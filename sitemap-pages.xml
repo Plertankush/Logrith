@@ -88,4 +88,11 @@
 <priority>0.30</priority>
 <changefreq>yearly</changefreq>
 </url>
+
+<url>
+<loc>https://logrith.in/pages/founder</loc>
+<priority>0.90</priority>
+<changefreq>yearly</changefreq>
+</url>
+  
 </urlset>
