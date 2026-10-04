@@ -1,0 +1,76 @@
+# Logrith
+
+> Logrith is a free, browser-based online tools platform offering 100+ utilities across image/PDF editing, calculators and converters, text and generators, developer tools, and general utilities. All tools run directly in the browser where technically possible — no signup, no file uploads to third-party servers for most tools, no unnecessary data collection, and no paywall.
+
+Logrith's positioning: a simple, fast, privacy-respecting place to get a small digital task done — compress, convert, calculate, generate, clean, format, transform, check, compare, create.
+
+## Founder
+
+Logrith is built and run by a solo founder, Ankush Maurya (online identity: Plert Ankush, same handle "plertankush" across platforms). The platform's tools, content, and SEO are developed using AI-assisted development ("vibecoding") directed and reviewed by the founder, who acts as strategist and editor while AI tooling does the hands-on building. Full founder profile: https://logrith.in/pages/founder
+
+## Key Pages
+
+- Homepage: https://logrith.in/
+- About: https://logrith.in/pages/about
+- Founder: https://logrith.in/pages/founder
+- Contact: https://logrith.in/pages/contact
+- Privacy Policy: https://logrith.in/pages/privacy
+- Terms of Service: https://logrith.in/pages/terms
+- Blog: https://logrith.in/blog/
+- All Tools: https://logrith.in/categories/all-tools
+
+## Tool Categories
+
+- Image & PDF Tools: https://logrith.in/categories/image-pdf-tools
+- Calculate & Convert: https://logrith.in/categories/calculate-convert
+- Text & Generators: https://logrith.in/categories/text-generators
+- Developer Tools: https://logrith.in/categories/developer-tools
+- Utilities: https://logrith.in/categories/utilities
+- AI Tools: https://logrith.in/categories/ai-tools
+
+## Notable Tools (high traffic / high utility)
+
+- Age Calculator: https://logrith.in/tools/age-calculator — exact age by date of birth, in years/months/days/hours/minutes
+- World Clock: https://logrith.in/tools/world-clock — live time across multiple cities and timezones
+- File Size Converter: https://logrith.in/tools/file-size-converter — convert between bytes, KB, MB, GB, TB (binary and decimal)
+- Word Counter: https://logrith.in/tools/word-counter — words, characters, sentences, paragraphs, reading time
+- Text Reverser: https://logrith.in/tools/text-reverser — reverse text by character or word order
+- Image Compressor: https://logrith.in/tools/image-compressor — reduce image file size in-browser
+- PDF to Text: https://logrith.in/tools/pdf-to-text — extract plain text from PDF files
+- Random Number Generator: https://logrith.in/tools/random-number-generator
+- Barcode Generator: https://logrith.in/tools/barcode-generator — CODE128, EAN, UPC formats
+- CSS Box Shadow Generator: https://logrith.in/tools/css-box-shadow-generator
+- Percentage Fee Splitter: https://logrith.in/tools/percentage-fee-splitter
+- Date Difference Calculator: https://logrith.in/tools/date-difference-calculator
+- Unit Converter: https://logrith.in/tools/unit-converter
+- JSON Formatter: https://logrith.in/tools/json-formatter
+- QR Code Generator: https://logrith.in/tools/qr-generator
+- Password Generator: https://logrith.in/tools/password-generator
+- UUID Generator: https://logrith.in/tools/uuid-generator
+- Regex Tester: https://logrith.in/tools/regex-tester
+
+## Full Tool Index
+
+Image & PDF: image-compressor, image-converter, image-crop, image-resize, image-rotate, image-color-picker, image-to-base64, image-watermark, photo-resizer-kb, favicon-generator, svg-to-png, meme-generator, jpg-to-pdf, pdf-to-jpg, pdf-to-text, pdf-compressor, pdf-merge, pdf-split, pdf-rotate, pdf-page-remover, pdf-password-protect, pdf-watermark
+
+Calculate & Convert: age-calculator, bmi-calculator, body-fat-percentage-calculator, compound-interest-calculator, simple-interest-calculator, emi-calculator, gst-calculator, loan-affordability-calculator, percentage-calculator, percentage-fee-splitter, currency-converter, unit-converter, time-zone-converter, date-difference-calculator, number-base-converter, roman-numeral-converter, salary-hourly-converter, tip-split-calculator, discount-stacking-calculator, unit-price-comparator
+
+Text & Generators: word-counter, character-counter, case-converter, text-reverser, text-diff, duplicate-remover, lorem-ipsum, slug-generator, markdown-previewer, acronym-generator, citation-generator, fancy-text-generator, morse-code-translator, nato-phonetic-alphabet-translator, number-to-words-converter, words-to-pages-converter, random-quote-generator, random-name-generator, random-team-generator, text-to-speech, speech-to-text, text-summarizer-basic, text-expander-snippet-tool, wpm-typing-speed-calculator
+
+Developer Tools: json-formatter, xml-formatter, yaml-json-converter, html-minifier, css-minifier, js-minifier, sql-formatter, html-entity-converter, base64, hash-generator, jwt-decoder, regex-tester, uuid-generator, cron-expression-builder, http-status-code-lookup, css-gradient-generator, css-box-shadow-generator, css-clamp-calculator
+
+Utilities: qr-generator, barcode-generator, password-generator, password-strength, passphrase-generator, file-size-converter, world-clock, countdown-timer-tool, flip-coin-dice-roller, random-color-palette-generator, random-number-generator, browser-info-lookup
+
+AI Tools: resume-analyzer, website-speed-analyzer
+
+## Content & Blog
+
+Logrith publishes explainer blog posts for its highest-traffic tools at https://logrith.in/blog/ — these cover how each tool works, common misconceptions, and practical usage guidance rather than generic SEO filler.
+
+## Technical Notes for Crawlers/Agents
+
+- Site is static HTML, mobile-responsive.
+- Most tools process data entirely client-side (in-browser); server upload is used only where technically required (noted per tool).
+- No login or account system; no paywalled tools.
+- Monetization is via non-intrusive display ads (Google AdSense) only — no sponsored tool rankings, no affiliate manipulation of results.
+- Sitemaps: https://logrith.in/sitemap.xml (index), https://logrith.in/sitemap-tools.xml, https://logrith.in/sitemap-blog.xml, https://logrith.in/sitemap-pages.xml
