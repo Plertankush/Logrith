@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://logrith.in/sitemap.xml
+Sitemap: https://logrith.in/sitemap-pages.xml
+Sitemap: https://logrith.in/sitemap-tools.xml
+Sitemap: https://logrith.in/sitemap-blog.xml
