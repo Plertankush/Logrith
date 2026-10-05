@@ -128,6 +128,51 @@
   <div class="faq-item"><div class="faq-q">What DPI should I choose?</div><div class="faq-a">For web use: Standard (72 DPI) is fine. For print or high quality: choose High (144 DPI) or Ultra (216 DPI). Higher DPI means larger file sizes but sharper images.</div></div>
   <div class="faq-item"><div class="faq-q">Can I convert only specific pages?</div><div class="faq-a">Yes! Select "Custom Range" and enter pages like "1-3, 5, 7-10". Only those pages will be converted and available for download.</div></div>
   <div class="faq-item"><div class="faq-q">PNG vs JPG — which should I choose?</div><div class="faq-a">Choose PNG if your PDF has transparent backgrounds or sharp text/diagrams you need at pixel-perfect quality. Choose JPG for smaller file sizes with photos or general content.</div></div>
+  <div class="faq-item"><div class="faq-q">Why does conversion take longer for some PDFs?</div><div class="faq-a">PDFs with many pages, high-resolution embedded images, or complex vector graphics take longer to render, since each page is drawn fresh onto a canvas at your chosen DPI before being saved as an image.</div></div>
+  <div class="faq-item"><div class="faq-q">Is my PDF uploaded to any server during conversion?</div><div class="faq-a">No, the entire conversion runs using PDF.js directly in your browser. Your file is read locally and never transmitted anywhere.</div></div>
+  <div class="faq-item"><div class="faq-q">Can I download all converted pages at once?</div><div class="faq-a">Yes, after conversion finishes, use the "Download All" button to save every converted page in one action instead of downloading each image individually.</div></div>
+</div>
+
+<section class="article-section">
+  <h2>How PDF to JPG Conversion Works</h2>
+  <p>This tool uses PDF.js, the same open-source rendering engine that powers Firefox's built-in PDF viewer, to draw each page of your PDF onto an HTML5 canvas at a resolution you choose. Once a page is rendered onto the canvas, the browser's native image encoding converts that canvas into a JPG or PNG file, ready to download. Because rendering happens through the same engine used to display PDFs in a browser, text, vector graphics, and embedded images all come through with high fidelity — nothing is approximated or simplified.</p>
+
+  <h3>Choosing the Right DPI for Your Use Case</h3>
+  <p>DPI (dots per inch) controls how much detail is captured in the output image, and the right setting depends entirely on what the image is for. For content that will only ever be viewed on a screen — a slide in a presentation, an image embedded in a webpage, a quick preview — Standard (72 DPI) keeps file sizes small without sacrificing noticeable quality at typical screen resolutions. For anything headed to print, or where text needs to stay crisp when zoomed in, High (144 DPI) or Ultra (216 DPI) produces noticeably sharper results, at the cost of a larger file. A useful way to think about it: double the DPI roughly quadruples the pixel count and file size, so it's worth matching the setting to the actual destination rather than defaulting to the highest option every time.</p>
+
+  <h3>Converting a Specific Page Range vs. the Whole Document</h3>
+  <p>Not every situation calls for converting an entire PDF. If you only need a cover page, a single diagram, or a specific chapter as images, the custom range option avoids processing — and waiting for — pages you don't need. The range field accepts the same flexible format used elsewhere on Logrith: individual page numbers and hyphenated ranges separated by commas, so "1-3, 5, 7-10" converts exactly those seven pages and skips everything else in the document.</p>
+
+  <h3>JPG vs. PNG Output: A Closer Look</h3>
+  <p>The two output formats serve different purposes. JPG uses lossy compression, which produces smaller files and works well for pages containing photographs or continuous-tone images, where minor compression artifacts are rarely noticeable. PNG uses lossless compression and supports transparency, which matters for PDF pages containing sharp text, line art, logos, or diagrams where compression artifacts around hard edges would be more visible — and essential if the original content relies on a transparent background. As a rule of thumb, scanned photo-heavy pages usually look fine as JPG, while text-heavy or graphic-heavy pages benefit from PNG's lossless precision.</p>
+
+  <h3>Common Situations Where This Conversion Is Useful</h3>
+  <ul class="feature-list">
+    <li><strong>Embedding a PDF page into a presentation or webpage</strong>, where only image formats are supported, not PDF embeds.</li>
+    <li><strong>Sharing a single diagram or chart</strong> from a larger report without sending the whole document.</li>
+    <li><strong>Creating thumbnails or previews</strong> of document pages for a gallery, catalog, or content management system.</li>
+    <li><strong>Extracting a scanned signature or stamp</strong> from a signed PDF to reuse as a standalone image.</li>
+    <li><strong>Archiving visual records</strong> of specific pages in an image format that's universally viewable without a PDF reader.</li>
+  </ul>
+
+  <h3>Troubleshooting: What to Check If Conversion Fails</h3>
+  <p>If the conversion doesn't complete, the most common cause is a slow or interrupted internet connection, since PDF.js itself loads from a content delivery network the first time the page runs. A corrupted or password-protected PDF can also prevent rendering — if your file is password-protected, remove the password first using a PDF password tool before converting. For very large files approaching the 20MB limit, converting at a lower DPI or a smaller page range can help the browser process the file more reliably, since high-DPI rendering of many pages at once is genuinely demanding on browser memory.</p>
+
+  <h3>How This Compares to Taking Screenshots of PDF Pages</h3>
+  <p>Some people try to get images out of a PDF by simply taking a screenshot of each page while viewing it in a PDF reader. This works in a pinch but has real downsides compared to proper rendering: screenshot resolution is limited to your screen's resolution and zoom level, text can appear blurry if the zoom wasn't high enough, and capturing many pages this way is slow and repetitive. Rendering each page directly at a chosen DPI, as this tool does, produces consistent, predictable quality across every page regardless of screen size or zoom level, and handles an entire document in the time it takes to click one button.</p>
+
+  <h3>Privacy and Browser-Based Processing</h3>
+  <p>Every step of this conversion — reading the PDF, rendering each page, and encoding the final images — happens locally in your browser. Your document is never uploaded to a remote server, stored, or logged anywhere, which makes this tool a safe choice for converting personal, financial, or otherwise confidential PDF pages into images without that data leaving your device.</p>
+</section>
+
+<div class="content-card related-tools">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a href="/tools/jpg-to-pdf" class="tool-item"><div class="ti-text"><h4>JPG to PDF</h4><p>Combine images into a single PDF document.</p></div></a>
+    <a href="/tools/pdf-compressor" class="tool-item"><div class="ti-text"><h4>PDF Compressor</h4><p>Reduce PDF file size while keeping content readable.</p></div></a>
+    <a href="/tools/pdf-password-protect" class="tool-item"><div class="ti-text"><h4>PDF Password Protect</h4><p>Add or remove password protection from a PDF.</p></div></a>
+    <a href="/tools/image-converter" class="tool-item"><div class="ti-text"><h4>Image Converter</h4><p>Convert images between JPG, PNG, WEBP, and other formats.</p></div></a>
+  </div>
 </div>
 
 <div id="footer"></div>

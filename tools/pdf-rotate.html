@@ -121,7 +121,76 @@
   <div class="faq-item"><div class="faq-q">How do I rotate a PDF page?</div><div class="faq-a">Upload your PDF, select the rotation angle (90°, 180° or 270°), choose whether to apply to all pages or specific ones, then click Rotate PDF. Download the result instantly.</div></div>
   <div class="faq-item"><div class="faq-q">Can I rotate only certain pages?</div><div class="faq-a">Yes! Select "Specific Page Range" and enter pages like "1-3, 5". Or choose "Odd Pages Only" or "Even Pages Only" for quick batch selection.</div></div>
   <div class="faq-item"><div class="faq-q">Will rotating reduce PDF quality?</div><div class="faq-a">No. PDF-Lib rotates pages by modifying page metadata — no re-encoding occurs. The content quality is perfectly preserved.</div></div>
+  <div class="faq-item"><div class="faq-q">Is my PDF uploaded anywhere?</div><div class="faq-a">No, the entire rotation process runs in your browser. Your document is never sent to a server, so it stays private throughout.</div></div>
+  <div class="faq-item"><div class="faq-q">Can I rotate pages in different directions within the same PDF?</div><div class="faq-a">For a single operation, the chosen rotation angle applies to all selected pages. If different pages need different rotations, run the tool again on the result with a new page selection.</div></div>
+  <div class="faq-item"><div class="faq-q">What causes PDF pages to be sideways in the first place?</div><div class="faq-a">This is usually caused by how a document was scanned, how a mobile phone was oriented when creating a PDF from a photo, or a page that was originally designed in landscape being inserted into a portrait document.</div></div>
 </div>
+
+<section class="article-section">
+  <h2>About the PDF Rotate Tool</h2>
+  <p>The Logrith PDF Rotate tool fixes sideways or upside-down pages in a PDF document without needing to reprint, rescan, or install desktop software. Rotate individual pages, a custom range, odd or even pages only, or the entire document, all directly in your browser. This is one of the most common fixes needed after scanning paper documents, since scanners and multi-function printers frequently produce pages that are rotated 90 or 180 degrees from how they should appear.</p>
+
+  <p>A sideways PDF page is a small but genuinely annoying problem — the content is all there, correctly scanned and readable, but viewing or printing it means constantly tilting your head or your printed page. Rather than rescanning the document correctly, which isn't always possible if you no longer have the original paper, rotating the existing PDF pages fixes the orientation in seconds.</p>
+
+  <h3>Flexible Rotation Options</h3>
+  <ul class="feature-list">
+    <li><strong>Rotate all pages</strong> — apply the same rotation angle uniformly across the entire document, useful when an entire scan came out sideways.</li>
+    <li><strong>Rotate a specific page range</strong> — enter page numbers or ranges, like "1-3, 5", to rotate only the pages that need it while leaving the rest untouched.</li>
+    <li><strong>Rotate odd pages only</strong> — a common fix for double-sided scans where every other page came out rotated due to how the paper fed through the scanner.</li>
+    <li><strong>Rotate even pages only</strong> — the counterpart fix for the opposite scanning pattern.</li>
+  </ul>
+
+  <h3>Why Scanned Documents Often Come Out Rotated</h3>
+  <p>Flatbed scanners and automatic document feeders don't always know which way is "up" for a given page — they simply capture whatever orientation the paper was fed in. With double-sided scanning in particular, it's common for one side of each sheet to scan correctly while the other comes out rotated 180 degrees, because the paper physically flips between passes. This is exactly why the odd-pages-only and even-pages-only rotation options exist in this tool — they let you correct just the affected half of a double-sided scan without touching the pages that are already correct.</p>
+
+  <h3>How Rotation Preserves Quality</h3>
+  <p>This tool uses PDF-Lib, a library that modifies a PDF's internal page rotation metadata rather than converting pages into images and rendering them back into the document. Every PDF page has a rotation property as part of its definition, and changing that property simply tells PDF viewers to display the page at a different angle — the underlying text, vector graphics, and embedded images are untouched. This means rotating a PDF with this tool never reduces sharpness, never re-compresses embedded images, and never affects text selectability, unlike approaches that convert pages to images first.</p>
+
+  <h3>Step-by-Step: How to Rotate a PDF</h3>
+  <div class="tool-steps">
+    <div class="tool-step"><strong>1. Upload your PDF</strong>Drag and drop the file or click to browse and select it from your device.</div>
+    <div class="tool-step"><strong>2. Choose the rotation angle</strong>Select 90°, 180°, or 270° depending on how far off the current orientation is.</div>
+    <div class="tool-step"><strong>3. Select which pages to rotate</strong>Choose all pages, a specific range, or odd/even pages only.</div>
+    <div class="tool-step"><strong>4. Download the corrected PDF</strong>Click Rotate PDF and download the result with the new page orientation applied.</div>
+  </div>
+
+  <h3>Privacy and Browser-Based Processing</h3>
+  <p>All rotation happens locally in your browser using JavaScript — your PDF is never uploaded to a server, stored, or logged. This makes the tool suitable even for sensitive documents like signed contracts, medical records, or financial statements that you'd rather not send to a third-party service just to fix their orientation.</p>
+
+  <h3>Choosing the Right Rotation Angle</h3>
+  <p>If you're unsure how many degrees a page needs to rotate, a quick way to check is to look at which direction the text currently reads. If the text runs from bottom to top when held normally, a 90° rotation in one direction will usually fix it. If it runs top to bottom, rotate the other way. If the page is simply upside down with text reading right-side-up but inverted, 180° is what you need. Since the tool shows results instantly, you can also just try a rotation and undo by re-uploading if it's not quite right, rather than needing to calculate the correct angle in advance.</p>
+
+  <h3>Rotating vs. Other PDF Fixes</h3>
+  <p>It helps to know when rotation is the right fix and when a different tool is needed. If the content itself is correct but just facing the wrong way, rotation is exactly what you want — it changes the display angle without touching anything else about the page. If instead you need to remove pages entirely, Logrith's PDF Page Remover is the right tool. If you need to combine several rotated and non-rotated documents into one, rotate the individual pages first, then use PDF Merge to combine them, since merging preserves each page's existing rotation setting.</p>
+</section>
+
+<div class="content-card related-tools">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a href="/tools/pdf-split" class="tool-item"><div class="ti-text"><h4>PDF Split</h4><p>Extract specific pages or split a PDF into individual files.</p></div></a>
+    <a href="/tools/pdf-page-remover" class="tool-item"><div class="ti-text"><h4>PDF Page Remover</h4><p>Delete unwanted pages from a PDF file in seconds.</p></div></a>
+    <a href="/tools/pdf-merge" class="tool-item"><div class="ti-text"><h4>PDF Merge</h4><p>Combine multiple PDF files into a single document.</p></div></a>
+    <a href="/tools/pdf-compressor" class="tool-item"><div class="ti-text"><h4>PDF Compressor</h4><p>Reduce PDF file size while keeping content readable.</p></div></a>
+  </div>
+</div>
+
+<section class="seo-section">
+  <div class="seo-wrap">
+    <div class="content-card keyword-section">
+      <h2>Popular Searches</h2>
+      <div class="keyword-box">
+        <span class="keyword-tag">rotate pdf online free</span>
+        <span class="keyword-tag">fix sideways pdf</span>
+        <span class="keyword-tag">rotate pdf pages 90 degrees</span>
+        <span class="keyword-tag">rotate scanned pdf</span>
+        <span class="keyword-tag">rotate pdf odd pages</span>
+        <span class="keyword-tag">pdf rotator online</span>
+        <span class="keyword-tag">rotate upside down pdf</span>
+        <span class="keyword-tag">rotate specific pdf pages</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <div id="footer"></div>
 

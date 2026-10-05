@@ -125,7 +125,84 @@
   <div class="faq-item"><div class="faq-q">What is a URL slug?</div><div class="faq-a">A URL slug is the part of a URL that identifies a specific page in human-readable form. For example, in "https://example.com/how-to-build-a-website", the slug is "how-to-build-a-website". Good slugs are descriptive, lowercase, and use hyphens between words.</div></div>
   <div class="faq-item"><div class="faq-q">Should I use hyphens or underscores in slugs?</div><div class="faq-a">Google recommends hyphens (-) over underscores (_) for URL slugs. Google treats hyphens as word separators but treats underscores as word joiners. "free-tools" = two words; "free_tools" = one compound word in search engine interpretation.</div></div>
   <div class="faq-item"><div class="faq-q">What are stop words in slug generation?</div><div class="faq-a">Stop words are common words (a, an, the, in, on, at, for, of, etc.) that add little SEO value to URLs. Removing them keeps slugs shorter and more keyword-focused. E.g., "the best tools for the web" → "best-tools-web".</div></div>
+  <div class="faq-item"><div class="faq-q">Does this tool handle special characters and accents?</div><div class="faq-a">Yes, accented characters (like é, ñ, ü) are converted to their closest plain ASCII equivalent, and symbols, punctuation, and other non-alphanumeric characters are stripped out automatically.</div></div>
+  <div class="faq-item"><div class="faq-q">How long should a URL slug be?</div><div class="faq-a">Shorter slugs that clearly describe the page content tend to work best for both readability and SEO — generally under 5-6 words is a reasonable target, though there's no strict limit.</div></div>
+  <div class="faq-item"><div class="faq-q">Is my text sent to a server when generating a slug?</div><div class="faq-a">No, the conversion happens instantly in your browser using JavaScript. Nothing you type is transmitted anywhere.</div></div>
 </div>
+
+<section class="article-section">
+  <h2>About the Slug Generator Tool</h2>
+  <p>The Logrith Slug Generator converts any title, heading, or phrase into a clean, URL-safe slug — lowercase, hyphen-separated, and stripped of special characters — ready to use as a page URL, blog post path, or file name. This is a small but genuinely important step in web publishing, since a well-formed slug affects both how search engines interpret a page and how readable the URL looks when shared.</p>
+
+  <p>A slug is the part of a URL that identifies a specific page in a human and machine-readable way. For a blog post titled "10 Best Budget Laptops in 2024," a good slug would be "10-best-budget-laptops-2024" — all lowercase, words separated by hyphens, with punctuation removed. This tool automates that conversion, handling capitalization, spacing, punctuation, accented characters, and optional stop-word removal in one step.</p>
+
+  <h3>What Makes a Good URL Slug</h3>
+  <ul class="feature-list">
+    <li><strong>Lowercase only.</strong> URLs are technically case-sensitive, and mixing cases creates inconsistency and potential duplicate-content issues if the same page is linked with different capitalization.</li>
+    <li><strong>Hyphens between words, not underscores.</strong> Search engines, including Google, treat hyphens as word separators but treat underscores as joining words together into one token, which can hurt how individual keywords in the slug are interpreted.</li>
+    <li><strong>No special characters.</strong> Spaces, punctuation, and symbols like &amp;, %, or # either break URLs outright or get encoded into unreadable character sequences, so they should be stripped or replaced.</li>
+    <li><strong>Short and descriptive.</strong> A slug that clearly reflects the page's topic in a few words is more useful to both users and search engines than an overly long, literal copy of the full title.</li>
+  </ul>
+
+  <h3>Why Hyphens Instead of Underscores</h3>
+  <p>This distinction trips a lot of people up because both hyphens and underscores look like reasonable word separators visually. The difference matters specifically because of how Google's indexing treats them: a hyphen in "free-tools" is read as two separate words, "free" and "tools," both of which can independently match search queries. An underscore in "free_tools," by contrast, is treated by Google as a single compound token, "free_tools," which won't match a search for just "free" or just "tools" nearly as effectively. For this reason, hyphens have become the standard convention for SEO-friendly URL slugs, and this tool defaults to hyphen separation.</p>
+
+  <h3>Why Remove Stop Words</h3>
+  <p>Stop words are short, extremely common words — like "a," "the," "in," "on," "for," and "of" — that carry little search relevance on their own. Including them in a slug makes the URL longer without adding meaningful keyword value. For example, "the-best-tools-for-the-web" becomes the more concise "best-tools-web" with stop words removed, keeping the same core meaning in a shorter, more keyword-dense URL. This isn't mandatory — some slugs read more naturally with stop words kept in — but it's a commonly used optimization for content-heavy sites publishing many articles or product pages.</p>
+
+  <h3>Handling Accented and Special Characters</h3>
+  <p>Titles in many languages include accented characters — é, ñ, ü, and similar — which, while valid in page titles, cause problems if left as-is in a URL, since they either break certain systems or get encoded into long percent-escaped sequences that look messy in a browser address bar. This tool automatically converts accented characters to their closest plain ASCII equivalent (é becomes e, ñ becomes n, and so on), keeping the resulting slug clean and universally compatible across browsers, servers, and content management systems.</p>
+
+  <h3>Common Use Cases</h3>
+  <ul class="feature-list">
+    <li><strong>Blog post URLs</strong> — converting an article title into a clean, SEO-friendly path.</li>
+    <li><strong>E-commerce product pages</strong> — generating consistent, readable URLs for product listings.</li>
+    <li><strong>File and folder naming</strong> — creating consistent, web-safe file names from longer, more natural-language titles.</li>
+    <li><strong>CMS and static site generators</strong> — many platforms require or expect a slug field separate from the display title.</li>
+  </ul>
+
+  <h3>Step-by-Step: How to Generate a Slug</h3>
+  <div class="tool-steps">
+    <div class="tool-step"><strong>1. Enter your title or phrase</strong>Type or paste the text you want converted into a slug.</div>
+    <div class="tool-step"><strong>2. Choose a separator</strong>Select hyphens (recommended for SEO) or underscores.</div>
+    <div class="tool-step"><strong>3. Toggle stop word removal</strong>Enable this if you want a shorter, more keyword-focused slug.</div>
+    <div class="tool-step"><strong>4. Copy the result</strong>Copy the generated slug directly into your CMS, URL, or file name field.</div>
+  </div>
+
+  <h3>Why Slugs Matter for SEO</h3>
+  <p>Search engines use several signals to understand what a page is about, and the URL itself is one of them — a weaker signal than the page title or heading tags, but a signal nonetheless. A slug like "best-budget-laptops-2024" tells both users and search engines what the page covers before anyone even clicks through, which can improve click-through rates from search results and makes shared links more trustworthy-looking. Beyond search engines, clean slugs also simply look better and build more trust when shared on social media, in emails, or pasted into a chat, compared to a URL full of random characters, numbers, or encoded spaces.</p>
+
+  <h3>Privacy</h3>
+  <p>All slug generation happens instantly in your browser using JavaScript — nothing you type is uploaded to a server, logged, or stored. This makes the tool safe to use even for unpublished or confidential page titles you aren't ready to share publicly yet.</p>
+</section>
+
+<div class="content-card related-tools">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a href="/tools/case-converter" class="tool-item"><div class="ti-text"><h4>Case Converter</h4><p>Convert text between uppercase, lowercase, and title case.</p></div></a>
+    <a href="/tools/url-encoder" class="tool-item"><div class="ti-text"><h4>URL Encoder</h4><p>Encode and decode URLs and query strings.</p></div></a>
+    <a href="/tools/text-reverser" class="tool-item"><div class="ti-text"><h4>Text Reverser</h4><p>Reverse text, words, or sentences instantly.</p></div></a>
+    <a href="/tools/word-counter" class="tool-item"><div class="ti-text"><h4>Word Counter</h4><p>Count words, characters, and paragraphs in your text.</p></div></a>
+  </div>
+</div>
+
+<section class="seo-section">
+  <div class="seo-wrap">
+    <div class="content-card keyword-section">
+      <h2>Popular Searches</h2>
+      <div class="keyword-box">
+        <span class="keyword-tag">slug generator online</span>
+        <span class="keyword-tag">url slug generator free</span>
+        <span class="keyword-tag">seo friendly url generator</span>
+        <span class="keyword-tag">convert title to slug</span>
+        <span class="keyword-tag">url friendly text converter</span>
+        <span class="keyword-tag">permalink generator</span>
+        <span class="keyword-tag">slug maker online</span>
+        <span class="keyword-tag">clean url generator</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <div id="footer"></div>
 

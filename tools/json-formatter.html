@@ -143,7 +143,76 @@
   <div class="faq-item"><div class="faq-q">How does the JSON validator work?</div><div class="faq-a">The tool uses JavaScript's built-in JSON.parse() to validate your JSON. If there's a syntax error, it shows the exact error message including the character position where parsing failed.</div></div>
   <div class="faq-item"><div class="faq-q">Is my JSON data safe?</div><div class="faq-a">Completely safe. All processing is done in your browser using JavaScript. No data is sent to any server.</div></div>
   <div class="faq-item"><div class="faq-q">Can I sort JSON keys alphabetically?</div><div class="faq-a">Yes! Use the "Sort Keys" option to sort all keys in the JSON object alphabetically in ascending (A→Z) or descending (Z→A) order.</div></div>
+  <div class="faq-item"><div class="faq-q">What causes most JSON syntax errors?</div><div class="faq-a">The most common issues are trailing commas after the last item in an object or array, missing quotes around keys, using single quotes instead of double quotes, and unescaped special characters inside strings.</div></div>
+  <div class="faq-item"><div class="faq-q">Can I minify JSON as well as format it?</div><div class="faq-a">Yes, the tool works in both directions — beautify compact JSON into readable, indented form, or minify readable JSON down to a single compact line with no extra whitespace.</div></div>
+  <div class="faq-item"><div class="faq-q">Does this tool support nested JSON structures?</div><div class="faq-a">Yes, it handles deeply nested objects and arrays of any depth, correctly indenting each level so the structure stays readable no matter how complex the JSON is.</div></div>
 </div>
+
+<section class="article-section">
+  <h2>About the JSON Formatter Tool</h2>
+  <p>The Logrith JSON Formatter beautifies, validates, minifies, and sorts JSON data instantly in your browser. Paste in compact or malformed JSON and get back properly indented, readable output — or catch a syntax error with the exact character position where parsing failed. This is one of the most frequently needed tools for anyone working with APIs, configuration files, or structured data.</p>
+
+  <p>JSON (JavaScript Object Notation) is the most widely used format for exchanging structured data between systems, especially in web APIs. In its raw form, especially when returned by an API without formatting, JSON often arrives as one long unbroken line of text — technically valid but nearly impossible to read or debug by eye. This tool adds proper indentation and line breaks, turning that dense block into a clearly structured, nested view that's easy to scan and understand.</p>
+
+  <h3>Core Functions This Tool Provides</h3>
+  <ul class="feature-list">
+    <li><strong>Beautify (format).</strong> Adds indentation and line breaks to compact JSON, making nested objects and arrays easy to read and navigate visually.</li>
+    <li><strong>Minify.</strong> Removes all unnecessary whitespace, producing the smallest possible valid JSON string — useful for reducing payload size before sending data over a network.</li>
+    <li><strong>Validate.</strong> Checks whether the JSON is syntactically correct, and if not, reports exactly where and why parsing failed.</li>
+    <li><strong>Sort keys.</strong> Reorders object keys alphabetically, which can make it easier to compare two JSON objects or find a specific field in a large structure.</li>
+  </ul>
+
+  <h3>Common JSON Syntax Errors and How to Spot Them</h3>
+  <p>JSON has a stricter syntax than JavaScript object literals, and the differences trip people up constantly. A trailing comma after the last item in an object or array — valid in some JavaScript contexts — is invalid in strict JSON and will cause a parse error. Keys must always be wrapped in double quotes, never single quotes or left unquoted, even though unquoted keys are valid in plain JavaScript objects. String values must also use double quotes, not single quotes. Special characters inside strings, like a literal quote mark or newline, need to be escaped properly or they'll break the surrounding string. This tool's validator catches all of these issues and reports the exact position where the problem occurs, saving you from manually scanning through a long JSON blob looking for a single misplaced comma.</p>
+
+  <h3>Why Readable Formatting Matters</h3>
+  <p>Beyond simply looking nicer, properly formatted JSON is significantly easier to debug. When an API response or configuration file is returned as one dense line, finding a specific field, understanding the nesting structure, or spotting a missing value means scrolling through a wall of text character by character. Formatted JSON, with each key-value pair on its own indented line, lets you visually trace the structure — which object a field belongs to, how deeply nested an array is, where one object ends and another begins — at a glance.</p>
+
+  <h3>When to Minify Instead of Format</h3>
+  <p>While formatted JSON is better for human reading, minified JSON has its own purpose: reducing file size. When JSON is being sent over a network — as an API request or response, or embedded in a web page — every unnecessary whitespace character adds to the payload size and, at scale, to bandwidth and loading time. Minifying strips all of that extra whitespace while keeping the data itself completely unchanged, producing a smaller file that parses identically to the formatted version. Development and debugging typically call for formatted JSON; production and network transfer typically call for minified JSON.</p>
+
+  <h3>Step-by-Step: How to Format JSON</h3>
+  <div class="tool-steps">
+    <div class="tool-step"><strong>1. Paste your JSON</strong>Enter or paste your raw JSON data into the input field.</div>
+    <div class="tool-step"><strong>2. Choose an action</strong>Select Beautify, Minify, or Sort Keys depending on what you need.</div>
+    <div class="tool-step"><strong>3. Review the output</strong>Check the formatted result, or read the error message if validation failed.</div>
+    <div class="tool-step"><strong>4. Copy the result</strong>Copy the processed JSON to use in your project, API testing tool, or documentation.</div>
+  </div>
+
+  <h3>Privacy</h3>
+  <p>All JSON processing happens locally in your browser using JavaScript's built-in JSON.parse() and JSON.stringify() functions — your data is never uploaded to a server or stored anywhere. This makes the tool safe to use with JSON containing API keys, internal configuration, or other sensitive structured data.</p>
+
+  <h3>Why Key Sorting Can Help With Comparisons</h3>
+  <p>When two JSON objects contain the same data but their keys are in a different order, a plain text comparison will flag them as different even though they're functionally identical. Sorting keys alphabetically before comparing removes this ordering noise, making it much easier to spot genuine differences between two JSON payloads — for example, when debugging why an API response doesn't match an expected test fixture, or when comparing two versions of a configuration file that were edited independently.</p>
+</section>
+
+<div class="content-card related-tools">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a href="/tools/yaml-json-converter" class="tool-item"><div class="ti-text"><h4>YAML to JSON Converter</h4><p>Convert between YAML and JSON formats instantly.</p></div></a>
+    <a href="/tools/xml-formatter" class="tool-item"><div class="ti-text"><h4>XML Formatter</h4><p>Format and validate XML documents.</p></div></a>
+    <a href="/tools/js-minifier" class="tool-item"><div class="ti-text"><h4>JS Minifier</h4><p>Minify JavaScript code to reduce file size.</p></div></a>
+    <a href="/tools/jwt-decoder" class="tool-item"><div class="ti-text"><h4>JWT Decoder</h4><p>Decode and inspect JSON Web Tokens instantly.</p></div></a>
+  </div>
+</div>
+
+<section class="seo-section">
+  <div class="seo-wrap">
+    <div class="content-card keyword-section">
+      <h2>Popular Searches</h2>
+      <div class="keyword-box">
+        <span class="keyword-tag">json formatter online</span>
+        <span class="keyword-tag">json validator free</span>
+        <span class="keyword-tag">json beautifier</span>
+        <span class="keyword-tag">minify json online</span>
+        <span class="keyword-tag">json pretty print</span>
+        <span class="keyword-tag">json syntax checker</span>
+        <span class="keyword-tag">format json online free</span>
+        <span class="keyword-tag">json viewer online</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <div id="footer"></div>
 

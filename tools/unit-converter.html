@@ -95,7 +95,79 @@
   <div class="faq-item"><div class="faq-q">How do I convert meters to feet?</div><div class="faq-a">Select "Length" category, enter your value, choose "Meter" as the from unit, and click Convert. The result will show feet, inches, yards, kilometers, miles and all other length units simultaneously.</div></div>
   <div class="faq-item"><div class="faq-q">How is temperature conversion different from other units?</div><div class="faq-a">Temperature uses offset formulas rather than simple multiplication. Celsius to Fahrenheit: (°C × 9/5) + 32. Celsius to Kelvin: °C + 273.15. The tool handles these automatically.</div></div>
   <div class="faq-item"><div class="faq-q">What data size units are supported?</div><div class="faq-a">The tool supports bits, bytes, kilobytes (KB), megabytes (MB), gigabytes (GB), terabytes (TB), kibibytes (KiB), mebibytes (MiB), gibibytes (GiB) — using both SI (1000-based) and binary (1024-based) standards.</div></div>
+  <div class="faq-item"><div class="faq-q">Can I convert between metric and imperial systems?</div><div class="faq-a">Yes, every category mixes metric units (meters, kilograms, liters) and imperial/US units (feet, pounds, gallons) in the same results list, so you don't need to pick a system first — just choose your starting unit and every equivalent appears at once.</div></div>
+  <div class="faq-item"><div class="faq-q">Why do I see multiple results instead of just one?</div><div class="faq-a">Instead of converting to a single target unit, this tool shows your value converted into every unit in that category simultaneously, so you can compare length in meters, feet, inches, and miles side by side without re-running the conversion.</div></div>
+  <div class="faq-item"><div class="faq-q">Does the tool store or save my conversions?</div><div class="faq-a">No. All calculations happen instantly in your browser using JavaScript. Nothing is saved, logged, or sent anywhere — refreshing the page simply resets the calculator.</div></div>
 </div>
+
+<section class="article-section">
+  <h2>About the Unit Converter Tool</h2>
+  <p>The Logrith Unit Converter is a free, all-in-one tool for converting values across ten different measurement categories — length, weight, temperature, area, volume, data size, speed, time, energy, and pressure. Rather than making you pick a single "from" and "to" unit and run the conversion repeatedly, it calculates every equivalent unit in the chosen category at once, so you get a complete reference table from a single input.</p>
+
+  <p>Unit conversion comes up constantly in everyday life and work — cooking with a recipe that uses cups when you only have a metric scale, checking a product's weight in pounds when the listing only gives kilograms, figuring out a temperature in Fahrenheit from a Celsius reading, or converting a file size between megabytes and gibibytes for storage planning. This tool is built to handle all of these cases from one interface, with results that update instantly as you type.</p>
+
+  <h3>Categories This Converter Supports</h3>
+  <ul class="feature-list">
+    <li><strong>Length</strong> — meters, kilometers, centimeters, millimeters, miles, yards, feet, inches, and nautical miles.</li>
+    <li><strong>Weight / Mass</strong> — kilograms, grams, milligrams, pounds, ounces, metric tons, stone, and carats.</li>
+    <li><strong>Temperature</strong> — Celsius, Fahrenheit, Kelvin, and Rankine, using proper offset-based formulas.</li>
+    <li><strong>Area</strong> — square meters, square kilometers, hectares, acres, square feet, and more.</li>
+    <li><strong>Volume</strong> — liters, milliliters, gallons, quarts, pints, cups, fluid ounces, tablespoons, and teaspoons.</li>
+    <li><strong>Data Size</strong> — bits, bytes, kilobytes through terabytes, plus binary (kibibyte/mebibyte/gibibyte) units.</li>
+    <li><strong>Speed, Time, Energy, and Pressure</strong> — covering common units like km/h, mph, knots, joules, calories, BTU, PSI, bar, and atmospheres.</li>
+  </ul>
+
+  <h3>Why Temperature Conversion Works Differently</h3>
+  <p>Most unit conversions in this tool are simple multiplication — multiply by a fixed conversion factor to move from one unit to another. Temperature is the exception, because the different scales don't all start counting from the same zero point. Celsius and Kelvin share the same size of degree but different starting points (0°C = 273.15K), while Fahrenheit uses both a different starting point and a different degree size entirely. Converting between them requires offset formulas — for example, Celsius to Fahrenheit is (°C × 9/5) + 32, not a straight multiplication. This tool applies the correct formula automatically for every temperature pair, so you never have to remember or calculate the offsets yourself.</p>
+
+  <h3>Metric vs. Binary Data Units</h3>
+  <p>Data size conversion has its own quirk worth understanding: there are two competing standards for units like kilobyte and megabyte. The SI (decimal) standard defines a kilobyte as exactly 1,000 bytes, which is what this tool uses for KB, MB, GB, and TB. The binary standard, used internally by operating systems and reflected in units like KiB, MiB, and GiB, defines a "kibibyte" as 1,024 bytes instead. This is exactly why a hard drive labeled "1TB" by its manufacturer (1,000,000,000,000 bytes, SI standard) shows up as roughly 931GB in your operating system (which measures using the binary standard but often still labels it GB). This converter includes both standards side by side so you can see exactly how a value differs between the two.</p>
+
+  <h3>How to Use the Converter</h3>
+  <div class="tool-steps">
+    <div class="tool-step"><strong>1. Pick a category</strong>Choose length, weight, temperature, or any of the other ten categories from the dropdown.</div>
+    <div class="tool-step"><strong>2. Enter your value</strong>Type the number you want to convert into the value field.</div>
+    <div class="tool-step"><strong>3. Choose your starting unit</strong>Select the unit your value is currently in from the "From Unit" dropdown.</div>
+    <div class="tool-step"><strong>4. Read every equivalent at once</strong>The results panel instantly lists your value converted into all other units in that category.</div>
+  </div>
+
+  <h3>Accuracy and Precision</h3>
+  <p>All conversions use standard, internationally recognized conversion factors rather than rounded approximations, so results stay accurate to several decimal places. For very small or very large results, the tool automatically switches to scientific notation to keep the number readable rather than showing a long string of leading or trailing zeros. Because every calculation happens directly in your browser using JavaScript, there's no server round-trip delay — results update the instant you change the value or unit.</p>
+
+  <h3>Privacy</h3>
+  <p>No values you enter into this converter are uploaded, logged, or stored anywhere. The entire calculation runs locally in your browser tab, which means it works even with values you'd rather not send to an external server, and nothing persists once you close or refresh the page.</p>
+
+  <h3>Common Conversion Mistakes to Avoid</h3>
+  <p>A few mistakes come up often enough with manual unit conversion that they're worth calling out specifically. One is applying a simple multiplication to temperature, forgetting that Fahrenheit and Celsius don't share a zero point — this alone causes some of the most common conversion errors people run into. Another is confusing the decimal and binary data standards, assuming 1GB always equals exactly 1024MB when, depending on context, it may mean 1000MB instead. A third is rounding too early in a multi-step manual conversion, which can compound small errors into a noticeably wrong final answer. Because this tool calculates every result directly from the base value using full precision, these kinds of compounding errors don't occur.</p>
+</section>
+
+<div class="content-card related-tools">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a href="/tools/percentage-calculator" class="tool-item"><div class="ti-text"><h4>Percentage Calculator</h4><p>Calculate percentages, increases, decreases, and ratios instantly.</p></div></a>
+    <a href="/tools/currency-converter" class="tool-item"><div class="ti-text"><h4>Currency Converter</h4><p>Convert between world currencies with live exchange rates.</p></div></a>
+    <a href="/tools/file-size-converter" class="tool-item"><div class="ti-text"><h4>File Size Converter</h4><p>Convert file sizes between bytes, KB, MB, GB, and TB.</p></div></a>
+    <a href="/tools/number-base-converter" class="tool-item"><div class="ti-text"><h4>Number Base Converter</h4><p>Convert numbers between binary, decimal, hex, and octal.</p></div></a>
+  </div>
+</div>
+
+<section class="seo-section">
+  <div class="seo-wrap">
+    <div class="content-card keyword-section">
+      <h2>Popular Searches</h2>
+      <div class="keyword-box">
+        <span class="keyword-tag">unit converter online</span>
+        <span class="keyword-tag">length converter free</span>
+        <span class="keyword-tag">weight converter online</span>
+        <span class="keyword-tag">temperature converter celsius fahrenheit</span>
+        <span class="keyword-tag">metric to imperial converter</span>
+        <span class="keyword-tag">data size converter</span>
+        <span class="keyword-tag">convert units free</span>
+        <span class="keyword-tag">speed converter online</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <div id="footer"></div>
 

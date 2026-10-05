@@ -195,7 +195,39 @@
   <div class="faq-item"><div class="faq-q">Does the word counter count hyphenated words as one or two?</div><div class="faq-a">Hyphenated words like "well-being" or "mother-in-law" are counted as one word, following the standard convention used by most word processors.</div></div>
   <div class="faq-item"><div class="faq-q">What is keyword density?</div><div class="faq-a">Keyword density is the percentage of times a word appears relative to the total word count. It's important for SEO — most experts recommend keeping target keywords at 1–3% density to avoid keyword stuffing.</div></div>
   <div class="faq-item"><div class="faq-q">Can I use this for Twitter, LinkedIn or blog posts?</div><div class="faq-a">Yes! Use the word count goal to hit platform limits. Twitter: ~280 chars. LinkedIn posts: ~1300 chars optimal. Blog posts: typically 1000–2500 words for SEO.</div></div>
+  <div class="faq-item"><div class="faq-q">Is my text uploaded to a server?</div><div class="faq-a">No, every statistic is calculated directly in your browser using JavaScript as you type. Nothing is sent anywhere, stored, or logged.</div></div>
+  <div class="faq-item"><div class="faq-q">Why is my sentence count different from what I expected?</div><div class="faq-a">Sentence counting works by detecting sentence-ending punctuation (periods, question marks, exclamation points), so abbreviations like "Dr." or decimal numbers can occasionally be miscounted as separate sentences.</div></div>
+  <div class="faq-item"><div class="faq-q">What counts as a "line" versus a "paragraph"?</div><div class="faq-a">A line is counted every time there's a line break, while a paragraph is counted as a block of text separated by a blank line — so a single paragraph can span several lines but still count as one paragraph.</div></div>
 </div>
+
+<section class="article-section">
+  <h2>How This Word Counter Calculates Each Statistic</h2>
+  <p>Every number on this page updates live as you type, calculated using straightforward text-processing rules applied directly in your browser. Word count splits the text on whitespace and counts the resulting chunks. Character counts are measured both with and without spaces, since different platforms and style guides specify limits using either convention. Sentences are detected by counting sequences of text ending in a period, question mark, or exclamation point. Paragraphs are counted as blocks of text separated by a blank line. None of this requires a server round-trip — it all happens instantly using plain JavaScript string processing.</p>
+
+  <h3>Reading Time and Speaking Time: How the Estimates Work</h3>
+  <p>Reading time is calculated using an average adult silent reading speed of around 225 words per minute, a commonly cited figure in readability research. Speaking time uses a slower rate of about 130 words per minute, reflecting typical conversational speaking pace rather than reading pace — useful for estimating how long a script, speech, or video voiceover will actually take to deliver aloud. Both are estimates rather than precise measurements, since actual reading and speaking speed varies by individual, content complexity, and familiarity with the subject matter, but they provide a solid practical benchmark for planning content length.</p>
+
+  <h3>Understanding Keyword Density and Why It's Used</h3>
+  <p>Keyword density measures how often a specific word appears relative to the total word count of a piece of text, expressed as a percentage. This tool automatically filters out common stop words — like "the," "and," "of" — so the keyword table reflects the words that actually carry meaning in your content, rather than being dominated by grammatically necessary but low-information words. In SEO writing, keyword density has historically been used as a rough check against both under-optimization (a target keyword barely appearing) and over-optimization, commonly called keyword stuffing, where a term is repeated unnaturally often in an attempt to manipulate search rankings. Modern search engines rely on far more sophisticated signals than density alone, but it remains a useful sanity check that a piece of content stays naturally focused on its intended topic.</p>
+
+  <h3>Setting and Using a Word Count Goal</h3>
+  <p>Many types of writing have a target length, whether set by a platform's constraints, an assignment's requirements, or general best practice for a content format. Setting a specific word count goal and watching the progress bar fill in as you write gives immediate feedback on how close you are, without needing to run a manual count repeatedly. This is useful for essays with a required length, blog posts targeting a specific word range for SEO purposes, or any writing task where hitting a length target — not too short, not too long — actually matters to the outcome.</p>
+
+  <h3>Common Word and Character Limits Across Platforms</h3>
+  <ul class="feature-list">
+    <li><strong>Twitter/X posts</strong> — 280 characters, making character count (not word count) the relevant limit to track.</li>
+    <li><strong>LinkedIn posts</strong> — roughly 1,300 characters tends to perform best before a "see more" truncation affects visibility.</li>
+    <li><strong>Meta descriptions for SEO</strong> — generally kept under about 155-160 characters to avoid truncation in search results.</li>
+    <li><strong>Blog posts for SEO</strong> — commonly targeted between 1,000 and 2,500 words, depending on topic depth and competition.</li>
+    <li><strong>Academic essays</strong> — length requirements vary widely by assignment, but are almost always specified in words rather than characters.</li>
+  </ul>
+
+  <h3>Privacy</h3>
+  <p>All text analysis happens locally in your browser as you type — nothing is uploaded to a server, logged, or stored anywhere. This makes the tool safe to use for drafts, private writing, or confidential content, since the text never leaves your own device at any point.</p>
+
+  <h3>Why Hyphenated Words Count as One</h3>
+  <p>Words like "well-being," "mother-in-law," or "state-of-the-art" are counted as single words rather than being split at each hyphen, following the same convention used by most word processors and style guides. This matters for anyone tracking word count against a strict limit, since treating a hyphenated compound as multiple separate words would inflate the count compared to how most tools and institutions actually define a "word." If your specific use case requires counting hyphenated segments separately, you can manually adjust for that, but the standard convention — and the one this tool follows — treats a hyphenated compound as one unit.</p>
+</section>
 
 <div id="footer"></div>
 

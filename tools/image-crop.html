@@ -122,7 +122,83 @@
   <div class="faq-item"><div class="faq-q">How do I crop an image online?</div><div class="faq-a">Upload your image, then drag on the preview to select the crop area. You can also type exact pixel coordinates in the X, Y, Width, Height fields. Click Crop Image to apply.</div></div>
   <div class="faq-item"><div class="faq-q">Can I crop to a specific aspect ratio?</div><div class="faq-a">Yes! Use the preset buttons (1:1, 16:9, 4:3, 9:16) to automatically set a crop area with the correct proportions centered on the image.</div></div>
   <div class="faq-item"><div class="faq-q">Will cropping affect image quality?</div><div class="faq-a">No, cropping only removes the parts outside your selection. The remaining area retains its full original quality.</div></div>
+  <div class="faq-item"><div class="faq-q">Is my image uploaded to a server?</div><div class="faq-a">No, all cropping happens locally using your browser's canvas feature. Your image never leaves your device during the process.</div></div>
+  <div class="faq-item"><div class="faq-q">What aspect ratios are available?</div><div class="faq-a">Square (1:1), widescreen (16:9), standard (4:3), and portrait/story (9:16) presets are built in, or you can enter exact X, Y, width, and height values for a fully custom crop area.</div></div>
+  <div class="faq-item"><div class="faq-q">What format does the cropped image download as?</div><div class="faq-a">Cropped images download as PNG files by default, which preserves full image quality and supports transparency if your original image had any.</div></div>
 </div>
+
+<section class="article-section">
+  <h2>About the Image Crop Tool</h2>
+  <p>The Logrith Image Crop tool lets you trim an image down to exactly the area you need, directly in your browser, with no software to install and no upload to a remote server. Drag to select a crop area visually, use a preset aspect ratio for common formats like square or widescreen, or type in exact pixel coordinates for a precise, repeatable crop.</p>
+
+  <p>Cropping is one of the most frequently needed image edits — removing unwanted background from a photo, focusing attention on a subject, preparing an image for a specific platform's required dimensions, or simply cutting out a section of a screenshot. This tool handles all of these with a simple drag-to-select interface backed by exact numeric control when you need precision.</p>
+
+  <h3>Two Ways to Select a Crop Area</h3>
+  <ul class="feature-list">
+    <li><strong>Drag to select.</strong> Click and drag directly on the image preview to visually draw the crop boundary. This is the fastest way to crop when exact pixel measurements don't matter.</li>
+    <li><strong>Enter exact coordinates.</strong> Type specific X position, Y position, width, and height values into the input fields for pixel-perfect, repeatable crops — useful when you need the exact same crop dimensions across multiple images.</li>
+  </ul>
+
+  <h3>Using Aspect Ratio Presets</h3>
+  <p>Different platforms and use cases call for different image proportions. A square crop (1:1) works well for profile pictures and most social media grid posts. Widescreen (16:9) matches video thumbnails and presentation slides. Standard (4:3) is common for traditional photo prints and some older display formats. Portrait (9:16) matches the vertical format used by Stories and Reels on most social platforms. Selecting a preset automatically draws a correctly proportioned crop box centered on your image, which you can then drag to reposition without needing to calculate the dimensions yourself.</p>
+
+  <h3>How Cropping Works</h3>
+  <p>When you crop an image, the tool draws only the selected rectangular region onto a new HTML5 canvas, discarding everything outside that area. Because this process simply copies existing pixel data to a new, smaller canvas rather than resampling or interpolating anything, the pixels that remain inside your crop area keep their exact original quality — there's no blurring, no added compression artifacts, and no loss of sharpness from the crop operation itself.</p>
+
+  <h3>Step-by-Step: How to Crop an Image</h3>
+  <div class="tool-steps">
+    <div class="tool-step"><strong>1. Upload your image</strong>Drag and drop a file onto the upload zone or click to browse and select one.</div>
+    <div class="tool-step"><strong>2. Select your crop area</strong>Drag directly on the preview, or choose an aspect ratio preset, or type exact coordinates.</div>
+    <div class="tool-step"><strong>3. Adjust as needed</strong>Fine-tune the selection by dragging its edges or editing the numeric fields.</div>
+    <div class="tool-step"><strong>4. Crop and download</strong>Click Crop Image and download the result as a PNG file.</div>
+  </div>
+
+  <h3>Common Use Cases</h3>
+  <ul class="feature-list">
+    <li><strong>Profile pictures</strong> that need a perfectly square crop for social media or professional profiles.</li>
+    <li><strong>Removing distracting backgrounds</strong> by cropping tightly around the main subject of a photo.</li>
+    <li><strong>Preparing thumbnails</strong> that match a specific platform's required aspect ratio.</li>
+    <li><strong>Cutting a section from a screenshot</strong> to share just the relevant part of a larger capture.</li>
+    <li><strong>Standardizing product photos</strong> to a consistent crop size and shape before uploading to an online store.</li>
+  </ul>
+
+  <h3>Privacy</h3>
+  <p>Because cropping happens entirely within your browser using canvas operations, your image is never transmitted to a server, stored remotely, or logged anywhere. This makes the tool a safe option for cropping personal photos or any image you'd prefer to keep off third-party servers.</p>
+
+  <h3>Cropping vs. Resizing: What's the Difference?</h3>
+  <p>These two operations are often confused but do different things. Cropping removes part of the image, keeping the remaining section at its original resolution — you end up with a smaller image because you've cut away pixels you didn't want. Resizing instead keeps the entire image but scales every pixel up or down to fit new dimensions, which can affect sharpness if scaling up significantly. If your goal is to remove unwanted background or focus on a subject, crop. If your goal is to make the whole image smaller or larger in file size or display dimensions without losing any of the content, use Logrith's Image Resize tool instead. The two are often used together — crop first to frame the subject, then resize to the exact dimensions a platform requires.</p>
+
+  <h3>Getting Precise Crops for Platform Requirements</h3>
+  <p>Many platforms specify exact pixel dimensions or aspect ratios for images — a profile photo might need to be square, a banner image might need a specific width-to-height ratio, and a thumbnail might have both minimum and maximum size requirements. When you know the exact dimensions required, entering precise X, Y, width, and height values rather than dragging freehand ensures the crop matches those requirements exactly, avoiding a platform rejecting or auto-cropping your upload in a way you didn't intend.</p>
+</section>
+
+<div class="content-card related-tools">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a href="/tools/image-resize" class="tool-item"><div class="ti-text"><h4>Image Resize</h4><p>Resize images to custom dimensions without losing quality.</p></div></a>
+    <a href="/tools/image-rotate" class="tool-item"><div class="ti-text"><h4>Image Rotate</h4><p>Rotate or flip images 90°, 180°, 270°, horizontal or vertical.</p></div></a>
+    <a href="/tools/image-compressor" class="tool-item"><div class="ti-text"><h4>Image Compressor</h4><p>Reduce image file size while keeping visual quality intact.</p></div></a>
+    <a href="/tools/image-converter" class="tool-item"><div class="ti-text"><h4>Image Converter</h4><p>Convert images between JPG, PNG, WEBP, and other formats.</p></div></a>
+  </div>
+</div>
+
+<section class="seo-section">
+  <div class="seo-wrap">
+    <div class="content-card keyword-section">
+      <h2>Popular Searches</h2>
+      <div class="keyword-box">
+        <span class="keyword-tag">crop image online free</span>
+        <span class="keyword-tag">crop photo online</span>
+        <span class="keyword-tag">square crop tool</span>
+        <span class="keyword-tag">crop image to aspect ratio</span>
+        <span class="keyword-tag">crop png online</span>
+        <span class="keyword-tag">crop jpg free</span>
+        <span class="keyword-tag">image cropper no watermark</span>
+        <span class="keyword-tag">crop image for instagram</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <div id="footer"></div>
 

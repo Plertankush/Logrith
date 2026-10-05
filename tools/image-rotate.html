@@ -100,7 +100,75 @@
   <div class="faq-item"><div class="faq-q">How do I rotate an image 90 degrees?</div><div class="faq-a">Upload your image, then click "Rotate 90° Right" or "Rotate 90° Left". The preview updates instantly. Apply as many rotations as needed then download.</div></div>
   <div class="faq-item"><div class="faq-q">What's the difference between flip and rotate?</div><div class="faq-a">Rotating turns the image clockwise or counterclockwise. Flipping mirrors it — Flip Horizontal mirrors left-to-right (like seeing it in a mirror), Flip Vertical mirrors top-to-bottom.</div></div>
   <div class="faq-item"><div class="faq-q">Can I combine rotate and flip?</div><div class="faq-a">Yes! You can apply multiple transforms. The preview updates after each operation. Click Reset All to undo all transforms and start fresh.</div></div>
+  <div class="faq-item"><div class="faq-q">What image formats are supported?</div><div class="faq-a">You can upload JPG, PNG, WEBP, or BMP files up to 20MB. The rotated or flipped result downloads as a PNG file by default, preserving transparency for images that have it.</div></div>
+  <div class="faq-item"><div class="faq-q">Is there a limit to how many times I can rotate?</div><div class="faq-a">No, you can click the rotate or flip buttons as many times as you like. Each click applies to the current preview, so you can chain rotations and flips together before downloading.</div></div>
+  <div class="faq-item"><div class="faq-q">Do I need to install any software?</div><div class="faq-a">No installation is needed. The tool runs entirely in your web browser using HTML5 canvas, so it works on Windows, Mac, Linux, Chromebooks, and mobile browsers without any extra app.</div></div>
 </div>
+
+<section class="article-section">
+  <h2>About the Image Rotate &amp; Flip Tool</h2>
+  <p>The Logrith Image Rotate &amp; Flip tool is a free, browser-based utility for correcting image orientation and mirroring photos without installing any software. Whether you've got a sideways phone photo, a scanned document that came out upside down, or you simply need a mirrored version of an image for a design project, this tool handles it in a couple of clicks. All processing happens using the HTML5 canvas element directly in your browser, which means your image is never uploaded to a server — it stays private on your device from start to finish.</p>
+
+  <p>Rotating and flipping are two different operations that are often confused. Rotating turns the entire image around a central point, changing its orientation by a fixed angle — 90°, 180°, or 270°. Flipping, on the other hand, creates a mirror image along either the horizontal or vertical axis without changing the angle of the content itself. This tool supports both, so you can fix orientation issues and create mirrored versions from the same interface.</p>
+
+  <h3>Common Reasons to Rotate or Flip an Image</h3>
+  <ul class="feature-list">
+    <li><strong>Phone photos taken sideways.</strong> Photos captured while holding a phone in an unusual orientation sometimes save with incorrect rotation metadata, making them appear sideways or upside down in certain apps.</li>
+    <li><strong>Scanned documents and receipts.</strong> Flatbed and sheet-fed scanners frequently produce pages that are rotated 90° or upside down depending on how the paper was fed in.</li>
+    <li><strong>Social media and website graphics.</strong> Design templates sometimes call for a mirrored version of a photo or icon to balance a layout visually.</li>
+    <li><strong>Screenshots from rotated displays.</strong> Screenshots taken on a monitor or device set to a non-standard orientation can come out rotated and need correcting before sharing.</li>
+    <li><strong>Printing and framing.</strong> Getting the orientation right before printing avoids wasted paper or having to crop and rotate after the fact.</li>
+  </ul>
+
+  <h3>How Rotation and Flipping Work Behind the Scenes</h3>
+  <p>When you click a rotate button, the tool draws your image onto a new HTML5 canvas using a transformation matrix that rotates the pixel grid by the chosen angle. For 90° and 270° rotations, the width and height of the canvas swap, since turning a landscape image on its side makes it portrait, and vice versa. For 180° rotation, the dimensions stay the same but every pixel is repositioned to the opposite corner.</p>
+  <p>Flipping works differently — instead of rotating around a center point, the canvas context is mirrored along one axis using a negative scale transform. Flip Horizontal mirrors content left-to-right, as if you were looking at the image in a mirror held up vertically. Flip Vertical mirrors content top-to-bottom, as if the mirror were held horizontally underneath the image.</p>
+
+  <h3>Does Rotating or Flipping Reduce Image Quality?</h3>
+  <p>Rotating by exact 90-degree increments (90°, 180°, 270°) does not blur or distort the image, because every pixel simply moves to a new position without any resampling or interpolation needed. The pixel data itself is unchanged — only its arrangement on the canvas changes. The one place quality can be affected is if the final image is saved in a lossy format like JPEG, where re-encoding always applies some compression. This tool downloads as PNG by default, which uses lossless compression, so repeated rotations and flips won't introduce visible quality loss.</p>
+
+  <h3>Rotate vs. Flip: Which One Do You Need?</h3>
+  <p>If your image is sideways or upside down and you just need it to display the right way up, you want to rotate it — choose 90° left, 90° right, or 180° depending on how far off it is. If your image looks correct in orientation but you need a mirrored version — for example, to match the direction a design element is facing, or to correct text that reads backward because of a scanning issue — you want to flip it instead. Many editing tasks only need one of the two, but this tool lets you combine them freely if a situation calls for both.</p>
+
+  <h3>Tips for Best Results</h3>
+  <div class="tool-steps">
+    <div class="tool-step"><strong>1. Upload your original file</strong>Start from the original image rather than a screenshot of it, when possible, to avoid compounding quality loss.</div>
+    <div class="tool-step"><strong>2. Preview before downloading</strong>Check the live preview after each rotation or flip to confirm you've reached the orientation you want.</div>
+    <div class="tool-step"><strong>3. Use Reset All if needed</strong>If you lose track of how many transforms you've applied, click Reset All to return to the original upload and start over.</div>
+    <div class="tool-step"><strong>4. Download as PNG for quality</strong>The default PNG download keeps full quality; re-save as JPEG only if you specifically need a smaller file size.</div>
+  </div>
+
+  <h3>Privacy and Browser-Based Processing</h3>
+  <p>Because this tool uses your browser's built-in canvas capabilities rather than sending images to a remote server, nothing you upload ever leaves your device. There's no account to create, no file storage, and no server-side log of what you've processed. This makes it a safe option for rotating personal photos, scanned IDs, or sensitive documents that you'd rather not upload to a third-party service.</p>
+</section>
+
+<div class="content-card related-tools">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a href="/tools/image-crop" class="tool-item"><div class="ti-text"><h4>Image Crop</h4><p>Crop images to the exact area you need, right in your browser.</p></div></a>
+    <a href="/tools/image-resize" class="tool-item"><div class="ti-text"><h4>Image Resize</h4><p>Resize images to custom dimensions without losing quality.</p></div></a>
+    <a href="/tools/image-converter" class="tool-item"><div class="ti-text"><h4>Image Converter</h4><p>Convert images between JPG, PNG, WEBP, and other formats.</p></div></a>
+    <a href="/tools/image-compressor" class="tool-item"><div class="ti-text"><h4>Image Compressor</h4><p>Reduce image file size while keeping visual quality intact.</p></div></a>
+  </div>
+</div>
+
+<section class="seo-section">
+  <div class="seo-wrap">
+    <div class="content-card keyword-section">
+      <h2>Popular Searches</h2>
+      <div class="keyword-box">
+        <span class="keyword-tag">rotate image online</span>
+        <span class="keyword-tag">flip image online free</span>
+        <span class="keyword-tag">rotate photo 90 degrees</span>
+        <span class="keyword-tag">mirror image online</span>
+        <span class="keyword-tag">rotate jpg online</span>
+        <span class="keyword-tag">rotate png free</span>
+        <span class="keyword-tag">flip image horizontal</span>
+        <span class="keyword-tag">rotate image without losing quality</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <div id="footer"></div>
 

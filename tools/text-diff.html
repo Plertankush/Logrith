@@ -134,7 +134,78 @@
   <div class="faq-item"><div class="faq-q">How does the text diff tool work?</div><div class="faq-a">The tool uses a longest common subsequence (LCS) algorithm to find what is common between the two texts. Lines/words unique to text A are highlighted in red (removed), lines/words unique to text B are in green (added).</div></div>
   <div class="faq-item"><div class="faq-q">What's the difference between line diff and word diff?</div><div class="faq-a">Line diff shows which entire lines were added, removed, or changed. Word diff breaks each line into words and shows which specific words changed. Character diff is the most granular — it shows individual characters that changed.</div></div>
   <div class="faq-item"><div class="faq-q">Can I compare code with this tool?</div><div class="faq-a">Yes! The diff tool works well for comparing code. Use "Line by Line" mode for code comparisons. For code, you may want to keep "Case Sensitive" set to Yes.</div></div>
+  <div class="faq-item"><div class="faq-q">Is my text uploaded to a server?</div><div class="faq-a">No, the comparison runs entirely in your browser using JavaScript. Neither text you paste in is sent anywhere, which makes it safe to compare confidential drafts or private content.</div></div>
+  <div class="faq-item"><div class="faq-q">What does the color coding mean?</div><div class="faq-a">Content shown in red represents text that exists in the first (original) input but not the second, meaning it was removed. Content shown in green represents text in the second input that wasn't in the first, meaning it was added.</div></div>
+  <div class="faq-item"><div class="faq-q">How large a text can I compare?</div><div class="faq-a">The tool handles typical documents, articles, and code files well. Very large files (tens of thousands of lines) may take a moment longer to process since comparison runs in your browser rather than on a server.</div></div>
 </div>
+
+<section class="article-section">
+  <h2>About the Text Diff Tool</h2>
+  <p>The Logrith Text Diff tool compares two blocks of text and highlights exactly what changed between them — additions in green, removals in red — so you can spot differences instantly instead of reading through both versions line by line looking for discrepancies. It supports comparison at the line, word, or character level, and works entirely in your browser.</p>
+
+  <p>Comparing two versions of text comes up constantly: checking what changed between two drafts of a document, reviewing edits a collaborator made, comparing two versions of code before merging, or verifying that a copied block of text matches the original exactly. Doing this manually by reading both versions side by side is slow and error-prone, especially with longer text, which is exactly the problem this tool solves.</p>
+
+  <h3>Three Levels of Comparison</h3>
+  <ul class="feature-list">
+    <li><strong>Line by Line.</strong> Compares entire lines at once, showing which lines were added, removed, or changed. This is the most useful mode for comparing code, configuration files, or any text organized into discrete lines.</li>
+    <li><strong>Word by Word.</strong> Breaks each line down into individual words and highlights exactly which words changed within a line, useful for catching small edits in prose that a line-level diff would mark as an entire line changing.</li>
+    <li><strong>Character by Character.</strong> The most granular mode, highlighting individual characters that differ — useful for catching typos, punctuation changes, or very small edits that word-level comparison might group together.</li>
+  </ul>
+
+  <h3>How the Comparison Algorithm Works</h3>
+  <p>This tool uses a longest common subsequence (LCS) algorithm, a well-established approach to text comparison that also powers version control tools like Git's diff feature. Rather than naively comparing text position by position — which breaks down the moment anything is inserted or deleted partway through, shifting everything after it out of alignment — LCS finds the longest sequence of matching content shared between the two texts, then treats everything outside that shared sequence as either an addition or a removal. This is why inserting a single new line in the middle of a document doesn't cause the diff tool to mark every subsequent line as changed; it correctly identifies that only the new line is different and everything else still matches.</p>
+
+  <h3>Common Use Cases for Text Diffing</h3>
+  <ul class="feature-list">
+    <li><strong>Reviewing document edits.</strong> Quickly see what a collaborator or editor changed in a shared document without manually comparing two long files.</li>
+    <li><strong>Comparing code snippets.</strong> Check differences between two versions of a function or configuration file, especially useful when working outside a version control system.</li>
+    <li><strong>Verifying copied text.</strong> Confirm that a block of text was copied exactly, with no accidental changes, truncation, or formatting differences introduced.</li>
+    <li><strong>Tracking content changes over time.</strong> Compare an older saved version of an article or policy document against the current version to see exactly what's been updated.</li>
+    <li><strong>Catching subtle errors.</strong> Spot small but important differences, like a changed number or date, that are easy to miss when scanning text by eye.</li>
+  </ul>
+
+  <h3>Case Sensitivity and Why It Matters</h3>
+  <p>The case-sensitive toggle controls whether "Hello" and "hello" are treated as identical or different during comparison. For most natural-language prose comparison, keeping case sensitivity off can reduce noise from inconsequential capitalization differences. For code comparison, however, case sensitivity usually should stay on, since many programming languages treat identifiers, variable names, and keywords as case-sensitive — a difference between myVariable and myvariable could represent an actual bug, not just a stylistic variation.</p>
+
+  <h3>Step-by-Step: How to Compare Two Texts</h3>
+  <div class="tool-steps">
+    <div class="tool-step"><strong>1. Paste your first text</strong>Enter or paste the original version into the first text box.</div>
+    <div class="tool-step"><strong>2. Paste your second text</strong>Enter or paste the updated or comparison version into the second text box.</div>
+    <div class="tool-step"><strong>3. Choose a comparison mode</strong>Select line, word, or character-level comparison depending on how granular you need the result.</div>
+    <div class="tool-step"><strong>4. Review the highlighted differences</strong>Scan the color-coded output to see exactly what was added or removed between the two versions.</div>
+  </div>
+
+  <h3>Privacy</h3>
+  <p>Both text inputs are processed entirely within your browser using JavaScript — nothing is uploaded to a server, logged, or stored anywhere. This makes the tool a safe choice for comparing confidential documents, private drafts, or proprietary code without that content ever leaving your device.</p>
+</section>
+
+<div class="content-card related-tools">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a href="/tools/word-counter" class="tool-item"><div class="ti-text"><h4>Word Counter</h4><p>Count words, characters, and paragraphs in your text.</p></div></a>
+    <a href="/tools/case-converter" class="tool-item"><div class="ti-text"><h4>Case Converter</h4><p>Convert text between uppercase, lowercase, and title case.</p></div></a>
+    <a href="/tools/json-formatter" class="tool-item"><div class="ti-text"><h4>JSON Formatter</h4><p>Format, validate, and beautify JSON data.</p></div></a>
+    <a href="/tools/duplicate-remover" class="tool-item"><div class="ti-text"><h4>Duplicate Remover</h4><p>Remove duplicate lines or entries from a list of text.</p></div></a>
+  </div>
+</div>
+
+<section class="seo-section">
+  <div class="seo-wrap">
+    <div class="content-card keyword-section">
+      <h2>Popular Searches</h2>
+      <div class="keyword-box">
+        <span class="keyword-tag">text diff online free</span>
+        <span class="keyword-tag">compare two texts online</span>
+        <span class="keyword-tag">text comparison tool</span>
+        <span class="keyword-tag">diff checker online</span>
+        <span class="keyword-tag">compare code online</span>
+        <span class="keyword-tag">find text differences</span>
+        <span class="keyword-tag">word diff tool</span>
+        <span class="keyword-tag">line by line text compare</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <div id="footer"></div>
 

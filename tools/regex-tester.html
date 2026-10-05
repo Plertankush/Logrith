@@ -127,7 +127,90 @@
   <div class="faq-item"><div class="faq-q">What are regex flags?</div><div class="faq-a">Flags modify how the regex engine searches: g (global) finds all matches instead of stopping at first; i (case insensitive) matches regardless of letter case; m (multiline) makes ^ and $ match line start/end instead of string start/end; s (dotAll) makes . match newlines too.</div></div>
   <div class="faq-item"><div class="faq-q">How do I capture groups in regex?</div><div class="faq-a">Use parentheses to create capture groups: (\d{4}) captures a 4-digit sequence. In the match details below, you'll see Group 1, Group 2, etc. for each captured group in each match.</div></div>
   <div class="faq-item"><div class="faq-q">What does \b mean in regex?</div><div class="faq-a">\b is a word boundary anchor. It matches the position between a word character (\w) and a non-word character. \b\w+\b matches complete words. Without \b, patterns can match partial words.</div></div>
+  <div class="faq-item"><div class="faq-q">Is my test data sent to a server?</div><div class="faq-a">No, pattern matching runs entirely in your browser using JavaScript's built-in regex engine. Your test string and pattern never leave your device.</div></div>
+  <div class="faq-item"><div class="faq-q">Does this tool use the same regex engine as JavaScript?</div><div class="faq-a">Yes, matches are tested using the browser's native JavaScript RegExp engine, so results will match exactly what you'd get running the same pattern in JavaScript code.</div></div>
+  <div class="faq-item"><div class="faq-q">Why isn't my pattern matching anything?</div><div class="faq-a">Common causes include a missing global flag (g) when expecting multiple matches, special characters that need escaping (like . or *), or case sensitivity — try adding the "i" flag if case shouldn't matter.</div></div>
 </div>
+
+<section class="article-section">
+  <h2>About the Regex Tester Tool</h2>
+  <p>The Logrith Regex Tester lets you build, test, and debug regular expressions against sample text in real time, showing every match, capture group, and flag effect instantly as you type. Regular expressions are a powerful but notoriously tricky syntax to get right on the first try, and this tool removes the guesswork by showing exactly what a pattern matches before you use it in actual code.</p>
+
+  <p>A regular expression (regex) is a sequence of characters that defines a search pattern, used for finding, validating, or extracting text that matches specific rules — email addresses, phone numbers, dates, or any custom text format. Writing regex correctly on the first attempt is difficult even for experienced developers, since small syntax differences can completely change what a pattern matches. Testing interactively, rather than running code repeatedly, is by far the fastest way to get a pattern right.</p>
+
+  <h3>Understanding Regex Flags</h3>
+  <ul class="feature-list">
+    <li><strong>g (global)</strong> — finds every match in the text instead of stopping after the first one found.</li>
+    <li><strong>i (case insensitive)</strong> — matches letters regardless of uppercase or lowercase, so "Hello" and "hello" are treated the same.</li>
+    <li><strong>m (multiline)</strong> — changes how ^ and $ behave, making them match the start and end of each line rather than only the start and end of the entire string.</li>
+    <li><strong>s (dotAll)</strong> — makes the . (dot) wildcard also match newline characters, which it doesn't by default.</li>
+  </ul>
+
+  <h3>Common Regex Patterns and What They Do</h3>
+  <ul class="feature-list">
+    <li><strong>\d</strong> matches any digit (0-9), while <strong>\D</strong> matches any non-digit character.</li>
+    <li><strong>\w</strong> matches any word character (letters, digits, underscore), while <strong>\W</strong> matches anything that isn't.</li>
+    <li><strong>\s</strong> matches whitespace (spaces, tabs, newlines), while <strong>\S</strong> matches non-whitespace.</li>
+    <li><strong>+</strong> means "one or more" of the preceding element, while <strong>*</strong> means "zero or more".</li>
+    <li><strong>?</strong> makes the preceding element optional (zero or one occurrence).</li>
+    <li><strong>{n}</strong> requires exactly n repetitions, while <strong>{n,m}</strong> requires between n and m repetitions.</li>
+    <li><strong>^</strong> and <strong>$</strong> anchor a match to the start and end of the string (or line, with the m flag).</li>
+  </ul>
+
+  <h3>Understanding Capture Groups</h3>
+  <p>Parentheses in a regex pattern create a capture group, which extracts a specific portion of each match rather than just confirming that a match occurred. For example, the pattern (\d{4})-(\d{2})-(\d{2}) matching a date like "2024-03-15" would capture "2024" as Group 1, "03" as Group 2, and "15" as Group 3 — letting you pull out the year, month, and day separately rather than just the full matched string. This tool displays every capture group for every match, making it easy to confirm your groups are extracting exactly the parts of the text you intend to use.</p>
+
+  <h3>Common Use Cases for Regex</h3>
+  <ul class="feature-list">
+    <li><strong>Form validation</strong> — checking that an email address, phone number, or postal code matches an expected format before accepting it.</li>
+    <li><strong>Data extraction</strong> — pulling specific pieces of information, like dates or prices, out of larger blocks of unstructured text.</li>
+    <li><strong>Find and replace</strong> — searching for a pattern across a codebase or document and replacing every occurrence with a different format.</li>
+    <li><strong>Log file analysis</strong> — filtering server or application logs for lines matching a specific error pattern or timestamp format.</li>
+    <li><strong>Input sanitization</strong> — identifying and stripping unwanted characters from user-submitted text before processing it further.</li>
+  </ul>
+
+  <h3>Step-by-Step: How to Test a Regex Pattern</h3>
+  <div class="tool-steps">
+    <div class="tool-step"><strong>1. Enter your pattern</strong>Type your regular expression into the pattern field, without the surrounding slashes.</div>
+    <div class="tool-step"><strong>2. Select flags</strong>Toggle global, case-insensitive, multiline, or dotAll flags depending on your needs.</div>
+    <div class="tool-step"><strong>3. Paste test text</strong>Enter or paste the sample text you want to test the pattern against.</div>
+    <div class="tool-step"><strong>4. Review matches</strong>See every match highlighted in the text, along with any capture groups extracted.</div>
+  </div>
+
+  <h3>Privacy</h3>
+  <p>All pattern testing happens locally in your browser using JavaScript's built-in regular expression engine — your test text and pattern are never sent to a server or logged anywhere. This makes the tool safe to use even when testing patterns against sensitive sample data like real user information or internal log excerpts.</p>
+
+  <h3>Tips for Debugging a Pattern That Isn't Working</h3>
+  <p>When a regex doesn't match what you expect, work through it step by step rather than guessing at the whole pattern at once. Start by simplifying the pattern down to its smallest matching piece and confirm that works, then add complexity back one piece at a time, checking after each addition. Pay close attention to characters that have special meaning in regex — a period (.) matches any character unless escaped as \., and parentheses, brackets, and braces all carry structural meaning rather than being literal characters. Forgetting the global flag is one of the most common reasons a pattern only seems to match once when multiple matches were expected, so if you're only seeing one result where you expected several, that's usually the first thing to check.</p>
+</section>
+
+<div class="content-card related-tools">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a href="/tools/text-diff" class="tool-item"><div class="ti-text"><h4>Text Diff</h4><p>Compare two blocks of text and highlight differences.</p></div></a>
+    <a href="/tools/json-formatter" class="tool-item"><div class="ti-text"><h4>JSON Formatter</h4><p>Format, validate, and beautify JSON data.</p></div></a>
+    <a href="/tools/url-encoder" class="tool-item"><div class="ti-text"><h4>URL Encoder</h4><p>Encode and decode URLs and query strings.</p></div></a>
+    <a href="/tools/sql-formatter" class="tool-item"><div class="ti-text"><h4>SQL Formatter</h4><p>Format and beautify SQL queries instantly.</p></div></a>
+  </div>
+</div>
+
+<section class="seo-section">
+  <div class="seo-wrap">
+    <div class="content-card keyword-section">
+      <h2>Popular Searches</h2>
+      <div class="keyword-box">
+        <span class="keyword-tag">regex tester online</span>
+        <span class="keyword-tag">regular expression tester</span>
+        <span class="keyword-tag">test regex pattern free</span>
+        <span class="keyword-tag">javascript regex tester</span>
+        <span class="keyword-tag">regex match checker</span>
+        <span class="keyword-tag">regex capture groups tool</span>
+        <span class="keyword-tag">online regex debugger</span>
+        <span class="keyword-tag">regex validator free</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <div id="footer"></div>
 

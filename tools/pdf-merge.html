@@ -123,7 +123,42 @@
   <div class="faq-item"><div class="faq-q">Is there a limit on how many PDFs I can merge?</div><div class="faq-a">There's no hard limit, but be aware that very large PDFs may be slow to process depending on your device. Each file has a 20MB limit.</div></div>
   <div class="faq-item"><div class="faq-q">Will the merged PDF maintain original formatting?</div><div class="faq-a">Yes! PDF-Lib preserves all page content, formatting, images, and links during the merge. The output is a faithful combination of all input PDFs.</div></div>
   <div class="faq-item"><div class="faq-q">Are my PDFs uploaded to your servers?</div><div class="faq-a">No. All PDF processing happens entirely in your browser. Your files are never sent to any server, ensuring complete privacy.</div></div>
+  <div class="faq-item"><div class="faq-q">Can I merge PDFs of different page sizes?</div><div class="faq-a">Yes, each page keeps its own original dimensions in the merged file. Mixing A4 and Letter-sized pages, or portrait and landscape pages, works fine within a single merged PDF.</div></div>
+  <div class="faq-item"><div class="faq-q">What happens if I accidentally add the wrong file?</div><div class="faq-a">Use the ✕ button next to any file in the list to remove it before merging, or click Clear All to start over completely.</div></div>
+  <div class="faq-item"><div class="faq-q">Does merging work on mobile browsers?</div><div class="faq-a">Yes, the tool runs on any modern browser including mobile Chrome and Safari, since all processing uses standard JavaScript and canvas features supported across devices.</div></div>
 </div>
+
+<section class="article-section">
+  <h2>How PDF Merging Works</h2>
+  <p>This tool uses PDF-Lib, a JavaScript library that works directly with a PDF's internal page structure rather than converting pages to images and stitching them together. When you merge files, each page from every uploaded PDF is copied — complete with its original text, fonts, images, and vector graphics — into a new combined document, in the exact order you've arranged them. Because pages are copied at the structural level rather than rendered and re-encoded, there's no quality loss anywhere in the process.</p>
+
+  <h3>Why Page Order Matters — and How Reordering Works</h3>
+  <p>When combining multiple source files into one document, the order files were uploaded in isn't always the order you want them to appear. This tool lets you drag any file up or down in the list before merging, which updates the pages' final position in the output PDF. This matters most when assembling something like a report built from several separately-authored sections, where the sections need to read in a specific sequence rather than the order the individual files happened to be created or uploaded.</p>
+
+  <h3>Common Reasons to Merge PDFs</h3>
+  <ul class="feature-list">
+    <li><strong>Combining a cover letter with a resume</strong> into one file for a job application that requests a single attachment.</li>
+    <li><strong>Assembling a complete report</strong> from sections written or exported separately, such as individual chapters or departmental contributions.</li>
+    <li><strong>Merging scanned pages</strong> that were captured as separate files into one continuous document.</li>
+    <li><strong>Combining supporting documents</strong> — invoices, receipts, contracts — into a single file for easier filing or submission.</li>
+    <li><strong>Creating a single print-ready file</strong> from multiple source documents, so printing happens in one pass rather than several.</li>
+  </ul>
+
+  <h3>Merging vs. Appending: Is There a Difference?</h3>
+  <p>In everyday use, "merging" and "appending" PDFs usually mean the same thing — combining the pages of multiple files into one continuous document. The term "appending" sometimes implies strictly adding files to the end of an existing document one at a time, while "merging" more generally describes combining any set of files in any order. This tool supports both: upload all the files you need at once and arrange them exactly how you want, whether that means strictly appending one file after another or freely reordering a larger set of documents.</p>
+
+  <h3>What Happens to Bookmarks, Metadata, and Links</h3>
+  <p>Page-level content — text, images, vector graphics, and embedded fonts — carries over completely during a merge, since PDF-Lib copies each page's full content stream. Document-level metadata, such as the title or author field, and internal navigation elements like bookmarks are tied to the original file structure and are not automatically combined or renumbered across the merged set. For most use cases, like combining scans, reports, or supporting documents, this has no practical effect since the content itself is what matters; it's only relevant if your original PDFs relied heavily on an internal bookmark outline for navigation.</p>
+
+  <h3>Privacy and Browser-Based Processing</h3>
+  <p>Every file you upload, and the merge operation itself, stays entirely within your browser — nothing is sent to a server, logged, or stored anywhere outside your own device. This makes the tool a safe option for merging confidential contracts, financial records, or personal documents without that content ever passing through a third party.</p>
+
+  <h3>Tips for a Smooth Merge</h3>
+  <p>Before merging, it's worth double-checking each source file individually to confirm it has the pages and content you expect, since fixing an issue after merging means re-uploading and starting over. If the final merged document needs specific pages removed afterward, Logrith's PDF Page Remover can clean it up without needing to redo the merge from scratch. For very large combined documents, keep in mind that total output size is roughly the sum of all input file sizes, so if the final file needs to stay under a certain size limit for emailing or uploading, running it through a PDF compressor after merging can help bring it down.</p>
+
+  <h3>When You Might Need to Merge Instead of Keep Files Separate</h3>
+  <p>It's worth pausing to consider whether merging is actually the right move for a given situation. Some contexts specifically call for a single file — an online application form that only accepts one upload, a printing job that needs to run as one continuous job, or an email where attaching one file is cleaner than several. Other contexts are better served keeping files separate, such as when each document needs to be referenced, edited, or shared independently later. Merging is a one-way convenience: once combined, you'd need to split the file again to separate the original documents, so it's generally worth keeping untouched copies of your original files before merging, just in case you need them individually again later.</p>
+</section>
 
 <div id="footer"></div>
 

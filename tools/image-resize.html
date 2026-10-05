@@ -139,7 +139,77 @@
   <div class="faq-item"><div class="faq-q">What does "Lock Aspect Ratio" mean?</div><div class="faq-a">Aspect ratio is the proportional relationship between width and height. When locked, if you change width, height auto-adjusts so the image doesn't look stretched or squished.</div></div>
   <div class="faq-item"><div class="faq-q">What are good image sizes for websites?</div><div class="faq-a">Hero images: 1920×1080. Blog images: 1200×800. Thumbnails: 300×200 or 400×400. Social media OG images: 1200×630. Profile pictures: 400×400.</div></div>
   <div class="faq-item"><div class="faq-q">Will resizing reduce file size?</div><div class="faq-a">Yes — reducing pixel dimensions directly reduces file size since there are fewer pixels to store. A 1920×1080 image resized to 800×450 will be significantly smaller.</div></div>
+  <div class="faq-item"><div class="faq-q">Can I enlarge a small image?</div><div class="faq-a">Yes, though enlarging beyond the image's original resolution can introduce some softness or blurriness, since the tool has to generate new pixel data rather than simply rearranging existing detail.</div></div>
+  <div class="faq-item"><div class="faq-q">Is my image uploaded to a server?</div><div class="faq-a">No, resizing happens entirely in your browser using canvas operations. Your image never leaves your device during the process.</div></div>
+  <div class="faq-item"><div class="faq-q">What format does the resized image download as?</div><div class="faq-a">The resized image downloads as a PNG by default, preserving quality and transparency where applicable.</div></div>
 </div>
+
+<section class="article-section">
+  <h2>About the Image Resize Tool</h2>
+  <p>The Logrith Image Resize tool changes an image's pixel dimensions — making it smaller or larger — directly in your browser, with an option to lock the aspect ratio so proportions stay correct automatically. Whether you need to shrink a photo to meet a website's size requirement, enlarge a small graphic, or prepare images at the exact dimensions a social platform expects, this tool handles it without installing photo editing software.</p>
+
+  <p>Resizing is one of the most common image tasks, and it comes up for a huge range of reasons — a blog needs images at a specific width to load quickly and look sharp, a social media platform has exact dimension requirements for cover photos and thumbnails, or a file simply needs to be smaller to fit within an upload size limit. This tool covers all of these with simple width and height controls backed by automatic proportion locking.</p>
+
+  <h3>Understanding Aspect Ratio Lock</h3>
+  <p>Aspect ratio is the proportional relationship between an image's width and height — for example, a 1920×1080 image has a 16:9 aspect ratio. When aspect ratio lock is enabled, changing the width field automatically recalculates the height to keep that same proportion, and vice versa. This matters because resizing an image to dimensions that don't match its original proportions stretches or squishes the content, distorting faces, logos, and any straight lines in the image. Keeping the lock enabled is almost always the right choice unless you specifically need an image to match an unusual fixed dimension regardless of how it affects the proportions.</p>
+
+  <h3>Recommended Image Sizes for Common Uses</h3>
+  <ul class="feature-list">
+    <li><strong>Website hero images</strong> — around 1920×1080 pixels, matching standard full-screen display width.</li>
+    <li><strong>Blog post images</strong> — around 1200×800 pixels, a good balance of quality and load time for in-article images.</li>
+    <li><strong>Thumbnails</strong> — around 300×200 or 400×400 pixels, small enough to load quickly in a grid or list view.</li>
+    <li><strong>Social media sharing images (Open Graph)</strong> — 1200×630 pixels, the dimension most platforms expect for link preview images.</li>
+    <li><strong>Profile pictures</strong> — typically 400×400 pixels, a square format used across most social and professional platforms.</li>
+  </ul>
+
+  <h3>How Resizing Affects File Size and Quality</h3>
+  <p>Reducing an image's pixel dimensions directly reduces its file size, since there's simply less pixel data to store — a 1920×1080 image resized down to 800×450 will be substantially smaller in file size as a result. Shrinking an image doesn't meaningfully hurt visual quality, since the tool is discarding detail that wouldn't be visible at the smaller size anyway. Enlarging works differently: since there's no additional real detail to draw from, the tool has to interpolate new pixel values to fill in the larger canvas, which can introduce a degree of softness, especially with significant enlargement. For best results, resize down from a high-resolution original rather than resizing up from a small image whenever possible.</p>
+
+  <h3>Resizing vs. Compressing</h3>
+  <p>These two operations both reduce file size but work differently. Resizing changes the actual pixel dimensions of the image — a 4000×3000 photo resized to 1200×900 has genuinely fewer pixels. Compressing keeps the same pixel dimensions but reduces file size through more efficient encoding, which can introduce some quality loss at higher compression levels. For the largest file size reduction with the least visible quality impact, combining both — resizing to appropriate dimensions, then compressing — usually gives the best result. Logrith's Image Compressor tool handles the compression side of that combination.</p>
+
+  <h3>Step-by-Step: How to Resize an Image</h3>
+  <div class="tool-steps">
+    <div class="tool-step"><strong>1. Upload your image</strong>Drag and drop a file or click to browse and select one.</div>
+    <div class="tool-step"><strong>2. Enter new dimensions</strong>Type your target width and/or height in pixels.</div>
+    <div class="tool-step"><strong>3. Check aspect ratio lock</strong>Leave it enabled to avoid stretching, or disable it for an exact custom size.</div>
+    <div class="tool-step"><strong>4. Resize and download</strong>Click Resize and download the result as a PNG file.</div>
+  </div>
+
+  <h3>Privacy</h3>
+  <p>All resizing happens locally in your browser using HTML5 canvas — your image is never uploaded to a server, stored, or logged. This makes the tool safe to use even for personal or sensitive photos you'd rather not send to a third-party service.</p>
+
+  <h3>A Note on Resizing for Multiple Platforms</h3>
+  <p>If you're preparing the same image for several destinations — say, a website hero image, a social media post, and a thumbnail — it's usually best to start from the highest-resolution original you have and resize down separately for each destination, rather than resizing once and then resizing that smaller result again for a different platform. Resizing down from an already-resized image compounds any quality loss and limits your flexibility if a platform later needs a larger version than what you have on hand. Keeping your original high-resolution file and generating each platform-specific size from it directly gives the sharpest result for every use case, and takes only a few extra seconds compared to repeatedly resizing an already-shrunk copy.</p>
+</section>
+
+<div class="content-card related-tools">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a href="/tools/image-crop" class="tool-item"><div class="ti-text"><h4>Image Crop</h4><p>Crop images to the exact area you need.</p></div></a>
+    <a href="/tools/image-compressor" class="tool-item"><div class="ti-text"><h4>Image Compressor</h4><p>Reduce image file size while keeping visual quality intact.</p></div></a>
+    <a href="/tools/image-converter" class="tool-item"><div class="ti-text"><h4>Image Converter</h4><p>Convert images between JPG, PNG, WEBP, and other formats.</p></div></a>
+    <a href="/tools/favicon-generator" class="tool-item"><div class="ti-text"><h4>Favicon Generator</h4><p>Generate favicons in all required sizes from one image.</p></div></a>
+  </div>
+</div>
+
+<section class="seo-section">
+  <div class="seo-wrap">
+    <div class="content-card keyword-section">
+      <h2>Popular Searches</h2>
+      <div class="keyword-box">
+        <span class="keyword-tag">resize image online free</span>
+        <span class="keyword-tag">resize photo online</span>
+        <span class="keyword-tag">change image dimensions</span>
+        <span class="keyword-tag">resize image without losing quality</span>
+        <span class="keyword-tag">resize image for instagram</span>
+        <span class="keyword-tag">image resizer no watermark</span>
+        <span class="keyword-tag">resize png online</span>
+        <span class="keyword-tag">resize jpg free</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <div id="footer"></div>
 

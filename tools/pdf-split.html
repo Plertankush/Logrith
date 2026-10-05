@@ -108,7 +108,80 @@
   <div class="faq-item"><div class="faq-q">How do I extract specific pages from a PDF?</div><div class="faq-a">Upload your PDF, then enter the page range (e.g., "1-5, 8, 10-12") and click Split. The tool extracts those exact pages into a new PDF file.</div></div>
   <div class="faq-item"><div class="faq-q">Can I split a PDF into individual pages?</div><div class="faq-a">Yes! Select the "Split All Pages" tab and click Split. Each page will be available as a separate downloadable PDF.</div></div>
   <div class="faq-item"><div class="faq-q">Will the split PDFs maintain original quality?</div><div class="faq-a">Absolutely. The split uses PDF-Lib to extract pages without any re-encoding, preserving the original quality and formatting.</div></div>
+  <div class="faq-item"><div class="faq-q">Is my PDF uploaded to a server?</div><div class="faq-a">No. All splitting happens directly in your browser using JavaScript. Your PDF file never leaves your device, which makes this safe for confidential or sensitive documents.</div></div>
+  <div class="faq-item"><div class="faq-q">What page range formats are supported?</div><div class="faq-a">You can enter single pages, ranges, or a mix of both separated by commas — for example "1-5, 8, 10-12" extracts pages 1 through 5, page 8 by itself, and pages 10 through 12.</div></div>
+  <div class="faq-item"><div class="faq-q">Is there a file size or page limit?</div><div class="faq-a">The tool handles typical multi-page PDF documents without issue. Very large files may take a moment longer to process since everything runs in your browser rather than on a remote server.</div></div>
 </div>
+
+<section class="article-section">
+  <h2>About the PDF Split Tool</h2>
+  <p>The Logrith PDF Split tool lets you extract specific pages or split an entire PDF into individual page files, free and directly in your browser. Whether you need to pull a single chapter out of a long report, separate an invoice from a multi-page scanned batch, or break a document into one file per page, this tool handles it without needing Adobe Acrobat or any other desktop software installed.</p>
+
+  <p>PDF splitting is one of the most common document tasks people run into — a scanned batch of receipts that needs separating into individual files, a textbook PDF where you only need one chapter, or a signed contract where you want to pull out just the signature page to send separately. This tool covers both the "extract specific pages" use case and the "split into one file per page" use case from the same interface.</p>
+
+  <h3>Two Ways to Split a PDF</h3>
+  <ul class="feature-list">
+    <li><strong>Extract a page range.</strong> Enter specific pages or ranges — like "1-5, 8, 10-12" — to pull out exactly the pages you need into a single new PDF file.</li>
+    <li><strong>Split into individual pages.</strong> Choose the "Split All Pages" option to break the entire document apart, with every page becoming its own separate, downloadable PDF file.</li>
+  </ul>
+
+  <h3>How the Page Range Syntax Works</h3>
+  <p>The page range field accepts a flexible, comma-separated format that mixes individual page numbers and ranges. A dash between two numbers (like "10-12") means every page from the first number to the second, inclusive. A single number on its own (like "8") pulls just that one page. You can combine as many of these as you need, separated by commas, and the tool reads them left to right, extracting pages in the order you listed them.</p>
+
+  <h3>Common Use Cases for Splitting PDFs</h3>
+  <ul class="feature-list">
+    <li><strong>Separating invoices or receipts</strong> that were scanned together into one long PDF, so each can be filed or sent individually.</li>
+    <li><strong>Extracting a chapter or section</strong> from a long ebook, report, or textbook without sending the entire document.</li>
+    <li><strong>Pulling out a signature page</strong> from a signed contract or agreement to send as a standalone confirmation.</li>
+    <li><strong>Isolating specific exam or assignment pages</strong> from a larger scanned bundle for grading or submission.</li>
+    <li><strong>Reducing file size</strong> by extracting only the pages you actually need, rather than sharing an entire bulky document.</li>
+  </ul>
+
+  <h3>Does Splitting Affect PDF Quality?</h3>
+  <p>No. This tool uses PDF-Lib, a library that works with the PDF's internal page structure directly rather than converting pages to images and back. That means text stays selectable, embedded fonts remain intact, and any images inside the original pages keep their original resolution. Splitting a PDF this way is fundamentally different from, say, converting pages to JPG and back to PDF, which would introduce quality loss — nothing here gets re-rendered or re-compressed.</p>
+
+  <h3>Step-by-Step: How to Split a PDF</h3>
+  <div class="tool-steps">
+    <div class="tool-step"><strong>1. Upload your PDF</strong>Drag and drop the file onto the upload zone, or click to browse and select it.</div>
+    <div class="tool-step"><strong>2. Choose your split method</strong>Pick either a specific page range or splitting into all individual pages.</div>
+    <div class="tool-step"><strong>3. Enter page numbers if needed</strong>For a range, type the pages or ranges you want, separated by commas.</div>
+    <div class="tool-step"><strong>4. Download your result</strong>Click Split and download either the single extracted PDF or the full set of individual page files.</div>
+  </div>
+
+  <h3>Privacy and Browser-Based Processing</h3>
+  <p>Because the entire split operation runs client-side in your browser using JavaScript, your original PDF file is never uploaded to any server. There's no file storage, no account requirement, and no record kept of what you've processed. This makes the tool a safe choice for splitting PDFs that contain personal, financial, or otherwise sensitive information, since the content never travels over the internet in the first place.</p>
+
+  <h3>Splitting vs. Merging: Knowing Which You Need</h3>
+  <p>It's easy to mix up splitting and merging when you're dealing with multiple PDF files. Splitting takes one PDF and breaks it apart into smaller pieces — either a specific page range or every page individually. Merging does the opposite: it takes several separate PDF files and combines them into one. If you've received a bundle of documents scanned together as one file and need to separate them, you want to split. If you have several separate files that you want combined into a single document to send or print together, you want to merge instead — Logrith's PDF Merge tool handles that side of the workflow.</p>
+</section>
+
+<div class="content-card related-tools">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a href="/tools/pdf-merge" class="tool-item"><div class="ti-text"><h4>PDF Merge</h4><p>Combine multiple PDF files into a single document.</p></div></a>
+    <a href="/tools/pdf-page-remover" class="tool-item"><div class="ti-text"><h4>PDF Page Remover</h4><p>Delete unwanted pages from a PDF file in seconds.</p></div></a>
+    <a href="/tools/pdf-rotate" class="tool-item"><div class="ti-text"><h4>PDF Rotate</h4><p>Fix sideways or upside-down pages in your PDF document.</p></div></a>
+    <a href="/tools/pdf-compressor" class="tool-item"><div class="ti-text"><h4>PDF Compressor</h4><p>Reduce PDF file size while keeping content readable.</p></div></a>
+  </div>
+</div>
+
+<section class="seo-section">
+  <div class="seo-wrap">
+    <div class="content-card keyword-section">
+      <h2>Popular Searches</h2>
+      <div class="keyword-box">
+        <span class="keyword-tag">split pdf online free</span>
+        <span class="keyword-tag">extract pages from pdf</span>
+        <span class="keyword-tag">pdf splitter online</span>
+        <span class="keyword-tag">split pdf into individual pages</span>
+        <span class="keyword-tag">pdf page extractor</span>
+        <span class="keyword-tag">separate pdf pages online</span>
+        <span class="keyword-tag">split pdf without software</span>
+        <span class="keyword-tag">free pdf splitter no watermark</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <div id="footer"></div>
 

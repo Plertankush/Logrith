@@ -109,7 +109,76 @@
   <div class="faq-item"><div class="faq-q">What is URL encoding?</div><div class="faq-a">URL encoding (percent-encoding) replaces unsafe ASCII characters with a % followed by their hex value. It ensures special characters in URLs don't break the URL structure. E.g., a space becomes %20.</div></div>
   <div class="faq-item"><div class="faq-q">What's the difference between encodeURI and encodeURIComponent?</div><div class="faq-a">encodeURI encodes a complete URL and preserves URL structural characters like /, ?, &, #. encodeURIComponent encodes a URL component (like a query parameter value) and also encodes these structural characters. Use encodeURIComponent for values in query strings.</div></div>
   <div class="faq-item"><div class="faq-q">When do I need URL encoding?</div><div class="faq-a">You need URL encoding when passing user input as URL query parameters, when building API requests with special characters in values, or when creating redirect URLs that contain query strings.</div></div>
+  <div class="faq-item"><div class="faq-q">Is my text sent to a server when encoding or decoding?</div><div class="faq-a">No, both encoding and decoding happen instantly in your browser using JavaScript's built-in functions. Nothing you enter is transmitted anywhere.</div></div>
+  <div class="faq-item"><div class="faq-q">What characters get encoded?</div><div class="faq-a">Any character outside the small set considered "safe" in URLs — letters, digits, and a handful of symbols like -, _, ., and ~ — gets converted to its percent-encoded form, including spaces, ampersands, question marks, and non-ASCII characters.</div></div>
+  <div class="faq-item"><div class="faq-q">Can I decode an already-encoded URL to read it?</div><div class="faq-a">Yes, paste the encoded URL or string into the decode field and it will convert all percent-encoded sequences back into their original readable characters.</div></div>
 </div>
+
+<section class="article-section">
+  <h2>About the URL Encoder/Decoder Tool</h2>
+  <p>The Logrith URL Encoder converts text into a URL-safe format using percent-encoding, and decodes it back into readable text. This is essential whenever special characters, spaces, or non-ASCII text need to be safely included in a URL, query string, or API request without breaking the structure of the URL itself.</p>
+
+  <p>URLs can only safely contain a limited set of characters — letters, digits, and a small handful of symbols. Everything else, including spaces, ampersands, question marks, and accented or non-Latin characters, has to be converted into a special percent-encoded representation before it can be included in a URL without causing errors or unexpected behavior. This conversion process is called URL encoding or percent-encoding, and this tool handles it instantly in both directions.</p>
+
+  <h3>How Percent-Encoding Works</h3>
+  <p>Percent-encoding replaces an unsafe character with a percent sign followed by the character's hexadecimal byte value. A space, for example, becomes %20. An ampersand (&amp;) becomes %26. A forward slash becomes %2F. This encoding scheme lets any character, including ones outside the basic ASCII set, be represented using only the limited character set that's guaranteed to be safe inside a URL. When a browser or server receives a percent-encoded URL, it decodes these sequences back into their original characters before processing the request.</p>
+
+  <h3>encodeURI vs. encodeURIComponent: Which to Use</h3>
+  <p>JavaScript provides two related but different encoding functions, and picking the right one matters. encodeURI is designed for encoding a complete URL — it leaves structural characters like /, ?, &amp;, and # untouched, since those characters have special meaning in the overall URL structure and shouldn't be encoded if you're encoding an entire address. encodeURIComponent, by contrast, is designed for encoding a single component or value — like one query parameter's value — and it does encode those structural characters, since within a single value, a literal & or ? should be treated as data rather than as part of the URL's structure. As a general rule, use encodeURIComponent when encoding a value that will be placed inside a query string, and reserve encodeURI for encoding an entire URL that already has its structure in place.</p>
+
+  <h3>Common Situations That Require URL Encoding</h3>
+  <ul class="feature-list">
+    <li><strong>Passing user input as a query parameter.</strong> If a search term contains spaces or special characters, it needs to be encoded before being appended to a URL as a parameter value.</li>
+    <li><strong>Building API request URLs.</strong> Many APIs require specific values, like API keys or search terms, to be properly encoded within the request URL.</li>
+    <li><strong>Creating redirect URLs.</strong> A URL used as a redirect target, especially one that itself contains a query string, often needs to be encoded to avoid the outer URL misinterpreting the nested one.</li>
+    <li><strong>Sharing URLs with special characters.</strong> International domain names, file paths with spaces, or URLs containing non-English text frequently need encoding to display and function correctly everywhere.</li>
+  </ul>
+
+  <h3>Decoding: Reading an Encoded URL</h3>
+  <p>Decoding reverses the process, converting percent-encoded sequences back into their original, human-readable characters. This is useful when you've copied a URL from a browser address bar or server log and it's full of %20s and %2Fs that are hard to read at a glance — decoding it instantly reveals the actual text or parameter values being passed, which is especially helpful when debugging why a particular link or API call isn't behaving as expected.</p>
+
+  <h3>Step-by-Step: How to Encode or Decode a URL</h3>
+  <div class="tool-steps">
+    <div class="tool-step"><strong>1. Paste your text or URL</strong>Enter the text you want to encode, or the encoded string you want to decode.</div>
+    <div class="tool-step"><strong>2. Choose the operation</strong>Select Encode or Decode depending on your direction.</div>
+    <div class="tool-step"><strong>3. Pick the right function</strong>Use Component encoding for query parameter values, or full URI encoding for a complete address.</div>
+    <div class="tool-step"><strong>4. Copy the result</strong>Copy the processed text to use in your code, URL, or API request.</div>
+  </div>
+
+  <h3>Privacy</h3>
+  <p>All encoding and decoding happens locally in your browser using JavaScript's built-in functions — nothing you enter is sent to a server or stored. This makes the tool safe to use even with sensitive query values, API parameters, or tokens you don't want passing through a third-party service.</p>
+
+  <h3>A Common Mistake: Double Encoding</h3>
+  <p>One issue that trips up developers regularly is double encoding — accidentally encoding a string that's already been encoded once, which turns the percent signs from the first encoding pass into their own encoded form (%25) and produces a broken, unreadable result when decoded incorrectly or passed to a system expecting single encoding. This typically happens when a value gets encoded both on the client side and again on the server side, or when a URL is constructed by concatenating an already-encoded parameter into a string that then gets encoded again as a whole. If a decoded URL still contains %25 sequences or other garbled percent signs, double encoding is usually the cause, and the fix is to decode it twice, or better, to trace back through the code and remove the redundant encoding step.</p>
+</section>
+
+<div class="content-card related-tools">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a href="/tools/base64" class="tool-item"><div class="ti-text"><h4>Base64 Encoder/Decoder</h4><p>Encode and decode Base64 strings instantly.</p></div></a>
+    <a href="/tools/html-entity-converter" class="tool-item"><div class="ti-text"><h4>HTML Entity Converter</h4><p>Encode and decode HTML entities and special characters.</p></div></a>
+    <a href="/tools/json-formatter" class="tool-item"><div class="ti-text"><h4>JSON Formatter</h4><p>Format, validate, and beautify JSON data.</p></div></a>
+    <a href="/tools/regex-tester" class="tool-item"><div class="ti-text"><h4>Regex Tester</h4><p>Build and test regular expressions with live matching.</p></div></a>
+  </div>
+</div>
+
+<section class="seo-section">
+  <div class="seo-wrap">
+    <div class="content-card keyword-section">
+      <h2>Popular Searches</h2>
+      <div class="keyword-box">
+        <span class="keyword-tag">url encoder online</span>
+        <span class="keyword-tag">url decoder free</span>
+        <span class="keyword-tag">percent encoding tool</span>
+        <span class="keyword-tag">encodeuricomponent online</span>
+        <span class="keyword-tag">url escape tool</span>
+        <span class="keyword-tag">query string encoder</span>
+        <span class="keyword-tag">decode url online free</span>
+        <span class="keyword-tag">url encode decode tool</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <div id="footer"></div>
 

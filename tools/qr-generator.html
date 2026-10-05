@@ -195,6 +195,55 @@
   <div class="faq-item"><div class="faq-q">What is error correction level?</div><div class="faq-a">Error correction allows QR codes to be read even if partially damaged. Higher levels (H) allow up to 30% of the code to be damaged and still scan, but create denser, more complex QR codes. Medium (M) is the best balance for most uses.</div></div>
   <div class="faq-item"><div class="faq-q">Can I use custom colors for my QR code?</div><div class="faq-a">Yes! Choose any dark and light color combination. Ensure sufficient contrast between the two colors (dark on light) for reliable scanning. Avoid very similar colors.</div></div>
   <div class="faq-item"><div class="faq-q">What size QR code do I need?</div><div class="faq-a">For digital use: 256px is fine. For print: use 400–512px or larger. The minimum physical size for a scannable QR code is about 2×2 cm when printed.</div></div>
+  <div class="faq-item"><div class="faq-q">Is my data sent to a server when generating a QR code?</div><div class="faq-a">No, every QR code is generated locally in your browser using JavaScript. The content you encode never leaves your device.</div></div>
+  <div class="faq-item"><div class="faq-q">Do these QR codes expire?</div><div class="faq-a">No, since the QR code is a static image encoding your exact data directly, there's no expiry, subscription, or tracking involved — it will work for as long as the image file exists.</div></div>
+  <div class="faq-item"><div class="faq-q">Can I create a QR code that adds a contact to someone's phone?</div><div class="faq-a">Yes, the vCard option generates a QR code that, when scanned, offers to save the encoded name, phone number, email, and organization directly as a new contact.</div></div>
+</div>
+
+<section class="article-section">
+  <h2>How QR Codes Work</h2>
+  <p>A QR (Quick Response) code is a two-dimensional barcode that encodes data as a pattern of black and white squares, readable by any modern smartphone camera. Unlike a traditional one-dimensional barcode, which can only hold a limited string of numbers, a QR code's two-dimensional structure lets it store significantly more data — URLs, contact details, WiFi credentials, or plain text — while still scanning in a fraction of a second.</p>
+
+  <p>This tool generates QR codes for seven distinct data types, each formatted according to the specific standard that phones and QR scanning apps recognize. Selecting "WiFi," for example, doesn't just encode the network name as plain text — it builds a properly structured WIFI: string that phones recognize and respond to by offering to connect automatically, rather than just displaying text to read and type in manually.</p>
+
+  <h3>Choosing the Right QR Code Type for Your Use Case</h3>
+  <ul class="feature-list">
+    <li><strong>URL / Link</strong> — the most common type, ideal for directing people to a website, menu, portfolio, or landing page with a single scan.</li>
+    <li><strong>Plain Text</strong> — useful for short messages, instructions, or any content that doesn't fit a more specific category.</li>
+    <li><strong>Email</strong> — pre-fills a recipient, subject, and body, so scanning opens the phone's email app ready to send.</li>
+    <li><strong>Phone</strong> — scanning immediately offers to dial the encoded number, useful on business materials or posters.</li>
+    <li><strong>SMS</strong> — pre-fills a text message to a specific number, useful for quick feedback forms or support lines.</li>
+    <li><strong>WiFi</strong> — lets guests join a network by scanning, without needing to type a password manually.</li>
+    <li><strong>vCard</strong> — encodes a full contact card that can be saved directly to a phone's address book in one scan.</li>
+  </ul>
+
+  <h3>Understanding Error Correction Levels</h3>
+  <p>QR codes include built-in redundancy, called error correction, which allows them to remain scannable even if part of the code is damaged, dirty, or obscured — for example, by a logo placed in the center. Four levels are available, each trading code density for damage tolerance: Low (L) tolerates about 7% damage, Medium (M) about 15%, Quartile (Q) about 25%, and High (H) up to 30%. Higher error correction levels produce visually denser codes, since more of the available space is dedicated to redundant data rather than the core content. For most everyday uses, Medium strikes a good balance; High is worth choosing specifically when a logo will be placed over the code or when it will be printed somewhere it might get scuffed or partially obscured.</p>
+
+  <h3>Color Contrast and Scannability</h3>
+  <p>While custom colors can match a brand or design, scannability depends on sufficient contrast between the dark and light colors used. Dark modules on a light background — the traditional black-on-white combination — scan most reliably because most scanning algorithms are tuned around high-contrast patterns. Using two similar-toned colors, or light-colored modules on a dark background, can significantly reduce scan reliability, especially in poor lighting or with lower-quality phone cameras. If customizing colors for branding, it's worth testing the final QR code with a few different phones before printing or publishing it widely.</p>
+
+  <h3>Common Use Cases for QR Codes</h3>
+  <ul class="feature-list">
+    <li><strong>Restaurant menus</strong> — linking a printed table tent or sticker to a digital menu page.</li>
+    <li><strong>Business cards and posters</strong> — linking directly to a website, portfolio, or contact card.</li>
+    <li><strong>Event check-ins</strong> — encoding a registration link or ticket confirmation page.</li>
+    <li><strong>Product packaging</strong> — linking to instructions, warranty registration, or additional product information.</li>
+    <li><strong>Guest WiFi access</strong> — letting visitors connect without reading out or typing a password.</li>
+  </ul>
+
+  <h3>Privacy</h3>
+  <p>Every QR code is generated entirely within your browser using JavaScript — the data you enter is never uploaded to a server, logged, or stored. This makes the tool safe to use even when encoding sensitive information like a WiFi password or personal contact details, since that data never travels anywhere outside your own device.</p>
+</section>
+
+<div class="content-card related-tools">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a href="/tools/barcode-generator" class="tool-item"><div class="ti-text"><h4>Barcode Generator</h4><p>Generate barcodes in multiple standard formats.</p></div></a>
+    <a href="/tools/url-encoder" class="tool-item"><div class="ti-text"><h4>URL Encoder</h4><p>Encode and decode URLs and query strings.</p></div></a>
+    <a href="/tools/favicon-generator" class="tool-item"><div class="ti-text"><h4>Favicon Generator</h4><p>Generate favicons in all required sizes from one image.</p></div></a>
+    <a href="/tools/image-converter" class="tool-item"><div class="ti-text"><h4>Image Converter</h4><p>Convert images between JPG, PNG, WEBP, and other formats.</p></div></a>
+  </div>
 </div>
 
 <div id="footer"></div>
