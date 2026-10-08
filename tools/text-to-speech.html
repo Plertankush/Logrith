@@ -95,6 +95,9 @@
     <div class="faq-item-box"><h3>Can I change the voice?</h3><p>Yes, this tool lists every voice available on your device, including different languages and accents if installed.</p></div>
     <div class="faq-item-box"><h3>Is there a text length limit?</h3><p>No hard limit is imposed by this tool, though very long text may take a while to finish reading aloud.</p></div>
     <div class="faq-item-box"><h3>Is my text sent to a server?</h3><p>No, this uses your browser's built-in Speech Synthesis API — text is processed by your device's speech engine, not uploaded anywhere by this tool.</p></div>
+    <div class="faq-item-box"><h3>Why do some voices sound more natural than others?</h3><p>Voice quality depends on the underlying engine your operating system uses — some are basic synthetic voices, while others use more advanced neural text-to-speech models, which is why the same sentence can sound noticeably different between voice options.</p></div>
+    <div class="faq-item-box"><h3>Can I download the generated audio as a file?</h3><p>This tool plays audio directly through your speakers using the browser's speech engine rather than generating a downloadable audio file. For a saved audio file, a dedicated audio-recording or screen-recording tool would be needed to capture the output separately.</p></div>
+    <div class="faq-item-box"><h3>Why don't I see any voices listed?</h3><p>Some browsers load voices asynchronously after the page loads, so the list can briefly appear empty before populating. If it stays empty, try refreshing the page or checking that your browser supports the Web Speech API.</p></div>
   </div>
 </div>
 
@@ -108,16 +111,32 @@
   <h3>Available Voices</h3>
   <p>The list of voices available depends entirely on your device and browser — different operating systems and browsers ship with different sets of built-in voices, often including multiple languages, accents, and both male and female voice options. This tool automatically detects and lists every voice your browser reports as available, so the exact options you see may differ from what someone using a different device or browser sees.</p>
 
+  <h3>Understanding Speed and Pitch Controls</h3>
+  <p>The speed control adjusts how quickly the voice speaks, with 1x being the engine's normal default pace — values below 1 slow the speech down, useful for language learning or carefully proofreading dense technical text, while values above 1 speed it up, useful for quickly skimming through long content. Pitch adjusts the perceived tone of the voice without changing its speed, which can help make a particular voice sound more natural for certain content, though extreme settings in either direction tend to make speech harder to understand clearly.</p>
+
   <h3>Common Uses</h3>
   <ul class="feature-list">
     <li><strong>Proofreading</strong> — hearing your own writing read aloud often reveals awkward phrasing or errors that are easy to miss when reading silently.</li>
     <li><strong>Accessibility</strong> — making written content accessible to people who prefer or need audio.</li>
     <li><strong>Language learning</strong> — hearing correct pronunciation of words and phrases.</li>
     <li><strong>Multitasking</strong> — listening to text content while doing something else.</li>
+    <li><strong>Reviewing scripts or speeches</strong> — hearing how written content sounds when spoken aloud before a live presentation.</li>
   </ul>
 
+  <h3>Why Hearing Your Writing Read Aloud Helps</h3>
+  <p>Proofreading by reading silently is prone to a specific blind spot: your brain tends to auto-correct small errors and awkward phrasing because it already knows what you meant to write. Hearing the same text read aloud by a voice with no knowledge of your intent exposes these issues much more reliably — run-on sentences become obviously too long, repeated words stand out, and awkward phrasing that reads fine silently often sounds clearly off once spoken. This is a widely used technique among professional editors and writers for exactly this reason.</p>
+
   <h3>Privacy and Local Processing</h3>
-  <p>Your text is processed by your browser's built-in speech engine — this tool does not upload, log, or store the text you enter.</p>
+  <p>Your text is processed by your browser's built-in speech engine — this tool does not upload, log, or store the text you enter anywhere.</p>
+
+  <h3>Choosing a Voice That Fits Your Content</h3>
+  <p>With multiple voices often available, picking one that suits the content can noticeably improve how natural the output sounds. A calmer, slower-paced voice tends to work better for long-form content like articles or documents, where listener fatigue over a longer session matters. A brighter, more energetic voice can suit shorter announcements or promotional text better. Testing the same piece of text with two or three different voices before settling on one is a quick way to find the best match, since the ideal choice varies both by content type and by personal listening preference.</p>
+
+  <h3>Text to Speech as an Accessibility Tool</h3>
+  <p>Beyond convenience, browser-based text to speech plays a meaningful accessibility role for people with dyslexia, low vision, or other conditions that make reading dense text more difficult, since hearing the same content read aloud provides an alternative way to absorb written information. Because this feature is built directly into the browser rather than requiring a separate paid screen reader or app, it's immediately available on most modern devices without any additional setup, which matters for making content genuinely accessible rather than accessible only to those who've already invested in specialized tools.</p>
+
+  <h3>Formatting Text for Better Speech Output</h3>
+  <p>A few small adjustments to how text is written can noticeably improve how natural it sounds when read aloud. Spelling out abbreviations and acronyms rather than leaving them as letters can help, since speech engines don't always pronounce abbreviations the way a human reader would expect. Breaking very long sentences into shorter ones also tends to produce more natural-sounding pacing, since synthetic voices generally handle sentence-level pauses better than mid-sentence ones in an overly long run-on sentence, which otherwise can come out sounding rushed or oddly monotone.</p>
 </section>
 
 <div class="content-card related-tools">
@@ -129,21 +148,6 @@
     <a href="/tools/case-converter" class="tool-item"><div class="ti-text"><h4>Case Converter</h4><p>Convert text between case formats.</p></div></a>
   </div>
 </div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">text to speech</span>
-        <span class="keyword-tag">text to speech online</span>
-        <span class="keyword-tag">tts online free</span>
-        <span class="keyword-tag">read text aloud</span>
-        <span class="keyword-tag">text to speech converter</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <div id="footer"></div>
 <script src="/assets/js/main.js" defer></script>

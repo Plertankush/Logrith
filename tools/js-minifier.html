@@ -90,6 +90,11 @@ greet("World");</textarea>
     <div class="faq-item-box"><h3>Is this safe for production code?</h3><p>This performs safe, conservative minification — removing comments and whitespace without renaming variables. For maximum compression in production builds, a full build-tool minifier like Terser or esbuild is recommended.</p></div>
     <div class="faq-item-box"><h3>Does this rename variables to shorten code?</h3><p>No, this tool only removes comments and unnecessary whitespace, keeping all variable and function names unchanged for safety and easier debugging.</p></div>
     <div class="faq-item-box"><h3>Can I beautify minified JavaScript?</h3><p>Yes, use the Beautify button to reformat minified or compressed JS with proper indentation for readability.</p></div>
+    <div class="faq-item-box"><h3>Is my code uploaded anywhere?</h3><p>No, minification and beautification both run locally in your browser using JavaScript. Your code is never transmitted to a server.</p></div>
+    <div class="faq-item-box"><h3>Does this handle string literals correctly during minification?</h3><p>Yes, the minifier tracks string boundaries (single quotes, double quotes, and template literals) so content inside strings is never altered, even if it contains characters that look like code syntax.</p></div>
+    <div class="faq-item-box"><h3>Why doesn't this tool rename variables like other minifiers?</h3><p>Variable renaming requires parsing the full syntax tree to safely track every reference to a name, which is a complex operation beyond what a lightweight browser-based tool can safely guarantee. This tool sticks to comment and whitespace removal, which is always safe regardless of code structure.</p></div>
+    <div class="faq-item-box"><h3>Does minifying affect how my script runs or its output?</h3><p>No, since only comments and insignificant whitespace are removed, the parsed logic, variable scoping, and runtime behavior of your script stay completely identical before and after minification.</p></div>
+    <div class="faq-item-box"><h3>Can I minify a script that uses modern ES6+ syntax?</h3><p>Yes, since the minifier works at the character and string-boundary level rather than parsing language-specific syntax, modern features like arrow functions, template literals, destructuring, and async/await all pass through safely.</p></div>
   </div>
 </div>
 
@@ -107,8 +112,36 @@ greet("World");</textarea>
     <li><strong>Cleaner distribution</strong> — sharing a compact script file without excessive comments or formatting.</li>
   </ul>
 
+  <h3>How String Literals Are Protected During Minification</h3>
+  <p>A naive minifier that simply strips anything after "//" or collapses all whitespace would break code the moment a string contains those same characters — for example, a URL like "http://example.com" inside a string would be mistaken for the start of a comment. This tool tracks whether each character is currently inside a string literal (single-quoted, double-quoted, or template literal) before applying any comment-stripping or whitespace rules, so content inside strings — including URLs, file paths, and any text that happens to resemble code syntax — passes through completely untouched.</p>
+
+  <h3>Conservative Minification vs. Full Build-Tool Minifiers</h3>
+  <p>Production JavaScript build pipelines typically use tools like Terser or esbuild, which parse code into a full abstract syntax tree and apply aggressive optimizations: renaming local variables to single letters, eliminating unreachable code, and restructuring expressions for maximum compactness. These tools achieve significantly smaller output than comment-and-whitespace removal alone, but they require a build step and can occasionally introduce subtle bugs if the code relies on function or variable names being preserved (for example, in certain reflection-based patterns). This tool's conservative approach — stripping only comments and whitespace while leaving every name and expression untouched — trades some additional compression for near-zero risk of altering behavior, making it well suited for quickly compressing a standalone script without setting up a full build pipeline, testing framework, or package manager configuration.</p>
+
+  <h3>When to Reach for a Full Build-Tool Minifier Instead</h3>
+  <p>For a small utility script, a one-off browser snippet, or sharing compact code without a build process, this tool's safe transformation is often all that's needed. For a production web application serving significant traffic, where every additional kilobyte of JavaScript affects load time at scale, investing in a proper build pipeline with Terser or esbuild is worth the setup effort, since the additional compression from variable renaming and dead-code elimination compounds meaningfully across a large codebase and directly affects how quickly a page becomes interactive for every visitor.</p>
+
   <h3>Privacy and Local Processing</h3>
-  <p>All processing happens directly in your browser — your JavaScript code is never sent to a server.</p>
+  <p>All processing happens directly in your browser — your JavaScript code is never sent to a server, logged, or stored anywhere. This makes the tool safe to use with proprietary scripts or unpublished code, since nothing leaves your own device during minification or beautification.</p>
+
+  <h3>Common Situations Where This Tool Helps</h3>
+  <ul class="feature-list">
+    <li><strong>Compressing a standalone utility script</strong> before embedding it in a webpage without setting up a build tool.</li>
+    <li><strong>Reading unfamiliar minified code</strong> — pasting a third-party minified script into Beautify to understand what it actually does.</li>
+    <li><strong>Debugging a production issue</strong> by beautifying a minified file to trace through the logic and locate the problem.</li>
+    <li><strong>Quick learning exercises</strong> — seeing exactly how comment and whitespace removal affects a piece of code you've written.</li>
+  </ul>
+
+  <h3>Reading Minified Code Safely With Beautify</h3>
+  <p>It's a common situation: you've found a useful but undocumented minified script and need to understand what it does before using it, or you're inspecting a third-party library's bundled output while debugging an integration issue. Pasting minified code into the Beautify function restores readable line breaks and indentation, making it far easier to visually trace function boundaries, conditionals, and loops — even though variable names remain whatever they were in the minified version, since beautifying only restores formatting, not the original descriptive names that may have been stripped by a more aggressive minifier upstream.</p>
+
+  <h3>Step-by-Step: Minifying or Beautifying JavaScript</h3>
+  <div class="tool-steps">
+    <div class="tool-step"><strong>1. Paste your JavaScript</strong>Enter or paste your code into the input box.</div>
+    <div class="tool-step"><strong>2. Choose Minify or Beautify</strong>Pick the direction you need based on your current code.</div>
+    <div class="tool-step"><strong>3. Review the size comparison</strong>After minifying, check the original size, new size, and percentage saved.</div>
+    <div class="tool-step"><strong>4. Copy the result</strong>Click Copy to grab the processed code for your project.</div>
+  </div>
 </section>
 
 <div class="content-card related-tools">
@@ -120,21 +153,6 @@ greet("World");</textarea>
     <a href="/tools/regex-tester" class="tool-item"><div class="ti-text"><h4>Regex Tester</h4><p>Test and debug regular expressions.</p></div></a>
   </div>
 </div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">javascript minifier</span>
-        <span class="keyword-tag">js minifier online</span>
-        <span class="keyword-tag">minify javascript free</span>
-        <span class="keyword-tag">js beautifier</span>
-        <span class="keyword-tag">javascript formatter</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <div id="footer"></div>
 <script src="/assets/js/main.js" defer></script>

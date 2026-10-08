@@ -85,6 +85,9 @@
     <div class="faq-item-box"><h3>Does this need microphone permission?</h3><p>Yes, your browser will ask for microphone access the first time you use this tool — required for speech recognition to work.</p></div>
     <div class="faq-item-box"><h3>Is my voice recording sent to a server?</h3><p>Speech processing is handled by your browser's built-in engine (Chrome's implementation uses Google's speech service). This tool itself does not separately upload or store your audio.</p></div>
     <div class="faq-item-box"><h3>Can I dictate in languages other than English?</h3><p>The underlying browser API supports many languages, though this tool is configured for English by default.</p></div>
+    <div class="faq-item-box"><h3>Why do punctuation marks not appear automatically?</h3><p>Browser speech recognition generally transcribes spoken words without inferring punctuation unless specifically spoken aloud (like saying "comma" or "period"), so adding punctuation manually after dictating is normal and expected.</p></div>
+    <div class="faq-item-box"><h3>What happens if I pause while speaking?</h3><p>Brief pauses are handled fine and recognition continues. A longer silence may cause the recognition session to end automatically, depending on your browser's specific timeout behavior.</p></div>
+    <div class="faq-item-box"><h3>Can I edit the transcribed text afterward?</h3><p>Yes, the output appears in a standard editable text area, so you can correct any misheard words, add punctuation, or reformat the text directly before copying it.</p></div>
   </div>
 </div>
 
@@ -98,16 +101,40 @@
   <h3>How This Tool Works</h3>
   <p>When you click Start Listening, the tool requests microphone access (your browser will prompt for permission) and begins streaming audio to the browser's speech recognition engine. As you speak, recognized words are appended to the text area in real time. You can stop listening at any point, and the transcribed text remains in the box for you to copy, edit, or continue dictating further.</p>
 
+  <h3>Tips for More Accurate Transcription</h3>
+  <p>Speech recognition accuracy improves noticeably with a few simple habits: speaking at a clear, moderate pace rather than rushing, minimizing background noise where possible, and using a decent microphone rather than a laptop's built-in mic across a room. Recognition engines are generally trained on clear, well-enunciated speech, so mumbled or very fast dictation tends to produce more errors that need manual correction afterward.</p>
+
   <h3>Common Uses</h3>
   <ul class="feature-list">
     <li><strong>Quick note-taking</strong> — capturing thoughts or ideas hands-free while multitasking.</li>
     <li><strong>Drafting messages or emails</strong> — dictating a first draft faster than typing.</li>
     <li><strong>Accessibility</strong> — an alternative input method for people who find typing difficult.</li>
     <li><strong>Meeting notes</strong> — quickly capturing spoken discussion points as text.</li>
+    <li><strong>Hands-free writing</strong> — drafting while cooking, driving as a passenger, or otherwise occupied.</li>
   </ul>
+
+  <h3>Step-by-Step: Dictating Text</h3>
+  <div class="tool-steps">
+    <div class="tool-step"><strong>1. Click Start Listening</strong>Grant microphone permission when your browser prompts for it.</div>
+    <div class="tool-step"><strong>2. Speak clearly</strong>Talk at a natural, moderate pace as your words appear as text.</div>
+    <div class="tool-step"><strong>3. Click Stop when finished</strong>End the listening session once you've said what you need.</div>
+    <div class="tool-step"><strong>4. Edit and copy</strong>Clean up any punctuation or errors, then copy the final text.</div>
+  </div>
 
   <h3>Privacy Considerations</h3>
   <p>Speech recognition in supporting browsers (like Chrome) is typically processed via the browser vendor's speech service, not by this website — this tool simply displays whatever text your browser's recognition engine returns. No audio or transcribed text is separately collected, logged, or stored by this tool.</p>
+
+  <h3>Speech to Text vs. Text to Speech: Two Different Directions</h3>
+  <p>These two tools are easy to mix up by name but work in opposite directions. Speech to text, covered here, listens to spoken words through your microphone and converts them into written text — useful for dictating rather than typing. Text to speech does the reverse, taking written text and reading it aloud using a synthetic voice — useful for proofreading, accessibility, or simply listening to content instead of reading it. If you have text and want to hear it, or you have speech and want to read it, Logrith's Text to Speech tool handles that opposite direction.</p>
+
+  <h3>Why Dictation Often Beats Typing for a First Draft</h3>
+  <p>Many writers find that dictating a rough first draft, then editing afterward, produces faster and sometimes more natural-sounding writing than typing from scratch, simply because speaking tends to flow at a faster, more continuous pace than typing for most people. The transcribed text from dictation is rarely publication-ready as-is — it usually needs punctuation added and a pass for clarity — but having a rough draft to edit is often a faster starting point than facing a completely blank page, which is why dictation has become a popular drafting technique even among people who type quickly.</p>
+
+  <h3>Dealing With Recognition Errors</h3>
+  <p>No speech recognition system is perfect, and certain words — technical jargon, uncommon names, homophones like "there" versus "their" — are more prone to misrecognition than common everyday vocabulary. Rather than stopping to fix every error as it appears, many people find it more efficient to dictate through the entire passage first, then do a dedicated editing pass afterward to catch and correct misheard words, since interrupting your flow of speech to fix small errors in real time tends to break the natural dictation rhythm that makes this method faster than typing in the first place.</p>
+
+  <h3>Improving Recognition for Technical or Uncommon Terms</h3>
+  <p>Speech recognition engines are generally trained on broad, everyday language, which means specialized vocabulary — technical jargon, brand names, uncommon proper nouns — gets misrecognized more often than common words. When dictating content heavy with specialized terms, speaking slightly more slowly and clearly around those specific words, and planning for a thorough proofreading pass focused specifically on technical terminology, tends to produce better final results than expecting the recognition engine to catch unfamiliar vocabulary correctly on the first attempt without any extra care.</p>
 </section>
 
 <div class="content-card related-tools">
@@ -119,21 +146,6 @@
     <a href="/tools/text-summarizer-basic" class="tool-item"><div class="ti-text"><h4>Text Summarizer</h4><p>Get a quick summary of your dictated text.</p></div></a>
   </div>
 </div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">speech to text</span>
-        <span class="keyword-tag">speech to text online</span>
-        <span class="keyword-tag">voice to text converter</span>
-        <span class="keyword-tag">dictation tool online</span>
-        <span class="keyword-tag">free speech recognition</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <div id="footer"></div>
 <script src="/assets/js/main.js" defer></script>

@@ -99,6 +99,9 @@
     <div class="faq-item-box"><h3>What is a percentage plus fixed fee structure?</h3><p>Many payment processors and marketplaces charge a percentage of the transaction plus a small fixed amount, such as 2.9% + $0.30, a common structure among payment gateways worldwide.</p></div>
     <div class="faq-item-box"><h3>Can I use this for any currency?</h3><p>Yes, this calculator works with plain numbers and applies to any currency — enter your amount and fee structure regardless of currency.</p></div>
     <div class="faq-item-box"><h3>Does this account for taxes?</h3><p>No, this tool calculates only the platform or processing fee deduction. Tax obligations vary by jurisdiction and are not calculated here.</p></div>
+    <div class="faq-item-box"><h3>Is my transaction data sent to a server?</h3><p>No, every calculation runs locally in your browser. Amounts and fee structures you enter are never transmitted anywhere.</p></div>
+    <div class="faq-item-box"><h3>Why do two platforms with similar advertised rates sometimes differ in net payout?</h3><p>Small differences in the fixed fee component, or in what counts as the taxable/fee base (pre-tax vs. post-tax amount, for instance), can lead to noticeably different net payouts even when the headline percentage rates look similar.</p></div>
+    <div class="faq-item-box"><h3>Should I set my price based on the gross amount or the net payout I want?</h3><p>If you have a specific take-home amount in mind, you'll need to work backward from your desired net payout through the fee structure to find the gross price to charge — this calculator shows the forward direction, but the same fee numbers let you solve for the price needed to reach a target payout.</p></div>
   </div>
 </div>
 
@@ -108,6 +111,12 @@
 
   <h3>How Percentage + Fixed Fees Work</h3>
   <p>Most payment processors and online marketplaces don't charge just a flat percentage — they combine a percentage rate with a small fixed fee per transaction. For example, a processor charging "2.9% + $0.30" on a $100 sale takes $2.90 (2.9% of $100) plus an additional $0.30 flat fee, for a total deduction of $3.20, leaving a net payout of $96.80. This combined structure means the effective fee percentage is actually higher on smaller transactions (where the fixed fee makes up a larger share) than on larger ones.</p>
+
+  <h3>Why Small Transactions Lose a Bigger Percentage</h3>
+  <p>The fixed-fee component of this structure has an outsized effect on small transactions specifically. On a $100 sale, a $0.30 fixed fee represents just 0.3% of the total — barely noticeable. On a $5 sale, that same $0.30 fixed fee represents 6% of the total, dramatically increasing the effective combined fee rate. This is exactly why businesses selling low-priced items or accepting small tips and donations often feel the fee burden much more acutely than businesses processing larger transactions, even when using the exact same payment processor and advertised rate.</p>
+
+  <h3>How Businesses Typically Factor Fees Into List Prices</h3>
+  <p>Established businesses selling through a platform with known, stable fees often build the fee percentage directly into their list prices from the start, effectively passing the cost on to the buyer so the seller's intended net margin stays protected regardless of transaction size. Businesses operating on thinner margins, or selling in markets sensitive to price comparisons, sometimes instead absorb the fee themselves rather than passing it on, treating it as a cost of doing business on that particular platform. Neither approach is universally correct — the right choice depends on your specific margin structure, competitive pricing pressure, and how price-sensitive your particular customer base tends to be.</p>
 
   <h3>Where This Fee Structure Appears</h3>
   <ul class="feature-list">
@@ -120,8 +129,22 @@
   <h3>Why Calculate This in Advance</h3>
   <p>Understanding your exact net payout before setting a price or accepting a payment helps you price products and services accurately, forecast actual take-home revenue, and compare different platforms' fee structures on equal footing. A platform with a lower percentage but higher fixed fee might actually cost you more on small transactions than a platform with a higher percentage but no fixed fee — this calculator lets you check the real numbers for your specific transaction size.</p>
 
+  <h3>Step-by-Step: Calculating Your Net Payout</h3>
+  <div class="tool-steps">
+    <div class="tool-step"><strong>1. Enter your transaction amount</strong>Type the gross sale or payment amount.</div>
+    <div class="tool-step"><strong>2. Enter the percentage fee</strong>Use your platform's published percentage rate.</div>
+    <div class="tool-step"><strong>3. Enter the fixed fee</strong>Add the flat per-transaction fee, if any.</div>
+    <div class="tool-step"><strong>4. Calculate</strong>Click Calculate Net Payout to see the exact fee breakdown and take-home amount.</div>
+  </div>
+
   <h3>Privacy and Local Processing</h3>
-  <p>All calculations run directly in your browser — no transaction details are sent to a server or stored anywhere.</p>
+  <p>All calculations run directly in your browser — no transaction details are sent to a server, logged, or stored anywhere.</p>
+
+  <h3>Using This Tool to Compare Platforms Before Choosing One</h3>
+  <p>When deciding between multiple payment processors or selling platforms, running your typical transaction amount through each platform's actual fee structure gives a far more useful comparison than just comparing the headline percentage rates side by side. A platform advertising a lower percentage but a higher fixed fee might cost more for your typical transaction size than one with a slightly higher percentage but no fixed fee at all — the only way to know for certain is calculating the real net payout for transactions that match your actual typical sale amount, rather than assuming the lower advertised percentage automatically means lower total fees.</p>
+
+  <h3>Factoring Fees Into Your Pricing Strategy</h3>
+  <p>Many sellers price a product or service without first accounting for the platform fee that will be deducted, then are surprised by a smaller-than-expected payout. A more deliberate approach is working backward from a target take-home amount — deciding what you actually need to receive, then using this calculator to determine the listed price that, after fees, will leave you with that target net amount. This avoids the common mistake of setting a price that looks reasonable on the surface but quietly erodes your intended margin once the platform's fee structure is factored in, especially across a high volume of smaller transactions.</p>
 </section>
 
 <div class="content-card related-tools">
@@ -134,20 +157,7 @@
   </div>
 </div>
 
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">payment fee calculator</span>
-        <span class="keyword-tag">percentage fee calculator</span>
-        <span class="keyword-tag">processing fee calculator</span>
-        <span class="keyword-tag">marketplace fee calculator</span>
-        <span class="keyword-tag">net payout calculator</span>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <div id="footer"></div>
 <script src="/assets/js/main.js" defer></script>

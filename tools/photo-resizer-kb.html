@@ -107,6 +107,9 @@
     <div class="faq-item-box"><h3>Why do forms require a specific file size?</h3><p>Many exam, visa, and government application forms enforce strict size limits (like 20-50KB) to keep upload systems fast and storage manageable at high volume.</p></div>
     <div class="faq-item-box"><h3>Will this reduce image quality?</h3><p>Yes, hitting a much smaller target size requires more compression, which does reduce quality somewhat. This tool finds the best quality achievable within your target size.</p></div>
     <div class="faq-item-box"><h3>What if the target size can't be reached?</h3><p>If the target is extremely small relative to the image dimensions, the tool will also reduce the image's pixel dimensions to help reach the target while preserving as much clarity as possible.</p></div>
+    <div class="faq-item-box"><h3>Is my photo uploaded to a server?</h3><p>No, all compression and resizing happens locally using the browser's Canvas API. Your photo never leaves your device.</p></div>
+    <div class="faq-item-box"><h3>Why does the tool sometimes shrink the image dimensions too?</h3><p>Very small KB targets can't always be reached through compression quality alone without the image becoming visibly degraded. Reducing pixel dimensions slightly, alongside compression, usually produces a clearer final result than compressing a full-size image down to an extremely low quality setting.</p></div>
+    <div class="faq-item-box"><h3>Does this work for passport or exam-size photos specifically?</h3><p>Yes, this tool targets file size rather than a specific photo standard, so it works well as a final step after cropping a photo to the exact dimensions a particular form requires.</p></div>
   </div>
 </div>
 
@@ -117,12 +120,18 @@
   <h3>How This Tool Finds the Target Size</h3>
   <p>Rather than using a single fixed compression level, this tool performs an automated search: it repeatedly compresses your image at different JPEG quality levels, checking the resulting file size against your target each time, and converges on the highest quality setting that still fits within your specified size limit. If quality reduction alone can't reach a very small target, the tool also reduces the image's pixel dimensions to help hit the target while keeping the image as clear as possible.</p>
 
+  <h3>Why a Binary Search Finds the Best Quality Faster</h3>
+  <p>Finding the ideal compression quality for a target file size isn't something you can calculate directly, since file size depends on image content in ways that are hard to predict mathematically in advance. Instead, this tool uses a binary search approach: it tries a quality setting roughly in the middle of the possible range, checks whether the resulting file is above or below the target, then narrows the search to the half of the range that's likely to contain the right answer, repeating this process several times. This converges on a quality setting very close to the maximum achievable within your target size in just a handful of compression attempts, rather than blindly trying many quality levels one at a time.</p>
+
   <h3>Why Forms Enforce File Size Limits</h3>
   <ul class="feature-list">
     <li><strong>Upload system performance</strong> — smaller required file sizes keep high-volume application portals fast and responsive.</li>
     <li><strong>Storage constraints</strong> — government and institutional systems processing millions of applications need to manage total storage.</li>
     <li><strong>Print consistency</strong> — many forms print photos at a fixed small size, so extremely high resolution isn't necessary.</li>
   </ul>
+
+  <h3>Tips for Getting the Best Result</h3>
+  <p>Starting from a higher-resolution, well-lit original photo generally produces a noticeably better result than starting from an already-small or poor-quality image, since the compression process has more genuine detail to work with before needing to discard information to hit the target size. A simple, evenly lit background with good contrast against the subject also compresses more cleanly than a busy or low-contrast photo, since JPEG compression handles smooth, simple areas of an image more efficiently than high-detail or noisy ones.</p>
 
   <h3>Common Uses</h3>
   <ul class="feature-list">
@@ -132,8 +141,25 @@
     <li><strong>Any form with an upload size limit</strong> — quickly meeting a size requirement without manual trial and error.</li>
   </ul>
 
+  <h3>Step-by-Step: Resizing to a Target Size</h3>
+  <div class="tool-steps">
+    <div class="tool-step"><strong>1. Upload your photo</strong>Drag and drop or click to select the image you need to resize.</div>
+    <div class="tool-step"><strong>2. Enter your target size</strong>Type the exact KB or MB limit your form requires.</div>
+    <div class="tool-step"><strong>3. Click Resize to Target</strong>Let the tool automatically find the best quality setting for your target.</div>
+    <div class="tool-step"><strong>4. Download your result</strong>Check the final size and dimensions, then download the compressed photo.</div>
+  </div>
+
   <h3>Privacy and Local Processing</h3>
-  <p>All resizing and compression happens directly in your browser using the Canvas API — your photo is never uploaded to a server.</p>
+  <p>All resizing and compression happens directly in your browser using the Canvas API — your photo is never uploaded to a server, logged, or stored anywhere.</p>
+
+  <h3>Common File Size Requirements You Might Encounter</h3>
+  <p>Different institutions and platforms set wildly different size limits, which is part of why a flexible, exact-target tool is useful rather than a single fixed preset. Many government exam portals specify something in the 20-50KB range for passport-style photos. Some visa application systems require photos between 10-300KB depending on the specific country and form. University and job application portals vary even more widely, sometimes specifying a maximum in MB rather than KB. Always double-check the exact limit stated on your specific form, since even small differences — 50KB versus 100KB — can mean the difference between a successful upload and a rejected one.</p>
+
+  <h3>What Happens When Compression Alone Isn't Enough</h3>
+  <p>For very aggressive size targets relative to a photo's original dimensions — say, squeezing a high-resolution 4000×3000 photo down to just 20KB — quality compression alone eventually hits a point of diminishing returns, where further reducing quality produces visibly poor results without actually reaching the target size efficiently. This is exactly when the tool's fallback step kicks in, incrementally shrinking the image's pixel dimensions alongside moderate compression, since a smaller image at reasonable quality generally looks clearer than a full-size image compressed to an extreme degree.</p>
+
+  <h3>JPEG Compression and Why Quality Settings Affect File Size</h3>
+  <p>JPEG compression works by selectively discarding image detail that the human eye is less sensitive to, with the quality setting controlling how aggressively this discarding happens. At high quality settings, very little detail is thrown away and the file stays large but visually near-identical to the original. At low quality settings, significantly more detail is discarded, shrinking the file considerably but introducing visible artifacts — blocky patterns, color banding, and blurred fine detail, especially noticeable around sharp edges and text. This tool searches across this quality range automatically to find the highest setting that still fits your target size, rather than requiring you to guess and manually check each attempt yourself.</p>
 </section>
 
 <div class="content-card related-tools">
@@ -145,21 +171,6 @@
     <a href="/tools/file-size-converter" class="tool-item"><div class="ti-text"><h4>File Size Converter</h4><p>Convert between bytes, KB, MB, GB.</p></div></a>
   </div>
 </div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">resize image to 50kb</span>
-        <span class="keyword-tag">photo resizer kb</span>
-        <span class="keyword-tag">reduce photo size to kb</span>
-        <span class="keyword-tag">image compressor target size</span>
-        <span class="keyword-tag">resize photo for exam form</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <div id="footer"></div>
 <script src="/assets/js/main.js" defer></script>

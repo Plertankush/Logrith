@@ -83,6 +83,10 @@
     <div class="faq-item-box"><h3>Does minifying HTML remove comments?</h3><p>Yes, HTML comments (&lt;!-- like this --&gt;) are removed during minification, along with unnecessary whitespace between tags.</p></div>
     <div class="faq-item-box"><h3>Will minification break my HTML?</h3><p>No, standard HTML minification only removes whitespace and comments — it doesn't alter tags, attributes, or content in ways that change rendering.</p></div>
     <div class="faq-item-box"><h3>What about content inside &lt;pre&gt; or &lt;textarea&gt; tags?</h3><p>Whitespace inside these tags is meaningful and preserved by browsers, so exercise care when minifying HTML containing such elements.</p></div>
+    <div class="faq-item-box"><h3>Is my HTML code sent to a server?</h3><p>No, both minification and beautification run entirely in your browser using JavaScript. Your markup never leaves your device.</p></div>
+    <div class="faq-item-box"><h3>Does minifying affect inline CSS or JavaScript inside the HTML?</h3><p>This tool focuses on HTML structure — tags, attributes, and whitespace between them. Content inside &lt;style&gt; and &lt;script&gt; blocks is preserved as-is; use the dedicated CSS Minifier or JS Minifier separately for that embedded code.</p></div>
+    <div class="faq-item-box"><h3>Can I beautify HTML copied from a browser's "View Source"?</h3><p>Yes, pasting compact or server-rendered HTML into Beautify reformats it with proper indentation, making nested structure much easier to read and follow.</p></div>
+    <div class="faq-item-box"><h3>Does this tool validate my HTML for errors?</h3><p>No, it only reformats or compresses the markup as given — it doesn't check for unclosed tags, invalid nesting, or other HTML validity issues.</p></div>
   </div>
 </div>
 
@@ -103,8 +107,45 @@
   <h3>A Note on Whitespace-Sensitive Content</h3>
   <p>A small number of HTML elements — most notably <code>&lt;pre&gt;</code> and <code>&lt;textarea&gt;</code> — preserve whitespace exactly as written, since it's meaningful to their content (like code formatting or default text). This tool performs general-purpose minification aimed at typical markup; if your HTML contains these whitespace-sensitive elements with meaningful internal formatting, review the minified output carefully before using it.</p>
 
+  <h3>Why Whitespace Between HTML Tags Is Usually Safe to Remove</h3>
+  <p>Browsers collapse most whitespace between block-level HTML elements when rendering a page, meaning a line break or several spaces of indentation between two tags typically has zero visual effect on the final rendered output. This is exactly what makes HTML minification safe in the vast majority of cases — the whitespace being removed was never contributing to the page's appearance in the first place, it existed purely to make the raw source code easier for a developer to read. The exceptions are inline elements and whitespace-sensitive tags, where a stray space can sometimes affect spacing between inline text — which is why reviewing minified output for pages with heavy inline formatting is worth a quick visual check.</p>
+
+  <h3>HTML Minification as Part of a Larger Optimization Strategy</h3>
+  <p>HTML minification on its own typically yields a smaller percentage reduction than CSS or JavaScript minification, since a well-written HTML document usually has less redundant whitespace to begin with compared to heavily commented stylesheets or scripts. Even so, it's a standard part of a complete front-end optimization pass — minifying HTML, CSS, and JavaScript together, combined with image optimization and server-side compression, adds up to a meaningfully faster-loading page overall, even when each individual step contributes a modest amount on its own. Logrith's CSS Minifier and JS Minifier cover the other two pieces of that same optimization pass.</p>
+
+  <h3>Step-by-Step: Minifying or Beautifying HTML</h3>
+  <div class="tool-steps">
+    <div class="tool-step"><strong>1. Paste your HTML</strong>Enter or paste your markup into the input box.</div>
+    <div class="tool-step"><strong>2. Choose Minify or Beautify</strong>Pick the direction based on whether you're compressing or reformatting.</div>
+    <div class="tool-step"><strong>3. Review the size comparison</strong>Check the original size, new size, and percentage saved after minifying.</div>
+    <div class="tool-step"><strong>4. Copy the output</strong>Copy the processed HTML for use in your project.</div>
+  </div>
+
   <h3>Privacy and Local Processing</h3>
-  <p>All processing happens directly in your browser — your HTML code is never sent to a server.</p>
+  <p>All processing happens directly in your browser — your HTML code is never sent to a server, logged, or stored anywhere. This makes the tool safe to use with unpublished templates or proprietary markup, since nothing leaves your own device.</p>
+
+  <h3>Common Situations Where This Tool Helps</h3>
+  <ul class="feature-list">
+    <li><strong>Compressing a static HTML page</strong> before deploying it without a full build pipeline.</li>
+    <li><strong>Cleaning up HTML exported from a design or editing tool</strong>, which often includes excessive nested divs and inconsistent indentation.</li>
+    <li><strong>Reading server-rendered or minified markup</strong> by beautifying it into a readable, indented structure for inspection.</li>
+    <li><strong>Preparing email templates</strong>, where smaller HTML can help avoid size-based clipping in some email clients.</li>
+    <li><strong>Archiving or sharing a snippet</strong> in its most compact form before pasting into a CMS or documentation page.</li>
+  </ul>
+
+  <h3>Beautifying HTML for Easier Debugging</h3>
+  <p>When inspecting a page's source — whether your own or a third-party site — densely packed, unindented HTML makes it hard to tell where one element ends and a nested one begins. Running it through Beautify restores a clear, properly indented tree structure, making it much easier to trace exactly how elements are nested, spot a missing closing tag, or understand a layout's structure before modifying it.</p>
+
+  <h3>Void Elements and Why They're Handled Differently</h3>
+  <p>HTML has a specific category of elements — called void elements — that never have a closing tag and never contain child content: tags like &lt;br&gt;, &lt;img&gt;, &lt;input&gt;, &lt;hr&gt;, and &lt;meta&gt;. When beautifying HTML, these elements need to be recognized and treated differently from regular container elements, since a normal tag increases the indentation level for everything nested inside it, while a void element should never do that, as there's nothing nested inside it to indent. This tool's beautifier maintains a list of standard void elements and handles them correctly, so the indentation stays accurate even in markup that mixes void and container elements throughout, avoiding the lopsided indentation that a naive beautifier would otherwise produce.</p>
+
+  <h3>Step-by-Step: Minifying or Beautifying HTML</h3>
+  <div class="tool-steps">
+    <div class="tool-step"><strong>1. Paste your HTML</strong>Enter or paste your markup into the input box.</div>
+    <div class="tool-step"><strong>2. Choose Minify or Beautify</strong>Pick the direction based on whether you're compressing or reformatting.</div>
+    <div class="tool-step"><strong>3. Review the size comparison</strong>Check the original size, new size, and percentage saved after minifying.</div>
+    <div class="tool-step"><strong>4. Copy the output</strong>Copy the processed HTML for use in your project.</div>
+  </div>
 </section>
 
 <div class="content-card related-tools">
@@ -116,21 +157,6 @@
     <a href="/tools/markdown-previewer" class="tool-item"><div class="ti-text"><h4>Markdown Previewer</h4><p>Convert Markdown to HTML with live preview.</p></div></a>
   </div>
 </div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">html minifier</span>
-        <span class="keyword-tag">html minifier online</span>
-        <span class="keyword-tag">minify html free</span>
-        <span class="keyword-tag">html beautifier</span>
-        <span class="keyword-tag">html formatter online</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <div id="footer"></div>
 <script src="/assets/js/main.js" defer></script>

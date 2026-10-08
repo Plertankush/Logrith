@@ -95,6 +95,9 @@
     <div class="faq-item-box"><h3>Can I generate multiple unique numbers?</h3><p>Yes, enable "Unique values only" to generate a set of numbers with no repeats, useful for lottery-style draws or sampling.</p></div>
     <div class="faq-item-box"><h3>What's the maximum range?</h3><p>You can use any minimum and maximum values, as long as the range is large enough to generate your requested quantity if uniqueness is enabled.</p></div>
     <div class="faq-item-box"><h3>Is this truly random?</h3><p>It uses JavaScript's built-in pseudorandom number generator, suitable for games, sampling, and general randomization needs, though not cryptographically secure.</p></div>
+    <div class="faq-item-box"><h3>Can I generate negative numbers?</h3><p>Yes, enter a negative value in the Minimum field — for example, a range of -50 to 50 generates numbers across both negative and positive values.</p></div>
+    <div class="faq-item-box"><h3>Is my data or usage tracked?</h3><p>No, every number is generated locally in your browser. Nothing about the ranges or quantities you request is logged or stored anywhere.</p></div>
+    <div class="faq-item-box"><h3>Can I generate more than 1000 numbers at once?</h3><p>The tool caps quantity at 1000 per generation to keep the results readable and the page responsive. For larger batches, run the generator multiple times and combine the results.</p></div>
   </div>
 </div>
 
@@ -111,10 +114,41 @@
   </ul>
 
   <h3>Unique vs. Non-Unique Generation</h3>
-  <p>By default, this tool can generate the same number more than once in a batch (like independent dice rolls). Enabling "unique values only" instead generates a set where no number repeats — similar to drawing lottery balls without replacement. If you request more unique numbers than fit in your specified range, the tool will let you know it isn't possible.</p>
+  <p>By default, this tool can generate the same number more than once in a batch (like independent dice rolls). Enabling "unique values only" instead generates a set where no number repeats — similar to drawing lottery balls without replacement. If you request more unique numbers than fit in your specified range, the tool will let you know it isn't possible, so you can either widen the range or lower the requested quantity.</p>
+
+  <h3>How the Random Values Are Generated</h3>
+  <p>This tool uses JavaScript's built-in Math.random() function as its source of randomness, scaled and offset to fit within the minimum and maximum values you specify. For unique generation, it builds a complete list of every number in the range, shuffles that list using a Fisher-Yates shuffle — a well-established, unbiased shuffling algorithm — and then takes however many numbers you requested from the front of the shuffled list. This approach guarantees that every number in the range has an equal chance of being selected and that no duplicates can occur.</p>
+
+  <h3>Pseudorandom vs. Cryptographically Secure Randomness</h3>
+  <p>It's worth understanding the distinction between this tool's randomness and the kind needed for security-sensitive applications. Math.random() is a pseudorandom number generator, meaning its output is statistically well-distributed and unpredictable enough for games, sampling, raffles, and general everyday randomization — but it is not designed to resist an attacker specifically trying to predict or reverse-engineer the sequence. For anything security-related, like generating a password or a cryptographic key, a cryptographically secure generator (which uses the Web Crypto API instead) is the right tool, which is why Logrith's Password Generator and UUID Generator use that stronger method instead of this one.</p>
+
+  <h3>Practical Examples of Using This Tool</h3>
+  <ul class="feature-list">
+    <li><strong>Classroom activities</strong> — randomly selecting a student number to call on, or assigning random group numbers.</li>
+    <li><strong>Giveaways and contests</strong> — picking a winning entry number from a numbered list of participants.</li>
+    <li><strong>Random sampling for research</strong> — selecting random row indices from a dataset for a representative sample.</li>
+    <li><strong>Game design and tabletop gaming</strong> — simulating dice rolls or random event outcomes beyond standard six-sided dice.</li>
+  </ul>
 
   <h3>Privacy and Local Processing</h3>
-  <p>All number generation happens directly in your browser using JavaScript — nothing is sent to a server.</p>
+  <p>All number generation happens directly in your browser using JavaScript — nothing about the range, quantity, or generated results is sent to a server, logged, or stored anywhere. This makes the tool suitable for private drawings or sampling where you don't want any record of what was generated.</p>
+
+  <h3>Sorting Results: When It Helps</h3>
+  <p>The sort option arranges generated numbers from smallest to largest after generation, which doesn't change the randomness of the selection itself but can make the results easier to scan, especially with larger batches. Sorting is particularly useful for sampling tasks, where you might be selecting random row or item indices from a larger dataset and want to process them in order, or for games where reading results in ascending order simply feels more natural than a jumbled list. For something like a raffle draw where only the final set of winning numbers matters and not the order they were drawn in, sorting makes the announcement list cleaner to read aloud or publish.</p>
+
+  <h3>Choosing a Range That Fits Your Use Case</h3>
+  <p>The range you set should match the real-world possibilities you're modeling. A standard six-sided die needs a range of 1 to 6; a raffle with 500 tickets needs a range of 1 to 500; a percentage-based random check needs a range of 1 to 100. Setting a range larger or smaller than what you're actually representing can introduce subtle bugs into whatever process depends on the output — for example, generating numbers 1-100 when your actual item list only has 75 entries means some generated numbers won't correspond to anything real. Taking a moment to confirm the range matches your actual use case avoids this kind of mismatch.</p>
+
+  <h3>Random Number Generator vs. Dice Roller</h3>
+  <p>This tool and Logrith's dedicated Coin Flip & Dice Roller overlap in function but are built for different situations. The dice roller is purpose-built around specific, familiar dice formats — a six-sided die, a twenty-sided die, and other standard tabletop gaming dice — with visuals and a roll history tailored to that experience. This random number generator is more general-purpose: any custom range, any quantity, with options like uniqueness and sorting that a dice-specific tool doesn't need. If you're playing a game that uses standard dice, the dedicated dice roller is the more natural fit; if you need a custom range or a batch of unique values, this tool is the better choice.</p>
+
+  <h3>Step-by-Step: Generating Your Numbers</h3>
+  <div class="tool-steps">
+    <div class="tool-step"><strong>1. Set your minimum and maximum</strong>Enter the lowest and highest values the generated numbers should fall between.</div>
+    <div class="tool-step"><strong>2. Choose how many numbers you need</strong>Enter a quantity from 1 up to 1000 in a single batch.</div>
+    <div class="tool-step"><strong>3. Toggle uniqueness and sorting as needed</strong>Enable "Unique values only" to avoid repeats, and "Sort ascending" for ordered results.</div>
+    <div class="tool-step"><strong>4. Generate and copy</strong>Click Generate to see your results instantly, then copy them with one click.</div>
+  </div>
 </section>
 
 <div class="content-card related-tools">
@@ -126,21 +160,6 @@
     <a href="/tools/random-team-generator" class="tool-item"><div class="ti-text"><h4>Random Team Generator</h4><p>Split a list of names into random teams.</p></div></a>
   </div>
 </div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">random number generator</span>
-        <span class="keyword-tag">random number generator online</span>
-        <span class="keyword-tag">number picker</span>
-        <span class="keyword-tag">random number in range</span>
-        <span class="keyword-tag">free number generator</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <div id="footer"></div>
 <script src="/assets/js/main.js" defer></script>

@@ -104,6 +104,9 @@
     <div class="faq-item-box"><h3>Does this account for taxes?</h3><p>No, this converts between gross pay periods only. Actual take-home pay after taxes and deductions will be lower and varies by jurisdiction.</p></div>
     <div class="faq-item-box"><h3>What if I don't work 52 weeks a year?</h3><p>Adjust the "Weeks Worked per Year" field to reflect actual weeks worked, such as 50 weeks if you take 2 weeks of unpaid leave.</p></div>
     <div class="faq-item-box"><h3>Can I use this for part-time work?</h3><p>Yes, adjust "Hours per Week" to your actual part-time schedule for accurate conversions.</p></div>
+    <div class="faq-item-box"><h3>Is my salary information sent to a server?</h3><p>No, every calculation happens locally in your browser. Your income details are never transmitted anywhere.</p></div>
+    <div class="faq-item-box"><h3>How should I account for unpaid vacation or holidays?</h3><p>Reduce "Weeks Worked per Year" below 52 to reflect actual paid working weeks, which will slightly increase the calculated hourly rate since the same salary is now being divided across fewer working hours.</p></div>
+    <div class="faq-item-box"><h3>Does this work for calculating freelance rates?</h3><p>Yes, enter your target annual income and realistic billable hours per week to find a baseline hourly rate — though freelancers typically need to add a margin above this baseline to cover non-billable time, taxes, and business expenses that a salaried calculation doesn't account for.</p></div>
   </div>
 </div>
 
@@ -114,6 +117,12 @@
   <h3>How the Conversion Works</h3>
   <p>All conversions are built from a base calculation: total hours worked per year, found by multiplying hours per week by weeks worked per year. A standard full-time schedule of 40 hours per week for 52 weeks yields 2,080 hours per year — the baseline most salary-to-hourly comparisons use. From there, annual salary divided by annual hours gives the hourly rate; that hourly rate multiplied by hours per day, week, or month gives each other period's equivalent pay.</p>
 
+  <h3>Why the Default 2,080-Hour Assumption Isn't Always Accurate</h3>
+  <p>The commonly cited "2,080 hours per year" figure assumes a full 52 weeks of work with no unpaid time off at all, which doesn't reflect most real working situations. Most salaried employees take some combination of paid vacation, sick leave, and public holidays, and freelancers or contractors often have unpaid gaps between projects. Adjusting the "Weeks Worked per Year" field to reflect your actual working weeks — say, 48 or 50 rather than the default 52 — gives a meaningfully more accurate hourly rate than relying on the unadjusted default, since the same annual salary divided across fewer actual working hours works out to a higher true hourly equivalent.</p>
+
+  <h3>How This Applies to International Pay Comparisons</h3>
+  <p>When comparing job offers or freelance rates across different countries, converting everything to a common period — typically hourly or annual — makes the comparison far more concrete than trying to mentally compare different quoted periods side by side. This is especially useful for remote work and international freelancing, where a client in one country might quote a project rate while you're used to thinking in terms of your local hourly or monthly rate, and converting both to the same basis removes the guesswork from deciding whether an offer is genuinely competitive.</p>
+
   <h3>Why Convert Between Pay Periods</h3>
   <ul class="feature-list">
     <li><strong>Comparing job offers</strong> — one offer quoted as an annual salary and another as an hourly rate can be hard to compare directly without conversion.</li>
@@ -122,11 +131,20 @@
     <li><strong>Overtime and part-time calculations</strong> — understanding your true hourly rate helps evaluate overtime pay or part-time schedule changes.</li>
   </ul>
 
+  <h3>Comparing a Salaried Offer to a Freelance or Contract Rate</h3>
+  <p>When comparing a salaried job offer to freelance or contract work quoted at an hourly rate, it's easy to undervalue the salaried position's additional benefits — paid time off, health insurance, retirement contributions, and employer-side tax contributions — none of which show up in a simple salary-to-hourly conversion. A contract role needs to pay a meaningfully higher hourly rate than an equivalent salaried position's converted hourly rate to actually come out ahead once these additional costs and benefits are factored in, which is worth keeping in mind beyond just the raw numbers this calculator produces.</p>
+
   <h3>A Note on Gross vs. Net Pay</h3>
   <p>This calculator works with gross pay — the amount before taxes, insurance, retirement contributions, and other deductions. Actual take-home (net) pay will be lower and depends heavily on your specific tax situation, benefits elections, and local regulations, which vary too widely to calculate generically.</p>
 
   <h3>Privacy and Local Processing</h3>
-  <p>All calculations run directly in your browser — your salary information is never sent to a server.</p>
+  <p>All calculations run directly in your browser — your salary information is never sent to a server, logged, or stored anywhere.</p>
+
+  <h3>Using This Tool When Negotiating Pay</h3>
+  <p>Having a clear, instant conversion between pay periods is especially useful during salary negotiation, where an offer might be presented in one period while your own mental benchmark is in another — comparing a new offer's annual figure against your current hourly rate, for instance, requires converting one into the other before a fair comparison is possible. Walking into a negotiation conversation already knowing your current position's equivalent in whatever period the new offer uses removes a layer of mental math under pressure, letting you focus the conversation on the actual value being discussed rather than scrambling to convert numbers on the spot.</p>
+
+  <h3>Why Hours Per Week Assumptions Matter So Much</h3>
+  <p>The "hours per week" field has an outsized effect on the resulting hourly rate, which is worth double-checking carefully before trusting the output. Someone who regularly works 50-hour weeks but calculates their hourly rate assuming a standard 40-hour week will significantly overstate their true hourly rate, since the same salary is actually being earned across more hours than the calculation assumes. For anyone regularly working beyond a standard schedule, entering a realistic average hours-per-week figure — rather than the officially stated or contracted number — gives a far more accurate picture of what's actually being earned per hour worked, which can be an eye-opening number to see clearly.</p>
 </section>
 
 <div class="content-card related-tools">
@@ -138,21 +156,6 @@
     <a href="/tools/compound-interest-calculator" class="tool-item"><div class="ti-text"><h4>Compound Interest Calculator</h4><p>Project savings growth over time.</p></div></a>
   </div>
 </div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">salary to hourly converter</span>
-        <span class="keyword-tag">annual salary to hourly</span>
-        <span class="keyword-tag">hourly to salary calculator</span>
-        <span class="keyword-tag">salary converter</span>
-        <span class="keyword-tag">hourly rate calculator</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <div id="footer"></div>
 <script src="/assets/js/main.js" defer></script>

@@ -99,6 +99,10 @@
     <div class="faq-item-box"><h3>Is the coin flip truly random?</h3><p>It uses JavaScript's random number generator, giving each side an equal 50/50 chance, suitable for games, decisions, and general randomization needs.</p></div>
     <div class="faq-item-box"><h3>How many dice can I roll at once?</h3><p>Roll between 1 and 6 standard six-sided dice simultaneously.</p></div>
     <div class="faq-item-box"><h3>Does this keep a history of results?</h3><p>Yes, both coin flips and dice rolls are logged in a history list so you can review previous results.</p></div>
+    <div class="faq-item-box"><h3>Does the history save if I close the tab?</h3><p>No, the history log only persists for your current browser session. Closing or refreshing the page clears it, since nothing is saved to a server or stored permanently.</p></div>
+    <div class="faq-item-box"><h3>Can I roll more than six dice at once?</h3><p>The slider is capped at 6 dice to keep the display clean and readable. For larger quantities, roll in multiple batches and add the totals together.</p></div>
+    <div class="faq-item-box"><h3>Is this fair enough to settle a real decision?</h3><p>Yes, both the coin flip and dice roll use a uniformly distributed random function, giving every outcome an equal chance, just like a fair physical coin or die.</p></div>
+    <div class="faq-item-box"><h3>Can I use this to simulate dice with more than six sides?</h3><p>This tool is built specifically around standard six-sided dice. For other die types, such as a twenty-sided die used in tabletop RPGs, Logrith's Random Number Generator can simulate any custom range.</p></div>
   </div>
 </div>
 
@@ -117,8 +121,37 @@
   <h3>How Randomness Works Here</h3>
   <p>Both the coin flip and dice roll use JavaScript's built-in random number generator, which produces a uniformly distributed random value each time — meaning heads and tails are equally likely, and each die face (1 through 6) has an equal chance of appearing on every roll, matching the behavior of a fair physical coin or die.</p>
 
+  <h3>Digital Coin Flips vs. Physical Coins: Any Real Difference?</h3>
+  <p>A frequently debated point in probability circles is whether a physical coin flip is truly a perfect 50/50 split — some research has suggested very slight biases depending on how a coin is flipped and caught, related to its starting position. A digital coin flip sidesteps that debate entirely: it's generated from a uniformly distributed random value with no physical starting bias, momentum, or catching technique involved, which makes it, if anything, closer to a theoretically "fair" 50/50 outcome than an actual physical coin toss. The same logic applies to the dice roller — there's no risk of a die landing on an edge, rolling off a table, or being subtly weighted, since each face is simply assigned an equal probability in code. For situations where perceived fairness genuinely matters, like settling a dispute between two people, a digital flip or roll can actually be the more trustworthy option precisely because there's no physical object either side could suspect of being tampered with.</p>
+
+  <h3>Why Keep a History Log</h3>
+  <p>A running history log serves a few practical purposes beyond simple novelty. For games that require tracking cumulative results — like keeping score across several rounds, or verifying no one's claiming a different outcome than what actually happened — having a visible, timestamped-in-order log settles any dispute instantly. It's also useful for anyone demonstrating basic probability concepts, since watching the actual distribution of heads/tails or dice totals accumulate over many trials is a more convincing illustration of statistical concepts like the law of large numbers than any single flip or roll could be on its own.</p>
+
+  <h3>Common Situations Where This Tool Helps</h3>
+  <ul class="feature-list">
+    <li><strong>Settling a quick decision</strong> between two options when neither side has a strong preference.</li>
+    <li><strong>Board games and tabletop RPGs</strong> that call for six-sided dice, without needing to dig out physical dice.</li>
+    <li><strong>Teaching basic probability</strong> in a classroom setting, using visible results and a history log as a live demonstration.</li>
+    <li><strong>Determining turn order</strong> in a group activity or game where a fair, visible method is needed.</li>
+    <li><strong>Replacing lost or forgotten dice</strong> when playing a tabletop game away from home without the physical set on hand.</li>
+  </ul>
+
   <h3>Privacy and Local Processing</h3>
-  <p>All randomization happens directly in your browser — nothing is sent to a server, and your history log exists only in your current browser session.</p>
+  <p>All randomization happens directly in your browser — nothing is sent to a server, logged remotely, or stored. Your history log exists only in your current browser session and disappears the moment you close or refresh the tab.</p>
+
+  <h3>Rolling Multiple Dice: Understanding the Total</h3>
+  <p>When rolling more than one die, this tool shows both each individual die's result and the sum total of all dice combined, since different games need different information. A game that cares about matching specific numbers, like certain board games checking for doubles, needs to see each die's face individually. A game that just needs a combined numeric outcome, like many tabletop RPG damage rolls, cares mainly about the total. Showing both at once means the same roll works for either style of game without needing to manually add up the numbers yourself.</p>
+
+  <h3>Coin Flip vs. Dice Roll: Choosing the Right Tool for a Decision</h3>
+  <p>A coin flip is the natural choice whenever a decision genuinely has just two outcomes — yes or no, option A or option B, who goes first. A dice roll fits better when there are more than two possibilities, or when you specifically need a numeric outcome rather than a binary one — choosing among six options, generating a random score, or simulating a specific game mechanic that calls for a six-sided die. Reaching for the right tool for the actual decision at hand, rather than defaulting to whichever is more familiar, keeps the randomization matched to how many genuinely different outcomes the situation calls for.</p>
+
+  <h3>Step-by-Step: Flipping or Rolling</h3>
+  <div class="tool-steps">
+    <div class="tool-step"><strong>1. Pick coin or dice</strong>Use the Coin Flip card for a two-outcome decision, or the Dice Roller for numbered results.</div>
+    <div class="tool-step"><strong>2. Set dice count if needed</strong>Use the slider to choose how many dice to roll at once, from 1 to 6.</div>
+    <div class="tool-step"><strong>3. Flip or roll</strong>Click the button to get an instant, randomized result.</div>
+    <div class="tool-step"><strong>4. Check the history</strong>Scroll the history log to review previous flips and rolls from your current session.</div>
+  </div>
 </section>
 
 <div class="content-card related-tools">
@@ -130,21 +163,6 @@
     <a href="/tools/random-quote-generator" class="tool-item"><div class="ti-text"><h4>Random Quote Generator</h4><p>Get inspiring quotes by category.</p></div></a>
   </div>
 </div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">coin flip online</span>
-        <span class="keyword-tag">dice roller online</span>
-        <span class="keyword-tag">flip a coin free</span>
-        <span class="keyword-tag">roll dice online</span>
-        <span class="keyword-tag">random coin toss</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <div id="footer"></div>
 <script src="/assets/js/main.js" defer></script>

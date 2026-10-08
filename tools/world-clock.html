@@ -83,6 +83,11 @@
     <div class="faq-item-box"><h3>Does this account for daylight saving time?</h3><p>Yes, all times are calculated using the browser's built-in timezone database, which automatically accounts for daylight saving time rules for each location.</p></div>
     <div class="faq-item-box"><h3>Can I add my own city?</h3><p>Choose from the provided list of major world cities covering all time zones. Select any city to add its live clock to your display.</p></div>
     <div class="faq-item-box"><h3>Does this clock stay accurate over time?</h3><p>Yes, each clock updates every second based on your device's current time, staying accurate as long as your device's clock is correctly set.</p></div>
+    <div class="faq-item-box"><h3>Can I add the same city twice?</h3><p>No, the tool checks for duplicates and won't add a city that's already in your current list, keeping the display clean.</p></div>
+    <div class="faq-item-box"><h3>Does my city selection save between visits?</h3><p>No, your selected cities reset to the default set each time you reload the page, since nothing is saved to a server or stored permanently.</p></div>
+    <div class="faq-item-box"><h3>How many cities can I display at once?</h3><p>There's no hard limit — add as many cities as you need from the list, and the grid layout adjusts automatically to fit them.</p></div>
+    <div class="faq-item-box"><h3>Why does the date sometimes differ between two clocks?</h3><p>Because time zones can be more than 12 hours apart, it's entirely normal for one city to already be in "tomorrow" relative to another — each clock card shows its own local date alongside the time to make this clear.</p></div>
+    <div class="faq-item-box"><h3>Does this work correctly on mobile devices?</h3><p>Yes, the tool runs on any modern mobile browser, pulling the same timezone data as desktop browsers, and the clock grid automatically rearranges to fit smaller screens.</p></div>
   </div>
 </div>
 
@@ -101,8 +106,28 @@
   <h3>How This Tool Works</h3>
   <p>Each clock uses the Intl.DateTimeFormat API, a standard browser feature, to format the current moment according to a specific city's timezone rules — automatically accounting for daylight saving time changes based on that location's specific rules and the current date. This means the displayed times are always accurate, even during periods when different regions have shifted their clocks for daylight saving at different times of year.</p>
 
+  <h3>How Daylight Saving Time Is Handled Automatically</h3>
+  <p>One of the trickiest parts of tracking time across multiple locations is that not every region observes daylight saving time, and the ones that do don't all switch on the same dates. The Intl.DateTimeFormat API that powers this tool doesn't rely on a fixed, manually maintained offset for each city — it looks up the correct rules for that specific timezone and date from the browser's built-in timezone database (the IANA Time Zone Database), which is kept current with daylight saving changes worldwide. This means a city like New York correctly shifts by an hour each spring and fall, while a city like Mumbai, which doesn't observe daylight saving at all, stays on a fixed offset year-round, all without any special handling needed on this page.</p>
+
+  <h3>Common Time Zone Confusion This Tool Helps Avoid</h3>
+  <p>Scheduling across time zones is a notoriously easy place to make mistakes — mental math with UTC offsets breaks down the moment daylight saving time is involved, since the offset between two cities can actually change by an hour depending on the time of year, even if neither city itself changes its own clock on exactly the same date as the other. Seeing live, correctly calculated times side by side removes this guesswork entirely, since each clock reflects the real current time in that location rather than a manually calculated estimate that might be an hour off during a daylight saving transition period. This is especially relevant for teams spanning the Northern and Southern Hemispheres, since their daylight saving transitions happen at opposite times of year, making a fixed mental offset unreliable for roughly half the calendar.</p>
+
+  <h3>Setting Up Your Clock for Regular Use</h3>
+  <p>If you regularly coordinate with the same set of locations — say, a distributed team across three offices — it's worth taking a moment to add all the relevant cities at once rather than re-adding them individually each time you need the information. Since the selection doesn't persist between visits, bookmarking this page gives you quick access, and you can quickly re-add your usual set of cities each time you return, which takes only a few seconds once you're familiar with where each one sits in the dropdown list.</p>
+
   <h3>Privacy and Local Processing</h3>
-  <p>All time calculations happen directly in your browser using built-in JavaScript APIs — no data is sent to a server.</p>
+  <p>All time calculations happen directly in your browser using built-in JavaScript APIs — no data about which cities you select or view is sent to a server, logged, or stored anywhere.</p>
+
+  <h3>World Clock vs. Time Zone Converter: Which to Use</h3>
+  <p>This tool and Logrith's Time Zone Converter solve related but slightly different problems. The world clock shows the current, continuously updating time right now across several cities at once, which is what you want for an always-on reference or a quick glance at "what time is it there currently." The Time Zone Converter instead lets you pick a specific time — not necessarily right now — and see what that exact moment translates to in a different zone, which is the better tool when scheduling a future meeting or event rather than checking the current moment.</p>
+
+  <h3>Step-by-Step: Setting Up Your Clock Display</h3>
+  <div class="tool-steps">
+    <div class="tool-step"><strong>1. Open the city dropdown</strong>Browse the list of major world cities covering every time zone.</div>
+    <div class="tool-step"><strong>2. Select and add a city</strong>Choose a city and click Add to place its live clock on your display.</div>
+    <div class="tool-step"><strong>3. Repeat for every location you need</strong>Add as many cities as relevant to your team, clients, or travel plans.</div>
+    <div class="tool-step"><strong>4. Remove cities as needed</strong>Click the ✕ on any clock card to remove it from your current display.</div>
+  </div>
 </section>
 
 <div class="content-card related-tools">
@@ -114,21 +139,6 @@
     <a href="/tools/browser-info-lookup" class="tool-item"><div class="ti-text"><h4>Browser Info Lookup</h4><p>Check your browser's configured timezone.</p></div></a>
   </div>
 </div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">world clock</span>
-        <span class="keyword-tag">world clock online</span>
-        <span class="keyword-tag">current time in cities</span>
-        <span class="keyword-tag">live world time</span>
-        <span class="keyword-tag">multiple time zone clock</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <div id="footer"></div>
 <script src="/assets/js/main.js" defer></script>

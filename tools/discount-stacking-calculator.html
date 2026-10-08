@@ -101,6 +101,9 @@
     <div class="faq-item-box"><h3>Does 20% off plus 10% off equal 30% off?</h3><p>No. Stacked discounts apply sequentially, each on the already-discounted price, so 20% then 10% off results in a 28% total discount, not 30%.</p></div>
     <div class="faq-item-box"><h3>In what order should discounts be applied?</h3><p>Store policies vary, but discounts are typically applied in the order shown at checkout. The final price can differ slightly depending on order when flat and percentage discounts are combined.</p></div>
     <div class="faq-item-box"><h3>How many discounts can I stack?</h3><p>You can add as many discount steps as you need using the "Add Another Discount" button.</p></div>
+    <div class="faq-item-box"><h3>Is my pricing data sent to a server?</h3><p>No, every calculation runs locally in your browser. Prices and discount percentages you enter are never transmitted anywhere.</p></div>
+    <div class="faq-item-box"><h3>Does the order of discounts change the final price?</h3><p>For purely percentage-based discounts, the order doesn't change the final result mathematically, since multiplying by several percentages gives the same product regardless of order. Order can matter when flat-amount discounts are mixed with percentage discounts.</p></div>
+    <div class="faq-item-box"><h3>Can I use this for business margin planning?</h3><p>Yes, the same sequential logic applies whether you're checking a shopper's final price or modeling how multiple markdowns affect a product's margin from a business perspective.</p></div>
   </div>
 </div>
 
@@ -114,15 +117,39 @@
   <h3>How This Calculator Works</h3>
   <p>Starting from your entered original price, this tool applies each discount percentage in the order you've listed them, recalculating the remaining price after every step. It shows the running price after each individual discount, the amount saved at that step, and the final total price and total amount saved across all discounts combined.</p>
 
+  <h3>Why Percentage Discount Order Doesn't Change the Final Result</h3>
+  <p>Interestingly, while the step-by-step savings amounts differ depending on which order percentage discounts are applied in, the final price ends up exactly the same regardless of order — because multiplying a price by several percentage factors gives the same product no matter what sequence you multiply them in. Whether you apply 20% off first and then 10% off, or 10% off first and then 20% off, both paths land on the same final price. This only holds for pure percentage discounts; mixing in a flat-amount discount (like "₹100 off") does make order matter, since a flat amount taken off a higher starting price represents a smaller effective percentage than the same flat amount taken off a lower price.</p>
+
+  <h3>Checking a Store's Advertised Savings Claim</h3>
+  <p>Retailers occasionally advertise a combined savings figure that doesn't quite match the true sequential calculation, whether through simple arithmetic error or more deliberately generous rounding. Running the actual listed discounts through this calculator before checkout gives you a quick, independent check against any advertised total savings figure, letting you confirm the real numbers rather than taking a marketing claim at face value.</p>
+
   <h3>Practical Uses</h3>
   <ul class="feature-list">
     <li><strong>Shopping during sales</strong> — verifying the actual final price when a store advertises multiple stacked discounts or coupon codes.</li>
     <li><strong>Comparing deals</strong> — checking whether "30% off" at one store beats "20% off plus an extra 10% off" at another (they are not the same).</li>
     <li><strong>Business pricing</strong> — modeling how sequential markdowns or promotional discounts affect final margins.</li>
+    <li><strong>Understanding coupon stacking rules</strong> — seeing the real combined effect before assuming discounts simply add together.</li>
   </ul>
 
+  <h3>Step-by-Step: Calculating Your Stacked Discount</h3>
+  <div class="tool-steps">
+    <div class="tool-step"><strong>1. Enter the original price</strong>Type in the starting price before any discounts.</div>
+    <div class="tool-step"><strong>2. Add each discount</strong>Enter every discount percentage, adding more rows as needed.</div>
+    <div class="tool-step"><strong>3. Calculate</strong>Click Calculate Final Price to see the step-by-step breakdown.</div>
+    <div class="tool-step"><strong>4. Review the effective discount</strong>Check the final price and the true combined percentage saved.</div>
+  </div>
+
   <h3>Privacy and Local Processing</h3>
-  <p>All calculations run directly in your browser — no prices or discount details are sent to a server.</p>
+  <p>All calculations run directly in your browser — no prices or discount details are sent to a server, logged, or stored anywhere.</p>
+
+  <h3>Recognizing Marketing That Relies on This Confusion</h3>
+  <p>Some promotions are structured specifically to make a combined discount sound bigger than it actually is, relying on shoppers doing the naive addition instead of the correct sequential math. Seeing "up to 50% off" advertised as two separate 25% discounts stacked together is a common example — the actual combined effect is 43.75% off, not 50%, since the second 25% applies only to the already-reduced price. This isn't necessarily deceptive so much as a natural consequence of how percentages compound, but knowing the real math helps you evaluate whether a "stacked" promotion is actually as generous as its headline framing suggests.</p>
+
+  <h3>Flat Discounts Combined With Percentage Discounts</h3>
+  <p>When a flat-amount discount (like "$10 off") is combined with a percentage discount, the order in which they're applied does change the final price, unlike pure percentage-on-percentage stacking. Applying the percentage discount first, then the flat amount off the reduced price, results in a different final price than applying the flat amount first and then taking a percentage off that already-reduced total — because a flat amount represents a different effective percentage depending on what price it's being subtracted from. If a store's checkout process isn't transparent about which order it applies these in, checking this calculator's result against your actual receipt is a good way to confirm you received the discount correctly.</p>
+
+  <h3>Retail Pricing Psychology Behind Stacked Promotions</h3>
+  <p>Retailers often intentionally structure promotions as multiple stacked discounts rather than one single equivalent discount, because the perceived value of "25% off, plus an extra 10% off" tends to feel larger to shoppers than the mathematically equivalent single discount, even when the two are worth the same or the stacked version is actually worth less once calculated correctly. This is a well-documented effect in behavioral pricing research — breaking a deal into multiple stages creates an impression of layered value that a single number doesn't convey as strongly, even though a careful shopper running the real numbers through a calculator like this one sees the true combined effect clearly and can shop with full confidence in the actual savings.</p>
 </section>
 
 <div class="content-card related-tools">
@@ -134,21 +161,6 @@
     <a href="/tools/gst-calculator" class="tool-item"><div class="ti-text"><h4>GST Calculator</h4><p>Calculate GST inclusive and exclusive amounts.</p></div></a>
   </div>
 </div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">discount stacking calculator</span>
-        <span class="keyword-tag">multiple discount calculator</span>
-        <span class="keyword-tag">stacked discount calculator</span>
-        <span class="keyword-tag">successive discount calculator</span>
-        <span class="keyword-tag">combined discount calculator</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <div id="footer"></div>
 <script src="/assets/js/main.js" defer></script>

@@ -90,6 +90,9 @@
     <div class="faq-item-box"><h3>How does an acronym generator work?</h3><p>It takes the first letter of each significant word in a phrase and combines them, typically skipping small connector words like "the," "of," and "and."</p></div>
     <div class="faq-item-box"><h3>Should small connector words be included?</h3><p>Convention varies, but most acronyms skip small words unless they're needed to make the result pronounceable or meaningful. This tool lets you toggle that behavior.</p></div>
     <div class="faq-item-box"><h3>What's the difference between an acronym and an initialism?</h3><p>An acronym is pronounced as a word (like NASA), while an initialism is spelled out letter by letter (like FBI). This tool generates the letter combination either way — how it's pronounced depends on the specific letters.</p></div>
+    <div class="faq-item-box"><h3>Is my phrase sent to a server?</h3><p>No, generation happens entirely in your browser using JavaScript. Nothing you enter is transmitted anywhere.</p></div>
+    <div class="faq-item-box"><h3>Can I generate an acronym from a single long word?</h3><p>This tool works best with multi-word phrases, since it extracts one letter per word. A single word won't produce a meaningful acronym, since there's only one word to draw a letter from.</p></div>
+    <div class="faq-item-box"><h3>Does capitalization in my input phrase matter?</h3><p>No, the tool extracts the first letter of each word regardless of how it was originally capitalized, then applies your chosen uppercase or original-case setting to the result.</p></div>
   </div>
 </div>
 
@@ -103,16 +106,40 @@
   <h3>Skipping Small Words</h3>
   <p>Most well-known acronyms skip minor connector words — articles like "a" and "the," conjunctions like "and," and prepositions like "of" or "for" — unless including them is necessary to form a meaningful or pronounceable result. For example, "Self Contained Underwater Breathing Apparatus" becomes SCUBA by taking the first letter of each major word. This tool defaults to skipping common small words but lets you disable that behavior if you want every single word's first letter included.</p>
 
+  <h3>What Makes a Good, Memorable Acronym</h3>
+  <p>Not every sequence of first letters makes for a strong acronym. The most memorable acronyms tend to either spell an actual pronounceable word (like NASA or SCUBA) or form a short, rhythmic sequence that's easy to say aloud even as individual letters (like FBI or CEO). When naming something new, it's often worth trying a few different phrasings of the same underlying idea through this tool, since small wording changes — swapping word order, adding or removing a connector word — can shift the resulting letters into something considerably catchier.</p>
+
   <h3>Common Uses</h3>
   <ul class="feature-list">
     <li><strong>Naming organizations or projects</strong> — quickly seeing what acronym results from a proposed full name.</li>
     <li><strong>Creating memorable shorthand</strong> — for long process names, methodologies, or internal team names.</li>
     <li><strong>Checking existing acronyms</strong> — verifying what a known acronym stands for by reverse-checking against candidate phrases.</li>
     <li><strong>Fun and creative naming</strong> — brainstorming names for teams, events, or study groups.</li>
+    <li><strong>Backronym brainstorming</strong> — working backward from a desired acronym to find words that fit each letter.</li>
   </ul>
 
+  <h3>Step-by-Step: Generating an Acronym</h3>
+  <div class="tool-steps">
+    <div class="tool-step"><strong>1. Enter your phrase</strong>Type or paste the full phrase or title you want to abbreviate.</div>
+    <div class="tool-step"><strong>2. Toggle small-word skipping</strong>Leave it on for a more standard result, or off to include every word.</div>
+    <div class="tool-step"><strong>3. Choose casing</strong>Toggle uppercase for a traditional acronym look.</div>
+    <div class="tool-step"><strong>4. Generate and review</strong>Click Generate Acronym and check the letter-by-letter breakdown.</div>
+  </div>
+
   <h3>Privacy and Local Processing</h3>
-  <p>All acronym generation happens directly in your browser — nothing is sent to a server.</p>
+  <p>All acronym generation happens directly in your browser — nothing you enter is sent to a server, logged, or stored anywhere.</p>
+
+  <h3>When to Include or Skip Small Words</h3>
+  <p>The default behavior of skipping short connector words generally produces cleaner, more standard-looking results, matching how most well-known real-world acronyms are formed. There are cases, though, where including every word's first letter matters — if a specific small word is essential to the phrase's meaning, or if skipping it would produce a sequence that's ambiguous or collides with an unrelated existing acronym. Toggling the setting off and comparing both results side by side is a quick way to judge which version reads better for your specific phrase.</p>
+
+  <h3>Checking for Existing Acronym Collisions</h3>
+  <p>A generated acronym occasionally turns out to already belong to a well-known existing organization, product, or term — a real risk when naming something new, since an accidental collision can cause confusion or even trademark concerns down the line. After generating a candidate acronym here, it's worth doing a quick web search for that exact sequence of letters before committing to it as a name, especially for anything that will be used publicly or professionally, since this tool only generates the letters and has no way to check them against existing usage.</p>
+
+  <h3>Using This Tool for Study and Memorization</h3>
+  <p>Acronyms are a widely used memory technique for remembering ordered lists or related concepts, since a single pronounceable word is far easier to recall than an unrelated list of items. Students and professionals often reverse-engineer this process — starting with a list of concepts they need to remember, then working out what phrase or acronym might help encode them. This tool helps check the other direction: if you already have a working acronym idea in mind, typing out the full phrase confirms exactly what letters it produces before you commit the mnemonic to memory.</p>
+
+  <h3>Acronyms in Professional and Technical Writing</h3>
+  <p>Workplace and technical writing often develops its own set of internal acronyms for recurring project names, processes, or team initiatives, and having a quick way to check what letters a proposed full name would produce helps teams avoid landing on something confusing, hard to say aloud, or accidentally identical to an existing unrelated term already used elsewhere in the organization. Running a few candidate full names through this tool during the naming process, rather than after a name has already stuck, makes it easy to course-correct before an awkward acronym becomes permanently embedded in documentation and conversation.</p>
 </section>
 
 <div class="content-card related-tools">
@@ -124,20 +151,6 @@
     <a href="/tools/word-counter" class="tool-item"><div class="ti-text"><h4>Word Counter</h4><p>Count words and characters in your text.</p></div></a>
   </div>
 </div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">acronym generator</span>
-        <span class="keyword-tag">acronym maker online</span>
-        <span class="keyword-tag">create acronym from phrase</span>
-        <span class="keyword-tag">free acronym generator</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <div id="footer"></div>
 <script src="/assets/js/main.js" defer></script>

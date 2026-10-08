@@ -88,6 +88,11 @@ Jamie</textarea>
     <div class="faq-item-box"><h3>How are teams balanced?</h3><p>Names are shuffled randomly, then distributed one at a time across all teams in rotation, ensuring each team gets as close to an equal number of members as possible.</p></div>
     <div class="faq-item-box"><h3>What if the number of names doesn't divide evenly?</h3><p>Some teams will have one more member than others — for example, splitting 10 names into 3 teams gives teams of 4, 3, and 3.</p></div>
     <div class="faq-item-box"><h3>Can I regenerate teams with the same names?</h3><p>Yes, click Generate Teams again to get a new random split with the same list of names.</p></div>
+    <div class="faq-item-box"><h3>Is my name list uploaded to a server?</h3><p>No, the entire shuffle and split happens locally in your browser using JavaScript. The names you enter never leave your device.</p></div>
+    <div class="faq-item-box"><h3>What's the maximum number of teams I can create?</h3><p>The slider supports up to 10 teams at once, which covers the vast majority of classroom, sports, and workplace group scenarios.</p></div>
+    <div class="faq-item-box"><h3>Can I split names into teams of a specific size instead of a specific count?</h3><p>This tool works by number of teams rather than team size. To get a target size, divide your total number of names by the desired size to find how many teams to request.</p></div>
+    <div class="faq-item-box"><h3>Does this tool work for events with just a few participants?</h3><p>Yes, it works with any list from the minimum needed for your chosen team count up to large groups, scaling the same round-robin logic regardless of list size.</p></div>
+    <div class="faq-item-box"><h3>Can I name the teams something other than "Team 1," "Team 2"?</h3><p>The generated results label teams numerically for simplicity. After generating, you're free to rename or relabel the teams however you like once you've copied or noted the groupings.</p></div>
   </div>
 </div>
 
@@ -96,7 +101,13 @@ Jamie</textarea>
   <p>This tool takes a list of names and splits them into a chosen number of random, evenly balanced teams, useful for sports, classroom activities, group projects, and any situation where you need fair, unbiased team assignment.</p>
 
   <h3>How This Tool Ensures Fair Teams</h3>
-  <p>The tool first shuffles the entire list of names into a random order, then distributes them across the requested number of teams one at a time in rotation — the first name goes to team 1, the second to team 2, and so on, cycling back to team 1 after reaching the last team. This "round-robin" distribution ensures team sizes stay as balanced as possible (differing by at most one member) while the actual assignment of who goes to which team remains completely random.</p>
+  <p>The tool first shuffles the entire list of names into a random order using a Fisher-Yates shuffle — a well-established, statistically unbiased shuffling algorithm — then distributes them across the requested number of teams one at a time in rotation: the first name goes to team 1, the second to team 2, and so on, cycling back to team 1 after reaching the last team. This "round-robin" distribution ensures team sizes stay as balanced as possible, differing by at most one member, while the actual assignment of who goes to which team remains completely random and free of any manual bias.</p>
+
+  <h3>Why Random Assignment Matters</h3>
+  <p>Manually picking teams, even with good intentions, is hard to do without some degree of unconscious bias — a team captain tends to pick familiar faces first, or group skill levels unevenly without quite meaning to. Random assignment removes that entirely: every name has an equal, provable chance of ending up on any team, which matters for settling disputes about fairness before a game even starts, and for classroom or workplace settings where visibly unbiased grouping avoids any appearance of favoritism, since the outcome is transparently determined by the shuffle rather than any individual's judgment.</p>
+
+  <h3>Handling Uneven Splits</h3>
+  <p>When a list of names doesn't divide evenly by the number of teams requested, some teams will end up with one more member than others — splitting 11 names into 3 teams, for example, produces teams of 4, 4, and 3. This is the smallest possible imbalance mathematically achievable, and which specific team ends up with the extra member is itself randomly determined by the shuffle, so no single team is systematically favored with the larger group across repeated uses of the generator.</p>
 
   <h3>Common Uses</h3>
   <ul class="feature-list">
@@ -104,10 +115,28 @@ Jamie</textarea>
     <li><strong>Classroom activities</strong> — assigning students to random groups for projects or discussions.</li>
     <li><strong>Workplace exercises</strong> — creating random teams for team-building activities or workshops.</li>
     <li><strong>Tournament brackets</strong> — randomly seeding participants into groups.</li>
+    <li><strong>Game nights and trivia</strong> — quickly splitting a group of friends into competing teams.</li>
   </ul>
 
+  <h3>Tips for Entering Your Name List</h3>
+  <p>Enter one name per line in the text box for the cleanest results. If your list has duplicate entries or inconsistent formatting, running it through Logrith's Duplicate Line Remover first can help clean things up before splitting into teams, ensuring each person is counted and assigned exactly once. It's also worth double-checking the total headcount before generating, since a missing or duplicated name directly affects how evenly the final teams come out.</p>
+
+  <h3>Re-Rolling for a Different Split</h3>
+  <p>Because each click of Generate Teams re-shuffles the list from scratch, you're never locked into a single result — clicking again produces an entirely new random arrangement using the same name list and team count. This is useful if a particular split happens to put several close friends or rivals on the same team and you'd prefer a different mix, or simply if you want to double-check that the distribution stays fair across repeated runs.</p>
+
+  <h3>Step-by-Step: Generating Random Teams</h3>
+  <div class="tool-steps">
+    <div class="tool-step"><strong>1. Enter your names</strong>Type or paste one name per line into the text box.</div>
+    <div class="tool-step"><strong>2. Set the number of teams</strong>Use the slider to choose how many teams to split into.</div>
+    <div class="tool-step"><strong>3. Generate</strong>Click Generate Teams to instantly shuffle and split the list.</div>
+    <div class="tool-step"><strong>4. Review and regenerate if needed</strong>Check the results, or click again for a fresh random split.</div>
+  </div>
+
+  <h3>Random Teams vs. Skill-Balanced Teams</h3>
+  <p>It's worth being clear about what "balanced" means here — this tool balances team size, ensuring each group has as close to an equal number of people as mathematically possible, but it has no awareness of skill, experience, or any other attribute about the people being assigned. For situations where skill balance matters more than pure randomness, such as a competitive sports league trying to create evenly matched teams, a different approach — manually distributing known skill levels across teams, or using a seeded draft system — would be more appropriate. This tool is purpose-built for situations where fairness means "everyone has an equal, unbiased chance," not for situations requiring teams matched by ability.</p>
+
   <h3>Privacy and Local Processing</h3>
-  <p>All shuffling and team assignment happens directly in your browser — the names you enter are never sent to a server.</p>
+  <p>All shuffling and team assignment happens directly in your browser — the names you enter are never sent to a server, logged, or stored anywhere, making this safe to use with real student, employee, or player names.</p>
 </section>
 
 <div class="content-card related-tools">
@@ -119,21 +148,6 @@ Jamie</textarea>
     <a href="/tools/random-number-generator" class="tool-item"><div class="ti-text"><h4>Random Number Generator</h4><p>Generate random numbers for other decisions.</p></div></a>
   </div>
 </div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">random team generator</span>
-        <span class="keyword-tag">team generator online</span>
-        <span class="keyword-tag">split names into teams</span>
-        <span class="keyword-tag">random group generator</span>
-        <span class="keyword-tag">team randomizer</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <div id="footer"></div>
 <script src="/assets/js/main.js" defer></script>

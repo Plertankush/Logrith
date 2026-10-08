@@ -106,6 +106,9 @@
     <div class="faq-item-box"><h3>Why use clamp() instead of media queries?</h3><p>clamp() scales smoothly and continuously with viewport width, avoiding the abrupt jumps that occur at media query breakpoints, and requires far less CSS code.</p></div>
     <div class="faq-item-box"><h3>Is clamp() supported in all browsers?</h3><p>Yes, clamp() has excellent support in all modern browsers (Chrome, Firefox, Safari, Edge) released since 2020.</p></div>
     <div class="faq-item-box"><h3>Can I use this for spacing, not just font size?</h3><p>Yes, the same clamp() value works for any CSS length property — padding, margin, gap, and width all benefit from fluid scaling too.</p></div>
+    <div class="faq-item-box"><h3>Is my input data sent to a server?</h3><p>No, the calculation runs entirely in your browser using JavaScript. Your chosen values never leave your device.</p></div>
+    <div class="faq-item-box"><h3>Why does the generated value use rem and vw together?</h3><p>Combining rem (which respects the user's base font size setting, important for accessibility) with vw (which responds to viewport width) gives fluid scaling that's both responsive and accessible — pure px or pure vw values lose one of these two benefits.</p></div>
+    <div class="faq-item-box"><h3>What happens below my minimum viewport or above my maximum?</h3><p>Below the minimum viewport, the size stays fixed at your minimum value. Above the maximum viewport, it stays fixed at your maximum value — the fluid scaling only happens between those two viewport widths.</p></div>
   </div>
 </div>
 
@@ -119,15 +122,36 @@
   <h3>The Math Behind the Calculation</h3>
   <p>This tool calculates the linear equation connecting your minimum size at your minimum viewport, and maximum size at your maximum viewport, then expresses that equation using rem and vw units — the standard, accessible approach for fluid typography that respects user font-size preferences (since rem scales with the user's base font size) while still responding to viewport width.</p>
 
+  <h3>clamp() vs. Media Queries: A Practical Comparison</h3>
+  <p>Before clamp() had wide browser support, fluid-feeling typography required defining a font size at each of several media query breakpoints, with the size jumping abruptly from one fixed value to another whenever the viewport crossed a breakpoint. This works, but produces a noticeably stepped effect if you resize a browser window slowly, and requires maintaining several separate CSS rules for a single property. A single clamp() declaration replaces all of those breakpoint rules with one line of CSS that scales continuously, removing both the abrupt jumps and the extra code to maintain.</p>
+
+  <h3>Choosing Good Min and Max Values</h3>
+  <p>For body text, a reasonable minimum is typically around 16px (below this, text starts becoming hard to read comfortably on small screens), with a maximum in the 18-20px range for most content-focused designs. Headings can use a much wider range, since large display text has more room to scale dramatically between a small mobile size and a large desktop size without becoming illegible at either end. Testing the live preview at different simulated viewport widths — or simply resizing your actual browser window — is the most reliable way to confirm your chosen range looks appropriate across the full range of device sizes.</p>
+
   <h3>Why Fluid Typography Matters</h3>
   <ul class="feature-list">
     <li><strong>Smoother scaling</strong> — text size changes gradually as the viewport resizes, rather than jumping at specific breakpoints.</li>
     <li><strong>Less CSS code</strong> — one clamp() declaration replaces multiple media query overrides for the same property.</li>
     <li><strong>Better in-between experience</strong> — devices and window sizes between your defined breakpoints still get an appropriately-scaled size.</li>
+    <li><strong>Works for more than just text</strong> — padding, margin, and gap properties benefit from the same fluid scaling approach.</li>
   </ul>
 
+  <h3>Step-by-Step: Generating a clamp() Value</h3>
+  <div class="tool-steps">
+    <div class="tool-step"><strong>1. Set your minimum size</strong>Enter the smallest size the property should ever be.</div>
+    <div class="tool-step"><strong>2. Set your maximum size</strong>Enter the largest size the property should scale up to.</div>
+    <div class="tool-step"><strong>3. Set your viewport range</strong>Define the min and max viewport widths the scaling should span.</div>
+    <div class="tool-step"><strong>4. Copy the CSS</strong>Copy the generated clamp() value directly into your stylesheet.</div>
+  </div>
+
   <h3>Privacy and Local Processing</h3>
-  <p>All calculations happen directly in your browser — nothing is sent to a server.</p>
+  <p>All calculations happen directly in your browser — nothing you enter is sent to a server, logged, or stored anywhere.</p>
+
+  <h3>Using clamp() Beyond Typography</h3>
+  <p>While fluid typography is the most common use case, clamp() works identically for any CSS property that accepts a length value — padding, margin, gap, width, and border-radius all benefit from the same fluid scaling approach. A card component's padding that scales smoothly from a compact mobile size to a more generous desktop size, for instance, uses exactly the same clamp() formula as a heading's font size, just applied to a different property. Once you're comfortable generating one clamp() value, applying the same technique across multiple properties in a design system becomes a quick, repeatable pattern.</p>
+
+  <h3>Building a Consistent Fluid Type Scale</h3>
+  <p>For a full design system rather than a single font size, many teams generate a series of clamp() values at once — one for each heading level and body text size — using a consistent minimum and maximum viewport range across all of them, while varying only the min and max size per text level. This keeps the entire typographic scale feeling proportionally consistent as the viewport resizes, since every text size scales using the same underlying viewport range, rather than each size having its own independently tuned scaling behavior that could drift out of visual harmony with the others as the page is resized.</p>
 </section>
 
 <div class="content-card related-tools">
@@ -139,21 +163,6 @@
     <a href="/tools/unit-converter" class="tool-item"><div class="ti-text"><h4>Unit Converter</h4><p>Convert between px, rem, and other units.</p></div></a>
   </div>
 </div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">css clamp calculator</span>
-        <span class="keyword-tag">fluid typography generator</span>
-        <span class="keyword-tag">responsive font size calculator</span>
-        <span class="keyword-tag">css clamp generator</span>
-        <span class="keyword-tag">fluid type scale</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <div id="footer"></div>
 <script src="/assets/js/main.js" defer></script>

@@ -91,6 +91,9 @@
     <div class="faq-item-box"><h3>Does this verify the JWT signature?</h3><p>No, this tool only decodes and displays the header and payload — it doesn't verify the signature, which requires the secret or public key used to sign the token.</p></div>
     <div class="faq-item-box"><h3>Is it safe to paste a JWT here?</h3><p>Decoding happens entirely in your browser and the token is never sent to a server, but as a general precaution avoid pasting tokens with highly sensitive production data into any tool.</p></div>
     <div class="faq-item-box"><h3>Why can anyone read a JWT's payload?</h3><p>JWTs are Base64-URL encoded, not encrypted — this is by design, since JWTs are meant to be readable but tamper-evident via their signature, not confidential.</p></div>
+    <div class="faq-item-box"><h3>What does the "exp" claim mean in a decoded payload?</h3><p>"exp" stands for expiration time, a standard JWT claim storing a Unix timestamp indicating when the token should no longer be considered valid, used by receiving systems to reject expired tokens.</p></div>
+    <div class="faq-item-box"><h3>Why does decoding fail with an error?</h3><p>This usually means the pasted text isn't a valid JWT — check that it has exactly three dot-separated parts, and that nothing was accidentally truncated or altered when copying it.</p></div>
+    <div class="faq-item-box"><h3>Can I use this to check if my own API's tokens are structured correctly?</h3><p>Yes, this is a common use case during development — decoding a token your own backend issued to visually confirm the expected claims are present and correctly formatted before shipping.</p></div>
   </div>
 </div>
 
@@ -104,11 +107,39 @@
   <h3>Why JWTs Are Readable But Not Confidential</h3>
   <p>A common misconception is that JWTs are encrypted. They're not — the header and payload are simply Base64-URL encoded, which is a reversible text encoding, not encryption. Anyone who has a JWT can decode its header and payload instantly, exactly as this tool demonstrates. This is by design: JWTs are meant to be tamper-evident (via the signature) rather than confidential. Sensitive data that shouldn't be readable by anyone holding the token should never be placed in a JWT payload.</p>
 
+  <h3>Where JWTs Are Commonly Used</h3>
+  <p>JWTs show up throughout modern web and mobile applications, most commonly as authentication tokens issued after a successful login, carried along with subsequent requests to prove the user's identity without requiring them to log in again on every single request. They're also used in OAuth and single sign-on flows, API access tokens for third-party integrations, and in some cases for securely passing structured data between services that both trust the same signing key. Recognizing the general shape of a JWT — three dot-separated Base64 segments — is a useful skill for anyone working with modern web APIs, since encountering one in a request header or API response is extremely common across contemporary backend systems.</p>
+
+  <h3>Common Claims Found in a JWT Payload</h3>
+  <p>While a JWT's payload can contain any custom data an issuer chooses to include, several standard claim names appear across most implementations. "sub" (subject) typically identifies the user the token represents. "iat" (issued at) records when the token was created. "exp" (expiration) specifies when the token should stop being accepted. "iss" (issuer) identifies which system generated the token. "aud" (audience) specifies which system the token is intended for. Recognizing these standard claim names makes it much faster to understand an unfamiliar token's structure at a glance, since they follow a consistent convention across most JWT implementations rather than being specific to any one system.</p>
+
   <h3>Why This Tool Doesn't Verify Signatures</h3>
   <p>Verifying a JWT's signature requires the same secret key (for HMAC algorithms like HS256) or the corresponding public key (for RSA/ECDSA algorithms like RS256) that was used to sign it — information that only the issuing server should have. Since this tool has no access to that secret, and receiving it would defeat the purpose of keeping it secret, this tool intentionally only decodes and displays the token's contents without claiming to verify its authenticity.</p>
 
+  <h3>Common Use Cases for Decoding a JWT</h3>
+  <ul class="feature-list">
+    <li><strong>Debugging authentication issues</strong> — checking whether a token contains the expected user ID or role claims.</li>
+    <li><strong>Verifying expiration timing</strong> — confirming a token's "exp" claim matches the expected session duration during development.</li>
+    <li><strong>Understanding a third-party API's tokens</strong> — inspecting what data an external service's token actually contains.</li>
+    <li><strong>Learning how JWTs work</strong> — seeing the header/payload/signature structure firsthand rather than just reading about it abstractly.</li>
+  </ul>
+
+  <h3>Step-by-Step: Decoding a Token</h3>
+  <div class="tool-steps">
+    <div class="tool-step"><strong>1. Paste your JWT</strong>Copy the full token, including all three dot-separated parts.</div>
+    <div class="tool-step"><strong>2. Click Decode</strong>Instantly see the decoded header and payload as readable JSON.</div>
+    <div class="tool-step"><strong>3. Review the claims</strong>Check the decoded data against what you expect the token to contain.</div>
+    <div class="tool-step"><strong>4. Remember: this doesn't verify authenticity</strong>Decoding confirms content, not whether the token's signature is valid.</div>
+  </div>
+
   <h3>Privacy and Local Processing</h3>
-  <p>All decoding happens directly in your browser using JavaScript's built-in Base64 decoding — your token is never sent to a server.</p>
+  <p>All decoding happens directly in your browser using JavaScript's built-in Base64 decoding — your token is never sent to a server, logged, or stored anywhere.</p>
+
+  <h3>A Note on Handling Real Production Tokens</h3>
+  <p>While this tool never transmits anything you paste, it's still good general practice to avoid pasting tokens from live production systems containing real user sessions into any third-party tool, including this one, simply as a matter of habit. For development and debugging, generating a test token with dummy claims, or using a token from a local development environment, achieves the same inspection goal without involving any data tied to a real user or live system.</p>
+
+  <h3>Why JWTs Became So Widely Used</h3>
+  <p>JWTs gained widespread adoption largely because they're self-contained and stateless — a server can verify a token's validity using just the signature and the secret key, without needing to look up a session record in a database for every single request. This makes JWTs particularly well suited to distributed systems and microservice architectures, where multiple independent services need to verify a user's identity without all querying a shared central session store. The tradeoff is that a JWT's claims, once issued, can't easily be revoked before expiration without additional infrastructure, which is a consideration worth understanding alongside the convenience this tool helps you inspect and debug.</p>
 </section>
 
 <div class="content-card related-tools">
@@ -120,21 +151,6 @@
     <a href="/tools/uuid-generator" class="tool-item"><div class="ti-text"><h4>UUID Generator</h4><p>Generate unique IDs for development use.</p></div></a>
   </div>
 </div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">jwt decoder</span>
-        <span class="keyword-tag">jwt decoder online</span>
-        <span class="keyword-tag">decode json web token</span>
-        <span class="keyword-tag">jwt debugger</span>
-        <span class="keyword-tag">jwt token decoder</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <div id="footer"></div>
 <script src="/assets/js/main.js" defer></script>

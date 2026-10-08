@@ -88,6 +88,11 @@
     <div class="faq-item-box"><h3>How much smaller does minified CSS get?</h3><p>Typically 20-40% smaller depending on how much whitespace, comments, and formatting the original CSS had.</p></div>
     <div class="faq-item-box"><h3>Does minifying break my CSS?</h3><p>No, minification only removes whitespace, comments, and unnecessary characters — it doesn't change how the CSS functions.</p></div>
     <div class="faq-item-box"><h3>Can I beautify already-minified CSS?</h3><p>Yes, use the Beautify button to reformat minified CSS with proper indentation and line breaks for readability.</p></div>
+    <div class="faq-item-box"><h3>Is my CSS code uploaded to a server?</h3><p>No, both minifying and beautifying run entirely in your browser using JavaScript. Your code never leaves your device.</p></div>
+    <div class="faq-item-box"><h3>Will minifying affect how my CSS renders?</h3><p>No, minification only removes characters that have no effect on rendering — whitespace, comments, and optional syntax. Every selector, property, and value remains functionally identical.</p></div>
+    <div class="faq-item-box"><h3>Should I minify CSS during development too?</h3><p>No, keep readable, well-formatted CSS during development and only minify as a build step before deploying to production, since minified code is much harder to debug while actively working on it.</p></div>
+    <div class="faq-item-box"><h3>Does this tool handle CSS with custom properties (variables)?</h3><p>Yes, CSS custom properties like --main-color are treated the same as any other value during minification and beautification, since they follow standard CSS syntax rules.</p></div>
+    <div class="faq-item-box"><h3>Can I minify CSS with media queries and nested rules?</h3><p>Yes, media queries, pseudo-classes, and standard nested selector blocks are all handled correctly during both minification and beautification.</p></div>
   </div>
 </div>
 
@@ -109,8 +114,31 @@
   <h3>Why Beautify CSS?</h3>
   <p>Minified CSS is efficient for production but nearly impossible to read or edit by hand. When you need to debug, modify, or understand someone else's minified stylesheet, beautifying it back into properly indented, multi-line code makes the structure clear again — restoring line breaks after each rule and property, and adding consistent indentation.</p>
 
+  <h3>How Much Size Reduction to Expect</h3>
+  <p>The actual file size reduction from minification depends heavily on how the original CSS was written. A stylesheet with generous comments, consistent multi-line formatting, and lots of whitespace for readability typically shrinks by 20-40% after minification. A stylesheet that was already written fairly compactly, with minimal comments, will see a smaller reduction simply because there's less excess to remove. Either way, the functional behavior of the CSS stays completely unchanged — minification is a purely cosmetic transformation at the character level, not a logical one, and the stats row above the output shows the exact before-and-after byte counts for whatever you paste in.</p>
+
+  <h3>Minification vs. Compression: Two Different Optimizations</h3>
+  <p>It's worth distinguishing minification from server-side compression, since they're often used together but solve different problems. Minification reduces the actual character count of the CSS file itself, which this tool handles. Compression (like gzip or Brotli, applied by a web server) further compresses the already-minified file during transfer to the browser, encoding repeated patterns more efficiently. Minifying first and then serving with server-side compression enabled gives the best combined result — compression algorithms generally work even better on minified code, since removing whitespace eliminates some of the repetitive patterns that would otherwise need compressing. Neither optimization replaces the other; a production site typically benefits from doing both.</p>
+
+  <h3>When Minified CSS Causes Debugging Headaches</h3>
+  <p>A common scenario: a live website has an unexpected styling bug, but opening the browser's developer tools shows a single unreadable line of minified CSS with no way to tell where one rule ends and another begins. This is exactly the situation the Beautify function is built for — paste in the minified stylesheet and get back properly formatted, readable code with each rule and property on its own line, making it realistic to actually trace through and find the problem rather than scrolling through thousands of characters on a single line looking for a specific property.</p>
+
   <h3>Privacy and Local Processing</h3>
-  <p>All processing happens directly in your browser using JavaScript — your CSS code is never sent to a server.</p>
+  <p>All processing happens directly in your browser using JavaScript — your CSS code is never sent to a server, logged, or stored anywhere. This makes the tool safe to use with proprietary or unpublished stylesheets, since the code never leaves your own device during either minification or beautification.</p>
+
+  <h3>Fitting Minification Into a Development Workflow</h3>
+  <p>In most modern web projects, minification happens automatically as part of a build process, using tools like Webpack, Vite, or a dedicated CSS build pipeline — so why use a standalone minifier at all? This tool fills the gap for situations outside a full build setup: a quick one-off stylesheet for a small static site, a snippet being pasted into a CMS that doesn't have its own build pipeline, or simply checking how much size reduction a particular piece of CSS would actually see before deciding whether a build process is worth setting up. It's also useful for learning purposes, letting you see exactly what a minifier strips out by comparing the before and after side by side.</p>
+
+  <h3>Common Mistakes When Working With Minified CSS</h3>
+  <p>A frequent mistake is editing the minified file directly in production, making a small tweak to a live, already-compressed stylesheet instead of editing the readable source and re-minifying. This works in a pinch but makes the next legitimate edit much harder, since any changes made directly to minified code get mixed in with everything else on that single line. Keeping a readable source version of every stylesheet, and treating the minified version as a generated output rather than something to hand-edit, avoids this problem entirely — the Beautify function here is also a good safety net for recovering a readable version if the original source was ever lost.</p>
+
+  <h3>Step-by-Step: Minifying or Beautifying CSS</h3>
+  <div class="tool-steps">
+    <div class="tool-step"><strong>1. Paste your CSS</strong>Enter or paste your stylesheet into the input box.</div>
+    <div class="tool-step"><strong>2. Choose an action</strong>Click Minify to compress it, or Beautify to format readable code from a minified version.</div>
+    <div class="tool-step"><strong>3. Check the size comparison</strong>After minifying, review the original size, new size, and percentage saved.</div>
+    <div class="tool-step"><strong>4. Copy the output</strong>Click Copy to grab the processed CSS for use in your project.</div>
+  </div>
 </section>
 
 <div class="content-card related-tools">
@@ -122,21 +150,6 @@
     <a href="/tools/css-box-shadow-generator" class="tool-item"><div class="ti-text"><h4>CSS Box Shadow Generator</h4><p>Build box shadows visually with CSS output.</p></div></a>
   </div>
 </div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">css minifier</span>
-        <span class="keyword-tag">css minifier online</span>
-        <span class="keyword-tag">minify css free</span>
-        <span class="keyword-tag">css beautifier</span>
-        <span class="keyword-tag">css formatter online</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <div id="footer"></div>
 <script src="/assets/js/main.js" defer></script>

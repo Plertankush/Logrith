@@ -84,6 +84,9 @@
     <div class="faq-item-box"><h3>Can this convert decimal numbers?</h3><p>This tool converts whole numbers. For amounts with cents or decimals, the whole and fractional parts are typically written out separately, as is standard on checks.</p></div>
     <div class="faq-item-box"><h3>What's the largest number this supports?</h3><p>This tool supports numbers up into the trillions, covering virtually any everyday use case.</p></div>
     <div class="faq-item-box"><h3>Does this handle negative numbers?</h3><p>Yes, negative numbers are converted with a "negative" prefix, such as "negative ninety-nine."</p></div>
+    <div class="faq-item-box"><h3>Is my number sent to a server?</h3><p>No, the conversion runs entirely in your browser using JavaScript. Nothing you enter is transmitted anywhere.</p></div>
+    <div class="faq-item-box"><h3>Does this use the short scale or long scale naming system?</h3><p>This tool uses the short scale, the standard in the US and most English-speaking countries, where one billion equals one thousand million. Some other countries use the long scale, where a billion equals one million million instead.</p></div>
+    <div class="faq-item-box"><h3>Can I paste a number that already has commas?</h3><p>Yes, commas in the input (like "1,234,567") are automatically stripped before conversion, so pasting a formatted number works without needing to remove the commas first.</p></div>
   </div>
 </div>
 
@@ -97,6 +100,9 @@
   <h3>How This Tool Works</h3>
   <p>The converter breaks your number down into groups of three digits (ones, thousands, millions, billions, and so on), converts each group into words using standard English number-naming rules, and joins the groups together with their appropriate scale word. This follows the standard short-scale naming convention used in English-speaking countries, where each new scale word (thousand, million, billion) represents a thousand-fold increase from the previous one.</p>
 
+  <h3>Short Scale vs. Long Scale: An International Difference</h3>
+  <p>Not every country names large numbers the same way. The short scale, used by this tool and standard across the US, UK, and most English-speaking countries today, defines a billion as a thousand million (1,000,000,000). The long scale, historically used in many European countries, instead defines a billion as a million million (1,000,000,000,000) — what the short scale calls a trillion. Most European countries have since adopted the short scale for everyday use, but the distinction occasionally still causes confusion in translated or historical documents, which is worth keeping in mind for any number translated from a long-scale source.</p>
+
   <h3>Common Uses</h3>
   <ul class="feature-list">
     <li><strong>Writing checks</strong> — filling in the "amount in words" line accurately.</li>
@@ -105,8 +111,23 @@
     <li><strong>Learning and teaching</strong> — helping students understand how large numbers are named and structured.</li>
   </ul>
 
+  <h3>Writing Out a Dollar Amount on a Check Correctly</h3>
+  <p>When filling out a check, the written-word line typically needs both the whole-dollar amount in words and the cents as a fraction — for example, $1,234.56 is written as "One thousand two hundred thirty-four and 56/100." This tool converts the whole-number portion for you; simply append "and [cents]/100" after the converted result to complete a standard check-writing format.</p>
+
   <h3>Privacy and Local Processing</h3>
-  <p>All conversion happens directly in your browser — no numbers you enter are sent to a server.</p>
+  <p>All conversion happens directly in your browser — no numbers you enter are sent to a server, logged, or stored anywhere.</p>
+
+  <h3>How Large Numbers Are Named in English</h3>
+  <p>English number names follow a consistent pattern of grouping digits into sets of three, each with its own scale word — thousand, million, billion, trillion — and this tool follows that same convention automatically. Understanding this grouping also explains why large numbers are traditionally written with commas every three digits (1,234,567 rather than 1234567): each comma marks exactly where one scale word's group ends and the next begins, which is the same grouping this converter uses internally to build the written-out result.</p>
+
+  <h3>Hyphenation Rules for Compound Numbers</h3>
+  <p>English convention hyphenates compound numbers from twenty-one through ninety-nine when they're not a round multiple of ten — "twenty-three," "fifty-six," "ninety-nine" — but not round tens themselves, like "twenty" or "fifty" alone. This tool follows that standard hyphenation convention automatically, so a number like 47 correctly outputs "forty-seven" with a hyphen, while 40 outputs simply "forty" without one. Getting this right matters most in formal contexts like legal documents, where consistent, correct hyphenation is often expected as part of proper written English.</p>
+
+  <h3>When Writing Numbers as Words Is Required vs. Optional</h3>
+  <p>Some contexts make spelling out numbers mandatory — check writing is the clearest example, where financial institutions specifically require the written form as the authoritative amount. Other contexts make it a matter of style convention rather than strict requirement — many style guides for formal writing recommend spelling out numbers under a certain threshold (commonly ten or one hundred) while using digits for larger figures, purely for readability rather than any legal necessity. Knowing which category your specific document falls into helps determine whether spelling out a number is a hard requirement or simply a stylistic choice.</p>
+
+  <h3>Avoiding Ambiguity in Formal Documents</h3>
+  <p>Beyond preventing deliberate tampering, writing a number in words also protects against simple transcription or printing errors. A faint or smudged digit on a printed check could be misread as a different number, but the same ambiguity rarely occurs with a fully spelled-out word, since a misread letter is far less likely to transform one number word into a different, equally valid one. This is part of why formal legal and financial documents often include both the numeric and the written form side by side — if the two ever disagree, the written-word form is typically treated as authoritative specifically because it's harder to alter or misread, giving both parties a reliable way to catch and resolve a discrepancy before the document is finalized.</p>
 </section>
 
 <div class="content-card related-tools">
@@ -118,21 +139,6 @@
     <a href="/tools/currency-converter" class="tool-item"><div class="ti-text"><h4>Currency Converter</h4><p>Convert between currencies with your own rate.</p></div></a>
   </div>
 </div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">number to words converter</span>
-        <span class="keyword-tag">spell out numbers</span>
-        <span class="keyword-tag">number to words online</span>
-        <span class="keyword-tag">convert number to text</span>
-        <span class="keyword-tag">numbers in words generator</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <div id="footer"></div>
 <script src="/assets/js/main.js" defer></script>

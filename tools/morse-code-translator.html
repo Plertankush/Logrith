@@ -93,6 +93,9 @@
     <div class="faq-item-box"><h3>Can I hear the Morse code as audio?</h3><p>Yes, click "Play Morse Audio" to hear the encoded signal played as beeps, matching standard dot and dash timing.</p></div>
     <div class="faq-item-box"><h3>What characters are supported?</h3><p>Letters A-Z, numbers 0-9, and common punctuation marks are all supported for both encoding and decoding.</p></div>
     <div class="faq-item-box"><h3>Is Morse code still used today?</h3><p>While largely replaced by digital communication, Morse code remains in use among amateur radio operators, in aviation navigation aids, and as an emergency signaling method (like SOS).</p></div>
+    <div class="faq-item-box"><h3>Is my text sent to a server?</h3><p>No, encoding, decoding, and audio generation all happen locally using your browser's Web Audio API. Nothing you enter leaves your device.</p></div>
+    <div class="faq-item-box"><h3>Why does SOS use such a simple pattern?</h3><p>SOS (three dots, three dashes, three dots) was chosen specifically because it's simple, unmistakable, and easy to recognize even under poor signal conditions or by an inexperienced operator — which is exactly why it became the standard international distress signal.</p></div>
+    <div class="faq-item-box"><h3>Can this translate lowercase letters?</h3><p>Yes, input is automatically normalized to uppercase before encoding, since Morse code itself doesn't distinguish between letter cases.</p></div>
   </div>
 </div>
 
@@ -102,6 +105,9 @@
 
   <h3>How Morse Code Works</h3>
   <p>Morse code represents each letter, number, and common punctuation mark as a unique sequence of dots (short signals) and dashes (long signals, traditionally three times the duration of a dot). Letters within a word are separated by a short pause, and words are separated by a longer pause. This encoding was designed so that common letters (like E and T) use the shortest sequences, while less common letters use longer ones, making the system efficient for manual transmission by telegraph key or radio.</p>
+
+  <h3>Why Letter Frequency Shaped the Code</h3>
+  <p>One of the cleverer design decisions behind Morse code is that it isn't arbitrary — the most frequently used letters in English were deliberately assigned the shortest sequences. "E," the most common letter in English, is a single dot. "T," the next most common, is a single dash. Less frequent letters like "Q," "X," and "Z" get longer, more complex sequences. This frequency-based design meant that, on average, a message would take less time to transmit by hand than if letters were assigned sequences randomly, which mattered enormously back when every signal had to be tapped out manually by a trained operator.</p>
 
   <h3>Where Morse Code Is Still Used</h3>
   <ul class="feature-list">
@@ -114,8 +120,20 @@
   <h3>How This Tool Works</h3>
   <p>The tool uses the standard International Morse Code character mapping to convert each letter, digit, or punctuation mark in your text to its corresponding dot-dash sequence, or to reverse that process when decoding. For audio playback, it uses the Web Audio API to generate short and long tones with correctly proportioned timing and pauses, closely matching how Morse code sounds when transmitted.</p>
 
+  <h3>Reading Morse Code by Ear</h3>
+  <p>Experienced Morse code operators don't count dots and dashes individually — they learn to recognize the overall rhythm of each letter as a single audible pattern, the way a fluent reader recognizes whole words rather than sounding out individual letters. This tool's audio playback follows standard timing proportions, which makes it a reasonable way to get a feel for how real Morse code sounds, though building genuine reading fluency by ear takes sustained practice well beyond what any single tool can provide.</p>
+
   <h3>Privacy and Local Processing</h3>
-  <p>All encoding, decoding, and audio generation happens directly in your browser — nothing is sent to a server.</p>
+  <p>All encoding, decoding, and audio generation happens directly in your browser — nothing you enter is sent to a server, logged, or stored anywhere.</p>
+
+  <h3>Learning to Recognize Common Morse Patterns</h3>
+  <p>For anyone starting to learn Morse code, a good first step is memorizing a handful of the shortest, most frequent letters before moving to the full alphabet — E (a single dot), T (a single dash), A, I, M, N, and S cover a disproportionate share of everyday English text since they're among the most common letters and have some of the shortest codes. Building familiarity with these few patterns first, rather than trying to memorize all 26 letters at once, tends to make the rest of the alphabet easier to pick up afterward, since the longer sequences are often built from combinations of these same basic short and long signal patterns.</p>
+
+  <h3>The History Behind Morse Code</h3>
+  <p>Morse code was developed in the 1830s and 1840s alongside the invention of the electrical telegraph, designed specifically to let operators transmit text over wires using simple on-off electrical pulses. Before Morse code, there was no efficient standardized way to send written messages faster than physical mail could travel. For roughly a century, it was the backbone of long-distance communication — used for everything from personal telegrams to naval and wartime communication — before being gradually displaced through the 20th century by voice radio, teleprinters, and eventually digital communication systems entirely.</p>
+
+  <h3>Decoding Morse Code Manually</h3>
+  <p>When decoding Morse code by eye rather than by ear, the key is recognizing that spacing carries as much meaning as the dots and dashes themselves. A single space typically separates individual dots and dashes within one letter, a larger gap separates one complete letter from the next, and an even larger gap separates one word from the next. This tool's input format follows that same convention, using a forward slash to mark word boundaries, which keeps the decoding process unambiguous even for longer messages with multiple words and multiple sentences strung together.</p>
 </section>
 
 <div class="content-card related-tools">
@@ -128,20 +146,7 @@
   </div>
 </div>
 
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">morse code translator</span>
-        <span class="keyword-tag">morse code converter</span>
-        <span class="keyword-tag">text to morse code</span>
-        <span class="keyword-tag">morse code to text</span>
-        <span class="keyword-tag">morse code generator</span>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <div id="footer"></div>
 <script src="/assets/js/main.js" defer></script>

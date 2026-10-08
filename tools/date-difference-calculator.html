@@ -95,6 +95,9 @@
     <div class="faq-item-box"><h3>Can I calculate working days between two dates?</h3><p>This tool calculates total calendar days and also shows the count of weekdays (excluding Saturdays and Sundays) between the two dates.</p></div>
     <div class="faq-item-box"><h3>Does the order of dates matter?</h3><p>No, you can enter either date as start or end — the tool automatically calculates the absolute difference regardless of order.</p></div>
     <div class="faq-item-box"><h3>How is this different from the Age Calculator?</h3><p>The Age Calculator is specifically for calculating age from a date of birth to today (or another date). This tool calculates the difference between any two arbitrary dates, for any purpose.</p></div>
+    <div class="faq-item-box"><h3>Is my date data sent to a server?</h3><p>No, every calculation runs locally in your browser using JavaScript's date handling. The dates you enter are never transmitted anywhere.</p></div>
+    <div class="faq-item-box"><h3>Does this account for leap years correctly?</h3><p>Yes, the years/months/days breakdown is calculated using calendar-aware logic that correctly accounts for February's varying length in leap versus non-leap years.</p></div>
+    <div class="faq-item-box"><h3>Does the weekday count account for public holidays?</h3><p>No, the weekday count only distinguishes Monday-Friday from Saturday-Sunday based on the calendar. It doesn't know about regional public holidays, which would need to be subtracted separately for a true business-day count.</p></div>
   </div>
 </div>
 
@@ -104,6 +107,12 @@
 
   <h3>How the Calculation Works</h3>
   <p>The tool first determines which of your two entered dates is earlier, then calculates the difference using calendar-aware arithmetic that correctly accounts for varying month lengths (28-31 days) and leap years, producing an accurate years/months/days breakdown. Alongside this, it computes the total number of calendar days and weeks between the dates using straightforward millisecond-based subtraction, plus a count of weekdays (Monday through Friday) versus weekend days within the span.</p>
+
+  <h3>Why Calendar-Aware Math Matters Here</h3>
+  <p>A naive approach to finding the difference between two dates in years, months, and days might simply subtract year, month, and day numbers independently, but this breaks down the moment the day-of-month numbers don't align cleanly — subtracting March 5 from February 28 can't just subtract "5 minus 28" without borrowing from the month above, exactly like borrowing in manual subtraction with regular numbers. This tool's calculation correctly borrows from the preceding month or year when needed, and correctly accounts for the fact that months have different lengths (28, 29, 30, or 31 days) depending on which month and whether it's a leap year, producing an accurate breakdown rather than one that's subtly wrong around month and year boundaries.</p>
+
+  <h3>Working Backward: Finding a Date From a Known Duration</h3>
+  <p>While this tool is built around finding the difference between two known dates, the same underlying date arithmetic naturally supports the reverse question too — if you know a duration and one endpoint, you can work out the other endpoint by entering your known date alongside an estimated target and adjusting until the calculated difference matches your intended duration. This back-and-forth approach is a practical way to pin down a specific date when you know how far it should be from a reference point but aren't certain of the exact calendar date itself.</p>
 
   <h3>Common Uses for Date Difference Calculations</h3>
   <ul class="feature-list">
@@ -117,8 +126,25 @@
   <h3>Understanding Weekday vs. Total Day Counts</h3>
   <p>This tool distinguishes between total calendar days (every day, including weekends) and weekday count (only Monday through Friday), since many practical applications — like calculating business days for a project timeline or a service level agreement — specifically care about working days rather than the full calendar span.</p>
 
+  <h3>A Note on Business Days vs. Weekdays</h3>
+  <p>It's worth distinguishing "weekdays" from "business days" precisely, since they're not always the same thing. This tool's weekday count reflects purely calendar-based Monday-through-Friday counting, without any awareness of public holidays specific to a country or region. A true business-day count for contract or payroll purposes in a specific location would need to additionally subtract any relevant public holidays that fall within the date range, which this tool doesn't account for since holiday calendars vary significantly by country and even by region within a country.</p>
+
+  <h3>Step-by-Step: Calculating a Date Difference</h3>
+  <div class="tool-steps">
+    <div class="tool-step"><strong>1. Select the start date</strong>Choose the earlier date in your range.</div>
+    <div class="tool-step"><strong>2. Select the end date</strong>Choose the later date, or any second date to compare.</div>
+    <div class="tool-step"><strong>3. Click Calculate</strong>Get the full breakdown instantly.</div>
+    <div class="tool-step"><strong>4. Review the results</strong>Check years/months/days, total days, weeks, and weekday count.</div>
+  </div>
+
   <h3>Privacy and Local Processing</h3>
-  <p>All calculations run directly in your browser using JavaScript's built-in date handling — no dates you enter are sent to a server or stored anywhere.</p>
+  <p>All calculations run directly in your browser using JavaScript's built-in date handling — no dates you enter are sent to a server, logged, or stored anywhere.</p>
+
+  <h3>Choosing Years/Months/Days vs. Total Days</h3>
+  <p>Which output format matters most depends on what you're actually trying to communicate. "2 years, 3 months, 14 days" reads naturally and intuitively for describing someone's age or a relationship's duration, but is awkward for precise scheduling math. "823 total days" is harder to intuitively grasp but is exactly what's needed for calculations like figuring out a per-day rate, confirming a contract's precise duration against a stated day-count clause, or any context where the figure needs to be used in further arithmetic. This tool provides both formats together specifically so you don't have to choose in advance which one your situation will end up needing.</p>
+
+  <h3>Common Scenarios Where Exact Day Counts Matter</h3>
+  <p>Precise day counts matter more often than people expect in everyday situations — a prorated rent or subscription calculation needs the exact number of days in a partial billing period, a legal notice period often specifies an exact number of days rather than a rounded month, and travel insurance or visa duration limits are frequently expressed and enforced in precise day counts rather than approximate months. In all of these cases, counting days by hand on a calendar is both tedious and genuinely error-prone, particularly across a month boundary, which is exactly the kind of calculation this tool is built to handle instantly and reliably every time.</p>
 </section>
 
 <div class="content-card related-tools">
@@ -130,21 +156,6 @@
     <a href="/tools/time-zone-converter" class="tool-item"><div class="ti-text"><h4>Time Zone Converter</h4><p>Convert a time between world time zones.</p></div></a>
   </div>
 </div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">date difference calculator</span>
-        <span class="keyword-tag">days between two dates</span>
-        <span class="keyword-tag">date calculator online</span>
-        <span class="keyword-tag">calculate days between dates</span>
-        <span class="keyword-tag">date duration calculator</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <div id="footer"></div>
 <script src="/assets/js/main.js" defer></script>

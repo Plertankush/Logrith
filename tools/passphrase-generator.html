@@ -104,6 +104,9 @@
     <div class="faq-item-box"><h3>What is a diceware passphrase?</h3><p>A passphrase created by randomly selecting words from a large word list, originally using physical dice. The resulting phrase is easier to remember than random characters while resisting guessing.</p></div>
     <div class="faq-item-box"><h3>Is a passphrase more secure than a random password?</h3><p>A sufficiently long passphrase (4+ random words) can match or exceed the entropy of a shorter random-character password, while being much easier to remember and type.</p></div>
     <div class="faq-item-box"><h3>How is this different from the Password Generator tool?</h3><p>The Password Generator creates random character strings (like "K9#mP2$vL"). This tool creates memorable multi-word phrases (like "Tiger-River-Cloud-42") that are easier for humans to recall.</p></div>
+    <div class="faq-item-box"><h3>Is my generated passphrase sent to a server?</h3><p>No, generation happens entirely in your browser using the Web Crypto API. Nothing is transmitted anywhere.</p></div>
+    <div class="faq-item-box"><h3>Where does the word "diceware" come from?</h3><p>Diceware is named after its original method: rolling physical dice to randomly select words from a numbered list, a technique developed specifically to generate passphrases with verifiable, unbiased randomness before computers made digital random generation convenient.</p></div>
+    <div class="faq-item-box"><h3>Should I add a number or symbol to my passphrase?</h3><p>Yes, where the account allows it. A random number appended to the end meaningfully increases the total possible combinations with minimal added difficulty to remember or type.</p></div>
   </div>
 </div>
 
@@ -117,6 +120,9 @@
   <h3>Passphrase vs. Traditional Password</h3>
   <p>Traditional advice pushed for short, complex passwords mixing uppercase, lowercase, numbers, and symbols — but these are often hard to remember and prone to being written down or reused. A longer passphrase built from multiple random words achieves comparable or better resistance to brute-force guessing, while being significantly easier for a person to actually remember without writing it down, which reduces a different, very common security risk.</p>
 
+  <h3>Why Word Count Matters More Than Word Complexity</h3>
+  <p>A common instinct is to pick obscure or unusual words to feel more secure, but this misunderstands where a passphrase's strength actually comes from. Security comes from the total search space an attacker would need to try — which depends on how many words are randomly selected and how large the word list is, not on whether any individual word feels exotic. Using unusual words instead of common ones doesn't meaningfully increase security if drawn from the same size word list; what matters is adding another random word to the phrase, since each additional word multiplies the total combinations by the full size of the word list.</p>
+
   <h3>Tips for Using This Tool</h3>
   <ul class="feature-list">
     <li><strong>Use at least 4 words</strong> for meaningful security — more words meaningfully increase the total combinations.</li>
@@ -125,8 +131,28 @@
     <li><strong>Still use a password manager</strong> where possible — passphrases are for cases where you need to actually remember and type a credential yourself.</li>
   </ul>
 
+  <h3>How This Tool's Word List Was Chosen</h3>
+  <p>The word list used for generation draws from common, easy-to-spell, everyday English words, deliberately avoiding obscure terms, homophones, or words with ambiguous spelling that could make a generated passphrase harder to type back correctly from memory. This matters because a passphrase that's technically random but full of hard-to-spell words defeats part of the purpose — the whole point of a passphrase over a random character string is that a human can reliably reproduce it, which requires every word in the pool to be unambiguous and simple to type correctly on the first attempt.</p>
+
+  <h3>When a Passphrase Is the Better Choice</h3>
+  <p>A passphrase makes the most sense specifically for credentials you need to type manually and remember without a password manager — a device unlock passcode, a master password for a password manager itself, or a shared household WiFi password that multiple people need to type on different devices. For every other account, where a password manager can generate and store a long random password you never need to type or memorize, a traditional random-character password remains a perfectly strong choice, and the two approaches aren't in competition so much as suited to different situations.</p>
+
+  <h3>Step-by-Step: Generating a Passphrase</h3>
+  <div class="tool-steps">
+    <div class="tool-step"><strong>1. Set your word count</strong>Use the slider to choose between 3 and 8 words.</div>
+    <div class="tool-step"><strong>2. Choose a separator</strong>Pick a hyphen, dot, underscore, or space.</div>
+    <div class="tool-step"><strong>3. Toggle capitalization and number</strong>Enable these for extra complexity where the account allows.</div>
+    <div class="tool-step"><strong>4. Generate and copy</strong>Click Generate Passphrase and copy the result.</div>
+  </div>
+
   <h3>Privacy and Local Processing</h3>
-  <p>All passphrase generation happens directly in your browser using the Web Crypto API's cryptographically secure random number generator — nothing is sent to a server or logged.</p>
+  <p>All passphrase generation happens directly in your browser using the Web Crypto API's cryptographically secure random number generator — nothing is sent to a server, logged, or stored.</p>
+
+  <h3>Why Predictable Word Patterns Weaken a Passphrase</h3>
+  <p>The security math behind passphrases assumes the words are genuinely randomly selected from the full word list — not chosen by a person trying to construct something memorable, which tends to introduce predictable patterns. A passphrase like "correct-horse-battery-staple," while a well-known example of the concept, would actually be a weak real-world choice specifically because it's now widely recognized, meaning an attacker's guessing list would likely include it directly. This is exactly why this tool uses true random selection rather than letting you hand-pick memorable words — genuine randomness, not perceived cleverness, is what provides real security against automated guessing.</p>
+
+  <h3>Memorization Tips for a Newly Generated Passphrase</h3>
+  <p>A freshly generated random passphrase won't feel memorable immediately, but a few techniques help it stick faster than simply staring at it repeatedly. Try constructing a brief, even absurd, mental image or short story connecting the words in order — the more vivid or unusual the imagined scene, the more memorable it tends to be, since human memory generally retains distinctive imagery better than arbitrary text. Typing the passphrase out manually several times in the minutes after generating it, rather than only reading it silently, also reinforces muscle memory in a way that pure visual review doesn't achieve nearly as effectively, especially for a passphrase you'll need to type from memory regularly.</p>
 </section>
 
 <div class="content-card related-tools">
@@ -138,21 +164,6 @@
     <a href="/tools/random-name-generator" class="tool-item"><div class="ti-text"><h4>Random Name Generator</h4><p>Generate random names for various uses.</p></div></a>
   </div>
 </div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">passphrase generator</span>
-        <span class="keyword-tag">diceware passphrase generator</span>
-        <span class="keyword-tag">memorable password generator</span>
-        <span class="keyword-tag">word based password generator</span>
-        <span class="keyword-tag">secure passphrase online</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <div id="footer"></div>
 <script src="/assets/js/main.js" defer></script>
