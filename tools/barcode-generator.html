@@ -101,6 +101,32 @@
   </div>
 </div>
 
+<section class="seo-section">
+  <div class="seo-wrap">
+    <div class="content-card">
+      <h2>How to Use the Barcode Generator</h2>
+      <div class="tool-steps">
+        <div class="tool-step">
+          <strong>1. Type your text or numbers</strong>
+          Enter the product code, SKU, tracking number, or any text you want encoded into the input field.
+        </div>
+        <div class="tool-step">
+          <strong>2. Adjust bar width and height</strong>
+          Use the sliders to set how thick each bar is and how tall the barcode appears, depending on your label size or printing needs.
+        </div>
+        <div class="tool-step">
+          <strong>3. Click Generate Barcode</strong>
+          The tool encodes your text into CODE128 Subset B, calculates the checksum, and renders the barcode onto a canvas.
+        </div>
+        <div class="tool-step">
+          <strong>4. Download the PNG</strong>
+          Click Download PNG to save the generated barcode image for printing on labels or embedding in documents.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="article-section">
   <h2>Generate CODE128 Barcodes Online</h2>
   <p>This tool generates real, scannable CODE128 barcodes from any text or number sequence, using the standard CODE128 Subset B encoding table with a correctly calculated checksum, rendered as a downloadable PNG image.</p>
@@ -121,6 +147,33 @@
 
   <h3>Privacy and Local Processing</h3>
   <p>All barcode generation happens directly in your browser using Canvas rendering — your input text is never sent to a server.</p>
+
+  <h3>Understanding CODE128 Subset B</h3>
+  <p>CODE128 actually has three subsets (A, B, and C) optimized for different kinds of data — Subset C packs pairs of digits for very dense numeric encoding, while Subset A and B cover the full printable ASCII range with different control-character support. This tool uses Subset B, which covers all standard uppercase and lowercase letters, digits, and common punctuation (ASCII values 32 through 126), making it the right choice for general-purpose alphanumeric codes like product SKUs, names, and mixed-format reference numbers rather than purely long numeric strings.</p>
+
+  <h3>How the Checksum Prevents Misreads</h3>
+  <p>Every valid CODE128 barcode includes a checksum character calculated from the data it encodes, which this tool computes by taking the start code's value, adding each subsequent character's value multiplied by its position in the sequence, and reducing the total modulo 103. A scanner recalculates this same checksum from what it reads and compares it to the checksum encoded in the barcode — if they don't match, the scanner rejects the read instead of reporting incorrect data, which is why a correctly calculated checksum (as this tool produces) matters for real-world reliability, not just visual appearance.</p>
+
+  <h3>Why This Produces a Scannable Barcode, Not Just an Image</h3>
+  <p>A barcode isn't just black and white stripes arranged to look right — each character maps to one of 107 precise 11-bit bar-and-space patterns defined by the CODE128 specification, and the sequence must begin with a valid start pattern and end with the standard stop pattern for a scanner to recognize it at all. This tool looks up each encoded value in the official CODE128 pattern table and renders bars pixel-for-pixel according to that pattern, rather than generating a barcode-like image that only resembles a real one — meaning the output can be scanned by real hardware and scanning apps, not just displayed for visual reference.</p>
+
+  <h3>Choosing Bar Width and Height</h3>
+  <p>Bar width controls how many pixels wide each unit bar is — thinner bars make a more compact barcode but require a higher-resolution scanner or printer to read reliably, while thicker bars are more forgiving for lower-quality printing or phone camera scanning but produce a wider image. Height is mostly a readability and aesthetic choice, since CODE128 is a 1D (linear) format read horizontally, though taller bars do make it easier for a handheld scanner to get a clean read if the scan angle isn't perfectly level.</p>
+
+  <h3>For Small Business and Inventory Use</h3>
+  <p>Small shops and warehouses that need a handful of barcodes for internal product or bin labeling — without paying for commercial barcode software or a subscription service — can generate exactly the codes they need here and print them directly onto label sheets. Since each character you type maps predictably to the encoded result, the same input text will always generate the identical barcode, which matters if you need to regenerate a lost label and have it still match your existing inventory records.</p>
+
+  <h3>Supported and Unsupported Characters</h3>
+  <p>CODE128 Subset B as implemented here supports standard printable ASCII characters — uppercase and lowercase letters, digits 0-9, spaces, and common punctuation and symbols found on a standard keyboard. Characters outside this printable range (such as extended Unicode characters, emoji, or certain control characters) aren't supported and will produce an error message naming the specific unsupported character, so you can adjust your input rather than getting a silently broken barcode.</p>
+
+  <h3>Frequently Searched Terms</h3>
+  <p>This tool is commonly found through searches like "barcode generator online free," "code128 barcode maker," "generate barcode from text free," "scannable barcode generator," and "download barcode png." It produces standard-compliant, scanner-readable CODE128 barcodes with no account or software installation required.</p>
+
+  <h3>CODE128 vs. Other Barcode Formats</h3>
+  <p>CODE128 is denser than older formats like Code39, meaning it can encode the same data in a shorter physical length, which matters when label space is limited. It differs from UPC/EAN formats used on retail packaging, which are fixed-length numeric codes tied to a product registration system (GS1) rather than arbitrary text — CODE128 is the better fit for internal reference codes, tracking numbers, and asset tags where you control both the encoding and the scanning, rather than for retail point-of-sale barcodes that need to match a registered product number.</p>
+
+  <h3>Printing Tips for Reliable Scans</h3>
+  <p>For a barcode to scan reliably when printed, it needs a clear quiet zone (blank space) on either side — this tool automatically adds that margin around the generated bars. When printing, avoid scaling the image in a way that blurs the bar edges, and test a printed label with an actual scanner or a phone scanning app before producing a full batch, since printer resolution and paper quality can affect how cleanly thin bars reproduce.</p>
 </section>
 
 <div class="content-card related-tools">

@@ -96,6 +96,32 @@
   </div>
 </div>
 
+<section class="seo-section">
+  <div class="seo-wrap">
+    <div class="content-card">
+      <h2>How to Use the Image Color Picker</h2>
+      <div class="tool-steps">
+        <div class="tool-step">
+          <strong>1. Upload your image</strong>
+          Drag and drop a PNG, JPG, or WEBP file onto the upload zone, or click it to browse your device (up to 10MB).
+        </div>
+        <div class="tool-step">
+          <strong>2. Click anywhere on the image</strong>
+          Once it loads onto the canvas, click any point to read the exact HEX and RGB color at that pixel, along with its x/y position.
+        </div>
+        <div class="tool-step">
+          <strong>3. Review the dominant palette</strong>
+          Scroll down to see the automatically extracted palette of the ten most common colors found across the whole photo.
+        </div>
+        <div class="tool-step">
+          <strong>4. Copy any swatch</strong>
+          Click a palette swatch to copy its HEX code to your clipboard for use in design tools or CSS.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="article-section">
   <h2>Pick Exact Colors From Any Image</h2>
   <p>This tool lets you click anywhere on an uploaded image to get the exact color at that pixel, shown as both HEX and RGB values ready to copy. It also automatically extracts a dominant color palette from the entire image, useful for quickly identifying a photo's overall color scheme.</p>
@@ -113,6 +139,38 @@
 
   <h3>Privacy and Local Processing</h3>
   <p>All color analysis happens locally in your browser using the Canvas API's pixel data access — your image is never uploaded to any server, keeping unpublished photos and designs completely private.</p>
+
+  <h3>How the Dominant Palette Is Extracted</h3>
+  <p>To find the most common colors across a potentially large image without scanning every single pixel, the tool samples pixels at a calculated interval based on the image's total pixel count, keeping the analysis fast even on large photos. Each sampled pixel's red, green, and blue values are rounded down to the nearest multiple of 32, which groups visually similar shades (like slightly different greens in foliage) into the same bucket rather than treating every minor variation as a separate color. The ten buckets with the highest pixel counts become the final palette, ordered from most to least common.</p>
+
+  <h3>Why Colors Are Rounded Into Buckets</h3>
+  <p>A typical photo can contain tens of thousands of distinct exact RGB values even in a small area, because of lighting gradients, compression artifacts, and natural color variation. Without rounding, a true "most common color" count would be almost meaningless — nearly every pixel would be unique. Rounding to steps of 32 per channel groups nearby shades together so the resulting palette reflects the image's real visual color regions (sky, skin, foliage, background) rather than noise.</p>
+
+  <h3>For Designers Matching Brand or Reference Colors</h3>
+  <p>When a client sends a logo, product photo, or mood board and you need the exact colors used in it, clicking directly on the relevant area gives you the precise HEX value at that pixel rather than an eyeballed approximation. This is more reliable than guessing a color value by eye, especially for colors that look similar but differ in ways that matter for brand consistency, like two shades of blue that look nearly identical on screen but have different HEX codes.</p>
+
+  <h3>For Illustrators and Digital Painters</h3>
+  <p>Sampling real-world reference photos is a common technique for picking believable colors for skin tones, skies, water, and materials. Uploading a reference photo and clicking across different lit and shadowed areas gives exact color values that can be plugged directly into digital painting software, rather than relying on memory or approximation for how a highlight or shadow color should look.</p>
+
+  <h3>Canvas-Based Pixel Reading Explained</h3>
+  <p>The tool draws your uploaded image onto an HTML5 canvas element, which exposes a getImageData() method giving direct access to the raw RGBA value of any pixel coordinate. When you click the image, the click position is translated from screen coordinates to canvas pixel coordinates (accounting for any scaling if the image was resized to fit the display area), and that exact pixel's color is read and displayed. This is the same low-level approach browser-based image editing tools use internally for color sampling.</p>
+
+  <h3>Common Use Cases</h3>
+  <ul class="feature-list">
+    <li><strong>Web development</strong> — pulling an exact background or accent color from a design mockup screenshot.</li>
+    <li><strong>Social media graphics</strong> — matching new graphics to the dominant colors of an existing brand photo.</li>
+    <li><strong>Print and packaging</strong> — checking color values from a product photo before ordering materials.</li>
+    <li><strong>Accessibility checks</strong> — reading exact foreground and background colors from a screenshot to check contrast ratios elsewhere.</li>
+  </ul>
+
+  <h3>Frequently Searched Terms</h3>
+  <p>People search for this tool using phrases like "pick color from image online," "eyedropper tool online free," "get hex code from photo," "dominant color extractor," and "image to color palette generator." This page covers each of these with a click-to-sample eyedropper and an automatic palette extractor in one tool.</p>
+
+  <h3>Image Size and Display Scaling</h3>
+  <p>Large images are automatically scaled down to fit within a maximum display width so the canvas stays usable on screen, but the color sampling still reads the correct pixel because click coordinates are converted back through the scale ratio before looking up the color. This means the HEX and RGB values you get are accurate to the image as displayed, regardless of how large the original upload was.</p>
+
+  <h3>Difference From a Desktop Eyedropper Tool</h3>
+  <p>A system-level eyedropper (like the one built into some operating systems or design apps) can sample any pixel on your entire screen, while this tool only samples pixels within the uploaded image itself. That's usually an advantage for web work, since it means you can share just the image file with the tool rather than needing the full design app open, and the sampling works identically across any device with a browser.</p>
 </section>
 
 <div class="content-card related-tools">

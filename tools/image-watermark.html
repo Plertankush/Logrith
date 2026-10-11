@@ -128,6 +128,32 @@
   </div>
 </div>
 
+<section class="seo-section">
+  <div class="seo-wrap">
+    <div class="content-card">
+      <h2>How to Use the Image Watermark Tool</h2>
+      <div class="tool-steps">
+        <div class="tool-step">
+          <strong>1. Upload your image</strong>
+          Drag a PNG, JPG, or WEBP file into the upload zone, or click it to browse your device — files up to 10MB are supported.
+        </div>
+        <div class="tool-step">
+          <strong>2. Type your watermark text</strong>
+          Enter the text you want overlaid on the image, such as a name, brand, or copyright line.
+        </div>
+        <div class="tool-step">
+          <strong>3. Adjust position, size, color, and opacity</strong>
+          Pick a corner, center, or tiled placement, then fine-tune the font size, color, and transparency until the preview looks right.
+        </div>
+        <div class="tool-step">
+          <strong>4. Download the watermarked image</strong>
+          Click Download to save the final PNG with the watermark baked permanently into the image.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="article-section">
   <h2>Free Text Watermark Tool for Images</h2>
   <p>This tool lets you add a customizable text watermark to any image directly in your browser — no software, no signup, and no uploads to a server. You control the watermark text, position, font size, color, and opacity, then download the result as a full-resolution PNG.</p>
@@ -148,6 +174,37 @@
 
   <h3>Privacy and Local Processing</h3>
   <p>All watermarking happens locally in your browser using the Canvas API. Your original image is never uploaded to a server, keeping unpublished photos and designs completely private until you choose to share them.</p>
+
+  <h3>Common Use Cases for Text Watermarks</h3>
+  <ul class="feature-list">
+    <li><strong>Freelance photographers:</strong> watermark proof galleries before sending to clients, so low-resolution previews can't be used without payment.</li>
+    <li><strong>E-commerce sellers:</strong> stamp a store name or URL across product photos to stop competitors from lifting images for their own listings.</li>
+    <li><strong>Bloggers and writers:</strong> add a site name to featured images and infographics so screenshots shared on social media still credit the source.</li>
+    <li><strong>Designers sharing drafts:</strong> mark unapproved mockups as "DRAFT" or "PREVIEW" before sending them to a client for review.</li>
+    <li><strong>Students and researchers:</strong> label chart or diagram exports with attribution text before including them in a shared document or presentation.</li>
+  </ul>
+
+  <h3>For Developers: Why Canvas-Based Watermarking Works</h3>
+  <p>The tool draws the uploaded image onto an HTML5 canvas element at its native pixel dimensions, then calls <code>fillText()</code> with the chosen font, color, and <code>globalAlpha</code> value to composite the watermark directly into the pixel buffer. Because the text is rasterized onto the same canvas as the image — not layered as a separate HTML element — the exported PNG contains a single flattened image with no editable overlay, which is what makes the watermark difficult to strip out with simple cropping or layer removal.</p>
+
+  <h3>Manual Watermarking vs. This Tool</h3>
+  <p>Adding a watermark manually in a desktop editor like Photoshop or GIMP means creating a text layer, positioning it, setting blend mode and opacity, then flattening and exporting — a process that takes several minutes per image and requires installed software. This tool collapses that into adjustable sliders and a live preview, so the same result takes seconds and works from any browser, including on a phone, without installing anything.</p>
+
+  <h3>Tiled Watermarks for Stronger Protection</h3>
+  <p>The tiled mode repeats the watermark text across the entire image in a grid rather than placing it once in a corner. This is the strongest protection option available here: because the watermark appears dozens of times at regular intervals, no single crop can remove it without destroying most of the image content. It's the right choice for preview images, stock samples, or any photo you specifically don't want reused even in part.</p>
+
+  <h3>Choosing Watermark Color for Visibility</h3>
+  <p>A light color such as white or pale yellow typically reads best on darker photos, while black or dark gray stands out better on bright backgrounds. If an image has mixed tones, a mid-opacity gray often stays legible across both light and dark areas without needing to pick a single best-contrast color.</p>
+
+  <h3>Common Mistakes to Avoid</h3>
+  <ul class="feature-list">
+    <li><strong>Placing the watermark too close to the edge:</strong> text that touches the image border is easy to crop off entirely — leave some padding.</li>
+    <li><strong>Using very high opacity on photo subjects:</strong> a watermark at 90–100% opacity over a face or focal point can make the image look damaged rather than protected; keep it subtle for most photography use.</li>
+    <li><strong>Forgetting to re-export after each change:</strong> always check the live preview and re-download after adjusting text, position, or color, since the download link reflects the canvas at the time you click it.</li>
+  </ul>
+
+  <h3>Frequently Searched Terms</h3>
+  <p>People looking for this feature often search for phrases like "add text to photo online," "copyright stamp image free," "how to watermark photos for Instagram," "bulk watermark alternative," and "protect photos from theft online." This tool covers the single-image text watermarking case for all of these without requiring an account or software download.</p>
 </section>
 
 <div class="content-card related-tools">

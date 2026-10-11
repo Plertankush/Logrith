@@ -322,6 +322,38 @@
     <p>One of the biggest benefits of this online hash generator is privacy. The tool works directly in your browser, so your input text and selected files are processed locally without needing to be uploaded to a server. This makes it a practical choice for users who want a browser hash generator for local verification, fast debugging, or simple file integrity checks without installing extra software.</p>
 
     <p>You can also use the compare section to match two hash values instantly. This is useful when a software provider publishes an official checksum and you want to confirm your downloaded file matches it exactly. Whether you need a SHA-256 hash generator, a file hash checker, or a simple online checksum tool, this page is designed to stay fast, private, and easy to use.</p>
+
+    <h3>How the Hashing Actually Works</h3>
+    <p>This tool uses the Web Crypto API's <code>crypto.subtle.digest()</code> method, a native browser function built specifically for cryptographic operations. For text input, the string is first encoded to raw bytes with <code>TextEncoder</code>; for files, the browser reads the file directly into an <code>ArrayBuffer</code>. That byte data is passed to the digest function, which returns a fixed-length binary hash that's then converted to a readable hexadecimal string. Because this is a native browser API rather than a JavaScript-only implementation, hashing runs quickly even on large files without freezing the page.</p>
+
+    <h3>SHA-1 vs SHA-256 vs SHA-384 vs SHA-512</h3>
+    <ul class="feature-list">
+      <li><strong>SHA-1 (160-bit):</strong> produces a 40-character hex output; retained here for compatibility with older systems and legacy checksums, but collision attacks make it unsuitable for security-sensitive verification today.</li>
+      <li><strong>SHA-256 (256-bit):</strong> produces a 64-character hex output; the de facto standard for file checksums, Git commit hashes, TLS certificates, and most modern software integrity checks.</li>
+      <li><strong>SHA-384 (384-bit):</strong> produces a 96-character hex output; a truncated variant of SHA-512 used where a stronger hash than SHA-256 is wanted without the full SHA-512 length.</li>
+      <li><strong>SHA-512 (512-bit):</strong> produces a 128-character hex output; the longest and most collision-resistant option in this set, often used in high-security contexts or 64-bit optimized systems.</li>
+    </ul>
+
+    <h3>Verifying a File Download</h3>
+    <p>Software publishers frequently list an official SHA-256 checksum next to a download link specifically so users can confirm the file wasn't corrupted in transit or tampered with. After downloading, switch to the Hash File tab, select the downloaded file, and compare the generated SHA-256 value against the one published on the official site using the Compare Hashes tab — an exact match confirms the file is byte-for-byte identical to what the publisher released.</p>
+
+    <h3>For Developers: Practical Use Cases</h3>
+    <ul class="feature-list">
+      <li><strong>Cache-busting and asset fingerprinting:</strong> generate a short hash of a build artifact to use as a version identifier in a filename or URL.</li>
+      <li><strong>Debugging data pipelines:</strong> confirm two files or payloads are byte-identical across environments without doing a manual diff.</li>
+      <li><strong>Git and version control familiarity:</strong> Git itself uses SHA-1 (and increasingly SHA-256) to identify commits, so this tool is a quick way to understand how commit hashing works by hashing a file's contents directly.</li>
+      <li><strong>API payload verification:</strong> some APIs require a request body hash for signature verification — generate it here to debug an integration without writing throwaway code.</li>
+    </ul>
+
+    <h3>Common Mistakes When Comparing Hashes</h3>
+    <ul class="feature-list">
+      <li><strong>Comparing hashes from different algorithms:</strong> a SHA-1 hash will never equal a SHA-256 hash even for identical input, since they're different-length outputs from different functions — always compare like with like.</li>
+      <li><strong>Trailing whitespace or newlines:</strong> hashing text pasted with an extra trailing newline produces a different hash than the same text without it, since hash functions are sensitive to every byte of input.</li>
+      <li><strong>Case sensitivity confusion:</strong> hex hash output is case-insensitive in meaning but displayed in lowercase here — the compare tool lowercases both inputs automatically so capitalization differences won't cause a false mismatch.</li>
+    </ul>
+
+    <h3>Frequently Searched Terms</h3>
+    <p>People land on this tool searching for phrases like "sha256 online," "generate checksum from file," "verify file hash windows," "md5 vs sha256 checker," and "compare two hashes online." This page focuses on the SHA-1/SHA-256/SHA-384/SHA-512 family specifically, covering text hashing, file hashing, and direct hash comparison in one place.</p>
   </section>
 
   <section class="faq-section">

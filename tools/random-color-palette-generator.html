@@ -94,6 +94,32 @@
   </div>
 </div>
 
+<section class="seo-section">
+  <div class="seo-wrap">
+    <div class="content-card">
+      <h2>How to Use the Color Palette Generator</h2>
+      <div class="tool-steps">
+        <div class="tool-step">
+          <strong>1. Pick a harmony type</strong>
+          Choose Complementary, Analogous, or Triadic from the mode cards depending on the contrast level you want.
+        </div>
+        <div class="tool-step">
+          <strong>2. Generate a palette</strong>
+          Click "Generate New Palette" to produce a fresh set of colors based on a randomized starting hue.
+        </div>
+        <div class="tool-step">
+          <strong>3. Preview the swatches</strong>
+          Hover over any swatch in the strip to see it expand, and read the HEX code shown on each one.
+        </div>
+        <div class="tool-step">
+          <strong>4. Copy what you need</strong>
+          Click a swatch to copy its HEX code to your clipboard, then paste it into your CSS, design tool, or image editor.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="article-section">
   <h2>Generate Harmonious Color Palettes</h2>
   <p>This tool generates color palettes using established color theory principles — complementary, analogous, and triadic schemes — giving you a starting point of colors that are mathematically guaranteed to work well together, rather than a purely random and potentially clashing set.</p>
@@ -118,6 +144,47 @@
 
   <h3>Privacy and Local Processing</h3>
   <p>All color generation happens directly in your browser — nothing is sent to a server.</p>
+
+  <h3>Why Random Doesn't Mean Clashing</h3>
+  <p>Picking colors purely at random — three unrelated HEX values with no relationship to each other — almost always produces a set that fights visually: one color too warm, another too saturated, a third with no connection to the rest. This tool avoids that by never truly randomizing the whole palette. Only the starting hue is random; everything after that is locked to a fixed angular offset on the color wheel, so no matter which hue you land on, the resulting colors keep a consistent, intentional relationship to each other.</p>
+
+  <h3>How the Lightness and Saturation Values Are Chosen</h3>
+  <p>Beyond hue, each generated palette also randomizes saturation (roughly 55-80%) and lightness (roughly 45-60%) within a band that avoids washed-out pastels on one end and muddy, overly dark tones on the other. The complementary and triadic modes additionally generate a couple of lighter or darker variants of the base hues, giving you tint and shade options alongside the core colors rather than five flat, identical-value swatches.</p>
+
+  <h3>For Developers</h3>
+  <p>Each swatch displays its HEX code directly on the color, and clicking it copies that code to your clipboard immediately — no separate "copy" button to hunt for. This is built for dropping straight into a CSS file, a Tailwind config, or a design token list without retyping anything.</p>
+
+  <h3>For Designers Without a Design Background</h3>
+  <p>If you don't have formal training in color theory, this tool effectively teaches it by example: every palette you generate is a live demonstration of how complementary, analogous, and triadic relationships actually look next to each other, which makes it easier to eventually choose colors manually with more confidence.</p>
+
+  <h3>Comparison to Manually Picking Colors</h3>
+  <p>Manually selecting a palette usually means eyeballing a color wheel, guessing at hex values, or copying swatches from inspiration sites — a slow, trial-and-error process. This generator does the color-wheel math instantly, so you get a usable, theory-correct palette in one click instead of several minutes of guessing.</p>
+
+  <h3>Frequently Searched Terms</h3>
+  <ul class="feature-list">
+    <li>free color palette generator</li>
+    <li>complementary colors generator online</li>
+    <li>analogous color scheme generator</li>
+    <li>triadic color palette</li>
+    <li>HEX color palette generator</li>
+    <li>random color generator for design</li>
+  </ul>
+
+  <h3>A Note on Starting Hue</h3>
+  <p>Every click of "Generate New Palette" picks a fresh base hue between 0 and 360 degrees, so running the generator repeatedly on the same harmony type will eventually cycle through the full color wheel — useful if you're trying to find a specific mood (warm reds and oranges vs. cool blues and greens) rather than settling for the very first result.</p>
+
+  <h3>Choosing a Scheme for a Specific Project</h3>
+  <p>Complementary schemes work best when you need one color to clearly stand out against another — think a call-to-action button against a page background, or a sports brand that wants high energy. Analogous schemes suit projects where you want everything to feel like it belongs to the same family, such as a calm wellness app or a nature-themed blog. Triadic schemes are a middle ground: enough contrast to keep a design interesting, but with three related anchor points instead of two, which works well for data dashboards or multi-category UI elements that each need a distinct but coordinated color.</p>
+
+  <h3>Common Mistakes When Using Generated Palettes</h3>
+  <ul class="feature-list">
+    <li>Using all five colors from an analogous palette as equally-weighted UI elements — in practice, one should dominate as the primary color while the rest act as accents.</li>
+    <li>Ignoring contrast ratios for text — a palette that looks harmonious visually can still fail accessibility guidelines if light text sits on a light swatch.</li>
+    <li>Treating the generated lightness/shade variants as separate "extra" colors rather than tints of the same base hue meant for hover states, borders, or backgrounds.</li>
+  </ul>
+
+  <h3>Extending a Palette Beyond This Tool</h3>
+  <p>Once you've locked in a base palette here, you can build further by generating tints (mixing with white) and shades (mixing with black) of each HEX code in an image editor or CSS preprocessor, which is a common next step for turning a 3-5 color palette into a full UI color system with primary, secondary, background, and border variants.</p>
 </section>
 
 <div class="content-card related-tools">

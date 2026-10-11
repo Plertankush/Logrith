@@ -133,6 +133,32 @@
   </div>
 </div>
 
+<section class="seo-section">
+  <div class="seo-wrap">
+    <div class="content-card">
+      <h2>How to Use the SVG to PNG Converter</h2>
+      <div class="tool-steps">
+        <div class="tool-step">
+          <strong>1. Provide your SVG</strong>
+          Upload an .svg file by dragging it into the upload zone, or switch to the Paste SVG Code tab and paste raw SVG markup directly.
+        </div>
+        <div class="tool-step">
+          <strong>2. Set the output width and height</strong>
+          The tool reads the SVG's own width and height attributes as a starting point — adjust them to the exact pixel dimensions you need.
+        </div>
+        <div class="tool-step">
+          <strong>3. Pick a background</strong>
+          Choose Transparent to preserve see-through areas, White for a solid backdrop, or Custom Color to fill with any color you pick.
+        </div>
+        <div class="tool-step">
+          <strong>4. Convert and download</strong>
+          Click Convert to PNG, preview the rasterized result on the checkered canvas, then download the PNG file.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="article-section">
   <h2>Convert SVG to PNG Online — Free and Instant</h2>
   <p>This tool converts SVG (Scalable Vector Graphics) files or raw SVG code into PNG raster images at any resolution you choose, directly in your browser. Upload an .svg file or paste SVG markup, set your desired output dimensions and background, and download a PNG instantly.</p>
@@ -156,6 +182,34 @@
 
   <h3>Privacy and Local Processing</h3>
   <p>All conversion happens locally in your browser using the Canvas API — your SVG file or code is never uploaded to any server.</p>
+
+  <h3>For Developers: Pasting SVG Code Directly</h3>
+  <p>If you're working with inline SVG markup from a codebase, a design export, or an icon library, the Paste SVG Code tab skips the file step entirely — paste the raw <code>&lt;svg&gt;...&lt;/svg&gt;</code> markup and the tool parses it with <code>DOMParser</code> to read its native width and height before rendering it to canvas. This is faster than saving a temporary .svg file just to convert it, and it works for SVG snippets copied straight from a React component, a CSS-in-JS icon, or a Figma export panel.</p>
+
+  <h3>Common Use Cases</h3>
+  <ul class="feature-list">
+    <li><strong>App icon and favicon prep:</strong> convert a vector logo to PNG before feeding it into a favicon or app-icon generator that requires raster input.</li>
+    <li><strong>Email signatures and newsletters:</strong> many email clients strip or mishandle SVG, so converting a logo to PNG first avoids broken images in Outlook or Gmail.</li>
+    <li><strong>Social media graphics:</strong> platforms like Twitter/X, LinkedIn, and Instagram require raster uploads, so an SVG illustration needs to become a PNG before posting.</li>
+    <li><strong>Print and presentation assets:</strong> some design tools and older versions of PowerPoint or Word handle PNG more reliably than embedded SVG.</li>
+    <li><strong>Placeholder and thumbnail generation:</strong> quickly rasterize an icon set to PNG thumbnails for a style guide or asset preview page.</li>
+  </ul>
+
+  <h3>Transparent Backgrounds Explained</h3>
+  <p>When you select the Transparent background option, the tool skips filling the canvas with any color before drawing the SVG, so any pixels not covered by SVG shapes stay fully transparent in the alpha channel of the exported PNG. This only works correctly if the source SVG itself doesn't already have an opaque background rectangle — if your SVG was exported with a solid background shape included, you'll need to remove that from the SVG code first for true transparency.</p>
+
+  <h3>Handling SVGs Without Explicit Dimensions</h3>
+  <p>Not every SVG file specifies width and height attributes — some only define a <code>viewBox</code>. When no explicit size is found, the tool falls back to the default 512×512 output dimensions, which you can then override manually. For best results with viewBox-only SVGs, set the output width and height to match the viewBox's aspect ratio so the image isn't stretched or distorted.</p>
+
+  <h3>Common Mistakes to Avoid</h3>
+  <ul class="feature-list">
+    <li><strong>Exporting at too low a resolution:</strong> since PNG can't be scaled up without blurring later, always export larger than you think you need — downscaling later is lossless, upscaling isn't.</li>
+    <li><strong>Forgetting the aspect ratio:</strong> changing width and height independently without matching the SVG's original proportions will stretch or squash the image.</li>
+    <li><strong>Pasting incomplete SVG code:</strong> the code must include the full <code>&lt;svg&gt;</code> opening and closing tags with valid XML; a partial snippet copied from inside an SVG won't render.</li>
+  </ul>
+
+  <h3>Frequently Searched Terms</h3>
+  <p>Common searches that lead people to this tool include "convert svg to png free," "svg to png transparent background," "svg code to image online," "export svg as png high resolution," and "vector to raster converter online." This tool handles each of these cases directly in the browser with no installation required.</p>
 </section>
 
 <div class="content-card related-tools">

@@ -311,7 +311,34 @@
   <h2>About GST in India And Why Use Our Tool</h2>
   <p>Goods and Services Tax (GST) is an indirect tax system levied on the supply of goods and services in India. It was implemented on July 1, 2017, to replace multiple central and state taxes with a more unified taxation structure.</p>
   <p>GST in India generally follows four major slabs: 5%, 12%, 18%, and 28%. Essential goods may fall under lower or zero tax slabs, while common goods and services usually come under 12% or 18%, and luxury or sin goods may attract 28% GST.</p>
-  <p>A GST calculator helps businesses, freelancers, shop owners, students, and consumers quickly calculate tax-inclusive and tax-exclusive prices without manual errors. It is also useful for understanding how much tax is charged as CGST, SGST, or IGST depending on the type of transaction.</p></section>
+  <p>A GST calculator helps businesses, freelancers, shop owners, students, and consumers quickly calculate tax-inclusive and tax-exclusive prices without manual errors. It is also useful for understanding how much tax is charged as CGST, SGST, or IGST depending on the type of transaction.</p>
+
+  <h3>How This Calculator Works</h3>
+  <p>Enter an amount, pick a GST rate (or use one of the quick slab buttons for 0%, 5%, 12%, 18%, or 28%), and choose whether that amount is exclusive of GST (tax needs to be added) or inclusive of GST (tax is already baked into the figure). For exclusive amounts, the tool multiplies the base price by the rate to get the GST amount, then adds it to get the total. For inclusive amounts, it works backward using the formula Total × Rate ÷ (100 + Rate) to extract the exact GST component from a final price. The breakdown table then splits that GST amount into CGST and SGST (each exactly half the rate, for transactions within the same state) and shows the equivalent IGST figure (the full rate, for transactions across state lines) side by side, so you don't have to calculate both scenarios separately.</p>
+
+  <h3>Exclusive vs Inclusive — Which One Should You Use</h3>
+  <p>Use "Exclusive" when you have a base price (what you'd quote before tax, common when pricing a product or service you're selling) and need to know what the customer pays after GST is added. Use "Inclusive" when you already have a final price — for example, an MRP printed on packaging, or an amount on an invoice — and need to work out how much of that figure is actually tax versus base value. Mixing these up is one of the most common GST calculation errors: applying the exclusive formula to an inclusive amount overstates the GST amount, since it taxes a number that already contains tax.</p>
+
+  <h3>CGST, SGST and IGST in Practice</h3>
+  <p>Under India's GST structure, a sale within the same state splits the tax equally between the central government (CGST) and the state government (SGST) — so an 18% rate becomes 9% + 9%. A sale across state lines instead charges IGST at the full rate, collected by the central government and apportioned to the destination state. This calculator shows both splits at once in the breakdown table so you can read off whichever applies to your transaction without re-running the calculation.</p>
+
+  <h3>Who Uses a GST Calculator</h3>
+  <ul class="feature-list">
+    <li><strong>Small business owners and shopkeepers</strong> who need to quote GST-inclusive retail prices or verify supplier invoices.</li>
+    <li><strong>Freelancers and consultants</strong> invoicing clients who need to add 18% GST on professional services.</li>
+    <li><strong>Accountants and bookkeepers</strong> cross-checking CGST/SGST/IGST splits on a large batch of invoices.</li>
+    <li><strong>Students and exam candidates</strong> learning how Indian indirect taxation is structured and calculated.</li>
+    <li><strong>Online shoppers</strong> trying to verify whether a displayed price already includes GST.</li>
+  </ul>
+
+  <h3>Common Mistakes When Calculating GST Manually</h3>
+  <p>The most frequent manual error is treating an inclusive price as if it were exclusive — for instance, taking a ₹1,180 MRP and simply multiplying by 18% to get ₹212.40 as the "GST amount," when the correct GST component of that inclusive price is actually ₹180. Another common mistake is forgetting that CGST and SGST are each half the stated rate, not the full rate applied twice — doubling the tax by mistake when manually splitting an intra-state invoice.</p>
+
+  <h3>Why Use a Dedicated GST Calculator Instead of a Generic One</h3>
+  <p>A generic percentage calculator can add or subtract a percentage, but it won't automatically split that percentage into CGST and SGST, won't handle the reverse inclusive-price formula correctly without you remembering it, and won't map to India's actual GST slab structure (0%, 5%, 12%, 18%, 28%). This tool is built specifically around those Indian GST mechanics, so the slab buttons, the inclusive/exclusive toggle, and the CGST/SGST/IGST table are all pre-wired to match how GST actually works on an Indian invoice, cutting out the risk of applying the wrong formula by hand.</p>
+
+  <h3>Runs Entirely in Your Browser</h3>
+  <p>All calculations happen client-side using JavaScript the moment you click Calculate — no amount, rate, or result is sent to any server. This makes it safe to use for quick checks on real invoice figures, client billing amounts, or business pricing without that data leaving your device.</p></section>
 
 <section class="faq-section">
   <h2>Frequently Asked Questions</h2>

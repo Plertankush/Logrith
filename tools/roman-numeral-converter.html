@@ -92,6 +92,32 @@
   </div>
 </div>
 
+<section class="seo-section">
+  <div class="seo-wrap">
+    <div class="content-card">
+      <h2>How to Use the Roman Numeral Converter</h2>
+      <div class="tool-steps">
+        <div class="tool-step">
+          <strong>1. Choose a conversion direction</strong>
+          Select "Number → Roman" to convert a standard number into numerals, or "Roman → Number" to convert numerals back into a number.
+        </div>
+        <div class="tool-step">
+          <strong>2. Enter your value</strong>
+          Type a number between 1 and 3999, or type Roman numerals using the letters I, V, X, L, C, D, and M.
+        </div>
+        <div class="tool-step">
+          <strong>3. Read the result instantly</strong>
+          The converted value appears immediately as you type — no button click needed.
+        </div>
+        <div class="tool-step">
+          <strong>4. Check for errors</strong>
+          If your input is outside the valid range or not a properly formed Roman numeral, a status message explains what to fix.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="article-section">
   <h2>Convert Between Numbers and Roman Numerals</h2>
   <p>This tool converts any standard number (1 to 3999) into Roman numerals, or converts Roman numerals back into their standard numeric value, following the classical Roman numeral system used since antiquity.</p>
@@ -110,6 +136,38 @@
 
   <h3>Privacy and Local Processing</h3>
   <p>All conversion happens directly in your browser — no numbers are sent to a server.</p>
+
+  <h3>Why the Range Is Limited to 1-3999</h3>
+  <p>The standard Roman numeral system, using only the seven basic letters I, V, X, L, C, D, and M with subtractive notation, tops out at 3999 (MMMCMXCIX). Representing 4000 and above with the basic system would require four M's in a row, which falls outside standard notation — larger numbers historically used a vinculum (a bar drawn over a numeral to multiply its value by 1,000), a convention not covered by this converter since it's rarely used in practice and inconsistently supported across fonts.</p>
+
+  <h3>How Number-to-Roman Conversion Works</h3>
+  <p>The tool works through a fixed list of value/symbol pairs from largest to smallest — 1000 (M), 900 (CM), 500 (D), 400 (CD), 100 (C), 90 (XC), 50 (L), 40 (XL), 10 (X), 9 (IX), 5 (V), 4 (IV), and 1 (I) — repeatedly subtracting the largest value that still fits and appending its symbol, until the number reaches zero. Including the subtractive pairs (900, 400, 90, 40, 9, 4) directly in this list, rather than handling them as a special case afterward, is what makes the subtractive notation come out correctly without extra logic.</p>
+
+  <h3>How Roman-to-Number Conversion Works</h3>
+  <p>Converting the other direction, the tool reads the Roman numeral letter by letter, adding each letter's value to a running total — except when a letter's value is smaller than the letter immediately following it, in which case that letter's value is subtracted instead. This correctly interprets patterns like IV (subtract 1 from 5 = 4) and IX (subtract 1 from 10 = 9). As a final accuracy check, the tool converts the resulting number back into Roman numerals and compares it to your original input; if they don't match exactly, your input isn't valid standard Roman numeral notation (for example "IIII" or "VX") and an error is shown instead of a potentially wrong number.</p>
+
+  <h3>For Students Learning the Numeral System</h3>
+  <p>Typing a few different numbers and watching how the Roman numeral output changes — especially around values like 4, 9, 40, 90, 400, and 900 where subtractive notation kicks in — is a quick way to build an intuition for the rules without memorizing a conversion table. Switching to Roman → Number mode and typing in numerals from a textbook or worksheet is a fast way to check your own manual conversion work.</p>
+
+  <h3>Valid Input Format</h3>
+  <p>Only the standard symbols I, V, X, L, C, D, and M are accepted, in either uppercase or lowercase (the tool automatically uppercases your input). A numeral is only accepted if it follows the standard construction rules exactly — repeated symbols beyond the allowed maximum (such as more than three I's in a row), incorrect subtractive ordering, or invalid combinations will be rejected with an error rather than silently guessed at.</p>
+
+  <h3>Common Mistakes</h3>
+  <ul class="feature-list">
+    <li><strong>Writing IIII instead of IV</strong> — standard notation uses subtractive form for 4, not four repeated symbols.</li>
+    <li><strong>Reversing subtractive pairs</strong> — VX, LC, and DM are not valid; only specific smaller-before-larger pairs are allowed (IV, IX, XL, XC, CD, CM).</li>
+    <li><strong>Entering 0 or negative numbers</strong> — Roman numerals have no symbol for zero or negative values, since the system predates the concept of zero as used in modern arithmetic.</li>
+    <li><strong>Assuming any number above 3999 will convert</strong> — standard notation simply doesn't extend that far without non-standard symbols.</li>
+  </ul>
+
+  <h3>Frequently Searched Terms</h3>
+  <p>This page is commonly reached through searches like "roman numeral converter online free," "convert number to roman numerals," "what is MMXXIV in numbers," "roman numeral translator," and "roman numeral calculator." Both conversion directions are covered in a single tool with instant results.</p>
+
+  <h3>Roman Numerals in Years and Dates</h3>
+  <p>Film and TV productions, building cornerstones, and monument inscriptions frequently render the year in Roman numerals as a stylistic convention — for example a film copyrighted in 2024 might display MMXXIV in its closing credits. Because years can involve all seven symbols and several subtractive pairs at once (a year like 1994 becomes MCMXCIV, combining three separate subtractive pairs), converting a year by hand is a common source of errors, which this tool avoids entirely.</p>
+
+  <h3>A Worked Example</h3>
+  <p>Converting 1994 to Roman numerals: 1994 breaks down as 1000 (M) + 900 (CM) + 90 (XC) + 4 (IV), giving MCMXCIV. Going the other direction, reading MCMXCIV letter by letter: M (1000) is followed by C (100, smaller than the next letter M, so subtract) giving net 900 so far, then XC together give 90, and IV gives 4 — adding up to 1994. Working through an example like this by hand alongside the tool's output is a good way to confirm you understand the subtractive rule before relying on it for larger numbers.</p>
 </section>
 
 <div class="content-card related-tools">

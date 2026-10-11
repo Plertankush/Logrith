@@ -97,6 +97,32 @@
   </div>
 </div>
 
+<section class="seo-section">
+  <div class="seo-wrap">
+    <div class="content-card">
+      <h2>How to Use the Number Base Converter</h2>
+      <div class="tool-steps">
+        <div class="tool-step">
+          <strong>1. Pick the base you already have</strong>
+          Decide whether your starting value is binary, octal, decimal, or hexadecimal.
+        </div>
+        <div class="tool-step">
+          <strong>2. Type the number into that field</strong>
+          Enter the digits in the matching input box — only valid digits for that base are accepted.
+        </div>
+        <div class="tool-step">
+          <strong>3. Read the other three fields</strong>
+          The remaining three bases update automatically and simultaneously as you type.
+        </div>
+        <div class="tool-step">
+          <strong>4. Clear and repeat as needed</strong>
+          Use Clear All to reset every field before converting a new number.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="article-section">
   <h2>Convert Between Number Bases Instantly</h2>
   <p>This tool converts a number between binary (base 2), octal (base 8), decimal (base 10), and hexadecimal (base 16) simultaneously — type a value into any field, and the other three update instantly to show the equivalent value in that base.</p>
@@ -122,6 +148,31 @@
 
   <h3>Privacy and Local Processing</h3>
   <p>All conversions happen directly in your browser using JavaScript's built-in number parsing — nothing is sent to a server.</p>
+
+  <h3>How the Conversion Actually Works</h3>
+  <p>Whichever field you type into, the tool first parses that value as an integer in its own base (using JavaScript's parseInt with the appropriate radix) to get a single underlying decimal value. From that one decimal number, it then regenerates the string representation for the other three bases using toString(2), toString(8), and toString(16). This means decimal acts as the common pivot internally — every conversion between, say, binary and hex is technically a binary-to-decimal step followed by a decimal-to-hex step, even though it appears instant and direct to you.</p>
+
+  <h3>Input Validation by Base</h3>
+  <p>Each field only accepts the digits that are valid for its base: binary accepts just 0 and 1, octal accepts 0 through 7, decimal accepts 0 through 9, and hexadecimal accepts 0-9 plus A-F (case-insensitive). If you type a digit that doesn't belong to the selected base — like an 8 or 9 in the binary field, or a G in the hex field — the tool flags it as invalid rather than silently misinterpreting it, which helps catch a common source of manual conversion errors.</p>
+
+  <h3>Manual Conversion vs. Using This Tool</h3>
+  <p>Converting a number between bases by hand involves repeated division (for converting decimal to another base) or repeated multiplication by powers of the base (for converting to decimal) — straightforward in principle but easy to make an arithmetic slip on, especially with larger numbers or hexadecimal's alphabetic digits. This tool removes that risk entirely and also saves the extra step of converting through decimal manually when going between two non-decimal bases, like binary and hex, by handling the whole chain at once.</p>
+
+  <h3>A Worked Example: Converting 255</h3>
+  <p>The decimal number 255 converts to 11111111 in binary (eight 1s, since 255 is one less than 256, which is 2⁸), 377 in octal, and FF in hexadecimal (since each hex digit F represents the maximum value 15, and FF = 15×16 + 15 = 255). This value is commonly recognized because 255 is the maximum value a single byte can hold, which is why FF appears so often in color codes, IP subnet masks (255.255.255.0), and byte-level programming.</p>
+
+  <h3>For Developers and CS Students</h3>
+  <ul class="feature-list">
+    <li><strong>Developers</strong> decoding hex memory addresses, debugging bitwise operations, or translating binary flags into readable decimal values.</li>
+    <li><strong>Students</strong> learning positional number systems and checking their manual base-conversion homework against a reliable reference.</li>
+    <li><strong>Network engineers</strong> converting between decimal and binary representations of IP addresses and subnet masks.</li>
+  </ul>
+
+  <h3>Why Octal Has Faded but Hex Hasn't</h3>
+  <p>Octal was popular in early computing because many early systems used word sizes that were multiples of 3 bits, making octal a natural grouping. As computing standardized around 8-bit bytes (a multiple of 4, not 3), hexadecimal became the more natural fit — two hex digits map exactly onto one byte, while octal doesn't divide evenly into byte boundaries. This is why modern programming, networking, and color systems lean almost entirely on hex, while octal survives mainly in legacy contexts like Unix file permission notation (chmod 755, for example).</p>
+
+  <h3>Frequently Searched Terms</h3>
+  <p>Searches that lead people to this tool include "binary to decimal converter," "convert hex to binary online," "decimal to octal calculator," and "base 2 to base 16 converter." Because all four bases update together from a single input, this tool effectively covers all twelve possible conversion directions between the four bases in one place, instead of needing a separate converter for each pair.</p>
 </section>
 
 <div class="content-card related-tools">

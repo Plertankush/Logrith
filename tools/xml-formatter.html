@@ -83,6 +83,32 @@
   </div>
 </div>
 
+<section class="seo-section">
+  <div class="seo-wrap">
+    <div class="content-card">
+      <h2>How to Use the XML Formatter</h2>
+      <div class="tool-steps">
+        <div class="tool-step">
+          <strong>1. Paste your XML</strong>
+          Replace the sample content in the input box with your own XML — a full document, a fragment, or an API response.
+        </div>
+        <div class="tool-step">
+          <strong>2. Format or minify</strong>
+          Click "Format" to pretty-print it with indentation, or "Minify" to collapse it down to a single compact line.
+        </div>
+        <div class="tool-step">
+          <strong>3. Check the validation result</strong>
+          The status message tells you immediately if the XML is well-formed or if there's a syntax problem like an unclosed tag.
+        </div>
+        <div class="tool-step">
+          <strong>4. Copy the output</strong>
+          Use the Copy button next to the output box to grab the formatted or minified result for your project.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="article-section">
   <h2>XML Formatter, Beautifier, and Validator</h2>
   <p>This tool formats XML documents with proper indentation for readability, validates that the XML is well-formed, and can also minify XML down to a single compact line for production use.</p>
@@ -103,6 +129,44 @@
 
   <h3>Privacy and Local Processing</h3>
   <p>All formatting, validation, and minification happens directly in your browser — your XML content is never sent to a server.</p>
+
+  <h3>How the Formatter Rebuilds Indentation</h3>
+  <p>The formatter first strips out all existing whitespace between tags, collapsing the document to its tightest form, then rebuilds it token by token. Each opening tag increases the indent level for everything nested inside it, each closing tag decreases it back, and self-closing tags stay at the current level without affecting what follows. Elements that contain only a short text value (like <code>&lt;title&gt;Example Book&lt;/title&gt;</code>) are kept on a single line rather than being split across three lines, which keeps the output compact and readable instead of needlessly verbose.</p>
+
+  <h3>How the Minify Function Works</h3>
+  <p>Minifying does the opposite: it removes all whitespace sitting between tags, collapsing the document down to the smallest form that's still valid XML. This matters for production use because XML payloads sent over an API or embedded in a build are typically charged or measured by size — stripping the formatting whitespace that only exists for human readability reduces that size with no change in meaning.</p>
+
+  <h3>What Counts as a Syntax Error</h3>
+  <ul class="feature-list">
+    <li><strong>Unclosed tags</strong> — an opening tag with no matching closing tag, or vice versa.</li>
+    <li><strong>Mismatched tags</strong> — a closing tag that doesn't match the most recently opened tag, such as <code>&lt;book&gt;...&lt;/catalog&gt;</code>.</li>
+    <li><strong>Multiple root elements</strong> — XML requires exactly one top-level element wrapping everything else; two sibling root elements make a document invalid.</li>
+    <li><strong>Unescaped special characters</strong> — characters like <code>&amp;</code> or <code>&lt;</code> appearing in text content without being escaped as entities.</li>
+  </ul>
+
+  <h3>For Developers Working with APIs and SOAP</h3>
+  <p>Legacy enterprise systems and SOAP-based APIs frequently exchange data as XML rather than JSON. When debugging a request or response from one of these systems, pasting the raw payload here and formatting it makes the nested envelope, header, and body structure visible at a glance, which is far faster than scanning an unindented wall of tags.</p>
+
+  <h3>XML vs. Schema Validation</h3>
+  <p>It's worth being clear about what this tool checks: "well-formed" means the XML follows correct syntax (matching tags, proper nesting, one root element). It does not mean the document is "valid" in the stricter sense of conforming to a DTD or XSD schema, which would additionally verify that specific elements, attributes, and their order match a predefined contract. A document can be perfectly well-formed and still fail schema validation if, say, a required attribute is missing.</p>
+
+  <h3>Frequently Searched Terms</h3>
+  <ul class="feature-list">
+    <li>xml beautifier online</li>
+    <li>xml pretty print tool</li>
+    <li>validate xml syntax online</li>
+    <li>minify xml for production</li>
+    <li>format soap xml response</li>
+  </ul>
+
+  <h3>XML in Document and Image Formats</h3>
+  <p>Several file formats people don't immediately think of as XML are actually built on it under the hood — SVG images, RSS and Atom feeds, and the Office Open XML formats behind modern .docx, .xlsx, and .pptx files are all XML documents with a specific vocabulary of tags. Opening one of these in a text editor usually shows a single unreadable line; running it through this formatter turns it into a structure you can actually inspect, which is useful when debugging a broken SVG icon or a malformed RSS feed.</p>
+
+  <h3>Comparing Formatting by Hand vs. This Tool</h3>
+  <p>Manually re-indenting a large XML document — counting nesting levels and adding spaces by hand — is slow and error-prone, especially once a document is more than a few dozen lines. A single miscounted indent doesn't break the XML (since indentation isn't meaningful to the parser the way it is in YAML), but it does make the document harder to read for anyone who opens it next. Running it through this tool fixes the whole document's indentation consistently in one pass.</p>
+
+  <h3>Handling Attributes and Self-Closing Tags</h3>
+  <p>The formatter preserves tag attributes exactly as written — such as the <code>id="1"</code> in <code>&lt;book id="1"&gt;</code> — without reordering or reformatting them, since attribute order can matter for some consumers even though the XML spec doesn't require a specific order. Self-closing tags like <code>&lt;br/&gt;</code> or <code>&lt;item value="x"/&gt;</code> are recognized and kept on their own line at the correct indent level rather than being mistaken for an opening tag awaiting a separate closing tag.</p>
 </section>
 
 <div class="content-card related-tools">

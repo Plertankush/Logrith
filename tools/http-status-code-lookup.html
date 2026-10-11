@@ -81,6 +81,32 @@
   </div>
 </div>
 
+<section class="seo-section">
+  <div class="seo-wrap">
+    <div class="content-card">
+      <h2>How to Use the HTTP Status Code Lookup</h2>
+      <div class="tool-steps">
+        <div class="tool-step">
+          <strong>1. Open the search box.</strong>
+          Click into the search field at the top of the tool — no setup or page reload needed.
+        </div>
+        <div class="tool-step">
+          <strong>2. Type a code or keyword.</strong>
+          Enter a three-digit code like 404, or a keyword like "not found" or "forbidden".
+        </div>
+        <div class="tool-step">
+          <strong>3. Review the filtered list.</strong>
+          Matching status codes appear instantly below, color-coded by category (2xx, 3xx, 4xx, 5xx) with a short explanation for each.
+        </div>
+        <div class="tool-step">
+          <strong>4. Clear the search to browse all codes.</strong>
+          Empty the search box to see the full reference list again, sorted from informational through server error codes.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="article-section">
   <h2>Complete HTTP Status Code Reference</h2>
   <p>This tool provides a searchable reference of standard HTTP status codes — the three-digit numbers servers return to indicate the result of a request. Search by code number or by keyword to instantly find an explanation.</p>
@@ -106,6 +132,33 @@
 
   <h3>Privacy and Local Processing</h3>
   <p>This tool uses a built-in reference list stored directly in the page — no external API calls or server requests are needed to search or filter results.</p>
+
+  <h3>How the Search Actually Works</h3>
+  <p>Every keystroke in the search box runs a simple match against three fields for each status code: the numeric code itself, its short name, and its longer description. So typing "gateway" surfaces both 502 Bad Gateway and 504 Gateway Timeout, while typing "50" surfaces every code that starts with those digits as well as any code whose description happens to mention the number 50. This makes the lookup forgiving — you don't need to remember the exact code number to find what you're looking for.</p>
+
+  <h3>Status Codes Developers Look Up Most Often</h3>
+  <p>In practice, a small handful of codes account for most lookups: 200, 201, 204 on the success side; 301, 302, 304 for redirects and caching; 400, 401, 403, 404, 429 for client-side errors; and 500, 502, 503, 504 for server and gateway failures. Knowing the difference between adjacent codes — like 401 versus 403, or 502 versus 503 versus 504 — is often what actually matters when debugging, since each implies a different place to look for the root cause.</p>
+
+  <h3>Reading Status Codes in Browser DevTools</h3>
+  <p>When a page or API call fails, the Network tab in browser developer tools shows the returned status code next to each request. Pasting that number into this lookup gives an instant explanation without needing to search documentation or remember the full HTTP specification.</p>
+
+  <h3>Status Codes in API Design</h3>
+  <p>When building an API, picking the right status code for each response is part of making the API predictable for whoever consumes it. A POST that creates a resource should typically return 201 rather than a plain 200; a request that's syntactically fine but semantically invalid is often better served by 422 than a generic 400; and rate-limited clients should see 429 rather than a vague 403. This reference is useful for confirming the precise meaning of a code before committing to it in API documentation.</p>
+
+  <h3>The Teapot Code and Other Oddities</h3>
+  <p>Not every status code is purely functional — 418 I'm a Teapot originated as an April Fools joke in RFC 2324 and has since been kept alive informally by various frameworks and services as a nod to internet history. It's a good reminder that the HTTP status registry, while standardized, has some quirks worth knowing if you ever encounter it in the wild.</p>
+
+  <h3>Frequently Searched Terms</h3>
+  <p>People commonly search this tool using phrases like "what does 403 mean", "404 vs 410", "http error code list", "status code meaning", and "what is a 5xx error" — the search box handles all of these naturally since it matches against both the numeric code and the plain-English description.</p>
+
+  <h3>Difference Between 401 and 403</h3>
+  <p>These two codes are frequently confused. A 401 Unauthorized means the request lacks valid authentication credentials altogether — you haven't proven who you are yet. A 403 Forbidden means the server knows who you are but has decided you don't have permission to access that specific resource. Mixing these up in an API response can mislead whoever is consuming it into retrying with the wrong fix, such as re-logging in when the real issue is a missing permission.</p>
+
+  <h3>Difference Between 502, 503, and 504</h3>
+  <p>These three server-side codes often get grouped together but mean different things. A 502 Bad Gateway means a server acting as a proxy got an invalid response from an upstream server. A 503 Service Unavailable means the server is temporarily overloaded or down for maintenance. A 504 Gateway Timeout means a proxy server didn't get a response from the upstream server in time. Telling these apart helps narrow down whether the problem is the origin server, a timeout, or a proxy layer in between.</p>
+
+  <h3>Students and New Developers</h3>
+  <p>Anyone new to web development often encounters unfamiliar status codes for the first time while debugging a failed fetch request or a broken form submission. This reference is built to be a quick, plain-English lookup rather than a dense specification document, so it's useful as a learning aid alongside tutorials and coursework on HTTP and REST APIs.</p>
 </section>
 
 <div class="content-card related-tools">

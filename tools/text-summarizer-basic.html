@@ -92,6 +92,32 @@
   </div>
 </div>
 
+<section class="seo-section">
+  <div class="seo-wrap">
+    <div class="content-card">
+      <h2>How to Use the Text Summarizer</h2>
+      <div class="tool-steps">
+        <div class="tool-step">
+          <strong>1. Paste your text</strong>
+          Copy an article, report, or set of notes into the input box.
+        </div>
+        <div class="tool-step">
+          <strong>2. Choose the number of sentences</strong>
+          Move the slider to set how many sentences (1-10) you want in the final summary.
+        </div>
+        <div class="tool-step">
+          <strong>3. Click Summarize</strong>
+          The tool scores every sentence by word frequency and pulls out the highest-scoring ones.
+        </div>
+        <div class="tool-step">
+          <strong>4. Review the output</strong>
+          Read the extracted sentences and check the word-count and reduction-percentage stats below them.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="article-section">
   <h2>Free Extractive Text Summarizer</h2>
   <p>This tool creates a summary of long text by identifying and extracting the most important sentences, using a word-frequency scoring approach that runs entirely in your browser — no external AI service required.</p>
@@ -112,6 +138,34 @@
 
   <h3>Privacy and Local Processing</h3>
   <p>All summarization happens directly in your browser using JavaScript — your text is never sent to a server or any external AI service.</p>
+
+  <h3>Why Word Frequency Is a Useful Signal</h3>
+  <p>The underlying assumption behind frequency-based scoring is simple: words that a writer repeats throughout a piece are usually the words carrying its central ideas, while one-off words tend to belong to supporting detail or examples. By excluding stop words before counting, the tool avoids letting filler words like "the" or "and" (which appear constantly but mean nothing on their own) dominate the frequency table. A sentence that happens to contain several of the text's most-repeated meaningful words is treated as a stand-in for the passage as a whole, which is why dense, topic-heavy sentences tend to surface at the top of the summary.</p>
+
+  <h3>What the Algorithm Cannot Do</h3>
+  <p>Because this tool only selects and never rewrites, it cannot merge two related sentences into one, shorten a long sentence by trimming clauses, or resolve pronouns that only make sense next to the sentence they originally followed. If a pulled sentence starts with "This means..." or "However, it also...", the summary can read slightly disjointed since the sentence was written to follow something that didn't make the cut. This is a known trade-off of extractive methods generally, not a bug specific to this implementation, and it's worth skimming the output rather than treating it as polished prose.</p>
+
+  <h3>Choosing a Sentence Count</h3>
+  <p>A good starting point is roughly 10-20% of the original sentence count. For a short 15-sentence blog post, 2-3 sentences is usually enough to capture the gist. For a longer 60-sentence report, 6-8 sentences will typically read more like a coherent abstract. Setting the slider too low on a long document risks losing supporting context; setting it too high defeats the purpose of summarizing at all.</p>
+
+  <h3>Use Cases for Students and Professionals</h3>
+  <ul class="feature-list">
+    <li><strong>Students</strong> skimming research papers or textbook chapters to judge relevance before committing to a full read.</li>
+    <li><strong>Professionals</strong> condensing long email threads, status reports, or meeting transcripts into a quick-reference summary.</li>
+    <li><strong>Writers and editors</strong> checking whether an article's most "statistically important" sentences align with its actual thesis, as a quick self-editing sanity check.</li>
+  </ul>
+
+  <h3>Common Mistakes When Summarizing Text</h3>
+  <p>Pasting text with many short, unrelated sentences (such as a bullet list converted to prose) tends to produce a weaker summary, since the frequency-scoring approach assumes a flowing narrative where ideas build on repeated terms. Similarly, pasting multiple unrelated articles at once dilutes the frequency counts across different topics, so sentences from one topic may crowd out another. For best results, summarize one coherent piece of writing at a time.</p>
+
+  <h3>Doing It Manually vs. Using This Tool</h3>
+  <p>Manually summarizing a long article means reading the whole thing, mentally tracking which ideas recur, and then re-reading to pick out the sentences that best represent those ideas — a process that can take several minutes even for a short piece and gets tedious across many documents. This tool performs the same core logic (find repeated important words, find the sentences that contain them) instantly and consistently, without fatigue or the skimming shortcuts a tired reader might take. It won't catch nuance the way a careful human reader would, but it gives a fast, repeatable first pass that's useful before deciding whether the full text is worth your time.</p>
+
+  <h3>Reading the Reduction Percentage</h3>
+  <p>The stats row shows how many words the summary kept compared to the original, expressed as a reduction percentage. A 70-80% reduction is typical when summarizing a multi-paragraph article down to 3-4 sentences. If the reduction percentage comes out low, it usually means the original text was already short relative to the number of sentences you asked the tool to keep — in that case, try lowering the sentence-count slider for a tighter summary.</p>
+
+  <h3>Frequently Searched Terms</h3>
+  <p>People land on this page looking for ways to "summarize an article online," "shorten a paragraph automatically," "get the main points of a text," or find a "free summary generator" that doesn't require an account or an API key. This tool covers that need for straightforward extractive summarization without any sign-up, upload limit, or paid tier.</p>
 </section>
 
 <div class="content-card related-tools">

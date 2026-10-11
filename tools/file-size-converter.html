@@ -104,6 +104,32 @@
   </div>
 </div>
 
+<section class="seo-section">
+  <div class="seo-wrap">
+    <div class="content-card">
+      <h2>How to Use the File Size Converter</h2>
+      <div class="tool-steps">
+        <div class="tool-step">
+          <strong>1. Enter the value</strong>
+          Type the number you want to convert, for example 1.5 or 500.
+        </div>
+        <div class="tool-step">
+          <strong>2. Select the starting unit</strong>
+          Choose whether your value is in bytes, KB, MB, GB, TB, or PB from the dropdown.
+        </div>
+        <div class="tool-step">
+          <strong>3. Pick decimal or binary mode</strong>
+          Choose decimal (1 KB = 1000 B) to match marketing figures, or binary (1 KB = 1024 B) to match what your OS displays.
+        </div>
+        <div class="tool-step">
+          <strong>4. Read all six converted values</strong>
+          Every unit from bytes to petabytes updates at once in the results grid below.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="article-section">
   <h2>Convert File Sizes: Bytes to KB, MB, GB, TB, PB</h2>
   <p>This tool converts a file size value into all common units at once — bytes, kilobytes, megabytes, gigabytes, terabytes, and petabytes — with a toggle between binary (1024-based) and decimal (1000-based) calculation methods.</p>
@@ -119,6 +145,32 @@
 
   <h3>Privacy and Local Processing</h3>
   <p>All conversions happen directly in your browser — no values are sent to a server.</p>
+
+  <h3>How the Conversion Math Works</h3>
+  <p>The tool first converts your entered value into a single underlying byte count by multiplying it by the selected base (1000 or 1024) raised to the power matching your chosen starting unit — bytes use a power of 0, kilobytes a power of 1, megabytes a power of 2, and so on up through petabytes at a power of 5. From that single byte figure, it then divides back down by the same base raised to each unit's power to populate every result field simultaneously, which is why switching the binary/decimal toggle recalculates all six values at once rather than just the one you're focused on.</p>
+
+  <h3>Common Real-World Use Cases</h3>
+  <ul class="feature-list">
+    <li><strong>Checking cloud storage plans</strong> that list capacity in GB or TB and comparing against files or backups measured in different units.</li>
+    <li><strong>Estimating upload or download time</strong> by converting a file size to the same unit your internet speed is measured in (after separately converting bits to bytes, since speeds are usually in Mbps, not MBps).</li>
+    <li><strong>Understanding camera and video file sizes</strong> when raw photo or 4K video files are reported in MB or GB and you need to know how many fit on a memory card.</li>
+    <li><strong>Reconciling "missing" drive space</strong> when a newly purchased drive shows less capacity in your OS than what was printed on the box.</li>
+  </ul>
+
+  <h3>Why Petabytes Are Included</h3>
+  <p>Petabyte (PB) might seem unnecessary for everyday file sizes, but it's useful context: 1 PB equals roughly 1,024 TB in binary terms, a scale relevant to enterprise data centers, large-scale cloud storage services, and big-data applications. Including it alongside the more commonly used units gives a complete picture of the full unit ladder from a single byte up to enterprise-scale storage.</p>
+
+  <h3>Frequently Searched Terms</h3>
+  <p>People reach this tool searching for things like "convert GB to MB," "how many bytes in a KB," "1TB to GB," "file size calculator," and "KB vs KiB difference." Because the tool converts to and from all six units in both binary and decimal modes simultaneously, it answers nearly every pairwise file-size conversion question in one place rather than needing a separate calculator for each pair of units.</p>
+
+  <h3>A Worked Example</h3>
+  <p>Take a 4.7 GB file, a size roughly matching a standard-definition DVD. In decimal mode, that's 4,700,000,000 bytes, or about 4,481 MiB and 4.38 GiB if you switch to binary mode, since binary units report a smaller number for the same physical amount of data. This is the exact same kind of discrepancy that makes a "4.7GB" DVD show as holding less than 4.7 "GB" worth of files once copied onto a computer that reports sizes in binary.</p>
+
+  <h3>Developers and IT Professionals</h3>
+  <p>Developers working with file uploads, storage quotas, or memory limits often need to convert between units quickly when writing validation logic or reading server logs. IT professionals sizing backups, estimating bandwidth needs, or explaining storage discrepancies to end users benefit from having both binary and decimal figures side by side, rather than mentally re-deriving one from the other every time a size comes up in a different convention.</p>
+
+  <h3>Doing It by Hand vs. Using This Tool</h3>
+  <p>Manually converting between file size units means remembering which power of 1000 or 1024 applies to each unit step, then doing the multiplication or division correctly — simple in theory, but a single wrong exponent produces a result that's off by an order of magnitude, which is an easy mistake under time pressure. This tool removes that risk and, more usefully, shows every unit and both base conventions at once, so you can immediately see how a value compares across the full range without running several separate calculations.</p>
 </section>
 
 <div class="content-card related-tools">

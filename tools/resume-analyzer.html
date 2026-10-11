@@ -273,6 +273,37 @@ Include:
     <p>ATS systems scan resumes for specific keywords matching the job description, check for proper section headings (Experience, Education, Skills), and penalize complex formatting like tables, text boxes, headers/footers, and non-standard fonts. A resume that looks beautiful in PDF may completely fail in ATS if it uses graphics or multi-column layouts.</p>
     <p>This AI-powered analyzer uses Claude by Anthropic to evaluate your resume across 8 critical dimensions: ATS compatibility, contact information, professional summary, work experience quality, education section, skills relevance, keyword density, and action verb usage. The result is a comprehensive score with specific, actionable improvements tailored to your target role.</p>
 
+    <h2 style="margin-top:28px;">How the Analysis Actually Works</h2>
+    <p>When you click Analyze, the tool sends your resume text, target job role, and experience level to Claude (Anthropic's AI model) through a direct API call from your browser. Claude reads the full resume and returns a structured breakdown — scores for each section, strengths, gaps, missing keywords for your target role, and a prioritized list of next steps. If that API call fails for any reason (network issue, rate limit, or timeout), the tool automatically falls back to a built-in heuristic analyzer that runs entirely in your browser. This fallback checks for things like the presence of an email and phone number, common section headings (Experience, Education, Skills, Summary), a list of common action verbs, and whether the text contains quantified numbers or percentages — it is a rule-based approximation, not an AI judgment, but it still gives a usable score and basic feedback so the tool never leaves you with a blank result.</p>
+
+    <h3>Why Keyword Gaps Matter More Than You'd Think</h3>
+    <p>Most ATS platforms rank candidates by how closely resume text matches the job description, not by a human's subjective read. Two resumes with identical experience can score very differently if one uses the exact phrasing from the job posting ("cross-functional team leadership") and the other uses a synonym ("worked with different departments"). The keyword gap section exists specifically to catch this mismatch — it lists terms found in your resume versus terms commonly expected for your stated job role, so you can adjust wording before you apply rather than after a rejection.</p>
+
+    <h3>For Freshers and Career Switchers</h3>
+    <p>If you select "Fresher / Entry Level" or are switching fields, the analysis weighs things differently — it looks harder at projects, internships, certifications, and transferable skills instead of expecting a long work history. A common mistake at this stage is leaving the professional summary generic ("hardworking fresher seeking opportunities") instead of naming the specific role and skills being targeted, which both humans and ATS keyword matching tend to penalize.</p>
+
+    <h3>For Experienced and Senior Candidates</h3>
+    <p>At the senior and lead level, the scoring leans more heavily on quantified achievements — revenue impact, team size managed, percentage improvements — rather than just listing responsibilities. A resume that says "responsible for backend systems" scores lower on the experience metric than one that says "led a team of 6 engineers to rebuild backend systems, cutting latency by 40%." The improvements list will usually flag unquantified bullet points first, since this is the single most common weakness in experienced resumes.</p>
+
+    <h3>Common Resume Mistakes This Tool Catches</h3>
+    <ul class="feature-list">
+      <li>Missing or incomplete contact information (no email, no working phone format)</li>
+      <li>No professional summary or an objective that doesn't mention the target role</li>
+      <li>Work experience bullets that describe duties instead of measurable outcomes</li>
+      <li>Resume length that is too short (under ~200 words, looks incomplete) or too long for one role</li>
+      <li>Missing role-specific keywords that an ATS would be scanning for</li>
+      <li>Weak or repeated action verbs at the start of bullet points</li>
+    </ul>
+
+    <h3>Frequently Searched Terms</h3>
+    <p>People land on this tool searching for phrases like "free resume checker online," "ATS score checker," "resume keyword scanner," "will my resume pass ATS," and "AI resume feedback free." If that's what brought you here — paste your resume text above, add the job title you're targeting, and run the analysis to see where it stands before you submit an application.</p>
+
+    <h3>Doing This Manually vs. Using the Analyzer</h3>
+    <p>Manually reviewing a resume against a job description means reading both side by side, highlighting matching and missing terms, and guessing at how an ATS might parse your formatting — a process that easily takes 20-30 minutes per application if done carefully, and most people skip it entirely after the first couple of applications. This tool compresses that same comparison into a single pass: it reads your resume text and your stated job role together and returns the keyword gaps, section-by-section scores, and formatting flags in one report, so you can re-run it after every edit instead of only checking once before the first submission.</p>
+
+    <h3>A Note on What Gets Sent and Why</h3>
+    <p>Your resume text is sent to Claude's API only for the duration of that single analysis request — it is not saved to a database or reused for any other purpose by this tool. Still, it's good practice to avoid pasting sensitive identifiers like Aadhaar, PAN, or bank account numbers into any online text box, including this one, since none of that information is needed for a resume review.</p>
+
     <h2 style="margin-top:28px;">Related Tools</h2>
     <div class="related-grid">
       <a href="fake-data-generator" class="related-card"><span class="ri">🎲</span><span>Fake Data Generator</span></a>

@@ -119,6 +119,32 @@
   </div>
 </div>
 
+<section class="seo-section">
+  <div class="seo-wrap">
+    <div class="content-card">
+      <h2>How to Use the Compound Interest Calculator</h2>
+      <div class="tool-steps">
+        <div class="tool-step">
+          <strong>1. Enter your initial principal</strong>
+          Type the lump sum you're starting with, or 0 if you're only planning to contribute monthly.
+        </div>
+        <div class="tool-step">
+          <strong>2. Add a monthly contribution (optional)</strong>
+          Enter how much you plan to add every month on top of the initial amount.
+        </div>
+        <div class="tool-step">
+          <strong>3. Set the rate, period, and compounding frequency</strong>
+          Fill in the expected annual interest rate, how many years you'll invest, and how often interest compounds.
+        </div>
+        <div class="tool-step">
+          <strong>4. Click Calculate Growth</strong>
+          See your future value, total contributed, and interest earned, along with the contribution-vs-interest breakdown bar.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="article-section">
   <h2>Understanding Compound Interest Growth</h2>
   <p>Compound interest is often called one of the most powerful forces in personal finance, because it causes money to grow at an accelerating rate over time — interest earns interest, which earns more interest, compounding on itself. This calculator computes exactly how a lump-sum investment (with optional ongoing monthly contributions) grows over time at a given interest rate and compounding frequency.</p>
@@ -134,6 +160,36 @@
 
   <h3>Privacy and Local Processing</h3>
   <p>All calculations run directly in your browser — your financial details are never sent to a server or stored anywhere.</p>
+
+  <h3>How Contributions Are Calculated Alongside the Lump Sum</h3>
+  <p>This calculator treats your initial principal and your recurring monthly contributions as two separate growth streams that are then added together. The principal grows using the standard compound interest formula on its own. The contribution stream is evaluated using the future-value-of-an-annuity formula, which accounts for the fact that each contribution is added at a different point in time and therefore compounds for a different length of time — the first contribution compounds for almost the entire period, while the final contribution barely compounds at all. Summing both streams gives the combined total future value shown in the results.</p>
+
+  <h3>Reading the Contribution-vs-Interest Bar</h3>
+  <p>The progress bar beneath your results shows what portion of your final total came from money you actually put in (principal plus all contributions) versus money that was generated purely by compounding. Over short periods or at low interest rates, this bar leans heavily toward contributions. Over long periods — 15, 20, or 30 years — at a reasonable rate, the bar can shift to show that more than half the final value came from interest alone, which is a concrete illustration of why starting early matters more than the exact amount you start with.</p>
+
+  <h3>Compounding Frequency Options Explained</h3>
+  <ul class="feature-list">
+    <li><strong>Monthly</strong> — interest compounds 12 times a year; a common default for savings accounts and many investment products.</li>
+    <li><strong>Quarterly</strong> — interest compounds 4 times a year; used by some fixed deposits and bonds.</li>
+    <li><strong>Annually</strong> — interest compounds once a year; the simplest case and a common assumption for long-term projections.</li>
+    <li><strong>Daily</strong> — interest compounds 365 times a year; produces the highest effective return for a given nominal rate, used by some high-yield savings accounts.</li>
+  </ul>
+
+  <h3>Common Mistakes When Projecting Investment Growth</h3>
+  <p>A frequent error is assuming a stock market return (often quoted as an average like 10-12%) will apply smoothly and consistently every single year, when real returns vary significantly year to year even if they average out over a long enough horizon — this calculator shows the smooth, idealized version, not the bumpy real path. Another common mistake is forgetting to account for inflation, which erodes the real purchasing power of a future value even as the nominal number grows; a ₹50 lakh figure 25 years from now won't buy what ₹50 lakh buys today.</p>
+
+  <h3>Who This Calculator Is Useful For</h3>
+  <ul class="feature-list">
+    <li><strong>Long-term investors</strong> projecting how a SIP-style monthly investment plan could grow over 10, 20, or 30 years.</li>
+    <li><strong>Retirement planners</strong> estimating how today's savings rate translates into a future retirement corpus.</li>
+    <li><strong>Students learning finance</strong> who want to see the compound interest formula applied concretely with real numbers rather than just reading it in a textbook.</li>
+  </ul>
+
+  <h3>Compound Interest vs. Simple Interest</h3>
+  <p>Simple interest is calculated only on the original principal for every period, so it grows at a constant, linear rate — ₹1,00,000 at 10% simple interest earns exactly ₹10,000 every single year. Compound interest instead recalculates the interest base each period to include previously earned interest, so the growth curve bends upward over time instead of staying flat. Over a short period the difference is small, but over 15-20+ years compound growth can produce a meaningfully larger total than simple interest at the same nominal rate, which is why almost all serious long-term investment products use compounding rather than simple interest.</p>
+
+  <h3>Frequently Searched Terms</h3>
+  <p>This calculator is built to answer searches like "compound interest calculator with monthly deposit," "how much will my investment grow," "SIP vs lump sum compound growth," and "compound interest formula calculator." Because it supports both a one-time principal and ongoing monthly contributions together, it covers lump-sum investing, pure SIP-style investing, and the common hybrid case of starting with savings and then adding to it regularly.</p>
 </section>
 
 <div class="content-card related-tools">

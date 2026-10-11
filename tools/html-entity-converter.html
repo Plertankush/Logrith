@@ -92,6 +92,32 @@
   </div>
 </div>
 
+<section class="seo-section">
+  <div class="seo-wrap">
+    <div class="content-card">
+      <h2>How to Use the HTML Entity Converter</h2>
+      <div class="tool-steps">
+        <div class="tool-step">
+          <strong>1. Paste or type your text</strong>
+          Enter plain text, HTML markup, or text containing special characters into the input box, replacing the sample text if needed.
+        </div>
+        <div class="tool-step">
+          <strong>2. Choose Encode or Decode</strong>
+          Click "Encode Entities" to convert reserved characters like <code>&amp;</code>, <code>&lt;</code>, and <code>&gt;</code> into their safe entity form, or "Decode Entities" to turn entities like <code>&amp;amp;</code> back into readable characters.
+        </div>
+        <div class="tool-step">
+          <strong>3. Review the output</strong>
+          The converted text appears in the read-only Output box below, ready to inspect before you use it.
+        </div>
+        <div class="tool-step">
+          <strong>4. Copy the result</strong>
+          Click "Copy" to copy the output to your clipboard, or "Clear" to reset both fields and start over.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="article-section">
   <h2>HTML Entity Encoder and Decoder</h2>
   <p>This tool converts special characters into their HTML entity equivalents (encoding), or converts HTML entities back into their original characters (decoding). It's essential for safely displaying text that contains characters with special meaning in HTML markup.</p>
@@ -115,6 +141,32 @@
 
   <h3>Privacy and Local Processing</h3>
   <p>All encoding and decoding happens directly in your browser — your text is never sent to a server.</p>
+
+  <h3>How Encoding Works in This Tool</h3>
+  <p>The encoder targets the five characters that actually matter for safe HTML output: <code>&amp;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>"</code>, and <code>'</code>. Each occurrence is replaced with its corresponding named or numeric entity — ampersand first, so that encoding a character like <code>&lt;</code> doesn't accidentally double-encode the ampersand inside its own entity. These five characters cover every case where HTML markup could be misinterpreted or broken by literal text, which is why most encoding libraries, including this one, focus specifically on them rather than converting every non-ASCII character.</p>
+
+  <h3>How Decoding Works in This Tool</h3>
+  <p>Decoding uses the browser's own HTML parser: the entity text is assigned to a hidden textarea element's <code>innerHTML</code>, and the browser decodes any valid entity — numeric (<code>&amp;#39;</code>), hexadecimal (<code>&amp;#x27;</code>), or named (<code>&amp;copy;</code>, <code>&amp;trade;</code>, <code>&amp;mdash;</code>) — exactly as it would when rendering a real web page. Reading the textarea's resulting <code>value</code> then gives back the plain-text result. This approach means the decoder supports the full range of entities a browser recognizes, not just a short hardcoded list.</p>
+
+  <h3>Numeric vs. Named Entities</h3>
+  <p>A named entity like <code>&amp;amp;</code> is easier for a human to read in source code, while a numeric entity like <code>&amp;#38;</code> references a character by its Unicode code point directly and works even in contexts that don't recognize the full set of named entities. Both forms decode to the same character, and this tool's decoder handles either form without needing to know in advance which one was used.</p>
+
+  <h3>When You Need to Encode Entities</h3>
+  <ul class="feature-list">
+    <li><strong>Displaying code snippets on a webpage:</strong> showing literal HTML or JavaScript code as text, rather than having the browser try to render it.</li>
+    <li><strong>Inserting user-submitted content into HTML:</strong> encoding comments, form input, or any text coming from an untrusted source before it's placed into a page's markup.</li>
+    <li><strong>Writing attribute values with quotes:</strong> escaping a quote character inside an HTML attribute so it doesn't prematurely close the attribute string.</li>
+    <li><strong>Embedding text with an ampersand:</strong> company names, URLs with query parameters, or phrases like "Tom & Jerry" that would otherwise be misread as the start of an entity.</li>
+  </ul>
+
+  <h3>When You Need to Decode Entities</h3>
+  <p>Decoding is useful when you have raw HTML source — copied from a page's view-source, exported from a CMS, or pulled from an API response — and need to read or process the actual text content without the entity escaping getting in the way. It's also common when working with RSS feeds or scraped data, where text is frequently delivered already entity-encoded.</p>
+
+  <h3>A Developer's Everyday Use Case</h3>
+  <p>When building a web form or comment system, any text a user types needs to be encoded before being inserted back into the page's HTML, otherwise a user typing something like <code>&lt;script&gt;</code> could break the page layout or, in a real application without proper safeguards, enable a cross-site scripting attack. Testing how your own encoding logic behaves against tricky inputs — strings with mixed quotes, ampersands, and angle brackets — is easy to do here before wiring it into actual application code.</p>
+
+  <h3>HTML Entities vs. URL Encoding</h3>
+  <p>HTML entity encoding and URL encoding (percent-encoding) solve different problems and are not interchangeable: HTML entities make text safe to place inside HTML markup, while URL encoding makes text safe to place inside a URL. A string destined for a query parameter needs URL encoding; the same string destined for the visible text of a web page needs HTML entity encoding. Mixing the two up is a common source of bugs when handling user input across different parts of an application.</p>
 </section>
 
 <div class="content-card related-tools">

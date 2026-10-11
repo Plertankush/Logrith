@@ -105,6 +105,32 @@
   </div>
 </div>
 
+<section class="seo-section">
+  <div class="seo-wrap">
+    <div class="content-card">
+      <h2>How to Use the Favicon Generator</h2>
+      <div class="tool-steps">
+        <div class="tool-step">
+          <strong>1. Upload a source image</strong>
+          Drag a PNG or JPG into the upload zone, ideally at least 512×512px for sharp results at every size.
+        </div>
+        <div class="tool-step">
+          <strong>2. Let the tool generate all sizes</strong>
+          It automatically center-crops your image to a square and renders it at 16×16, 32×32, 48×48, 180×180, 192×192, and 512×512.
+        </div>
+        <div class="tool-step">
+          <strong>3. Download individual sizes or all at once</strong>
+          Click Download under any size you need, or use Download All Sizes to save every PNG in one click.
+        </div>
+        <div class="tool-step">
+          <strong>4. Copy the HTML snippet into your site</strong>
+          Paste the generated link tags into your page's &lt;head&gt; so browsers and devices pick up the right icon automatically.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="article-section">
   <h2>Free Favicon Generator — All Sizes From One Image</h2>
   <p>This tool takes a single source image and generates all the favicon sizes a modern website typically needs — 16×16, 32×32, 48×48, 180×180 (Apple touch icon), 192×192, and 512×512 — using the browser's Canvas API to resize with high-quality smoothing. Each size is available as an individual PNG download, along with a ready-to-paste HTML snippet for your site's <code>&lt;head&gt;</code>.</p>
@@ -128,6 +154,34 @@
 
   <h3>Privacy and Local Processing</h3>
   <p>All resizing happens locally using the Canvas API — your image is never uploaded to any server, keeping unreleased logos or branding completely private until you're ready to publish.</p>
+
+  <h3>How Non-Square Images Are Handled</h3>
+  <p>If you upload a rectangular image, the tool automatically center-crops it to the largest possible square before resizing, rather than squashing it to fit. This keeps the center of your image intact and avoids the distortion that stretching would cause, but it does mean content near the top, bottom, left, or right edges of a non-square source may get cropped out — so for full control over composition, crop to a square yourself before uploading.</p>
+
+  <h3>Where Each Favicon Size Is Used</h3>
+  <ul class="feature-list">
+    <li><strong>16×16 and 32×32:</strong> displayed in browser tabs, bookmark bars, and browser history lists — the most frequently seen sizes.</li>
+    <li><strong>48×48:</strong> used by some Windows site shortcuts and older browser UI elements.</li>
+    <li><strong>180×180 (Apple touch icon):</strong> shown when a user adds your site to their iOS or iPadOS home screen.</li>
+    <li><strong>192×192:</strong> the standard Android home screen and Chrome PWA manifest icon size.</li>
+    <li><strong>512×512:</strong> used for Android splash screens and as the high-resolution source for PWA install prompts.</li>
+  </ul>
+
+  <h3>For Developers: Where to Place the Files</h3>
+  <p>Most frameworks expect favicon files in a public or static assets folder served from the site root — for example, <code>/public</code> in a React or Next.js project, or <code>/static</code> in many static site generators. The generated HTML snippet references absolute paths like <code>/favicon-32x32.png</code>, so uploading the downloaded files to your site's root directory (or adjusting the paths to match your folder structure) is all that's needed to wire them up.</p>
+
+  <h3>Favicon Generator vs. Manual Resizing</h3>
+  <p>Manually resizing a logo into six separate files in an image editor means repeating the same crop-and-export steps six times, keeping track of exact pixel dimensions, and manually writing the HTML link tags. This tool does the center-crop, resize, and smoothing for every required size in one pass and generates the matching HTML automatically, cutting a repetitive 15–20 minute task down to a few seconds.</p>
+
+  <h3>Common Mistakes to Avoid</h3>
+  <ul class="feature-list">
+    <li><strong>Uploading a low-resolution source:</strong> starting below 512×512 means the largest generated sizes will look soft, since upscaling introduces blur that downscaling avoids.</li>
+    <li><strong>Using a busy or detailed logo:</strong> fine detail, thin lines, or small text disappear at 16×16 — favicons work best as simple, bold shapes or a single letter/mark.</li>
+    <li><strong>Forgetting the manifest reference:</strong> if you're building an installable PWA, make sure your <code>site.webmanifest</code> file also references the 192×192 and 512×512 icons, not just the HTML <code>&lt;link&gt;</code> tags.</li>
+  </ul>
+
+  <h3>Frequently Searched Terms</h3>
+  <p>People searching for this feature often use terms like "favicon generator from logo," "apple touch icon size," "how to add favicon to website," "generate ico file online," and "PWA icon sizes generator." This tool produces all the common sizes needed to answer each of these searches in one step.</p>
 </section>
 
 <div class="content-card related-tools">

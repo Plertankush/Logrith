@@ -115,6 +115,32 @@
   </div>
 </div>
 
+<section class="seo-section">
+  <div class="seo-wrap">
+    <div class="content-card">
+      <h2>How to Use the PDF Watermark Tool</h2>
+      <div class="tool-steps">
+        <div class="tool-step">
+          <strong>1. Upload your PDF</strong>
+          Drag and drop a PDF file into the upload zone, or click it to browse your device. Files up to 20MB are supported.
+        </div>
+        <div class="tool-step">
+          <strong>2. Enter your watermark text</strong>
+          Type the text you want stamped on every page, such as "CONFIDENTIAL," "DRAFT," or your company name, replacing the default sample text.
+        </div>
+        <div class="tool-step">
+          <strong>3. Adjust size, opacity, rotation, and color</strong>
+          Use the sliders to set the font size and transparency, pick a rotation angle (45° diagonal is the common choice), and choose a color that fits the document.
+        </div>
+        <div class="tool-step">
+          <strong>4. Apply and download</strong>
+          Click "Apply Watermark" to stamp every page, then download the resulting PDF file with the watermark permanently embedded.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="article-section">
   <h2>Add a Text Watermark to Your PDF</h2>
   <p>This tool stamps a custom text watermark — like "CONFIDENTIAL," "DRAFT," or a company name — across every page of a PDF document, directly in your browser. Control the text, size, color, opacity, and rotation angle to match your needs, then download the watermarked file instantly.</p>
@@ -135,6 +161,38 @@
 
   <h3>Privacy and Local Processing</h3>
   <p>All watermarking happens locally in your browser using pdf-lib — your PDF is never uploaded to a server, keeping confidential documents completely private during processing.</p>
+
+  <h3>Text Watermark vs. Image Watermark</h3>
+  <p>A text watermark is lighter-weight and keeps the file size small, since it's drawn using an embedded font rather than an embedded image. It's also easy to adjust — change the wording, color, or angle and reapply in seconds. An image-based watermark, such as a logo, is better suited for branding where a wordmark or graphic needs to appear consistently; this tool focuses on text, which covers the most common use cases like "DRAFT," "CONFIDENTIAL," or a company name.</p>
+
+  <h3>Where the Watermark Is Positioned</h3>
+  <p>The watermark text is centered on each page both horizontally and vertically, with its width calculated from the selected font and size so it sits exactly in the middle regardless of how long the text is. Because the tool uses a bold Helvetica font embedded directly into the PDF, the watermark renders identically across every PDF viewer and operating system, rather than depending on a font that might not be installed on the reader's device.</p>
+
+  <h3>Common Use Cases</h3>
+  <ul class="feature-list">
+    <li><strong>Legal and business documents:</strong> stamping contracts, proposals, or invoices as "DRAFT" before a final version is approved.</li>
+    <li><strong>Academic and research papers:</strong> marking a working paper as "PREPRINT" or "NOT FOR CITATION" before peer review.</li>
+    <li><strong>Digital products and ebooks:</strong> adding a buyer's name or order ID as a lightweight deterrent against unauthorized sharing.</li>
+    <li><strong>Internal reports:</strong> labeling sensitive financial or HR documents as "INTERNAL USE ONLY" before distribution.</li>
+  </ul>
+
+  <h3>One File at a Time, Every Page Covered</h3>
+  <p>The tool processes one PDF per run and loops through every page in that document, applying the same watermark text, size, color, opacity, and rotation to each one. There's no option to watermark only specific pages or to vary the text per page — if you need a uniform stamp across an entire document, this covers it in a single click; for page-specific watermarks, you'd need to split the PDF first.</p>
+
+  <h3>Why the Watermark Can't Be Removed by the Recipient</h3>
+  <p>Because pdf-lib draws the watermark text as actual content on each page — not as a separate layer or metadata field — it becomes part of the page just like the original text and images. A recipient opening the file in a standard PDF viewer has no built-in way to toggle it off, which is why keeping your original, unwatermarked file is important if you'll need a clean copy later.</p>
+
+  <h3>Doing This Manually vs. Using This Tool</h3>
+  <p>Without a dedicated tool, adding a watermark to every page of a PDF typically means using desktop software like Adobe Acrobat, which often requires a paid subscription, or manually editing each page in a design tool and re-exporting — both slow for a document with many pages. This tool applies the same watermark to every page of the file in one pass, in the browser, with no installation or account required.</p>
+
+  <h3>Choosing a Watermark Color</h3>
+  <p>Red is a common default for "CONFIDENTIAL" or "DRAFT" stamps because it stands out as a warning against a plain white page background. Gray or a muted tone works better when the watermark is meant to be present but unobtrusive, such as a faint company name on every page of a public-facing document. The color picker lets you pick any hex value, so you can match a brand color if the watermark is meant to double as light branding rather than a warning label.</p>
+
+  <h3>Font Size and Readability</h3>
+  <p>A large font size relative to the page, combined with high opacity, makes the watermark the dominant visual element — useful for a "SAMPLE" stamp meant to prevent a preview document from being used as a final copy. A smaller size with low opacity keeps the watermark present for identification purposes without interfering with reading the underlying text, which is the better choice for internal documents that still need to be fully legible.</p>
+
+  <h3>What Happens to Encrypted or Corrupted PDFs</h3>
+  <p>If the uploaded file is password-protected, encrypted, or corrupted in a way that pdf-lib cannot parse, the watermarking step will fail and the tool shows an error message rather than producing a broken file. Removing the password protection first, or confirming the PDF opens correctly in a standard viewer, resolves this in most cases.</p>
 </section>
 
 <div class="content-card related-tools">

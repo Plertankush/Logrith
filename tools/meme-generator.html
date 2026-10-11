@@ -107,6 +107,32 @@
   </div>
 </div>
 
+<section class="seo-section">
+  <div class="seo-wrap">
+    <div class="content-card">
+      <h2>How to Use the Meme Generator</h2>
+      <div class="tool-steps">
+        <div class="tool-step">
+          <strong>1. Upload your image</strong>
+          Drag and drop a PNG, JPG, or WEBP file into the upload zone, or click it to browse your device, up to 10MB.
+        </div>
+        <div class="tool-step">
+          <strong>2. Type your top and bottom text</strong>
+          Enter your caption into the Top Text and Bottom Text fields — the tool automatically converts your text to the classic all-caps style.
+        </div>
+        <div class="tool-step">
+          <strong>3. Adjust font size and color</strong>
+          Drag the font size slider to fit longer or shorter captions, and pick a text color if white doesn't suit your image.
+        </div>
+        <div class="tool-step">
+          <strong>4. Download your meme</strong>
+          Review the rendered canvas preview, then click Download Meme to save the finished PNG with no watermark.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="article-section">
   <h2>Free Online Meme Generator</h2>
   <p>This tool recreates the classic internet meme format — bold white text with a black outline, positioned at the top and bottom of an image — using nothing but your browser's Canvas API. Upload any image, type your captions, adjust the size and color, and download the finished meme instantly.</p>
@@ -124,6 +150,42 @@
 
   <h3>Privacy and Local Processing</h3>
   <p>Your image and text are processed entirely in your browser using the Canvas API — nothing is uploaded to a server, and no watermark is added to your finished meme.</p>
+
+  <h3>How the Text Rendering Actually Works</h3>
+  <p>When you type a caption, the tool measures its width against the canvas using the Impact font (falling back to Haettenschweiler or Arial Narrow Bold if Impact isn't available on your device) and automatically wraps it onto multiple lines if it's too wide to fit in one line at 92% of the image width. Each line is drawn twice — once as a thick black stroke for the outline, then again as a solid fill in your chosen color — which is exactly how the original image-macro meme format achieved its readable look on any background.</p>
+
+  <h3>Why Top and Bottom Text Specifically</h3>
+  <p>The two-caption format (setup on top, punchline on bottom) isn't arbitrary — it mirrors how meme templates are typically read: the top line sets up a situation or reaction, and the bottom line delivers the twist. This tool keeps that same structure, wrapping and stacking each block of text from its respective edge of the image so longer captions grow inward rather than overlapping each other.</p>
+
+  <h3>Choosing the Right Base Image</h3>
+  <p>Reaction images, screenshots, and photos with a clear focal point tend to work best, since there's usually open space near the top and bottom edges for text to sit without covering an important detail. If your image is very tall or very wide, consider cropping it first with an image crop tool so the proportions match a typical meme format before adding captions.</p>
+
+  <h3>Common Use Cases</h3>
+  <ul class="feature-list">
+    <li><strong>Reaction memes</strong> — turning a screenshot or photo into a shareable reaction image for group chats and social media.</li>
+    <li><strong>Templates from trending formats</strong> — applying a current meme template's text pattern to your own image or situation.</li>
+    <li><strong>Personal or inside jokes</strong> — captioning a photo of friends, pets, or events for private sharing.</li>
+    <li><strong>Marketing and social content</strong> — quick, relatable meme-style posts for brand social accounts that want a casual tone.</li>
+  </ul>
+
+  <h3>Meme Generator vs. Mobile Apps</h3>
+  <p>Dedicated meme apps often require an account, inject a watermark unless you pay, or compress your image on export. Because this tool runs entirely as a web page with no account system, there's no login wall, no forced watermark, and no upload step that could degrade your image quality — the output canvas is rendered at the same resolution as your original upload.</p>
+
+  <h3>Common Mistakes to Avoid</h3>
+  <ul class="feature-list">
+    <li><strong>Text too large for the image</strong> — an oversized font size can push captions off the edges or force excessive line wrapping; reduce the size slider if your lines look cramped.</li>
+    <li><strong>Low-contrast text color</strong> — white text usually reads well with the black outline, but on a very light image you may want to switch to a darker fill color for extra contrast.</li>
+    <li><strong>Captions that are too long</strong> — classic memes read fastest with short, punchy lines; very long sentences lose the format's visual punch.</li>
+  </ul>
+
+  <h3>Frequently Searched Terms</h3>
+  <p>People looking for this kind of tool often search "meme maker no watermark," "free meme generator online," "impact font meme maker," "make a meme from my photo," and "caption generator for memes." This tool's top/bottom text and Impact-style outline rendering covers all of these searches in one place.</p>
+
+  <h3>Sharing Your Finished Meme</h3>
+  <p>Once downloaded, the PNG file is ready to share directly on any platform — Instagram, WhatsApp, X, Discord, or group chats — without needing to resize or convert it first. Since the canvas renders at your original image's resolution, the file stays sharp even if the platform you're posting to compresses it slightly on upload.</p>
+
+  <h3>Editing an Existing Meme</h3>
+  <p>If you want to change the wording after seeing the preview, you don't need to start over — editing the Top Text or Bottom Text field re-renders the canvas instantly with the new caption, so you can try several versions of a joke before picking the one you like best and downloading it.</p>
 </section>
 
 <div class="content-card related-tools">

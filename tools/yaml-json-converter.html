@@ -98,6 +98,32 @@ address:
   </div>
 </div>
 
+<section class="seo-section">
+  <div class="seo-wrap">
+    <div class="content-card">
+      <h2>How to Use the YAML to JSON Converter</h2>
+      <div class="tool-steps">
+        <div class="tool-step">
+          <strong>1. Pick a direction</strong>
+          Choose "YAML → JSON" or "JSON → YAML" from the mode cards depending on which way you need to convert.
+        </div>
+        <div class="tool-step">
+          <strong>2. Paste or edit your data</strong>
+          Replace the sample content in the input box with your own YAML or JSON, keeping indentation consistent for YAML.
+        </div>
+        <div class="tool-step">
+          <strong>3. Click Convert</strong>
+          Press the Convert button to parse the input and generate the equivalent output instantly in your browser.
+        </div>
+        <div class="tool-step">
+          <strong>4. Copy the result</strong>
+          Use the Copy button next to the output box to grab the converted text for your config file, script, or API call.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="article-section">
   <h2>Convert Between YAML and JSON</h2>
   <p>This tool converts YAML documents to JSON, or JSON to YAML, handling nested objects and arrays. It's useful for developers working with configuration files, Kubernetes manifests, CI/CD pipelines, and APIs that use either format.</p>
@@ -118,6 +144,49 @@ address:
 
   <h3>Privacy and Local Processing</h3>
   <p>All conversion happens directly in your browser — your data is never sent to a server.</p>
+
+  <h3>How the YAML Parser Handles Structure</h3>
+  <p>This converter reads YAML line by line, using each line's indentation level to figure out where it sits in the overall structure. When indentation increases, the parser treats that as a nested object or list; when it decreases, it closes out the current nesting level and returns to a shallower one. List items are recognized by a leading hyphen, and each key-value pair separated by a colon is interpreted either as a scalar value or the start of a new nested block depending on whether anything follows the colon on the same line.</p>
+
+  <h3>Which Value Types Are Recognized</h3>
+  <ul class="feature-list">
+    <li><strong>Booleans</strong> — the literal words <code>true</code> and <code>false</code> convert to JSON booleans.</li>
+    <li><strong>Null values</strong> — <code>null</code>, <code>~</code>, or an empty value convert to JSON <code>null</code>.</li>
+    <li><strong>Numbers</strong> — unquoted numeric values convert to JSON numbers rather than strings.</li>
+    <li><strong>Quoted strings</strong> — values wrapped in single or double quotes have the quotes stripped and are kept as plain strings.</li>
+    <li><strong>Plain strings</strong> — anything that isn't a recognized boolean, null, or number is treated as a string.</li>
+  </ul>
+
+  <h3>What Happens When Converting JSON Back to YAML</h3>
+  <p>In the reverse direction, the tool walks the parsed JSON object recursively: nested objects become indented blocks, arrays become hyphen-prefixed lists (with nested objects inside an array getting their own indented block), and scalar values are written as plain text unless they look like they could be misread as a number, boolean, or null — in which case they're quoted to preserve their original type as a string.</p>
+
+  <h3>For Developers Working with Kubernetes and CI/CD</h3>
+  <p>Kubernetes manifests, GitHub Actions workflows, and Docker Compose files are all written in YAML, but debugging tools, APIs, and many programming language standard libraries work more naturally with JSON. Converting a manifest to JSON temporarily makes it easier to validate structure, diff against an API response, or feed into a JSON Schema validator, then convert back to YAML once you're done.</p>
+
+  <h3>Limitations to Be Aware Of</h3>
+  <p>This converter supports the YAML features most configuration files actually use: nested mappings, lists, and the standard scalar types. It does not support YAML anchors and aliases (<code>&amp;</code>/<code>*</code> references for reusing blocks), multi-document files separated by <code>---</code>, or flow-style inline collections like <code>{key: value}</code> written on a single line. If your YAML file relies on these advanced features, a dedicated YAML library will handle them more reliably.</p>
+
+  <h3>Common Mistakes</h3>
+  <ul class="feature-list">
+    <li>Mixing tabs and spaces for indentation — YAML (and this parser) relies on consistent spacing, and a stray tab can shift an entire block to the wrong nesting level.</li>
+    <li>Forgetting a trailing comma check in JSON mode — valid JSON never has a trailing comma after the last item in an object or array.</li>
+    <li>Assuming quoted numbers stay as numbers — a YAML value like <code>"30"</code> in quotes is intentionally kept as a string, not converted to the number 30.</li>
+  </ul>
+
+  <h3>Frequently Searched Terms</h3>
+  <ul class="feature-list">
+    <li>yaml to json online converter</li>
+    <li>convert kubernetes yaml to json</li>
+    <li>json to yaml formatter</li>
+    <li>yaml parser online free</li>
+    <li>convert docker compose yaml to json</li>
+  </ul>
+
+  <h3>Why Indentation Matters More in YAML Than JSON</h3>
+  <p>JSON's structure is defined by its braces and brackets, so whitespace between tokens is purely cosmetic — you can minify a JSON file to a single line and it still parses correctly. YAML has no such delimiters; indentation is the only thing telling the parser where one block ends and another begins. This is why a YAML file that looks almost identical to a working one can fail to parse if a single line is indented with one space instead of two — it's also why converting to JSON is a useful sanity check, since the resulting braces make the actual nesting visible and unambiguous.</p>
+
+  <h3>Typical Workflow for Config File Debugging</h3>
+  <p>A common pattern among developers is pasting a YAML config that's behaving unexpectedly into this tool, converting it to JSON, and visually comparing the nesting against what was intended. Because JSON's braces make every level of nesting explicit, it's often faster to spot a misplaced key or an array that accidentally became an object than it is by staring at raw YAML indentation.</p>
 </section>
 
 <div class="content-card related-tools">
