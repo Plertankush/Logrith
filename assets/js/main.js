@@ -33,6 +33,13 @@ const ALL_TOOLS = [
   { name: 'GST Calculator',            cat: 'Utility', url: 'tools/gst-calculator',        icon: '💹' },
   { name: 'EMI Calculator',            cat: 'Utility', url: 'tools/emi-calculator',        icon: '💰' },
   { name: 'Password Strength Checker', cat: 'Utility', url: 'tools/password-strength',     icon: '🔒' },
+  { name: 'PDF Inspector',             cat: 'Global',  url: 'tools/pdf-inspector',           icon: '📄' },
+  { name: 'Image Privacy Cleaner',     cat: 'Global',  url: 'tools/image-privacy-cleaner',   icon: '🖼️' },
+  { name: 'JSON Repair Tool',          cat: 'Global',  url: 'tools/json-repair',             icon: '{ }' },
+  { name: 'CSV Cleaner',               cat: 'Global',  url: 'tools/csv-cleaner',             icon: '📊' },
+  { name: 'AI Token & Context Calculator', cat: 'Global', url: 'tools/ai-context-calculator', icon: '🧮' },
+  { name: 'Markdown to HTML',          cat: 'Global',  url: 'tools/markdown-to-html',        icon: '📝' },
+  { name: 'URL Deduplicator',          cat: 'Global',  url: 'tools/url-deduplicator',        icon: '🔗' },
 ];
 
 /* ─────────────────────────────────────────────────────────

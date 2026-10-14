@@ -27,6 +27,7 @@ Logrith is built and run by a solo founder, Ankush Maurya (online identity: Pler
 - Developer Tools: https://logrith.in/categories/developer-tools
 - Utilities: https://logrith.in/categories/utilities
 - AI Tools: https://logrith.in/categories/ai-tools
+- Global Tools: https://logrith.in/categories/global-tools
 
 ## Notable Tools (high traffic / high utility)
 
@@ -48,6 +49,13 @@ Logrith is built and run by a solo founder, Ankush Maurya (online identity: Pler
 - Password Generator: https://logrith.in/tools/password-generator
 - UUID Generator: https://logrith.in/tools/uuid-generator
 - Regex Tester: https://logrith.in/tools/regex-tester
+- PDF Inspector: https://logrith.in/tools/pdf-inspector — inspect PDF metadata, fonts, embedded images, structure, and security flags
+- Image Privacy Cleaner: https://logrith.in/tools/image-privacy-cleaner — strip EXIF and GPS metadata from photos entirely in-browser
+- JSON Repair Tool: https://logrith.in/tools/json-repair — fix broken JSON, view as a tree, export as TypeScript or CSV
+- CSV Cleaner: https://logrith.in/tools/csv-cleaner — remove duplicate rows, trim whitespace, validate CSV data
+- AI Token & Context Calculator: https://logrith.in/tools/ai-context-calculator — estimate token count and context-window usage for AI prompts
+- Markdown to HTML Converter: https://logrith.in/tools/markdown-to-html — convert Markdown to clean, semantic HTML
+- URL Deduplicator: https://logrith.in/tools/url-deduplicator — remove exact and near-duplicate URLs from a list
 
 ## Full Tool Index
 
@@ -63,6 +71,8 @@ Utilities: qr-generator, barcode-generator, password-generator, password-strengt
 
 AI Tools: resume-analyzer, website-speed-analyzer
 
+Global Tools: pdf-inspector, image-privacy-cleaner, json-repair, csv-cleaner, ai-context-calculator, markdown-to-html, url-deduplicator
+
 ## Content & Blog
 
 Logrith publishes explainer blog posts for its highest-traffic tools at https://logrith.in/blog/ — these cover how each tool works, common misconceptions, and practical usage guidance rather than generic SEO filler.
@@ -73,4 +83,4 @@ Logrith publishes explainer blog posts for its highest-traffic tools at https://
 - Most tools process data entirely client-side (in-browser); server upload is used only where technically required (noted per tool).
 - No login or account system; no paywalled tools.
 - Monetization is via non-intrusive display ads (Google AdSense) only — no sponsored tool rankings, no affiliate manipulation of results.
-- Sitemaps: https://logrith.in/sitemap.xml (index), https://logrith.in/sitemap-tools.xml, https://logrith.in/sitemap-blog.xml, https://logrith.in/sitemap-pages.xml
+- Sitemaps: https://logrith.in/sitemap.xml (index), https://logrith.in/sitemap-tools.xml, https://logrith.in/sitemap-global.xml, https://logrith.in/sitemap-blog.xml, https://logrith.in/sitemap-pages.xml

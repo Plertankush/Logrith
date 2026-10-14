@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Image Privacy Cleaner – Remove EXIF & Photo Metadata Online</title>
+  <meta name="description" content="Image Privacy Cleaner: Remove EXIF, GPS and camera metadata from photos directly in your browser. Free and privacy-focused.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Logrith">
+  <link rel="canonical" href="https://logrith.in/tools/image-privacy-cleaner">
+
+  <meta property="og:title" content="Image Privacy Cleaner – Remove EXIF & Photo Metadata Online">
+  <meta property="og:description" content="Remove EXIF, GPS and camera metadata from photos directly in your browser. Free and privacy-focused.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://logrith.in/tools/image-privacy-cleaner">
+  <meta property="og:site_name" content="Logrith">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Image Privacy Cleaner – Remove EXIF & Photo Metadata Online">
+  <meta name="twitter:description" content="Remove EXIF, GPS and camera metadata from photos directly in your browser. Free and privacy-focused.">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preload" href="/assets/css/style.css" as="style">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <meta name="keywords" content="image privacy cleaner, remove exif data, strip photo metadata, remove gps from photo, exif remover online">
+
+  <style>
+    .tool-hero { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #ecfdf5 100%);}
+    .tool-hero h1 span { color: #16a34a; }
+
+    .insp-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-top:14px; }
+    .insp-card { background:var(--gray-50); border:1px solid var(--gray-200); border-radius:12px; padding:16px; }
+    .insp-card h3 { font-family:var(--font-display); font-size:.9rem; font-weight:700; color:var(--gray-900); margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+    .insp-row { display:flex; justify-content:space-between; gap:10px; padding:6px 0; border-bottom:1px solid var(--gray-100); font-size:.84rem; }
+    .insp-row:last-child { border-bottom:none; }
+    .insp-row .k { color:var(--gray-500); }
+    .insp-row .v { color:var(--gray-900); font-weight:600; text-align:right; word-break:break-word; }
+    .insp-flag { display:inline-flex; align-items:center; gap:6px; padding:3px 10px; border-radius:20px; font-size:.76rem; font-weight:700; }
+    .insp-flag.yes { background:#fff7ed; color:#9a3412; }
+    .insp-flag.no { background:#ecfdf3; color:#166534; }
+
+    .preview-row { display:flex; gap:16px; flex-wrap:wrap; margin-top:14px; }
+    .preview-box { flex:1; min-width:220px; }
+    .preview-box img { width:100%; border-radius:10px; border:1px solid var(--gray-200); display:block; }
+    .preview-box h4 { font-size:.82rem; font-weight:700; color:var(--gray-600); margin-bottom:8px; }
+
+    .article-section, .faq-section, .feature-section, .related-tools, .keyword-section, .howto-section {
+      max-width: 860px; margin: 22px auto 0; background: #fff; border: 1px solid var(--gray-100); border-radius: 14px; padding: 22px;
+    }
+    .article-section h2, .faq-section h2, .feature-section h2, .related-tools h2, .keyword-section h2, .howto-section h2 { margin-bottom: 14px; }
+    .article-section p, .howto-section p { margin: 0 0 12px; line-height: 1.8; color: var(--gray-700); }
+    .feature-list, .keyword-list, .related-list, .howto-list { margin: 0; padding-left: 18px; }
+    .feature-list li, .keyword-list li, .related-list li, .howto-list li { margin-bottom: 10px; color: var(--gray-700); line-height: 1.7; }
+    .privacy-note { max-width: 860px; margin: 10px auto 0; font-size: .88rem; color: var(--gray-600); text-align: left; }
+    .faq-item { border-bottom: 1px solid var(--gray-100); padding: 14px 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-weight: 700; color: var(--gray-800); margin-bottom: 6px; }
+    .faq-a { color: var(--gray-700); line-height: 1.8; }
+    .related-list a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    .related-list a:hover { text-decoration: underline; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareApplication",
+    "name":"Logrith Image Privacy Cleaner",
+    "url":"https://logrith.in/tools/image-privacy-cleaner",
+    "applicationCategory":"UtilitiesApplication",
+    "operatingSystem":"Web Browser",
+    "description":"Browser-based tool that reads EXIF metadata from a photo and removes camera, timestamp and GPS location data before download, without uploading the file to a server.",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+    "featureList":[
+      "Read EXIF metadata from JPEG photos",
+      "Detect camera make and model",
+      "Detect date and time metadata",
+      "Detect GPS location coordinates in photos",
+      "Remove all metadata from an image",
+      "Download a clean image with pixels unchanged",
+      "100% local browser processing"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://logrith.in/"},
+      {"@type":"ListItem","position":2,"name":"Global Tools","item":"https://logrith.in/categories/global-tools"},
+      {"@type":"ListItem","position":3,"name":"Image Privacy Cleaner","item":"https://logrith.in/tools/image-privacy-cleaner"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Does this tool remove GPS location data from photos?","acceptedAnswer":{"@type":"Answer","text":"Yes. If the photo contains GPS coordinates in its EXIF data, the tool detects and displays them, and the cleaning step removes them along with all other metadata."}},
+      {"@type":"Question","name":"Will removing metadata change how my photo looks?","acceptedAnswer":{"@type":"Answer","text":"No. The visible pixels of the image are not altered. Only the hidden metadata attached to the file, such as camera details, timestamps and GPS coordinates, is removed."}},
+      {"@type":"Question","name":"Is my photo uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. The image is read and processed entirely in your browser using JavaScript. It is never uploaded to Logrith or any other server."}},
+      {"@type":"Question","name":"Which image formats are supported?","acceptedAnswer":{"@type":"Answer","text":"EXIF reading works on JPEG photos, which is the format that typically carries camera and GPS metadata. PNG and other formats can also be cleaned through the canvas re-export step, though PNG rarely contains EXIF data."}},
+      {"@type":"Question","name":"Is this tool free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes, this tool is completely free with no account, signup, or file limit beyond what your browser can handle."}}
+    ]
+  }
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+</head>
+<body>
+<div id="navbar"></div>
+
+<main>
+  <div class="tool-hero">
+    <div class="tool-hero-inner">
+      <div class="tool-breadcrumb">
+        <a href="/">Home</a> › <a href="/categories/global-tools">Global Tools</a> › Image Privacy Cleaner
+      </div>
+      <h1>Image Privacy Cleaner – Remove<span> Photo Metadata</span></h1>
+      <p>See what EXIF, camera and GPS metadata is hidden inside your photo, then remove it and download a clean copy, entirely in your browser.</p>
+      <div class="tool-tags">
+        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
+        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#lock"></use></svg> Local Processing</span>
+        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#map-pin"></use></svg> GPS Detection</span>
+        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#speed"></use></svg> Instant</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="tool-workspace" style="max-width:900px;">
+    <div class="tool-card">
+      <h2>Upload a Photo to Check</h2>
+      <div class="upload-zone" id="upload-zone">
+        <input type="file" id="file-input" accept="image/jpeg,image/jpg,image/png">
+        <svg class="icon" style="width:40px;height:40px;color:var(--gray-400);"><use href="/assets/svg/icons.svg#image"></use></svg>
+        <h3>Drop a JPG or PNG here or click to browse</h3>
+        <p>The file is read entirely in your browser — nothing is uploaded.</p>
+        <span class="upload-limit">EXIF reading works best on JPEG photos straight from a camera or phone</span>
+      </div>
+      <div class="status-msg" id="status-msg" style="margin-top:12px;" aria-live="polite"></div>
+    </div>
+
+    <p class="privacy-note">Your image is processed in your browser. Files are not uploaded to Logrith.</p>
+
+    <div class="tool-card" id="results-card" style="display:none;">
+      <h2>Metadata Found</h2>
+      <div class="insp-grid" id="insp-grid"></div>
+      <div class="btn-group mt-12">
+        <button class="btn btn-primary" id="clean-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#shield-check"></use></svg> Remove Metadata &amp; Download Clean Image</button>
+      </div>
+      <div class="preview-row" id="preview-row" style="display:none;">
+        <div class="preview-box">
+          <h4>Original</h4>
+          <img id="preview-original" alt="Original uploaded image">
+        </div>
+        <div class="preview-box">
+          <h4>Cleaned (metadata removed)</h4>
+          <img id="preview-cleaned" alt="Cleaned image with metadata removed">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="howto-section">
+    <h2>How to Clean Image Metadata</h2>
+    <ol class="howto-list">
+      <li>Click the upload area or drag a JPG or PNG photo into it.</li>
+      <li>The tool reads the file's raw bytes locally and parses any EXIF metadata segment it finds.</li>
+      <li>Review the camera, timestamp and GPS details that were detected, if any.</li>
+      <li>Click "Remove Metadata & Download Clean Image" to redraw the photo onto a canvas and download a copy with no metadata attached.</li>
+    </ol>
+  </section>
+
+  <section class="feature-section">
+    <h2>What This Tool Checks and Removes</h2>
+    <ul class="feature-list">
+      <li><strong>Camera details:</strong> device make and model recorded by the camera or phone that took the photo.</li>
+      <li><strong>Timestamps:</strong> the date and time the photo was originally taken, and when it was last modified.</li>
+      <li><strong>Software tag:</strong> the name of the software or app that last processed or exported the image.</li>
+      <li><strong>Orientation:</strong> the rotation flag some cameras store instead of rotating the actual pixels.</li>
+      <li><strong>GPS location:</strong> latitude and longitude coordinates, converted to readable decimal degrees when present.</li>
+      <li><strong>Full removal:</strong> the cleaning step strips all of the above, and any other embedded metadata, from the downloaded copy.</li>
+    </ul>
+  </section>
+
+  <section class="article-section">
+    <h2>What Is Image Metadata?</h2>
+    <p>Most photos taken on a phone or digital camera carry more information than just the pixels you see. This extra information is called metadata, and the most common format for storing it in photos is EXIF (Exchangeable Image File Format). EXIF data sits in a dedicated segment inside the JPEG file, separate from the actual image content, and can include the camera make and model, the date and time the photo was taken, camera settings, the orientation of the shot, and in many cases, the precise GPS coordinates of where the photo was captured.</p>
+    <p>This information is added automatically by most phones and cameras, usually without the person taking the photo noticing. It's useful for photo organization apps that sort pictures by location or date, but it also means a photo file can carry details you may not intend to share when you post or send it.</p>
+
+    <h2>Why Remove EXIF Data?</h2>
+    <p>There are several practical, everyday reasons people choose to strip metadata from a photo before sharing it:</p>
+    <ul class="feature-list">
+      <li><strong>Location privacy:</strong> a photo with GPS coordinates reveals exactly where it was taken, which may be a home address, workplace, or other location you'd rather not attach to a public post.</li>
+      <li><strong>Device information:</strong> camera make and model data can reveal what equipment or phone you use, which is sometimes irrelevant to share alongside the image itself.</li>
+      <li><strong>Timestamps:</strong> the exact date and time a photo was taken is sometimes more detail than needed, particularly for images being archived, submitted, or published later.</li>
+      <li><strong>Sharing online:</strong> many platforms strip metadata automatically on upload, but not all of them do, and files sent directly (email, messaging apps, file transfer) usually keep their original metadata intact.</li>
+      <li><strong>Public uploads:</strong> photos submitted to open galleries, marketplaces, forums, or public datasets often benefit from a metadata-free version so that only the image content is shared, not the surrounding technical details.</li>
+    </ul>
+    <p>None of this means metadata is inherently a problem — it's simply additional information riding along with the file, and this tool gives you visibility into it along with a straightforward way to remove it when you'd prefer not to include it.</p>
+
+    <h2>What Metadata Can This Tool Remove?</h2>
+    <p>The cleaning step in this tool removes every category of metadata embedded in the photo, not just the fields that happen to be displayed in the report above. Because the cleaning method works by redrawing the image rather than selectively deleting tags, camera details, timestamps, software tags, orientation flags, GPS coordinates, and any other EXIF or metadata segment present in the original file are all removed from the output in one step.</p>
+
+    <h2>How to Clean Image Metadata</h2>
+    <p>Using the tool is a two-step process. First, upload your photo so the tool can read and display whatever metadata it contains — this step is purely informational and doesn't modify the file. Second, click the clean button to generate a new version of the image with all metadata stripped out, ready to download. You can repeat this with as many photos as you like, one at a time.</p>
+
+    <h2>Browser-Based Image Privacy</h2>
+    <p>Everything in this tool runs locally in your browser using JavaScript. When you select a photo, its bytes are read directly from your device's memory using the File API — there is no upload step, no server round-trip, and no copy of your photo stored anywhere by Logrith. This matters for a privacy tool specifically, since a metadata cleaner that required uploading your file to a remote server first would defeat much of the point. The entire process, from reading the EXIF segment to generating the cleaned download, happens on your own device.</p>
+
+    <h2>EXIF vs Image Pixels</h2>
+    <p>It's worth being precise about what metadata removal actually changes. A JPEG file is made up of two distinct kinds of data: the compressed pixel data that forms the visible picture, and separate metadata segments (like the EXIF block) that sit alongside it but are never rendered as part of the image itself. Removing metadata only touches the second kind. The cleaning step in this tool works by drawing the image onto an HTML5 canvas and then exporting that canvas as a new file — a canvas only ever captures what's visually rendered, which means the output file contains the same pixels as the original but none of the original metadata segments, because metadata was never part of what gets drawn to canvas in the first place. In short: the picture looks identical, the hidden data attached to the file does not carry over.</p>
+
+    <h2>When Should You Remove Image Metadata?</h2>
+    <p>A few common moments where people find it useful to clean a photo's metadata first:</p>
+    <ul class="feature-list">
+      <li><strong>Before publishing:</strong> on a blog, portfolio, or news article, where only the visual content needs to be included.</li>
+      <li><strong>Before sharing publicly:</strong> on social media, forums, or community groups, especially for photos taken at a home or private location.</li>
+      <li><strong>Before uploading to websites:</strong> marketplaces, classifieds, or submission forms that don't need to know what device or location produced the photo.</li>
+      <li><strong>Before sending to unknown recipients:</strong> such as a photo attached to a support ticket, application, or correspondence with someone you don't know personally.</li>
+    </ul>
+
+    <h3>How the EXIF Reader Works</h3>
+    <p>JPEG files begin with a fixed two-byte marker (0xFFD8), after which the file is organized into a sequence of segments, each starting with its own marker. EXIF metadata, when present, lives inside an APP1 segment marked by 0xFFE1, which contains the literal text "Exif" followed by two null bytes and then a TIFF-structured block of tagged data. This tool scans the uploaded file's bytes for that structure, parses the TIFF header to determine byte order, walks the Image File Directory (IFD) entries to read tags such as camera make, model, date/time, software and orientation, and separately follows the GPS IFD pointer tag when present to read latitude and longitude, converting the stored degrees/minutes/seconds rational values into a single decimal-degree number for display.</p>
+
+    <h3>Frequently Searched Terms</h3>
+    <p>People use this tool when searching for phrases like "remove exif data online," "strip gps from photo," "delete metadata from image," "remove camera info from jpg," and "exif remover browser." This page is built to answer exactly those needs in one local, browser-based tool.</p>
+  </section>
+
+  <section class="faq-section">
+    <h2>Image Privacy Cleaner FAQ</h2>
+    <div class="faq-item">
+      <div class="faq-q">Does this tool remove GPS location data from photos?</div>
+      <div class="faq-a">Yes. If the photo contains GPS coordinates in its EXIF data, the tool detects and displays them, and the cleaning step removes them along with all other metadata.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Will removing metadata change how my photo looks?</div>
+      <div class="faq-a">No. The visible pixels are not altered. Only the hidden metadata attached to the file, such as camera details, timestamps and GPS coordinates, is removed.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is my photo uploaded to a server?</div>
+      <div class="faq-a">No. The image is read and processed entirely in your browser using JavaScript. It is never uploaded to Logrith or any other server.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Which image formats are supported?</div>
+      <div class="faq-a">EXIF reading works on JPEG photos, which is the format that typically carries camera and GPS metadata. PNG files can also be cleaned through the canvas re-export step, though PNG rarely contains EXIF data to begin with.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is this tool free to use?</div>
+      <div class="faq-a">Yes, this tool is free to use with no account, signup, or file limit beyond what your browser can handle.</div>
+    </div>
+  </section>
+
+  <section class="related-tools">
+    <h2>Related Tools</h2>
+    <ul class="related-list">
+      <li><a href="/tools/pdf-inspector">PDF Inspector</a></li>
+      <li><a href="/tools/image-watermark">Image Watermark</a></li>
+      <li><a href="/tools/image-compressor">Image Compressor</a></li>
+      <li><a href="/tools/image-converter">Image Converter</a></li>
+      <li><a href="/tools/csv-cleaner">CSV Cleaner</a></li>
+    </ul>
+  </section>
+
+  <section class="keyword-section">
+    <h2>Top Image Privacy Cleaner Search Queries</h2>
+    <ul class="keyword-list">
+      <li>image privacy cleaner</li>
+      <li>remove exif data online</li>
+      <li>strip photo metadata</li>
+      <li>remove gps from photo</li>
+      <li>exif remover online free</li>
+      <li>delete camera metadata from jpg</li>
+      <li>check photo metadata online</li>
+      <li>remove location data from image</li>
+    </ul>
+  </section>
+</main>
+
+<div id="footer"></div>
+
+<script src="/assets/js/main.js" defer></script>
+<script src="/load-components.js"></script>
+
+<script>
+const uploadZone = document.getElementById('upload-zone');
+const fileInput = document.getElementById('file-input');
+const statusEl = document.getElementById('status-msg');
+const resultsCard = document.getElementById('results-card');
+const inspGrid = document.getElementById('insp-grid');
+const cleanBtn = document.getElementById('clean-btn');
+const previewRow = document.getElementById('preview-row');
+const previewOriginal = document.getElementById('preview-original');
+const previewCleaned = document.getElementById('preview-cleaned');
+
+let currentFile = null;
+
+function row(k, v) {
+  return `<div class="insp-row"><span class="k">${k}</span><span class="v">${v}</span></div>`;
+}
+
+function flag(yes, yesText, noText) {
+  return yes
+    ? `<span class="insp-flag yes">${yesText}</span>`
+    : `<span class="insp-flag no">${noText}</span>`;
+}
+
+function setStatus(type, msg) {
+  if (!statusEl) return;
+  statusEl.className = 'status-msg ' + type;
+  statusEl.textContent = msg;
+  statusEl.style.display = 'flex';
+}
+
+/* ---------- EXIF parsing ---------- */
+
+// Convert a rational [numerator, denominator] array to a float.
+function rationalToFloat(num, den) {
+  if (!den) return 0;
+  return num / den;
+}
+
+// Read EXIF from a JPEG ArrayBuffer. Returns a plain object of found tags, or null.
+function parseExif(arrayBuffer) {
+  const view = new DataView(arrayBuffer);
+  if (view.byteLength < 4 || view.getUint16(0, false) !== 0xFFD8) {
+    return null; // not a JPEG
+  }
+
+  let offset = 2;
+  let exifStart = -1, exifLength = 0;
+
+  while (offset < view.byteLength - 1) {
+    const marker = view.getUint16(offset, false);
+    if ((marker & 0xFF00) !== 0xFF00) break; // not a valid marker, stop
+    if (marker === 0xFFD8 || marker === 0xFFD9) { offset += 2; continue; } // SOI/EOI, no length field
+    if (marker >= 0xFFD0 && marker <= 0xFFD7) { offset += 2; continue; } // RSTn, no length field
+
+    if (offset + 4 > view.byteLength) break;
+    const segLength = view.getUint16(offset + 2, false);
+
+    if (marker === 0xFFE1) { // APP1 — likely EXIF
+      const sigOffset = offset + 4;
+      if (sigOffset + 6 <= view.byteLength) {
+        const sig = String.fromCharCode(
+          view.getUint8(sigOffset), view.getUint8(sigOffset + 1), view.getUint8(sigOffset + 2),
+          view.getUint8(sigOffset + 3)
+        );
+        if (sig === 'Exif') {
+          exifStart = sigOffset + 6; // skip "Exif\0\0"
+          exifLength = segLength - 2 - 6;
+          break;
+        }
+      }
+    }
+
+    if (marker === 0xFFDA) break; // start of scan — no more metadata segments follow
+    offset += 2 + segLength;
+  }
+
+  if (exifStart === -1) return null;
+
+  // TIFF header starts at exifStart
+  const tiffStart = exifStart;
+  const byteOrderMark = view.getUint16(tiffStart, false);
+  let little;
+  if (byteOrderMark === 0x4949) little = true;       // "II"
+  else if (byteOrderMark === 0x4D4D) little = false; // "MM"
+  else return null;
+
+  const getU16 = (o) => view.getUint16(o, little);
+  const getU32 = (o) => view.getUint32(o, little);
+  const getS32 = (o) => view.getInt32(o, little);
+
+  const magic = getU16(tiffStart + 2);
+  if (magic !== 42) return null;
+
+  const firstIFDOffset = getU32(tiffStart + 4);
+
+  const TAGS = {
+    0x010F: 'Make',
+    0x0110: 'Model',
+    0x0112: 'Orientation',
+    0x0131: 'Software',
+    0x0132: 'DateTime',
+    0x9003: 'DateTimeOriginal',
+    0x8825: 'GPSInfo' // pointer to GPS IFD
+  };
+
+  const GPS_TAGS = {
+    0x0001: 'GPSLatitudeRef',
+    0x0002: 'GPSLatitude',
+    0x0003: 'GPSLongitudeRef',
+    0x0004: 'GPSLongitude'
+  };
+
+  function readIFD(ifdOffset, tagMap) {
+    const result = {};
+    if (ifdOffset <= 0 || tiffStart + ifdOffset + 2 > view.byteLength) return result;
+    const entryCount = getU16(tiffStart + ifdOffset);
+    let entryOffset = tiffStart + ifdOffset + 2;
+
+    for (let i = 0; i < entryCount; i++) {
+      if (entryOffset + 12 > view.byteLength) break;
+      const tag = getU16(entryOffset);
+      const type = getU16(entryOffset + 2);
+      const count = getU32(entryOffset + 4);
+      const valueFieldOffset = entryOffset + 8;
+
+      if (tagMap[tag]) {
+        const name = tagMap[tag];
+
+        // Determine byte size per component for this type.
+        const typeSizes = { 1:1, 2:1, 3:2, 4:4, 5:8, 7:1, 9:4, 10:8 };
+        const compSize = typeSizes[type] || 1;
+        const totalSize = compSize * count;
+        const dataOffset = totalSize > 4 ? tiffStart + getU32(valueFieldOffset) : valueFieldOffset;
+
+        if (type === 2) { // ASCII string
+          let str = '';
+          for (let c = 0; c < count - 1 && dataOffset + c < view.byteLength; c++) {
+            const ch = view.getUint8(dataOffset + c);
+            if (ch === 0) break;
+            str += String.fromCharCode(ch);
+          }
+          result[name] = str.trim();
+        } else if (type === 3) { // SHORT
+          result[name] = getU16(dataOffset);
+        } else if (type === 4) { // LONG
+          result[name] = getU32(dataOffset);
+        } else if (type === 5) { // RATIONAL — array of {num, den} pairs
+          const vals = [];
+          for (let c = 0; c < count; c++) {
+            const n = getU32(dataOffset + c * 8);
+            const d = getU32(dataOffset + c * 8 + 4);
+            vals.push([n, d]);
+          }
+          result[name] = count === 1 ? vals[0] : vals;
+        } else {
+          result[name] = getU32(valueFieldOffset);
+        }
+      }
+
+      entryOffset += 12;
+    }
+    return result;
+  }
+
+  const main = readIFD(firstIFDOffset, TAGS);
+  let gps = {};
+  if (main.GPSInfo) {
+    gps = readIFD(main.GPSInfo, GPS_TAGS);
+  }
+
+  // Convert GPS DMS rational triplet to decimal degrees.
+  function dmsToDecimal(dmsArray) {
+    if (!Array.isArray(dmsArray) || dmsArray.length < 3) return null;
+    const deg = rationalToFloat(dmsArray[0][0], dmsArray[0][1]);
+    const min = rationalToFloat(dmsArray[1][0], dmsArray[1][1]);
+    const sec = rationalToFloat(dmsArray[2][0], dmsArray[2][1]);
+    return deg + (min / 60) + (sec / 3600);
+  }
+
+  let latitude = null, longitude = null;
+  if (gps.GPSLatitude && gps.GPSLongitude) {
+    latitude = dmsToDecimal(gps.GPSLatitude);
+    longitude = dmsToDecimal(gps.GPSLongitude);
+    if (latitude !== null && gps.GPSLatitudeRef === 'S') latitude = -latitude;
+    if (longitude !== null && gps.GPSLongitudeRef === 'W') longitude = -longitude;
+  }
+
+  const ORIENTATIONS = {
+    1: 'Normal', 2: 'Flipped horizontally', 3: 'Rotated 180°',
+    4: 'Flipped vertically', 5: 'Rotated 90° CW + flipped', 6: 'Rotated 90° CW',
+    7: 'Rotated 90° CCW + flipped', 8: 'Rotated 90° CCW'
+  };
+
+  return {
+    make: main.Make || null,
+    model: main.Model || null,
+    software: main.Software || null,
+    dateTime: main.DateTimeOriginal || main.DateTime || null,
+    orientation: main.Orientation ? (ORIENTATIONS[main.Orientation] || main.Orientation) : null,
+    hasGPS: latitude !== null && longitude !== null,
+    latitude, longitude
+  };
+}
+
+/* ---------- UI flow ---------- */
+
+function handleFile(file) {
+  if (!file || !/^image\/(jpeg|jpg|png)$/.test(file.type)) {
+    setStatus('error', 'Please select a JPG or PNG image file.');
+    return;
+  }
+  currentFile = file;
+  setStatus('info', 'Reading image locally...');
+
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    let exif = null;
+    try {
+      exif = parseExif(e.target.result);
+    } catch (err) {
+      exif = null;
+    }
+    showReport(file, exif);
+  };
+  reader.onerror = () => setStatus('error', 'Could not read this file.');
+  reader.readAsArrayBuffer(file);
+}
+
+function showReport(file, exif) {
+  let basicsHtml = '';
+  basicsHtml += row('File Name', file.name);
+  basicsHtml += row('File Size', formatSize(file.size));
+  basicsHtml += row('File Type', file.type || 'Unknown');
+
+  let cameraHtml = '';
+  let gpsHtml = '';
+  let hasAnyMetadata = false;
+
+  if (exif) {
+    if (exif.make || exif.model || exif.software || exif.dateTime || exif.orientation) {
+      hasAnyMetadata = true;
+      cameraHtml += row('Make', exif.make || '—');
+      cameraHtml += row('Model', exif.model || '—');
+      cameraHtml += row('Date/Time', exif.dateTime || '—');
+      cameraHtml += row('Software', exif.software || '—');
+      cameraHtml += row('Orientation', exif.orientation || '—');
+    }
+
+    if (exif.hasGPS) {
+      hasAnyMetadata = true;
+      gpsHtml += row('GPS Data', flag(true, 'Location Found', 'None Detected'));
+      gpsHtml += row('Latitude', exif.latitude.toFixed(6));
+      gpsHtml += row('Longitude', exif.longitude.toFixed(6));
+      gpsHtml += row('Map Link', `<a href="https://www.openstreetmap.org/?mlat=${exif.latitude}&mlon=${exif.longitude}#map=15/${exif.latitude}/${exif.longitude}" target="_blank" rel="noopener">View location</a>`);
+    } else {
+      gpsHtml += row('GPS Data', flag(false, 'Location Found', 'None Detected'));
+    }
+  } else {
+    gpsHtml += row('GPS Data', flag(false, 'Location Found', 'None Detected'));
+  }
+
+  inspGrid.innerHTML = `
+    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#file"></use></svg> File Info</h3>${basicsHtml}</div>
+    ${cameraHtml ? `<div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#camera"></use></svg> Camera Metadata</h3>${cameraHtml}</div>` : `<div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#camera"></use></svg> Camera Metadata</h3>${row('Status', 'No EXIF camera data found')}</div>`}
+    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#map-pin"></use></svg> Location Metadata</h3>${gpsHtml}</div>
+  `;
+
+  resultsCard.style.display = 'block';
+  previewRow.style.display = 'none';
+  previewCleaned.src = '';
+
+  if (hasAnyMetadata) {
+    setStatus('info', 'Metadata found in this image. Review it below, then clean the file if you want a copy without it.');
+  } else {
+    setStatus('info', 'No readable EXIF metadata was found in this file. You can still run the clean step to be certain.');
+  }
+}
+
+cleanBtn.addEventListener('click', () => {
+  if (!currentFile) {
+    setStatus('error', 'Upload an image first.');
+    return;
+  }
+
+  const img = new Image();
+  const url = URL.createObjectURL(currentFile);
+
+  img.onload = () => {
+    const canvas = document.createElement('canvas');
+    canvas.width = img.naturalWidth;
+    canvas.height = img.naturalHeight;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0);
+
+    const mime = currentFile.type === 'image/png' ? 'image/png' : 'image/jpeg';
+    const quality = mime === 'image/jpeg' ? 0.95 : undefined;
+
+    canvas.toBlob((blob) => {
+      if (!blob) {
+        setStatus('error', 'Could not generate the cleaned image.');
+        return;
+      }
+
+      const cleanUrl = URL.createObjectURL(blob);
+      previewOriginal.src = url;
+      previewCleaned.src = cleanUrl;
+      previewRow.style.display = 'flex';
+
+      const ext = mime === 'image/png' ? 'png' : 'jpg';
+      const baseName = currentFile.name.replace(/\.[^.]+$/, '');
+      const downloadName = `${baseName}-clean.${ext}`;
+
+      const a = document.createElement('a');
+      a.href = cleanUrl;
+      a.download = downloadName;
+      a.click();
+
+      setStatus('success', 'Metadata removed. A clean copy of your image has been downloaded.');
+    }, mime, quality);
+  };
+
+  img.onerror = () => {
+    setStatus('error', 'Could not load this image for cleaning.');
+    URL.revokeObjectURL(url);
+  };
+
+  img.src = url;
+});
+
+fileInput.addEventListener('change', e => { if (e.target.files[0]) handleFile(e.target.files[0]); });
+
+if (typeof initDragDrop === 'function') {
+  initDragDrop(uploadZone, files => {
+    if (files && files[0]) handleFile(files[0]);
+  });
+}
+</script>
+</body>
+</html>

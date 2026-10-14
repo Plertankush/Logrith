@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PDF Inspector – Analyze PDF Metadata, Fonts, Images & Structure | Logrith</title>
+  <meta name="description" content="PDF Inspector: Analyze PDF metadata, fonts, images, structure and security information directly in your browser. Free and privacy-focused.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Logrith">
+  <link rel="canonical" href="https://logrith.in/tools/pdf-inspector">
+
+  <meta property="og:title" content="PDF Inspector – Analyze PDF Metadata, Fonts, Images & Structure">
+  <meta property="og:description" content="Analyze PDF metadata, fonts, images, structure and security information directly in your browser. Free and privacy-focused.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://logrith.in/tools/pdf-inspector">
+  <meta property="og:site_name" content="Logrith">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="PDF Inspector – Analyze PDF Metadata, Fonts, Images & Structure">
+  <meta name="twitter:description" content="Analyze PDF metadata, fonts, images, structure and security information directly in your browser.">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preload" href="/assets/css/style.css" as="style">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <meta name="keywords" content="pdf inspector, pdf analyzer, pdf metadata viewer, check pdf fonts, pdf structure checker">
+
+  <style>
+    .tool-hero { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #ecfdf5 100%);}
+    .tool-hero h1 span { color: #16a34a; }
+
+    .insp-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-top:14px; }
+    .insp-card { background:var(--gray-50); border:1px solid var(--gray-200); border-radius:12px; padding:16px; }
+    .insp-card h3 { font-family:var(--font-display); font-size:.9rem; font-weight:700; color:var(--gray-900); margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+    .insp-row { display:flex; justify-content:space-between; gap:10px; padding:6px 0; border-bottom:1px solid var(--gray-100); font-size:.84rem; }
+    .insp-row:last-child { border-bottom:none; }
+    .insp-row .k { color:var(--gray-500); }
+    .insp-row .v { color:var(--gray-900); font-weight:600; text-align:right; word-break:break-word; }
+    .insp-flag { display:inline-flex; align-items:center; gap:6px; padding:3px 10px; border-radius:20px; font-size:.76rem; font-weight:700; }
+    .insp-flag.yes { background:#fef2f2; color:#991b1b; }
+    .insp-flag.no { background:#ecfdf3; color:#166534; }
+    .font-chip-list, .link-sample-list { display:flex; flex-wrap:wrap; gap:6px; margin-top:4px; }
+    .font-chip { background:var(--white); border:1px solid var(--gray-200); border-radius:8px; padding:3px 9px; font-size:.78rem; font-family:'Courier New',monospace; }
+
+    .article-section, .faq-section, .feature-section, .related-tools, .keyword-section, .howto-section {
+      max-width: 860px; margin: 22px auto 0; background: #fff; border: 1px solid var(--gray-100); border-radius: 14px; padding: 22px;
+    }
+    .article-section h2, .faq-section h2, .feature-section h2, .related-tools h2, .keyword-section h2, .howto-section h2 { margin-bottom: 14px; }
+    .article-section p, .howto-section p { margin: 0 0 12px; line-height: 1.8; color: var(--gray-700); }
+    .feature-list, .keyword-list, .related-list, .howto-list { margin: 0; padding-left: 18px; }
+    .feature-list li, .keyword-list li, .related-list li, .howto-list li { margin-bottom: 10px; color: var(--gray-700); line-height: 1.7; }
+    .privacy-note { max-width: 860px; margin: 10px auto 0; font-size: .88rem; color: var(--gray-600); text-align: left; }
+    .faq-item { border-bottom: 1px solid var(--gray-100); padding: 14px 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-weight: 700; color: var(--gray-800); margin-bottom: 6px; }
+    .faq-a { color: var(--gray-700); line-height: 1.8; }
+    .related-list a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    .related-list a:hover { text-decoration: underline; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareApplication",
+    "name":"Logrith PDF Inspector",
+    "url":"https://logrith.in/tools/pdf-inspector",
+    "applicationCategory":"UtilitiesApplication",
+    "operatingSystem":"Web Browser",
+    "description":"Browser-based PDF inspection tool that analyzes PDF metadata, fonts, images, structure and security information without uploading the file to a server.",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+    "featureList":[
+      "View PDF page count and dimensions",
+      "View PDF metadata (title, author, creator, producer, dates)",
+      "List embedded fonts",
+      "Count embedded images",
+      "Detect encryption and password protection",
+      "Detect forms and embedded files",
+      "Detect bookmarks and links",
+      "100% local browser processing"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://logrith.in/"},
+      {"@type":"ListItem","position":2,"name":"Document Utilities","item":"https://logrith.in/categories/global-tools"},
+      {"@type":"ListItem","position":3,"name":"PDF Inspector","item":"https://logrith.in/tools/pdf-inspector"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Can I inspect a PDF without uploading it?","acceptedAnswer":{"@type":"Answer","text":"Yes. This tool reads the PDF entirely in your browser using JavaScript. The file is never uploaded to any server."}},
+      {"@type":"Question","name":"Can I see PDF metadata?","acceptedAnswer":{"@type":"Answer","text":"Yes. The tool reads standard metadata fields including title, author, creator, producer, creation date and modification date, when present in the file."}},
+      {"@type":"Question","name":"Can I check PDF fonts?","acceptedAnswer":{"@type":"Answer","text":"Yes. The tool lists the font names embedded in or referenced by the document, which is useful for checking whether a PDF uses embedded or system fonts."}},
+      {"@type":"Question","name":"Can I inspect a password-protected PDF?","acceptedAnswer":{"@type":"Answer","text":"The tool can detect that a PDF is encrypted or password-protected, but it cannot open or decrypt a password-protected file without the correct password."}},
+      {"@type":"Question","name":"Is PDF inspection free?","acceptedAnswer":{"@type":"Answer","text":"Yes, this tool is completely free to use with no account, signup, or file limit beyond what your browser can handle."}}
+    ]
+  }
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" defer></script>
+</head>
+<body>
+<div id="navbar"></div>
+
+<main>
+  <div class="tool-hero">
+    <div class="tool-hero-inner">
+      <div class="tool-breadcrumb">
+        <a href="/">Home</a> › <a href="/categories/global-tools">Document Utilities</a> › PDF Inspector
+      </div>
+      <h1>PDF Inspector – Analyze<span> PDF Files</span> Online</h1>
+      <p>Check page count, metadata, fonts, images, security settings and document structure of any PDF, fully in your browser.</p>
+      <div class="tool-tags">
+        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
+        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#lock"></use></svg> Local Processing</span>
+        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#pdf"></use></svg> Full Structure Report</span>
+        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#speed"></use></svg> Instant</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="tool-workspace" style="max-width:900px;">
+    <div class="tool-card">
+      <h2>Upload a PDF to Inspect</h2>
+      <div class="upload-zone" id="upload-zone">
+        <input type="file" id="file-input" accept="application/pdf">
+        <svg class="icon" style="width:40px;height:40px;color:var(--gray-400);"><use href="/assets/svg/icons.svg#pdf"></use></svg>
+        <h3>Drop a PDF file here or click to browse</h3>
+        <p>The file is read entirely in your browser — nothing is uploaded.</p>
+        <span class="upload-limit">Works with PDFs of any size your browser can handle</span>
+      </div>
+      <div class="status-msg" id="status-msg" style="margin-top:12px;" aria-live="polite"></div>
+    </div>
+
+    <p class="privacy-note">Your PDF is processed in your browser. Files are not uploaded to Logrith.</p>
+
+    <div class="tool-card" id="results-card" style="display:none;">
+      <h2>Inspection Report</h2>
+      <div class="insp-grid" id="insp-grid"></div>
+    </div>
+  </div>
+
+  <section class="howto-section">
+    <h2>How to Inspect a PDF</h2>
+    <ol class="howto-list">
+      <li>Click the upload area or drag a PDF file into it.</li>
+      <li>The tool reads the file locally and parses its structure using the browser's PDF engine.</li>
+      <li>Review page count, metadata, fonts, images, security and structure information in the report.</li>
+      <li>No download or export is needed — the report is generated instantly on the page.</li>
+    </ol>
+  </section>
+
+  <section class="feature-section">
+    <h2>What This PDF Inspector Checks</h2>
+    <ul class="feature-list">
+      <li><strong>Document basics:</strong> page count, page dimensions, PDF version, and file size.</li>
+      <li><strong>Metadata:</strong> title, author, creator application, producer application, creation date, and modification date.</li>
+      <li><strong>Fonts and images:</strong> number of distinct fonts used and the count of embedded images across the document.</li>
+      <li><strong>Security and structure:</strong> encryption/password protection, presence of form fields, embedded files, JavaScript, bookmarks, and links.</li>
+    </ul>
+  </section>
+
+  <section class="article-section">
+    <h2>What Is a PDF Inspector?</h2>
+    <p>A PDF inspector is a utility that reads the internal structure of a PDF file and reports what's actually inside it, beyond what you see on the page. A PDF is not just an image of text — it's a structured document format containing metadata, font references, embedded objects, and a cross-reference table describing every element. A PDF inspector exposes that structure in a readable report: document properties, the fonts used, how many images are embedded, whether the file is encrypted, and whether it contains forms, bookmarks, or embedded JavaScript.</p>
+
+    <h2>What This PDF Inspector Checks</h2>
+    <p>This tool opens the PDF using a browser-based PDF parsing engine and reads several categories of information in sequence: the document's basic properties (page count, dimensions, version, size), its metadata fields, the fonts referenced across its pages, an estimate of embedded images, and structural/security details such as encryption status, form fields, bookmarks, and links. Each category is displayed as its own card in the report so you can scan the result quickly.</p>
+
+    <h2>PDF Metadata</h2>
+    <p>Metadata is descriptive information stored inside the PDF file itself, separate from the visible page content. Common fields include the document <strong>title</strong>, the <strong>author</strong> who created it, the <strong>creator</strong> application used to produce the original content (such as a word processor), the <strong>producer</strong> application that generated the final PDF (such as a PDF export library), and the <strong>creation</strong> and <strong>modification</strong> dates. Not every PDF includes all of these fields — some are stripped by certain export tools, while others are filled in automatically by the software that created the file.</p>
+
+    <h2>PDF Fonts and Images</h2>
+    <p>Font information matters for publishing and troubleshooting because a PDF can either embed its fonts directly in the file or simply reference font names that must be available on the viewer's system. A PDF with non-embedded fonts can render differently — or substitute a fallback font — on a device that lacks the original font, which is a common cause of unexpected layout shifts when a PDF is opened on a different computer. Checking the font list here helps confirm whether a document is safe to share without font-related rendering issues.</p>
+    <p>Image count is useful for understanding file size and complexity. A PDF with many high-resolution embedded images is typically far larger than a text-only document, and knowing the approximate image count can help explain why a particular file is unexpectedly large or slow to open.</p>
+
+    <h2>PDF Security and Structure</h2>
+    <p>This section reports whether a PDF is encrypted or password-protected, whether it contains interactive form fields, whether files are embedded inside it (such as an attached spreadsheet or image), whether it references JavaScript, and whether it includes bookmarks (also called an outline) or clickable links. These structural details matter for document verification — for example, confirming that a contract PDF doesn't contain unexpected embedded files, or checking whether a form-based PDF actually contains fillable fields before sending it out.</p>
+
+    <h3>How to Inspect a PDF</h3>
+    <ol class="howto-list">
+      <li>Open this page and click the upload area, or drag a PDF file directly onto it.</li>
+      <li>Wait a moment while the browser parses the document's structure locally.</li>
+      <li>Scroll through the report cards covering document info, metadata, fonts, images, and security/structure.</li>
+      <li>Use the information to verify, troubleshoot, or document the PDF before sharing or archiving it.</li>
+    </ol>
+
+    <h2>Private Browser-Based PDF Analysis</h2>
+    <p>This inspector runs entirely client-side using a JavaScript PDF parsing library loaded in your browser. When you select a file, it is read directly from your device's memory and never transmitted anywhere — there is no upload step, no server-side processing, and no copy of your document stored by Logrith. This makes the tool suitable for inspecting sensitive or confidential PDFs, such as contracts, internal reports, or personal documents, without the privacy concerns that come with uploading a file to a third-party web service.</p>
+
+    <h2>Common Reasons to Inspect a PDF</h2>
+    <ul class="feature-list">
+      <li><strong>Document quality checking:</strong> confirming a PDF export retained the correct page count, fonts, and structure before distributing it.</li>
+      <li><strong>Publishing workflows:</strong> verifying that a manuscript, report, or e-book PDF has consistent metadata and embedded fonts before submission.</li>
+      <li><strong>Troubleshooting:</strong> diagnosing why a PDF renders incorrectly on another device by checking whether fonts are embedded.</li>
+      <li><strong>File verification:</strong> confirming a received PDF doesn't contain unexpected embedded files, JavaScript, or forms.</li>
+      <li><strong>Metadata review:</strong> checking or auditing the author, creation date, and producer fields before sharing a document publicly.</li>
+      <li><strong>Accessibility and document preparation:</strong> reviewing structural elements such as bookmarks and links before finalizing a document for distribution.</li>
+    </ul>
+
+    <h3>Why Browser-Based Inspection Is Different From a Desktop PDF Reader</h3>
+    <p>Most desktop PDF readers show you the rendered page but hide the underlying structure unless you dig through a "document properties" dialog that usually shows only a handful of metadata fields. This inspector surfaces a wider set of structural details — fonts, image counts, embedded files, JavaScript presence — in one consolidated report, without requiring a separate desktop application or plugin.</p>
+
+    <h3>Frequently Searched Terms</h3>
+    <p>People use this tool when searching for phrases like "check pdf metadata online," "view pdf fonts," "is this pdf encrypted," "pdf structure checker," and "analyze pdf file online" — this page is built to answer exactly those questions in one browser-based report.</p>
+  </section>
+
+  <section class="faq-section">
+    <h2>PDF Inspector FAQ</h2>
+    <div class="faq-item">
+      <div class="faq-q">Can I inspect a PDF without uploading it?</div>
+      <div class="faq-a">Yes. The PDF is read and parsed entirely inside your browser. No file is sent to any server during inspection.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I see PDF metadata?</div>
+      <div class="faq-a">Yes. Title, author, creator, producer, creation date and modification date are displayed when they are present in the document.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I check PDF fonts?</div>
+      <div class="faq-a">Yes. The tool lists the distinct font names it finds referenced across the document's pages.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I inspect a password-protected PDF?</div>
+      <div class="faq-a">The tool can detect that a file is encrypted, but it cannot open or read the contents of a password-protected PDF without the correct password.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is PDF inspection free?</div>
+      <div class="faq-a">Yes, this tool is free to use with no account, signup, or watermark.</div>
+    </div>
+  </section>
+
+  <section class="related-tools">
+    <h2>Related Tools</h2>
+    <ul class="related-list">
+      <li><a href="/tools/pdf-to-text">PDF to Text</a></li>
+      <li><a href="/tools/pdf-password-protect">PDF Password Protect</a></li>
+      <li><a href="/tools/pdf-compressor">PDF Compressor</a></li>
+      <li><a href="/tools/image-privacy-cleaner">Image Privacy Cleaner</a></li>
+      <li><a href="/tools/csv-cleaner">CSV Cleaner</a></li>
+    </ul>
+  </section>
+
+  <section class="keyword-section">
+    <h2>Top PDF Inspector Search Queries</h2>
+    <ul class="keyword-list">
+      <li>pdf inspector online</li>
+      <li>pdf analyzer</li>
+      <li>view pdf metadata</li>
+      <li>check pdf fonts online</li>
+      <li>pdf structure checker</li>
+      <li>is pdf password protected checker</li>
+      <li>pdf properties viewer</li>
+      <li>analyze pdf file online free</li>
+    </ul>
+  </section>
+</main>
+
+<div id="footer"></div>
+
+<script src="/assets/js/main.js" defer></script>
+<script src="/load-components.js"></script>
+
+<script>
+const uploadZone = document.getElementById('upload-zone');
+const fileInput = document.getElementById('file-input');
+const statusEl = document.getElementById('status-msg');
+const resultsCard = document.getElementById('results-card');
+const inspGrid = document.getElementById('insp-grid');
+
+function row(k, v) {
+  return `<div class="insp-row"><span class="k">${k}</span><span class="v">${v}</span></div>`;
+}
+
+function flag(yes, yesText, noText) {
+  return yes
+    ? `<span class="insp-flag yes">${yesText}</span>`
+    : `<span class="insp-flag no">${noText}</span>`;
+}
+
+async function inspectPdf(file) {
+  if (typeof pdfjsLib === 'undefined') {
+    showStatus(statusEl, 'error', 'PDF library loading... please wait a moment and try again.');
+    return;
+  }
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+  showStatus(statusEl, 'info', 'Reading PDF locally...');
+
+  const arrayBuffer = await file.arrayBuffer();
+  const bytes = new Uint8Array(arrayBuffer);
+
+  let pdf, encrypted = false;
+  try {
+    pdf = await pdfjsLib.getDocument({ data: arrayBuffer.slice(0) }).promise;
+  } catch (err) {
+    if (err && err.name === 'PasswordException') {
+      encrypted = true;
+    } else {
+      showStatus(statusEl, 'error', 'Could not parse this PDF: ' + (err.message || 'unknown error.'));
+      return;
+    }
+  }
+
+  // --- Raw byte scan for header version, JS, forms, embedded files, encryption dict ---
+  const headSlice = bytes.slice(0, 2048);
+  const headerText = new TextDecoder('latin1').decode(headSlice);
+  const versionMatch = headerText.match(/%PDF-(\d\.\d)/);
+  const pdfVersion = versionMatch ? versionMatch[1] : 'Unknown';
+
+  // Decode a reasonable chunk of the file as latin1 to scan for structural markers.
+  // For very large files, scan in chunks to avoid excessive memory use.
+  const scanLimit = Math.min(bytes.length, 15 * 1024 * 1024); // scan up to 15MB of raw bytes
+  const fullText = new TextDecoder('latin1').decode(bytes.slice(0, scanLimit));
+
+  const hasJS = /\/JavaScript|\/JS\b/.test(fullText);
+  const hasAcroForm = /\/AcroForm/.test(fullText);
+  const hasEmbeddedFile = /\/EmbeddedFile/.test(fullText);
+  const hasEncryptDict = /\/Encrypt\b/.test(fullText);
+  if (hasEncryptDict) encrypted = true;
+
+  const fileSizeStr = formatSize(file.size);
+
+  let basicsHtml = '';
+  let metaHtml = '';
+  let fontsHtml = '';
+  let imagesHtml = '';
+  let structureHtml = '';
+
+  if (encrypted && !pdf) {
+    basicsHtml += row('PDF Version', pdfVersion);
+    basicsHtml += row('File Size', fileSizeStr);
+    structureHtml += row('Encryption', flag(true, 'Password Protected', 'Not Encrypted'));
+    structureHtml += `<p style="font-size:.82rem;color:var(--gray-500);margin-top:10px;">This PDF is password-protected. Page count, metadata, fonts and images cannot be read without the correct password.</p>`;
+  } else {
+    const numPages = pdf.numPages;
+    let firstPage;
+    try {
+      firstPage = await pdf.getPage(1);
+    } catch (e) {
+      firstPage = null;
+    }
+    const viewport = firstPage ? firstPage.getViewport({ scale: 1 }) : null;
+
+    basicsHtml += row('Page Count', numPages);
+    basicsHtml += row('PDF Version', pdfVersion);
+    basicsHtml += row('File Size', fileSizeStr);
+    if (viewport) {
+      basicsHtml += row('Page Dimensions', `${Math.round(viewport.width)} × ${Math.round(viewport.height)} pt`);
+    }
+
+    // Metadata
+    let info = {};
+    try {
+      const metaResult = await pdf.getMetadata();
+      info = metaResult.info || {};
+    } catch (e) {}
+
+    metaHtml += row('Title', info.Title || '—');
+    metaHtml += row('Author', info.Author || '—');
+    metaHtml += row('Creator', info.Creator || '—');
+    metaHtml += row('Producer', info.Producer || '—');
+    metaHtml += row('Creation Date', info.CreationDate || '—');
+    metaHtml += row('Modified Date', info.ModDate || '—');
+
+    // Fonts and images — scan each page's operator list for setFont / image-paint ops
+    const fontNames = new Set();
+    let imageCount = 0;
+    const pagesToScan = Math.min(numPages, 25); // cap for performance on very large documents
+    for (let i = 1; i <= pagesToScan; i++) {
+      try {
+        const page = await pdf.getPage(i);
+        const opList = await page.getOperatorList();
+        for (let j = 0; j < opList.fnArray.length; j++) {
+          const fn = opList.fnArray[j];
+          if (fn === pdfjsLib.OPS.setFont) {
+            const args = opList.argsArray[j];
+            if (args && args[0]) fontNames.add(args[0]);
+          }
+          if (fn === pdfjsLib.OPS.paintImageXObject || fn === pdfjsLib.OPS.paintJpegXObject || fn === pdfjsLib.OPS.paintInlineImageXObject) {
+            imageCount++;
+          }
+        }
+      } catch (e) {}
+    }
+
+    fontsHtml += row('Fonts Found', fontNames.size);
+    if (fontNames.size) {
+      fontsHtml += `<div class="font-chip-list">${Array.from(fontNames).slice(0, 20).map(f => `<span class="font-chip">${f}</span>`).join('')}</div>`;
+    }
+    if (numPages > pagesToScan) {
+      fontsHtml += `<p style="font-size:.78rem;color:var(--gray-500);margin-top:8px;">Font scan limited to the first ${pagesToScan} pages for performance.</p>`;
+    }
+
+    imagesHtml += row('Images Detected', imageCount + (numPages > pagesToScan ? '+' : ''));
+    if (numPages > pagesToScan) {
+      imagesHtml += `<p style="font-size:.78rem;color:var(--gray-500);margin-top:8px;">Image count limited to the first ${pagesToScan} pages for performance.</p>`;
+    }
+
+    // Outline / bookmarks
+    let outline = [];
+    try { outline = await pdf.getOutline() || []; } catch (e) {}
+
+    // Links — count annotation links on first few pages
+    let linkCount = 0;
+    for (let i = 1; i <= pagesToScan; i++) {
+      try {
+        const page = await pdf.getPage(i);
+        const annots = await page.getAnnotations();
+        linkCount += annots.filter(a => a.subtype === 'Link').length;
+      } catch (e) {}
+    }
+
+    structureHtml += row('Encryption', flag(encrypted, 'Password Protected', 'Not Encrypted'));
+    structureHtml += row('Form Fields', flag(hasAcroForm, 'Detected', 'None Detected'));
+    structureHtml += row('Embedded Files', flag(hasEmbeddedFile, 'Detected', 'None Detected'));
+    structureHtml += row('JavaScript', flag(hasJS, 'Detected', 'None Detected'));
+    structureHtml += row('Bookmarks / Outline', flag(outline.length > 0, `${outline.length} Found`, 'None Detected'));
+    structureHtml += row('Links (sampled)', linkCount);
+  }
+
+  inspGrid.innerHTML = `
+    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#file"></use></svg> Document Basics</h3>${basicsHtml}</div>
+    ${metaHtml ? `<div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#info"></use></svg> Metadata</h3>${metaHtml}</div>` : ''}
+    ${fontsHtml ? `<div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#case"></use></svg> Fonts</h3>${fontsHtml}</div>` : ''}
+    ${imagesHtml ? `<div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#image"></use></svg> Images</h3>${imagesHtml}</div>` : ''}
+    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#shield"></use></svg> Security & Structure</h3>${structureHtml}</div>
+  `;
+
+  resultsCard.style.display = 'block';
+  showStatus(statusEl, 'success', 'PDF inspected successfully.');
+}
+
+function handleFile(file) {
+  if (!file || file.type !== 'application/pdf') {
+    showStatus(statusEl, 'error', 'Please select a valid PDF file.');
+    return;
+  }
+  inspectPdf(file).catch(err => {
+    showStatus(statusEl, 'error', 'Error inspecting PDF: ' + err.message);
+  });
+}
+
+fileInput.addEventListener('change', e => { if (e.target.files[0]) handleFile(e.target.files[0]); });
+
+if (typeof initDragDrop === 'function') {
+  initDragDrop(uploadZone, files => {
+    if (files && files[0]) handleFile(files[0]);
+  });
+}
+</script>
+</body>
+</html>

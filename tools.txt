@@ -43,6 +43,10 @@ text-expander-snippet-tool
 AI TOOLS (2)
 resume-analyzer, website-speed-analyzer
 
+GLOBAL TOOLS (7) — stored in /tools/global/, served at clean /tools/ URLs
+pdf-inspector, image-privacy-cleaner, json-repair, csv-cleaner,
+ai-context-calculator, markdown-to-html, url-deduplicator
+
 =====================================================================
-TOTAL: 100 TOOLS
+TOTAL: 107 TOOLS
 =====================================================================

@@ -506,4 +506,5 @@
 <priority>0.80</priority>
 <changefreq>monthly</changefreq>
 </url>
+<!--  GLOBAL TOOLS (7 new tools) are listed separately in sitemap-global.xml  -->
 </urlset>

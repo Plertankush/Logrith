@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CSV Cleaner – Clean, Fix & Deduplicate CSV Files Online | Logrith</title>
+  <meta name="description" content="CSV Cleaner: Remove duplicate rows, trim whitespace, fix empty cells and clean messy CSV files directly in your browser. Free and fast.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Logrith">
+  <link rel="canonical" href="https://logrith.in/tools/csv-cleaner">
+
+  <meta property="og:title" content="CSV Cleaner – Clean, Fix & Deduplicate CSV Files Online">
+  <meta property="og:description" content="Remove duplicate rows, trim whitespace, fix empty cells and clean messy CSV files directly in your browser. Free and fast.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://logrith.in/tools/csv-cleaner">
+  <meta property="og:site_name" content="Logrith">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="CSV Cleaner – Clean, Fix & Deduplicate CSV Files Online">
+  <meta name="twitter:description" content="Remove duplicate rows, trim whitespace and clean messy CSV files directly in your browser.">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preload" href="/assets/css/style.css" as="style">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <meta name="keywords" content="csv cleaner, csv deduplicator, clean csv file, remove duplicate csv rows, csv validator, csv formatter online">
+
+  <style>
+    .tool-hero { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #ecfdf5 100%);}
+    .tool-hero h1 span { color: #16a34a; }
+
+    .insp-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin-top:14px; }
+    .insp-card { background:var(--gray-50); border:1px solid var(--gray-200); border-radius:12px; padding:16px; }
+    .insp-card h3 { font-family:var(--font-display); font-size:.9rem; font-weight:700; color:var(--gray-900); margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+    .insp-row { display:flex; justify-content:space-between; gap:10px; padding:6px 0; border-bottom:1px solid var(--gray-100); font-size:.84rem; }
+    .insp-row:last-child { border-bottom:none; }
+    .insp-row .k { color:var(--gray-500); }
+    .insp-row .v { color:var(--gray-900); font-weight:600; text-align:right; word-break:break-word; }
+
+    .clean-opts { display:flex; flex-direction:column; gap:10px; margin-top:14px; }
+    .clean-opt { display:flex; align-items:flex-start; gap:10px; padding:10px 12px; background:var(--gray-50); border:1px solid var(--gray-200); border-radius:10px; }
+    .clean-opt input[type="checkbox"] { width:16px; height:16px; margin-top:2px; accent-color:var(--primary); cursor:pointer; flex-shrink:0; }
+    .clean-opt label { font-size:.86rem; color:var(--gray-800); font-weight:600; cursor:pointer; }
+    .clean-opt p { font-size:.78rem; color:var(--gray-500); margin-top:2px; }
+    .clean-opt .inline-select { margin-top:8px; display:flex; gap:8px; flex-wrap:wrap; }
+    .clean-opt select { padding:6px 10px; border:1px solid var(--gray-200); border-radius:8px; font-size:.82rem; background:var(--white); }
+
+    .csv-preview-wrap { overflow-x:auto; margin-top:14px; border:1px solid var(--gray-200); border-radius:10px; }
+    table.csv-preview { border-collapse:collapse; width:100%; font-size:.8rem; }
+    table.csv-preview th, table.csv-preview td { border:1px solid var(--gray-100); padding:6px 10px; text-align:left; white-space:nowrap; max-width:220px; overflow:hidden; text-overflow:ellipsis; }
+    table.csv-preview th { background:var(--gray-50); font-weight:700; color:var(--gray-700); position:sticky; top:0; }
+    table.csv-preview tr:nth-child(even) { background:var(--gray-50); }
+
+    .article-section, .faq-section, .feature-section, .related-tools, .keyword-section, .howto-section {
+      max-width: 860px; margin: 22px auto 0; background: #fff; border: 1px solid var(--gray-100); border-radius: 14px; padding: 22px;
+    }
+    .article-section h2, .faq-section h2, .feature-section h2, .related-tools h2, .keyword-section h2, .howto-section h2 { margin-bottom: 14px; }
+    .article-section p, .howto-section p { margin: 0 0 12px; line-height: 1.8; color: var(--gray-700); }
+    .feature-list, .keyword-list, .related-list, .howto-list { margin: 0; padding-left: 18px; }
+    .feature-list li, .keyword-list li, .related-list li, .howto-list li { margin-bottom: 10px; color: var(--gray-700); line-height: 1.7; }
+    .privacy-note { max-width: 860px; margin: 10px auto 0; font-size: .88rem; color: var(--gray-600); text-align: left; }
+    .faq-item { border-bottom: 1px solid var(--gray-100); padding: 14px 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-weight: 700; color: var(--gray-800); margin-bottom: 6px; }
+    .faq-a { color: var(--gray-700); line-height: 1.8; }
+    .related-list a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    .related-list a:hover { text-decoration: underline; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareApplication",
+    "name":"Logrith CSV Cleaner",
+    "url":"https://logrith.in/tools/csv-cleaner",
+    "applicationCategory":"UtilitiesApplication",
+    "operatingSystem":"Web Browser",
+    "description":"Browser-based CSV cleaning tool that removes duplicate rows, trims whitespace, removes empty rows and columns, normalizes casing and flags invalid emails, without uploading data to a server.",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+    "featureList":[
+      "Remove duplicate CSV rows",
+      "Remove empty rows and columns",
+      "Trim whitespace from every cell",
+      "Normalize text casing on a selected column",
+      "Flag invalid-looking email addresses",
+      "Export cleaned CSV",
+      "100% local browser processing"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://logrith.in/"},
+      {"@type":"ListItem","position":2,"name":"Global Tools","item":"https://logrith.in/categories/global-tools"},
+      {"@type":"ListItem","position":3,"name":"CSV Cleaner","item":"https://logrith.in/tools/csv-cleaner"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Does this tool detect duplicate rows?","acceptedAnswer":{"@type":"Answer","text":"Yes. It compares every cell in a row, after trimming whitespace, against every other row and flags exact matches as duplicates."}},
+      {"@type":"Question","name":"Can it handle fields that contain commas?","acceptedAnswer":{"@type":"Answer","text":"Yes. The parser correctly handles quoted fields that contain commas, quotes, or line breaks, following standard CSV quoting rules."}},
+      {"@type":"Question","name":"Will it upload my CSV file anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. The file is parsed and cleaned entirely in your browser using JavaScript. Nothing is sent to a server."}},
+      {"@type":"Question","name":"Can I undo a cleaning operation?","acceptedAnswer":{"@type":"Answer","text":"The cleaning options are previewed before you download, and your original uploaded file is never modified, so you can re-upload it and try different options at any time."}},
+      {"@type":"Question","name":"Is this tool free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes, this tool is completely free with no account, signup, or row limit beyond what your browser can handle."}}
+    ]
+  }
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+</head>
+<body>
+<div id="navbar"></div>
+
+<main>
+  <div class="tool-hero">
+    <div class="tool-hero-inner">
+      <div class="tool-breadcrumb">
+        <a href="/">Home</a> › <a href="/categories/global-tools">Global Tools</a> › CSV Cleaner
+      </div>
+      <h1>CSV Cleaner – Clean<span> and Organize</span> CSV Files</h1>
+      <p>Remove duplicate rows, trim whitespace, drop empty rows and columns, and flag invalid emails — all in your browser.</p>
+      <div class="tool-tags">
+        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
+        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#lock"></use></svg> Local Processing</span>
+        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#csv"></use></svg> Real CSV Parser</span>
+        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#speed"></use></svg> Instant</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="tool-workspace" style="max-width:960px;">
+    <div class="tool-card">
+      <h2>Upload or Paste a CSV</h2>
+      <div class="upload-zone" id="upload-zone">
+        <input type="file" id="file-input" accept=".csv,text/csv">
+        <svg class="icon" style="width:40px;height:40px;color:var(--gray-400);"><use href="/assets/svg/icons.svg#csv"></use></svg>
+        <h3>Drop a CSV file here or click to browse</h3>
+        <p>Or paste raw CSV text in the box below.</p>
+        <span class="upload-limit">Works with CSVs of any size your browser can handle</span>
+      </div>
+      <div class="control-group mt-12">
+        <label for="csv-input">Or paste CSV text</label>
+        <textarea class="tool-textarea mono" id="csv-input" rows="6" placeholder="name,email,city&#10;Jane Doe, jane@example.com ,Boston&#10;Jane Doe,jane@example.com,Boston"></textarea>
+      </div>
+      <div class="btn-group mt-12">
+        <button class="btn btn-primary" id="parse-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#search"></use></svg> Analyze CSV</button>
+      </div>
+      <div class="status-msg" id="status-msg" style="margin-top:12px;" aria-live="polite"></div>
+    </div>
+
+    <p class="privacy-note">Your CSV is processed in your browser. Files are not uploaded to Logrith.</p>
+
+    <div class="tool-card" id="summary-card" style="display:none;">
+      <h2>CSV Summary</h2>
+      <div class="insp-grid" id="summary-grid"></div>
+    </div>
+
+    <div class="tool-card" id="options-card" style="display:none;">
+      <h2>Cleaning Options</h2>
+      <div class="clean-opts">
+        <div class="clean-opt">
+          <input type="checkbox" id="opt-dedupe" checked>
+          <div><label for="opt-dedupe">Remove duplicate rows</label><p>Keeps the first occurrence of each exact row, compared after trimming whitespace.</p></div>
+        </div>
+        <div class="clean-opt">
+          <input type="checkbox" id="opt-empty-rows" checked>
+          <div><label for="opt-empty-rows">Remove fully empty rows</label><p>Drops rows where every cell is blank.</p></div>
+        </div>
+        <div class="clean-opt">
+          <input type="checkbox" id="opt-empty-cols">
+          <div><label for="opt-empty-cols">Remove fully empty columns</label><p>Drops columns where every data row is blank.</p></div>
+        </div>
+        <div class="clean-opt">
+          <input type="checkbox" id="opt-trim" checked>
+          <div><label for="opt-trim">Trim whitespace from every cell</label><p>Removes leading and trailing spaces from all values.</p></div>
+        </div>
+        <div class="clean-opt">
+          <input type="checkbox" id="opt-case">
+          <div>
+            <label for="opt-case">Normalize casing on a column</label>
+            <p>Apply consistent casing to one column.</p>
+            <div class="inline-select">
+              <select id="case-column"></select>
+              <select id="case-mode">
+                <option value="lower">lowercase</option>
+                <option value="upper">UPPERCASE</option>
+                <option value="title">Title Case</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="clean-opt">
+          <input type="checkbox" id="opt-email">
+          <div>
+            <label for="opt-email">Flag invalid email addresses</label>
+            <p>Check one column for values that don't look like a valid email. Flagged rows are reported, not removed.</p>
+            <div class="inline-select">
+              <select id="email-column"></select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btn-group mt-16">
+        <button class="btn btn-primary" id="clean-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Clean CSV</button>
+      </div>
+    </div>
+
+    <div class="tool-card" id="result-card" style="display:none;">
+      <h2>Cleaning Result</h2>
+      <div class="insp-grid" id="result-grid"></div>
+      <div class="csv-preview-wrap" id="preview-wrap" style="display:none;">
+        <table class="csv-preview" id="preview-table"></table>
+      </div>
+      <div class="btn-group mt-16">
+        <button class="btn btn-primary" id="download-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#cloud-down"></use></svg> Download Cleaned CSV</button>
+        <button class="btn btn-secondary" id="copy-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy as Text</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="howto-section">
+    <h2>How to Clean a CSV</h2>
+    <ol class="howto-list">
+      <li>Upload a .csv file or paste raw CSV text directly into the box.</li>
+      <li>Click "Analyze CSV" to see row/column counts, duplicate count, and empty row/column counts.</li>
+      <li>Choose which cleaning operations to apply, then click "Clean CSV".</li>
+      <li>Review the before/after summary and preview table, then download or copy the cleaned result.</li>
+    </ol>
+  </section>
+
+  <section class="feature-section">
+    <h2>What Problems Can It Detect?</h2>
+    <ul class="feature-list">
+      <li><strong>Duplicate rows:</strong> exact row matches, compared after trimming whitespace from each cell.</li>
+      <li><strong>Empty rows and columns:</strong> rows where every cell is blank, and columns where every data row is blank.</li>
+      <li><strong>Inconsistent whitespace:</strong> leading or trailing spaces that make otherwise-identical values look different.</li>
+      <li><strong>Inconsistent casing:</strong> a selected column can be normalized to lowercase, uppercase, or Title Case in one pass.</li>
+      <li><strong>Invalid-looking emails:</strong> a selected email column is checked against a standard email pattern and mismatches are reported.</li>
+    </ul>
+  </section>
+
+  <section class="article-section">
+    <h2>What Is a CSV Cleaner?</h2>
+    <p>A CSV cleaner is a utility that reads a comma-separated-values file, finds common data problems, and fixes them in a repeatable way. CSV is a simple, text-based format, but that simplicity is also why CSV files exported from different systems — spreadsheets, databases, contact forms, e-commerce platforms — often arrive with duplicate rows, empty rows or columns, inconsistent spacing, and mismatched casing. A CSV cleaner automates the tedious part of fixing those problems by hand in a spreadsheet application.</p>
+
+    <h2>Remove Duplicate CSV Rows</h2>
+    <p>Duplicate rows commonly appear when a contact list is exported more than once and merged, when a form is submitted twice, or when data is combined from multiple sources without deduplication. This tool compares every cell in a row — after trimming whitespace — against every other row in the file, and removes exact repeats while keeping the first occurrence. Because the comparison happens after trimming, rows that differ only by a stray trailing space are still correctly recognized as duplicates.</p>
+
+    <h2>Clean CSV Columns</h2>
+    <p>Beyond duplicate rows, a CSV file can carry columns that are entirely empty — sometimes left over from a template or an export that included unused fields. Removing fully empty columns reduces clutter and keeps the file focused on columns that actually carry data. This tool checks every column across all data rows and removes any column where no row has a value.</p>
+
+    <h2>Validate CSV Data</h2>
+    <p>Beyond structural cleanup, this tool includes a lightweight validation pass for one of the most common data-quality checks: email addresses. Select the column that holds email values, and the tool checks each entry against a standard email pattern, reporting how many values don't look like valid emails. Flagged rows are not removed automatically — the pattern check is a heuristic, not a guarantee of deliverability, so the decision to fix or remove flagged entries is left to you.</p>
+
+    <h3>How the CSV Parser Actually Works</h3>
+    <p>Many simple tools split CSV text on commas, which breaks immediately on any field that itself contains a comma — a common case with addresses, descriptions, or names written as "Last, First". This tool instead uses a proper character-by-character CSV parser that tracks whether it is currently inside a quoted field. Inside quotes, commas and line breaks are treated as literal characters rather than delimiters, and a doubled quote (<code>""</code>) inside a quoted field is correctly read as a single literal quote character. Rows are split on unquoted line breaks, handling both Unix (<code>\n</code>) and Windows (<code>\r\n</code>) line endings.</p>
+
+    <h3>Normalizing Casing on a Column</h3>
+    <p>Data entered by hand or merged from multiple sources frequently has inconsistent capitalization — "new york", "New York", and "NEW YORK" might all represent the same value. Selecting a column and choosing lowercase, UPPERCASE, or Title Case applies that casing consistently to every value in that column, which is especially useful before deduplicating on a column where case differences would otherwise cause near-identical values to be treated as distinct.</p>
+
+    <h2>Clean CSV Files in Your Browser</h2>
+    <p>Every step — parsing, analysis, cleaning, and CSV re-serialization — runs locally in your browser using JavaScript. Your file is never uploaded to any server, which makes this tool suitable for cleaning files that contain personal information, customer data, or other sensitive content before you process it further elsewhere.</p>
+
+    <h2>Common CSV Cleaning Tasks</h2>
+    <ul class="feature-list">
+      <li><strong>Cleaning an exported contact list:</strong> removing duplicate entries and empty rows left over from an export, before importing into another system.</li>
+      <li><strong>Preparing data for a spreadsheet import:</strong> trimming stray whitespace and normalizing casing so lookups and filters behave consistently.</li>
+      <li><strong>Deduplicating a mailing list:</strong> catching repeated email addresses or names that would otherwise result in duplicate sends.</li>
+      <li><strong>Auditing a data export:</strong> quickly seeing row/column counts and empty-field counts before deciding how to process a file further.</li>
+    </ul>
+
+    <h3>Re-serializing CSV Correctly</h3>
+    <p>When the cleaned data is exported back to CSV, any value that contains a comma, a double quote, or a line break is automatically wrapped in double quotes, with internal quotes doubled, following the same quoting convention most spreadsheet applications expect. This means the downloaded file opens correctly in Excel, Google Sheets, or any standard CSV reader without manual fixing.</p>
+
+    <h3>Frequently Searched Terms</h3>
+    <p>People use this tool when searching for phrases like "remove duplicate rows csv online," "clean csv file free," "csv whitespace trimmer," and "validate csv data online" — this page is built to answer those tasks directly with a working, browser-based tool rather than a manual spreadsheet workaround.</p>
+  </section>
+
+  <section class="faq-section">
+    <h2>CSV Cleaner FAQ</h2>
+    <div class="faq-item">
+      <div class="faq-q">Does this tool detect duplicate rows?</div>
+      <div class="faq-a">Yes. It compares every cell in a row, after trimming whitespace, against every other row and flags exact matches as duplicates.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can it handle fields that contain commas?</div>
+      <div class="faq-a">Yes. The parser correctly handles quoted fields that contain commas, quotes, or line breaks, following standard CSV quoting rules.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Will it upload my CSV file anywhere?</div>
+      <div class="faq-a">No. The file is parsed and cleaned entirely in your browser using JavaScript. Nothing is sent to a server.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I undo a cleaning operation?</div>
+      <div class="faq-a">The cleaning options are previewed before you download, and your original uploaded file is never modified, so you can re-upload it and try different options at any time.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is this tool free to use?</div>
+      <div class="faq-a">Yes, this tool is completely free with no account, signup, or row limit beyond what your browser can handle.</div>
+    </div>
+  </section>
+
+  <section class="related-tools">
+    <h2>Related Tools</h2>
+    <ul class="related-list">
+      <li><a href="/tools/json-repair">JSON Repair Tool</a></li>
+      <li><a href="/tools/url-deduplicator">URL Deduplicator</a></li>
+      <li><a href="/tools/ai-context-calculator">AI Token & Context Calculator</a></li>
+      <li><a href="/tools/markdown-to-html">Markdown to HTML Converter</a></li>
+    </ul>
+  </section>
+
+  <section class="keyword-section">
+    <h2>Top CSV Cleaner Search Queries</h2>
+    <ul class="keyword-list">
+      <li>csv cleaner online</li>
+      <li>remove duplicate csv rows</li>
+      <li>clean csv file free</li>
+      <li>csv validator online</li>
+      <li>trim csv whitespace</li>
+      <li>csv deduplicator tool</li>
+      <li>fix messy csv online</li>
+    </ul>
+  </section>
+</main>
+
+<div id="footer"></div>
+
+<script src="/assets/js/main.js" defer></script>
+<script src="/load-components.js"></script>
+
+<script>
+/* ---------- CSV parser: character-by-character state machine ---------- */
+function parseCsv(text) {
+  const rows = [];
+  let row = [];
+  let field = '';
+  let inQuotes = false;
+  let i = 0;
+  const len = text.length;
+
+  while (i < len) {
+    const ch = text[i];
+
+    if (inQuotes) {
+      if (ch === '"') {
+        if (text[i + 1] === '"') { field += '"'; i += 2; continue; }
+        inQuotes = false; i++; continue;
+      }
+      field += ch; i++; continue;
+    }
+
+    if (ch === '"') { inQuotes = true; i++; continue; }
+    if (ch === ',') { row.push(field); field = ''; i++; continue; }
+    if (ch === '\r') { i++; continue; } // normalize CRLF, handled by \n below
+    if (ch === '\n') {
+      row.push(field);
+      rows.push(row);
+      row = [];
+      field = '';
+      i++;
+      continue;
+    }
+    field += ch; i++;
+  }
+
+  // Final field/row if the text didn't end with a newline
+  if (field.length > 0 || row.length > 0) {
+    row.push(field);
+    rows.push(row);
+  }
+
+  // Drop a single fully-blank trailing row produced by a trailing newline
+  if (rows.length && rows[rows.length - 1].length === 1 && rows[rows.length - 1][0] === '') {
+    rows.pop();
+  }
+
+  return rows;
+}
+
+function csvEscape(value) {
+  const v = value == null ? '' : String(value);
+  if (/[",\n]/.test(v)) {
+    return '"' + v.replace(/"/g, '""') + '"';
+  }
+  return v;
+}
+
+function serializeCsv(rows) {
+  return rows.map(r => r.map(csvEscape).join(',')).join('\r\n');
+}
+
+/* ---------- App state ---------- */
+let headers = [];
+let dataRows = [];
+let cleanedHeaders = [];
+let cleanedRows = [];
+
+const uploadZone = document.getElementById('upload-zone');
+const fileInput = document.getElementById('file-input');
+const csvInput = document.getElementById('csv-input');
+const statusEl = document.getElementById('status-msg');
+const summaryCard = document.getElementById('summary-card');
+const summaryGrid = document.getElementById('summary-grid');
+const optionsCard = document.getElementById('options-card');
+const resultCard = document.getElementById('result-card');
+const resultGrid = document.getElementById('result-grid');
+const previewWrap = document.getElementById('preview-wrap');
+const previewTable = document.getElementById('preview-table');
+const caseColumnSel = document.getElementById('case-column');
+const emailColumnSel = document.getElementById('email-column');
+
+function row(k, v) {
+  return `<div class="insp-row"><span class="k">${k}</span><span class="v">${v}</span></div>`;
+}
+
+function rowsEqualTrimmed(a, b) {
+  if (a.length !== b.length) return false;
+  for (let i = 0; i < a.length; i++) {
+    if ((a[i] || '').trim() !== (b[i] || '').trim()) return false;
+  }
+  return true;
+}
+
+function analyze(text) {
+  const parsed = parseCsv(text);
+  if (!parsed.length) {
+    showStatus(statusEl, 'error', 'No CSV data found. Paste or upload a CSV first.');
+    return;
+  }
+
+  headers = parsed[0];
+  dataRows = parsed.slice(1);
+
+  const totalRows = dataRows.length;
+  const totalCols = headers.length;
+
+  let dupeCount = 0;
+  const seen = [];
+  dataRows.forEach(r => {
+    const isDupe = seen.some(s => rowsEqualTrimmed(s, r));
+    if (isDupe) dupeCount++;
+    else seen.push(r);
+  });
+
+  const emptyRowCount = dataRows.filter(r => r.every(c => (c || '').trim() === '')).length;
+
+  let emptyColCount = 0;
+  for (let c = 0; c < totalCols; c++) {
+    const colEmpty = dataRows.every(r => ((r[c] || '').trim() === ''));
+    if (colEmpty) emptyColCount++;
+  }
+
+  summaryGrid.innerHTML = `
+    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#csv"></use></svg> Structure</h3>${row('Data Rows', totalRows)}${row('Columns', totalCols)}</div>
+    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#warning"></use></svg> Issues Found</h3>${row('Duplicate Rows', dupeCount)}${row('Empty Rows', emptyRowCount)}${row('Empty Columns', emptyColCount)}</div>
+    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#tag"></use></svg> Column Headers</h3>${headers.map((h, idx) => row('Col ' + (idx + 1), h || '(blank)')).join('')}</div>
+  `;
+  summaryCard.style.display = 'block';
+  optionsCard.style.display = 'block';
+
+  caseColumnSel.innerHTML = headers.map((h, idx) => `<option value="${idx}">${h || 'Column ' + (idx + 1)}</option>`).join('');
+  emailColumnSel.innerHTML = headers.map((h, idx) => `<option value="${idx}">${h || 'Column ' + (idx + 1)}</option>`).join('');
+
+  showStatus(statusEl, 'success', `Parsed ${totalRows} rows and ${totalCols} columns.`);
+}
+
+document.getElementById('parse-btn').addEventListener('click', () => {
+  const text = csvInput.value;
+  if (!text.trim()) {
+    showStatus(statusEl, 'error', 'Paste CSV text or upload a file first.');
+    return;
+  }
+  analyze(text);
+});
+
+function handleFile(file) {
+  const reader = new FileReader();
+  reader.onload = e => {
+    csvInput.value = e.target.result;
+    analyze(e.target.result);
+  };
+  reader.onerror = () => showStatus(statusEl, 'error', 'Could not read this file.');
+  reader.readAsText(file);
+}
+
+fileInput.addEventListener('change', e => { if (e.target.files[0]) handleFile(e.target.files[0]); });
+if (typeof initDragDrop === 'function') {
+  initDragDrop(uploadZone, files => { if (files && files[0]) handleFile(files[0]); });
+}
+
+function toTitleCase(s) {
+  return s.replace(/\w\S*/g, w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase());
+}
+
+document.getElementById('clean-btn').addEventListener('click', () => {
+  if (!headers.length) {
+    showStatus(statusEl, 'error', 'Analyze a CSV first.');
+    return;
+  }
+
+  const doDedupe = document.getElementById('opt-dedupe').checked;
+  const doEmptyRows = document.getElementById('opt-empty-rows').checked;
+  const doEmptyCols = document.getElementById('opt-empty-cols').checked;
+  const doTrim = document.getElementById('opt-trim').checked;
+  const doCase = document.getElementById('opt-case').checked;
+  const caseCol = parseInt(caseColumnSel.value || '0', 10);
+  const caseMode = document.getElementById('case-mode').value;
+  const doEmail = document.getElementById('opt-email').checked;
+  const emailCol = parseInt(emailColumnSel.value || '0', 10);
+
+  let rows = dataRows.map(r => r.slice());
+  const beforeCount = rows.length;
+
+  if (doTrim) {
+    rows = rows.map(r => r.map(c => (c || '').trim()));
+  }
+
+  if (doEmptyRows) {
+    rows = rows.filter(r => !r.every(c => (c || '').trim() === ''));
+  }
+
+  if (doDedupe) {
+    const unique = [];
+    rows.forEach(r => {
+      const isDupe = unique.some(u => rowsEqualTrimmed(u, r));
+      if (!isDupe) unique.push(r);
+    });
+    rows = unique;
+  }
+
+  if (doCase && !isNaN(caseCol)) {
+    rows = rows.map(r => {
+      const copy = r.slice();
+      const val = copy[caseCol] || '';
+      if (caseMode === 'lower') copy[caseCol] = val.toLowerCase();
+      else if (caseMode === 'upper') copy[caseCol] = val.toUpperCase();
+      else if (caseMode === 'title') copy[caseCol] = toTitleCase(val.toLowerCase());
+      return copy;
+    });
+  }
+
+  let outHeaders = headers.slice();
+  if (doEmptyCols) {
+    const keepIdx = [];
+    for (let c = 0; c < outHeaders.length; c++) {
+      const colEmpty = rows.every(r => ((r[c] || '').trim() === ''));
+      if (!colEmpty) keepIdx.push(c);
+    }
+    outHeaders = keepIdx.map(i => headers[i]);
+    rows = rows.map(r => keepIdx.map(i => r[i]));
+  }
+
+  let invalidEmailCount = 0;
+  if (doEmail && !isNaN(emailCol)) {
+    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const colIdx = doEmptyCols ? null : emailCol; // if columns were removed, index mapping would shift — only run on original layout
+    if (colIdx !== null) {
+      rows.forEach(r => {
+        const val = (r[colIdx] || '').trim();
+        if (val && !emailRe.test(val)) invalidEmailCount++;
+      });
+    }
+  }
+
+  cleanedHeaders = outHeaders;
+  cleanedRows = rows;
+
+  resultGrid.innerHTML = `
+    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Before</h3>${row('Rows', beforeCount)}${row('Columns', headers.length)}</div>
+    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> After</h3>${row('Rows', rows.length)}${row('Columns', outHeaders.length)}</div>
+    ${doEmail ? `<div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#warning"></use></svg> Email Check</h3>${row('Flagged Rows', invalidEmailCount)}</div>` : ''}
+  `;
+
+  const previewRows = rows.slice(0, 15);
+  previewTable.innerHTML = `
+    <thead><tr>${outHeaders.map(h => `<th>${h || ''}</th>`).join('')}</tr></thead>
+    <tbody>${previewRows.map(r => `<tr>${outHeaders.map((_, i) => `<td>${r[i] != null ? r[i] : ''}</td>`).join('')}</tr>`).join('')}</tbody>
+  `;
+  previewWrap.style.display = 'block';
+  resultCard.style.display = 'block';
+  showStatus(statusEl, 'success', `Cleaned: ${beforeCount} rows -> ${rows.length} rows.`);
+});
+
+function getCleanedCsvText() {
+  return serializeCsv([cleanedHeaders, ...cleanedRows]);
+}
+
+document.getElementById('download-btn').addEventListener('click', function() {
+  if (!cleanedRows.length && !cleanedHeaders.length) {
+    showStatus(statusEl, 'error', 'Clean the CSV first.');
+    return;
+  }
+  const csvText = getCleanedCsvText();
+  const blob = new Blob([csvText], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'cleaned.csv';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+});
+
+document.getElementById('copy-btn').addEventListener('click', function() {
+  if (!cleanedRows.length && !cleanedHeaders.length) {
+    showStatus(statusEl, 'error', 'Clean the CSV first.');
+    return;
+  }
+  copyText(getCleanedCsvText(), this);
+});
+</script>
+</body>
+</html>

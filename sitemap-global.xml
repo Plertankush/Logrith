@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<!--  GLOBAL TOOLS CATEGORY  -->
+<url>
+<loc>https://logrith.in/categories/global-tools</loc>
+<priority>0.80</priority>
+<changefreq>weekly</changefreq>
+</url>
+<!--  GLOBAL TOOLS — 7 TOOLS  -->
+<url>
+<loc>https://logrith.in/tools/pdf-inspector</loc>
+<priority>0.80</priority>
+<changefreq>monthly</changefreq>
+</url>
+<url>
+<loc>https://logrith.in/tools/image-privacy-cleaner</loc>
+<priority>0.80</priority>
+<changefreq>monthly</changefreq>
+</url>
+<url>
+<loc>https://logrith.in/tools/json-repair</loc>
+<priority>0.80</priority>
+<changefreq>monthly</changefreq>
+</url>
+<url>
+<loc>https://logrith.in/tools/csv-cleaner</loc>
+<priority>0.80</priority>
+<changefreq>monthly</changefreq>
+</url>
+<url>
+<loc>https://logrith.in/tools/ai-context-calculator</loc>
+<priority>0.80</priority>
+<changefreq>monthly</changefreq>
+</url>
+<url>
+<loc>https://logrith.in/tools/markdown-to-html</loc>
+<priority>0.80</priority>
+<changefreq>monthly</changefreq>
+</url>
+<url>
+<loc>https://logrith.in/tools/url-deduplicator</loc>
+<priority>0.80</priority>
+<changefreq>monthly</changefreq>
+</url>
+</urlset>

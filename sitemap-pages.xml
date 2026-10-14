@@ -47,6 +47,11 @@
 <priority>0.80</priority>
 <changefreq>weekly</changefreq>
 </url>
+<url>
+<loc>https://logrith.in/categories/global-tools</loc>
+<priority>0.80</priority>
+<changefreq>weekly</changefreq>
+</url>
 <!--  MAIN PAGES  -->
 <url>
 <loc>https://logrith.in/pages/about</loc>

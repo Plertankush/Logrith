@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Markdown to HTML Converter – Convert Markdown to Clean HTML Online</title>
+  <meta name="description" content="Convert Markdown to clean, semantic HTML instantly in your browser. Supports headings, lists, links, images, code blocks, tables, and more. Free and private.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Logrith">
+  <link rel="canonical" href="https://logrith.in/tools/markdown-to-html">
+
+  <meta property="og:title" content="Markdown to HTML Converter – Convert Markdown to Clean HTML Online">
+  <meta property="og:description" content="Convert Markdown to clean, semantic HTML instantly in your browser. Supports headings, lists, links, images, code blocks, tables, and more. Free and private.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://logrith.in/tools/markdown-to-html">
+  <meta property="og:site_name" content="Logrith">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Markdown to HTML Converter – Convert Markdown to Clean HTML Online">
+  <meta name="twitter:description" content="Convert Markdown to clean, semantic HTML instantly in your browser. Supports headings, lists, links, images, code blocks, tables, and more.">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preload" href="/assets/css/style.css" as="style">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <meta name="keywords" content="markdown to html converter, convert markdown to html, markdown html online, markdown parser online, md to html, markdown renderer free">
+
+  <style>
+    .tool-hero { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #ecfdf5 100%);}
+    .tool-hero h1 span { color: #16a34a; }
+
+    .insp-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin-top:14px; }
+    .insp-card { background:var(--gray-50); border:1px solid var(--gray-200); border-radius:12px; padding:16px; }
+    .insp-card h3 { font-family:var(--font-display); font-size:.9rem; font-weight:700; color:var(--gray-900); margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+    .insp-row { display:flex; justify-content:space-between; gap:10px; padding:6px 0; border-bottom:1px solid var(--gray-100); font-size:.84rem; }
+    .insp-row:last-child { border-bottom:none; }
+    .insp-row .k { color:var(--gray-500); }
+    .insp-row .v { color:var(--gray-900); font-weight:600; text-align:right; word-break:break-word; }
+
+    .md-panes { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:14px; }
+    @media (max-width:760px) { .md-panes { grid-template-columns:1fr; } }
+    .md-pane-label { font-size:.82rem; font-weight:700; color:var(--gray-700); margin-bottom:6px; display:flex; align-items:center; gap:6px; }
+    .md-output-tabs { display:flex; gap:8px; margin-top:14px; border-bottom:1px solid var(--gray-200); }
+    .md-tab-btn { padding:8px 16px; border:none; background:none; font-size:.86rem; font-weight:600; color:var(--gray-500); cursor:pointer; border-bottom:2px solid transparent; margin-bottom:-1px; }
+    .md-tab-btn.active { color:var(--primary); border-bottom-color:var(--primary); }
+    .md-tab-panel { display:none; margin-top:14px; }
+    .md-tab-panel.active { display:block; }
+
+    .md-preview {
+      border:1px solid var(--gray-200); border-radius:10px; padding:16px 18px; background:var(--white);
+      min-height:220px; max-height:480px; overflow:auto; font-size:.92rem; line-height:1.65; color:var(--gray-800);
+    }
+    .md-preview h1, .md-preview h2, .md-preview h3, .md-preview h4, .md-preview h5, .md-preview h6 {
+      font-family:var(--font-display); color:var(--gray-900); margin:1em 0 .5em; line-height:1.3; font-weight:700;
+    }
+    .md-preview h1:first-child, .md-preview h2:first-child, .md-preview h3:first-child { margin-top:0; }
+    .md-preview h1 { font-size:1.6rem; } .md-preview h2 { font-size:1.35rem; } .md-preview h3 { font-size:1.15rem; }
+    .md-preview h4 { font-size:1.02rem; } .md-preview h5 { font-size:.92rem; } .md-preview h6 { font-size:.84rem; color:var(--gray-600); }
+    .md-preview p { margin:0 0 1em; }
+    .md-preview ul, .md-preview ol { margin:0 0 1em; padding-left:1.4em; }
+    .md-preview li { margin-bottom:.3em; }
+    .md-preview blockquote { margin:0 0 1em; padding:4px 14px; border-left:3px solid var(--primary); background:var(--gray-50); color:var(--gray-600); }
+    .md-preview code { background:var(--gray-100); padding:.15em .4em; border-radius:4px; font-family:var(--font-mono,monospace); font-size:.88em; }
+    .md-preview pre { background:#161b22; color:#e6edf3; padding:14px; border-radius:10px; overflow-x:auto; margin:0 0 1em; }
+    .md-preview pre code { background:none; padding:0; color:inherit; font-size:.84rem; }
+    .md-preview a { color:var(--primary); text-decoration:underline; }
+    .md-preview img { max-width:100%; border-radius:8px; }
+    .md-preview hr { border:none; border-top:1px solid var(--gray-200); margin:1.2em 0; }
+    .md-preview table { border-collapse:collapse; width:100%; margin:0 0 1em; font-size:.88rem; }
+    .md-preview table th, .md-preview table td { border:1px solid var(--gray-200); padding:6px 10px; text-align:left; }
+    .md-preview table th { background:var(--gray-50); font-weight:700; }
+
+    .md-syntax-table { width:100%; border-collapse:collapse; margin-top:10px; font-size:.86rem; }
+    .md-syntax-table th, .md-syntax-table td { border:1px solid var(--gray-100); padding:8px 10px; text-align:left; vertical-align:top; }
+    .md-syntax-table th { background:var(--gray-50); font-weight:700; color:var(--gray-700); }
+    .md-syntax-table code { background:var(--gray-100); padding:.1em .35em; border-radius:4px; font-size:.86em; }
+
+    .article-section, .faq-section, .feature-section, .related-tools, .keyword-section, .howto-section {
+      max-width: 860px; margin: 22px auto 0; background: #fff; border: 1px solid var(--gray-100); border-radius: 14px; padding: 22px;
+    }
+    .article-section h2, .faq-section h2, .feature-section h2, .related-tools h2, .keyword-section h2, .howto-section h2 { margin-bottom: 14px; }
+    .article-section p, .howto-section p { margin: 0 0 12px; line-height: 1.8; color: var(--gray-700); }
+    .feature-list, .keyword-list, .related-list, .howto-list { margin: 0; padding-left: 18px; }
+    .feature-list li, .keyword-list li, .related-list li, .howto-list li { margin-bottom: 10px; color: var(--gray-700); line-height: 1.7; }
+    .privacy-note { max-width: 860px; margin: 10px auto 0; font-size: .88rem; color: var(--gray-600); text-align: left; }
+    .faq-item { border-bottom: 1px solid var(--gray-100); padding: 14px 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-weight: 700; color: var(--gray-800); margin-bottom: 6px; }
+    .faq-a { color: var(--gray-700); line-height: 1.8; }
+    .related-list a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    .related-list a:hover { text-decoration: underline; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareApplication",
+    "name":"Logrith Markdown to HTML Converter",
+    "url":"https://logrith.in/tools/markdown-to-html",
+    "applicationCategory":"UtilitiesApplication",
+    "operatingSystem":"Web Browser",
+    "description":"Browser-based tool that converts Markdown text into clean, semantic HTML using a hand-written parser, with a live preview and downloadable HTML source, without uploading data to a server.",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+    "featureList":[
+      "Convert headings, bold, italic, and inline code",
+      "Convert ordered and unordered lists",
+      "Convert links and images",
+      "Convert fenced code blocks and blockquotes",
+      "Convert tables with column alignment",
+      "Live HTML preview",
+      "Copy or download the generated HTML",
+      "100% local browser processing"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://logrith.in/"},
+      {"@type":"ListItem","position":2,"name":"Global Tools","item":"https://logrith.in/categories/global-tools"},
+      {"@type":"ListItem","position":3,"name":"Markdown to HTML Converter","item":"https://logrith.in/tools/markdown-to-html"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"What Markdown syntax does this converter support?","acceptedAnswer":{"@type":"Answer","text":"It supports headings, bold and italic text, ordered and unordered lists, links, images, inline code, fenced code blocks, blockquotes, horizontal rules, tables, and paragraphs with line breaks."}},
+      {"@type":"Question","name":"Does this tool upload my Markdown anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. The entire conversion happens locally in your browser using a hand-written JavaScript parser. Your text is never sent to Logrith or any other server."}},
+      {"@type":"Question","name":"Does it use an external Markdown library?","acceptedAnswer":{"@type":"Answer","text":"No. The parser is written from scratch in plain JavaScript with no external dependencies, so the tool loads quickly and works entirely offline once the page is open."}},
+      {"@type":"Question","name":"Is the generated HTML safe to reuse?","acceptedAnswer":{"@type":"Answer","text":"Text inside code blocks and inline code is escaped so angle brackets and ampersands display literally instead of being interpreted as markup. The generated HTML reflects standard Markdown-to-HTML conventions and is suitable for pasting into a blog, static site, or documentation page."}},
+      {"@type":"Question","name":"Can I download the HTML as a complete file?","acceptedAnswer":{"@type":"Answer","text":"Yes. The download button wraps your converted HTML in a minimal, valid HTML5 document with a doctype, charset, and title, ready to save as a standalone .html file."}}
+    ]
+  }
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+</head>
+<body>
+<div id="navbar"></div>
+
+<main>
+  <div class="tool-hero">
+    <div class="tool-hero-inner">
+      <div class="tool-breadcrumb">
+        <a href="/">Home</a> › <a href="/categories/global-tools">Global Tools</a> › Markdown to HTML Converter
+      </div>
+      <h1>Markdown to<span> HTML Converter</span></h1>
+      <p>Paste Markdown and get clean, semantic HTML instantly — with a live preview and a downloadable HTML file, entirely in your browser.</p>
+      <div class="tool-tags">
+        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
+        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#lock"></use></svg> Local Processing</span>
+        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#markdown-html"></use></svg> Real Parser</span>
+        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#speed"></use></svg> Instant</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="tool-workspace" style="max-width:1060px;">
+    <div class="tool-card">
+      <h2>Paste Your Markdown</h2>
+      <div class="control-group">
+        <label for="md-input">Markdown text</label>
+        <textarea class="tool-textarea mono" id="md-input" rows="12" placeholder="# Hello World&#10;&#10;This is **bold** and this is *italic*.&#10;&#10;- First item&#10;- Second item&#10;&#10;[Visit Logrith](https://logrith.in)"></textarea>
+      </div>
+      <div class="btn-group mt-12">
+        <button class="btn btn-primary" id="convert-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#markdown-html"></use></svg> Convert to HTML</button>
+      </div>
+      <div class="status-msg" id="status-msg" style="margin-top:12px;" aria-live="polite"></div>
+    </div>
+
+    <p class="privacy-note">Your Markdown is converted in your browser using a hand-written parser. Nothing is uploaded to Logrith.</p>
+
+    <div class="tool-card" id="result-card" style="display:none;">
+      <h2>Result</h2>
+      <div class="insp-grid" id="result-grid"></div>
+
+      <div class="md-output-tabs">
+        <button class="md-tab-btn active" id="tab-preview" type="button">Live Preview</button>
+        <button class="md-tab-btn" id="tab-source" type="button">HTML Source</button>
+      </div>
+
+      <div class="md-tab-panel active" id="panel-preview">
+        <div class="md-pane-label"><svg class="icon"><use href="/assets/svg/icons.svg#eye"></use></svg> Rendered output</div>
+        <div class="md-preview" id="md-preview"></div>
+      </div>
+
+      <div class="md-tab-panel" id="panel-source">
+        <div class="md-pane-label"><svg class="icon"><use href="/assets/svg/icons.svg#code"></use></svg> Generated HTML</div>
+        <textarea class="tool-textarea mono" id="html-output" rows="12" readonly></textarea>
+      </div>
+
+      <div class="btn-group mt-16">
+        <button class="btn btn-primary" id="copy-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy HTML</button>
+        <button class="btn btn-secondary" id="download-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#download"></use></svg> Download .html</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="howto-section">
+    <h2>How to Convert Markdown to HTML</h2>
+    <ol class="howto-list">
+      <li>Paste or type your Markdown text into the input box.</li>
+      <li>Click "Convert to HTML" to run it through the parser.</li>
+      <li>Switch between the "Live Preview" tab to see the rendered result and the "HTML Source" tab to see the generated markup.</li>
+      <li>Click "Copy HTML" to copy the markup, or "Download .html" to save it as a complete, standalone HTML file.</li>
+    </ol>
+  </section>
+
+  <section class="feature-section">
+    <h2>What This Converter Supports</h2>
+    <ul class="feature-list">
+      <li><strong>Headings:</strong> all six levels, from <code>#</code> through <code>######</code>.</li>
+      <li><strong>Text formatting:</strong> bold (<code>**text**</code> or <code>__text__</code>) and italic (<code>*text*</code> or <code>_text_</code>).</li>
+      <li><strong>Lists:</strong> unordered lists with <code>-</code>, <code>*</code>, or <code>+</code>, and ordered lists with <code>1.</code>, <code>2.</code>, and so on.</li>
+      <li><strong>Links and images:</strong> <code>[text](url)</code> and <code>![alt](url)</code>.</li>
+      <li><strong>Code:</strong> inline <code>`code`</code> and fenced code blocks using triple backticks, with special characters escaped for safety.</li>
+      <li><strong>Blockquotes, horizontal rules, and tables:</strong> <code>&gt;</code> quotes, <code>---</code> rules, and pipe-delimited tables with an alignment row.</li>
+    </ul>
+  </section>
+
+  <section class="article-section">
+    <h2>What Is Markdown?</h2>
+    <p>Markdown is a lightweight plain-text formatting syntax created to let people write formatted documents using nothing but a plain text editor. Instead of clicking toolbar buttons to make text bold or insert a heading, you type a small set of symbols — a <code>#</code> before a line for a heading, asterisks around a word for emphasis, a dash for a list item — and a Markdown processor turns that plain text into properly structured HTML. Because it reads almost like plain prose even before conversion, Markdown has become the default writing format for README files on code hosting platforms, technical documentation, developer blogs, static site generators, note-taking apps, and chat platforms that support rich text.</p>
+
+    <h2>Why Convert Markdown to HTML?</h2>
+    <p>Markdown is excellent for writing, but browsers don't render Markdown directly — they render HTML. Converting Markdown to HTML is the step that turns your plain-text draft into something a browser, content management system, or email client can display with proper headings, formatted lists, clickable links, and styled code blocks. This conversion happens constantly behind the scenes: static site generators convert Markdown source files into HTML pages at build time, code hosting platforms convert README.md files into formatted pages on the fly, and many blogging platforms accept Markdown input specifically so they can convert it to HTML before publishing. Having a standalone converter is useful whenever you want to see or reuse that HTML directly — for example, pasting formatted content into a content management system that doesn't understand Markdown, generating a quick standalone HTML page from notes, or checking exactly what markup your Markdown will produce before committing it to a project.</p>
+
+    <h2>Supported Markdown Syntax Reference</h2>
+    <table class="md-syntax-table">
+      <thead><tr><th>Markdown</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td><code># Heading</code> through <code>###### Heading</code></td><td>Heading levels 1 through 6</td></tr>
+        <tr><td><code>**bold**</code> or <code>__bold__</code></td><td>Bold text</td></tr>
+        <tr><td><code>*italic*</code> or <code>_italic_</code></td><td>Italic text</td></tr>
+        <tr><td><code>- item</code>, <code>* item</code>, <code>+ item</code></td><td>Unordered list</td></tr>
+        <tr><td><code>1. item</code></td><td>Ordered list</td></tr>
+        <tr><td><code>[text](url)</code></td><td>Link</td></tr>
+        <tr><td><code>![alt](url)</code></td><td>Image</td></tr>
+        <tr><td><code>`code`</code></td><td>Inline code</td></tr>
+        <tr><td>Triple backticks on their own lines</td><td>Fenced code block</td></tr>
+        <tr><td><code>&gt; quote</code></td><td>Blockquote</td></tr>
+        <tr><td><code>---</code>, <code>***</code>, or <code>___</code> on its own line</td><td>Horizontal rule</td></tr>
+        <tr><td>Pipe rows with a <code>---|---</code> separator</td><td>Table</td></tr>
+      </tbody>
+    </table>
+
+    <h2>What "Clean, Semantic HTML" Means</h2>
+    <p>Semantic HTML means using the HTML element that actually matches the meaning of the content, rather than generic styling tags. A heading becomes an <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>, not a bold paragraph; a list becomes an actual <code>&lt;ul&gt;</code> or <code>&lt;ol&gt;</code> with <code>&lt;li&gt;</code> items, not a series of line breaks; a quotation becomes a <code>&lt;blockquote&gt;</code>, not indented text. This matters for two practical reasons. First, accessibility: screen readers and other assistive technology rely on semantic tags to announce structure — a screen reader tells a user "heading level 2" or "list, 4 items" only when the underlying markup is actually a heading or a list element. Second, search engines use heading hierarchy and structural markup as signals when indexing and summarizing a page, so semantic output tends to be both more accessible and more search-friendly than visually similar but structurally flat markup.</p>
+
+    <h2>How This Tool Works</h2>
+    <p>The converter runs a hand-written parser entirely in your browser, in two stages. The first stage scans the Markdown line by line to identify block-level structures — headings, fenced code blocks, blockquotes, horizontal rules, list blocks, table blocks, and ordinary paragraphs. The second stage processes the inline text inside each non-code block — applying bold, italic, inline code, and link or image formatting — while special characters inside code blocks and inline code spans are escaped so that angle brackets and ampersands in your sample code show up as visible text rather than being interpreted as HTML tags. Everything happens synchronously with no network request, so the live preview updates as soon as you click convert, and your content never leaves the page.</p>
+
+    <h2>Common Use Cases</h2>
+    <ul class="feature-list">
+      <li><strong>Writing a README:</strong> draft a project README in Markdown, then check exactly how it will render as HTML before publishing it elsewhere.</li>
+      <li><strong>Converting notes into a blog post:</strong> turn plain-text notes written in Markdown into ready-to-paste HTML for a blogging platform or content management system.</li>
+      <li><strong>Preparing content for a CMS:</strong> many content management systems accept raw HTML in a code or embed block; converting Markdown first lets you paste formatted content directly.</li>
+      <li><strong>Generating a standalone HTML page:</strong> write a short document in Markdown and download it as a complete, valid HTML5 file you can open in any browser.</li>
+      <li><strong>Checking table and list output:</strong> verify that a Markdown table or nested list converts to correctly structured HTML before using it in documentation.</li>
+    </ul>
+
+    <h3>Why a Hand-Written Parser</h3>
+    <p>Many online converters simply load a third-party Markdown library from a content delivery network. This tool instead uses a parser written specifically for Logrith, with no external dependencies, keeping the page lightweight and fully functional even if a CDN is unreachable. It supports the core CommonMark-style syntax most people actually use day to day — headings, emphasis, lists, links, images, code, blockquotes, rules, and tables — rather than attempting to replicate every edge case of the full Markdown specification.</p>
+
+    <h3>Frequently Searched Terms</h3>
+    <p>People use this tool when searching for phrases like "markdown to html converter online," "convert md to html free," "markdown preview tool," "markdown table to html," and "markdown renderer no signup."</p>
+  </section>
+
+  <section class="faq-section">
+    <h2>Markdown to HTML Converter FAQ</h2>
+    <div class="faq-item">
+      <div class="faq-q">What Markdown syntax does this converter support?</div>
+      <div class="faq-a">It supports headings, bold and italic text, ordered and unordered lists, links, images, inline code, fenced code blocks, blockquotes, horizontal rules, tables, and paragraphs with line breaks.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Does this tool upload my Markdown anywhere?</div>
+      <div class="faq-a">No. The entire conversion happens locally in your browser using a hand-written JavaScript parser. Your text is never sent to Logrith or any other server.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Does it use an external Markdown library?</div>
+      <div class="faq-a">No. The parser is written from scratch in plain JavaScript with no external dependencies, so the tool loads quickly and works entirely offline once the page is open.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is the generated HTML safe to reuse?</div>
+      <div class="faq-a">Text inside code blocks and inline code is escaped so angle brackets and ampersands display literally instead of being interpreted as markup. The generated HTML reflects standard Markdown-to-HTML conventions and is suitable for pasting into a blog, static site, or documentation page.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I download the HTML as a complete file?</div>
+      <div class="faq-a">Yes. The download button wraps your converted HTML in a minimal, valid HTML5 document with a doctype, charset, and title, ready to save as a standalone .html file.</div>
+    </div>
+  </section>
+
+  <section class="related-tools">
+    <h2>Related Tools</h2>
+    <ul class="related-list">
+      <li><a href="/tools/csv-cleaner">CSV Cleaner</a></li>
+      <li><a href="/tools/json-repair">JSON Repair Tool</a></li>
+      <li><a href="/tools/ai-context-calculator">AI Token & Context Calculator</a></li>
+      <li><a href="/tools/url-deduplicator">URL Deduplicator</a></li>
+    </ul>
+  </section>
+
+  <section class="keyword-section">
+    <h2>Top Markdown to HTML Search Queries</h2>
+    <ul class="keyword-list">
+      <li>markdown to html converter</li>
+      <li>convert markdown to html online</li>
+      <li>md to html free</li>
+      <li>markdown preview tool</li>
+      <li>markdown table to html</li>
+      <li>markdown renderer online</li>
+      <li>markdown to html no signup</li>
+    </ul>
+  </section>
+</main>
+
+<div id="footer"></div>
+
+<script src="/assets/js/main.js" defer></script>
+<script src="/load-components.js"></script>
+
+<script>
+/* ==========================================================================
+   Markdown to HTML Converter
+   Hand-written, dependency-free Markdown parser.
+
+   Pipeline:
+     markdownToHtml(src)
+       -> escapeHtml()              utility, used everywhere user text lands in HTML
+       -> splitIntoBlocks()         block-level pass: classifies the document into
+                                     an ordered list of block objects (heading, hr,
+                                     code, blockquote, ul, ol, table, paragraph)
+       -> renderBlock(block)        turns one block object into an HTML string,
+                                     calling renderInline() on any text content
+       -> renderInline(text)        inline-level pass: escapes text then applies,
+                                     in order: inline code, images, links, bold,
+                                     italic
+   ========================================================================== */
+
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+/* ---------- inline-level formatting ---------- */
+function renderInline(text) {
+  let out = escapeHtml(text);
+
+  // Inline code first, so markup characters inside `code` are not touched
+  // by later bold/italic/link passes. Use a placeholder stash so already-
+  // escaped code spans are not re-processed.
+  const codeStash = [];
+  out = out.replace(/`([^`]+)`/g, (m, code) => {
+    codeStash.push('<code>' + code + '</code>');
+    return '\u0000CODE' + (codeStash.length - 1) + '\u0000';
+  });
+
+  // Images before links (images share the link syntax prefixed with !)
+  out = out.replace(/!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)/g,
+    (m, alt, url, title) => `<img src="${url}" alt="${alt}"${title ? ' title="' + title + '"' : ''}>`);
+
+  // Links
+  out = out.replace(/\[([^\]]+)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)/g,
+    (m, label, url, title) => `<a href="${url}"${title ? ' title="' + title + '"' : ''} target="_blank" rel="noopener noreferrer">${label}</a>`);
+
+  // Bold (** or __) before italic so **bold** isn't partially eaten by italic
+  out = out.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+  out = out.replace(/__([^_]+)__/g, '<strong>$1</strong>');
+
+  // Italic (* or _), single markers only (doubled ones already consumed above)
+  out = out.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+  out = out.replace(/(^|[^\w])_([^_]+)_(?!\w)/g, '$1<em>$2</em>');
+
+  // Restore stashed inline code
+  out = out.replace(/\u0000CODE(\d+)\u0000/g, (m, idx) => codeStash[parseInt(idx, 10)]);
+
+  return out;
+}
+
+/* ---------- block-level classification ---------- */
+function splitIntoBlocks(src) {
+  const lines = src.replace(/\r\n/g, '\n').split('\n');
+  const blocks = [];
+  let i = 0;
+
+  const headingRe = /^(#{1,6})\s+(.*)$/;
+  const hrRe = /^\s*(?:-{3,}|\*{3,}|_{3,})\s*$/;
+  const fenceRe = /^```(\S*)\s*$/;
+  const ulRe = /^(\s*)([-*+])\s+(.*)$/;
+  const olRe = /^(\s*)(\d+)[.)]\s+(.*)$/;
+  const quoteRe = /^>\s?(.*)$/;
+  const tableRowRe = /^\s*\|?(.+\|.+?)\|?\s*$/;
+  const tableSepRe = /^\s*\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)*\|?\s*$/;
+
+  while (i < lines.length) {
+    const line = lines[i];
+
+    if (line.trim() === '') { i++; continue; }
+
+    // Fenced code block
+    const fenceMatch = line.match(fenceRe);
+    if (fenceMatch) {
+      const lang = fenceMatch[1] || '';
+      const codeLines = [];
+      i++;
+      while (i < lines.length && !/^```\s*$/.test(lines[i])) {
+        codeLines.push(lines[i]);
+        i++;
+      }
+      i++; // skip closing fence
+      blocks.push({ type: 'code', lang, text: codeLines.join('\n') });
+      continue;
+    }
+
+    // Heading
+    const hMatch = line.match(headingRe);
+    if (hMatch) {
+      blocks.push({ type: 'heading', level: hMatch[1].length, text: hMatch[2].trim() });
+      i++;
+      continue;
+    }
+
+    // Horizontal rule (checked before list/paragraph; *** and --- are ambiguous
+    // with list markers, so require 3+ repeated chars with nothing else)
+    if (hrRe.test(line) && !ulRe.test(line)) {
+      blocks.push({ type: 'hr' });
+      i++;
+      continue;
+    }
+
+    // Table: a row containing a pipe, immediately followed by a separator row
+    if (line.indexOf('|') !== -1 && i + 1 < lines.length && tableSepRe.test(lines[i + 1]) && lines[i + 1].indexOf('-') !== -1) {
+      const splitRow = (row) => row.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map(c => c.trim());
+      const headerCells = splitRow(line);
+      const alignCells = splitRow(lines[i + 1]).map(c => {
+        const left = c.startsWith(':');
+        const right = c.endsWith(':');
+        if (left && right) return 'center';
+        if (right) return 'right';
+        if (left) return 'left';
+        return '';
+      });
+      i += 2;
+      const bodyRows = [];
+      while (i < lines.length && lines[i].indexOf('|') !== -1 && lines[i].trim() !== '') {
+        bodyRows.push(splitRow(lines[i]));
+        i++;
+      }
+      blocks.push({ type: 'table', header: headerCells, align: alignCells, rows: bodyRows });
+      continue;
+    }
+
+    // Blockquote (consume consecutive > lines)
+    if (quoteRe.test(line)) {
+      const quoteLines = [];
+      while (i < lines.length && quoteRe.test(lines[i])) {
+        quoteLines.push(lines[i].replace(quoteRe, '$1'));
+        i++;
+      }
+      blocks.push({ type: 'blockquote', text: quoteLines.join('\n') });
+      continue;
+    }
+
+    // Unordered list
+    if (ulRe.test(line)) {
+      const items = [];
+      while (i < lines.length && ulRe.test(lines[i])) {
+        items.push(lines[i].match(ulRe)[3]);
+        i++;
+      }
+      blocks.push({ type: 'ul', items });
+      continue;
+    }
+
+    // Ordered list
+    if (olRe.test(line)) {
+      const items = [];
+      while (i < lines.length && olRe.test(lines[i])) {
+        items.push(lines[i].match(olRe)[3]);
+        i++;
+      }
+      blocks.push({ type: 'ol', items });
+      continue;
+    }
+
+    // Paragraph: consume lines until a blank line or the start of another block type
+    const paraLines = [];
+    while (
+      i < lines.length &&
+      lines[i].trim() !== '' &&
+      !headingRe.test(lines[i]) &&
+      !fenceRe.test(lines[i]) &&
+      !quoteRe.test(lines[i]) &&
+      !ulRe.test(lines[i]) &&
+      !olRe.test(lines[i]) &&
+      !(hrRe.test(lines[i]) && !ulRe.test(lines[i]))
+    ) {
+      paraLines.push(lines[i]);
+      i++;
+    }
+    blocks.push({ type: 'paragraph', text: paraLines.join('\n') });
+  }
+
+  return blocks;
+}
+
+/* ---------- block -> HTML rendering ---------- */
+function renderBlock(block) {
+  switch (block.type) {
+    case 'heading':
+      return `<h${block.level}>${renderInline(block.text)}</h${block.level}>`;
+
+    case 'hr':
+      return '<hr>';
+
+    case 'code': {
+      const escaped = escapeHtml(block.text);
+      const langClass = block.lang ? ` class="language-${escapeHtml(block.lang)}"` : '';
+      return `<pre><code${langClass}>${escaped}</code></pre>`;
+    }
+
+    case 'blockquote': {
+      // Recursively render the quoted text as its own mini block sequence,
+      // so a blockquote containing a list or paragraph still renders correctly.
+      const innerBlocks = splitIntoBlocks(block.text);
+      const innerHtml = innerBlocks.map(renderBlock).join('\n');
+      return `<blockquote>\n${innerHtml}\n</blockquote>`;
+    }
+
+    case 'ul':
+      return `<ul>\n${block.items.map(it => `<li>${renderInline(it)}</li>`).join('\n')}\n</ul>`;
+
+    case 'ol':
+      return `<ol>\n${block.items.map(it => `<li>${renderInline(it)}</li>`).join('\n')}\n</ol>`;
+
+    case 'table': {
+      const alignStyle = (a) => a ? ` style="text-align:${a}"` : '';
+      const thead = `<thead><tr>${block.header.map((h, idx) => `<th${alignStyle(block.align[idx])}>${renderInline(h)}</th>`).join('')}</tr></thead>`;
+      const tbody = `<tbody>${block.rows.map(r => `<tr>${r.map((c, idx) => `<td${alignStyle(block.align[idx])}>${renderInline(c || '')}</td>`).join('')}</tr>`).join('')}</tbody>`;
+      return `<table>\n${thead}\n${tbody}\n</table>`;
+    }
+
+    case 'paragraph': {
+      // A single newline inside a paragraph becomes a <br> (soft line break)
+      const withBreaks = block.text.split('\n').map(renderInline).join('<br>\n');
+      return `<p>${withBreaks}</p>`;
+    }
+
+    default:
+      return '';
+  }
+}
+
+function markdownToHtml(src) {
+  const blocks = splitIntoBlocks(src);
+  return blocks.map(renderBlock).join('\n\n');
+}
+
+/* ---------- UI wiring ---------- */
+const mdInput = document.getElementById('md-input');
+const statusEl = document.getElementById('status-msg');
+const resultCard = document.getElementById('result-card');
+const resultGrid = document.getElementById('result-grid');
+const mdPreview = document.getElementById('md-preview');
+const htmlOutput = document.getElementById('html-output');
+const tabPreviewBtn = document.getElementById('tab-preview');
+const tabSourceBtn = document.getElementById('tab-source');
+const panelPreview = document.getElementById('panel-preview');
+const panelSource = document.getElementById('panel-source');
+
+function row(k, v) {
+  return `<div class="insp-row"><span class="k">${k}</span><span class="v">${v}</span></div>`;
+}
+
+let lastHtml = '';
+
+document.getElementById('convert-btn').addEventListener('click', () => {
+  const src = mdInput.value;
+  if (!src.trim()) {
+    showStatus(statusEl, 'error', 'Paste some Markdown text first.');
+    return;
+  }
+
+  const html = markdownToHtml(src);
+  lastHtml = html;
+
+  mdPreview.innerHTML = html;
+  htmlOutput.value = html;
+
+  const lineCount = src.split('\n').length;
+  const blockCount = splitIntoBlocks(src).length;
+  resultGrid.innerHTML = `
+    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#file-text"></use></svg> Input</h3>${row('Lines', lineCount)}${row('Characters', src.length)}</div>
+    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#markdown-html"></use></svg> Output</h3>${row('Blocks Parsed', blockCount)}${row('HTML Characters', html.length)}</div>
+  `;
+
+  resultCard.style.display = 'block';
+  showStatus(statusEl, 'success', 'Converted to HTML. Switch tabs to view the preview or the HTML source.');
+});
+
+tabPreviewBtn.addEventListener('click', () => {
+  tabPreviewBtn.classList.add('active');
+  tabSourceBtn.classList.remove('active');
+  panelPreview.classList.add('active');
+  panelSource.classList.remove('active');
+});
+
+tabSourceBtn.addEventListener('click', () => {
+  tabSourceBtn.classList.add('active');
+  tabPreviewBtn.classList.remove('active');
+  panelSource.classList.add('active');
+  panelPreview.classList.remove('active');
+});
+
+document.getElementById('copy-btn').addEventListener('click', function() {
+  if (!lastHtml) {
+    showStatus(statusEl, 'error', 'Convert some Markdown first.');
+    return;
+  }
+  if (typeof copyText === 'function') {
+    copyText(lastHtml, this);
+  } else if (navigator.clipboard) {
+    navigator.clipboard.writeText(lastHtml);
+  }
+});
+
+document.getElementById('download-btn').addEventListener('click', () => {
+  if (!lastHtml) {
+    showStatus(statusEl, 'error', 'Convert some Markdown first.');
+    return;
+  }
+  const fullDoc = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Converted Document</title>
+</head>
+<body>
+${lastHtml}
+</body>
+</html>
+`;
+  const blob = new Blob([fullDoc], { type: 'text/html;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'converted.html';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+});
+</script>
+</body>
+</html>

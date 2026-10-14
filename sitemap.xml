@@ -7,6 +7,9 @@
 <loc>https://logrith.in/sitemap-tools.xml</loc>
 </sitemap>
 <sitemap>
+<loc>https://logrith.in/sitemap-global.xml</loc>
+</sitemap>
+<sitemap>
 <loc>https://logrith.in/sitemap-blog.xml</loc>
 </sitemap>
 </sitemapindex>

@@ -1,2 +1,11 @@
 /en/*        /:splat            301
 /legacy/*    /:splat            301
+
+# Global Tools category — files live in /tools/global/, served at clean /tools/ URLs
+/tools/pdf-inspector            /tools/global/pdf-inspector.html            200
+/tools/image-privacy-cleaner    /tools/global/image-privacy-cleaner.html    200
+/tools/json-repair              /tools/global/json-repair.html              200
+/tools/csv-cleaner              /tools/global/csv-cleaner.html              200
+/tools/ai-context-calculator    /tools/global/ai-context-calculator.html    200
+/tools/markdown-to-html         /tools/global/markdown-to-html.html         200
+/tools/url-deduplicator         /tools/global/url-deduplicator.html         200

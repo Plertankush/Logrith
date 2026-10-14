@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>JSON Repair Tool – Fix, Validate & Format JSON Online</title>
+  <meta name="description" content="JSON Repair Tool: Validate, format, beautify and automatically fix common JSON syntax errors directly in your browser. Free and fast.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Logrith">
+  <link rel="canonical" href="https://logrith.in/tools/json-repair">
+
+  <meta property="og:title" content="JSON Repair Tool – Fix, Validate & Format JSON Online">
+  <meta property="og:description" content="Validate, format, beautify and automatically fix common JSON syntax errors directly in your browser. Free and fast.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://logrith.in/tools/json-repair">
+  <meta property="og:site_name" content="Logrith">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="JSON Repair Tool – Fix, Validate & Format JSON Online">
+  <meta name="twitter:description" content="Validate, format, beautify and automatically fix common JSON syntax errors directly in your browser. Free and fast.">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preload" href="/assets/css/style.css" as="style">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <meta name="keywords" content="json repair tool, fix json online, json validator, json formatter, json beautifier, json to typescript, json to csv">
+
+  <style>
+    .tool-hero { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #ecfdf5 100%);}
+    .tool-hero h1 span { color: #16a34a; }
+
+    .json-toolbar { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; align-items:center; }
+    .json-toolbar .spacer { flex:1; }
+    .indent-select { padding:8px 10px; border:1px solid var(--gray-200); border-radius:8px; font-size:.84rem; background:var(--white); }
+
+    .json-output-wrap { position:relative; }
+    .repair-note { margin-top:10px; padding:12px 14px; border-radius:10px; font-size:.86rem; line-height:1.6; }
+    .repair-note.ok { background:#ecfdf3; color:#166534; border:1px solid #bbf7d0; }
+    .repair-note.fail { background:#fef2f2; color:#991b1b; border:1px solid #fecaca; }
+    .repair-note ul { margin:6px 0 0 18px; }
+
+    .json-tabs { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; }
+    .json-tab { padding:7px 14px; border-radius:20px; font-size:.82rem; font-weight:700; border:1px solid var(--gray-200); background:var(--white); color:var(--gray-600); cursor:pointer; }
+    .json-tab.active { background:var(--gray-900); color:#fff; border-color:var(--gray-900); }
+    .json-panel { display:none; }
+    .json-panel.active { display:block; }
+
+    .json-tree { font-family:'Courier New',monospace; font-size:.84rem; line-height:1.7; background:var(--gray-50); border:1px solid var(--gray-200); border-radius:10px; padding:14px; overflow-x:auto; max-height:420px; overflow-y:auto; }
+    .jt-node { margin-left:16px; }
+    .jt-root { margin-left:0; }
+    .jt-toggle { cursor:pointer; user-select:none; color:var(--gray-500); font-weight:700; display:inline-block; width:14px; }
+    .jt-key { color:#9a3412; font-weight:600; }
+    .jt-string { color:#166534; }
+    .jt-number { color:#1d4ed8; }
+    .jt-bool { color:#7c3aed; }
+    .jt-null { color:var(--gray-400); }
+    .jt-children.collapsed { display:none; }
+    .jt-meta { color:var(--gray-400); font-size:.78rem; }
+
+    .example-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; margin-top:10px; }
+    .example-box { background:var(--gray-50); border:1px solid var(--gray-200); border-radius:10px; padding:12px; font-family:'Courier New',monospace; font-size:.78rem; white-space:pre-wrap; word-break:break-word; }
+    .example-box .lbl { font-family:var(--font-display); font-weight:700; font-size:.76rem; color:var(--gray-500); margin-bottom:6px; display:block; }
+
+    .article-section, .faq-section, .feature-section, .related-tools, .keyword-section, .howto-section {
+      max-width: 860px; margin: 22px auto 0; background: #fff; border: 1px solid var(--gray-100); border-radius: 14px; padding: 22px;
+    }
+    .article-section h2, .faq-section h2, .feature-section h2, .related-tools h2, .keyword-section h2, .howto-section h2 { margin-bottom: 14px; }
+    .article-section p, .howto-section p { margin: 0 0 12px; line-height: 1.8; color: var(--gray-700); }
+    .feature-list, .keyword-list, .related-list, .howto-list { margin: 0; padding-left: 18px; }
+    .feature-list li, .keyword-list li, .related-list li, .howto-list li { margin-bottom: 10px; color: var(--gray-700); line-height: 1.7; }
+    .privacy-note { max-width: 860px; margin: 10px auto 0; font-size: .88rem; color: var(--gray-600); text-align: left; }
+    .faq-item { border-bottom: 1px solid var(--gray-100); padding: 14px 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-weight: 700; color: var(--gray-800); margin-bottom: 6px; }
+    .faq-a { color: var(--gray-700); line-height: 1.8; }
+    .related-list a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    .related-list a:hover { text-decoration: underline; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareApplication",
+    "name":"Logrith JSON Repair Tool",
+    "url":"https://logrith.in/tools/json-repair",
+    "applicationCategory":"UtilitiesApplication",
+    "operatingSystem":"Web Browser",
+    "description":"Browser-based tool that validates JSON, automatically fixes common syntax errors such as trailing commas and unquoted keys, formats and minifies JSON, and converts JSON to TypeScript interfaces or CSV, without uploading data to a server.",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+    "featureList":[
+      "Validate JSON with line and column error location",
+      "Automatically repair trailing commas, unquoted keys and single-quoted strings",
+      "Format and beautify JSON with selectable indent",
+      "Minify JSON",
+      "Collapsible JSON tree viewer",
+      "Convert JSON to a TypeScript interface",
+      "Convert array-of-objects JSON to CSV",
+      "100% local browser processing"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://logrith.in/"},
+      {"@type":"ListItem","position":2,"name":"Global Tools","item":"https://logrith.in/categories/global-tools"},
+      {"@type":"ListItem","position":3,"name":"JSON Repair Tool","item":"https://logrith.in/tools/json-repair"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Can this tool fix any broken JSON?","acceptedAnswer":{"@type":"Answer","text":"No. The automatic repair step targets three common, well-defined problems: trailing commas, unquoted object keys, and single-quoted string values. It cannot recover data that is genuinely missing, fix deeply malformed or truncated structures, or guess what you meant to write. For anything outside those three fixes, the tool reports the exact error location so you can correct it manually."}},
+      {"@type":"Question","name":"Is my JSON data uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. All parsing, repair, formatting and conversion happens locally in your browser using JavaScript. Your data is never sent to Logrith or any other server."}},
+      {"@type":"Question","name":"Does the tool tell me exactly where the error is?","acceptedAnswer":{"@type":"Answer","text":"Yes, when the browser's JSON parser reports a character position, the tool converts that position into a line and column number so you can jump straight to the problem."}},
+      {"@type":"Question","name":"Can I convert JSON to a TypeScript interface?","acceptedAnswer":{"@type":"Answer","text":"Yes. Once your JSON parses successfully, the tool generates a basic TypeScript interface by inferring the type of each field, including nested objects and arrays."}},
+      {"@type":"Question","name":"Can I convert JSON to CSV?","acceptedAnswer":{"@type":"Answer","text":"Yes, if the top-level JSON is an array of flat objects. The tool builds a CSV header from the union of all keys and writes one row per object. If the JSON isn't shaped that way, the tool explains why CSV export isn't possible rather than producing broken output."}},
+      {"@type":"Question","name":"Is this tool free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes, this tool is completely free with no account, signup, or usage limit beyond what your browser can handle."}}
+    ]
+  }
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+</head>
+<body>
+<div id="navbar"></div>
+
+<main>
+  <div class="tool-hero">
+    <div class="tool-hero-inner">
+      <div class="tool-breadcrumb">
+        <a href="/">Home</a> › <a href="/categories/global-tools">Global Tools</a> › JSON Repair Tool
+      </div>
+      <h1>JSON Repair Tool – Fix<span> and Validate JSON</span></h1>
+      <p>Paste broken JSON, validate it, auto-fix common syntax mistakes, and format, minify or convert the result, entirely in your browser.</p>
+      <div class="tool-tags">
+        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
+        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#lock"></use></svg> Local Processing</span>
+        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#json"></use></svg> Auto Repair</span>
+        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#speed"></use></svg> Instant</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="tool-workspace" style="max-width:960px;">
+    <div class="tool-card">
+      <h2>Paste Your JSON</h2>
+      <textarea class="tool-textarea mono" id="json-input" rows="14" spellcheck="false" placeholder='{"name": "Example", "tags": ["a", "b",], noQuotes: &apos;value&apos;}'></textarea>
+
+      <div class="json-toolbar">
+        <select class="indent-select" id="indent-select">
+          <option value="2">2 spaces</option>
+          <option value="4">4 spaces</option>
+          <option value="tab">Tab</option>
+        </select>
+        <button class="btn btn-secondary" id="validate-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#check"></use></svg> Validate</button>
+        <button class="btn btn-secondary" id="format-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#code"></use></svg> Format</button>
+        <button class="btn btn-secondary" id="minify-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#compress-img"></use></svg> Minify</button>
+        <div class="spacer"></div>
+        <button class="btn btn-primary" id="repair-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#tool"></use></svg> Auto-Repair</button>
+      </div>
+
+      <div class="status-msg" id="status-msg" aria-live="polite"></div>
+      <div id="repair-note-wrap"></div>
+    </div>
+
+    <div class="tool-card" id="results-card" style="display:none;">
+      <div class="json-tabs">
+        <button class="json-tab active" data-panel="panel-output" type="button">Output</button>
+        <button class="json-tab" data-panel="panel-tree" type="button">Tree View</button>
+        <button class="json-tab" data-panel="panel-ts" type="button">TypeScript</button>
+        <button class="json-tab" data-panel="panel-csv" type="button">CSV</button>
+      </div>
+
+      <div class="json-panel active" id="panel-output">
+        <div class="btn-group mb-12">
+          <button class="btn btn-secondary btn-sm" id="copy-output-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
+          <button class="btn btn-secondary btn-sm" id="download-output-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#download"></use></svg> Download .json</button>
+        </div>
+        <textarea class="tool-textarea mono" id="json-output" rows="14" spellcheck="false" readonly></textarea>
+      </div>
+
+      <div class="json-panel" id="panel-tree">
+        <div class="json-tree" id="tree-view"></div>
+      </div>
+
+      <div class="json-panel" id="panel-ts">
+        <div class="btn-group mb-12">
+          <button class="btn btn-secondary btn-sm" id="copy-ts-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
+        </div>
+        <textarea class="tool-textarea mono" id="ts-output" rows="14" spellcheck="false" readonly></textarea>
+      </div>
+
+      <div class="json-panel" id="panel-csv">
+        <div class="btn-group mb-12">
+          <button class="btn btn-secondary btn-sm" id="copy-csv-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
+          <button class="btn btn-secondary btn-sm" id="download-csv-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#download"></use></svg> Download .csv</button>
+        </div>
+        <div id="csv-message" class="status-msg"></div>
+        <textarea class="tool-textarea mono" id="csv-output" rows="14" spellcheck="false" readonly></textarea>
+      </div>
+    </div>
+
+    <p class="privacy-note">Your JSON is processed in your browser. Data is not uploaded to Logrith.</p>
+  </div>
+
+  <section class="howto-section">
+    <h2>How to Fix JSON</h2>
+    <ol class="howto-list">
+      <li>Paste or type your JSON into the input box above.</li>
+      <li>Click "Validate" to check it, or click "Auto-Repair" directly if you know it has common mistakes.</li>
+      <li>If repair succeeds, review which fixes were applied, then click "Accept repaired JSON" to replace the editor content.</li>
+      <li>Use "Format" to beautify the result, "Minify" to compress it, or switch tabs to view it as a tree, TypeScript interface, or CSV.</li>
+    </ol>
+  </section>
+
+  <section class="feature-section">
+    <h2>What This JSON Repair Tool Does</h2>
+    <ul class="feature-list">
+      <li><strong>Validation:</strong> parses your JSON and reports the exact line and column of the first syntax error.</li>
+      <li><strong>Automatic repair:</strong> fixes trailing commas, unquoted object keys, and single-quoted string values when it safely can.</li>
+      <li><strong>Formatting:</strong> beautifies JSON with a selectable indent of 2 spaces, 4 spaces, or a tab.</li>
+      <li><strong>Minification:</strong> strips all unnecessary whitespace for compact output.</li>
+      <li><strong>Tree view:</strong> renders parsed JSON as a collapsible nested structure you can explore.</li>
+      <li><strong>Conversions:</strong> generates a TypeScript interface or, for array-of-objects data, a CSV file.</li>
+    </ul>
+  </section>
+
+  <section class="article-section">
+    <h2>What Is JSON?</h2>
+    <p>JSON (JavaScript Object Notation) is a lightweight, text-based data format used almost everywhere in modern software: API responses, configuration files, application settings, data exports, and the output of countless tools and scripts. It represents data as nested objects (key-value pairs in curly braces) and arrays (ordered lists in square brackets), with values that are strings, numbers, booleans, null, or further nested objects and arrays. Its simplicity is exactly why it's so widely used — and also why a single missing comma or stray quote can make an entire file unreadable to a parser.</p>
+
+    <h2>Why JSON Becomes Invalid</h2>
+    <p>JSON has strict, unforgiving syntax rules. Unlike some configuration formats that tolerate minor inconsistencies, a JSON parser will reject the entire document over a single misplaced character. The most common causes of invalid JSON are:</p>
+    <ul class="feature-list">
+      <li><strong>Missing commas</strong> between properties or array items.</li>
+      <li><strong>Missing quotes</strong> around string values or object keys.</li>
+      <li><strong>Extra trailing commas</strong> left after the last item in an object or array — valid in JavaScript object literals, but not in strict JSON.</li>
+      <li><strong>Unmatched brackets or braces</strong> from a copy-paste that cut off part of the structure.</li>
+      <li><strong>Incorrect values</strong>, such as using single quotes instead of double quotes, or writing <code>undefined</code> instead of <code>null</code>.</li>
+    </ul>
+
+    <div class="example-grid">
+      <div class="example-box"><span class="lbl">Before (trailing comma)</span>{
+  "tags": ["a", "b",]
+}</div>
+      <div class="example-box"><span class="lbl">After</span>{
+  "tags": ["a", "b"]
+}</div>
+      <div class="example-box"><span class="lbl">Before (unquoted key)</span>{
+  name: "Example"
+}</div>
+      <div class="example-box"><span class="lbl">After</span>{
+  "name": "Example"
+}</div>
+    </div>
+
+    <h2>How to Fix JSON</h2>
+    <p>The most reliable way to fix JSON is to let a parser point you to the exact location of the problem rather than scanning the whole document by eye. This tool does that two ways: the Validate button reports a precise line and column for the first error the browser's own JSON parser encounters, and the Auto-Repair button attempts to fix the specific categories of mistakes that are common enough to handle safely and predictably.</p>
+
+    <h2>JSON Validator</h2>
+    <p>Click "Validate" to run your input through <code>JSON.parse()</code>. If it succeeds, you'll see a confirmation that the JSON is valid. If it fails, the browser's error message is parsed for a character position — when present, that position is converted into a line and column number by counting the newline characters in your input up to that point, so you can go straight to the offending character instead of re-reading the entire document.</p>
+
+    <h2>JSON Formatter and Beautifier</h2>
+    <p>Click "Format" to pretty-print valid JSON with consistent indentation. Choose 2 spaces, 4 spaces, or a tab from the indent selector before formatting. This is useful for making minified API responses or single-line config values readable, or for standardizing the style of a file before committing it to a repository.</p>
+
+    <h2>JSON Minifier</h2>
+    <p>Click "Minify" to strip all non-essential whitespace from valid JSON, producing the smallest possible representation. This is useful when you need to paste JSON into a size-constrained field, embed it in a URL parameter, or shrink a configuration payload before sending it over a network.</p>
+
+    <h2>JSON Repair</h2>
+    <p>The Auto-Repair button applies three specific, well-scoped fixes, in order, and re-validates after each pass:</p>
+    <ul class="feature-list">
+      <li><strong>Trailing comma removal:</strong> a comma directly before a closing <code>}</code> or <code>]</code> is removed.</li>
+      <li><strong>Unquoted key quoting:</strong> an object key written without quotes (a valid JavaScript identifier followed by a colon) is wrapped in double quotes. Keys that are already quoted are left untouched.</li>
+      <li><strong>Single-quote conversion:</strong> string values wrapped in single quotes are converted to double-quoted strings.</li>
+    </ul>
+    <p>After these fixes are applied, the tool re-parses the result. If it now succeeds, you'll see a list of exactly which of the three fixes changed something, and a button to accept the repaired JSON into the editor. If the JSON still doesn't parse, the tool tells you plainly that automatic repair could not fix it and shows the latest parse error so you can correct it by hand.</p>
+    <p><strong>Honest limitations:</strong> this repair step cannot recover data that is genuinely missing (such as a value that was never written), cannot fix deeply malformed or truncated structures with multiple overlapping problems, cannot guess your intent when a key or value is ambiguous, and the single-quote conversion uses a scoped pattern that won't perfectly handle every case of escaped quotes inside a string. It is designed to reliably fix the handful of mistakes that account for most "nearly-valid" JSON, not to repair arbitrary broken text.</p>
+
+    <h2>Developer Use Cases</h2>
+    <p>This tool is built for the everyday moments developers run into broken JSON:</p>
+    <ul class="feature-list">
+      <li><strong>Debugging API responses</strong> that fail to parse because of a server-side formatting bug.</li>
+      <li><strong>Cleaning up configuration files</strong> hand-edited by someone who used JavaScript object syntax instead of strict JSON.</li>
+      <li><strong>Working with AI-generated JSON output</strong>, which frequently includes trailing commas, unquoted keys, or single quotes when a model approximates JSON from training patterns rather than strict syntax.</li>
+      <li><strong>Quick data exchange</strong> between tools that expect slightly different JSON conventions.</li>
+      <li><strong>Web development</strong>, where a malformed JSON fixture or mock-data file can block local testing until it's fixed.</li>
+      <li><strong>Generating types and tabular exports</strong> directly from a JSON payload without writing a one-off script.</li>
+    </ul>
+
+    <h3>JSON to TypeScript</h3>
+    <p>Once your JSON parses successfully, switch to the TypeScript tab to generate a basic interface. The tool infers each field's type — string, number, boolean, or <code>null</code> — and recurses into nested objects to generate additional named interfaces, and into arrays to infer an element type from the first item. An empty array is annotated as <code>any[]</code> with a comment noting that its type couldn't be inferred, since there's no element to examine.</p>
+
+    <h3>JSON to CSV</h3>
+    <p>The CSV tab works specifically for JSON shaped as an array of flat objects — the common shape for exported records or API list responses. The tool builds a header row from the union of every key that appears across all objects, in the order each key first appears, then writes one row per object with proper CSV escaping (quoting any value containing a comma, quote, or newline, and doubling internal quotes). If your JSON isn't in that shape, the tool explains clearly why CSV export isn't available instead of producing a broken file.</p>
+
+    <h3>Frequently Searched Terms</h3>
+    <p>People use this tool when searching for phrases like "fix json online," "json validator," "json syntax error checker," "json repair tool," "json to typescript converter," and "json to csv converter" — this page is built to answer exactly those needs in one browser-based tool.</p>
+  </section>
+
+  <section class="faq-section">
+    <h2>JSON Repair Tool FAQ</h2>
+    <div class="faq-item">
+      <div class="faq-q">Can this tool fix any broken JSON?</div>
+      <div class="faq-a">No. The automatic repair step targets three common, well-defined problems: trailing commas, unquoted object keys, and single-quoted string values. It cannot recover genuinely missing data, fix deeply malformed or truncated structures, or guess what you meant to write. For anything beyond those three fixes, the tool shows the exact parse error so you can correct it manually.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is my JSON data uploaded anywhere?</div>
+      <div class="faq-a">No. Parsing, repair, formatting and conversion all happen locally in your browser using JavaScript. Nothing is sent to Logrith or any other server.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Does the tool tell me exactly where the error is?</div>
+      <div class="faq-a">Yes, when the browser's parser reports a character position, the tool converts it into a line and column number so you can locate the problem quickly.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I convert JSON to a TypeScript interface?</div>
+      <div class="faq-a">Yes. Once your JSON parses successfully, the tool generates a basic TypeScript interface, inferring types including nested objects and arrays.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I convert JSON to CSV?</div>
+      <div class="faq-a">Yes, if the top-level JSON is an array of flat objects. The tool builds a header from the union of all keys and writes one row per object. If the shape doesn't fit, it explains why rather than producing broken output.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is this tool free to use?</div>
+      <div class="faq-a">Yes, this tool is free to use with no account, signup, or usage limit beyond what your browser can handle.</div>
+    </div>
+  </section>
+
+  <section class="related-tools">
+    <h2>Related Tools</h2>
+    <ul class="related-list">
+      <li><a href="/tools/json-formatter">JSON Formatter</a> — the classic formatter; use this repair tool first when your JSON won't parse at all.</li>
+      <li><a href="/tools/yaml-json-converter">YAML to JSON Converter</a></li>
+      <li><a href="/tools/xml-formatter">XML Formatter</a></li>
+      <li><a href="/tools/ai-context-calculator">AI Context Calculator</a></li>
+      <li><a href="/tools/markdown-to-html">Markdown to HTML</a></li>
+      <li><a href="/tools/csv-cleaner">CSV Cleaner</a></li>
+    </ul>
+  </section>
+
+  <section class="keyword-section">
+    <h2>Top JSON Repair Tool Search Queries</h2>
+    <ul class="keyword-list">
+      <li>json repair tool online</li>
+      <li>fix json syntax error</li>
+      <li>json validator free</li>
+      <li>json formatter and beautifier</li>
+      <li>json to typescript converter</li>
+      <li>json to csv converter online</li>
+      <li>fix trailing comma json</li>
+      <li>json minifier online</li>
+    </ul>
+  </section>
+</main>
+
+<div id="footer"></div>
+
+<script src="/assets/js/main.js" defer></script>
+<script src="/load-components.js"></script>
+
+<script>
+const inputEl = document.getElementById('json-input');
+const outputEl = document.getElementById('json-output');
+const statusEl = document.getElementById('status-msg');
+const repairNoteWrap = document.getElementById('repair-note-wrap');
+const resultsCard = document.getElementById('results-card');
+const indentSelect = document.getElementById('indent-select');
+const treeView = document.getElementById('tree-view');
+const tsOutput = document.getElementById('ts-output');
+const csvOutput = document.getElementById('csv-output');
+const csvMessage = document.getElementById('csv-message');
+
+let lastParsed = null;
+let lastRepairedText = null;
+
+/* ---------- tab switching ---------- */
+document.querySelectorAll('.json-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.json-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.json-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.panel).classList.add('active');
+  });
+});
+
+/* ---------- position -> line/column ---------- */
+function positionToLineCol(text, pos) {
+  let line = 1, lastNl = -1;
+  for (let i = 0; i < pos && i < text.length; i++) {
+    if (text[i] === '\n') { line++; lastNl = i; }
+  }
+  const col = pos - lastNl;
+  return { line, col };
+}
+
+function describeError(text, err) {
+  const msg = err && err.message ? err.message : 'Invalid JSON';
+  const m = msg.match(/position (\d+)/i);
+  if (m) {
+    const pos = parseInt(m[1], 10);
+    const { line, col } = positionToLineCol(text, pos);
+    return `Error near line ${line}, column ${col}: ${msg}`;
+  }
+  return msg;
+}
+
+/* ---------- validate ---------- */
+document.getElementById('validate-btn').addEventListener('click', () => {
+  const text = inputEl.value;
+  try {
+    JSON.parse(text);
+    showStatus(statusEl, 'success', 'Valid JSON.');
+  } catch (err) {
+    showStatus(statusEl, 'error', describeError(text, err));
+  }
+});
+
+/* ---------- format / minify ---------- */
+function getIndent() {
+  const v = indentSelect.value;
+  return v === 'tab' ? '\t' : parseInt(v, 10);
+}
+
+document.getElementById('format-btn').addEventListener('click', () => {
+  const text = inputEl.value;
+  try {
+    const parsed = JSON.parse(text);
+    const formatted = JSON.stringify(parsed, null, getIndent());
+    showOutput(formatted, parsed);
+    showStatus(statusEl, 'success', 'JSON formatted.');
+  } catch (err) {
+    showStatus(statusEl, 'error', describeError(text, err));
+  }
+});
+
+document.getElementById('minify-btn').addEventListener('click', () => {
+  const text = inputEl.value;
+  try {
+    const parsed = JSON.parse(text);
+    const minified = JSON.stringify(parsed);
+    showOutput(minified, parsed);
+    showStatus(statusEl, 'success', 'JSON minified.');
+  } catch (err) {
+    showStatus(statusEl, 'error', describeError(text, err));
+  }
+});
+
+/* ---------- repair ---------- */
+function repairJson(text) {
+  const applied = [];
+  let working = text;
+
+  // 1. Strip trailing commas before } or ]
+  const noTrailing = working.replace(/,(\s*[}\]])/g, '$1');
+  if (noTrailing !== working) applied.push('Removed trailing commas');
+  working = noTrailing;
+
+  // 2. Quote unquoted object keys: ({ or ,) whitespace identifier whitespace :
+  //    Only match keys NOT already inside quotes (identifier-start char after { or ,)
+  const quotedKeys = working.replace(/([{,])(\s*)([A-Za-z_$][A-Za-z0-9_$]*)(\s*):/g, '$1$2"$3"$4:');
+  if (quotedKeys !== working) applied.push('Quoted unquoted object keys');
+  working = quotedKeys;
+
+  // 3. Convert single-quoted string values to double-quoted.
+  //    Scoped: matches a single-quoted run not containing an unescaped double quote,
+  //    used as a value or array element (preceded by : , [ or whitespace after those).
+  const singleToDouble = working.replace(/'((?:[^'\\]|\\.)*)'/g, (match, inner) => {
+    // Escape any existing double quotes inside, then wrap in double quotes.
+    const escaped = inner.replace(/\\'/g, "'").replace(/"/g, '\\"');
+    return '"' + escaped + '"';
+  });
+  if (singleToDouble !== working) applied.push('Converted single-quoted strings to double-quoted');
+  working = singleToDouble;
+
+  return { text: working, applied };
+}
+
+document.getElementById('repair-btn').addEventListener('click', () => {
+  const text = inputEl.value;
+  if (!text.trim()) {
+    showStatus(statusEl, 'error', 'Paste some JSON first.');
+    return;
+  }
+
+  // If already valid, nothing to repair.
+  try {
+    JSON.parse(text);
+    showStatus(statusEl, 'success', 'This JSON is already valid — nothing to repair.');
+    repairNoteWrap.innerHTML = '';
+    return;
+  } catch (e) { /* continue to repair */ }
+
+  const { text: repaired, applied } = repairJson(text);
+
+  let finalParsed = null;
+  let finalErr = null;
+  try {
+    finalParsed = JSON.parse(repaired);
+  } catch (err) {
+    finalErr = err;
+  }
+
+  if (finalParsed !== null || (finalParsed === null && !finalErr)) {
+    // success (note: JSON "null" literal parses to null with no error — treat as success)
+    lastRepairedText = repaired;
+    const list = applied.length
+      ? `<ul>${applied.map(a => `<li>${a}</li>`).join('')}</ul>`
+      : '<p>No changes were needed beyond re-parsing.</p>';
+    repairNoteWrap.innerHTML = `
+      <div class="repair-note ok">
+        <strong>Repaired successfully.</strong> The following fixes were applied:
+        ${list}
+        <button class="btn btn-primary btn-sm mt-12" id="accept-repair-btn" type="button">Accept repaired JSON</button>
+      </div>`;
+    document.getElementById('accept-repair-btn').addEventListener('click', () => {
+      inputEl.value = JSON.stringify(finalParsed, null, getIndent());
+      showOutput(inputEl.value, finalParsed);
+      showStatus(statusEl, 'success', 'Repaired JSON accepted into the editor.');
+      repairNoteWrap.innerHTML = '';
+    });
+    showStatus(statusEl, 'success', 'JSON repaired. Review the changes below.');
+  } else {
+    repairNoteWrap.innerHTML = `
+      <div class="repair-note fail">
+        <strong>Automatic repair could not fix this JSON automatically — manual correction is needed.</strong>
+        <p style="margin-top:8px;">${describeError(repaired, finalErr)}</p>
+      </div>`;
+    showStatus(statusEl, 'error', 'Repair attempted, but the JSON still has errors.');
+  }
+});
+
+/* ---------- output display + conversions ---------- */
+function showOutput(text, parsed) {
+  outputEl.value = text;
+  lastParsed = parsed;
+  resultsCard.style.display = 'block';
+  renderTree(parsed);
+  renderTypeScript(parsed);
+  renderCsv(parsed);
+}
+
+/* ---------- tree view ---------- */
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"]/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[c]));
+}
+
+function renderValue(key, value, isRoot) {
+  const keyHtml = key !== null ? `<span class="jt-key">${escapeHtml(key)}</span>: ` : '';
+  if (value === null) {
+    return `<div class="jt-node">${keyHtml}<span class="jt-null">null</span></div>`;
+  }
+  if (Array.isArray(value)) {
+    if (value.length === 0) return `<div class="jt-node">${keyHtml}<span class="jt-meta">[]</span></div>`;
+    const children = value.map((v, i) => renderValue(String(i), v, false)).join('');
+    return `<div class="jt-node"><span class="jt-toggle">▾</span>${keyHtml}<span class="jt-meta">[${value.length}]</span><div class="jt-children">${children}</div></div>`;
+  }
+  if (typeof value === 'object') {
+    const keys = Object.keys(value);
+    if (keys.length === 0) return `<div class="jt-node">${keyHtml}<span class="jt-meta">{}</span></div>`;
+    const children = keys.map(k => renderValue(k, value[k], false)).join('');
+    return `<div class="jt-node"><span class="jt-toggle">▾</span>${keyHtml}<span class="jt-meta">{${keys.length}}</span><div class="jt-children">${children}</div></div>`;
+  }
+  if (typeof value === 'string') {
+    return `<div class="jt-node">${keyHtml}<span class="jt-string">"${escapeHtml(value)}"</span></div>`;
+  }
+  if (typeof value === 'number') {
+    return `<div class="jt-node">${keyHtml}<span class="jt-number">${value}</span></div>`;
+  }
+  if (typeof value === 'boolean') {
+    return `<div class="jt-node">${keyHtml}<span class="jt-bool">${value}</span></div>`;
+  }
+  return `<div class="jt-node">${keyHtml}${escapeHtml(String(value))}</div>`;
+}
+
+function renderTree(parsed) {
+  if (parsed === undefined) { treeView.innerHTML = '<p>No valid JSON to display.</p>'; return; }
+  treeView.innerHTML = `<div class="jt-root">${renderValue(null, parsed, true)}</div>`;
+  treeView.querySelectorAll('.jt-toggle').forEach(t => {
+    t.addEventListener('click', () => {
+      const childrenEl = t.parentElement.querySelector(':scope > .jt-children');
+      if (!childrenEl) return;
+      childrenEl.classList.toggle('collapsed');
+      t.textContent = childrenEl.classList.contains('collapsed') ? '▸' : '▾';
+    });
+  });
+}
+
+/* ---------- JSON to TypeScript ---------- */
+function toPascalCase(name) {
+  return String(name).replace(/(^|[_\-\s])([a-zA-Z0-9])/g, (m, sep, c) => c.toUpperCase());
+}
+
+function inferType(value, name, interfaces) {
+  if (value === null) return 'null';
+  if (Array.isArray(value)) {
+    if (value.length === 0) return { type: 'any[]', note: true };
+    const elType = inferType(value[0], name, interfaces);
+    const elTypeStr = typeof elType === 'object' ? elType.type : elType;
+    return `${elTypeStr}[]`;
+  }
+  if (typeof value === 'object') {
+    const ifaceName = toPascalCase(name) || 'Root';
+    buildInterface(ifaceName, value, interfaces);
+    return ifaceName;
+  }
+  if (typeof value === 'string') return 'string';
+  if (typeof value === 'number') return 'number';
+  if (typeof value === 'boolean') return 'boolean';
+  return 'any';
+}
+
+function buildInterface(name, obj, interfaces) {
+  const lines = [];
+  let note = '';
+  for (const key of Object.keys(obj)) {
+    const val = obj[key];
+    if (val === null) {
+      lines.push(`  ${key}: null;`);
+      continue;
+    }
+    const t = inferType(val, key, interfaces);
+    if (typeof t === 'object' && t.note) {
+      note += `  // Note: "${key}" is an empty array; element type could not be inferred.\n`;
+      lines.push(`  ${key}: ${t.type};`);
+    } else {
+      lines.push(`  ${key}: ${t};`);
+    }
+  }
+  interfaces.push(`${note}interface ${name} {\n${lines.join('\n')}\n}`);
+}
+
+function renderTypeScript(parsed) {
+  if (parsed === undefined) { tsOutput.value = ''; return; }
+  const interfaces = [];
+  if (Array.isArray(parsed)) {
+    if (parsed.length === 0) {
+      tsOutput.value = '// Empty array: element type could not be inferred.\ntype Root = any[];';
+      return;
+    }
+    const elType = inferType(parsed[0], 'RootItem', interfaces);
+    const elTypeStr = typeof elType === 'object' ? elType.type : elType;
+    interfaces.push(`type Root = ${elTypeStr}[];`);
+  } else if (parsed !== null && typeof parsed === 'object') {
+    buildInterface('Root', parsed, interfaces);
+  } else {
+    interfaces.push(`type Root = ${typeof parsed};`);
+  }
+  tsOutput.value = interfaces.reverse().join('\n\n');
+}
+
+/* ---------- JSON to CSV ---------- */
+function csvEscape(value) {
+  const s = value === null || value === undefined ? '' : String(value);
+  if (/[",\n\r]/.test(s)) {
+    return '"' + s.replace(/"/g, '""') + '"';
+  }
+  return s;
+}
+
+function renderCsv(parsed) {
+  csvOutput.value = '';
+  csvMessage.style.display = 'none';
+  if (parsed === undefined) return;
+
+  if (!Array.isArray(parsed) || parsed.length === 0) {
+    csvMessage.className = 'status-msg info';
+    csvMessage.style.display = 'flex';
+    csvMessage.textContent = 'CSV export needs an array of flat objects (e.g. [{"a":1},{"a":2}]). This JSON is not an array.';
+    return;
+  }
+
+  const allObjects = parsed.every(item => item !== null && typeof item === 'object' && !Array.isArray(item));
+  if (!allObjects) {
+    csvMessage.className = 'status-msg info';
+    csvMessage.style.display = 'flex';
+    csvMessage.textContent = 'CSV export needs an array of flat objects. One or more items in this array are not plain objects.';
+    return;
+  }
+
+  const hasNested = parsed.some(obj => Object.values(obj).some(v => v !== null && typeof v === 'object'));
+  if (hasNested) {
+    csvMessage.className = 'status-msg info';
+    csvMessage.style.display = 'flex';
+    csvMessage.textContent = 'CSV export needs flat objects (no nested objects or arrays as values). Some fields in this data are nested.';
+    return;
+  }
+
+  const headers = [];
+  const seen = new Set();
+  parsed.forEach(obj => {
+    Object.keys(obj).forEach(k => {
+      if (!seen.has(k)) { seen.add(k); headers.push(k); }
+    });
+  });
+
+  const rows = [headers.map(csvEscape).join(',')];
+  parsed.forEach(obj => {
+    rows.push(headers.map(h => csvEscape(obj[h])).join(','));
+  });
+
+  csvOutput.value = rows.join('\r\n');
+}
+
+/* ---------- copy / download ---------- */
+document.getElementById('copy-output-btn').addEventListener('click', (e) => {
+  if (!outputEl.value) { showStatus(statusEl, 'error', 'Nothing to copy yet — format or minify first.'); return; }
+  copyText(outputEl.value, e.currentTarget);
+});
+document.getElementById('copy-ts-btn').addEventListener('click', (e) => {
+  if (!tsOutput.value) { showStatus(statusEl, 'error', 'No TypeScript output available yet.'); return; }
+  copyText(tsOutput.value, e.currentTarget);
+});
+document.getElementById('copy-csv-btn').addEventListener('click', (e) => {
+  if (!csvOutput.value) { showStatus(statusEl, 'error', 'No CSV output available for this JSON.'); return; }
+  copyText(csvOutput.value, e.currentTarget);
+});
+
+function downloadBlob(content, filename, mime) {
+  const blob = new Blob([content], { type: mime });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+document.getElementById('download-output-btn').addEventListener('click', () => {
+  if (!outputEl.value) { showStatus(statusEl, 'error', 'Nothing to download yet — format or minify first.'); return; }
+  downloadBlob(outputEl.value, 'data.json', 'application/json');
+});
+
+document.getElementById('download-csv-btn').addEventListener('click', () => {
+  if (!csvOutput.value) { showStatus(statusEl, 'error', 'No CSV output available for this JSON.'); return; }
+  downloadBlob(csvOutput.value, 'data.csv', 'text/csv');
+});
+</script>
+</body>
+</html>

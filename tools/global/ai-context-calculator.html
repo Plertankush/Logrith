@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AI Token & Context Calculator – Estimate Tokens, Cost & Context Usage</title>
+  <meta name="description" content="Estimate token count, context window usage, and API cost for your text across popular AI models. Free, runs entirely in your browser.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Logrith">
+  <link rel="canonical" href="https://logrith.in/tools/ai-context-calculator">
+
+  <meta property="og:title" content="AI Token & Context Calculator – Estimate Tokens, Cost & Context Usage">
+  <meta property="og:description" content="Estimate token count, context window usage, and API cost for your text across popular AI models. Free, runs entirely in your browser.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://logrith.in/tools/ai-context-calculator">
+  <meta property="og:site_name" content="Logrith">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AI Token & Context Calculator – Estimate Tokens, Cost & Context Usage">
+  <meta name="twitter:description" content="Estimate token count, context window usage, and API cost for your text across popular AI models. Free, runs entirely in your browser.">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preload" href="/assets/css/style.css" as="style">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <meta name="keywords" content="ai token calculator, token counter, context window calculator, estimate ai tokens, llm cost calculator, prompt token estimator">
+
+  <style>
+    .tool-hero { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #ecfdf5 100%);}
+    .tool-hero h1 span { color: #16a34a; }
+
+    .insp-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin-top:14px; }
+    .insp-card { background:var(--gray-50); border:1px solid var(--gray-200); border-radius:12px; padding:16px; }
+    .insp-card h3 { font-family:var(--font-display); font-size:.9rem; font-weight:700; color:var(--gray-900); margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+    .insp-row { display:flex; justify-content:space-between; gap:10px; padding:6px 0; border-bottom:1px solid var(--gray-100); font-size:.84rem; }
+    .insp-row:last-child { border-bottom:none; }
+    .insp-row .k { color:var(--gray-500); }
+    .insp-row .v { color:var(--gray-900); font-weight:600; text-align:right; word-break:break-word; }
+
+    .ctx-controls { display:flex; flex-wrap:wrap; gap:12px; margin-top:14px; align-items:flex-end; }
+    .ctx-field { display:flex; flex-direction:column; gap:6px; min-width:180px; flex:1; }
+    .ctx-field label { font-size:.82rem; font-weight:700; color:var(--gray-700); }
+    .ctx-field select, .ctx-field input { padding:9px 12px; border:1px solid var(--gray-200); border-radius:8px; font-size:.86rem; background:var(--white); }
+
+    .ctx-bar-wrap { margin-top:18px; }
+    .ctx-bar-label { display:flex; justify-content:space-between; font-size:.84rem; font-weight:600; color:var(--gray-700); margin-bottom:6px; }
+    .ctx-bar-track { width:100%; height:16px; border-radius:999px; background:var(--gray-100); overflow:hidden; border:1px solid var(--gray-200); }
+    .ctx-bar-fill { height:100%; border-radius:999px; background:linear-gradient(90deg,#16a34a,#22c55e); transition:width .3s ease; }
+    .ctx-bar-fill.warn { background:linear-gradient(90deg,#f59e0b,#f97316); }
+    .ctx-bar-fill.over { background:linear-gradient(90deg,#dc2626,#ef4444); }
+    .ctx-bar-note { font-size:.78rem; color:var(--gray-500); margin-top:6px; }
+
+    .cost-row { display:flex; flex-wrap:wrap; gap:12px; margin-top:14px; align-items:flex-end; }
+    .cost-row .ctx-field { min-width:160px; }
+
+    .article-section, .faq-section, .feature-section, .related-tools, .keyword-section, .howto-section {
+      max-width: 860px; margin: 22px auto 0; background: #fff; border: 1px solid var(--gray-100); border-radius: 14px; padding: 22px;
+    }
+    .article-section h2, .faq-section h2, .feature-section h2, .related-tools h2, .keyword-section h2, .howto-section h2 { margin-bottom: 14px; }
+    .article-section p, .howto-section p { margin: 0 0 12px; line-height: 1.8; color: var(--gray-700); }
+    .feature-list, .keyword-list, .related-list, .howto-list { margin: 0; padding-left: 18px; }
+    .feature-list li, .keyword-list li, .related-list li, .howto-list li { margin-bottom: 10px; color: var(--gray-700); line-height: 1.7; }
+    .privacy-note { max-width: 860px; margin: 10px auto 0; font-size: .88rem; color: var(--gray-600); text-align: left; }
+    .faq-item { border-bottom: 1px solid var(--gray-100); padding: 14px 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-weight: 700; color: var(--gray-800); margin-bottom: 6px; }
+    .faq-a { color: var(--gray-700); line-height: 1.8; }
+    .related-list a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    .related-list a:hover { text-decoration: underline; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareApplication",
+    "name":"Logrith AI Token & Context Calculator",
+    "url":"https://logrith.in/tools/ai-context-calculator",
+    "applicationCategory":"UtilitiesApplication",
+    "operatingSystem":"Web Browser",
+    "description":"Browser-based tool that estimates token count, context window usage, and API cost for pasted text, using transparent heuristics instead of a hidden or fabricated exact tokenizer, without uploading data to a server.",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+    "featureList":[
+      "Estimate approximate token count from pasted text",
+      "Show character, word, sentence and paragraph counts",
+      "Compare text size against common context window sizes",
+      "Visual context window usage bar with percentage",
+      "Optional cost estimate from a custom price per 1K or 1M tokens",
+      "100% local browser processing"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://logrith.in/"},
+      {"@type":"ListItem","position":2,"name":"Global Tools","item":"https://logrith.in/categories/global-tools"},
+      {"@type":"ListItem","position":3,"name":"AI Token & Context Calculator","item":"https://logrith.in/tools/ai-context-calculator"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Is this an exact token count like tiktoken?","acceptedAnswer":{"@type":"Answer","text":"No. Exact tokenization depends on the specific byte-pair-encoding vocabulary of a given model, which isn't something that can be faithfully reproduced client-side without shipping that model's real vocabulary file. This tool uses two well-known, transparent heuristics instead and is clearly labeled as an estimate, not an exact count."}},
+      {"@type":"Question","name":"Why does token count differ from word count?","acceptedAnswer":{"@type":"Answer","text":"Tokenizers split text into sub-word pieces, not whole words. Common short words are often a single token, while longer or less common words, numbers, punctuation and code can split into multiple tokens. As a result, token count is usually higher than word count for normal English text."}},
+      {"@type":"Question","name":"What is a context window?","acceptedAnswer":{"@type":"Answer","text":"A context window is the maximum number of tokens a model can process at once across your input and its own output combined. If your text exceeds the context window, the model cannot see all of it, or the request may be rejected outright."}},
+      {"@type":"Question","name":"Does this tool upload my text anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. All counting and estimation happens locally in your browser using JavaScript. Your text is never sent to Logrith or any other server."}},
+      {"@type":"Question","name":"Can I estimate API cost with this tool?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter your own price per 1,000 or per 1,000,000 tokens, since provider pricing changes frequently and varies by model, and the tool multiplies that rate by the estimated token count to show an approximate cost for your input text."}}
+    ]
+  }
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+</head>
+<body>
+<div id="navbar"></div>
+
+<main>
+  <div class="tool-hero">
+    <div class="tool-hero-inner">
+      <div class="tool-breadcrumb">
+        <a href="/">Home</a> › <a href="/categories/global-tools">Global Tools</a> › AI Token & Context Calculator
+      </div>
+      <h1>AI Token & Context<span> Calculator</span></h1>
+      <p>Paste a prompt, document, or conversation to estimate its token count, context window usage, and API cost — all in your browser.</p>
+      <div class="tool-tags">
+        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
+        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#lock"></use></svg> Local Processing</span>
+        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#cpu"></use></svg> Honest Estimate</span>
+        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#speed"></use></svg> Instant</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="tool-workspace" style="max-width:960px;">
+    <div class="tool-card">
+      <h2>Paste Your Text</h2>
+      <div class="control-group">
+        <label for="text-input">Prompt, document, or conversation text</label>
+        <textarea class="tool-textarea" id="text-input" rows="12" placeholder="Paste a prompt, article, chat history, or any text you want to estimate..."></textarea>
+      </div>
+      <div class="btn-group mt-12">
+        <button class="btn btn-primary" id="calc-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#calculator"></use></svg> Calculate</button>
+      </div>
+      <div class="status-msg" id="status-msg" style="margin-top:12px;" aria-live="polite"></div>
+    </div>
+
+    <p class="privacy-note">Your text is processed in your browser. Nothing is uploaded to Logrith.</p>
+
+    <div class="tool-card" id="breakdown-card" style="display:none;">
+      <h2>Text Breakdown</h2>
+      <div class="insp-grid" id="breakdown-grid"></div>
+    </div>
+
+    <div class="tool-card" id="context-card" style="display:none;">
+      <h2>Context Window Usage</h2>
+      <div class="ctx-controls">
+        <div class="ctx-field">
+          <label for="context-size">Context window size</label>
+          <select id="context-size">
+            <option value="8192">Small (8K tokens)</option>
+            <option value="32768" selected>Medium (32K tokens)</option>
+            <option value="128000">Large (128K tokens)</option>
+            <option value="200000">Extra Large (200K tokens)</option>
+            <option value="1000000">Very Large (1M tokens)</option>
+          </select>
+        </div>
+      </div>
+      <div class="ctx-bar-wrap">
+        <div class="ctx-bar-label"><span id="ctx-bar-text">0 of 32,768 tokens</span><span id="ctx-bar-pct">0%</span></div>
+        <div class="ctx-bar-track"><div class="ctx-bar-fill" id="ctx-bar-fill" style="width:0%;"></div></div>
+        <div class="ctx-bar-note" id="ctx-bar-note"></div>
+      </div>
+    </div>
+
+    <div class="tool-card" id="cost-card" style="display:none;">
+      <h2>Optional Cost Estimate</h2>
+      <p style="font-size:.86rem;color:var(--gray-600);margin-bottom:10px;">Enter a price you know for a given model or provider. Prices change often and vary widely, so no rate is pre-filled.</p>
+      <div class="cost-row">
+        <div class="ctx-field">
+          <label for="price-amount">Price</label>
+          <input type="number" id="price-amount" min="0" step="0.0001" placeholder="e.g. 3.00">
+        </div>
+        <div class="ctx-field">
+          <label for="price-unit">Per</label>
+          <select id="price-unit">
+            <option value="1000">1,000 tokens</option>
+            <option value="1000000" selected>1,000,000 tokens</option>
+          </select>
+        </div>
+      </div>
+      <div class="insp-grid" id="cost-grid" style="margin-top:14px;"></div>
+    </div>
+  </div>
+
+  <section class="howto-section">
+    <h2>How to Use the AI Token & Context Calculator</h2>
+    <ol class="howto-list">
+      <li>Paste your prompt, document, or chat history into the text box.</li>
+      <li>Click "Calculate" to see character count, word count, sentence and paragraph count, and an estimated token count.</li>
+      <li>Pick a context window size to see what percentage of that window your text would use, shown as a progress bar.</li>
+      <li>Optionally enter a price per 1,000 or 1,000,000 tokens to see an estimated cost for processing this text as input.</li>
+    </ol>
+  </section>
+
+  <section class="feature-section">
+    <h2>What This Tool Calculates</h2>
+    <ul class="feature-list">
+      <li><strong>Character and word counts:</strong> exact counts of your pasted text, for reference against the token estimate.</li>
+      <li><strong>Sentence and paragraph counts:</strong> a rough structural breakdown of document length.</li>
+      <li><strong>Estimated token count:</strong> computed with two transparent heuristics, shown side by side.</li>
+      <li><strong>Context window usage:</strong> a percentage and visual bar for a chosen context size.</li>
+      <li><strong>Optional cost estimate:</strong> your own price per 1,000 or 1,000,000 tokens, multiplied by the estimated token count.</li>
+    </ul>
+  </section>
+
+  <section class="article-section">
+    <h2>What Is a Token in AI Language Models?</h2>
+    <p>A token is the basic unit of text that a language model actually reads and generates. Models don't process raw characters or whole words one at a time — they work with tokens produced by a tokenizer, which breaks text into a sequence of sub-word pieces drawn from a fixed vocabulary learned during training. A common English word like "the" or "is" is often a single token, while a longer or less frequent word, a made-up word, a number, or a piece of code might be split into two, three, or more tokens. Every request you send to an AI model and every response it generates is measured and billed in tokens, not in words or characters, which is why understanding roughly how many tokens your text contains matters before you send it anywhere.</p>
+
+    <h2>Why Token Count Differs From Word Count</h2>
+    <p>Because tokenizers split on sub-word units rather than whitespace, token count and word count are related but never identical. For typical English prose, a widely cited rule of thumb is that one token corresponds to roughly four characters, or equivalently about three-quarters of a word — so 100 words of English text usually lands somewhere around 130 to 140 tokens. Text that's dense with rare words, technical jargon, non-English characters, code syntax, or unusual punctuation tends to use more tokens per word, because the tokenizer has to fall back to smaller pieces for anything outside its most common vocabulary entries.</p>
+
+    <h2>Why This Tool Doesn't Pretend to Be an Exact Tokenizer</h2>
+    <p>Precise, model-accurate tokenization requires the real byte-pair-encoding vocabulary file that a specific model was trained with, and different model families use different vocabularies that can change over time. Shipping a fake approximation that silently pretends to be exact would give you a number that looks precise but is actually meaningless. Instead, this tool is upfront about what it does: it applies two well-known, published estimation heuristics — a character-based estimate (roughly 1 token per 4 characters) and a word-based estimate (roughly 1 token per 0.75 words) — and shows both, clearly labeled as approximations. For everyday planning, such as checking whether a prompt is roughly within budget, this level of accuracy is sufficient, and it's honest about its own limits rather than quietly guessing.</p>
+
+    <h2>What Is a Context Window?</h2>
+    <p>A context window is the maximum number of tokens a model can hold in memory for a single request, counting your input (the prompt, any attached documents, and prior conversation turns) together with the model's own generated output. If the combined token count exceeds the context window, the model either truncates older content, rejects the request, or simply cannot "see" everything you've provided. Context windows vary enormously by model and provider, from a few thousand tokens on smaller or older models up to a million tokens or more on newer, large-context models. Because exact window sizes change frequently as providers release new models, this tool uses generic size tiers — Small, Medium, Large, Extra Large, and Very Large — so the comparison stays useful without going stale.</p>
+
+    <h2>Why Context Window Usage Matters</h2>
+    <p>If you're building a long conversation, feeding in a large document, or pasting an entire codebase, you need to know whether it will even fit before the model truncates or refuses part of it. Many providers also charge by the token, so a request using a large fraction of the context window is typically more expensive. Some models also perform less reliably when a context window is nearly full, so keeping headroom rather than running right up against the limit is often good practice.</p>
+
+    <h2>Estimating API Cost</h2>
+    <p>Token-based pricing means the cost of a request scales directly with how many tokens it contains. Rather than hardcoding specific vendor prices into this tool — which would quickly become outdated as providers adjust their pricing — the cost estimator lets you type in whatever rate you currently know, per 1,000 or per 1,000,000 tokens, and instantly multiplies it by the estimated token count of your pasted text. This keeps the calculator useful regardless of which provider or model you're planning to use.</p>
+
+    <h2>Common Use Cases</h2>
+    <ul class="feature-list">
+      <li><strong>Estimating cost before an API call:</strong> check roughly how many tokens a prompt or document will use, and what that might cost at a known rate, before sending a request.</li>
+      <li><strong>Checking whether a document fits a model's context window:</strong> paste a long document or transcript and see what percentage of a given context size it would consume.</li>
+      <li><strong>Estimating chat history size:</strong> paste an exported conversation to gauge how close it is to running into context limits during a long back-and-forth session.</li>
+      <li><strong>Trimming content to a budget:</strong> paste draft text, see the token estimate, and edit down until it comfortably fits a target size.</li>
+      <li><strong>Comparing word count versus token count:</strong> get a feel for how much more "expensive" certain kinds of text (code, technical writing, non-English text) are in tokens compared to plain prose.</li>
+    </ul>
+
+    <h3>How the Estimate Is Calculated</h3>
+    <p>This tool computes character, word, sentence, and paragraph counts directly from your pasted text, then derives two token estimates — character count divided by four, and word count divided by 0.75 — averaging them into one working estimate used for the context bar and cost calculation. Both heuristic values are shown separately so you can see the spread. Everything runs synchronously in plain JavaScript, with no network request involved.</p>
+
+    <h3>Frequently Searched Terms</h3>
+    <p>People use this tool when searching for phrases like "ai token calculator," "how many tokens is this text," "context window calculator," "estimate prompt tokens," and "llm api cost estimator."</p>
+  </section>
+
+  <section class="faq-section">
+    <h2>AI Token & Context Calculator FAQ</h2>
+    <div class="faq-item">
+      <div class="faq-q">Is this an exact token count like tiktoken?</div>
+      <div class="faq-a">No. Exact tokenization depends on the specific byte-pair-encoding vocabulary of a given model, which isn't something that can be faithfully reproduced client-side without shipping that model's real vocabulary file. This tool uses two well-known, transparent heuristics instead and is clearly labeled as an estimate, not an exact count.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Why does token count differ from word count?</div>
+      <div class="faq-a">Tokenizers split text into sub-word pieces, not whole words. Common short words are often a single token, while longer or less common words, numbers, punctuation and code can split into multiple tokens. As a result, token count is usually higher than word count for normal English text.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is a context window?</div>
+      <div class="faq-a">A context window is the maximum number of tokens a model can process at once across your input and its own output combined. If your text exceeds the context window, the model cannot see all of it, or the request may be rejected outright.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Does this tool upload my text anywhere?</div>
+      <div class="faq-a">No. All counting and estimation happens locally in your browser using JavaScript. Your text is never sent to Logrith or any other server.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I estimate API cost with this tool?</div>
+      <div class="faq-a">Yes. Enter your own price per 1,000 or per 1,000,000 tokens, since provider pricing changes frequently and varies by model, and the tool multiplies that rate by the estimated token count to show an approximate cost for your input text.</div>
+    </div>
+  </section>
+
+  <section class="related-tools">
+    <h2>Related Tools</h2>
+    <ul class="related-list">
+      <li><a href="/tools/csv-cleaner">CSV Cleaner</a></li>
+      <li><a href="/tools/json-repair">JSON Repair Tool</a></li>
+      <li><a href="/tools/markdown-to-html">Markdown to HTML Converter</a></li>
+      <li><a href="/tools/url-deduplicator">URL Deduplicator</a></li>
+    </ul>
+  </section>
+
+  <section class="keyword-section">
+    <h2>Top AI Token Calculator Search Queries</h2>
+    <ul class="keyword-list">
+      <li>ai token calculator</li>
+      <li>how many tokens is this text</li>
+      <li>context window calculator</li>
+      <li>estimate prompt tokens</li>
+      <li>llm api cost estimator</li>
+      <li>token counter online free</li>
+      <li>gpt token estimator</li>
+    </ul>
+  </section>
+</main>
+
+<div id="footer"></div>
+
+<script src="/assets/js/main.js" defer></script>
+<script src="/load-components.js"></script>
+
+<script>
+const textInput = document.getElementById('text-input');
+const statusEl = document.getElementById('status-msg');
+const breakdownCard = document.getElementById('breakdown-card');
+const breakdownGrid = document.getElementById('breakdown-grid');
+const contextCard = document.getElementById('context-card');
+const costCard = document.getElementById('cost-card');
+const contextSizeSel = document.getElementById('context-size');
+const ctxBarFill = document.getElementById('ctx-bar-fill');
+const ctxBarText = document.getElementById('ctx-bar-text');
+const ctxBarPct = document.getElementById('ctx-bar-pct');
+const ctxBarNote = document.getElementById('ctx-bar-note');
+const priceAmount = document.getElementById('price-amount');
+const priceUnit = document.getElementById('price-unit');
+const costGrid = document.getElementById('cost-grid');
+
+let lastTokenEstimate = 0;
+
+function row(k, v) {
+  return `<div class="insp-row"><span class="k">${k}</span><span class="v">${v}</span></div>`;
+}
+
+function fmt(n) {
+  return Math.round(n).toLocaleString('en-US');
+}
+
+/* ---------- core text analysis ---------- */
+function analyzeText(text) {
+  const charCount = text.length;
+  const charCountNoSpace = text.replace(/\s/g, '').length;
+
+  const words = text.trim().length ? text.trim().split(/\s+/) : [];
+  const wordCount = words.length;
+
+  const sentenceMatches = text.match(/[^.!?]+[.!?]+/g);
+  const sentenceCount = sentenceMatches ? sentenceMatches.length : (text.trim().length ? 1 : 0);
+
+  const paragraphs = text.split(/\n\s*\n/).map(p => p.trim()).filter(p => p.length > 0);
+  const paragraphCount = paragraphs.length || (text.trim().length ? 1 : 0);
+
+  // Two published heuristics for English text:
+  const charBasedEstimate = charCount / 4;        // ~1 token per 4 characters
+  const wordBasedEstimate = wordCount / 0.75;      // ~0.75 words per token
+
+  const tokenEstimate = (charBasedEstimate + wordBasedEstimate) / 2;
+
+  return {
+    charCount, charCountNoSpace, wordCount, sentenceCount, paragraphCount,
+    charBasedEstimate, wordBasedEstimate, tokenEstimate
+  };
+}
+
+/* ---------- context bar ---------- */
+function updateContextBar() {
+  const size = parseInt(contextSizeSel.value, 10);
+  const used = lastTokenEstimate;
+  const pct = size > 0 ? (used / size) * 100 : 0;
+  const clampedPct = Math.min(pct, 100);
+
+  ctxBarFill.style.width = clampedPct + '%';
+  ctxBarFill.classList.remove('warn', 'over');
+  if (pct > 100) {
+    ctxBarFill.classList.add('over');
+    ctxBarNote.textContent = `This text exceeds the selected context window by about ${fmt(used - size)} tokens.`;
+  } else if (pct > 80) {
+    ctxBarFill.classList.add('warn');
+    ctxBarNote.textContent = 'This text is using most of the selected context window, leaving little room for a response.';
+  } else {
+    ctxBarNote.textContent = 'This text comfortably fits within the selected context window.';
+  }
+
+  ctxBarText.textContent = `${fmt(used)} of ${fmt(size)} tokens`;
+  ctxBarPct.textContent = pct.toFixed(1) + '%';
+}
+
+/* ---------- cost estimate ---------- */
+function updateCost() {
+  const price = parseFloat(priceAmount.value);
+  const unit = parseInt(priceUnit.value, 10);
+
+  if (isNaN(price) || price <= 0) {
+    costGrid.innerHTML = `<div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#info"></use></svg> Cost Estimate</h3>${row('Status', 'Enter a price to see an estimate')}</div>`;
+    return;
+  }
+
+  const estimatedCost = (lastTokenEstimate / unit) * price;
+
+  costGrid.innerHTML = `
+    <div class="insp-card">
+      <h3><svg class="icon"><use href="/assets/svg/icons.svg#calculator"></use></svg> Cost Estimate</h3>
+      ${row('Estimated Tokens', fmt(lastTokenEstimate))}
+      ${row('Rate', '$' + price + ' / ' + fmt(unit) + ' tokens')}
+      ${row('Estimated Cost', '$' + estimatedCost.toFixed(6))}
+    </div>
+  `;
+}
+
+/* ---------- main calculate action ---------- */
+document.getElementById('calc-btn').addEventListener('click', () => {
+  const text = textInput.value;
+  if (!text.trim()) {
+    showStatus(statusEl, 'error', 'Paste some text first.');
+    return;
+  }
+
+  const a = analyzeText(text);
+  lastTokenEstimate = a.tokenEstimate;
+
+  breakdownGrid.innerHTML = `
+    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#char-count"></use></svg> Characters</h3>${row('Total', fmt(a.charCount))}${row('Without Spaces', fmt(a.charCountNoSpace))}</div>
+    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#word-count"></use></svg> Structure</h3>${row('Words', fmt(a.wordCount))}${row('Sentences', fmt(a.sentenceCount))}${row('Paragraphs', fmt(a.paragraphCount))}</div>
+    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#hash"></use></svg> Token Estimate</h3>${row('Character-based', fmt(a.charBasedEstimate))}${row('Word-based', fmt(a.wordBasedEstimate))}${row('Average (used below)', fmt(a.tokenEstimate))}</div>
+  `;
+
+  breakdownCard.style.display = 'block';
+  contextCard.style.display = 'block';
+  costCard.style.display = 'block';
+
+  updateContextBar();
+  updateCost();
+
+  showStatus(statusEl, 'success', `Estimated about ${fmt(a.tokenEstimate)} tokens. This is an approximation, not an exact model tokenizer count.`);
+});
+
+contextSizeSel.addEventListener('change', () => {
+  if (lastTokenEstimate > 0) updateContextBar();
+});
+
+priceAmount.addEventListener('input', () => {
+  if (lastTokenEstimate > 0) updateCost();
+});
+priceUnit.addEventListener('change', () => {
+  if (lastTokenEstimate > 0) updateCost();
+});
+</script>
+</body>
+</html>
