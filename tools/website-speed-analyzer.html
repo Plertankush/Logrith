@@ -22,546 +22,17 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="preload" href="/assets/css/style.css" as="style">
-<link rel="stylesheet" href="/assets/css/style.css">
 
-
-<style>
-:root {
-  --black:   #ffffff;
-  --black2:  #ffffff;
-  --black3:  #8383e0;
-  --black4:  #22222c;
-  --purple:  #7c3aed;
-  --purple2: #9d5ff5;
-  --purple3: #c4a0fa;
-  --purple-glow: rgba(124,58,237,0.18);
-  --white:   #222222;
-  --white2:  #c9c9c9;
-  --white3:  #d1cfe8;
-  --muted:   #050505;
-  --border:  rgba(124,58,237,0.18);
-  --border2: rgba(255,255,255,0.07);
-  --good:    #22c55e;
-  --avg:     #f59e0b;
-  --bad:     #ef4444;
-  --font-h:  'Syne', sans-serif;
-  --font-b:  'Outfit', sans-serif;
-  --radius:  14px;
-  --radius-sm: 8px;
-}
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-
-body {
-  font-family: var(--font-b);
-  background: var(--black);
-  color: var(--white);
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
-/* ── BACKGROUND ── */
-
-
-/* ── LAYOUT ── */
-.wrap { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-
-/* ── HERO ── */
-.hero {
-  text-align: center;
-  padding: 5rem 0 3.5rem;
-}
-.hero-tag {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  background: rgba(124,58,237,0.12); border: 1px solid rgba(124,58,237,0.3);
-  color: var(--purple3); border-radius: 20px;
-  padding: 0.3rem 1rem; font-size: 0.72rem; font-weight: 600;
-  letter-spacing: 0.08em; text-transform: uppercase;
-  margin-bottom: 1.8rem;
-}
-.hero-tag .tag-dot {
-  width: 5px; height: 5px; border-radius: 50%;
-  background: var(--purple3); animation: blink 2s infinite;
-}
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
-
-h1 {
-  font-family: var(--font-h);
-  font-size: clamp(2.2rem, 5vw, 3.8rem);
-  font-weight: 800; line-height: 1.08; letter-spacing: -0.04em;
-  margin-bottom: 1.2rem;
-}
-h1 em {
-  font-style: normal;
-  background: linear-gradient(135deg, var(--purple2), var(--purple3));
-  -webkit-background-clip: text; background-clip: text; color: transparent;
-}
-.hero-sub {
-  color: var(--muted); font-size: 1rem; max-width: 480px;
-  margin: 0 auto 2.5rem; line-height: 1.65; font-weight: 400;
-}
-
-/* ── SEARCH ── */
-.search-outer {
-  max-width: 700px; margin: 0 auto;
-}
-.search-box {
-  display: flex; align-items: center;
-  background: var(--black2);
-  border: 1.5px solid var(--border);
-  border-radius: 12px;
-  padding: 0.35rem 0.35rem 0.35rem 1.2rem;
-  transition: border-color 0.25s, box-shadow 0.25s;
-}
-.search-box:focus-within {
-  border-color: var(--purple);
-  box-shadow: 0 0 0 4px rgba(124,58,237,0.12);
-}
-.search-icon { color: var(--muted); font-size: 0.9rem; margin-right: 0.7rem; flex-shrink: 0; }
-#urlInput {
-  flex: 1; background: transparent; border: none; outline: none;
-  font-family: var(--font-b); font-size: 0.95rem; color: var(--white);
-  padding: 0.5rem 0;
-}
-#urlInput::placeholder { color: var(--muted); }
-
-.device-btns {
-  display: flex; gap: 0.2rem; padding: 0 0.5rem;
-  border-left: 1px solid var(--border2);
-  margin-left: 0.5rem;
-}
-.dev-btn {
-  background: none; border: none; color: var(--muted);
-  padding: 0.4rem 0.55rem; border-radius: 6px; cursor: pointer;
-  font-size: 0.82rem; transition: 0.18s;
-}
-.dev-btn:hover, .dev-btn.active { background: rgba(124,58,237,0.15); color: var(--purple3); }
-
-.run-btn {
-  background: var(--purple); border: none; border-radius: 8px;
-  color: #fff; font-family: var(--font-b); font-weight: 600;
-  font-size: 0.88rem; padding: 0.7rem 1.6rem; cursor: pointer;
-  transition: 0.2s; display: flex; align-items: center; gap: 0.5rem;
-  white-space: nowrap; flex-shrink: 0;
-}
-.run-btn:hover { background: var(--purple2); box-shadow: 0 6px 24px rgba(124,58,237,0.35); transform: translateY(-1px); }
-.run-btn:active { transform: none; }
-.run-btn.loading { opacity: 0.65; pointer-events: none; }
-
-#statusMsg {
-  text-align: center; margin-top: 0.7rem;
-  font-size: 0.78rem; min-height: 1.2rem;
-}
-
-/* ── TRUST BAR ── */
-.trust-bar {
-  display: flex; align-items: center; justify-content: center;
-  flex-wrap: wrap; gap: 1.5rem;
-  margin-top: 2.5rem; padding-top: 2rem;
-  border-top: 1px solid var(--border2);
-}
-.trust-item {
-  display: flex; align-items: center; gap: 0.5rem;
-  font-size: 0.78rem; color: var(--muted);
-}
-.trust-item i { color: var(--purple3); font-size: 0.8rem; }
-
-/* ── LOADING ── */
-.loading-overlay {
-  display: none; position: fixed; inset: 0; z-index: 999;
-  background: rgba(8,8,12,0.85); backdrop-filter: blur(6px);
-  flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
-}
-.loading-overlay.show { display: flex; }
-
-.spinner-wrap { position: relative; width: 64px; height: 64px; }
-.spin-ring {
-  position: absolute; inset: 0; border-radius: 50%; border: 2px solid transparent;
-}
-.spin-ring:nth-child(1) { border-top-color: var(--purple); animation: rot 1.1s linear infinite; }
-.spin-ring:nth-child(2) { inset: 9px; border-right-color: var(--purple3); animation: rot 1.7s linear infinite reverse; }
-.spin-ring:nth-child(3) { inset: 18px; border-bottom-color: rgba(124,58,237,0.4); animation: rot 1.4s linear infinite; }
-@keyframes rot { to { transform: rotate(360deg); } }
-
-.loading-steps { display: flex; flex-direction: column; gap: 0.4rem; }
-.lstep {
-  display: flex; align-items: center; gap: 0.6rem;
-  font-size: 0.82rem; color: var(--muted); transition: color 0.3s;
-}
-.lstep i { font-size: 0.7rem; width: 14px; text-align: center; }
-.lstep.active { color: var(--purple3); }
-.lstep.done { color: var(--good); }
-
-/* ── RESULTS ── */
-#resultsArea { display: none; padding: 2.5rem 0; animation: fadeUp 0.4s ease; }
-@keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:none} }
-
-/* result header */
-.result-header {
-  display: flex; align-items: center; justify-content: space-between;
-  flex-wrap: wrap; gap: 1rem; margin-bottom: 1.8rem;
-}
-.result-site { display: flex; align-items: center; gap: 0.8rem; }
-.favicon-box {
-  width: 36px; height: 36px; border-radius: 8px;
-  background: var(--black3); border: 1px solid var(--border2);
-  display: flex; align-items: center; justify-content: center;
-  overflow: hidden; flex-shrink: 0;
-}
-.result-url { font-family: var(--font-h); font-size: 0.85rem; color: var(--purple3); font-weight: 600; }
-.result-time { font-size: 0.72rem; color: var(--muted); margin-top: 0.15rem; }
-.mode-chip {
-  display: inline-flex; align-items: center; gap: 0.4rem;
-  padding: 0.3rem 0.9rem; border-radius: 20px;
-  font-size: 0.72rem; font-weight: 600; border: 1px solid;
-}
-.mode-chip.api { border-color: rgba(34,197,94,0.35); color: var(--good); background: rgba(34,197,94,0.08); }
-.mode-chip.fallback { border-color: rgba(245,158,11,0.35); color: var(--avg); background: rgba(245,158,11,0.08); }
-
-/* action row */
-.action-row {
-  display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;
-}
-.act-btn {
-  display: inline-flex; align-items: center; gap: 0.4rem;
-  padding: 0.4rem 0.9rem; border-radius: 7px;
-  border: 1px solid var(--border2); background: var(--black3);
-  color: var(--muted); font-family: var(--font-b); font-size: 0.77rem;
-  cursor: pointer; transition: 0.18s;
-}
-.act-btn:hover { border-color: var(--purple); color: var(--purple3); }
-
-/* ── SCORE GRID ── */
-.score-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1rem; margin-bottom: 1.8rem;
-}
-@media(max-width:860px){ .score-grid { grid-template-columns: repeat(3,1fr); } }
-@media(max-width:480px){ .score-grid { grid-template-columns: repeat(2,1fr); } }
-
-.sc-card {
-  background: var(--black2); border: 1px solid var(--border2);
-  border-radius: var(--radius); padding: 1.2rem 0.8rem;
-  text-align: center; position: relative; overflow: hidden;
-  transition: 0.22s; cursor: default;
-}
-.sc-card::after {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: var(--card-accent, var(--purple));
-  transform: scaleX(0); transform-origin: left;
-  transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
-}
-.sc-card.loaded::after { transform: scaleX(1); }
-.sc-card:hover { border-color: var(--purple); transform: translateY(-3px); }
-
-.ring-wrap { position: relative; width: 70px; height: 70px; margin: 0 auto 0.7rem; }
-.ring-wrap svg { transform: rotate(-90deg); }
-.r-bg { fill: none; stroke: rgba(255,255,255,0.06); stroke-width: 5; }
-.r-fill { fill: none; stroke-width: 5; stroke-linecap: round; transition: stroke-dashoffset 1.3s cubic-bezier(0.22,1,0.36,1); }
-.ring-val {
-  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
-  font-family: var(--font-h); font-size: 1.1rem; font-weight: 800; line-height: 1;
-}
-.sc-lbl { font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 500; }
-
-/* ── TABS ── */
-.tab-bar {
-  display: flex; flex-wrap: wrap; gap: 0.25rem;
-  background: var(--black2); border: 1px solid var(--border2);
-  border-radius: var(--radius-sm); padding: 0.35rem;
-  margin-bottom: 1.2rem;
-}
-.tab {
-  background: none; border: none; color: var(--muted);
-  font-family: var(--font-b); font-size: 0.8rem; font-weight: 500;
-  padding: 0.45rem 0.95rem; border-radius: 6px; cursor: pointer;
-  transition: 0.18s; display: flex; align-items: center; gap: 0.4rem;
-  white-space: nowrap;
-}
-.tab:hover { color: var(--white3); background: rgba(255,255,255,0.04); }
-.tab.active { background: var(--purple); color: #fff; }
-.tbadge {
-  font-size: 0.62rem; background: #ef4444; color: #fff;
-  padding: 0.1rem 0.45rem; border-radius: 10px; font-weight: 700;
-}
-
-.tab-pane { display: none; animation: fadeIn 0.2s; }
-.tab-pane.active { display: block; }
-@keyframes fadeIn { from{opacity:0} to{opacity:1} }
-
-/* ── PANEL ── */
-.panel {
-  background: var(--black2); border: 1px solid var(--border2);
-  border-radius: var(--radius); padding: 1.4rem;
-  margin-bottom: 1rem;
-}
-.panel-ttl {
-  display: flex; align-items: center; gap: 0.6rem;
-  font-family: var(--font-h); font-size: 0.72rem; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted);
-  margin-bottom: 1.1rem; padding-bottom: 0.7rem;
-  border-bottom: 1px solid var(--border2);
-}
-.panel-ttl i { color: var(--purple3); }
-
-/* ── METRICS ── */
-.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-@media(max-width:640px){ .two-col { grid-template-columns: 1fr; } }
-
-.mrow {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0.55rem 0; border-bottom: 1px solid rgba(255,255,255,0.04);
-}
-.mrow:last-of-type { border-bottom: none; }
-.mname {
-  font-size: 0.8rem; color: var(--muted);
-  display: flex; align-items: center; gap: 0.4rem;
-}
-.mval { font-family: var(--font-h); font-size: 0.82rem; font-weight: 700; }
-.mval.good { color: var(--good); }
-.mval.avg  { color: var(--avg); }
-.mval.bad  { color: var(--bad); }
-.mval.na   { color: var(--muted); }
-
-.cwv-badge {
-  display: inline-flex; align-items: center; gap: 0.4rem;
-  padding: 0.45rem 0.9rem; border-radius: var(--radius-sm);
-  font-size: 0.78rem; font-weight: 600; margin-top: 0.9rem;
-  border: 1px solid;
-}
-.cwv-badge.pass { border-color: rgba(34,197,94,0.3); color: var(--good); background: rgba(34,197,94,0.08); }
-.cwv-badge.fail { border-color: rgba(239,68,68,0.3); color: var(--bad); background: rgba(239,68,68,0.08); }
-
-/* ── CRUX ── */
-.crux-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
-@media(max-width:600px){ .crux-grid { grid-template-columns: 1fr; } }
-.crux-card {
-  background: var(--black3); border: 1px solid var(--border2);
-  border-radius: var(--radius-sm); padding: 1.1rem; text-align: center;
-}
-.crux-name { font-size: 0.67rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.7rem; }
-.crux-val { font-family: var(--font-h); font-size: 1.7rem; font-weight: 800; line-height: 1; margin-bottom: 0.35rem; }
-.crux-chip {
-  display: inline-flex; align-items: center; gap: 0.3rem;
-  font-size: 0.67rem; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 0.05em; padding: 0.2rem 0.6rem; border-radius: 20px;
-}
-.crux-chip.good { background: rgba(34,197,94,0.12); color: var(--good); }
-.crux-chip.ni   { background: rgba(245,158,11,0.12); color: var(--avg); }
-.crux-chip.poor { background: rgba(239,68,68,0.12); color: var(--bad); }
-.crux-bar-wrap { margin-top: 0.9rem; }
-.crux-bar-lbl { display: flex; justify-content: space-between; font-size: 0.65rem; color: var(--muted); margin-bottom: 0.3rem; }
-.crux-bar-track { display: flex; height: 4px; border-radius: 3px; overflow: hidden; gap: 2px; background: rgba(255,255,255,0.05); }
-.crux-seg { height: 100%; border-radius: 2px; min-width: 2px; transition: width 1.2s ease; }
-.crux-seg.g { background: var(--good); }
-.crux-seg.n { background: var(--avg); }
-.crux-seg.p { background: var(--bad); }
-
-/* ── OPPORTUNITIES ── */
-.opp-item {
-  display: flex; align-items: flex-start; gap: 1rem;
-  background: var(--black3); border: 1px solid var(--border2);
-  border-radius: var(--radius-sm); padding: 1rem; margin-bottom: 0.6rem;
-  transition: 0.2s;
-}
-.opp-item:hover { border-color: rgba(124,58,237,0.3); }
-.opp-ico {
-  width: 34px; height: 34px; border-radius: 7px; flex-shrink: 0;
-  display: flex; align-items: center; justify-content: center; font-size: 0.85rem;
-}
-.opp-ico.high   { background: rgba(239,68,68,0.12); color: var(--bad); }
-.opp-ico.medium { background: rgba(245,158,11,0.12); color: var(--avg); }
-.opp-ico.low    { background: rgba(34,197,94,0.12); color: var(--good); }
-.opp-body { flex: 1; }
-.opp-title { font-weight: 600; font-size: 0.87rem; margin-bottom: 0.2rem; }
-.opp-desc { font-size: 0.77rem; color: var(--muted); line-height: 1.5; }
-.opp-tags { display: flex; gap: 0.4rem; margin-top: 0.5rem; flex-wrap: wrap; }
-.otag {
-  display: inline-flex; align-items: center; gap: 0.3rem;
-  font-size: 0.68rem; font-weight: 600; padding: 0.18rem 0.6rem;
-  border-radius: 20px; border: 1px solid;
-}
-.otag.save { border-color: rgba(124,58,237,0.3); color: var(--purple3); background: rgba(124,58,237,0.08); }
-.otag.high { border-color: rgba(239,68,68,0.3); color: var(--bad); background: rgba(239,68,68,0.07); }
-.otag.medium { border-color: rgba(245,158,11,0.3); color: var(--avg); background: rgba(245,158,11,0.07); }
-.otag.low { border-color: rgba(34,197,94,0.3); color: var(--good); background: rgba(34,197,94,0.07); }
-
-/* ── DIAGNOSTICS ── */
-.diag-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 0.5rem; }
-@media(max-width:520px){ .diag-grid { grid-template-columns: 1fr; } }
-.diag-row {
-  display: flex; align-items: center; justify-content: space-between;
-  background: var(--black3); border: 1px solid var(--border2);
-  border-radius: var(--radius-sm); padding: 0.7rem 0.9rem; gap: 0.5rem;
-}
-.diag-lbl { font-size: 0.77rem; color: var(--muted); display: flex; align-items: center; gap: 0.4rem; }
-.diag-lbl i { color: var(--purple3); width: 12px; font-size: 0.7rem; }
-.diag-val { font-family: var(--font-h); font-size: 0.78rem; color: var(--white3); text-align: right; }
-
-/* ── NETWORK TABLE ── */
-.net-table { width: 100%; border-collapse: collapse; font-size: 0.77rem; }
-.net-table th {
-  text-align: left; padding: 0.5rem 0.7rem;
-  color: var(--muted); font-size: 0.67rem; font-weight: 600;
-  text-transform: uppercase; letter-spacing: 0.06em;
-  border-bottom: 1px solid var(--border2);
-}
-.net-table td { padding: 0.5rem 0.7rem; border-bottom: 1px solid rgba(255,255,255,0.03); }
-.net-table tr:hover td { background: rgba(124,58,237,0.04); }
-.net-url { max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--muted); }
-.rtype {
-  display: inline-block; padding: 0.1rem 0.5rem; border-radius: 20px;
-  font-size: 0.63rem; font-weight: 700; text-transform: uppercase;
-}
-.rtype.script     { background: rgba(245,158,11,0.12); color: var(--avg); }
-.rtype.stylesheet { background: rgba(157,95,245,0.15); color: var(--purple3); }
-.rtype.image      { background: rgba(34,197,94,0.12); color: var(--good); }
-.rtype.document   { background: rgba(124,58,237,0.12); color: var(--purple3); }
-.rtype.font       { background: rgba(239,68,68,0.12); color: var(--bad); }
-.rtype.other      { background: rgba(255,255,255,0.07); color: var(--muted); }
-.sz-bar { height: 3px; border-radius: 2px; background: var(--purple); min-width: 3px; opacity: 0.7; }
-
-/* ── 3RD PARTY ── */
-.tp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); gap: 0.8rem; }
-.tp-card {
-  background: var(--black3); border: 1px solid var(--border2);
-  border-radius: var(--radius-sm); padding: 1rem;
-}
-.tp-name { font-weight: 600; font-size: 0.85rem; margin-bottom: 0.7rem; display: flex; align-items: center; gap: 0.4rem; color: var(--white3); }
-.tp-name i { color: var(--muted); font-size: 0.75rem; }
-.tp-row { display: flex; justify-content: space-between; font-size: 0.77rem; padding: 0.22rem 0; }
-.tp-key { color: var(--muted); }
-.tp-v { font-family: var(--font-h); font-size: 0.74rem; color: var(--bad); }
-
-/* ── EMPTY ── */
-.empty {
-  text-align: center; padding: 2.5rem 1rem; color: var(--muted);
-}
-.empty i { font-size: 1.8rem; opacity: 0.25; display: block; margin-bottom: 0.7rem; }
-.empty p { font-size: 0.83rem; }
-
-/* ════════════════════════════════════════════════
-   EDITORIAL CONTENT SECTIONS
-════════════════════════════════════════════════ */
-.content-wrap { padding: 4rem 0; border-top: 1px solid var(--border2); }
-
-.section-tag {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 0.1em; color: var(--purple3);
-  margin-bottom: 0.8rem;
-}
-.section-tag i { font-size: 0.7rem; }
-
-.section-h {
-  font-family: var(--font-h); font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.6rem;
-}
-.section-sub { color: var(--muted); font-size: 0.9rem; max-width: 520px; line-height: 1.65; }
-
-/* WHY BEST */
-.why-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px,1fr)); gap: 1rem; margin-top: 2rem; }
-.why-card {
-  background: var(--black2); border: 1px solid var(--border2);
-  border-radius: var(--radius); padding: 1.4rem;
-  transition: 0.22s; position: relative; overflow: hidden;
-}
-.why-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, var(--purple), var(--purple3));
-  opacity: 0; transition: 0.3s;
-}
-.why-card:hover { border-color: rgba(124,58,237,0.3); transform: translateY(-3px); }
-.why-card:hover::before { opacity: 1; }
-.why-ico {
-  width: 38px; height: 38px; border-radius: 8px;
-  background: rgba(124,58,237,0.12); border: 1px solid rgba(124,58,237,0.2);
-  display: flex; align-items: center; justify-content: center;
-  color: var(--purple3); font-size: 0.9rem; margin-bottom: 0.9rem;
-}
-.why-title { font-family: var(--font-h); font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; }
-.why-text { font-size: 0.78rem; color: var(--muted); line-height: 1.6; }
-
-/* ARTICLES */
-.articles-section { margin-top: 4rem; }
-.articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); gap: 1.2rem; margin-top: 2rem; }
-.article-card {
-  background: var(--black2); border: 1px solid var(--border2);
-  border-radius: var(--radius); padding: 1.4rem;
-  transition: 0.22s; cursor: default;
-}
-.article-card:hover { border-color: rgba(124,58,237,0.3); transform: translateY(-2px); }
-.art-cat {
-  display: inline-flex; align-items: center; gap: 0.3rem;
-  font-size: 0.65rem; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 0.08em; color: var(--purple3);
-  background: rgba(124,58,237,0.1); border: 1px solid rgba(124,58,237,0.2);
-  padding: 0.18rem 0.6rem; border-radius: 20px; margin-bottom: 0.8rem;
-}
-.art-title { font-family: var(--font-h); font-size: 0.95rem; font-weight: 700; line-height: 1.35; margin-bottom: 0.5rem; }
-.art-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.6; }
-.art-meta { display: flex; align-items: center; gap: 0.8rem; margin-top: 0.9rem; }
-.art-read { font-size: 0.7rem; color: var(--muted); display: flex; align-items: center; gap: 0.3rem; }
-
-/* QnA */
-.qna-section { margin-top: 4rem; }
-.qna-list { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
-.qna-item {
-  background: var(--black2); border: 1px solid var(--border2);
-  border-radius: var(--radius-sm); overflow: hidden;
-}
-.qna-q {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 1rem 1.2rem; cursor: pointer; gap: 1rem;
-  font-weight: 600; font-size: 0.88rem; transition: 0.18s;
-  user-select: none;
-}
-.qna-q:hover { background: rgba(124,58,237,0.06); }
-.qna-q .q-ico {
-  width: 26px; height: 26px; border-radius: 6px; flex-shrink: 0;
-  background: rgba(124,58,237,0.1); display: flex; align-items: center;
-  justify-content: center; color: var(--purple3); font-size: 0.72rem;
-}
-.qna-q .q-text { flex: 1; }
-.qna-q .q-arrow { color: var(--muted); font-size: 0.75rem; transition: transform 0.25s; flex-shrink: 0; }
-.qna-item.open .q-arrow { transform: rotate(180deg); }
-.qna-a {
-  display: none; padding: 0 1.2rem 1rem;
-  font-size: 0.82rem; color: var(--muted); line-height: 1.7;
-  border-top: 1px solid var(--border2);
-}
-.qna-a p { padding-top: 0.8rem; }
-.qna-item.open .qna-a { display: block; }
-
-/* QUICK TIPS */
-.tips-section { margin-top: 4rem; }
-.tips-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap: 0.8rem; margin-top: 1.5rem; }
-.tip-card {
-  background: var(--black2); border: 1px solid var(--border2);
-  border-radius: var(--radius-sm); padding: 1.1rem; transition: 0.2s;
-}
-.tip-card:hover { border-color: rgba(124,58,237,0.3); transform: translateY(-2px); }
-.tip-ico {
-  width: 32px; height: 32px; border-radius: 7px;
-  background: rgba(124,58,237,0.1); display: flex; align-items: center;
-  justify-content: center; color: var(--purple3); font-size: 0.8rem; margin-bottom: 0.8rem;
-}
-.tip-title { font-family: var(--font-h); font-size: 0.83rem; font-weight: 700; margin-bottom: 0.3rem; }
-.tip-text { font-size: 0.74rem; color: var(--muted); line-height: 1.55; }
-
-
-/* ── SCROLL ── */
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: var(--black); }
-::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
-</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
 <script>
+const ico = (name) => `<svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#${name}"></use></svg>`;
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -587,46 +58,49 @@ h1 em {
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/" },
-    { "@type": "ListItem", "position": 2, "name": "Developer Tools", "item": "https://logrith.in/categories/developer-tools" },
+    { "@type": "ListItem", "position": 2, "name": "AI Tools", "item": "https://logrith.in/categories/ai-tools" },
     { "@type": "ListItem", "position": 3, "name": "Website Speed Analyzer", "item": "https://logrith.in/tools/website-speed-analyzer" }
   ]
 }
 </script>
 </head>
-<body>
+<body class="page-website-speed-analyzer">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
-<div class="bg-layer"></div>
-<div class="bg-grid"></div>
 
+<main id="main">
 <!-- HERO -->
-<div class="wrap">
-  <div class="hero">
-    <div class="tool-breadcrumb" style="margin-bottom:14px;"><a href="/" style="color:var(--primary-light,#3a7bff);">Home</a> › <a href="/categories/developer-tools" style="color:var(--primary-light,#3a7bff);">Developer Tools</a> › <span style="color:rgba(255,255,255,0.6);">Speed Analyzer</span></div>
-    <div class="hero-tag"><span class="tag-dot"></span> Professional Speed Audit Tool</div>
-    <h1>Analyze Your Website<br><em>Performance Instantly</em></h1>
-    <p class="hero-sub">Real Lighthouse scores, Core Web Vitals, CrUX field data, opportunities and diagnostics — all in one place.</p>
+<header class="page-hero page-hero-center">
+  <div class="page-hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/ai-tools">AI Tools</a> › <span>Speed Analyzer</span></nav>
+    <div class="badge"> Professional Speed Audit Tool</div>
+    <h1>Analyze Your Website<br><span>Performance Instantly</span></h1>
+    <p>Real Lighthouse scores, Core Web Vitals, CrUX field data, opportunities and diagnostics — all in one place.</p>
 
     <div class="search-outer">
       <div class="search-box">
-        <i class="fas fa-globe search-icon"></i>
+        <i class="search-icon"><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#globe"></use></svg></i>
         <input type="url" id="urlInput" placeholder="https://yourwebsite.com" autocomplete="off" spellcheck="false">
         <div class="device-btns">
-          <button class="dev-btn active" data-device="mobile" title="Mobile"><i class="fas fa-mobile-alt"></i></button>
-          <button class="dev-btn" data-device="desktop" title="Desktop"><i class="fas fa-desktop"></i></button>
-          <button class="dev-btn" data-device="both" title="Both"><i class="fas fa-layer-group"></i></button>
+          <button class="dev-btn active" data-device="mobile" title="Mobile"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#phone"></use></svg></i></button>
+          <button class="dev-btn" data-device="desktop" title="Desktop"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#layout"></use></svg></i></button>
+          <button class="dev-btn" data-device="both" title="Both"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#layers"></use></svg></i></button>
         </div>
-        <button class="run-btn" id="analyzeBtn"><i class="fas fa-bolt"></i> Analyze</button>
+        <button class="run-btn" id="analyzeBtn"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg></i> Analyze</button>
       </div>
       <div id="statusMsg"></div>
     </div>
 
     <div class="trust-bar">
-      <span class="trust-item"><i class="fas fa-check-circle"></i> Google Lighthouse v11</span>
-      <span class="trust-item"><i class="fas fa-users"></i> CrUX Real-User Data</span>
-      <span class="trust-item"><i class="fas fa-lock"></i> No Login Required</span>
-      <span class="trust-item"><i class="fas fa-infinity"></i> Free &amp; Unlimited</span>
+      <span class="trust-item"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg></i> Google Lighthouse v11</span>
+      <span class="trust-item"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#users"></use></svg></i> CrUX Real-User Data</span>
+      <span class="trust-item"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#lock"></use></svg></i> No Login Required</span>
+      <span class="trust-item"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#repeat"></use></svg></i> Free &amp; Unlimited</span>
     </div>
   </div>
+</header>
+<div class="wrap">
+  
 </div>
 
 <!-- LOADING -->
@@ -637,11 +111,11 @@ h1 em {
     <div class="spin-ring"></div>
   </div>
   <div class="loading-steps">
-    <div class="lstep" id="ls1"><i class="fas fa-link"></i> Connecting to Lighthouse API</div>
-    <div class="lstep" id="ls2"><i class="fas fa-mobile-alt"></i> Mobile performance audit</div>
-    <div class="lstep" id="ls3"><i class="fas fa-desktop"></i> Desktop performance audit</div>
-    <div class="lstep" id="ls4"><i class="fas fa-users"></i> Fetching Chrome UX Report</div>
-    <div class="lstep" id="ls5"><i class="fas fa-chart-bar"></i> Processing results</div>
+    <div class="lstep" id="ls1"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#link"></use></svg></i> Connecting to Lighthouse API</div>
+    <div class="lstep" id="ls2"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#phone"></use></svg></i> Mobile performance audit</div>
+    <div class="lstep" id="ls3"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#layout"></use></svg></i> Desktop performance audit</div>
+    <div class="lstep" id="ls4"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#users"></use></svg></i> Fetching Chrome UX Report</div>
+    <div class="lstep" id="ls5"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#chart-bar"></use></svg></i> Processing results</div>
   </div>
 </div>
 
@@ -651,7 +125,7 @@ h1 em {
 
     <div class="result-header">
       <div class="result-site">
-        <div class="favicon-box" id="faviconBox"><i class="fas fa-globe" style="color:var(--muted);font-size:0.8rem"></i></div>
+        <div class="favicon-box" id="faviconBox"><i class="u-564f5b"><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#globe"></use></svg></i></div>
         <div>
           <div class="result-url" id="resultUrl">—</div>
           <div class="result-time" id="resultTime">—</div>
@@ -661,20 +135,20 @@ h1 em {
     </div>
 
     <div class="action-row">
-      <button class="act-btn" onclick="copyReport()"><i class="fas fa-copy"></i> Copy Report</button>
-      <button class="act-btn" onclick="window.print()"><i class="fas fa-print"></i> Print</button>
-      <button class="act-btn" id="compareBtn"><i class="fas fa-code-compare"></i> Compare</button>
+      <button class="act-btn" onclick="copyReport()"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg></i> Copy Report</button>
+      <button class="act-btn" onclick="window.print()"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#print"></use></svg></i> Print</button>
+      <button class="act-btn" id="compareBtn"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#git-compare"></use></svg></i> Compare</button>
     </div>
 
     <div class="score-grid" id="scoreGrid"></div>
 
     <div class="tab-bar">
-      <button class="tab active" data-tab="metrics"><i class="fas fa-chart-line"></i> Core Web Vitals</button>
-      <button class="tab" data-tab="crux"><i class="fas fa-users"></i> Real Users</button>
-      <button class="tab" data-tab="opps" id="oppsTab"><i class="fas fa-lightbulb"></i> Opportunities</button>
-      <button class="tab" data-tab="diag"><i class="fas fa-stethoscope"></i> Diagnostics</button>
-      <button class="tab" data-tab="network"><i class="fas fa-network-wired"></i> Network</button>
-      <button class="tab" data-tab="thirdparty"><i class="fas fa-plug"></i> 3rd Party</button>
+      <button class="tab active" data-tab="metrics"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#chart-line"></use></svg></i> Core Web Vitals</button>
+      <button class="tab" data-tab="crux"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#users"></use></svg></i> Real Users</button>
+      <button class="tab" data-tab="opps" id="oppsTab"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#lightbulb"></use></svg></i> Opportunities</button>
+      <button class="tab" data-tab="diag"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></i> Diagnostics</button>
+      <button class="tab" data-tab="network"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#server"></use></svg></i> Network</button>
+      <button class="tab" data-tab="thirdparty"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#api"></use></svg></i> 3rd Party</button>
     </div>
 
     <div class="tab-pane active" id="metricsPane"></div>
@@ -692,37 +166,37 @@ h1 em {
 
     <!-- WHY LOGRITH IS BEST -->
     <div class="why-section">
-      <div class="section-tag"><i class="fas fa-trophy"></i> Why Logrith</div>
+      <div class="section-tag"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#award"></use></svg></i> Why Logrith</div>
       <h2 class="section-h">Better Than Google PageSpeed.<br>Here's Why.</h2>
       <p class="section-sub">Most tools show you a score. We show you the full picture — lab data, real users, third-party impact, and exactly what to fix.</p>
       <div class="why-grid">
         <div class="why-card">
-          <div class="why-ico"><i class="fas fa-users"></i></div>
+          <div class="why-ico"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#users"></use></svg></i></div>
           <div class="why-title">Real User Data (CrUX)</div>
           <div class="why-text">We pull Chrome UX Report field data — the same data Google uses for Search ranking. See how your actual visitors experience your site, not just a simulation.</div>
         </div>
         <div class="why-card">
-          <div class="why-ico"><i class="fas fa-layer-group"></i></div>
+          <div class="why-ico"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#layers"></use></svg></i></div>
           <div class="why-title">Mobile + Desktop Together</div>
           <div class="why-text">Run both mobile and desktop audits in parallel with a single click. Compare results side by side to see where the biggest gap is and what to prioritize.</div>
         </div>
         <div class="why-card">
-          <div class="why-ico"><i class="fas fa-plug"></i></div>
+          <div class="why-ico"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#api"></use></svg></i></div>
           <div class="why-title">Third-Party Impact Analysis</div>
           <div class="why-text">Identify exactly which analytics, ad scripts, chat widgets, or social embeds are blocking your main thread and slowing your site down by milliseconds.</div>
         </div>
         <div class="why-card">
-          <div class="why-ico"><i class="fas fa-network-wired"></i></div>
+          <div class="why-ico"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#server"></use></svg></i></div>
           <div class="why-title">Network Waterfall</div>
           <div class="why-text">See every request your page makes, sorted by transfer size. Instantly spot oversized assets, unnecessary fonts, or unoptimized scripts killing your load time.</div>
         </div>
         <div class="why-card">
-          <div class="why-ico"><i class="fas fa-lightbulb"></i></div>
+          <div class="why-ico"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#lightbulb"></use></svg></i></div>
           <div class="why-title">Actionable Opportunities</div>
           <div class="why-text">Every opportunity comes with an estimated time saving and impact rating. No guesswork — just a prioritized list of what to fix first for maximum improvement.</div>
         </div>
         <div class="why-card">
-          <div class="why-ico"><i class="fas fa-lock"></i></div>
+          <div class="why-ico"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#lock"></use></svg></i></div>
           <div class="why-title">Free, No Login, Unlimited</div>
           <div class="why-text">No accounts, no paywalls, no daily limits. Analyze any public URL as many times as you want. Results are cached for 5 minutes to respect API quotas.</div>
         </div>
@@ -731,42 +205,42 @@ h1 em {
 
     <!-- ARTICLES -->
     <div class="articles-section">
-      <div class="section-tag"><i class="fas fa-book-open"></i> Performance Guides</div>
+      <div class="section-tag"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#file-text"></use></svg></i> Performance Guides</div>
       <h2 class="section-h">Learn Web Performance</h2>
       <p class="section-sub">Understand every metric, what it means, and the fastest way to improve it.</p>
       <div class="articles-grid">
         <div class="article-card">
-          <div class="art-cat"><i class="fas fa-clock"></i> Core Web Vitals</div>
+          <div class="art-cat"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#clock"></use></svg></i> Core Web Vitals</div>
           <div class="art-title">What is Largest Contentful Paint (LCP) and How to Fix It</div>
           <div class="art-desc">LCP measures how long it takes for the largest visible element to render on screen. A score above 2.5 seconds means users see a blank screen — and may leave. The most common fix is preloading your hero image using &lt;link rel="preload"&gt;, serving it in WebP format, and hosting it on a CDN closer to your users. Eliminating render-blocking scripts before the LCP element loads also produces significant gains.</div>
         </div>
 
         <div class="article-card">
-          <div class="art-cat"><i class="fas fa-arrows-alt"></i> Layout Stability</div>
+          <div class="art-cat"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#expand"></use></svg></i> Layout Stability</div>
           <div class="art-title">Cumulative Layout Shift (CLS): Why Your Page Jumps and How to Stop It</div>
           <div class="art-desc">CLS tracks how much the page visually shifts after load. Ads loading without reserved space, images without width/height attributes, and web fonts causing FOUT are the top causes. Set explicit dimensions on all images and iframes, use font-display: swap for custom fonts, and avoid inserting content above existing elements after the user arrives on the page.</div>
         </div>
       
         <div class="article-card">
-          <div class="art-cat"><i class="fas fa-hand-pointer"></i> Interactivity</div>
+          <div class="art-cat"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#navigation"></use></svg></i> Interactivity</div>
           <div class="art-title">INP vs FID: Understanding the New Responsiveness Metric</div>
           <div class="art-desc">Interaction to Next Paint (INP) replaced First Input Delay in 2024 as a Core Web Vital. Unlike FID which only measured the first click, INP tracks the slowest interaction across the entire page session. Reduce INP by breaking up long JavaScript tasks, yielding to the main thread with scheduler.yield(), and deferring non-critical third-party scripts until after user interaction.</div>
         </div>
 
         <div class="article-card">
-          <div class="art-cat"><i class="fas fa-server"></i> Server Performance</div>
+          <div class="art-cat"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#server"></use></svg></i> Server Performance</div>
           <div class="art-title">How to Improve Time to First Byte (TTFB) Below 800ms</div>
           <div class="art-desc">TTFB measures how quickly your server responds to the first request. High TTFB is often caused by slow database queries, no caching layer, or server location being far from users. Use a CDN with edge caching, enable HTTP/2, implement server-side caching (Redis, Varnish), and consider edge computing platforms like Cloudflare Workers to serve dynamic content closer to visitors.</div>
         </div>
 
         <div class="article-card">
-          <div class="art-cat"><i class="fas fa-code"></i> JavaScript</div>
+          <div class="art-cat"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#code"></use></svg></i> JavaScript</div>
           <div class="art-title">Reducing Total Blocking Time (TBT): JavaScript Optimization Guide</div>
           <div class="art-desc">TBT measures how long the main thread is blocked by JavaScript, preventing user interaction. Every JS task over 50ms is a long task that contributes to TBT. Use code splitting to load only what's needed for the current view, tree-shake unused exports, and move heavy computations to Web Workers. Aim for a TBT under 200ms for mobile users on slow 4G connections.</div>
         </div>
 
         <div class="article-card">
-          <div class="art-cat"><i class="fas fa-image"></i> Images</div>
+          <div class="art-cat"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#image"></use></svg></i> Images</div>
           <div class="art-title">WebP vs AVIF: Which Image Format Should You Use in 2025?</div>
           <div class="art-desc">Modern image formats can reduce file size by 30–70% over JPEG/PNG with equivalent quality. WebP has 97%+ browser support and is the safest choice today. AVIF offers 20–30% better compression than WebP but has slightly less browser support. Use the &lt;picture&gt; element to serve AVIF to supported browsers and WebP as a fallback, with JPEG as the last resort for maximum compatibility.</div>
         </div>
@@ -776,71 +250,71 @@ h1 em {
 
     <!-- QnA -->
     <div class="qna-section">
-      <div class="section-tag"><i class="fas fa-question-circle"></i> FAQ</div>
+      <div class="section-tag"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#help"></use></svg></i> FAQ</div>
       <h2 class="section-h">Frequently Asked Questions</h2>
       <p class="section-sub">Everything you need to know about web performance auditing and this tool.</p>
       <div class="qna-list">
         <div class="qna-item">
           <div class="qna-q">
-            <div class="q-ico"><i class="fas fa-question"></i></div>
+            <div class="q-ico"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#help"></use></svg></i></div>
             <span class="q-text">What is the difference between lab data and real-user field data?</span>
-            <i class="fas fa-chevron-down q-arrow"></i>
+            <i class="q-arrow"><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#chevron-down"></use></svg></i>
           </div>
           <div class="qna-a"><p>Lab data comes from Google Lighthouse running a simulated test on a controlled device with a fixed network speed (Slow 4G for mobile). It is great for debugging and consistent comparisons. Field data (CrUX) comes from real Chrome users visiting your site over the last 28 days and reflects actual conditions like varying devices, network speeds, and geographic locations. Google uses field data — not lab data — as a ranking signal in Search.</p></div>
         </div>
         <div class="qna-item">
           <div class="qna-q">
-            <div class="q-ico"><i class="fas fa-question"></i></div>
+            <div class="q-ico"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#help"></use></svg></i></div>
             <span class="q-text">Why do I see "No CrUX data available" for my site?</span>
-            <i class="fas fa-chevron-down q-arrow"></i>
+            <i class="q-arrow"><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#chevron-down"></use></svg></i>
           </div>
           <div class="qna-a"><p>Chrome UX Report only includes data for origins with a statistically sufficient number of Chrome users over the past 28 days. Low-traffic or newly launched websites typically do not have enough data to appear. This is normal and does not negatively affect your rankings — Google simply does not have enough data to make a field-data assessment and falls back to lab data for those sites.</p></div>
         </div>
         <div class="qna-item">
           <div class="qna-q">
-            <div class="q-ico"><i class="fas fa-question"></i></div>
+            <div class="q-ico"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#help"></use></svg></i></div>
             <span class="q-text">Does a low performance score directly affect my Google rankings?</span>
-            <i class="fas fa-chevron-down q-arrow"></i>
+            <i class="q-arrow"><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#chevron-down"></use></svg></i>
           </div>
           <div class="qna-a"><p>Core Web Vitals (LCP, INP, CLS) are confirmed Google ranking signals since 2021. However, they are a tiebreaker signal — meaning high-quality, relevant content still matters most. If two pages have similar content quality, the faster page with better CWV scores will rank higher. Failing CWV thresholds is unlikely to tank a well-established site, but passing them gives a measurable edge in competitive search results.</p></div>
         </div>
         <div class="qna-item">
           <div class="qna-q">
-            <div class="q-ico"><i class="fas fa-question"></i></div>
+            <div class="q-ico"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#help"></use></svg></i></div>
             <span class="q-text">Why does my score vary between runs?</span>
-            <i class="fas fa-chevron-down q-arrow"></i>
+            <i class="q-arrow"><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#chevron-down"></use></svg></i>
           </div>
           <div class="qna-a"><p>Lighthouse scores can vary run-to-run by 5–10 points due to network variability, server response time fluctuations, and variability in the cloud machine running the audit. Results are cached for 5 minutes to reduce quota usage. For the most accurate picture, run multiple audits and average the scores. The CrUX field data is far more stable as it aggregates data from thousands of real visits.</p></div>
         </div>
         <div class="qna-item">
           <div class="qna-q">
-            <div class="q-ico"><i class="fas fa-question"></i></div>
+            <div class="q-ico"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#help"></use></svg></i></div>
             <span class="q-text">What should I fix first to improve my performance score?</span>
-            <i class="fas fa-chevron-down q-arrow"></i>
+            <i class="q-arrow"><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#chevron-down"></use></svg></i>
           </div>
           <div class="qna-a"><p>Start with the Opportunities tab — items are sorted by estimated time savings. In most cases, the highest-impact fixes are: (1) compress and convert images to WebP/AVIF, (2) eliminate render-blocking JavaScript and CSS, (3) preload the LCP image with &lt;link rel="preload"&gt;, (4) enable text compression (Brotli/Gzip), and (5) use a CDN to reduce server response time. These five fixes alone typically account for 60–80% of total potential improvement.</p></div>
         </div>
         <div class="qna-item">
           <div class="qna-q">
-            <div class="q-ico"><i class="fas fa-question"></i></div>
+            <div class="q-ico"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#help"></use></svg></i></div>
             <span class="q-text">Is this tool completely free? Are there any hidden limits?</span>
-            <i class="fas fa-chevron-down q-arrow"></i>
+            <i class="q-arrow"><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#chevron-down"></use></svg></i>
           </div>
           <div class="qna-a"><p>Yes, completely free. The tool uses Google's PageSpeed Insights API which allows 25,000 requests per day at no cost. Results are cached for 5 minutes, so repeated analyses of the same URL use cached data. In the rare event of API quota exhaustion, the tool falls back to a basic HTML analysis that still provides page size, script count, image analysis, and basic SEO checks. No signup, no account, no credit card required.</p></div>
         </div>
         <div class="qna-item">
           <div class="qna-q">
-            <div class="q-ico"><i class="fas fa-question"></i></div>
+            <div class="q-ico"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#help"></use></svg></i></div>
             <span class="q-text">What does Total Blocking Time (TBT) measure?</span>
-            <i class="fas fa-chevron-down q-arrow"></i>
+            <i class="q-arrow"><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#chevron-down"></use></svg></i>
           </div>
           <div class="qna-a"><p>TBT is the sum of all time periods between First Contentful Paint and Time to Interactive where the main thread was blocked for more than 50ms. Each blocking period contributes (duration - 50ms) to the TBT score. A high TBT means users cannot click buttons, type in inputs, or scroll smoothly during page load. TBT is Lighthouse's lab proxy for INP — reducing TBT almost always improves real-world interactivity.</p></div>
         </div>
         <div class="qna-item">
           <div class="qna-q">
-            <div class="q-ico"><i class="fas fa-question"></i></div>
+            <div class="q-ico"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#help"></use></svg></i></div>
             <span class="q-text">How often should I audit my website speed?</span>
-            <i class="fas fa-chevron-down q-arrow"></i>
+            <i class="q-arrow"><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#chevron-down"></use></svg></i>
           </div>
           <div class="qna-a"><p>Run a performance audit after every significant change to your site — new features, theme updates, new marketing scripts, or image uploads. For ongoing monitoring, a weekly automated audit is ideal. Track your scores over time to catch regressions early. It is especially important to audit after adding any third-party scripts (analytics, chat widgets, ad tags) as these frequently cause the biggest performance regressions.</p></div>
         </div>
@@ -849,37 +323,37 @@ h1 em {
 
     <!-- QUICK TIPS -->
     <div class="tips-section">
-      <div class="section-tag"><i class="fas fa-bolt"></i> Quick Wins</div>
+      <div class="section-tag"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg></i> Quick Wins</div>
       <h2 class="section-h">Performance Fixes That Work</h2>
       <p class="section-sub">High-impact improvements you can implement today.</p>
       <div class="tips-grid">
         <div class="tip-card">
-          <div class="tip-ico"><i class="fas fa-image"></i></div>
+          <div class="tip-ico"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#image"></use></svg></i></div>
           <div class="tip-title">Use WebP / AVIF</div>
           <div class="tip-text">Reduce image size by 25–50% with no visible quality loss. Serve AVIF with WebP fallback using the picture element.</div>
         </div>
         <div class="tip-card">
-          <div class="tip-ico"><i class="fas fa-arrow-up"></i></div>
+          <div class="tip-ico"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-up"></use></svg></i></div>
           <div class="tip-title">Preload LCP Image</div>
           <div class="tip-text">Add &lt;link rel="preload" as="image"&gt; for your hero image. One of the highest-ROI changes for LCP score.</div>
         </div>
         <div class="tip-card">
-          <div class="tip-ico"><i class="fas fa-ban"></i></div>
+          <div class="tip-ico"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#ban"></use></svg></i></div>
           <div class="tip-title">Defer Non-Critical JS</div>
           <div class="tip-text">Add defer or async to scripts that are not needed for first render. Reduces TBT and TTI significantly.</div>
         </div>
         <div class="tip-card">
-          <div class="tip-ico"><i class="fas fa-globe"></i></div>
+          <div class="tip-ico"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#globe"></use></svg></i></div>
           <div class="tip-title">Deploy a CDN</div>
           <div class="tip-text">Serve static assets from edge nodes close to your users. Reduces TTFB by 40–70% for geographically distributed audiences.</div>
         </div>
         <div class="tip-card">
-          <div class="tip-ico"><i class="fas fa-compress-alt"></i></div>
+          <div class="tip-ico"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#collapse"></use></svg></i></div>
           <div class="tip-title">Enable Brotli Compression</div>
           <div class="tip-text">Brotli compresses HTML, CSS, and JS 15–20% better than Gzip. Enable it on your server or CDN for instant wins.</div>
         </div>
         <div class="tip-card">
-          <div class="tip-ico"><i class="fas fa-font"></i></div>
+          <div class="tip-ico"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#font-size"></use></svg></i></div>
           <div class="tip-title">font-display: swap</div>
           <div class="tip-text">Prevent invisible text during web font loading. Eliminates a common CLS and FCP issue in one CSS property.</div>
         </div>
@@ -889,10 +363,11 @@ h1 em {
   </div><!-- /content-wrap -->
 </div>
 
-<div id="footer"></div>
+</main>
 
-<script src="/load-components.js"></script>
-<script src="/assets/js/main.js" defer></script>
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+
 <script>
 // ═══════════════════════════════════════════
 // CONFIG
@@ -941,7 +416,7 @@ async function analyze() {
 
   const btn = document.getElementById('analyzeBtn');
   btn.classList.add('loading');
-  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Analyzing...';
+  btn.innerHTML = '<i><svg class="icon icon-em icon-spin" aria-hidden="true"><use href="/assets/svg/icons.svg#loader"></use></svg></i> Analyzing...';
   document.getElementById('loadingOverlay').classList.add('show');
   document.getElementById('resultsArea').style.display = 'none';
   setStatus('', '');
@@ -963,14 +438,14 @@ async function analyze() {
   } finally {
     document.getElementById('loadingOverlay').classList.remove('show');
     btn.classList.remove('loading');
-    btn.innerHTML = '<i class="fas fa-bolt"></i> Analyze';
+    btn.innerHTML = '<i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg></i> Analyze';
   }
 }
 
 function setStatus(msg, type) {
   const el = document.getElementById('statusMsg');
-  const colors = { good:'var(--good)', bad:'var(--bad)', avg:'var(--avg)' };
-  el.innerHTML = msg ? `<span style="color:${colors[type]||'var(--muted)'};font-size:0.78rem;"><i class="fas fa-${type==='good'?'check-circle':type==='bad'?'times-circle':'info-circle'}"></i> ${msg}</span>` : '';
+  const colors = { good:'var(--success)', bad:'var(--error)', avg:'var(--warning)' };
+  el.innerHTML = msg ? `<span style="color:${colors[type]||'var(--gray-500)'};font-size:0.78rem;">${ico(type==='good'?'check-circle':type==='bad'?'x-circle':'info')} ${msg}</span>` : '';
 }
 
 function animateLoadingSteps() {
@@ -978,7 +453,7 @@ function animateLoadingSteps() {
   ids.forEach(id => { const el=document.getElementById(id); el.className='lstep'; });
   ids.forEach((id,i) => {
     setTimeout(() => {
-      if(i>0) { const prev=document.getElementById(ids[i-1]); if(prev){prev.classList.add('done');prev.querySelector('i').className='fas fa-check-circle';} }
+      if(i>0) { const prev=document.getElementById(ids[i-1]); if(prev){prev.classList.add('done');prev.querySelector('use').setAttribute('href','/assets/svg/icons.svg#check-circle');} }
       document.getElementById(id).classList.add('active');
     }, i*1600);
   });
@@ -1002,8 +477,8 @@ function renderAll(data) {
     document.getElementById('faviconBox').innerHTML = `<img src="https://www.google.com/s2/favicons?domain=${domain}&sz=32" width="22" style="border-radius:4px" onerror="this.style.display='none'">`;
   } catch(e){}
   document.getElementById('modeChip').innerHTML = isApi
-    ? `<span class="mode-chip api"><i class="fas fa-check-circle"></i> Lighthouse API + CrUX</span>`
-    : `<span class="mode-chip fallback"><i class="fas fa-exclamation-triangle"></i> Fallback Mode</span>`;
+    ? `<span class="mode-chip api"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg></i> Lighthouse API + CrUX</span>`
+    : `<span class="mode-chip fallback"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#warning"></use></svg></i> Fallback Mode</span>`;
 
   // Scores
   buildScores(mob, dsk);
@@ -1011,8 +486,8 @@ function renderAll(data) {
   // Opp badge
   const oppCount = (mob.opportunities||[]).length;
   document.getElementById('oppsTab').innerHTML = oppCount
-    ? `<i class="fas fa-lightbulb"></i> Opportunities <span class="tbadge">${oppCount}</span>`
-    : `<i class="fas fa-lightbulb"></i> Opportunities`;
+    ? `<i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#lightbulb"></use></svg></i> Opportunities <span class="tbadge">${oppCount}</span>`
+    : `<i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#lightbulb"></use></svg></i> Opportunities`;
 
   // Panes
   document.getElementById('metricsPane').innerHTML = buildMetrics(mob, dsk);
@@ -1029,11 +504,11 @@ function renderAll(data) {
 function buildScores(mob, dsk) {
   const circ = 2 * Math.PI * 30;
   const cards = [
-    { label:'Mobile', sub:'Performance', val: mob.performance, icon:'fa-mobile-alt' },
-    { label:'Desktop', sub:'Performance', val: dsk.performance, icon:'fa-desktop' },
-    { label:'Accessibility', sub:'', val: mob.accessibility, icon:'fa-universal-access' },
-    { label:'Best Practices', sub:'', val: mob.bestPractices, icon:'fa-shield-alt' },
-    { label:'SEO', sub:'', val: mob.seo, icon:'fa-search' },
+    { label:'Mobile', sub:'Performance', val: mob.performance, icon:'phone' },
+    { label:'Desktop', sub:'Performance', val: dsk.performance, icon:'layout' },
+    { label:'Accessibility', sub:'', val: mob.accessibility, icon:'user' },
+    { label:'Best Practices', sub:'', val: mob.bestPractices, icon:'shield' },
+    { label:'SEO', sub:'', val: mob.seo, icon:'search' },
   ];
   const color = v => v >= 90 ? '#22c55e' : v >= 50 ? '#f59e0b' : '#ef4444';
   const cls   = v => v >= 90 ? 'good' : v >= 50 ? 'avg' : 'bad';
@@ -1051,7 +526,7 @@ function buildScores(mob, dsk) {
           </svg>
           <div class="ring-val" style="color:${col}">${c.val ?? '--'}</div>
         </div>
-        <div class="sc-lbl"><i class="fas ${c.icon}" style="color:${col};margin-right:0.3rem"></i>${c.label}${c.sub?' '+c.sub:''}</div>
+        <div class="sc-lbl"><i style="color:${col};margin-right:0.3rem">${ico(c.icon)}</i>${c.label}${c.sub?' '+c.sub:''}</div>
       </div>`;
   }).join('');
   // trigger top bar
@@ -1087,39 +562,39 @@ function buildMetrics(mob, dsk) {
   };
   const makeRows = (metrics) => rows.map(r => `
     <div class="mrow">
-      <span class="mname"><i class="fas fa-circle-dot" style="font-size:0.45rem;opacity:0.4"></i> ${r.name}</span>
+      <span class="mname"><i style="font-size:0.45rem;opacity:0.4"><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#circle"></use></svg></i> ${r.name}</span>
       <span class="mval ${cls(r.key,metrics[r.key])}">${metrics[r.key]||'N/A'}</span>
     </div>`).join('');
   return `
     <div class="two-col">
       <div class="panel">
-        <div class="panel-ttl"><i class="fas fa-mobile-alt"></i> Mobile — Slow 4G Simulated</div>
+        <div class="panel-ttl"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#phone"></use></svg></i> Mobile — Slow 4G Simulated</div>
         ${makeRows(m)}
         <div class="cwv-badge ${mob.coreWebVitalsPass?'pass':'fail'}">
-          <i class="fas fa-${mob.coreWebVitalsPass?'check':'times'}-circle"></i>
+          ${ico(mob.coreWebVitalsPass?'check-circle':'x-circle')}
           Core Web Vitals: ${mob.coreWebVitalsPass?'PASS':'FAIL'}
         </div>
       </div>
       <div class="panel">
-        <div class="panel-ttl"><i class="fas fa-desktop"></i> Desktop — Fast Wired</div>
+        <div class="panel-ttl"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#layout"></use></svg></i> Desktop — Fast Wired</div>
         ${makeRows(d)}
         <div class="cwv-badge ${dsk.coreWebVitalsPass?'pass':'fail'}">
-          <i class="fas fa-${dsk.coreWebVitalsPass?'check':'times'}-circle"></i>
+          ${ico(dsk.coreWebVitalsPass?'check-circle':'x-circle')}
           Core Web Vitals: ${dsk.coreWebVitalsPass?'PASS':'FAIL'}
         </div>
       </div>
     </div>
-    <p style="font-size:0.73rem;color:var(--muted);margin-top:0.6rem"><i class="fas fa-flask" style="color:var(--purple3)"></i> Lab data — simulated environment. See "Real Users" tab for field data Google uses for ranking.</p>`;
+    <p style="font-size:0.73rem;color:var(--gray-500);margin-top:0.6rem"><i style="color:var(--primary)"><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></i> Lab data — simulated environment. See "Real Users" tab for field data Google uses for ranking.</p>`;
 }
 
 // ── CRUX ──
 function buildCrux(crux) {
   if (!crux.available) return `
     <div class="panel"><div class="empty">
-      <i class="fas fa-users"></i>
+      <i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#users"></use></svg></i>
       <p><strong>No CrUX data available</strong></p>
       <p style="margin-top:0.4rem">This origin has insufficient Chrome user traffic in the last 28 days.<br>Try a high-traffic site like google.com.</p>
-      ${crux.error?`<p style="color:var(--bad);font-size:0.73rem;margin-top:0.4rem">${crux.error}</p>`:''}
+      ${crux.error?`<p style="color:var(--error);font-size:0.73rem;margin-top:0.4rem">${crux.error}</p>`:''}
     </div></div>`;
 
   const defs = [
@@ -1132,7 +607,7 @@ function buildCrux(crux) {
 
   return `
     <div class="panel">
-      <div class="panel-ttl"><i class="fas fa-users"></i> Chrome UX Report — Last 28 Days (Real Chrome Users)</div>
+      <div class="panel-ttl"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#users"></use></svg></i> Chrome UX Report — Last 28 Days (Real Chrome Users)</div>
       <div class="crux-grid">
         ${defs.map(def => {
           const d = crux[def.key]; if(!d) return '';
@@ -1142,12 +617,12 @@ function buildCrux(crux) {
           const rc = ratingCls(d.rating||'poor');
           const toP = v => (Number(v)||0)*100;
           const g=toP(d.goodPercent).toFixed(1), n=toP(d.needsImprovementPercent).toFixed(1), p=toP(d.poorPercent).toFixed(1);
-          const col = rc==='good'?'var(--good)':rc==='ni'?'var(--avg)':'var(--bad)';
+          const col = rc==='good'?'var(--success)':rc==='ni'?'var(--warning)':'var(--error)';
           return `
             <div class="crux-card">
               <div class="crux-name">${def.name}</div>
               <div class="crux-val" style="color:${col}">${displayVal}${def.unit?' '+def.unit:''}</div>
-              <div class="crux-chip ${rc}"><i class="fas fa-${rc==='good'?'check':rc==='ni'?'minus':'times'}-circle"></i> ${ratingLabel(d.rating||'')}</div>
+              <div class="crux-chip ${rc}">${ico(rc==='good'?'check-circle':rc==='ni'?'minus':'x-circle')} ${ratingLabel(d.rating||'')}</div>
               <div class="crux-bar-wrap">
                 <div class="crux-bar-lbl"><span>Good ${g}%</span><span>NI ${n}%</span><span>Poor ${p}%</span></div>
                 <div class="crux-bar-track">
@@ -1159,7 +634,7 @@ function buildCrux(crux) {
             </div>`;
         }).join('')}
       </div>
-      <p style="font-size:0.72rem;color:var(--muted);margin-top:1rem"><i class="fas fa-info-circle"></i> p75 = 75th percentile. This is what Google uses as a Search ranking signal, not lab data.</p>
+      <p style="font-size:0.72rem;color:var(--gray-500);margin-top:1rem"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#info"></use></svg></i> p75 = 75th percentile. This is what Google uses as a Search ranking signal, not lab data.</p>
     </div>`;
 }
 
@@ -1167,26 +642,26 @@ function buildCrux(crux) {
 function buildOpps(opps) {
   if(!opps.length) return `
     <div class="panel"><div class="empty">
-      <i class="fas fa-trophy" style="color:var(--good);opacity:1"></i>
-      <p style="color:var(--good);font-weight:600">No major opportunities found</p>
+      <i style="color:var(--success);opacity:1"><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#award"></use></svg></i>
+      <p style="color:var(--success);font-weight:600">No major opportunities found</p>
       <p>Your site is well-optimized. Check diagnostics for fine-tuning.</p>
     </div></div>`;
-  const icoMap = {high:{i:'fa-fire',c:'high'},medium:{i:'fa-exclamation-triangle',c:'medium'},low:{i:'fa-info-circle',c:'low'}};
+  const icoMap = {high:{i:'fire',c:'high'},medium:{i:'warning',c:'medium'},low:{i:'info',c:'low'}};
   return `
     <div class="panel">
-      <div class="panel-ttl"><i class="fas fa-lightbulb"></i> ${opps.length} Opportunities — Sorted by Impact</div>
+      <div class="panel-ttl"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#lightbulb"></use></svg></i> ${opps.length} Opportunities — Sorted by Impact</div>
       ${opps.map(o=>{
         const imp=(o.impact||'medium').toLowerCase();
         const ic=icoMap[imp]||icoMap.medium;
         return `
           <div class="opp-item">
-            <div class="opp-ico ${ic.c}"><i class="fas ${ic.i}"></i></div>
+            <div class="opp-ico ${ic.c}"><i>${ico(ic.i)}</i></div>
             <div class="opp-body">
               <div class="opp-title">${o.title}</div>
               <div class="opp-desc">${o.description}</div>
               <div class="opp-tags">
-                <span class="otag save"><i class="fas fa-clock"></i> ${o.savings}</span>
-                <span class="otag ${imp}"><i class="fas fa-signal"></i> ${imp.charAt(0).toUpperCase()+imp.slice(1)} Impact</span>
+                <span class="otag save"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#clock"></use></svg></i> ${o.savings}</span>
+                <span class="otag ${imp}"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#wifi"></use></svg></i> ${imp.charAt(0).toUpperCase()+imp.slice(1)} Impact</span>
               </div>
             </div>
           </div>`;
@@ -1197,40 +672,40 @@ function buildOpps(opps) {
 // ── DIAGNOSTICS ──
 function buildDiag(diag, env) {
   const items = [
-    {icon:'fa-sitemap',    name:'DOM Size',            val:diag.domSize},
-    {icon:'fa-code',       name:'JS Execution Time',   val:diag.jsExecution},
-    {icon:'fa-microchip',  name:'Main Thread Work',    val:diag.mainThreadWork},
-    {icon:'fa-box',        name:'Total Page Weight',   val:diag.totalByteWeight||diag.networkPayload},
-    {icon:'fa-plug',       name:'Third-Party Impact',  val:diag.thirdParty},
-    {icon:'fa-file-code',  name:'First-Party Summary', val:diag.firstParty},
-    {icon:'fa-bolt',       name:'JS Parse + Compile',  val:diag.jsParseCompile},
-    {icon:'fa-arrows-alt', name:'Layout Shift Elements',val:diag.layoutShift},
-    {icon:'fa-hourglass',  name:'Long Tasks',          val:diag.longTasks},
-    {icon:'fa-font',       name:'Font Display',        val:diag.fontDisplay},
+    {icon:'grid',    name:'DOM Size',            val:diag.domSize},
+    {icon:'code',       name:'JS Execution Time',   val:diag.jsExecution},
+    {icon:'cpu',  name:'Main Thread Work',    val:diag.mainThreadWork},
+    {icon:'package',        name:'Total Page Weight',   val:diag.totalByteWeight||diag.networkPayload},
+    {icon:'api',       name:'Third-Party Impact',  val:diag.thirdParty},
+    {icon:'file-text',  name:'First-Party Summary', val:diag.firstParty},
+    {icon:'zap',       name:'JS Parse + Compile',  val:diag.jsParseCompile},
+    {icon:'expand', name:'Layout Shift Elements',val:diag.layoutShift},
+    {icon:'timer',  name:'Long Tasks',          val:diag.longTasks},
+    {icon:'font-size',       name:'Font Display',        val:diag.fontDisplay},
   ];
   return `
     <div class="panel">
-      <div class="panel-ttl"><i class="fas fa-stethoscope"></i> Technical Diagnostics</div>
+      <div class="panel-ttl"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></i> Technical Diagnostics</div>
       <div class="diag-grid">
         ${items.map(i=>`
           <div class="diag-row">
-            <span class="diag-lbl"><i class="fas ${i.icon}"></i> ${i.name}</span>
+            <span class="diag-lbl"><i>${ico(i.icon)}</i> ${i.name}</span>
             <span class="diag-val">${i.val||'N/A'}</span>
           </div>`).join('')}
       </div>
-      ${env.device?`<div style="margin-top:1rem;padding:0.75rem;background:var(--black3);border-radius:6px;font-size:0.76rem;color:var(--muted)">
-        <i class="fas fa-server" style="color:var(--purple3)"></i> ${env.device} &middot; ${env.network||'—'} &middot; Lighthouse ${env.lighthouseVersion||'11.x'}
+      ${env.device?`<div style="margin-top:1rem;padding:0.75rem;background:var(--gray-300);border-radius:6px;font-size:0.76rem;color:var(--gray-500)">
+        <i style="color:var(--primary)"><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#server"></use></svg></i> ${env.device} &middot; ${env.network||'—'} &middot; Lighthouse ${env.lighthouseVersion||'11.x'}
       </div>`:''}
     </div>`;
 }
 
 // ── NETWORK ──
 function buildNetwork(reqs) {
-  if(!reqs||!reqs.length) return `<div class="panel"><div class="empty"><i class="fas fa-network-wired"></i><p>Network waterfall not available in fallback mode.</p></div></div>`;
+  if(!reqs||!reqs.length) return `<div class="panel"><div class="empty"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#server"></use></svg></i><p>Network waterfall not available in fallback mode.</p></div></div>`;
   const maxSz = Math.max(...reqs.map(r=>r.transferSize||0));
   return `
     <div class="panel">
-      <div class="panel-ttl"><i class="fas fa-network-wired"></i> Network Waterfall — Top ${reqs.length} Requests by Size</div>
+      <div class="panel-ttl"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#server"></use></svg></i> Network Waterfall — Top ${reqs.length} Requests by Size</div>
       <div style="overflow-x:auto">
         <table class="net-table">
           <thead><tr><th>#</th><th>URL</th><th>Type</th><th>Size</th><th>Bar</th></tr></thead>
@@ -1241,10 +716,10 @@ function buildNetwork(reqs) {
               const type=rawType.includes('script')?'script':rawType.includes('css')||rawType.includes('stylesheet')?'stylesheet':rawType.includes('image')||rawType.includes('img')?'image':rawType.includes('font')?'font':rawType.includes('document')||rawType.includes('html')?'document':'other';
               const barW=maxSz?Math.max(3,Math.round((r.transferSize/maxSz)*100)):3;
               return `<tr>
-                <td style="color:var(--muted)">${i+1}</td>
+                <td style="color:var(--gray-500)">${i+1}</td>
                 <td class="net-url" title="${r.url}">${r.url}</td>
                 <td><span class="rtype ${type}">${type}</span></td>
-                <td style="font-family:var(--font-h);font-size:0.76rem">${kb} KB</td>
+                <td style="font-family:var(--font-display);font-size:0.76rem">${kb} KB</td>
                 <td><div class="sz-bar" style="width:${barW}px"></div></td>
               </tr>`;
             }).join('')}
@@ -1256,16 +731,16 @@ function buildNetwork(reqs) {
 
 // ── THIRD PARTY ──
 function buildTP(summary) {
-  if(!summary||!summary.length) return `<div class="panel"><div class="empty"><i class="fas fa-plug"></i><p>No third-party data. Requires full Lighthouse API mode.</p></div></div>`;
+  if(!summary||!summary.length) return `<div class="panel"><div class="empty"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#api"></use></svg></i><p>No third-party data. Requires full Lighthouse API mode.</p></div></div>`;
   return `
     <div class="panel">
-      <div class="panel-ttl"><i class="fas fa-plug"></i> Third-Party Scripts — Main Thread Impact</div>
+      <div class="panel-ttl"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#api"></use></svg></i> Third-Party Scripts — Main Thread Impact</div>
       <div class="tp-grid">
         ${summary.map(tp=>`
           <div class="tp-card">
-            <div class="tp-name"><i class="fas fa-external-link-alt"></i> ${tp.entity}</div>
+            <div class="tp-name"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#external-link"></use></svg></i> ${tp.entity}</div>
             <div class="tp-row"><span class="tp-key">Main Thread</span><span class="tp-v">${tp.mainThreadTime?Math.round(tp.mainThreadTime)+' ms':'N/A'}</span></div>
-            <div class="tp-row"><span class="tp-key">Transfer Size</span><span class="tp-v" style="color:var(--avg)">${tp.transferSize?(tp.transferSize/1024).toFixed(1)+' KB':'N/A'}</span></div>
+            <div class="tp-row"><span class="tp-key">Transfer Size</span><span class="tp-v" style="color:var(--warning)">${tp.transferSize?(tp.transferSize/1024).toFixed(1)+' KB':'N/A'}</span></div>
             <div class="tp-row"><span class="tp-key">Blocking Time</span><span class="tp-v">${tp.blockTime?Math.round(tp.blockTime)+' ms':'N/A'}</span></div>
           </div>`).join('')}
       </div>

@@ -23,79 +23,13 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .page-hero {
-      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 60%, #e0f2fe 100%);
-      padding: 60px 24px 48px; text-align: center;
-      border-bottom: 1.5px solid var(--gray-200);
-    }
-    .page-hero-inner { max-width: 700px; margin: 0 auto; }
-    .page-hero .badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 5px 14px; background: var(--white);
-      border: 1px solid var(--gray-200); border-radius: 20px;
-      font-size: .78rem; font-weight: 700; color: var(--primary);
-      font-family: var(--font-display); margin-bottom: 16px;
-    }
-    .page-hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(1.8rem, 5vw, 2.8rem);
-      font-weight: 800; color: var(--gray-900);
-      letter-spacing: -.5px; line-height: 1.2; margin-bottom: 14px;
-    }
-    .page-hero h1 span { color: var(--primary); }
-    .page-hero p { font-size: .98rem; color: var(--gray-700); line-height: 1.7; }
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
-    /* Tool List - unique style */
-    .tool-list-section { max-width: 1100px; margin: 0 auto; padding: 40px 24px; }
-    .tls-header { margin-bottom: 28px; }
-    .tls-header h2 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--gray-900); margin-bottom: 6px; }
-    .tls-header p { font-size: .88rem; color: var(--gray-500); }
-
-    .tool-list { display: flex; flex-direction: column; gap: 12px; }
-    .tl-item {
-      display: flex; align-items: center; gap: 18px;
-      padding: 18px 20px;
-      background: var(--white);
-      border: 1.5px solid var(--gray-200);
-      border-radius: var(--radius-lg);
-      text-decoration: none;
-      transition: var(--transition);
-    }
-    .tl-item:hover { border-color: var(--primary); box-shadow: var(--shadow-md); transform: translateX(4px); }
-    .tl-icon {
-      width: 46px; height: 46px;
-      background: var(--gray-50);
-      border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.3rem; flex-shrink: 0;
-      transition: var(--transition);
-    }
-    .tl-item:hover .tl-icon { background: var(--primary); }
-    .tl-body { flex: 1; min-width: 0; }
-    .tl-name { font-family: var(--font-display); font-size: .98rem; font-weight: 700; color: var(--gray-900); margin-bottom: 3px; }
-    .tl-desc { font-size: .82rem; color: var(--gray-500); line-height: 1.5; }
-    .tl-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
-    .tl-tag { padding: 2px 8px; background: var(--gray-100); border-radius: 10px; font-size: .72rem; color: var(--gray-600); }
-    .tl-arrow { color: var(--gray-300); font-size: 1.2rem; flex-shrink: 0; transition: var(--transition); }
-    .tl-item:hover .tl-arrow { color: var(--primary); transform: translateX(3px); }
-
-    /* SEO section */
-    .seo-text { max-width: 900px; margin: 0 auto; padding: 0 24px 48px; }
-    .seo-text h2 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--gray-900); margin-bottom: 12px; margin-top: 32px; }
-    .seo-text p { font-size: .93rem; color: var(--gray-700); line-height: 1.8; margin-bottom: 12px; }
-    .seo-text a { color: var(--primary); }
-
-    /* Format table */
-    .format-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: .88rem; }
-    .format-table th { text-align: left; padding: 10px 14px; background: var(--gray-50); color: var(--gray-500); font-weight: 600; border-bottom: 1.5px solid var(--gray-200); }
-    .format-table td { padding: 10px 14px; border-bottom: 1px solid var(--gray-100); color: var(--gray-700); }
-    .format-table tr:hover td { background: var(--gray-50); }
-
-    @media(max-width:600px){ .tl-tags { display:none; } }
-  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -117,19 +51,22 @@
  </script>
  
 </head>
-<body>
+<body class="page-categories-calculate-convert">
 
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
+<main id="main">
+
 <!-- HERO -->
-<section class="page-hero">
+<header class="page-hero">
   <div class="page-hero-inner">
 
-    <div class="tool-breadcrumb" style="justify-content:center;margin-bottom:14px;">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="/">Home</a> › 
       <a href="categories">Categories</a> › 
       Calculate & Convert Tools
-    </div>
+    </nav>
 
     <div class="badge">
       <svg class="icon">
@@ -146,173 +83,173 @@
       Convert units, calculate percentages, estimate EMI, calculate GST, convert colors, and use practical everyday calculators — fast, accurate, mobile-friendly, and completely free.
     </p>
 
-    <div class="tool-tags" style="justify-content:center;margin-top:16px;">
-      <span class="tool-tag">✅ No Login</span>
-      <span class="tool-tag">⚡ Instant Results</span>
-      <span class="tool-tag">📊 Accurate Calculations</span>
-      <span class="tool-tag">📱 Mobile Ready</span>
+    <div class="tag-list">
+      <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> No Login</span>
+      <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant Results</span>
+      <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#chart-bar"></use></svg> Accurate Calculations</span>
+      <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#phone"></use></svg> Mobile Ready</span>
     </div>
 
   </div>
-</section>
+</header>
 
 <!-- TOOL LIST -->
-<div class="tool-list-section">
-  <div class="tls-header">
+<section class="page-section">
+  <div class="section-header">
     <h2>All Calculate & Convert Tools</h2>
     <p>Click any tool to start using it instantly — no setup required</p>
   </div>
   <div class="tool-list">
 
-    <a href="/tools/color-converter" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#color-picker"></use></svg>
-      <div class="tl-body">
-        <div class="tl-name">Color Converter</div>
-        <div class="tl-desc">Convert between HEX, RGB, HSL color formats. Batch convert multiple colors. Control output quality with a slider.</div>
-        <div class="tl-tags"><span class="tl-tag">HEX↔RGB</span><span class="tl-tag">HSL</span><span class="tl-tag">Batch</span></div>
+    <a href="/tools/color-converter" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#color-picker"></use></svg></span>
+      <div class="tool-row-body">
+        <div class="tool-row-name">Color Converter</div>
+        <div class="tool-row-desc">Convert between HEX, RGB, HSL color formats. Batch convert multiple colors. Control output quality with a slider.</div>
+        <div class="tag-list"><span class="tag">HEX↔RGB</span><span class="tag">HSL</span><span class="tag">Batch</span></div>
       </div>
-      <span class="tl-arrow">→</span>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
     </a>
 
-    <a href="/tools/unit-converter" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#ruler"></use></svg>
-      <div class="tl-body">
-        <div class="tl-name">Unit Converter</div>
-        <div class="tl-desc">Convert between various units of measurement for length, weight, temperature, data, and more.</div>
-        <div class="tl-tags"><span class="tl-tag">Length</span><span class="tl-tag">Weight</span><span class="tl-tag">Temperature</span><span class="tl-tag">Data</span></div>
+    <a href="/tools/unit-converter" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#ruler"></use></svg></span>
+      <div class="tool-row-body">
+        <div class="tool-row-name">Unit Converter</div>
+        <div class="tool-row-desc">Convert between various units of measurement for length, weight, temperature, data, and more.</div>
+        <div class="tag-list"><span class="tag">Length</span><span class="tag">Weight</span><span class="tag">Temperature</span><span class="tag">Data</span></div>
       </div>
-      <span class="tl-arrow">→</span>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
     </a>
 
-    <a href="/tools/percentage-calculator" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#percent"></use></svg>
-      <div class="tl-body">
-        <div class="tl-name">Percentage Calculator</div>
-        <div class="tl-desc">Calculate percentages, discounts, and increases with ease.</div>
-        <div class="tl-tags"><span class="tl-tag">Percentages</span><span class="tl-tag">Discounts</span><span class="tl-tag">Increases</span></div>
+    <a href="/tools/percentage-calculator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#percent"></use></svg></span>
+      <div class="tool-row-body">
+        <div class="tool-row-name">Percentage Calculator</div>
+        <div class="tool-row-desc">Calculate percentages, discounts, and increases with ease.</div>
+        <div class="tag-list"><span class="tag">Percentages</span><span class="tag">Discounts</span><span class="tag">Increases</span></div>
       </div>
-      <span class="tl-arrow">→</span>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
     </a>
 
-    <a href="/tools/emi-calculator" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#emi"></use></svg>
-      <div class="tl-body">
-        <div class="tl-name">EMI Calculator</div>
-        <div class="tl-desc">Calculate loan EMI with full breakdown. Adjust principal, interest rate, and tenure to see the impact on your monthly payments.</div>
-        <div class="tl-tags"><span class="tl-tag">Loan EMI</span><span class="tl-tag">Breakdown</span><span class="tl-tag">Adjustable</span></div>
+    <a href="/tools/emi-calculator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#emi"></use></svg></span>
+      <div class="tool-row-body">
+        <div class="tool-row-name">EMI Calculator</div>
+        <div class="tool-row-desc">Calculate loan EMI with full breakdown. Adjust principal, interest rate, and tenure to see the impact on your monthly payments.</div>
+        <div class="tag-list"><span class="tag">Loan EMI</span><span class="tag">Breakdown</span><span class="tag">Adjustable</span></div>
       </div>
-      <span class="tl-arrow">→</span>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
     </a>
 
-    <a href="/tools/gst-calculator" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#gst"></use></svg>
-      <div class="tl-body">
-        <div class="tl-name">GST Calculator</div>
-        <div class="tl-desc">Calculate GST inclusive and exclusive amounts with ease.</div>
-        <div class="tl-tags"><span class="tl-tag">GST Inclusive</span><span class="tl-tag">GST Exclusive</span><span class="tl-tag">Quick Calculation</span></div>
+    <a href="/tools/gst-calculator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#gst"></use></svg></span>
+      <div class="tool-row-body">
+        <div class="tool-row-name">GST Calculator</div>
+        <div class="tool-row-desc">Calculate GST inclusive and exclusive amounts with ease.</div>
+        <div class="tag-list"><span class="tag">GST Inclusive</span><span class="tag">GST Exclusive</span><span class="tag">Quick Calculation</span></div>
       </div>
-      <span class="tl-arrow">→</span>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
     </a>
 
-    <a href="/tools/age-calculator" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#age"></use></svg>
-      <div class="tl-body">
-        <div class="tl-name">Age Calculator</div>
-        <div class="tl-desc">Calculate exact age in years, months, days, hours, and total minutes. Includes birthday countdown and year-progress bar.</div>
-        <div class="tl-tags"><span class="tl-tag">Exact age</span><span class="tl-tag">Birthday countdown</span></div>
+    <a href="/tools/age-calculator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#age"></use></svg></span>
+      <div class="tool-row-body">
+        <div class="tool-row-name">Age Calculator</div>
+        <div class="tool-row-desc">Calculate exact age in years, months, days, hours, and total minutes. Includes birthday countdown and year-progress bar.</div>
+        <div class="tag-list"><span class="tag">Exact age</span><span class="tag">Birthday countdown</span></div>
       </div>
-      <span class="tl-arrow">→</span>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
     </a>
 
-    <a href="/tools/bmi-calculator" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#percent"></use></svg>
-      <div class="tl-body"><div class="tl-name">BMI Calculator</div><div class="tl-desc">Calculate Body Mass Index with category and healthy weight range.</div><div class="tl-tags"><span class="tl-tag">Metric & Imperial</span></div></div>
-      <span class="tl-arrow">→</span>
+    <a href="/tools/bmi-calculator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#percent"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">BMI Calculator</div><div class="tool-row-desc">Calculate Body Mass Index with category and healthy weight range.</div><div class="tag-list"><span class="tag">Metric & Imperial</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
     </a>
 
-    <a href="/tools/loan-affordability-calculator" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#emi"></use></svg>
-      <div class="tl-body"><div class="tl-name">Loan Affordability Calculator</div><div class="tl-desc">Find the maximum loan you can afford based on income.</div><div class="tl-tags"><span class="tl-tag">Income-based</span></div></div>
-      <span class="tl-arrow">→</span>
+    <a href="/tools/loan-affordability-calculator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#emi"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Loan Affordability Calculator</div><div class="tool-row-desc">Find the maximum loan you can afford based on income.</div><div class="tag-list"><span class="tag">Income-based</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
     </a>
 
-    <a href="/tools/compound-interest-calculator" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#percent"></use></svg>
-      <div class="tl-body"><div class="tl-name">Compound Interest Calculator</div><div class="tl-desc">Calculate investment growth with monthly contributions.</div><div class="tl-tags"><span class="tl-tag">Monthly contributions</span></div></div>
-      <span class="tl-arrow">→</span>
+    <a href="/tools/compound-interest-calculator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#percent"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Compound Interest Calculator</div><div class="tool-row-desc">Calculate investment growth with monthly contributions.</div><div class="tag-list"><span class="tag">Monthly contributions</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
     </a>
 
-    <a href="/tools/simple-interest-calculator" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#percent"></use></svg>
-      <div class="tl-body"><div class="tl-name">Simple Interest Calculator</div><div class="tl-desc">Calculate simple interest with formula breakdown.</div><div class="tl-tags"><span class="tl-tag">Formula shown</span></div></div>
-      <span class="tl-arrow">→</span>
+    <a href="/tools/simple-interest-calculator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#percent"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Simple Interest Calculator</div><div class="tool-row-desc">Calculate simple interest with formula breakdown.</div><div class="tag-list"><span class="tag">Formula shown</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
     </a>
 
-    <a href="/tools/currency-converter" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#refresh"></use></svg>
-      <div class="tl-body"><div class="tl-name">Currency Converter</div><div class="tl-desc">Convert between currencies using your own exchange rate.</div><div class="tl-tags"><span class="tl-tag">Any currency</span></div></div>
-      <span class="tl-arrow">→</span>
+    <a href="/tools/currency-converter" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#refresh"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Currency Converter</div><div class="tool-row-desc">Convert between currencies using your own exchange rate.</div><div class="tag-list"><span class="tag">Any currency</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
     </a>
 
-    <a href="/tools/discount-stacking-calculator" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#percent"></use></svg>
-      <div class="tl-body"><div class="tl-name">Discount Stacking Calculator</div><div class="tl-desc">Calculate final price after multiple stacked discounts.</div><div class="tl-tags"><span class="tl-tag">Multiple discounts</span></div></div>
-      <span class="tl-arrow">→</span>
+    <a href="/tools/discount-stacking-calculator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#percent"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Discount Stacking Calculator</div><div class="tool-row-desc">Calculate final price after multiple stacked discounts.</div><div class="tag-list"><span class="tag">Multiple discounts</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
     </a>
 
-    <a href="/tools/tip-split-calculator" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#percent"></use></svg>
-      <div class="tl-body"><div class="tl-name">Tip Split Calculator</div><div class="tl-desc">Split a restaurant bill with tip among multiple people.</div><div class="tl-tags"><span class="tl-tag">Equal or uneven split</span></div></div>
-      <span class="tl-arrow">→</span>
+    <a href="/tools/tip-split-calculator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#percent"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Tip Split Calculator</div><div class="tool-row-desc">Split a restaurant bill with tip among multiple people.</div><div class="tag-list"><span class="tag">Equal or uneven split</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
     </a>
 
-    <a href="/tools/date-difference-calculator" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#age"></use></svg>
-      <div class="tl-body"><div class="tl-name">Date Difference Calculator</div><div class="tl-desc">Calculate days, weeks, months between any two dates.</div><div class="tl-tags"><span class="tl-tag">Any two dates</span></div></div>
-      <span class="tl-arrow">→</span>
+    <a href="/tools/date-difference-calculator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#age"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Date Difference Calculator</div><div class="tool-row-desc">Calculate days, weeks, months between any two dates.</div><div class="tag-list"><span class="tag">Any two dates</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
     </a>
 
-    <a href="/tools/time-zone-converter" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#refresh"></use></svg>
-      <div class="tl-body"><div class="tl-name">Time Zone Converter</div><div class="tl-desc">Convert time between major world time zones.</div><div class="tl-tags"><span class="tl-tag">Auto DST</span></div></div>
-      <span class="tl-arrow">→</span>
+    <a href="/tools/time-zone-converter" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#refresh"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Time Zone Converter</div><div class="tool-row-desc">Convert time between major world time zones.</div><div class="tag-list"><span class="tag">Auto DST</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
     </a>
 
-    <a href="/tools/number-base-converter" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#json"></use></svg>
-      <div class="tl-body"><div class="tl-name">Number Base Converter</div><div class="tl-desc">Convert between binary, octal, decimal, and hex.</div><div class="tl-tags"><span class="tl-tag">4 bases</span></div></div>
-      <span class="tl-arrow">→</span>
+    <a href="/tools/number-base-converter" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#json"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Number Base Converter</div><div class="tool-row-desc">Convert between binary, octal, decimal, and hex.</div><div class="tag-list"><span class="tag">4 bases</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
     </a>
 
-    <a href="/tools/wpm-typing-speed-calculator" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#speed"></use></svg>
-      <div class="tl-body"><div class="tl-name">WPM Typing Speed Calculator</div><div class="tl-desc">Live typing test or manual WPM calculator.</div><div class="tl-tags"><span class="tl-tag">Live test</span></div></div>
-      <span class="tl-arrow">→</span>
+    <a href="/tools/wpm-typing-speed-calculator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#speed"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">WPM Typing Speed Calculator</div><div class="tool-row-desc">Live typing test or manual WPM calculator.</div><div class="tag-list"><span class="tag">Live test</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
     </a>
 
-    <a href="/tools/roman-numeral-converter" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#hash"></use></svg>
-      <div class="tl-body"><div class="tl-name">Roman Numeral Converter</div><div class="tl-desc">Convert numbers to and from Roman numerals.</div><div class="tl-tags"><span class="tl-tag">1 to 3999</span></div></div>
-      <span class="tl-arrow">→</span>
+    <a href="/tools/roman-numeral-converter" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#hash"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Roman Numeral Converter</div><div class="tool-row-desc">Convert numbers to and from Roman numerals.</div><div class="tag-list"><span class="tag">1 to 3999</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
     </a>
 
-    <a href="/tools/body-fat-percentage-calculator" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#ruler"></use></svg>
-      <div class="tl-body"><div class="tl-name">Body Fat Percentage Calculator</div><div class="tl-desc">Estimate body fat using the US Navy method.</div><div class="tl-tags"><span class="tl-tag">US Navy method</span></div></div>
-      <span class="tl-arrow">→</span>
+    <a href="/tools/body-fat-percentage-calculator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#ruler"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Body Fat Percentage Calculator</div><div class="tool-row-desc">Estimate body fat using the US Navy method.</div><div class="tag-list"><span class="tag">US Navy method</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
     </a>
 
-    <a href="/tools/salary-hourly-converter" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#emi"></use></svg>
-      <div class="tl-body"><div class="tl-name">Salary to Hourly Converter</div><div class="tl-desc">Convert annual salary to hourly rate and back.</div><div class="tl-tags"><span class="tl-tag">All pay periods</span></div></div>
-      <span class="tl-arrow">→</span>
+    <a href="/tools/salary-hourly-converter" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#emi"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Salary to Hourly Converter</div><div class="tool-row-desc">Convert annual salary to hourly rate and back.</div><div class="tag-list"><span class="tag">All pay periods</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
     </a>
 
   </div>
-</div>
+</section>
 
 <!-- SEO DESCRIPTION -->
-<div class="seo-text">
+<section class="page-section prose">
 
   <h2>About Logrith Calculate & Convert Tools</h2>
 
@@ -346,7 +283,8 @@
 
   <h2>Popular Conversion & Calculation Categories</h2>
 
-  <table class="format-table">
+  <div class="table-wrap">
+    <table class="table">
     <thead>
       <tr>
         <th>Category</th>
@@ -361,123 +299,98 @@
         <td><strong>Length</strong></td>
         <td>Meter, Kilometer, Mile, Inch</td>
         <td>Travel, engineering, education</td>
-        <td>✅ Yes</td>
+        <td><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Yes</td>
       </tr>
 
       <tr>
         <td><strong>Weight</strong></td>
         <td>KG, Gram, Pound</td>
         <td>Fitness, cooking, shipping</td>
-        <td>✅ Yes</td>
+        <td><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Yes</td>
       </tr>
 
       <tr>
         <td><strong>Temperature</strong></td>
         <td>Celsius, Fahrenheit, Kelvin</td>
         <td>Science, weather, studies</td>
-        <td>✅ Yes</td>
+        <td><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Yes</td>
       </tr>
 
       <tr>
         <td><strong>Finance</strong></td>
         <td>EMI, GST, Percentage</td>
         <td>Loans, billing, discounts</td>
-        <td>✅ Yes</td>
+        <td><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Yes</td>
       </tr>
 
       <tr>
         <td><strong>Colors</strong></td>
         <td>HEX, RGB, HSL</td>
         <td>UI/UX, web design, branding</td>
-        <td>✅ Yes</td>
+        <td><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Yes</td>
       </tr>
 
       <tr>
         <td><strong>Data Storage</strong></td>
         <td>KB, MB, GB, TB</td>
         <td>Storage and internet calculations</td>
-        <td>✅ Yes</td>
+        <td><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Yes</td>
       </tr>
     </tbody>
   </table>
+  </div>
 
   <h2>Frequently Asked Questions</h2>
 
-  <div class="faq-item">
-    <div class="faq-q">Are the calculation results accurate?</div>
-    <div class="faq-a">
-      Yes. Logrith tools use standard mathematical formulas and conversion standards to provide accurate and reliable results for daily use, education, business, and financial calculations.
-    </div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">Are the calculation results accurate?</summary>
+      <div class="faq-a"><p>Yes. Logrith tools use standard mathematical formulas and conversion standards to provide accurate and reliable results for daily use, education, business, and financial calculations.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I use these tools on mobile devices?</summary>
+      <div class="faq-a"><p>Absolutely. All tools are optimized for phones, tablets, laptops, and desktop devices with responsive layouts and mobile-friendly controls.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Do I need to create an account?</summary>
+      <div class="faq-a"><p>No. All tools can be used instantly without registration, login, or software installation.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How do I calculate loan EMI?</summary>
+      <div class="faq-a"><p>Open the EMI Calculator, enter the loan amount, annual interest rate, and repayment tenure. The tool instantly calculates your estimated monthly EMI and repayment breakdown.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I calculate GST-inclusive and GST-exclusive prices?</summary>
+      <div class="faq-a"><p>Yes. The GST Calculator supports both GST-inclusive and GST-exclusive calculations for multiple GST slabs commonly used in India.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What color formats are supported?</summary>
+      <div class="faq-a"><p>The Color Converter currently supports HEX, RGB, and HSL color formats for web and design usage.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I calculate discounts and percentage increases?</summary>
+      <div class="faq-a"><p>Yes. The Percentage Calculator can calculate percentage increase, decrease, discounts, percentage difference, and other common percentage-based calculations instantly.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What types of units can I convert?</summary>
+      <div class="faq-a"><p>The Unit Converter supports multiple categories including length, weight, temperature, speed, volume, area, pressure, and digital storage units.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Are these tools free to use?</summary>
+      <div class="faq-a"><p>Yes. All Logrith calculation and conversion tools are completely free to use without subscriptions or hidden charges.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Do the tools work instantly?</summary>
+      <div class="faq-a"><p>Yes. Most calculations and conversions are processed instantly in your browser for a fast and smooth experience.</p></div>
+    </details>
   </div>
 
-  <div class="faq-item">
-    <div class="faq-q">Can I use these tools on mobile devices?</div>
-    <div class="faq-a">
-      Absolutely. All tools are optimized for phones, tablets, laptops, and desktop devices with responsive layouts and mobile-friendly controls.
-    </div>
-  </div>
+</section>
 
-  <div class="faq-item">
-    <div class="faq-q">Do I need to create an account?</div>
-    <div class="faq-a">
-      No. All tools can be used instantly without registration, login, or software installation.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">How do I calculate loan EMI?</div>
-    <div class="faq-a">
-      Open the EMI Calculator, enter the loan amount, annual interest rate, and repayment tenure. The tool instantly calculates your estimated monthly EMI and repayment breakdown.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">Can I calculate GST-inclusive and GST-exclusive prices?</div>
-    <div class="faq-a">
-      Yes. The GST Calculator supports both GST-inclusive and GST-exclusive calculations for multiple GST slabs commonly used in India.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">What color formats are supported?</div>
-    <div class="faq-a">
-      The Color Converter currently supports HEX, RGB, and HSL color formats for web and design usage.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">Can I calculate discounts and percentage increases?</div>
-    <div class="faq-a">
-      Yes. The Percentage Calculator can calculate percentage increase, decrease, discounts, percentage difference, and other common percentage-based calculations instantly.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">What types of units can I convert?</div>
-    <div class="faq-a">
-      The Unit Converter supports multiple categories including length, weight, temperature, speed, volume, area, pressure, and digital storage units.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">Are these tools free to use?</div>
-    <div class="faq-a">
-      Yes. All Logrith calculation and conversion tools are completely free to use without subscriptions or hidden charges.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">Do the tools work instantly?</div>
-    <div class="faq-a">
-      Yes. Most calculations and conversions are processed instantly in your browser for a fast and smooth experience.
-    </div>
-  </div>
-
-</div>
+</main>
 
 <div id="footer"></div>
+<script src="/assets/js/main.js"></script>
 
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
 </body>
 </html>

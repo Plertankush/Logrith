@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -51,17 +55,20 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-simple-interest-calculator">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/calculate-convert">Calculate & Convert</a> › Simple Interest Calculator</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/calculate-convert">Calculate &amp; Convert</a> › Simple Interest Calculator</nav>
   <h1>Free Simple Interest Calculator</h1>
   <p>Calculate simple interest on a principal amount instantly, with a clear breakdown of the formula and total payable.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">🧮 Formula Shown</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#calculator"></use></svg> Formula Shown</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:700px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Enter Details</h2>
     <div class="controls-grid">
@@ -79,55 +86,60 @@
       </div>
     </div>
     <div class="btn-group mt-16">
-      <button class="btn btn-primary btn-lg" id="calc-btn">🧮 Calculate</button>
-      <button class="btn btn-secondary" id="reset-btn">✕ Reset</button>
+      <button class="btn btn-primary btn-lg" id="calc-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#calculator"></use></svg> Calculate</button>
+      <button class="btn btn-secondary" id="reset-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Reset</button>
     </div>
     <div class="status-msg" id="status-msg"></div>
   </div>
 
-  <div class="tool-card" id="result-card" style="display:none;">
+  <div class="tool-card is-hidden" id="result-card">
     <h2>Result</h2>
-    <div class="stat-result-grid" id="result-grid"></div>
+    <div class="stat-grid" id="result-grid"></div>
     <div class="insight-box mt-16" id="formula-box"></div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>What is the formula for simple interest?</h3><p>Simple Interest = (Principal × Rate × Time) ÷ 100, where Rate is the annual percentage rate and Time is in years.</p></div>
-    <div class="faq-item-box"><h3>What's the difference between simple and compound interest?</h3><p>Simple interest is calculated only on the original principal for the full term. Compound interest is calculated on principal plus previously earned interest, so it grows faster over time.</p></div>
-    <div class="faq-item-box"><h3>Where is simple interest commonly used?</h3><p>Simple interest is common for short-term loans, certain bonds, and some basic savings calculations, where compounding isn't applied.</p></div>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card">
-      <h2>How to Use the Simple Interest Calculator</h2>
-      <div class="tool-steps">
-        <div class="tool-step">
-          <strong>1. Enter the principal amount</strong>
-          Type in the original sum being borrowed or invested, in rupees.
-        </div>
-        <div class="tool-step">
-          <strong>2. Enter the annual interest rate</strong>
-          Enter the yearly interest rate as a percentage, such as 8 for 8% per year.
-        </div>
-        <div class="tool-step">
-          <strong>3. Enter the time period</strong>
-          Enter the duration in years — decimals like 2.5 are accepted for part-year terms.
-        </div>
-        <div class="tool-step">
-          <strong>4. Calculate and review</strong>
-          Click "Calculate" to see the interest amount, total payable, and the exact formula substitution used to reach it.
-        </div>
-      </div>
-    </div>
+    <details class="faq-item">
+      <summary class="faq-q">What is the formula for simple interest?</summary>
+      <div class="faq-a"><p>Simple Interest = (Principal × Rate × Time) ÷ 100, where Rate is the annual percentage rate and Time is in years.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What's the difference between simple and compound interest?</summary>
+      <div class="faq-a"><p>Simple interest is calculated only on the original principal for the full term. Compound interest is calculated on principal plus previously earned interest, so it grows faster over time.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Where is simple interest commonly used?</summary>
+      <div class="faq-a"><p>Simple interest is common for short-term loans, certain bonds, and some basic savings calculations, where compounding isn't applied.</p></div>
+    </details>
   </div>
 </section>
 
-<section class="article-section">
+<section class="page-section">
+  <h2>How to Use the Simple Interest Calculator</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Enter the principal amount</strong>
+      <p>Type in the original sum being borrowed or invested, in rupees.</p>
+    </li>
+    <li class="step">
+      <strong>Enter the annual interest rate</strong>
+      <p>Enter the yearly interest rate as a percentage, such as 8 for 8% per year.</p>
+    </li>
+    <li class="step">
+      <strong>Enter the time period</strong>
+      <p>Enter the duration in years — decimals like 2.5 are accepted for part-year terms.</p>
+    </li>
+    <li class="step">
+      <strong>Calculate and review</strong>
+      <p>Click "Calculate" to see the interest amount, total payable, and the exact formula substitution used to reach it.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
   <h2>Simple Interest Explained</h2>
   <p>Simple interest is the most straightforward way to calculate interest on a loan or investment: it's based only on the original principal amount, and stays constant every year regardless of how much interest has already accumulated. This calculator computes simple interest instantly and shows the underlying formula so you can see exactly how the result was reached.</p>
 
@@ -138,7 +150,7 @@
   <p>The key difference is what the interest is calculated on. Simple interest is always calculated on the original principal only, so the interest earned each year is identical. Compound interest, by contrast, is calculated on the principal plus all previously accumulated interest, so the amount of interest earned grows each period. Over short time periods or small amounts, the difference between the two is minor, but over longer periods, compound interest produces significantly more growth (or, for a loan, significantly more cost).</p>
 
   <h3>Where Simple Interest Is Used</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Short-term personal loans</strong> that don't compound interest over their term.</li>
     <li><strong>Certain fixed-term bonds and certificates</strong> that pay a fixed simple interest rate.</li>
     <li><strong>Quick financial estimates</strong> where a straightforward, easy-to-verify calculation is preferred over compound growth modeling.</li>
@@ -161,14 +173,14 @@
   <p>Simple interest is typically the first interest concept introduced in school math and personal finance courses, specifically because the formula has no compounding steps to track — each year contributes an identical, easy-to-predict amount. Using this calculator alongside manual practice problems is a quick way to check your own arithmetic before moving on to compound interest, which builds directly on the same underlying formula.</p>
 
   <h3>Common Mistakes to Avoid</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Entering a monthly rate instead of an annual one</strong> — this formula expects the rate as a yearly percentage; a monthly rate needs to be multiplied by 12 first.</li>
     <li><strong>Entering time in months instead of years</strong> — a 6-month term should be entered as 0.5, not 6, or the result will be off by a factor of 12.</li>
     <li><strong>Assuming simple interest applies to a loan that actually compounds</strong> — most credit cards, many personal loans, and most savings accounts use compound interest, not simple interest, so check the loan or account terms before assuming this formula applies.</li>
   </ul>
 
   <h3>Frequently Searched Terms</h3>
-  <ul class="feature-list">
+  <ul>
     <li>simple interest formula calculator online</li>
     <li>calculate interest on loan amount</li>
     <li>SI calculator with formula</li>
@@ -186,34 +198,31 @@
   <p>Because the result updates instantly, this tool is useful for quickly comparing how sensitive the total payable is to small changes in rate or tenure — for example, checking how much extra interest one additional percentage point on the rate adds over a 5-year term, without needing to redo the arithmetic by hand each time.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/compound-interest-calculator" class="tool-item"><div class="ti-text"><h4>Compound Interest Calculator</h4><p>Calculate compound growth with contributions.</p></div></a>
-    <a href="/tools/emi-calculator" class="tool-item"><div class="ti-text"><h4>EMI Calculator</h4><p>Calculate loan EMI and amortization schedule.</p></div></a>
-    <a href="/tools/loan-affordability-calculator" class="tool-item"><div class="ti-text"><h4>Loan Affordability Calculator</h4><p>Find the maximum loan you can afford.</p></div></a>
-    <a href="/tools/percentage-calculator" class="tool-item"><div class="ti-text"><h4>Percentage Calculator</h4><p>Calculate percentages and ratios quickly.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">simple interest calculator</span>
-        <span class="keyword-tag">simple interest calculator online</span>
-        <span class="keyword-tag">calculate simple interest</span>
-        <span class="keyword-tag">simple interest formula</span>
-        <span class="keyword-tag">free simple interest calculator</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/compound-interest-calculator"><strong>Compound Interest Calculator</strong><span>Calculate compound growth with contributions.</span></a>
+    <a class="related-card" href="/tools/emi-calculator"><strong>EMI Calculator</strong><span>Calculate loan EMI and amortization schedule.</span></a>
+    <a class="related-card" href="/tools/loan-affordability-calculator"><strong>Loan Affordability Calculator</strong><span>Find the maximum loan you can afford.</span></a>
+    <a class="related-card" href="/tools/percentage-calculator"><strong>Percentage Calculator</strong><span>Calculate percentages and ratios quickly.</span></a>
   </div>
 </section>
 
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">simple interest calculator</span>
+    <span class="keyword-tag">simple interest calculator online</span>
+    <span class="keyword-tag">calculate simple interest</span>
+    <span class="keyword-tag">simple interest formula</span>
+    <span class="keyword-tag">free simple interest calculator</span>
+  </div>
+</section>
+
+</main>
+
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 document.getElementById('calc-btn').addEventListener('click', () => {
   const statusEl = document.getElementById('status-msg');
@@ -231,10 +240,10 @@ document.getElementById('calc-btn').addEventListener('click', () => {
   const fmt = v => '₹' + v.toLocaleString('en-IN', {maximumFractionDigits: 2});
 
   document.getElementById('result-grid').innerHTML = `
-    <div class="stat-box"><span class="sb-num">${fmt(principal)}</span><span class="sb-lbl">Principal</span></div>
-    <div class="stat-box"><span class="sb-num" style="color:var(--success);">${fmt(interest)}</span><span class="sb-lbl">Simple Interest</span></div>
+    <div class="stat-box"><span class="stat-num">${fmt(principal)}</span><span class="stat-label">Principal</span></div>
+    <div class="stat-box"><span class="stat-num" style="color:var(--success);">${fmt(interest)}</span><span class="stat-label">Simple Interest</span></div>
     <div class="stat-box" style="background:linear-gradient(135deg,var(--primary),var(--primary-light));border:none;">
-      <span class="sb-num" style="color:white;">${fmt(total)}</span><span class="sb-lbl" style="color:rgba(255,255,255,0.85);">Total Amount</span>
+      <span class="stat-num" style="color:white;">${fmt(total)}</span><span class="stat-label" style="color:rgba(255,255,255,0.85);">Total Amount</span>
     </div>`;
 
   document.getElementById('formula-box').innerHTML =

@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {
@@ -48,37 +52,6 @@
   }
   </script>
 
-  <style>
-    .page-hero { background:linear-gradient(135deg,var(--gray-50) 0%,#eef4ff 50%,var(--gray-100) 100%); padding:60px 24px 48px; text-align:center; border-bottom:1.5px solid var(--gray-200); }
-    .page-hero-inner { max-width:720px; margin:0 auto; }
-    .badge { display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:var(--white);border:1px solid var(--gray-200);border-radius:20px;font-size:.78rem;font-weight:700;color:var(--primary);font-family:var(--font-display);margin-bottom:16px; }
-    .page-hero h1 { font-family:var(--font-display);font-size:clamp(1.8rem,5vw,2.8rem);font-weight:800;color:var(--gray-900);letter-spacing:-.5px;line-height:1.2;margin-bottom:14px; }
-    .page-hero h1 span { color:var(--primary); }
-    .page-hero p { font-size:.98rem;color:var(--gray-700);line-height:1.7; }
-    .tool-list-section { max-width:1100px;margin:0 auto;padding:40px 24px; }
-    .tls-header { margin-bottom:28px; }
-    .tls-header h2 { font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:var(--gray-900);margin-bottom:6px; }
-    .tls-header p { font-size:.88rem;color:var(--gray-500); }
-    .tool-list { display:flex;flex-direction:column;gap:12px; }
-    .tl-item { display:flex;align-items:center;gap:18px;padding:18px 20px;background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);text-decoration:none;transition:var(--transition); }
-    .tl-item:hover { border-color:var(--primary);box-shadow:var(--shadow-md);transform:translateX(4px); }
-    .tl-icon { width:46px;height:46px;background:var(--gray-50);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;transition:var(--transition); }
-    .tl-item:hover .tl-icon { background:var(--primary); }
-    .tl-body { flex:1;min-width:0; }
-    .tl-name { font-family:var(--font-display);font-size:.98rem;font-weight:700;color:var(--gray-900);margin-bottom:3px; }
-    .tl-desc { font-size:.82rem;color:var(--gray-500);line-height:1.5; }
-    .tl-tags { display:flex;gap:6px;flex-wrap:wrap;margin-top:6px; }
-    .tl-tag { padding:2px 8px;background:var(--gray-100);border-radius:10px;font-size:.72rem;color:var(--gray-600); }
-    .tl-arrow { color:var(--gray-300);font-size:1.2rem;flex-shrink:0;transition:var(--transition); }
-    .tl-item:hover .tl-arrow { color:var(--primary);transform:translateX(3px); }
-    .seo-text { max-width:900px;margin:0 auto;padding:0 24px 48px; }
-    .seo-text h2 { font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:var(--gray-900);margin-bottom:12px;margin-top:32px; }
-    .seo-text p { font-size:.93rem;color:var(--gray-700);line-height:1.8;margin-bottom:12px; }
-    .seo-text a { color:var(--primary); }
-    @media(max-width:600px){ .tl-tags{display:none;} }
-    .faq-q::after { content: '+'; color: var(--primary); font-size: 1.3rem; flex-shrink: 0; }
-  </style>
-
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -87,12 +60,15 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-global-tools">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<section class="page-hero">
+<main id="main">
+
+<header class="page-hero">
   <div class="page-hero-inner">
-    <div class="tool-breadcrumb" style="justify-content:center;margin-bottom:14px;"><a href="/">Home</a> › <a href="/categories/categories">Categories</a> › Global Tools</div>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/categories">Categories</a> › Global Tools</nav>
 
     <div class="badge">
       <svg class="icon"><use href="/assets/svg/icons.svg#shield"></use></svg>
@@ -105,64 +81,64 @@
       Inspect PDFs, clean image metadata, repair broken JSON, clean messy CSV files, estimate AI token usage, convert Markdown to HTML, and remove duplicate URLs — seven practical utilities built for users worldwide, processed locally in your browser wherever possible.
     </p>
 
-    <div class="tool-tags" style="justify-content:center;margin-top:16px;">
-      <span class="tool-tag">No Login</span>
-      <span class="tool-tag">Browser-First</span>
-      <span class="tool-tag">Free</span>
+    <div class="tag-list">
+      <span class="tag">No Login</span>
+      <span class="tag">Browser-First</span>
+      <span class="tag">Free</span>
     </div>
+  </div>
+</header>
+
+<section class="page-section">
+  <div class="section-header"><h2>All Global Tools</h2><p>Document, data and developer utilities for a worldwide audience</p></div>
+  <div class="tool-list">
+
+    <a href="/tools/pdf-inspector" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#pdf"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">PDF Inspector</div><div class="tool-row-desc">Analyze PDF metadata, fonts, images, security and document structure directly in your browser.</div><div class="tag-list"><span class="tag">Metadata</span><span class="tag">Fonts</span><span class="tag">Security</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/image-privacy-cleaner" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#image"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Image Privacy Cleaner</div><div class="tool-row-desc">Remove EXIF and GPS metadata from photos before sharing them online, processed locally in your browser.</div><div class="tag-list"><span class="tag">EXIF Removal</span><span class="tag">GPS Strip</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/json-repair" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#json"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">JSON Repair Tool</div><div class="tool-row-desc">Validate, format, and fix common JSON syntax errors with a tree viewer and TypeScript export.</div><div class="tag-list"><span class="tag">Validate</span><span class="tag">Auto-Repair</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/csv-cleaner" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#csv"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">CSV Cleaner</div><div class="tool-row-desc">Remove duplicate rows, trim whitespace, and fix common CSV data problems in your browser.</div><div class="tag-list"><span class="tag">Deduplicate</span><span class="tag">Validate</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/ai-context-calculator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#cpu"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">AI Token & Context Calculator</div><div class="tool-row-desc">Estimate token count, word count, and context window usage for AI prompts and documents.</div><div class="tag-list"><span class="tag">Token Count</span><span class="tag">Context Window</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/markdown-to-html" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#code"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Markdown to HTML Converter</div><div class="tool-row-desc">Convert Markdown to clean, semantic HTML with a live preview, both directions supported.</div><div class="tag-list"><span class="tag">Live Preview</span><span class="tag">Two-Way</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/url-deduplicator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#link"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">URL Deduplicator</div><div class="tool-row-desc">Find and remove duplicate URLs from a pasted list, with normalization and sorting.</div><div class="tag-list"><span class="tag">Normalize</span><span class="tag">Sort</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
   </div>
 </section>
 
-<div class="tool-list-section">
-  <div class="tls-header"><h2>All Global Tools</h2><p>Document, data and developer utilities for a worldwide audience</p></div>
-  <div class="tool-list">
-
-    <a href="/tools/pdf-inspector" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#pdf"></use></svg>
-      <div class="tl-body"><div class="tl-name">PDF Inspector</div><div class="tl-desc">Analyze PDF metadata, fonts, images, security and document structure directly in your browser.</div><div class="tl-tags"><span class="tl-tag">Metadata</span><span class="tl-tag">Fonts</span><span class="tl-tag">Security</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/image-privacy-cleaner" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#image"></use></svg>
-      <div class="tl-body"><div class="tl-name">Image Privacy Cleaner</div><div class="tl-desc">Remove EXIF and GPS metadata from photos before sharing them online, processed locally in your browser.</div><div class="tl-tags"><span class="tl-tag">EXIF Removal</span><span class="tl-tag">GPS Strip</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/json-repair" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#json"></use></svg>
-      <div class="tl-body"><div class="tl-name">JSON Repair Tool</div><div class="tl-desc">Validate, format, and fix common JSON syntax errors with a tree viewer and TypeScript export.</div><div class="tl-tags"><span class="tl-tag">Validate</span><span class="tl-tag">Auto-Repair</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/csv-cleaner" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#csv"></use></svg>
-      <div class="tl-body"><div class="tl-name">CSV Cleaner</div><div class="tl-desc">Remove duplicate rows, trim whitespace, and fix common CSV data problems in your browser.</div><div class="tl-tags"><span class="tl-tag">Deduplicate</span><span class="tl-tag">Validate</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/ai-context-calculator" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#cpu"></use></svg>
-      <div class="tl-body"><div class="tl-name">AI Token & Context Calculator</div><div class="tl-desc">Estimate token count, word count, and context window usage for AI prompts and documents.</div><div class="tl-tags"><span class="tl-tag">Token Count</span><span class="tl-tag">Context Window</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/markdown-to-html" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#code"></use></svg>
-      <div class="tl-body"><div class="tl-name">Markdown to HTML Converter</div><div class="tl-desc">Convert Markdown to clean, semantic HTML with a live preview, both directions supported.</div><div class="tl-tags"><span class="tl-tag">Live Preview</span><span class="tl-tag">Two-Way</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/url-deduplicator" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#link"></use></svg>
-      <div class="tl-body"><div class="tl-name">URL Deduplicator</div><div class="tl-desc">Find and remove duplicate URLs from a pasted list, with normalization and sorting.</div><div class="tl-tags"><span class="tl-tag">Normalize</span><span class="tl-tag">Sort</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-  </div>
-</div>
-
-<div class="seo-text">
+<section class="page-section prose">
  <h2>About Logrith Global Tools</h2>
 
  <p>
@@ -194,51 +170,37 @@
 
 <h2>Frequently Asked Questions</h2>
 
-<div class="faq-item">
-  <div class="faq-q">Are these tools free to use?</div>
-  <div class="faq-a">
-    Yes. All seven Global Tools are completely free, with no account, signup, or usage limit beyond what your browser and device can handle.
-  </div>
+<div class="faq-list">
+  <details class="faq-item">
+    <summary class="faq-q">Are these tools free to use?</summary>
+    <div class="faq-a"><p>Yes. All seven Global Tools are completely free, with no account, signup, or usage limit beyond what your browser and device can handle.</p></div>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-q">Do these tools upload my files to a server?</summary>
+    <div class="faq-a"><p>Wherever technically possible, processing happens entirely in your browser. Each tool's page clearly states its local-processing behavior.</p></div>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-q">Do I need to create an account to use these tools?</summary>
+    <div class="faq-a"><p>No. Every tool in this category is designed for instant use without registration or login.</p></div>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-q">Are these tools suitable for international use?</summary>
+    <div class="faq-a"><p>Yes. This category is specifically designed for a global, English-speaking audience rather than any single country or region.</p></div>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-q">Why does the Image Privacy Cleaner matter — what's actually in a photo's metadata?</summary>
+    <div class="faq-a"><p>Most smartphone cameras automatically embed EXIF data in every photo, which can include exact GPS coordinates, the device model, and the date and time the photo was taken. The Image Privacy Cleaner strips this before you post the photo publicly, without re-compressing or altering the visible image.</p></div>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-q">Can the JSON Repair Tool fix any broken JSON?</summary>
+    <div class="faq-a"><p>It automatically fixes common issues like trailing commas, missing quotes, and single quotes instead of double quotes. Severely malformed JSON may still need manual correction, but the tool's error highlighting shows you exactly where to look.</p></div>
+  </details>
 </div>
+</section>
+</main>
 
-<div class="faq-item">
-  <div class="faq-q">Do these tools upload my files to a server?</div>
-  <div class="faq-a">
-    Wherever technically possible, processing happens entirely in your browser. Each tool's page clearly states its local-processing behavior.
-  </div>
-</div>
-
-<div class="faq-item">
-  <div class="faq-q">Do I need to create an account to use these tools?</div>
-  <div class="faq-a">
-    No. Every tool in this category is designed for instant use without registration or login.
-  </div>
-</div>
-
-<div class="faq-item">
-  <div class="faq-q">Are these tools suitable for international use?</div>
-  <div class="faq-a">
-    Yes. This category is specifically designed for a global, English-speaking audience rather than any single country or region.
-  </div>
-</div>
-
-<div class="faq-item">
-  <div class="faq-q">Why does the Image Privacy Cleaner matter — what's actually in a photo's metadata?</div>
-  <div class="faq-a">
-    Most smartphone cameras automatically embed EXIF data in every photo, which can include exact GPS coordinates, the device model, and the date and time the photo was taken. The Image Privacy Cleaner strips this before you post the photo publicly, without re-compressing or altering the visible image.
-  </div>
-</div>
-
-<div class="faq-item">
-  <div class="faq-q">Can the JSON Repair Tool fix any broken JSON?</div>
-  <div class="faq-a">
-    It automatically fixes common issues like trailing commas, missing quotes, and single quotes instead of double quotes. Severely malformed JSON may still need manual correction, but the tool's error highlighting shows you exactly where to look.
-  </div>
-</div>
-</div>
 <div id="footer"></div>
+<script src="/assets/js/main.js"></script>
 
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
 </body>
 </html>

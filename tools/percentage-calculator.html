@@ -21,14 +21,18 @@
   <meta name="twitter:title" content="Calculate Any Percentage, Increase or Discount | Logrith">
   <meta name="twitter:description" content="Find what a percentage of a number is, the percentage change between two values, or a discounted price — four common calculations in one accurate tool.">
 
-  <link rel="preload" href="/assets/css/style.css" as="style">
-  <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {
@@ -88,21 +92,24 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-percentage-calculator">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/calculate-convert">Calculate & Convert</a> › Percentage Calculator</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/calculate-convert">Calculate &amp; Convert</a> › Percentage Calculator</nav>
   <h1>Free Percentage Calculator</h1>
   <p>Calculate percentages, discounts, percentage change, and more — instantly and free.</p>
-  <div class="tool-tags">
-    <span class="tool-tag">✅ Free</span>
-    <span class="tool-tag">⚡ Instant</span>
-    <span class="tool-tag">4 Calculation Types</span>
+  <div class="tag-list">
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span>
+    <span class="tag">4 Calculation Types</span>
   </div>
-</div></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:760px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>What is X% of Y?</h2>
     <div class="controls-grid">
@@ -118,7 +125,7 @@
     <div class="btn-group mt-12">
       <button class="btn btn-primary" onclick="calc1()">= Calculate</button>
     </div>
-    <div id="r1" style="margin-top:12px;padding:12px;background:var(--gray-50);border-radius:8px;font-size:1.1rem;font-weight:700;color:var(--primary);border:1.5px solid var(--gray-200);">—</div>
+    <div id="r1">—</div>
   </div>
 
   <div class="tool-card">
@@ -136,7 +143,7 @@
     <div class="btn-group mt-12">
       <button class="btn btn-primary" onclick="calc2()">= Calculate</button>
     </div>
-    <div id="r2" style="margin-top:12px;padding:12px;background:var(--gray-50);border-radius:8px;font-size:1.1rem;font-weight:700;color:var(--primary);border:1.5px solid var(--gray-200);">—</div>
+    <div id="r2">—</div>
   </div>
 
   <div class="tool-card">
@@ -154,7 +161,7 @@
     <div class="btn-group mt-12">
       <button class="btn btn-primary" onclick="calc3()">= Calculate</button>
     </div>
-    <div id="r3" style="margin-top:12px;padding:12px;background:var(--gray-50);border-radius:8px;font-size:1.1rem;font-weight:700;color:var(--primary);border:1.5px solid var(--gray-200);">—</div>
+    <div id="r3">—</div>
   </div>
 
   <div class="tool-card">
@@ -172,47 +179,55 @@
     <div class="btn-group mt-12">
       <button class="btn btn-primary" onclick="calc4()">= Calculate</button>
     </div>
-    <div id="r4" style="margin-top:12px;padding:12px;background:var(--gray-50);border-radius:8px;font-size:1rem;font-weight:600;color:var(--primary);border:1.5px solid var(--gray-200);">—</div>
+    <div id="r4">—</div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>How do I calculate 20% of 500?</h3><p>Use the "What is X% of Y?" calculator. Enter 20 as the percentage and 500 as the number. Result: 20% × 500 = 100.</p></div>
-    <div class="faq-item-box"><h3>How do I find percentage increase or decrease?</h3><p>Use the Percentage Change calculator. Enter the old value and new value. Formula: ((New - Old) / |Old|) × 100. A positive result means an increase, negative means a decrease.</p></div>
-    <div class="faq-item-box"><h3>How do I calculate a discount amount?</h3><p>Enter the original price and discount percentage in the Discount Calculator to instantly see the amount saved and the final price.</p></div>
-    <div class="faq-item-box"><h3>Is this percentage calculator free to use?</h3><p>Yes, it's completely free to use online with no login or signup required.</p></div>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card">
-      <h2>How to Use the Percentage Calculator</h2>
-      <div class="tool-steps">
-        <div class="tool-step">
-          <strong>1. Pick the right calculator</strong>
-          Choose among "What is X% of Y?", "X is what % of Y?", Percentage Change, or Discount Calculator based on the question you're trying to answer.
-        </div>
-        <div class="tool-step">
-          <strong>2. Enter your numbers</strong>
-          Type the values into the input fields — percentages, totals, old and new values, or prices as needed.
-        </div>
-        <div class="tool-step">
-          <strong>3. Click Calculate</strong>
-          Press the Calculate button under the relevant card to run the formula instantly.
-        </div>
-        <div class="tool-step">
-          <strong>4. Read the result</strong>
-          The answer appears directly below the inputs, with increases and decreases color-coded in the Percentage Change calculator.
-        </div>
-      </div>
-    </div>
+    <details class="faq-item">
+      <summary class="faq-q">How do I calculate 20% of 500?</summary>
+      <div class="faq-a"><p>Use the "What is X% of Y?" calculator. Enter 20 as the percentage and 500 as the number. Result: 20% × 500 = 100.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How do I find percentage increase or decrease?</summary>
+      <div class="faq-a"><p>Use the Percentage Change calculator. Enter the old value and new value. Formula: ((New - Old) / |Old|) × 100. A positive result means an increase, negative means a decrease.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How do I calculate a discount amount?</summary>
+      <div class="faq-a"><p>Enter the original price and discount percentage in the Discount Calculator to instantly see the amount saved and the final price.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is this percentage calculator free to use?</summary>
+      <div class="faq-a"><p>Yes, it's completely free to use online with no login or signup required.</p></div>
+    </details>
   </div>
 </section>
 
-<section class="article-section">
+<section class="page-section">
+  <h2>How to Use the Percentage Calculator</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Pick the right calculator</strong>
+      <p>Choose among "What is X% of Y?", "X is what % of Y?", Percentage Change, or Discount Calculator based on the question you're trying to answer.</p>
+    </li>
+    <li class="step">
+      <strong>Enter your numbers</strong>
+      <p>Type the values into the input fields — percentages, totals, old and new values, or prices as needed.</p>
+    </li>
+    <li class="step">
+      <strong>Click Calculate</strong>
+      <p>Press the Calculate button under the relevant card to run the formula instantly.</p>
+    </li>
+    <li class="step">
+      <strong>Read the result</strong>
+      <p>The answer appears directly below the inputs, with increases and decreases color-coded in the Percentage Change calculator.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
   <h2>About This Percentage Calculator</h2>
   <p>This free percentage calculator handles four of the most common percentage-related calculations people need in everyday life, school, and work: finding what a percentage of a number is, finding what percentage one number is of another, calculating percentage increase or decrease between two values, and calculating a discount amount and final price. Each calculator works instantly as you enter numbers, with no signup or installation required.</p>
 
@@ -232,7 +247,7 @@
   <p>Percentage math is simple in principle but easy to get subtly wrong in a few common ways. One frequent mistake is confusing percentage change with percentage point change — going from 20% to 25% is a 5 percentage point increase, but it's actually a 25% relative increase (5 ÷ 20 × 100). Another common mistake is applying percentage change in the wrong direction — a 50% decrease followed by a 50% increase does not return a value to its original number, since the second 50% is calculated on a smaller base. This calculator avoids these pitfalls by applying the standard, mathematically correct formulas consistently every time, removing the guesswork from manual calculation.</p>
 
   <h3>Practical Uses Across Different Contexts</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Shopping and discounts</strong> — quickly verifying sale prices and comparing discount percentages across different offers.</li>
     <li><strong>Finance and budgeting</strong> — tracking how much an expense category has grown or shrunk as a percentage of total spending.</li>
     <li><strong>Academic grading</strong> — converting raw scores into percentages, or checking what percentage of a class scored within a certain range.</li>
@@ -245,7 +260,7 @@
 
   <h3>Percentage Formulas Reference</h3>
   <p>For quick reference, here are the four core formulas this calculator applies:</p>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Percentage of a number:</strong> (Percentage ÷ 100) × Number = Result</li>
     <li><strong>What percent is X of Y:</strong> (X ÷ Y) × 100 = Percentage</li>
     <li><strong>Percentage change:</strong> ((New − Old) ÷ |Old|) × 100 = Percentage Change</li>
@@ -260,38 +275,35 @@
   <p>Percentage formulas are short, but manual calculation still leaves room for arithmetic slips, especially with decimals or negative values in percentage change problems. Typing the numbers into this calculator removes that risk and returns a result instantly, which matters most when you're checking several numbers in a row, such as comparing discount percentages across multiple products while shopping.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/gst-calculator" class="tool-item"><div class="ti-text"><h4>GST Calculator</h4><p>Calculate GST inclusive and exclusive amounts instantly.</p></div></a>
-    <a href="/tools/emi-calculator" class="tool-item"><div class="ti-text"><h4>EMI Calculator</h4><p>Calculate loan EMI, total interest, and repayment schedule.</p></div></a>
-    <a href="/tools/unit-converter" class="tool-item"><div class="ti-text"><h4>Unit Converter</h4><p>Convert between length, weight, temperature, and more.</p></div></a>
-    <a href="/tools/age-calculator" class="tool-item"><div class="ti-text"><h4>Age Calculator</h4><p>Find exact age in years, months, and days.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">percentage calculator online</span>
-        <span class="keyword-tag">percentage of a number</span>
-        <span class="keyword-tag">percentage change calculator</span>
-        <span class="keyword-tag">percentage increase calculator</span>
-        <span class="keyword-tag">percentage decrease calculator</span>
-        <span class="keyword-tag">discount calculator online</span>
-        <span class="keyword-tag">what percent calculator</span>
-        <span class="keyword-tag">free percentage calculator</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/gst-calculator"><strong>GST Calculator</strong><span>Calculate GST inclusive and exclusive amounts instantly.</span></a>
+    <a class="related-card" href="/tools/emi-calculator"><strong>EMI Calculator</strong><span>Calculate loan EMI, total interest, and repayment schedule.</span></a>
+    <a class="related-card" href="/tools/unit-converter"><strong>Unit Converter</strong><span>Convert between length, weight, temperature, and more.</span></a>
+    <a class="related-card" href="/tools/age-calculator"><strong>Age Calculator</strong><span>Find exact age in years, months, and days.</span></a>
   </div>
 </section>
 
-<div id="footer"></div>
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">percentage calculator online</span>
+    <span class="keyword-tag">percentage of a number</span>
+    <span class="keyword-tag">percentage change calculator</span>
+    <span class="keyword-tag">percentage increase calculator</span>
+    <span class="keyword-tag">percentage decrease calculator</span>
+    <span class="keyword-tag">discount calculator online</span>
+    <span class="keyword-tag">what percent calculator</span>
+    <span class="keyword-tag">free percentage calculator</span>
+  </div>
+</section>
 
-<script src="/load-components.js"></script>
-<script src="/assets/js/main.js" defer></script>
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+
 
 <script>
 function calc1() {

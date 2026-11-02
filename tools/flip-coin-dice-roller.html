@@ -23,13 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    #coin-display, .dice-face { display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;background:var(--white);border:3px solid var(--primary);border-radius:50%; }
-    #coin-display { width:120px;height:120px;font-size:1.3rem;color:var(--primary); }
-    .dice-face { width:70px;height:70px;border-radius:14px;font-size:1.8rem;color:var(--gray-900); }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -50,24 +49,27 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-flip-coin-dice-roller">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/utilities">Utilities</a> › Coin Flip & Dice Roller</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/utilities">Utilities</a> › Coin Flip & Dice Roller</nav>
   <h1>Free Coin Flip & Dice Roller</h1>
   <p>Flip a coin or roll one or more dice instantly — with a running history log of your results.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">🎲 Multiple Dice</span><span class="tool-tag">📋 History Log</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#random"></use></svg> Multiple Dice</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> History Log</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:700px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Coin Flip</h2>
-    <div style="text-align:center;padding:16px;">
+    <div class="u-103721">
       <div id="coin-display">TAILS</div>
     </div>
-    <div class="btn-group" style="justify-content:center;">
-      <button class="btn btn-primary btn-lg" id="flip-btn">🪙 Flip Coin</button>
+    <div class="btn-group u-9b54a3">
+      <button class="btn btn-primary btn-lg" id="flip-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#currency"></use></svg> Flip Coin</button>
     </div>
   </div>
 
@@ -77,41 +79,62 @@
       <label>Number of Dice: <span id="dice-count-val">2</span></label>
       <input type="range" id="dice-count" min="1" max="6" value="2">
     </div>
-    <div id="dice-display" style="display:flex;gap:12px;justify-content:center;padding:16px;flex-wrap:wrap;"></div>
-    <div class="btn-group" style="justify-content:center;">
-      <button class="btn btn-primary btn-lg" id="roll-btn">🎲 Roll Dice</button>
+    <div id="dice-display"></div>
+    <div class="btn-group u-9b54a3">
+      <button class="btn btn-primary btn-lg" id="roll-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#random"></use></svg> Roll Dice</button>
     </div>
-    <div class="mini-note mt-8" style="text-align:center;" id="dice-total"></div>
+    <div class="mini-note mt-8 text-center" id="dice-total"></div>
   </div>
 
-  <div class="tool-card" id="history-card" style="display:none;">
+  <div class="tool-card is-hidden" id="history-card">
     <h2>History</h2>
-    <div id="history-list" style="display:flex;flex-direction:column;gap:6px;max-height:240px;overflow-y:auto;"></div>
+    <div id="history-list"></div>
     <div class="btn-group mt-12">
-      <button class="btn btn-secondary btn-sm" id="clear-history-btn">✕ Clear History</button>
+      <button class="btn btn-secondary btn-sm" id="clear-history-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Clear History</button>
     </div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>Is the coin flip truly random?</h3><p>It uses JavaScript's random number generator, giving each side an equal 50/50 chance, suitable for games, decisions, and general randomization needs.</p></div>
-    <div class="faq-item-box"><h3>How many dice can I roll at once?</h3><p>Roll between 1 and 6 standard six-sided dice simultaneously.</p></div>
-    <div class="faq-item-box"><h3>Does this keep a history of results?</h3><p>Yes, both coin flips and dice rolls are logged in a history list so you can review previous results.</p></div>
-    <div class="faq-item-box"><h3>Does the history save if I close the tab?</h3><p>No, the history log only persists for your current browser session. Closing or refreshing the page clears it, since nothing is saved to a server or stored permanently.</p></div>
-    <div class="faq-item-box"><h3>Can I roll more than six dice at once?</h3><p>The slider is capped at 6 dice to keep the display clean and readable. For larger quantities, roll in multiple batches and add the totals together.</p></div>
-    <div class="faq-item-box"><h3>Is this fair enough to settle a real decision?</h3><p>Yes, both the coin flip and dice roll use a uniformly distributed random function, giving every outcome an equal chance, just like a fair physical coin or die.</p></div>
-    <div class="faq-item-box"><h3>Can I use this to simulate dice with more than six sides?</h3><p>This tool is built specifically around standard six-sided dice. For other die types, such as a twenty-sided die used in tabletop RPGs, Logrith's Random Number Generator can simulate any custom range.</p></div>
+    <details class="faq-item">
+      <summary class="faq-q">Is the coin flip truly random?</summary>
+      <div class="faq-a"><p>It uses JavaScript's random number generator, giving each side an equal 50/50 chance, suitable for games, decisions, and general randomization needs.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How many dice can I roll at once?</summary>
+      <div class="faq-a"><p>Roll between 1 and 6 standard six-sided dice simultaneously.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does this keep a history of results?</summary>
+      <div class="faq-a"><p>Yes, both coin flips and dice rolls are logged in a history list so you can review previous results.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does the history save if I close the tab?</summary>
+      <div class="faq-a"><p>No, the history log only persists for your current browser session. Closing or refreshing the page clears it, since nothing is saved to a server or stored permanently.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I roll more than six dice at once?</summary>
+      <div class="faq-a"><p>The slider is capped at 6 dice to keep the display clean and readable. For larger quantities, roll in multiple batches and add the totals together.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is this fair enough to settle a real decision?</summary>
+      <div class="faq-a"><p>Yes, both the coin flip and dice roll use a uniformly distributed random function, giving every outcome an equal chance, just like a fair physical coin or die.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I use this to simulate dice with more than six sides?</summary>
+      <div class="faq-a"><p>This tool is built specifically around standard six-sided dice. For other die types, such as a twenty-sided die used in tabletop RPGs, Logrith's Random Number Generator can simulate any custom range.</p></div>
+    </details>
   </div>
-</div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>Free Coin Flip and Dice Roller</h2>
   <p>This tool provides both a simple coin flip (heads or tails) and a multi-dice roller (1-6 standard six-sided dice), each with a running history log so you can track previous results. Useful for games, decision-making, tabletop gaming, or settling friendly disputes.</p>
 
   <h3>Common Uses</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Making quick decisions</strong> — using a coin flip to choose between two options.</li>
     <li><strong>Tabletop and board games</strong> — rolling dice for games that need randomization without physical dice.</li>
     <li><strong>Teaching probability</strong> — demonstrating randomness and probability concepts with visible results and history.</li>
@@ -128,7 +151,7 @@
   <p>A running history log serves a few practical purposes beyond simple novelty. For games that require tracking cumulative results — like keeping score across several rounds, or verifying no one's claiming a different outcome than what actually happened — having a visible, timestamped-in-order log settles any dispute instantly. It's also useful for anyone demonstrating basic probability concepts, since watching the actual distribution of heads/tails or dice totals accumulate over many trials is a more convincing illustration of statistical concepts like the law of large numbers than any single flip or roll could be on its own.</p>
 
   <h3>Common Situations Where This Tool Helps</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Settling a quick decision</strong> between two options when neither side has a strong preference.</li>
     <li><strong>Board games and tabletop RPGs</strong> that call for six-sided dice, without needing to dig out physical dice.</li>
     <li><strong>Teaching basic probability</strong> in a classroom setting, using visible results and a history log as a live demonstration.</li>
@@ -146,27 +169,40 @@
   <p>A coin flip is the natural choice whenever a decision genuinely has just two outcomes — yes or no, option A or option B, who goes first. A dice roll fits better when there are more than two possibilities, or when you specifically need a numeric outcome rather than a binary one — choosing among six options, generating a random score, or simulating a specific game mechanic that calls for a six-sided die. Reaching for the right tool for the actual decision at hand, rather than defaulting to whichever is more familiar, keeps the randomization matched to how many genuinely different outcomes the situation calls for.</p>
 
   <h3>Step-by-Step: Flipping or Rolling</h3>
-  <div class="tool-steps">
-    <div class="tool-step"><strong>1. Pick coin or dice</strong>Use the Coin Flip card for a two-outcome decision, or the Dice Roller for numbered results.</div>
-    <div class="tool-step"><strong>2. Set dice count if needed</strong>Use the slider to choose how many dice to roll at once, from 1 to 6.</div>
-    <div class="tool-step"><strong>3. Flip or roll</strong>Click the button to get an instant, randomized result.</div>
-    <div class="tool-step"><strong>4. Check the history</strong>Scroll the history log to review previous flips and rolls from your current session.</div>
+  <ol class="steps">
+    <li class="step">
+      <strong>Pick coin or dice</strong>
+      <p>Use the Coin Flip card for a two-outcome decision, or the Dice Roller for numbered results.</p>
+    </li>
+    <li class="step">
+      <strong>Set dice count if needed</strong>
+      <p>Use the slider to choose how many dice to roll at once, from 1 to 6.</p>
+    </li>
+    <li class="step">
+      <strong>Flip or roll</strong>
+      <p>Click the button to get an instant, randomized result.</p>
+    </li>
+    <li class="step">
+      <strong>Check the history</strong>
+      <p>Scroll the history log to review previous flips and rolls from your current session.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/tools/random-number-generator"><strong>Random Number Generator</strong><span>Generate random numbers with custom range.</span></a>
+    <a class="related-card" href="/tools/random-team-generator"><strong>Random Team Generator</strong><span>Split a list of names into random teams.</span></a>
+    <a class="related-card" href="/tools/random-name-generator"><strong>Random Name Generator</strong><span>Generate random names for games or testing.</span></a>
+    <a class="related-card" href="/tools/random-quote-generator"><strong>Random Quote Generator</strong><span>Get inspiring quotes by category.</span></a>
   </div>
 </section>
 
-<div class="content-card related-tools">
-  <h2>Related Tools</h2>
-  <div class="related-grid">
-    <a href="/tools/random-number-generator" class="tool-item"><div class="ti-text"><h4>Random Number Generator</h4><p>Generate random numbers with custom range.</p></div></a>
-    <a href="/tools/random-team-generator" class="tool-item"><div class="ti-text"><h4>Random Team Generator</h4><p>Split a list of names into random teams.</p></div></a>
-    <a href="/tools/random-name-generator" class="tool-item"><div class="ti-text"><h4>Random Name Generator</h4><p>Generate random names for games or testing.</p></div></a>
-    <a href="/tools/random-quote-generator" class="tool-item"><div class="ti-text"><h4>Random Quote Generator</h4><p>Get inspiring quotes by category.</p></div></a>
-  </div>
-</div>
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 let history = [];
 
@@ -182,14 +218,14 @@ function addHistory(entry) {
 document.getElementById('flip-btn').addEventListener('click', () => {
   const result = Math.random() < 0.5 ? 'HEADS' : 'TAILS';
   document.getElementById('coin-display').textContent = result;
-  addHistory(`🪙 Coin Flip: <strong>${result}</strong>`);
+  addHistory(`<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#currency"></use></svg> Coin Flip: <strong>${result}</strong>`);
 });
 
 document.getElementById('dice-count').addEventListener('input', e => {
   document.getElementById('dice-count-val').textContent = e.target.value;
 });
 
-const DICE_FACES = ['⚀','⚁','⚂','⚃','⚄','⚅'];
+const DICE_FACES = [1, 2, 3, 4, 5, 6].map((n) => `<svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#dice-${n}"></use></svg>`);
 
 document.getElementById('roll-btn').addEventListener('click', () => {
   const count = parseInt(document.getElementById('dice-count').value);
@@ -201,7 +237,7 @@ document.getElementById('roll-btn').addEventListener('click', () => {
 
   const total = rolls.reduce((a,b) => a+b, 0);
   document.getElementById('dice-total').textContent = `Total: ${total} (${rolls.join(' + ')})`;
-  addHistory(`🎲 Dice Roll (${count}): <strong>${rolls.join(', ')}</strong> = ${total}`);
+  addHistory(`<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#random"></use></svg> Dice Roll (${count}): <strong>${rolls.join(', ')}</strong> = ${total}`);
 });
 
 document.getElementById('clear-history-btn').addEventListener('click', () => {

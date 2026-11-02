@@ -23,47 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .bp-hero { max-width:820px;margin:0 auto;padding:48px 20px 8px; }
-    .bp-crumb { font-size:.85rem;color:var(--gray-500);margin-bottom:16px; }
-    .bp-crumb a { color:var(--primary);text-decoration:none; }
-    .bp-hero h1 { font-family:var(--font-display);font-size:2rem;line-height:1.25;color:var(--gray-900);margin-bottom:14px; }
-    .bp-hero .bp-dek { font-size:1.05rem;color:var(--gray-700);line-height:1.7;margin-bottom:20px; }
-    .bp-cta { display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:white;padding:13px 26px;border-radius:var(--radius);font-weight:700;text-decoration:none;font-size:.95rem; }
-    .bp-cta svg { width:17px;height:17px; }
-    .bp-cta:hover { background:var(--primary-dark); }
-    .bp-body { max-width:760px;margin:0 auto;padding:28px 20px 20px; }
-    .bp-body h2 { font-family:var(--font-display);font-size:1.5rem;color:var(--gray-900);margin:38px 0 14px; }
-    .bp-body h3 { font-family:var(--font-display);font-size:1.15rem;color:var(--gray-900);margin:26px 0 10px; }
-    .bp-body p { color:var(--gray-700);line-height:1.8;margin-bottom:16px;font-size:1rem; }
-    .bp-body ul, .bp-body ol { color:var(--gray-700);line-height:1.8;margin:0 0 16px 22px; }
-    .bp-body li { margin-bottom:8px; }
-    .bp-body strong { color:var(--gray-900); }
-    .bp-toc { background:var(--gray-50);border-radius:var(--radius-lg);padding:20px 24px;margin:24px 0; }
-    .bp-toc h2 { margin:0 0 10px;font-size:1.05rem; }
-    .bp-toc ol { margin:0 0 0 20px; }
-    .bp-toc a { color:var(--primary);text-decoration:none; }
-    .bp-table { width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:.92rem; }
-    .bp-table th, .bp-table td { border:1px solid var(--gray-200);padding:10px 12px;text-align:left; }
-    .bp-table th { background:var(--gray-50);font-weight:700;color:var(--gray-900); }
-    .bp-howto { counter-reset:step; list-style:none;margin-left:0; }
-    .bp-howto li { position:relative;padding-left:42px;margin-bottom:18px; }
-    .bp-howto li::before { counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;background:var(--primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem; }
-    .bp-faq-item { border-bottom:1px solid var(--gray-200);padding:16px 0; }
-    .bp-faq-item h3 { margin:0 0 8px; font-size:1.02rem; }
-    .bp-byline { font-size:.82rem;color:var(--gray-500);margin-top:10px; }
-    .bp-related { max-width:1000px;margin:0 auto;padding:20px 20px 60px; }
-    .bp-related h2 { font-family:var(--font-display);font-size:1.4rem;color:var(--gray-900);margin-bottom:18px;text-align:center; }
-    .bp-related-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px; }
-    .bp-related-card { border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:18px;text-decoration:none;color:inherit;background:var(--white); }
-    .bp-related-card h4 { font-size:.95rem;color:var(--gray-900);margin-bottom:6px; }
-    .bp-related-card p { font-size:.82rem;color:var(--gray-700);line-height:1.5; }
-    .bp-prevnext { display:flex;justify-content:space-between;gap:16px;max-width:760px;margin:0 auto;padding:0 20px 20px; }
-    .bp-prevnext a { flex:1;border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:12px 16px;text-decoration:none;color:var(--gray-700);font-size:.85rem; }
-    .bp-prevnext a strong { display:block;color:var(--gray-900);font-size:.92rem; }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -98,23 +63,26 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-extract-text-from-pdf">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="bp-hero">
-  <div class="bp-crumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/image-pdf-tools">Image & PDF Tools</a> &rsaquo; PDF to Text</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/image-pdf-tools">Image & PDF Tools</a> &rsaquo; PDF to Text</nav>
   <h1>How to Pull Readable, Copyable Text Out of Any PDF</h1>
-  <p class="bp-dek">Copying a paragraph out of a PDF should be as simple as selecting text in any document, but plenty of PDFs make this harder than it should be — locked layouts, awkward column breaks, or content you need in bulk rather than one careful selection at a time. Extracting the full text at once solves this, as long as the PDF actually contains real text to begin with rather than being a scanned image wearing a PDF file extension.</p>
-  <a href="/tools/pdf-to-text" class="bp-cta">
+  <p>Copying a paragraph out of a PDF should be as simple as selecting text in any document, but plenty of PDFs make this harder than it should be — locked layouts, awkward column breaks, or content you need in bulk rather than one careful selection at a time. Extracting the full text at once solves this, as long as the PDF actually contains real text to begin with rather than being a scanned image wearing a PDF file extension.</p>
+  <a href="/tools/pdf-to-text" class="btn btn-primary btn-lg">
     <svg class="icon"><use href="/assets/svg/icons.svg#file-text"></use></svg>
     Extract PDF Text
   </a>
-  <p class="bp-byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
-</div>
+  <p class="byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
+</div></header>
 
-<div class="bp-body">
+<article class="page-section prose">
 
-  <div class="bp-toc">
+  <nav class="toc" aria-label="On this page">
     <h2>On This Page</h2>
     <ol>
       <li><a href="#how-to-use">How to Extract Text from a PDF</a></li>
@@ -125,14 +93,22 @@
       <li><a href="#mistakes">Common Mistakes</a></li>
       <li><a href="#faq">Frequently Asked Questions</a></li>
     </ol>
-  </div>
+  </nav>
 
   <h2 id="how-to-use">How to Extract Text from a PDF</h2>
-  <ol class="bp-howto">
-    <li>Open the <a href="/tools/pdf-to-text">PDF to Text tool</a> and upload your PDF.</li>
-    <li>The tool reads every page's text layer and displays the extracted content.</li>
-    <li>Copy the text directly, or download it as a plain text file.</li>
-    <li>No file was uploaded to a server — extraction happens entirely using PDF.js in your browser.</li>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the <a href="/tools/pdf-to-text">PDF to Text tool</a> and upload your PDF.</p>
+    </li>
+    <li class="step">
+      <p>The tool reads every page's text layer and displays the extracted content.</p>
+    </li>
+    <li class="step">
+      <p>Copy the text directly, or download it as a plain text file.</p>
+    </li>
+    <li class="step">
+      <p>No file was uploaded to a server — extraction happens entirely using PDF.js in your browser.</p>
+    </li>
   </ol>
 
   <h2 id="text-vs-scan">Text-Based PDFs vs. Scanned PDFs</h2>
@@ -151,13 +127,15 @@
   <p>If text extraction returns nothing, or returns content that clearly doesn't match a text-based document (confirming the PDF is actually a scanned image), Optical Character Recognition becomes the relevant technology instead. OCR works fundamentally differently from text-layer extraction — rather than reading stored character data, it visually analyzes the image of each page and attempts to recognize individual characters and words based on their shapes, essentially the same task a human does when reading a scanned document, but automated. OCR accuracy depends heavily on scan quality, font clarity, and image resolution, and even high-quality OCR introduces some recognition errors that a genuine text layer never would, since it's fundamentally guessing at characters from pixels rather than reading stored data directly. Understanding this distinction helps set the right expectations: extraction from a real text layer is essentially always perfectly accurate, while OCR results always warrant a proofread pass before relying on them completely.</p>
 
   <h2 id="comparison">Comparison vs. Other PDF-to-Text Tools</h2>
-  <table class="bp-table">
+  <div class="table-wrap">
+    <table class="table">
     <tr><th>Feature</th><th>Logrith PDF to Text</th><th>iLovePDF</th><th>Smallpdf</th></tr>
     <tr><td>Processing location</td><td>Entirely in-browser</td><td>Server upload</td><td>Server upload</td></tr>
     <tr><td>OCR for scanned PDFs</td><td>No — text-layer extraction only</td><td>Yes, OCR available as a separate tool</td><td>Yes, OCR available on paid tiers</td></tr>
     <tr><td>Free usage limit</td><td>Unlimited</td><td>Unlimited, file size caps apply</td><td>2 tasks per day (free tier)</td></tr>
     <tr><td>Account required</td><td>No</td><td>No</td><td>No</td></tr>
   </table>
+  </div>
   <p>Both major competitors offer OCR as an additional capability for scanned documents, which Logrith's current tool doesn't provide — if your document is a scan rather than a text-based PDF, a dedicated OCR tool is necessary regardless of which extraction tool you start with. For genuinely text-based PDFs, which cover the large majority of everyday documents (contracts, reports, articles, exported documents), Logrith's tool extracts the same underlying text data instantly and privately, without the file ever leaving your device.</p>
 
   <h2>Real-World Scenarios</h2>
@@ -184,39 +162,54 @@
   <h3>Why Choose Logrith</h3>
   <p>Extraction happens entirely using PDF.js in your browser, with no upload of potentially sensitive document content to any server — a meaningful consideration for contracts, financial documents, or anything else you'd rather not hand to a third party just to copy some text out of it. This same local-processing standard applies across Logrith's other PDF tools, so a document can move through extraction, splitting, merging, or compression without ever leaving your device at any stage.</p>
 
-</div>
+</article>
 
-<div class="bp-body">
+<article class="page-section prose">
   <h2 id="faq">Frequently Asked Questions</h2>
-  <div class="bp-faq-item"><h3>Why won't this tool extract text from a scanned PDF?</h3><p>A scanned PDF is actually a photo of a page, not real text data — extraction finds nothing because there isn't a text layer. Scanned documents require OCR, a different technology that reads text from an image.</p></div>
-  <div class="bp-faq-item"><h3>Does extracted text preserve the original formatting?</h3><p>Generally not exactly. Extracted text preserves the words and general reading order, but layout details like multi-column formatting and tables often don't translate cleanly into plain text.</p></div>
-  <div class="bp-faq-item"><h3>Is it safe to extract text from a confidential PDF online?</h3><p>Only if the tool processes the file entirely in your browser. Many tools upload your file to a server. Logrith's PDF to Text tool never does — everything runs locally using PDF.js.</p></div>
-  <div class="bp-faq-item"><h3>How can I tell if a PDF has real text or is a scanned image?</h3><p>Try selecting text in a PDF viewer. If you can highlight individual words, it has a real text layer. If clicking only selects the whole page as one image, it's scanned and requires OCR.</p></div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">Why won't this tool extract text from a scanned PDF?</summary>
+      <div class="faq-a"><p>A scanned PDF is actually a photo of a page, not real text data — extraction finds nothing because there isn't a text layer. Scanned documents require OCR, a different technology that reads text from an image.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does extracted text preserve the original formatting?</summary>
+      <div class="faq-a"><p>Generally not exactly. Extracted text preserves the words and general reading order, but layout details like multi-column formatting and tables often don't translate cleanly into plain text.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is it safe to extract text from a confidential PDF online?</summary>
+      <div class="faq-a"><p>Only if the tool processes the file entirely in your browser. Many tools upload your file to a server. Logrith's PDF to Text tool never does — everything runs locally using PDF.js.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How can I tell if a PDF has real text or is a scanned image?</summary>
+      <div class="faq-a"><p>Try selecting text in a PDF viewer. If you can highlight individual words, it has a real text layer. If clicking only selects the whole page as one image, it's scanned and requires OCR.</p></div>
+    </details>
+  </div>
 
   <h2>Working with Extracted Text in Other Tools</h2>
   <p>Once text is out of a PDF, it typically becomes far more useful across other software than it was locked inside the original document. Plain text drops cleanly into a word processor for further editing, into a translation tool for converting to another language, into an AI system for summarization or analysis, or into a spreadsheet if the content includes structured data worth reorganizing into rows and columns. This portability is exactly the point of extraction — a PDF's own internal structure is optimized for consistent visual display across devices, not for being reused as raw material somewhere else, and converting to plain text removes that display-oriented packaging, leaving just the content itself, ready to be reshaped for whatever the next step actually requires.</p>
 
   <h2>Conclusion</h2>
   <p>For any PDF with a genuine text layer, extraction is instant, accurate, and completely private when it happens locally in your browser rather than through a server upload. The one hard limit worth internalizing is scanned documents — no text extraction tool can pull data that was never stored as text in the first place, and recognizing that distinction quickly saves the confusion of wondering why extraction "isn't working" on a document that was simply photographed rather than typed, pointing you toward OCR instead when that's genuinely what the task requires.</p>
-</div>
+</article>
 
-<div class="bp-prevnext">
+<nav class="post-nav page-section" aria-label="More guides">
   <a href="/blog/make-a-meme-online-free">&larr; Previous: <strong>Meme Generator Guide</strong></a>
   <a href="/blog/delete-pdf-pages-free">Next: <strong>PDF Page Remover Guide</strong> &rarr;</a>
-</div>
+</nav>
 
-<div class="bp-related">
+<section class="page-section">
   <h2>Related Tools</h2>
-  <div class="bp-related-grid">
-    <a href="/blog/extract-pages-from-pdf-online-free" class="bp-related-card"><h4>PDF Split</h4><p>Extract specific pages before pulling their text.</p></a>
-    <a href="/blog/convert-pdf-to-jpg-choose-right-dpi" class="bp-related-card"><h4>PDF to JPG</h4><p>Convert pages to images when text extraction isn't possible.</p></a>
-    <a href="/blog/merge-multiple-pdf-files-into-one-free" class="bp-related-card"><h4>PDF Merge</h4><p>Combine documents before extracting text from all of them.</p></a>
-    <a href="/blog/pdf-compressor" class="bp-related-card"><h4>PDF Compressor</h4><p>Reduce a large PDF's size for easier handling.</p></a>
+  <div class="related-grid">
+    <a class="related-card" href="/blog/extract-pages-from-pdf-online-free"><strong>PDF Split</strong><span>Extract specific pages before pulling their text.</span></a>
+    <a class="related-card" href="/blog/convert-pdf-to-jpg-choose-right-dpi"><strong>PDF to JPG</strong><span>Convert pages to images when text extraction isn't possible.</span></a>
+    <a class="related-card" href="/blog/merge-multiple-pdf-files-into-one-free"><strong>PDF Merge</strong><span>Combine documents before extracting text from all of them.</span></a>
+    <a class="related-card" href="/blog/pdf-compressor"><strong>PDF Compressor</strong><span>Reduce a large PDF's size for easier handling.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

@@ -21,9 +21,13 @@
   <meta name="twitter:title" content="Compress Images to an Exact KB Size | Logrith">
   <meta name="twitter:description" content="Shrink JPG, PNG and WEBP photos to a target size in your browser — batch compress, resize and convert in one pass.">
 
-  <link rel="preload" href="/assets/css/style.css" as="style">
-  <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="icon" href="/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {
@@ -123,27 +127,30 @@
   </script>
  
 </head>
-<body>
+<body class="page-tools-image-compressor">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/#image-tools">Image Tools</a> › Image Compressor</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/image-pdf-tools">Image &amp; PDF Tools</a> › Image Compressor</nav>
   <h1>Free Image Compressor Online</h1>
   <p>Compress images your way — reduce quality, resize dimensions, convert format, target a file size, or use ready-made presets for web, email, WhatsApp, and more.</p>
-  <div class="tool-tags">
-    <span class="tool-tag">✅ Free</span>
-    <span class="tool-tag">⚡ Multi-Mode</span>
-    <span class="tool-tag">🔒 Browser-Based</span>
-    <span class="tool-tag">🖼️ JPG, PNG, WEBP</span>
+  <div class="tag-list">
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Multi-Mode</span>
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lock"></use></svg> Browser-Based</span>
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#image"></use></svg> JPG, PNG, WEBP</span>
   </div>
-</div></div>
+</div></header>
 
 <div class="tool-workspace">
   <div class="tool-card">
     <h2>Upload Image(s)</h2>
     <div class="upload-zone" id="upload-zone">
       <input type="file" id="file-input" accept="image/jpeg,image/png,image/webp" multiple>
-      <div class="upload-icon">📦</div>
+      <div class="upload-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#package"></use></svg></div>
       <h3>Drop images here or click to browse</h3>
       <p>Supports JPG, PNG, WEBP — up to 10 images</p>
       <span class="upload-limit">Max 20MB per file</span>
@@ -151,7 +158,7 @@
     <div id="file-list" class="mt-12"></div>
   </div>
 
-  <div class="tool-card" id="settings-card" style="display:none;">
+  <div class="tool-card is-hidden" id="settings-card">
     <h2>Choose Compression Method</h2>
 
     <div class="mode-grid" id="mode-grid">
@@ -195,8 +202,8 @@
         </div>
       </div>
       <div class="control-group mt-12">
-        <label style="display:flex;align-items:center;gap:8px;">
-          <input type="checkbox" id="keep-ratio" checked style="width:16px;height:16px;">
+        <label class="u-2a9780">
+          <input type="checkbox" id="keep-ratio" checked>
           Keep aspect ratio
         </label>
       </div>
@@ -260,58 +267,54 @@
     </div>
 
     <div class="mt-16 btn-group">
-      <button class="btn btn-primary btn-lg" id="compress-btn">📦 Compress Images</button>
-      <button class="btn btn-secondary" id="reset-btn">✕ Reset</button>
+      <button class="btn btn-primary btn-lg" id="compress-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#package"></use></svg> Compress Images</button>
+      <button class="btn btn-secondary" id="reset-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Reset</button>
     </div>
 
     <div class="progress-bar mt-12" id="progress"><div class="progress-fill" id="progress-fill"></div></div>
     <div class="status-msg" id="status-msg"></div>
   </div>
 
-  <div class="tool-card" id="preview-card" style="display:none;">
+  <div class="tool-card is-hidden" id="preview-card">
     <h2>Preview</h2>
     <div class="preview-grid" id="preview-grid"></div>
   </div>
 
-  <div class="tool-card" id="output-card" style="display:none;">
+  <div class="tool-card is-hidden" id="output-card">
     <h2>Compressed Results</h2>
     <div class="result-list" id="results-list"></div>
     <div class="summary-strip" id="summary-strip"></div>
     <div class="btn-group mt-16">
-      <button class="btn btn-success" id="download-all-btn">⬇️ Download All</button>
+      <button class="btn btn-success" id="download-all-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#download"></use></svg> Download All</button>
       <button class="btn btn-secondary" id="compress-more-btn">+ Compress More</button>
     </div>
   </div>
 </div>
-<section class="seo-section">
-    <div class="seo-wrap">
-      <div class="content-card">
-        <h2>How to Use This Image Compressor</h2>
-        <div class="tool-steps">
-          <div class="tool-step">
-            <strong>1. Upload image</strong>
-            Add one or multiple JPG, PNG, or WEBP images.
-          </div>
-          <div class="tool-step">
-            <strong>2. Choose mode</strong>
-            Select quality, resize, target KB, preset, or format conversion.
-          </div>
-          <div class="tool-step">
-            <strong>3. Adjust settings</strong>
-            Set the quality, exact dimensions, or output type as needed.
-          </div>
-          <div class="tool-step">
-            <strong>4. Download result</strong>
-            Get optimized images with lower file size and better usability.
-          </div>
-        </div>
-      </div>
-    </div>
-</section>
+  <section class="page-section">
+    <h2>How to Use This Image Compressor</h2>
+    <ol class="steps">
+      <li class="step">
+        <strong>Upload image</strong>
+        <p>Add one or multiple JPG, PNG, or WEBP images.</p>
+      </li>
+      <li class="step">
+        <strong>Choose mode</strong>
+        <p>Select quality, resize, target KB, preset, or format conversion.</p>
+      </li>
+      <li class="step">
+        <strong>Adjust settings</strong>
+        <p>Set the quality, exact dimensions, or output type as needed.</p>
+      </li>
+      <li class="step">
+        <strong>Download result</strong>
+        <p>Get optimized images with lower file size and better usability.</p>
+      </li>
+    </ol>
+  </section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>Why Our Image Compressor Is Best</h2>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Fast:</strong> Compresses images instantly in the browser using Canvas — no upload wait time.</li>
     <li><strong>Private:</strong> Local browser-based processing means your images never leave your device.</li>
     <li><strong>Free:</strong> Use the tool unlimited times without signup or installation.</li>
@@ -320,7 +323,7 @@
   </ul>
 </section>
 
-<div class="article-section">
+<section class="page-section prose">
  <h2>Free Image Compressor Online for JPG, PNG, and WEBP</h2>
           <p>Image compression is one of the most useful tasks for modern websites, online forms, social media uploads, document portals, portfolios, e-commerce listings, and email attachments. Large image files slow down websites, increase upload time, waste storage, and can even fail when a platform sets a strict size limit. That is why an image compressor should be flexible enough to support different types of optimization instead of relying on only a single compression slider.</p>
 
@@ -354,79 +357,73 @@
           <p>Users search with many related phrases such as image compressor online, reduce image size, compress JPG online, compress PNG online, resize image online, image optimizer online, WEBP converter, and target file size image compressor. A page that explains these use cases clearly while also offering the actual working tool is more useful than a thin page with only a button and no guidance. The goal is to help the user finish the task, not just land on the page.</p>
 
           <p>If you need a browser-based image compressor that gives control over quality, dimensions, output format, target file size, and preset-based optimization, this Logrith tool is built to cover those use cases in a single workflow. It is free, practical, and designed for everyday image compression needs.</p>
-</div>
-
-<section class="seo-section">
-    <div class="seo-wrap">
-      <div class="content-card faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-list">
-          <div class="faq-item-box">
-            <h3>How do I compress an image online for free?</h3>
-            <p>Upload your image, choose a compression mode, adjust the settings, and download the smaller file instantly.</p>
-          </div>
-          <div class="faq-item-box">
-            <h3>Can I resize my image before compressing it?</h3>
-            <p>Yes. You can resize by percentage or enter exact width and height before saving the final image.</p>
-          </div>
-          <div class="faq-item-box">
-            <h3>Which format is best for smaller file size?</h3>
-            <p>WEBP is often the smallest for photos, while JPG is widely supported and PNG is better when transparency matters.</p>
-          </div>
-          <div class="faq-item-box">
-            <h3>Can I compress multiple images at once?</h3>
-            <p>Yes. The tool can support batch compression so you can handle multiple files in one workflow.</p>
-          </div>
-          <div class="faq-item-box">
-            <h3>Does target file size mode help for forms and uploads?</h3>
-            <p>Yes. Target size mode is useful when you need an image under a specific file-size limit such as 100 KB, 200 KB, or another custom upload restriction.</p>
-          </div>
-          <div class="faq-item-box">
-            <h3>Does converting PNG to JPG or WEBP reduce file size?</h3>
-            <p>Yes. Converting large PNG files to JPG or WEBP can reduce file size significantly when transparency is not required.</p>
-          </div>
-        </div>
-      </div>
-    </div>
 </section>
 
+  <section class="page-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">How do I compress an image online for free?</summary>
+        <div class="faq-a"><p>Upload your image, choose a compression mode, adjust the settings, and download the smaller file instantly.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Can I resize my image before compressing it?</summary>
+        <div class="faq-a"><p>Yes. You can resize by percentage or enter exact width and height before saving the final image.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Which format is best for smaller file size?</summary>
+        <div class="faq-a"><p>WEBP is often the smallest for photos, while JPG is widely supported and PNG is better when transparency matters.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Can I compress multiple images at once?</summary>
+        <div class="faq-a"><p>Yes. The tool can support batch compression so you can handle multiple files in one workflow.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Does target file size mode help for forms and uploads?</summary>
+        <div class="faq-a"><p>Yes. Target size mode is useful when you need an image under a specific file-size limit such as 100 KB, 200 KB, or another custom upload restriction.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Does converting PNG to JPG or WEBP reduce file size?</summary>
+        <div class="faq-a"><p>Yes. Converting large PNG files to JPG or WEBP can reduce file size significantly when transparency is not required.</p></div>
+      </details>
+    </div>
+  </section>
 
-<div class="content-card related-tools">
+
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/image-converter" class="tool-item"><div class="ti-text"><h4>Image Converter</h4><p>Convert JPG, PNG, and WEBP images into other formats online.</p></div></a>
-    <a href="/tools/image-resize" class="tool-item"><div class="ti-text"><h4>Image Resize</h4><p>Resize image dimensions for web, social media, and forms.</p></div></a>
-    <a href="/tools/image-crop" class="tool-item"><div class="ti-text"><h4>Image Crop</h4><p>Crop photos and screenshots before export or upload.</p></div></a>
-    <a href="/tools/jpg-to-pdf" class="tool-item"><div class="ti-text"><h4>JPG to PDF</h4><p>Turn images into PDF documents quickly.</p></div></a>
-    <a href="/tools/pdf-to-jpg" class="tool-item"><div class="ti-text"><h4>PDF to JPG</h4><p>Extract PDF pages as image files online.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">image compressor online</span>
-        <span class="keyword-tag">compress JPG online</span>
-        <span class="keyword-tag">compress PNG online</span>
-        <span class="keyword-tag">reduce image size</span>
-        <span class="keyword-tag">resize image online</span>
-        <span class="keyword-tag">target file size compressor</span>
-        <span class="keyword-tag">bulk image compressor</span>
-        <span class="keyword-tag">photo compressor online</span>
-        <span class="keyword-tag">image optimizer online</span>
-        <span class="keyword-tag">WEBP converter</span>
-        <span class="keyword-tag">convert PNG to JPG</span>
-        <span class="keyword-tag">image size reducer</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/image-converter"><strong>Image Converter</strong><span>Convert JPG, PNG, and WEBP images into other formats online.</span></a>
+    <a class="related-card" href="/tools/image-resize"><strong>Image Resize</strong><span>Resize image dimensions for web, social media, and forms.</span></a>
+    <a class="related-card" href="/tools/image-crop"><strong>Image Crop</strong><span>Crop photos and screenshots before export or upload.</span></a>
+    <a class="related-card" href="/tools/jpg-to-pdf"><strong>JPG to PDF</strong><span>Turn images into PDF documents quickly.</span></a>
+    <a class="related-card" href="/tools/pdf-to-jpg"><strong>PDF to JPG</strong><span>Extract PDF pages as image files online.</span></a>
   </div>
 </section>
 
-<div id="footer"></div>
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">image compressor online</span>
+    <span class="keyword-tag">compress JPG online</span>
+    <span class="keyword-tag">compress PNG online</span>
+    <span class="keyword-tag">reduce image size</span>
+    <span class="keyword-tag">resize image online</span>
+    <span class="keyword-tag">target file size compressor</span>
+    <span class="keyword-tag">bulk image compressor</span>
+    <span class="keyword-tag">photo compressor online</span>
+    <span class="keyword-tag">image optimizer online</span>
+    <span class="keyword-tag">WEBP converter</span>
+    <span class="keyword-tag">convert PNG to JPG</span>
+    <span class="keyword-tag">image size reducer</span>
+  </div>
+</section>
 
-<script src="/load-components.js"></script>
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+
 
 <script>
 (function () {
@@ -561,7 +558,7 @@
     if (!accepted.length) return;
     files = accepted;
     fileList.innerHTML = files.map(f =>
-      '<span class="stat-chip">📄 <strong>' + f.name + '</strong> — ' + formatSize(f.size) + '</span>'
+      '<span class="stat-chip"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#file-text"></use></svg> <strong>' + f.name + '</strong> — ' + formatSize(f.size) + '</span>'
     ).join('');
     settingsCard.style.display = 'block';
     previewCard.style.display = 'none';
@@ -753,11 +750,11 @@
               '<span class="' + badgeClass + '">' + (savePct > 0 ? ('↓ ' + savePct + '% saved') : 'Low savings') + '</span>' +
             '</div>' +
             '<div class="btn-group mt-12">' +
-              '<button class="btn btn-success btn-sm" data-idx="' + i + '">⬇️ Download</button>' +
+              '<button class="btn btn-success btn-sm" data-idx="' + i + '"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#download"></use></svg> Download</button>' +
             '</div>' +
           '</div>';
       } catch (e) {
-        resultsList.innerHTML += '<div class="result-card" style="color:var(--error);">✗ ' + files[i].name + ': ' + e.message + '</div>';
+        resultsList.innerHTML += '<div class="result-card" style="color:var(--error);"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#x-circle"></use></svg> ' + files[i].name + ': ' + e.message + '</div>';
       }
     }
 

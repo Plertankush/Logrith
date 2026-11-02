@@ -14,20 +14,13 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#000000">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .page-hero { background: linear-gradient(135deg, #f0f4ff 0%, #e8f7f5 100%); padding: 64px 24px 52px; text-align: center; border-bottom: 1.5px solid var(--gray-200); }
-    .page-hero h1 { font-family: var(--font-display); font-size: clamp(1.8rem,5vw,2.6rem); font-weight: 800; color: var(--gray-900); margin-bottom: 12px; }
-    .page-hero h1 span { color: var(--primary); }
-    .page-hero p { font-size:1rem; color:var(--gray-700); max-width:540px; margin:0 auto; line-height:1.7; }
-    .breadcrumb { display:flex;align-items:center;gap:6px;font-size:.82rem;color:var(--gray-500);justify-content:center;margin-bottom:16px; }
-    .breadcrumb a { color:var(--primary);text-decoration:none; }
-    .faq-wrap { max-width: 860px; margin: 0 auto; padding: 52px 24px 60px; }
-    .faq-category { margin-bottom: 44px; }
-    .faq-category-title { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
-    .faq-category-title::after { content:''; flex:1; height:1px; background:var(--gray-200); }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -51,40 +44,47 @@
  </script>
  
 </head>
-<body>
+<body class="page-faq">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="page-hero">
-  <div class="breadcrumb"><a href="/">Home</a> › FAQ</div>
+<main id="main">
+
+<header class="page-hero">
+  <div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › FAQ</nav>
   <h1>Frequently Asked <span>Questions</span></h1>
   <p>Everything you need to know about Logrith — how it works, what's safe, and what's coming next.</p>
-</div>
+  </div>
+</header>
 
-<div class="faq-wrap">
+<div class="faq-wrap container">
 
   <!-- GENERAL -->
   <div class="faq-category">
     <div class="faq-category-title"><svg class="icon"><use href="/assets/svg/icons.svg#globe"></use></svg> General</div>
 
-    <div class="faq-item">
-      <div class="faq-q">What is Logrith?</div>
-      <div class="faq-a">Logrith is a free online tool hub with 100+ browser-based utilities for image editing, PDF management, developer workflows, text processing, and everyday calculations. Every tool runs 100% in your browser — no server upload, no account, no install required.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Is Logrith really free? Are there hidden costs?</div>
-      <div class="faq-a">Completely free, no exceptions. No premium tier, no usage credits, no watermarks on downloads, no account required. The platform is supported by non-intrusive advertising, not by charging users.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">How many tools does Logrith have?</div>
-      <div class="faq-a">Logrith currently has 100+ fully functional tools live and ready to use right now. New tools are added regularly based on user demand. Categories include Image & PDF, Calculate & Convert, Text & Generators, Developer Tools, Utilities, and AI Tools.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Do I need to create an account or log in?</div>
-      <div class="faq-a">No. Zero registration, zero login, zero personal information required. Every tool is immediately accessible. There is no sign-up form anywhere on Logrith.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Which browsers does Logrith support?</div>
-      <div class="faq-a">All modern browsers — Chrome 90+, Firefox 88+, Safari 14+, Edge 90+, and Brave. Both desktop and mobile versions of these browsers are supported. Internet Explorer is not supported as it lacks the modern web APIs Logrith tools rely on.</div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">What is Logrith?</summary>
+        <div class="faq-a"><p>Logrith is a free online tool hub with 100+ browser-based utilities for image editing, PDF management, developer workflows, text processing, and everyday calculations. Every tool runs 100% in your browser — no server upload, no account, no install required.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Is Logrith really free? Are there hidden costs?</summary>
+        <div class="faq-a"><p>Completely free, no exceptions. No premium tier, no usage credits, no watermarks on downloads, no account required. The platform is supported by non-intrusive advertising, not by charging users.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">How many tools does Logrith have?</summary>
+        <div class="faq-a"><p>Logrith currently has 100+ fully functional tools live and ready to use right now. New tools are added regularly based on user demand. Categories include Image &amp; PDF, Calculate &amp; Convert, Text &amp; Generators, Developer Tools, Utilities, and AI Tools.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Do I need to create an account or log in?</summary>
+        <div class="faq-a"><p>No. Zero registration, zero login, zero personal information required. Every tool is immediately accessible. There is no sign-up form anywhere on Logrith.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Which browsers does Logrith support?</summary>
+        <div class="faq-a"><p>All modern browsers — Chrome 90+, Firefox 88+, Safari 14+, Edge 90+, and Brave. Both desktop and mobile versions of these browsers are supported. Internet Explorer is not supported as it lacks the modern web APIs Logrith tools rely on.</p></div>
+      </details>
     </div>
   </div>
 
@@ -92,21 +92,23 @@
   <div class="faq-category">
     <div class="faq-category-title"><svg class="icon"><use href="/assets/svg/icons.svg#shield-check"></use></svg> Privacy & Safety</div>
 
-    <div class="faq-item">
-      <div class="faq-q">Are my files uploaded to Logrith's servers?</div>
-      <div class="faq-a">No. This is the most important thing to understand about Logrith: all file processing happens entirely in your browser using JavaScript APIs. Your images, PDFs, and documents are never transmitted to any server. You can verify this yourself by opening Chrome DevTools → Network tab and using any tool — you'll see zero file upload requests.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Is it safe to process sensitive documents on Logrith?</div>
-      <div class="faq-a">Yes. Since files never leave your device, Logrith is safe for sensitive documents — contracts, financial statements, personal photos, confidential business files. The processing happens in your browser's sandboxed JavaScript environment and the data is never accessible to us.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Does Logrith collect any personal data?</div>
-      <div class="faq-a">Logrith does not collect, store, or process any personal data or file contents. We use standard anonymous analytics (page views, general usage patterns) to understand which tools are most used. No individual user data, no file contents, no search queries are ever stored. See our Privacy Policy for full details.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Can I use Logrith offline?</div>
-      <div class="faq-a">Most tools work offline after the page has loaded once, since all processing is local. Some tools load JavaScript libraries from CDN (PDF-Lib, QRCode.js) which require an initial internet connection. After the library loads, the actual processing is offline-capable.</div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">Are my files uploaded to Logrith's servers?</summary>
+        <div class="faq-a"><p>No. This is the most important thing to understand about Logrith: all file processing happens entirely in your browser using JavaScript APIs. Your images, PDFs, and documents are never transmitted to any server. You can verify this yourself by opening Chrome DevTools → Network tab and using any tool — you'll see zero file upload requests.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Is it safe to process sensitive documents on Logrith?</summary>
+        <div class="faq-a"><p>Yes. Since files never leave your device, Logrith is safe for sensitive documents — contracts, financial statements, personal photos, confidential business files. The processing happens in your browser's sandboxed JavaScript environment and the data is never accessible to us.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Does Logrith collect any personal data?</summary>
+        <div class="faq-a"><p>Logrith does not collect, store, or process any personal data or file contents. We use standard anonymous analytics (page views, general usage patterns) to understand which tools are most used. No individual user data, no file contents, no search queries are ever stored. See our Privacy Policy for full details.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Can I use Logrith offline?</summary>
+        <div class="faq-a"><p>Most tools work offline after the page has loaded once, since all processing is local. Some tools load JavaScript libraries from CDN (PDF-Lib, QRCode.js) which require an initial internet connection. After the library loads, the actual processing is offline-capable.</p></div>
+      </details>
     </div>
   </div>
 
@@ -114,21 +116,23 @@
   <div class="faq-category">
     <div class="faq-category-title"><svg class="icon"><use href="/assets/svg/icons.svg#image"></use></svg> Image Tools</div>
 
-    <div class="faq-item">
-      <div class="faq-q">How do I convert JPG to PNG on Logrith?</div>
-      <div class="faq-a">Open the Image Converter tool, upload your JPG file (drag & drop or click to browse), select PNG as the output format, then click Convert. The download starts immediately. You can also batch convert multiple files at once.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">How much can I compress an image without losing quality?</div>
-      <div class="faq-a">At 75–80% quality, JPG and WEBP files are typically 40–70% smaller with no visible difference to the human eye. The Image Compressor shows you the exact before/after file sizes and percentage saved. PNG compression is lossless — it removes metadata without affecting visual quality.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">What image formats are supported?</div>
-      <div class="faq-a">Logrith Image Converter supports JPG/JPEG, PNG, WEBP, BMP, and GIF. For output, you can convert to JPG, PNG, WEBP, or BMP. HEIC (iPhone format) is not directly supported by browser Canvas API — convert HEIC to JPG on your phone first using the built-in share options.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">What is WEBP and why should I use it?</div>
-      <div class="faq-a">WEBP is a modern image format developed by Google. It produces files 25–34% smaller than equivalent JPG or PNG at the same visual quality. Using WEBP on your website directly improves Google PageSpeed scores and Core Web Vitals. All modern browsers support WEBP.</div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">How do I convert JPG to PNG on Logrith?</summary>
+        <div class="faq-a"><p>Open the Image Converter tool, upload your JPG file (drag &amp; drop or click to browse), select PNG as the output format, then click Convert. The download starts immediately. You can also batch convert multiple files at once.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">How much can I compress an image without losing quality?</summary>
+        <div class="faq-a"><p>At 75–80% quality, JPG and WEBP files are typically 40–70% smaller with no visible difference to the human eye. The Image Compressor shows you the exact before/after file sizes and percentage saved. PNG compression is lossless — it removes metadata without affecting visual quality.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">What image formats are supported?</summary>
+        <div class="faq-a"><p>Logrith Image Converter supports JPG/JPEG, PNG, WEBP, BMP, and GIF. For output, you can convert to JPG, PNG, WEBP, or BMP. HEIC (iPhone format) is not directly supported by browser Canvas API — convert HEIC to JPG on your phone first using the built-in share options.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">What is WEBP and why should I use it?</summary>
+        <div class="faq-a"><p>WEBP is a modern image format developed by Google. It produces files 25–34% smaller than equivalent JPG or PNG at the same visual quality. Using WEBP on your website directly improves Google PageSpeed scores and Core Web Vitals. All modern browsers support WEBP.</p></div>
+      </details>
     </div>
   </div>
 
@@ -136,21 +140,23 @@
   <div class="faq-category">
     <div class="faq-category-title"><svg class="icon"><use href="/assets/svg/icons.svg#pdf"></use></svg> PDF Tools</div>
 
-    <div class="faq-item">
-      <div class="faq-q">How do I merge multiple PDF files?</div>
-      <div class="faq-a">Open PDF Merge, upload all your PDF files, drag them to set the order if needed, then click Merge PDFs. The tool uses PDF-Lib running in your browser to combine the files. Download the merged PDF instantly. No file size limits beyond available browser memory.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Can I extract specific pages from a PDF?</div>
-      <div class="faq-a">Yes. In PDF Split, select "Extract Page Range" and enter ranges like "1-5, 8, 10-12". The tool creates a new PDF with exactly those pages. You can also split a PDF into individual single-page PDFs using the "Split All Pages" option.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Will PDF processing reduce document quality?</div>
-      <div class="faq-a">No. PDF-Lib copies page objects directly from source files without re-encoding. Text remains selectable, images retain original resolution, and all formatting is preserved. Merging, splitting, and rotating are metadata operations that don't affect content quality.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">What is the maximum PDF file size?</div>
-      <div class="faq-a">Each PDF has a 20MB individual file limit. Total combined size for merge operations depends on available browser memory (typically 100–200MB on desktop). For very large PDFs, we recommend splitting them into smaller chunks first.</div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">How do I merge multiple PDF files?</summary>
+        <div class="faq-a"><p>Open PDF Merge, upload all your PDF files, drag them to set the order if needed, then click Merge PDFs. The tool uses PDF-Lib running in your browser to combine the files. Download the merged PDF instantly. No file size limits beyond available browser memory.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Can I extract specific pages from a PDF?</summary>
+        <div class="faq-a"><p>Yes. In PDF Split, select "Extract Page Range" and enter ranges like "1-5, 8, 10-12". The tool creates a new PDF with exactly those pages. You can also split a PDF into individual single-page PDFs using the "Split All Pages" option.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Will PDF processing reduce document quality?</summary>
+        <div class="faq-a"><p>No. PDF-Lib copies page objects directly from source files without re-encoding. Text remains selectable, images retain original resolution, and all formatting is preserved. Merging, splitting, and rotating are metadata operations that don't affect content quality.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">What is the maximum PDF file size?</summary>
+        <div class="faq-a"><p>Each PDF has a 20MB individual file limit. Total combined size for merge operations depends on available browser memory (typically 100–200MB on desktop). For very large PDFs, we recommend splitting them into smaller chunks first.</p></div>
+      </details>
     </div>
   </div>
 
@@ -158,17 +164,19 @@
   <div class="faq-category">
     <div class="faq-category-title"><svg class="icon"><use href="/assets/svg/icons.svg#code"></use></svg> Developer Tools</div>
 
-    <div class="faq-item">
-      <div class="faq-q">Is the password generator cryptographically secure?</div>
-      <div class="faq-a">Yes. Logrith's Password Generator uses <code>crypto.getRandomValues()</code> — the Web Crypto API — which provides cryptographically secure randomness equivalent to what operating systems and security software use. It is not the weak Math.random() used by many generator sites.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Can I hash files, not just text?</div>
-      <div class="faq-a">Yes. The Hash Generator supports files up to 100MB. It uses <code>SubtleCrypto.digest()</code> to compute SHA-1, SHA-256, SHA-384, and SHA-512 hashes. File hashing is useful for verifying download integrity — compare the hash with what the software publisher provides.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Does the JSON formatter work on large files?</div>
-      <div class="faq-a">The JSON formatter works on files up to about 50–100MB depending on your device's available memory. For very large JSON files, use the command-line tool <code>jq</code> instead. For typical API responses and config files, the formatter handles any size without issues.</div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">Is the password generator cryptographically secure?</summary>
+        <div class="faq-a"><p>Yes. Logrith's Password Generator uses <code>crypto.getRandomValues()</code> — the Web Crypto API — which provides cryptographically secure randomness equivalent to what operating systems and security software use. It is not the weak Math.random() used by many generator sites.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Can I hash files, not just text?</summary>
+        <div class="faq-a"><p>Yes. The Hash Generator supports files up to 100MB. It uses <code>SubtleCrypto.digest()</code> to compute SHA-1, SHA-256, SHA-384, and SHA-512 hashes. File hashing is useful for verifying download integrity — compare the hash with what the software publisher provides.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Does the JSON formatter work on large files?</summary>
+        <div class="faq-a"><p>The JSON formatter works on files up to about 50–100MB depending on your device's available memory. For very large JSON files, use the command-line tool <code>jq</code> instead. For typical API responses and config files, the formatter handles any size without issues.</p></div>
+      </details>
     </div>
   </div>
 
@@ -176,28 +184,31 @@
   <div class="faq-category">
     <div class="faq-category-title"><svg class="icon"><use href="/assets/svg/icons.svg#settings"></use></svg> Technical</div>
 
-    <div class="faq-item">
-      <div class="faq-q">A tool isn't working — what should I do?</div>
-      <div class="faq-a">1) Try refreshing the page. 2) Clear browser cache (Ctrl+Shift+R). 3) Try Chrome or Firefox if on another browser. 4) Check that your file is within the size limit. 5) If the issue persists, please report it on our Contact page with the tool name and what happened — we fix bugs within 48 hours.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Why do some tools need internet even though they're "client-side"?</div>
-      <div class="faq-a">Some tools load JavaScript libraries (PDF-Lib, PDF.js, QRCode.js) from CDN on first use. After the library downloads, the actual processing is local. Once you've visited a tool page, most tools work offline due to browser caching. Pure JavaScript tools (text tools, calculators, JSON formatter) work fully offline from the first visit.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Can I use Logrith tools programmatically via API?</div>
-      <div class="faq-a">Logrith is a browser-only platform — there is no public API. For programmatic access, use the same libraries we use: PDF-Lib (npm), Sharp (Node.js image processing), and the Web Crypto API directly in your JavaScript code. An API is on the long-term roadmap.</div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">A tool isn't working — what should I do?</summary>
+        <div class="faq-a"><p>1) Try refreshing the page. 2) Clear browser cache (Ctrl+Shift+R). 3) Try Chrome or Firefox if on another browser. 4) Check that your file is within the size limit. 5) If the issue persists, please report it on our Contact page with the tool name and what happened — we fix bugs within 48 hours.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Why do some tools need internet even though they're "client-side"?</summary>
+        <div class="faq-a"><p>Some tools load JavaScript libraries (PDF-Lib, PDF.js, QRCode.js) from CDN on first use. After the library downloads, the actual processing is local. Once you've visited a tool page, most tools work offline due to browser caching. Pure JavaScript tools (text tools, calculators, JSON formatter) work fully offline from the first visit.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Can I use Logrith tools programmatically via API?</summary>
+        <div class="faq-a"><p>Logrith is a browser-only platform — there is no public API. For programmatic access, use the same libraries we use: PDF-Lib (npm), Sharp (Node.js image processing), and the Web Crypto API directly in your JavaScript code. An API is on the long-term roadmap.</p></div>
+      </details>
     </div>
   </div>
 
-  <div style="text-align:center;padding:32px 0;border-top:1px solid var(--gray-200);margin-top:20px;">
-    <p style="font-size:.95rem;color:var(--gray-700);margin-bottom:16px;">Still have a question? We're happy to help.</p>
+  <div class="u-7f46fc">
+    <p class="u-d59a7e">Still have a question? We're happy to help.</p>
     <a href=" /pages/contact" class="btn btn-primary">Contact Us →</a>
   </div>
 </div>
 
+</main>
+
 <div id="footer"></div>
-<script src="/load-components.js"></script>
-<script src="/assets/js/main.js" defer></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

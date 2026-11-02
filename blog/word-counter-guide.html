@@ -23,47 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .bp-hero { max-width:820px;margin:0 auto;padding:48px 20px 8px; }
-    .bp-crumb { font-size:.85rem;color:var(--gray-500);margin-bottom:16px; }
-    .bp-crumb a { color:var(--primary);text-decoration:none; }
-    .bp-hero h1 { font-family:var(--font-display);font-size:2rem;line-height:1.25;color:var(--gray-900);margin-bottom:14px; }
-    .bp-hero .bp-dek { font-size:1.05rem;color:var(--gray-700);line-height:1.7;margin-bottom:20px; }
-    .bp-cta { display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:white;padding:13px 26px;border-radius:var(--radius);font-weight:700;text-decoration:none;font-size:.95rem; }
-    .bp-cta svg { width:17px;height:17px; }
-    .bp-cta:hover { background:var(--primary-dark); }
-    .bp-body { max-width:760px;margin:0 auto;padding:28px 20px 20px; }
-    .bp-body h2 { font-family:var(--font-display);font-size:1.5rem;color:var(--gray-900);margin:38px 0 14px; }
-    .bp-body h3 { font-family:var(--font-display);font-size:1.15rem;color:var(--gray-900);margin:26px 0 10px; }
-    .bp-body p { color:var(--gray-700);line-height:1.8;margin-bottom:16px;font-size:1rem; }
-    .bp-body ul, .bp-body ol { color:var(--gray-700);line-height:1.8;margin:0 0 16px 22px; }
-    .bp-body li { margin-bottom:8px; }
-    .bp-body strong { color:var(--gray-900); }
-    .bp-toc { background:var(--gray-50);border-radius:var(--radius-lg);padding:20px 24px;margin:24px 0; }
-    .bp-toc h2 { margin:0 0 10px;font-size:1.05rem; }
-    .bp-toc ol { margin:0 0 0 20px; }
-    .bp-toc a { color:var(--primary);text-decoration:none; }
-    .bp-table { width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:.92rem; }
-    .bp-table th, .bp-table td { border:1px solid var(--gray-200);padding:10px 12px;text-align:left; }
-    .bp-table th { background:var(--gray-50);font-weight:700;color:var(--gray-900); }
-    .bp-howto { counter-reset:step; list-style:none;margin-left:0; }
-    .bp-howto li { position:relative;padding-left:42px;margin-bottom:18px; }
-    .bp-howto li::before { counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;background:var(--primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem; }
-    .bp-faq-item { border-bottom:1px solid var(--gray-200);padding:16px 0; }
-    .bp-faq-item h3 { margin:0 0 8px; font-size:1.02rem; }
-    .bp-byline { font-size:.82rem;color:var(--gray-500);margin-top:10px; }
-    .bp-related { max-width:1000px;margin:0 auto;padding:20px 20px 60px; }
-    .bp-related h2 { font-family:var(--font-display);font-size:1.4rem;color:var(--gray-900);margin-bottom:18px;text-align:center; }
-    .bp-related-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px; }
-    .bp-related-card { border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:18px;text-decoration:none;color:inherit;background:var(--white); }
-    .bp-related-card h4 { font-size:.95rem;color:var(--gray-900);margin-bottom:6px; }
-    .bp-related-card p { font-size:.82rem;color:var(--gray-700);line-height:1.5; }
-    .bp-prevnext { display:flex;justify-content:space-between;gap:16px;max-width:760px;margin:0 auto;padding:0 20px 20px; }
-    .bp-prevnext a { flex:1;border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:12px 16px;text-decoration:none;color:var(--gray-700);font-size:.85rem; }
-    .bp-prevnext a strong { display:block;color:var(--gray-900);font-size:.92rem; }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -97,23 +62,26 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-word-counter-guide">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="bp-hero">
-  <div class="bp-crumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/text-generators">Text & Generators</a> &rsaquo; Word Counter</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/text-generators">Text & Generators</a> &rsaquo; Word Counter</nav>
   <h1>Why Two Word Counters Can Give You Two Different Numbers</h1>
-  <p class="bp-dek">Paste the same paragraph into two different word counters and you'll occasionally get two slightly different numbers, which is more unsettling than it should be when you're trying to hit an exact word limit for an essay, article, or application. The discrepancy isn't a bug — it's a genuine difference in how "word" gets defined, and understanding why helps you know when to trust a quick estimate versus when to check the exact platform your text is headed to.</p>
-  <a href="/tools/word-counter" class="bp-cta">
+  <p>Paste the same paragraph into two different word counters and you'll occasionally get two slightly different numbers, which is more unsettling than it should be when you're trying to hit an exact word limit for an essay, article, or application. The discrepancy isn't a bug — it's a genuine difference in how "word" gets defined, and understanding why helps you know when to trust a quick estimate versus when to check the exact platform your text is headed to.</p>
+  <a href="/tools/word-counter" class="btn btn-primary btn-lg">
     <svg class="icon"><use href="/assets/svg/icons.svg#file-text"></use></svg>
     Count Words
   </a>
-  <p class="bp-byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
-</div>
+  <p class="byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
+</div></header>
 
-<div class="bp-body">
+<article class="page-section prose">
 
-  <div class="bp-toc">
+  <nav class="toc" aria-label="On this page">
     <h2>On This Page</h2>
     <ol>
       <li><a href="#how-to-use">How to Count Words and Characters</a></li>
@@ -125,25 +93,35 @@
       <li><a href="#mistakes">Common Mistakes</a></li>
       <li><a href="#faq">Frequently Asked Questions</a></li>
     </ol>
-  </div>
+  </nav>
 
   <h2 id="how-to-use">How to Count Words and Characters</h2>
-  <ol class="bp-howto">
-    <li>Open the <a href="/tools/word-counter">Word Counter</a> to get started immediately.</li>
-    <li>Paste or type your text directly into the input area provided.</li>
-    <li>View the instant word count, character count (with and without spaces), and sentence count.</li>
-    <li>Edit your text and watch the counts update live as you type.</li>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the <a href="/tools/word-counter">Word Counter</a> to get started immediately.</p>
+    </li>
+    <li class="step">
+      <p>Paste or type your text directly into the input area provided.</p>
+    </li>
+    <li class="step">
+      <p>View the instant word count, character count (with and without spaces), and sentence count.</p>
+    </li>
+    <li class="step">
+      <p>Edit your text and watch the counts update live as you type.</p>
+    </li>
   </ol>
 
   <h2 id="why-differ">Why Word Counts Differ Between Tools</h2>
   <p>This is genuinely one of the more common points of confusion for anyone who has ever compared results across two different word counting tools on the exact same text. The core reason is that "word" doesn't have one single, universally agreed-upon technical definition — different tools make different, reasonable choices about edge cases, and those choices compound across a full document into a noticeably different total. Hyphenated compounds ("well-known") might be counted as one word by one tool and two by another. Numbers, standalone punctuation marks, and certain special characters get handled inconsistently across different counting implementations. Even something as simple as multiple consecutive spaces between words can occasionally trip up a naive counting algorithm if it's not specifically designed to collapse them correctly before counting. None of these tools are "wrong" exactly — they're each applying a defensible, internally consistent definition of what counts as a word, they just don't all apply the same one, which is exactly why the discrepancy shows up more the longer and more varied the text is, since more edge cases naturally appear across a longer document than a short, simple sentence.</p>
 
   <h2 id="char-count">Character Count: With Spaces vs. Without</h2>
-  <table class="bp-table">
+  <div class="table-wrap">
+    <table class="table">
     <tr><th>Measurement</th><th>What's Included</th><th>Common Use</th></tr>
     <tr><td>Characters with spaces</td><td>Every character including all whitespace</td><td>Platforms and forms that count total input length literally</td></tr>
     <tr><td>Characters without spaces</td><td>Only letters, numbers, and punctuation</td><td>Contexts focused specifically on actual content length</td></tr>
   </table>
+  </div>
   <p>This distinction matters most for anything with a strict character limit, since the two counts can differ by a meaningful margin for longer text — a paragraph with a hundred words easily contains close to a hundred spaces between them, meaning the "with spaces" count can run roughly 15-20% higher than the "without spaces" count for typical English prose. Always check which specific count a platform's stated limit refers to before assuming your text fits, since a piece of writing that fits comfortably under a without-spaces limit might exceed a with-spaces limit of the same numeric value.</p>
 
   <h2 id="sentence-count">Why Sentence Counting Is Genuinely Imprecise</h2>
@@ -187,14 +165,28 @@
   <h3>Why Choose Logrith</h3>
   <p>Counting happens entirely in your browser as you type, with no data ever transmitted anywhere — instant, private, and useful for drafting content of any kind without needing to submit your text anywhere just to check its length, whether you're finalizing an essay, a social media post, or a presentation script ready for delivery.</p>
 
-</div>
+</article>
 
-<div class="bp-body">
+<article class="page-section prose">
   <h2 id="faq">Frequently Asked Questions</h2>
-  <div class="bp-faq-item"><h3>Why do different word counters give different results?</h3><p>Tools differ in how they define a "word" — some count hyphenated words as one word, others as two; some handle numbers or punctuation differently. These definitional differences produce slightly different totals on identical text.</p></div>
-  <div class="bp-faq-item"><h3>Does a word counter count numbers as words?</h3><p>Most word counters treat any sequence of characters separated by whitespace as a word, meaning a number like "42" typically counts as one word, the same as any other word.</p></div>
-  <div class="bp-faq-item"><h3>What's the difference between character count with and without spaces?</h3><p>With spaces includes every space character in the total. Without spaces excludes them, counting only letters, numbers, and punctuation. Platforms with strict limits usually specify which applies.</p></div>
-  <div class="bp-faq-item"><h3>What counts as a sentence for sentence-count purposes?</h3><p>Most tools detect sentences by terminal punctuation, which can produce inaccurate counts for text with abbreviations, decimal numbers, or unconventional punctuation.</p></div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">Why do different word counters give different results?</summary>
+      <div class="faq-a"><p>Tools differ in how they define a "word" — some count hyphenated words as one word, others as two; some handle numbers or punctuation differently. These definitional differences produce slightly different totals on identical text.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does a word counter count numbers as words?</summary>
+      <div class="faq-a"><p>Most word counters treat any sequence of characters separated by whitespace as a word, meaning a number like "42" typically counts as one word, the same as any other word.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What's the difference between character count with and without spaces?</summary>
+      <div class="faq-a"><p>With spaces includes every space character in the total. Without spaces excludes them, counting only letters, numbers, and punctuation. Platforms with strict limits usually specify which applies.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What counts as a sentence for sentence-count purposes?</summary>
+      <div class="faq-a"><p>Most tools detect sentences by terminal punctuation, which can produce inaccurate counts for text with abbreviations, decimal numbers, or unconventional punctuation.</p></div>
+    </details>
+  </div>
 
   <h2>Why This Matters More for Content Writers and Students Than Anyone Else</h2>
   <p>Two groups run into word-count discrepancies more than anyone else: students submitting assignments through learning management systems, and writers submitting content through publishing platforms with defined length requirements. Both groups face a common pattern — writing and drafting happens in one tool (a word processor, a text editor, a general-purpose counter like this one), while the final, binding count happens in a completely different system at submission time. This gap between drafting environment and submission environment is exactly where the small definitional differences covered throughout this guide turn from academic curiosity into a genuinely practical concern, since a paper drafted to hit 1,500 words in one counter might register as 1,487 or 1,513 in the learning management system that actually enforces the assignment's length requirement. The safest habit for anyone in either group: treat any word count from a drafting tool as a close approximation during the writing process, and reserve the final, authoritative check for whatever system will actually receive and grade or publish the finished piece, building in a small buffer rather than writing to the exact boundary of a limit and hoping every tool agrees precisely on the final number.</p>
@@ -202,25 +194,26 @@
   <h2>Conclusion</h2>
 
   <p>Word counting feels like it should be a perfectly objective, unambiguous number, but the small definitional choices every tool has to make around hyphens, numbers, and punctuation mean two counters can genuinely disagree on the same text. For casual use, this discrepancy rarely matters; for anything requiring a precise target — an assignment, an application, a strict character limit — checking the actual destination platform's own count remains the only fully reliable approach, with a general-purpose counter like this one serving as a fast, private tool for drafting and getting a close working estimate along the way.</p>
-</div>
+</article>
 
-<div class="bp-prevnext">
+<nav class="post-nav page-section" aria-label="More guides">
   <a href="/blog/">&larr; Back to Blog</a>
   <a href="/blog/text-reverser-guide">Next: <strong>Text Reverser Guide</strong> &rarr;</a>
-</div>
+</nav>
 
-<div class="bp-related">
+<section class="page-section">
   <h2>Related Tools</h2>
-  <div class="bp-related-grid">
-    <a href="/tools/case-converter" class="bp-related-card"><h4>Case Converter</h4><p>Convert text between different capitalization styles.</p></a>
-    <a href="/tools/text-reverser" class="bp-related-card"><h4>Text Reverser</h4><p>Reverse text character by character.</p></a>
-    <a href="/tools/lorem-ipsum" class="bp-related-card"><h4>Lorem Ipsum Generator</h4><p>Generate placeholder text for design mockups.</p></a>
-    <a href="/tools/random-quote-generator" class="bp-related-card"><h4>Random Quote Generator</h4><p>Generate random quotes for inspiration.</p></a>
+  <div class="related-grid">
+    <a class="related-card" href="/tools/case-converter"><strong>Case Converter</strong><span>Convert text between different capitalization styles.</span></a>
+    <a class="related-card" href="/tools/text-reverser"><strong>Text Reverser</strong><span>Reverse text character by character.</span></a>
+    <a class="related-card" href="/tools/lorem-ipsum"><strong>Lorem Ipsum Generator</strong><span>Generate placeholder text for design mockups.</span></a>
+    <a class="related-card" href="/tools/random-quote-generator"><strong>Random Quote Generator</strong><span>Generate random quotes for inspiration.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

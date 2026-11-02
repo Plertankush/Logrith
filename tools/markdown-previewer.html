@@ -23,21 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    #md-preview { min-height: 300px; padding: 16px; background: var(--white); border: 1.5px solid var(--gray-200); border-radius: var(--radius); overflow-y:auto; }
-    #md-preview h1, #md-preview h2, #md-preview h3 { margin: 0.6em 0 0.3em; color: var(--gray-900); font-family: var(--font-display); }
-    #md-preview p { margin: 0.5em 0; line-height: 1.7; color: var(--gray-700); }
-    #md-preview code { background: var(--gray-100); padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 0.9em; }
-    #md-preview pre { background: var(--gray-900); color: #e2e8f0; padding: 12px; border-radius: 8px; overflow-x: auto; }
-    #md-preview blockquote { border-left: 3px solid var(--primary); padding-left: 12px; color: var(--gray-500); margin: 0.5em 0; }
-    #md-preview a { color: var(--primary); }
-    #md-preview li { margin-left: 20px; }
-    #md-preview hr { border: none; border-top: 1px solid var(--gray-200); margin: 1em 0; }
-    .editor-split { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    @media (max-width: 768px) { .editor-split { grid-template-columns: 1fr; } }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -58,23 +49,26 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-markdown-previewer">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/text-generators">Text & Generators</a> › Markdown Previewer</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/text-generators">Text &amp; Generators</a> › Markdown Previewer</nav>
   <h1>Free Markdown Previewer</h1>
   <p>Write Markdown on the left and see the rendered HTML preview update live on the right — supports headings, bold, italic, links, lists, and code.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">👀 Live Preview</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#eye"></use></svg> Live Preview</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:1100px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Markdown Editor</h2>
     <div class="editor-split">
       <div>
-        <label class="mini-note mb-8" style="display:block;">Markdown Input</label>
-        <textarea class="tool-textarea mono" id="md-input" rows="16" style="height:100%;"># Welcome
+        <label class="mini-note mb-8 u-fa9aec">Markdown Input</label>
+        <textarea class="tool-textarea mono" id="md-input" rows="16"># Welcome
 
 This is a **live Markdown previewer**. Try editing this text!
 
@@ -91,53 +85,58 @@ This is a **live Markdown previewer**. Try editing this text!
 Happy writing!</textarea>
       </div>
       <div>
-        <label class="mini-note mb-8" style="display:block;">Live Preview</label>
+        <label class="mini-note mb-8 u-fa9aec">Live Preview</label>
         <div id="md-preview"></div>
       </div>
     </div>
     <div class="btn-group mt-16">
-      <button class="btn btn-secondary" id="copy-html-btn">📋 Copy HTML</button>
-      <button class="btn btn-secondary" id="clear-btn">✕ Clear</button>
+      <button class="btn btn-secondary" id="copy-html-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy HTML</button>
+      <button class="btn btn-secondary" id="clear-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Clear</button>
     </div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>What Markdown syntax is supported?</h3><p>Headings (#, ##, ###), bold (**text**), italic (*text*), inline code (`code`), links ([text](url)), blockquotes (&gt; text), horizontal rules (---), and basic lists (* item).</p></div>
-    <div class="faq-item-box"><h3>Can I copy the rendered HTML?</h3><p>Yes, click "Copy HTML" to copy the rendered HTML output, ready to paste into a webpage or email.</p></div>
-    <div class="faq-item-box"><h3>Is this a full Markdown implementation?</h3><p>This covers the most commonly used Markdown syntax for quick previewing. For advanced features like tables or nested lists, a dedicated Markdown editor may be needed.</p></div>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card">
-      <h2>How to Use the Markdown Previewer</h2>
-      <div class="tool-steps">
-        <div class="tool-step">
-          <strong>1. Clear or keep the sample text</strong>
-          The editor loads with sample Markdown so you can see how headings, bold text, and lists render; click "Clear" if you want to start from a blank editor.
-        </div>
-        <div class="tool-step">
-          <strong>2. Type or paste your Markdown</strong>
-          Write directly in the left-hand editor, or paste in Markdown copied from a README, a notes app, or another editor.
-        </div>
-        <div class="tool-step">
-          <strong>3. Watch the live preview update</strong>
-          As you type, the right-hand panel re-renders the HTML output instantly, so you can check headings, formatting, and links look right.
-        </div>
-        <div class="tool-step">
-          <strong>4. Copy the rendered HTML</strong>
-          Click "Copy HTML" to grab the generated HTML markup, ready to paste into a web page, email template, or CMS that accepts raw HTML.
-        </div>
-      </div>
-    </div>
+    <details class="faq-item">
+      <summary class="faq-q">What Markdown syntax is supported?</summary>
+      <div class="faq-a"><p>Headings (#, ##, ###), bold (**text**), italic (*text*), inline code (`code`), links ([text](url)), blockquotes (&gt; text), horizontal rules (---), and basic lists (* item).</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I copy the rendered HTML?</summary>
+      <div class="faq-a"><p>Yes, click "Copy HTML" to copy the rendered HTML output, ready to paste into a webpage or email.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is this a full Markdown implementation?</summary>
+      <div class="faq-a"><p>This covers the most commonly used Markdown syntax for quick previewing. For advanced features like tables or nested lists, a dedicated Markdown editor may be needed.</p></div>
+    </details>
   </div>
 </section>
 
-<section class="article-section">
+<section class="page-section">
+  <h2>How to Use the Markdown Previewer</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Clear or keep the sample text</strong>
+      <p>The editor loads with sample Markdown so you can see how headings, bold text, and lists render; click "Clear" if you want to start from a blank editor.</p>
+    </li>
+    <li class="step">
+      <strong>Type or paste your Markdown</strong>
+      <p>Write directly in the left-hand editor, or paste in Markdown copied from a README, a notes app, or another editor.</p>
+    </li>
+    <li class="step">
+      <strong>Watch the live preview update</strong>
+      <p>As you type, the right-hand panel re-renders the HTML output instantly, so you can check headings, formatting, and links look right.</p>
+    </li>
+    <li class="step">
+      <strong>Copy the rendered HTML</strong>
+      <p>Click "Copy HTML" to grab the generated HTML markup, ready to paste into a web page, email template, or CMS that accepts raw HTML.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
   <h2>Live Markdown Previewer</h2>
   <p>This tool lets you write Markdown — a lightweight text formatting syntax — and see the rendered HTML output update live as you type, side by side. It's useful for drafting README files, documentation, forum posts, or any content destined for a platform that uses Markdown.</p>
 
@@ -145,7 +144,7 @@ Happy writing!</textarea>
   <p>Markdown is a simple, readable plain-text syntax for formatting documents, designed so that even the unformatted source text remains easy to read. Instead of clicking buttons in a rich text editor, you type simple symbols — like <code>**text**</code> for bold or <code># Heading</code> for a title — and the Markdown gets converted into properly formatted HTML. It's the standard formatting syntax on platforms like GitHub, many blogging tools, Reddit, and countless documentation systems.</p>
 
   <h3>Supported Markdown Syntax</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Headings:</strong> <code># H1</code>, <code>## H2</code>, <code>### H3</code></li>
     <li><strong>Bold:</strong> <code>**bold text**</code></li>
     <li><strong>Italic:</strong> <code>*italic text*</code></li>
@@ -172,7 +171,7 @@ Happy writing!</textarea>
   <p>Many documentation platforms, static site generators, and note-taking apps — including Jekyll, Hugo, Obsidian, and Notion's Markdown import — use the same core syntax. Drafting content here first means you can verify structure and emphasis before pasting it into whichever platform you actually publish to.</p>
 
   <h3>Common Formatting Mistakes This Catches</h3>
-  <ul class="feature-list">
+  <ul>
     <li>A missing space after <code>#</code> in a heading, which some parsers ignore but others render as literal text</li>
     <li>An unmatched <code>**</code> or <code>*</code> that leaves the rest of a paragraph unexpectedly bold or italic</li>
     <li>A list item that doesn't start with the expected <code>* </code> marker and so renders as plain text instead of a bullet</li>
@@ -195,34 +194,31 @@ Happy writing!</textarea>
   <p>People land on this page looking for a "markdown to html converter online," "markdown live preview tool," "md file previewer," "markdown renderer without download," or a way to "test markdown formatting before posting." All of these describe the same core function this tool provides: typing Markdown and immediately seeing the rendered result.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/html-minifier" class="tool-item"><div class="ti-text"><h4>HTML Minifier</h4><p>Minify or beautify HTML code.</p></div></a>
-    <a href="/tools/word-counter" class="tool-item"><div class="ti-text"><h4>Word Counter</h4><p>Count words in your Markdown content.</p></div></a>
-    <a href="/tools/text-diff" class="tool-item"><div class="ti-text"><h4>Text Diff Checker</h4><p>Compare two versions of your document.</p></div></a>
-    <a href="/tools/html-entity-converter" class="tool-item"><div class="ti-text"><h4>HTML Entity Converter</h4><p>Encode and decode HTML entities.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">markdown previewer</span>
-        <span class="keyword-tag">markdown editor online</span>
-        <span class="keyword-tag">live markdown preview</span>
-        <span class="keyword-tag">markdown to html converter</span>
-        <span class="keyword-tag">free markdown editor</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/html-minifier"><strong>HTML Minifier</strong><span>Minify or beautify HTML code.</span></a>
+    <a class="related-card" href="/tools/word-counter"><strong>Word Counter</strong><span>Count words in your Markdown content.</span></a>
+    <a class="related-card" href="/tools/text-diff"><strong>Text Diff Checker</strong><span>Compare two versions of your document.</span></a>
+    <a class="related-card" href="/tools/html-entity-converter"><strong>HTML Entity Converter</strong><span>Encode and decode HTML entities.</span></a>
   </div>
 </section>
 
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">markdown previewer</span>
+    <span class="keyword-tag">markdown editor online</span>
+    <span class="keyword-tag">live markdown preview</span>
+    <span class="keyword-tag">markdown to html converter</span>
+    <span class="keyword-tag">free markdown editor</span>
+  </div>
+</section>
+
+</main>
+
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 function markdownToHtml(md) {
   let html = md

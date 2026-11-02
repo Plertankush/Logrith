@@ -23,47 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .bp-hero { max-width:820px;margin:0 auto;padding:48px 20px 8px; }
-    .bp-crumb { font-size:.85rem;color:var(--gray-500);margin-bottom:16px; }
-    .bp-crumb a { color:var(--primary);text-decoration:none; }
-    .bp-hero h1 { font-family:var(--font-display);font-size:2rem;line-height:1.25;color:var(--gray-900);margin-bottom:14px; }
-    .bp-hero .bp-dek { font-size:1.05rem;color:var(--gray-700);line-height:1.7;margin-bottom:20px; }
-    .bp-cta { display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:white;padding:13px 26px;border-radius:var(--radius);font-weight:700;text-decoration:none;font-size:.95rem; }
-    .bp-cta svg { width:17px;height:17px; }
-    .bp-cta:hover { background:var(--primary-dark); }
-    .bp-body { max-width:760px;margin:0 auto;padding:28px 20px 20px; }
-    .bp-body h2 { font-family:var(--font-display);font-size:1.5rem;color:var(--gray-900);margin:38px 0 14px; }
-    .bp-body h3 { font-family:var(--font-display);font-size:1.15rem;color:var(--gray-900);margin:26px 0 10px; }
-    .bp-body p { color:var(--gray-700);line-height:1.8;margin-bottom:16px;font-size:1rem; }
-    .bp-body ul, .bp-body ol { color:var(--gray-700);line-height:1.8;margin:0 0 16px 22px; }
-    .bp-body li { margin-bottom:8px; }
-    .bp-body strong { color:var(--gray-900); }
-    .bp-toc { background:var(--gray-50);border-radius:var(--radius-lg);padding:20px 24px;margin:24px 0; }
-    .bp-toc h2 { margin:0 0 10px;font-size:1.05rem; }
-    .bp-toc ol { margin:0 0 0 20px; }
-    .bp-toc a { color:var(--primary);text-decoration:none; }
-    .bp-table { width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:.92rem; }
-    .bp-table th, .bp-table td { border:1px solid var(--gray-200);padding:10px 12px;text-align:left; }
-    .bp-table th { background:var(--gray-50);font-weight:700;color:var(--gray-900); }
-    .bp-howto { counter-reset:step; list-style:none;margin-left:0; }
-    .bp-howto li { position:relative;padding-left:42px;margin-bottom:18px; }
-    .bp-howto li::before { counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;background:var(--primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem; }
-    .bp-faq-item { border-bottom:1px solid var(--gray-200);padding:16px 0; }
-    .bp-faq-item h3 { margin:0 0 8px; font-size:1.02rem; }
-    .bp-byline { font-size:.82rem;color:var(--gray-500);margin-top:10px; }
-    .bp-related { max-width:1000px;margin:0 auto;padding:20px 20px 60px; }
-    .bp-related h2 { font-family:var(--font-display);font-size:1.4rem;color:var(--gray-900);margin-bottom:18px;text-align:center; }
-    .bp-related-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px; }
-    .bp-related-card { border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:18px;text-decoration:none;color:inherit;background:var(--white); }
-    .bp-related-card h4 { font-size:.95rem;color:var(--gray-900);margin-bottom:6px; }
-    .bp-related-card p { font-size:.82rem;color:var(--gray-700);line-height:1.5; }
-    .bp-prevnext { display:flex;justify-content:space-between;gap:16px;max-width:760px;margin:0 auto;padding:0 20px 20px; }
-    .bp-prevnext a { flex:1;border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:12px 16px;text-decoration:none;color:var(--gray-700);font-size:.85rem; }
-    .bp-prevnext a strong { display:block;color:var(--gray-900);font-size:.92rem; }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -98,23 +63,26 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-calculate-exact-age-online">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="bp-hero">
-  <div class="bp-crumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/calculate-convert">Calculate & Convert</a> &rsaquo; Age Calculator</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/calculate-convert">Calculate & Convert</a> &rsaquo; Age Calculator</nav>
   <h1>Age Calculator by Date of Birth: How to Calculate Your Exact Age Free</h1>
-  <p class="bp-dek">This free age calculator by date of birth gives you the precise breakdown "how old are you" questions usually skip — exact years, months, and days since your birth date, not just a rounded whole-number answer. Whether you're checking eligibility, verifying legal age, or just curious how to calculate birthday age down to the day, the math is simple in principle but genuinely fiddly in the details, particularly around leap years and the exact moment a birthday "counts," which is exactly where manual calculation tends to quietly go wrong.</p>
-  <a href="/tools/age-calculator" class="bp-cta">
+  <p>This free age calculator by date of birth gives you the precise breakdown "how old are you" questions usually skip — exact years, months, and days since your birth date, not just a rounded whole-number answer. Whether you're checking eligibility, verifying legal age, or just curious how to calculate birthday age down to the day, the math is simple in principle but genuinely fiddly in the details, particularly around leap years and the exact moment a birthday "counts," which is exactly where manual calculation tends to quietly go wrong.</p>
+  <a href="/tools/age-calculator" class="btn btn-primary btn-lg">
     <svg class="icon"><use href="/assets/svg/icons.svg#calendar"></use></svg>
     Calculate Your Age
   </a>
-  <p class="bp-byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
-</div>
+  <p class="byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
+</div></header>
 
-<div class="bp-body">
+<article class="page-section prose">
 
-  <div class="bp-toc">
+  <nav class="toc" aria-label="On this page">
     <h2>On This Page</h2>
     <ol>
       <li><a href="#how-to-use">How to Calculate Your Age by Date of Birth</a></li>
@@ -126,14 +94,22 @@
       <li><a href="#mistakes">Common Mistakes</a></li>
       <li><a href="#faq">Frequently Asked Questions</a></li>
     </ol>
-  </div>
+  </nav>
 
   <h2 id="how-to-use">How to Calculate Your Age by Date of Birth</h2>
-  <ol class="bp-howto">
-    <li>Open the <a href="/tools/age-calculator">Age Calculator</a> and enter your birth date.</li>
-    <li>The tool instantly calculates your exact age in years, months, and days as of today.</li>
-    <li>View the countdown to your next birthday, showing exactly how many days remain.</li>
-    <li>Optionally, enter a different "as of" date to calculate age at a specific past or future point instead of today.</li>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the <a href="/tools/age-calculator">Age Calculator</a> and enter your birth date.</p>
+    </li>
+    <li class="step">
+      <p>The tool instantly calculates your exact age in years, months, and days as of today.</p>
+    </li>
+    <li class="step">
+      <p>View the countdown to your next birthday, showing exactly how many days remain.</p>
+    </li>
+    <li class="step">
+      <p>Optionally, enter a different "as of" date to calculate age at a specific past or future point instead of today.</p>
+    </li>
   </ol>
 
   <h2 id="why-tricky">Why Age Calculation Is Trickier Than It Looks</h2>
@@ -161,12 +137,14 @@
   </ul>
 
   <h2 id="comparison">Comparison vs. Manual Calculation and Other Tools</h2>
-  <table class="bp-table">
+  <div class="table-wrap">
+    <table class="table">
     <tr><th>Method</th><th>Accuracy</th><th>Speed</th></tr>
     <tr><td>Mental math / manual subtraction</td><td>Error-prone, especially around the "has birthday occurred yet" check</td><td>Fast but unreliable</td></tr>
     <tr><td>Spreadsheet date formulas</td><td>Accurate if formula is correctly constructed</td><td>Requires setup time and formula knowledge</td></tr>
     <tr><td>Dedicated age calculator</td><td>Reliably accurate, handles edge cases automatically</td><td>Instant</td></tr>
   </table>
+  </div>
   <p>Spreadsheet software like Excel or Google Sheets can calculate age correctly using date-difference functions, but requires knowing the correct formula syntax and constructing it properly — a genuine barrier for anyone not already comfortable with spreadsheet functions, and an easy place to introduce a subtle formula error that produces a plausible-looking but incorrect result. A dedicated calculator removes this setup step entirely, handling the underlying date arithmetic (including the leap year and month-boundary edge cases) correctly by default without requiring the person using it to understand or verify the calculation logic themselves, which matters most precisely in the situations where getting the number wrong would actually have consequences.</p>
 
   <h2 id="mistakes">Common Mistakes</h2>
@@ -181,36 +159,51 @@
   <h3>Why Choose Logrith</h3>
   <p>Calculation happens entirely using standard JavaScript date arithmetic in your browser, with no data ever transmitted anywhere — genuinely fast and private for what's often a quick, casual lookup, but handled with the same correctness that would matter for a more formal eligibility check or legal age verification.</p>
 
-</div>
+</article>
 
-<div class="bp-body">
+<article class="page-section prose">
   <h2 id="faq">Frequently Asked Questions</h2>
-  <div class="bp-faq-item"><h3>Why does my age sometimes differ by one from what I expect?</h3><p>Age calculations depend on whether your birthday this year has already occurred. If today falls before your birthday month and day, you're still one year younger than a simple year subtraction would suggest.</p></div>
-  <div class="bp-faq-item"><h3>How is age in months and days calculated?</h3><p>After determining completed years, the calculation finds remaining months since the last birthday, then remaining days since the last monthly anniversary, borrowing from the previous month's day count when needed.</p></div>
-  <div class="bp-faq-item"><h3>Does a leap year birthday (February 29) cause issues?</h3><p>A person born on February 29 technically has a birthday once every four years. Most calculators treat February 28 as the effective anniversary in non-leap years, so age still calculates correctly every year.</p></div>
-  <div class="bp-faq-item"><h3>Can this calculate age between any two dates?</h3><p>Yes, entering any two dates calculates elapsed time between them the same way, useful for figuring out age at a specific past or future event.</p></div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">Why does my age sometimes differ by one from what I expect?</summary>
+      <div class="faq-a"><p>Age calculations depend on whether your birthday this year has already occurred. If today falls before your birthday month and day, you're still one year younger than a simple year subtraction would suggest.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How is age in months and days calculated?</summary>
+      <div class="faq-a"><p>After determining completed years, the calculation finds remaining months since the last birthday, then remaining days since the last monthly anniversary, borrowing from the previous month's day count when needed.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does a leap year birthday (February 29) cause issues?</summary>
+      <div class="faq-a"><p>A person born on February 29 technically has a birthday once every four years. Most calculators treat February 28 as the effective anniversary in non-leap years, so age still calculates correctly every year.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can this calculate age between any two dates?</summary>
+      <div class="faq-a"><p>Yes, entering any two dates calculates elapsed time between them the same way, useful for figuring out age at a specific past or future event.</p></div>
+    </details>
+  </div>
 
   <h2>Conclusion</h2>
   <p>Exact age calculation looks trivial until the details — whether this year's birthday has occurred, how leap year birthdays get treated, correctly borrowing across month boundaries — actually need to be handled correctly. A dedicated calculator resolves all of this instantly and reliably, which matters whether the use case is a lighthearted personal curiosity or something genuinely time-sensitive like an eligibility cutoff where getting the number exactly right actually counts, and where a manual miscalculation could mean the difference between qualifying and not qualifying for whatever the age requirement happens to govern.</p>
-</div>
+</article>
 
-<div class="bp-prevnext">
+<nav class="post-nav page-section" aria-label="More guides">
   <a href="/blog/">&larr; Back to Blog</a>
   <a href="/blog/calculate-bmi-online-free">Next: <strong>BMI Calculator Guide</strong> &rarr;</a>
-</div>
+</nav>
 
-<div class="bp-related">
+<section class="page-section">
   <h2>Related Tools</h2>
-  <div class="bp-related-grid">
-    <a href="/tools/date-difference-calculator" class="bp-related-card"><h4>Date Difference Calculator</h4><p>Calculate elapsed time between any two dates.</p></a>
-    <a href="/tools/bmi-calculator" class="bp-related-card"><h4>BMI Calculator</h4><p>Calculate body mass index from height and weight.</p></a>
-    <a href="/tools/time-zone-converter" class="bp-related-card"><h4>Time Zone Converter</h4><p>Convert times across different time zones.</p></a>
-    <a href="/tools/percentage-calculator" class="bp-related-card"><h4>Percentage Calculator</h4><p>Calculate percentages, increases, and decreases.</p></a>
+  <div class="related-grid">
+    <a class="related-card" href="/tools/date-difference-calculator"><strong>Date Difference Calculator</strong><span>Calculate elapsed time between any two dates.</span></a>
+    <a class="related-card" href="/tools/bmi-calculator"><strong>BMI Calculator</strong><span>Calculate body mass index from height and weight.</span></a>
+    <a class="related-card" href="/tools/time-zone-converter"><strong>Time Zone Converter</strong><span>Convert times across different time zones.</span></a>
+    <a class="related-card" href="/tools/percentage-calculator"><strong>Percentage Calculator</strong><span>Calculate percentages, increases, and decreases.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

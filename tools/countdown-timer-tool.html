@@ -23,15 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .countdown-display { display:grid;grid-template-columns:repeat(4,1fr);gap:12px;text-align:center; }
-    .countdown-unit { background:var(--gray-50);border-radius:var(--radius-lg);padding:20px 8px; }
-    .countdown-num { font-family:var(--font-display);font-size:2.2rem;font-weight:800;color:var(--primary); }
-    .countdown-label { font-size:.78rem;color:var(--gray-500);text-transform:uppercase;letter-spacing:.5px;margin-top:4px; }
-    @media(max-width:480px){ .countdown-num{font-size:1.5rem;} .countdown-display{gap:8px;} }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -52,17 +49,20 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-countdown-timer-tool">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/utilities">Utilities</a> › Countdown Timer</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/utilities">Utilities</a> › Countdown Timer</nav>
   <h1>Free Countdown Timer</h1>
   <p>Set a target date and event name to see a live countdown — days, hours, minutes, and seconds remaining.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">⏱️ Live Updates</span><span class="tool-tag">⚡ Any Date</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#timer"></use></svg> Live Updates</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Any Date</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:700px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Set Your Countdown</h2>
     <div class="controls-grid">
@@ -80,11 +80,11 @@
       </div>
     </div>
     <div class="btn-group mt-16">
-      <button class="btn btn-primary btn-lg" id="start-btn">⏱️ Start Countdown</button>
+      <button class="btn btn-primary btn-lg" id="start-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#timer"></use></svg> Start Countdown</button>
     </div>
   </div>
 
-  <div class="tool-card" id="result-card" style="display:none;">
+  <div class="tool-card is-hidden" id="result-card">
     <h2 id="event-title-display">Countdown</h2>
     <div class="countdown-display">
       <div class="countdown-unit"><div class="countdown-num" id="cd-days">0</div><div class="countdown-label">Days</div></div>
@@ -92,28 +92,46 @@
       <div class="countdown-unit"><div class="countdown-num" id="cd-minutes">0</div><div class="countdown-label">Minutes</div></div>
       <div class="countdown-unit"><div class="countdown-num" id="cd-seconds">0</div><div class="countdown-label">Seconds</div></div>
     </div>
-    <div class="mini-note mt-12" id="cd-status" style="text-align:center;"></div>
+    <div class="mini-note mt-12 text-center" id="cd-status"></div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>Does the countdown update automatically?</h3><p>Yes, the countdown updates live every second as long as this page stays open in your browser.</p></div>
-    <div class="faq-item-box"><h3>What happens when the countdown reaches zero?</h3><p>The display shows that the event has arrived, and all values show zero.</p></div>
-    <div class="faq-item-box"><h3>Can I count down to a time in a different time zone?</h3><p>The target date and time you enter are interpreted in your browser's local time zone.</p></div>
-    <div class="faq-item-box"><h3>Does the countdown keep running if I close the tab?</h3><p>No, the countdown only runs while this page is open in your browser. If you close or navigate away from the tab, you'll need to re-enter your target date and start it again.</p></div>
-    <div class="faq-item-box"><h3>Can I run multiple countdowns at once?</h3><p>This tool displays one active countdown at a time. To track several events, open the page in separate browser tabs, each set to a different target date.</p></div>
-    <div class="faq-item-box"><h3>Is my event name or date sent anywhere?</h3><p>No, everything you enter stays in your browser. There's no account, no server storage, and no tracking of what dates or event names you've used.</p></div>
+    <details class="faq-item">
+      <summary class="faq-q">Does the countdown update automatically?</summary>
+      <div class="faq-a"><p>Yes, the countdown updates live every second as long as this page stays open in your browser.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What happens when the countdown reaches zero?</summary>
+      <div class="faq-a"><p>The display shows that the event has arrived, and all values show zero.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I count down to a time in a different time zone?</summary>
+      <div class="faq-a"><p>The target date and time you enter are interpreted in your browser's local time zone.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does the countdown keep running if I close the tab?</summary>
+      <div class="faq-a"><p>No, the countdown only runs while this page is open in your browser. If you close or navigate away from the tab, you'll need to re-enter your target date and start it again.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I run multiple countdowns at once?</summary>
+      <div class="faq-a"><p>This tool displays one active countdown at a time. To track several events, open the page in separate browser tabs, each set to a different target date.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my event name or date sent anywhere?</summary>
+      <div class="faq-a"><p>No, everything you enter stays in your browser. There's no account, no server storage, and no tracking of what dates or event names you've used.</p></div>
+    </details>
   </div>
-</div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>Live Countdown Timer to Any Date</h2>
   <p>This tool creates a live, continuously updating countdown to any future date and time you specify, showing the remaining days, hours, minutes, and seconds. Set an event name and target date, and watch the countdown tick down in real time.</p>
 
   <h3>Common Uses for a Countdown Timer</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Product launches</strong> — building anticipation for an upcoming release.</li>
     <li><strong>Events and deadlines</strong> — tracking time remaining until a conference, wedding, or project deadline.</li>
     <li><strong>Sales and promotions</strong> — creating urgency around a limited-time offer's end date.</li>
@@ -131,28 +149,40 @@
   <p>A countdown timer differs from a one-time date difference calculation in an important way: it updates continuously rather than giving you a single static answer. If you just need to know how many days are between today and a future date, a date difference calculator gives you that number once. A countdown timer instead keeps recalculating every second for as long as the page stays open, which matters for use cases like a live event page, a product launch landing page, or a shared screen counting down to a specific moment, where the display needs to stay accurate to the second without the viewer needing to refresh or recalculate anything themselves.</p>
 
   <h3>Setting Up an Accurate Countdown</h3>
-  <div class="tool-steps">
-    <div class="tool-step"><strong>1. Name your event</strong>Give the countdown a clear label so it's obvious at a glance what you're counting down to.</div>
-    <div class="tool-step"><strong>2. Set the target date</strong>Choose the exact calendar date the countdown should end on.</div>
-    <div class="tool-step"><strong>3. Set the target time</strong>Specify the exact time of day, since even a small time difference matters for same-day events.</div>
-    <div class="tool-step"><strong>4. Start and leave the tab open</strong>Click Start Countdown and keep the page open to see it update live, second by second.</div>
-  </div>
+  <ol class="steps">
+    <li class="step">
+      <strong>Name your event</strong>
+      <p>Give the countdown a clear label so it's obvious at a glance what you're counting down to.</p>
+    </li>
+    <li class="step">
+      <strong>Set the target date</strong>
+      <p>Choose the exact calendar date the countdown should end on.</p>
+    </li>
+    <li class="step">
+      <strong>Set the target time</strong>
+      <p>Specify the exact time of day, since even a small time difference matters for same-day events.</p>
+    </li>
+    <li class="step">
+      <strong>Start and leave the tab open</strong>
+      <p>Click Start Countdown and keep the page open to see it update live, second by second.</p>
+    </li>
+  </ol>
 
   <h3>Privacy and Local Processing</h3>
   <p>All countdown calculations happen directly in your browser using JavaScript's built-in date functions — no dates, event names, or any other input are sent to a server, logged, or stored anywhere. This makes the tool just as suitable for a private personal milestone as it is for a public event page, since nothing about what you're counting down to is ever transmitted outside your own device.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/date-difference-calculator" class="tool-item"><div class="ti-text"><h4>Date Difference Calculator</h4><p>Calculate days between any two dates.</p></div></a>
-    <a href="/tools/world-clock" class="tool-item"><div class="ti-text"><h4>World Clock</h4><p>See current time across multiple cities.</p></div></a>
-    <a href="/tools/time-zone-converter" class="tool-item"><div class="ti-text"><h4>Time Zone Converter</h4><p>Convert time between world time zones.</p></div></a>
-    <a href="/tools/age-calculator" class="tool-item"><div class="ti-text"><h4>Age Calculator</h4><p>Calculate exact age from date of birth.</p></div></a>
+    <a class="related-card" href="/tools/date-difference-calculator"><strong>Date Difference Calculator</strong><span>Calculate days between any two dates.</span></a>
+    <a class="related-card" href="/tools/world-clock"><strong>World Clock</strong><span>See current time across multiple cities.</span></a>
+    <a class="related-card" href="/tools/time-zone-converter"><strong>Time Zone Converter</strong><span>Convert time between world time zones.</span></a>
+    <a class="related-card" href="/tools/age-calculator"><strong>Age Calculator</strong><span>Calculate exact age from date of birth.</span></a>
   </div>
-</div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>Troubleshooting Common Countdown Issues</h2>
   <p>If the countdown shows an unexpected number of hours or seems off by a few hours from what you expected, the most likely cause is a time zone mismatch between how the date was intended and how your browser is interpreting it — double-check that the target time field reflects the correct local time for the event, not a different region's time. If the countdown stops updating, the browser tab may have been inactive long enough for the page's timer to pause, which some browsers do to save battery on background tabs; bringing the tab back into focus and restarting the countdown resolves this. If the countdown shows the event has already "arrived" immediately after starting, double-check that the target date and time are actually set in the future rather than the past.</p>
 
@@ -163,9 +193,10 @@
   <p>For a long-range countdown — say, counting down to a conference three months away — the seconds digit ticking by rarely matters to anyone watching; days and hours carry the meaningful information. For a short-range countdown, like the final minute before a product launch or a live sale going public, the seconds become the most important part of the display, since viewers are often watching that exact moment arrive in real time. This tool shows all four units together regardless of how far away the target date is, which keeps the display consistent and lets viewers naturally focus on whichever unit is most relevant as the event approaches.</p>
 </section>
 
+</main>
+
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 let countdownInterval = null;
 
@@ -196,7 +227,7 @@ document.getElementById('start-btn').addEventListener('click', () => {
       document.getElementById('cd-hours').textContent = '0';
       document.getElementById('cd-minutes').textContent = '0';
       document.getElementById('cd-seconds').textContent = '0';
-      document.getElementById('cd-status').textContent = `🎉 ${eventName} has arrived!`;
+      document.getElementById('cd-status').textContent = `${eventName} has arrived!`;
       clearInterval(countdownInterval);
       return;
     }

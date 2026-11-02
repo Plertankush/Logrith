@@ -23,48 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .bp-hero { max-width:820px;margin:0 auto;padding:48px 20px 8px; }
-    .bp-crumb { font-size:.85rem;color:var(--gray-500);margin-bottom:16px; }
-    .bp-crumb a { color:var(--primary);text-decoration:none; }
-    .bp-hero h1 { font-family:var(--font-display);font-size:2rem;line-height:1.25;color:var(--gray-900);margin-bottom:14px; }
-    .bp-hero .bp-dek { font-size:1.05rem;color:var(--gray-700);line-height:1.7;margin-bottom:20px; }
-    .bp-cta { display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:white;padding:13px 26px;border-radius:var(--radius);font-weight:700;text-decoration:none;font-size:.95rem; }
-    .bp-cta svg { width:17px;height:17px; }
-    .bp-cta:hover { background:var(--primary-dark); }
-    .bp-body { max-width:760px;margin:0 auto;padding:28px 20px 20px; }
-    .bp-body h2 { font-family:var(--font-display);font-size:1.5rem;color:var(--gray-900);margin:38px 0 14px; }
-    .bp-body h3 { font-family:var(--font-display);font-size:1.15rem;color:var(--gray-900);margin:26px 0 10px; }
-    .bp-body p { color:var(--gray-700);line-height:1.8;margin-bottom:16px;font-size:1rem; }
-    .bp-body ul, .bp-body ol { color:var(--gray-700);line-height:1.8;margin:0 0 16px 22px; }
-    .bp-body li { margin-bottom:8px; }
-    .bp-body strong { color:var(--gray-900); }
-    .bp-body code { background:var(--gray-100);padding:2px 6px;border-radius:4px;font-size:.88em;font-family:monospace; }
-    .bp-toc { background:var(--gray-50);border-radius:var(--radius-lg);padding:20px 24px;margin:24px 0; }
-    .bp-toc h2 { margin:0 0 10px;font-size:1.05rem; }
-    .bp-toc ol { margin:0 0 0 20px; }
-    .bp-toc a { color:var(--primary);text-decoration:none; }
-    .bp-table { width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:.92rem; }
-    .bp-table th, .bp-table td { border:1px solid var(--gray-200);padding:10px 12px;text-align:left; }
-    .bp-table th { background:var(--gray-50);font-weight:700;color:var(--gray-900); }
-    .bp-howto { counter-reset:step; list-style:none;margin-left:0; }
-    .bp-howto li { position:relative;padding-left:42px;margin-bottom:18px; }
-    .bp-howto li::before { counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;background:var(--primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem; }
-    .bp-faq-item { border-bottom:1px solid var(--gray-200);padding:16px 0; }
-    .bp-faq-item h3 { margin:0 0 8px; font-size:1.02rem; }
-    .bp-byline { font-size:.82rem;color:var(--gray-500);margin-top:10px; }
-    .bp-related { max-width:1000px;margin:0 auto;padding:20px 20px 60px; }
-    .bp-related h2 { font-family:var(--font-display);font-size:1.4rem;color:var(--gray-900);margin-bottom:18px;text-align:center; }
-    .bp-related-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px; }
-    .bp-related-card { border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:18px;text-decoration:none;color:inherit;background:var(--white); }
-    .bp-related-card h4 { font-size:.95rem;color:var(--gray-900);margin-bottom:6px; }
-    .bp-related-card p { font-size:.82rem;color:var(--gray-700);line-height:1.5; }
-    .bp-prevnext { display:flex;justify-content:space-between;gap:16px;max-width:760px;margin:0 auto;padding:0 20px 20px; }
-    .bp-prevnext a { flex:1;border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:12px 16px;text-decoration:none;color:var(--gray-700);font-size:.85rem; }
-    .bp-prevnext a strong { display:block;color:var(--gray-900);font-size:.92rem; }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -98,23 +62,26 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-css-box-shadow-generator-guide">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="bp-hero">
-  <div class="bp-crumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/developer-tools">Developer Tools</a> &rsaquo; CSS Box Shadow Generator</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/developer-tools">Developer Tools</a> &rsaquo; CSS Box Shadow Generator</nav>
   <h1>Decoding CSS box-shadow: Offset, Blur, Spread, and Inset Fully Explained</h1>
-  <p class="bp-dek">The box-shadow property packs four numeric values plus a color and an optional keyword into one declaration, and while copying a value from a generator works fine, actually understanding what each piece controls is what lets you adjust a shadow confidently rather than randomly tweaking numbers until something looks right, and it opens the door to genuinely custom effects a generator's default presets alone would never produce.</p>
-  <a href="/tools/css-box-shadow-generator" class="bp-cta">
+  <p>The box-shadow property packs four numeric values plus a color and an optional keyword into one declaration, and while copying a value from a generator works fine, actually understanding what each piece controls is what lets you adjust a shadow confidently rather than randomly tweaking numbers until something looks right, and it opens the door to genuinely custom effects a generator's default presets alone would never produce.</p>
+  <a href="/tools/css-box-shadow-generator" class="btn btn-primary btn-lg">
     <svg class="icon"><use href="/assets/svg/icons.svg#square"></use></svg>
     Generate a Box Shadow
   </a>
-  <p class="bp-byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
-</div>
+  <p class="byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
+</div></header>
 
-<div class="bp-body">
+<article class="page-section prose">
 
-  <div class="bp-toc">
+  <nav class="toc" aria-label="On this page">
     <h2>On This Page</h2>
     <ol>
       <li><a href="#how-to-use">How to Generate a Box Shadow</a></li>
@@ -126,24 +93,34 @@
       <li><a href="#mistakes">Common Mistakes</a></li>
       <li><a href="#faq">Frequently Asked Questions</a></li>
     </ol>
-  </div>
+  </nav>
 
   <h2 id="how-to-use">How to Generate a Box Shadow</h2>
-  <ol class="bp-howto">
-    <li>Open the <a href="/tools/css-box-shadow-generator">CSS Box Shadow Generator</a> to get started right away.</li>
-    <li>Adjust the offset, blur, spread, color, and opacity sliders while previewing the result live.</li>
-    <li>Toggle inset if you want an inner shadow instead of an outer one.</li>
-    <li>Copy the generated CSS code directly into your stylesheet for immediate use.</li>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the <a href="/tools/css-box-shadow-generator">CSS Box Shadow Generator</a> to get started right away.</p>
+    </li>
+    <li class="step">
+      <p>Adjust the offset, blur, spread, color, and opacity sliders while previewing the result live.</p>
+    </li>
+    <li class="step">
+      <p>Toggle inset if you want an inner shadow instead of an outer one.</p>
+    </li>
+    <li class="step">
+      <p>Copy the generated CSS code directly into your stylesheet for immediate use.</p>
+    </li>
   </ol>
 
   <h2 id="syntax">The box-shadow Syntax Broken Down</h2>
   <p>A full box-shadow declaration looks like: <code>box-shadow: 2px 4px 8px 0px rgba(0,0,0,0.25);</code>. Reading left to right, the four numeric values are horizontal offset, vertical offset, blur radius, and spread radius, followed by the shadow's color (here using rgba to include transparency). An optional <code>inset</code> keyword can appear at the start or end of the value to flip the shadow from outer to inner. Multiple shadows can be layered by separating complete shadow declarations with commas, a technique covered in more detail further down. The order of the four numeric values is fixed and cannot be rearranged — browsers parse box-shadow strictly according to this positional convention, meaning even a syntactically valid-looking value with values in the wrong order will produce an unexpected visual result rather than an error, since the browser has no way to know your intended meaning differs from the standard positional interpretation.</p>
 
   <h2 id="offset">Horizontal and Vertical Offset</h2>
-  <table class="bp-table">    <tr><th>Value</th><th>What It Controls</th><th>Effect</th></tr>
+  <div class="table-wrap">
+    <table class="table">    <tr><th>Value</th><th>What It Controls</th><th>Effect</th></tr>
     <tr><td>Horizontal offset</td><td>Left/right shadow position</td><td>Positive moves shadow right, negative moves it left</td></tr>
     <tr><td>Vertical offset</td><td>Up/down shadow position</td><td>Positive moves shadow down, negative moves it up</td></tr>
   </table>
+  </div>
   <p>These first two values position the shadow relative to the element casting it, functioning conceptually like a light source's direction — a shadow offset down and to the right suggests a light source coming from the upper left, which is the most common, natural-feeling convention used in most UI design, mimicking how light typically falls in real-world environments. Setting both offsets to zero produces a shadow that surrounds the element evenly on all sides rather than appearing to fall in any particular direction, useful for a subtle, ambient glow effect rather than a directional shadow suggesting elevation. Larger offset values combined with proportionally larger blur generally suggest a more dramatically elevated element, since real-world shadows genuinely do grow larger and more diffuse the further their source is lifted above the surface behind it, making offset magnitude a useful, intuitive dial for communicating relative elevation across different interface elements.</p>
 
   <h2 id="blur-spread">Blur Radius vs. Spread Radius</h2>
@@ -177,36 +154,51 @@
   <h3>Why Choose Logrith</h3>
   <p>Generation happens entirely in your browser with a live visual preview, no signup required — adjust every value and see the effect immediately, then copy the exact CSS you need directly into your project, without needing to guess at values or iterate through a code editor's slow refresh cycle just to see a small adjustment's effect, saving genuine time whether you're tweaking a single component or exploring several design options quickly.</p>
 
-</div>
+</article>
 
-<div class="bp-body">
+<article class="page-section prose">
   <h2 id="faq">Frequently Asked Questions</h2>
-  <div class="bp-faq-item"><h3>What do the numbers in a box-shadow value mean?</h3><p>In order: horizontal offset, vertical offset, blur radius, and spread radius, followed by color. Offsets position the shadow, blur softens edges, and spread expands or contracts the shadow's size before blurring is applied.</p></div>
-  <div class="bp-faq-item"><h3>What's the difference between blur and spread?</h3><p>Blur radius softens and fades the shadow's edges outward. Spread radius expands or shrinks the shadow's base size uniformly before any blurring is applied, changing its underlying shape.</p></div>
-  <div class="bp-faq-item"><h3>What does the inset keyword do?</h3><p>It changes the shadow from an outer shadow (suggesting elevation) to an inner shadow (suggesting a pressed or recessed appearance), using the same offset, blur, and spread logic in the opposite direction.</p></div>
-  <div class="bp-faq-item"><h3>Can an element have multiple box-shadows?</h3><p>Yes, multiple shadow values can be applied by separating them with commas, layering several shadows to create more complex, realistic depth effects than any single shadow alone could achieve.</p></div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">What do the numbers in a box-shadow value mean?</summary>
+      <div class="faq-a"><p>In order: horizontal offset, vertical offset, blur radius, and spread radius, followed by color. Offsets position the shadow, blur softens edges, and spread expands or contracts the shadow's size before blurring is applied.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What's the difference between blur and spread?</summary>
+      <div class="faq-a"><p>Blur radius softens and fades the shadow's edges outward. Spread radius expands or shrinks the shadow's base size uniformly before any blurring is applied, changing its underlying shape.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What does the inset keyword do?</summary>
+      <div class="faq-a"><p>It changes the shadow from an outer shadow (suggesting elevation) to an inner shadow (suggesting a pressed or recessed appearance), using the same offset, blur, and spread logic in the opposite direction.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can an element have multiple box-shadows?</summary>
+      <div class="faq-a"><p>Yes, multiple shadow values can be applied by separating them with commas, layering several shadows to create more complex, realistic depth effects than any single shadow alone could achieve.</p></div>
+    </details>
+  </div>
 
   <h2>Conclusion</h2>
   <p>The box-shadow property's syntax packs a lot into one line, but each value controls something distinct and learnable: offsets for position, blur for edge softness, spread for size, and an optional inset flag for direction. Understanding these individually, rather than treating shadow values as a black box to copy and paste, makes it far easier to adjust a shadow confidently for a specific design need rather than blindly tweaking numbers until something looks acceptable, and it opens the door to layering multiple shadows together for the kind of realistic, polished depth effects that a single flat shadow value alone can never quite achieve on its own, no matter how carefully its individual values are tuned.</p>
-</div>
+</article>
 
-<div class="bp-prevnext">
+<nav class="post-nav page-section" aria-label="More guides">
   <a href="/blog/">&larr; Back to Blog</a>
   <a href="/blog/categories/developer-tools">More Developer Tools Guides &rarr;</a>
-</div>
+</nav>
 
-<div class="bp-related">
+<section class="page-section">
   <h2>Related Tools</h2>
-  <div class="bp-related-grid">
-    <a href="/tools/color-converter" class="bp-related-card"><h4>Color Converter</h4><p>Convert colors between HEX, RGB, and HSL.</p></a>
-    <a href="/tools/css-gradient-generator" class="bp-related-card"><h4>CSS Gradient Generator</h4><p>Generate CSS gradient code visually.</p></a>
-    <a href="/tools/json-formatter" class="bp-related-card"><h4>JSON Formatter</h4><p>Format and validate JSON data.</p></a>
-    <a href="/tools/html-minifier" class="bp-related-card"><h4>HTML Minifier</h4><p>Minify HTML for production use.</p></a>
+  <div class="related-grid">
+    <a class="related-card" href="/tools/color-converter"><strong>Color Converter</strong><span>Convert colors between HEX, RGB, and HSL.</span></a>
+    <a class="related-card" href="/tools/css-gradient-generator"><strong>CSS Gradient Generator</strong><span>Generate CSS gradient code visually.</span></a>
+    <a class="related-card" href="/tools/json-formatter"><strong>JSON Formatter</strong><span>Format and validate JSON data.</span></a>
+    <a class="related-card" href="/tools/html-minifier"><strong>HTML Minifier</strong><span>Minify HTML for production use.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

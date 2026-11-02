@@ -23,47 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .bp-hero { max-width:820px;margin:0 auto;padding:48px 20px 8px; }
-    .bp-crumb { font-size:.85rem;color:var(--gray-500);margin-bottom:16px; }
-    .bp-crumb a { color:var(--primary);text-decoration:none; }
-    .bp-hero h1 { font-family:var(--font-display);font-size:2rem;line-height:1.25;color:var(--gray-900);margin-bottom:14px; }
-    .bp-hero .bp-dek { font-size:1.05rem;color:var(--gray-700);line-height:1.7;margin-bottom:20px; }
-    .bp-cta { display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:white;padding:13px 26px;border-radius:var(--radius);font-weight:700;text-decoration:none;font-size:.95rem; }
-    .bp-cta svg { width:17px;height:17px; }
-    .bp-cta:hover { background:var(--primary-dark); }
-    .bp-body { max-width:760px;margin:0 auto;padding:28px 20px 20px; }
-    .bp-body h2 { font-family:var(--font-display);font-size:1.5rem;color:var(--gray-900);margin:38px 0 14px; }
-    .bp-body h3 { font-family:var(--font-display);font-size:1.15rem;color:var(--gray-900);margin:26px 0 10px; }
-    .bp-body p { color:var(--gray-700);line-height:1.8;margin-bottom:16px;font-size:1rem; }
-    .bp-body ul, .bp-body ol { color:var(--gray-700);line-height:1.8;margin:0 0 16px 22px; }
-    .bp-body li { margin-bottom:8px; }
-    .bp-body strong { color:var(--gray-900); }
-    .bp-toc { background:var(--gray-50);border-radius:var(--radius-lg);padding:20px 24px;margin:24px 0; }
-    .bp-toc h2 { margin:0 0 10px;font-size:1.05rem; }
-    .bp-toc ol { margin:0 0 0 20px; }
-    .bp-toc a { color:var(--primary);text-decoration:none; }
-    .bp-table { width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:.92rem; }
-    .bp-table th, .bp-table td { border:1px solid var(--gray-200);padding:10px 12px;text-align:left; }
-    .bp-table th { background:var(--gray-50);font-weight:700;color:var(--gray-900); }
-    .bp-howto { counter-reset:step; list-style:none;margin-left:0; }
-    .bp-howto li { position:relative;padding-left:42px;margin-bottom:18px; }
-    .bp-howto li::before { counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;background:var(--primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem; }
-    .bp-faq-item { border-bottom:1px solid var(--gray-200);padding:16px 0; }
-    .bp-faq-item h3 { margin:0 0 8px; font-size:1.02rem; }
-    .bp-byline { font-size:.82rem;color:var(--gray-500);margin-top:10px; }
-    .bp-related { max-width:1000px;margin:0 auto;padding:20px 20px 60px; }
-    .bp-related h2 { font-family:var(--font-display);font-size:1.4rem;color:var(--gray-900);margin-bottom:18px;text-align:center; }
-    .bp-related-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px; }
-    .bp-related-card { border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:18px;text-decoration:none;color:inherit;background:var(--white); }
-    .bp-related-card h4 { font-size:.95rem;color:var(--gray-900);margin-bottom:6px; }
-    .bp-related-card p { font-size:.82rem;color:var(--gray-700);line-height:1.5; }
-    .bp-prevnext { display:flex;justify-content:space-between;gap:16px;max-width:760px;margin:0 auto;padding:0 20px 20px; }
-    .bp-prevnext a { flex:1;border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:12px 16px;text-decoration:none;color:var(--gray-700);font-size:.85rem; }
-    .bp-prevnext a strong { display:block;color:var(--gray-900);font-size:.92rem; }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -97,23 +62,26 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-world-clock-guide">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="bp-hero">
-  <div class="bp-crumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/utilities">Utilities</a> &rsaquo; World Clock</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/utilities">Utilities</a> &rsaquo; World Clock</nav>
   <h1>World Clock Live: Check the Current Time Anywhere, and Why It's Trickier Than a Simple Offset</h1>
-  <p class="bp-dek">A world clock live view sounds like it should be simple math — add or subtract hours from your own time — but daylight saving changes, half-hour offsets, and regions that don't observe daylight saving at all mean the "simple" calculation quietly breaks more often than people expect, especially for anyone scheduling recurring meetings across multiple countries throughout the year.</p>
-  <a href="/tools/world-clock" class="bp-cta">
+  <p>A world clock live view sounds like it should be simple math — add or subtract hours from your own time — but daylight saving changes, half-hour offsets, and regions that don't observe daylight saving at all mean the "simple" calculation quietly breaks more often than people expect, especially for anyone scheduling recurring meetings across multiple countries throughout the year.</p>
+  <a href="/tools/world-clock" class="btn btn-primary btn-lg">
     <svg class="icon"><use href="/assets/svg/icons.svg#globe"></use></svg>
     Check World Clock Live
   </a>
-  <p class="bp-byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
-</div>
+  <p class="byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
+</div></header>
 
-<div class="bp-body">
+<article class="page-section prose">
 
-  <div class="bp-toc">
+  <nav class="toc" aria-label="On this page">
     <h2>On This Page</h2>
     <ol>
       <li><a href="#how-to-use">How to Check the Time Anywhere Live</a></li>
@@ -125,14 +93,22 @@
       <li><a href="#mistakes">Common Mistakes</a></li>
       <li><a href="#faq">Frequently Asked Questions</a></li>
     </ol>
-  </div>
+  </nav>
 
   <h2 id="how-to-use">How to Check the Time Anywhere Live</h2>
-  <ol class="bp-howto">
-    <li>Open the <a href="/tools/world-clock">World Clock</a>.</li>
-    <li>Search for or select the city or timezone you want to check.</li>
-    <li>View the current live time, updating in real time as you watch.</li>
-    <li>Add multiple cities to compare several timezones side by side at once.</li>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the <a href="/tools/world-clock">World Clock</a>.</p>
+    </li>
+    <li class="step">
+      <p>Search for or select the city or timezone you want to check.</p>
+    </li>
+    <li class="step">
+      <p>View the current live time, updating in real time as you watch.</p>
+    </li>
+    <li class="step">
+      <p>Add multiple cities to compare several timezones side by side at once.</p>
+    </li>
   </ol>
 
   <h2 id="utc">Why UTC Is the Reference Point for Every Timezone</h2>
@@ -156,12 +132,14 @@
   <p>Many, though not all, regions of the world observe daylight saving time, shifting their clocks forward in spring and back in autumn, typically to make better use of daylight hours during warmer months. The genuine complication for cross-timezone scheduling is that different regions change their clocks on different dates, and some regions don't observe daylight saving at all, meaning the time difference between two specific locations isn't fixed year-round — it can shift by an hour at certain points in the calendar depending on which regions are involved and their respective daylight saving schedules. A meeting scheduled for "9 AM your time, which is 7 PM mine" during one part of the year can require a genuinely different local time on one side once one region's daylight saving shift takes effect while the other region's doesn't move at the same time, which is exactly the kind of quiet scheduling trap that catches people off guard for recurring international meetings spanning a daylight saving transition.</p>
 
   <h2 id="scheduling">Scheduling Across Timezones Correctly</h2>
-  <table class="bp-table">
+  <div class="table-wrap">
+    <table class="table">
     <tr><th>Approach</th><th>Reliability</th></tr>
     <tr><td>Mental math with fixed hour offset</td><td>Low — breaks with half-hour zones and daylight saving shifts</td></tr>
     <tr><td>Checking a live world clock at the time of scheduling</td><td>Good for one-off events, still needs rechecking for recurring ones</td></tr>
     <tr><td>Using calendar software with timezone-aware scheduling</td><td>Best — automatically adjusts for daylight saving changes on both ends</td></tr>
   </table>
+  </div>
   <p>For a one-time event, checking a live world clock at the moment of scheduling is generally sufficient and reliable. For anything recurring — a standing weekly meeting spanning multiple timezones — relying on calendar software that stores the event with proper timezone awareness (rather than a fixed, hardcoded time difference) is considerably more reliable, since the software automatically recalculates the correct local time for each participant as daylight saving transitions occur on either end, rather than requiring anyone to manually remember and adjust for the shift. This distinction matters most for teams and relationships spanning regions with mismatched daylight saving calendars, since a meeting time that felt correct when first scheduled can silently drift by an hour for one participant the moment their region's clocks change while the other region's don't move on the same date.</p>
 
   <h2 id="uses">Common Reasons to Check a World Clock</h2>
@@ -184,36 +162,51 @@
   <h3>Why Choose Logrith</h3>
   <p>The world clock updates live entirely in your browser, with no data ever transmitted anywhere — check any city's current time instantly, compare multiple timezones side by side, and avoid the common scheduling mistakes that fixed mental math tends to produce, whether you're planning a single call or managing an ongoing distributed team schedule.</p>
 
-</div>
+</article>
 
-<div class="bp-body">
+<article class="page-section prose">
   <h2 id="faq">Frequently Asked Questions</h2>
-  <div class="bp-faq-item"><h3>What is UTC and why are timezones described relative to it?</h3><p>UTC is the global time standard that doesn't shift for daylight saving, serving as the fixed reference point every timezone is defined relative to, giving everyone a common, unambiguous reference.</p></div>
-  <div class="bp-faq-item"><h3>Why do some timezones have offsets like UTC+5:30?</h3><p>Some regions, including India, chose a half-hour or 45-minute offset for historical and geographic reasons rather than aligning to the nearest whole-hour zone.</p></div>
-  <div class="bp-faq-item"><h3>How does daylight saving time affect scheduling?</h3><p>Regions observing daylight saving shift clocks at different dates than others, meaning the time difference between two locations can change during the year rather than staying fixed.</p></div>
-  <div class="bp-faq-item"><h3>Why isn't the time difference between two cities always whole hours?</h3><p>Because some regions use half-hour or 45-minute UTC offsets, the difference between two specific cities can work out to a non-whole-hour gap.</p></div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">What is UTC and why are timezones described relative to it?</summary>
+      <div class="faq-a"><p>UTC is the global time standard that doesn't shift for daylight saving, serving as the fixed reference point every timezone is defined relative to, giving everyone a common, unambiguous reference.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why do some timezones have offsets like UTC+5:30?</summary>
+      <div class="faq-a"><p>Some regions, including India, chose a half-hour or 45-minute offset for historical and geographic reasons rather than aligning to the nearest whole-hour zone.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How does daylight saving time affect scheduling?</summary>
+      <div class="faq-a"><p>Regions observing daylight saving shift clocks at different dates than others, meaning the time difference between two locations can change during the year rather than staying fixed.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why isn't the time difference between two cities always whole hours?</summary>
+      <div class="faq-a"><p>Because some regions use half-hour or 45-minute UTC offsets, the difference between two specific cities can work out to a non-whole-hour gap.</p></div>
+    </details>
+  </div>
 
   <h2>Conclusion</h2>
   <p>Checking the time anywhere in the world live is simple with the right tool, but the underlying reason a quick mental calculation so often goes wrong — half-hour offsets, unsynchronized daylight saving transitions, and regions that skip daylight saving entirely — is worth understanding for anyone who regularly schedules across timezones. A live world clock removes the guesswork for one-off checks; timezone-aware calendar tools remain the more reliable choice for anything recurring, since they automatically absorb the daylight saving shifts and offset quirks that trip up manual calculation every single time.</p>
-</div>
+</article>
 
-<div class="bp-prevnext">
+<nav class="post-nav page-section" aria-label="More guides">
   <a href="/blog/">&larr; Back to Blog</a>
   <a href="/blog/best-time-to-schedule-meeting">Next: <strong>Meeting Scheduling Guide</strong> &rarr;</a>
-</div>
+</nav>
 
-<div class="bp-related">
+<section class="page-section">
   <h2>Related Tools</h2>
-  <div class="bp-related-grid">
-    <a href="/tools/date-difference-calculator" class="bp-related-card"><h4>Date Difference Calculator</h4><p>Calculate days between two dates.</p></a>
-    <a href="/tools/age-calculator" class="bp-related-card"><h4>Age Calculator</h4><p>Calculate exact age by date of birth.</p></a>
-    <a href="/tools/unit-converter" class="bp-related-card"><h4>Unit Converter</h4><p>Convert between measurement units.</p></a>
-    <a href="/tools/currency-converter" class="bp-related-card"><h4>Currency Converter</h4><p>Convert amounts between world currencies.</p></a>
+  <div class="related-grid">
+    <a class="related-card" href="/tools/date-difference-calculator"><strong>Date Difference Calculator</strong><span>Calculate days between two dates.</span></a>
+    <a class="related-card" href="/tools/age-calculator"><strong>Age Calculator</strong><span>Calculate exact age by date of birth.</span></a>
+    <a class="related-card" href="/tools/unit-converter"><strong>Unit Converter</strong><span>Convert between measurement units.</span></a>
+    <a class="related-card" href="/tools/currency-converter"><strong>Currency Converter</strong><span>Convert amounts between world currencies.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

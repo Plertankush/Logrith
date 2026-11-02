@@ -18,8 +18,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <!-- Google tag (gtag.js) -->
  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
@@ -50,17 +54,20 @@
   {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is URL encoding?", "acceptedAnswer": {"@type": "Answer", "text": "URL encoding, also called percent encoding, replaces unsafe characters in a URL with a percent sign followed by two hexadecimal digits so the URL can be transmitted safely."}}, {"@type": "Question", "name": "What is the difference between encodeURI and encodeURIComponent?", "acceptedAnswer": {"@type": "Answer", "text": "encodeURI leaves reserved URL characters like slashes and question marks intact, while encodeURIComponent encodes them, making it suitable for individual query parameter values."}}, {"@type": "Question", "name": "When do I need to URL encode a string?", "acceptedAnswer": {"@type": "Answer", "text": "Whenever a value containing spaces, symbols, or non-ASCII characters is placed inside a URL, such as in query parameters, it should be encoded to avoid breaking the URL."}}, {"@type": "Question", "name": "Is my data sent to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No, encoding and decoding happen entirely in your browser."}}]}
   </script>
 </head>
-<body>
+<body class="page-url-encoder">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/developer-tools">Dev Tools</a> › URL Encoder</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/developer-tools">Developer Tools</a> › URL Encoder</nav>
   <h1>Free URL Encoder & Decoder</h1>
   <p>Encode special characters in URLs using percent-encoding, or decode percent-encoded URLs back to readable text. Instant and free.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">⚡ Instant</span><span class="tool-tag">🔗 encodeURIComponent</span><span class="tool-tag">📋 Copy Output</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#link"></use></svg> encodeURIComponent</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy Output</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:920px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>URL Encoder / Decoder</h2>
     <div class="tabs">
@@ -73,48 +80,68 @@
       <div class="controls-grid mt-8 mb-12">
         <div class="control-group"><label>Encoding Mode</label><select id="enc-mode"><option value="component">encodeURIComponent (recommended)</option><option value="uri">encodeURI (preserves URI structure)</option></select></div>
       </div>
-      <div class="btn-group"><button class="btn btn-primary" id="do-encode">🔗 Encode</button><button class="btn btn-secondary" id="enc-clear">✕ Clear</button><button class="btn btn-secondary" id="enc-sample">📋 Sample</button></div>
-      <div class="control-group mt-16" style="position:relative;"><label>Encoded Output</label><textarea class="tool-textarea mono" id="enc-out" rows="5" readonly></textarea><button class="copy-btn" id="copy-enc">📋 Copy</button></div>
+      <div class="btn-group"><button class="btn btn-primary" id="do-encode"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#link"></use></svg> Encode</button><button class="btn btn-secondary" id="enc-clear"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Clear</button><button class="btn btn-secondary" id="enc-sample"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Sample</button></div>
+      <div class="control-group mt-16 relative"><label>Encoded Output</label><textarea class="tool-textarea mono" id="enc-out" rows="5" readonly></textarea><button class="copy-btn" id="copy-enc"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button></div>
     </div>
 
     <div class="tab-panel" id="tab-decode">
       <div class="control-group mt-12"><label>Percent-encoded URL to Decode</label><textarea class="tool-textarea mono" id="dec-in" rows="5" placeholder="Enter percent-encoded URL to decode...&#10;e.g. Hello%20World%21 → Hello World!"></textarea></div>
-      <div class="btn-group mt-12"><button class="btn btn-primary" id="do-decode">🔓 Decode</button><button class="btn btn-secondary" id="dec-clear">✕ Clear</button></div>
-      <div class="status-msg" id="dec-status" style="margin-top:12px;"></div>
-      <div class="control-group mt-16" style="position:relative;"><label>Decoded Output</label><textarea class="tool-textarea mono" id="dec-out" rows="5" readonly></textarea><button class="copy-btn" id="copy-dec">📋 Copy</button></div>
+      <div class="btn-group mt-12"><button class="btn btn-primary" id="do-decode"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#unlock"></use></svg> Decode</button><button class="btn btn-secondary" id="dec-clear"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Clear</button></div>
+      <div class="status-msg mt-12" id="dec-status"></div>
+      <div class="control-group mt-16 relative"><label>Decoded Output</label><textarea class="tool-textarea mono" id="dec-out" rows="5" readonly></textarea><button class="copy-btn" id="copy-dec"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button></div>
     </div>
   </div>
 
   <div class="tool-card">
     <h2>Quick Reference — Common Encodings</h2>
-    <div style="overflow-x:auto;">
-      <table style="width:100%;border-collapse:collapse;font-size:.86rem;">
-        <thead><tr><th style="text-align:left;padding:8px 12px;background:var(--gray-50);color:var(--gray-500);font-weight:600;border-bottom:1.5px solid var(--gray-200);">Character</th><th style="text-align:left;padding:8px 12px;background:var(--gray-50);color:var(--gray-500);font-weight:600;border-bottom:1.5px solid var(--gray-200);">Encoded</th><th style="text-align:left;padding:8px 12px;background:var(--gray-50);color:var(--gray-500);font-weight:600;border-bottom:1.5px solid var(--gray-200);">Description</th></tr></thead>
+    <div class="u-df74e8">
+      <table class="u-ccfb2a">
+        <thead><tr><th class="u-039e38">Character</th><th class="u-039e38">Encoded</th><th class="u-039e38">Description</th></tr></thead>
         <tbody id="ref-table">
-          <tr><td style="padding:8px 12px;border-bottom:1px solid var(--gray-100);font-family:monospace;">Space</td><td style="padding:8px 12px;border-bottom:1px solid var(--gray-100);font-family:monospace;color:var(--primary);">%20</td><td style="padding:8px 12px;border-bottom:1px solid var(--gray-100);color:var(--gray-500);">Whitespace</td></tr>
-          <tr><td style="padding:8px 12px;border-bottom:1px solid var(--gray-100);font-family:monospace;">!</td><td style="padding:8px 12px;border-bottom:1px solid var(--gray-100);font-family:monospace;color:var(--primary);">%21</td><td style="padding:8px 12px;border-bottom:1px solid var(--gray-100);color:var(--gray-500);">Exclamation mark</td></tr>
-          <tr><td style="padding:8px 12px;border-bottom:1px solid var(--gray-100);font-family:monospace;">#</td><td style="padding:8px 12px;border-bottom:1px solid var(--gray-100);font-family:monospace;color:var(--primary);">%23</td><td style="padding:8px 12px;border-bottom:1px solid var(--gray-100);color:var(--gray-500);">Hash / Fragment</td></tr>
-          <tr><td style="padding:8px 12px;border-bottom:1px solid var(--gray-100);font-family:monospace;">&</td><td style="padding:8px 12px;border-bottom:1px solid var(--gray-100);font-family:monospace;color:var(--primary);">%26</td><td style="padding:8px 12px;border-bottom:1px solid var(--gray-100);color:var(--gray-500);">Ampersand (param separator)</td></tr>
-          <tr><td style="padding:8px 12px;border-bottom:1px solid var(--gray-100);font-family:monospace;">=</td><td style="padding:8px 12px;border-bottom:1px solid var(--gray-100);font-family:monospace;color:var(--primary);">%3D</td><td style="padding:8px 12px;border-bottom:1px solid var(--gray-100);color:var(--gray-500);">Equals (key=value)</td></tr>
-          <tr><td style="padding:8px 12px;border-bottom:1px solid var(--gray-100);font-family:monospace;">?</td><td style="padding:8px 12px;border-bottom:1px solid var(--gray-100);font-family:monospace;color:var(--primary);">%3F</td><td style="padding:8px 12px;border-bottom:1px solid var(--gray-100);color:var(--gray-500);">Query string start</td></tr>
-          <tr><td style="padding:8px 12px;font-family:monospace;">@</td><td style="padding:8px 12px;font-family:monospace;color:var(--primary);">%40</td><td style="padding:8px 12px;color:var(--gray-500);">At sign</td></tr>
+          <tr><td class="u-487786">Space</td><td class="u-53a01e">%20</td><td class="u-d322df">Whitespace</td></tr>
+          <tr><td class="u-487786">!</td><td class="u-53a01e">%21</td><td class="u-d322df">Exclamation mark</td></tr>
+          <tr><td class="u-487786">#</td><td class="u-53a01e">%23</td><td class="u-d322df">Hash / Fragment</td></tr>
+          <tr><td class="u-487786">&</td><td class="u-53a01e">%26</td><td class="u-d322df">Ampersand (param separator)</td></tr>
+          <tr><td class="u-487786">=</td><td class="u-53a01e">%3D</td><td class="u-d322df">Equals (key=value)</td></tr>
+          <tr><td class="u-487786">?</td><td class="u-53a01e">%3F</td><td class="u-d322df">Query string start</td></tr>
+          <tr><td class="u-c7afe5">@</td><td class="u-b9f127">%40</td><td class="u-68e138">At sign</td></tr>
         </tbody>
       </table>
     </div>
   </div>
 </div>
 
-<div class="faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
-  <div class="faq-item"><div class="faq-q">What is URL encoding?</div><div class="faq-a">URL encoding (percent-encoding) replaces unsafe ASCII characters with a % followed by their hex value. It ensures special characters in URLs don't break the URL structure. E.g., a space becomes %20.</div></div>
-  <div class="faq-item"><div class="faq-q">What's the difference between encodeURI and encodeURIComponent?</div><div class="faq-a">encodeURI encodes a complete URL and preserves URL structural characters like /, ?, &, #. encodeURIComponent encodes a URL component (like a query parameter value) and also encodes these structural characters. Use encodeURIComponent for values in query strings.</div></div>
-  <div class="faq-item"><div class="faq-q">When do I need URL encoding?</div><div class="faq-a">You need URL encoding when passing user input as URL query parameters, when building API requests with special characters in values, or when creating redirect URLs that contain query strings.</div></div>
-  <div class="faq-item"><div class="faq-q">Is my text sent to a server when encoding or decoding?</div><div class="faq-a">No, both encoding and decoding happen instantly in your browser using JavaScript's built-in functions. Nothing you enter is transmitted anywhere.</div></div>
-  <div class="faq-item"><div class="faq-q">What characters get encoded?</div><div class="faq-a">Any character outside the small set considered "safe" in URLs — letters, digits, and a handful of symbols like -, _, ., and ~ — gets converted to its percent-encoded form, including spaces, ampersands, question marks, and non-ASCII characters.</div></div>
-  <div class="faq-item"><div class="faq-q">Can I decode an already-encoded URL to read it?</div><div class="faq-a">Yes, paste the encoded URL or string into the decode field and it will convert all percent-encoded sequences back into their original readable characters.</div></div>
-</div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">What is URL encoding?</summary>
+      <div class="faq-a"><p>URL encoding (percent-encoding) replaces unsafe ASCII characters with a % followed by their hex value. It ensures special characters in URLs don't break the URL structure. E.g., a space becomes %20.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What's the difference between encodeURI and encodeURIComponent?</summary>
+      <div class="faq-a"><p>encodeURI encodes a complete URL and preserves URL structural characters like /, ?, &amp;, #. encodeURIComponent encodes a URL component (like a query parameter value) and also encodes these structural characters. Use encodeURIComponent for values in query strings.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">When do I need URL encoding?</summary>
+      <div class="faq-a"><p>You need URL encoding when passing user input as URL query parameters, when building API requests with special characters in values, or when creating redirect URLs that contain query strings.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my text sent to a server when encoding or decoding?</summary>
+      <div class="faq-a"><p>No, both encoding and decoding happen instantly in your browser using JavaScript's built-in functions. Nothing you enter is transmitted anywhere.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What characters get encoded?</summary>
+      <div class="faq-a"><p>Any character outside the small set considered "safe" in URLs — letters, digits, and a handful of symbols like -, _, ., and ~ — gets converted to its percent-encoded form, including spaces, ampersands, question marks, and non-ASCII characters.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I decode an already-encoded URL to read it?</summary>
+      <div class="faq-a"><p>Yes, paste the encoded URL or string into the decode field and it will convert all percent-encoded sequences back into their original readable characters.</p></div>
+    </details>
+  </div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>About the URL Encoder/Decoder Tool</h2>
   <p>The Logrith URL Encoder converts text into a URL-safe format using percent-encoding, and decodes it back into readable text. This is essential whenever special characters, spaces, or non-ASCII text need to be safely included in a URL, query string, or API request without breaking the structure of the URL itself.</p>
 
@@ -127,7 +154,7 @@
   <p>JavaScript provides two related but different encoding functions, and picking the right one matters. encodeURI is designed for encoding a complete URL — it leaves structural characters like /, ?, &amp;, and # untouched, since those characters have special meaning in the overall URL structure and shouldn't be encoded if you're encoding an entire address. encodeURIComponent, by contrast, is designed for encoding a single component or value — like one query parameter's value — and it does encode those structural characters, since within a single value, a literal & or ? should be treated as data rather than as part of the URL's structure. As a general rule, use encodeURIComponent when encoding a value that will be placed inside a query string, and reserve encodeURI for encoding an entire URL that already has its structure in place.</p>
 
   <h3>Common Situations That Require URL Encoding</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Passing user input as a query parameter.</strong> If a search term contains spaces or special characters, it needs to be encoded before being appended to a URL as a parameter value.</li>
     <li><strong>Building API request URLs.</strong> Many APIs require specific values, like API keys or search terms, to be properly encoded within the request URL.</li>
     <li><strong>Creating redirect URLs.</strong> A URL used as a redirect target, especially one that itself contains a query string, often needs to be encoded to avoid the outer URL misinterpreting the nested one.</li>
@@ -138,12 +165,24 @@
   <p>Decoding reverses the process, converting percent-encoded sequences back into their original, human-readable characters. This is useful when you've copied a URL from a browser address bar or server log and it's full of %20s and %2Fs that are hard to read at a glance — decoding it instantly reveals the actual text or parameter values being passed, which is especially helpful when debugging why a particular link or API call isn't behaving as expected.</p>
 
   <h3>Step-by-Step: How to Encode or Decode a URL</h3>
-  <div class="tool-steps">
-    <div class="tool-step"><strong>1. Paste your text or URL</strong>Enter the text you want to encode, or the encoded string you want to decode.</div>
-    <div class="tool-step"><strong>2. Choose the operation</strong>Select Encode or Decode depending on your direction.</div>
-    <div class="tool-step"><strong>3. Pick the right function</strong>Use Component encoding for query parameter values, or full URI encoding for a complete address.</div>
-    <div class="tool-step"><strong>4. Copy the result</strong>Copy the processed text to use in your code, URL, or API request.</div>
-  </div>
+  <ol class="steps">
+    <li class="step">
+      <strong>Paste your text or URL</strong>
+      <p>Enter the text you want to encode, or the encoded string you want to decode.</p>
+    </li>
+    <li class="step">
+      <strong>Choose the operation</strong>
+      <p>Select Encode or Decode depending on your direction.</p>
+    </li>
+    <li class="step">
+      <strong>Pick the right function</strong>
+      <p>Use Component encoding for query parameter values, or full URI encoding for a complete address.</p>
+    </li>
+    <li class="step">
+      <strong>Copy the result</strong>
+      <p>Copy the processed text to use in your code, URL, or API request.</p>
+    </li>
+  </ol>
 
   <h3>Privacy</h3>
   <p>All encoding and decoding happens locally in your browser using JavaScript's built-in functions — nothing you enter is sent to a server or stored. This makes the tool safe to use even with sensitive query values, API parameters, or tokens you don't want passing through a third-party service.</p>
@@ -152,39 +191,36 @@
   <p>One issue that trips up developers regularly is double encoding — accidentally encoding a string that's already been encoded once, which turns the percent signs from the first encoding pass into their own encoded form (%25) and produces a broken, unreadable result when decoded incorrectly or passed to a system expecting single encoding. This typically happens when a value gets encoded both on the client side and again on the server side, or when a URL is constructed by concatenating an already-encoded parameter into a string that then gets encoded again as a whole. If a decoded URL still contains %25 sequences or other garbled percent signs, double encoding is usually the cause, and the fix is to decode it twice, or better, to trace back through the code and remove the redundant encoding step.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/base64" class="tool-item"><div class="ti-text"><h4>Base64 Encoder/Decoder</h4><p>Encode and decode Base64 strings instantly.</p></div></a>
-    <a href="/tools/html-entity-converter" class="tool-item"><div class="ti-text"><h4>HTML Entity Converter</h4><p>Encode and decode HTML entities and special characters.</p></div></a>
-    <a href="/tools/json-formatter" class="tool-item"><div class="ti-text"><h4>JSON Formatter</h4><p>Format, validate, and beautify JSON data.</p></div></a>
-    <a href="/tools/regex-tester" class="tool-item"><div class="ti-text"><h4>Regex Tester</h4><p>Build and test regular expressions with live matching.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">url encoder online</span>
-        <span class="keyword-tag">url decoder free</span>
-        <span class="keyword-tag">percent encoding tool</span>
-        <span class="keyword-tag">encodeuricomponent online</span>
-        <span class="keyword-tag">url escape tool</span>
-        <span class="keyword-tag">query string encoder</span>
-        <span class="keyword-tag">decode url online free</span>
-        <span class="keyword-tag">url encode decode tool</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/base64"><strong>Base64 Encoder/Decoder</strong><span>Encode and decode Base64 strings instantly.</span></a>
+    <a class="related-card" href="/tools/html-entity-converter"><strong>HTML Entity Converter</strong><span>Encode and decode HTML entities and special characters.</span></a>
+    <a class="related-card" href="/tools/json-formatter"><strong>JSON Formatter</strong><span>Format, validate, and beautify JSON data.</span></a>
+    <a class="related-card" href="/tools/regex-tester"><strong>Regex Tester</strong><span>Build and test regular expressions with live matching.</span></a>
   </div>
 </section>
 
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">url encoder online</span>
+    <span class="keyword-tag">url decoder free</span>
+    <span class="keyword-tag">percent encoding tool</span>
+    <span class="keyword-tag">encodeuricomponent online</span>
+    <span class="keyword-tag">url escape tool</span>
+    <span class="keyword-tag">query string encoder</span>
+    <span class="keyword-tag">decode url online free</span>
+    <span class="keyword-tag">url encode decode tool</span>
+  </div>
+</section>
+
+</main>
+
 <div id="footer"></div>
+<script src="/assets/js/main.js"></script>
 
-<script src="/load-components.js"></script>
 
-<script src="/assets/js/main.js" defer></script>
 <script>
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => {

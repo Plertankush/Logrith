@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -51,17 +55,20 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-fancy-text-generator">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/text-generators">Text & Generators</a> › Fancy Text Generator</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/text-generators">Text &amp; Generators</a> › Fancy Text Generator</nav>
   <h1>Free Fancy Text Generator</h1>
   <p>Type your text once and get it instantly transformed into a dozen stylish Unicode fonts — perfect for social media bios and posts.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">✨ 12+ Styles</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#sparkles"></use></svg> 12+ Styles</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:820px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Enter Your Text</h2>
     <input type="text" id="input-text" class="field-input" value="Hello World" placeholder="Type something...">
@@ -69,46 +76,51 @@
 
   <div class="tool-card">
     <h2>Styled Results — Tap to Copy</h2>
-    <div id="styles-list" style="display:flex;flex-direction:column;gap:8px;"></div>
+    <div id="styles-list"></div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>How does fancy text work if it's not a real font?</h3><p>These styles use special Unicode characters that look like styled letters (bold, italic, etc.) but are actually distinct characters, so they display consistently as text everywhere, not as a font applied by a website.</p></div>
-    <div class="faq-item-box"><h3>Will fancy text work everywhere I paste it?</h3><p>Since these are real Unicode characters, they work in most modern apps and platforms. Some very old or limited systems may not render every character correctly.</p></div>
-    <div class="faq-item-box"><h3>Can I use fancy text in a username?</h3><p>Many platforms accept Unicode characters in display names and bios, though some strictly limit usernames to standard letters — check the specific platform's rules.</p></div>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card">
-      <h2>How to Use the Fancy Text Generator</h2>
-      <div class="tool-steps">
-        <div class="tool-step">
-          <strong>1. Type your text</strong>
-          Enter the word or phrase you want styled in the input box — it starts with "Hello World" as a sample.
-        </div>
-        <div class="tool-step">
-          <strong>2. See all 12 styles generate instantly</strong>
-          As you type, every style — Bold, Italic, Bold Italic, Script, Double-Struck, Fraktur, Monospace, Sans-Serif Bold, Circled, Fullwidth, Strikethrough, and Underline — updates live below the input.
-        </div>
-        <div class="tool-step">
-          <strong>3. Browse the list</strong>
-          Scroll through the styled results, each labeled with its style name, to find the look that fits your bio, post, or message.
-        </div>
-        <div class="tool-step">
-          <strong>4. Tap to copy</strong>
-          Click any styled result to copy that exact styled text to your clipboard, ready to paste into Instagram, TikTok, Discord, or anywhere else.
-        </div>
-      </div>
-    </div>
+    <details class="faq-item">
+      <summary class="faq-q">How does fancy text work if it's not a real font?</summary>
+      <div class="faq-a"><p>These styles use special Unicode characters that look like styled letters (bold, italic, etc.) but are actually distinct characters, so they display consistently as text everywhere, not as a font applied by a website.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Will fancy text work everywhere I paste it?</summary>
+      <div class="faq-a"><p>Since these are real Unicode characters, they work in most modern apps and platforms. Some very old or limited systems may not render every character correctly.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I use fancy text in a username?</summary>
+      <div class="faq-a"><p>Many platforms accept Unicode characters in display names and bios, though some strictly limit usernames to standard letters — check the specific platform's rules.</p></div>
+    </details>
   </div>
 </section>
 
-<section class="article-section">
+<section class="page-section">
+  <h2>How to Use the Fancy Text Generator</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Type your text</strong>
+      <p>Enter the word or phrase you want styled in the input box — it starts with "Hello World" as a sample.</p>
+    </li>
+    <li class="step">
+      <strong>See all 12 styles generate instantly</strong>
+      <p>As you type, every style — Bold, Italic, Bold Italic, Script, Double-Struck, Fraktur, Monospace, Sans-Serif Bold, Circled, Fullwidth, Strikethrough, and Underline — updates live below the input.</p>
+    </li>
+    <li class="step">
+      <strong>Browse the list</strong>
+      <p>Scroll through the styled results, each labeled with its style name, to find the look that fits your bio, post, or message.</p>
+    </li>
+    <li class="step">
+      <strong>Tap to copy</strong>
+      <p>Click any styled result to copy that exact styled text to your clipboard, ready to paste into Instagram, TikTok, Discord, or anywhere else.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
   <h2>Generate Stylish Unicode Text</h2>
   <p>This tool transforms ordinary text into a variety of stylish alternate character sets — bold, italic, bubble letters, script, strikethrough, and more — all built from real Unicode characters, so the styled text works as plain text anywhere you paste it.</p>
 
@@ -116,7 +128,7 @@
   <p>Fancy text generators don't apply a font — they substitute each letter in your text with a different, visually distinct Unicode character that happens to look bold, italic, or otherwise stylized. The Unicode standard includes entire blocks of "Mathematical Alphanumeric Symbols" originally intended for mathematical notation, along with other special character sets, that happen to provide ready-made styled versions of the Latin alphabet. Because these are genuine text characters (not images or fonts), they copy, paste, and display consistently across social media bios, messaging apps, and most modern software.</p>
 
   <h3>Common Uses</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Social media bios</strong> — Instagram, TikTok, and Twitter/X profiles where stylized text helps a bio stand out.</li>
     <li><strong>Usernames and display names</strong> — where platforms allow Unicode characters.</li>
     <li><strong>Chat and messaging</strong> — adding visual flair to messages in apps that support Unicode.</li>
@@ -130,7 +142,7 @@
   <p>All text transformation happens directly in your browser using character mapping — nothing is sent to a server.</p>
 
   <h3>The 12 Styles Explained</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Bold, Italic, Bold Italic:</strong> styled Latin letters from the Unicode Mathematical Alphanumeric Symbols block, visually matching bold or italic type without needing an actual bold or italic font applied.</li>
     <li><strong>Script:</strong> cursive-style letterforms, useful for a more decorative or elegant look in a bio or title.</li>
     <li><strong>Double-Struck:</strong> an outlined, "blackboard bold" style commonly seen in math notation, repurposed here as a distinct visual effect.</li>
@@ -164,34 +176,31 @@
   <p>Screen readers often read styled Unicode characters letter by letter or mispronounce them entirely, since they're technically distinct code points rather than the standard alphabet the screen reader expects. If accessibility matters for where you're posting — a public announcement, a resume, or content aimed at a broad audience — it's worth sticking to plain text or using fancy styling sparingly, such as for a single decorative heading rather than full paragraphs.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/case-converter" class="tool-item"><div class="ti-text"><h4>Case Converter</h4><p>Convert text between standard case formats.</p></div></a>
-    <a href="/tools/morse-code-translator" class="tool-item"><div class="ti-text"><h4>Morse Code Translator</h4><p>Convert text to and from Morse code.</p></div></a>
-    <a href="/tools/nato-phonetic-alphabet-translator" class="tool-item"><div class="ti-text"><h4>NATO Phonetic Alphabet Translator</h4><p>Convert text to NATO spelling alphabet.</p></div></a>
-    <a href="/tools/text-reverser" class="tool-item"><div class="ti-text"><h4>Text Reverser</h4><p>Reverse text characters, words, or lines.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">fancy text generator</span>
-        <span class="keyword-tag">stylish text generator</span>
-        <span class="keyword-tag">unicode font generator</span>
-        <span class="keyword-tag">cool text for instagram bio</span>
-        <span class="keyword-tag">bold italic text generator</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/case-converter"><strong>Case Converter</strong><span>Convert text between standard case formats.</span></a>
+    <a class="related-card" href="/tools/morse-code-translator"><strong>Morse Code Translator</strong><span>Convert text to and from Morse code.</span></a>
+    <a class="related-card" href="/tools/nato-phonetic-alphabet-translator"><strong>NATO Phonetic Alphabet Translator</strong><span>Convert text to NATO spelling alphabet.</span></a>
+    <a class="related-card" href="/tools/text-reverser"><strong>Text Reverser</strong><span>Reverse text characters, words, or lines.</span></a>
   </div>
 </section>
 
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">fancy text generator</span>
+    <span class="keyword-tag">stylish text generator</span>
+    <span class="keyword-tag">unicode font generator</span>
+    <span class="keyword-tag">cool text for instagram bio</span>
+    <span class="keyword-tag">bold italic text generator</span>
+  </div>
+</section>
+
+</main>
+
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 const NORMAL_UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const NORMAL_LOWER = 'abcdefghijklmnopqrstuvwxyz';
@@ -246,7 +255,7 @@ function render() {
         <div class="tl-name" style="font-size:.75rem;color:var(--gray-500);text-transform:uppercase;letter-spacing:.5px;">${item.name}</div>
         <div style="font-size:1.15rem;margin-top:4px;word-break:break-word;">${item.text}</div>
       </div>
-      <span class="tl-arrow">📋</span>
+      <span class="tl-arrow"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg></span>
     </div>
   `).join('');
 

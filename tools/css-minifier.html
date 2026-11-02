@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -45,17 +49,20 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-css-minifier">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/developer-tools">Developer Tools</a> › CSS Minifier</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/developer-tools">Developer Tools</a> › CSS Minifier</nav>
   <h1>Free CSS Minifier & Beautifier</h1>
   <p>Minify CSS to reduce file size, or beautify minified CSS back into readable, indented code.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">🗜️ Minify & Beautify</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zip"></use></svg> Minify & Beautify</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:900px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>CSS Code</h2>
     <textarea class="tool-textarea mono" id="input-css" rows="12" placeholder="Paste your CSS here...">.box {
@@ -68,35 +75,59 @@
   font-size: 16px;
 }</textarea>
     <div class="btn-group mt-12">
-      <button class="btn btn-primary" id="minify-btn">🗜️ Minify</button>
-      <button class="btn btn-primary" id="beautify-btn">✨ Beautify</button>
-      <button class="btn btn-secondary" id="clear-btn">✕ Clear</button>
+      <button class="btn btn-primary" id="minify-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zip"></use></svg> Minify</button>
+      <button class="btn btn-primary" id="beautify-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#sparkles"></use></svg> Beautify</button>
+      <button class="btn btn-secondary" id="clear-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Clear</button>
     </div>
     <div class="stats-row mt-8" id="stats-row"></div>
 
-    <div class="control-group mt-16" style="position:relative;">
+    <div class="control-group mt-16 relative">
       <label>Output</label>
       <textarea class="tool-textarea mono" id="output-css" rows="12" readonly></textarea>
-      <button class="copy-btn" id="copy-btn">📋 Copy</button>
+      <button class="copy-btn" id="copy-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
     </div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>How much smaller does minified CSS get?</h3><p>Typically 20-40% smaller depending on how much whitespace, comments, and formatting the original CSS had.</p></div>
-    <div class="faq-item-box"><h3>Does minifying break my CSS?</h3><p>No, minification only removes whitespace, comments, and unnecessary characters — it doesn't change how the CSS functions.</p></div>
-    <div class="faq-item-box"><h3>Can I beautify already-minified CSS?</h3><p>Yes, use the Beautify button to reformat minified CSS with proper indentation and line breaks for readability.</p></div>
-    <div class="faq-item-box"><h3>Is my CSS code uploaded to a server?</h3><p>No, both minifying and beautifying run entirely in your browser using JavaScript. Your code never leaves your device.</p></div>
-    <div class="faq-item-box"><h3>Will minifying affect how my CSS renders?</h3><p>No, minification only removes characters that have no effect on rendering — whitespace, comments, and optional syntax. Every selector, property, and value remains functionally identical.</p></div>
-    <div class="faq-item-box"><h3>Should I minify CSS during development too?</h3><p>No, keep readable, well-formatted CSS during development and only minify as a build step before deploying to production, since minified code is much harder to debug while actively working on it.</p></div>
-    <div class="faq-item-box"><h3>Does this tool handle CSS with custom properties (variables)?</h3><p>Yes, CSS custom properties like --main-color are treated the same as any other value during minification and beautification, since they follow standard CSS syntax rules.</p></div>
-    <div class="faq-item-box"><h3>Can I minify CSS with media queries and nested rules?</h3><p>Yes, media queries, pseudo-classes, and standard nested selector blocks are all handled correctly during both minification and beautification.</p></div>
+    <details class="faq-item">
+      <summary class="faq-q">How much smaller does minified CSS get?</summary>
+      <div class="faq-a"><p>Typically 20-40% smaller depending on how much whitespace, comments, and formatting the original CSS had.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does minifying break my CSS?</summary>
+      <div class="faq-a"><p>No, minification only removes whitespace, comments, and unnecessary characters — it doesn't change how the CSS functions.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I beautify already-minified CSS?</summary>
+      <div class="faq-a"><p>Yes, use the Beautify button to reformat minified CSS with proper indentation and line breaks for readability.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my CSS code uploaded to a server?</summary>
+      <div class="faq-a"><p>No, both minifying and beautifying run entirely in your browser using JavaScript. Your code never leaves your device.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Will minifying affect how my CSS renders?</summary>
+      <div class="faq-a"><p>No, minification only removes characters that have no effect on rendering — whitespace, comments, and optional syntax. Every selector, property, and value remains functionally identical.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Should I minify CSS during development too?</summary>
+      <div class="faq-a"><p>No, keep readable, well-formatted CSS during development and only minify as a build step before deploying to production, since minified code is much harder to debug while actively working on it.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does this tool handle CSS with custom properties (variables)?</summary>
+      <div class="faq-a"><p>Yes, CSS custom properties like --main-color are treated the same as any other value during minification and beautification, since they follow standard CSS syntax rules.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I minify CSS with media queries and nested rules?</summary>
+      <div class="faq-a"><p>Yes, media queries, pseudo-classes, and standard nested selector blocks are all handled correctly during both minification and beautification.</p></div>
+    </details>
   </div>
-</div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>CSS Minifier and Beautifier</h2>
   <p>This tool compresses CSS code by removing unnecessary whitespace, comments, and characters to reduce file size for production use, or reformats minified CSS back into readable, properly indented code for editing and debugging.</p>
 
@@ -104,7 +135,7 @@
   <p>Minifying CSS removes everything that's only there for human readability — comments, extra spaces, line breaks, and unnecessary semicolons — without changing how the styles actually work. Smaller CSS files download faster, which directly improves page load time, especially on mobile connections or for sites with render-blocking stylesheets. This is a standard step in most production web deployment workflows.</p>
 
   <h3>What Minification Removes</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Comments</strong> — anything between <code>/* */</code> is stripped entirely.</li>
     <li><strong>Whitespace and line breaks</strong> — collapsed to the minimum needed for valid syntax.</li>
     <li><strong>Unnecessary spaces</strong> — around colons, braces, and commas.</li>
@@ -133,27 +164,40 @@
   <p>A frequent mistake is editing the minified file directly in production, making a small tweak to a live, already-compressed stylesheet instead of editing the readable source and re-minifying. This works in a pinch but makes the next legitimate edit much harder, since any changes made directly to minified code get mixed in with everything else on that single line. Keeping a readable source version of every stylesheet, and treating the minified version as a generated output rather than something to hand-edit, avoids this problem entirely — the Beautify function here is also a good safety net for recovering a readable version if the original source was ever lost.</p>
 
   <h3>Step-by-Step: Minifying or Beautifying CSS</h3>
-  <div class="tool-steps">
-    <div class="tool-step"><strong>1. Paste your CSS</strong>Enter or paste your stylesheet into the input box.</div>
-    <div class="tool-step"><strong>2. Choose an action</strong>Click Minify to compress it, or Beautify to format readable code from a minified version.</div>
-    <div class="tool-step"><strong>3. Check the size comparison</strong>After minifying, review the original size, new size, and percentage saved.</div>
-    <div class="tool-step"><strong>4. Copy the output</strong>Click Copy to grab the processed CSS for use in your project.</div>
+  <ol class="steps">
+    <li class="step">
+      <strong>Paste your CSS</strong>
+      <p>Enter or paste your stylesheet into the input box.</p>
+    </li>
+    <li class="step">
+      <strong>Choose an action</strong>
+      <p>Click Minify to compress it, or Beautify to format readable code from a minified version.</p>
+    </li>
+    <li class="step">
+      <strong>Check the size comparison</strong>
+      <p>After minifying, review the original size, new size, and percentage saved.</p>
+    </li>
+    <li class="step">
+      <strong>Copy the output</strong>
+      <p>Click Copy to grab the processed CSS for use in your project.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/tools/js-minifier"><strong>JS Minifier</strong><span>Minify or beautify JavaScript code.</span></a>
+    <a class="related-card" href="/tools/html-minifier"><strong>HTML Minifier</strong><span>Minify or beautify HTML code.</span></a>
+    <a class="related-card" href="/tools/css-gradient-generator"><strong>CSS Gradient Generator</strong><span>Build gradients visually with CSS output.</span></a>
+    <a class="related-card" href="/tools/css-box-shadow-generator"><strong>CSS Box Shadow Generator</strong><span>Build box shadows visually with CSS output.</span></a>
   </div>
 </section>
 
-<div class="content-card related-tools">
-  <h2>Related Tools</h2>
-  <div class="related-grid">
-    <a href="/tools/js-minifier" class="tool-item"><div class="ti-text"><h4>JS Minifier</h4><p>Minify or beautify JavaScript code.</p></div></a>
-    <a href="/tools/html-minifier" class="tool-item"><div class="ti-text"><h4>HTML Minifier</h4><p>Minify or beautify HTML code.</p></div></a>
-    <a href="/tools/css-gradient-generator" class="tool-item"><div class="ti-text"><h4>CSS Gradient Generator</h4><p>Build gradients visually with CSS output.</p></div></a>
-    <a href="/tools/css-box-shadow-generator" class="tool-item"><div class="ti-text"><h4>CSS Box Shadow Generator</h4><p>Build box shadows visually with CSS output.</p></div></a>
-  </div>
-</div>
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 function minifyCSS(css) {
   return css

@@ -23,47 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .bp-hero { max-width:820px;margin:0 auto;padding:48px 20px 8px; }
-    .bp-crumb { font-size:.85rem;color:var(--gray-500);margin-bottom:16px; }
-    .bp-crumb a { color:var(--primary);text-decoration:none; }
-    .bp-hero h1 { font-family:var(--font-display);font-size:2rem;line-height:1.25;color:var(--gray-900);margin-bottom:14px; }
-    .bp-hero .bp-dek { font-size:1.05rem;color:var(--gray-700);line-height:1.7;margin-bottom:20px; }
-    .bp-cta { display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:white;padding:13px 26px;border-radius:var(--radius);font-weight:700;text-decoration:none;font-size:.95rem; }
-    .bp-cta svg { width:17px;height:17px; }
-    .bp-cta:hover { background:var(--primary-dark); }
-    .bp-body { max-width:760px;margin:0 auto;padding:28px 20px 20px; }
-    .bp-body h2 { font-family:var(--font-display);font-size:1.5rem;color:var(--gray-900);margin:38px 0 14px; }
-    .bp-body h3 { font-family:var(--font-display);font-size:1.15rem;color:var(--gray-900);margin:26px 0 10px; }
-    .bp-body p { color:var(--gray-700);line-height:1.8;margin-bottom:16px;font-size:1rem; }
-    .bp-body ul, .bp-body ol { color:var(--gray-700);line-height:1.8;margin:0 0 16px 22px; }
-    .bp-body li { margin-bottom:8px; }
-    .bp-body strong { color:var(--gray-900); }
-    .bp-toc { background:var(--gray-50);border-radius:var(--radius-lg);padding:20px 24px;margin:24px 0; }
-    .bp-toc h2 { margin:0 0 10px;font-size:1.05rem; }
-    .bp-toc ol { margin:0 0 0 20px; }
-    .bp-toc a { color:var(--primary);text-decoration:none; }
-    .bp-table { width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:.92rem; }
-    .bp-table th, .bp-table td { border:1px solid var(--gray-200);padding:10px 12px;text-align:left; }
-    .bp-table th { background:var(--gray-50);font-weight:700;color:var(--gray-900); }
-    .bp-howto { counter-reset:step; list-style:none;margin-left:0; }
-    .bp-howto li { position:relative;padding-left:42px;margin-bottom:18px; }
-    .bp-howto li::before { counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;background:var(--primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem; }
-    .bp-faq-item { border-bottom:1px solid var(--gray-200);padding:16px 0; }
-    .bp-faq-item h3 { margin:0 0 8px; font-size:1.02rem; }
-    .bp-byline { font-size:.82rem;color:var(--gray-500);margin-top:10px; }
-    .bp-related { max-width:1000px;margin:0 auto;padding:20px 20px 60px; }
-    .bp-related h2 { font-family:var(--font-display);font-size:1.4rem;color:var(--gray-900);margin-bottom:18px;text-align:center; }
-    .bp-related-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px; }
-    .bp-related-card { border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:18px;text-decoration:none;color:inherit;background:var(--white); }
-    .bp-related-card h4 { font-size:.95rem;color:var(--gray-900);margin-bottom:6px; }
-    .bp-related-card p { font-size:.82rem;color:var(--gray-700);line-height:1.5; }
-    .bp-prevnext { display:flex;justify-content:space-between;gap:16px;max-width:760px;margin:0 auto;padding:0 20px 20px; }
-    .bp-prevnext a { flex:1;border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:12px 16px;text-decoration:none;color:var(--gray-700);font-size:.85rem; }
-    .bp-prevnext a strong { display:block;color:var(--gray-900);font-size:.92rem; }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -99,23 +64,26 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-blog-image-crop">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="bp-hero">
-  <div class="bp-crumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/image-pdf-tools">Image & PDF Tools</a> &rsaquo; Image Crop</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/image-pdf-tools">Image & PDF Tools</a> &rsaquo; Image Crop</nav>
   <h1>How to Crop an Image to the Exact Ratio a Platform Actually Requires</h1>
-  <p class="bp-dek">A photo straight from a phone camera almost never matches the aspect ratio a platform wants. Instagram wants square or portrait, YouTube wants a strict 16:9 widescreen frame, and a print flyer wants something else entirely. Cropping to the wrong ratio gets your image auto-cropped unpredictably by the platform itself, or padded with unwanted empty space. Here's how to crop precisely, without losing quality, for whatever platform or purpose you're preparing an image for, and the composition habits that make a technically correct crop also look intentional.</p>
-  <a href="/tools/image-crop" class="bp-cta">
+  <p>A photo straight from a phone camera almost never matches the aspect ratio a platform wants. Instagram wants square or portrait, YouTube wants a strict 16:9 widescreen frame, and a print flyer wants something else entirely. Cropping to the wrong ratio gets your image auto-cropped unpredictably by the platform itself, or padded with unwanted empty space. Here's how to crop precisely, without losing quality, for whatever platform or purpose you're preparing an image for, and the composition habits that make a technically correct crop also look intentional.</p>
+  <a href="/tools/image-crop" class="btn btn-primary btn-lg">
     <svg class="icon"><use href="/assets/svg/icons.svg#crop"></use></svg>
     Crop an Image
   </a>
-  <p class="bp-byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
-</div>
+  <p class="byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
+</div></header>
 
-<div class="bp-body">
+<article class="page-section prose">
 
-  <div class="bp-toc">
+  <nav class="toc" aria-label="On this page">
     <h2>On This Page</h2>
     <ol>
       <li><a href="#why-ratio">Why Aspect Ratio Matters More Than People Realize</a></li>
@@ -129,21 +97,30 @@
       <li><a href="#privacy">Privacy and Quality</a></li>
       <li><a href="#faq">Frequently Asked Questions</a></li>
     </ol>
-  </div>
+  </nav>
 
   <h2 id="why-ratio">Why Aspect Ratio Matters More Than People Realize</h2>
   <p>Every platform that displays images enforces an aspect ratio, whether or not it says so explicitly. Upload a portrait photo to a platform expecting a landscape 16:9 frame, and the platform will typically auto-crop it for you — usually from the center, with no regard for what's actually the most important part of your composition. A carefully framed photo can end up with its subject's head cut off, simply because the platform's automatic crop didn't know what mattered in the frame. Cropping to the correct ratio yourself, deliberately, before uploading gives you control over exactly what stays in frame — control that an automatic platform crop won't give you, since no algorithm can reliably guess which part of a given photo the photographer actually intended to be the focal point.</p>
 
   <h2 id="how-to-use">How to Crop an Image</h2>
-  <ol class="bp-howto">
-    <li>Open the <a href="/tools/image-crop">Image Crop tool</a> and upload your image.</li>
-    <li>Choose a preset aspect ratio — 1:1 square, 16:9 landscape, 4:3, or 9:16 — or select freeform to crop to any custom shape.</li>
-    <li>Drag the crop box to position it over the part of the image you want to keep, and resize using the corner handles.</li>
-    <li>Preview the result, then download the cropped image.</li>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the <a href="/tools/image-crop">Image Crop tool</a> and upload your image.</p>
+    </li>
+    <li class="step">
+      <p>Choose a preset aspect ratio — 1:1 square, 16:9 landscape, 4:3, or 9:16 — or select freeform to crop to any custom shape.</p>
+    </li>
+    <li class="step">
+      <p>Drag the crop box to position it over the part of the image you want to keep, and resize using the corner handles.</p>
+    </li>
+    <li class="step">
+      <p>Preview the result, then download the cropped image.</p>
+    </li>
   </ol>
 
   <h2 id="ratios">Aspect Ratios by Platform</h2>
-  <table class="bp-table">
+  <div class="table-wrap">
+    <table class="table">
     <tr><th>Use Case</th><th>Aspect Ratio</th></tr>
     <tr><td>Instagram feed post (square)</td><td>1:1</td></tr>
     <tr><td>Instagram feed post (portrait)</td><td>4:5</td></tr>
@@ -155,6 +132,7 @@
     <tr><td>Standard print photo</td><td>4:3 or 3:2, depending on print size</td></tr>
     <tr><td>Profile picture (most platforms)</td><td>1:1</td></tr>
   </table>
+  </div>
   <p>These figures shift periodically as platforms update their layouts, so treat them as a strong starting point rather than a permanent guarantee — when precision matters for a specific campaign or professional use, checking the platform's current official specifications is worth the extra minute.</p>
 
   <h2 id="crop-vs-resize">Cropping vs. Resizing: Not the Same Thing</h2>
@@ -178,7 +156,8 @@
   <p>A common real-world need is preparing the same source photo for several different platforms with different aspect ratio requirements — a product photo that needs to become an Instagram square post, a Facebook cover image, and a website banner, all from one original. The practical approach is to start from your highest-resolution original each time rather than cropping sequentially from an already-cropped version, since each crop discards pixels permanently. Crop the original to 1:1 for Instagram, separately crop the same original to 16:9 for the website banner, and so on — treating each platform's requirement as an independent crop from the source rather than a chain of edits.</p>
 
   <h2 id="comparison">Comparison vs. Other Crop Tools</h2>
-  <table class="bp-table">
+  <div class="table-wrap">
+    <table class="table">
     <tr><th>Feature</th><th>Logrith Image Crop</th><th>Typical Free Crop Tools</th></tr>
     <tr><td>Processing location</td><td>Entirely in-browser</td><td>Mixed — several genuinely browser-based, some upload to a server</td></tr>
     <tr><td>Aspect ratio presets</td><td>4 (1:1, 16:9, 4:3, 9:16)</td><td>Often 10-15+ presets including platform-specific and print sizes</td></tr>
@@ -187,6 +166,7 @@
     <tr><td>Circle/shape crop</td><td>No — rectangular crop only</td><td>Some competitors offer circle crop for avatars</td></tr>
     <tr><td>Passport photo presets</td><td>No dedicated preset — use freeform with exact dimensions</td><td>A few dedicated tools include country-specific passport presets</td></tr>
   </table>
+  </div>
   <p>This is worth being candid about: several competitor tools offer a wider range of built-in presets, including circular crops for avatars and country-specific passport photo dimensions, which Logrith's version doesn't currently include. If you specifically need a passport photo preset or a circular avatar crop, a dedicated tool built around that use case may get you there faster. Logrith's crop tool covers the most common general-purpose ratios well, with the same no-upload privacy standard as competitors that also process locally.</p>
 
   <h2 id="mistakes">Common Cropping Mistakes</h2>
@@ -201,9 +181,9 @@
   <h2>Freeform Cropping for Non-Standard Needs</h2>
   <p>Beyond the four standard presets, freeform cropping exists for situations that don't map to a common ratio at all — an unusual print size, a specific layout requirement from a design brief, or simply wanting creative control over an unconventional composition. Freeform mode drops the ratio constraint entirely, letting the crop box be dragged and resized to any shape and proportion. This is also the right mode when you know the exact pixel dimensions you need (say, 350×450 for a specific ID card spec) rather than just a ratio — position the crop box freely, then verify the resulting dimensions match your requirement, adjusting a resize step afterward if the exact pixel count still needs fine-tuning.</p>
 
-</div>
+</article>
 
-<div class="bp-body">
+<article class="page-section prose">
   <h2 id="privacy">Privacy and Quality</h2>
   <p>Cropping happens directly in your browser using the Canvas API — your original image is read locally, the crop is applied, and the result is generated without any upload to a server. Since cropping only removes pixels rather than re-encoding or compressing the remaining ones, the retained portion of your image keeps its full original quality and resolution.</p>
 
@@ -211,33 +191,51 @@
   <p>Once your image is cropped to the right composition, Logrith's other image tools cover the rest of a typical prep workflow — resizing to exact pixel dimensions, compressing for faster upload, or converting to a different format — all without leaving the same privacy-respecting, no-account toolset.</p>
 
   <h2 id="faq">Frequently Asked Questions</h2>
-  <div class="bp-faq-item"><h3>Does cropping an image reduce its quality?</h3><p>No, cropping only removes pixels outside the selected area. The remaining image keeps its original resolution and quality — cropping is fundamentally different from compression, which does affect quality.</p></div>
-  <div class="bp-faq-item"><h3>What aspect ratio should I use for Instagram?</h3><p>1:1 (square) works reliably for feed posts. 4:5 (portrait) is also common since it takes up more vertical scroll space. Stories and Reels use 9:16.</p></div>
-  <div class="bp-faq-item"><h3>What aspect ratio should I use for a YouTube thumbnail?</h3><p>16:9 is YouTube's standard thumbnail and video aspect ratio.</p></div>
-  <div class="bp-faq-item"><h3>Can I crop to exact pixel dimensions instead of a ratio?</h3><p>Yes, use freeform crop mode and manually adjust the crop box, or crop first and then use a separate resize tool to hit exact pixel dimensions if the ratio alone isn't sufficient.</p></div>
-  <div class="bp-faq-item"><h3>Is cropping the same as resizing?</h3><p>No. Cropping removes part of the image to change its composition or aspect ratio. Resizing scales the entire image up or down while keeping all of its content.</p></div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">Does cropping an image reduce its quality?</summary>
+      <div class="faq-a"><p>No, cropping only removes pixels outside the selected area. The remaining image keeps its original resolution and quality — cropping is fundamentally different from compression, which does affect quality.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What aspect ratio should I use for Instagram?</summary>
+      <div class="faq-a"><p>1:1 (square) works reliably for feed posts. 4:5 (portrait) is also common since it takes up more vertical scroll space. Stories and Reels use 9:16.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What aspect ratio should I use for a YouTube thumbnail?</summary>
+      <div class="faq-a"><p>16:9 is YouTube's standard thumbnail and video aspect ratio.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I crop to exact pixel dimensions instead of a ratio?</summary>
+      <div class="faq-a"><p>Yes, use freeform crop mode and manually adjust the crop box, or crop first and then use a separate resize tool to hit exact pixel dimensions if the ratio alone isn't sufficient.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is cropping the same as resizing?</summary>
+      <div class="faq-a"><p>No. Cropping removes part of the image to change its composition or aspect ratio. Resizing scales the entire image up or down while keeping all of its content.</p></div>
+    </details>
+  </div>
 
   <h2>Conclusion</h2>
   <p>Letting a platform auto-crop your images is a gamble on what stays in frame. A few seconds spent cropping deliberately to the ratio you actually need — before uploading anywhere — keeps your composition exactly as intended, whether that's a square Instagram post, a widescreen YouTube thumbnail, or a custom shape for something else entirely, and applying a few basic composition principles along the way turns a technically correct crop into one that also looks genuinely well-composed.</p>
-</div>
+</article>
 
-<div class="bp-prevnext">
+<nav class="post-nav page-section" aria-label="More guides">
   <a href="/blog/image-converter">&larr; Previous: <strong>Image Converter Guide</strong></a>
   <a href="/blog/resize-image-without-losing-quality-online">Next: <strong>Image Resize Guide</strong> &rarr;</a>
-</div>
+</nav>
 
-<div class="bp-related">
+<section class="page-section">
   <h2>Related Tools</h2>
-  <div class="bp-related-grid">
-    <a href="/blog/resize-image-without-losing-quality-online" class="bp-related-card"><h4>Image Resize</h4><p>Resize images to exact pixel dimensions after cropping.</p></a>
-    <a href="/blog/photo-resizer-kb" class="bp-related-card"><h4>Photo Resizer to KB</h4><p>Resize a cropped photo to a target file size for forms.</p></a>
-    <a href="/blog/rotate-flip-image-online-free" class="bp-related-card"><h4>Image Rotate</h4><p>Rotate or flip an image before or after cropping.</p></a>
-    <a href="/blog/image-compressor" class="bp-related-card"><h4>Image Compressor</h4><p>Compress a cropped image for faster upload.</p></a>
+  <div class="related-grid">
+    <a class="related-card" href="/blog/resize-image-without-losing-quality-online"><strong>Image Resize</strong><span>Resize images to exact pixel dimensions after cropping.</span></a>
+    <a class="related-card" href="/blog/photo-resizer-kb"><strong>Photo Resizer to KB</strong><span>Resize a cropped photo to a target file size for forms.</span></a>
+    <a class="related-card" href="/blog/rotate-flip-image-online-free"><strong>Image Rotate</strong><span>Rotate or flip an image before or after cropping.</span></a>
+    <a class="related-card" href="/blog/image-compressor"><strong>Image Compressor</strong><span>Compress a cropped image for faster upload.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

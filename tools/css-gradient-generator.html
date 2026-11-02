@@ -23,14 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    #gradient-preview { height: 220px; border-radius: var(--radius-lg); border: 1.5px solid var(--gray-200); }
-    .color-stop-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-    .color-stop-row input[type="color"] { width: 44px; height: 36px; border-radius: 8px; border: 1.5px solid var(--gray-200); cursor: pointer; }
-    .color-stop-row input[type="range"] { flex: 1; }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -51,17 +49,20 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-css-gradient-generator">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/developer-tools">Developer Tools</a> › CSS Gradient Generator</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/developer-tools">Developer Tools</a> › CSS Gradient Generator</nav>
   <h1>Free CSS Gradient Generator</h1>
   <p>Build linear or radial CSS gradients visually with multiple color stops — get the exact CSS code instantly.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">🎨 Live Preview</span><span class="tool-tag">⚡ Instant Code</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#palette"></use></svg> Live Preview</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant Code</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:820px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Gradient Preview</h2>
     <div id="gradient-preview"></div>
@@ -80,54 +81,59 @@
       </div>
     </div>
 
-    <h3 class="mt-16" style="font-size:.95rem;font-weight:700;color:var(--gray-700);">Color Stops</h3>
+    <h3 class="mt-16 u-74b8ef">Color Stops</h3>
     <div id="color-stops"></div>
-    <button class="btn btn-secondary btn-sm mt-8" id="add-stop-btn">➕ Add Color Stop</button>
+    <button class="btn btn-secondary btn-sm mt-8" id="add-stop-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#plus"></use></svg> Add Color Stop</button>
 
-    <div class="control-group mt-16" style="position:relative;">
+    <div class="control-group mt-16 relative">
       <label>CSS Code</label>
       <textarea class="tool-textarea mono" id="css-output" rows="3" readonly></textarea>
-      <button class="copy-btn" id="copy-btn">📋 Copy</button>
+      <button class="copy-btn" id="copy-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
     </div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>What's the difference between linear and radial gradients?</h3><p>Linear gradients transition colors along a straight line at a specified angle, while radial gradients transition colors outward from a center point in a circular or elliptical pattern.</p></div>
-    <div class="faq-item-box"><h3>How many color stops can I add?</h3><p>Add as many color stops as you need using the "Add Color Stop" button, each with its own color and position.</p></div>
-    <div class="faq-item-box"><h3>Is the generated CSS compatible with all browsers?</h3><p>Yes, the linear-gradient() and radial-gradient() CSS functions are supported by all modern browsers without vendor prefixes.</p></div>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card">
-      <h2>How to Use the CSS Gradient Generator</h2>
-      <div class="tool-steps">
-        <div class="tool-step">
-          <strong>1. Pick a gradient type</strong>
-          Choose Linear for a straight-line color transition or Radial for a transition that expands outward from a center point.
-        </div>
-        <div class="tool-step">
-          <strong>2. Set the angle (linear only)</strong>
-          Drag the angle slider from 0° to 360° to control the direction the colors flow in a linear gradient.
-        </div>
-        <div class="tool-step">
-          <strong>3. Adjust your color stops</strong>
-          Click each color swatch to change its color and drag its position slider to move where that color sits in the gradient; use "Add Color Stop" for more than two colors.
-        </div>
-        <div class="tool-step">
-          <strong>4. Copy the CSS</strong>
-          Watch the live preview update instantly, then click Copy to grab the generated background CSS and paste it into your stylesheet.
-        </div>
-      </div>
-    </div>
+    <details class="faq-item">
+      <summary class="faq-q">What's the difference between linear and radial gradients?</summary>
+      <div class="faq-a"><p>Linear gradients transition colors along a straight line at a specified angle, while radial gradients transition colors outward from a center point in a circular or elliptical pattern.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How many color stops can I add?</summary>
+      <div class="faq-a"><p>Add as many color stops as you need using the "Add Color Stop" button, each with its own color and position.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is the generated CSS compatible with all browsers?</summary>
+      <div class="faq-a"><p>Yes, the linear-gradient() and radial-gradient() CSS functions are supported by all modern browsers without vendor prefixes.</p></div>
+    </details>
   </div>
 </section>
 
-<section class="article-section">
+<section class="page-section">
+  <h2>How to Use the CSS Gradient Generator</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Pick a gradient type</strong>
+      <p>Choose Linear for a straight-line color transition or Radial for a transition that expands outward from a center point.</p>
+    </li>
+    <li class="step">
+      <strong>Set the angle (linear only)</strong>
+      <p>Drag the angle slider from 0° to 360° to control the direction the colors flow in a linear gradient.</p>
+    </li>
+    <li class="step">
+      <strong>Adjust your color stops</strong>
+      <p>Click each color swatch to change its color and drag its position slider to move where that color sits in the gradient; use "Add Color Stop" for more than two colors.</p>
+    </li>
+    <li class="step">
+      <strong>Copy the CSS</strong>
+      <p>Watch the live preview update instantly, then click Copy to grab the generated background CSS and paste it into your stylesheet.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
   <h2>Visual CSS Gradient Builder</h2>
   <p>This tool lets you build CSS gradients visually — choosing linear or radial type, setting an angle, and adding multiple color stops — while seeing a live preview and generating the exact CSS code to copy into your stylesheet.</p>
 
@@ -138,7 +144,7 @@
   <p>Each color stop defines a color and a position (as a percentage) along the gradient. With two stops, you get a simple two-color transition. Adding more stops lets you create more complex, multi-color gradients — for example, a sunset effect moving from orange to pink to purple, or a rainbow-style gradient with many distinct color bands.</p>
 
   <h3>Common Uses for CSS Gradients</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Backgrounds</strong> — adding visual depth and interest to hero sections, cards, or full-page backgrounds.</li>
     <li><strong>Buttons and UI elements</strong> — creating a modern, polished look for interactive elements.</li>
     <li><strong>Overlays</strong> — darkening part of an image for readable text overlay, using a gradient from transparent to semi-opaque black.</li>
@@ -167,7 +173,7 @@
   <p>Two color stops produce a simple fade, but adding three, four, or more stops opens up effects like sunset skies, aurora backgrounds, or brand-colored banners that cycle through a full palette. Each added stop gets its own position percentage, so you can bunch several colors close together for a sharp transition in one area while leaving a slow fade elsewhere in the same gradient.</p>
 
   <h3>Common Mistakes When Building Gradients</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Overlapping stop positions</strong> — setting two stops to the same percentage creates a hard color break instead of a smooth blend, which is sometimes intentional but often accidental.</li>
     <li><strong>Too many stops</strong> — piling on five or six colors can make a gradient look noisy rather than polished; two or three well-chosen stops usually reads cleaner.</li>
     <li><strong>Ignoring contrast</strong> — if you plan to place text over the gradient, check that the darkest and lightest parts still leave the text readable.</li>
@@ -177,7 +183,7 @@
   <p>People searching for this kind of tool often look for phrases like "gradient color picker," "CSS background gradient maker," "two color gradient generator," "gradient hex code generator," and "linear-gradient CSS generator." This tool covers all of these use cases through the same linear and radial controls described above.</p>
 
   <h3>Real-World Use Cases</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Hero section backgrounds</strong> — a subtle two-tone gradient behind a landing page headline adds depth without distracting from the text.</li>
     <li><strong>Call-to-action buttons</strong> — a gradient fill on a button, especially with a slight angle, gives it a more dimensional, clickable appearance than a flat color.</li>
     <li><strong>Loading skeletons and placeholders</strong> — gradients are often animated to create shimmer effects while content loads.</li>
@@ -189,34 +195,31 @@
   <p>The CSS output this tool generates follows the standard syntax: linear-gradient(angle, color1 position1%, color2 position2%, ...) or radial-gradient(circle, color1 position1%, color2 position2%, ...). You can paste this directly into any background or background-image property. Because the syntax is plain CSS with no vendor prefixes needed, it works the same way whether you're styling a div, a button, or the body element itself.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/css-box-shadow-generator" class="tool-item"><div class="ti-text"><h4>CSS Box Shadow Generator</h4><p>Build box shadows visually with CSS output.</p></div></a>
-    <a href="/tools/color-converter" class="tool-item"><div class="ti-text"><h4>Color Converter</h4><p>Convert colors between HEX, RGB, HSL, CMYK.</p></div></a>
-    <a href="/tools/css-minifier" class="tool-item"><div class="ti-text"><h4>CSS Minifier</h4><p>Minify or beautify your CSS code.</p></div></a>
-    <a href="/tools/image-color-picker" class="tool-item"><div class="ti-text"><h4>Image Color Picker</h4><p>Pick gradient colors from an image.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">css gradient generator</span>
-        <span class="keyword-tag">gradient generator online</span>
-        <span class="keyword-tag">css linear gradient tool</span>
-        <span class="keyword-tag">css radial gradient generator</span>
-        <span class="keyword-tag">gradient css code generator</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/css-box-shadow-generator"><strong>CSS Box Shadow Generator</strong><span>Build box shadows visually with CSS output.</span></a>
+    <a class="related-card" href="/tools/color-converter"><strong>Color Converter</strong><span>Convert colors between HEX, RGB, HSL, CMYK.</span></a>
+    <a class="related-card" href="/tools/css-minifier"><strong>CSS Minifier</strong><span>Minify or beautify your CSS code.</span></a>
+    <a class="related-card" href="/tools/image-color-picker"><strong>Image Color Picker</strong><span>Pick gradient colors from an image.</span></a>
   </div>
 </section>
 
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">css gradient generator</span>
+    <span class="keyword-tag">gradient generator online</span>
+    <span class="keyword-tag">css linear gradient tool</span>
+    <span class="keyword-tag">css radial gradient generator</span>
+    <span class="keyword-tag">gradient css code generator</span>
+  </div>
+</section>
+
+</main>
+
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 let stops = [
   { color: '#4c88ff', pos: 0 },
@@ -230,7 +233,7 @@ function renderStops() {
       <input type="color" data-idx="${i}" class="stop-color" value="${s.color}">
       <input type="range" data-idx="${i}" class="stop-pos" min="0" max="100" value="${s.pos}">
       <span style="width:36px;text-align:right;font-size:.82rem;color:var(--gray-500);">${s.pos}%</span>
-      ${stops.length > 2 ? `<button class="btn btn-secondary btn-sm remove-stop" data-idx="${i}">✕</button>` : ''}
+      ${stops.length > 2 ? `<button class="btn btn-secondary btn-sm remove-stop" data-idx="${i}"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg></button>` : ''}
     </div>
   `).join('');
 

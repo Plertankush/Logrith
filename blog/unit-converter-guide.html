@@ -23,47 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .bp-hero { max-width:820px;margin:0 auto;padding:48px 20px 8px; }
-    .bp-crumb { font-size:.85rem;color:var(--gray-500);margin-bottom:16px; }
-    .bp-crumb a { color:var(--primary);text-decoration:none; }
-    .bp-hero h1 { font-family:var(--font-display);font-size:2rem;line-height:1.25;color:var(--gray-900);margin-bottom:14px; }
-    .bp-hero .bp-dek { font-size:1.05rem;color:var(--gray-700);line-height:1.7;margin-bottom:20px; }
-    .bp-cta { display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:white;padding:13px 26px;border-radius:var(--radius);font-weight:700;text-decoration:none;font-size:.95rem; }
-    .bp-cta svg { width:17px;height:17px; }
-    .bp-cta:hover { background:var(--primary-dark); }
-    .bp-body { max-width:760px;margin:0 auto;padding:28px 20px 20px; }
-    .bp-body h2 { font-family:var(--font-display);font-size:1.5rem;color:var(--gray-900);margin:38px 0 14px; }
-    .bp-body h3 { font-family:var(--font-display);font-size:1.15rem;color:var(--gray-900);margin:26px 0 10px; }
-    .bp-body p { color:var(--gray-700);line-height:1.8;margin-bottom:16px;font-size:1rem; }
-    .bp-body ul, .bp-body ol { color:var(--gray-700);line-height:1.8;margin:0 0 16px 22px; }
-    .bp-body li { margin-bottom:8px; }
-    .bp-body strong { color:var(--gray-900); }
-    .bp-toc { background:var(--gray-50);border-radius:var(--radius-lg);padding:20px 24px;margin:24px 0; }
-    .bp-toc h2 { margin:0 0 10px;font-size:1.05rem; }
-    .bp-toc ol { margin:0 0 0 20px; }
-    .bp-toc a { color:var(--primary);text-decoration:none; }
-    .bp-table { width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:.92rem; }
-    .bp-table th, .bp-table td { border:1px solid var(--gray-200);padding:10px 12px;text-align:left; }
-    .bp-table th { background:var(--gray-50);font-weight:700;color:var(--gray-900); }
-    .bp-howto { counter-reset:step; list-style:none;margin-left:0; }
-    .bp-howto li { position:relative;padding-left:42px;margin-bottom:18px; }
-    .bp-howto li::before { counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;background:var(--primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem; }
-    .bp-faq-item { border-bottom:1px solid var(--gray-200);padding:16px 0; }
-    .bp-faq-item h3 { margin:0 0 8px; font-size:1.02rem; }
-    .bp-byline { font-size:.82rem;color:var(--gray-500);margin-top:10px; }
-    .bp-related { max-width:1000px;margin:0 auto;padding:20px 20px 60px; }
-    .bp-related h2 { font-family:var(--font-display);font-size:1.4rem;color:var(--gray-900);margin-bottom:18px;text-align:center; }
-    .bp-related-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px; }
-    .bp-related-card { border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:18px;text-decoration:none;color:inherit;background:var(--white); }
-    .bp-related-card h4 { font-size:.95rem;color:var(--gray-900);margin-bottom:6px; }
-    .bp-related-card p { font-size:.82rem;color:var(--gray-700);line-height:1.5; }
-    .bp-prevnext { display:flex;justify-content:space-between;gap:16px;max-width:760px;margin:0 auto;padding:0 20px 20px; }
-    .bp-prevnext a { flex:1;border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:12px 16px;text-decoration:none;color:var(--gray-700);font-size:.85rem; }
-    .bp-prevnext a strong { display:block;color:var(--gray-900);font-size:.92rem; }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -97,23 +62,26 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-unit-converter-guide">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="bp-hero">
-  <div class="bp-crumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/calculate-convert">Calculate & Convert</a> &rsaquo; Unit Converter</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/calculate-convert">Calculate & Convert</a> &rsaquo; Unit Converter</nav>
   <h1>Converting Between Metric and Imperial, and Why the World Still Isn't on One System</h1>
-  <p class="bp-dek">Nearly every country on Earth uses the metric system, except for a small handful, most visibly the United States, which still measures distance in miles, weight in pounds, and temperature in Fahrenheit. Converting between the two systems is a purely mechanical task, but understanding why this split still exists — and which conversions actually trip people up — makes the whole subject far less arbitrary than it looks, and helps explain why some conversions feel effortless while others (temperature, specifically) never quite feel intuitive no matter how many times you've done them.</p>
-  <a href="/tools/unit-converter" class="bp-cta">
+  <p>Nearly every country on Earth uses the metric system, except for a small handful, most visibly the United States, which still measures distance in miles, weight in pounds, and temperature in Fahrenheit. Converting between the two systems is a purely mechanical task, but understanding why this split still exists — and which conversions actually trip people up — makes the whole subject far less arbitrary than it looks, and helps explain why some conversions feel effortless while others (temperature, specifically) never quite feel intuitive no matter how many times you've done them.</p>
+  <a href="/tools/unit-converter" class="btn btn-primary btn-lg">
     <svg class="icon"><use href="/assets/svg/icons.svg#ruler"></use></svg>
     Convert Units
   </a>
-  <p class="bp-byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
-</div>
+  <p class="byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
+</div></header>
 
-<div class="bp-body">
+<article class="page-section prose">
 
-  <div class="bp-toc">
+  <nav class="toc" aria-label="On this page">
     <h2>On This Page</h2>
     <ol>
       <li><a href="#how-to-use">How to Convert Units</a></li>
@@ -125,18 +93,27 @@
       <li><a href="#mistakes">Common Mistakes</a></li>
       <li><a href="#faq">Frequently Asked Questions</a></li>
     </ol>
-  </div>
+  </nav>
 
   <h2 id="how-to-use">How to Convert Units</h2>
-  <ol class="bp-howto">
-    <li>Open the <a href="/tools/unit-converter">Unit Converter</a> to get started right away.</li>
-    <li>Choose a category — length, weight, temperature, volume, or speed.</li>
-    <li>Select your source and target units.</li>
-    <li>Enter a value and get the instant, precise converted result.</li>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the <a href="/tools/unit-converter">Unit Converter</a> to get started right away.</p>
+    </li>
+    <li class="step">
+      <p>Choose a category — length, weight, temperature, volume, or speed.</p>
+    </li>
+    <li class="step">
+      <p>Select your source and target units.</p>
+    </li>
+    <li class="step">
+      <p>Enter a value and get the instant, precise converted result.</p>
+    </li>
   </ol>
 
   <h2 id="categories">What This Tool Converts</h2>
-  <table class="bp-table">
+  <div class="table-wrap">
+    <table class="table">
     <tr><th>Category</th><th>Common Units</th></tr>
     <tr><td>Length</td><td>Meters, feet, inches, miles, kilometers, centimeters</td></tr>
     <tr><td>Weight</td><td>Kilograms, pounds, grams, ounces, stone</td></tr>
@@ -144,6 +121,7 @@
     <tr><td>Volume</td><td>Liters, gallons, milliliters, fluid ounces, cups</td></tr>
     <tr><td>Speed</td><td>Kilometers per hour, miles per hour, meters per second, knots</td></tr>
   </table>
+  </div>
   <p>Length, weight, volume, and speed conversions are all straightforward multiplicative relationships — multiply by a fixed conversion factor to move between units, the same mechanism regardless of which specific units are involved. Temperature is the one genuine exception in this list, covered separately below, since it involves both a scaling factor and an offset rather than a simple multiplication, making it worth understanding on its own terms rather than assuming the same mental shortcut that works for every other unit category applies here too.</p>
 
   <h2 id="temperature">Why Temperature Conversion Trips People Up</h2>
@@ -181,36 +159,51 @@
   <h3>Why Choose Logrith</h3>
   <p>Conversion happens entirely in your browser using standard JavaScript arithmetic, with no data ever transmitted anywhere — instant results across length, weight, temperature, volume, and speed, all from a single tool rather than needing several different single-purpose converters scattered across different websites, each with its own interface and quirks to relearn.</p>
 
-</div>
+</article>
 
-<div class="bp-body">
+<article class="page-section prose">
   <h2 id="faq">Frequently Asked Questions</h2>
-  <div class="bp-faq-item"><h3>Why does the US still use miles, pounds, and Fahrenheit?</h3><p>The US officially adopted metric as its preferred system in 1975, but adoption remained voluntary, and deeply entrenched infrastructure and habits meant imperial units persisted despite the law being on the books.</p></div>
-  <div class="bp-faq-item"><h3>How do you convert Celsius to Fahrenheit?</h3><p>Multiply the Celsius value by 9/5, then add 32. For example, 20°C converts to (20 × 9/5) + 32 = 68°F.</p></div>
-  <div class="bp-faq-item"><h3>Why is metric easier to work with than imperial?</h3><p>Metric units scale by powers of 10, so converting related units just requires shifting a decimal point. Imperial units use irregular conversion factors that must each be individually memorized.</p></div>
-  <div class="bp-faq-item"><h3>What's the difference between metric tons and imperial tons?</h3><p>A metric ton is exactly 1,000 kg. A US ton is 2,000 lbs, and a UK ton is 2,240 lbs — three genuinely different weights sharing similar names.</p></div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">Why does the US still use miles, pounds, and Fahrenheit?</summary>
+      <div class="faq-a"><p>The US officially adopted metric as its preferred system in 1975, but adoption remained voluntary, and deeply entrenched infrastructure and habits meant imperial units persisted despite the law being on the books.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How do you convert Celsius to Fahrenheit?</summary>
+      <div class="faq-a"><p>Multiply the Celsius value by 9/5, then add 32. For example, 20°C converts to (20 × 9/5) + 32 = 68°F.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why is metric easier to work with than imperial?</summary>
+      <div class="faq-a"><p>Metric units scale by powers of 10, so converting related units just requires shifting a decimal point. Imperial units use irregular conversion factors that must each be individually memorized.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What's the difference between metric tons and imperial tons?</summary>
+      <div class="faq-a"><p>A metric ton is exactly 1,000 kg. A US ton is 2,000 lbs, and a UK ton is 2,240 lbs — three genuinely different weights sharing similar names.</p></div>
+    </details>
+  </div>
 
   <h2>Conclusion</h2>
   <p>Unit conversion itself is mechanically simple — multiply by a fixed factor, or for temperature, multiply and offset — but the real-world complexity comes from regional naming conventions and the historical accident of the US never completing its metric transition. A converter handles the arithmetic instantly regardless, but knowing which specific unit variant a situation actually calls for is the part that still requires a moment of human judgment, whether you're converting a recipe, checking a weather forecast, or comparing product specifications listed in an unfamiliar measurement system entirely.</p>
-</div>
+</article>
 
-<div class="bp-prevnext">
+<nav class="post-nav page-section" aria-label="More guides">
   <a href="/blog/currency-converter-guide">&larr; Previous: <strong>Currency Converter Guide</strong></a>
   <a href="/blog/date-difference-calculator-guide">Next: <strong>Date Difference Calculator Guide</strong> &rarr;</a>
-</div>
+</nav>
 
-<div class="bp-related">
+<section class="page-section">
   <h2>Related Tools</h2>
-  <div class="bp-related-grid">
-    <a href="/tools/currency-converter" class="bp-related-card"><h4>Currency Converter</h4><p>Convert amounts between world currencies.</p></a>
-    <a href="/tools/percentage-calculator" class="bp-related-card"><h4>Percentage Calculator</h4><p>Calculate percentages and changes.</p></a>
-    <a href="/tools/bmi-calculator" class="bp-related-card"><h4>BMI Calculator</h4><p>Calculate BMI in either metric or imperial units.</p></a>
-    <a href="/tools/date-difference-calculator" class="bp-related-card"><h4>Date Difference Calculator</h4><p>Calculate days between two dates.</p></a>
+  <div class="related-grid">
+    <a class="related-card" href="/tools/currency-converter"><strong>Currency Converter</strong><span>Convert amounts between world currencies.</span></a>
+    <a class="related-card" href="/tools/percentage-calculator"><strong>Percentage Calculator</strong><span>Calculate percentages and changes.</span></a>
+    <a class="related-card" href="/tools/bmi-calculator"><strong>BMI Calculator</strong><span>Calculate BMI in either metric or imperial units.</span></a>
+    <a class="related-card" href="/tools/date-difference-calculator"><strong>Date Difference Calculator</strong><span>Calculate days between two dates.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

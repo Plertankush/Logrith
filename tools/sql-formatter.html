@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -45,68 +49,76 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-sql-formatter">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/developer-tools">Developer Tools</a> › SQL Formatter</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/developer-tools">Developer Tools</a> › SQL Formatter</nav>
   <h1>Free SQL Formatter</h1>
   <p>Turn messy, single-line SQL queries into clean, properly indented, readable code instantly.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">📐 Auto-Indent</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#ruler"></use></svg> Auto-Indent</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:900px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>SQL Query</h2>
     <textarea class="tool-textarea mono" id="input-sql" rows="6" placeholder="Paste your SQL query here...">select id, name, email from users where status = 'active' and age > 18 order by name limit 50</textarea>
     <div class="btn-group mt-12">
-      <button class="btn btn-primary btn-lg" id="format-btn">📐 Format SQL</button>
-      <button class="btn btn-secondary" id="clear-btn">✕ Clear</button>
+      <button class="btn btn-primary btn-lg" id="format-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#ruler"></use></svg> Format SQL</button>
+      <button class="btn btn-secondary" id="clear-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Clear</button>
     </div>
-    <div class="control-group mt-16" style="position:relative;">
+    <div class="control-group mt-16 relative">
       <label>Formatted Output</label>
       <textarea class="tool-textarea mono" id="output-sql" rows="10" readonly></textarea>
-      <button class="copy-btn" id="copy-btn">📋 Copy</button>
+      <button class="copy-btn" id="copy-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
     </div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>Which SQL keywords does this recognize?</h3><p>Common keywords like SELECT, FROM, WHERE, JOIN, GROUP BY, ORDER BY, HAVING, INSERT INTO, UPDATE, and DELETE FROM are recognized and placed on new lines with uppercase formatting.</p></div>
-    <div class="faq-item-box"><h3>Does this work for all SQL dialects?</h3><p>This formatter handles standard SQL syntax common across MySQL, PostgreSQL, SQLite, and SQL Server. Highly dialect-specific syntax may not format perfectly.</p></div>
-    <div class="faq-item-box"><h3>Will formatting change my query's behavior?</h3><p>No, formatting only adds whitespace and line breaks for readability — it doesn't change the query logic or behavior.</p></div>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card">
-      <h2>How to Use the SQL Formatter</h2>
-      <div class="tool-steps">
-        <div class="tool-step">
-          <strong>1. Paste your SQL</strong>
-          Replace the sample query in the input box with your own SQL statement, however messy or unindented.
-        </div>
-        <div class="tool-step">
-          <strong>2. Click Format SQL</strong>
-          The tool scans your query for recognized keywords and rebuilds it with each clause on its own line.
-        </div>
-        <div class="tool-step">
-          <strong>3. Review the formatted output</strong>
-          Check the read-only output box — keywords are uppercased and placed on new lines, while your identifiers and values stay untouched.
-        </div>
-        <div class="tool-step">
-          <strong>4. Copy the result</strong>
-          Click the Copy button to grab the formatted SQL for pasting into your editor, documentation, or pull request.
-        </div>
-      </div>
-    </div>
+    <details class="faq-item">
+      <summary class="faq-q">Which SQL keywords does this recognize?</summary>
+      <div class="faq-a"><p>Common keywords like SELECT, FROM, WHERE, JOIN, GROUP BY, ORDER BY, HAVING, INSERT INTO, UPDATE, and DELETE FROM are recognized and placed on new lines with uppercase formatting.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does this work for all SQL dialects?</summary>
+      <div class="faq-a"><p>This formatter handles standard SQL syntax common across MySQL, PostgreSQL, SQLite, and SQL Server. Highly dialect-specific syntax may not format perfectly.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Will formatting change my query's behavior?</summary>
+      <div class="faq-a"><p>No, formatting only adds whitespace and line breaks for readability — it doesn't change the query logic or behavior.</p></div>
+    </details>
   </div>
 </section>
 
-<section class="article-section">
+<section class="page-section">
+  <h2>How to Use the SQL Formatter</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Paste your SQL</strong>
+      <p>Replace the sample query in the input box with your own SQL statement, however messy or unindented.</p>
+    </li>
+    <li class="step">
+      <strong>Click Format SQL</strong>
+      <p>The tool scans your query for recognized keywords and rebuilds it with each clause on its own line.</p>
+    </li>
+    <li class="step">
+      <strong>Review the formatted output</strong>
+      <p>Check the read-only output box — keywords are uppercased and placed on new lines, while your identifiers and values stay untouched.</p>
+    </li>
+    <li class="step">
+      <strong>Copy the result</strong>
+      <p>Click the Copy button to grab the formatted SQL for pasting into your editor, documentation, or pull request.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
   <h2>SQL Formatter and Beautifier</h2>
   <p>This tool reformats SQL queries — turning a dense, single-line query into a clean, readable structure with each major clause on its own line and consistent capitalization for keywords.</p>
 
@@ -117,7 +129,7 @@
   <p>The formatter identifies common SQL keywords within your query and places each one at the start of a new line, capitalizing it for consistency, while leaving the rest of your query (table names, column names, values, conditions) untouched. This produces a query that's dramatically easier to scan and understand without altering its actual logic or behavior in any way.</p>
 
   <h3>Common Uses</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Debugging</strong> — quickly understanding a complex query pulled from application logs.</li>
     <li><strong>Code review</strong> — making SQL in pull requests easier for reviewers to read.</li>
     <li><strong>Documentation</strong> — presenting queries clearly in technical documentation or tutorials.</li>
@@ -155,34 +167,31 @@
   <p>If your input contains more than one SQL statement separated by semicolons, the formatter processes the whole pasted block as one piece of text, splitting on whitespace and keywords rather than on statement boundaries. For the clearest output, it generally works best to format one statement at a time, especially when the statements use very different clause structures (for example, one SELECT and one UPDATE in the same paste).</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/json-formatter" class="tool-item"><div class="ti-text"><h4>JSON Formatter</h4><p>Format and validate JSON data.</p></div></a>
-    <a href="/tools/css-minifier" class="tool-item"><div class="ti-text"><h4>CSS Minifier</h4><p>Minify or beautify CSS code.</p></div></a>
-    <a href="/tools/html-minifier" class="tool-item"><div class="ti-text"><h4>HTML Minifier</h4><p>Minify or beautify HTML code.</p></div></a>
-    <a href="/tools/regex-tester" class="tool-item"><div class="ti-text"><h4>Regex Tester</h4><p>Test and debug regular expressions.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">sql formatter</span>
-        <span class="keyword-tag">sql formatter online</span>
-        <span class="keyword-tag">beautify sql</span>
-        <span class="keyword-tag">sql query formatter</span>
-        <span class="keyword-tag">sql beautifier</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/json-formatter"><strong>JSON Formatter</strong><span>Format and validate JSON data.</span></a>
+    <a class="related-card" href="/tools/css-minifier"><strong>CSS Minifier</strong><span>Minify or beautify CSS code.</span></a>
+    <a class="related-card" href="/tools/html-minifier"><strong>HTML Minifier</strong><span>Minify or beautify HTML code.</span></a>
+    <a class="related-card" href="/tools/regex-tester"><strong>Regex Tester</strong><span>Test and debug regular expressions.</span></a>
   </div>
 </section>
 
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">sql formatter</span>
+    <span class="keyword-tag">sql formatter online</span>
+    <span class="keyword-tag">beautify sql</span>
+    <span class="keyword-tag">sql query formatter</span>
+    <span class="keyword-tag">sql beautifier</span>
+  </div>
+</section>
+
+</main>
+
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 function formatSQL(sql) {
   const keywords = [

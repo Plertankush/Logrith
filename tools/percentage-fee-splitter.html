@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -51,17 +55,20 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-percentage-fee-splitter">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/utilities">Utilities</a> › Payment Fee Calculator</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/utilities">Utilities</a> › Payment Fee Calculator</nav>
   <h1>Free Payment Fee Calculator</h1>
   <p>Calculate the exact fee and net payout for any transaction with a percentage plus fixed fee structure — works with any currency.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">🌍 Any Currency</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#globe"></use></svg> Any Currency</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:700px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Enter Transaction Details</h2>
     <div class="controls-grid">
@@ -80,32 +87,50 @@
     </div>
     <div class="mini-note mt-8">Common presets: Stripe/PayPal-style ≈ 2.9% + 0.30 · Marketplace ≈ 5-15% + 0 · Freelance platform ≈ 10-20% + 0</div>
     <div class="btn-group mt-16">
-      <button class="btn btn-primary btn-lg" id="calc-btn">💳 Calculate Net Payout</button>
-      <button class="btn btn-secondary" id="reset-btn">✕ Reset</button>
+      <button class="btn btn-primary btn-lg" id="calc-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#credit-card"></use></svg> Calculate Net Payout</button>
+      <button class="btn btn-secondary" id="reset-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Reset</button>
     </div>
     <div class="status-msg" id="status-msg"></div>
   </div>
 
-  <div class="tool-card" id="result-card" style="display:none;">
+  <div class="tool-card is-hidden" id="result-card">
     <h2>Result</h2>
-    <div class="stat-result-grid" id="result-grid"></div>
+    <div class="stat-grid" id="result-grid"></div>
     <div class="summary-box mt-16" id="result-summary"></div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>What is a percentage plus fixed fee structure?</h3><p>Many payment processors and marketplaces charge a percentage of the transaction plus a small fixed amount, such as 2.9% + $0.30, a common structure among payment gateways worldwide.</p></div>
-    <div class="faq-item-box"><h3>Can I use this for any currency?</h3><p>Yes, this calculator works with plain numbers and applies to any currency — enter your amount and fee structure regardless of currency.</p></div>
-    <div class="faq-item-box"><h3>Does this account for taxes?</h3><p>No, this tool calculates only the platform or processing fee deduction. Tax obligations vary by jurisdiction and are not calculated here.</p></div>
-    <div class="faq-item-box"><h3>Is my transaction data sent to a server?</h3><p>No, every calculation runs locally in your browser. Amounts and fee structures you enter are never transmitted anywhere.</p></div>
-    <div class="faq-item-box"><h3>Why do two platforms with similar advertised rates sometimes differ in net payout?</h3><p>Small differences in the fixed fee component, or in what counts as the taxable/fee base (pre-tax vs. post-tax amount, for instance), can lead to noticeably different net payouts even when the headline percentage rates look similar.</p></div>
-    <div class="faq-item-box"><h3>Should I set my price based on the gross amount or the net payout I want?</h3><p>If you have a specific take-home amount in mind, you'll need to work backward from your desired net payout through the fee structure to find the gross price to charge — this calculator shows the forward direction, but the same fee numbers let you solve for the price needed to reach a target payout.</p></div>
+    <details class="faq-item">
+      <summary class="faq-q">What is a percentage plus fixed fee structure?</summary>
+      <div class="faq-a"><p>Many payment processors and marketplaces charge a percentage of the transaction plus a small fixed amount, such as 2.9% + $0.30, a common structure among payment gateways worldwide.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I use this for any currency?</summary>
+      <div class="faq-a"><p>Yes, this calculator works with plain numbers and applies to any currency — enter your amount and fee structure regardless of currency.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does this account for taxes?</summary>
+      <div class="faq-a"><p>No, this tool calculates only the platform or processing fee deduction. Tax obligations vary by jurisdiction and are not calculated here.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my transaction data sent to a server?</summary>
+      <div class="faq-a"><p>No, every calculation runs locally in your browser. Amounts and fee structures you enter are never transmitted anywhere.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why do two platforms with similar advertised rates sometimes differ in net payout?</summary>
+      <div class="faq-a"><p>Small differences in the fixed fee component, or in what counts as the taxable/fee base (pre-tax vs. post-tax amount, for instance), can lead to noticeably different net payouts even when the headline percentage rates look similar.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Should I set my price based on the gross amount or the net payout I want?</summary>
+      <div class="faq-a"><p>If you have a specific take-home amount in mind, you'll need to work backward from your desired net payout through the fee structure to find the gross price to charge — this calculator shows the forward direction, but the same fee numbers let you solve for the price needed to reach a target payout.</p></div>
+    </details>
   </div>
-</div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>Calculate Your Exact Net Payout After Fees</h2>
   <p>This tool calculates exactly how much of a transaction amount you'll actually receive after a platform, payment processor, or marketplace deducts its fee — which is typically structured as a percentage of the transaction plus a small fixed amount per transaction.</p>
 
@@ -119,7 +144,7 @@
   <p>Established businesses selling through a platform with known, stable fees often build the fee percentage directly into their list prices from the start, effectively passing the cost on to the buyer so the seller's intended net margin stays protected regardless of transaction size. Businesses operating on thinner margins, or selling in markets sensitive to price comparisons, sometimes instead absorb the fee themselves rather than passing it on, treating it as a cost of doing business on that particular platform. Neither approach is universally correct — the right choice depends on your specific margin structure, competitive pricing pressure, and how price-sensitive your particular customer base tends to be.</p>
 
   <h3>Where This Fee Structure Appears</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Payment gateways</strong> — services processing card payments typically use this percentage-plus-fixed model.</li>
     <li><strong>Online marketplaces</strong> — platforms selling goods or services often deduct a percentage-based commission, sometimes with an additional listing or transaction fee.</li>
     <li><strong>Freelance and gig platforms</strong> — many charge a percentage fee on payments between clients and freelancers.</li>
@@ -130,12 +155,24 @@
   <p>Understanding your exact net payout before setting a price or accepting a payment helps you price products and services accurately, forecast actual take-home revenue, and compare different platforms' fee structures on equal footing. A platform with a lower percentage but higher fixed fee might actually cost you more on small transactions than a platform with a higher percentage but no fixed fee — this calculator lets you check the real numbers for your specific transaction size.</p>
 
   <h3>Step-by-Step: Calculating Your Net Payout</h3>
-  <div class="tool-steps">
-    <div class="tool-step"><strong>1. Enter your transaction amount</strong>Type the gross sale or payment amount.</div>
-    <div class="tool-step"><strong>2. Enter the percentage fee</strong>Use your platform's published percentage rate.</div>
-    <div class="tool-step"><strong>3. Enter the fixed fee</strong>Add the flat per-transaction fee, if any.</div>
-    <div class="tool-step"><strong>4. Calculate</strong>Click Calculate Net Payout to see the exact fee breakdown and take-home amount.</div>
-  </div>
+  <ol class="steps">
+    <li class="step">
+      <strong>Enter your transaction amount</strong>
+      <p>Type the gross sale or payment amount.</p>
+    </li>
+    <li class="step">
+      <strong>Enter the percentage fee</strong>
+      <p>Use your platform's published percentage rate.</p>
+    </li>
+    <li class="step">
+      <strong>Enter the fixed fee</strong>
+      <p>Add the flat per-transaction fee, if any.</p>
+    </li>
+    <li class="step">
+      <strong>Calculate</strong>
+      <p>Click Calculate Net Payout to see the exact fee breakdown and take-home amount.</p>
+    </li>
+  </ol>
 
   <h3>Privacy and Local Processing</h3>
   <p>All calculations run directly in your browser — no transaction details are sent to a server, logged, or stored anywhere.</p>
@@ -147,21 +184,22 @@
   <p>Many sellers price a product or service without first accounting for the platform fee that will be deducted, then are surprised by a smaller-than-expected payout. A more deliberate approach is working backward from a target take-home amount — deciding what you actually need to receive, then using this calculator to determine the listed price that, after fees, will leave you with that target net amount. This avoids the common mistake of setting a price that looks reasonable on the surface but quietly erodes your intended margin once the platform's fee structure is factored in, especially across a high volume of smaller transactions.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/percentage-calculator" class="tool-item"><div class="ti-text"><h4>Percentage Calculator</h4><p>Calculate percentages, changes, and ratios.</p></div></a>
-    <a href="/tools/discount-stacking-calculator" class="tool-item"><div class="ti-text"><h4>Discount Stacking Calculator</h4><p>Calculate final price after multiple discounts.</p></div></a>
-    <a href="/tools/unit-price-comparator" class="tool-item"><div class="ti-text"><h4>Unit Price Comparator</h4><p>Compare price-per-unit across products.</p></div></a>
-    <a href="/tools/currency-converter" class="tool-item"><div class="ti-text"><h4>Currency Converter</h4><p>Convert between currencies with your own rate.</p></div></a>
+    <a class="related-card" href="/tools/percentage-calculator"><strong>Percentage Calculator</strong><span>Calculate percentages, changes, and ratios.</span></a>
+    <a class="related-card" href="/tools/discount-stacking-calculator"><strong>Discount Stacking Calculator</strong><span>Calculate final price after multiple discounts.</span></a>
+    <a class="related-card" href="/tools/unit-price-comparator"><strong>Unit Price Comparator</strong><span>Compare price-per-unit across products.</span></a>
+    <a class="related-card" href="/tools/currency-converter"><strong>Currency Converter</strong><span>Convert between currencies with your own rate.</span></a>
   </div>
-</div>
+</section>
 
 
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 document.getElementById('calc-btn').addEventListener('click', () => {
   const statusEl = document.getElementById('status-msg');
@@ -182,12 +220,12 @@ document.getElementById('calc-btn').addEventListener('click', () => {
   const fmt = v => v.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
 
   document.getElementById('result-grid').innerHTML = `
-    <div class="stat-box"><span class="sb-num">${fmt(amount)}</span><span class="sb-lbl">Transaction Amount</span></div>
-    <div class="stat-box"><span class="sb-num" style="color:var(--error);">${fmt(totalFee)}</span><span class="sb-lbl">Total Fee Deducted</span></div>
+    <div class="stat-box"><span class="stat-num">${fmt(amount)}</span><span class="stat-label">Transaction Amount</span></div>
+    <div class="stat-box"><span class="stat-num" style="color:var(--error);">${fmt(totalFee)}</span><span class="stat-label">Total Fee Deducted</span></div>
     <div class="stat-box" style="background:linear-gradient(135deg,var(--primary),var(--primary-light));border:none;">
-      <span class="sb-num" style="color:white;">${fmt(netAmount)}</span><span class="sb-lbl" style="color:rgba(255,255,255,0.85);">Net Payout</span>
+      <span class="stat-num" style="color:white;">${fmt(netAmount)}</span><span class="stat-label" style="color:rgba(255,255,255,0.85);">Net Payout</span>
     </div>
-    <div class="stat-box"><span class="sb-num">${effectiveRate.toFixed(2)}%</span><span class="sb-lbl">Effective Fee Rate</span></div>`;
+    <div class="stat-box"><span class="stat-num">${effectiveRate.toFixed(2)}%</span><span class="stat-label">Effective Fee Rate</span></div>`;
 
   document.getElementById('result-summary').innerHTML =
     `On a transaction of <strong>${fmt(amount)}</strong> with a fee of <strong>${percentFee}% + ${fmt(fixedFee)}</strong> fixed, the total fee deducted is <strong>${fmt(totalFee)}</strong> (${effectiveRate.toFixed(2)}% effective rate), leaving a net payout of <strong>${fmt(netAmount)}</strong>.`;

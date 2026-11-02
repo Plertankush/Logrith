@@ -23,47 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .bp-hero { max-width:820px;margin:0 auto;padding:48px 20px 8px; }
-    .bp-crumb { font-size:.85rem;color:var(--gray-500);margin-bottom:16px; }
-    .bp-crumb a { color:var(--primary);text-decoration:none; }
-    .bp-hero h1 { font-family:var(--font-display);font-size:2rem;line-height:1.25;color:var(--gray-900);margin-bottom:14px; }
-    .bp-hero .bp-dek { font-size:1.05rem;color:var(--gray-700);line-height:1.7;margin-bottom:20px; }
-    .bp-cta { display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:white;padding:13px 26px;border-radius:var(--radius);font-weight:700;text-decoration:none;font-size:.95rem; }
-    .bp-cta svg { width:17px;height:17px; }
-    .bp-cta:hover { background:var(--primary-dark); }
-    .bp-body { max-width:760px;margin:0 auto;padding:28px 20px 20px; }
-    .bp-body h2 { font-family:var(--font-display);font-size:1.5rem;color:var(--gray-900);margin:38px 0 14px; }
-    .bp-body h3 { font-family:var(--font-display);font-size:1.15rem;color:var(--gray-900);margin:26px 0 10px; }
-    .bp-body p { color:var(--gray-700);line-height:1.8;margin-bottom:16px;font-size:1rem; }
-    .bp-body ul, .bp-body ol { color:var(--gray-700);line-height:1.8;margin:0 0 16px 22px; }
-    .bp-body li { margin-bottom:8px; }
-    .bp-body strong { color:var(--gray-900); }
-    .bp-toc { background:var(--gray-50);border-radius:var(--radius-lg);padding:20px 24px;margin:24px 0; }
-    .bp-toc h2 { margin:0 0 10px;font-size:1.05rem; }
-    .bp-toc ol { margin:0 0 0 20px; }
-    .bp-toc a { color:var(--primary);text-decoration:none; }
-    .bp-table { width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:.92rem; }
-    .bp-table th, .bp-table td { border:1px solid var(--gray-200);padding:10px 12px;text-align:left; }
-    .bp-table th { background:var(--gray-50);font-weight:700;color:var(--gray-900); }
-    .bp-howto { counter-reset:step; list-style:none;margin-left:0; }
-    .bp-howto li { position:relative;padding-left:42px;margin-bottom:18px; }
-    .bp-howto li::before { counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;background:var(--primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem; }
-    .bp-faq-item { border-bottom:1px solid var(--gray-200);padding:16px 0; }
-    .bp-faq-item h3 { margin:0 0 8px; font-size:1.02rem; }
-    .bp-byline { font-size:.82rem;color:var(--gray-500);margin-top:10px; }
-    .bp-related { max-width:1000px;margin:0 auto;padding:20px 20px 60px; }
-    .bp-related h2 { font-family:var(--font-display);font-size:1.4rem;color:var(--gray-900);margin-bottom:18px;text-align:center; }
-    .bp-related-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px; }
-    .bp-related-card { border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:18px;text-decoration:none;color:inherit;background:var(--white); }
-    .bp-related-card h4 { font-size:.95rem;color:var(--gray-900);margin-bottom:6px; }
-    .bp-related-card p { font-size:.82rem;color:var(--gray-700);line-height:1.5; }
-    .bp-prevnext { display:flex;justify-content:space-between;gap:16px;max-width:760px;margin:0 auto;padding:0 20px 20px; }
-    .bp-prevnext a { flex:1;border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:12px 16px;text-decoration:none;color:var(--gray-700);font-size:.85rem; }
-    .bp-prevnext a strong { display:block;color:var(--gray-900);font-size:.92rem; }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -99,23 +64,26 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-blog-image-converter">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="bp-hero">
-  <div class="bp-crumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/image-pdf-tools">Image & PDF Tools</a> &rsaquo; Image Converter</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/image-pdf-tools">Image & PDF Tools</a> &rsaquo; Image Converter</nav>
   <h1>Image Converter: Why You Don't Need a Different Tool for Every Format Pair</h1>
-  <p class="bp-dek">Search "JPG to WebP converter" and you'll find a dedicated tool for exactly that pairing. Search "PNG to WebP converter" and you'll find an entirely different dedicated tool. Search "GIF to PNG" and there's yet another. Most of the image conversion market is built this way — one narrow tool per format combination — which means bookmarking five different sites for five different conversions you might need across a week. Here's the case for using one converter that handles every pairing, and what actually changes (or doesn't) between formats when you convert.</p>
-  <a href="/tools/image-converter" class="bp-cta">
+  <p>Search "JPG to WebP converter" and you'll find a dedicated tool for exactly that pairing. Search "PNG to WebP converter" and you'll find an entirely different dedicated tool. Search "GIF to PNG" and there's yet another. Most of the image conversion market is built this way — one narrow tool per format combination — which means bookmarking five different sites for five different conversions you might need across a week. Here's the case for using one converter that handles every pairing, and what actually changes (or doesn't) between formats when you convert.</p>
+  <a href="/tools/image-converter" class="btn btn-primary btn-lg">
     <svg class="icon"><use href="/assets/svg/icons.svg#refresh"></use></svg>
     Convert an Image
   </a>
-  <p class="bp-byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
-</div>
+  <p class="byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
+</div></header>
 
-<div class="bp-body">
+<article class="page-section prose">
 
-  <div class="bp-toc">
+  <nav class="toc" aria-label="On this page">
     <h2>On This Page</h2>
     <ol>
       <li><a href="#one-tool">Why Format-Pair-Specific Tools Became the Norm</a></li>
@@ -127,23 +95,34 @@
       <li><a href="#privacy">Privacy and Processing</a></li>
       <li><a href="#faq">Frequently Asked Questions</a></li>
     </ol>
-  </div>
+  </nav>
 
   <h2 id="one-tool">Why Format-Pair-Specific Tools Became the Norm</h2>
   <p>A lot of the image conversion tooling landscape is organized around individual format pairs — a JPG-to-WebP converter, a separate PNG-to-WebP converter, another for GIF-to-PNG, and so on — largely because it's a straightforward way to target a specific search query directly. Someone searching "convert JPG to WebP" lands on a page built exactly for that. It works well for search visibility, but it doesn't reflect how most people actually think about the task: you have an image in one format, you need it in a different format, and the specific pairing is almost incidental to what you're actually trying to accomplish.</p>
   <p>A single converter that accepts any of the common formats and lets you pick any other as the output sidesteps the need to remember which specific tool handles which specific pairing. Upload once, choose your target format from a dropdown, done — regardless of whether you're going from JPG to PNG, PNG to WebP, GIF to JPG, or any other combination among the formats it supports.</p>
 
   <h2 id="how-to-use">How to Convert an Image</h2>
-  <ol class="bp-howto">
-    <li>Open the <a href="/tools/image-converter">Image Converter tool</a> and upload your image by clicking the upload area or dragging the file in.</li>
-    <li>Select your desired output format from the dropdown — PNG, JPG, WebP, BMP, or GIF.</li>
-    <li>Adjust the quality setting if converting to a format that supports compression (JPG, WebP).</li>
-    <li>Click Convert. The browser processes the conversion instantly using the Canvas API.</li>
-    <li>Download the converted file — no server upload occurs at any point.</li>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the <a href="/tools/image-converter">Image Converter tool</a> and upload your image by clicking the upload area or dragging the file in.</p>
+    </li>
+    <li class="step">
+      <p>Select your desired output format from the dropdown — PNG, JPG, WebP, BMP, or GIF.</p>
+    </li>
+    <li class="step">
+      <p>Adjust the quality setting if converting to a format that supports compression (JPG, WebP).</p>
+    </li>
+    <li class="step">
+      <p>Click Convert. The browser processes the conversion instantly using the Canvas API.</p>
+    </li>
+    <li class="step">
+      <p>Download the converted file — no server upload occurs at any point.</p>
+    </li>
   </ol>
 
   <h2 id="formats">Understanding the Five Formats</h2>
-  <table class="bp-table">
+  <div class="table-wrap">
+    <table class="table">
     <tr><th>Format</th><th>Compression</th><th>Transparency</th><th>Best For</th></tr>
     <tr><td>JPG / JPEG</td><td>Lossy</td><td>No</td><td>Photographs, maximum compatibility</td></tr>
     <tr><td>PNG</td><td>Lossless</td><td>Yes</td><td>Screenshots, logos, graphics with sharp edges or transparency</td></tr>
@@ -151,6 +130,7 @@
     <tr><td>BMP</td><td>Uncompressed</td><td>No (standard BMP)</td><td>Legacy Windows applications, situations requiring uncompressed raw pixel data</td></tr>
     <tr><td>GIF</td><td>Lossless, limited to 256 colors</td><td>Yes (binary only)</td><td>Simple animations, low-color graphics</td></tr>
   </table>
+  </div>
 
   <h2 id="which-format">Which Format Should You Actually Use?</h2>
   <p>For photographs destined for the web, WebP is generally the best modern default — smaller files than JPEG at equivalent visual quality, with support in the overwhelming majority of browsers in active use today. JPG remains the safer choice when maximum compatibility matters more than squeezing out extra savings, such as email attachments or older systems that might not handle WebP.</p>
@@ -178,7 +158,8 @@
   <p>This is also why conversion is close to instantaneous for typical image sizes: there's no encoding queue, no upload bandwidth constraint, and no server-side processing time to wait on. The entire operation completes as fast as your device's own hardware can execute it, which for most images is well under a second.</p>
 
   <h2 id="comparison">Comparison vs. Format-Specific Converters</h2>
-  <table class="bp-table">
+  <div class="table-wrap">
+    <table class="table">
     <tr><th>Feature</th><th>Logrith Image Converter</th><th>Format-Specific Sites (e.g. "JPG to WebP" tools)</th></tr>
     <tr><td>Formats supported</td><td>5 formats, any combination</td><td>Usually one specific pairing per site</td></tr>
     <tr><td>Need to find a new tool per pairing</td><td>No</td><td>Yes</td></tr>
@@ -186,6 +167,7 @@
     <tr><td>Batch conversion</td><td>Single image per session</td><td>Some support batch, particularly the larger conversion platforms</td></tr>
     <tr><td>Quality control</td><td>Yes, for lossy output formats</td><td>Varies by site, often present</td></tr>
   </table>
+  </div>
   <p>Dedicated single-pairing tools aren't lesser tools — many are well-built and some, like ToWebP.io and Picflow, are genuinely browser-based and privacy-respecting, matching what Logrith's converter offers on that front. Where a single multi-format converter has a real advantage is convenience: converting a GIF to PNG and, ten minutes later, a different image from PNG to JPG doesn't require navigating to two different websites — it's the same tool with a different dropdown selection each time.</p>
 
   <h2 id="mistakes">Common Conversion Mistakes</h2>
@@ -202,37 +184,55 @@
   <h3>Why Choose Logrith</h3>
   <p>Beyond format conversion, Logrith includes the full set of image tools you're likely to need in the same workflow — compression, resizing, cropping, and color extraction — all built to the same no-upload, no-account standard, so switching between related tasks doesn't mean switching between different sites with different privacy policies.</p>
 
-</div>
+</article>
 
-<div class="bp-body">
+<article class="page-section prose">
   <h2 id="faq">Frequently Asked Questions</h2>
-  <div class="bp-faq-item"><h3>What image formats can I convert between?</h3><p>Logrith's Image Converter supports JPG, PNG, WebP, BMP, and GIF, in any direction — convert any of these formats to any other using the same tool.</p></div>
-  <div class="bp-faq-item"><h3>Is converting JPG to WebP the same as compressing it?</h3><p>They're related but distinct. Converting changes the file format, which often results in a smaller file since WebP compresses more efficiently than JPEG at similar quality. Dedicated compression additionally lets you control the quality-versus-size tradeoff directly.</p></div>
-  <div class="bp-faq-item"><h3>Will converting PNG to JPG lose transparency?</h3><p>Yes, JPEG doesn't support transparency at all. Any transparent areas in a PNG will be filled with a solid background color, usually white, when converted to JPG.</p></div>
-  <div class="bp-faq-item"><h3>Why do some websites still not display WebP images?</h3><p>WebP support is now present in over 96% of browsers in active use, but older browser versions or specific software may not open WebP files, which is why JPG and PNG remain useful fallback formats.</p></div>
-  <div class="bp-faq-item"><h3>Does converting an image reduce its quality?</h3><p>Converting between two lossy formats (like JPG to WebP) can introduce a small amount of additional quality loss, since you're re-encoding already-compressed data. Converting from a lossless format like PNG avoids this issue for the conversion step itself.</p></div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">What image formats can I convert between?</summary>
+      <div class="faq-a"><p>Logrith's Image Converter supports JPG, PNG, WebP, BMP, and GIF, in any direction — convert any of these formats to any other using the same tool.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is converting JPG to WebP the same as compressing it?</summary>
+      <div class="faq-a"><p>They're related but distinct. Converting changes the file format, which often results in a smaller file since WebP compresses more efficiently than JPEG at similar quality. Dedicated compression additionally lets you control the quality-versus-size tradeoff directly.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Will converting PNG to JPG lose transparency?</summary>
+      <div class="faq-a"><p>Yes, JPEG doesn't support transparency at all. Any transparent areas in a PNG will be filled with a solid background color, usually white, when converted to JPG.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why do some websites still not display WebP images?</summary>
+      <div class="faq-a"><p>WebP support is now present in over 96% of browsers in active use, but older browser versions or specific software may not open WebP files, which is why JPG and PNG remain useful fallback formats.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does converting an image reduce its quality?</summary>
+      <div class="faq-a"><p>Converting between two lossy formats (like JPG to WebP) can introduce a small amount of additional quality loss, since you're re-encoding already-compressed data. Converting from a lossless format like PNG avoids this issue for the conversion step itself.</p></div>
+    </details>
+  </div>
 
   <h2>Conclusion</h2>
   <p>The specific format pairing you need rarely matters as much as just getting the conversion done quickly and without giving up your image to a server you don't need to trust. A single converter that handles all common formats removes the friction of hunting for a differently-branded tool every time your specific combination changes, while keeping the same privacy standard regardless of which direction you're converting.</p>
-</div>
+</article>
 
-<div class="bp-prevnext">
+<nav class="post-nav page-section" aria-label="More guides">
   <a href="/blog/pdf-compressor">&larr; Previous: <strong>PDF Compressor Guide</strong></a>
   <a href="/blog/image-crop">Next: <strong>Image Crop Guide</strong> &rarr;</a>
-</div>
+</nav>
 
-<div class="bp-related">
+<section class="page-section">
   <h2>Related Tools</h2>
-  <div class="bp-related-grid">
-    <a href="/blog/image-compressor" class="bp-related-card"><h4>Image Compressor</h4><p>Reduce file size after converting to a new format.</p></a>
-    <a href="/blog/svg-to-png" class="bp-related-card"><h4>SVG to PNG</h4><p>Convert vector SVG files into raster PNG images.</p></a>
-    <a href="/blog/convert-image-to-base64-data-uri-online" class="bp-related-card"><h4>Image to Base64</h4><p>Encode any image format as a Base64 string.</p></a>
-    <a href="/blog/favicon-generator" class="bp-related-card"><h4>Favicon Generator</h4><p>Convert an image into all standard favicon sizes.</p></a>
+  <div class="related-grid">
+    <a class="related-card" href="/blog/image-compressor"><strong>Image Compressor</strong><span>Reduce file size after converting to a new format.</span></a>
+    <a class="related-card" href="/blog/svg-to-png"><strong>SVG to PNG</strong><span>Convert vector SVG files into raster PNG images.</span></a>
+    <a class="related-card" href="/blog/convert-image-to-base64-data-uri-online"><strong>Image to Base64</strong><span>Encode any image format as a Base64 string.</span></a>
+    <a class="related-card" href="/blog/favicon-generator"><strong>Favicon Generator</strong><span>Convert an image into all standard favicon sizes.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

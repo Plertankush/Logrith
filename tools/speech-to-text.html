@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -51,47 +55,71 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-speech-to-text">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/text-generators">Text & Generators</a> › Speech to Text</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/text-generators">Text &amp; Generators</a> › Speech to Text</nav>
   <h1>Free Speech to Text</h1>
   <p>Dictate using your microphone and see your words appear as text instantly — powered by your browser's built-in speech recognition.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">🎙️ Live Dictation</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#mic"></use></svg> Live Dictation</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:700px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Voice Dictation</h2>
     <div class="btn-group">
-      <button class="btn btn-primary btn-lg" id="start-btn">🎙️ Start Listening</button>
-      <button class="btn btn-secondary" id="stop-btn">⏹ Stop</button>
-      <button class="btn btn-secondary" id="clear-btn">✕ Clear</button>
+      <button class="btn btn-primary btn-lg" id="start-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#mic"></use></svg> Start Listening</button>
+      <button class="btn btn-secondary" id="stop-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#stop"></use></svg> Stop</button>
+      <button class="btn btn-secondary" id="clear-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Clear</button>
     </div>
-    <div class="status-msg" id="status-msg" style="margin-top:12px;"></div>
-    <div class="control-group mt-16" style="position:relative;">
+    <div class="status-msg mt-12" id="status-msg"></div>
+    <div class="control-group mt-16 relative">
       <label>Transcribed Text</label>
       <textarea class="tool-textarea" id="output-text" rows="10" placeholder="Your speech will appear here as text..."></textarea>
-      <button class="copy-btn" id="copy-btn">📋 Copy</button>
+      <button class="copy-btn" id="copy-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
     </div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>Which browsers support speech to text?</h3><p>Google Chrome and Microsoft Edge have strong support for the Web Speech API's recognition feature. Firefox and Safari have limited or no support as of current versions.</p></div>
-    <div class="faq-item-box"><h3>Does this need microphone permission?</h3><p>Yes, your browser will ask for microphone access the first time you use this tool — required for speech recognition to work.</p></div>
-    <div class="faq-item-box"><h3>Is my voice recording sent to a server?</h3><p>Speech processing is handled by your browser's built-in engine (Chrome's implementation uses Google's speech service). This tool itself does not separately upload or store your audio.</p></div>
-    <div class="faq-item-box"><h3>Can I dictate in languages other than English?</h3><p>The underlying browser API supports many languages, though this tool is configured for English by default.</p></div>
-    <div class="faq-item-box"><h3>Why do punctuation marks not appear automatically?</h3><p>Browser speech recognition generally transcribes spoken words without inferring punctuation unless specifically spoken aloud (like saying "comma" or "period"), so adding punctuation manually after dictating is normal and expected.</p></div>
-    <div class="faq-item-box"><h3>What happens if I pause while speaking?</h3><p>Brief pauses are handled fine and recognition continues. A longer silence may cause the recognition session to end automatically, depending on your browser's specific timeout behavior.</p></div>
-    <div class="faq-item-box"><h3>Can I edit the transcribed text afterward?</h3><p>Yes, the output appears in a standard editable text area, so you can correct any misheard words, add punctuation, or reformat the text directly before copying it.</p></div>
+    <details class="faq-item">
+      <summary class="faq-q">Which browsers support speech to text?</summary>
+      <div class="faq-a"><p>Google Chrome and Microsoft Edge have strong support for the Web Speech API's recognition feature. Firefox and Safari have limited or no support as of current versions.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does this need microphone permission?</summary>
+      <div class="faq-a"><p>Yes, your browser will ask for microphone access the first time you use this tool — required for speech recognition to work.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my voice recording sent to a server?</summary>
+      <div class="faq-a"><p>Speech processing is handled by your browser's built-in engine (Chrome's implementation uses Google's speech service). This tool itself does not separately upload or store your audio.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I dictate in languages other than English?</summary>
+      <div class="faq-a"><p>The underlying browser API supports many languages, though this tool is configured for English by default.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why do punctuation marks not appear automatically?</summary>
+      <div class="faq-a"><p>Browser speech recognition generally transcribes spoken words without inferring punctuation unless specifically spoken aloud (like saying "comma" or "period"), so adding punctuation manually after dictating is normal and expected.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What happens if I pause while speaking?</summary>
+      <div class="faq-a"><p>Brief pauses are handled fine and recognition continues. A longer silence may cause the recognition session to end automatically, depending on your browser's specific timeout behavior.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I edit the transcribed text afterward?</summary>
+      <div class="faq-a"><p>Yes, the output appears in a standard editable text area, so you can correct any misheard words, add punctuation, or reformat the text directly before copying it.</p></div>
+    </details>
   </div>
-</div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>Free Browser-Based Speech to Text</h2>
   <p>This tool converts your spoken words into written text in real time, using the Web Speech API's SpeechRecognition feature built into supporting browsers. Click Start Listening, speak naturally, and watch your words appear as text — useful for quick note-taking, drafting messages, or hands-free writing.</p>
 
@@ -105,7 +133,7 @@
   <p>Speech recognition accuracy improves noticeably with a few simple habits: speaking at a clear, moderate pace rather than rushing, minimizing background noise where possible, and using a decent microphone rather than a laptop's built-in mic across a room. Recognition engines are generally trained on clear, well-enunciated speech, so mumbled or very fast dictation tends to produce more errors that need manual correction afterward.</p>
 
   <h3>Common Uses</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Quick note-taking</strong> — capturing thoughts or ideas hands-free while multitasking.</li>
     <li><strong>Drafting messages or emails</strong> — dictating a first draft faster than typing.</li>
     <li><strong>Accessibility</strong> — an alternative input method for people who find typing difficult.</li>
@@ -114,12 +142,24 @@
   </ul>
 
   <h3>Step-by-Step: Dictating Text</h3>
-  <div class="tool-steps">
-    <div class="tool-step"><strong>1. Click Start Listening</strong>Grant microphone permission when your browser prompts for it.</div>
-    <div class="tool-step"><strong>2. Speak clearly</strong>Talk at a natural, moderate pace as your words appear as text.</div>
-    <div class="tool-step"><strong>3. Click Stop when finished</strong>End the listening session once you've said what you need.</div>
-    <div class="tool-step"><strong>4. Edit and copy</strong>Clean up any punctuation or errors, then copy the final text.</div>
-  </div>
+  <ol class="steps">
+    <li class="step">
+      <strong>Click Start Listening</strong>
+      <p>Grant microphone permission when your browser prompts for it.</p>
+    </li>
+    <li class="step">
+      <strong>Speak clearly</strong>
+      <p>Talk at a natural, moderate pace as your words appear as text.</p>
+    </li>
+    <li class="step">
+      <strong>Click Stop when finished</strong>
+      <p>End the listening session once you've said what you need.</p>
+    </li>
+    <li class="step">
+      <strong>Edit and copy</strong>
+      <p>Clean up any punctuation or errors, then copy the final text.</p>
+    </li>
+  </ol>
 
   <h3>Privacy Considerations</h3>
   <p>Speech recognition in supporting browsers (like Chrome) is typically processed via the browser vendor's speech service, not by this website — this tool simply displays whatever text your browser's recognition engine returns. No audio or transcribed text is separately collected, logged, or stored by this tool.</p>
@@ -137,19 +177,20 @@
   <p>Speech recognition engines are generally trained on broad, everyday language, which means specialized vocabulary — technical jargon, brand names, uncommon proper nouns — gets misrecognized more often than common words. When dictating content heavy with specialized terms, speaking slightly more slowly and clearly around those specific words, and planning for a thorough proofreading pass focused specifically on technical terminology, tends to produce better final results than expecting the recognition engine to catch unfamiliar vocabulary correctly on the first attempt without any extra care.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/text-to-speech" class="tool-item"><div class="ti-text"><h4>Text to Speech</h4><p>Convert written text into spoken audio.</p></div></a>
-    <a href="/tools/word-counter" class="tool-item"><div class="ti-text"><h4>Word Counter</h4><p>Count words in your transcribed text.</p></div></a>
-    <a href="/tools/case-converter" class="tool-item"><div class="ti-text"><h4>Case Converter</h4><p>Convert text between case formats.</p></div></a>
-    <a href="/tools/text-summarizer-basic" class="tool-item"><div class="ti-text"><h4>Text Summarizer</h4><p>Get a quick summary of your dictated text.</p></div></a>
+    <a class="related-card" href="/tools/text-to-speech"><strong>Text to Speech</strong><span>Convert written text into spoken audio.</span></a>
+    <a class="related-card" href="/tools/word-counter"><strong>Word Counter</strong><span>Count words in your transcribed text.</span></a>
+    <a class="related-card" href="/tools/case-converter"><strong>Case Converter</strong><span>Convert text between case formats.</span></a>
+    <a class="related-card" href="/tools/text-summarizer-basic"><strong>Text Summarizer</strong><span>Get a quick summary of your dictated text.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 const statusEl = document.getElementById('status-msg');
 const outputText = document.getElementById('output-text');

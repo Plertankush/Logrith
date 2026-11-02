@@ -26,54 +26,13 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
 
-  <link rel="preload" href="/assets/css/style.css" as="style">
-  <link rel="stylesheet" href="/assets/css/style.css">
-
   <meta name="keywords" content="url deduplicator, remove duplicate urls, normalize urls online, dedupe links, remove utm parameters, clean url list, url list cleaner">
 
-  <style>
-    .tool-hero { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #ecfdf5 100%);}
-    .tool-hero h1 span { color: #16a34a; }
-
-    .insp-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin-top:14px; }
-    .insp-card { background:var(--gray-50); border:1px solid var(--gray-200); border-radius:12px; padding:16px; }
-    .insp-card h3 { font-family:var(--font-display); font-size:.9rem; font-weight:700; color:var(--gray-900); margin-bottom:10px; display:flex; align-items:center; gap:8px; }
-    .insp-row { display:flex; justify-content:space-between; gap:10px; padding:6px 0; border-bottom:1px solid var(--gray-100); font-size:.84rem; }
-    .insp-row:last-child { border-bottom:none; }
-    .insp-row .k { color:var(--gray-500); }
-    .insp-row .v { color:var(--gray-900); font-weight:600; text-align:right; word-break:break-word; }
-
-    .clean-opts { display:flex; flex-direction:column; gap:10px; margin-top:14px; }
-    .clean-opt { display:flex; align-items:flex-start; gap:10px; padding:10px 12px; background:var(--gray-50); border:1px solid var(--gray-200); border-radius:10px; }
-    .clean-opt input[type="checkbox"] { width:16px; height:16px; margin-top:2px; accent-color:var(--primary); cursor:pointer; flex-shrink:0; }
-    .clean-opt label { font-size:.86rem; color:var(--gray-800); font-weight:600; cursor:pointer; }
-    .clean-opt p { font-size:.78rem; color:var(--gray-500); margin-top:2px; }
-
-    .sort-row { display:flex; align-items:center; gap:14px; margin-top:14px; flex-wrap:wrap; }
-    .sort-row label { font-size:.84rem; font-weight:600; color:var(--gray-700); display:flex; align-items:center; gap:6px; cursor:pointer; }
-    .sort-row input[type="radio"] { accent-color:var(--primary); cursor:pointer; }
-
-    .url-list-box { border:1px solid var(--gray-200); border-radius:10px; max-height:360px; overflow:auto; background:var(--white); }
-    .url-list-box ol, .url-list-box ul { margin:0; padding:10px 14px 10px 34px; }
-    .url-list-box li { font-family:var(--font-mono,monospace); font-size:.82rem; color:var(--gray-800); word-break:break-all; padding:4px 0; border-bottom:1px solid var(--gray-100); }
-    .url-list-box li:last-child { border-bottom:none; }
-    .url-list-box li.flagged { color:#b45309; }
-
-    .article-section, .faq-section, .feature-section, .related-tools, .keyword-section, .howto-section {
-      max-width: 860px; margin: 22px auto 0; background: #fff; border: 1px solid var(--gray-100); border-radius: 14px; padding: 22px;
-    }
-    .article-section h2, .faq-section h2, .feature-section h2, .related-tools h2, .keyword-section h2, .howto-section h2 { margin-bottom: 14px; }
-    .article-section p, .howto-section p { margin: 0 0 12px; line-height: 1.8; color: var(--gray-700); }
-    .feature-list, .keyword-list, .related-list, .howto-list { margin: 0; padding-left: 18px; }
-    .feature-list li, .keyword-list li, .related-list li, .howto-list li { margin-bottom: 10px; color: var(--gray-700); line-height: 1.7; }
-    .privacy-note { max-width: 860px; margin: 10px auto 0; font-size: .88rem; color: var(--gray-600); text-align: left; }
-    .faq-item { border-bottom: 1px solid var(--gray-100); padding: 14px 0; }
-    .faq-item:last-child { border-bottom: none; }
-    .faq-q { font-weight: 700; color: var(--gray-800); margin-bottom: 6px; }
-    .faq-a { color: var(--gray-700); line-height: 1.8; }
-    .related-list a { color: var(--primary); text-decoration: none; font-weight: 600; }
-    .related-list a:hover { text-decoration: underline; }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {
@@ -135,27 +94,27 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-url-deduplicator">
 <div id="navbar"></div>
 
 <main>
-  <div class="tool-hero">
-    <div class="tool-hero-inner">
-      <div class="tool-breadcrumb">
+  <header class="page-hero">
+    <div class="page-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a> › <a href="/categories/global-tools">Global Tools</a> › URL Deduplicator
-      </div>
+      </nav>
       <h1>URL Deduplicator – Remove<span> Duplicate &amp; Near-Duplicate</span> Links</h1>
       <p>Paste a list of URLs and remove exact duplicates plus near-duplicates caused by trailing slashes, case, www, tracking parameters, and fragments — all in your browser.</p>
-      <div class="tool-tags">
-        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
-        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#lock"></use></svg> Local Processing</span>
-        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#dedupe"></use></svg> Real URL Parser</span>
-        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#speed"></use></svg> Instant</span>
+      <div class="tag-list">
+        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
+        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#lock"></use></svg> Local Processing</span>
+        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#dedupe"></use></svg> Real URL Parser</span>
+        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#speed"></use></svg> Instant</span>
       </div>
     </div>
-  </div>
+  </header>
 
-  <div class="tool-workspace" style="max-width:960px;">
+  <div class="tool-workspace">
     <div class="tool-card">
       <h2>Paste Your URL List</h2>
       <div class="control-group">
@@ -163,7 +122,7 @@
         <textarea class="tool-textarea mono" id="url-input" rows="10" placeholder="https://example.com/blog/post-1&#10;https://example.com/blog/post-1/&#10;https://Example.com/blog/post-1?utm_source=newsletter&#10;http://www.example.com/blog/post-1&#10;not a url&#10;https://example.com/blog/post-2#section"></textarea>
       </div>
 
-      <h2 style="margin-top:18px;">Normalization Options</h2>
+      <h2 class="u-4a909e">Normalization Options</h2>
       <div class="clean-opts">
         <div class="clean-opt">
           <input type="checkbox" id="opt-slash" checked>
@@ -192,7 +151,7 @@
       </div>
 
       <div class="sort-row">
-        <span style="font-size:.84rem; font-weight:700; color:var(--gray-700);">Output order:</span>
+        <span class="u-6665f4">Output order:</span>
         <label><input type="radio" name="sort-mode" value="original" checked> Keep original order</label>
         <label><input type="radio" name="sort-mode" value="alpha"> Sort alphabetically</label>
       </div>
@@ -200,17 +159,17 @@
       <div class="btn-group mt-16">
         <button class="btn btn-primary" id="dedupe-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#dedupe"></use></svg> Deduplicate URLs</button>
       </div>
-      <div class="status-msg" id="status-msg" style="margin-top:12px;" aria-live="polite"></div>
+      <div class="status-msg mt-12" id="status-msg" aria-live="polite"></div>
     </div>
 
     <p class="privacy-note">Your URL list is parsed and deduplicated in your browser using the native URL API. Nothing is uploaded to Logrith.</p>
 
-    <div class="tool-card" id="summary-card" style="display:none;">
+    <div class="tool-card is-hidden" id="summary-card">
       <h2>Deduplication Summary</h2>
       <div class="insp-grid" id="summary-grid"></div>
     </div>
 
-    <div class="tool-card" id="result-card" style="display:none;">
+    <div class="tool-card is-hidden" id="result-card">
       <h2>Cleaned URL List</h2>
       <div class="url-list-box">
         <ol id="result-list"></ol>
@@ -222,19 +181,27 @@
     </div>
   </div>
 
-  <section class="howto-section">
+  <section class="page-section">
     <h2>How to Deduplicate a URL List</h2>
-    <ol class="howto-list">
-      <li>Paste your list of URLs into the box — one per line, or mixed in with other text; the tool extracts the URLs automatically.</li>
-      <li>Choose which normalization options to apply, based on which formatting differences you want treated as duplicates.</li>
-      <li>Click "Deduplicate URLs" to see the summary: how many URLs were found, how many were exact duplicates, how many were near-duplicates, and how many were unparseable.</li>
-      <li>Review the cleaned list, then copy it or download it as a .txt file.</li>
+    <ol class="steps">
+      <li class="step">
+        <p>Paste your list of URLs into the box — one per line, or mixed in with other text; the tool extracts the URLs automatically.</p>
+      </li>
+      <li class="step">
+        <p>Choose which normalization options to apply, based on which formatting differences you want treated as duplicates.</p>
+      </li>
+      <li class="step">
+        <p>Click "Deduplicate URLs" to see the summary: how many URLs were found, how many were exact duplicates, how many were near-duplicates, and how many were unparseable.</p>
+      </li>
+      <li class="step">
+        <p>Review the cleaned list, then copy it or download it as a .txt file.</p>
+      </li>
     </ol>
   </section>
 
-  <section class="feature-section">
+  <section class="page-section prose">
     <h2>What This Tool Detects</h2>
-    <ul class="feature-list">
+    <ul>
       <li><strong>Exact duplicates:</strong> the identical URL string appearing more than once.</li>
       <li><strong>Trailing slash differences:</strong> a URL with and without a trailing slash after the path.</li>
       <li><strong>Hostname case differences:</strong> uppercase or mixed-case letters in the scheme or host.</li>
@@ -245,7 +212,7 @@
     </ul>
   </section>
 
-  <section class="article-section">
+  <section class="page-section prose">
     <h2>What Is URL Deduplication?</h2>
     <p>URL deduplication is the process of taking a list of links and reducing it down to one entry per unique destination. It sounds simple, but "unique" is doing a lot of work in that sentence. A straightforward approach — comparing URL strings character by character — only catches exact duplicates: the same string appearing twice. In practice, most duplicate URLs in a real-world list aren't exact string matches at all. They're near-duplicates: the same underlying page, written slightly differently. <code>https://example.com/pricing</code> and <code>https://example.com/pricing/</code> almost always point to the same page, but as plain text strings they're different. A naive deduplication pass misses that, and a list that should have 500 unique URLs ends up reported as 650.</p>
 
@@ -271,58 +238,59 @@
     <p>People use this tool when searching for phrases like "remove duplicate urls online," "url list deduplicator," "strip utm parameters from urls," "normalize url list," and "clean backlink list free" — this page is built to answer those tasks directly with a working, browser-based tool powered by the real URL parsing API rather than a naive string comparison.</p>
   </section>
 
-  <section class="faq-section">
+  <section class="page-section">
     <h2>URL Deduplicator FAQ</h2>
-    <div class="faq-item">
-      <div class="faq-q">What counts as a duplicate URL?</div>
-      <div class="faq-a">An exact duplicate is a byte-for-byte identical URL string. A near-duplicate is a URL that points to the same resource but differs in formatting — a trailing slash, hostname case, a www prefix, a tracking parameter, or a fragment. You choose which of these differences to treat as duplicates using the normalization options.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Does this tool remove tracking parameters from every URL?</div>
-      <div class="faq-a">Only when you enable that option, and only for a fixed list of known tracking parameters such as utm_source, utm_medium, utm_campaign, fbclid, and gclid. Unrecognized query parameters are left untouched because they may affect which page or content is actually returned.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Will this tool treat http and https versions of the same URL as duplicates?</div>
-      <div class="faq-a">Only if you turn on the "Treat http and https as equivalent" option, which is off by default. Many sites serve different content or redirect behavior on http versus https, so this tool does not assume they are the same unless you say so.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Does this tool upload my URL list anywhere?</div>
-      <div class="faq-a">No. Extraction, parsing, normalization, and deduplication all run locally in your browser using JavaScript and the browser's built-in URL parser. Nothing is sent to a server.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">What happens to text that isn't a valid URL?</div>
-      <div class="faq-a">The tool extracts URL-shaped substrings from your pasted text using a pattern match, then attempts to parse each one with the browser's URL API. Anything that fails to parse as a URL is excluded from the cleaned list and counted separately so you can see how many entries were skipped.</div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">What counts as a duplicate URL?</summary>
+        <div class="faq-a"><p>An exact duplicate is a byte-for-byte identical URL string. A near-duplicate is a URL that points to the same resource but differs in formatting — a trailing slash, hostname case, a www prefix, a tracking parameter, or a fragment. You choose which of these differences to treat as duplicates using the normalization options.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Does this tool remove tracking parameters from every URL?</summary>
+        <div class="faq-a"><p>Only when you enable that option, and only for a fixed list of known tracking parameters such as utm_source, utm_medium, utm_campaign, fbclid, and gclid. Unrecognized query parameters are left untouched because they may affect which page or content is actually returned.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Will this tool treat http and https versions of the same URL as duplicates?</summary>
+        <div class="faq-a"><p>Only if you turn on the "Treat http and https as equivalent" option, which is off by default. Many sites serve different content or redirect behavior on http versus https, so this tool does not assume they are the same unless you say so.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Does this tool upload my URL list anywhere?</summary>
+        <div class="faq-a"><p>No. Extraction, parsing, normalization, and deduplication all run locally in your browser using JavaScript and the browser's built-in URL parser. Nothing is sent to a server.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">What happens to text that isn't a valid URL?</summary>
+        <div class="faq-a"><p>The tool extracts URL-shaped substrings from your pasted text using a pattern match, then attempts to parse each one with the browser's URL API. Anything that fails to parse as a URL is excluded from the cleaned list and counted separately so you can see how many entries were skipped.</p></div>
+      </details>
     </div>
   </section>
 
-  <section class="related-tools">
+  <section class="page-section">
     <h2>Related Tools</h2>
-    <ul class="related-list">
-      <li><a href="/tools/csv-cleaner">CSV Cleaner</a></li>
-      <li><a href="/tools/json-repair">JSON Repair Tool</a></li>
-      <li><a href="/tools/ai-context-calculator">AI Token & Context Calculator</a></li>
-      <li><a href="/tools/markdown-to-html">Markdown to HTML Converter</a></li>
-    </ul>
+    <div class="related-grid">
+      <a class="related-card" href="/tools/csv-cleaner"><strong>CSV Cleaner</strong></a>
+      <a class="related-card" href="/tools/json-repair"><strong>JSON Repair Tool</strong></a>
+      <a class="related-card" href="/tools/ai-context-calculator"><strong>AI Token &amp; Context Calculator</strong></a>
+      <a class="related-card" href="/tools/markdown-to-html"><strong>Markdown to HTML Converter</strong></a>
+    </div>
   </section>
 
-  <section class="keyword-section">
+  <section class="page-section">
     <h2>Top URL Deduplicator Search Queries</h2>
-    <ul class="keyword-list">
-      <li>url deduplicator online</li>
-      <li>remove duplicate urls</li>
-      <li>strip utm parameters from url</li>
-      <li>normalize url list free</li>
-      <li>clean backlink list</li>
-      <li>dedupe links tool</li>
-      <li>remove tracking parameters url</li>
-    </ul>
+    <div class="keyword-box">
+      <span class="keyword-tag">url deduplicator online</span>
+      <span class="keyword-tag">remove duplicate urls</span>
+      <span class="keyword-tag">strip utm parameters from url</span>
+      <span class="keyword-tag">normalize url list free</span>
+      <span class="keyword-tag">clean backlink list</span>
+      <span class="keyword-tag">dedupe links tool</span>
+      <span class="keyword-tag">remove tracking parameters url</span>
+    </div>
   </section>
 </main>
 
 <div id="footer"></div>
+<script src="/assets/js/main.js"></script>
 
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
 
 <script>
 /* ==========================================================================

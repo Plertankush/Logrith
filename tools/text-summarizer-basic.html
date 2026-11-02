@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -51,17 +55,20 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-text-summarizer-basic">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/text-generators">Text & Generators</a> › Text Summarizer</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/text-generators">Text &amp; Generators</a> › Text Summarizer</nav>
   <h1>Free Text Summarizer</h1>
   <p>Paste long text and get the most important sentences extracted instantly — a fast, private, browser-based summarizer.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">📝 Extractive</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#edit"></use></svg> Extractive</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:820px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Input Text</h2>
     <textarea class="tool-textarea" id="input-text" rows="10" placeholder="Paste a long article or paragraph here..."></textarea>
@@ -70,55 +77,63 @@
       <input type="range" id="sentence-count" min="1" max="10" value="3">
     </div>
     <div class="btn-group mt-12">
-      <button class="btn btn-primary btn-lg" id="summarize-btn">📝 Summarize</button>
+      <button class="btn btn-primary btn-lg" id="summarize-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#edit"></use></svg> Summarize</button>
     </div>
     <div class="status-msg" id="status-msg"></div>
   </div>
 
-  <div class="tool-card" id="result-card" style="display:none;">
+  <div class="tool-card is-hidden" id="result-card">
     <h2>Summary</h2>
     <div class="summary-box" id="summary-output"></div>
     <div class="stats-row mt-12" id="stats-row"></div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>How does this summarizer work?</h3><p>It uses extractive summarization, scoring each sentence by word frequency and selecting the highest-scoring ones, rather than generating new sentences.</p></div>
-    <div class="faq-item-box"><h3>Is this the same as AI summarization?</h3><p>No, this uses a statistical, rule-based approach that runs entirely in your browser, rather than an AI language model generating a new abstractive summary.</p></div>
-    <div class="faq-item-box"><h3>How long should my input text be?</h3><p>This works best on text with at least several sentences — very short text (1-2 sentences) won't benefit much from summarization.</p></div>
-    <div class="faq-item-box"><h3>Does the summary preserve the original order?</h3><p>Yes, selected sentences are presented in their original order from the source text, not reordered by importance.</p></div>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card">
-      <h2>How to Use the Text Summarizer</h2>
-      <div class="tool-steps">
-        <div class="tool-step">
-          <strong>1. Paste your text</strong>
-          Copy an article, report, or set of notes into the input box.
-        </div>
-        <div class="tool-step">
-          <strong>2. Choose the number of sentences</strong>
-          Move the slider to set how many sentences (1-10) you want in the final summary.
-        </div>
-        <div class="tool-step">
-          <strong>3. Click Summarize</strong>
-          The tool scores every sentence by word frequency and pulls out the highest-scoring ones.
-        </div>
-        <div class="tool-step">
-          <strong>4. Review the output</strong>
-          Read the extracted sentences and check the word-count and reduction-percentage stats below them.
-        </div>
-      </div>
-    </div>
+    <details class="faq-item">
+      <summary class="faq-q">How does this summarizer work?</summary>
+      <div class="faq-a"><p>It uses extractive summarization, scoring each sentence by word frequency and selecting the highest-scoring ones, rather than generating new sentences.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is this the same as AI summarization?</summary>
+      <div class="faq-a"><p>No, this uses a statistical, rule-based approach that runs entirely in your browser, rather than an AI language model generating a new abstractive summary.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How long should my input text be?</summary>
+      <div class="faq-a"><p>This works best on text with at least several sentences — very short text (1-2 sentences) won't benefit much from summarization.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does the summary preserve the original order?</summary>
+      <div class="faq-a"><p>Yes, selected sentences are presented in their original order from the source text, not reordered by importance.</p></div>
+    </details>
   </div>
 </section>
 
-<section class="article-section">
+<section class="page-section">
+  <h2>How to Use the Text Summarizer</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Paste your text</strong>
+      <p>Copy an article, report, or set of notes into the input box.</p>
+    </li>
+    <li class="step">
+      <strong>Choose the number of sentences</strong>
+      <p>Move the slider to set how many sentences (1-10) you want in the final summary.</p>
+    </li>
+    <li class="step">
+      <strong>Click Summarize</strong>
+      <p>The tool scores every sentence by word frequency and pulls out the highest-scoring ones.</p>
+    </li>
+    <li class="step">
+      <strong>Review the output</strong>
+      <p>Read the extracted sentences and check the word-count and reduction-percentage stats below them.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
   <h2>Free Extractive Text Summarizer</h2>
   <p>This tool creates a summary of long text by identifying and extracting the most important sentences, using a word-frequency scoring approach that runs entirely in your browser — no external AI service required.</p>
 
@@ -129,7 +144,7 @@
   <p>This tool first breaks your text into individual sentences, then builds a word frequency count across the entire text (ignoring common "stop words" like "the," "a," and "and," which carry little meaning). Each sentence is then scored based on how many frequently-occurring, meaningful words it contains — sentences packed with the text's most repeated key terms score higher, on the theory that these sentences are more likely to represent the core content. The highest-scoring sentences (however many you've requested) are selected and presented back in their original order.</p>
 
   <h3>When This Tool Works Best</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Longer articles or reports</strong> with clear, distinct sentences and a consistent topic focus.</li>
     <li><strong>Getting a quick overview</strong> before deciding whether to read something in full.</li>
     <li><strong>Extracting key points</strong> from meeting notes, research excerpts, or long emails.</li>
@@ -149,7 +164,7 @@
   <p>A good starting point is roughly 10-20% of the original sentence count. For a short 15-sentence blog post, 2-3 sentences is usually enough to capture the gist. For a longer 60-sentence report, 6-8 sentences will typically read more like a coherent abstract. Setting the slider too low on a long document risks losing supporting context; setting it too high defeats the purpose of summarizing at all.</p>
 
   <h3>Use Cases for Students and Professionals</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Students</strong> skimming research papers or textbook chapters to judge relevance before committing to a full read.</li>
     <li><strong>Professionals</strong> condensing long email threads, status reports, or meeting transcripts into a quick-reference summary.</li>
     <li><strong>Writers and editors</strong> checking whether an article's most "statistically important" sentences align with its actual thesis, as a quick self-editing sanity check.</li>
@@ -168,34 +183,31 @@
   <p>People land on this page looking for ways to "summarize an article online," "shorten a paragraph automatically," "get the main points of a text," or find a "free summary generator" that doesn't require an account or an API key. This tool covers that need for straightforward extractive summarization without any sign-up, upload limit, or paid tier.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/word-counter" class="tool-item"><div class="ti-text"><h4>Word Counter</h4><p>Count words in your original or summarized text.</p></div></a>
-    <a href="/tools/text-to-speech" class="tool-item"><div class="ti-text"><h4>Text to Speech</h4><p>Listen to your summary read aloud.</p></div></a>
-    <a href="/tools/citation-generator" class="tool-item"><div class="ti-text"><h4>Citation Generator</h4><p>Create citations for summarized sources.</p></div></a>
-    <a href="/tools/character-counter" class="tool-item"><div class="ti-text"><h4>Character Counter</h4><p>Check character count of your summary.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">text summarizer</span>
-        <span class="keyword-tag">text summarizer online</span>
-        <span class="keyword-tag">summarize text free</span>
-        <span class="keyword-tag">article summarizer</span>
-        <span class="keyword-tag">extractive summarization tool</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/word-counter"><strong>Word Counter</strong><span>Count words in your original or summarized text.</span></a>
+    <a class="related-card" href="/tools/text-to-speech"><strong>Text to Speech</strong><span>Listen to your summary read aloud.</span></a>
+    <a class="related-card" href="/tools/citation-generator"><strong>Citation Generator</strong><span>Create citations for summarized sources.</span></a>
+    <a class="related-card" href="/tools/character-counter"><strong>Character Counter</strong><span>Check character count of your summary.</span></a>
   </div>
 </section>
 
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">text summarizer</span>
+    <span class="keyword-tag">text summarizer online</span>
+    <span class="keyword-tag">summarize text free</span>
+    <span class="keyword-tag">article summarizer</span>
+    <span class="keyword-tag">extractive summarization tool</span>
+  </div>
+</section>
+
+</main>
+
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 document.getElementById('sentence-count').addEventListener('input', e => {
   document.getElementById('count-val').textContent = e.target.value;

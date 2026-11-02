@@ -23,7 +23,13 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -42,7 +48,7 @@
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/" },
-          { "@type": "ListItem", "position": 2, "name": "Utility Tools", "item": "https://logrith.in/categories/utilities" },
+          { "@type": "ListItem", "position": 2, "name": "AI Tools", "item": "https://logrith.in/categories/ai-tools" },
           { "@type": "ListItem", "position": 3, "name": "AI Resume Analyzer" }
         ]
       },
@@ -61,137 +67,26 @@
   </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-BPJ4332XJH');</script>
-  <style>
-    .tool-hero{background:linear-gradient(135deg,var(--gray-900) 0%,var(--primary) 150%);padding:40px 24px 32px;border-bottom:1.5px solid var(--primary-light);}
-    .breadcrumb{display:flex;align-items:center;gap:6px;font-size:.8rem;color:rgba(255,255,255,0.6);margin-bottom:14px;}
-    .breadcrumb a{color:var(--primary-light);text-decoration:none;}
-    .tool-title{display:flex;align-items:center;gap:14px;margin-bottom:10px;}
-    .tool-icon{width:52px;height:52px;background:rgba(255,255,255,.08);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0;}
-    .tool-title h1{font-family:var(--font-display);font-size:clamp(1.4rem,4vw,2rem);font-weight:800;color:white;margin-bottom:4px;}
-    .tool-title p{font-size:.88rem;color:#94a3b8;}
-    .tool-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px;}
-    .tool-tag{padding:3px 10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:20px;font-size:.74rem;color:#cbd5e1;}
-    .tool-wrap{max-width:960px;margin:0 auto;padding:28px 24px 60px;}
-
-    /* Input section */
-    .input-card{background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius-xl);padding:24px;margin-bottom:20px;box-shadow:var(--shadow-sm);}
-    .input-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px;}
-    .field-group{display:flex;flex-direction:column;gap:6px;}
-    .field-group label{font-size:.82rem;font-weight:600;color:var(--gray-700);}
-    .field-group input,.field-group select{padding:10px 13px;border:1.5px solid var(--gray-200);border-radius:var(--radius);font-size:.88rem;font-family:var(--font-main);color:var(--gray-900);outline:none;transition:var(--transition);}
-    .field-group input:focus,.field-group select:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(0,87,255,.08);}
-    .resume-textarea{width:100%;min-height:280px;padding:14px;border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);font-size:.86rem;font-family:var(--font-main);color:var(--gray-900);resize:vertical;outline:none;transition:var(--transition);box-sizing:border-box;line-height:1.7;}
-    .resume-textarea:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(0,87,255,.08);}
-    .char-row{display:flex;justify-content:space-between;align-items:center;margin-top:6px;}
-    .char-hint{font-size:.76rem;color:var(--gray-400);}
-    .analyze-btn{width:100%;padding:14px;background:linear-gradient(135deg,#1d4ed8,#3b82f6);color:white;border:none;border-radius:var(--radius);font-size:.96rem;font-family:var(--font-display);font-weight:700;cursor:pointer;transition:var(--transition);box-shadow:0 4px 14px rgba(29,78,216,.3);margin-top:16px;display:flex;align-items:center;justify-content:center;gap:8px;}
-    .analyze-btn:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 6px 20px rgba(29,78,216,.4);}
-    .analyze-btn:disabled{opacity:.6;cursor:not-allowed;transform:none;}
-
-    /* Loading */
-    .loading-card{background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius-xl);padding:48px;text-align:center;display:none;}
-    .loading-card.show{display:block;}
-    .ai-spinner{width:48px;height:48px;margin:0 auto 16px;position:relative;}
-    .ai-spinner::before{content:'';position:absolute;inset:0;border:3px solid var(--gray-200);border-radius:50%;}
-    .ai-spinner::after{content:'';position:absolute;inset:0;border:3px solid transparent;border-top-color:var(--primary);border-radius:50%;animation:spin .8s linear infinite;}
-    @keyframes spin{to{transform:rotate(360deg);}}
-    .loading-steps{display:flex;flex-direction:column;gap:8px;margin-top:20px;text-align:left;max-width:340px;margin-left:auto;margin-right:auto;}
-    .ls-item{display:flex;align-items:center;gap:10px;font-size:.84rem;color:var(--gray-600);}
-    .ls-item.done{color:#16a34a;}
-    .ls-item.active{color:var(--primary);font-weight:600;}
-
-    /* Results */
-    .results-card{display:none;}
-    .results-card.show{display:block;}
-
-    /* Score circle */
-    .score-header{display:flex;align-items:center;gap:24px;background:linear-gradient(135deg,var(--gray-900),var(--primary));border-radius:var(--radius-xl);padding:28px;margin-bottom:20px;flex-wrap:wrap;}
-    .score-circle{width:100px;height:100px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-direction:column;flex-shrink:0;position:relative;}
-    .score-circle svg{position:absolute;inset:0;transform:rotate(-90deg);}
-    .score-circle .sc-val{font-family:var(--font-display);font-size:1.6rem;font-weight:800;color:white;position:relative;z-index:1;}
-    .score-circle .sc-label{font-size:.62rem;color:rgba(255,255,255,.5);position:relative;z-index:1;margin-top:-2px;}
-    .score-info{flex:1;}
-    .score-title{font-family:var(--font-display);font-size:1.2rem;font-weight:800;color:white;margin-bottom:6px;}
-    .score-subtitle{font-size:.86rem;color:#94a3b8;margin-bottom:14px;}
-    .score-pills{display:flex;gap:8px;flex-wrap:wrap;}
-    .score-pill{padding:4px 12px;border-radius:20px;font-size:.76rem;font-weight:700;font-family:var(--font-display);}
-    .pill-green{background:rgba(16,185,129,.2);color:#10b981;}
-    .pill-yellow{background:rgba(245,158,11,.2);color:#f59e0b;}
-    .pill-red{background:rgba(239,68,68,.2);color:#ef4444;}
-
-    /* Section scores */
-    .scores-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:20px;}
-    .score-metric{background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:16px;}
-    .sm-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
-    .sm-label{font-size:.82rem;font-weight:700;color:var(--gray-700);display:flex;align-items:center;gap:6px;}
-    .sm-score{font-family:var(--font-display);font-size:.9rem;font-weight:800;}
-    .score-bar-wrap{height:6px;background:var(--gray-100);border-radius:3px;overflow:hidden;}
-    .score-bar-fill{height:100%;border-radius:3px;transition:width .8s ease;}
-
-    /* Feedback sections */
-    .feedback-section{background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius-xl);padding:22px;margin-bottom:16px;}
-    .fs-header{display:flex;align-items:center;gap:10px;margin-bottom:16px;cursor:pointer;}
-    .fs-icon{font-size:1.2rem;}
-    .fs-title{font-family:var(--font-display);font-size:.95rem;font-weight:700;color:var(--gray-900);}
-    .fs-badge{margin-left:auto;padding:3px 10px;border-radius:20px;font-size:.72rem;font-weight:700;font-family:var(--font-display);}
-    .badge-good{background:#dcfce7;color:#16a34a;}
-    .badge-improve{background:#fef9c3;color:#d97706;}
-    .badge-critical{background:#fee2e2;color:#dc2626;}
-
-    .feedback-list{list-style:none;}
-    .feedback-list li{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--gray-100);font-size:.85rem;color:var(--gray-700);line-height:1.55;}
-    .feedback-list li:last-child{border:none;}
-    .fi{flex-shrink:0;margin-top:1px;}
-
-    /* Keywords */
-    .keywords-found{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
-    .kw-chip{padding:4px 10px;border-radius:20px;font-size:.74rem;font-weight:600;font-family:var(--font-display);}
-    .kw-found{background:#dcfce7;color:#16a34a;}
-    .kw-missing{background:#fee2e2;color:#dc2626;}
-
-    /* Action buttons */
-    .result-actions{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;}
-    .ra-btn{padding:10px 20px;border:1.5px solid var(--gray-200);border-radius:var(--radius);font-size:.84rem;font-weight:700;cursor:pointer;font-family:var(--font-display);transition:var(--transition);background:var(--white);}
-    .ra-btn:hover{border-color:var(--primary);color:var(--primary);}
-    .ra-btn.primary{background:var(--primary);color:white;border-color:var(--primary);}
-
-    .seo-section{border-top:1.5px solid var(--gray-200);margin-top:40px;padding-top:36px;}
-    .seo-section h2{font-family:var(--font-display);font-size:1.25rem;font-weight:700;color:var(--gray-900);margin-bottom:14px;}
-    .seo-section p{font-size:.92rem;color:var(--gray-700);line-height:1.8;margin-bottom:12px;}
-    .how-steps{display:flex;flex-direction:column;gap:12px;margin:14px 0;}
-    .how-step{display:flex;gap:14px;align-items:flex-start;padding:14px 16px;background:var(--gray-50);border-radius:var(--radius-lg);}
-    .step-n{width:28px;height:28px;background:var(--primary);color:white;border-radius:50%;font-size:.78rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-    .step-body h4{font-family:var(--font-display);font-size:.88rem;font-weight:700;color:var(--gray-900);margin-bottom:3px;}
-    .step-body p{font-size:.8rem;color:var(--gray-500);margin:0;line-height:1.5;}
-    .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-top:16px;}
-    .related-card{display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);text-decoration:none;transition:var(--transition);}
-    .related-card:hover{border-color:var(--primary);}
-    .related-card .ri{font-size:1.1rem;}
-    .related-card span{font-size:.82rem;font-weight:600;color:var(--gray-700);}
-    .related-card:hover span{color:var(--primary);}
-
-    @media(max-width:600px){.input-row{grid-template-columns:1fr;}.score-header{flex-direction:column;}.scores-grid{grid-template-columns:1fr 1fr;}}
-  </style>
 </head>
-<body>
+<body class="page-resume-analyzer">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero">
-  <div style="max-width:960px;margin:0 auto;">
-    <div class="breadcrumb"><a href="/">Home</a> › <a href="/categories/utilities">Utility Tools</a> › AI Resume Analyzer</div>
-    <div class="tool-title">
-      <div class="tool-icon">🤖</div>
-      <div><h1>AI Resume Analyzer</h1><p>Get instant ATS score, keyword gaps & actionable feedback powered by Claude AI</p></div>
-    </div>
-    <div class="tool-tags">
-      <span class="tool-tag">🤖 Claude AI</span>
-      <span class="tool-tag">📊 ATS Score</span>
-      <span class="tool-tag">🔑 Keyword Analysis</span>
-      <span class="tool-tag">✅ Free</span>
-      <span class="tool-tag">🔒 Private</span>
+<main id="main">
+
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/ai-tools">AI Tools</a> › AI Resume Analyzer</nav>
+    <h1>AI Resume Analyzer</h1><p>Get instant ATS score, keyword gaps & actionable feedback powered by Claude AI</p>
+    <div class="tag-list">
+      <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#cpu"></use></svg> Claude AI</span>
+      <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#chart-bar"></use></svg> ATS Score</span>
+      <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#key"></use></svg> Keyword Analysis</span>
+      <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
+      <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lock"></use></svg> Private</span>
     </div>
   </div>
-</div>
+</header>
 
 <div class="tool-wrap">
 
@@ -226,25 +121,25 @@ Include:
 • Any certifications or projects" oninput="updateResumeStats()"></textarea>
       <div class="char-row">
         <span class="char-hint" id="resume-stats">0 words · 0 characters</span>
-        <span class="char-hint">💡 Include all sections for best results</span>
+        <span class="char-hint"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lightbulb"></use></svg> Include all sections for best results</span>
       </div>
     </div>
     <button class="analyze-btn" id="analyze-btn" onclick="analyzeResume()">
-      <span>🤖 Analyze with AI</span>
+      <span><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#cpu"></use></svg> Analyze with AI</span>
     </button>
   </div>
 
   <!-- LOADING -->
   <div class="loading-card" id="loading-card">
     <div class="ai-spinner"></div>
-    <p style="font-family:var(--font-display);font-weight:700;color:var(--gray-900);font-size:1rem;margin-bottom:6px;">AI is reviewing your resume...</p>
-    <p style="font-size:.84rem;color:var(--gray-500);">This takes about 10-15 seconds</p>
+    <p class="u-bffcff">AI is reviewing your resume...</p>
+    <p class="u-c78774">This takes about 10-15 seconds</p>
     <div class="loading-steps">
-      <div class="ls-item done" id="ls1">✅ Parsing resume structure</div>
+      <div class="ls-item done" id="ls1"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Parsing resume structure</div>
       <div class="ls-item active" id="ls2">⟳ Analyzing content quality</div>
-      <div class="ls-item" id="ls3">○ Checking ATS compatibility</div>
-      <div class="ls-item" id="ls4">○ Identifying keyword gaps</div>
-      <div class="ls-item" id="ls5">○ Generating recommendations</div>
+      <div class="ls-item" id="ls3"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#circle"></use></svg> Checking ATS compatibility</div>
+      <div class="ls-item" id="ls4"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#circle"></use></svg> Identifying keyword gaps</div>
+      <div class="ls-item" id="ls5"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#circle"></use></svg> Generating recommendations</div>
     </div>
   </div>
 
@@ -252,81 +147,80 @@ Include:
   <div class="results-card" id="results-card">
     <div id="results-content"></div>
     <div class="result-actions">
-      <button class="ra-btn primary" onclick="analyzeAgain()">🔄 Analyze Again</button>
-      <button class="ra-btn" onclick="copyReport()">📋 Copy Report</button>
-      <button class="ra-btn" onclick="downloadReport()">⬇️ Download PDF</button>
+      <button class="ra-btn primary" onclick="analyzeAgain()"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#refresh"></use></svg> Analyze Again</button>
+      <button class="ra-btn" onclick="copyReport()"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy Report</button>
+      <button class="ra-btn" onclick="downloadReport()"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#download"></use></svg> Download PDF</button>
     </div>
   </div>
 
   <!-- SEO SECTION -->
-  <div class="seo-section">
-    <h2>How to Use AI Resume Analyzer</h2>
-    <div class="how-steps">
-      <div class="how-step"><div class="step-n">1</div><div class="step-body"><h4>Enter Job Details</h4><p>Type the job role you're applying for and select your experience level.</p></div></div>
-      <div class="how-step"><div class="step-n">2</div><div class="step-body"><h4>Paste Resume Text</h4><p>Copy all text from your Word or PDF resume and paste it in the text area.</p></div></div>
-      <div class="how-step"><div class="step-n">3</div><div class="step-body"><h4>Get AI Analysis</h4><p>Click Analyze to receive ATS score, keyword analysis, and improvement tips.</p></div></div>
-      <div class="how-step"><div class="step-n">4</div><div class="step-body"><h4>Apply Improvements</h4><p>Follow the recommendations to improve your resume and re-analyze.</p></div></div>
-    </div>
+  <h2>How to Use AI Resume Analyzer</h2>
+  <div class="how-steps">
+    <div class="how-step"><div class="step-n">1</div><div class="step-body"><h4>Enter Job Details</h4><p>Type the job role you're applying for and select your experience level.</p></div></div>
+    <div class="how-step"><div class="step-n">2</div><div class="step-body"><h4>Paste Resume Text</h4><p>Copy all text from your Word or PDF resume and paste it in the text area.</p></div></div>
+    <div class="how-step"><div class="step-n">3</div><div class="step-body"><h4>Get AI Analysis</h4><p>Click Analyze to receive ATS score, keyword analysis, and improvement tips.</p></div></div>
+    <div class="how-step"><div class="step-n">4</div><div class="step-body"><h4>Apply Improvements</h4><p>Follow the recommendations to improve your resume and re-analyze.</p></div></div>
+  </div>
 
-    <h2 style="margin-top:32px;">What is ATS and Why Does It Matter?</h2>
-    <p>ATS (Applicant Tracking System) is software used by over 90% of Fortune 500 companies to automatically screen resumes before a human recruiter ever sees them. If your resume does not pass ATS filters, it gets rejected automatically — regardless of how qualified you are. Studies show that 75% of resumes are rejected by ATS before reaching a recruiter.</p>
-    <p>ATS systems scan resumes for specific keywords matching the job description, check for proper section headings (Experience, Education, Skills), and penalize complex formatting like tables, text boxes, headers/footers, and non-standard fonts. A resume that looks beautiful in PDF may completely fail in ATS if it uses graphics or multi-column layouts.</p>
-    <p>This AI-powered analyzer uses Claude by Anthropic to evaluate your resume across 8 critical dimensions: ATS compatibility, contact information, professional summary, work experience quality, education section, skills relevance, keyword density, and action verb usage. The result is a comprehensive score with specific, actionable improvements tailored to your target role.</p>
+  <h2 class="mt-32">What is ATS and Why Does It Matter?</h2>
+  <p>ATS (Applicant Tracking System) is software used by over 90% of Fortune 500 companies to automatically screen resumes before a human recruiter ever sees them. If your resume does not pass ATS filters, it gets rejected automatically — regardless of how qualified you are. Studies show that 75% of resumes are rejected by ATS before reaching a recruiter.</p>
+  <p>ATS systems scan resumes for specific keywords matching the job description, check for proper section headings (Experience, Education, Skills), and penalize complex formatting like tables, text boxes, headers/footers, and non-standard fonts. A resume that looks beautiful in PDF may completely fail in ATS if it uses graphics or multi-column layouts.</p>
+  <p>This AI-powered analyzer uses Claude by Anthropic to evaluate your resume across 8 critical dimensions: ATS compatibility, contact information, professional summary, work experience quality, education section, skills relevance, keyword density, and action verb usage. The result is a comprehensive score with specific, actionable improvements tailored to your target role.</p>
 
-    <h2 style="margin-top:28px;">How the Analysis Actually Works</h2>
-    <p>When you click Analyze, the tool sends your resume text, target job role, and experience level to Claude (Anthropic's AI model) through a direct API call from your browser. Claude reads the full resume and returns a structured breakdown — scores for each section, strengths, gaps, missing keywords for your target role, and a prioritized list of next steps. If that API call fails for any reason (network issue, rate limit, or timeout), the tool automatically falls back to a built-in heuristic analyzer that runs entirely in your browser. This fallback checks for things like the presence of an email and phone number, common section headings (Experience, Education, Skills, Summary), a list of common action verbs, and whether the text contains quantified numbers or percentages — it is a rule-based approximation, not an AI judgment, but it still gives a usable score and basic feedback so the tool never leaves you with a blank result.</p>
+  <h2 class="u-47c857">How the Analysis Actually Works</h2>
+  <p>When you click Analyze, the tool sends your resume text, target job role, and experience level to Claude (Anthropic's AI model) through a direct API call from your browser. Claude reads the full resume and returns a structured breakdown — scores for each section, strengths, gaps, missing keywords for your target role, and a prioritized list of next steps. If that API call fails for any reason (network issue, rate limit, or timeout), the tool automatically falls back to a built-in heuristic analyzer that runs entirely in your browser. This fallback checks for things like the presence of an email and phone number, common section headings (Experience, Education, Skills, Summary), a list of common action verbs, and whether the text contains quantified numbers or percentages — it is a rule-based approximation, not an AI judgment, but it still gives a usable score and basic feedback so the tool never leaves you with a blank result.</p>
 
-    <h3>Why Keyword Gaps Matter More Than You'd Think</h3>
-    <p>Most ATS platforms rank candidates by how closely resume text matches the job description, not by a human's subjective read. Two resumes with identical experience can score very differently if one uses the exact phrasing from the job posting ("cross-functional team leadership") and the other uses a synonym ("worked with different departments"). The keyword gap section exists specifically to catch this mismatch — it lists terms found in your resume versus terms commonly expected for your stated job role, so you can adjust wording before you apply rather than after a rejection.</p>
+  <h3>Why Keyword Gaps Matter More Than You'd Think</h3>
+  <p>Most ATS platforms rank candidates by how closely resume text matches the job description, not by a human's subjective read. Two resumes with identical experience can score very differently if one uses the exact phrasing from the job posting ("cross-functional team leadership") and the other uses a synonym ("worked with different departments"). The keyword gap section exists specifically to catch this mismatch — it lists terms found in your resume versus terms commonly expected for your stated job role, so you can adjust wording before you apply rather than after a rejection.</p>
 
-    <h3>For Freshers and Career Switchers</h3>
-    <p>If you select "Fresher / Entry Level" or are switching fields, the analysis weighs things differently — it looks harder at projects, internships, certifications, and transferable skills instead of expecting a long work history. A common mistake at this stage is leaving the professional summary generic ("hardworking fresher seeking opportunities") instead of naming the specific role and skills being targeted, which both humans and ATS keyword matching tend to penalize.</p>
+  <h3>For Freshers and Career Switchers</h3>
+  <p>If you select "Fresher / Entry Level" or are switching fields, the analysis weighs things differently — it looks harder at projects, internships, certifications, and transferable skills instead of expecting a long work history. A common mistake at this stage is leaving the professional summary generic ("hardworking fresher seeking opportunities") instead of naming the specific role and skills being targeted, which both humans and ATS keyword matching tend to penalize.</p>
 
-    <h3>For Experienced and Senior Candidates</h3>
-    <p>At the senior and lead level, the scoring leans more heavily on quantified achievements — revenue impact, team size managed, percentage improvements — rather than just listing responsibilities. A resume that says "responsible for backend systems" scores lower on the experience metric than one that says "led a team of 6 engineers to rebuild backend systems, cutting latency by 40%." The improvements list will usually flag unquantified bullet points first, since this is the single most common weakness in experienced resumes.</p>
+  <h3>For Experienced and Senior Candidates</h3>
+  <p>At the senior and lead level, the scoring leans more heavily on quantified achievements — revenue impact, team size managed, percentage improvements — rather than just listing responsibilities. A resume that says "responsible for backend systems" scores lower on the experience metric than one that says "led a team of 6 engineers to rebuild backend systems, cutting latency by 40%." The improvements list will usually flag unquantified bullet points first, since this is the single most common weakness in experienced resumes.</p>
 
-    <h3>Common Resume Mistakes This Tool Catches</h3>
-    <ul class="feature-list">
-      <li>Missing or incomplete contact information (no email, no working phone format)</li>
-      <li>No professional summary or an objective that doesn't mention the target role</li>
-      <li>Work experience bullets that describe duties instead of measurable outcomes</li>
-      <li>Resume length that is too short (under ~200 words, looks incomplete) or too long for one role</li>
-      <li>Missing role-specific keywords that an ATS would be scanning for</li>
-      <li>Weak or repeated action verbs at the start of bullet points</li>
-    </ul>
+  <h3>Common Resume Mistakes This Tool Catches</h3>
+  <ul>
+    <li>Missing or incomplete contact information (no email, no working phone format)</li>
+    <li>No professional summary or an objective that doesn't mention the target role</li>
+    <li>Work experience bullets that describe duties instead of measurable outcomes</li>
+    <li>Resume length that is too short (under ~200 words, looks incomplete) or too long for one role</li>
+    <li>Missing role-specific keywords that an ATS would be scanning for</li>
+    <li>Weak or repeated action verbs at the start of bullet points</li>
+  </ul>
 
-    <h3>Frequently Searched Terms</h3>
-    <p>People land on this tool searching for phrases like "free resume checker online," "ATS score checker," "resume keyword scanner," "will my resume pass ATS," and "AI resume feedback free." If that's what brought you here — paste your resume text above, add the job title you're targeting, and run the analysis to see where it stands before you submit an application.</p>
+  <h3>Frequently Searched Terms</h3>
+  <p>People land on this tool searching for phrases like "free resume checker online," "ATS score checker," "resume keyword scanner," "will my resume pass ATS," and "AI resume feedback free." If that's what brought you here — paste your resume text above, add the job title you're targeting, and run the analysis to see where it stands before you submit an application.</p>
 
-    <h3>Doing This Manually vs. Using the Analyzer</h3>
-    <p>Manually reviewing a resume against a job description means reading both side by side, highlighting matching and missing terms, and guessing at how an ATS might parse your formatting — a process that easily takes 20-30 minutes per application if done carefully, and most people skip it entirely after the first couple of applications. This tool compresses that same comparison into a single pass: it reads your resume text and your stated job role together and returns the keyword gaps, section-by-section scores, and formatting flags in one report, so you can re-run it after every edit instead of only checking once before the first submission.</p>
+  <h3>Doing This Manually vs. Using the Analyzer</h3>
+  <p>Manually reviewing a resume against a job description means reading both side by side, highlighting matching and missing terms, and guessing at how an ATS might parse your formatting — a process that easily takes 20-30 minutes per application if done carefully, and most people skip it entirely after the first couple of applications. This tool compresses that same comparison into a single pass: it reads your resume text and your stated job role together and returns the keyword gaps, section-by-section scores, and formatting flags in one report, so you can re-run it after every edit instead of only checking once before the first submission.</p>
 
-    <h3>A Note on What Gets Sent and Why</h3>
-    <p>Your resume text is sent to Claude's API only for the duration of that single analysis request — it is not saved to a database or reused for any other purpose by this tool. Still, it's good practice to avoid pasting sensitive identifiers like Aadhaar, PAN, or bank account numbers into any online text box, including this one, since none of that information is needed for a resume review.</p>
+  <h3>A Note on What Gets Sent and Why</h3>
+  <p>Your resume text is sent to Claude's API only for the duration of that single analysis request — it is not saved to a database or reused for any other purpose by this tool. Still, it's good practice to avoid pasting sensitive identifiers like Aadhaar, PAN, or bank account numbers into any online text box, including this one, since none of that information is needed for a resume review.</p>
 
-    <h2 style="margin-top:28px;">Related Tools</h2>
-    <div class="related-grid">
-      <a href="fake-data-generator" class="related-card"><span class="ri">🎲</span><span>Fake Data Generator</span></a>
-      <a href="word-counter" class="related-card"><span class="ri">📝</span><span>Word Counter</span></a>
-      <a href="seo-title-generator" class="related-card"><span class="ri">✍️</span><span>Title Generator</span></a>
-      <a href="blog-outline-generator" class="related-card"><span class="ri">📋</span><span>Blog Outline</span></a>
-      <a href="case-converter" class="related-card"><span class="ri">Aa</span><span>Case Converter</span></a>
-      <a href="pdf-to-text" class="related-card"><span class="ri">📄</span><span>PDF to Text</span></a>
-    </div>
+  <h2 class="u-47c857">Related Tools</h2>
+  <div class="related-grid">
+    <a href="fake-data-generator" class="related-card"><span class="ri"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#random"></use></svg></span><span>Fake Data Generator</span></a>
+    <a href="word-counter" class="related-card"><span class="ri"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#edit"></use></svg></span><span>Word Counter</span></a>
+    <a href="seo-title-generator" class="related-card"><span class="ri"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#edit"></use></svg></span><span>Title Generator</span></a>
+    <a href="blog-outline-generator" class="related-card"><span class="ri"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg></span><span>Blog Outline</span></a>
+    <a href="case-converter" class="related-card"><span class="ri">Aa</span><span>Case Converter</span></a>
+    <a href="pdf-to-text" class="related-card"><span class="ri"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#file-text"></use></svg></span><span>PDF to Text</span></a>
+  </div>
 
-    <div style="margin-top:36px;">
-      <h2>Frequently Asked Questions</h2>
-      <div class="faq-item"><div class="faq-q">What does the AI analyze in my resume?</div><div class="faq-a">8 dimensions: ATS compatibility, contact information completeness, professional summary quality, work experience (quantified achievements, action verbs), education section, skills relevance, keyword density for your target role, and overall formatting.</div></div>
-      <div class="faq-item"><div class="faq-q">What is a good ATS score?</div><div class="faq-a">70+ is considered good. 85+ is excellent. Below 60 means your resume is likely getting filtered out by ATS systems. The most important fixes are adding relevant keywords, using standard section headings, and removing complex formatting.</div></div>
-      <div class="faq-item"><div class="faq-q">Is my resume data stored?</div><div class="faq-a">No. Your resume is analyzed by the Claude AI API in real time and not stored permanently. Each analysis is independent. Do not include sensitive info like Aadhaar/PAN numbers in the text you paste.</div></div>
-      <div class="faq-item"><div class="faq-q">How do I paste my PDF resume?</div><div class="faq-a">Open your PDF resume, press Ctrl+A to select all, then Ctrl+C to copy. Paste into the text area. Alternatively use our PDF to Text tool to extract clean text from your PDF first.</div></div>
-      <div class="faq-item"><div class="faq-q">How often should I analyze my resume?</div><div class="faq-a">Analyze every time you update your resume, and customize it for each job application by adding role-specific keywords. ATS filtering is job-specific — a resume optimized for one role may miss keywords for another.</div></div>
-    </div>
+  <div class="u-d3a180">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item"><div class="faq-q">What does the AI analyze in my resume?</div><div class="faq-a">8 dimensions: ATS compatibility, contact information completeness, professional summary quality, work experience (quantified achievements, action verbs), education section, skills relevance, keyword density for your target role, and overall formatting.</div></div>
+    <div class="faq-item"><div class="faq-q">What is a good ATS score?</div><div class="faq-a">70+ is considered good. 85+ is excellent. Below 60 means your resume is likely getting filtered out by ATS systems. The most important fixes are adding relevant keywords, using standard section headings, and removing complex formatting.</div></div>
+    <div class="faq-item"><div class="faq-q">Is my resume data stored?</div><div class="faq-a">No. Your resume is analyzed by the Claude AI API in real time and not stored permanently. Each analysis is independent. Do not include sensitive info like Aadhaar/PAN numbers in the text you paste.</div></div>
+    <div class="faq-item"><div class="faq-q">How do I paste my PDF resume?</div><div class="faq-a">Open your PDF resume, press Ctrl+A to select all, then Ctrl+C to copy. Paste into the text area. Alternatively use our PDF to Text tool to extract clean text from your PDF first.</div></div>
+    <div class="faq-item"><div class="faq-q">How often should I analyze my resume?</div><div class="faq-a">Analyze every time you update your resume, and customize it for each job application by adding role-specific keywords. ATS filtering is job-specific — a resume optimized for one role may miss keywords for another.</div></div>
   </div>
 </div>
 
+</main>
+
 <div id="footer"></div>
-<script src="/load-components.js"></script>
 <script src="/assets/js/main.js"></script>
 <script>
 let lastReport = '';
@@ -356,9 +250,9 @@ async function analyzeResume() {
   const stepInterval = setInterval(() => {
     if(stepIdx < steps.length) {
       document.getElementById(steps[stepIdx-1]).className = 'ls-item done';
-      document.getElementById(steps[stepIdx-1]).innerHTML = document.getElementById(steps[stepIdx-1]).innerHTML.replace('⟳','✅').replace('○','✅');
+      document.getElementById(steps[stepIdx-1]).innerHTML = document.getElementById(steps[stepIdx-1]).innerHTML.replace(/#(loader|circle)"/, '#check-circle"');
       document.getElementById(steps[stepIdx]).className = 'ls-item active';
-      document.getElementById(steps[stepIdx]).innerHTML = document.getElementById(steps[stepIdx]).innerHTML.replace('○','⟳');
+      document.getElementById(steps[stepIdx]).innerHTML = document.getElementById(steps[stepIdx]).innerHTML.replace('#circle"', '#loader"');
       stepIdx++;
     }
   }, 2500);
@@ -485,7 +379,7 @@ function staticAnalyze(text, role) {
 }
 
 function scoreColor(s) { return s >= 75 ? '#16a34a' : s >= 55 ? '#d97706' : '#ef4444'; }
-function scoreLabel(s) { return s >= 75 ? '✅ Good' : s >= 55 ? '⚠️ Improve' : '❌ Weak'; }
+function scoreLabel(s) { return s >= 75 ? '<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Good' : s >= 55 ? '<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#warning"></use></svg> Improve' : '<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#x-circle"></use></svg> Weak'; }
 
 function renderResults(r, role) {
   const gradeColors = {'A+':'#10b981','A':'#16a34a','B+':'#3b82f6','B':'#60a5fa','C+':'#f59e0b','C':'#f97316','D':'#ef4444'};
@@ -532,45 +426,45 @@ function renderResults(r, role) {
   // Strengths
   if(r.strengths?.length) {
     html += `<div class="feedback-section">
-      <div class="fs-header"><span class="fs-icon">✅</span><span class="fs-title">Strengths</span><span class="fs-badge badge-good">Good</span></div>
-      <ul class="feedback-list">${r.strengths.map(s=>`<li><span class="fi">✅</span><span>${s}</span></li>`).join('')}</ul>
+      <div class="fs-header"><span class="fs-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg></span><span class="fs-title">Strengths</span><span class="fs-badge badge-good">Good</span></div>
+      <ul class="feedback-list">${r.strengths.map(s=>`<li><span class="fi"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg></span><span>${s}</span></li>`).join('')}</ul>
     </div>`;
   }
 
   // Improvements
   if(r.improvements?.length) {
     html += `<div class="feedback-section">
-      <div class="fs-header"><span class="fs-icon">💡</span><span class="fs-title">Recommended Improvements</span><span class="fs-badge badge-improve">Action Needed</span></div>
-      <ul class="feedback-list">${r.improvements.map(s=>`<li><span class="fi">💡</span><span>${s}</span></li>`).join('')}</ul>
+      <div class="fs-header"><span class="fs-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lightbulb"></use></svg></span><span class="fs-title">Recommended Improvements</span><span class="fs-badge badge-improve">Action Needed</span></div>
+      <ul class="feedback-list">${r.improvements.map(s=>`<li><span class="fi"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lightbulb"></use></svg></span><span>${s}</span></li>`).join('')}</ul>
     </div>`;
   }
 
   // Critical
   if(r.critical_issues?.length) {
     html += `<div class="feedback-section">
-      <div class="fs-header"><span class="fs-icon">🚨</span><span class="fs-title">Critical Issues</span><span class="fs-badge badge-critical">Fix First</span></div>
-      <ul class="feedback-list">${r.critical_issues.map(s=>`<li><span class="fi">🚨</span><span>${s}</span></li>`).join('')}</ul>
+      <div class="fs-header"><span class="fs-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#warning"></use></svg></span><span class="fs-title">Critical Issues</span><span class="fs-badge badge-critical">Fix First</span></div>
+      <ul class="feedback-list">${r.critical_issues.map(s=>`<li><span class="fi"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#warning"></use></svg></span><span>${s}</span></li>`).join('')}</ul>
     </div>`;
   }
 
   // Keywords
   html += `<div class="feedback-section">
-    <div class="fs-header"><span class="fs-icon">🔑</span><span class="fs-title">Keyword Analysis</span></div>
+    <div class="fs-header"><span class="fs-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#key"></use></svg></span><span class="fs-title">Keyword Analysis</span></div>
     <p style="font-size:.84rem;color:var(--gray-600);margin-bottom:8px;">Found in your resume:</p>
-    <div class="keywords-found">${(r.keywords_found||[]).map(k=>`<span class="kw-chip kw-found">✓ ${k}</span>`).join('')}</div>
+    <div class="keywords-found">${(r.keywords_found||[]).map(k=>`<span class="kw-chip kw-found"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check"></use></svg> ${k}</span>`).join('')}</div>
     <p style="font-size:.84rem;color:var(--gray-600);margin:12px 0 8px;">Consider adding for <strong>${role}</strong>:</p>
-    <div class="keywords-found">${(r.keywords_missing||[]).map(k=>`<span class="kw-chip kw-missing">✗ ${k}</span>`).join('')}</div>
+    <div class="keywords-found">${(r.keywords_missing||[]).map(k=>`<span class="kw-chip kw-missing"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#x-circle"></use></svg> ${k}</span>`).join('')}</div>
   </div>`;
 
   // ATS Tips
   html += `<div class="feedback-section">
-    <div class="fs-header"><span class="fs-icon">🤖</span><span class="fs-title">ATS Optimization Tips</span><span class="fs-badge badge-${r.ats_score>=75?'good':'improve'}">ATS: ${r.ats_score}/100</span></div>
-    <ul class="feedback-list">${(r.ats_tips||[]).map(s=>`<li><span class="fi">🤖</span><span>${s}</span></li>`).join('')}</ul>
+    <div class="fs-header"><span class="fs-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#cpu"></use></svg></span><span class="fs-title">ATS Optimization Tips</span><span class="fs-badge badge-${r.ats_score>=75?'good':'improve'}">ATS: ${r.ats_score}/100</span></div>
+    <ul class="feedback-list">${(r.ats_tips||[]).map(s=>`<li><span class="fi"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#cpu"></use></svg></span><span>${s}</span></li>`).join('')}</ul>
   </div>`;
 
   // Next steps
   html += `<div class="feedback-section">
-    <div class="fs-header"><span class="fs-icon">🚀</span><span class="fs-title">Your Next Steps</span></div>
+    <div class="fs-header"><span class="fs-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#send"></use></svg></span><span class="fs-title">Your Next Steps</span></div>
     <ul class="feedback-list">${(r.next_steps||[]).map((s,i)=>`<li><span class="fi" style="background:#eff6ff;padding:1px 6px;border-radius:4px;font-size:.7rem;font-weight:700;color:var(--primary);">${i+1}</span><span>${s}</span></li>`).join('')}</ul>
   </div>`;
 
@@ -590,7 +484,7 @@ function buildReportText(r, role, exp) {
 }
 
 function analyzeAgain() {
-  document.getElementById('input-card').style.display = '';
+  document.getElementById('input-card').classList.remove('is-hidden'); document.getElementById('input-card').style.display = '';
   document.getElementById('results-card').className = 'results-card';
 }
 
@@ -598,7 +492,7 @@ function copyReport() {
   if(!lastReport) return;
   navigator.clipboard.writeText(lastReport).then(() => {
     const btn = document.querySelectorAll('.ra-btn')[1];
-    btn.textContent = '✅ Copied!'; setTimeout(() => btn.textContent = '📋 Copy Report', 2000);
+    btn.innerHTML = '<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Copied!'; setTimeout(() => btn.innerHTML = '<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy Report', 2000);
   });
 }
 

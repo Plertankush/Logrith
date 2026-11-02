@@ -23,47 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .bp-hero { max-width:820px;margin:0 auto;padding:48px 20px 8px; }
-    .bp-crumb { font-size:.85rem;color:var(--gray-500);margin-bottom:16px; }
-    .bp-crumb a { color:var(--primary);text-decoration:none; }
-    .bp-hero h1 { font-family:var(--font-display);font-size:2rem;line-height:1.25;color:var(--gray-900);margin-bottom:14px; }
-    .bp-hero .bp-dek { font-size:1.05rem;color:var(--gray-700);line-height:1.7;margin-bottom:20px; }
-    .bp-cta { display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:white;padding:13px 26px;border-radius:var(--radius);font-weight:700;text-decoration:none;font-size:.95rem; }
-    .bp-cta svg { width:17px;height:17px; }
-    .bp-cta:hover { background:var(--primary-dark); }
-    .bp-body { max-width:760px;margin:0 auto;padding:28px 20px 20px; }
-    .bp-body h2 { font-family:var(--font-display);font-size:1.5rem;color:var(--gray-900);margin:38px 0 14px; }
-    .bp-body h3 { font-family:var(--font-display);font-size:1.15rem;color:var(--gray-900);margin:26px 0 10px; }
-    .bp-body p { color:var(--gray-700);line-height:1.8;margin-bottom:16px;font-size:1rem; }
-    .bp-body ul, .bp-body ol { color:var(--gray-700);line-height:1.8;margin:0 0 16px 22px; }
-    .bp-body li { margin-bottom:8px; }
-    .bp-body strong { color:var(--gray-900); }
-    .bp-toc { background:var(--gray-50);border-radius:var(--radius-lg);padding:20px 24px;margin:24px 0; }
-    .bp-toc h2 { margin:0 0 10px;font-size:1.05rem; }
-    .bp-toc ol { margin:0 0 0 20px; }
-    .bp-toc a { color:var(--primary);text-decoration:none; }
-    .bp-table { width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:.92rem; }
-    .bp-table th, .bp-table td { border:1px solid var(--gray-200);padding:10px 12px;text-align:left; }
-    .bp-table th { background:var(--gray-50);font-weight:700;color:var(--gray-900); }
-    .bp-howto { counter-reset:step; list-style:none;margin-left:0; }
-    .bp-howto li { position:relative;padding-left:42px;margin-bottom:18px; }
-    .bp-howto li::before { counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;background:var(--primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem; }
-    .bp-faq-item { border-bottom:1px solid var(--gray-200);padding:16px 0; }
-    .bp-faq-item h3 { margin:0 0 8px; font-size:1.02rem; }
-    .bp-byline { font-size:.82rem;color:var(--gray-500);margin-top:10px; }
-    .bp-related { max-width:1000px;margin:0 auto;padding:20px 20px 60px; }
-    .bp-related h2 { font-family:var(--font-display);font-size:1.4rem;color:var(--gray-900);margin-bottom:18px;text-align:center; }
-    .bp-related-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px; }
-    .bp-related-card { border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:18px;text-decoration:none;color:inherit;background:var(--white); }
-    .bp-related-card h4 { font-size:.95rem;color:var(--gray-900);margin-bottom:6px; }
-    .bp-related-card p { font-size:.82rem;color:var(--gray-700);line-height:1.5; }
-    .bp-prevnext { display:flex;justify-content:space-between;gap:16px;max-width:760px;margin:0 auto;padding:0 20px 20px; }
-    .bp-prevnext a { flex:1;border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:12px 16px;text-decoration:none;color:var(--gray-700);font-size:.85rem; }
-    .bp-prevnext a strong { display:block;color:var(--gray-900);font-size:.92rem; }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -97,23 +62,26 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-text-diff-guide">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="bp-hero">
-  <div class="bp-crumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/text-generators">Text & Generators</a> &rsaquo; Text Diff</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/text-generators">Text & Generators</a> &rsaquo; Text Diff</nav>
   <h1>How Diff Tools Actually Find the Differences Between Two Pieces of Text</h1>
-  <p class="bp-dek">Comparing two versions of a document by eye is slow and error-prone the moment either one grows beyond a few sentences. A diff tool solves this instantly, but reading its output correctly requires understanding what granularity of comparison it's actually using — line, word, or character — since each tells a genuinely different story about what changed.</p>
-  <a href="/tools/text-diff" class="bp-cta">
+  <p>Comparing two versions of a document by eye is slow and error-prone the moment either one grows beyond a few sentences. A diff tool solves this instantly, but reading its output correctly requires understanding what granularity of comparison it's actually using — line, word, or character — since each tells a genuinely different story about what changed.</p>
+  <a href="/tools/text-diff" class="btn btn-primary btn-lg">
     <svg class="icon"><use href="/assets/svg/icons.svg#git-compare"></use></svg>
     Compare Text
   </a>
-  <p class="bp-byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
-</div>
+  <p class="byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
+</div></header>
 
-<div class="bp-body">
+<article class="page-section prose">
 
-  <div class="bp-toc">
+  <nav class="toc" aria-label="On this page">
     <h2>On This Page</h2>
     <ol>
       <li><a href="#how-to-use">How to Compare Two Pieces of Text</a></li>
@@ -125,23 +93,33 @@
       <li><a href="#mistakes">Common Mistakes</a></li>
       <li><a href="#faq">Frequently Asked Questions</a></li>
     </ol>
-  </div>
+  </nav>
 
   <h2 id="how-to-use">How to Compare Two Pieces of Text</h2>
-  <ol class="bp-howto">
-    <li>Open the <a href="/tools/text-diff">Text Diff tool</a>.</li>
-    <li>Paste your original text into the first field and the revised version into the second.</li>
-    <li>View the instant comparison, with additions and deletions clearly highlighted.</li>
-    <li>Switch between line, word, or character-level comparison depending on the precision you need.</li>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the <a href="/tools/text-diff">Text Diff tool</a>.</p>
+    </li>
+    <li class="step">
+      <p>Paste your original text into the first field and the revised version into the second.</p>
+    </li>
+    <li class="step">
+      <p>View the instant comparison, with additions and deletions clearly highlighted.</p>
+    </li>
+    <li class="step">
+      <p>Switch between line, word, or character-level comparison depending on the precision you need.</p>
+    </li>
   </ol>
 
   <h2 id="granularity">Line-Level vs. Word-Level vs. Character-Level Diffing</h2>
-  <table class="bp-table">
+  <div class="table-wrap">
+    <table class="table">
     <tr><th>Granularity</th><th>Comparison Unit</th><th>Best For</th></tr>
     <tr><td>Line-level</td><td>Whole lines</td><td>Code files, structured documents, large-scale changes</td></tr>
     <tr><td>Word-level</td><td>Individual words</td><td>Prose, paragraphs, edits within a sentence</td></tr>
     <tr><td>Character-level</td><td>Individual characters</td><td>Precise typo detection, very short strings</td></tr>
   </table>
+  </div>
   <p>Choosing the right granularity genuinely changes how useful and readable the resulting comparison is. Line-level diffing, the default for most code-comparison tools, treats each entire line as a single unit — if even one character within a line changes, the whole line shows as different, which works well for code (where line boundaries are already meaningful structural units) but can feel imprecise for comparing prose, where a single word change in a long paragraph shouldn't require highlighting the entire paragraph as "changed." Word-level diffing solves exactly this problem for text-heavy comparisons, pinpointing the specific words that actually differ within an otherwise unchanged sentence or paragraph, producing a far more readable and precise comparison for prose specifically.</p>
 
   <h2>Real-World Scenarios</h2>
@@ -189,36 +167,51 @@
   <h3>Why Choose Logrith</h3>
   <p>Comparison happens entirely in your browser, with no data ever transmitted anywhere — instant, private diffing across line, word, and character granularity, useful for anything from reviewing a document edit to checking a code change, without needing to install specialized software or upload sensitive content to a third-party service.</p>
 
-</div>
+</article>
 
-<div class="bp-body">
+<article class="page-section prose">
   <h2 id="faq">Frequently Asked Questions</h2>
-  <div class="bp-faq-item"><h3>What's the difference between line, word, and character-level diffing?</h3><p>Line-level diffing shows which entire lines changed. Word-level and character-level diffing zoom in further, highlighting exactly which words or characters within a changed line differ, offering more precision.</p></div>
-  <div class="bp-faq-item"><h3>Why does a diff sometimes show a whole line changed for one word?</h3><p>This happens with line-level diffing, which treats each line as one unit. Any difference within a line, however small, marks the entire line as changed.</p></div>
-  <div class="bp-faq-item"><h3>How do diff algorithms decide additions vs. deletions?</h3><p>They typically compute the shortest possible sequence of additions and deletions needed to transform one text into the other, favoring the smallest, most readable set of changes.</p></div>
-  <div class="bp-faq-item"><h3>Can text diff tools handle reordered content?</h3><p>Most standard algorithms aren't designed to detect reordered blocks, typically showing reordered text as a deletion plus an addition rather than recognizing it as a move.</p></div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">What's the difference between line, word, and character-level diffing?</summary>
+      <div class="faq-a"><p>Line-level diffing shows which entire lines changed. Word-level and character-level diffing zoom in further, highlighting exactly which words or characters within a changed line differ, offering more precision.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why does a diff sometimes show a whole line changed for one word?</summary>
+      <div class="faq-a"><p>This happens with line-level diffing, which treats each line as one unit. Any difference within a line, however small, marks the entire line as changed.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How do diff algorithms decide additions vs. deletions?</summary>
+      <div class="faq-a"><p>They typically compute the shortest possible sequence of additions and deletions needed to transform one text into the other, favoring the smallest, most readable set of changes.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can text diff tools handle reordered content?</summary>
+      <div class="faq-a"><p>Most standard algorithms aren't designed to detect reordered blocks, typically showing reordered text as a deletion plus an addition rather than recognizing it as a move.</p></div>
+    </details>
+  </div>
 
   <h2>Conclusion</h2>
   <p>Diff tools solve a genuinely tedious manual task instantly, but reading their output correctly means understanding the granularity being used and what the underlying algorithm is actually optimizing for — the shortest edit sequence, not necessarily the most intuitive human description of what changed. For prose specifically, word-level diffing usually produces the most readable comparison; for code and structured documents, line-level diffing remains the standard, well-understood default that most tools and workflows are built around, and knowing when to reach for each is most of what separates a frustrating diff-reading experience from a genuinely fast, useful one.</p>
-</div>
+</article>
 
-<div class="bp-prevnext">
+<nav class="post-nav page-section" aria-label="More guides">
   <a href="/blog/random-number-generator-guide">&larr; Previous: <strong>Random Number Generator Guide</strong></a>
   <a href="/blog/categories/text-generators">More Text & Generators Guides &rarr;</a>
-</div>
+</nav>
 
-<div class="bp-related">
+<section class="page-section">
   <h2>Related Tools</h2>
-  <div class="bp-related-grid">
-    <a href="/tools/word-counter" class="bp-related-card"><h4>Word Counter</h4><p>Count words and characters in your text.</p></a>
-    <a href="/tools/case-converter" class="bp-related-card"><h4>Case Converter</h4><p>Convert text between capitalization styles.</p></a>
-    <a href="/tools/duplicate-remover" class="bp-related-card"><h4>Duplicate Remover</h4><p>Remove duplicate lines from text.</p></a>
-    <a href="/tools/json-formatter" class="bp-related-card"><h4>JSON Formatter</h4><p>Format and validate JSON data.</p></a>
+  <div class="related-grid">
+    <a class="related-card" href="/tools/word-counter"><strong>Word Counter</strong><span>Count words and characters in your text.</span></a>
+    <a class="related-card" href="/tools/case-converter"><strong>Case Converter</strong><span>Convert text between capitalization styles.</span></a>
+    <a class="related-card" href="/tools/duplicate-remover"><strong>Duplicate Remover</strong><span>Remove duplicate lines from text.</span></a>
+    <a class="related-card" href="/tools/json-formatter"><strong>JSON Formatter</strong><span>Format and validate JSON data.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -51,17 +55,20 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-file-size-converter">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/utilities">Utilities</a> › File Size Converter</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/utilities">Utilities</a> › File Size Converter</nav>
   <h1>Free File Size Converter</h1>
   <p>Convert between bytes, KB, MB, GB, TB, and PB instantly — with a toggle for binary (1024) or decimal (1000) base.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">💾 Binary or Decimal</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#save"></use></svg> Binary or Decimal</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:700px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Enter a Value</h2>
     <div class="controls-grid">
@@ -91,46 +98,51 @@
 
   <div class="tool-card">
     <h2>Converted Values</h2>
-    <div class="stat-result-grid" id="result-grid"></div>
+    <div class="stat-grid" id="result-grid"></div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>What's the difference between binary and decimal file sizes?</h3><p>Binary uses 1024 as the base for each unit step (how operating systems typically calculate), while decimal uses 1000 (how storage manufacturers typically advertise capacity), leading to different reported sizes for the same data.</p></div>
-    <div class="faq-item-box"><h3>Why does my hard drive show less space than advertised?</h3><p>Manufacturers advertise storage using decimal (1000-based) units, while operating systems display capacity using binary (1024-based) units, making the same drive appear smaller in your OS than its advertised capacity.</p></div>
-    <div class="faq-item-box"><h3>Which mode should I use?</h3><p>Use decimal for how storage is typically marketed and sold, or binary to match what your operating system's file properties usually display.</p></div>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card">
-      <h2>How to Use the File Size Converter</h2>
-      <div class="tool-steps">
-        <div class="tool-step">
-          <strong>1. Enter the value</strong>
-          Type the number you want to convert, for example 1.5 or 500.
-        </div>
-        <div class="tool-step">
-          <strong>2. Select the starting unit</strong>
-          Choose whether your value is in bytes, KB, MB, GB, TB, or PB from the dropdown.
-        </div>
-        <div class="tool-step">
-          <strong>3. Pick decimal or binary mode</strong>
-          Choose decimal (1 KB = 1000 B) to match marketing figures, or binary (1 KB = 1024 B) to match what your OS displays.
-        </div>
-        <div class="tool-step">
-          <strong>4. Read all six converted values</strong>
-          Every unit from bytes to petabytes updates at once in the results grid below.
-        </div>
-      </div>
-    </div>
+    <details class="faq-item">
+      <summary class="faq-q">What's the difference between binary and decimal file sizes?</summary>
+      <div class="faq-a"><p>Binary uses 1024 as the base for each unit step (how operating systems typically calculate), while decimal uses 1000 (how storage manufacturers typically advertise capacity), leading to different reported sizes for the same data.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why does my hard drive show less space than advertised?</summary>
+      <div class="faq-a"><p>Manufacturers advertise storage using decimal (1000-based) units, while operating systems display capacity using binary (1024-based) units, making the same drive appear smaller in your OS than its advertised capacity.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Which mode should I use?</summary>
+      <div class="faq-a"><p>Use decimal for how storage is typically marketed and sold, or binary to match what your operating system's file properties usually display.</p></div>
+    </details>
   </div>
 </section>
 
-<section class="article-section">
+<section class="page-section">
+  <h2>How to Use the File Size Converter</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Enter the value</strong>
+      <p>Type the number you want to convert, for example 1.5 or 500.</p>
+    </li>
+    <li class="step">
+      <strong>Select the starting unit</strong>
+      <p>Choose whether your value is in bytes, KB, MB, GB, TB, or PB from the dropdown.</p>
+    </li>
+    <li class="step">
+      <strong>Pick decimal or binary mode</strong>
+      <p>Choose decimal (1 KB = 1000 B) to match marketing figures, or binary (1 KB = 1024 B) to match what your OS displays.</p>
+    </li>
+    <li class="step">
+      <strong>Read all six converted values</strong>
+      <p>Every unit from bytes to petabytes updates at once in the results grid below.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
   <h2>Convert File Sizes: Bytes to KB, MB, GB, TB, PB</h2>
   <p>This tool converts a file size value into all common units at once — bytes, kilobytes, megabytes, gigabytes, terabytes, and petabytes — with a toggle between binary (1024-based) and decimal (1000-based) calculation methods.</p>
 
@@ -150,7 +162,7 @@
   <p>The tool first converts your entered value into a single underlying byte count by multiplying it by the selected base (1000 or 1024) raised to the power matching your chosen starting unit — bytes use a power of 0, kilobytes a power of 1, megabytes a power of 2, and so on up through petabytes at a power of 5. From that single byte figure, it then divides back down by the same base raised to each unit's power to populate every result field simultaneously, which is why switching the binary/decimal toggle recalculates all six values at once rather than just the one you're focused on.</p>
 
   <h3>Common Real-World Use Cases</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Checking cloud storage plans</strong> that list capacity in GB or TB and comparing against files or backups measured in different units.</li>
     <li><strong>Estimating upload or download time</strong> by converting a file size to the same unit your internet speed is measured in (after separately converting bits to bytes, since speeds are usually in Mbps, not MBps).</li>
     <li><strong>Understanding camera and video file sizes</strong> when raw photo or 4K video files are reported in MB or GB and you need to know how many fit on a memory card.</li>
@@ -173,34 +185,31 @@
   <p>Manually converting between file size units means remembering which power of 1000 or 1024 applies to each unit step, then doing the multiplication or division correctly — simple in theory, but a single wrong exponent produces a result that's off by an order of magnitude, which is an easy mistake under time pressure. This tool removes that risk and, more usefully, shows every unit and both base conventions at once, so you can immediately see how a value compares across the full range without running several separate calculations.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/unit-converter" class="tool-item"><div class="ti-text"><h4>Unit Converter</h4><p>Convert length, weight, temperature, and more.</p></div></a>
-    <a href="/tools/number-base-converter" class="tool-item"><div class="ti-text"><h4>Number Base Converter</h4><p>Convert between binary, decimal, and hex.</p></div></a>
-    <a href="/tools/image-compressor" class="tool-item"><div class="ti-text"><h4>Image Compressor</h4><p>Reduce image file sizes for storage or upload.</p></div></a>
-    <a href="/tools/base64" class="tool-item"><div class="ti-text"><h4>Base64 Encode/Decode</h4><p>See how Base64 encoding affects file size.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">file size converter</span>
-        <span class="keyword-tag">bytes to mb converter</span>
-        <span class="keyword-tag">gb to mb converter</span>
-        <span class="keyword-tag">storage size converter</span>
-        <span class="keyword-tag">binary vs decimal file size</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/unit-converter"><strong>Unit Converter</strong><span>Convert length, weight, temperature, and more.</span></a>
+    <a class="related-card" href="/tools/number-base-converter"><strong>Number Base Converter</strong><span>Convert between binary, decimal, and hex.</span></a>
+    <a class="related-card" href="/tools/image-compressor"><strong>Image Compressor</strong><span>Reduce image file sizes for storage or upload.</span></a>
+    <a class="related-card" href="/tools/base64"><strong>Base64 Encode/Decode</strong><span>See how Base64 encoding affects file size.</span></a>
   </div>
 </section>
 
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">file size converter</span>
+    <span class="keyword-tag">bytes to mb converter</span>
+    <span class="keyword-tag">gb to mb converter</span>
+    <span class="keyword-tag">storage size converter</span>
+    <span class="keyword-tag">binary vs decimal file size</span>
+  </div>
+</section>
+
+</main>
+
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 const UNITS = ['Bytes','Kilobytes','Megabytes','Gigabytes','Terabytes','Petabytes'];
 const ABBR = ['B','KB','MB','GB','TB','PB'];
@@ -220,7 +229,7 @@ function convert() {
     const display = converted >= 100000 || (converted < 0.001 && converted > 0)
       ? converted.toExponential(3)
       : converted.toLocaleString(undefined, { maximumFractionDigits: 6 });
-    return `<div class="stat-box"><span class="sb-num" style="font-size:1.3rem;">${display}</span><span class="sb-lbl">${u} (${ABBR[i]})</span></div>`;
+    return `<div class="stat-box"><span class="stat-num" style="font-size:1.3rem;">${display}</span><span class="stat-label">${u} (${ABBR[i]})</span></div>`;
   }).join('');
 }
 

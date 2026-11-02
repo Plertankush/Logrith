@@ -18,8 +18,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <!-- Google tag (gtag.js) -->
  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
@@ -50,25 +54,28 @@
   {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a UUID?", "acceptedAnswer": {"@type": "Answer", "text": "A UUID is a 128-bit identifier designed to be unique across systems without central coordination."}}, {"@type": "Question", "name": "What is UUID version 4?", "acceptedAnswer": {"@type": "Answer", "text": "Version 4 UUIDs are generated from random numbers, making collisions extremely unlikely."}}, {"@type": "Question", "name": "Can I generate multiple UUIDs at once?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, you can generate several UUIDs in a single batch."}}, {"@type": "Question", "name": "Are UUIDs generated in my browser?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, generation happens locally and nothing is sent to a server."}}]}
   </script>
 </head>
-<body>
+<body class="page-uuid-generator">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/developer-tools">Dev Tools</a> › UUID Generator</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/developer-tools">Developer Tools</a> › UUID Generator</nav>
   <h1>Free UUID Generator Online</h1>
   <p>Generate cryptographically secure UUID v4 values instantly. Bulk generate up to 100 UUIDs, copy individually or all at once.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">🔒 Crypto-secure</span><span class="tool-tag">📋 Bulk Generate</span><span class="tool-tag">🆔 UUID v4</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lock"></use></svg> Crypto-secure</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Bulk Generate</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#uuid"></use></svg> UUID v4</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:760px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>UUID v4 Generator</h2>
-    <div style="background:var(--gray-50);border:2px solid var(--gray-200);border-radius:var(--radius);padding:20px;text-align:center;margin-bottom:16px;">
-      <div id="single-uuid" style="font-family:'Courier New',monospace;font-size:1.2rem;font-weight:700;color:var(--primary);letter-spacing:1px;word-break:break-all;">Click Generate to get a UUID</div>
+    <div class="u-6c6992">
+      <div id="single-uuid">Click Generate to get a UUID</div>
     </div>
     <div class="btn-group">
-      <button class="btn btn-primary btn-lg" id="gen-one-btn">🆔 Generate UUID</button>
-      <button class="btn btn-secondary" id="copy-one-btn">📋 Copy</button>
+      <button class="btn btn-primary btn-lg" id="gen-one-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#uuid"></use></svg> Generate UUID</button>
+      <button class="btn btn-secondary" id="copy-one-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
     </div>
   </div>
 
@@ -87,8 +94,8 @@
       </div>
     </div>
     <div class="btn-group mt-12">
-      <button class="btn btn-accent" id="gen-bulk-btn">⚡ Generate Bulk</button>
-      <button class="btn btn-secondary" id="copy-bulk-btn">📋 Copy All</button>
+      <button class="btn btn-accent" id="gen-bulk-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Generate Bulk</button>
+      <button class="btn btn-secondary" id="copy-bulk-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy All</button>
     </div>
     <textarea class="tool-textarea mono mt-12" id="bulk-output" rows="10" readonly placeholder="Bulk UUIDs will appear here..."></textarea>
   </div>
@@ -96,23 +103,46 @@
   <div class="tool-card">
     <h2>UUID Validator</h2>
     <div class="control-group"><label>Paste a UUID to validate</label><input type="text" id="validate-input" placeholder="e.g. 550e8400-e29b-41d4-a716-446655440000"></div>
-    <div class="btn-group mt-12"><button class="btn btn-primary" id="validate-btn">✅ Validate UUID</button></div>
-    <div class="status-msg" id="validate-result" style="margin-top:12px;"></div>
+    <div class="btn-group mt-12"><button class="btn btn-primary" id="validate-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Validate UUID</button></div>
+    <div class="status-msg mt-12" id="validate-result"></div>
   </div>
 </div>
 
-<div class="faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
-  <div class="faq-item"><div class="faq-q">What is a UUID?</div><div class="faq-a">UUID (Universally Unique Identifier) is a 128-bit label used to uniquely identify objects in computer systems. Format: 8-4-4-4-12 hex characters, e.g., 550e8400-e29b-41d4-a716-446655440000. UUID v4 is randomly generated.</div></div>
-  <div class="faq-item"><div class="faq-q">How unique is a UUID v4?</div><div class="faq-a">The probability of generating two identical UUID v4s is astronomically small — approximately 1 in 5.3 × 10^36. You could generate 1 trillion UUIDs per second for a billion years and the chance of a collision would still be negligible.</div></div>
-  <div class="faq-item"><div class="faq-q">When should I use UUIDs?</div><div class="faq-a">Use UUIDs for: database primary keys (avoiding sequential ID guessing), distributed systems where IDs are generated without coordination, session tokens, file names for uploaded files, API resource identifiers.</div></div>
-  <div class="faq-item"><div class="faq-q">Is this UUID generator cryptographically secure?</div><div class="faq-a">Yes. It uses the browser's built-in crypto.getRandomValues() API, which is a cryptographically secure pseudo-random number generator, rather than Math.random(), which is not suitable for generating unpredictable identifiers.</div></div>
-  <div class="faq-item"><div class="faq-q">What formats can I generate UUIDs in?</div><div class="faq-a">Standard lowercase with hyphens, uppercase, no hyphens, wrapped in braces (common in some Windows/.NET contexts), or as a URN string prefixed with "urn:uuid:" for use in XML or RDF contexts.</div></div>
-  <div class="faq-item"><div class="faq-q">Does this tool store the UUIDs I generate?</div><div class="faq-a">No. Every UUID is generated locally in your browser and nothing is saved, logged, or sent to any server. Refreshing the page clears everything.</div></div>
-  <div class="faq-item"><div class="faq-q">Can I validate a UUID I already have?</div><div class="faq-a">Yes, paste it into the validator field to check whether it's correctly formatted and whether it specifically matches the UUID v4 pattern.</div></div>
-</div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">What is a UUID?</summary>
+      <div class="faq-a"><p>UUID (Universally Unique Identifier) is a 128-bit label used to uniquely identify objects in computer systems. Format: 8-4-4-4-12 hex characters, e.g., 550e8400-e29b-41d4-a716-446655440000. UUID v4 is randomly generated.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How unique is a UUID v4?</summary>
+      <div class="faq-a"><p>The probability of generating two identical UUID v4s is astronomically small — approximately 1 in 5.3 × 10^36. You could generate 1 trillion UUIDs per second for a billion years and the chance of a collision would still be negligible.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">When should I use UUIDs?</summary>
+      <div class="faq-a"><p>Use UUIDs for: database primary keys (avoiding sequential ID guessing), distributed systems where IDs are generated without coordination, session tokens, file names for uploaded files, API resource identifiers.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is this UUID generator cryptographically secure?</summary>
+      <div class="faq-a"><p>Yes. It uses the browser's built-in crypto.getRandomValues() API, which is a cryptographically secure pseudo-random number generator, rather than Math.random(), which is not suitable for generating unpredictable identifiers.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What formats can I generate UUIDs in?</summary>
+      <div class="faq-a"><p>Standard lowercase with hyphens, uppercase, no hyphens, wrapped in braces (common in some Windows/.NET contexts), or as a URN string prefixed with "urn:uuid:" for use in XML or RDF contexts.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does this tool store the UUIDs I generate?</summary>
+      <div class="faq-a"><p>No. Every UUID is generated locally in your browser and nothing is saved, logged, or sent to any server. Refreshing the page clears everything.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I validate a UUID I already have?</summary>
+      <div class="faq-a"><p>Yes, paste it into the validator field to check whether it's correctly formatted and whether it specifically matches the UUID v4 pattern.</p></div>
+    </details>
+  </div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>About the UUID Generator Tool</h2>
   <p>The Logrith UUID Generator creates random, version 4 UUIDs (Universally Unique Identifiers) instantly in your browser — one at a time or in bulk batches of up to 100 at once. UUIDs are widely used in software development as unique identifiers for database records, API resources, session tokens, and distributed systems, and this tool covers generation, formatting, and validation from a single page.</p>
 
@@ -122,7 +152,7 @@
   <p>There are several UUID versions defined by the standard, each generated using a different method. Version 1 UUIDs incorporate the generating computer's MAC address and a timestamp, which means they can theoretically be traced back to the machine that created them. Version 4, which this tool generates, is built entirely from random or pseudo-random numbers instead, with no embedded timestamp or hardware identifier. This makes version 4 UUIDs the most common choice for general-purpose unique identifiers today, since they reveal nothing about when or where they were generated and don't require any special input data beyond a good source of randomness.</p>
 
   <h3>Why UUIDs Are Used Instead of Sequential IDs</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Unpredictability.</strong> Sequential IDs like 1, 2, 3 let anyone guess neighboring record IDs just by incrementing a number in a URL. UUIDs can't be guessed this way.</li>
     <li><strong>No coordination needed.</strong> Multiple servers, databases, or services can generate IDs independently without checking with each other to avoid collisions, which matters a lot in distributed systems.</li>
     <li><strong>Safe to expose publicly.</strong> Because UUIDs don't reveal how many records exist or what order they were created in, they're safer to use in public-facing URLs and APIs than sequential database keys.</li>
@@ -130,7 +160,7 @@
   </ul>
 
   <h3>Common Uses for UUIDs in Development</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Database primary keys</strong> — especially in distributed databases or systems with multiple write nodes.</li>
     <li><strong>API resource identifiers</strong> — giving each resource (user, order, document) a unique, non-guessable ID in REST or GraphQL APIs.</li>
     <li><strong>Session and authentication tokens</strong> — generating unique session identifiers that are hard to predict or brute-force.</li>
@@ -151,38 +181,35 @@
   <p>When designing a new database table or API, picking between a UUID and a simple auto-incrementing integer ID is a common early decision. Auto-increment IDs are smaller, slightly faster to index in some databases, and easy to read at a glance. UUIDs trade some of that simplicity for unpredictability and the ability to generate IDs across multiple servers without coordination. A common middle-ground approach used by many modern systems is to keep an internal auto-increment ID for database performance while exposing a UUID externally in URLs and API responses, getting the benefits of both. Which approach fits best depends on the scale and structure of the system being built, but for anything distributed, public-facing, or merge-sensitive, UUIDs are usually the safer default.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/hash-generator" class="tool-item"><div class="ti-text"><h4>Hash Generator</h4><p>Generate MD5, SHA-1, SHA-256 and other hash values.</p></div></a>
-    <a href="/tools/password-generator" class="tool-item"><div class="ti-text"><h4>Password Generator</h4><p>Create strong, random passwords with custom rules.</p></div></a>
-    <a href="/tools/jwt-decoder" class="tool-item"><div class="ti-text"><h4>JWT Decoder</h4><p>Decode and inspect JSON Web Tokens instantly.</p></div></a>
-    <a href="/tools/json-formatter" class="tool-item"><div class="ti-text"><h4>JSON Formatter</h4><p>Format, validate, and beautify JSON data.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">uuid generator online</span>
-        <span class="keyword-tag">generate uuid v4</span>
-        <span class="keyword-tag">random uuid online free</span>
-        <span class="keyword-tag">guid generator</span>
-        <span class="keyword-tag">bulk uuid generator</span>
-        <span class="keyword-tag">uuid validator online</span>
-        <span class="keyword-tag">uuid v4 generator free</span>
-        <span class="keyword-tag">unique id generator</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/hash-generator"><strong>Hash Generator</strong><span>Generate MD5, SHA-1, SHA-256 and other hash values.</span></a>
+    <a class="related-card" href="/tools/password-generator"><strong>Password Generator</strong><span>Create strong, random passwords with custom rules.</span></a>
+    <a class="related-card" href="/tools/jwt-decoder"><strong>JWT Decoder</strong><span>Decode and inspect JSON Web Tokens instantly.</span></a>
+    <a class="related-card" href="/tools/json-formatter"><strong>JSON Formatter</strong><span>Format, validate, and beautify JSON data.</span></a>
   </div>
 </section>
 
-<div id="footer"></div>
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">uuid generator online</span>
+    <span class="keyword-tag">generate uuid v4</span>
+    <span class="keyword-tag">random uuid online free</span>
+    <span class="keyword-tag">guid generator</span>
+    <span class="keyword-tag">bulk uuid generator</span>
+    <span class="keyword-tag">uuid validator online</span>
+    <span class="keyword-tag">uuid v4 generator free</span>
+    <span class="keyword-tag">unique id generator</span>
+  </div>
+</section>
 
-<script src="/load-components.js"></script>
-<script src="/assets/js/main.js" defer></script>
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+
 <script>
 function genUUID() {
   return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c => (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16));
@@ -220,9 +247,9 @@ document.getElementById('validate-btn').addEventListener('click', () => {
   const genericUUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
   const res = document.getElementById('validate-result');
   if (!v) { showStatus(res,'error','Please enter a UUID.'); return; }
-  if (uuidRegex.test(v)) showStatus(res,'success','✅ Valid UUID v4!');
-  else if (genericUUID.test(v)) showStatus(res,'info','ℹ️ Valid UUID format but not version 4 (the 13th char should be "4").');
-  else showStatus(res,'error','❌ Invalid UUID format.');
+  if (uuidRegex.test(v)) showStatus(res,'success','Valid UUID v4!');
+  else if (genericUUID.test(v)) showStatus(res,'info','Valid UUID format but not version 4 (the 13th char should be "4").');
+  else showStatus(res,'error','Invalid UUID format.');
 });
 
 // Generate one on load

@@ -25,8 +25,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#000000">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <!-- Website Schema -->
   <script type="application/ld+json">
@@ -156,180 +160,26 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 
-<style>
-  .categories-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 16px;
-    margin-bottom: 40px;
-  }
-
-  .category-card {
-    background: var(--white);
-    border: 1px solid var(--gray-200);
-    border-radius: 12px;
-    padding: 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .category-card:hover {
-    border-color: var(--blue-500);
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
-    transform: translateY(-2px);
-  }
-
-  .category-icon {
-    width: 44px;
-    height: 44px;
-    margin-bottom: 12px;
-    color: var(--blue-500);
-  }
-
-  .category-title {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-    color: var(--gray-900);
-  }
-
-  .category-desc {
-    font-size: 0.9rem;
-    color: var(--gray-600);
-    line-height: 1.5;
-    margin-bottom: 12px;
-    flex-grow: 1;
-  }
-
-  .category-count {
-    font-size: 0.85rem;
-    color: var(--gray-500);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .category-count svg {
-    width: 14px;
-    height: 14px;
-  }
-
-  .tool-list {
-    margin-top: 8px;
-  }
-
-  .tool-list-item {
-    font-size: 0.85rem;
-    color: var(--gray-600);
-    padding: 4px 0;
-    padding-left: 16px;
-    position: relative;
-  }
-
-  .tool-list-item:before {
-    content: "→";
-    position: absolute;
-    left: 0;
-    color: var(--blue-500);
-  }
-
-  @media (max-width: 768px) {
-    .categories-grid {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 12px;
-    }
-
-    .category-card {
-      padding: 16px;
-    }
-
-    .category-icon {
-      width: 40px;
-      height: 40px;
-    }
-
-    .category-title {
-      font-size: 1rem;
-    }
-
-    .category-desc {
-      font-size: 0.85rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .categories-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-    }
-    .category-card {
-      padding: 12px;
-    }
-    .category-icon {
-      width: 32px;
-      height: 32px;
-      margin-bottom: 8px;
-    }
-    .category-title {
-      font-size: 0.88rem;
-      margin-bottom: 4px;
-    }
-    .category-desc {
-      font-size: 0.76rem;
-      line-height: 1.4;
-      margin-bottom: 8px;
-    }
-    .category-count {
-      font-size: 0.72rem;
-    }
-  }
-
-  .section-divider {
-    height: 1px;
-    background: var(--gray-200);
-    margin: 40px 0;
-  }
-
-  .about-section {
-    background: var(--gray-50);
-    border-radius: 12px;
-    padding: 32px;
-    margin: 40px 0;
-  }
-
-  .about-section h2 {
-    color: var(--gray-900);
-    margin-bottom: 16px;
-  }
-
-  .about-section p {
-    color: var(--gray-700);
-    line-height: 1.8;
-    margin-bottom: 16px;
-    font-size: 1rem;
-  }
-</style>
 </head>
-<body>
+<body class="page-categories">
 
 <!-- NAVBAR -->
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
+<main id="main">
+
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-badge">Organized Tools for Every Task.</div>
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <div class="badge">Organized Tools for Every Task.</div>
     <h1>Browse Tool<br><span>Categories</span></h1>
     <p>Explore all Logrith tools organized by category. Find exactly what you need, instantly.</p>
   </div>
-</section>
+</header>
 
 <!-- CATEGORIES SECTION -->
-<section class="section" style="background: var(--white);">
+<section class="section u-9674bd">
   <div class="section-inner">
     <div class="section-header">
       <h2>All Tool Categories</h2>
@@ -344,7 +194,7 @@
         <h3 class="category-title">Image & PDF Tools</h3>
         <p class="category-desc">Convert, compress, resize, crop, and rotate images. Merge, split, rotate, and convert PDF files.</p>
         <div class="category-count">
-          <svg style="width: 14px; height: 14px;"><use href="/assets/svg/icons.svg#arrow-right"></use></svg>
+          <svg class="u-12da9e"><use href="/assets/svg/icons.svg#arrow-right"></use></svg>
           10 Tools
         </div>
         <div class="tool-list">
@@ -367,7 +217,7 @@
         <h3 class="category-title">Calculate & Convert</h3>
         <p class="category-desc">Convert colors and units, calculate percentages, GST, EMI, and exact age instantly.</p>
         <div class="category-count">
-          <svg style="width: 14px; height: 14px;"><use href="/assets/svg/icons.svg#arrow-right"></use></svg>
+          <svg class="u-12da9e"><use href="/assets/svg/icons.svg#arrow-right"></use></svg>
           6 Tools
         </div>
         <div class="tool-list">
@@ -386,7 +236,7 @@
         <h3 class="category-title">Text & Generators</h3>
         <p class="category-desc">Count words, convert cases, compare text, remove duplicates, and generate slugs or placeholder text.</p>
         <div class="category-count">
-          <svg style="width: 14px; height: 14px;"><use href="/assets/svg/icons.svg#arrow-right"></use></svg>
+          <svg class="u-12da9e"><use href="/assets/svg/icons.svg#arrow-right"></use></svg>
           7 Tools
         </div>
         <div class="tool-list">
@@ -406,7 +256,7 @@
         <h3 class="category-title">Developer Tools</h3>
         <p class="category-desc">Format JSON, encode/decode Base64 and URLs, generate hashes, UUIDs, passwords, and test regular expressions.</p>
         <div class="category-count">
-          <svg style="width: 14px; height: 14px;"><use href="/assets/svg/icons.svg#arrow-right"></use></svg>
+          <svg class="u-12da9e"><use href="/assets/svg/icons.svg#arrow-right"></use></svg>
           7 Tools
         </div>
         <div class="tool-list">
@@ -426,7 +276,7 @@
         <h3 class="category-title">Utilities</h3>
         <p class="category-desc">Check password strength and generate custom QR codes. Essential everyday browser tools.</p>
         <div class="category-count">
-          <svg style="width: 14px; height: 14px;"><use href="/assets/svg/icons.svg#arrow-right"></use></svg>
+          <svg class="u-12da9e"><use href="/assets/svg/icons.svg#arrow-right"></use></svg>
           2 Tools
         </div>
         <div class="tool-list">
@@ -441,7 +291,7 @@
         <h3 class="category-title">AI Tools</h3>
         <p class="category-desc">Analyze resumes and check website speed performance. AI-powered insights for optimization.</p>
         <div class="category-count">
-          <svg style="width: 14px; height: 14px;"><use href="/assets/svg/icons.svg#arrow-right"></use></svg>
+          <svg class="u-12da9e"><use href="/assets/svg/icons.svg#arrow-right"></use></svg>
           2 Tools
         </div>
         <div class="tool-list">
@@ -456,7 +306,7 @@
         <h3 class="category-title">Global Tools</h3>
         <p class="category-desc">Inspect PDFs, clean image metadata, repair JSON, clean CSV files, estimate AI tokens, and convert Markdown — built for a worldwide audience.</p>
         <div class="category-count">
-          <svg style="width: 14px; height: 14px;"><use href="/assets/svg/icons.svg#arrow-right"></use></svg>
+          <svg class="u-12da9e"><use href="/assets/svg/icons.svg#arrow-right"></use></svg>
           7 Tools
         </div>
         <div class="tool-list">
@@ -475,15 +325,15 @@
 </section>
 
 <!-- ABOUT SECTION -->
-<section class="section" style="background: var(--gray-50);">
-  <div class="section-inner" style="max-width: 900px; margin: 0 auto;">
+<section class="section u-fb7a0c">
+  <div class="section-inner">
     <div class="section-header">
       <h2>Understanding Tool Categories on Logrith</h2>
       <p>A complete guide to finding and using the right tools for your needs</p>
     </div>
 
-    <div class="about-section" style="background: var(--white); border: 1px solid var(--gray-200);">
-      <h3 style="color: var(--gray-900); margin-bottom: 16px; font-size: 1.2rem;">Why We Organized Tools by Category</h3>
+    <div class="about-section u-38c1fc">
+      <h3 class="u-eb7116">Why We Organized Tools by Category</h3>
       
       <p>Logrith offers 100+ carefully curated tools designed to solve everyday digital tasks. Instead of forcing every tool into a single page, we've organized them into 6 logical categories based on their primary function and use case. This makes it easier for you to find exactly what you need, whether you're working with images, PDFs, text, or code.</p>
 
@@ -499,13 +349,13 @@
 
       <p><strong>AI Tools</strong> use AI-assisted analysis to provide deeper insights. The Resume Analyzer examines your resume and provides an ATS score with suggestions for improvement. The Website Speed Analyzer checks your website's performance and provides actionable recommendations for optimization.</p>
 
-      <h3 style="color: var(--gray-900); margin-bottom: 16px; margin-top: 24px; font-size: 1.2rem;">How to Use Tool Categories</h3>
+      <h3 class="u-4d3304">How to Use Tool Categories</h3>
       
       <p>Using Logrith's categories is straightforward. Start by identifying which category matches your task. If you need to work with an image or PDF, visit Image & PDF Tools. If you need a calculation or conversion, go to Calculate & Convert. Each category page shows all available tools with descriptions and links. Click on any tool to open it in full screen.</p>
 
       <p>All tools are 100% free with no login required. They run entirely in your browser, meaning your data never leaves your device. You can use tools across different categories in any order. There are no limits on how many times you can use each tool.</p>
 
-      <h3 style="color: var(--gray-900); margin-bottom: 16px; margin-top: 24px; font-size: 1.2rem;">When to Use Each Category</h3>
+      <h3 class="u-4d3304">When to Use Each Category</h3>
       
       <p><strong>Image & PDF Tools:</strong> Use when you need to work with photos, graphics, visual content, or PDF documents. Perfect for preparing images for websites, reducing storage space, or organizing PDF files.</p>
 
@@ -525,70 +375,64 @@
 </section>
 
 <!-- FAQ SECTION -->
-<section class="section" style="background: var(--white);">
-  <div class="section-inner" style="max-width: 860px; margin: 0 auto;">
+<section class="section u-9674bd">
+  <div class="section-inner">
     <div class="section-header">
       <h2>Categories FAQ</h2>
       <p>Frequently asked questions about Logrith tool categories</p>
     </div>
 
-    <div class="faq-item">
-      <div class="faq-q">What are the different tool categories on Logrith?</div>
-      <div class="faq-a">Logrith offers 6 main tool categories: Image & PDF Tools (10 tools), Calculate & Convert (6 tools), Text & Generators (7 tools), Developer Tools (7 tools), Utilities (2 tools), and AI Tools (2 tools). Total 34+ tools.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Can I use tools from multiple categories?</div>
-      <div class="faq-a">Yes! All tools are independent and can be used in any combination. You can use an Image Converter, then switch to a PDF Tool, then use a Calculator - there are no restrictions or limits on mixing tools from different categories.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">How do I find the right tool for my task?</div>
-      <div class="faq-a">Start by identifying the type of content you're working with (image, PDF, text, code) or the type of task (calculation, conversion, analysis). Then visit the appropriate category page. Each category displays all its tools with descriptions to help you choose.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Are all category tools free to use?</div>
-      <div class="faq-a">Absolutely! Every tool in every category is 100% free. No subscriptions, no trial periods, no hidden charges, no watermarks, and no login required. All tools remain free forever.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">What makes the Image & PDF Tools category special?</div>
-      <div class="faq-a">The Image & PDF Tools category includes 10 comprehensive tools: Image Converter (supports JPG, PNG, WEBP, BMP), Image Compressor, Image Resize, Image Crop, Image Rotate & Flip, PDF Merge, PDF Split, PDF Rotate, PDF to JPG, and JPG to PDF. All processing happens in your browser for complete privacy.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Can I merge PDFs from different folders?</div>
-      <div class="faq-a">Yes! The PDF Merge tool in the Image & PDF Tools category can combine multiple PDF files from different locations into a single PDF. You can select as many PDFs as needed and arrange them in any order.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">What does the Developer Tools category include?</div>
-      <div class="faq-a">The Developer Tools category includes 7 essential tools: JSON Formatter (format and validate JSON), Base64 Encode/Decode, URL Encoder/Decoder, Hash Generator, UUID Generator, Password Generator, and Regex Tester. Perfect for programmers and technical professionals.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Which category is best for password management?</div>
-      <div class="faq-a">The Developer Tools category includes a Password Generator for creating strong, random passwords. The Utilities category includes a Password Strength Checker to verify how secure your existing passwords are.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Can I access categories on mobile devices?</div>
-      <div class="faq-a">Yes! All category pages are fully responsive and work perfectly on mobile phones, tablets, and desktops. The category grid adapts to your screen size for optimal viewing and interaction.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Will more tools be added to the categories?</div>
-      <div class="faq-a">Yes! Logrith continues to grow. New tools are added regularly and placed in their most logical category. Check back periodically for new additions, or follow Logrith for updates.</div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">What are the different tool categories on Logrith?</summary>
+        <div class="faq-a"><p>Logrith offers 6 main tool categories: Image &amp; PDF Tools (10 tools), Calculate &amp; Convert (6 tools), Text &amp; Generators (7 tools), Developer Tools (7 tools), Utilities (2 tools), and AI Tools (2 tools). Total 34+ tools.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Can I use tools from multiple categories?</summary>
+        <div class="faq-a"><p>Yes! All tools are independent and can be used in any combination. You can use an Image Converter, then switch to a PDF Tool, then use a Calculator - there are no restrictions or limits on mixing tools from different categories.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">How do I find the right tool for my task?</summary>
+        <div class="faq-a"><p>Start by identifying the type of content you're working with (image, PDF, text, code) or the type of task (calculation, conversion, analysis). Then visit the appropriate category page. Each category displays all its tools with descriptions to help you choose.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Are all category tools free to use?</summary>
+        <div class="faq-a"><p>Absolutely! Every tool in every category is 100% free. No subscriptions, no trial periods, no hidden charges, no watermarks, and no login required. All tools remain free forever.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">What makes the Image &amp; PDF Tools category special?</summary>
+        <div class="faq-a"><p>The Image &amp; PDF Tools category includes 10 comprehensive tools: Image Converter (supports JPG, PNG, WEBP, BMP), Image Compressor, Image Resize, Image Crop, Image Rotate &amp; Flip, PDF Merge, PDF Split, PDF Rotate, PDF to JPG, and JPG to PDF. All processing happens in your browser for complete privacy.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Can I merge PDFs from different folders?</summary>
+        <div class="faq-a"><p>Yes! The PDF Merge tool in the Image &amp; PDF Tools category can combine multiple PDF files from different locations into a single PDF. You can select as many PDFs as needed and arrange them in any order.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">What does the Developer Tools category include?</summary>
+        <div class="faq-a"><p>The Developer Tools category includes 7 essential tools: JSON Formatter (format and validate JSON), Base64 Encode/Decode, URL Encoder/Decoder, Hash Generator, UUID Generator, Password Generator, and Regex Tester. Perfect for programmers and technical professionals.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Which category is best for password management?</summary>
+        <div class="faq-a"><p>The Developer Tools category includes a Password Generator for creating strong, random passwords. The Utilities category includes a Password Strength Checker to verify how secure your existing passwords are.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Can I access categories on mobile devices?</summary>
+        <div class="faq-a"><p>Yes! All category pages are fully responsive and work perfectly on mobile phones, tablets, and desktops. The category grid adapts to your screen size for optimal viewing and interaction.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Will more tools be added to the categories?</summary>
+        <div class="faq-a"><p>Yes! Logrith continues to grow. New tools are added regularly and placed in their most logical category. Check back periodically for new additions, or follow Logrith for updates.</p></div>
+      </details>
     </div>
 
   </div>
 </section>
 
 <!-- FOOTER -->
-<div id="footer"></div>
+</main>
 
-<script src="/load-components.js"></script>
-<script src="/assets/js/main.js" defer></script>
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+
 </body>
 </html>

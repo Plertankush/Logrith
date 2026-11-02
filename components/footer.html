@@ -1,365 +1,10 @@
+<!-- Shared site footer. Injected into #footer by /assets/js/main.js; styles live in style.css (section 14). -->
 <footer class="site-footer">
-  <style>
-    .site-footer {
-      background: var(--white, #ffffff);
-      border-top: 1px solid var(--gray-100, #eef2ff);
-      margin-top: auto;
-      width: 100%;
-      font-family: 'DM Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-    }
-
-    .footer-inner {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 3rem 2rem 1.5rem;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem 2.5rem;
-      margin-bottom: 2rem;
-      border-bottom: 1px solid var(--gray-100, #eef2ff);
-      padding-bottom: 2rem;
-    }
-
-    .footer-col h4 {
-      color: #0d1b35;
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      margin-bottom: 1.25rem;
-      position: relative;
-      display: inline-block;
-      font-family: var(--font-display, 'Sora', sans-serif);
-    }
-
-    .footer-col h4::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -6px;
-      width: 32px;
-      height: 2px;
-      background: var(--primary, #4c88ff);
-      border-radius: 4px;
-    }
-
-    .footer-col ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .footer-col ul li {
-      margin-bottom: 0.65rem;
-    }
-
-    .footer-col ul li a {
-      color: #3d4f6e;
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: all 0.2s ease;
-      display: inline-block;
-    }
-
-    .footer-col ul li a:hover {
-      color: var(--primary, #4c88ff);
-      transform: translateX(4px);
-    }
-
-    .footer-second-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 2rem;
-      margin-bottom: 2rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid var(--gray-100, #eef2ff);
-    }
-
-    .footer-brand {
-      flex: 1;
-      min-width: 220px;
-    }
-
-    /* LOGO BIGGER AND MOVED UP */
-    .nav-logo1 {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.8rem;
-      text-decoration: none;
-      margin-bottom: 0;
-      position: relative;
-      top: -12px;
-    }
-
-    .logo-icon1 img {
-      height: 48px;
-      width: auto;
-    }
-
-    .logo-text1 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: #0d1b35 !important;
-      background: none !important;
-    }
-
-    .footer-brand p {
-      color: #5b6b85;
-      font-size: 0.85rem;
-      line-height: 1.5;
-      max-width: 260px;
-      margin-top: 4px;
-      position: relative;
-      top: -8px;
-    }
-
-    /* Language Button - Below Description */
-    .lang-wrapper {
-      margin-top: 12px;
-      position: relative;
-      top: -8px;
-    }
-
-    .lang-dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    .lang-selected {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--primary, #4c88ff);
-      font-size: 0.9rem;
-      font-weight: 500;
-      cursor: pointer;
-      padding: 6px 12px;
-      border-radius: 8px;
-      transition: all 0.2s ease;
-      background: var(--gray-50, #f7f9fc);
-      border: 1px solid var(--gray-200, #dde5f0);
-    }
-
-    .lang-selected:hover {
-      background: var(--gray-100, #eef2ff);
-    }
-
-    .lang-selected .globe-icon {
-      font-size: 1rem;
-      display: inline-block;
-      transition: transform 0.2s ease;
-    }
-
-    .lang-selected .arrow {
-      font-size: 0.7rem;
-      transition: transform 0.2s ease;
-      display: inline-block;
-    }
-
-    .lang-dropdown.open .lang-selected .arrow {
-      transform: rotate(180deg);
-    }
-
-    .lang-dropdown.open .lang-selected .globe-icon {
-      transform: scale(1.1);
-    }
-
-    .lang-menu {
-      position: absolute;
-      bottom: 100%;
-      left: 0;
-      margin-bottom: 8px;
-      background: var(--white, #ffffff);
-      border-radius: 12px;
-      min-width: 180px;
-      overflow: hidden;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(10px);
-      transition: all 0.2s ease;
-      z-index: 100;
-      box-shadow: 0 10px 25px -5px rgba(13,27,53,0.15);
-      border: 1px solid var(--gray-200, #dde5f0);
-    }
-
-    .lang-dropdown.open .lang-menu {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-
-    .lang-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 16px;
-      color: #3d4f6e;
-      text-decoration: none;
-      font-size: 0.85rem;
-      transition: all 0.2s;
-      cursor: pointer;
-    }
-
-    .lang-item:hover {
-      background: var(--gray-100, #eef2ff);
-      color: #0d1b35;
-    }
-
-    .lang-item.disabled {
-      opacity: 0.6;
-    }
-
-    .lang-item .status {
-      font-size: 0.65rem;
-      margin-left: auto;
-      color: #8b9bb4;
-    }
-
-    .lang-item.active {
-      background: var(--gray-100, #eef2ff);
-      color: #0d1b35;
-    }
-
-    .lang-item.active .status {
-      color: var(--primary, #4c88ff);
-    }
-
-    .footer-center-cats {
-      flex: 2;
-      display: flex;
-      gap: 3rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .footer-cat {
-      min-width: 150px;
-    }
-
-    .footer-cat h4 {
-      color: #0d1b35;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-      position: relative;
-      display: inline-block;
-    }
-
-    .footer-cat h4::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -5px;
-      width: 28px;
-      height: 2px;
-      background: var(--primary, #4c88ff);
-    }
-
-    .footer-cat ul {
-      list-style: none;
-    }
-
-    .footer-cat ul li {
-      margin-bottom: 0.6rem;
-    }
-
-    .footer-cat ul li a {
-      color: #3d4f6e;
-      text-decoration: none;
-      font-size: 0.88rem;
-      transition: all 0.2s ease;
-      display: inline-block;
-    }
-
-    .footer-cat ul li a:hover {
-      color: var(--primary, #4c88ff);
-      transform: translateX(4px);
-    }
-
-    .footer-bottom {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      font-size: 0.8rem;
-      color: #5b6b85;
-    }
-
-    .footer-bottom span:last-child {
-      background: var(--gray-100, #eef2ff);
-      padding: 0.25rem 0.75rem;
-      border-radius: 40px;
-      font-size: 0.75rem;
-    }
-
-    @media (max-width: 1024px) {
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-    }
-
-    @media (max-width: 900px) {
-      .footer-second-row {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      .footer-brand {
-        text-align: center;
-      }
-      .footer-brand p {
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .lang-wrapper {
-        text-align: center;
-      }
-      .lang-menu {
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 100%;
-      }
-      .footer-grid { grid-template-columns: 1fr; gap: 20px; }
-      footer, .site-footer { padding: 32px 16px 20px; margin-top: 40px; }
-      .footer-bottom { font-size: .76rem; }
-    }
-
-    @media (max-width: 600px) {
-      .footer-center-cats {
-        flex-direction: column;
-        align-items: center;
-      }
-      .footer-cat {
-        text-align: center;
-      }
-      .footer-cat h4::after {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-      .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-      }
-      .logo-text {
-        font-size: 1.8rem;
-      }
-      .logo-icon img {
-        height: 38px;
-      }
-    }
-  </style>
-
   <div class="footer-inner">
-    <div class="footer-grid">
 
+    <div class="footer-tools">
       <div class="footer-col">
-        <h4> Image & PDF Tools</h4>
+        <h2>Image &amp; PDF</h2>
         <ul>
           <li><a href="/tools/image-converter">Image Converter</a></li>
           <li><a href="/tools/image-compressor">Image Compressor</a></li>
@@ -369,12 +14,12 @@
           <li><a href="/tools/pdf-split">PDF Split</a></li>
           <li><a href="/tools/jpg-to-pdf">JPG to PDF</a></li>
           <li><a href="/tools/pdf-to-jpg">PDF to JPG</a></li>
-          <li><a href="/categories/image-pdf-tools" style="color: var(--primary, #4c88ff); font-weight: bold;">EXPLORE MORE→</a></li>
+          <li><a class="footer-more" href="/categories/image-pdf-tools">Explore more &rarr;</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4> Calculate & Convert</h4>
+        <h2>Calculate &amp; Convert</h2>
         <ul>
           <li><a href="/tools/color-converter">Color Converter</a></li>
           <li><a href="/tools/unit-converter">Unit Converter</a></li>
@@ -382,13 +27,12 @@
           <li><a href="/tools/emi-calculator">EMI Calculator</a></li>
           <li><a href="/tools/gst-calculator">GST Calculator</a></li>
           <li><a href="/tools/age-calculator">Age Calculator</a></li>
-          <li><a href="/categories/calculate-convert" style="color: var(--primary, #4c88ff); font-weight: bold;">EXPLORE MORE→</a></li>   
+          <li><a class="footer-more" href="/categories/calculate-convert">Explore more &rarr;</a></li>
         </ul>
       </div>
 
-
       <div class="footer-col">
-        <h4> Text & Generators</h4>
+        <h2>Text &amp; Generators</h2>
         <ul>
           <li><a href="/tools/case-converter">Case Converter</a></li>
           <li><a href="/tools/lorem-ipsum">Lorem Ipsum Generator</a></li>
@@ -397,12 +41,12 @@
           <li><a href="/tools/text-diff">Text Diff Checker</a></li>
           <li><a href="/tools/duplicate-remover">Duplicate Remover</a></li>
           <li><a href="/tools/slug-generator">URL Slug Generator</a></li>
-          <li><a href="/categories/text-generators" style="color: var(--primary, #4c88ff); font-weight: bold;">EXPLORE MORE→</a></li>   
+          <li><a class="footer-more" href="/categories/text-generators">Explore more &rarr;</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4> Developer Tools</h4>
+        <h2>Developer</h2>
         <ul>
           <li><a href="/tools/json-formatter">JSON Formatter</a></li>
           <li><a href="/tools/hash-generator">Hash Generator</a></li>
@@ -411,30 +55,30 @@
           <li><a href="/tools/uuid-generator">UUID Generator</a></li>
           <li><a href="/tools/password-generator">Password Generator</a></li>
           <li><a href="/tools/regex-tester">Regex Tester</a></li>
-          <li><a href="/categories/developer-tools" style="color: var(--primary, #4c88ff); font-weight: bold;">EXPLORE MORE→</a></li>   
+          <li><a class="footer-more" href="/categories/developer-tools">Explore more &rarr;</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4> Utilities</h4>
+        <h2>Utilities</h2>
         <ul>
           <li><a href="/tools/password-strength">Password Strength Checker</a></li>
           <li><a href="/tools/qr-generator">QR Code Generator</a></li>
-          <li><a href="/categories/utilities" style="color: var(--primary, #4c88ff); font-weight: bold;">EXPLORE MORE→</a></li>   
+          <li><a class="footer-more" href="/categories/utilities">Explore more &rarr;</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4> AI Tools</h4>
+        <h2>AI Tools</h2>
         <ul>
           <li><a href="/tools/resume-analyzer">Resume Analyzer</a></li>
           <li><a href="/tools/website-speed-analyzer">Website Speed Analyzer</a></li>
-          <li><a href="/categories/ai-tools" style="color: var(--primary, #4c88ff); font-weight: bold;">EXPLORE MORE→</a></li>
+          <li><a class="footer-more" href="/categories/ai-tools">Explore more &rarr;</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4> Global Tools</h4>
+        <h2>Global Tools</h2>
         <ul>
           <li><a href="/tools/pdf-inspector">PDF Inspector</a></li>
           <li><a href="/tools/image-privacy-cleaner">Image Privacy Cleaner</a></li>
@@ -443,128 +87,67 @@
           <li><a href="/tools/ai-context-calculator">AI Token Calculator</a></li>
           <li><a href="/tools/markdown-to-html">Markdown to HTML</a></li>
           <li><a href="/tools/url-deduplicator">URL Deduplicator</a></li>
-          <li><a href="/categories/global-tools" style="color: var(--primary, #4c88ff); font-weight: bold;">EXPLORE MORE→</a></li>
+          <li><a class="footer-more" href="/categories/global-tools">Explore more &rarr;</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">
+          <img src="/assets/img/logo1.webp" alt="" width="36" height="36">
+          <span>Logrith</span>
+        </a>
+        <p>Fast, free online tools to calculate, convert, format text, and handle developer tasks &mdash; all in one place, with no login and complete privacy.</p>
+
+        <details class="lang-select">
+          <summary><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#globe"></use></svg> English</summary>
+          <div class="lang-menu">
+            <span class="lang-option is-current">English <small><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check"></use></svg></small></span>
+            <span class="lang-option is-soon">Spanish <small>Soon</small></span>
+            <span class="lang-option is-soon">French <small>Soon</small></span>
+            <span class="lang-option is-soon">German <small>Soon</small></span>
+            <span class="lang-option is-soon">Japanese <small>Soon</small></span>
+          </div>
+        </details>
+      </div>
+
+      <div class="footer-col">
+        <h2>Company</h2>
+        <ul>
+          <li><a href="/pages/about">About</a></li>
+          <li><a href="/pages/founder">Founder</a></li>
+          <li><a href="/blog/index">Blog</a></li>
+          <li><a href="/pages/contact">Contact</a></li>
+          <li><a href="/pages/business">Business &amp; Partnerships</a></li>
+          <li><a href="/pages/support">Support</a></li>
+          <li><a href="/pages/faq">Q&amp;A</a></li>
         </ul>
       </div>
 
-    </div>
-
-    <div class="footer-second-row">
-      <div class="footer-brand">
-        <a href="/" class="nav-logo1">
-          <div class="logo-icon1">
-            <img src="/assets/img/logo1.webp" alt="Logrith logo" onerror="this.style.display='none'">
-          </div>
-          <span class="logo-text1">Logrith</span>
-        </a>
-        <p>Fast, free online tools to calculate, convert, format text, and handle developer tasks — all in one place, with no login and complete privacy.</p>
-        
-        <!-- Language Button - Below Description -->
-        <div class="lang-wrapper">
-          <div class="lang-dropdown" id="langDropdown">
-            <div class="lang-selected" onclick="document.getElementById('langDropdown').classList.toggle('open')">
-              <span class="globe-icon">🌐</span>
-              <span>English</span>
-              <span class="arrow">▼</span>
-            </div>
-            <div class="lang-menu">
-              <div class="lang-item active" onclick="selectLang('English', this)">
-                <span>🌐</span> English
-                <span class="status">✓</span>
-              </div>
-              <div class="lang-item disabled" onclick="showSoon('Spanish')">
-                <span>🇪🇸</span> Spanish
-                <span class="status">Soon</span>
-              </div>
-              <div class="lang-item disabled" onclick="showSoon('French')">
-                <span>🇫🇷</span> French
-                <span class="status">Soon</span>
-              </div>
-              <div class="lang-item disabled" onclick="showSoon('German')">
-                <span>🇩🇪</span> German
-                <span class="status">Soon</span>
-              </div>
-              <div class="lang-item disabled" onclick="showSoon('Japanese')">
-                <span>🇯🇵</span> Japanese
-                <span class="status">Soon</span>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="footer-col">
+        <h2>Legal &amp; Policies</h2>
+        <ul>
+          <li><a href="/pages/privacy">Privacy Policy</a></li>
+          <li><a href="/pages/terms">Terms of Service</a></li>
+          <li><a href="/pages/license">License</a></li>
+        </ul>
       </div>
 
-      <div class="footer-center-cats">
-        <div class="footer-cat">
-          <h4>Legal & Policies</h4>
-          <ul>
-            <li><a href="/pages/privacy">Privacy Policy</a></li>
-            <li><a href="/pages/terms">Terms of Service</a></li>
-            <li><a href="/pages/license">License</a></li>
-          </ul>
-        </div>
-        <div class="footer-cat">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="/pages/about">About</a></li>
-            <li><a href="/pages/founder">Founder</a></li>
-            <li><a href="/blog/index">Blog</a></li>
-            <li><a href="/pages/contact">Contact</a></li>
-            <li><a href="/pages/business">Business & Partnerships</a></li>
-            <li><a href="/pages/support">Support</a></li>
-            <li><a href="/pages/faq">Q&A</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-         <h4>Main</h4>
-         <ul>
-           <li><a href="/">Home</a></li>
-           <li><a href="/categories/categories">All Categories</a></li>
-           <li><a href="/categories/all-tools">All Tools</a></li>
-         </ul>
-        </div>
+      <div class="footer-col">
+        <h2>Browse</h2>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/categories/categories">All Categories</a></li>
+          <li><a href="/categories/all-tools">All Tools</a></li>
+        </ul>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <span>© 2026 Logrith.in — All rights reserved</span>
-      
-
-      <span style="margin-left:auto; margin-right:8px;">Made with ❤️ for the web | 100% Free & Open</span>
-      
-      <a href="/sitemap.xml" style="color:var(--primary, #4c88ff);">sitemap</a>
+      <span>&copy; 2026 Logrith.in &mdash; All rights reserved</span>
+      <span>Made with <svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#heart"></use></svg> for the web &middot; 100% free &amp; open</span>
+      <a href="/sitemap.xml">Sitemap</a>
     </div>
   </div>
-
-  <script>
-    function selectLang(lang, element) {
-      if (lang === 'English') {
-        var selected = document.querySelector('.lang-selected');
-        selected.innerHTML = '<span class="globe-icon">🌐</span> <span>English</span> <span class="arrow">▼</span>';
-        
-        var allItems = document.querySelectorAll('.lang-item');
-        allItems.forEach(function(item) {
-          item.classList.remove('active');
-        });
-        
-        element.classList.add('active');
-        var statusSpan = element.querySelector('.status');
-        if (statusSpan) statusSpan.textContent = '✓';
-        
-        document.getElementById('langDropdown').classList.remove('open');
-      }
-    }
-
-    function showSoon(lang) {
-      alert('🌐 ' + lang + ' language coming soon! Stay tuned.');
-      document.getElementById('langDropdown').classList.remove('open');
-    }
-
-    document.addEventListener('click', function(event) {
-      var dropdown = document.getElementById('langDropdown');
-      if (dropdown && !dropdown.contains(event.target)) {
-        dropdown.classList.remove('open');
-      }
-    });
-  </script>
 </footer>

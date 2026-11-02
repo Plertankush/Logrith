@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -51,17 +55,20 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-salary-hourly-converter">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/calculate-convert">Calculate & Convert</a> › Salary to Hourly Converter</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/calculate-convert">Calculate &amp; Convert</a> › Salary to Hourly Converter</nav>
   <h1>Free Salary to Hourly Converter</h1>
   <p>Convert between annual salary, monthly, weekly, daily, and hourly pay — enter any one value to see all the others.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">💰 All Pay Periods</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#currency"></use></svg> All Pay Periods</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:700px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Enter Your Pay</h2>
     <div class="controls-grid">
@@ -93,24 +100,45 @@
 
   <div class="tool-card">
     <h2>All Pay Periods</h2>
-    <div class="stat-result-grid" id="result-grid"></div>
+    <div class="stat-grid" id="result-grid"></div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>How do I convert annual salary to hourly rate?</h3><p>Divide annual salary by total hours worked per year — typically hours per week × weeks per year (commonly 40 × 52 = 2,080 hours).</p></div>
-    <div class="faq-item-box"><h3>Does this account for taxes?</h3><p>No, this converts between gross pay periods only. Actual take-home pay after taxes and deductions will be lower and varies by jurisdiction.</p></div>
-    <div class="faq-item-box"><h3>What if I don't work 52 weeks a year?</h3><p>Adjust the "Weeks Worked per Year" field to reflect actual weeks worked, such as 50 weeks if you take 2 weeks of unpaid leave.</p></div>
-    <div class="faq-item-box"><h3>Can I use this for part-time work?</h3><p>Yes, adjust "Hours per Week" to your actual part-time schedule for accurate conversions.</p></div>
-    <div class="faq-item-box"><h3>Is my salary information sent to a server?</h3><p>No, every calculation happens locally in your browser. Your income details are never transmitted anywhere.</p></div>
-    <div class="faq-item-box"><h3>How should I account for unpaid vacation or holidays?</h3><p>Reduce "Weeks Worked per Year" below 52 to reflect actual paid working weeks, which will slightly increase the calculated hourly rate since the same salary is now being divided across fewer working hours.</p></div>
-    <div class="faq-item-box"><h3>Does this work for calculating freelance rates?</h3><p>Yes, enter your target annual income and realistic billable hours per week to find a baseline hourly rate — though freelancers typically need to add a margin above this baseline to cover non-billable time, taxes, and business expenses that a salaried calculation doesn't account for.</p></div>
+    <details class="faq-item">
+      <summary class="faq-q">How do I convert annual salary to hourly rate?</summary>
+      <div class="faq-a"><p>Divide annual salary by total hours worked per year — typically hours per week × weeks per year (commonly 40 × 52 = 2,080 hours).</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does this account for taxes?</summary>
+      <div class="faq-a"><p>No, this converts between gross pay periods only. Actual take-home pay after taxes and deductions will be lower and varies by jurisdiction.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What if I don't work 52 weeks a year?</summary>
+      <div class="faq-a"><p>Adjust the "Weeks Worked per Year" field to reflect actual weeks worked, such as 50 weeks if you take 2 weeks of unpaid leave.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I use this for part-time work?</summary>
+      <div class="faq-a"><p>Yes, adjust "Hours per Week" to your actual part-time schedule for accurate conversions.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my salary information sent to a server?</summary>
+      <div class="faq-a"><p>No, every calculation happens locally in your browser. Your income details are never transmitted anywhere.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How should I account for unpaid vacation or holidays?</summary>
+      <div class="faq-a"><p>Reduce "Weeks Worked per Year" below 52 to reflect actual paid working weeks, which will slightly increase the calculated hourly rate since the same salary is now being divided across fewer working hours.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does this work for calculating freelance rates?</summary>
+      <div class="faq-a"><p>Yes, enter your target annual income and realistic billable hours per week to find a baseline hourly rate — though freelancers typically need to add a margin above this baseline to cover non-billable time, taxes, and business expenses that a salaried calculation doesn't account for.</p></div>
+    </details>
   </div>
-</div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>Convert Between Salary and Hourly Pay</h2>
   <p>This tool converts pay between any period — annual, monthly, weekly, daily, or hourly — letting you enter a figure in whichever format you know and instantly see the equivalent in every other period.</p>
 
@@ -124,7 +152,7 @@
   <p>When comparing job offers or freelance rates across different countries, converting everything to a common period — typically hourly or annual — makes the comparison far more concrete than trying to mentally compare different quoted periods side by side. This is especially useful for remote work and international freelancing, where a client in one country might quote a project rate while you're used to thinking in terms of your local hourly or monthly rate, and converting both to the same basis removes the guesswork from deciding whether an offer is genuinely competitive.</p>
 
   <h3>Why Convert Between Pay Periods</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Comparing job offers</strong> — one offer quoted as an annual salary and another as an hourly rate can be hard to compare directly without conversion.</li>
     <li><strong>Freelance and contract pricing</strong> — professionals moving from salaried to hourly (or vice versa) work need an accurate baseline conversion.</li>
     <li><strong>Budgeting</strong> — breaking an annual salary into monthly or weekly figures makes budgeting more concrete.</li>
@@ -147,19 +175,20 @@
   <p>The "hours per week" field has an outsized effect on the resulting hourly rate, which is worth double-checking carefully before trusting the output. Someone who regularly works 50-hour weeks but calculates their hourly rate assuming a standard 40-hour week will significantly overstate their true hourly rate, since the same salary is actually being earned across more hours than the calculation assumes. For anyone regularly working beyond a standard schedule, entering a realistic average hours-per-week figure — rather than the officially stated or contracted number — gives a far more accurate picture of what's actually being earned per hour worked, which can be an eye-opening number to see clearly.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/percentage-fee-splitter" class="tool-item"><div class="ti-text"><h4>Payment Fee Calculator</h4><p>Calculate net payout after transaction fees.</p></div></a>
-    <a href="/tools/percentage-calculator" class="tool-item"><div class="ti-text"><h4>Percentage Calculator</h4><p>Calculate percentages, raises, and changes.</p></div></a>
-    <a href="/tools/currency-converter" class="tool-item"><div class="ti-text"><h4>Currency Converter</h4><p>Convert between currencies with your own rate.</p></div></a>
-    <a href="/tools/compound-interest-calculator" class="tool-item"><div class="ti-text"><h4>Compound Interest Calculator</h4><p>Project savings growth over time.</p></div></a>
+    <a class="related-card" href="/tools/percentage-fee-splitter"><strong>Payment Fee Calculator</strong><span>Calculate net payout after transaction fees.</span></a>
+    <a class="related-card" href="/tools/percentage-calculator"><strong>Percentage Calculator</strong><span>Calculate percentages, raises, and changes.</span></a>
+    <a class="related-card" href="/tools/currency-converter"><strong>Currency Converter</strong><span>Convert between currencies with your own rate.</span></a>
+    <a class="related-card" href="/tools/compound-interest-calculator"><strong>Compound Interest Calculator</strong><span>Project savings growth over time.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 function calculate() {
   const period = document.getElementById('pay-period').value;
@@ -186,12 +215,12 @@ function calculate() {
   const fmt = v => v.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
 
   document.getElementById('result-grid').innerHTML = `
-    <div class="stat-box"><span class="sb-num" style="font-size:1.2rem;">${fmt(annual)}</span><span class="sb-lbl">Annual</span></div>
-    <div class="stat-box"><span class="sb-num" style="font-size:1.2rem;">${fmt(monthly)}</span><span class="sb-lbl">Monthly</span></div>
-    <div class="stat-box"><span class="sb-num" style="font-size:1.2rem;">${fmt(weekly)}</span><span class="sb-lbl">Weekly</span></div>
-    <div class="stat-box"><span class="sb-num" style="font-size:1.2rem;">${fmt(daily)}</span><span class="sb-lbl">Daily</span></div>
+    <div class="stat-box"><span class="stat-num" style="font-size:1.2rem;">${fmt(annual)}</span><span class="stat-label">Annual</span></div>
+    <div class="stat-box"><span class="stat-num" style="font-size:1.2rem;">${fmt(monthly)}</span><span class="stat-label">Monthly</span></div>
+    <div class="stat-box"><span class="stat-num" style="font-size:1.2rem;">${fmt(weekly)}</span><span class="stat-label">Weekly</span></div>
+    <div class="stat-box"><span class="stat-num" style="font-size:1.2rem;">${fmt(daily)}</span><span class="stat-label">Daily</span></div>
     <div class="stat-box" style="background:linear-gradient(135deg,var(--primary),var(--primary-light));border:none;grid-column:span 2;">
-      <span class="sb-num" style="color:white;font-size:1.4rem;">${fmt(hourly)}</span><span class="sb-lbl" style="color:rgba(255,255,255,0.85);">Hourly Rate</span>
+      <span class="stat-num" style="color:white;font-size:1.4rem;">${fmt(hourly)}</span><span class="stat-label" style="color:rgba(255,255,255,0.85);">Hourly Rate</span>
     </div>`;
 }
 

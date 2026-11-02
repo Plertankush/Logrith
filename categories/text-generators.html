@@ -14,44 +14,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#000000">
-  <link rel="preload" href="/assets/css/style.css" as="style">
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .page-hero { background:linear-gradient(135deg,#fffbeb 0%,#fef3c7 50%,#fef9c3 100%); padding:60px 24px 48px; text-align:center; border-bottom:1.5px solid var(--gray-200); }
-    .page-hero-inner { max-width:700px; margin:0 auto; }
-    .badge { display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:var(--white);border:1px solid var(--gray-200);border-radius:20px;font-size:.78rem;font-weight:700;color:#d97706;font-family:var(--font-display);margin-bottom:16px; }
-    .page-hero h1 { font-family:var(--font-display);font-size:clamp(1.8rem,5vw,2.8rem);font-weight:800;color:var(--gray-900);letter-spacing:-.5px;line-height:1.2;margin-bottom:14px; }
-    .page-hero h1 span { color:#d97706; }
-    .page-hero p { font-size:.98rem;color:var(--gray-700);line-height:1.7; }
-    .tool-list-section { max-width:1100px;margin:0 auto;padding:40px 24px; }
-    .tls-header { margin-bottom:28px; }
-    .tls-header h2 { font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:var(--gray-900);margin-bottom:6px; }
-    .tls-header p { font-size:.88rem;color:var(--gray-500); }
-    .tool-list { display:flex;flex-direction:column;gap:12px; }
-    .tl-item { display:flex;align-items:center;gap:18px;padding:18px 20px;background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);text-decoration:none;transition:var(--transition); }
-    .tl-item:hover { border-color:#d97706;box-shadow:var(--shadow-md);transform:translateX(4px); }
-    .tl-icon { width:46px;height:46px;background:var(--gray-50);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;transition:var(--transition); }
-    .tl-item:hover .tl-icon { background:#d97706; }
-    .tl-body { flex:1;min-width:0; }
-    .tl-name { font-family:var(--font-display);font-size:.98rem;font-weight:700;color:var(--gray-900);margin-bottom:3px; }
-    .tl-desc { font-size:.82rem;color:var(--gray-500);line-height:1.5; }
-    .tl-tags { display:flex;gap:6px;flex-wrap:wrap;margin-top:6px; }
-    .tl-tag { padding:2px 8px;background:var(--gray-100);border-radius:10px;font-size:.72rem;color:var(--gray-600); }
-    .tl-arrow { color:var(--gray-300);font-size:1.2rem;flex-shrink:0;transition:var(--transition); }
-    .tl-item:hover .tl-arrow { color:#d97706;transform:translateX(3px); }
-    .seo-text { max-width:900px;margin:0 auto;padding:0 24px 48px; }
-    .seo-text h2 { font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:var(--gray-900);margin-bottom:12px;margin-top:32px; }
-    .seo-text p { font-size:.93rem;color:var(--gray-700);line-height:1.8;margin-bottom:12px; }
-    .seo-text a { color:#d97706; }
-    @media(max-width:600px){ .tl-tags{display:none;} }
 
-    .faq-q::after {
-     content: '+';
-     color: #d97706;
-     font-size: 1.3rem;
-     flex-shrink: 0;
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <!-- Google tag (gtag.js) -->
  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
@@ -64,161 +32,164 @@
  </script>
  
 </head>
-<body>
+<body class="page-categories-text-generators">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
-<section class="page-hero">
+
+<main id="main">
+<header class="page-hero">
   <div class="page-hero-inner">
-    <div class="tool-breadcrumb" style="justify-content:center;margin-bottom:14px;"><a href="/">Home</a> › <a href="categories">Categories</a> › Text & Generator Tools</div>
-    <div class="badge">✏️ 22 Text & Generator Tools</div>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="categories">Categories</a> › Text & Generator Tools</nav>
+    <div class="badge"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#edit"></use></svg> 22 Text & Generator Tools</div>
     <h1>Free <span>Text & Generator</span> Tools</h1>
     <p>Count words and characters, convert between case formats, compare texts, clean up lists, generate placeholder text, and create URL-friendly slugs — all in your browser, instantly.</p>
-    <div class="tool-tags" style="justify-content:center;margin-top:16px;"><span class="tool-tag">✅ No Login</span><span class="tool-tag">⚡ Real-time</span><span class="tool-tag">📋 One-click Copy</span><span class="tool-tag">📱 Mobile Ready</span></div>
+    <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> No Login</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Real-time</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> One-click Copy</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#phone"></use></svg> Mobile Ready</span></div>
+  </div>
+</header>
+
+<section class="page-section">
+  <div class="section-header"><h2>All Text & Generator Tools</h2><p>Writers, editors, developers and SEOs — tools for everyone who works with text</p></div>
+  <div class="tool-list">
+
+    <a href="/tools/word-counter" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#page"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Word Counter</div><div class="tool-row-desc">Count words, characters, sentences, paragraphs, and lines in real-time. Get reading time and speaking time estimates. Includes keyword density analysis and word count goal tracker.</div><div class="tag-list"><span class="tag">Real-time</span><span class="tag">Reading time</span><span class="tag">Keyword density</span><span class="tag">Word goal</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/character-counter" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#char-count"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Character Counter</div><div class="tool-row-desc">Detailed character breakdown — total, no spaces, letters, digits, uppercase, lowercase, punctuation. Character frequency chart. Live platform limit bars (Twitter, Instagram, meta description).</div><div class="tag-list"><span class="tag">Frequency chart</span><span class="tag">Platform limits</span><span class="tag">Real-time</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/case-converter" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#case"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Text Case Converter</div><div class="tool-row-desc">Convert text between 12 formats: UPPERCASE, lowercase, Title Case, Sentence case, camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE, dot.case, aLtErNaTe and iNVERSE.</div><div class="tag-list"><span class="tag">12 formats</span><span class="tag">camelCase</span><span class="tag">snake_case</span><span class="tag">Instant</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/text-diff" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#diff"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Text Diff Checker</div><div class="tool-row-desc">Compare two texts and highlight exactly what changed. Line-by-line, word-by-word, or character-by-character diff modes. LCS algorithm — same approach used by git diff.</div><div class="tag-list"><span class="tag">Line/Word/Char diff</span><span class="tag">Highlight changes</span><span class="tag">LCS algorithm</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/duplicate-remover" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#duplicate"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Duplicate Line Remover</div><div class="tool-row-desc">Remove duplicate lines from any text list. Optional: sort alphabetically, trim whitespace, remove empty lines, ignore case. Shows count of duplicates removed. Real-time as you type.</div><div class="tag-list"><span class="tag">Sort lines</span><span class="tag">Ignore case</span><span class="tag">Trim whitespace</span><span class="tag">Real-time</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/lorem-ipsum" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#lorem"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Lorem Ipsum Generator</div><div class="tool-row-desc">Generate placeholder text by paragraphs, sentences, words, or approximate byte count. Output as plain text, HTML p-tags, or Markdown. Option to include bold/italic decorations.</div><div class="tag-list"><span class="tag">Paragraphs/Words</span><span class="tag">HTML / Markdown</span><span class="tag">Classic opening</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/slug-generator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#slug"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">URL Slug Generator</div><div class="tool-row-desc">Convert any title or phrase into a clean URL slug. Custom separator (hyphen/underscore/dot), case control, stop word removal, max length limit. Bulk mode for multiple titles at once.</div><div class="tag-list"><span class="tag">SEO slugs</span><span class="tag">Stop words</span><span class="tag">Bulk mode</span><span class="tag">Real-time</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/random-name-generator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#user"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Random Name Generator</div><div class="tool-row-desc">Generate random male, female, or business names instantly.</div><div class="tag-list"><span class="tag">3 categories</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/random-number-generator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#random"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Random Number Generator</div><div class="tool-row-desc">Generate random numbers with custom range and uniqueness.</div><div class="tag-list"><span class="tag">Custom range</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/text-to-speech" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#volume"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Text to Speech</div><div class="tool-row-desc">Convert text into spoken audio using browser voices.</div><div class="tag-list"><span class="tag">Multiple voices</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/speech-to-text" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#mic"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Speech to Text</div><div class="tool-row-desc">Dictate using your microphone and see live text.</div><div class="tag-list"><span class="tag">Live dictation</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/markdown-previewer" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#markdown-html"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Markdown Previewer</div><div class="tool-row-desc">Write Markdown and see a live HTML preview.</div><div class="tag-list"><span class="tag">Live preview</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/text-reverser" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#repeat"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Text Reverser</div><div class="tool-row-desc">Reverse text characters, words, or lines.</div><div class="tag-list"><span class="tag">3 modes</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/acronym-generator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#tag"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Acronym Generator</div><div class="tool-row-desc">Turn any phrase into an acronym instantly.</div><div class="tag-list"><span class="tag">Customizable</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/text-summarizer-basic" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#file-text"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Text Summarizer</div><div class="tool-row-desc">Extract the most important sentences from long text.</div><div class="tag-list"><span class="tag">Extractive</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/citation-generator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#bookmark"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Citation Generator</div><div class="tool-row-desc">Generate APA, MLA, and Chicago style citations.</div><div class="tag-list"><span class="tag">3 styles</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/random-quote-generator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#quote"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Random Quote Generator</div><div class="tool-row-desc">Get inspiring quotes filtered by category.</div><div class="tag-list"><span class="tag">5 categories</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/words-to-pages-converter" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#pages"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Words to Pages Converter</div><div class="tool-row-desc">Convert word count to estimated page count and back.</div><div class="tag-list"><span class="tag">Both directions</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/number-to-words-converter" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#hash"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Number to Words Converter</div><div class="tool-row-desc">Spell out any number in full written words.</div><div class="tag-list"><span class="tag">Checks & invoices</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/morse-code-translator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#code"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Morse Code Translator</div><div class="tool-row-desc">Convert text to Morse code and back, with audio playback.</div><div class="tag-list"><span class="tag">Audio playback</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/nato-phonetic-alphabet-translator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#navigation"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">NATO Phonetic Alphabet Translator</div><div class="tool-row-desc">Convert text to Alpha, Bravo, Charlie spelling alphabet.</div><div class="tag-list"><span class="tag">Standard NATO</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/fancy-text-generator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#case"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Fancy Text Generator</div><div class="tool-row-desc">Generate 12+ stylish unicode fonts for social bios.</div><div class="tag-list"><span class="tag">Bold, italic & more</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <div class="tool-row u-877fec"><svg class="icon"><use href="/assets/svg/icons.svg#text"></use></svg><div class="tool-row-body"><div class="tool-row-name">Keyword Density Checker <span class="u-de7918">Coming Soon</span></div><div class="tool-row-desc">Analyze the frequency of keywords in your text to optimize for SEO.</div><div class="tag-list"><span class="tag">SEO optimization</span><span class="tag">Keyword analysis</span><span class="tag">Frequency count</span></div></div></div>
+    <div class="tool-row u-877fec"><svg class="icon"><use href="/assets/svg/icons.svg#mail"></use></svg><div class="tool-row-body"><div class="tool-row-name">Email Extractor <span class="u-de7918">Coming Soon</span></div><div class="tool-row-desc">Extract email addresses from any text or webpage.</div><div class="tag-list"><span class="tag">Email extraction</span><span class="tag">Text parsing</span><span class="tag">Bulk processing</span></div></div></div>
+
   </div>
 </section>
 
-<div class="tool-list-section">
-  <div class="tls-header"><h2>All Text & Generator Tools</h2><p>Writers, editors, developers and SEOs — tools for everyone who works with text</p></div>
-  <div class="tool-list">
-
-    <a href="/tools/word-counter" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#page"></use></svg>
-      <div class="tl-body"><div class="tl-name">Word Counter</div><div class="tl-desc">Count words, characters, sentences, paragraphs, and lines in real-time. Get reading time and speaking time estimates. Includes keyword density analysis and word count goal tracker.</div><div class="tl-tags"><span class="tl-tag">Real-time</span><span class="tl-tag">Reading time</span><span class="tl-tag">Keyword density</span><span class="tl-tag">Word goal</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/character-counter" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#char-count"></use></svg>
-      <div class="tl-body"><div class="tl-name">Character Counter</div><div class="tl-desc">Detailed character breakdown — total, no spaces, letters, digits, uppercase, lowercase, punctuation. Character frequency chart. Live platform limit bars (Twitter, Instagram, meta description).</div><div class="tl-tags"><span class="tl-tag">Frequency chart</span><span class="tl-tag">Platform limits</span><span class="tl-tag">Real-time</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/case-converter" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#case"></use></svg>
-      <div class="tl-body"><div class="tl-name">Text Case Converter</div><div class="tl-desc">Convert text between 12 formats: UPPERCASE, lowercase, Title Case, Sentence case, camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE, dot.case, aLtErNaTe and iNVERSE.</div><div class="tl-tags"><span class="tl-tag">12 formats</span><span class="tl-tag">camelCase</span><span class="tl-tag">snake_case</span><span class="tl-tag">Instant</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/text-diff" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#diff"></use></svg>
-      <div class="tl-body"><div class="tl-name">Text Diff Checker</div><div class="tl-desc">Compare two texts and highlight exactly what changed. Line-by-line, word-by-word, or character-by-character diff modes. LCS algorithm — same approach used by git diff.</div><div class="tl-tags"><span class="tl-tag">Line/Word/Char diff</span><span class="tl-tag">Highlight changes</span><span class="tl-tag">LCS algorithm</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/duplicate-remover" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#duplicate"></use></svg>
-      <div class="tl-body"><div class="tl-name">Duplicate Line Remover</div><div class="tl-desc">Remove duplicate lines from any text list. Optional: sort alphabetically, trim whitespace, remove empty lines, ignore case. Shows count of duplicates removed. Real-time as you type.</div><div class="tl-tags"><span class="tl-tag">Sort lines</span><span class="tl-tag">Ignore case</span><span class="tl-tag">Trim whitespace</span><span class="tl-tag">Real-time</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/lorem-ipsum" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#lorem"></use></svg>
-      <div class="tl-body"><div class="tl-name">Lorem Ipsum Generator</div><div class="tl-desc">Generate placeholder text by paragraphs, sentences, words, or approximate byte count. Output as plain text, HTML p-tags, or Markdown. Option to include bold/italic decorations.</div><div class="tl-tags"><span class="tl-tag">Paragraphs/Words</span><span class="tl-tag">HTML / Markdown</span><span class="tl-tag">Classic opening</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/slug-generator" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#slug"></use></svg>
-      <div class="tl-body"><div class="tl-name">URL Slug Generator</div><div class="tl-desc">Convert any title or phrase into a clean URL slug. Custom separator (hyphen/underscore/dot), case control, stop word removal, max length limit. Bulk mode for multiple titles at once.</div><div class="tl-tags"><span class="tl-tag">SEO slugs</span><span class="tl-tag">Stop words</span><span class="tl-tag">Bulk mode</span><span class="tl-tag">Real-time</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/random-name-generator" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#user"></use></svg>
-      <div class="tl-body"><div class="tl-name">Random Name Generator</div><div class="tl-desc">Generate random male, female, or business names instantly.</div><div class="tl-tags"><span class="tl-tag">3 categories</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/random-number-generator" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#random"></use></svg>
-      <div class="tl-body"><div class="tl-name">Random Number Generator</div><div class="tl-desc">Generate random numbers with custom range and uniqueness.</div><div class="tl-tags"><span class="tl-tag">Custom range</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/text-to-speech" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#volume"></use></svg>
-      <div class="tl-body"><div class="tl-name">Text to Speech</div><div class="tl-desc">Convert text into spoken audio using browser voices.</div><div class="tl-tags"><span class="tl-tag">Multiple voices</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/speech-to-text" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#mic"></use></svg>
-      <div class="tl-body"><div class="tl-name">Speech to Text</div><div class="tl-desc">Dictate using your microphone and see live text.</div><div class="tl-tags"><span class="tl-tag">Live dictation</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/markdown-previewer" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#markdown-html"></use></svg>
-      <div class="tl-body"><div class="tl-name">Markdown Previewer</div><div class="tl-desc">Write Markdown and see a live HTML preview.</div><div class="tl-tags"><span class="tl-tag">Live preview</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/text-reverser" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#repeat"></use></svg>
-      <div class="tl-body"><div class="tl-name">Text Reverser</div><div class="tl-desc">Reverse text characters, words, or lines.</div><div class="tl-tags"><span class="tl-tag">3 modes</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/acronym-generator" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#tag"></use></svg>
-      <div class="tl-body"><div class="tl-name">Acronym Generator</div><div class="tl-desc">Turn any phrase into an acronym instantly.</div><div class="tl-tags"><span class="tl-tag">Customizable</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/text-summarizer-basic" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#file-text"></use></svg>
-      <div class="tl-body"><div class="tl-name">Text Summarizer</div><div class="tl-desc">Extract the most important sentences from long text.</div><div class="tl-tags"><span class="tl-tag">Extractive</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/citation-generator" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#bookmark"></use></svg>
-      <div class="tl-body"><div class="tl-name">Citation Generator</div><div class="tl-desc">Generate APA, MLA, and Chicago style citations.</div><div class="tl-tags"><span class="tl-tag">3 styles</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/random-quote-generator" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#quote"></use></svg>
-      <div class="tl-body"><div class="tl-name">Random Quote Generator</div><div class="tl-desc">Get inspiring quotes filtered by category.</div><div class="tl-tags"><span class="tl-tag">5 categories</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/words-to-pages-converter" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#pages"></use></svg>
-      <div class="tl-body"><div class="tl-name">Words to Pages Converter</div><div class="tl-desc">Convert word count to estimated page count and back.</div><div class="tl-tags"><span class="tl-tag">Both directions</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/number-to-words-converter" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#hash"></use></svg>
-      <div class="tl-body"><div class="tl-name">Number to Words Converter</div><div class="tl-desc">Spell out any number in full written words.</div><div class="tl-tags"><span class="tl-tag">Checks & invoices</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/morse-code-translator" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#code"></use></svg>
-      <div class="tl-body"><div class="tl-name">Morse Code Translator</div><div class="tl-desc">Convert text to Morse code and back, with audio playback.</div><div class="tl-tags"><span class="tl-tag">Audio playback</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/nato-phonetic-alphabet-translator" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#navigation"></use></svg>
-      <div class="tl-body"><div class="tl-name">NATO Phonetic Alphabet Translator</div><div class="tl-desc">Convert text to Alpha, Bravo, Charlie spelling alphabet.</div><div class="tl-tags"><span class="tl-tag">Standard NATO</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/fancy-text-generator" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#case"></use></svg>
-      <div class="tl-body"><div class="tl-name">Fancy Text Generator</div><div class="tl-desc">Generate 12+ stylish unicode fonts for social bios.</div><div class="tl-tags"><span class="tl-tag">Bold, italic & more</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <div class="tl-item" style="opacity:.55;cursor:default;"><svg class="icon"><use href="/assets/svg/icons.svg#text"></use></svg><div class="tl-body"><div class="tl-name">Keyword Density Checker <span style="font-size:.7rem;background:var(--accent);color:white;padding:2px 7px;border-radius:10px;margin-left:8px;">Coming Soon</span></div><div class="tl-desc">Analyze the frequency of keywords in your text to optimize for SEO.</div><div class="tl-tags"><span class="tl-tag">SEO optimization</span><span class="tl-tag">Keyword analysis</span><span class="tl-tag">Frequency count</span></div></div></div>
-    <div class="tl-item" style="opacity:.55;cursor:default;"><svg class="icon"><use href="/assets/svg/icons.svg#mail"></use></svg><div class="tl-body"><div class="tl-name">Email Extractor <span style="font-size:.7rem;background:var(--accent);color:white;padding:2px 7px;border-radius:10px;margin-left:8px;">Coming Soon</span></div><div class="tl-desc">Extract email addresses from any text or webpage.</div><div class="tl-tags"><span class="tl-tag">Email extraction</span><span class="tl-tag">Text parsing</span><span class="tl-tag">Bulk processing</span></div></div></div>
-
-  </div>
-</div>
-
-<div class="seo-text">
+<section class="page-section prose">
 
   <h2>About Logrith Text & Generator Tools</h2>
 
@@ -244,81 +215,55 @@
 
   <h2>Frequently Asked Questions</h2>
 
-  <div class="faq-item">
-    <div class="faq-q">Are these text tools free to use?</div>
-    <div class="faq-a">
-      Yes. All currently available text and generator tools on Logrith are free without registration or usage limits.
-    </div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">Are these text tools free to use?</summary>
+      <div class="faq-a"><p>Yes. All currently available text and generator tools on Logrith are free without registration or usage limits.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Do the tools work in real-time?</summary>
+      <div class="faq-a"><p>Most text tools update instantly while typing, allowing real-time word counting, formatting, comparison, and analysis.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I use these tools on mobile devices?</summary>
+      <div class="faq-a"><p>Yes. The entire text tools section is fully responsive and optimized for phones, tablets, laptops, and desktop browsers.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What can the Word Counter measure?</summary>
+      <div class="faq-a"><p>The Word Counter can measure words, characters, sentences, paragraphs, and estimated reading time depending on the tool configuration.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Which text formats does the Case Converter support?</summary>
+      <div class="faq-a"><p>The Case Converter supports formats such as uppercase, lowercase, Title Case, Sentence case, camelCase, PascalCase, snake_case, kebab-case, and additional developer-friendly naming styles.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I compare two versions of text or code?</summary>
+      <div class="faq-a"><p>Yes. The Text Diff Checker highlights additions, removals, and changes between two text blocks, making it useful for documents, code, notes, and revisions.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What is the Duplicate Line Remover used for?</summary>
+      <div class="faq-a"><p>It removes repeated lines from lists or datasets and can help clean keywords, usernames, emails, tags, notes, and copied text blocks.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can the Lorem Ipsum Generator create HTML or Markdown output?</summary>
+      <div class="faq-a"><p>Yes. Depending on the generator options, placeholder text can be created in plain text, HTML, or Markdown-style formatting.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What is a URL slug?</summary>
+      <div class="faq-a"><p>A URL slug is the readable part of a webpage address. The Slug Generator converts titles or phrases into clean, SEO-friendly URL text.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Will more text tools be added later?</summary>
+      <div class="faq-a"><p>Yes. Additional generators, formatting tools, extraction utilities, SEO helpers, and creator-focused text workflows are planned for future updates.</p></div>
+    </details>
   </div>
 
-  <div class="faq-item">
-    <div class="faq-q">Do the tools work in real-time?</div>
-    <div class="faq-a">
-      Most text tools update instantly while typing, allowing real-time word counting, formatting, comparison, and analysis.
-    </div>
-  </div>
+</section>
 
-  <div class="faq-item">
-    <div class="faq-q">Can I use these tools on mobile devices?</div>
-    <div class="faq-a">
-      Yes. The entire text tools section is fully responsive and optimized for phones, tablets, laptops, and desktop browsers.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">What can the Word Counter measure?</div>
-    <div class="faq-a">
-      The Word Counter can measure words, characters, sentences, paragraphs, and estimated reading time depending on the tool configuration.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">Which text formats does the Case Converter support?</div>
-    <div class="faq-a">
-      The Case Converter supports formats such as uppercase, lowercase, Title Case, Sentence case, camelCase, PascalCase, snake_case, kebab-case, and additional developer-friendly naming styles.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">Can I compare two versions of text or code?</div>
-    <div class="faq-a">
-      Yes. The Text Diff Checker highlights additions, removals, and changes between two text blocks, making it useful for documents, code, notes, and revisions.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">What is the Duplicate Line Remover used for?</div>
-    <div class="faq-a">
-      It removes repeated lines from lists or datasets and can help clean keywords, usernames, emails, tags, notes, and copied text blocks.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">Can the Lorem Ipsum Generator create HTML or Markdown output?</div>
-    <div class="faq-a">
-      Yes. Depending on the generator options, placeholder text can be created in plain text, HTML, or Markdown-style formatting.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">What is a URL slug?</div>
-    <div class="faq-a">
-      A URL slug is the readable part of a webpage address. The Slug Generator converts titles or phrases into clean, SEO-friendly URL text.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">Will more text tools be added later?</div>
-    <div class="faq-a">
-      Yes. Additional generators, formatting tools, extraction utilities, SEO helpers, and creator-focused text workflows are planned for future updates.
-    </div>
-  </div>
-
-</div>
+</main>
 
 <div id="footer"></div>
+<script src="/assets/js/main.js"></script>
 
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
 </body>
 </html>

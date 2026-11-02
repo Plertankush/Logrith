@@ -23,47 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .bp-hero { max-width:820px;margin:0 auto;padding:48px 20px 8px; }
-    .bp-crumb { font-size:.85rem;color:var(--gray-500);margin-bottom:16px; }
-    .bp-crumb a { color:var(--primary);text-decoration:none; }
-    .bp-hero h1 { font-family:var(--font-display);font-size:2rem;line-height:1.25;color:var(--gray-900);margin-bottom:14px; }
-    .bp-hero .bp-dek { font-size:1.05rem;color:var(--gray-700);line-height:1.7;margin-bottom:20px; }
-    .bp-cta { display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:white;padding:13px 26px;border-radius:var(--radius);font-weight:700;text-decoration:none;font-size:.95rem; }
-    .bp-cta svg { width:17px;height:17px; }
-    .bp-cta:hover { background:var(--primary-dark); }
-    .bp-body { max-width:760px;margin:0 auto;padding:28px 20px 20px; }
-    .bp-body h2 { font-family:var(--font-display);font-size:1.5rem;color:var(--gray-900);margin:38px 0 14px; }
-    .bp-body h3 { font-family:var(--font-display);font-size:1.15rem;color:var(--gray-900);margin:26px 0 10px; }
-    .bp-body p { color:var(--gray-700);line-height:1.8;margin-bottom:16px;font-size:1rem; }
-    .bp-body ul, .bp-body ol { color:var(--gray-700);line-height:1.8;margin:0 0 16px 22px; }
-    .bp-body li { margin-bottom:8px; }
-    .bp-body strong { color:var(--gray-900); }
-    .bp-toc { background:var(--gray-50);border-radius:var(--radius-lg);padding:20px 24px;margin:24px 0; }
-    .bp-toc h2 { margin:0 0 10px;font-size:1.05rem; }
-    .bp-toc ol { margin:0 0 0 20px; }
-    .bp-toc a { color:var(--primary);text-decoration:none; }
-    .bp-table { width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:.92rem; }
-    .bp-table th, .bp-table td { border:1px solid var(--gray-200);padding:10px 12px;text-align:left; }
-    .bp-table th { background:var(--gray-50);font-weight:700;color:var(--gray-900); }
-    .bp-howto { counter-reset:step; list-style:none;margin-left:0; }
-    .bp-howto li { position:relative;padding-left:42px;margin-bottom:18px; }
-    .bp-howto li::before { counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;background:var(--primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem; }
-    .bp-faq-item { border-bottom:1px solid var(--gray-200);padding:16px 0; }
-    .bp-faq-item h3 { margin:0 0 8px; font-size:1.02rem; }
-    .bp-byline { font-size:.82rem;color:var(--gray-500);margin-top:10px; }
-    .bp-related { max-width:1000px;margin:0 auto;padding:20px 20px 60px; }
-    .bp-related h2 { font-family:var(--font-display);font-size:1.4rem;color:var(--gray-900);margin-bottom:18px;text-align:center; }
-    .bp-related-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px; }
-    .bp-related-card { border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:18px;text-decoration:none;color:inherit;background:var(--white); }
-    .bp-related-card h4 { font-size:.95rem;color:var(--gray-900);margin-bottom:6px; }
-    .bp-related-card p { font-size:.82rem;color:var(--gray-700);line-height:1.5; }
-    .bp-prevnext { display:flex;justify-content:space-between;gap:16px;max-width:760px;margin:0 auto;padding:0 20px 20px; }
-    .bp-prevnext a { flex:1;border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:12px 16px;text-decoration:none;color:var(--gray-700);font-size:.85rem; }
-    .bp-prevnext a strong { display:block;color:var(--gray-900);font-size:.92rem; }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -99,23 +64,26 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-combine-jpg-images-into-one-pdf-free">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="bp-hero">
-  <div class="bp-crumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/image-pdf-tools">Image & PDF Tools</a> &rsaquo; JPG to PDF</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/image-pdf-tools">Image & PDF Tools</a> &rsaquo; JPG to PDF</nav>
   <h1>How to Combine Multiple Photos into a Single PDF, In the Right Order</h1>
-  <p class="bp-dek">Sending ten separate JPG attachments in an email is clumsy, and most portals that expect a document upload won't accept a folder of loose images at all. Converting a batch of photos into a single, correctly-ordered PDF solves both problems at once — here's how to do it properly, including the page-size decision most guides skip over, the practical habits that make photographed documents look genuinely clean once combined, and how this compares to the major PDF platforms most people default to.</p>
-  <a href="/tools/jpg-to-pdf" class="bp-cta">
+  <p>Sending ten separate JPG attachments in an email is clumsy, and most portals that expect a document upload won't accept a folder of loose images at all. Converting a batch of photos into a single, correctly-ordered PDF solves both problems at once — here's how to do it properly, including the page-size decision most guides skip over, the practical habits that make photographed documents look genuinely clean once combined, and how this compares to the major PDF platforms most people default to.</p>
+  <a href="/tools/jpg-to-pdf" class="btn btn-primary btn-lg">
     <svg class="icon"><use href="/assets/svg/icons.svg#pdf"></use></svg>
     Combine Images to PDF
   </a>
-  <p class="bp-byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
-</div>
+  <p class="byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
+</div></header>
 
-<div class="bp-body">
+<article class="page-section prose">
 
-  <div class="bp-toc">
+  <nav class="toc" aria-label="On this page">
     <h2>On This Page</h2>
     <ol>
       <li><a href="#how-to-use">How to Combine Images into a PDF</a></li>
@@ -126,24 +94,36 @@
       <li><a href="#mistakes">Common Mistakes</a></li>
       <li><a href="#faq">Frequently Asked Questions</a></li>
     </ol>
-  </div>
+  </nav>
 
   <h2 id="how-to-use">How to Combine Images into a PDF</h2>
-  <ol class="bp-howto">
-    <li>Open the <a href="/tools/jpg-to-pdf">JPG to PDF tool</a> and upload your images — JPG, PNG, and WebP are all supported, and you can mix formats in the same batch.</li>
-    <li>Drag the thumbnails to reorder them; the first image in the list becomes page one of the final PDF.</li>
-    <li>Choose a page size: A4, US Letter, or Fit to Image.</li>
-    <li>Select an orientation and layout option if needed.</li>
-    <li>Click Create PDF and download the result — no image was ever uploaded to a server.</li>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the <a href="/tools/jpg-to-pdf">JPG to PDF tool</a> and upload your images — JPG, PNG, and WebP are all supported, and you can mix formats in the same batch.</p>
+    </li>
+    <li class="step">
+      <p>Drag the thumbnails to reorder them; the first image in the list becomes page one of the final PDF.</p>
+    </li>
+    <li class="step">
+      <p>Choose a page size: A4, US Letter, or Fit to Image.</p>
+    </li>
+    <li class="step">
+      <p>Select an orientation and layout option if needed.</p>
+    </li>
+    <li class="step">
+      <p>Click Create PDF and download the result — no image was ever uploaded to a server.</p>
+    </li>
   </ol>
 
   <h2 id="page-sizing">A4, Letter, or Fit to Image: Which to Choose</h2>
-  <table class="bp-table">
+  <div class="table-wrap">
+    <table class="table">
     <tr><th>Page Size</th><th>Best For</th><th>Behavior</th></tr>
     <tr><td>A4 (210×297mm)</td><td>Documents intended for printing or professional sharing outside North America</td><td>Every page is the same standard size, with images placed and scaled to fit within margins</td></tr>
     <tr><td>US Letter (216×279mm)</td><td>Documents intended for printing in the US, Canada, and a few other regions</td><td>Same uniform-page behavior as A4, at the North American standard paper size</td></tr>
     <tr><td>Fit to Image</td><td>Photo portfolios, image collections, or anything where preserving each image's exact dimensions matters more than uniform paper sizing</td><td>Each page exactly matches its own image's dimensions — no scaling, no added margin</td></tr>
   </table>
+  </div>
   <p>A quick way to decide: if this PDF will ever be printed, or needs to look like a conventional document, use A4 or Letter. If it's a digital-only collection of photos where you want each image to appear at its native size and aspect ratio without any letterboxing or margin, use Fit to Image.</p>
 
   <h2 id="why-pdf">Why PDF Is the Right Format for This</h2>
@@ -164,7 +144,8 @@
   <p>Since one of the most common uses of this tool is turning phone photos of physical documents into a single PDF, a few practical habits noticeably improve the final result. Photograph each page under even, bright lighting to avoid shadows that can make text harder to read once combined. Keep the phone as parallel as possible to the document surface to minimize perspective distortion — a page photographed at an angle will appear subtly trapezoidal rather than rectangular in the final PDF. Where possible, use a plain, contrasting background (a dark surface for a white document) so the page edges are clearly distinguishable, which also makes it easier to visually confirm you've captured the full page without cropping any content. None of these habits require special equipment — just a few extra seconds of care before photographing each page, which pays off in a noticeably cleaner final document.</p>
 
   <h2 id="comparison">Comparison vs. Smallpdf, Adobe, and CleverPDF</h2>
-  <table class="bp-table">
+  <div class="table-wrap">
+    <table class="table">
     <tr><th>Feature</th><th>Logrith JPG to PDF</th><th>Smallpdf</th><th>Adobe Acrobat Online</th><th>CleverPDF</th></tr>
     <tr><td>Processing location</td><td>Entirely in-browser</td><td>Server upload</td><td>Server upload</td><td>Server upload (auto-deleted after 30 min)</td></tr>
     <tr><td>Drag-to-reorder</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
@@ -173,6 +154,7 @@
     <tr><td>Free usage limit</td><td>Unlimited, no file count cap</td><td>Limited free tier (2 tasks/day)</td><td>Requires account sign-in</td><td>Free with server-side processing</td></tr>
     <tr><td>Account required</td><td>No</td><td>No</td><td>Yes</td><td>No</td></tr>
   </table>
+  </div>
   <p>Smallpdf, Adobe, and CleverPDF all offer broader format support than Logrith's version currently does — particularly HEIC (the format modern iPhones use by default) and TIFF, which some competitors handle directly and Logrith's tool doesn't yet. If your source images are in one of those less-common formats, converting to JPG or PNG first with a separate tool, then combining, is the current workaround. Where Logrith's version stands apart is the combination of genuinely unlimited free use with no account requirement and entirely local, in-browser processing — Smallpdf's generous feature set comes with a restrictive daily free-tier cap, and Adobe requires signing in even for its free online tool.</p>
 
   <h2>Manual Alternatives</h2>
@@ -193,37 +175,55 @@
   <h3>Why Choose Logrith</h3>
   <p>This tool pairs naturally with Logrith's other PDF and image utilities — compress the resulting PDF if it's too large, or prepare individual images beforehand with cropping, resizing, or format conversion, all under the same no-upload, no-account standard throughout the entire document-preparation workflow.</p>
 
-</div>
+</article>
 
-<div class="bp-body">
+<article class="page-section prose">
   <h2 id="faq">Frequently Asked Questions</h2>
-  <div class="bp-faq-item"><h3>Can I combine images of different sizes into one PDF?</h3><p>Yes. Using A4 or Letter, each image is placed on a uniformly sized page regardless of its original dimensions. Using Fit to Image, each page matches its own image's exact dimensions, which can result in different page sizes throughout the document.</p></div>
-  <div class="bp-faq-item"><h3>What order will my images appear in?</h3><p>Images appear in the order shown in the upload list, which you can rearrange by dragging thumbnails before generating the PDF. The first image becomes page one.</p></div>
-  <div class="bp-faq-item"><h3>Can I mix JPG, PNG, and WebP in the same PDF?</h3><p>Yes, the tool accepts JPG, PNG, and WebP together in a single batch, converting all of them into pages of the same PDF regardless of original format.</p></div>
-  <div class="bp-faq-item"><h3>Does converting to PDF reduce image quality?</h3><p>No, images are embedded at their original resolution and quality. The PDF format itself doesn't force any additional compression during conversion.</p></div>
-  <div class="bp-faq-item"><h3>What's the difference between A4, Letter, and Fit to Image?</h3><p>A4 and Letter create uniformly-sized pages at standard paper dimensions, useful for printing. Fit to Image creates a page matching each image's own dimensions, useful for portfolios where uniform paper sizing isn't the goal.</p></div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">Can I combine images of different sizes into one PDF?</summary>
+      <div class="faq-a"><p>Yes. Using A4 or Letter, each image is placed on a uniformly sized page regardless of its original dimensions. Using Fit to Image, each page matches its own image's exact dimensions, which can result in different page sizes throughout the document.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What order will my images appear in?</summary>
+      <div class="faq-a"><p>Images appear in the order shown in the upload list, which you can rearrange by dragging thumbnails before generating the PDF. The first image becomes page one.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I mix JPG, PNG, and WebP in the same PDF?</summary>
+      <div class="faq-a"><p>Yes, the tool accepts JPG, PNG, and WebP together in a single batch, converting all of them into pages of the same PDF regardless of original format.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does converting to PDF reduce image quality?</summary>
+      <div class="faq-a"><p>No, images are embedded at their original resolution and quality. The PDF format itself doesn't force any additional compression during conversion.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What's the difference between A4, Letter, and Fit to Image?</summary>
+      <div class="faq-a"><p>A4 and Letter create uniformly-sized pages at standard paper dimensions, useful for printing. Fit to Image creates a page matching each image's own dimensions, useful for portfolios where uniform paper sizing isn't the goal.</p></div>
+    </details>
+  </div>
 
   <h2>Conclusion</h2>
   <p>A batch of loose photos is genuinely harder to share, view in sequence, and archive than a single combined document. Converting to PDF — with the order and page sizing set deliberately rather than left to whatever the upload happened to default to — turns a scattered folder into one clean, universally viewable file, without needing to hand your images to a server to get there. Whether it's a scanned document, an expense report, or a photo portfolio, the same simple workflow applies: upload, order, choose a page size, and download, with the same privacy guarantee applying regardless of how many images you're combining or how sensitive their content happens to be.</p>
-</div>
+</article>
 
-<div class="bp-prevnext">
+<nav class="post-nav page-section" aria-label="More guides">
   <a href="/blog/rotate-flip-image-online-free">&larr; Previous: <strong>Image Rotate Guide</strong></a>
   <a href="/blog/merge-multiple-pdf-files-into-one-free">Next: <strong>PDF Merge Guide</strong> &rarr;</a>
-</div>
+</nav>
 
-<div class="bp-related">
+<section class="page-section">
   <h2>Related Tools</h2>
-  <div class="bp-related-grid">
-    <a href="/blog/merge-multiple-pdf-files-into-one-free" class="bp-related-card"><h4>PDF Merge</h4><p>Combine multiple existing PDF files into one.</p></a>
-    <a href="/blog/pdf-compressor" class="bp-related-card"><h4>PDF Compressor</h4><p>Reduce the combined PDF's file size if needed.</p></a>
-    <a href="/blog/image-converter" class="bp-related-card"><h4>Image Converter</h4><p>Convert unsupported formats before combining.</p></a>
-    <a href="/blog/resize-image-without-losing-quality-online" class="bp-related-card"><h4>Image Resize</h4><p>Resize images before combining for a smaller PDF.</p></a>
+  <div class="related-grid">
+    <a class="related-card" href="/blog/merge-multiple-pdf-files-into-one-free"><strong>PDF Merge</strong><span>Combine multiple existing PDF files into one.</span></a>
+    <a class="related-card" href="/blog/pdf-compressor"><strong>PDF Compressor</strong><span>Reduce the combined PDF's file size if needed.</span></a>
+    <a class="related-card" href="/blog/image-converter"><strong>Image Converter</strong><span>Convert unsupported formats before combining.</span></a>
+    <a class="related-card" href="/blog/resize-image-without-losing-quality-online"><strong>Image Resize</strong><span>Resize images before combining for a smaller PDF.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

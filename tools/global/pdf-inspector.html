@@ -26,43 +26,13 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
 
-  <link rel="preload" href="/assets/css/style.css" as="style">
-  <link rel="stylesheet" href="/assets/css/style.css">
-
   <meta name="keywords" content="pdf inspector, pdf analyzer, pdf metadata viewer, check pdf fonts, pdf structure checker">
 
-  <style>
-    .tool-hero { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #ecfdf5 100%);}
-    .tool-hero h1 span { color: #16a34a; }
-
-    .insp-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-top:14px; }
-    .insp-card { background:var(--gray-50); border:1px solid var(--gray-200); border-radius:12px; padding:16px; }
-    .insp-card h3 { font-family:var(--font-display); font-size:.9rem; font-weight:700; color:var(--gray-900); margin-bottom:10px; display:flex; align-items:center; gap:8px; }
-    .insp-row { display:flex; justify-content:space-between; gap:10px; padding:6px 0; border-bottom:1px solid var(--gray-100); font-size:.84rem; }
-    .insp-row:last-child { border-bottom:none; }
-    .insp-row .k { color:var(--gray-500); }
-    .insp-row .v { color:var(--gray-900); font-weight:600; text-align:right; word-break:break-word; }
-    .insp-flag { display:inline-flex; align-items:center; gap:6px; padding:3px 10px; border-radius:20px; font-size:.76rem; font-weight:700; }
-    .insp-flag.yes { background:#fef2f2; color:#991b1b; }
-    .insp-flag.no { background:#ecfdf3; color:#166534; }
-    .font-chip-list, .link-sample-list { display:flex; flex-wrap:wrap; gap:6px; margin-top:4px; }
-    .font-chip { background:var(--white); border:1px solid var(--gray-200); border-radius:8px; padding:3px 9px; font-size:.78rem; font-family:'Courier New',monospace; }
-
-    .article-section, .faq-section, .feature-section, .related-tools, .keyword-section, .howto-section {
-      max-width: 860px; margin: 22px auto 0; background: #fff; border: 1px solid var(--gray-100); border-radius: 14px; padding: 22px;
-    }
-    .article-section h2, .faq-section h2, .feature-section h2, .related-tools h2, .keyword-section h2, .howto-section h2 { margin-bottom: 14px; }
-    .article-section p, .howto-section p { margin: 0 0 12px; line-height: 1.8; color: var(--gray-700); }
-    .feature-list, .keyword-list, .related-list, .howto-list { margin: 0; padding-left: 18px; }
-    .feature-list li, .keyword-list li, .related-list li, .howto-list li { margin-bottom: 10px; color: var(--gray-700); line-height: 1.7; }
-    .privacy-note { max-width: 860px; margin: 10px auto 0; font-size: .88rem; color: var(--gray-600); text-align: left; }
-    .faq-item { border-bottom: 1px solid var(--gray-100); padding: 14px 0; }
-    .faq-item:last-child { border-bottom: none; }
-    .faq-q { font-weight: 700; color: var(--gray-800); margin-bottom: 6px; }
-    .faq-a { color: var(--gray-700); line-height: 1.8; }
-    .related-list a { color: var(--primary); text-decoration: none; font-weight: 600; }
-    .related-list a:hover { text-decoration: underline; }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {
@@ -123,60 +93,68 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" defer></script>
 </head>
-<body>
+<body class="page-pdf-inspector">
 <div id="navbar"></div>
 
 <main>
-  <div class="tool-hero">
-    <div class="tool-hero-inner">
-      <div class="tool-breadcrumb">
-        <a href="/">Home</a> › <a href="/categories/global-tools">Document Utilities</a> › PDF Inspector
-      </div>
+  <header class="page-hero">
+    <div class="page-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> › <a href="/categories/global-tools">Global Tools</a> › PDF Inspector
+      </nav>
       <h1>PDF Inspector – Analyze<span> PDF Files</span> Online</h1>
       <p>Check page count, metadata, fonts, images, security settings and document structure of any PDF, fully in your browser.</p>
-      <div class="tool-tags">
-        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
-        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#lock"></use></svg> Local Processing</span>
-        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#pdf"></use></svg> Full Structure Report</span>
-        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#speed"></use></svg> Instant</span>
+      <div class="tag-list">
+        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
+        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#lock"></use></svg> Local Processing</span>
+        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#pdf"></use></svg> Full Structure Report</span>
+        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#speed"></use></svg> Instant</span>
       </div>
     </div>
-  </div>
+  </header>
 
-  <div class="tool-workspace" style="max-width:900px;">
+  <div class="tool-workspace">
     <div class="tool-card">
       <h2>Upload a PDF to Inspect</h2>
       <div class="upload-zone" id="upload-zone">
         <input type="file" id="file-input" accept="application/pdf">
-        <svg class="icon" style="width:40px;height:40px;color:var(--gray-400);"><use href="/assets/svg/icons.svg#pdf"></use></svg>
+        <svg class="icon u-bbd9fb"><use href="/assets/svg/icons.svg#pdf"></use></svg>
         <h3>Drop a PDF file here or click to browse</h3>
         <p>The file is read entirely in your browser — nothing is uploaded.</p>
         <span class="upload-limit">Works with PDFs of any size your browser can handle</span>
       </div>
-      <div class="status-msg" id="status-msg" style="margin-top:12px;" aria-live="polite"></div>
+      <div class="status-msg mt-12" id="status-msg" aria-live="polite"></div>
     </div>
 
     <p class="privacy-note">Your PDF is processed in your browser. Files are not uploaded to Logrith.</p>
 
-    <div class="tool-card" id="results-card" style="display:none;">
+    <div class="tool-card is-hidden" id="results-card">
       <h2>Inspection Report</h2>
       <div class="insp-grid" id="insp-grid"></div>
     </div>
   </div>
 
-  <section class="howto-section">
+  <section class="page-section">
     <h2>How to Inspect a PDF</h2>
-    <ol class="howto-list">
-      <li>Click the upload area or drag a PDF file into it.</li>
-      <li>The tool reads the file locally and parses its structure using the browser's PDF engine.</li>
-      <li>Review page count, metadata, fonts, images, security and structure information in the report.</li>
-      <li>No download or export is needed — the report is generated instantly on the page.</li>
+    <ol class="steps">
+      <li class="step">
+        <p>Click the upload area or drag a PDF file into it.</p>
+      </li>
+      <li class="step">
+        <p>The tool reads the file locally and parses its structure using the browser's PDF engine.</p>
+      </li>
+      <li class="step">
+        <p>Review page count, metadata, fonts, images, security and structure information in the report.</p>
+      </li>
+      <li class="step">
+        <p>No download or export is needed — the report is generated instantly on the page.</p>
+      </li>
     </ol>
   </section>
 
-  <section class="feature-section">
+  <section class="page-section prose">
     <h2>What This PDF Inspector Checks</h2>
-    <ul class="feature-list">
+    <ul>
       <li><strong>Document basics:</strong> page count, page dimensions, PDF version, and file size.</li>
       <li><strong>Metadata:</strong> title, author, creator application, producer application, creation date, and modification date.</li>
       <li><strong>Fonts and images:</strong> number of distinct fonts used and the count of embedded images across the document.</li>
@@ -184,7 +162,7 @@
     </ul>
   </section>
 
-  <section class="article-section">
+  <section class="page-section prose">
     <h2>What Is a PDF Inspector?</h2>
     <p>A PDF inspector is a utility that reads the internal structure of a PDF file and reports what's actually inside it, beyond what you see on the page. A PDF is not just an image of text — it's a structured document format containing metadata, font references, embedded objects, and a cross-reference table describing every element. A PDF inspector exposes that structure in a readable report: document properties, the fonts used, how many images are embedded, whether the file is encrypted, and whether it contains forms, bookmarks, or embedded JavaScript.</p>
 
@@ -202,7 +180,7 @@
     <p>This section reports whether a PDF is encrypted or password-protected, whether it contains interactive form fields, whether files are embedded inside it (such as an attached spreadsheet or image), whether it references JavaScript, and whether it includes bookmarks (also called an outline) or clickable links. These structural details matter for document verification — for example, confirming that a contract PDF doesn't contain unexpected embedded files, or checking whether a form-based PDF actually contains fillable fields before sending it out.</p>
 
     <h3>How to Inspect a PDF</h3>
-    <ol class="howto-list">
+    <ol>
       <li>Open this page and click the upload area, or drag a PDF file directly onto it.</li>
       <li>Wait a moment while the browser parses the document's structure locally.</li>
       <li>Scroll through the report cards covering document info, metadata, fonts, images, and security/structure.</li>
@@ -213,7 +191,7 @@
     <p>This inspector runs entirely client-side using a JavaScript PDF parsing library loaded in your browser. When you select a file, it is read directly from your device's memory and never transmitted anywhere — there is no upload step, no server-side processing, and no copy of your document stored by Logrith. This makes the tool suitable for inspecting sensitive or confidential PDFs, such as contracts, internal reports, or personal documents, without the privacy concerns that come with uploading a file to a third-party web service.</p>
 
     <h2>Common Reasons to Inspect a PDF</h2>
-    <ul class="feature-list">
+    <ul>
       <li><strong>Document quality checking:</strong> confirming a PDF export retained the correct page count, fonts, and structure before distributing it.</li>
       <li><strong>Publishing workflows:</strong> verifying that a manuscript, report, or e-book PDF has consistent metadata and embedded fonts before submission.</li>
       <li><strong>Troubleshooting:</strong> diagnosing why a PDF renders incorrectly on another device by checking whether fonts are embedded.</li>
@@ -229,60 +207,61 @@
     <p>People use this tool when searching for phrases like "check pdf metadata online," "view pdf fonts," "is this pdf encrypted," "pdf structure checker," and "analyze pdf file online" — this page is built to answer exactly those questions in one browser-based report.</p>
   </section>
 
-  <section class="faq-section">
+  <section class="page-section">
     <h2>PDF Inspector FAQ</h2>
-    <div class="faq-item">
-      <div class="faq-q">Can I inspect a PDF without uploading it?</div>
-      <div class="faq-a">Yes. The PDF is read and parsed entirely inside your browser. No file is sent to any server during inspection.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Can I see PDF metadata?</div>
-      <div class="faq-a">Yes. Title, author, creator, producer, creation date and modification date are displayed when they are present in the document.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Can I check PDF fonts?</div>
-      <div class="faq-a">Yes. The tool lists the distinct font names it finds referenced across the document's pages.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Can I inspect a password-protected PDF?</div>
-      <div class="faq-a">The tool can detect that a file is encrypted, but it cannot open or read the contents of a password-protected PDF without the correct password.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Is PDF inspection free?</div>
-      <div class="faq-a">Yes, this tool is free to use with no account, signup, or watermark.</div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">Can I inspect a PDF without uploading it?</summary>
+        <div class="faq-a"><p>Yes. The PDF is read and parsed entirely inside your browser. No file is sent to any server during inspection.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Can I see PDF metadata?</summary>
+        <div class="faq-a"><p>Yes. Title, author, creator, producer, creation date and modification date are displayed when they are present in the document.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Can I check PDF fonts?</summary>
+        <div class="faq-a"><p>Yes. The tool lists the distinct font names it finds referenced across the document's pages.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Can I inspect a password-protected PDF?</summary>
+        <div class="faq-a"><p>The tool can detect that a file is encrypted, but it cannot open or read the contents of a password-protected PDF without the correct password.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Is PDF inspection free?</summary>
+        <div class="faq-a"><p>Yes, this tool is free to use with no account, signup, or watermark.</p></div>
+      </details>
     </div>
   </section>
 
-  <section class="related-tools">
+  <section class="page-section">
     <h2>Related Tools</h2>
-    <ul class="related-list">
-      <li><a href="/tools/pdf-to-text">PDF to Text</a></li>
-      <li><a href="/tools/pdf-password-protect">PDF Password Protect</a></li>
-      <li><a href="/tools/pdf-compressor">PDF Compressor</a></li>
-      <li><a href="/tools/image-privacy-cleaner">Image Privacy Cleaner</a></li>
-      <li><a href="/tools/csv-cleaner">CSV Cleaner</a></li>
-    </ul>
+    <div class="related-grid">
+      <a class="related-card" href="/tools/pdf-to-text"><strong>PDF to Text</strong></a>
+      <a class="related-card" href="/tools/pdf-password-protect"><strong>PDF Password Protect</strong></a>
+      <a class="related-card" href="/tools/pdf-compressor"><strong>PDF Compressor</strong></a>
+      <a class="related-card" href="/tools/image-privacy-cleaner"><strong>Image Privacy Cleaner</strong></a>
+      <a class="related-card" href="/tools/csv-cleaner"><strong>CSV Cleaner</strong></a>
+    </div>
   </section>
 
-  <section class="keyword-section">
+  <section class="page-section">
     <h2>Top PDF Inspector Search Queries</h2>
-    <ul class="keyword-list">
-      <li>pdf inspector online</li>
-      <li>pdf analyzer</li>
-      <li>view pdf metadata</li>
-      <li>check pdf fonts online</li>
-      <li>pdf structure checker</li>
-      <li>is pdf password protected checker</li>
-      <li>pdf properties viewer</li>
-      <li>analyze pdf file online free</li>
-    </ul>
+    <div class="keyword-box">
+      <span class="keyword-tag">pdf inspector online</span>
+      <span class="keyword-tag">pdf analyzer</span>
+      <span class="keyword-tag">view pdf metadata</span>
+      <span class="keyword-tag">check pdf fonts online</span>
+      <span class="keyword-tag">pdf structure checker</span>
+      <span class="keyword-tag">is pdf password protected checker</span>
+      <span class="keyword-tag">pdf properties viewer</span>
+      <span class="keyword-tag">analyze pdf file online free</span>
+    </div>
   </section>
 </main>
 
 <div id="footer"></div>
+<script src="/assets/js/main.js"></script>
 
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
 
 <script>
 const uploadZone = document.getElementById('upload-zone');

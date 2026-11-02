@@ -23,48 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .bp-hero { max-width:820px;margin:0 auto;padding:48px 20px 8px; }
-    .bp-crumb { font-size:.85rem;color:var(--gray-500);margin-bottom:16px; }
-    .bp-crumb a { color:var(--primary);text-decoration:none; }
-    .bp-hero h1 { font-family:var(--font-display);font-size:2rem;line-height:1.25;color:var(--gray-900);margin-bottom:14px; }
-    .bp-hero .bp-dek { font-size:1.05rem;color:var(--gray-700);line-height:1.7;margin-bottom:20px; }
-    .bp-cta { display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:white;padding:13px 26px;border-radius:var(--radius);font-weight:700;text-decoration:none;font-size:.95rem; }
-    .bp-cta svg { width:17px;height:17px; }
-    .bp-cta:hover { background:var(--primary-dark); }
-    .bp-body { max-width:760px;margin:0 auto;padding:28px 20px 20px; }
-    .bp-body h2 { font-family:var(--font-display);font-size:1.5rem;color:var(--gray-900);margin:38px 0 14px; }
-    .bp-body h3 { font-family:var(--font-display);font-size:1.15rem;color:var(--gray-900);margin:26px 0 10px; }
-    .bp-body p { color:var(--gray-700);line-height:1.8;margin-bottom:16px;font-size:1rem; }
-    .bp-body ul, .bp-body ol { color:var(--gray-700);line-height:1.8;margin:0 0 16px 22px; }
-    .bp-body li { margin-bottom:8px; }
-    .bp-body strong { color:var(--gray-900); }
-    .bp-body code { background:var(--gray-100);padding:2px 6px;border-radius:4px;font-size:.88em;font-family:monospace; }
-    .bp-toc { background:var(--gray-50);border-radius:var(--radius-lg);padding:20px 24px;margin:24px 0; }
-    .bp-toc h2 { margin:0 0 10px;font-size:1.05rem; }
-    .bp-toc ol { margin:0 0 0 20px; }
-    .bp-toc a { color:var(--primary);text-decoration:none; }
-    .bp-table { width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:.92rem; }
-    .bp-table th, .bp-table td { border:1px solid var(--gray-200);padding:10px 12px;text-align:left; }
-    .bp-table th { background:var(--gray-50);font-weight:700;color:var(--gray-900); }
-    .bp-howto { counter-reset:step; list-style:none;margin-left:0; }
-    .bp-howto li { position:relative;padding-left:42px;margin-bottom:18px; }
-    .bp-howto li::before { counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;background:var(--primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem; }
-    .bp-faq-item { border-bottom:1px solid var(--gray-200);padding:16px 0; }
-    .bp-faq-item h3 { margin:0 0 8px; font-size:1.02rem; }
-    .bp-byline { font-size:.82rem;color:var(--gray-500);margin-top:10px; }
-    .bp-related { max-width:1000px;margin:0 auto;padding:20px 20px 60px; }
-    .bp-related h2 { font-family:var(--font-display);font-size:1.4rem;color:var(--gray-900);margin-bottom:18px;text-align:center; }
-    .bp-related-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px; }
-    .bp-related-card { border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:18px;text-decoration:none;color:inherit;background:var(--white); }
-    .bp-related-card h4 { font-size:.95rem;color:var(--gray-900);margin-bottom:6px; }
-    .bp-related-card p { font-size:.82rem;color:var(--gray-700);line-height:1.5; }
-    .bp-prevnext { display:flex;justify-content:space-between;gap:16px;max-width:760px;margin:0 auto;padding:0 20px 20px; }
-    .bp-prevnext a { flex:1;border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:12px 16px;text-decoration:none;color:var(--gray-700);font-size:.85rem; }
-    .bp-prevnext a strong { display:block;color:var(--gray-900);font-size:.92rem; }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -99,23 +63,26 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-convert-image-to-base64-data-uri-online">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="bp-hero">
-  <div class="bp-crumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/image-pdf-tools">Image & PDF Tools</a> &rsaquo; Image to Base64</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/image-pdf-tools">Image & PDF Tools</a> &rsaquo; Image to Base64</nav>
   <h1>Converting an Image to Base64: What It's For, and When It Actually Helps</h1>
-  <p class="bp-dek">Base64 image encoding gets used constantly in web development, but it's also frequently misused in ways that hurt performance rather than help it. Understanding what this conversion actually does — and honestly, when it's the wrong choice — matters more than knowing how to run the conversion itself, since the technique is genuinely useful in a handful of specific situations and actively counterproductive in most others.</p>
-  <a href="/tools/image-to-base64" class="bp-cta">
+  <p>Base64 image encoding gets used constantly in web development, but it's also frequently misused in ways that hurt performance rather than help it. Understanding what this conversion actually does — and honestly, when it's the wrong choice — matters more than knowing how to run the conversion itself, since the technique is genuinely useful in a handful of specific situations and actively counterproductive in most others.</p>
+  <a href="/tools/image-to-base64" class="btn btn-primary btn-lg">
     <svg class="icon"><use href="/assets/svg/icons.svg#code"></use></svg>
     Convert Image to Base64
   </a>
-  <p class="bp-byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
-</div>
+  <p class="byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
+</div></header>
 
-<div class="bp-body">
+<article class="page-section prose">
 
-  <div class="bp-toc">
+  <nav class="toc" aria-label="On this page">
     <h2>On This Page</h2>
     <ol>
       <li><a href="#how-to-use">How to Convert an Image to Base64</a></li>
@@ -129,14 +96,22 @@
       <li><a href="#mistakes">Common Mistakes</a></li>
       <li><a href="#faq">Frequently Asked Questions</a></li>
     </ol>
-  </div>
+  </nav>
 
   <h2 id="how-to-use">How to Convert an Image to Base64</h2>
-  <ol class="bp-howto">
-    <li>Open the <a href="/tools/image-to-base64">Image to Base64 tool</a> and upload your image.</li>
-    <li>The tool generates the full data URI instantly, along with a live preview and size statistics.</li>
-    <li>Copy the generated string directly for use in your HTML, CSS, or code.</li>
-    <li>No file was uploaded to a server — the conversion runs using the browser's FileReader API.</li>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the <a href="/tools/image-to-base64">Image to Base64 tool</a> and upload your image.</p>
+    </li>
+    <li class="step">
+      <p>The tool generates the full data URI instantly, along with a live preview and size statistics.</p>
+    </li>
+    <li class="step">
+      <p>Copy the generated string directly for use in your HTML, CSS, or code.</p>
+    </li>
+    <li class="step">
+      <p>No file was uploaded to a server — the conversion runs using the browser's FileReader API.</p>
+    </li>
   </ol>
 
   <h2 id="what-is">What a Base64 Data URI Actually Is</h2>
@@ -165,7 +140,8 @@
   <p>Web pages aren't the only place Base64 image encoding shows up regularly. JSON, a purely text-based data format, has no native way to represent binary image data either — which is why APIs that need to send or receive image data as part of a JSON payload (rather than as a separate file upload) commonly use Base64 to represent that image within the JSON structure. This is common in scenarios like mobile app APIs sending a profile picture alongside other user data in a single request, or webhook payloads that include a screenshot or generated image as part of a larger JSON response. The same size and encoding tradeoffs apply here as they do for HTML embedding — Base64 within a JSON payload is a practical solution for keeping binary data inside a text-based format, at the cost of the same roughly 33% size increase.</p>
 
   <h2 id="comparison">Comparison vs. Other Base64 Tools</h2>
-  <table class="bp-table">
+  <div class="table-wrap">
+    <table class="table">
     <tr><th>Feature</th><th>Logrith Image to Base64</th><th>Typical Online Base64 Encoders</th></tr>
     <tr><td>Processing location</td><td>Entirely in-browser (FileReader API)</td><td>Mixed — most browser-based, some upload to a server</td></tr>
     <tr><td>Live preview</td><td>Yes</td><td>Standard across most tools</td></tr>
@@ -173,6 +149,7 @@
     <tr><td>Copy-to-clipboard</td><td>Yes</td><td>Standard</td></tr>
     <tr><td>Reverse conversion (Base64 back to image file)</td><td>No — encode only</td><td>Some tools offer bidirectional conversion</td></tr>
   </table>
+  </div>
   <p>Most reputable Base64 image converters handle this conversion client-side, since it's a genuinely simple operation well-suited to browser-based JavaScript — there's little practical reason for a tool to upload your image to a server just to Base64-encode it. Logrith's version adds explicit size comparison statistics, making the size increase from encoding visible immediately rather than something you'd only notice later when investigating a performance issue.</p>
 
   <h2 id="mistakes">Common Mistakes</h2>
@@ -198,38 +175,59 @@
   <h3>Why Choose Logrith</h3>
   <p>Conversion happens entirely using your browser's FileReader API, with no upload and an immediate size comparison so you can make an informed decision about whether Base64 is actually the right choice for your specific use case, rather than encoding blindly. This same instant, local-processing approach applies across Logrith's other developer and image tools, keeping technical workflows fast and private without depending on a remote server for straightforward client-side operations like this one.</p>
 
-</div>
+</article>
 
-<div class="bp-body">
+<article class="page-section prose">
   <h2 id="faq">Frequently Asked Questions</h2>
-  <div class="bp-faq-item"><h3>What is a Base64 data URI for an image?</h3><p>A text representation of an image's binary data, prefixed with a MIME type declaration like <code>data:image/png;base64,</code>, allowing the image to be embedded directly into HTML, CSS, or JSON without a separate file.</p></div>
-  <div class="bp-faq-item"><h3>Does converting to Base64 increase file size?</h3><p>Yes, roughly 33% larger, since it represents binary data using only text-safe characters, which is inherently less space-efficient than raw binary.</p></div>
-  <div class="bp-faq-item"><h3>When should I use Base64 images?</h3><p>For small icons needing inline embedding, emails where external images may be blocked, or self-contained portable documents. Avoid it for larger images where regular linked files and browser caching perform better.</p></div>
-  <div class="bp-faq-item"><h3>Is Base64 the same as compression?</h3><p>No. Base64 is a text-encoding scheme, not compression — it actually increases file size. It solves a different problem: embedding binary data within text-based formats.</p></div>
-  <div class="bp-faq-item"><h3>Can Base64-encoded images be used in JSON APIs?</h3><p>Yes, this is a common pattern for sending image data alongside other structured data in a single API request or response, since JSON is text-based and has no native binary support.</p></div>
-  <div class="bp-faq-item"><h3>How do I know if Base64 is the right choice for my specific image?</h3><p>As a general rule, small icons under a few KB tend to benefit from Base64 embedding, while larger images typically perform better as regular linked files that browsers can cache separately.</p></div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">What is a Base64 data URI for an image?</summary>
+      <div class="faq-a"><p>A text representation of an image's binary data, prefixed with a MIME type declaration like <code>data:image/png;base64,</code>, allowing the image to be embedded directly into HTML, CSS, or JSON without a separate file.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does converting to Base64 increase file size?</summary>
+      <div class="faq-a"><p>Yes, roughly 33% larger, since it represents binary data using only text-safe characters, which is inherently less space-efficient than raw binary.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">When should I use Base64 images?</summary>
+      <div class="faq-a"><p>For small icons needing inline embedding, emails where external images may be blocked, or self-contained portable documents. Avoid it for larger images where regular linked files and browser caching perform better.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is Base64 the same as compression?</summary>
+      <div class="faq-a"><p>No. Base64 is a text-encoding scheme, not compression — it actually increases file size. It solves a different problem: embedding binary data within text-based formats.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can Base64-encoded images be used in JSON APIs?</summary>
+      <div class="faq-a"><p>Yes, this is a common pattern for sending image data alongside other structured data in a single API request or response, since JSON is text-based and has no native binary support.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How do I know if Base64 is the right choice for my specific image?</summary>
+      <div class="faq-a"><p>As a general rule, small icons under a few KB tend to benefit from Base64 embedding, while larger images typically perform better as regular linked files that browsers can cache separately.</p></div>
+    </details>
+  </div>
 
   <h2>Conclusion</h2>
   <p>Base64 image encoding is a genuinely useful technique for specific situations — small icons, email HTML, portable single-file documents — but it's frequently applied more broadly than it should be, based on a misunderstanding of what it actually trades off. Knowing the real size and caching cost helps make this a deliberate choice for the cases where it genuinely helps, rather than a default reached for out of habit, whether you're embedding a logo in CSS or sending an image through a JSON API.</p>
-</div>
+</article>
 
-<div class="bp-prevnext">
+<nav class="post-nav page-section" aria-label="More guides">
   <a href="/blog/convert-pdf-to-jpg-choose-right-dpi">&larr; Previous: <strong>PDF to JPG Guide</strong></a>
   <a href="/blog/generate-favicon-all-sizes-online-free">Next: <strong>Favicon Generator Guide</strong> &rarr;</a>
-</div>
+</nav>
 
-<div class="bp-related">
+<section class="page-section">
   <h2>Related Tools</h2>
-  <div class="bp-related-grid">
-    <a href="/blog/image-compressor" class="bp-related-card"><h4>Image Compressor</h4><p>Reduce image size before Base64-encoding it.</p></a>
-    <a href="/blog/image-converter" class="bp-related-card"><h4>Image Converter</h4><p>Convert to a smaller format before encoding.</p></a>
-    <a href="/blog/image-crop" class="bp-related-card"><h4>Image Crop</h4><p>Crop images before converting to Base64.</p></a>
-    <a href="/blog/resize-image-without-losing-quality-online" class="bp-related-card"><h4>Image Resize</h4><p>Resize images before encoding to keep files small.</p></a>
+  <div class="related-grid">
+    <a class="related-card" href="/blog/image-compressor"><strong>Image Compressor</strong><span>Reduce image size before Base64-encoding it.</span></a>
+    <a class="related-card" href="/blog/image-converter"><strong>Image Converter</strong><span>Convert to a smaller format before encoding.</span></a>
+    <a class="related-card" href="/blog/image-crop"><strong>Image Crop</strong><span>Crop images before converting to Base64.</span></a>
+    <a class="related-card" href="/blog/resize-image-without-losing-quality-online"><strong>Image Resize</strong><span>Resize images before encoding to keep files small.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

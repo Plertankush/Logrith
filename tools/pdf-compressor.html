@@ -23,8 +23,13 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js" defer></script>
 
@@ -53,88 +58,96 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-tools-pdf-compressor">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/image-pdf-tools">Image & PDF Tools</a> › PDF Compressor</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/image-pdf-tools">Image &amp; PDF Tools</a> › PDF Compressor</nav>
   <h1>Free PDF Compressor</h1>
   <p>Reduce your PDF's file size with an adjustable compression level — processed entirely in your browser, no server upload.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">🔒 100% Private</span><span class="tool-tag">⚡ Adjustable Quality</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lock"></use></svg> 100% Private</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Adjustable Quality</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:700px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Upload PDF</h2>
     <div class="upload-zone" id="upload-zone">
-      <input type="file" id="file-input" accept="application/pdf" style="display:none;">
-      <p>📤 Click or drag a PDF file here</p>
+      <input class="is-hidden" type="file" id="file-input" accept="application/pdf">
+      <p><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#upload"></use></svg> Click or drag a PDF file here</p>
     </div>
     <div id="file-info" class="mini-note mt-8"></div>
 
     <div class="control-group mt-16">
       <label>Compression Level: <span id="quality-label">Medium</span></label>
       <input type="range" id="quality-slider" min="1" max="3" value="2" step="1">
-      <div style="display:flex;justify-content:space-between;font-size:.75rem;color:var(--gray-500);margin-top:4px;">
+      <div class="u-5d919d">
         <span>Smaller file</span><span>Higher quality</span>
       </div>
     </div>
 
     <div class="btn-group mt-16">
-      <button class="btn btn-primary btn-lg" id="compress-btn" disabled>🗜️ Compress PDF</button>
+      <button class="btn btn-primary btn-lg" id="compress-btn" disabled><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zip"></use></svg> Compress PDF</button>
     </div>
     <div class="status-msg" id="status-msg"></div>
-    <div class="progress-row mt-8" id="progress-row" style="display:none;">
-      <div class="timeline-bar"><div class="timeline-fill" id="progress-fill" style="width:0%;"></div></div>
+    <div class="progress-row mt-8 is-hidden" id="progress-row">
+      <div class="timeline-bar"><div class="timeline-fill" id="progress-fill"></div></div>
       <span id="progress-text">0%</span>
     </div>
   </div>
 
-  <div class="tool-card" id="result-card" style="display:none;">
+  <div class="tool-card is-hidden" id="result-card">
     <h2>Result</h2>
     <div class="stats-row" id="result-stats"></div>
     <div class="btn-group mt-12">
-      <a href="#" id="download-btn" class="btn btn-primary" download="compressed.pdf">⬇️ Download Compressed PDF</a>
+      <a href="#" id="download-btn" class="btn btn-primary" download="compressed.pdf"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#download"></use></svg> Download Compressed PDF</a>
     </div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>How does this compress a PDF without a server?</h3><p>Each page is rendered to an image at a chosen quality level, then reassembled into a new PDF — entirely within your browser, producing significant reduction for image-heavy or scanned PDFs.</p></div>
-    <div class="faq-item-box"><h3>Will compressing reduce text sharpness?</h3><p>Since pages are rendered as images, very high compression can slightly soften fine text edges. Use a higher quality setting to preserve sharper text at a larger file size.</p></div>
-    <div class="faq-item-box"><h3>Does this work on large PDFs?</h3><p>Yes, though very large or many-page PDFs will take longer to process since each page is individually rendered and re-compressed in your browser.</p></div>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card">
-      <h2>How to Use the PDF Compressor</h2>
-      <div class="tool-steps">
-        <div class="tool-step">
-          <strong>1. Upload your PDF</strong>
-          Click the upload zone or drag and drop a PDF file to load it into the tool.
-        </div>
-        <div class="tool-step">
-          <strong>2. Choose a compression level</strong>
-          Move the slider between "Smaller file" and "Higher quality" to set how aggressively each page is compressed.
-        </div>
-        <div class="tool-step">
-          <strong>3. Compress</strong>
-          Click "Compress PDF" and wait while each page is rendered and re-encoded — the progress bar shows how far along it is.
-        </div>
-        <div class="tool-step">
-          <strong>4. Review and download</strong>
-          Check the original size, new size, and percentage reduction shown in the result, then download the compressed PDF.
-        </div>
-      </div>
-    </div>
+    <details class="faq-item">
+      <summary class="faq-q">How does this compress a PDF without a server?</summary>
+      <div class="faq-a"><p>Each page is rendered to an image at a chosen quality level, then reassembled into a new PDF — entirely within your browser, producing significant reduction for image-heavy or scanned PDFs.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Will compressing reduce text sharpness?</summary>
+      <div class="faq-a"><p>Since pages are rendered as images, very high compression can slightly soften fine text edges. Use a higher quality setting to preserve sharper text at a larger file size.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does this work on large PDFs?</summary>
+      <div class="faq-a"><p>Yes, though very large or many-page PDFs will take longer to process since each page is individually rendered and re-compressed in your browser.</p></div>
+    </details>
   </div>
 </section>
 
-<section class="article-section">
+<section class="page-section">
+  <h2>How to Use the PDF Compressor</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Upload your PDF</strong>
+      <p>Click the upload zone or drag and drop a PDF file to load it into the tool.</p>
+    </li>
+    <li class="step">
+      <strong>Choose a compression level</strong>
+      <p>Move the slider between "Smaller file" and "Higher quality" to set how aggressively each page is compressed.</p>
+    </li>
+    <li class="step">
+      <strong>Compress</strong>
+      <p>Click "Compress PDF" and wait while each page is rendered and re-encoded — the progress bar shows how far along it is.</p>
+    </li>
+    <li class="step">
+      <strong>Review and download</strong>
+      <p>Check the original size, new size, and percentage reduction shown in the result, then download the compressed PDF.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
   <h2>Compress PDF Files Online, Privately</h2>
   <p>This tool reduces a PDF's file size by re-rendering each page at an adjustable compression quality and reassembling the result into a new, smaller PDF — all processed locally in your browser without uploading your document anywhere.</p>
 
@@ -142,14 +155,14 @@
   <p>Rather than manipulating the PDF's internal structure directly (which requires format-specific optimization tools), this compressor renders each page as an image using PDF.js, applies JPEG-style compression to that image at your chosen quality level, and rebuilds a new PDF from the compressed pages using pdf-lib. This approach is particularly effective for PDFs containing scanned pages, photos, or high-resolution images, where the bulk of the file size comes from image data rather than text.</p>
 
   <h3>Choosing a Compression Level</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Smaller file (low quality)</strong> — maximum size reduction, best for documents where visual fidelity matters less than file size, like quick email attachments.</li>
     <li><strong>Medium</strong> — a balanced default suitable for most everyday sharing and storage needs.</li>
     <li><strong>Higher quality</strong> — less size reduction but sharper text and images, better for documents where visual clarity matters.</li>
   </ul>
 
   <h3>Why Compress a PDF</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Email attachment limits</strong> — many email providers cap attachment sizes, making compression necessary for larger documents.</li>
     <li><strong>Faster uploads</strong> — smaller files upload faster to portals, forms, and cloud storage.</li>
     <li><strong>Storage efficiency</strong> — reducing file size across many documents saves meaningful storage space over time.</li>
@@ -174,7 +187,7 @@
   <p>If the PDF is headed to an email attachment or a web form with a size cap, the "smaller file" setting is usually the right call since legibility on a screen tolerates more compression. If you intend to print the document or it contains detailed diagrams or photos that need to stay sharp, the "higher quality" setting keeps more visual detail at the cost of a larger file.</p>
 
   <h3>Frequently Searched Terms</h3>
-  <ul class="feature-list">
+  <ul>
     <li>compress pdf without losing quality</li>
     <li>reduce pdf size for email</li>
     <li>free online pdf compressor no upload</li>
@@ -192,34 +205,31 @@
   <p>Since the whole process runs locally and takes only moments for most documents, it's practical to compress the same file at two or three different quality settings and compare the resulting sizes before deciding which one to download, rather than guessing which level will hit a target file size on the first try.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/pdf-merge" class="tool-item"><div class="ti-text"><h4>PDF Merge</h4><p>Combine multiple PDFs into one file.</p></div></a>
-    <a href="/tools/pdf-split" class="tool-item"><div class="ti-text"><h4>PDF Split</h4><p>Split a PDF into separate pages or ranges.</p></div></a>
-    <a href="/tools/image-compressor" class="tool-item"><div class="ti-text"><h4>Image Compressor</h4><p>Compress standalone images by quality.</p></div></a>
-    <a href="/tools/photo-resizer-kb" class="tool-item"><div class="ti-text"><h4>Photo Resizer to KB</h4><p>Resize a photo to an exact target file size.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">pdf compressor</span>
-        <span class="keyword-tag">compress pdf online</span>
-        <span class="keyword-tag">reduce pdf file size</span>
-        <span class="keyword-tag">pdf compressor free</span>
-        <span class="keyword-tag">shrink pdf online</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/pdf-merge"><strong>PDF Merge</strong><span>Combine multiple PDFs into one file.</span></a>
+    <a class="related-card" href="/tools/pdf-split"><strong>PDF Split</strong><span>Split a PDF into separate pages or ranges.</span></a>
+    <a class="related-card" href="/tools/image-compressor"><strong>Image Compressor</strong><span>Compress standalone images by quality.</span></a>
+    <a class="related-card" href="/tools/photo-resizer-kb"><strong>Photo Resizer to KB</strong><span>Resize a photo to an exact target file size.</span></a>
   </div>
 </section>
 
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">pdf compressor</span>
+    <span class="keyword-tag">compress pdf online</span>
+    <span class="keyword-tag">reduce pdf file size</span>
+    <span class="keyword-tag">pdf compressor free</span>
+    <span class="keyword-tag">shrink pdf online</span>
+  </div>
+</section>
+
+</main>
+
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 let uploadedFile = null;
 let originalSize = 0;
@@ -278,7 +288,7 @@ document.getElementById('compress-btn').addEventListener('click', async () => {
       canvas.width = viewport.width;
       canvas.height = viewport.height;
       const ctx = canvas.getContext('2d');
-      await page.render({ canvasContext: ctx, viewport }).promise;
+      await page.render({ canvasContext: ctx, canvas, viewport }).promise;
 
       const jpegDataUrl = canvas.toDataURL('image/jpeg', settings.jpeg);
       const jpegBytes = await fetch(jpegDataUrl).then(r => r.arrayBuffer());
@@ -293,7 +303,10 @@ document.getElementById('compress-btn').addEventListener('click', async () => {
     }
 
     const compressedBytes = await newPdf.save();
-    const blob = new Blob([compressedBytes], { type: 'application/pdf' });
+    // Rasterising a small or text-only PDF can make it bigger; keep the original then.
+    const blob = compressedBytes.length < originalSize
+      ? new Blob([compressedBytes], { type: 'application/pdf' })
+      : new Blob([arrayBuffer], { type: 'application/pdf' });
     const url = URL.createObjectURL(blob);
 
     const newSize = blob.size;

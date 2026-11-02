@@ -18,14 +18,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    #crop-container { position:relative; display:inline-block; max-width:100%; cursor:crosshair; user-select:none; }
-    #crop-img { max-width:100%; max-height:400px; display:block; }
-    #crop-overlay { position:absolute; border:2px solid var(--primary); background:rgba(0,87,255,0.08); pointer-events:none; display:none; }
-    #crop-wrap { text-align:center; background:var(--gray-50); border:1.5px solid var(--gray-200); border-radius:var(--radius); padding:16px; overflow:auto; }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <!-- Google tag (gtag.js) -->
  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
@@ -50,91 +48,127 @@
   {"@context": "https://schema.org", "@type": "WebApplication", "name": "Image Crop", "url": "https://logrith.in/tools/image-crop", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript and a modern web browser", "description": "Crop images online for free. Set exact crop dimensions or use interactive drag to crop. Supports JPG, PNG, WEBP. No upload required.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}
   </script>
   <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Image Tools", "item": "https://logrith.in/categories/image-pdf-tools"}, {"@type": "ListItem", "position": 3, "name": "Image Crop", "item": "https://logrith.in/tools/image-crop"}]}
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Image & PDF Tools", "item": "https://logrith.in/categories/image-pdf-tools"}, {"@type": "ListItem", "position": 3, "name": "Image Crop", "item": "https://logrith.in/tools/image-crop"}]}
   </script>
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I crop an image online?", "acceptedAnswer": {"@type": "Answer", "text": "Upload your image, drag the crop box to select the area you want to keep, and download the cropped result."}}, {"@type": "Question", "name": "Can I set an exact crop size?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, you can define precise dimensions or an aspect ratio for the crop area."}}, {"@type": "Question", "name": "Does cropping reduce image quality?", "acceptedAnswer": {"@type": "Answer", "text": "Cropping removes pixels outside the selected area but does not degrade the quality of the pixels that remain."}}, {"@type": "Question", "name": "Is my image uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No, cropping happens entirely in your browser."}}]}
   </script>
 </head>
-<body>
+<body class="page-tools-image-crop">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/utilities">Image Tools</a> › Image Crop</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/image-pdf-tools">Image &amp; PDF Tools</a> › Image Crop</nav>
   <h1>Free Image Crop Online</h1>
   <p>Crop images with an interactive drag tool or enter exact pixel coordinates. Download your cropped image instantly — no server upload.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">🖱️ Drag to Crop</span><span class="tool-tag">📐 Exact Pixels</span><span class="tool-tag">🔒 Private</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#navigation"></use></svg> Drag to Crop</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#ruler"></use></svg> Exact Pixels</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lock"></use></svg> Private</span></div>
+</div></header>
 
 <div class="tool-workspace">
   <div class="tool-card">
     <h2>Upload Image</h2>
     <div class="upload-zone" id="upload-zone">
       <input type="file" id="file-input" accept="image/*">
-      <div class="upload-icon">✂️</div>
+      <div class="upload-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#scissors"></use></svg></div>
       <h3>Drop your image here or click to browse</h3>
       <p>JPG, PNG, WEBP, BMP — Max 20MB</p>
     </div>
   </div>
 
-  <div class="tool-card" id="crop-card" style="display:none;">
-    <h2>Crop Image — Drag to Select Area</h2>
-    <div id="crop-wrap">
-      <div id="crop-container">
-        <img id="crop-img" src="" alt="Image to crop" draggable="false">
-        <div id="crop-overlay"></div>
+  <div class="tool-card is-hidden" id="crop-card">
+    <h2>Crop Image</h2>
+    <p class="mini-note">Drag on the image to draw a selection, drag the box to move it, and pull the handles to resize. Or type exact values below.</p>
+    <div class="cropper" id="crop-stage">
+      <img id="crop-img" src="" alt="Image to crop" draggable="false">
+      <div class="cropper-box" id="crop-box" hidden>
+        <span class="cropper-grid" aria-hidden="true"></span>
+        <span class="cropper-handle" data-handle="nw"></span><span class="cropper-handle" data-handle="n"></span><span class="cropper-handle" data-handle="ne"></span><span class="cropper-handle" data-handle="e"></span><span class="cropper-handle" data-handle="se"></span><span class="cropper-handle" data-handle="s"></span><span class="cropper-handle" data-handle="sw"></span><span class="cropper-handle" data-handle="w"></span>
       </div>
     </div>
-    <div class="controls-grid mt-16">
-      <div class="control-group"><label>X (left px)</label><input type="number" id="cx" min="0" value="0"></div>
-      <div class="control-group"><label>Y (top px)</label><input type="number" id="cy" min="0" value="0"></div>
-      <div class="control-group"><label>Width (px)</label><input type="number" id="cw" min="1" value=""></div>
-      <div class="control-group"><label>Height (px)</label><input type="number" id="ch" min="1" value=""></div>
+
+    <div class="control-group mt-16">
+      <label>Aspect ratio</label>
+      <div class="btn-group">
+        <button type="button" class="btn btn-sm btn-secondary is-active" data-ratio="free">Free</button>
+        <button type="button" class="btn btn-sm btn-secondary" data-ratio="original">Original</button>
+        <button type="button" class="btn btn-sm btn-secondary" data-ratio="1:1">1:1</button>
+        <button type="button" class="btn btn-sm btn-secondary" data-ratio="16:9">16:9</button>
+        <button type="button" class="btn btn-sm btn-secondary" data-ratio="4:3">4:3</button>
+        <button type="button" class="btn btn-sm btn-secondary" data-ratio="3:2">3:2</button>
+        <button type="button" class="btn btn-sm btn-secondary" data-ratio="9:16">9:16</button>
+        <button type="button" class="btn btn-sm btn-secondary" id="crop-full">Full image</button>
+      </div>
     </div>
-    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;">
-      <button class="btn btn-sm btn-secondary" data-ratio="1:1">1:1 Square</button>
-      <button class="btn btn-sm btn-secondary" data-ratio="16:9">16:9 Landscape</button>
-      <button class="btn btn-sm btn-secondary" data-ratio="4:3">4:3</button>
-      <button class="btn btn-sm btn-secondary" data-ratio="9:16">9:16 Portrait</button>
-      <button class="btn btn-sm btn-secondary" id="crop-full">Full Image</button>
+
+    <div class="controls-grid mt-16">
+      <div class="control-group"><label for="cx">X (left px)</label><input type="number" id="cx" min="0" value="0"></div>
+      <div class="control-group"><label for="cy">Y (top px)</label><input type="number" id="cy" min="0" value="0"></div>
+      <div class="control-group"><label for="cw">Width (px)</label><input type="number" id="cw" min="1" value=""></div>
+      <div class="control-group"><label for="ch">Height (px)</label><input type="number" id="ch" min="1" value=""></div>
+      <div class="control-group"><label for="crop-format">Save as</label>
+        <select id="crop-format"><option value="image/png">PNG (lossless)</option><option value="image/jpeg">JPG</option><option value="image/webp">WEBP</option></select>
+      </div>
     </div>
     <div class="stats-row mt-12" id="crop-info"></div>
     <div class="mt-16 btn-group">
-      <button class="btn btn-primary btn-lg" id="crop-btn">✂️ Crop Image</button>
-      <button class="btn btn-secondary" id="reset-btn">✕ Reset</button>
+      <button class="btn btn-primary btn-lg" id="crop-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#scissors"></use></svg> Crop Image</button>
+      <button class="btn btn-secondary" id="reset-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Reset</button>
     </div>
     <div class="status-msg" id="status-msg"></div>
   </div>
 
-  <div class="tool-card" id="output-card" style="display:none;">
+  <div class="tool-card is-hidden" id="output-card">
     <h2>Cropped Result</h2>
-    <div class="output-preview"><img id="output-img" src="" alt="Cropped image" style="max-width:100%;max-height:400px;border-radius:8px;"></div>
+    <div class="output-preview"><img id="output-img" src="" alt="Cropped image"></div>
     <div class="stats-row mt-12" id="output-stats"></div>
     <div class="btn-group mt-16">
-      <button class="btn btn-success" id="download-btn">⬇️ Download Cropped Image</button>
-      <button class="btn btn-secondary" id="crop-another">✂️ Crop Again</button>
+      <button class="btn btn-success" id="download-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#download"></use></svg> Download Cropped Image</button>
+      <button class="btn btn-secondary" id="crop-another"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#scissors"></use></svg> Crop Again</button>
     </div>
   </div>
 </div>
 
-<div class="faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
-  <div class="faq-item"><div class="faq-q">How do I crop an image online?</div><div class="faq-a">Upload your image, then drag on the preview to select the crop area. You can also type exact pixel coordinates in the X, Y, Width, Height fields. Click Crop Image to apply.</div></div>
-  <div class="faq-item"><div class="faq-q">Can I crop to a specific aspect ratio?</div><div class="faq-a">Yes! Use the preset buttons (1:1, 16:9, 4:3, 9:16) to automatically set a crop area with the correct proportions centered on the image.</div></div>
-  <div class="faq-item"><div class="faq-q">Will cropping affect image quality?</div><div class="faq-a">No, cropping only removes the parts outside your selection. The remaining area retains its full original quality.</div></div>
-  <div class="faq-item"><div class="faq-q">Is my image uploaded to a server?</div><div class="faq-a">No, all cropping happens locally using your browser's canvas feature. Your image never leaves your device during the process.</div></div>
-  <div class="faq-item"><div class="faq-q">What aspect ratios are available?</div><div class="faq-a">Square (1:1), widescreen (16:9), standard (4:3), and portrait/story (9:16) presets are built in, or you can enter exact X, Y, width, and height values for a fully custom crop area.</div></div>
-  <div class="faq-item"><div class="faq-q">What format does the cropped image download as?</div><div class="faq-a">Cropped images download as PNG files by default, which preserves full image quality and supports transparency if your original image had any.</div></div>
-</div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">How do I crop an image online?</summary>
+      <div class="faq-a"><p>Upload your image, then drag on the preview to select the crop area. You can also type exact pixel coordinates in the X, Y, Width, Height fields. Click Crop Image to apply.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I crop to a specific aspect ratio?</summary>
+      <div class="faq-a"><p>Yes! Use the preset buttons (1:1, 16:9, 4:3, 9:16) to automatically set a crop area with the correct proportions centered on the image.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Will cropping affect image quality?</summary>
+      <div class="faq-a"><p>No, cropping only removes the parts outside your selection. The remaining area retains its full original quality.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my image uploaded to a server?</summary>
+      <div class="faq-a"><p>No, all cropping happens locally using your browser's canvas feature. Your image never leaves your device during the process.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What aspect ratios are available?</summary>
+      <div class="faq-a"><p>Square (1:1), widescreen (16:9), standard (4:3), and portrait/story (9:16) presets are built in, or you can enter exact X, Y, width, and height values for a fully custom crop area.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What format does the cropped image download as?</summary>
+      <div class="faq-a"><p>Cropped images download as PNG files by default, which preserves full image quality and supports transparency if your original image had any.</p></div>
+    </details>
+  </div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>About the Image Crop Tool</h2>
   <p>The Logrith Image Crop tool lets you trim an image down to exactly the area you need, directly in your browser, with no software to install and no upload to a remote server. Drag to select a crop area visually, use a preset aspect ratio for common formats like square or widescreen, or type in exact pixel coordinates for a precise, repeatable crop.</p>
 
   <p>Cropping is one of the most frequently needed image edits — removing unwanted background from a photo, focusing attention on a subject, preparing an image for a specific platform's required dimensions, or simply cutting out a section of a screenshot. This tool handles all of these with a simple drag-to-select interface backed by exact numeric control when you need precision.</p>
 
   <h3>Two Ways to Select a Crop Area</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Drag to select.</strong> Click and drag directly on the image preview to visually draw the crop boundary. This is the fastest way to crop when exact pixel measurements don't matter.</li>
     <li><strong>Enter exact coordinates.</strong> Type specific X position, Y position, width, and height values into the input fields for pixel-perfect, repeatable crops — useful when you need the exact same crop dimensions across multiple images.</li>
   </ul>
@@ -146,15 +180,27 @@
   <p>When you crop an image, the tool draws only the selected rectangular region onto a new HTML5 canvas, discarding everything outside that area. Because this process simply copies existing pixel data to a new, smaller canvas rather than resampling or interpolating anything, the pixels that remain inside your crop area keep their exact original quality — there's no blurring, no added compression artifacts, and no loss of sharpness from the crop operation itself.</p>
 
   <h3>Step-by-Step: How to Crop an Image</h3>
-  <div class="tool-steps">
-    <div class="tool-step"><strong>1. Upload your image</strong>Drag and drop a file onto the upload zone or click to browse and select one.</div>
-    <div class="tool-step"><strong>2. Select your crop area</strong>Drag directly on the preview, or choose an aspect ratio preset, or type exact coordinates.</div>
-    <div class="tool-step"><strong>3. Adjust as needed</strong>Fine-tune the selection by dragging its edges or editing the numeric fields.</div>
-    <div class="tool-step"><strong>4. Crop and download</strong>Click Crop Image and download the result as a PNG file.</div>
-  </div>
+  <ol class="steps">
+    <li class="step">
+      <strong>Upload your image</strong>
+      <p>Drag and drop a file onto the upload zone or click to browse and select one.</p>
+    </li>
+    <li class="step">
+      <strong>Select your crop area</strong>
+      <p>Drag directly on the preview, or choose an aspect ratio preset, or type exact coordinates.</p>
+    </li>
+    <li class="step">
+      <strong>Adjust as needed</strong>
+      <p>Fine-tune the selection by dragging its edges or editing the numeric fields.</p>
+    </li>
+    <li class="step">
+      <strong>Crop and download</strong>
+      <p>Click Crop Image and download the result as a PNG file.</p>
+    </li>
+  </ol>
 
   <h3>Common Use Cases</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Profile pictures</strong> that need a perfectly square crop for social media or professional profiles.</li>
     <li><strong>Removing distracting backgrounds</strong> by cropping tightly around the main subject of a photo.</li>
     <li><strong>Preparing thumbnails</strong> that match a specific platform's required aspect ratio.</li>
@@ -172,157 +218,34 @@
   <p>Many platforms specify exact pixel dimensions or aspect ratios for images — a profile photo might need to be square, a banner image might need a specific width-to-height ratio, and a thumbnail might have both minimum and maximum size requirements. When you know the exact dimensions required, entering precise X, Y, width, and height values rather than dragging freehand ensures the crop matches those requirements exactly, avoiding a platform rejecting or auto-cropping your upload in a way you didn't intend.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/image-resize" class="tool-item"><div class="ti-text"><h4>Image Resize</h4><p>Resize images to custom dimensions without losing quality.</p></div></a>
-    <a href="/tools/image-rotate" class="tool-item"><div class="ti-text"><h4>Image Rotate</h4><p>Rotate or flip images 90°, 180°, 270°, horizontal or vertical.</p></div></a>
-    <a href="/tools/image-compressor" class="tool-item"><div class="ti-text"><h4>Image Compressor</h4><p>Reduce image file size while keeping visual quality intact.</p></div></a>
-    <a href="/tools/image-converter" class="tool-item"><div class="ti-text"><h4>Image Converter</h4><p>Convert images between JPG, PNG, WEBP, and other formats.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">crop image online free</span>
-        <span class="keyword-tag">crop photo online</span>
-        <span class="keyword-tag">square crop tool</span>
-        <span class="keyword-tag">crop image to aspect ratio</span>
-        <span class="keyword-tag">crop png online</span>
-        <span class="keyword-tag">crop jpg free</span>
-        <span class="keyword-tag">image cropper no watermark</span>
-        <span class="keyword-tag">crop image for instagram</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/image-resize"><strong>Image Resize</strong><span>Resize images to custom dimensions without losing quality.</span></a>
+    <a class="related-card" href="/tools/image-rotate"><strong>Image Rotate</strong><span>Rotate or flip images 90°, 180°, 270°, horizontal or vertical.</span></a>
+    <a class="related-card" href="/tools/image-compressor"><strong>Image Compressor</strong><span>Reduce image file size while keeping visual quality intact.</span></a>
+    <a class="related-card" href="/tools/image-converter"><strong>Image Converter</strong><span>Convert images between JPG, PNG, WEBP, and other formats.</span></a>
   </div>
 </section>
 
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">crop image online free</span>
+    <span class="keyword-tag">crop photo online</span>
+    <span class="keyword-tag">square crop tool</span>
+    <span class="keyword-tag">crop image to aspect ratio</span>
+    <span class="keyword-tag">crop png online</span>
+    <span class="keyword-tag">crop jpg free</span>
+    <span class="keyword-tag">image cropper no watermark</span>
+    <span class="keyword-tag">crop image for instagram</span>
+  </div>
+</section>
+
+</main>
+
 <div id="footer"></div>
+<script src="/assets/js/main.js"></script>
 
-<script src="/load-components.js"></script>
-<script src="/assets/js/main.js" defer></script>
-<script>
-let origImg = null, origFile = null;
-let isDragging = false, startX, startY, selX, selY, selW, selH;
-let scale = 1;
-const container = document.getElementById('crop-container');
-const overlay = document.getElementById('crop-overlay');
-const cropImg = document.getElementById('crop-img');
-const cx = document.getElementById('cx'), cy = document.getElementById('cy');
-const cw = document.getElementById('cw'), ch = document.getElementById('ch');
-const cropInfo = document.getElementById('crop-info');
-
-function updateInfo() {
-  if (origImg) cropInfo.innerHTML = `<span class="stat-chip">Image: <strong>${origImg.naturalWidth} × ${origImg.naturalHeight}px</strong></span><span class="stat-chip">Selection: <strong>${cw.value||0} × ${ch.value||0}px</strong></span>`;
-}
-
-// Drag to select
-container.addEventListener('mousedown', e => {
-  const rect = cropImg.getBoundingClientRect();
-  scale = origImg ? origImg.naturalWidth / cropImg.offsetWidth : 1;
-  startX = e.clientX - rect.left; startY = e.clientY - rect.top;
-  isDragging = true;
-  overlay.style.display = 'block';
-  e.preventDefault();
-});
-document.addEventListener('mousemove', e => {
-  if (!isDragging) return;
-  const rect = cropImg.getBoundingClientRect();
-  let curX = e.clientX - rect.left, curY = e.clientY - rect.top;
-  selX = Math.max(0, Math.min(startX, curX));
-  selY = Math.max(0, Math.min(startY, curY));
-  selW = Math.abs(curX - startX); selH = Math.abs(curY - startY);
-  overlay.style.left = selX + 'px'; overlay.style.top = selY + 'px';
-  overlay.style.width = selW + 'px'; overlay.style.height = selH + 'px';
-  cx.value = Math.round(selX * scale); cy.value = Math.round(selY * scale);
-  cw.value = Math.round(selW * scale); ch.value = Math.round(selH * scale);
-  updateInfo();
-});
-document.addEventListener('mouseup', () => { isDragging = false; });
-
-// Touch support
-container.addEventListener('touchstart', e => {
-  const t = e.touches[0]; const rect = cropImg.getBoundingClientRect();
-  scale = origImg ? origImg.naturalWidth / cropImg.offsetWidth : 1;
-  startX = t.clientX - rect.left; startY = t.clientY - rect.top;
-  isDragging = true; overlay.style.display = 'block'; e.preventDefault();
-}, { passive: false });
-document.addEventListener('touchmove', e => {
-  if (!isDragging) return;
-  const t = e.touches[0]; const rect = cropImg.getBoundingClientRect();
-  let curX = t.clientX - rect.left, curY = t.clientY - rect.top;
-  selX = Math.max(0, Math.min(startX, curX)); selY = Math.max(0, Math.min(startY, curY));
-  selW = Math.abs(curX - startX); selH = Math.abs(curY - startY);
-  overlay.style.left = selX+'px'; overlay.style.top = selY+'px'; overlay.style.width = selW+'px'; overlay.style.height = selH+'px';
-  cx.value = Math.round(selX * scale); cy.value = Math.round(selY * scale);
-  cw.value = Math.round(selW * scale); ch.value = Math.round(selH * scale);
-  updateInfo();
-}, { passive: true });
-document.addEventListener('touchend', () => { isDragging = false; });
-
-// Ratio presets
-document.querySelectorAll('[data-ratio]').forEach(btn => {
-  btn.addEventListener('click', () => {
-    if (!origImg) return;
-    const [rw, rh] = btn.dataset.ratio.split(':').map(Number);
-    const imgW = origImg.naturalWidth, imgH = origImg.naturalHeight;
-    let w = imgW, h = Math.round(w * rh / rw);
-    if (h > imgH) { h = imgH; w = Math.round(h * rw / rh); }
-    const x = Math.round((imgW - w) / 2), y = Math.round((imgH - h) / 2);
-    cx.value = x; cy.value = y; cw.value = w; ch.value = h;
-    const dispScale = cropImg.offsetWidth / imgW;
-    overlay.style.left = (x * dispScale) + 'px'; overlay.style.top = (y * dispScale) + 'px';
-    overlay.style.width = (w * dispScale) + 'px'; overlay.style.height = (h * dispScale) + 'px';
-    overlay.style.display = 'block'; updateInfo();
-  });
-});
-
-document.getElementById('crop-full').addEventListener('click', () => {
-  if (!origImg) return;
-  cx.value = 0; cy.value = 0; cw.value = origImg.naturalWidth; ch.value = origImg.naturalHeight;
-  overlay.style.display = 'none'; updateInfo();
-});
-
-function handleFile(file) {
-  if (!file.type.startsWith('image/')) return;
-  if (file.size > 20*1024*1024) { alert('Max 20MB'); return; }
-  origFile = file;
-  const url = URL.createObjectURL(file);
-  origImg = new Image();
-  origImg.onload = () => {
-    cropImg.src = url;
-    cw.value = origImg.naturalWidth; ch.value = origImg.naturalHeight;
-    document.getElementById('crop-card').style.display = 'block';
-    document.getElementById('output-card').style.display = 'none';
-    updateInfo();
-  };
-  origImg.src = url;
-}
-document.getElementById('file-input').addEventListener('change', e => handleFile(e.target.files[0]));
-initDragDrop(document.getElementById('upload-zone'), files => handleFile(files[0]));
-
-document.getElementById('crop-btn').addEventListener('click', () => {
-  const x = parseInt(cx.value)||0, y = parseInt(cy.value)||0;
-  const w = parseInt(cw.value), h = parseInt(ch.value);
-  if (!w || !h || !origImg) { showStatus(document.getElementById('status-msg'), 'error', 'Set crop dimensions first.'); return; }
-  const canvas = document.createElement('canvas');
-  canvas.width = w; canvas.height = h;
-  const ctx = canvas.getContext('2d');
-  ctx.drawImage(origImg, x, y, w, h, 0, 0, w, h);
-  canvas.toBlob(blob => {
-    const url = URL.createObjectURL(blob);
-    document.getElementById('output-img').src = url;
-    document.getElementById('output-stats').innerHTML = `<span class="stat-chip">Cropped: <strong>${w} × ${h}px</strong></span><span class="stat-chip">Size: <strong>${formatSize(blob.size)}</strong></span>`;
-    document.getElementById('output-card').style.display = 'block';
-    showStatus(document.getElementById('status-msg'), 'success', 'Image cropped!');
-    document.getElementById('download-btn').onclick = () => downloadBlob(blob, origFile.name.replace(/\.[^.]+$/, '') + '_cropped.png');
-  }, 'image/png');
-});
-
-document.getElementById('reset-btn').addEventListener('click', () => { document.getElementById('crop-card').style.display='none'; document.getElementById('output-card').style.display='none'; document.getElementById('file-input').value=''; origImg=null; });
-document.getElementById('crop-another').addEventListener('click', () => { document.getElementById('output-card').style.display='none'; });
-</script>
+<script src="/assets/js/tools/image-crop.js"></script>
 </body></html>

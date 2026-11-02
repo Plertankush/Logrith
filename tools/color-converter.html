@@ -21,8 +21,6 @@
   <meta name="twitter:title" content="Convert HEX, RGB, HSL & CMYK Color Codes Instantly | Logrith">
   <meta name="twitter:description" content="Paste any color value and get it converted to HEX, RGB, HSL, HSV and CMYK at once, with a visual picker, shade generator and contrast checker built in.">
 
-  <link rel="preload" href="/assets/css/style.css" as="style">
-  <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -30,81 +28,11 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
 
-  <style>
-    .color-swatch {
-      width: 100%;
-      min-height: 150px;
-      border-radius: var(--radius);
-      border: 1.5px solid var(--gray-200);
-      transition: background .2s;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 12px;
-      flex-wrap: wrap;
-    }
-    .color-info-badge {
-      background: rgba(255,255,255,0.92);
-      padding: 7px 12px;
-      border-radius: 999px;
-      font-size: .78rem;
-      font-weight: 700;
-      backdrop-filter: blur(4px);
-    }
-    .color-input-row, .color-output-grid { display: grid; gap: 12px; }
-    .color-input-row { grid-template-columns: repeat(3, 1fr); }
-    .color-output-grid { grid-template-columns: repeat(4, 1fr); }
-    .color-field { display: flex; flex-direction: column; gap: 4px; }
-    .color-field label {
-      font-size: .78rem;
-      font-weight: 600;
-      color: var(--gray-500);
-      text-transform: uppercase;
-      letter-spacing: .04em;
-    }
-    .color-field input[type="text"], .color-field input[type="number"] {
-      padding: 10px 12px;
-      border: 1.5px solid var(--gray-200);
-      border-radius: 8px;
-      font-family: 'Courier New', monospace;
-      font-size: .9rem;
-      font-weight: 600;
-      color: var(--gray-900);
-      background: var(--white);
-      outline: none;
-      transition: var(--transition);
-    }
-    .color-field input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(76,136,255,0.10); }
-    .palette-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(56px, 1fr)); gap: 8px; }
-    .palette-chip {
-      height: 52px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: transform .15s ease, border-color .15s ease;
-      border: 2px solid transparent;
-      appearance: none;
-      background-clip: padding-box;
-    }
-    .palette-chip:hover, .palette-chip:focus { transform: scale(1.08); border-color: var(--gray-300); outline: none; }
-    .named-colors-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 8px; }
-    .named-color {
-      display: flex; flex-direction: column; align-items: center; gap: 4px;
-      cursor: pointer; appearance: none; border: none; background: transparent; padding: 0;
-    }
-    .named-color .nc-swatch { width: 100%; height: 36px; border-radius: 6px; border: 1px solid var(--gray-200); }
-    .named-color span { font-size: .72rem; color: var(--gray-500); text-align: center; }
-    .tool-copy-grid { display: flex; flex-wrap: wrap; gap: 10px; }
-    .mini-stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px; }
-    .mini-stat { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 12px; padding: 12px; }
-    .mini-stat .ms-label { font-size: .72rem; color: var(--gray-500); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 4px; }
-    .mini-stat .ms-value { font-size: .95rem; font-weight: 700; color: var(--gray-900); word-break: break-word; }
-    @media (max-width: 768px) {
-      .color-input-row, .color-output-grid, .mini-stat-grid { grid-template-columns: 1fr; }
-      .tool-copy-grid { flex-direction: column; }
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {
@@ -167,43 +95,46 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-color-converter">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/calculate-convert">Calculate & Convert</a> › Color Converter</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/calculate-convert">Calculate &amp; Convert</a> › Color Converter</nav>
   <h1>Free Color Converter Online</h1>
   <p>Convert HEX, RGB, HSL, HSV, and CMYK color values instantly. Pick a color, generate tints and shades, check contrast, and copy values for CSS, UI design, or print workflows.</p>
-  <div class="tool-tags">
-    <span class="tool-tag">✅ Free</span>
-    <span class="tool-tag">🎨 HEX / RGB / HSL / HSV / CMYK</span>
-    <span class="tool-tag">🖌️ Palette Generator</span>
-    <span class="tool-tag">⚡ Instant</span>
+  <div class="tag-list">
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#palette"></use></svg> HEX / RGB / HSL / HSV / CMYK</span>
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#palette"></use></svg> Palette Generator</span>
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span>
   </div>
-</div></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:900px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Color Picker &amp; Converter</h2>
 
-    <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px;flex-wrap:wrap;">
+    <div class="u-3594f4">
       <label for="color-picker" class="sr-only">Choose a color</label>
-      <input type="color" id="color-picker" value="#0057FF" style="width:60px;height:60px;border:none;cursor:pointer;border-radius:12px;padding:0;">
-      <div style="flex:1;min-width:220px;">
-        <div class="color-swatch" id="color-swatch" style="background:#0057FF;">
+      <input type="color" id="color-picker" value="#0057FF">
+      <div class="u-39cc94">
+        <div class="color-swatch" id="color-swatch">
           <span class="color-info-badge" id="swatch-label">#0057FF</span>
           <span class="color-info-badge" id="contrast-badge">Contrast: White text</span>
         </div>
       </div>
     </div>
 
-    <div class="color-field" style="margin-bottom:16px;">
+    <div class="color-field mb-16">
       <label for="hex-input">HEX</label>
       <input type="text" id="hex-input" value="#0057FF" placeholder="#RRGGBB" maxlength="7">
     </div>
 
-    <div style="margin-bottom:16px;">
-      <label style="font-size:.78rem;font-weight:600;color:var(--gray-500);text-transform:uppercase;letter-spacing:.04em;display:block;margin-bottom:8px;">RGB</label>
+    <div class="mb-16">
+      <label class="u-b82231">RGB</label>
       <div class="color-input-row">
         <div class="color-field"><label for="r-input">R (0–255)</label><input type="number" id="r-input" min="0" max="255" value="0"></div>
         <div class="color-field"><label for="g-input">G (0–255)</label><input type="number" id="g-input" min="0" max="255" value="87"></div>
@@ -211,8 +142,8 @@
       </div>
     </div>
 
-    <div style="margin-bottom:16px;">
-      <label style="font-size:.78rem;font-weight:600;color:var(--gray-500);text-transform:uppercase;letter-spacing:.04em;display:block;margin-bottom:8px;">HSL</label>
+    <div class="mb-16">
+      <label class="u-b82231">HSL</label>
       <div class="color-input-row">
         <div class="color-field"><label for="h-input">H (0–360)</label><input type="number" id="h-input" min="0" max="360" value="220"></div>
         <div class="color-field"><label for="s-input">S (0–100%)</label><input type="number" id="s-input" min="0" max="100" value="100"></div>
@@ -220,8 +151,8 @@
       </div>
     </div>
 
-    <div style="margin-bottom:16px;">
-      <label style="font-size:.78rem;font-weight:600;color:var(--gray-500);text-transform:uppercase;letter-spacing:.04em;display:block;margin-bottom:8px;">HSV</label>
+    <div class="mb-16">
+      <label class="u-b82231">HSV</label>
       <div class="color-input-row">
         <div class="color-field"><label for="hh-input">H (0–360)</label><input type="number" id="hh-input" min="0" max="360" value="220"></div>
         <div class="color-field"><label for="sv-input">S (0–100%)</label><input type="number" id="sv-input" min="0" max="100" value="100"></div>
@@ -230,22 +161,22 @@
     </div>
 
     <div>
-      <label style="font-size:.78rem;font-weight:600;color:var(--gray-500);text-transform:uppercase;letter-spacing:.04em;display:block;margin-bottom:8px;">CMYK (Read Only)</label>
+      <label class="u-b82231">CMYK (Read Only)</label>
       <div class="color-output-grid">
-        <div class="color-field"><label for="c-out">C %</label><input type="number" id="c-out" readonly style="background:var(--gray-50);"></div>
-        <div class="color-field"><label for="m-out">M %</label><input type="number" id="m-out" readonly style="background:var(--gray-50);"></div>
-        <div class="color-field"><label for="y-out">Y %</label><input type="number" id="y-out" readonly style="background:var(--gray-50);"></div>
-        <div class="color-field"><label for="k-out">K %</label><input type="number" id="k-out" readonly style="background:var(--gray-50);"></div>
+        <div class="color-field"><label for="c-out">C %</label><input type="number" id="c-out" readonly></div>
+        <div class="color-field"><label for="m-out">M %</label><input type="number" id="m-out" readonly></div>
+        <div class="color-field"><label for="y-out">Y %</label><input type="number" id="y-out" readonly></div>
+        <div class="color-field"><label for="k-out">K %</label><input type="number" id="k-out" readonly></div>
       </div>
     </div>
 
     <div class="tool-copy-grid mt-16">
-      <button class="btn btn-secondary" id="copy-hex">📋 Copy HEX</button>
-      <button class="btn btn-secondary" id="copy-rgb">📋 Copy RGB</button>
-      <button class="btn btn-secondary" id="copy-hsl">📋 Copy HSL</button>
-      <button class="btn btn-secondary" id="copy-hsv">📋 Copy HSV</button>
-      <button class="btn btn-secondary" id="copy-css">📋 Copy CSS Vars</button>
-      <button class="btn btn-secondary" id="copy-all">📋 Copy All</button>
+      <button class="btn btn-secondary" id="copy-hex"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy HEX</button>
+      <button class="btn btn-secondary" id="copy-rgb"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy RGB</button>
+      <button class="btn btn-secondary" id="copy-hsl"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy HSL</button>
+      <button class="btn btn-secondary" id="copy-hsv"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy HSV</button>
+      <button class="btn btn-secondary" id="copy-css"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy CSS Vars</button>
+      <button class="btn btn-secondary" id="copy-all"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy All</button>
     </div>
 
     <div class="mini-stat-grid">
@@ -267,18 +198,33 @@
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>What is the difference between HEX and RGB colors?</h3><p>HEX and RGB represent the same digital color in different notations. RGB uses decimal red, green, and blue values, while HEX stores those values in hexadecimal form such as #FF0000.</p></div>
-    <div class="faq-item-box"><h3>What is HSL color format?</h3><p>HSL stands for Hue, Saturation, and Lightness. It is useful for design work because it makes it easier to adjust color tone and brightness visually.</p></div>
-    <div class="faq-item-box"><h3>What is HSV color format?</h3><p>HSV stands for Hue, Saturation, and Value. It is similar to HSL and is often used in design tools and color pickers where brightness-based control is preferred.</p></div>
-    <div class="faq-item-box"><h3>What is CMYK and when is it used?</h3><p>CMYK stands for Cyan, Magenta, Yellow, and Key or Black. It is mainly used for print design because printing relies on ink mixing rather than light-based RGB color.</p></div>
-    <div class="faq-item-box"><h3>Can I convert HEX to RGB online for free?</h3><p>Yes. Enter any valid HEX code and this tool instantly converts it into RGB, HSL, HSV, and CMYK values for free.</p></div>
+    <details class="faq-item">
+      <summary class="faq-q">What is the difference between HEX and RGB colors?</summary>
+      <div class="faq-a"><p>HEX and RGB represent the same digital color in different notations. RGB uses decimal red, green, and blue values, while HEX stores those values in hexadecimal form such as #FF0000.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What is HSL color format?</summary>
+      <div class="faq-a"><p>HSL stands for Hue, Saturation, and Lightness. It is useful for design work because it makes it easier to adjust color tone and brightness visually.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What is HSV color format?</summary>
+      <div class="faq-a"><p>HSV stands for Hue, Saturation, and Value. It is similar to HSL and is often used in design tools and color pickers where brightness-based control is preferred.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What is CMYK and when is it used?</summary>
+      <div class="faq-a"><p>CMYK stands for Cyan, Magenta, Yellow, and Key or Black. It is mainly used for print design because printing relies on ink mixing rather than light-based RGB color.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I convert HEX to RGB online for free?</summary>
+      <div class="faq-a"><p>Yes. Enter any valid HEX code and this tool instantly converts it into RGB, HSL, HSV, and CMYK values for free.</p></div>
+    </details>
   </div>
-</div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>Online HEX to RGB, HSL, HSV and CMYK Converter</h2>
   <p>This free online color converter is designed for web designers, frontend developers, graphic designers, students, and creators who need quick color format conversion without opening heavy design software. It lets you convert between HEX, RGB, HSL, HSV, and CMYK in one place, with a live picker, generated tints and shades, a contrast checker, and one-click copy for CSS values.</p>
 
@@ -286,7 +232,7 @@
 
   <h3>Understanding Each Color Format</h3>
   <p>Modern design and development work touches several different color formats, each suited to a different context:</p>
-  <ul class="feature-list">
+  <ul>
     <li><strong>HEX</strong> — a six-digit hexadecimal code like #0057FF, the most common format in web development, used directly in CSS, HTML, and most design tools.</li>
     <li><strong>RGB</strong> — three decimal values (0–255) for red, green, and blue, representing the same color as HEX but in a form that's easier to reason about numerically, and the format used by rgb() in CSS.</li>
     <li><strong>HSL</strong> — Hue (0–360°), Saturation (0–100%), and Lightness (0–100%), a format that separates "which color" from "how vivid" and "how light or dark," making it much easier to create consistent color variations by adjusting just one value.</li>
@@ -313,7 +259,7 @@
   <p>Every conversion, palette generation, and contrast calculation in this tool runs entirely in your browser using JavaScript math — no color values are ever sent to a server. This makes the tool equally suitable for public brand colors and for unreleased or confidential design work you'd rather not upload anywhere.</p>
 
   <h3>Common Use Cases in Real Projects</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Building a design system</strong> — converting a single brand HEX color into a full set of HSL-based tints and shades for buttons, hover states, and backgrounds.</li>
     <li><strong>Debugging CSS</strong> — quickly checking what a given rgb() or hsl() value in a stylesheet actually looks like, or converting it to HEX to match a design spec.</li>
     <li><strong>Print design handoff</strong> — converting a screen-based RGB or HEX brand color to CMYK before sending artwork to a print vendor, since printers expect ink-based CMYK values rather than screen-based RGB.</li>
@@ -325,40 +271,37 @@
   <p>Of the formats supported here, HSL tends to be the most intuitive for making deliberate color adjustments by hand, because its three components map closely to how people naturally describe color changes. Wanting a color "a bit lighter" means increasing Lightness; wanting it "more vivid" or "more muted" means increasing or decreasing Saturation; and changing the color family entirely (blue to purple to red) means adjusting Hue. This is why many CSS-based theming systems and design tools expose HSL sliders even when the underlying stored value is HEX — it's simply easier to reason about a controlled adjustment in HSL terms than to guess at the equivalent HEX or RGB shift directly.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/unit-converter" class="tool-item"><div class="ti-text"><h4>Unit Converter</h4><p>Convert between length, weight, temperature, and more.</p></div></a>
-    <a href="/tools/percentage-calculator" class="tool-item"><div class="ti-text"><h4>Percentage Calculator</h4><p>Calculate percentages, increases, decreases, and ratios.</p></div></a>
-    <a href="/tools/qr-generator" class="tool-item"><div class="ti-text"><h4>QR Code Generator</h4><p>Generate custom QR codes for links, text, and contact info.</p></div></a>
-    <a href="/tools/image-compressor" class="tool-item"><div class="ti-text"><h4>Image Compressor</h4><p>Reduce image file size for websites and faster uploads.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">color converter online</span>
-        <span class="keyword-tag">hex to rgb converter</span>
-        <span class="keyword-tag">rgb to hex converter</span>
-        <span class="keyword-tag">hsl color converter</span>
-        <span class="keyword-tag">hsv color picker</span>
-        <span class="keyword-tag">cmyk converter online</span>
-        <span class="keyword-tag">color contrast checker</span>
-        <span class="keyword-tag">color palette generator</span>
-        <span class="keyword-tag">css color converter</span>
-        <span class="keyword-tag">free online color picker</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/unit-converter"><strong>Unit Converter</strong><span>Convert between length, weight, temperature, and more.</span></a>
+    <a class="related-card" href="/tools/percentage-calculator"><strong>Percentage Calculator</strong><span>Calculate percentages, increases, decreases, and ratios.</span></a>
+    <a class="related-card" href="/tools/qr-generator"><strong>QR Code Generator</strong><span>Generate custom QR codes for links, text, and contact info.</span></a>
+    <a class="related-card" href="/tools/image-compressor"><strong>Image Compressor</strong><span>Reduce image file size for websites and faster uploads.</span></a>
   </div>
 </section>
 
-<div id="footer"></div>
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">color converter online</span>
+    <span class="keyword-tag">hex to rgb converter</span>
+    <span class="keyword-tag">rgb to hex converter</span>
+    <span class="keyword-tag">hsl color converter</span>
+    <span class="keyword-tag">hsv color picker</span>
+    <span class="keyword-tag">cmyk converter online</span>
+    <span class="keyword-tag">color contrast checker</span>
+    <span class="keyword-tag">color palette generator</span>
+    <span class="keyword-tag">css color converter</span>
+    <span class="keyword-tag">free online color picker</span>
+  </div>
+</section>
 
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+
 
 <script>
 let r = 0, g = 87, b = 255;

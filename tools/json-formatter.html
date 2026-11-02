@@ -18,21 +18,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .editor-wrap { position: relative; }
-    #json-input, #json-output { width:100%; min-height:280px; padding:16px; border:1.5px solid var(--gray-200); border-radius:var(--radius); font-family:'Courier New',monospace; font-size:.84rem; line-height:1.7; color:var(--gray-900); background:var(--gray-50); resize:vertical; outline:none; transition:var(--transition); }
-    #json-input:focus, #json-output:focus { border-color:var(--primary); background:var(--white); }
-    #json-output { background:#f0fdf4; border-color:#a7f3d0; color:#065f46; }
-    #json-output.error { background:#fef2f2; border-color:#fecaca; color:#991b1b; }
-    .error-line { background: rgba(239,68,68,0.08); }
-    .json-stats { display:flex; gap:10px; flex-wrap:wrap; }
-    .json-stat { padding:4px 12px; background:var(--gray-100); border-radius:20px; font-size:.78rem; color:var(--gray-700); }
-    .json-stat strong { color:var(--primary); }
-    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-    @media(max-width:700px){ .two-col { grid-template-columns:1fr; } }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <!-- Google tag (gtag.js) -->
  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
@@ -63,44 +54,47 @@
   {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I format JSON online?", "acceptedAnswer": {"@type": "Answer", "text": "Paste your JSON into the input box and the tool will validate it and display a cleanly indented, readable version."}}, {"@type": "Question", "name": "Does it validate JSON syntax?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, it detects syntax errors such as missing commas or unclosed brackets and reports them."}}, {"@type": "Question", "name": "Can I minify JSON as well?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, you can compress JSON by removing whitespace, which reduces file size."}}, {"@type": "Question", "name": "Is my JSON data sent to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No, formatting runs entirely in your browser."}}]}
   </script>
 </head>
-<body>
+<body class="page-json-formatter">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/developer-tools">Dev Tools</a> › JSON Formatter</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/developer-tools">Developer Tools</a> › JSON Formatter</nav>
   <h1>Free JSON Formatter &amp; Validator</h1>
   <p>Instantly format, beautify, validate, and minify JSON. Detects errors with line numbers. Works completely offline in your browser.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">⚡ Real-time</span><span class="tool-tag">🔍 Validates JSON</span><span class="tool-tag">📋 Copy Output</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Real-time</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#search"></use></svg> Validates JSON</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy Output</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:960px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>JSON Input &amp; Output</h2>
-    <div class="btn-group" style="margin-bottom:14px;">
-      <button class="btn btn-primary" id="format-btn">✨ Format / Beautify</button>
-      <button class="btn btn-secondary" id="minify-btn">⚡ Minify</button>
-      <button class="btn btn-secondary" id="validate-btn">✅ Validate Only</button>
-      <button class="btn btn-secondary" id="clear-btn">✕ Clear</button>
-      <button class="btn btn-secondary" id="sample-btn">📋 Load Sample</button>
+    <div class="btn-group u-617963">
+      <button class="btn btn-primary" id="format-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#sparkles"></use></svg> Format / Beautify</button>
+      <button class="btn btn-secondary" id="minify-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Minify</button>
+      <button class="btn btn-secondary" id="validate-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Validate Only</button>
+      <button class="btn btn-secondary" id="clear-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Clear</button>
+      <button class="btn btn-secondary" id="sample-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Load Sample</button>
     </div>
 
     <div class="two-col">
       <div>
-        <label style="font-size:.84rem;font-weight:600;color:var(--gray-700);display:block;margin-bottom:6px;">Input JSON</label>
+        <label class="u-8eb637">Input JSON</label>
         <div class="editor-wrap">
           <textarea id="json-input" spellcheck="false" placeholder='Paste your JSON here...&#10;&#10;{"name":"Logrith","tools":160,"free":true}'></textarea>
         </div>
       </div>
       <div>
-        <label style="font-size:.84rem;font-weight:600;color:var(--gray-700);display:block;margin-bottom:6px;">Output</label>
-        <div class="editor-wrap" style="position:relative;">
+        <label class="u-8eb637">Output</label>
+        <div class="editor-wrap relative">
           <textarea id="json-output" spellcheck="false" readonly placeholder="Formatted JSON will appear here..."></textarea>
-          <button class="copy-btn" id="copy-btn">📋 Copy</button>
+          <button class="copy-btn" id="copy-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
         </div>
       </div>
     </div>
 
-    <div class="status-msg" id="status-msg" style="margin-top:12px;"></div>
+    <div class="status-msg mt-12" id="status-msg"></div>
     <div class="json-stats mt-12" id="json-stats"></div>
   </div>
 
@@ -127,35 +121,58 @@
   </div>
 </div>
 
-<div class="related-tools">
+<section class="page-section">
   <h2>Related Dev Tools</h2>
   <div class="related-grid">
-    <a href="base64" class="tool-item"><div class="ti-icon">🔐</div><div class="ti-text"><h4>Base64 Encode/Decode</h4><p>Encode text or files to Base64</p></div></a>
-    <a href="url-encoder" class="tool-item"><div class="ti-icon">🔗</div><div class="ti-text"><h4>URL Encoder</h4><p>Encode/decode URLs</p></div></a>
-    <a href="hash-generator" class="tool-item"><div class="ti-icon">#</div><div class="ti-text"><h4>Hash Generator</h4><p>MD5, SHA1, SHA256</p></div></a>
-    <a href="password-generator" class="tool-item"><div class="ti-icon">🔑</div><div class="ti-text"><h4>Password Generator</h4><p>Strong random passwords</p></div></a>
+    <a class="related-card" href="base64"><i class="related-icon" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lock"></use></svg></i><div><strong>Base64 Encode/Decode</strong><span>Encode text or files to Base64</span></div></a>
+    <a class="related-card" href="url-encoder"><i class="related-icon" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#link"></use></svg></i><div><strong>URL Encoder</strong><span>Encode/decode URLs</span></div></a>
+    <a class="related-card" href="hash-generator"><i class="related-icon" aria-hidden="true">#</i><div><strong>Hash Generator</strong><span>MD5, SHA1, SHA256</span></div></a>
+    <a class="related-card" href="password-generator"><i class="related-icon" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#key"></use></svg></i><div><strong>Password Generator</strong><span>Strong random passwords</span></div></a>
   </div>
-</div>
+</section>
 
-<div class="faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
-  <div class="faq-item"><div class="faq-q">What is JSON formatting?</div><div class="faq-a">JSON formatting (beautifying) adds proper indentation and line breaks to make compact JSON human-readable. Minifying does the reverse — removes all whitespace to reduce file size.</div></div>
-  <div class="faq-item"><div class="faq-q">How does the JSON validator work?</div><div class="faq-a">The tool uses JavaScript's built-in JSON.parse() to validate your JSON. If there's a syntax error, it shows the exact error message including the character position where parsing failed.</div></div>
-  <div class="faq-item"><div class="faq-q">Is my JSON data safe?</div><div class="faq-a">Completely safe. All processing is done in your browser using JavaScript. No data is sent to any server.</div></div>
-  <div class="faq-item"><div class="faq-q">Can I sort JSON keys alphabetically?</div><div class="faq-a">Yes! Use the "Sort Keys" option to sort all keys in the JSON object alphabetically in ascending (A→Z) or descending (Z→A) order.</div></div>
-  <div class="faq-item"><div class="faq-q">What causes most JSON syntax errors?</div><div class="faq-a">The most common issues are trailing commas after the last item in an object or array, missing quotes around keys, using single quotes instead of double quotes, and unescaped special characters inside strings.</div></div>
-  <div class="faq-item"><div class="faq-q">Can I minify JSON as well as format it?</div><div class="faq-a">Yes, the tool works in both directions — beautify compact JSON into readable, indented form, or minify readable JSON down to a single compact line with no extra whitespace.</div></div>
-  <div class="faq-item"><div class="faq-q">Does this tool support nested JSON structures?</div><div class="faq-a">Yes, it handles deeply nested objects and arrays of any depth, correctly indenting each level so the structure stays readable no matter how complex the JSON is.</div></div>
-</div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">What is JSON formatting?</summary>
+      <div class="faq-a"><p>JSON formatting (beautifying) adds proper indentation and line breaks to make compact JSON human-readable. Minifying does the reverse — removes all whitespace to reduce file size.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How does the JSON validator work?</summary>
+      <div class="faq-a"><p>The tool uses JavaScript's built-in JSON.parse() to validate your JSON. If there's a syntax error, it shows the exact error message including the character position where parsing failed.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my JSON data safe?</summary>
+      <div class="faq-a"><p>Completely safe. All processing is done in your browser using JavaScript. No data is sent to any server.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I sort JSON keys alphabetically?</summary>
+      <div class="faq-a"><p>Yes! Use the "Sort Keys" option to sort all keys in the JSON object alphabetically in ascending (A→Z) or descending (Z→A) order.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What causes most JSON syntax errors?</summary>
+      <div class="faq-a"><p>The most common issues are trailing commas after the last item in an object or array, missing quotes around keys, using single quotes instead of double quotes, and unescaped special characters inside strings.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I minify JSON as well as format it?</summary>
+      <div class="faq-a"><p>Yes, the tool works in both directions — beautify compact JSON into readable, indented form, or minify readable JSON down to a single compact line with no extra whitespace.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does this tool support nested JSON structures?</summary>
+      <div class="faq-a"><p>Yes, it handles deeply nested objects and arrays of any depth, correctly indenting each level so the structure stays readable no matter how complex the JSON is.</p></div>
+    </details>
+  </div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>About the JSON Formatter Tool</h2>
   <p>The Logrith JSON Formatter beautifies, validates, minifies, and sorts JSON data instantly in your browser. Paste in compact or malformed JSON and get back properly indented, readable output — or catch a syntax error with the exact character position where parsing failed. This is one of the most frequently needed tools for anyone working with APIs, configuration files, or structured data.</p>
 
   <p>JSON (JavaScript Object Notation) is the most widely used format for exchanging structured data between systems, especially in web APIs. In its raw form, especially when returned by an API without formatting, JSON often arrives as one long unbroken line of text — technically valid but nearly impossible to read or debug by eye. This tool adds proper indentation and line breaks, turning that dense block into a clearly structured, nested view that's easy to scan and understand.</p>
 
   <h3>Core Functions This Tool Provides</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Beautify (format).</strong> Adds indentation and line breaks to compact JSON, making nested objects and arrays easy to read and navigate visually.</li>
     <li><strong>Minify.</strong> Removes all unnecessary whitespace, producing the smallest possible valid JSON string — useful for reducing payload size before sending data over a network.</li>
     <li><strong>Validate.</strong> Checks whether the JSON is syntactically correct, and if not, reports exactly where and why parsing failed.</li>
@@ -172,12 +189,24 @@
   <p>While formatted JSON is better for human reading, minified JSON has its own purpose: reducing file size. When JSON is being sent over a network — as an API request or response, or embedded in a web page — every unnecessary whitespace character adds to the payload size and, at scale, to bandwidth and loading time. Minifying strips all of that extra whitespace while keeping the data itself completely unchanged, producing a smaller file that parses identically to the formatted version. Development and debugging typically call for formatted JSON; production and network transfer typically call for minified JSON.</p>
 
   <h3>Step-by-Step: How to Format JSON</h3>
-  <div class="tool-steps">
-    <div class="tool-step"><strong>1. Paste your JSON</strong>Enter or paste your raw JSON data into the input field.</div>
-    <div class="tool-step"><strong>2. Choose an action</strong>Select Beautify, Minify, or Sort Keys depending on what you need.</div>
-    <div class="tool-step"><strong>3. Review the output</strong>Check the formatted result, or read the error message if validation failed.</div>
-    <div class="tool-step"><strong>4. Copy the result</strong>Copy the processed JSON to use in your project, API testing tool, or documentation.</div>
-  </div>
+  <ol class="steps">
+    <li class="step">
+      <strong>Paste your JSON</strong>
+      <p>Enter or paste your raw JSON data into the input field.</p>
+    </li>
+    <li class="step">
+      <strong>Choose an action</strong>
+      <p>Select Beautify, Minify, or Sort Keys depending on what you need.</p>
+    </li>
+    <li class="step">
+      <strong>Review the output</strong>
+      <p>Check the formatted result, or read the error message if validation failed.</p>
+    </li>
+    <li class="step">
+      <strong>Copy the result</strong>
+      <p>Copy the processed JSON to use in your project, API testing tool, or documentation.</p>
+    </li>
+  </ol>
 
   <h3>Privacy</h3>
   <p>All JSON processing happens locally in your browser using JavaScript's built-in JSON.parse() and JSON.stringify() functions — your data is never uploaded to a server or stored anywhere. This makes the tool safe to use with JSON containing API keys, internal configuration, or other sensitive structured data.</p>
@@ -186,39 +215,36 @@
   <p>When two JSON objects contain the same data but their keys are in a different order, a plain text comparison will flag them as different even though they're functionally identical. Sorting keys alphabetically before comparing removes this ordering noise, making it much easier to spot genuine differences between two JSON payloads — for example, when debugging why an API response doesn't match an expected test fixture, or when comparing two versions of a configuration file that were edited independently.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/yaml-json-converter" class="tool-item"><div class="ti-text"><h4>YAML to JSON Converter</h4><p>Convert between YAML and JSON formats instantly.</p></div></a>
-    <a href="/tools/xml-formatter" class="tool-item"><div class="ti-text"><h4>XML Formatter</h4><p>Format and validate XML documents.</p></div></a>
-    <a href="/tools/js-minifier" class="tool-item"><div class="ti-text"><h4>JS Minifier</h4><p>Minify JavaScript code to reduce file size.</p></div></a>
-    <a href="/tools/jwt-decoder" class="tool-item"><div class="ti-text"><h4>JWT Decoder</h4><p>Decode and inspect JSON Web Tokens instantly.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">json formatter online</span>
-        <span class="keyword-tag">json validator free</span>
-        <span class="keyword-tag">json beautifier</span>
-        <span class="keyword-tag">minify json online</span>
-        <span class="keyword-tag">json pretty print</span>
-        <span class="keyword-tag">json syntax checker</span>
-        <span class="keyword-tag">format json online free</span>
-        <span class="keyword-tag">json viewer online</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/yaml-json-converter"><strong>YAML to JSON Converter</strong><span>Convert between YAML and JSON formats instantly.</span></a>
+    <a class="related-card" href="/tools/xml-formatter"><strong>XML Formatter</strong><span>Format and validate XML documents.</span></a>
+    <a class="related-card" href="/tools/js-minifier"><strong>JS Minifier</strong><span>Minify JavaScript code to reduce file size.</span></a>
+    <a class="related-card" href="/tools/jwt-decoder"><strong>JWT Decoder</strong><span>Decode and inspect JSON Web Tokens instantly.</span></a>
   </div>
 </section>
 
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">json formatter online</span>
+    <span class="keyword-tag">json validator free</span>
+    <span class="keyword-tag">json beautifier</span>
+    <span class="keyword-tag">minify json online</span>
+    <span class="keyword-tag">json pretty print</span>
+    <span class="keyword-tag">json syntax checker</span>
+    <span class="keyword-tag">format json online free</span>
+    <span class="keyword-tag">json viewer online</span>
+  </div>
+</section>
+
+</main>
+
 <div id="footer"></div>
+<script src="/assets/js/main.js"></script>
 
-<script src="/load-components.js"></script>
 
-<script src="/assets/js/main.js" defer></script>
 <script>
 const jsonInput = document.getElementById('json-input');
 const jsonOutput = document.getElementById('json-output');
@@ -274,10 +300,10 @@ document.getElementById('format-btn').addEventListener('click', () => {
     const formatted = JSON.stringify(parsed, null, getIndent());
     jsonOutput.value = formatted;
     jsonOutput.className = '';
-    showStatus(statusMsg, 'success', '✅ Valid JSON — formatted successfully!');
+    showStatus(statusMsg, 'success', 'Valid JSON — formatted successfully!');
     updateStats(parsed, formatted);
   } catch(e) {
-    jsonOutput.value = '❌ Error: ' + e.message;
+    jsonOutput.value = 'Error: ' + e.message;
     jsonOutput.className = 'error';
     showStatus(statusMsg, 'error', e.message);
     statsEl.innerHTML = '';
@@ -295,7 +321,7 @@ document.getElementById('minify-btn').addEventListener('click', () => {
     showStatus(statusMsg, 'success', `Minified! ${raw.length} → ${minified.length} chars`);
     updateStats(parsed, minified);
   } catch(e) {
-    jsonOutput.value = '❌ Error: ' + e.message;
+    jsonOutput.value = 'Error: ' + e.message;
     jsonOutput.className = 'error';
     showStatus(statusMsg, 'error', e.message);
   }
@@ -306,12 +332,12 @@ document.getElementById('validate-btn').addEventListener('click', () => {
   if (!raw) return;
   try {
     const parsed = JSON.parse(raw);
-    jsonOutput.value = '✅ Valid JSON!';
+    jsonOutput.value = 'Valid JSON!';
     jsonOutput.className = '';
     showStatus(statusMsg, 'success', 'JSON is valid!');
     updateStats(parsed, raw);
   } catch(e) {
-    jsonOutput.value = '❌ Invalid JSON\n\n' + e.message;
+    jsonOutput.value = 'Invalid JSON\n\n' + e.message;
     jsonOutput.className = 'error';
     showStatus(statusMsg, 'error', e.message);
   }

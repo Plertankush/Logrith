@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -45,17 +49,20 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-time-zone-converter">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/calculate-convert">Calculate & Convert</a> › Time Zone Converter</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/calculate-convert">Calculate &amp; Convert</a> › Time Zone Converter</nav>
   <h1>Free Time Zone Converter</h1>
   <p>Convert a specific time from one time zone to another, and see the result across major world cities instantly.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">🌍 Auto DST</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#globe"></use></svg> Auto DST</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:700px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Select Date, Time & Zone</h2>
     <div class="controls-grid">
@@ -67,37 +74,55 @@
         <label>Time</label>
         <input type="time" id="input-time" class="field-input">
       </div>
-      <div class="control-group" style="grid-column:1/-1;">
+      <div class="control-group u-1b9b41">
         <label>Source Time Zone</label>
         <select id="source-tz" class="field-input"></select>
       </div>
     </div>
     <div class="btn-group mt-16">
-      <button class="btn btn-primary btn-lg" id="convert-btn">🌍 Convert</button>
-      <button class="btn btn-secondary" id="now-btn">🕐 Use Current Time</button>
+      <button class="btn btn-primary btn-lg" id="convert-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#globe"></use></svg> Convert</button>
+      <button class="btn btn-secondary" id="now-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#clock"></use></svg> Use Current Time</button>
     </div>
     <div class="status-msg" id="status-msg"></div>
   </div>
 
-  <div class="tool-card" id="result-card" style="display:none;">
+  <div class="tool-card is-hidden" id="result-card">
     <h2>Time Around the World</h2>
     <div class="preview-grid" id="tz-results"></div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>Does this handle daylight saving time?</h3><p>Yes, the converter automatically accounts for daylight saving time changes based on the specific date you select.</p></div>
-    <div class="faq-item-box"><h3>Can I convert to any city's time zone?</h3><p>This tool shows results for a curated list of major world cities across all time zones, covering the most commonly needed conversions.</p></div>
-    <div class="faq-item-box"><h3>Is the conversion accurate?</h3><p>Yes, it uses the browser's built-in timezone database (the same one used by operating systems), which is regularly updated and highly accurate.</p></div>
-    <div class="faq-item-box"><h3>Is my data sent to a server?</h3><p>No, all conversion happens locally using JavaScript's built-in timezone APIs. The date and time you enter never leave your device.</p></div>
-    <div class="faq-item-box"><h3>Why does the date sometimes change along with the time?</h3><p>Time zones can differ by more than 12 hours, so converting a time near midnight can shift it into the previous or next calendar day in another zone — this is normal and correctly reflected in the results.</p></div>
-    <div class="faq-item-box"><h3>Can I convert a time in the past or future?</h3><p>Yes, select any date, and the converter applies the correct daylight saving rules that were or will be in effect for that specific date in each zone.</p></div>
+    <details class="faq-item">
+      <summary class="faq-q">Does this handle daylight saving time?</summary>
+      <div class="faq-a"><p>Yes, the converter automatically accounts for daylight saving time changes based on the specific date you select.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I convert to any city's time zone?</summary>
+      <div class="faq-a"><p>This tool shows results for a curated list of major world cities across all time zones, covering the most commonly needed conversions.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is the conversion accurate?</summary>
+      <div class="faq-a"><p>Yes, it uses the browser's built-in timezone database (the same one used by operating systems), which is regularly updated and highly accurate.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my data sent to a server?</summary>
+      <div class="faq-a"><p>No, all conversion happens locally using JavaScript's built-in timezone APIs. The date and time you enter never leave your device.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why does the date sometimes change along with the time?</summary>
+      <div class="faq-a"><p>Time zones can differ by more than 12 hours, so converting a time near midnight can shift it into the previous or next calendar day in another zone — this is normal and correctly reflected in the results.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I convert a time in the past or future?</summary>
+      <div class="faq-a"><p>Yes, select any date, and the converter applies the correct daylight saving rules that were or will be in effect for that specific date in each zone.</p></div>
+    </details>
   </div>
-</div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>Convert Time Between Time Zones</h2>
   <p>This tool converts a specific date and time from one time zone into the corresponding local time across a range of major world cities, using the browser's built-in timezone database for accurate, automatically DST-aware results.</p>
 
@@ -108,7 +133,7 @@
   <p>This tool and Logrith's World Clock solve related but different problems. The World Clock shows the current, continuously updating time right now across several cities — ideal for an always-on reference. This converter instead lets you specify any particular date and time, not necessarily the current moment, and see what that exact point in time translates to elsewhere — the right tool specifically for scheduling a future meeting, verifying a past timestamp, or planning around a specific moment rather than checking "what time is it right now."</p>
 
   <h3>Common Uses</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Scheduling international meetings</strong> across teams in different countries.</li>
     <li><strong>Planning calls with remote colleagues or clients</strong> in a different time zone.</li>
     <li><strong>Coordinating travel plans</strong> and understanding arrival times relative to your home time zone.</li>
@@ -120,12 +145,24 @@
   <p>Once you select a date, time, and source time zone, the tool constructs the exact moment in time you specified, then formats that same moment using each target city's local timezone rules via the Intl.DateTimeFormat API — a standard, built-in JavaScript feature for locale and timezone-aware date formatting. Because this uses the same timezone data your operating system relies on, the results reflect the correct local time and date for each city, including any date-line rollover (where the date itself changes, not just the hour).</p>
 
   <h3>Step-by-Step: Converting a Time</h3>
-  <div class="tool-steps">
-    <div class="tool-step"><strong>1. Select the date</strong>Choose the specific calendar date for the time you're converting.</div>
-    <div class="tool-step"><strong>2. Select the time</strong>Enter the exact time in the source location.</div>
-    <div class="tool-step"><strong>3. Choose the source time zone</strong>Pick which city or region that date and time apply to.</div>
-    <div class="tool-step"><strong>4. Convert and review</strong>Click Convert to see the equivalent local time across every listed city.</div>
-  </div>
+  <ol class="steps">
+    <li class="step">
+      <strong>Select the date</strong>
+      <p>Choose the specific calendar date for the time you're converting.</p>
+    </li>
+    <li class="step">
+      <strong>Select the time</strong>
+      <p>Enter the exact time in the source location.</p>
+    </li>
+    <li class="step">
+      <strong>Choose the source time zone</strong>
+      <p>Pick which city or region that date and time apply to.</p>
+    </li>
+    <li class="step">
+      <strong>Convert and review</strong>
+      <p>Click Convert to see the equivalent local time across every listed city.</p>
+    </li>
+  </ol>
 
   <h3>Privacy and Local Processing</h3>
   <p>All conversions happen directly in your browser using built-in JavaScript APIs — no dates or times you enter are sent to any server, logged, or stored anywhere.</p>
@@ -143,19 +180,20 @@
   <p>Most time zones are offset from UTC by a whole number of hours, but a handful of regions use half-hour or even 45-minute offsets instead — India (UTC+5:30), parts of Australia (UTC+9:30 in some states), and Nepal (UTC+5:45) are well-known examples. These odd offsets can catch people off guard when doing rough mental math for scheduling, since the usual assumption of whole-hour differences breaks down entirely for these regions. This tool handles them correctly without any special effort on your part, since the underlying timezone database accounts for every region's actual offset, whole-hour or not.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/world-clock" class="tool-item"><div class="ti-text"><h4>World Clock</h4><p>See current time across multiple cities live.</p></div></a>
-    <a href="/tools/date-difference-calculator" class="tool-item"><div class="ti-text"><h4>Date Difference Calculator</h4><p>Calculate days between two dates.</p></div></a>
-    <a href="/tools/countdown-timer-tool" class="tool-item"><div class="ti-text"><h4>Countdown Timer</h4><p>Create a countdown to a specific event.</p></div></a>
-    <a href="/tools/age-calculator" class="tool-item"><div class="ti-text"><h4>Age Calculator</h4><p>Calculate exact age from date of birth.</p></div></a>
+    <a class="related-card" href="/tools/world-clock"><strong>World Clock</strong><span>See current time across multiple cities live.</span></a>
+    <a class="related-card" href="/tools/date-difference-calculator"><strong>Date Difference Calculator</strong><span>Calculate days between two dates.</span></a>
+    <a class="related-card" href="/tools/countdown-timer-tool"><strong>Countdown Timer</strong><span>Create a countdown to a specific event.</span></a>
+    <a class="related-card" href="/tools/age-calculator"><strong>Age Calculator</strong><span>Calculate exact age from date of birth.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 const ZONES = [
   { name: 'New York (USA)', tz: 'America/New_York' },

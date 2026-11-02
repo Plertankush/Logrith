@@ -23,48 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .bp-hero { max-width:820px;margin:0 auto;padding:48px 20px 8px; }
-    .bp-crumb { font-size:.85rem;color:var(--gray-500);margin-bottom:16px; }
-    .bp-crumb a { color:var(--primary);text-decoration:none; }
-    .bp-hero h1 { font-family:var(--font-display);font-size:2rem;line-height:1.25;color:var(--gray-900);margin-bottom:14px; }
-    .bp-hero .bp-dek { font-size:1.05rem;color:var(--gray-700);line-height:1.7;margin-bottom:20px; }
-    .bp-cta { display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:white;padding:13px 26px;border-radius:var(--radius);font-weight:700;text-decoration:none;font-size:.95rem; }
-    .bp-cta svg { width:17px;height:17px; }
-    .bp-cta:hover { background:var(--primary-dark); }
-    .bp-body { max-width:760px;margin:0 auto;padding:28px 20px 20px; }
-    .bp-body h2 { font-family:var(--font-display);font-size:1.5rem;color:var(--gray-900);margin:38px 0 14px; }
-    .bp-body h3 { font-family:var(--font-display);font-size:1.15rem;color:var(--gray-900);margin:26px 0 10px; }
-    .bp-body p { color:var(--gray-700);line-height:1.8;margin-bottom:16px;font-size:1rem; }
-    .bp-body ul, .bp-body ol { color:var(--gray-700);line-height:1.8;margin:0 0 16px 22px; }
-    .bp-body li { margin-bottom:8px; }
-    .bp-body strong { color:var(--gray-900); }
-    .bp-body code { background:var(--gray-100);padding:2px 6px;border-radius:4px;font-size:.88em;font-family:monospace; }
-    .bp-toc { background:var(--gray-50);border-radius:var(--radius-lg);padding:20px 24px;margin:24px 0; }
-    .bp-toc h2 { margin:0 0 10px;font-size:1.05rem; }
-    .bp-toc ol { margin:0 0 0 20px; }
-    .bp-toc a { color:var(--primary);text-decoration:none; }
-    .bp-table { width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:.92rem; }
-    .bp-table th, .bp-table td { border:1px solid var(--gray-200);padding:10px 12px;text-align:left; }
-    .bp-table th { background:var(--gray-50);font-weight:700;color:var(--gray-900); }
-    .bp-howto { counter-reset:step; list-style:none;margin-left:0; }
-    .bp-howto li { position:relative;padding-left:42px;margin-bottom:18px; }
-    .bp-howto li::before { counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;background:var(--primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem; }
-    .bp-faq-item { border-bottom:1px solid var(--gray-200);padding:16px 0; }
-    .bp-faq-item h3 { margin:0 0 8px; font-size:1.02rem; }
-    .bp-byline { font-size:.82rem;color:var(--gray-500);margin-top:10px; }
-    .bp-related { max-width:1000px;margin:0 auto;padding:20px 20px 60px; }
-    .bp-related h2 { font-family:var(--font-display);font-size:1.4rem;color:var(--gray-900);margin-bottom:18px;text-align:center; }
-    .bp-related-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px; }
-    .bp-related-card { border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:18px;text-decoration:none;color:inherit;background:var(--white); }
-    .bp-related-card h4 { font-size:.95rem;color:var(--gray-900);margin-bottom:6px; }
-    .bp-related-card p { font-size:.82rem;color:var(--gray-700);line-height:1.5; }
-    .bp-prevnext { display:flex;justify-content:space-between;gap:16px;max-width:760px;margin:0 auto;padding:0 20px 20px; }
-    .bp-prevnext a { flex:1;border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:12px 16px;text-decoration:none;color:var(--gray-700);font-size:.85rem; }
-    .bp-prevnext a strong { display:block;color:var(--gray-900);font-size:.92rem; }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -99,23 +63,26 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-pick-colors-from-image">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="bp-hero">
-  <div class="bp-crumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/image-pdf-tools">Image & PDF Tools</a> &rsaquo; Image Color Picker</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/image-pdf-tools">Image & PDF Tools</a> &rsaquo; Image Color Picker</nav>
   <h1>How to Get the Exact Color Code from Any Point in an Image</h1>
-  <p class="bp-dek">Matching a color from a photo, a screenshot, or a design reference to a precise hex code shouldn't require guessing or eyeballing it against a swatch chart. Clicking directly on the pixel you need gives you the exact value the image actually contains — and understanding why that value can still shift slightly between photos of the "same" color explains a lot of color-matching frustration before it happens, whether you're matching a brand color, a paint sample, or a detail from a client's reference image.</p>
-  <a href="/tools/image-color-picker" class="bp-cta">
+  <p>Matching a color from a photo, a screenshot, or a design reference to a precise hex code shouldn't require guessing or eyeballing it against a swatch chart. Clicking directly on the pixel you need gives you the exact value the image actually contains — and understanding why that value can still shift slightly between photos of the "same" color explains a lot of color-matching frustration before it happens, whether you're matching a brand color, a paint sample, or a detail from a client's reference image.</p>
+  <a href="/tools/image-color-picker" class="btn btn-primary btn-lg">
     <svg class="icon"><use href="/assets/svg/icons.svg#palette"></use></svg>
     Pick a Color
   </a>
-  <p class="bp-byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
-</div>
+  <p class="byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
+</div></header>
 
-<div class="bp-body">
+<article class="page-section prose">
 
-  <div class="bp-toc">
+  <nav class="toc" aria-label="On this page">
     <h2>On This Page</h2>
     <ol>
       <li><a href="#how-to-use">How to Pick a Color from an Image</a></li>
@@ -127,23 +94,33 @@
       <li><a href="#mistakes">Common Mistakes</a></li>
       <li><a href="#faq">Frequently Asked Questions</a></li>
     </ol>
-  </div>
+  </nav>
 
   <h2 id="how-to-use">How to Pick a Color from an Image</h2>
-  <ol class="bp-howto">
-    <li>Open the <a href="/tools/image-color-picker">Image Color Picker tool</a> and upload your image file to begin.</li>
-    <li>Click anywhere on the image to instantly get that exact pixel's HEX and RGB color code.</li>
-    <li>Copy the code directly for use in design software, CSS, or anywhere else a color value is needed.</li>
-    <li>View the automatically extracted dominant color palette for the whole image alongside your picked color.</li>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the <a href="/tools/image-color-picker">Image Color Picker tool</a> and upload your image file to begin.</p>
+    </li>
+    <li class="step">
+      <p>Click anywhere on the image to instantly get that exact pixel's HEX and RGB color code.</p>
+    </li>
+    <li class="step">
+      <p>Copy the code directly for use in design software, CSS, or anywhere else a color value is needed.</p>
+    </li>
+    <li class="step">
+      <p>View the automatically extracted dominant color palette for the whole image alongside your picked color.</p>
+    </li>
   </ol>
 
   <h2 id="hex-vs-rgb">HEX vs. RGB: Same Color, Different Notation</h2>
   <p>Understanding both formats and when each is used avoids the confusion of receiving a color spec in one notation while your tool expects the other:</p>
-  <table class="bp-table">
+  <div class="table-wrap">
+    <table class="table">
     <tr><th>Format</th><th>Example</th><th>Common Use</th></tr>
     <tr><td>HEX</td><td><code>#3B82F6</code></td><td>CSS, design tools, most web-facing software applications</td></tr>
     <tr><td>RGB</td><td><code>rgb(59, 130, 246)</code></td><td>CSS, programming contexts, some design software</td></tr>
   </table>
+  </div>
   <p>These two formats represent the exact same underlying color — three numeric values for red, green, and blue intensity, each ranging 0-255. HEX simply expresses those same three values in base-16 (hexadecimal) notation rather than base-10, packed into a compact six-character code. Neither format is more "accurate" than the other; they're just different ways of writing down identical information, and virtually all modern design and development tools accept either interchangeably, so the choice between them usually comes down to whichever your specific tool or codebase happens to expect.</p>
 
   <h2 id="how-it-works">How Pixel Color Picking Works Technically</h2>
@@ -167,13 +144,15 @@
   <p>A design system or brand guideline that relies on "close enough" color matching tends to drift over time — small, cumulative shifts across different assets, screens, and contributors eventually produce a noticeably inconsistent result, even if no single change looked wrong in isolation. Working from exact, picked HEX values rather than approximated ones is a small habit that compounds into meaningfully better consistency across a project with many assets or contributors. This matters more as a project scales: a single designer working alone might get away with eyeballing colors reasonably well, but a team producing dozens of assets across weeks or months benefits substantially from everyone pulling from the same precisely-defined color values rather than each person's individual visual judgment of what counts as "close enough." Documenting the exact picked values in a shared style guide, rather than relying on institutional memory or repeated re-picking from the same source image, further reinforces this consistency across a project's entire lifespan, especially as new contributors join and need a reliable, unambiguous reference to work from.</p>
 
   <h2 id="comparison">Comparison vs. Other Color Picker Tools</h2>
-  <table class="bp-table">
+  <div class="table-wrap">
+    <table class="table">
     <tr><th>Feature</th><th>Logrith Image Color Picker</th><th>Browser DevTools Eyedropper</th><th>Adobe Color</th></tr>
     <tr><td>Processing location</td><td>Entirely in-browser</td><td>Native browser feature</td><td>Server-based (Adobe account)</td></tr>
     <tr><td>Dominant palette extraction</td><td>Yes, automatic</td><td>No — single pixel only</td><td>Yes, with more advanced color theory tools</td></tr>
     <tr><td>Account required</td><td>No</td><td>No</td><td>Yes for full features</td></tr>
     <tr><td>Works on any uploaded image</td><td>Yes</td><td>Yes, screen-wide (not image-specific)</td><td>Yes</td></tr>
   </table>
+  </div>
   <p>Modern browsers increasingly ship a native eyedropper tool accessible through developer tools, which can sample any pixel on screen, not just within an uploaded image — genuinely convenient for quick one-off picks without needing a dedicated tool at all. Adobe Color offers considerably more sophisticated palette and color-harmony generation for serious design work, at the cost of requiring an Adobe account for full functionality. Logrith's tool sits in between — dedicated specifically to image-based color extraction, with automatic palette generation included, while keeping the entire process local and requiring no account, which matters for design work involving unreleased brand assets or client materials not yet ready to be shared with any third-party service.</p>
 
   <h2 id="mistakes">Common Mistakes</h2>
@@ -188,36 +167,51 @@
   <h3>Why Choose Logrith</h3>
   <p>Color picking happens entirely in your browser using the Canvas API, with no upload of your image — useful for anything from personal photos to unreleased design work you'd rather not send to a server just to grab a color value. This same local-processing standard runs across Logrith's other image tools, so a color palette extracted here can inform decisions made with the resize, crop, or conversion tools without any of the underlying source images ever leaving your device.</p>
 
-</div>
+</article>
 
-<div class="bp-body">
+<article class="page-section prose">
   <h2 id="faq">Frequently Asked Questions</h2>
-  <div class="bp-faq-item"><h3>What's the difference between HEX and RGB?</h3><p>Both represent the same color in different notations. RGB expresses a color as three numbers (0-255 each). HEX expresses the same values as a six-character code in base-16. Most design software accepts either format.</p></div>
-  <div class="bp-faq-item"><h3>Why does the same color look different across two photos?</h3><p>Lighting, camera white balance, and compression can all shift a color's captured values slightly, even for what was physically the same color. Picked colors reflect what's stored in the image file, not necessarily the true original color.</p></div>
-  <div class="bp-faq-item"><h3>How does dominant color palette extraction work?</h3><p>The tool samples pixel colors and groups similar ones together, reporting the most frequently occurring groups — a representative palette rather than every unique color present.</p></div>
-  <div class="bp-faq-item"><h3>Can I pick colors from a low-quality image?</h3><p>Yes, but compression artifacts can shift pixel colors slightly, especially in JPEGs — use the highest-quality source available for critical color-matching work of any kind.</p></div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">What's the difference between HEX and RGB?</summary>
+      <div class="faq-a"><p>Both represent the same color in different notations. RGB expresses a color as three numbers (0-255 each). HEX expresses the same values as a six-character code in base-16. Most design software accepts either format.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why does the same color look different across two photos?</summary>
+      <div class="faq-a"><p>Lighting, camera white balance, and compression can all shift a color's captured values slightly, even for what was physically the same color. Picked colors reflect what's stored in the image file, not necessarily the true original color.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How does dominant color palette extraction work?</summary>
+      <div class="faq-a"><p>The tool samples pixel colors and groups similar ones together, reporting the most frequently occurring groups — a representative palette rather than every unique color present.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I pick colors from a low-quality image?</summary>
+      <div class="faq-a"><p>Yes, but compression artifacts can shift pixel colors slightly, especially in JPEGs — use the highest-quality source available for critical color-matching work of any kind.</p></div>
+    </details>
+  </div>
 
   <h2>Conclusion</h2>
   <p>Getting an exact color code from an image is a simple, precise operation — the value reported is a direct readout of what's actually stored in the file, not a guess. The nuance worth remembering is that this stored value can differ from the true original physical color depending on how the photo was captured and compressed, which matters for critical color-matching work but rarely for everyday design use, where the picked value is exactly what's needed to replicate a color seen in a reference image, whether that's a single pixel or the overall palette a photo represents.</p>
-</div>
+</article>
 
-<div class="bp-prevnext">
+<nav class="post-nav page-section" aria-label="More guides">
   <a href="/blog/password-protect-pdf-free">&larr; Previous: <strong>PDF Password Protect Guide</strong></a>
   <a href="/blog/convert-svg-to-png">Next: <strong>SVG to PNG Guide</strong> &rarr;</a>
-</div>
+</nav>
 
-<div class="bp-related">
+<section class="page-section">
   <h2>Related Tools</h2>
-  <div class="bp-related-grid">
-    <a href="/blog/image-compressor" class="bp-related-card"><h4>Image Compressor</h4><p>Compress images without disturbing colors you need to sample.</p></a>
-    <a href="/blog/image-converter" class="bp-related-card"><h4>Image Converter</h4><p>Convert to a lossless format for more accurate color picking.</p></a>
-    <a href="/blog/image-crop" class="bp-related-card"><h4>Image Crop</h4><p>Crop to the specific area you want to sample colors from.</p></a>
-    <a href="/blog/make-a-meme-online-free" class="bp-related-card"><h4>Meme Generator</h4><p>Use picked colors to design custom captions.</p></a>
+  <div class="related-grid">
+    <a class="related-card" href="/blog/image-compressor"><strong>Image Compressor</strong><span>Compress images without disturbing colors you need to sample.</span></a>
+    <a class="related-card" href="/blog/image-converter"><strong>Image Converter</strong><span>Convert to a lossless format for more accurate color picking.</span></a>
+    <a class="related-card" href="/blog/image-crop"><strong>Image Crop</strong><span>Crop to the specific area you want to sample colors from.</span></a>
+    <a class="related-card" href="/blog/make-a-meme-online-free"><strong>Meme Generator</strong><span>Use picked colors to design custom captions.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

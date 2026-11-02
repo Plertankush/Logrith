@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -51,17 +55,20 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-compound-interest-calculator">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/calculate-convert">Calculate & Convert</a> › Compound Interest Calculator</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/calculate-convert">Calculate &amp; Convert</a> › Compound Interest Calculator</nav>
   <h1>Free Compound Interest Calculator</h1>
   <p>Calculate compound interest growth on an investment, including regular monthly contributions, with a full breakdown of principal vs. interest earned.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">📈 Monthly Contributions</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#trending-up"></use></svg> Monthly Contributions</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:700px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Investment Details</h2>
     <div class="controls-grid">
@@ -92,16 +99,16 @@
       </div>
     </div>
     <div class="btn-group mt-16">
-      <button class="btn btn-primary btn-lg" id="calc-btn">📈 Calculate Growth</button>
-      <button class="btn btn-secondary" id="reset-btn">✕ Reset</button>
+      <button class="btn btn-primary btn-lg" id="calc-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#trending-up"></use></svg> Calculate Growth</button>
+      <button class="btn btn-secondary" id="reset-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Reset</button>
     </div>
     <div class="status-msg" id="status-msg"></div>
   </div>
 
-  <div class="tool-card" id="result-card" style="display:none;">
+  <div class="tool-card is-hidden" id="result-card">
     <h2>Growth Result</h2>
-    <div class="stat-result-grid" id="result-grid"></div>
-    <div style="margin-top:16px;">
+    <div class="stat-grid" id="result-grid"></div>
+    <div class="mt-16">
       <div class="progress-row"><span class="pr-label">Principal & Contributions</span><span class="pr-value" id="principal-pct"></span></div>
       <div class="timeline-bar"><div class="timeline-fill" id="growth-bar"></div></div>
     </div>
@@ -109,43 +116,51 @@
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>What is compound interest?</h3><p>Compound interest is interest calculated on both the initial principal and accumulated interest from previous periods, causing growth to accelerate over time versus simple interest.</p></div>
-    <div class="faq-item-box"><h3>How does compounding frequency affect growth?</h3><p>More frequent compounding (daily or monthly vs. annually) produces slightly higher returns, since interest is calculated and added more often.</p></div>
-    <div class="faq-item-box"><h3>Does this account for monthly contributions?</h3><p>Yes, this calculator adds your regular monthly contribution on top of compound growth from your initial principal.</p></div>
-    <div class="faq-item-box"><h3>Is this the same as an SIP calculator?</h3><p>It's similar in concept — regular contributions compounding over time — though a dedicated SIP calculator may use fund-specific assumptions. This tool uses a standard fixed-rate compound growth model.</p></div>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card">
-      <h2>How to Use the Compound Interest Calculator</h2>
-      <div class="tool-steps">
-        <div class="tool-step">
-          <strong>1. Enter your initial principal</strong>
-          Type the lump sum you're starting with, or 0 if you're only planning to contribute monthly.
-        </div>
-        <div class="tool-step">
-          <strong>2. Add a monthly contribution (optional)</strong>
-          Enter how much you plan to add every month on top of the initial amount.
-        </div>
-        <div class="tool-step">
-          <strong>3. Set the rate, period, and compounding frequency</strong>
-          Fill in the expected annual interest rate, how many years you'll invest, and how often interest compounds.
-        </div>
-        <div class="tool-step">
-          <strong>4. Click Calculate Growth</strong>
-          See your future value, total contributed, and interest earned, along with the contribution-vs-interest breakdown bar.
-        </div>
-      </div>
-    </div>
+    <details class="faq-item">
+      <summary class="faq-q">What is compound interest?</summary>
+      <div class="faq-a"><p>Compound interest is interest calculated on both the initial principal and accumulated interest from previous periods, causing growth to accelerate over time versus simple interest.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How does compounding frequency affect growth?</summary>
+      <div class="faq-a"><p>More frequent compounding (daily or monthly vs. annually) produces slightly higher returns, since interest is calculated and added more often.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does this account for monthly contributions?</summary>
+      <div class="faq-a"><p>Yes, this calculator adds your regular monthly contribution on top of compound growth from your initial principal.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is this the same as an SIP calculator?</summary>
+      <div class="faq-a"><p>It's similar in concept — regular contributions compounding over time — though a dedicated SIP calculator may use fund-specific assumptions. This tool uses a standard fixed-rate compound growth model.</p></div>
+    </details>
   </div>
 </section>
 
-<section class="article-section">
+<section class="page-section">
+  <h2>How to Use the Compound Interest Calculator</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Enter your initial principal</strong>
+      <p>Type the lump sum you're starting with, or 0 if you're only planning to contribute monthly.</p>
+    </li>
+    <li class="step">
+      <strong>Add a monthly contribution (optional)</strong>
+      <p>Enter how much you plan to add every month on top of the initial amount.</p>
+    </li>
+    <li class="step">
+      <strong>Set the rate, period, and compounding frequency</strong>
+      <p>Fill in the expected annual interest rate, how many years you'll invest, and how often interest compounds.</p>
+    </li>
+    <li class="step">
+      <strong>Click Calculate Growth</strong>
+      <p>See your future value, total contributed, and interest earned, along with the contribution-vs-interest breakdown bar.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
   <h2>Understanding Compound Interest Growth</h2>
   <p>Compound interest is often called one of the most powerful forces in personal finance, because it causes money to grow at an accelerating rate over time — interest earns interest, which earns more interest, compounding on itself. This calculator computes exactly how a lump-sum investment (with optional ongoing monthly contributions) grows over time at a given interest rate and compounding frequency.</p>
 
@@ -168,7 +183,7 @@
   <p>The progress bar beneath your results shows what portion of your final total came from money you actually put in (principal plus all contributions) versus money that was generated purely by compounding. Over short periods or at low interest rates, this bar leans heavily toward contributions. Over long periods — 15, 20, or 30 years — at a reasonable rate, the bar can shift to show that more than half the final value came from interest alone, which is a concrete illustration of why starting early matters more than the exact amount you start with.</p>
 
   <h3>Compounding Frequency Options Explained</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Monthly</strong> — interest compounds 12 times a year; a common default for savings accounts and many investment products.</li>
     <li><strong>Quarterly</strong> — interest compounds 4 times a year; used by some fixed deposits and bonds.</li>
     <li><strong>Annually</strong> — interest compounds once a year; the simplest case and a common assumption for long-term projections.</li>
@@ -179,7 +194,7 @@
   <p>A frequent error is assuming a stock market return (often quoted as an average like 10-12%) will apply smoothly and consistently every single year, when real returns vary significantly year to year even if they average out over a long enough horizon — this calculator shows the smooth, idealized version, not the bumpy real path. Another common mistake is forgetting to account for inflation, which erodes the real purchasing power of a future value even as the nominal number grows; a ₹50 lakh figure 25 years from now won't buy what ₹50 lakh buys today.</p>
 
   <h3>Who This Calculator Is Useful For</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Long-term investors</strong> projecting how a SIP-style monthly investment plan could grow over 10, 20, or 30 years.</li>
     <li><strong>Retirement planners</strong> estimating how today's savings rate translates into a future retirement corpus.</li>
     <li><strong>Students learning finance</strong> who want to see the compound interest formula applied concretely with real numbers rather than just reading it in a textbook.</li>
@@ -192,34 +207,31 @@
   <p>This calculator is built to answer searches like "compound interest calculator with monthly deposit," "how much will my investment grow," "SIP vs lump sum compound growth," and "compound interest formula calculator." Because it supports both a one-time principal and ongoing monthly contributions together, it covers lump-sum investing, pure SIP-style investing, and the common hybrid case of starting with savings and then adding to it regularly.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/simple-interest-calculator" class="tool-item"><div class="ti-text"><h4>Simple Interest Calculator</h4><p>Calculate simple (non-compounding) interest.</p></div></a>
-    <a href="/tools/emi-calculator" class="tool-item"><div class="ti-text"><h4>EMI Calculator</h4><p>Calculate loan EMI and amortization schedule.</p></div></a>
-    <a href="/tools/loan-affordability-calculator" class="tool-item"><div class="ti-text"><h4>Loan Affordability Calculator</h4><p>Find the maximum loan you can afford.</p></div></a>
-    <a href="/tools/percentage-calculator" class="tool-item"><div class="ti-text"><h4>Percentage Calculator</h4><p>Calculate percentages and growth rates.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">compound interest calculator</span>
-        <span class="keyword-tag">compound interest calculator online</span>
-        <span class="keyword-tag">investment growth calculator</span>
-        <span class="keyword-tag">compound interest with monthly contribution</span>
-        <span class="keyword-tag">free compound interest calculator</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/simple-interest-calculator"><strong>Simple Interest Calculator</strong><span>Calculate simple (non-compounding) interest.</span></a>
+    <a class="related-card" href="/tools/emi-calculator"><strong>EMI Calculator</strong><span>Calculate loan EMI and amortization schedule.</span></a>
+    <a class="related-card" href="/tools/loan-affordability-calculator"><strong>Loan Affordability Calculator</strong><span>Find the maximum loan you can afford.</span></a>
+    <a class="related-card" href="/tools/percentage-calculator"><strong>Percentage Calculator</strong><span>Calculate percentages and growth rates.</span></a>
   </div>
 </section>
 
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">compound interest calculator</span>
+    <span class="keyword-tag">compound interest calculator online</span>
+    <span class="keyword-tag">investment growth calculator</span>
+    <span class="keyword-tag">compound interest with monthly contribution</span>
+    <span class="keyword-tag">free compound interest calculator</span>
+  </div>
+</section>
+
+</main>
+
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 document.getElementById('calc-btn').addEventListener('click', () => {
   const statusEl = document.getElementById('status-msg');
@@ -256,11 +268,11 @@ document.getElementById('calc-btn').addEventListener('click', () => {
 
   document.getElementById('result-grid').innerHTML = `
     <div class="stat-box" style="background:linear-gradient(135deg,var(--primary),var(--primary-light));border:none;">
-      <span class="sb-num" style="color:white;">${fmt(totalFV)}</span>
-      <span class="sb-lbl" style="color:rgba(255,255,255,0.85);">Future Value</span>
+      <span class="stat-num" style="color:white;">${fmt(totalFV)}</span>
+      <span class="stat-label" style="color:rgba(255,255,255,0.85);">Future Value</span>
     </div>
-    <div class="stat-box"><span class="sb-num">${fmt(totalContributed)}</span><span class="sb-lbl">Total Contributed</span></div>
-    <div class="stat-box"><span class="sb-num" style="color:var(--success);">${fmt(totalInterest)}</span><span class="sb-lbl">Interest Earned</span></div>`;
+    <div class="stat-box"><span class="stat-num">${fmt(totalContributed)}</span><span class="stat-label">Total Contributed</span></div>
+    <div class="stat-box"><span class="stat-num" style="color:var(--success);">${fmt(totalInterest)}</span><span class="stat-label">Interest Earned</span></div>`;
 
   const contribPct = (totalContributed / totalFV * 100).toFixed(1);
   document.getElementById('principal-pct').textContent = contribPct + '%';

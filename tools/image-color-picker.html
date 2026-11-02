@@ -23,13 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    #picker-canvas { cursor: crosshair; max-width: 100%; border-radius: 10px; border: 1.5px solid var(--gray-200); }
-    .picked-swatch { width: 60px; height: 60px; border-radius: 10px; border: 1.5px solid var(--gray-200); flex-shrink: 0; }
-    .palette-swatch { width: 100%; height: 60px; border-radius: 8px; cursor: pointer; border: 1px solid var(--gray-200); }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -50,84 +49,92 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-image-color-picker">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/image-pdf-tools">Image & PDF Tools</a> › Image Color Picker</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/image-pdf-tools">Image &amp; PDF Tools</a> › Image Color Picker</nav>
   <h1>Free Image Color Picker</h1>
   <p>Click anywhere on an image to get the exact HEX and RGB color, plus an automatic dominant color palette extracted from the whole photo.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">🎨 Palette Extraction</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#palette"></use></svg> Palette Extraction</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:900px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Upload Image</h2>
     <div class="upload-zone" id="upload-zone">
       <input type="file" id="file-input" accept="image/*">
-      <div class="upload-icon">🎨</div>
+      <div class="upload-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#palette"></use></svg></div>
       <h3>Drop an image here or click to browse</h3>
       <p>PNG, JPG, WEBP — max 10MB</p>
     </div>
     <div class="status-msg" id="status-msg"></div>
   </div>
 
-  <div class="tool-card" id="picker-card" style="display:none;">
+  <div class="tool-card is-hidden" id="picker-card">
     <h2>Click Anywhere to Pick a Color</h2>
     <canvas id="picker-canvas"></canvas>
-    <div class="mt-16" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+    <div class="mt-16 u-041960">
       <div class="picked-swatch" id="picked-swatch"></div>
       <div class="stats-row" id="picked-info"></div>
     </div>
   </div>
 
-  <div class="tool-card" id="palette-card" style="display:none;">
+  <div class="tool-card is-hidden" id="palette-card">
     <h2>Dominant Color Palette</h2>
-    <div class="preview-grid" id="palette-grid" style="grid-template-columns:repeat(auto-fill,minmax(130px,1fr));"></div>
+    <div class="preview-grid" id="palette-grid"></div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>How do I pick a color from an image?</h3><p>Upload your image, then click anywhere on it — the exact HEX and RGB color at that pixel appears instantly.</p></div>
-    <div class="faq-item-box"><h3>What is a dominant color palette?</h3><p>It's a set of the most common colors found across the whole image, automatically extracted and displayed as clickable swatches.</p></div>
-    <div class="faq-item-box"><h3>Is my image uploaded to a server?</h3><p>No, all color analysis happens locally using the Canvas API — your image never leaves your browser.</p></div>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card">
-      <h2>How to Use the Image Color Picker</h2>
-      <div class="tool-steps">
-        <div class="tool-step">
-          <strong>1. Upload your image</strong>
-          Drag and drop a PNG, JPG, or WEBP file onto the upload zone, or click it to browse your device (up to 10MB).
-        </div>
-        <div class="tool-step">
-          <strong>2. Click anywhere on the image</strong>
-          Once it loads onto the canvas, click any point to read the exact HEX and RGB color at that pixel, along with its x/y position.
-        </div>
-        <div class="tool-step">
-          <strong>3. Review the dominant palette</strong>
-          Scroll down to see the automatically extracted palette of the ten most common colors found across the whole photo.
-        </div>
-        <div class="tool-step">
-          <strong>4. Copy any swatch</strong>
-          Click a palette swatch to copy its HEX code to your clipboard for use in design tools or CSS.
-        </div>
-      </div>
-    </div>
+    <details class="faq-item">
+      <summary class="faq-q">How do I pick a color from an image?</summary>
+      <div class="faq-a"><p>Upload your image, then click anywhere on it — the exact HEX and RGB color at that pixel appears instantly.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What is a dominant color palette?</summary>
+      <div class="faq-a"><p>It's a set of the most common colors found across the whole image, automatically extracted and displayed as clickable swatches.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my image uploaded to a server?</summary>
+      <div class="faq-a"><p>No, all color analysis happens locally using the Canvas API — your image never leaves your browser.</p></div>
+    </details>
   </div>
 </section>
 
-<section class="article-section">
+<section class="page-section">
+  <h2>How to Use the Image Color Picker</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Upload your image</strong>
+      <p>Drag and drop a PNG, JPG, or WEBP file onto the upload zone, or click it to browse your device (up to 10MB).</p>
+    </li>
+    <li class="step">
+      <strong>Click anywhere on the image</strong>
+      <p>Once it loads onto the canvas, click any point to read the exact HEX and RGB color at that pixel, along with its x/y position.</p>
+    </li>
+    <li class="step">
+      <strong>Review the dominant palette</strong>
+      <p>Scroll down to see the automatically extracted palette of the ten most common colors found across the whole photo.</p>
+    </li>
+    <li class="step">
+      <strong>Copy any swatch</strong>
+      <p>Click a palette swatch to copy its HEX code to your clipboard for use in design tools or CSS.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
   <h2>Pick Exact Colors From Any Image</h2>
   <p>This tool lets you click anywhere on an uploaded image to get the exact color at that pixel, shown as both HEX and RGB values ready to copy. It also automatically extracts a dominant color palette from the entire image, useful for quickly identifying a photo's overall color scheme.</p>
 
   <h3>Why Pick Colors From an Image?</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Matching brand colors</strong> from a logo or reference photo when building a website or design.</li>
     <li><strong>Building a color palette</strong> inspired by a photograph, artwork, or mood board.</li>
     <li><strong>Checking exact color values</strong> for design consistency across assets.</li>
@@ -156,7 +163,7 @@
   <p>The tool draws your uploaded image onto an HTML5 canvas element, which exposes a getImageData() method giving direct access to the raw RGBA value of any pixel coordinate. When you click the image, the click position is translated from screen coordinates to canvas pixel coordinates (accounting for any scaling if the image was resized to fit the display area), and that exact pixel's color is read and displayed. This is the same low-level approach browser-based image editing tools use internally for color sampling.</p>
 
   <h3>Common Use Cases</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Web development</strong> — pulling an exact background or accent color from a design mockup screenshot.</li>
     <li><strong>Social media graphics</strong> — matching new graphics to the dominant colors of an existing brand photo.</li>
     <li><strong>Print and packaging</strong> — checking color values from a product photo before ordering materials.</li>
@@ -173,34 +180,31 @@
   <p>A system-level eyedropper (like the one built into some operating systems or design apps) can sample any pixel on your entire screen, while this tool only samples pixels within the uploaded image itself. That's usually an advantage for web work, since it means you can share just the image file with the tool rather than needing the full design app open, and the sampling works identically across any device with a browser.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/color-converter" class="tool-item"><div class="ti-text"><h4>Color Converter</h4><p>Convert any color between HEX, RGB, HSL, and CMYK.</p></div></a>
-    <a href="/tools/image-compressor" class="tool-item"><div class="ti-text"><h4>Image Compressor</h4><p>Reduce image file size while keeping quality.</p></div></a>
-    <a href="/tools/svg-to-png" class="tool-item"><div class="ti-text"><h4>SVG to PNG</h4><p>Convert SVG graphics to raster PNG images.</p></div></a>
-    <a href="/tools/image-crop" class="tool-item"><div class="ti-text"><h4>Image Crop</h4><p>Crop images to focus on a specific area.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">image color picker</span>
-        <span class="keyword-tag">color picker from image</span>
-        <span class="keyword-tag">extract colors from photo</span>
-        <span class="keyword-tag">pixel color picker online</span>
-        <span class="keyword-tag">dominant color palette generator</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/color-converter"><strong>Color Converter</strong><span>Convert any color between HEX, RGB, HSL, and CMYK.</span></a>
+    <a class="related-card" href="/tools/image-compressor"><strong>Image Compressor</strong><span>Reduce image file size while keeping quality.</span></a>
+    <a class="related-card" href="/tools/svg-to-png"><strong>SVG to PNG</strong><span>Convert SVG graphics to raster PNG images.</span></a>
+    <a class="related-card" href="/tools/image-crop"><strong>Image Crop</strong><span>Crop images to focus on a specific area.</span></a>
   </div>
 </section>
 
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">image color picker</span>
+    <span class="keyword-tag">color picker from image</span>
+    <span class="keyword-tag">extract colors from photo</span>
+    <span class="keyword-tag">pixel color picker online</span>
+    <span class="keyword-tag">dominant color palette generator</span>
+  </div>
+</section>
+
+</main>
+
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 const uploadZone = document.getElementById('upload-zone');
 const fileInput = document.getElementById('file-input');

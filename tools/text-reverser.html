@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -45,17 +49,20 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-text-reverser">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/text-generators">Text & Generators</a> › Text Reverser</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/text-generators">Text &amp; Generators</a> › Text Reverser</nav>
   <h1>Reverse Text Online — Free Word Reverser</h1>
   <p>Reverse text character by character, reverse word order, or reverse line order — instantly.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">🔄 3 Modes</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#refresh"></use></svg> 3 Modes</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:820px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Input Text</h2>
     <textarea class="tool-textarea" id="input-text" rows="8" placeholder="Type or paste text here...">Hello World, this is a sample sentence.</textarea>
@@ -66,62 +73,67 @@
       <div class="mode-card" data-mode="lines"><h3>Reverse Lines</h3><p>Line order flipped</p></div>
     </div>
 
-    <div class="control-group mt-16" style="position:relative;">
+    <div class="control-group mt-16 relative">
       <label>Result</label>
       <textarea class="tool-textarea" id="output-text" rows="8" readonly></textarea>
-      <button class="copy-btn" id="copy-btn">📋 Copy</button>
+      <button class="copy-btn" id="copy-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
     </div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>What's the difference between character and word reversal?</h3><p>Character reversal flips every letter's order ("Hello" becomes "olleH"), while word reversal keeps each word intact but reverses their order ("Hello World" becomes "World Hello").</p></div>
-    <div class="faq-item-box"><h3>What is line reversal used for?</h3><p>Line reversal flips the order of lines in a multi-line block of text, useful for reversing a list or chronological log.</p></div>
-    <div class="faq-item-box"><h3>Can I reverse a whole paragraph?</h3><p>Yes, all three modes work on any length of text, from a single word to a full multi-paragraph document.</p></div>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card">
-      <h2>How to Use the Text Reverser</h2>
-      <div class="tool-steps">
-        <div class="tool-step">
-          <strong>1. Paste your text</strong>
-          Type or paste any sentence, word list, or multi-line block into the input box.
-        </div>
-        <div class="tool-step">
-          <strong>2. Pick a mode</strong>
-          Choose Reverse Characters, Reverse Words, or Reverse Lines depending on the effect you want.
-        </div>
-        <div class="tool-step">
-          <strong>3. View the result instantly</strong>
-          The reversed output updates live as you type or switch modes — no button click needed.
-        </div>
-        <div class="tool-step">
-          <strong>4. Copy the output</strong>
-          Click the copy button to grab the reversed text for pasting anywhere else.
-        </div>
-      </div>
-    </div>
+    <details class="faq-item">
+      <summary class="faq-q">What's the difference between character and word reversal?</summary>
+      <div class="faq-a"><p>Character reversal flips every letter's order ("Hello" becomes "olleH"), while word reversal keeps each word intact but reverses their order ("Hello World" becomes "World Hello").</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What is line reversal used for?</summary>
+      <div class="faq-a"><p>Line reversal flips the order of lines in a multi-line block of text, useful for reversing a list or chronological log.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I reverse a whole paragraph?</summary>
+      <div class="faq-a"><p>Yes, all three modes work on any length of text, from a single word to a full multi-paragraph document.</p></div>
+    </details>
   </div>
 </section>
 
-<section class="article-section">
+<section class="page-section">
+  <h2>How to Use the Text Reverser</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Paste your text</strong>
+      <p>Type or paste any sentence, word list, or multi-line block into the input box.</p>
+    </li>
+    <li class="step">
+      <strong>Pick a mode</strong>
+      <p>Choose Reverse Characters, Reverse Words, or Reverse Lines depending on the effect you want.</p>
+    </li>
+    <li class="step">
+      <strong>View the result instantly</strong>
+      <p>The reversed output updates live as you type or switch modes — no button click needed.</p>
+    </li>
+    <li class="step">
+      <strong>Copy the output</strong>
+      <p>Click the copy button to grab the reversed text for pasting anywhere else.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
   <h2>Text Reverser — 3 Reversal Modes</h2>
   <p>This tool reverses text in three different ways: character-by-character (turning "Hello" into "olleH"), word-by-word (turning "Hello World" into "World Hello"), or line-by-line (flipping the order of lines in a multi-line block). Each mode updates the result instantly as you type or switch modes.</p>
 
   <h3>Understanding the Three Modes</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Reverse Characters</strong> — flips every single character's position, including spaces and punctuation, producing a mirror-image of the original text. This is the classic "backwards text" effect.</li>
     <li><strong>Reverse Words</strong> — keeps each individual word spelled correctly, but reverses the order the words appear in, so "The quick brown fox" becomes "fox brown quick The."</li>
     <li><strong>Reverse Lines</strong> — for multi-line text, flips which line comes first and which comes last, useful for reversing a chronological list, log file, or numbered sequence.</li>
   </ul>
 
   <h3>Common Uses</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Fun and novelty text</strong> — creating "backwards" or mirror-text for social media posts or messages.</li>
     <li><strong>Palindrome checking</strong> — quickly comparing a text against its character-reversed version to check if it reads the same both ways.</li>
     <li><strong>Reordering lists</strong> — using line reversal to flip a chronological list into reverse-chronological order or vice versa.</li>
@@ -165,34 +177,31 @@
   <p>All text processing happens directly in your browser — nothing is sent to a server.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/case-converter" class="tool-item"><div class="ti-text"><h4>Case Converter</h4><p>Convert text between UPPERCASE, camelCase, and more.</p></div></a>
-    <a href="/tools/duplicate-remover" class="tool-item"><div class="ti-text"><h4>Duplicate Line Remover</h4><p>Remove duplicate lines from text.</p></div></a>
-    <a href="/tools/text-diff" class="tool-item"><div class="ti-text"><h4>Text Diff Checker</h4><p>Compare two text versions for differences.</p></div></a>
-    <a href="/tools/word-counter" class="tool-item"><div class="ti-text"><h4>Word Counter</h4><p>Count words, characters, and sentences.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">text reverser</span>
-        <span class="keyword-tag">reverse text online</span>
-        <span class="keyword-tag">reverse words online</span>
-        <span class="keyword-tag">backwards text generator</span>
-        <span class="keyword-tag">flip text online</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/case-converter"><strong>Case Converter</strong><span>Convert text between UPPERCASE, camelCase, and more.</span></a>
+    <a class="related-card" href="/tools/duplicate-remover"><strong>Duplicate Line Remover</strong><span>Remove duplicate lines from text.</span></a>
+    <a class="related-card" href="/tools/text-diff"><strong>Text Diff Checker</strong><span>Compare two text versions for differences.</span></a>
+    <a class="related-card" href="/tools/word-counter"><strong>Word Counter</strong><span>Count words, characters, and sentences.</span></a>
   </div>
 </section>
 
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">text reverser</span>
+    <span class="keyword-tag">reverse text online</span>
+    <span class="keyword-tag">reverse words online</span>
+    <span class="keyword-tag">backwards text generator</span>
+    <span class="keyword-tag">flip text online</span>
+  </div>
+</section>
+
+</main>
+
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 let currentMode = 'chars';
 

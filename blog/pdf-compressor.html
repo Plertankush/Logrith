@@ -23,47 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .bp-hero { max-width:820px;margin:0 auto;padding:48px 20px 8px; }
-    .bp-crumb { font-size:.85rem;color:var(--gray-500);margin-bottom:16px; }
-    .bp-crumb a { color:var(--primary);text-decoration:none; }
-    .bp-hero h1 { font-family:var(--font-display);font-size:2rem;line-height:1.25;color:var(--gray-900);margin-bottom:14px; }
-    .bp-hero .bp-dek { font-size:1.05rem;color:var(--gray-700);line-height:1.7;margin-bottom:20px; }
-    .bp-cta { display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:white;padding:13px 26px;border-radius:var(--radius);font-weight:700;text-decoration:none;font-size:.95rem; }
-    .bp-cta svg { width:17px;height:17px; }
-    .bp-cta:hover { background:var(--primary-dark); }
-    .bp-body { max-width:760px;margin:0 auto;padding:28px 20px 20px; }
-    .bp-body h2 { font-family:var(--font-display);font-size:1.5rem;color:var(--gray-900);margin:38px 0 14px; }
-    .bp-body h3 { font-family:var(--font-display);font-size:1.15rem;color:var(--gray-900);margin:26px 0 10px; }
-    .bp-body p { color:var(--gray-700);line-height:1.8;margin-bottom:16px;font-size:1rem; }
-    .bp-body ul, .bp-body ol { color:var(--gray-700);line-height:1.8;margin:0 0 16px 22px; }
-    .bp-body li { margin-bottom:8px; }
-    .bp-body strong { color:var(--gray-900); }
-    .bp-toc { background:var(--gray-50);border-radius:var(--radius-lg);padding:20px 24px;margin:24px 0; }
-    .bp-toc h2 { margin:0 0 10px;font-size:1.05rem; }
-    .bp-toc ol { margin:0 0 0 20px; }
-    .bp-toc a { color:var(--primary);text-decoration:none; }
-    .bp-table { width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:.92rem; }
-    .bp-table th, .bp-table td { border:1px solid var(--gray-200);padding:10px 12px;text-align:left; }
-    .bp-table th { background:var(--gray-50);font-weight:700;color:var(--gray-900); }
-    .bp-howto { counter-reset:step; list-style:none;margin-left:0; }
-    .bp-howto li { position:relative;padding-left:42px;margin-bottom:18px; }
-    .bp-howto li::before { counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;background:var(--primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem; }
-    .bp-faq-item { border-bottom:1px solid var(--gray-200);padding:16px 0; }
-    .bp-faq-item h3 { margin:0 0 8px; font-size:1.02rem; }
-    .bp-byline { font-size:.82rem;color:var(--gray-500);margin-top:10px; }
-    .bp-related { max-width:1000px;margin:0 auto;padding:20px 20px 60px; }
-    .bp-related h2 { font-family:var(--font-display);font-size:1.4rem;color:var(--gray-900);margin-bottom:18px;text-align:center; }
-    .bp-related-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px; }
-    .bp-related-card { border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:18px;text-decoration:none;color:inherit;background:var(--white); }
-    .bp-related-card h4 { font-size:.95rem;color:var(--gray-900);margin-bottom:6px; }
-    .bp-related-card p { font-size:.82rem;color:var(--gray-700);line-height:1.5; }
-    .bp-prevnext { display:flex;justify-content:space-between;gap:16px;max-width:760px;margin:0 auto;padding:0 20px 20px; }
-    .bp-prevnext a { flex:1;border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:12px 16px;text-decoration:none;color:var(--gray-700);font-size:.85rem; }
-    .bp-prevnext a strong { display:block;color:var(--gray-900);font-size:.92rem; }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -100,23 +65,26 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-blog-pdf-compressor">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="bp-hero">
-  <div class="bp-crumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/image-pdf-tools">Image & PDF Tools</a> &rsaquo; PDF Compressor</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/image-pdf-tools">Image & PDF Tools</a> &rsaquo; PDF Compressor</nav>
   <h1>How to Compress a PDF for Email or Upload Without Sending It to a Server</h1>
-  <p class="bp-dek">Gmail rejects attachments over 25MB. Outlook caps at 20MB. Countless job portals, government forms, and application systems enforce their own strict PDF size limits. Most people solve this by uploading their file to a compression website — but that means handing a resume, contract, or financial document to a third-party server before you've even confirmed the compression worked. Here's how to shrink a PDF entirely inside your own browser instead, and how that approach compares to iLovePDF, SmallPDF, and Adobe's online compressor.</p>
-  <a href="/tools/pdf-compressor" class="bp-cta">
+  <p>Gmail rejects attachments over 25MB. Outlook caps at 20MB. Countless job portals, government forms, and application systems enforce their own strict PDF size limits. Most people solve this by uploading their file to a compression website — but that means handing a resume, contract, or financial document to a third-party server before you've even confirmed the compression worked. Here's how to shrink a PDF entirely inside your own browser instead, and how that approach compares to iLovePDF, SmallPDF, and Adobe's online compressor.</p>
+  <a href="/tools/pdf-compressor" class="btn btn-primary btn-lg">
     <svg class="icon"><use href="/assets/svg/icons.svg#compress-img"></use></svg>
     Compress My PDF
   </a>
-  <p class="bp-byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
-</div>
+  <p class="byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
+</div></header>
 
-<div class="bp-body">
+<article class="page-section prose">
 
-  <div class="bp-toc">
+  <nav class="toc" aria-label="On this page">
     <h2>On This Page</h2>
     <ol>
       <li><a href="#why-server">Why Server-Based Compression Is a Real Privacy Tradeoff</a></li>
@@ -128,19 +96,29 @@
       <li><a href="#privacy">Privacy, Security, and Limits</a></li>
       <li><a href="#faq">Frequently Asked Questions</a></li>
     </ol>
-  </div>
+  </nav>
 
   <h2 id="why-server">Why Server-Based Compression Is a Real Privacy Tradeoff</h2>
   <p>The most widely used PDF compressors — iLovePDF, SmallPDF, Adobe's online tool, and dozens of similar sites — all work the same fundamental way: you upload your file to their servers, their infrastructure processes it, and you download the result. This is a completely reasonable approach for a birthday invitation or a public flyer. It's a materially different question when the file is a resume with your home address and phone number, a signed contract, a bank statement, or a medical record — documents where you'd reasonably prefer not to introduce a third party into the chain of custody at all, even one with a good privacy policy.</p>
   <p>Most of these services are genuinely trustworthy and delete uploaded files after processing, as their privacy policies state. The distinction this guide is making isn't that they're untrustworthy — it's that browser-based processing removes the question entirely, rather than resolving it through a policy you have to trust. If your PDF is never transmitted anywhere, there's no server log, no temporary storage window, and no policy to rely on, because there was never a hand-off in the first place.</p>
 
   <h2 id="how-to-use">How to Compress a PDF in Your Browser</h2>
-  <ol class="bp-howto">
-    <li>Open the <a href="/tools/pdf-compressor">PDF Compressor tool</a> and upload your PDF by clicking the upload area or dragging the file in.</li>
-    <li>Choose a compression level — Low, Medium, or High quality — based on how aggressively you need to shrink the file versus how much visual fidelity you want to preserve.</li>
-    <li>Click Compress PDF. The tool renders each page and re-compresses it at your chosen quality, showing a progress bar as it works through multi-page documents.</li>
-    <li>Review the before/after size comparison shown once processing completes.</li>
-    <li>Download the compressed PDF directly — at no point was the file uploaded anywhere.</li>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the <a href="/tools/pdf-compressor">PDF Compressor tool</a> and upload your PDF by clicking the upload area or dragging the file in.</p>
+    </li>
+    <li class="step">
+      <p>Choose a compression level — Low, Medium, or High quality — based on how aggressively you need to shrink the file versus how much visual fidelity you want to preserve.</p>
+    </li>
+    <li class="step">
+      <p>Click Compress PDF. The tool renders each page and re-compresses it at your chosen quality, showing a progress bar as it works through multi-page documents.</p>
+    </li>
+    <li class="step">
+      <p>Review the before/after size comparison shown once processing completes.</p>
+    </li>
+    <li class="step">
+      <p>Download the compressed PDF directly — at no point was the file uploaded anywhere.</p>
+    </li>
   </ol>
 
   <h2 id="how-it-works">How Browser-Based PDF Compression Actually Works</h2>
@@ -148,15 +126,18 @@
   <p>This approach is particularly effective for PDFs that are already mostly images to begin with — scanned documents, photo-heavy reports, or PDFs exported from a scanner app — since the bulk of their file size already comes from image data, which compresses well using this method. It's less dramatically effective on PDFs that are almost entirely native text (a plain text-based invoice, for example), since converting efficiently-encoded text into a rendered image can occasionally increase file size rather than reduce it, a genuine limitation worth understanding rather than glossing over.</p>
 
   <h2 id="quality-levels">Choosing the Right Compression Level</h2>
-  <table class="bp-table">
+  <div class="table-wrap">
+    <table class="table">
     <tr><th>Level</th><th>Best For</th><th>Tradeoff</th></tr>
     <tr><td>Low (smallest file)</td><td>Quick sharing where maximum size reduction matters most — email attachments under a strict limit, casual document sharing</td><td>Noticeably softer image detail and less sharp text edges on image-heavy pages</td></tr>
     <tr><td>Medium</td><td>General-purpose sharing and storage — the sensible default for most everyday compression needs</td><td>Balanced — moderate size reduction with generally acceptable visual quality</td></tr>
     <tr><td>High</td><td>Documents where visual clarity matters, like reports with detailed charts or photos, where some compression is still needed but quality matters more than squeezing out the last few percent</td><td>Smaller size reduction than Low or Medium</td></tr>
   </table>
+  </div>
 
   <h2 id="comparison">Comparison vs. iLovePDF, SmallPDF, and Adobe</h2>
-  <table class="bp-table">
+  <div class="table-wrap">
+    <table class="table">
     <tr><th>Feature</th><th>Logrith PDF Compressor</th><th>iLovePDF</th><th>SmallPDF</th><th>Adobe Acrobat Online</th></tr>
     <tr><td>Processing location</td><td>Entirely in-browser</td><td>Server upload</td><td>Server upload</td><td>Server upload</td></tr>
     <tr><td>Free usage limit</td><td>Unlimited</td><td>Unlimited compressions, 25MB file cap</td><td>2 tasks per day (free tier)</td><td>Requires Google/Adobe sign-in</td></tr>
@@ -165,6 +146,7 @@
     <tr><td>Exact size targeting (e.g. "under 200KB")</td><td>No — quality-level based</td><td>No</td><td>No</td><td>No</td></tr>
     <tr><td>Watermark on output</td><td>None</td><td>None</td><td>None</td><td>None</td></tr>
   </table>
+  </div>
   <p>Adobe's compression engine — the same one behind Acrobat Pro — genuinely produces the best raw compression-to-quality ratio of the group, which makes sense given its decades of dedicated PDF engineering. Its cost is requiring a Google or Adobe sign-in, which introduces both friction and an account-level record of your usage. iLovePDF offers a reasonable middle ground with unlimited free compressions, at the cost of a 25MB file cap and an ad-supported interface. SmallPDF's free tier is the most restrictive of the three at just 2 tasks per day, positioning it more as a funnel toward its paid plans than a genuinely free everyday tool.</p>
   <p>Logrith's PDF Compressor doesn't try to match Adobe's compression engine sophistication — a page-image-based approach is a reasonable, practical method, not a state-of-the-art PDF optimization engine. What it offers instead is the one thing none of the three major alternatives provide: your file never leaves your device, with no daily limit and no account required. For sensitive documents where that tradeoff matters more than squeezing out the absolute maximum compression ratio, that's a meaningfully different value proposition, not just a smaller version of the same tool.</p>
 
@@ -199,38 +181,59 @@
   <h3>Why Choose Logrith</h3>
   <p>This same privacy-first, no-account approach applies across all of Logrith's 100+ tools. If you're compressing a PDF for a job application, you might also need a resume analyzer, a file size converter to double-check the final result, or an image compressor for an accompanying photo — all built to the same standard, all in one place.</p>
 
-</div>
+</article>
 
-<div class="bp-body">
+<article class="page-section prose">
   <h2 id="faq">Frequently Asked Questions</h2>
-  <div class="bp-faq-item"><h3>How do I compress a PDF to fit Gmail's attachment limit?</h3><p>Gmail caps attachments at 25MB. Use Medium or Low compression quality, which re-renders each page at a lower image quality, typically shrinking scanned or image-heavy PDFs well below that limit.</p></div>
-  <div class="bp-faq-item"><h3>Is it safe to compress a PDF with personal or financial information online?</h3><p>Only if the tool processes the file entirely in your browser. Many popular compressors upload your file to a server first. Logrith's PDF Compressor never does — everything runs locally using PDF.js and pdf-lib.</p></div>
-  <div class="bp-faq-item"><h3>Why did my compressed PDF get bigger instead of smaller?</h3><p>This can happen if the original PDF was already highly optimized or mostly text-based, since re-rendering text as an image can sometimes produce a larger file than efficiently-encoded original text.</p></div>
-  <div class="bp-faq-item"><h3>Does compressing a PDF reduce text sharpness?</h3><p>With page-image-based compression, yes, to some degree, since each page becomes a rendered image rather than live text. Higher quality settings keep text edges sharper at a larger file size.</p></div>
-  <div class="bp-faq-item"><h3>Can I compress a password-protected PDF?</h3><p>You'll need to remove the password first, since compression requires reading and re-rendering each page, which isn't possible on an encrypted file without the password.</p></div>
-  <div class="bp-faq-item"><h3>What's the difference between compressing a PDF and reducing its page count?</h3><p>Compression reduces file size of existing pages by lowering image quality. Reducing page count means removing pages entirely, a separate operation using a PDF page remover tool.</p></div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">How do I compress a PDF to fit Gmail's attachment limit?</summary>
+      <div class="faq-a"><p>Gmail caps attachments at 25MB. Use Medium or Low compression quality, which re-renders each page at a lower image quality, typically shrinking scanned or image-heavy PDFs well below that limit.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is it safe to compress a PDF with personal or financial information online?</summary>
+      <div class="faq-a"><p>Only if the tool processes the file entirely in your browser. Many popular compressors upload your file to a server first. Logrith's PDF Compressor never does — everything runs locally using PDF.js and pdf-lib.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why did my compressed PDF get bigger instead of smaller?</summary>
+      <div class="faq-a"><p>This can happen if the original PDF was already highly optimized or mostly text-based, since re-rendering text as an image can sometimes produce a larger file than efficiently-encoded original text.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does compressing a PDF reduce text sharpness?</summary>
+      <div class="faq-a"><p>With page-image-based compression, yes, to some degree, since each page becomes a rendered image rather than live text. Higher quality settings keep text edges sharper at a larger file size.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I compress a password-protected PDF?</summary>
+      <div class="faq-a"><p>You'll need to remove the password first, since compression requires reading and re-rendering each page, which isn't possible on an encrypted file without the password.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What's the difference between compressing a PDF and reducing its page count?</summary>
+      <div class="faq-a"><p>Compression reduces file size of existing pages by lowering image quality. Reducing page count means removing pages entirely, a separate operation using a PDF page remover tool.</p></div>
+    </details>
+  </div>
 
   <h2>Conclusion</h2>
   <p>Compressing a PDF doesn't have to mean handing it to a server first. For casual documents, that tradeoff barely matters — but for resumes, contracts, financial records, and anything else genuinely sensitive, browser-based compression removes the question of trust entirely rather than asking you to rely on a privacy policy. Logrith's PDF Compressor won't out-compress Adobe's dedicated engine, but for documents where privacy and zero cost matter more than squeezing out the absolute maximum size reduction, it's a straightforward, honest tool for the job.</p>
-</div>
+</article>
 
-<div class="bp-prevnext">
+<nav class="post-nav page-section" aria-label="More guides">
   <a href="/blog/photo-resizer-kb">&larr; Previous: <strong>Photo Resizer to KB Guide</strong></a>
   <a href="/blog/image-converter">Next: <strong>Image Converter Guide</strong> &rarr;</a>
-</div>
+</nav>
 
-<div class="bp-related">
+<section class="page-section">
   <h2>Related Tools</h2>
-  <div class="bp-related-grid">
-    <a href="/blog/merge-multiple-pdf-files-into-one-free" class="bp-related-card"><h4>PDF Merge</h4><p>Combine multiple PDF files into one document.</p></a>
-    <a href="/blog/extract-pages-from-pdf-online-free" class="bp-related-card"><h4>PDF Split</h4><p>Split a PDF into separate pages or page ranges.</p></a>
-    <a href="/blog/pdf-page-remover" class="bp-related-card"><h4>PDF Page Remover</h4><p>Remove specific pages to reduce page count directly.</p></a>
-    <a href="/blog/image-compressor" class="bp-related-card"><h4>Image Compressor</h4><p>Compress standalone images with six flexible modes.</p></a>
+  <div class="related-grid">
+    <a class="related-card" href="/blog/merge-multiple-pdf-files-into-one-free"><strong>PDF Merge</strong><span>Combine multiple PDF files into one document.</span></a>
+    <a class="related-card" href="/blog/extract-pages-from-pdf-online-free"><strong>PDF Split</strong><span>Split a PDF into separate pages or page ranges.</span></a>
+    <a class="related-card" href="/blog/pdf-page-remover"><strong>PDF Page Remover</strong><span>Remove specific pages to reduce page count directly.</span></a>
+    <a class="related-card" href="/blog/image-compressor"><strong>Image Compressor</strong><span>Compress standalone images with six flexible modes.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

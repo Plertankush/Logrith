@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {
@@ -48,37 +52,6 @@
   }
   </script>
 
-  <style>
-    .page-hero { background:linear-gradient(135deg,var(--gray-50) 0%,#eef4ff 50%,var(--gray-100) 100%); padding:60px 24px 48px; text-align:center; border-bottom:1.5px solid var(--gray-200); }
-    .page-hero-inner { max-width:700px; margin:0 auto; }
-    .badge { display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:var(--white);border:1px solid var(--gray-200);border-radius:20px;font-size:.78rem;font-weight:700;color:var(--primary);font-family:var(--font-display);margin-bottom:16px; }
-    .page-hero h1 { font-family:var(--font-display);font-size:clamp(1.8rem,5vw,2.8rem);font-weight:800;color:var(--gray-900);letter-spacing:-.5px;line-height:1.2;margin-bottom:14px; }
-    .page-hero h1 span { color:var(--primary); }
-    .page-hero p { font-size:.98rem;color:var(--gray-700);line-height:1.7; }
-    .tool-list-section { max-width:1100px;margin:0 auto;padding:40px 24px; }
-    .tls-header { margin-bottom:28px; }
-    .tls-header h2 { font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:var(--gray-900);margin-bottom:6px; }
-    .tls-header p { font-size:.88rem;color:var(--gray-500); }
-    .tool-list { display:flex;flex-direction:column;gap:12px; }
-    .tl-item { display:flex;align-items:center;gap:18px;padding:18px 20px;background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);text-decoration:none;transition:var(--transition); }
-    .tl-item:hover { border-color:var(--primary);box-shadow:var(--shadow-md);transform:translateX(4px); }
-    .tl-icon { width:46px;height:46px;background:var(--gray-50);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;transition:var(--transition); }
-    .tl-item:hover .tl-icon { background:var(--primary); }
-    .tl-body { flex:1;min-width:0; }
-    .tl-name { font-family:var(--font-display);font-size:.98rem;font-weight:700;color:var(--gray-900);margin-bottom:3px; }
-    .tl-desc { font-size:.82rem;color:var(--gray-500);line-height:1.5; }
-    .tl-tags { display:flex;gap:6px;flex-wrap:wrap;margin-top:6px; }
-    .tl-tag { padding:2px 8px;background:var(--gray-100);border-radius:10px;font-size:.72rem;color:var(--gray-600); }
-    .tl-arrow { color:var(--gray-300);font-size:1.2rem;flex-shrink:0;transition:var(--transition); }
-    .tl-item:hover .tl-arrow { color:var(--primary);transform:translateX(3px); }
-    .seo-text { max-width:900px;margin:0 auto;padding:0 24px 48px; }
-    .seo-text h2 { font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:var(--gray-900);margin-bottom:12px;margin-top:32px; }
-    .seo-text p { font-size:.93rem;color:var(--gray-700);line-height:1.8;margin-bottom:12px; }
-    .seo-text a { color:var(--primary); }
-    @media(max-width:600px){ .tl-tags{display:none;} }
-    .faq-q::after { content: '+'; color: var(--primary); font-size: 1.3rem; flex-shrink: 0; }
-  </style>
-
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
   <script>
@@ -88,12 +61,15 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-categories-image-pdf-tools">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<section class="page-hero">
+<main id="main">
+
+<header class="page-hero">
   <div class="page-hero-inner">
-    <div class="tool-breadcrumb" style="justify-content:center;margin-bottom:14px;"><a href="/">Home</a> › <a href="/categories/categories">Categories</a> › Image & PDF Tools</div>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/categories">Categories</a> › Image & PDF Tools</nav>
 
     <div class="badge">
       <svg class="icon"><use href="/assets/svg/icons.svg#settings"></use></svg>
@@ -106,155 +82,155 @@
       Compress, convert, resize, crop, and rotate images, plus merge, split, rotate, and convert PDF documents — all directly in your browser, fast and free.
     </p>
 
-    <div class="tool-tags" style="justify-content:center;margin-top:16px;">
-      <span class="tool-tag">✅ No Login</span>
-      <span class="tool-tag">⚡ Instant Processing</span>
-      <span class="tool-tag">🔒 Privacy Focused</span>
-      <span class="tool-tag">📱 Mobile Ready</span>
+    <div class="tag-list">
+      <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> No Login</span>
+      <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant Processing</span>
+      <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lock"></use></svg> Privacy Focused</span>
+      <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#phone"></use></svg> Mobile Ready</span>
     </div>
+  </div>
+</header>
+
+<section class="page-section">
+  <div class="section-header"><h2>Image & PDF Tools</h2><p>Practical file tools for everyday tasks — no complexity, no nonsense</p></div>
+  <div class="tool-list">
+
+    <a href="/tools/image-compressor" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#compress-img"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Image Compressor</div><div class="tool-row-desc">Reduce image file sizes without compromising quality. Choose from various compression levels and download in multiple formats.</div><div class="tag-list"><span class="tag">File size reduction</span><span class="tag">Quality preservation</span><span class="tag">Multiple formats</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/image-converter" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#refresh"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Image Converter</div><div class="tool-row-desc">Convert images between various formats while maintaining quality. Choose from a wide range of input and output formats.</div><div class="tag-list"><span class="tag">Multiple formats</span><span class="tag">Quality preservation</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/image-resize" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#resize"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Image Resizer</div><div class="tool-row-desc">Resize images while maintaining aspect ratio. Choose from predefined sizes or enter custom dimensions. Download in various formats.</div><div class="tag-list"><span class="tag">Aspect ratio</span><span class="tag">Custom sizes</span><span class="tag">Multiple formats</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/image-crop" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#crop"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Image Cropper</div><div class="tool-row-desc">Crop images to the exact area you need, with preset aspect ratios for social media, profile photos, and more.</div><div class="tag-list"><span class="tag">Preset ratios</span><span class="tag">Custom crop</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/image-rotate" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#refresh"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Image Rotate & Flip</div><div class="tool-row-desc">Rotate images by 90°, 180°, or 270°, and flip horizontally or vertically to fix orientation issues instantly.</div><div class="tag-list"><span class="tag">Rotate</span><span class="tag">Flip</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/pdf-merge" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#image"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">PDF Merger</div><div class="tool-row-desc">Combine multiple PDF files into a single organized document, arranged in the order you choose.</div><div class="tag-list"><span class="tag">Combine PDFs</span><span class="tag">Reorder pages</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/pdf-split" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#image"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">PDF Splitter</div><div class="tool-row-desc">Split a PDF into separate files by page range, or extract individual pages from a larger document.</div><div class="tag-list"><span class="tag">Page ranges</span><span class="tag">Extract pages</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/pdf-rotate" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#refresh"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">PDF Rotator</div><div class="tool-row-desc">Rotate PDF pages individually or all at once to fix scanning or orientation issues before sharing or printing.</div><div class="tag-list"><span class="tag">Per-page rotate</span><span class="tag">Bulk rotate</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/pdf-to-jpg" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#image"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">PDF to JPG</div><div class="tool-row-desc">Convert PDF pages to high-quality JPG images. Choose from various conversion options and download the results.</div><div class="tag-list"><span class="tag">PDF to image</span><span class="tag">High quality</span><span class="tag">Download</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/jpg-to-pdf" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#image"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">JPG to PDF</div><div class="tool-row-desc">Convert JPG images to high-quality PDF documents. Choose from various conversion options and download the results.</div><div class="tag-list"><span class="tag">Image to PDF</span><span class="tag">High quality</span><span class="tag">Download</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/image-to-base64" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#refresh"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Image to Base64</div><div class="tool-row-desc">Convert images to a Base64 data URI with live preview and size stats.</div><div class="tag-list"><span class="tag">Data URI</span><span class="tag">Live preview</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/favicon-generator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#settings"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Favicon Generator</div><div class="tool-row-desc">Generate all favicon sizes (16px to 512px) from a single image instantly.</div><div class="tag-list"><span class="tag">6 sizes</span><span class="tag">Instant</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/image-watermark" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#image"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Image Watermark</div><div class="tool-row-desc">Add a custom text watermark to images with position and opacity control.</div><div class="tag-list"><span class="tag">Text watermark</span><span class="tag">Full control</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/meme-generator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#image"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Meme Generator</div><div class="tool-row-desc">Add classic top and bottom text captions to any image.</div><div class="tag-list"><span class="tag">Classic style</span><span class="tag">Free</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/pdf-to-text" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#image"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">PDF to Text</div><div class="tool-row-desc">Extract all readable text from a PDF file instantly.</div><div class="tag-list"><span class="tag">Text extraction</span><span class="tag">All pages</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/pdf-page-remover" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#image"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">PDF Page Remover</div><div class="tool-row-desc">Delete specific pages from a PDF file and download the result.</div><div class="tag-list"><span class="tag">Select pages</span><span class="tag">Instant</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/pdf-watermark" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#image"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">PDF Watermark</div><div class="tool-row-desc">Stamp a text watermark across every page of a PDF.</div><div class="tag-list"><span class="tag">All pages</span><span class="tag">Custom rotation</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/pdf-password-protect" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#lock"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">PDF Password Protect</div><div class="tool-row-desc">Add real password encryption to a PDF file, right in your browser.</div><div class="tag-list"><span class="tag">Real encryption</span><span class="tag">RC4-128</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/image-color-picker" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#image"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Image Color Picker</div><div class="tool-row-desc">Click any photo to get exact HEX/RGB colors, plus dominant palette extraction.</div><div class="tag-list"><span class="tag">Palette extraction</span><span class="tag">Instant</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/svg-to-png" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#refresh"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">SVG to PNG</div><div class="tool-row-desc">Convert SVG files or code into raster PNG images at custom resolution.</div><div class="tag-list"><span class="tag">Custom resolution</span><span class="tag">Free</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/photo-resizer-kb" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#resize"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Photo Resizer to KB</div><div class="tool-row-desc">Resize a photo to an exact target file size, e.g. 50KB for forms.</div><div class="tag-list"><span class="tag">Exact target size</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="/tools/pdf-compressor" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon"><use href="/assets/svg/icons.svg#compress-img"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">PDF Compressor</div><div class="tool-row-desc">Reduce PDF file size with adjustable compression.</div><div class="tag-list"><span class="tag">Adjustable quality</span></div></div>
+      <span class="tool-row-arrow" aria-hidden="true">→</span>
+    </a>
+
   </div>
 </section>
 
-<div class="tool-list-section">
-  <div class="tls-header"><h2>Image & PDF Tools</h2><p>Practical file tools for everyday tasks — no complexity, no nonsense</p></div>
-  <div class="tool-list">
-
-    <a href="/tools/image-compressor" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#compress-img"></use></svg>
-      <div class="tl-body"><div class="tl-name">Image Compressor</div><div class="tl-desc">Reduce image file sizes without compromising quality. Choose from various compression levels and download in multiple formats.</div><div class="tl-tags"><span class="tl-tag">File size reduction</span><span class="tl-tag">Quality preservation</span><span class="tl-tag">Multiple formats</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/image-converter" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#refresh"></use></svg>
-      <div class="tl-body"><div class="tl-name">Image Converter</div><div class="tl-desc">Convert images between various formats while maintaining quality. Choose from a wide range of input and output formats.</div><div class="tl-tags"><span class="tl-tag">Multiple formats</span><span class="tl-tag">Quality preservation</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/image-resize" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#resize"></use></svg>
-      <div class="tl-body"><div class="tl-name">Image Resizer</div><div class="tl-desc">Resize images while maintaining aspect ratio. Choose from predefined sizes or enter custom dimensions. Download in various formats.</div><div class="tl-tags"><span class="tl-tag">Aspect ratio</span><span class="tl-tag">Custom sizes</span><span class="tl-tag">Multiple formats</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/image-crop" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#crop"></use></svg>
-      <div class="tl-body"><div class="tl-name">Image Cropper</div><div class="tl-desc">Crop images to the exact area you need, with preset aspect ratios for social media, profile photos, and more.</div><div class="tl-tags"><span class="tl-tag">Preset ratios</span><span class="tl-tag">Custom crop</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/image-rotate" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#refresh"></use></svg>
-      <div class="tl-body"><div class="tl-name">Image Rotate & Flip</div><div class="tl-desc">Rotate images by 90°, 180°, or 270°, and flip horizontally or vertically to fix orientation issues instantly.</div><div class="tl-tags"><span class="tl-tag">Rotate</span><span class="tl-tag">Flip</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/pdf-merge" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#image"></use></svg>
-      <div class="tl-body"><div class="tl-name">PDF Merger</div><div class="tl-desc">Combine multiple PDF files into a single organized document, arranged in the order you choose.</div><div class="tl-tags"><span class="tl-tag">Combine PDFs</span><span class="tl-tag">Reorder pages</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/pdf-split" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#image"></use></svg>
-      <div class="tl-body"><div class="tl-name">PDF Splitter</div><div class="tl-desc">Split a PDF into separate files by page range, or extract individual pages from a larger document.</div><div class="tl-tags"><span class="tl-tag">Page ranges</span><span class="tl-tag">Extract pages</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/pdf-rotate" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#refresh"></use></svg>
-      <div class="tl-body"><div class="tl-name">PDF Rotator</div><div class="tl-desc">Rotate PDF pages individually or all at once to fix scanning or orientation issues before sharing or printing.</div><div class="tl-tags"><span class="tl-tag">Per-page rotate</span><span class="tl-tag">Bulk rotate</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/pdf-to-jpg" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#image"></use></svg>
-      <div class="tl-body"><div class="tl-name">PDF to JPG</div><div class="tl-desc">Convert PDF pages to high-quality JPG images. Choose from various conversion options and download the results.</div><div class="tl-tags"><span class="tl-tag">PDF to image</span><span class="tl-tag">High quality</span><span class="tl-tag">Download</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/jpg-to-pdf" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#image"></use></svg>
-      <div class="tl-body"><div class="tl-name">JPG to PDF</div><div class="tl-desc">Convert JPG images to high-quality PDF documents. Choose from various conversion options and download the results.</div><div class="tl-tags"><span class="tl-tag">Image to PDF</span><span class="tl-tag">High quality</span><span class="tl-tag">Download</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/image-to-base64" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#refresh"></use></svg>
-      <div class="tl-body"><div class="tl-name">Image to Base64</div><div class="tl-desc">Convert images to a Base64 data URI with live preview and size stats.</div><div class="tl-tags"><span class="tl-tag">Data URI</span><span class="tl-tag">Live preview</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/favicon-generator" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#settings"></use></svg>
-      <div class="tl-body"><div class="tl-name">Favicon Generator</div><div class="tl-desc">Generate all favicon sizes (16px to 512px) from a single image instantly.</div><div class="tl-tags"><span class="tl-tag">6 sizes</span><span class="tl-tag">Instant</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/image-watermark" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#image"></use></svg>
-      <div class="tl-body"><div class="tl-name">Image Watermark</div><div class="tl-desc">Add a custom text watermark to images with position and opacity control.</div><div class="tl-tags"><span class="tl-tag">Text watermark</span><span class="tl-tag">Full control</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/meme-generator" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#image"></use></svg>
-      <div class="tl-body"><div class="tl-name">Meme Generator</div><div class="tl-desc">Add classic top and bottom text captions to any image.</div><div class="tl-tags"><span class="tl-tag">Classic style</span><span class="tl-tag">Free</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/pdf-to-text" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#image"></use></svg>
-      <div class="tl-body"><div class="tl-name">PDF to Text</div><div class="tl-desc">Extract all readable text from a PDF file instantly.</div><div class="tl-tags"><span class="tl-tag">Text extraction</span><span class="tl-tag">All pages</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/pdf-page-remover" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#image"></use></svg>
-      <div class="tl-body"><div class="tl-name">PDF Page Remover</div><div class="tl-desc">Delete specific pages from a PDF file and download the result.</div><div class="tl-tags"><span class="tl-tag">Select pages</span><span class="tl-tag">Instant</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/pdf-watermark" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#image"></use></svg>
-      <div class="tl-body"><div class="tl-name">PDF Watermark</div><div class="tl-desc">Stamp a text watermark across every page of a PDF.</div><div class="tl-tags"><span class="tl-tag">All pages</span><span class="tl-tag">Custom rotation</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/pdf-password-protect" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#lock"></use></svg>
-      <div class="tl-body"><div class="tl-name">PDF Password Protect</div><div class="tl-desc">Add real password encryption to a PDF file, right in your browser.</div><div class="tl-tags"><span class="tl-tag">Real encryption</span><span class="tl-tag">RC4-128</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/image-color-picker" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#image"></use></svg>
-      <div class="tl-body"><div class="tl-name">Image Color Picker</div><div class="tl-desc">Click any photo to get exact HEX/RGB colors, plus dominant palette extraction.</div><div class="tl-tags"><span class="tl-tag">Palette extraction</span><span class="tl-tag">Instant</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/svg-to-png" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#refresh"></use></svg>
-      <div class="tl-body"><div class="tl-name">SVG to PNG</div><div class="tl-desc">Convert SVG files or code into raster PNG images at custom resolution.</div><div class="tl-tags"><span class="tl-tag">Custom resolution</span><span class="tl-tag">Free</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/photo-resizer-kb" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#resize"></use></svg>
-      <div class="tl-body"><div class="tl-name">Photo Resizer to KB</div><div class="tl-desc">Resize a photo to an exact target file size, e.g. 50KB for forms.</div><div class="tl-tags"><span class="tl-tag">Exact target size</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-    <a href="/tools/pdf-compressor" class="tl-item">
-      <svg class="icon"><use href="/assets/svg/icons.svg#compress-img"></use></svg>
-      <div class="tl-body"><div class="tl-name">PDF Compressor</div><div class="tl-desc">Reduce PDF file size with adjustable compression.</div><div class="tl-tags"><span class="tl-tag">Adjustable quality</span></div></div>
-      <span class="tl-arrow">→</span>
-    </a>
-
-  </div>
-</div>
-
-<div class="seo-text">
+<section class="page-section prose">
  <h2>About Logrith Image & PDF Tools</h2>
 
  <p>
@@ -276,72 +252,49 @@
 
 <h2>Frequently Asked Questions</h2>
 
-<div class="faq-item">
-  <div class="faq-q">Does Logrith upload my files to a server?</div>
-  <div class="faq-a">
-    Most Logrith image and PDF tools are designed to process files directly in your browser whenever possible. This helps improve privacy, speed, and security while reducing unnecessary uploads.
-  </div>
+<div class="faq-list">
+  <details class="faq-item">
+    <summary class="faq-q">Does Logrith upload my files to a server?</summary>
+    <div class="faq-a"><p>Most Logrith image and PDF tools are designed to process files directly in your browser whenever possible. This helps improve privacy, speed, and security while reducing unnecessary uploads.</p></div>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-q">Will image compression reduce image quality?</summary>
+    <div class="faq-a"><p>Image compression slightly reduces file size by optimizing image data, but Logrith is designed to maintain visual quality as much as possible. You can choose different compression levels depending on whether you want maximum quality or the smallest possible file size.</p></div>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-q">What image formats are supported?</summary>
+    <div class="faq-a"><p>The image tools support popular formats such as JPG, JPEG, PNG, WEBP, and more depending on the tool. You can convert between formats, resize images, crop photos, rotate files, and optimize images for websites, social media, or uploads.</p></div>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-q">Can I resize images without stretching them?</summary>
+    <div class="faq-a"><p>Yes. The Image Resizer maintains aspect ratio automatically to prevent images from looking stretched or distorted. You can also enter custom dimensions or use predefined sizes for social media platforms and websites.</p></div>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-q">How do I merge multiple PDF files into one document?</summary>
+    <div class="faq-a"><p>Open the PDF Merger tool, upload your PDF files, arrange them in the correct order, and start the merge process. The tool combines all selected PDFs into a single downloadable document within seconds.</p></div>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-q">Can I split specific pages from a PDF?</summary>
+    <div class="faq-a"><p>Yes. The PDF Splitter allows you to separate complete page ranges or extract individual pages from large PDF documents. This is useful for notes, assignments, forms, contracts, and presentations.</p></div>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-q">Can I use Logrith tools on mobile devices?</summary>
+    <div class="faq-a"><p>Absolutely. All image and PDF tools are designed to work smoothly on phones, tablets, laptops, and desktop devices with responsive layouts and touch-friendly controls.</p></div>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-q">Do I need to create an account to use the tools?</summary>
+    <div class="faq-a"><p>No. Logrith tools are designed for instant usage without requiring registration, login, or unnecessary setup. Simply open the tool and start using it immediately.</p></div>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-q">Can I convert images into PDF documents?</summary>
+    <div class="faq-a"><p>Yes. The JPG to PDF tool allows you to combine one or multiple images into a high-quality PDF file suitable for printing, sharing, assignments, reports, and official document uploads.</p></div>
+  </details>
 </div>
+</section>
+</main>
 
-<div class="faq-item">
-  <div class="faq-q">Will image compression reduce image quality?</div>
-  <div class="faq-a">
-    Image compression slightly reduces file size by optimizing image data, but Logrith is designed to maintain visual quality as much as possible. You can choose different compression levels depending on whether you want maximum quality or the smallest possible file size.
-  </div>
-</div>
-
-<div class="faq-item">
-  <div class="faq-q">What image formats are supported?</div>
-  <div class="faq-a">
-    The image tools support popular formats such as JPG, JPEG, PNG, WEBP, and more depending on the tool. You can convert between formats, resize images, crop photos, rotate files, and optimize images for websites, social media, or uploads.
-  </div>
-</div>
-
-<div class="faq-item">
-  <div class="faq-q">Can I resize images without stretching them?</div>
-  <div class="faq-a">
-    Yes. The Image Resizer maintains aspect ratio automatically to prevent images from looking stretched or distorted. You can also enter custom dimensions or use predefined sizes for social media platforms and websites.
-  </div>
-</div>
-
-<div class="faq-item">
-  <div class="faq-q">How do I merge multiple PDF files into one document?</div>
-  <div class="faq-a">
-    Open the PDF Merger tool, upload your PDF files, arrange them in the correct order, and start the merge process. The tool combines all selected PDFs into a single downloadable document within seconds.
-  </div>
-</div>
-
-<div class="faq-item">
-  <div class="faq-q">Can I split specific pages from a PDF?</div>
-  <div class="faq-a">
-    Yes. The PDF Splitter allows you to separate complete page ranges or extract individual pages from large PDF documents. This is useful for notes, assignments, forms, contracts, and presentations.
-  </div>
-</div>
-
-<div class="faq-item">
-  <div class="faq-q">Can I use Logrith tools on mobile devices?</div>
-  <div class="faq-a">
-    Absolutely. All image and PDF tools are designed to work smoothly on phones, tablets, laptops, and desktop devices with responsive layouts and touch-friendly controls.
-  </div>
-</div>
-
-<div class="faq-item">
-  <div class="faq-q">Do I need to create an account to use the tools?</div>
-  <div class="faq-a">
-    No. Logrith tools are designed for instant usage without requiring registration, login, or unnecessary setup. Simply open the tool and start using it immediately.
-  </div>
-</div>
-
-<div class="faq-item">
-  <div class="faq-q">Can I convert images into PDF documents?</div>
-  <div class="faq-a">
-    Yes. The JPG to PDF tool allows you to combine one or multiple images into a high-quality PDF file suitable for printing, sharing, assignments, reports, and official document uploads.
-  </div>
-</div>
-</div>
 <div id="footer"></div>
+<script src="/assets/js/main.js"></script>
 
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
 </body>
 </html>

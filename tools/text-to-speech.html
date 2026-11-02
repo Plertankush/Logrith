@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -51,17 +55,20 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-text-to-speech">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/text-generators">Text & Generators</a> › Text to Speech</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/text-generators">Text &amp; Generators</a> › Text to Speech</nav>
   <h1>Free Text to Speech</h1>
   <p>Convert any text into spoken audio using your browser's built-in voices — control speed, pitch, and voice selection.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">🔊 Multiple Voices</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#volume"></use></svg> Multiple Voices</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:700px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Enter Text</h2>
     <textarea class="tool-textarea" id="tts-text" rows="8" placeholder="Type or paste text here to have it read aloud...">Hello! This is a free text to speech tool. You can type anything here and it will be read aloud using your browser's voices.</textarea>
@@ -80,28 +87,49 @@
       </div>
     </div>
     <div class="btn-group mt-16">
-      <button class="btn btn-primary btn-lg" id="speak-btn">🔊 Speak</button>
-      <button class="btn btn-secondary" id="pause-btn">⏸ Pause</button>
-      <button class="btn btn-secondary" id="stop-btn">⏹ Stop</button>
+      <button class="btn btn-primary btn-lg" id="speak-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#volume"></use></svg> Speak</button>
+      <button class="btn btn-secondary" id="pause-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#pause"></use></svg> Pause</button>
+      <button class="btn btn-secondary" id="stop-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#stop"></use></svg> Stop</button>
     </div>
     <div class="status-msg" id="status-msg"></div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>Does this work offline?</h3><p>Many voices work offline once your browser's speech engine is loaded, though some voices may require an internet connection depending on your OS and browser.</p></div>
-    <div class="faq-item-box"><h3>Can I change the voice?</h3><p>Yes, this tool lists every voice available on your device, including different languages and accents if installed.</p></div>
-    <div class="faq-item-box"><h3>Is there a text length limit?</h3><p>No hard limit is imposed by this tool, though very long text may take a while to finish reading aloud.</p></div>
-    <div class="faq-item-box"><h3>Is my text sent to a server?</h3><p>No, this uses your browser's built-in Speech Synthesis API — text is processed by your device's speech engine, not uploaded anywhere by this tool.</p></div>
-    <div class="faq-item-box"><h3>Why do some voices sound more natural than others?</h3><p>Voice quality depends on the underlying engine your operating system uses — some are basic synthetic voices, while others use more advanced neural text-to-speech models, which is why the same sentence can sound noticeably different between voice options.</p></div>
-    <div class="faq-item-box"><h3>Can I download the generated audio as a file?</h3><p>This tool plays audio directly through your speakers using the browser's speech engine rather than generating a downloadable audio file. For a saved audio file, a dedicated audio-recording or screen-recording tool would be needed to capture the output separately.</p></div>
-    <div class="faq-item-box"><h3>Why don't I see any voices listed?</h3><p>Some browsers load voices asynchronously after the page loads, so the list can briefly appear empty before populating. If it stays empty, try refreshing the page or checking that your browser supports the Web Speech API.</p></div>
+    <details class="faq-item">
+      <summary class="faq-q">Does this work offline?</summary>
+      <div class="faq-a"><p>Many voices work offline once your browser's speech engine is loaded, though some voices may require an internet connection depending on your OS and browser.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I change the voice?</summary>
+      <div class="faq-a"><p>Yes, this tool lists every voice available on your device, including different languages and accents if installed.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is there a text length limit?</summary>
+      <div class="faq-a"><p>No hard limit is imposed by this tool, though very long text may take a while to finish reading aloud.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my text sent to a server?</summary>
+      <div class="faq-a"><p>No, this uses your browser's built-in Speech Synthesis API — text is processed by your device's speech engine, not uploaded anywhere by this tool.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why do some voices sound more natural than others?</summary>
+      <div class="faq-a"><p>Voice quality depends on the underlying engine your operating system uses — some are basic synthetic voices, while others use more advanced neural text-to-speech models, which is why the same sentence can sound noticeably different between voice options.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I download the generated audio as a file?</summary>
+      <div class="faq-a"><p>This tool plays audio directly through your speakers using the browser's speech engine rather than generating a downloadable audio file. For a saved audio file, a dedicated audio-recording or screen-recording tool would be needed to capture the output separately.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why don't I see any voices listed?</summary>
+      <div class="faq-a"><p>Some browsers load voices asynchronously after the page loads, so the list can briefly appear empty before populating. If it stays empty, try refreshing the page or checking that your browser supports the Web Speech API.</p></div>
+    </details>
   </div>
-</div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>Free Browser-Based Text to Speech</h2>
   <p>This tool converts written text into spoken audio using the Web Speech API's SpeechSynthesis feature, built into modern browsers. There's no server processing involved — your device's own speech engine reads the text aloud using whichever voices are installed on your system.</p>
 
@@ -115,7 +143,7 @@
   <p>The speed control adjusts how quickly the voice speaks, with 1x being the engine's normal default pace — values below 1 slow the speech down, useful for language learning or carefully proofreading dense technical text, while values above 1 speed it up, useful for quickly skimming through long content. Pitch adjusts the perceived tone of the voice without changing its speed, which can help make a particular voice sound more natural for certain content, though extreme settings in either direction tend to make speech harder to understand clearly.</p>
 
   <h3>Common Uses</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Proofreading</strong> — hearing your own writing read aloud often reveals awkward phrasing or errors that are easy to miss when reading silently.</li>
     <li><strong>Accessibility</strong> — making written content accessible to people who prefer or need audio.</li>
     <li><strong>Language learning</strong> — hearing correct pronunciation of words and phrases.</li>
@@ -139,19 +167,20 @@
   <p>A few small adjustments to how text is written can noticeably improve how natural it sounds when read aloud. Spelling out abbreviations and acronyms rather than leaving them as letters can help, since speech engines don't always pronounce abbreviations the way a human reader would expect. Breaking very long sentences into shorter ones also tends to produce more natural-sounding pacing, since synthetic voices generally handle sentence-level pauses better than mid-sentence ones in an overly long run-on sentence, which otherwise can come out sounding rushed or oddly monotone.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/speech-to-text" class="tool-item"><div class="ti-text"><h4>Speech to Text</h4><p>Convert spoken words into written text.</p></div></a>
-    <a href="/tools/word-counter" class="tool-item"><div class="ti-text"><h4>Word Counter</h4><p>Count words and characters in your text.</p></div></a>
-    <a href="/tools/text-summarizer-basic" class="tool-item"><div class="ti-text"><h4>Text Summarizer</h4><p>Get a quick extractive summary of long text.</p></div></a>
-    <a href="/tools/case-converter" class="tool-item"><div class="ti-text"><h4>Case Converter</h4><p>Convert text between case formats.</p></div></a>
+    <a class="related-card" href="/tools/speech-to-text"><strong>Speech to Text</strong><span>Convert spoken words into written text.</span></a>
+    <a class="related-card" href="/tools/word-counter"><strong>Word Counter</strong><span>Count words and characters in your text.</span></a>
+    <a class="related-card" href="/tools/text-summarizer-basic"><strong>Text Summarizer</strong><span>Get a quick extractive summary of long text.</span></a>
+    <a class="related-card" href="/tools/case-converter"><strong>Case Converter</strong><span>Convert text between case formats.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 const synth = window.speechSynthesis;
 let voices = [];

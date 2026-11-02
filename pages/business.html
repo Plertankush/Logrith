@@ -12,106 +12,37 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#000000">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .page-tabs { display:flex; justify-content:center; gap:6px; padding:16px 24px; background:var(--white); border-bottom:1.5px solid var(--gray-200); }
-    .page-tab { padding:8px 20px; border-radius:20px; border:1.5px solid var(--gray-200); background:var(--gray-50); font-size:.84rem; font-weight:600; font-family:var(--font-display); color:var(--gray-600); text-decoration:none; transition:var(--transition); display:flex; align-items:center; gap:6px; }
-    .page-tab:hover { border-color:var(--primary); color:var(--primary); background:var(--white); }
-    .page-tab.active { background:#7c3aed; color:white; border-color:#7c3aed; }
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
-    .page-hero { background:linear-gradient(135deg,#fdf4ff 0%,#ede9fe 60%,#ddd6fe 100%); padding:56px 24px 44px; text-align:center; border-bottom:1.5px solid var(--gray-200); }
-    .page-hero h1 { font-family:var(--font-display); font-size:clamp(1.8rem,5vw,2.6rem); font-weight:800; color:var(--gray-900); margin-bottom:10px; }
-    .page-hero h1 span { color:#7c3aed; }
-    .page-hero p { font-size:.96rem; color:var(--gray-600); max-width:500px; margin:0 auto; line-height:1.7; }
-    .breadcrumb { display:flex; align-items:center; gap:6px; font-size:.8rem; color:var(--gray-400); justify-content:center; margin-bottom:14px; }
-    .breadcrumb a { color:var(--primary); text-decoration:none; }
-
-    .contact-wrap { max-width:960px; margin:0 auto; padding:52px 24px 80px; display:grid; grid-template-columns:1fr 1.5fr; gap:40px; align-items:start; }
-    .contact-info h2 { font-family:var(--font-display); font-size:1.05rem; font-weight:700; color:var(--gray-900); margin-bottom:18px; }
-
-    /* Stats */
-    .stats-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:20px; }
-    .stat-card { background:var(--white); border:1.5px solid var(--gray-200); border-radius:var(--radius-lg); padding:16px 14px; text-align:center; }
-    .stat-card .sn { font-family:var(--font-display); font-size:1.4rem; font-weight:800; color:#7c3aed; display:block; margin-bottom:3px; }
-    .stat-card .sl { font-size:.74rem; color:var(--gray-500); }
-
-    .contact-card { background:var(--white); border:1.5px solid var(--gray-200); border-radius:var(--radius-lg); padding:16px 18px; margin-bottom:12px; display:flex; align-items:flex-start; gap:14px; transition:var(--transition); }
-    .contact-card:hover { border-color:var(--gray-300); box-shadow:var(--shadow-sm); }
-    .cc-icon { font-size:1.3rem; flex-shrink:0; margin-top:1px; }
-    .contact-card h3 { font-family:var(--font-display); font-size:.88rem; font-weight:700; color:var(--gray-900); margin-bottom:4px; }
-    .contact-card p { font-size:.82rem; color:var(--gray-600); line-height:1.55; margin:0; }
-
-    /* Partnership types */
-    .partner-types { display:flex; flex-direction:column; gap:10px; margin-bottom:16px; }
-    .partner-type { display:flex; align-items:flex-start; gap:12px; padding:14px 16px; background:var(--white); border:1.5px solid var(--gray-200); border-radius:var(--radius-lg); transition:var(--transition); }
-    .partner-type:hover { border-color:#c4b5fd; box-shadow:var(--shadow-sm); }
-    .pt-icon { font-size:1.2rem; flex-shrink:0; margin-top:1px; }
-    .pt-body h3 { font-family:var(--font-display); font-size:.86rem; font-weight:700; color:var(--gray-900); margin-bottom:3px; }
-    .pt-body p { font-size:.78rem; color:var(--gray-500); line-height:1.5; margin:0; }
-
-    .response-badge { background:#f5f3ff; border:1.5px solid #ddd6fe; border-radius:var(--radius); padding:14px 16px; margin-bottom:14px; }
-    .response-badge .rb-title { font-family:var(--font-display); font-size:.82rem; font-weight:700; color:#6d28d9; margin-bottom:4px; }
-    .response-badge p { font-size:.8rem; color:#5b21b6; line-height:1.6; margin:0; }
-
-    .direct-email { display:flex; align-items:center; gap:10px; padding:13px 16px; background:var(--white); border:1.5px solid var(--gray-200); border-radius:var(--radius-lg); text-decoration:none; color:var(--gray-700); font-size:.84rem; font-weight:600; transition:var(--transition); }
-    .direct-email:hover { border-color:#7c3aed; color:#7c3aed; }
-
-    /* Form card */
-    .form-card { background:var(--white); border:1.5px solid var(--gray-200); border-radius:var(--radius-xl); padding:32px; box-shadow:var(--shadow-md); }
-    .form-card h2 { font-family:var(--font-display); font-size:1.1rem; font-weight:700; color:var(--gray-900); margin-bottom:24px; }
-    .cf-group { margin-bottom:16px; }
-    .cf-group label { display:block; font-size:.82rem; font-weight:600; color:var(--gray-700); margin-bottom:6px; }
-    .cf-group label .req { color:#7c3aed; margin-left:2px; }
-    .cf-group label .opt { font-weight:400; color:var(--gray-400); font-size:.76rem; margin-left:4px; }
-    .cf-group input, .cf-group select, .cf-group textarea { width:100%; padding:10px 13px; border:1.5px solid var(--gray-200); border-radius:var(--radius); font-size:.88rem; font-family:var(--font-main); color:var(--gray-900); background:var(--white); outline:none; transition:var(--transition); box-sizing:border-box; }
-    .cf-group input:focus, .cf-group select:focus, .cf-group textarea:focus { border-color:#7c3aed; box-shadow:0 0 0 3px rgba(124,58,237,.08); }
-    .cf-group input.error, .cf-group select.error, .cf-group textarea.error { border-color:#ef4444; }
-    .cf-group textarea { resize:vertical; min-height:110px; line-height:1.6; }
-    .field-error { font-size:.75rem; color:#ef4444; margin-top:4px; display:none; }
-    .field-error.show { display:block; }
-    .char-count { font-size:.74rem; color:var(--gray-400); text-align:right; margin-top:4px; }
-
-    /* Two col */
-    .cf-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-    @media(max-width:480px){ .cf-row { grid-template-columns:1fr; } }
-
-    .submit-btn { width:100%; padding:12px; background:linear-gradient(135deg,#7c3aed,#a855f7); color:white; border:none; border-radius:var(--radius); font-size:.94rem; font-family:var(--font-display); font-weight:700; cursor:pointer; transition:var(--transition); box-shadow:0 4px 14px rgba(124,58,237,.28); display:flex; align-items:center; justify-content:center; gap:8px; }
-    .submit-btn:hover:not(:disabled) { transform:translateY(-1px); box-shadow:0 6px 20px rgba(124,58,237,.4); }
-    .submit-btn:disabled { opacity:.7; cursor:not-allowed; transform:none; }
-    .form-footer { font-size:.74rem; color:var(--gray-400); text-align:center; margin-top:12px; }
-    .form-footer a { color:var(--primary); }
-
-    .form-success { display:none; text-align:center; padding:32px 24px; background:#f5f3ff; border-radius:var(--radius-lg); border:1.5px solid #ddd6fe; }
-    .form-success .fs-icon { font-size:2.8rem; display:block; margin-bottom:14px; }
-    .form-success h3 { font-family:var(--font-display); font-size:1.1rem; font-weight:700; color:#4c1d95; margin-bottom:8px; }
-    .form-success p { font-size:.86rem; color:#5b21b6; line-height:1.6; }
-    .form-success .reset-btn { margin-top:18px; padding:8px 20px; background:white; border:1.5px solid #ddd6fe; border-radius:20px; font-size:.82rem; font-weight:600; color:#7c3aed; cursor:pointer; font-family:var(--font-display); }
-
-    .msg-error { display:none; padding:12px 16px; background:#fef2f2; border:1.5px solid #fecaca; border-radius:var(--radius); font-size:.84rem; color:#dc2626; margin-bottom:16px; }
-    .msg-error.show { display:block; }
-
-    @media(max-width:768px){ .contact-wrap{grid-template-columns:1fr;gap:28px;padding:28px 16px 60px;} .form-card{padding:22px 18px;} .stats-grid{grid-template-columns:1fr 1fr;} .page-tabs{top:44px;overflow-x:auto;justify-content:flex-start;padding:12px 16px;} .page-tab{white-space:nowrap;padding:7px 16px;font-size:.8rem;} }
-  </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-BPJ4332XJH');</script>
 </head>
-<body>
+<body class="page-business">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="page-hero">
-  <div class="breadcrumb"><a href="/">Home</a> › <a href="contact">Contact</a> › Business</div>
+<main id="main">
+
+<header class="page-hero">
+  <div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="contact">Contact</a> › Business</nav>
   <h1>Business &amp; <span>Partnerships</span></h1>
   <p>Grow with Logrith — advertising, integrations, and strategic collaborations. We respond within 24 hours.</p>
-</div>
+  </div>
+</header>
 
 <div class="page-tabs">
-  <a href="contact" class="page-tab">✉️ Contact</a>
-  <a href="support" class="page-tab">🛠️ Support</a>
-  <a href="business" class="page-tab active">🤝 Business</a>
+  <a href="contact" class="page-tab"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#mail"></use></svg> Contact</a>
+  <a href="support" class="page-tab"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg> Support</a>
+  <a href="business" class="page-tab active"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#users"></use></svg> Business</a>
 </div>
 
-<div class="contact-wrap">
+<div class="contact-wrap container">
 
   <!-- LEFT -->
   <div class="contact-info">
@@ -128,21 +59,21 @@
     <!-- Partnership Types -->
     <div class="partner-types">
       <div class="partner-type">
-        <span class="pt-icon">📣</span>
+        <span class="pt-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#broadcast"></use></svg></span>
         <div class="pt-body">
           <h3>Advertising</h3>
           <p>Reach developers, designers, students and professionals actively using free online tools. Contextual placements, zero intrusion.</p>
         </div>
       </div>
       <div class="partner-type">
-        <span class="pt-icon">🔗</span>
+        <span class="pt-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#link"></use></svg></span>
         <div class="pt-body">
           <h3>Integration</h3>
           <p>Integrate your product or API into Logrith's tool ecosystem. Co-build tools, embed workflows, or power existing tools.</p>
         </div>
       </div>
       <div class="partner-type">
-        <span class="pt-icon">🚀</span>
+        <span class="pt-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#send"></use></svg></span>
         <div class="pt-body">
           <h3>Strategic Partnership</h3>
           <p>Long-term collaboration — content, co-marketing, link building, or joint product development.</p>
@@ -151,22 +82,22 @@
     </div>
 
     <div class="response-badge">
-      <div class="rb-title">⚡ Response Commitment</div>
+      <div class="rb-title"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Response Commitment</div>
       <p>All business inquiries receive a reply within <strong>24 hours</strong> on business days. Complex proposals may require a follow-up call.</p>
     </div>
 
     <div class="contact-card">
-      <span class="cc-icon">📧</span>
+      <span class="cc-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#mail"></use></svg></span>
       <div>
         <h3>Direct Email</h3>
-        <p>email us at <a href="mailto:contact@logrith.in" style="color:var(--primary);font-weight:600;">contact@logrith.in</a></p>
+        <p>email us at <a class="u-dbe490" href="mailto:contact@logrith.in">contact@logrith.in</a></p>
       </div>
     </div>
   </div>
 
   <!-- RIGHT FORM -->
   <div class="form-card">
-    <h2>🤝 Partnership Inquiry</h2>
+    <h2><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#users"></use></svg> Partnership Inquiry</h2>
     <div class="msg-error" id="msg-error"></div>
 
     <div id="contact-form">
@@ -191,10 +122,10 @@
         <div class="cf-group">
           <label>Inquiry Type</label>
           <select id="cf-inquiry">
-            <option value="partnership">🚀 Strategic Partnership</option>
-            <option value="advertising">📣 Advertising</option>
-            <option value="integration">🔗 Integration</option>
-            <option value="other">📝 Other</option>
+            <option value="partnership">Strategic Partnership</option>
+            <option value="advertising">Advertising</option>
+            <option value="integration">Integration</option>
+            <option value="other">Other</option>
           </select>
         </div>
       </div>
@@ -219,7 +150,7 @@
     </div>
 
     <div class="form-success" id="form-success">
-      <span class="fs-icon">🤝</span>
+      <span class="fs-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#users"></use></svg></span>
       <h3>Proposal Received!</h3>
       <p>Thank you for your interest in partnering with Logrith. We'll review your proposal and get back to you within 24 hours at the email you provided.</p>
       <button class="reset-btn" onclick="resetForm()">Send another inquiry</button>
@@ -229,45 +160,46 @@
 </div>
 
 <!-- PARTNERSHIP DETAILS -->
-<section style="max-width:860px;margin:0 auto 60px;padding:0 24px;">
-  <h2 style="font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:var(--gray-900);margin-bottom:18px;">How Each Partnership Type Works</h2>
+<section class="u-d33dc1">
+  <h2 class="u-359580">How Each Partnership Type Works</h2>
 
-  <div style="margin-bottom:18px;">
-    <h3 style="font-size:.96rem;font-weight:700;color:var(--gray-800);margin-bottom:6px;">Advertising</h3>
-    <p style="font-size:.88rem;color:var(--gray-600);line-height:1.7;">Logrith's tools are used by people actively doing a specific task — compressing a file, calculating a number, generating a password — which makes placements contextual rather than interruptive. We keep ad density low on purpose, so any advertising partnership is evaluated for fit with the page it would appear on, not just budget.</p>
+  <div class="u-be2540">
+    <h3 class="u-e98619">Advertising</h3>
+    <p class="u-37832d">Logrith's tools are used by people actively doing a specific task — compressing a file, calculating a number, generating a password — which makes placements contextual rather than interruptive. We keep ad density low on purpose, so any advertising partnership is evaluated for fit with the page it would appear on, not just budget.</p>
   </div>
 
-  <div style="margin-bottom:18px;">
-    <h3 style="font-size:.96rem;font-weight:700;color:var(--gray-800);margin-bottom:6px;">Integration</h3>
-    <p style="font-size:.88rem;color:var(--gray-600);line-height:1.7;">If your product solves a problem adjacent to what Logrith already does — an API, a data source, a specialized conversion — we're open to discussing how it could power a new tool or improve an existing one. These conversations usually start with a short technical overview of what you're proposing and why it's a good fit for a browser-first, no-login platform.</p>
+  <div class="u-be2540">
+    <h3 class="u-e98619">Integration</h3>
+    <p class="u-37832d">If your product solves a problem adjacent to what Logrith already does — an API, a data source, a specialized conversion — we're open to discussing how it could power a new tool or improve an existing one. These conversations usually start with a short technical overview of what you're proposing and why it's a good fit for a browser-first, no-login platform.</p>
   </div>
 
-  <div style="margin-bottom:18px;">
-    <h3 style="font-size:.96rem;font-weight:700;color:var(--gray-800);margin-bottom:6px;">Strategic Partnership</h3>
-    <p style="font-size:.88rem;color:var(--gray-600);line-height:1.7;">This covers longer-term collaborations: co-authored content, link exchanges with genuinely relevant sites, or joint development of a new tool or feature. We're a small, independently-run platform, so strategic partnerships are evaluated case by case rather than through a formal program.</p>
+  <div class="u-be2540">
+    <h3 class="u-e98619">Strategic Partnership</h3>
+    <p class="u-37832d">This covers longer-term collaborations: co-authored content, link exchanges with genuinely relevant sites, or joint development of a new tool or feature. We're a small, independently-run platform, so strategic partnerships are evaluated case by case rather than through a formal program.</p>
   </div>
 
-  <h2 style="font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:var(--gray-900);margin:28px 0 18px;">Frequently Asked Questions</h2>
+  <h2 class="u-376d1d">Frequently Asked Questions</h2>
 
-  <div style="margin-bottom:16px;">
-    <h3 style="font-size:.96rem;font-weight:700;color:var(--gray-800);margin-bottom:6px;">What information should I include in a proposal?</h3>
-    <p style="font-size:.88rem;color:var(--gray-600);line-height:1.7;">What you're proposing, what you're offering in return, a rough timeline, and a budget range if advertising or a paid arrangement is involved. The more specific the proposal, the faster we can give you a real answer rather than a generic reply.</p>
+  <div class="mb-16">
+    <h3 class="u-e98619">What information should I include in a proposal?</h3>
+    <p class="u-37832d">What you're proposing, what you're offering in return, a rough timeline, and a budget range if advertising or a paid arrangement is involved. The more specific the proposal, the faster we can give you a real answer rather than a generic reply.</p>
   </div>
 
-  <div style="margin-bottom:16px;">
-    <h3 style="font-size:.96rem;font-weight:700;color:var(--gray-800);margin-bottom:6px;">Do you accept sponsored tool placements or paid rankings?</h3>
-    <p style="font-size:.88rem;color:var(--gray-600);line-height:1.7;">No. Tool visibility on Logrith is based on usefulness and category fit, not payment. We're open to advertising placements that are clearly labeled as such, but we don't let sponsorship influence which tools get built or how they're ranked.</p>
+  <div class="mb-16">
+    <h3 class="u-e98619">Do you accept sponsored tool placements or paid rankings?</h3>
+    <p class="u-37832d">No. Tool visibility on Logrith is based on usefulness and category fit, not payment. We're open to advertising placements that are clearly labeled as such, but we don't let sponsorship influence which tools get built or how they're ranked.</p>
   </div>
 
   <div>
-    <h3 style="font-size:.96rem;font-weight:700;color:var(--gray-800);margin-bottom:6px;">How long does a typical partnership discussion take?</h3>
-    <p style="font-size:.88rem;color:var(--gray-600);line-height:1.7;">The initial reply comes within 24 hours. From there, it depends on the complexity of the proposal — a simple advertising placement can move quickly, while an integration or strategic partnership usually needs a follow-up call or email thread to work out details.</p>
+    <h3 class="u-e98619">How long does a typical partnership discussion take?</h3>
+    <p class="u-37832d">The initial reply comes within 24 hours. From there, it depends on the complexity of the proposal — a simple advertising placement can move quickly, while an integration or strategic partnership usually needs a follow-up call or email thread to work out details.</p>
   </div>
 </section>
 
+</main>
+
 <div id="footer"></div>
-<script src="/load-components.js"></script>
-<script src="/assets/js/main.js" defer></script>
+<script src="/assets/js/main.js"></script>
 <script>
 function updateCharCount(el, countId, min, max) {
   var len = el.value.length;

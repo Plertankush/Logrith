@@ -23,47 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .bp-hero { max-width:820px;margin:0 auto;padding:48px 20px 8px; }
-    .bp-crumb { font-size:.85rem;color:var(--gray-500);margin-bottom:16px; }
-    .bp-crumb a { color:var(--primary);text-decoration:none; }
-    .bp-hero h1 { font-family:var(--font-display);font-size:2rem;line-height:1.25;color:var(--gray-900);margin-bottom:14px; }
-    .bp-hero .bp-dek { font-size:1.05rem;color:var(--gray-700);line-height:1.7;margin-bottom:20px; }
-    .bp-cta { display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:white;padding:13px 26px;border-radius:var(--radius);font-weight:700;text-decoration:none;font-size:.95rem; }
-    .bp-cta svg { width:17px;height:17px; }
-    .bp-cta:hover { background:var(--primary-dark); }
-    .bp-body { max-width:760px;margin:0 auto;padding:28px 20px 20px; }
-    .bp-body h2 { font-family:var(--font-display);font-size:1.5rem;color:var(--gray-900);margin:38px 0 14px; }
-    .bp-body h3 { font-family:var(--font-display);font-size:1.15rem;color:var(--gray-900);margin:26px 0 10px; }
-    .bp-body p { color:var(--gray-700);line-height:1.8;margin-bottom:16px;font-size:1rem; }
-    .bp-body ul, .bp-body ol { color:var(--gray-700);line-height:1.8;margin:0 0 16px 22px; }
-    .bp-body li { margin-bottom:8px; }
-    .bp-body strong { color:var(--gray-900); }
-    .bp-toc { background:var(--gray-50);border-radius:var(--radius-lg);padding:20px 24px;margin:24px 0; }
-    .bp-toc h2 { margin:0 0 10px;font-size:1.05rem; }
-    .bp-toc ol { margin:0 0 0 20px; }
-    .bp-toc a { color:var(--primary);text-decoration:none; }
-    .bp-table { width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:.92rem; }
-    .bp-table th, .bp-table td { border:1px solid var(--gray-200);padding:10px 12px;text-align:left; }
-    .bp-table th { background:var(--gray-50);font-weight:700;color:var(--gray-900); }
-    .bp-howto { counter-reset:step; list-style:none;margin-left:0; }
-    .bp-howto li { position:relative;padding-left:42px;margin-bottom:18px; }
-    .bp-howto li::before { counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;background:var(--primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem; }
-    .bp-faq-item { border-bottom:1px solid var(--gray-200);padding:16px 0; }
-    .bp-faq-item h3 { margin:0 0 8px; font-size:1.02rem; }
-    .bp-byline { font-size:.82rem;color:var(--gray-500);margin-top:10px; }
-    .bp-related { max-width:1000px;margin:0 auto;padding:20px 20px 60px; }
-    .bp-related h2 { font-family:var(--font-display);font-size:1.4rem;color:var(--gray-900);margin-bottom:18px;text-align:center; }
-    .bp-related-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px; }
-    .bp-related-card { border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:18px;text-decoration:none;color:inherit;background:var(--white); }
-    .bp-related-card h4 { font-size:.95rem;color:var(--gray-900);margin-bottom:6px; }
-    .bp-related-card p { font-size:.82rem;color:var(--gray-700);line-height:1.5; }
-    .bp-prevnext { display:flex;justify-content:space-between;gap:16px;max-width:760px;margin:0 auto;padding:0 20px 20px; }
-    .bp-prevnext a { flex:1;border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:12px 16px;text-decoration:none;color:var(--gray-700);font-size:.85rem; }
-    .bp-prevnext a strong { display:block;color:var(--gray-900);font-size:.92rem; }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -99,23 +64,26 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-merge-multiple-pdf-files-into-one-free">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="bp-hero">
-  <div class="bp-crumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/image-pdf-tools">Image & PDF Tools</a> &rsaquo; PDF Merge</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/image-pdf-tools">Image & PDF Tools</a> &rsaquo; PDF Merge</nav>
   <h1>How to Merge Multiple PDF Files into One Document, Without Uploading Any of Them</h1>
-  <p class="bp-dek">A contract, its signature page, and a cover letter arrive as three separate PDFs — and most systems that accept document uploads expect exactly one file, not three. Merging solves this cleanly, but it's worth understanding what actually happens to your original content in the process, why keeping this operation entirely local matters more for merged documents than almost any other PDF task, and where merging fits into a larger document assembly workflow that might also involve trimming or compressing the final result.</p>
-  <a href="/tools/pdf-merge" class="bp-cta">
+  <p>A contract, its signature page, and a cover letter arrive as three separate PDFs — and most systems that accept document uploads expect exactly one file, not three. Merging solves this cleanly, but it's worth understanding what actually happens to your original content in the process, why keeping this operation entirely local matters more for merged documents than almost any other PDF task, and where merging fits into a larger document assembly workflow that might also involve trimming or compressing the final result.</p>
+  <a href="/tools/pdf-merge" class="btn btn-primary btn-lg">
     <svg class="icon"><use href="/assets/svg/icons.svg#pages"></use></svg>
     Merge PDF Files
   </a>
-  <p class="bp-byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
-</div>
+  <p class="byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
+</div></header>
 
-<div class="bp-body">
+<article class="page-section prose">
 
-  <div class="bp-toc">
+  <nav class="toc" aria-label="On this page">
     <h2>On This Page</h2>
     <ol>
       <li><a href="#how-to-use">How to Merge PDF Files</a></li>
@@ -125,15 +93,25 @@
       <li><a href="#mistakes">Common Mistakes</a></li>
       <li><a href="#faq">Frequently Asked Questions</a></li>
     </ol>
-  </div>
+  </nav>
 
   <h2 id="how-to-use">How to Merge PDF Files</h2>
-  <ol class="bp-howto">
-    <li>Open the <a href="/tools/pdf-merge">PDF Merge tool</a> and upload two or more PDF files.</li>
-    <li>Drag the file thumbnails to set the order they should appear in the final document.</li>
-    <li>Double-check the order against your intended final document sequence before proceeding — this is the step most worth pausing on, since correcting it after merging means starting over.</li>
-    <li>Click Merge PDFs. The tool combines all pages from every file, in order, into one new document.</li>
-    <li>Download the merged PDF directly — none of the source files were ever uploaded anywhere.</li>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the <a href="/tools/pdf-merge">PDF Merge tool</a> and upload two or more PDF files.</p>
+    </li>
+    <li class="step">
+      <p>Drag the file thumbnails to set the order they should appear in the final document.</p>
+    </li>
+    <li class="step">
+      <p>Double-check the order against your intended final document sequence before proceeding — this is the step most worth pausing on, since correcting it after merging means starting over.</p>
+    </li>
+    <li class="step">
+      <p>Click Merge PDFs. The tool combines all pages from every file, in order, into one new document.</p>
+    </li>
+    <li class="step">
+      <p>Download the merged PDF directly — none of the source files were ever uploaded anywhere.</p>
+    </li>
   </ol>
 
   <h2 id="why-privacy-matters">Why Privacy Matters More for Merged Documents</h2>
@@ -147,7 +125,8 @@
   <p>Every PDF contains more than just visible page content — metadata like the document title, author, creation date, embedded fonts, and sometimes form fields or bookmarks. When merging, the visible page content from each source carries over faithfully, but document-level metadata (like the original title or author field) generally doesn't carry through in a meaningful combined way, since the new merged document is a genuinely new file with its own identity. If any of your source PDFs contain fillable form fields, be aware that complex interactive forms can sometimes behave differently after merging — for straightforward static documents (the overwhelming majority of everyday PDFs like scans, letters, and reports), this isn't a concern at all.</p>
 
   <h2 id="comparison">Comparison vs. iLovePDF and Smallpdf</h2>
-  <table class="bp-table">
+  <div class="table-wrap">
+    <table class="table">
     <tr><th>Feature</th><th>Logrith PDF Merge</th><th>iLovePDF</th><th>Smallpdf</th></tr>
     <tr><td>Processing location</td><td>Entirely in-browser</td><td>Server upload</td><td>Server upload</td></tr>
     <tr><td>Free usage limit</td><td>Unlimited</td><td>Unlimited merges, file size caps apply</td><td>2 tasks per day (free tier)</td></tr>
@@ -156,6 +135,7 @@
     <tr><td>Preserves live text/searchability</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
     <tr><td>Merge with page selection (specific pages only)</td><td>No — merges full files only</td><td>Yes, select specific pages from each file</td><td>Yes, select specific pages from each file</td></tr>
   </table>
+  </div>
   <p>Both iLovePDF and Smallpdf offer more granular control than Logrith's current version — the ability to select only specific pages from each source PDF rather than merging entire files. If you need to pull page 3 from one document and pages 1-2 from another, those tools handle that directly, while Logrith's version currently requires using the PDF page remover tool first to trim files down to just the pages you want, then merging the trimmed results. For the more common case of combining complete documents in a chosen order, Logrith's tool handles that directly with the same result quality, while keeping the entire process local rather than uploading potentially sensitive combined documents to a server.</p>
 
   <h2>Naming and Organizing Files Before Merging</h2>
@@ -187,38 +167,59 @@
   <h3>Why Choose Logrith</h3>
   <p>Merging pairs naturally with Logrith's other PDF tools — trim unwanted pages with the page remover before merging, or compress the final combined document afterward if it's too large for an email attachment, all under the same no-upload, no-account privacy standard throughout every step of the document assembly process.</p>
 
-</div>
+</article>
 
-<div class="bp-body">
+<article class="page-section prose">
   <h2 id="faq">Frequently Asked Questions</h2>
-  <div class="bp-faq-item"><h3>Does merging PDFs reduce their quality?</h3><p>No, merging combines existing pages as-is into a new document, without re-rendering, re-compressing, or altering the original page content.</p></div>
-  <div class="bp-faq-item"><h3>Can I merge password-protected PDFs?</h3><p>You'll need to remove the password first, since merging requires reading the actual page content, which isn't possible on an encrypted file without the password.</p></div>
-  <div class="bp-faq-item"><h3>What order will the merged pages be in?</h3><p>Pages follow the order the source files appear in your upload list, which you can rearrange by dragging before merging. Each file's own internal page order is preserved within its section.</p></div>
-  <div class="bp-faq-item"><h3>Is there a limit to how many PDFs I can merge?</h3><p>There's no fixed file-count limit, though very large numbers of large PDFs will take longer to process since everything happens using your device's own processing power.</p></div>
-  <div class="bp-faq-item"><h3>Will the merged PDF be larger than the sum of the originals?</h3><p>Generally the merged file size is close to the sum of the source files, since content is combined rather than re-encoded. Minor differences can occur due to the new document's internal structure.</p></div>
-  <div class="bp-faq-item"><h3>Can I undo a merge and get my original separate files back?</h3><p>Not automatically — a merged PDF becomes one combined document with no built-in record of the original file boundaries. Keep your original separate files if you might need them independently later, since separating pages back out afterward requires a split tool and manual page-range selection rather than a true undo.</p></div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">Does merging PDFs reduce their quality?</summary>
+      <div class="faq-a"><p>No, merging combines existing pages as-is into a new document, without re-rendering, re-compressing, or altering the original page content.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I merge password-protected PDFs?</summary>
+      <div class="faq-a"><p>You'll need to remove the password first, since merging requires reading the actual page content, which isn't possible on an encrypted file without the password.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What order will the merged pages be in?</summary>
+      <div class="faq-a"><p>Pages follow the order the source files appear in your upload list, which you can rearrange by dragging before merging. Each file's own internal page order is preserved within its section.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is there a limit to how many PDFs I can merge?</summary>
+      <div class="faq-a"><p>There's no fixed file-count limit, though very large numbers of large PDFs will take longer to process since everything happens using your device's own processing power.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Will the merged PDF be larger than the sum of the originals?</summary>
+      <div class="faq-a"><p>Generally the merged file size is close to the sum of the source files, since content is combined rather than re-encoded. Minor differences can occur due to the new document's internal structure.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I undo a merge and get my original separate files back?</summary>
+      <div class="faq-a"><p>Not automatically — a merged PDF becomes one combined document with no built-in record of the original file boundaries. Keep your original separate files if you might need them independently later, since separating pages back out afterward requires a split tool and manual page-range selection rather than a true undo.</p></div>
+    </details>
+  </div>
 
   <h2>Conclusion</h2>
   <p>Merging PDFs is a simple operation with an outsized privacy consideration: the resulting file is often more complete and more sensitive than any single input, which makes browser-based processing a genuinely meaningful choice rather than a minor technical preference. Get the order right before merging, name your files clearly beforehand to reduce the chance of mistakes, and the result is a clean, single document ready for whatever submission or archive it was assembled for — all without a copy of your combined, complete file ever touching a server you don't control, regardless of how sensitive the underlying content happens to be.</p>
-</div>
+</article>
 
-<div class="bp-prevnext">
+<nav class="post-nav page-section" aria-label="More guides">
   <a href="/blog/combine-jpg-images-into-one-pdf-free">&larr; Previous: <strong>JPG to PDF Guide</strong></a>
   <a href="/blog/rotate-pdf-pages-fix-sideways-scan">Next: <strong>PDF Rotate Guide</strong> &rarr;</a>
-</div>
+</nav>
 
-<div class="bp-related">
+<section class="page-section">
   <h2>Related Tools</h2>
-  <div class="bp-related-grid">
-    <a href="/blog/extract-pages-from-pdf-online-free" class="bp-related-card"><h4>PDF Split</h4><p>Split a PDF into separate pages or ranges.</p></a>
-    <a href="/blog/pdf-compressor" class="bp-related-card"><h4>PDF Compressor</h4><p>Reduce the merged PDF's file size if needed.</p></a>
-    <a href="/blog/combine-jpg-images-into-one-pdf-free" class="bp-related-card"><h4>JPG to PDF</h4><p>Convert images into PDF pages before merging.</p></a>
-    <a href="/blog/pdf-page-remover" class="bp-related-card"><h4>PDF Page Remover</h4><p>Trim unwanted pages before or after merging.</p></a>
+  <div class="related-grid">
+    <a class="related-card" href="/blog/extract-pages-from-pdf-online-free"><strong>PDF Split</strong><span>Split a PDF into separate pages or ranges.</span></a>
+    <a class="related-card" href="/blog/pdf-compressor"><strong>PDF Compressor</strong><span>Reduce the merged PDF's file size if needed.</span></a>
+    <a class="related-card" href="/blog/combine-jpg-images-into-one-pdf-free"><strong>JPG to PDF</strong><span>Convert images into PDF pages before merging.</span></a>
+    <a class="related-card" href="/blog/pdf-page-remover"><strong>PDF Page Remover</strong><span>Trim unwanted pages before or after merging.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

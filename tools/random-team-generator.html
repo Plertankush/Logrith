@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -45,17 +49,20 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-random-team-generator">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/utilities">Utilities</a> › Random Team Generator</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/utilities">Utilities</a> › Random Team Generator</nav>
   <h1>Free Random Team Generator</h1>
   <p>Paste a list of names and split them into a set number of random, evenly balanced teams instantly.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">⚖️ Balanced Split</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#file-text"></use></svg> Balanced Split</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:820px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Enter Names</h2>
     <textarea class="tool-textarea" id="names-input" rows="8" placeholder="Enter one name per line...">Alex
@@ -71,32 +78,56 @@ Jamie</textarea>
       <input type="range" id="team-count" min="2" max="10" value="2">
     </div>
     <div class="btn-group mt-12">
-      <button class="btn btn-primary btn-lg" id="generate-btn">⚖️ Generate Teams</button>
+      <button class="btn btn-primary btn-lg" id="generate-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#file-text"></use></svg> Generate Teams</button>
     </div>
     <div class="status-msg" id="status-msg"></div>
   </div>
 
-  <div class="tool-card" id="result-card" style="display:none;">
+  <div class="tool-card is-hidden" id="result-card">
     <h2>Your Teams</h2>
-    <div class="preview-grid" id="teams-grid" style="grid-template-columns:repeat(auto-fill,minmax(180px,1fr));"></div>
+    <div class="preview-grid" id="teams-grid"></div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>How are teams balanced?</h3><p>Names are shuffled randomly, then distributed one at a time across all teams in rotation, ensuring each team gets as close to an equal number of members as possible.</p></div>
-    <div class="faq-item-box"><h3>What if the number of names doesn't divide evenly?</h3><p>Some teams will have one more member than others — for example, splitting 10 names into 3 teams gives teams of 4, 3, and 3.</p></div>
-    <div class="faq-item-box"><h3>Can I regenerate teams with the same names?</h3><p>Yes, click Generate Teams again to get a new random split with the same list of names.</p></div>
-    <div class="faq-item-box"><h3>Is my name list uploaded to a server?</h3><p>No, the entire shuffle and split happens locally in your browser using JavaScript. The names you enter never leave your device.</p></div>
-    <div class="faq-item-box"><h3>What's the maximum number of teams I can create?</h3><p>The slider supports up to 10 teams at once, which covers the vast majority of classroom, sports, and workplace group scenarios.</p></div>
-    <div class="faq-item-box"><h3>Can I split names into teams of a specific size instead of a specific count?</h3><p>This tool works by number of teams rather than team size. To get a target size, divide your total number of names by the desired size to find how many teams to request.</p></div>
-    <div class="faq-item-box"><h3>Does this tool work for events with just a few participants?</h3><p>Yes, it works with any list from the minimum needed for your chosen team count up to large groups, scaling the same round-robin logic regardless of list size.</p></div>
-    <div class="faq-item-box"><h3>Can I name the teams something other than "Team 1," "Team 2"?</h3><p>The generated results label teams numerically for simplicity. After generating, you're free to rename or relabel the teams however you like once you've copied or noted the groupings.</p></div>
+    <details class="faq-item">
+      <summary class="faq-q">How are teams balanced?</summary>
+      <div class="faq-a"><p>Names are shuffled randomly, then distributed one at a time across all teams in rotation, ensuring each team gets as close to an equal number of members as possible.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What if the number of names doesn't divide evenly?</summary>
+      <div class="faq-a"><p>Some teams will have one more member than others — for example, splitting 10 names into 3 teams gives teams of 4, 3, and 3.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I regenerate teams with the same names?</summary>
+      <div class="faq-a"><p>Yes, click Generate Teams again to get a new random split with the same list of names.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my name list uploaded to a server?</summary>
+      <div class="faq-a"><p>No, the entire shuffle and split happens locally in your browser using JavaScript. The names you enter never leave your device.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What's the maximum number of teams I can create?</summary>
+      <div class="faq-a"><p>The slider supports up to 10 teams at once, which covers the vast majority of classroom, sports, and workplace group scenarios.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I split names into teams of a specific size instead of a specific count?</summary>
+      <div class="faq-a"><p>This tool works by number of teams rather than team size. To get a target size, divide your total number of names by the desired size to find how many teams to request.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does this tool work for events with just a few participants?</summary>
+      <div class="faq-a"><p>Yes, it works with any list from the minimum needed for your chosen team count up to large groups, scaling the same round-robin logic regardless of list size.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I name the teams something other than "Team 1," "Team 2"?</summary>
+      <div class="faq-a"><p>The generated results label teams numerically for simplicity. After generating, you're free to rename or relabel the teams however you like once you've copied or noted the groupings.</p></div>
+    </details>
   </div>
-</div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>Split Names Into Random Teams</h2>
   <p>This tool takes a list of names and splits them into a chosen number of random, evenly balanced teams, useful for sports, classroom activities, group projects, and any situation where you need fair, unbiased team assignment.</p>
 
@@ -110,7 +141,7 @@ Jamie</textarea>
   <p>When a list of names doesn't divide evenly by the number of teams requested, some teams will end up with one more member than others — splitting 11 names into 3 teams, for example, produces teams of 4, 4, and 3. This is the smallest possible imbalance mathematically achievable, and which specific team ends up with the extra member is itself randomly determined by the shuffle, so no single team is systematically favored with the larger group across repeated uses of the generator.</p>
 
   <h3>Common Uses</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Sports and games</strong> — randomly splitting players into fair teams for pickup games.</li>
     <li><strong>Classroom activities</strong> — assigning students to random groups for projects or discussions.</li>
     <li><strong>Workplace exercises</strong> — creating random teams for team-building activities or workshops.</li>
@@ -125,12 +156,24 @@ Jamie</textarea>
   <p>Because each click of Generate Teams re-shuffles the list from scratch, you're never locked into a single result — clicking again produces an entirely new random arrangement using the same name list and team count. This is useful if a particular split happens to put several close friends or rivals on the same team and you'd prefer a different mix, or simply if you want to double-check that the distribution stays fair across repeated runs.</p>
 
   <h3>Step-by-Step: Generating Random Teams</h3>
-  <div class="tool-steps">
-    <div class="tool-step"><strong>1. Enter your names</strong>Type or paste one name per line into the text box.</div>
-    <div class="tool-step"><strong>2. Set the number of teams</strong>Use the slider to choose how many teams to split into.</div>
-    <div class="tool-step"><strong>3. Generate</strong>Click Generate Teams to instantly shuffle and split the list.</div>
-    <div class="tool-step"><strong>4. Review and regenerate if needed</strong>Check the results, or click again for a fresh random split.</div>
-  </div>
+  <ol class="steps">
+    <li class="step">
+      <strong>Enter your names</strong>
+      <p>Type or paste one name per line into the text box.</p>
+    </li>
+    <li class="step">
+      <strong>Set the number of teams</strong>
+      <p>Use the slider to choose how many teams to split into.</p>
+    </li>
+    <li class="step">
+      <strong>Generate</strong>
+      <p>Click Generate Teams to instantly shuffle and split the list.</p>
+    </li>
+    <li class="step">
+      <strong>Review and regenerate if needed</strong>
+      <p>Check the results, or click again for a fresh random split.</p>
+    </li>
+  </ol>
 
   <h3>Random Teams vs. Skill-Balanced Teams</h3>
   <p>It's worth being clear about what "balanced" means here — this tool balances team size, ensuring each group has as close to an equal number of people as mathematically possible, but it has no awareness of skill, experience, or any other attribute about the people being assigned. For situations where skill balance matters more than pure randomness, such as a competitive sports league trying to create evenly matched teams, a different approach — manually distributing known skill levels across teams, or using a seeded draft system — would be more appropriate. This tool is purpose-built for situations where fairness means "everyone has an equal, unbiased chance," not for situations requiring teams matched by ability.</p>
@@ -139,19 +182,20 @@ Jamie</textarea>
   <p>All shuffling and team assignment happens directly in your browser — the names you enter are never sent to a server, logged, or stored anywhere, making this safe to use with real student, employee, or player names.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/random-name-generator" class="tool-item"><div class="ti-text"><h4>Random Name Generator</h4><p>Generate random names for testing or games.</p></div></a>
-    <a href="/tools/flip-coin-dice-roller" class="tool-item"><div class="ti-text"><h4>Coin Flip & Dice Roller</h4><p>Flip a coin or roll dice for quick decisions.</p></div></a>
-    <a href="/tools/duplicate-remover" class="tool-item"><div class="ti-text"><h4>Duplicate Line Remover</h4><p>Clean up your name list before splitting teams.</p></div></a>
-    <a href="/tools/random-number-generator" class="tool-item"><div class="ti-text"><h4>Random Number Generator</h4><p>Generate random numbers for other decisions.</p></div></a>
+    <a class="related-card" href="/tools/random-name-generator"><strong>Random Name Generator</strong><span>Generate random names for testing or games.</span></a>
+    <a class="related-card" href="/tools/flip-coin-dice-roller"><strong>Coin Flip &amp; Dice Roller</strong><span>Flip a coin or roll dice for quick decisions.</span></a>
+    <a class="related-card" href="/tools/duplicate-remover"><strong>Duplicate Line Remover</strong><span>Clean up your name list before splitting teams.</span></a>
+    <a class="related-card" href="/tools/random-number-generator"><strong>Random Number Generator</strong><span>Generate random numbers for other decisions.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 document.getElementById('team-count').addEventListener('input', e => {
   document.getElementById('team-count-val').textContent = e.target.value;

@@ -23,12 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    #clamp-preview { padding:30px 16px;background:var(--gray-50);border-radius:var(--radius-lg);text-align:center;overflow:hidden; }
-    #clamp-preview-text { font-weight:800;color:var(--primary);transition:font-size .1s; }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -55,17 +55,20 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-css-clamp-calculator">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/developer-tools">Developer Tools</a> › CSS Clamp Calculator</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/developer-tools">Developer Tools</a> › CSS Clamp Calculator</nav>
   <h1>Free CSS Clamp() Calculator</h1>
   <p>Generate a fluid, responsive CSS clamp() value that scales smoothly between a minimum and maximum size across any viewport range.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">📐 Fluid Typography</span><span class="tool-tag">⚡ Instant Code</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#ruler"></use></svg> Fluid Typography</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant Code</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:820px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Live Preview</h2>
     <div id="clamp-preview">
@@ -91,28 +94,49 @@
       </div>
     </div>
 
-    <div class="control-group mt-16" style="position:relative;">
+    <div class="control-group mt-16 relative">
       <label>CSS Code</label>
       <textarea class="tool-textarea mono" id="css-output" rows="2" readonly></textarea>
-      <button class="copy-btn" id="copy-btn">📋 Copy</button>
+      <button class="copy-btn" id="copy-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
     </div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>What does CSS clamp() do?</h3><p>clamp() takes a minimum, preferred, and maximum value, letting a property (like font-size) scale fluidly with the viewport while never going below the minimum or above the maximum.</p></div>
-    <div class="faq-item-box"><h3>Why use clamp() instead of media queries?</h3><p>clamp() scales smoothly and continuously with viewport width, avoiding the abrupt jumps that occur at media query breakpoints, and requires far less CSS code.</p></div>
-    <div class="faq-item-box"><h3>Is clamp() supported in all browsers?</h3><p>Yes, clamp() has excellent support in all modern browsers (Chrome, Firefox, Safari, Edge) released since 2020.</p></div>
-    <div class="faq-item-box"><h3>Can I use this for spacing, not just font size?</h3><p>Yes, the same clamp() value works for any CSS length property — padding, margin, gap, and width all benefit from fluid scaling too.</p></div>
-    <div class="faq-item-box"><h3>Is my input data sent to a server?</h3><p>No, the calculation runs entirely in your browser using JavaScript. Your chosen values never leave your device.</p></div>
-    <div class="faq-item-box"><h3>Why does the generated value use rem and vw together?</h3><p>Combining rem (which respects the user's base font size setting, important for accessibility) with vw (which responds to viewport width) gives fluid scaling that's both responsive and accessible — pure px or pure vw values lose one of these two benefits.</p></div>
-    <div class="faq-item-box"><h3>What happens below my minimum viewport or above my maximum?</h3><p>Below the minimum viewport, the size stays fixed at your minimum value. Above the maximum viewport, it stays fixed at your maximum value — the fluid scaling only happens between those two viewport widths.</p></div>
+    <details class="faq-item">
+      <summary class="faq-q">What does CSS clamp() do?</summary>
+      <div class="faq-a"><p>clamp() takes a minimum, preferred, and maximum value, letting a property (like font-size) scale fluidly with the viewport while never going below the minimum or above the maximum.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why use clamp() instead of media queries?</summary>
+      <div class="faq-a"><p>clamp() scales smoothly and continuously with viewport width, avoiding the abrupt jumps that occur at media query breakpoints, and requires far less CSS code.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is clamp() supported in all browsers?</summary>
+      <div class="faq-a"><p>Yes, clamp() has excellent support in all modern browsers (Chrome, Firefox, Safari, Edge) released since 2020.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I use this for spacing, not just font size?</summary>
+      <div class="faq-a"><p>Yes, the same clamp() value works for any CSS length property — padding, margin, gap, and width all benefit from fluid scaling too.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my input data sent to a server?</summary>
+      <div class="faq-a"><p>No, the calculation runs entirely in your browser using JavaScript. Your chosen values never leave your device.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why does the generated value use rem and vw together?</summary>
+      <div class="faq-a"><p>Combining rem (which respects the user's base font size setting, important for accessibility) with vw (which responds to viewport width) gives fluid scaling that's both responsive and accessible — pure px or pure vw values lose one of these two benefits.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What happens below my minimum viewport or above my maximum?</summary>
+      <div class="faq-a"><p>Below the minimum viewport, the size stays fixed at your minimum value. Above the maximum viewport, it stays fixed at your maximum value — the fluid scaling only happens between those two viewport widths.</p></div>
+    </details>
   </div>
-</div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>Fluid Typography with CSS clamp()</h2>
   <p>This tool calculates a CSS clamp() value that smoothly scales a font size (or any length property) between a minimum and maximum, based on the viewport width — creating fluid, responsive typography without needing multiple media query breakpoints.</p>
 
@@ -129,7 +153,7 @@
   <p>For body text, a reasonable minimum is typically around 16px (below this, text starts becoming hard to read comfortably on small screens), with a maximum in the 18-20px range for most content-focused designs. Headings can use a much wider range, since large display text has more room to scale dramatically between a small mobile size and a large desktop size without becoming illegible at either end. Testing the live preview at different simulated viewport widths — or simply resizing your actual browser window — is the most reliable way to confirm your chosen range looks appropriate across the full range of device sizes.</p>
 
   <h3>Why Fluid Typography Matters</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Smoother scaling</strong> — text size changes gradually as the viewport resizes, rather than jumping at specific breakpoints.</li>
     <li><strong>Less CSS code</strong> — one clamp() declaration replaces multiple media query overrides for the same property.</li>
     <li><strong>Better in-between experience</strong> — devices and window sizes between your defined breakpoints still get an appropriately-scaled size.</li>
@@ -137,12 +161,24 @@
   </ul>
 
   <h3>Step-by-Step: Generating a clamp() Value</h3>
-  <div class="tool-steps">
-    <div class="tool-step"><strong>1. Set your minimum size</strong>Enter the smallest size the property should ever be.</div>
-    <div class="tool-step"><strong>2. Set your maximum size</strong>Enter the largest size the property should scale up to.</div>
-    <div class="tool-step"><strong>3. Set your viewport range</strong>Define the min and max viewport widths the scaling should span.</div>
-    <div class="tool-step"><strong>4. Copy the CSS</strong>Copy the generated clamp() value directly into your stylesheet.</div>
-  </div>
+  <ol class="steps">
+    <li class="step">
+      <strong>Set your minimum size</strong>
+      <p>Enter the smallest size the property should ever be.</p>
+    </li>
+    <li class="step">
+      <strong>Set your maximum size</strong>
+      <p>Enter the largest size the property should scale up to.</p>
+    </li>
+    <li class="step">
+      <strong>Set your viewport range</strong>
+      <p>Define the min and max viewport widths the scaling should span.</p>
+    </li>
+    <li class="step">
+      <strong>Copy the CSS</strong>
+      <p>Copy the generated clamp() value directly into your stylesheet.</p>
+    </li>
+  </ol>
 
   <h3>Privacy and Local Processing</h3>
   <p>All calculations happen directly in your browser — nothing you enter is sent to a server, logged, or stored anywhere.</p>
@@ -154,19 +190,20 @@
   <p>For a full design system rather than a single font size, many teams generate a series of clamp() values at once — one for each heading level and body text size — using a consistent minimum and maximum viewport range across all of them, while varying only the min and max size per text level. This keeps the entire typographic scale feeling proportionally consistent as the viewport resizes, since every text size scales using the same underlying viewport range, rather than each size having its own independently tuned scaling behavior that could drift out of visual harmony with the others as the page is resized.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/css-gradient-generator" class="tool-item"><div class="ti-text"><h4>CSS Gradient Generator</h4><p>Build linear and radial gradients visually.</p></div></a>
-    <a href="/tools/css-box-shadow-generator" class="tool-item"><div class="ti-text"><h4>CSS Box Shadow Generator</h4><p>Build box shadows visually with CSS output.</p></div></a>
-    <a href="/tools/css-minifier" class="tool-item"><div class="ti-text"><h4>CSS Minifier</h4><p>Minify or beautify your CSS code.</p></div></a>
-    <a href="/tools/unit-converter" class="tool-item"><div class="ti-text"><h4>Unit Converter</h4><p>Convert between px, rem, and other units.</p></div></a>
+    <a class="related-card" href="/tools/css-gradient-generator"><strong>CSS Gradient Generator</strong><span>Build linear and radial gradients visually.</span></a>
+    <a class="related-card" href="/tools/css-box-shadow-generator"><strong>CSS Box Shadow Generator</strong><span>Build box shadows visually with CSS output.</span></a>
+    <a class="related-card" href="/tools/css-minifier"><strong>CSS Minifier</strong><span>Minify or beautify your CSS code.</span></a>
+    <a class="related-card" href="/tools/unit-converter"><strong>Unit Converter</strong><span>Convert between px, rem, and other units.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 function calcClamp(minPx, maxPx, minVw, maxVw) {
   const slope = (maxPx - minPx) / (maxVw - minVw);

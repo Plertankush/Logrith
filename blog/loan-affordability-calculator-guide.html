@@ -23,47 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .bp-hero { max-width:820px;margin:0 auto;padding:48px 20px 8px; }
-    .bp-crumb { font-size:.85rem;color:var(--gray-500);margin-bottom:16px; }
-    .bp-crumb a { color:var(--primary);text-decoration:none; }
-    .bp-hero h1 { font-family:var(--font-display);font-size:2rem;line-height:1.25;color:var(--gray-900);margin-bottom:14px; }
-    .bp-hero .bp-dek { font-size:1.05rem;color:var(--gray-700);line-height:1.7;margin-bottom:20px; }
-    .bp-cta { display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:white;padding:13px 26px;border-radius:var(--radius);font-weight:700;text-decoration:none;font-size:.95rem; }
-    .bp-cta svg { width:17px;height:17px; }
-    .bp-cta:hover { background:var(--primary-dark); }
-    .bp-body { max-width:760px;margin:0 auto;padding:28px 20px 20px; }
-    .bp-body h2 { font-family:var(--font-display);font-size:1.5rem;color:var(--gray-900);margin:38px 0 14px; }
-    .bp-body h3 { font-family:var(--font-display);font-size:1.15rem;color:var(--gray-900);margin:26px 0 10px; }
-    .bp-body p { color:var(--gray-700);line-height:1.8;margin-bottom:16px;font-size:1rem; }
-    .bp-body ul, .bp-body ol { color:var(--gray-700);line-height:1.8;margin:0 0 16px 22px; }
-    .bp-body li { margin-bottom:8px; }
-    .bp-body strong { color:var(--gray-900); }
-    .bp-toc { background:var(--gray-50);border-radius:var(--radius-lg);padding:20px 24px;margin:24px 0; }
-    .bp-toc h2 { margin:0 0 10px;font-size:1.05rem; }
-    .bp-toc ol { margin:0 0 0 20px; }
-    .bp-toc a { color:var(--primary);text-decoration:none; }
-    .bp-table { width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:.92rem; }
-    .bp-table th, .bp-table td { border:1px solid var(--gray-200);padding:10px 12px;text-align:left; }
-    .bp-table th { background:var(--gray-50);font-weight:700;color:var(--gray-900); }
-    .bp-howto { counter-reset:step; list-style:none;margin-left:0; }
-    .bp-howto li { position:relative;padding-left:42px;margin-bottom:18px; }
-    .bp-howto li::before { counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;background:var(--primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem; }
-    .bp-faq-item { border-bottom:1px solid var(--gray-200);padding:16px 0; }
-    .bp-faq-item h3 { margin:0 0 8px; font-size:1.02rem; }
-    .bp-byline { font-size:.82rem;color:var(--gray-500);margin-top:10px; }
-    .bp-related { max-width:1000px;margin:0 auto;padding:20px 20px 60px; }
-    .bp-related h2 { font-family:var(--font-display);font-size:1.4rem;color:var(--gray-900);margin-bottom:18px;text-align:center; }
-    .bp-related-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px; }
-    .bp-related-card { border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:18px;text-decoration:none;color:inherit;background:var(--white); }
-    .bp-related-card h4 { font-size:.95rem;color:var(--gray-900);margin-bottom:6px; }
-    .bp-related-card p { font-size:.82rem;color:var(--gray-700);line-height:1.5; }
-    .bp-prevnext { display:flex;justify-content:space-between;gap:16px;max-width:760px;margin:0 auto;padding:0 20px 20px; }
-    .bp-prevnext a { flex:1;border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:12px 16px;text-decoration:none;color:var(--gray-700);font-size:.85rem; }
-    .bp-prevnext a strong { display:block;color:var(--gray-900);font-size:.92rem; }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -97,23 +62,26 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-loan-affordability-calculator-guide">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="bp-hero">
-  <div class="bp-crumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/calculate-convert">Calculate & Convert</a> &rsaquo; Loan Affordability Calculator</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/calculate-convert">Calculate & Convert</a> &rsaquo; Loan Affordability Calculator</nav>
   <h1>Just Because a Lender Approves It Doesn't Mean You Can Actually Afford It</h1>
-  <p class="bp-dek">A lender's maximum approval amount answers "how much risk are we willing to take on you," not "how much can you comfortably repay while still living the rest of your financial life normally." These are genuinely different questions, and understanding the gap between them is worth far more than the loan calculation itself, since it changes how you interpret every pre-approval letter and every borrowing decision you'll ever make.</p>
-  <a href="/tools/loan-affordability-calculator" class="bp-cta">
+  <p>A lender's maximum approval amount answers "how much risk are we willing to take on you," not "how much can you comfortably repay while still living the rest of your financial life normally." These are genuinely different questions, and understanding the gap between them is worth far more than the loan calculation itself, since it changes how you interpret every pre-approval letter and every borrowing decision you'll ever make.</p>
+  <a href="/tools/loan-affordability-calculator" class="btn btn-primary btn-lg">
     <svg class="icon"><use href="/assets/svg/icons.svg#bank"></use></svg>
     Check Loan Affordability
   </a>
-  <p class="bp-byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
-</div>
+  <p class="byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
+</div></header>
 
-<div class="bp-body">
+<article class="page-section prose">
 
-  <div class="bp-toc">
+  <nav class="toc" aria-label="On this page">
     <h2>On This Page</h2>
     <ol>
       <li><a href="#how-to-use">How to Check Loan Affordability</a></li>
@@ -125,14 +93,22 @@
       <li><a href="#mistakes">Common Mistakes</a></li>
       <li><a href="#faq">Frequently Asked Questions</a></li>
     </ol>
-  </div>
+  </nav>
 
   <h2 id="how-to-use">How to Check Loan Affordability</h2>
-  <ol class="bp-howto">
-    <li>Open the <a href="/tools/loan-affordability-calculator">Loan Affordability Calculator</a> to begin your check.</li>
-    <li>Enter your gross monthly income and all existing monthly debt payments carefully.</li>
-    <li>Enter the proposed loan terms (amount, interest rate, and full repayment term) you're considering carefully.</li>
-    <li>Review your resulting debt-to-income ratio and how it compares to common lending benchmarks and general financial guidance.</li>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the <a href="/tools/loan-affordability-calculator">Loan Affordability Calculator</a> to begin your check.</p>
+    </li>
+    <li class="step">
+      <p>Enter your gross monthly income and all existing monthly debt payments carefully.</p>
+    </li>
+    <li class="step">
+      <p>Enter the proposed loan terms (amount, interest rate, and full repayment term) you're considering carefully.</p>
+    </li>
+    <li class="step">
+      <p>Review your resulting debt-to-income ratio and how it compares to common lending benchmarks and general financial guidance.</p>
+    </li>
   </ol>
 
   <h2 id="dti">Debt-to-Income Ratio Explained</h2>
@@ -183,36 +159,51 @@
   <h3>Why Choose Logrith</h3>
   <p>Calculation happens entirely in your browser using standard JavaScript arithmetic, with no data ever transmitted anywhere — a private, judgment-free way to check your numbers before ever discussing them with a lender, giving you an independent perspective before entering a conversation where the other party's incentives don't necessarily align with your own long-term financial comfort or personal goals.</p>
 
-</div>
+</article>
 
-<div class="bp-body">
+<article class="page-section prose">
   <h2 id="faq">Frequently Asked Questions</h2>
-  <div class="bp-faq-item"><h3>What is debt-to-income ratio and why does it matter?</h3><p>DTI compares total monthly debt payments to gross monthly income. Lenders use it to assess repayment risk, and it's also a useful personal metric for judging what you can actually afford, independent of lender approval decisions.</p></div>
-  <div class="bp-faq-item"><h3>Why can a lender approve more than I can comfortably afford?</h3><p>Lenders assess approval based on default risk and their own criteria, not your personal comfort level. Their maximum reflects the largest loan they're willing to risk, not necessarily a comfortable amount for you.</p></div>
-  <div class="bp-faq-item"><h3>What's a reasonable DTI ratio to target?</h3><p>General guidance often suggests keeping total DTI below roughly 36%, though this varies by loan type, lender, and individual circumstances, and shouldn't be treated as a rigid universal rule.</p></div>
-  <div class="bp-faq-item"><h3>Should I borrow the maximum a lender approves?</h3><p>Not necessarily. The maximum reflects lender risk tolerance, not your personal comfort or other goals. Many advisors suggest borrowing meaningfully less to maintain a financial cushion.</p></div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">What is debt-to-income ratio and why does it matter?</summary>
+      <div class="faq-a"><p>DTI compares total monthly debt payments to gross monthly income. Lenders use it to assess repayment risk, and it's also a useful personal metric for judging what you can actually afford, independent of lender approval decisions.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why can a lender approve more than I can comfortably afford?</summary>
+      <div class="faq-a"><p>Lenders assess approval based on default risk and their own criteria, not your personal comfort level. Their maximum reflects the largest loan they're willing to risk, not necessarily a comfortable amount for you.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What's a reasonable DTI ratio to target?</summary>
+      <div class="faq-a"><p>General guidance often suggests keeping total DTI below roughly 36%, though this varies by loan type, lender, and individual circumstances, and shouldn't be treated as a rigid universal rule.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Should I borrow the maximum a lender approves?</summary>
+      <div class="faq-a"><p>Not necessarily. The maximum reflects lender risk tolerance, not your personal comfort or other goals. Many advisors suggest borrowing meaningfully less to maintain a financial cushion.</p></div>
+    </details>
+  </div>
 
   <h2>Conclusion</h2>
   <p>A lender's approval amount and your genuine, comfortable affordability are two different numbers answering two different questions, and confusing them is one of the more consequential financial mistakes borrowers make. Debt-to-income ratio is a useful, widely understood starting point for both perspectives, but treating the lender's maximum as your personal target overlooks everything DTI alone can't capture — your actual cost of living, income stability, and competing financial goals — all of which matter far more to your genuine day-to-day financial comfort than the number a lender's risk model happens to be willing to approve for you.</p>
-</div>
+</article>
 
-<div class="bp-prevnext">
+<nav class="post-nav page-section" aria-label="More guides">
   <a href="/blog/percentage-fee-splitter-guide">&larr; Previous: <strong>Fee Splitter Guide</strong></a>
   <a href="/blog/categories/calculate-convert">More Calculate & Convert Guides &rarr;</a>
-</div>
+</nav>
 
-<div class="bp-related">
+<section class="page-section">
   <h2>Related Tools</h2>
-  <div class="bp-related-grid">
-    <a href="/tools/compound-interest-calculator" class="bp-related-card"><h4>Compound Interest Calculator</h4><p>Calculate investment growth over time.</p></a>
-    <a href="/tools/percentage-calculator" class="bp-related-card"><h4>Percentage Calculator</h4><p>Calculate percentages and ratios.</p></a>
-    <a href="/tools/simple-interest-calculator" class="bp-related-card"><h4>Simple Interest Calculator</h4><p>Calculate straightforward interest costs.</p></a>
-    <a href="/tools/currency-converter" class="bp-related-card"><h4>Currency Converter</h4><p>Convert loan amounts between currencies.</p></a>
+  <div class="related-grid">
+    <a class="related-card" href="/tools/compound-interest-calculator"><strong>Compound Interest Calculator</strong><span>Calculate investment growth over time.</span></a>
+    <a class="related-card" href="/tools/percentage-calculator"><strong>Percentage Calculator</strong><span>Calculate percentages and ratios.</span></a>
+    <a class="related-card" href="/tools/simple-interest-calculator"><strong>Simple Interest Calculator</strong><span>Calculate straightforward interest costs.</span></a>
+    <a class="related-card" href="/tools/currency-converter"><strong>Currency Converter</strong><span>Convert loan amounts between currencies.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

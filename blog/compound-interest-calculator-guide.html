@@ -23,48 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .bp-hero { max-width:820px;margin:0 auto;padding:48px 20px 8px; }
-    .bp-crumb { font-size:.85rem;color:var(--gray-500);margin-bottom:16px; }
-    .bp-crumb a { color:var(--primary);text-decoration:none; }
-    .bp-hero h1 { font-family:var(--font-display);font-size:2rem;line-height:1.25;color:var(--gray-900);margin-bottom:14px; }
-    .bp-hero .bp-dek { font-size:1.05rem;color:var(--gray-700);line-height:1.7;margin-bottom:20px; }
-    .bp-cta { display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:white;padding:13px 26px;border-radius:var(--radius);font-weight:700;text-decoration:none;font-size:.95rem; }
-    .bp-cta svg { width:17px;height:17px; }
-    .bp-cta:hover { background:var(--primary-dark); }
-    .bp-body { max-width:760px;margin:0 auto;padding:28px 20px 20px; }
-    .bp-body h2 { font-family:var(--font-display);font-size:1.5rem;color:var(--gray-900);margin:38px 0 14px; }
-    .bp-body h3 { font-family:var(--font-display);font-size:1.15rem;color:var(--gray-900);margin:26px 0 10px; }
-    .bp-body p { color:var(--gray-700);line-height:1.8;margin-bottom:16px;font-size:1rem; }
-    .bp-body ul, .bp-body ol { color:var(--gray-700);line-height:1.8;margin:0 0 16px 22px; }
-    .bp-body li { margin-bottom:8px; }
-    .bp-body strong { color:var(--gray-900); }
-    .bp-body code { background:var(--gray-100);padding:2px 6px;border-radius:4px;font-size:.88em;font-family:monospace; }
-    .bp-toc { background:var(--gray-50);border-radius:var(--radius-lg);padding:20px 24px;margin:24px 0; }
-    .bp-toc h2 { margin:0 0 10px;font-size:1.05rem; }
-    .bp-toc ol { margin:0 0 0 20px; }
-    .bp-toc a { color:var(--primary);text-decoration:none; }
-    .bp-table { width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:.92rem; }
-    .bp-table th, .bp-table td { border:1px solid var(--gray-200);padding:10px 12px;text-align:left; }
-    .bp-table th { background:var(--gray-50);font-weight:700;color:var(--gray-900); }
-    .bp-howto { counter-reset:step; list-style:none;margin-left:0; }
-    .bp-howto li { position:relative;padding-left:42px;margin-bottom:18px; }
-    .bp-howto li::before { counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;background:var(--primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem; }
-    .bp-faq-item { border-bottom:1px solid var(--gray-200);padding:16px 0; }
-    .bp-faq-item h3 { margin:0 0 8px; font-size:1.02rem; }
-    .bp-byline { font-size:.82rem;color:var(--gray-500);margin-top:10px; }
-    .bp-related { max-width:1000px;margin:0 auto;padding:20px 20px 60px; }
-    .bp-related h2 { font-family:var(--font-display);font-size:1.4rem;color:var(--gray-900);margin-bottom:18px;text-align:center; }
-    .bp-related-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px; }
-    .bp-related-card { border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:18px;text-decoration:none;color:inherit;background:var(--white); }
-    .bp-related-card h4 { font-size:.95rem;color:var(--gray-900);margin-bottom:6px; }
-    .bp-related-card p { font-size:.82rem;color:var(--gray-700);line-height:1.5; }
-    .bp-prevnext { display:flex;justify-content:space-between;gap:16px;max-width:760px;margin:0 auto;padding:0 20px 20px; }
-    .bp-prevnext a { flex:1;border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:12px 16px;text-decoration:none;color:var(--gray-700);font-size:.85rem; }
-    .bp-prevnext a strong { display:block;color:var(--gray-900);font-size:.92rem; }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -99,23 +63,26 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-compound-interest-calculator-guide">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="bp-hero">
-  <div class="bp-crumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/calculate-convert">Calculate & Convert</a> &rsaquo; Compound Interest Calculator</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/calculate-convert">Calculate & Convert</a> &rsaquo; Compound Interest Calculator</nav>
   <h1>How Compound Interest Actually Grows Money, and Why Time Beats Rate</h1>
-  <p class="bp-dek">Compound interest gets called the eighth wonder of the world often enough that the phrase has become a cliché, but the underlying math genuinely does produce counterintuitive results — specifically, that a modest return compounded over a long period frequently outperforms a much higher return compounded over a short one, purely because of how exponential growth behaves over time, a fact that surprises most people the first time they see actual numbers laid out side by side.</p>
-  <a href="/tools/compound-interest-calculator" class="bp-cta">
+  <p>Compound interest gets called the eighth wonder of the world often enough that the phrase has become a cliché, but the underlying math genuinely does produce counterintuitive results — specifically, that a modest return compounded over a long period frequently outperforms a much higher return compounded over a short one, purely because of how exponential growth behaves over time, a fact that surprises most people the first time they see actual numbers laid out side by side.</p>
+  <a href="/tools/compound-interest-calculator" class="btn btn-primary btn-lg">
     <svg class="icon"><use href="/assets/svg/icons.svg#trending-up"></use></svg>
     Calculate Compound Interest
   </a>
-  <p class="bp-byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
-</div>
+  <p class="byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
+</div></header>
 
-<div class="bp-body">
+<article class="page-section prose">
 
-  <div class="bp-toc">
+  <nav class="toc" aria-label="On this page">
     <h2>On This Page</h2>
     <ol>
       <li><a href="#how-to-use">How to Calculate Compound Interest</a></li>
@@ -127,25 +94,35 @@
       <li><a href="#mistakes">Common Mistakes</a></li>
       <li><a href="#faq">Frequently Asked Questions</a></li>
     </ol>
-  </div>
+  </nav>
 
   <h2 id="how-to-use">How to Calculate Compound Interest</h2>
-  <ol class="bp-howto">
-    <li>Open the <a href="/tools/compound-interest-calculator">Compound Interest Calculator</a> to begin your calculation.</li>
-    <li>Enter your starting principal, annual interest rate, and time period.</li>
-    <li>Choose your compounding frequency (annually, monthly, daily, etc.).</li>
-    <li>The tool instantly calculates your final amount and total interest earned over the period.</li>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the <a href="/tools/compound-interest-calculator">Compound Interest Calculator</a> to begin your calculation.</p>
+    </li>
+    <li class="step">
+      <p>Enter your starting principal, annual interest rate, and time period.</p>
+    </li>
+    <li class="step">
+      <p>Choose your compounding frequency (annually, monthly, daily, etc.).</p>
+    </li>
+    <li class="step">
+      <p>The tool instantly calculates your final amount and total interest earned over the period.</p>
+    </li>
   </ol>
 
   <h2 id="formula">The Compound Interest Formula</h2>
   <p>The standard compound interest formula is: <code>A = P(1 + r/n)^(nt)</code>, where A is the final amount, P is the principal (starting amount), r is the annual interest rate (as a decimal), n is the number of times interest compounds per year, and t is the number of years. The exponent <code>nt</code> is the mathematical source of compound interest's accelerating growth — as t (time) increases, the exponent grows, and because it's an exponent rather than a simple multiplier, the growth compounds rather than accumulates linearly. This is the fundamental mathematical difference between compound growth and simple linear growth, and it's why the formula's output curves upward more and more steeply the longer the time period extends, rather than following a straight line. Understanding this formula's structure — specifically that time appears as an exponent rather than a simple multiplier — is the mathematical key to understanding every other insight in this guide about why time matters more than rate for long-term compound growth.</p>
 
   <h2 id="simple-vs-compound">Simple Interest vs. Compound Interest</h2>
-  <table class="bp-table">
+  <div class="table-wrap">
+    <table class="table">
     <tr><th>Interest Type</th><th>Calculated On</th><th>Growth Pattern</th></tr>
     <tr><td>Simple Interest</td><td>Original principal only, every period</td><td>Linear (constant amount added each period)</td></tr>
     <tr><td>Compound Interest</td><td>Principal plus all previously accumulated interest</td><td>Exponential (increasing amount added each period)</td></tr>
   </table>
+  </div>
   <p>The distinction is straightforward but has significant long-term consequences: with simple interest, $1,000 at 5% annually always earns exactly $50 per year, indefinitely, since the calculation base never changes. With compound interest, that same $1,000 at 5% earns $50 in year one, but in year two earns 5% of $1,050 (the original principal plus year one's interest), which is $52.50 — a small difference in year two, but one that compounds further in every subsequent year, producing meaningfully larger gaps over longer periods as the base amount being earned on keeps growing. Over a 30-year horizon, this seemingly small early difference compounds into a genuinely substantial gap between the two growth patterns, which is exactly why the distinction matters far more for long-term financial planning than it might initially appear from looking at just the first few years side by side.</p>
 
   <h2 id="frequency">Why Compounding Frequency Matters</h2>
@@ -183,36 +160,51 @@
   <h3>Why Choose Logrith</h3>
   <p>Calculation happens entirely in your browser using standard JavaScript arithmetic, with no data ever transmitted anywhere — genuinely useful for quickly modeling different scenarios (different rates, time periods, or compounding frequencies) without needing a spreadsheet or financial software, letting you test multiple what-if scenarios in the time it would otherwise take to open and configure a single spreadsheet formula.</p>
 
-</div>
+</article>
 
-<div class="bp-body">
+<article class="page-section prose">
   <h2 id="faq">Frequently Asked Questions</h2>
-  <div class="bp-faq-item"><h3>What's the difference between simple and compound interest?</h3><p>Simple interest is calculated only on the original principal for every period. Compound interest is calculated on the principal plus all previously accumulated interest, producing accelerating rather than linear growth.</p></div>
-  <div class="bp-faq-item"><h3>Why does compounding frequency affect the final amount?</h3><p>More frequent compounding means interest gets added more often, and each addition starts earning its own interest sooner, producing a slightly higher final amount for the same stated annual rate.</p></div>
-  <div class="bp-faq-item"><h3>Why is starting early more important than the rate?</h3><p>Compound growth is exponential, accelerating dramatically over longer periods. An extra decade of compounding time often produces more growth than a higher rate over a shorter period.</p></div>
-  <div class="bp-faq-item"><h3>Does compound interest work the same for debt?</h3><p>Yes, the same principle applies in both directions. Compound interest on debt grows the amount owed exponentially in exactly the same way it grows investment returns.</p></div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">What's the difference between simple and compound interest?</summary>
+      <div class="faq-a"><p>Simple interest is calculated only on the original principal for every period. Compound interest is calculated on the principal plus all previously accumulated interest, producing accelerating rather than linear growth.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why does compounding frequency affect the final amount?</summary>
+      <div class="faq-a"><p>More frequent compounding means interest gets added more often, and each addition starts earning its own interest sooner, producing a slightly higher final amount for the same stated annual rate.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why is starting early more important than the rate?</summary>
+      <div class="faq-a"><p>Compound growth is exponential, accelerating dramatically over longer periods. An extra decade of compounding time often produces more growth than a higher rate over a shorter period.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does compound interest work the same for debt?</summary>
+      <div class="faq-a"><p>Yes, the same principle applies in both directions. Compound interest on debt grows the amount owed exponentially in exactly the same way it grows investment returns.</p></div>
+    </details>
+  </div>
 
   <h2>Conclusion</h2>
   <p>Compound interest's power comes entirely from its exponential nature — the same mathematical structure that rewards early, patient investing also punishes delayed high-interest debt repayment with equal force. Running your own numbers through a calculator, rather than relying on general financial advice alone, makes both the opportunity and the risk concrete for your specific situation, and consistently reveals that time in the market matters more than most people initially assume relative to the interest rate itself, whether you're planning decades ahead for retirement or simply deciding how urgently to pay down a high-interest balance.</p>
-</div>
+</article>
 
-<div class="bp-prevnext">
+<nav class="post-nav page-section" aria-label="More guides">
   <a href="/blog/body-fat-percentage-calculator-guide">&larr; Previous: <strong>Body Fat Calculator Guide</strong></a>
   <a href="/blog/percentage-calculator-guide">Next: <strong>Percentage Calculator Guide</strong> &rarr;</a>
-</div>
+</nav>
 
-<div class="bp-related">
+<section class="page-section">
   <h2>Related Tools</h2>
-  <div class="bp-related-grid">
-    <a href="/tools/simple-interest-calculator" class="bp-related-card"><h4>Simple Interest Calculator</h4><p>Compare against linear, non-compounding growth.</p></a>
-    <a href="/tools/emi-calculator" class="bp-related-card"><h4>EMI Calculator</h4><p>Calculate loan repayments and interest costs.</p></a>
-    <a href="/tools/loan-affordability-calculator" class="bp-related-card"><h4>Loan Affordability Calculator</h4><p>Check what loan amount fits your budget.</p></a>
-    <a href="/tools/percentage-calculator" class="bp-related-card"><h4>Percentage Calculator</h4><p>Calculate percentages and rate changes.</p></a>
+  <div class="related-grid">
+    <a class="related-card" href="/tools/simple-interest-calculator"><strong>Simple Interest Calculator</strong><span>Compare against linear, non-compounding growth.</span></a>
+    <a class="related-card" href="/tools/emi-calculator"><strong>EMI Calculator</strong><span>Calculate loan repayments and interest costs.</span></a>
+    <a class="related-card" href="/tools/loan-affordability-calculator"><strong>Loan Affordability Calculator</strong><span>Check what loan amount fits your budget.</span></a>
+    <a class="related-card" href="/tools/percentage-calculator"><strong>Percentage Calculator</strong><span>Calculate percentages and rate changes.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

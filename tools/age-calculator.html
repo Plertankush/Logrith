@@ -21,14 +21,18 @@
   <meta name="twitter:title" content="Calculate Your Exact Age in Years, Months & Days | Logrith">
   <meta name="twitter:description" content="Enter your date of birth and get your precise age down to the day, hour and minute, plus a live countdown to your next birthday. Instant, accurate, no signup.">
 
-  <link rel="preload" href="/assets/css/style.css" as="style">
-  <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {
@@ -78,7 +82,7 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/" },
-      { "@type": "ListItem", "position": 2, "name": "Everyday Utilities", "item": "https://logrith.in/categories/utilities" },
+      { "@type": "ListItem", "position": 2, "name": "Utilities", "item": "https://logrith.in/categories/utilities" },
       { "@type": "ListItem", "position": 3, "name": "Age Calculator", "item": "https://logrith.in/tools/age-calculator" }
     ]
   }
@@ -132,17 +136,20 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-age-calculator">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/utilities">Everyday Utilities</a> › Age Calculator</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/utilities">Utilities</a> › Age Calculator</nav>
   <h1>Age Calculator Online (Free & Accurate DOB Tool)</h1>
   <p>Calculate your exact age in years, months, days, hours, and minutes from your date of birth. Also check how many days are left until your next birthday, right in your browser.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">⚡ Instant</span><span class="tool-tag">🎂 Birthday Countdown</span><span class="tool-tag">📅 Date of Birth Tool</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#gift"></use></svg> Birthday Countdown</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#calendar"></use></svg> Date of Birth Tool</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:760px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Enter Date of Birth</h2>
     <div class="controls-grid">
@@ -156,19 +163,19 @@
       </div>
     </div>
     <div class="btn-group mt-16">
-      <button class="btn btn-primary btn-lg" id="calc-btn">📅 Calculate Age</button>
-      <button class="btn btn-secondary" id="reset-btn">✕ Reset</button>
+      <button class="btn btn-primary btn-lg" id="calc-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#calendar"></use></svg> Calculate Age</button>
+      <button class="btn btn-secondary" id="reset-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Reset</button>
     </div>
     <div class="status-msg" id="status-msg"></div>
   </div>
 
-  <div class="tool-card" id="result-card" style="display:none;">
+  <div class="tool-card is-hidden" id="result-card">
     <h2>Age Results</h2>
-    <div class="stat-result-grid" id="age-grid"></div>
+    <div class="stat-grid" id="age-grid"></div>
 
     <div class="summary-box"><div id="age-summary"></div></div>
 
-    <div style="margin-top:16px;">
+    <div class="mt-16">
       <div class="progress-row"><span class="pr-label">Year progress</span><span class="pr-value" id="year-pct"></span></div>
       <div class="timeline-bar"><div class="timeline-fill" id="year-fill"></div></div>
     </div>
@@ -177,19 +184,37 @@
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>What is an age calculator?</h3><p>An age calculator is an online tool that works out your exact age from your date of birth. It shows your age broken down into years, months, days, and even hours and minutes, instead of just a single year-based number.</p></div>
-    <div class="faq-item-box"><h3>How is age calculated exactly?</h3><p>Age is calculated by measuring the difference between your date of birth and a chosen calculation date. The tool accounts for varying month lengths and leap years so the breakdown stays accurate.</p></div>
-    <div class="faq-item-box"><h3>Can I calculate age for a past or future date?</h3><p>Yes. Use the "Calculate Age As Of" field to check age on a past date, or a future date, based on the value you select.</p></div>
-    <div class="faq-item-box"><h3>Can I check days left until my next birthday?</h3><p>Yes, this tool also shows how many days remain until your next birthday, which is useful for reminders and planning.</p></div>
-    <div class="faq-item-box"><h3>Can I use this age calculator on mobile?</h3><p>Yes, the age calculator is fully responsive and works on mobile phones, tablets, laptops, and desktop browsers.</p></div>
-    <div class="faq-item-box"><h3>Does this tool account for leap years?</h3><p>Yes. The calculation logic accounts for varying month lengths and leap years, so the years, months, and days breakdown stays accurate regardless of birth year.</p></div>
+    <details class="faq-item">
+      <summary class="faq-q">What is an age calculator?</summary>
+      <div class="faq-a"><p>An age calculator is an online tool that works out your exact age from your date of birth. It shows your age broken down into years, months, days, and even hours and minutes, instead of just a single year-based number.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How is age calculated exactly?</summary>
+      <div class="faq-a"><p>Age is calculated by measuring the difference between your date of birth and a chosen calculation date. The tool accounts for varying month lengths and leap years so the breakdown stays accurate.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I calculate age for a past or future date?</summary>
+      <div class="faq-a"><p>Yes. Use the "Calculate Age As Of" field to check age on a past date, or a future date, based on the value you select.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I check days left until my next birthday?</summary>
+      <div class="faq-a"><p>Yes, this tool also shows how many days remain until your next birthday, which is useful for reminders and planning.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I use this age calculator on mobile?</summary>
+      <div class="faq-a"><p>Yes, the age calculator is fully responsive and works on mobile phones, tablets, laptops, and desktop browsers.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does this tool account for leap years?</summary>
+      <div class="faq-a"><p>Yes. The calculation logic accounts for varying month lengths and leap years, so the years, months, and days breakdown stays accurate regardless of birth year.</p></div>
+    </details>
   </div>
-</div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>About This Age Calculator</h2>
   <p>The Logrith Age Calculator is a free online tool designed to calculate exact age from a date of birth quickly and accurately. It helps you find your age in years, months, days, and even total hours and minutes lived, without needing to do any manual date math. This makes it useful for everyday personal curiosity as well as more formal situations like filling out admission forms, job applications, insurance documents, and government paperwork.</p>
 
@@ -199,7 +224,7 @@
 
   <h3>Who Uses an Online Age Calculator?</h3>
   <p>An age calculator is genuinely useful across many types of users and situations:</p>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Students and parents</strong> checking school or college admission age eligibility, which is often defined by an exact cutoff date rather than a birth year alone.</li>
     <li><strong>Job seekers</strong> confirming they meet a minimum or maximum age requirement for a government exam, recruitment drive, or scholarship application.</li>
     <li><strong>HR and recruitment teams</strong> quickly verifying candidate age eligibility during hiring without doing manual date subtraction for every applicant.</li>
@@ -216,12 +241,24 @@
 
   <h3>How to Calculate Age Manually (Without a Tool)</h3>
   <p>If you ever want to sanity-check the result yourself, or you just don't have access to a calculator, you can work out your age manually with a simple method:</p>
-  <div class="tool-steps">
-    <div class="tool-step"><strong>1. Subtract the years</strong>Take the current year and subtract your birth year. This gives a rough age.</div>
-    <div class="tool-step"><strong>2. Compare month and day</strong>Check whether the current month and day have already passed your birth month and day this year.</div>
-    <div class="tool-step"><strong>3. Adjust if needed</strong>If your birthday hasn't happened yet this year, subtract 1 from the rough age calculated in step 1.</div>
-    <div class="tool-step"><strong>4. Handle leap years</strong>If you were born on February 29, treat your birthday as February 28 (or March 1, depending on convention) in non-leap years for month/day comparison.</div>
-  </div>
+  <ol class="steps">
+    <li class="step">
+      <strong>Subtract the years</strong>
+      <p>Take the current year and subtract your birth year. This gives a rough age.</p>
+    </li>
+    <li class="step">
+      <strong>Compare month and day</strong>
+      <p>Check whether the current month and day have already passed your birth month and day this year.</p>
+    </li>
+    <li class="step">
+      <strong>Adjust if needed</strong>
+      <p>If your birthday hasn't happened yet this year, subtract 1 from the rough age calculated in step 1.</p>
+    </li>
+    <li class="step">
+      <strong>Handle leap years</strong>
+      <p>If you were born on February 29, treat your birthday as February 28 (or March 1, depending on convention) in non-leap years for month/day comparison.</p>
+    </li>
+  </ol>
   <p>This manual method works fine for a basic years-only answer, but it becomes tedious and error-prone once you also want the months-and-days breakdown, or total days/hours/minutes lived — which is exactly where an online calculator like this one saves time and avoids mistakes.</p>
 
   <h3>Age Calculation and School or Job Eligibility</h3>
@@ -241,7 +278,7 @@
 
   <h3>Common Mistakes People Make When Calculating Age Manually</h3>
   <p>Manual age calculation looks simple on the surface — subtract the birth year from the current year — but there are several places where errors commonly creep in:</p>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Forgetting the "has the birthday happened yet" adjustment.</strong> If someone's birthday hasn't occurred yet this calendar year, simply subtracting birth year from current year overstates their age by one.</li>
     <li><strong>Miscounting days across month boundaries.</strong> Months have different numbers of days (28, 29, 30, or 31), so counting "days since last birthday" by hand often produces small off-by-a-few errors.</li>
     <li><strong>Mishandling leap years.</strong> February 29 birthdays are a special edge case; many manual calculations simply skip this or handle it inconsistently.</li>
@@ -256,7 +293,7 @@
 
   <h3>Frequently Requested Age Formats This Tool Supports</h3>
   <p>Different documents and situations ask for age in different formats, and this calculator's breakdown covers the most commonly requested ones in a single calculation:</p>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Years only</strong> — the simplest and most common format, shown as the first stat box.</li>
     <li><strong>Years, months, and days</strong> — often required for young children, immigration forms, and certain legal documents.</li>
     <li><strong>Total days lived</strong> — useful for milestone tracking (like a 1,000-day or 10,000-day birthday) and some medical or scientific contexts.</li>
@@ -266,40 +303,37 @@
   </ul>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/percentage-calculator" class="tool-item"><div class="ti-text"><h4>Percentage Calculator</h4><p>Calculate percentages, increases, decreases, and ratios instantly.</p></div></a>
-    <a href="/tools/gst-calculator" class="tool-item"><div class="ti-text"><h4>GST Calculator</h4><p>Calculate GST amounts, inclusive and exclusive tax values.</p></div></a>
-    <a href="/tools/emi-calculator" class="tool-item"><div class="ti-text"><h4>EMI Calculator</h4><p>Calculate loan EMI, total interest, and repayment schedule.</p></div></a>
-    <a href="/tools/unit-converter" class="tool-item"><div class="ti-text"><h4>Unit Converter</h4><p>Convert between length, weight, temperature, and more.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">age calculator online</span>
-        <span class="keyword-tag">calculate age from date of birth</span>
-        <span class="keyword-tag">exact age calculator</span>
-        <span class="keyword-tag">DOB calculator</span>
-        <span class="keyword-tag">age calculator years months days</span>
-        <span class="keyword-tag">birthday countdown calculator</span>
-        <span class="keyword-tag">how old am I calculator</span>
-        <span class="keyword-tag">age in days calculator</span>
-        <span class="keyword-tag">next birthday calculator</span>
-        <span class="keyword-tag">free age calculator</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/percentage-calculator"><strong>Percentage Calculator</strong><span>Calculate percentages, increases, decreases, and ratios instantly.</span></a>
+    <a class="related-card" href="/tools/gst-calculator"><strong>GST Calculator</strong><span>Calculate GST amounts, inclusive and exclusive tax values.</span></a>
+    <a class="related-card" href="/tools/emi-calculator"><strong>EMI Calculator</strong><span>Calculate loan EMI, total interest, and repayment schedule.</span></a>
+    <a class="related-card" href="/tools/unit-converter"><strong>Unit Converter</strong><span>Convert between length, weight, temperature, and more.</span></a>
   </div>
 </section>
 
-<div id="footer"></div>
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">age calculator online</span>
+    <span class="keyword-tag">calculate age from date of birth</span>
+    <span class="keyword-tag">exact age calculator</span>
+    <span class="keyword-tag">DOB calculator</span>
+    <span class="keyword-tag">age calculator years months days</span>
+    <span class="keyword-tag">birthday countdown calculator</span>
+    <span class="keyword-tag">how old am I calculator</span>
+    <span class="keyword-tag">age in days calculator</span>
+    <span class="keyword-tag">next birthday calculator</span>
+    <span class="keyword-tag">free age calculator</span>
+  </div>
+</section>
 
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+
 <script>
 const today = new Date();
 const pad = n => String(n).padStart(2,'0');
@@ -330,12 +364,12 @@ document.getElementById('calc-btn').addEventListener('click', () => {
   const totalMonths = years * 12 + months;
 
   document.getElementById('age-grid').innerHTML = `
-    <div class="stat-box"><span class="sb-num">${years}</span><span class="sb-lbl">Years</span></div>
-    <div class="stat-box"><span class="sb-num">${months}</span><span class="sb-lbl">Months</span></div>
-    <div class="stat-box"><span class="sb-num">${days}</span><span class="sb-lbl">Days</span></div>
-    <div class="stat-box"><span class="sb-num">${totalWeeks.toLocaleString()}</span><span class="sb-lbl">Total Weeks</span></div>
-    <div class="stat-box"><span class="sb-num">${totalDays.toLocaleString()}</span><span class="sb-lbl">Total Days</span></div>
-    <div class="stat-box"><span class="sb-num">${totalMonths.toLocaleString()}</span><span class="sb-lbl">Total Months</span></div>`;
+    <div class="stat-box"><span class="stat-num">${years}</span><span class="stat-label">Years</span></div>
+    <div class="stat-box"><span class="stat-num">${months}</span><span class="stat-label">Months</span></div>
+    <div class="stat-box"><span class="stat-num">${days}</span><span class="stat-label">Days</span></div>
+    <div class="stat-box"><span class="stat-num">${totalWeeks.toLocaleString()}</span><span class="stat-label">Total Weeks</span></div>
+    <div class="stat-box"><span class="stat-num">${totalDays.toLocaleString()}</span><span class="stat-label">Total Days</span></div>
+    <div class="stat-box"><span class="stat-num">${totalMonths.toLocaleString()}</span><span class="stat-label">Total Months</span></div>`;
 
   const DAYS = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
   const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
@@ -356,8 +390,8 @@ document.getElementById('calc-btn').addEventListener('click', () => {
   const daysUntil = Math.ceil((nextBday - calc) / 86400000);
   const nextAge = years + 1;
   document.getElementById('birthday-section').innerHTML = daysUntil === 0
-    ? `<strong>🎂 Happy Birthday!</strong> You are turning ${nextAge} today!`
-    : `<strong>🎂 Next Birthday:</strong> ${MONTHS[dob.getMonth()]} ${dob.getDate()}, ${nextBday.getFullYear()} — in <strong>${daysUntil} days</strong> (turning ${nextAge})`;
+    ? `<strong><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#gift"></use></svg> Happy Birthday!</strong> You are turning ${nextAge} today!`
+    : `<strong><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#gift"></use></svg> Next Birthday:</strong> ${MONTHS[dob.getMonth()]} ${dob.getDate()}, ${nextBday.getFullYear()} — in <strong>${daysUntil} days</strong> (turning ${nextAge})`;
 
   document.getElementById('result-card').style.display = 'block';
   showStatus(document.getElementById('status-msg'), 'success', 'Age calculated!');

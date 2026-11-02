@@ -21,14 +21,18 @@
   <meta name="twitter:title" content="Encode or Decode Base64 for Text and Files | Logrith">
   <meta name="twitter:description" content="Convert text or an uploaded file to Base64, or decode a Base64 string back to its original form, instantly in your browser.">
 
-  <link rel="preload" href="/assets/css/style.css" as="style">
-  <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {
@@ -110,23 +114,26 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-base64">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/developer-tools">Developer Tools</a> › Base64 Encoder</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/developer-tools">Developer Tools</a> › Base64 Encoder</nav>
   <h1>Free Base64 Encode & Decode Online</h1>
   <p>Convert text and files to Base64 instantly, or decode Base64 strings back to their original format. Supports standard Base64, the URL-safe variant, image preview, and file uploads up to 5MB.</p>
-  <div class="tool-tags">
-    <span class="tool-tag">✅ 100% Free</span>
-    <span class="tool-tag">📄 Text & Binary</span>
-    <span class="tool-tag">🔗 URL-Safe</span>
-    <span class="tool-tag">🖼️ Image Preview</span>
-    <span class="tool-tag">⚡ Instant</span>
+  <div class="tag-list">
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> 100% Free</span>
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#file-text"></use></svg> Text & Binary</span>
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#link"></use></svg> URL-Safe</span>
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#image"></use></svg> Image Preview</span>
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span>
   </div>
-</div></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:960px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Base64 Encode / Decode Tool</h2>
     <div class="tabs">
@@ -137,11 +144,11 @@
 
     <!-- ENCODE TAB -->
     <div class="tab-panel active" id="tab-encode">
-      <div class="control-group" style="margin-bottom:12px;">
+      <div class="control-group mb-12">
         <label>Input Text</label>
         <textarea class="tool-textarea mono" id="enc-input" rows="6" placeholder="Enter text to encode to Base64... (e.g., Hello World)"></textarea>
       </div>
-      <div class="controls-grid" style="margin-bottom:12px;">
+      <div class="controls-grid mb-12">
         <div class="control-group">
           <label>Encoding Type</label>
           <select id="enc-variant">
@@ -151,37 +158,37 @@
         </div>
       </div>
       <div class="btn-group">
-        <button class="btn btn-primary" id="encode-btn">🔐 Encode to Base64</button>
-        <button class="btn btn-secondary" id="enc-clear">✕ Clear All</button>
+        <button class="btn btn-primary" id="encode-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lock"></use></svg> Encode to Base64</button>
+        <button class="btn btn-secondary" id="enc-clear"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Clear All</button>
       </div>
-      <div class="control-group mt-16" style="position:relative;">
+      <div class="control-group mt-16 relative">
         <label>Base64 Output</label>
         <textarea class="tool-textarea mono" id="enc-output" rows="6" readonly placeholder="Base64 encoded result appears here..."></textarea>
-        <button class="copy-btn" id="copy-enc" title="Copy Base64">📋 Copy</button>
+        <button class="copy-btn" id="copy-enc" title="Copy Base64"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
       </div>
       <div class="stats-row mt-8" id="enc-stats"></div>
-      <div class="status-msg" id="enc-status" style="margin-top:8px;"></div>
+      <div class="status-msg mt-8" id="enc-status"></div>
     </div>
 
     <!-- DECODE TAB -->
     <div class="tab-panel" id="tab-decode">
-      <div class="control-group" style="margin-bottom:12px;">
+      <div class="control-group mb-12">
         <label>Base64 Input</label>
         <textarea class="tool-textarea mono" id="dec-input" rows="6" placeholder="Paste Base64 string here..."></textarea>
       </div>
       <div class="btn-group">
-        <button class="btn btn-primary" id="decode-btn">🔓 Decode Base64</button>
-        <button class="btn btn-secondary" id="dec-clear">✕ Clear</button>
+        <button class="btn btn-primary" id="decode-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#unlock"></use></svg> Decode Base64</button>
+        <button class="btn btn-secondary" id="dec-clear"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Clear</button>
       </div>
-      <div class="status-msg" id="dec-status" style="margin-top:12px;"></div>
-      <div class="control-group mt-16" style="position:relative;">
+      <div class="status-msg mt-12" id="dec-status"></div>
+      <div class="control-group mt-16 relative">
         <label>Decoded Output</label>
         <textarea class="tool-textarea mono" id="dec-output" rows="6" readonly placeholder="Decoded result appears here..."></textarea>
-        <button class="copy-btn" id="copy-dec" title="Copy decoded text">📋 Copy</button>
+        <button class="copy-btn" id="copy-dec" title="Copy decoded text"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
       </div>
-      <div id="img-preview" style="margin-top:12px;display:none;">
-        <label style="font-size:.84rem;font-weight:500;color:var(--gray-700);">Image Preview</label>
-        <img id="dec-img" style="max-width:100%;max-height:300px;border-radius:8px;border:1.5px solid var(--gray-200);" alt="Decoded image preview">
+      <div id="img-preview">
+        <label class="u-c90df8">Image Preview</label>
+        <img id="dec-img" alt="Decoded image preview">
       </div>
     </div>
 
@@ -189,37 +196,52 @@
     <div class="tab-panel" id="tab-file">
       <div class="upload-zone" id="upload-zone">
         <input type="file" id="file-input" accept="*/*">
-        <div class="upload-icon">📁</div>
+        <div class="upload-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#folder"></use></svg></div>
         <h3>Drop files here or click to browse</h3>
         <p>Images, PDFs, text files — Max 5MB. Get Base64 data URI instantly.</p>
       </div>
-      <div class="status-msg" id="file-status" style="margin-top:12px;"></div>
-      <div class="control-group mt-16" style="position:relative;display:none;" id="file-output-wrap">
+      <div class="status-msg mt-12" id="file-status"></div>
+      <div class="control-group mt-16" id="file-output-wrap">
         <label>File as Base64 Data URI</label>
         <textarea class="tool-textarea mono" id="file-output" rows="8" readonly placeholder="Base64 data URI appears here..."></textarea>
-        <button class="copy-btn" id="copy-file" title="Copy Base64">📋 Copy</button>
+        <button class="copy-btn" id="copy-file" title="Copy Base64"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
       </div>
       <div class="stats-row mt-8" id="file-stats"></div>
-      <div id="file-img-preview" style="margin-top:12px;display:none;">
-        <label style="font-size:.84rem;font-weight:500;color:var(--gray-700);">Original File Preview</label>
-        <img id="file-preview-img" style="max-width:100%;max-height:200px;border-radius:8px;border:1.5px solid var(--gray-200);" alt="File preview">
+      <div id="file-img-preview">
+        <label class="u-c90df8">Original File Preview</label>
+        <img id="file-preview-img" alt="File preview">
       </div>
     </div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>What is Base64 encoding and when is it used?</h3><p>Base64 converts binary data — images, files, audio — into text using 64 ASCII characters. Common uses include embedding images in HTML/CSS, JSON APIs, email attachments (MIME), JWT tokens, and data URIs.</p></div>
-    <div class="faq-item-box"><h3>What's the difference between standard and URL-safe Base64?</h3><p>Standard Base64 uses the + and / characters. URL-safe Base64 replaces them with - and _ to avoid URL encoding issues. Use URL-safe for web APIs, JWT tokens, and filenames.</p></div>
-    <div class="faq-item-box"><h3>Can I convert images to Base64 for HTML?</h3><p>Yes. Upload any image (PNG, JPG, GIF, WEBP) in the File tab to get a complete data URI ready for HTML img tags or CSS background-image.</p></div>
-    <div class="faq-item-box"><h3>Does Base64 encoding make files bigger?</h3><p>Base64 increases size by roughly 33–37%. A 1MB image becomes about 1.33MB as Base64. This is the trade-off for converting binary data into text format.</p></div>
-    <div class="faq-item-box"><h3>Is this Base64 tool safe for sensitive data?</h3><p>Yes. All processing happens in your browser. Files never leave your device or get uploaded to any server.</p></div>
+    <details class="faq-item">
+      <summary class="faq-q">What is Base64 encoding and when is it used?</summary>
+      <div class="faq-a"><p>Base64 converts binary data — images, files, audio — into text using 64 ASCII characters. Common uses include embedding images in HTML/CSS, JSON APIs, email attachments (MIME), JWT tokens, and data URIs.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What's the difference between standard and URL-safe Base64?</summary>
+      <div class="faq-a"><p>Standard Base64 uses the + and / characters. URL-safe Base64 replaces them with - and _ to avoid URL encoding issues. Use URL-safe for web APIs, JWT tokens, and filenames.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I convert images to Base64 for HTML?</summary>
+      <div class="faq-a"><p>Yes. Upload any image (PNG, JPG, GIF, WEBP) in the File tab to get a complete data URI ready for HTML img tags or CSS background-image.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does Base64 encoding make files bigger?</summary>
+      <div class="faq-a"><p>Base64 increases size by roughly 33–37%. A 1MB image becomes about 1.33MB as Base64. This is the trade-off for converting binary data into text format.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is this Base64 tool safe for sensitive data?</summary>
+      <div class="faq-a"><p>Yes. All processing happens in your browser. Files never leave your device or get uploaded to any server.</p></div>
+    </details>
   </div>
-</div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>Free Online Base64 Encoder & Decoder — Complete Guide</h2>
   <p>The Logrith Base64 Encoder & Decoder is a free online tool for developers, designers, and technical users who need to convert between binary data and Base64 text format instantly. Whether you need to encode text for JSON APIs, convert images into data URIs for HTML and CSS, decode JWT token segments, or handle email attachments, this tool processes everything directly in your browser with zero server uploads.</p>
 
@@ -234,7 +256,7 @@
   <p>URL-safe Base64 solves this by substituting '-' for '+' and '_' for '/', and it commonly strips the trailing '=' padding characters entirely. This variant is what you'll see used in JWT (JSON Web Token) headers and payloads, in many REST API query parameters, and in filenames generated from encoded content. This tool supports both variants through a simple dropdown, so you can produce exactly the format your target system expects.</p>
 
   <h3>Common Real-World Use Cases</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Embedding images directly in HTML/CSS</strong> — using a data URI like <code>data:image/png;base64,...</code> avoids an extra HTTP request for small icons or inline graphics.</li>
     <li><strong>Sending binary data through JSON APIs</strong> — since JSON only supports text values, files, images, or byte arrays are often Base64-encoded before being placed inside a JSON payload.</li>
     <li><strong>Decoding and inspecting JWT tokens</strong> — the header and payload segments of a JSON Web Token are Base64-URL-encoded JSON, and pasting a segment into the Decode tab reveals the underlying claims.</li>
@@ -267,7 +289,7 @@
   <p>URL percent-encoding (the %XX style you see in URLs) is designed specifically for making arbitrary text safe inside a URL, not for compactly representing binary data — it can massively inflate the size of binary content, since many bytes need a three-character %XX representation. Base64 sits in a useful middle ground: it's reasonably compact, entirely composed of safe, printable ASCII characters, and works well for embedding binary content inside text-based formats like JSON, XML, and HTML, which is exactly why it has become the de facto standard for this kind of conversion across web technologies.</p>
 
   <h3>Tips for Getting the Most Out of This Tool</h3>
-  <ul class="feature-list">
+  <ul>
     <li>Use the <strong>URL-safe option</strong> whenever the Base64 output needs to go into a URL, a filename, or a JWT — it saves you from having to manually replace characters afterward.</li>
     <li>Use the <strong>File tab</strong> instead of pasting binary content as text whenever you're working with actual files, since browsers can mangle raw binary data if it's typed or pasted as plain text.</li>
     <li>When debugging a JWT, decode the <strong>header and payload segments separately</strong> — trying to decode the full token (including the signature) as one string will not produce valid JSON.</li>
@@ -276,40 +298,37 @@
   </ul>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Developer Tools</h2>
   <div class="related-grid">
-    <a href="/tools/json-formatter" class="tool-item"><div class="ti-text"><h4>JSON Formatter & Validator</h4><p>Format, validate, and minify JSON with live error checking.</p></div></a>
-    <a href="/tools/url-encoder" class="tool-item"><div class="ti-text"><h4>URL Encoder/Decoder</h4><p>Encode and decode URLs for safe web transmission.</p></div></a>
-    <a href="/tools/hash-generator" class="tool-item"><div class="ti-text"><h4>Hash Generator</h4><p>Generate SHA-1, SHA-256, SHA-384, and SHA-512 hashes instantly.</p></div></a>
-    <a href="/tools/uuid-generator" class="tool-item"><div class="ti-text"><h4>UUID Generator</h4><p>Generate random UUIDs / GUIDs for development use.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">base64 encode online</span>
-        <span class="keyword-tag">base64 decode online</span>
-        <span class="keyword-tag">text to base64</span>
-        <span class="keyword-tag">base64 to text</span>
-        <span class="keyword-tag">file to base64</span>
-        <span class="keyword-tag">image to base64</span>
-        <span class="keyword-tag">url safe base64</span>
-        <span class="keyword-tag">base64 data uri generator</span>
-        <span class="keyword-tag">base64 encoder decoder free</span>
-        <span class="keyword-tag">jwt base64 decode</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/json-formatter"><strong>JSON Formatter &amp; Validator</strong><span>Format, validate, and minify JSON with live error checking.</span></a>
+    <a class="related-card" href="/tools/url-encoder"><strong>URL Encoder/Decoder</strong><span>Encode and decode URLs for safe web transmission.</span></a>
+    <a class="related-card" href="/tools/hash-generator"><strong>Hash Generator</strong><span>Generate SHA-1, SHA-256, SHA-384, and SHA-512 hashes instantly.</span></a>
+    <a class="related-card" href="/tools/uuid-generator"><strong>UUID Generator</strong><span>Generate random UUIDs / GUIDs for development use.</span></a>
   </div>
 </section>
 
-<div id="footer"></div>
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">base64 encode online</span>
+    <span class="keyword-tag">base64 decode online</span>
+    <span class="keyword-tag">text to base64</span>
+    <span class="keyword-tag">base64 to text</span>
+    <span class="keyword-tag">file to base64</span>
+    <span class="keyword-tag">image to base64</span>
+    <span class="keyword-tag">url safe base64</span>
+    <span class="keyword-tag">base64 data uri generator</span>
+    <span class="keyword-tag">base64 encoder decoder free</span>
+    <span class="keyword-tag">jwt base64 decode</span>
+  </div>
+</section>
 
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+
 <script>
 // Tab switching
 document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -331,7 +350,7 @@ function showStatus(el, type, msg) {
 function copyText(text, btn) {
   navigator.clipboard.writeText(text).then(()=>{
     const orig = btn.innerHTML;
-    btn.innerHTML = '✅ Copied!';
+    btn.innerHTML = '<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Copied!';
     setTimeout(()=>btn.innerHTML=orig, 1500);
   });
 }

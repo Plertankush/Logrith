@@ -23,47 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .bp-hero { max-width:820px;margin:0 auto;padding:48px 20px 8px; }
-    .bp-crumb { font-size:.85rem;color:var(--gray-500);margin-bottom:16px; }
-    .bp-crumb a { color:var(--primary);text-decoration:none; }
-    .bp-hero h1 { font-family:var(--font-display);font-size:2rem;line-height:1.25;color:var(--gray-900);margin-bottom:14px; }
-    .bp-hero .bp-dek { font-size:1.05rem;color:var(--gray-700);line-height:1.7;margin-bottom:20px; }
-    .bp-cta { display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:white;padding:13px 26px;border-radius:var(--radius);font-weight:700;text-decoration:none;font-size:.95rem; }
-    .bp-cta svg { width:17px;height:17px; }
-    .bp-cta:hover { background:var(--primary-dark); }
-    .bp-body { max-width:760px;margin:0 auto;padding:28px 20px 20px; }
-    .bp-body h2 { font-family:var(--font-display);font-size:1.5rem;color:var(--gray-900);margin:38px 0 14px; }
-    .bp-body h3 { font-family:var(--font-display);font-size:1.15rem;color:var(--gray-900);margin:26px 0 10px; }
-    .bp-body p { color:var(--gray-700);line-height:1.8;margin-bottom:16px;font-size:1rem; }
-    .bp-body ul, .bp-body ol { color:var(--gray-700);line-height:1.8;margin:0 0 16px 22px; }
-    .bp-body li { margin-bottom:8px; }
-    .bp-body strong { color:var(--gray-900); }
-    .bp-toc { background:var(--gray-50);border-radius:var(--radius-lg);padding:20px 24px;margin:24px 0; }
-    .bp-toc h2 { margin:0 0 10px;font-size:1.05rem; }
-    .bp-toc ol { margin:0 0 0 20px; }
-    .bp-toc a { color:var(--primary);text-decoration:none; }
-    .bp-table { width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:.92rem; }
-    .bp-table th, .bp-table td { border:1px solid var(--gray-200);padding:10px 12px;text-align:left; }
-    .bp-table th { background:var(--gray-50);font-weight:700;color:var(--gray-900); }
-    .bp-howto { counter-reset:step; list-style:none;margin-left:0; }
-    .bp-howto li { position:relative;padding-left:42px;margin-bottom:18px; }
-    .bp-howto li::before { counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;background:var(--primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem; }
-    .bp-faq-item { border-bottom:1px solid var(--gray-200);padding:16px 0; }
-    .bp-faq-item h3 { margin:0 0 8px; font-size:1.02rem; }
-    .bp-byline { font-size:.82rem;color:var(--gray-500);margin-top:10px; }
-    .bp-related { max-width:1000px;margin:0 auto;padding:20px 20px 60px; }
-    .bp-related h2 { font-family:var(--font-display);font-size:1.4rem;color:var(--gray-900);margin-bottom:18px;text-align:center; }
-    .bp-related-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px; }
-    .bp-related-card { border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:18px;text-decoration:none;color:inherit;background:var(--white); }
-    .bp-related-card h4 { font-size:.95rem;color:var(--gray-900);margin-bottom:6px; }
-    .bp-related-card p { font-size:.82rem;color:var(--gray-700);line-height:1.5; }
-    .bp-prevnext { display:flex;justify-content:space-between;gap:16px;max-width:760px;margin:0 auto;padding:0 20px 20px; }
-    .bp-prevnext a { flex:1;border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:12px 16px;text-decoration:none;color:var(--gray-700);font-size:.85rem; }
-    .bp-prevnext a strong { display:block;color:var(--gray-900);font-size:.92rem; }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -97,23 +62,26 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-random-number-generator-guide">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="bp-hero">
-  <div class="bp-crumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/text-generators">Text & Generators</a> &rsaquo; Random Number Generator</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/text-generators">Text & Generators</a> &rsaquo; Random Number Generator</nav>
   <h1>Computer "Random" Numbers Aren't Really Random, and That's Usually Fine</h1>
-  <p class="bp-dek">Ask a computer for a random number and it hands you one instantly, but underneath, most random number generators are running a precise, entirely deterministic mathematical formula — technically predictable, not random at all in the strictest sense, yet statistically good enough for the overwhelming majority of things people actually use random numbers for.</p>
-  <a href="/tools/random-number-generator" class="bp-cta">
+  <p>Ask a computer for a random number and it hands you one instantly, but underneath, most random number generators are running a precise, entirely deterministic mathematical formula — technically predictable, not random at all in the strictest sense, yet statistically good enough for the overwhelming majority of things people actually use random numbers for.</p>
+  <a href="/tools/random-number-generator" class="btn btn-primary btn-lg">
     <svg class="icon"><use href="/assets/svg/icons.svg#shuffle"></use></svg>
     Generate a Random Number
   </a>
-  <p class="bp-byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
-</div>
+  <p class="byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
+</div></header>
 
-<div class="bp-body">
+<article class="page-section prose">
 
-  <div class="bp-toc">
+  <nav class="toc" aria-label="On this page">
     <h2>On This Page</h2>
     <ol>
       <li><a href="#how-to-use">How to Generate a Random Number</a></li>
@@ -125,14 +93,22 @@
       <li><a href="#mistakes">Common Mistakes</a></li>
       <li><a href="#faq">Frequently Asked Questions</a></li>
     </ol>
-  </div>
+  </nav>
 
   <h2 id="how-to-use">How to Generate a Random Number</h2>
-  <ol class="bp-howto">
-    <li>Open the <a href="/tools/random-number-generator">Random Number Generator</a>.</li>
-    <li>Set your desired minimum and maximum range.</li>
-    <li>Choose how many random numbers you need generated.</li>
-    <li>Get the instant result, generated fresh with each request.</li>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the <a href="/tools/random-number-generator">Random Number Generator</a>.</p>
+    </li>
+    <li class="step">
+      <p>Set your desired minimum and maximum range.</p>
+    </li>
+    <li class="step">
+      <p>Choose how many random numbers you need generated.</p>
+    </li>
+    <li class="step">
+      <p>Get the instant result, generated fresh with each request.</p>
+    </li>
   </ol>
 
   <h2 id="pseudorandom">What "Pseudorandom" Actually Means</h2>
@@ -153,13 +129,15 @@
   <p>Genuine, non-deterministic randomness requires deriving numbers from a physical process that's fundamentally unpredictable at a physical level, not just computationally difficult to predict. Sources used for true random number generation include atmospheric radio noise, radioactive decay timing, and various quantum-level physical phenomena, all of which are genuinely unpredictable in a way no deterministic algorithm, however complex, can ever fully replicate. Services specifically built around true randomness (rather than standard software pseudorandom generation) typically source their randomness from exactly these kinds of physical processes, and are used specifically in contexts where the theoretical predictability of pseudorandom generation, however unlikely to actually be exploited in practice, is nonetheless an unacceptable risk.</p>
 
   <h2 id="when-matters">When the Distinction Actually Matters</h2>
-  <table class="bp-table">
+  <div class="table-wrap">
+    <table class="table">
     <tr><th>Context</th><th>Pseudorandom OK?</th><th>Reasoning</th></tr>
     <tr><td>Games, simulations, casual selection</td><td>Yes</td><td>No one is trying to predict or exploit the sequence</td></tr>
     <tr><td>Statistical sampling, research</td><td>Yes</td><td>Statistical properties are what matter, not unpredictability against an adversary</td></tr>
     <tr><td>Cryptographic keys, security tokens</td><td>No</td><td>Predictability would represent a genuine, exploitable security vulnerability</td></tr>
     <tr><td>Lottery or gambling systems</td><td>Depends</td><td>Regulated contexts typically require certified true randomness or rigorously audited pseudorandom systems</td></tr>
   </table>
+  </div>
   <p>The practical rule of thumb: if predicting the "random" output would give someone a meaningful advantage or represent a security concern, standard pseudorandom generation is the wrong tool, and a cryptographically secure random number generator (a specifically designed PRNG variant resistant to this kind of prediction) or true hardware-based randomness is required instead. For virtually everything else — picking a random name from a list, rolling virtual dice, shuffling a playlist, generating a sample dataset — standard pseudorandom generation is entirely appropriate and indistinguishable from true randomness for any practical purpose.</p>
 
   <h2 id="range">Understanding Range and Distribution</h2>
@@ -188,36 +166,51 @@
   <h3>Why Choose Logrith</h3>
   <p>Generation happens entirely in your browser, with no data ever transmitted anywhere — instant, uniform random numbers within any range you specify, generated fresh for every request.</p>
 
-</div>
+</article>
 
-<div class="bp-body">
+<article class="page-section prose">
   <h2 id="faq">Frequently Asked Questions</h2>
-  <div class="bp-faq-item"><h3>Are computer-generated random numbers actually random?</h3><p>Most everyday generators produce pseudorandom numbers from a deterministic algorithm, statistically indistinguishable from true randomness, but technically reproducible if the starting seed value is known.</p></div>
-  <div class="bp-faq-item"><h3>What's the difference between pseudorandom and true random?</h3><p>Pseudorandom numbers come from a deterministic algorithm and are technically predictable given the seed. True random numbers derive from an unpredictable physical process and cannot be reproduced even with full knowledge of the method.</p></div>
-  <div class="bp-faq-item"><h3>Does pseudorandomness matter for games or picking a name?</h3><p>No, pseudorandom numbers are statistically indistinguishable from true randomness for virtually all everyday purposes where predictability is never actually exploited.</p></div>
-  <div class="bp-faq-item"><h3>When does the distinction actually matter?</h3><p>Primarily in cryptographic and security contexts, where predictability could be exploited. Security applications use specifically designed cryptographically secure generators instead.</p></div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">Are computer-generated random numbers actually random?</summary>
+      <div class="faq-a"><p>Most everyday generators produce pseudorandom numbers from a deterministic algorithm, statistically indistinguishable from true randomness, but technically reproducible if the starting seed value is known.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What's the difference between pseudorandom and true random?</summary>
+      <div class="faq-a"><p>Pseudorandom numbers come from a deterministic algorithm and are technically predictable given the seed. True random numbers derive from an unpredictable physical process and cannot be reproduced even with full knowledge of the method.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does pseudorandomness matter for games or picking a name?</summary>
+      <div class="faq-a"><p>No, pseudorandom numbers are statistically indistinguishable from true randomness for virtually all everyday purposes where predictability is never actually exploited.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">When does the distinction actually matter?</summary>
+      <div class="faq-a"><p>Primarily in cryptographic and security contexts, where predictability could be exploited. Security applications use specifically designed cryptographically secure generators instead.</p></div>
+    </details>
+  </div>
 
   <h2>Conclusion</h2>
   <p>The word "random" in most everyday software tools is doing slightly less philosophical work than it sounds like — the numbers come from a deterministic formula, not genuine physical unpredictability. For virtually every everyday purpose, this distinction is invisible and irrelevant; it only becomes genuinely important in security-sensitive contexts specifically designed to resist prediction, where a different class of random number generation is the correct, necessary tool. Understanding the seed-based, deterministic mechanism underlying pseudorandom generation isn't just an interesting technical footnote either — it explains both the theoretical limitation (technical predictability given the seed) and a genuinely useful practical capability (reproducible sequences for testing and scientific work) that emerge from the exact same underlying mechanism, making pseudorandom generation neither a compromise to apologize for nor something to worry about for the overwhelming majority of everyday uses this tool, and tools like it, are actually built for.</p>
-</div>
+</article>
 
-<div class="bp-prevnext">
+<nav class="post-nav page-section" aria-label="More guides">
   <a href="/blog/text-reverser-guide">&larr; Previous: <strong>Text Reverser Guide</strong></a>
   <a href="/blog/text-diff-guide">Next: <strong>Text Diff Guide</strong> &rarr;</a>
-</div>
+</nav>
 
-<div class="bp-related">
+<section class="page-section">
   <h2>Related Tools</h2>
-  <div class="bp-related-grid">
-    <a href="/tools/uuid-generator" class="bp-related-card"><h4>UUID Generator</h4><p>Generate unique identifiers for systems.</p></a>
-    <a href="/tools/password-generator" class="bp-related-card"><h4>Password Generator</h4><p>Generate secure, random passwords.</p></a>
-    <a href="/tools/text-reverser" class="bp-related-card"><h4>Text Reverser</h4><p>Reverse text character by character.</p></a>
-    <a href="/tools/hash-generator" class="bp-related-card"><h4>Hash Generator</h4><p>Generate hashes for data verification.</p></a>
+  <div class="related-grid">
+    <a class="related-card" href="/tools/uuid-generator"><strong>UUID Generator</strong><span>Generate unique identifiers for systems.</span></a>
+    <a class="related-card" href="/tools/password-generator"><strong>Password Generator</strong><span>Generate secure, random passwords.</span></a>
+    <a class="related-card" href="/tools/text-reverser"><strong>Text Reverser</strong><span>Reverse text character by character.</span></a>
+    <a class="related-card" href="/tools/hash-generator"><strong>Hash Generator</strong><span>Generate hashes for data verification.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

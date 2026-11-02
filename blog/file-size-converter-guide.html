@@ -23,48 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .bp-hero { max-width:820px;margin:0 auto;padding:48px 20px 8px; }
-    .bp-crumb { font-size:.85rem;color:var(--gray-500);margin-bottom:16px; }
-    .bp-crumb a { color:var(--primary);text-decoration:none; }
-    .bp-hero h1 { font-family:var(--font-display);font-size:2rem;line-height:1.25;color:var(--gray-900);margin-bottom:14px; }
-    .bp-hero .bp-dek { font-size:1.05rem;color:var(--gray-700);line-height:1.7;margin-bottom:20px; }
-    .bp-cta { display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:white;padding:13px 26px;border-radius:var(--radius);font-weight:700;text-decoration:none;font-size:.95rem; }
-    .bp-cta svg { width:17px;height:17px; }
-    .bp-cta:hover { background:var(--primary-dark); }
-    .bp-body { max-width:760px;margin:0 auto;padding:28px 20px 20px; }
-    .bp-body h2 { font-family:var(--font-display);font-size:1.5rem;color:var(--gray-900);margin:38px 0 14px; }
-    .bp-body h3 { font-family:var(--font-display);font-size:1.15rem;color:var(--gray-900);margin:26px 0 10px; }
-    .bp-body p { color:var(--gray-700);line-height:1.8;margin-bottom:16px;font-size:1rem; }
-    .bp-body ul, .bp-body ol { color:var(--gray-700);line-height:1.8;margin:0 0 16px 22px; }
-    .bp-body li { margin-bottom:8px; }
-    .bp-body strong { color:var(--gray-900); }
-    .bp-body code { background:var(--gray-100);padding:2px 6px;border-radius:4px;font-size:.88em;font-family:monospace; }
-    .bp-toc { background:var(--gray-50);border-radius:var(--radius-lg);padding:20px 24px;margin:24px 0; }
-    .bp-toc h2 { margin:0 0 10px;font-size:1.05rem; }
-    .bp-toc ol { margin:0 0 0 20px; }
-    .bp-toc a { color:var(--primary);text-decoration:none; }
-    .bp-table { width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:.92rem; }
-    .bp-table th, .bp-table td { border:1px solid var(--gray-200);padding:10px 12px;text-align:left; }
-    .bp-table th { background:var(--gray-50);font-weight:700;color:var(--gray-900); }
-    .bp-howto { counter-reset:step; list-style:none;margin-left:0; }
-    .bp-howto li { position:relative;padding-left:42px;margin-bottom:18px; }
-    .bp-howto li::before { counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;background:var(--primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem; }
-    .bp-faq-item { border-bottom:1px solid var(--gray-200);padding:16px 0; }
-    .bp-faq-item h3 { margin:0 0 8px; font-size:1.02rem; }
-    .bp-byline { font-size:.82rem;color:var(--gray-500);margin-top:10px; }
-    .bp-related { max-width:1000px;margin:0 auto;padding:20px 20px 60px; }
-    .bp-related h2 { font-family:var(--font-display);font-size:1.4rem;color:var(--gray-900);margin-bottom:18px;text-align:center; }
-    .bp-related-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px; }
-    .bp-related-card { border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:18px;text-decoration:none;color:inherit;background:var(--white); }
-    .bp-related-card h4 { font-size:.95rem;color:var(--gray-900);margin-bottom:6px; }
-    .bp-related-card p { font-size:.82rem;color:var(--gray-700);line-height:1.5; }
-    .bp-prevnext { display:flex;justify-content:space-between;gap:16px;max-width:760px;margin:0 auto;padding:0 20px 20px; }
-    .bp-prevnext a { flex:1;border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:12px 16px;text-decoration:none;color:var(--gray-700);font-size:.85rem; }
-    .bp-prevnext a strong { display:block;color:var(--gray-900);font-size:.92rem; }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -98,23 +62,26 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-file-size-converter-guide">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="bp-hero">
-  <div class="bp-crumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/utilities">Utilities</a> &rsaquo; File Size Converter</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/utilities">Utilities</a> &rsaquo; File Size Converter</nav>
   <h1>Why a 1TB Hard Drive Shows Up as 931GB, and Other File Size Mysteries</h1>
-  <p class="bp-dek">Buy a drive advertised as 1TB, plug it in, and your operating system reports something closer to 931GB — no storage vanished, and nobody made a mistake. This is one of computing's most persistent, most confusing conventions, and understanding it makes every file size, download estimate, and storage purchase make a lot more sense, from a quick glance at a phone's storage settings to a full comparison of competing cloud storage plans.</p>
-  <a href="/tools/file-size-converter" class="bp-cta">
+  <p>Buy a drive advertised as 1TB, plug it in, and your operating system reports something closer to 931GB — no storage vanished, and nobody made a mistake. This is one of computing's most persistent, most confusing conventions, and understanding it makes every file size, download estimate, and storage purchase make a lot more sense, from a quick glance at a phone's storage settings to a full comparison of competing cloud storage plans.</p>
+  <a href="/tools/file-size-converter" class="btn btn-primary btn-lg">
     <svg class="icon"><use href="/assets/svg/icons.svg#hard-drive"></use></svg>
     Convert File Sizes
   </a>
-  <p class="bp-byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
-</div>
+  <p class="byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
+</div></header>
 
-<div class="bp-body">
+<article class="page-section prose">
 
-  <div class="bp-toc">
+  <nav class="toc" aria-label="On this page">
     <h2>On This Page</h2>
     <ol>
       <li><a href="#how-to-use">How to Convert File Sizes</a></li>
@@ -126,22 +93,32 @@
       <li><a href="#mistakes">Common Mistakes</a></li>
       <li><a href="#faq">Frequently Asked Questions</a></li>
     </ol>
-  </div>
+  </nav>
 
   <h2 id="how-to-use">How to Convert File Sizes</h2>
-  <ol class="bp-howto">
-    <li>Open the <a href="/tools/file-size-converter">File Size Converter</a> to begin converting.</li>
-    <li>Enter a value and choose its unit — bytes, KB, MB, GB, or TB.</li>
-    <li>Select whether to convert using binary (1024-based) or decimal (1000-based) calculation.</li>
-    <li>Get the instant converted result in your target unit, calculated precisely either way.</li>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the <a href="/tools/file-size-converter">File Size Converter</a> to begin converting.</p>
+    </li>
+    <li class="step">
+      <p>Enter a value and choose its unit — bytes, KB, MB, GB, or TB.</p>
+    </li>
+    <li class="step">
+      <p>Select whether to convert using binary (1024-based) or decimal (1000-based) calculation.</p>
+    </li>
+    <li class="step">
+      <p>Get the instant converted result in your target unit, calculated precisely either way.</p>
+    </li>
   </ol>
 
   <h2 id="binary-decimal">Binary vs. Decimal: The Root of the Confusion</h2>
-  <table class="bp-table">
+  <div class="table-wrap">
+    <table class="table">
     <tr><th>System</th><th>1 KB equals</th><th>1 MB equals</th><th>Used by</th></tr>
     <tr><td>Decimal (base-10)</td><td>1,000 bytes</td><td>1,000,000 bytes</td><td>Storage manufacturers, network speeds</td></tr>
     <tr><td>Binary (base-2)</td><td>1,024 bytes</td><td>1,048,576 bytes</td><td>Operating systems, memory (RAM)</td></tr>
   </table>
+  </div>
   <p>This is the single root cause behind nearly every file-size discrepancy anyone encounters. Computers fundamentally operate in binary, and 1,024 (2 to the 10th power) is a natural, clean number in binary arithmetic, which is why early computing conventions built storage measurement around powers of 1,024 rather than 1,000. Decimal units, using clean round numbers like 1,000, are more intuitive for humans and align with how every other measurement system (money, distance, weight) scales. Both conventions reused the same unit names — kilobyte, megabyte, gigabyte — for genuinely different underlying values, and that naming collision is the entire source of the confusion that follows.</p>
 
   <h2 id="missing-storage">Why Your Drive Shows Less Than Advertised</h2>
@@ -184,36 +161,51 @@
   <h3>Why Choose Logrith</h3>
   <p>Conversion happens entirely in your browser using standard JavaScript arithmetic, with no data ever transmitted anywhere — instant results in both binary and decimal calculation, letting you check exactly which convention applies to whatever specific number you're trying to make sense of, whether that's a puzzling drive capacity or a download speed estimate that never quite matches what the advertised connection speed seemed to promise.</p>
 
-</div>
+</article>
 
-<div class="bp-body">
+<article class="page-section prose">
   <h2 id="faq">Frequently Asked Questions</h2>
-  <div class="bp-faq-item"><h3>Why does my new drive show less storage than advertised?</h3><p>Manufacturers use decimal units (1 GB = 1,000,000,000 bytes), while operating systems typically use binary units (1 GB = 1,073,741,824 bytes). A 1TB drive shows as roughly 931GB in binary calculation, with no storage actually missing.</p></div>
-  <div class="bp-faq-item"><h3>What's the difference between a kilobyte and a kibibyte?</h3><p>A kilobyte (KB) is technically 1,000 bytes (decimal). A kibibyte (KiB) is 1,024 bytes (binary). In casual usage, "KB" is used loosely to mean either, which is the root of most file-size confusion.</p></div>
-  <div class="bp-faq-item"><h3>Why is 1 megabyte sometimes 1,000 KB and sometimes 1,024 KB?</h3><p>This depends on whether decimal or binary convention is used. Storage manufacturers and network speeds typically use decimal; operating systems and memory typically use binary.</p></div>
-  <div class="bp-faq-item"><h3>Is my internet speed measured the same way as file sizes?</h3><p>Usually not directly comparable. Internet speeds are measured in bits per second; file sizes in bytes. Divide a speed in bits by 8 to estimate an equivalent download rate in bytes per second.</p></div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">Why does my new drive show less storage than advertised?</summary>
+      <div class="faq-a"><p>Manufacturers use decimal units (1 GB = 1,000,000,000 bytes), while operating systems typically use binary units (1 GB = 1,073,741,824 bytes). A 1TB drive shows as roughly 931GB in binary calculation, with no storage actually missing.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What's the difference between a kilobyte and a kibibyte?</summary>
+      <div class="faq-a"><p>A kilobyte (KB) is technically 1,000 bytes (decimal). A kibibyte (KiB) is 1,024 bytes (binary). In casual usage, "KB" is used loosely to mean either, which is the root of most file-size confusion.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why is 1 megabyte sometimes 1,000 KB and sometimes 1,024 KB?</summary>
+      <div class="faq-a"><p>This depends on whether decimal or binary convention is used. Storage manufacturers and network speeds typically use decimal; operating systems and memory typically use binary.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my internet speed measured the same way as file sizes?</summary>
+      <div class="faq-a"><p>Usually not directly comparable. Internet speeds are measured in bits per second; file sizes in bytes. Divide a speed in bits by 8 to estimate an equivalent download rate in bytes per second.</p></div>
+    </details>
+  </div>
 
   <h2>Conclusion</h2>
   <p>Nearly every confusing file-size discrepancy anyone runs into traces back to one of two overlapping issues: binary versus decimal calculation of the same unit names, or bits versus bytes in speed and size measurements. Neither represents an error or missing data — they're simply two legitimate, differently-motivated conventions that happen to share identical unit names, and knowing which convention applies to a specific number is usually all it takes to make an otherwise mysterious figure make complete sense, whether that's a hard drive that seems smaller than advertised or an internet connection that seems slower than its stated speed.</p>
-</div>
+</article>
 
-<div class="bp-prevnext">
+<nav class="post-nav page-section" aria-label="More guides">
   <a href="/blog/">&larr; Back to Blog</a>
   <a href="/blog/categories/utilities">More Utilities Guides &rarr;</a>
-</div>
+</nav>
 
-<div class="bp-related">
+<section class="page-section">
   <h2>Related Tools</h2>
-  <div class="bp-related-grid">
-    <a href="/tools/unit-converter" class="bp-related-card"><h4>Unit Converter</h4><p>Convert between other measurement units.</p></a>
-    <a href="/tools/image-compressor" class="bp-related-card"><h4>Image Compressor</h4><p>Reduce image file sizes for uploads.</p></a>
-    <a href="/tools/pdf-compressor" class="bp-related-card"><h4>PDF Compressor</h4><p>Reduce PDF file sizes for email or upload limits.</p></a>
-    <a href="/tools/percentage-calculator" class="bp-related-card"><h4>Percentage Calculator</h4><p>Calculate storage usage percentages.</p></a>
+  <div class="related-grid">
+    <a class="related-card" href="/tools/unit-converter"><strong>Unit Converter</strong><span>Convert between other measurement units.</span></a>
+    <a class="related-card" href="/tools/image-compressor"><strong>Image Compressor</strong><span>Reduce image file sizes for uploads.</span></a>
+    <a class="related-card" href="/tools/pdf-compressor"><strong>PDF Compressor</strong><span>Reduce PDF file sizes for email or upload limits.</span></a>
+    <a class="related-card" href="/tools/percentage-calculator"><strong>Percentage Calculator</strong><span>Calculate storage usage percentages.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

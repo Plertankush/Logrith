@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -51,17 +55,20 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-roman-numeral-converter">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/calculate-convert">Calculate & Convert</a> › Roman Numeral Converter</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/calculate-convert">Calculate &amp; Convert</a> › Roman Numeral Converter</nav>
   <h1>Free Roman Numeral Converter</h1>
   <p>Convert any number to Roman numerals, or Roman numerals back to numbers — instantly and accurately.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">🏛️ 1 to 3999</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#layout"></use></svg> 1 to 3999</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:700px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Convert</h2>
     <div class="mode-grid">
@@ -75,50 +82,55 @@
     </div>
 
     <div class="insight-box mt-16">
-      <div style="text-align:center;">
-        <div style="font-family:var(--font-display);font-size:2rem;font-weight:800;color:var(--primary);" id="result-value">MMXXIV</div>
+      <div class="text-center">
+        <div id="result-value">MMXXIV</div>
       </div>
     </div>
     <div class="status-msg" id="status-msg"></div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>What is the largest number Roman numerals can represent?</h3><p>Using standard notation, Roman numerals represent numbers from 1 to 3999. Numbers beyond this require special notation not covered by the basic system.</p></div>
-    <div class="faq-item-box"><h3>Why does 4 become IV instead of IIII?</h3><p>Roman numerals use subtractive notation for certain values — a smaller numeral placed before a larger one is subtracted, so IV (1 before 5) means 4, avoiding four repeated symbols.</p></div>
-    <div class="faq-item-box"><h3>Where are Roman numerals still used today?</h3><p>Common uses include clock faces, book chapter numbering, movie sequel titles, Super Bowl numbering, and monarch or pope naming (like Elizabeth II).</p></div>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card">
-      <h2>How to Use the Roman Numeral Converter</h2>
-      <div class="tool-steps">
-        <div class="tool-step">
-          <strong>1. Choose a conversion direction</strong>
-          Select "Number → Roman" to convert a standard number into numerals, or "Roman → Number" to convert numerals back into a number.
-        </div>
-        <div class="tool-step">
-          <strong>2. Enter your value</strong>
-          Type a number between 1 and 3999, or type Roman numerals using the letters I, V, X, L, C, D, and M.
-        </div>
-        <div class="tool-step">
-          <strong>3. Read the result instantly</strong>
-          The converted value appears immediately as you type — no button click needed.
-        </div>
-        <div class="tool-step">
-          <strong>4. Check for errors</strong>
-          If your input is outside the valid range or not a properly formed Roman numeral, a status message explains what to fix.
-        </div>
-      </div>
-    </div>
+    <details class="faq-item">
+      <summary class="faq-q">What is the largest number Roman numerals can represent?</summary>
+      <div class="faq-a"><p>Using standard notation, Roman numerals represent numbers from 1 to 3999. Numbers beyond this require special notation not covered by the basic system.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why does 4 become IV instead of IIII?</summary>
+      <div class="faq-a"><p>Roman numerals use subtractive notation for certain values — a smaller numeral placed before a larger one is subtracted, so IV (1 before 5) means 4, avoiding four repeated symbols.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Where are Roman numerals still used today?</summary>
+      <div class="faq-a"><p>Common uses include clock faces, book chapter numbering, movie sequel titles, Super Bowl numbering, and monarch or pope naming (like Elizabeth II).</p></div>
+    </details>
   </div>
 </section>
 
-<section class="article-section">
+<section class="page-section">
+  <h2>How to Use the Roman Numeral Converter</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Choose a conversion direction</strong>
+      <p>Select "Number → Roman" to convert a standard number into numerals, or "Roman → Number" to convert numerals back into a number.</p>
+    </li>
+    <li class="step">
+      <strong>Enter your value</strong>
+      <p>Type a number between 1 and 3999, or type Roman numerals using the letters I, V, X, L, C, D, and M.</p>
+    </li>
+    <li class="step">
+      <strong>Read the result instantly</strong>
+      <p>The converted value appears immediately as you type — no button click needed.</p>
+    </li>
+    <li class="step">
+      <strong>Check for errors</strong>
+      <p>If your input is outside the valid range or not a properly formed Roman numeral, a status message explains what to fix.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
   <h2>Convert Between Numbers and Roman Numerals</h2>
   <p>This tool converts any standard number (1 to 3999) into Roman numerals, or converts Roman numerals back into their standard numeric value, following the classical Roman numeral system used since antiquity.</p>
 
@@ -126,7 +138,7 @@
   <p>Roman numerals use seven basic symbols: I (1), V (5), X (10), L (50), C (100), D (500), and M (1000). Numbers are built by combining these symbols, generally from largest to smallest, with their values added together. A key exception is subtractive notation: when a smaller-value symbol appears before a larger one, its value is subtracted rather than added — this is why 4 is written as IV (5 minus 1) rather than IIII, and 9 is IX (10 minus 1) rather than VIIII.</p>
 
   <h3>Common Uses for Roman Numerals</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Clock and watch faces</strong> — many traditional clocks display hours in Roman numerals.</li>
     <li><strong>Book and document structure</strong> — chapter numbers, preface pages, and outline levels often use Roman numerals.</li>
     <li><strong>Sequel and event numbering</strong> — movie sequels, Super Bowl games, and Olympic Games are traditionally numbered in Roman numerals.</li>
@@ -153,7 +165,7 @@
   <p>Only the standard symbols I, V, X, L, C, D, and M are accepted, in either uppercase or lowercase (the tool automatically uppercases your input). A numeral is only accepted if it follows the standard construction rules exactly — repeated symbols beyond the allowed maximum (such as more than three I's in a row), incorrect subtractive ordering, or invalid combinations will be rejected with an error rather than silently guessed at.</p>
 
   <h3>Common Mistakes</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Writing IIII instead of IV</strong> — standard notation uses subtractive form for 4, not four repeated symbols.</li>
     <li><strong>Reversing subtractive pairs</strong> — VX, LC, and DM are not valid; only specific smaller-before-larger pairs are allowed (IV, IX, XL, XC, CD, CM).</li>
     <li><strong>Entering 0 or negative numbers</strong> — Roman numerals have no symbol for zero or negative values, since the system predates the concept of zero as used in modern arithmetic.</li>
@@ -170,34 +182,31 @@
   <p>Converting 1994 to Roman numerals: 1994 breaks down as 1000 (M) + 900 (CM) + 90 (XC) + 4 (IV), giving MCMXCIV. Going the other direction, reading MCMXCIV letter by letter: M (1000) is followed by C (100, smaller than the next letter M, so subtract) giving net 900 so far, then XC together give 90, and IV gives 4 — adding up to 1994. Working through an example like this by hand alongside the tool's output is a good way to confirm you understand the subtractive rule before relying on it for larger numbers.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/number-to-words-converter" class="tool-item"><div class="ti-text"><h4>Number to Words Converter</h4><p>Convert numbers into fully written-out words.</p></div></a>
-    <a href="/tools/number-base-converter" class="tool-item"><div class="ti-text"><h4>Number Base Converter</h4><p>Convert between binary, decimal, and hex.</p></div></a>
-    <a href="/tools/date-difference-calculator" class="tool-item"><div class="ti-text"><h4>Date Difference Calculator</h4><p>Calculate days between two dates.</p></div></a>
-    <a href="/tools/percentage-calculator" class="tool-item"><div class="ti-text"><h4>Percentage Calculator</h4><p>Calculate percentages and ratios.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">roman numeral converter</span>
-        <span class="keyword-tag">number to roman numerals</span>
-        <span class="keyword-tag">roman numerals to numbers</span>
-        <span class="keyword-tag">roman numeral translator</span>
-        <span class="keyword-tag">convert roman numerals</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/number-to-words-converter"><strong>Number to Words Converter</strong><span>Convert numbers into fully written-out words.</span></a>
+    <a class="related-card" href="/tools/number-base-converter"><strong>Number Base Converter</strong><span>Convert between binary, decimal, and hex.</span></a>
+    <a class="related-card" href="/tools/date-difference-calculator"><strong>Date Difference Calculator</strong><span>Calculate days between two dates.</span></a>
+    <a class="related-card" href="/tools/percentage-calculator"><strong>Percentage Calculator</strong><span>Calculate percentages and ratios.</span></a>
   </div>
 </section>
 
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">roman numeral converter</span>
+    <span class="keyword-tag">number to roman numerals</span>
+    <span class="keyword-tag">roman numerals to numbers</span>
+    <span class="keyword-tag">roman numeral translator</span>
+    <span class="keyword-tag">convert roman numerals</span>
+  </div>
+</section>
+
+</main>
+
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 let currentMode = 'to-roman';
 

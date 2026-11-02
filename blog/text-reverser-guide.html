@@ -23,48 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .bp-hero { max-width:820px;margin:0 auto;padding:48px 20px 8px; }
-    .bp-crumb { font-size:.85rem;color:var(--gray-500);margin-bottom:16px; }
-    .bp-crumb a { color:var(--primary);text-decoration:none; }
-    .bp-hero h1 { font-family:var(--font-display);font-size:2rem;line-height:1.25;color:var(--gray-900);margin-bottom:14px; }
-    .bp-hero .bp-dek { font-size:1.05rem;color:var(--gray-700);line-height:1.7;margin-bottom:20px; }
-    .bp-cta { display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:white;padding:13px 26px;border-radius:var(--radius);font-weight:700;text-decoration:none;font-size:.95rem; }
-    .bp-cta svg { width:17px;height:17px; }
-    .bp-cta:hover { background:var(--primary-dark); }
-    .bp-body { max-width:760px;margin:0 auto;padding:28px 20px 20px; }
-    .bp-body h2 { font-family:var(--font-display);font-size:1.5rem;color:var(--gray-900);margin:38px 0 14px; }
-    .bp-body h3 { font-family:var(--font-display);font-size:1.15rem;color:var(--gray-900);margin:26px 0 10px; }
-    .bp-body p { color:var(--gray-700);line-height:1.8;margin-bottom:16px;font-size:1rem; }
-    .bp-body ul, .bp-body ol { color:var(--gray-700);line-height:1.8;margin:0 0 16px 22px; }
-    .bp-body li { margin-bottom:8px; }
-    .bp-body strong { color:var(--gray-900); }
-    .bp-body code { background:var(--gray-100);padding:2px 6px;border-radius:4px;font-size:.88em;font-family:monospace; }
-    .bp-toc { background:var(--gray-50);border-radius:var(--radius-lg);padding:20px 24px;margin:24px 0; }
-    .bp-toc h2 { margin:0 0 10px;font-size:1.05rem; }
-    .bp-toc ol { margin:0 0 0 20px; }
-    .bp-toc a { color:var(--primary);text-decoration:none; }
-    .bp-table { width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:.92rem; }
-    .bp-table th, .bp-table td { border:1px solid var(--gray-200);padding:10px 12px;text-align:left; }
-    .bp-table th { background:var(--gray-50);font-weight:700;color:var(--gray-900); }
-    .bp-howto { counter-reset:step; list-style:none;margin-left:0; }
-    .bp-howto li { position:relative;padding-left:42px;margin-bottom:18px; }
-    .bp-howto li::before { counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;background:var(--primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem; }
-    .bp-faq-item { border-bottom:1px solid var(--gray-200);padding:16px 0; }
-    .bp-faq-item h3 { margin:0 0 8px; font-size:1.02rem; }
-    .bp-byline { font-size:.82rem;color:var(--gray-500);margin-top:10px; }
-    .bp-related { max-width:1000px;margin:0 auto;padding:20px 20px 60px; }
-    .bp-related h2 { font-family:var(--font-display);font-size:1.4rem;color:var(--gray-900);margin-bottom:18px;text-align:center; }
-    .bp-related-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px; }
-    .bp-related-card { border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:18px;text-decoration:none;color:inherit;background:var(--white); }
-    .bp-related-card h4 { font-size:.95rem;color:var(--gray-900);margin-bottom:6px; }
-    .bp-related-card p { font-size:.82rem;color:var(--gray-700);line-height:1.5; }
-    .bp-prevnext { display:flex;justify-content:space-between;gap:16px;max-width:760px;margin:0 auto;padding:0 20px 20px; }
-    .bp-prevnext a { flex:1;border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:12px 16px;text-decoration:none;color:var(--gray-700);font-size:.85rem; }
-    .bp-prevnext a strong { display:block;color:var(--gray-900);font-size:.92rem; }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -98,23 +62,26 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-text-reverser-guide">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="bp-hero">
-  <div class="bp-crumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/text-generators">Text & Generators</a> &rsaquo; Text Reverser</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/text-generators">Text & Generators</a> &rsaquo; Text Reverser</nav>
   <h1>What Actually Happens When You "Reverse" a Piece of Text</h1>
-  <p class="bp-dek">Reversing text sounds like the simplest possible text operation — just flip it backward — but "reverse" genuinely means different things depending on whether you're flipping individual characters or the order of whole words, and the character-level version can break in surprising ways once emoji or certain languages get involved, which is worth understanding before assuming a strange-looking result means the tool is malfunctioning.</p>
-  <a href="/tools/text-reverser" class="bp-cta">
+  <p>Reversing text sounds like the simplest possible text operation — just flip it backward — but "reverse" genuinely means different things depending on whether you're flipping individual characters or the order of whole words, and the character-level version can break in surprising ways once emoji or certain languages get involved, which is worth understanding before assuming a strange-looking result means the tool is malfunctioning.</p>
+  <a href="/tools/text-reverser" class="btn btn-primary btn-lg">
     <svg class="icon"><use href="/assets/svg/icons.svg#refresh"></use></svg>
     Reverse Text
   </a>
-  <p class="bp-byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
-</div>
+  <p class="byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
+</div></header>
 
-<div class="bp-body">
+<article class="page-section prose">
 
-  <div class="bp-toc">
+  <nav class="toc" aria-label="On this page">
     <h2>On This Page</h2>
     <ol>
       <li><a href="#how-to-use">How to Reverse Text</a></li>
@@ -126,22 +93,32 @@
       <li><a href="#mistakes">Common Mistakes</a></li>
       <li><a href="#faq">Frequently Asked Questions</a></li>
     </ol>
-  </div>
+  </nav>
 
   <h2 id="how-to-use">How to Reverse Text</h2>
-  <ol class="bp-howto">
-    <li>Open the <a href="/tools/text-reverser">Text Reverser tool</a>.</li>
-    <li>Type or paste your text into the input field.</li>
-    <li>Choose character reversal or word-order reversal.</li>
-    <li>Copy the instantly reversed result.</li>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the <a href="/tools/text-reverser">Text Reverser tool</a>.</p>
+    </li>
+    <li class="step">
+      <p>Type or paste your text into the input field.</p>
+    </li>
+    <li class="step">
+      <p>Choose character reversal or word-order reversal.</p>
+    </li>
+    <li class="step">
+      <p>Copy the instantly reversed result.</p>
+    </li>
   </ol>
 
   <h2 id="char-vs-word">Character Reversal vs. Word-Order Reversal</h2>
-  <table class="bp-table">
+  <div class="table-wrap">
+    <table class="table">
     <tr><th>Type</th><th>Example Input</th><th>Example Output</th></tr>
     <tr><td>Character reversal</td><td>hello world</td><td>dlrow olleh</td></tr>
     <tr><td>Word-order reversal</td><td>hello world</td><td>world hello</td></tr>
   </table>
+  </div>
   <p>These are genuinely different operations, and it's worth being clear about which one you actually want before reversing anything. Character reversal treats the entire input as one continuous sequence and flips it end to end, producing text that reads backward at the letter level — the classic "mirror text" effect. Word-order reversal instead keeps every individual word completely intact and unreversed, but reorders the sequence of words themselves, which produces a very different, often still partially readable result compared to full character reversal, since each individual word remains recognizable even though the overall sentence structure is scrambled.</p>
 
   <h2 id="emoji-breaks">Why Emoji and Some Languages Break When Reversed</h2>
@@ -187,36 +164,51 @@
   <h3>Why Choose Logrith</h3>
   <p>Reversal happens entirely in your browser as you type, with no data ever transmitted anywhere — instant results for both character and word-order reversal, whether you're checking a palindrome, making a novelty message, or testing how text behaves when flipped, all without needing to send your text to any external server just for such a simple transformation.</p>
 
-</div>
+</article>
 
-<div class="bp-body">
+<article class="page-section prose">
   <h2 id="faq">Frequently Asked Questions</h2>
-  <div class="bp-faq-item"><h3>What's the difference between reversing characters and reversing word order?</h3><p>Character reversal flips the entire string, turning "hello world" into "dlrow olleh". Word-order reversal keeps each word intact but reverses their sequence, turning "hello world" into "world hello".</p></div>
-  <div class="bp-faq-item"><h3>Why does reversing text with emoji sometimes break?</h3><p>Many emoji and non-Latin characters are represented internally by more than one code unit. Naive character-by-character reversal can split these apart, producing garbled symbols instead of a correctly reversed emoji.</p></div>
-  <div class="bp-faq-item"><h3>Is reversed text used for anything practical?</h3><p>Beyond novelty use, it's used for checking palindromes, certain puzzle formats, testing software text handling, and historical stylistic writing techniques like mirror writing.</p></div>
-  <div class="bp-faq-item"><h3>Can reversed text bypass content filters?</h3><p>Some spam and filter-evasion techniques have historically used reversal to avoid detection, though modern filtering systems have generally adapted to catch these techniques.</p></div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">What's the difference between reversing characters and reversing word order?</summary>
+      <div class="faq-a"><p>Character reversal flips the entire string, turning "hello world" into "dlrow olleh". Word-order reversal keeps each word intact but reverses their sequence, turning "hello world" into "world hello".</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why does reversing text with emoji sometimes break?</summary>
+      <div class="faq-a"><p>Many emoji and non-Latin characters are represented internally by more than one code unit. Naive character-by-character reversal can split these apart, producing garbled symbols instead of a correctly reversed emoji.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is reversed text used for anything practical?</summary>
+      <div class="faq-a"><p>Beyond novelty use, it's used for checking palindromes, certain puzzle formats, testing software text handling, and historical stylistic writing techniques like mirror writing.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can reversed text bypass content filters?</summary>
+      <div class="faq-a"><p>Some spam and filter-evasion techniques have historically used reversal to avoid detection, though modern filtering systems have generally adapted to catch these techniques.</p></div>
+    </details>
+  </div>
 
   <h2>Conclusion</h2>
   <p>Reversing text is conceptually simple but hides a genuine technical distinction between flipping characters and flipping word order, plus a real edge case around complex Unicode characters like emoji that can produce garbled results if not handled carefully. For everyday English text, either reversal method works reliably and predictably — the nuance only matters once emoji, accented characters, or unusual scripts enter the picture, and even then, knowing that this limitation exists is usually enough to explain an unexpected result rather than leaving it a genuine mystery. Whether the use case is a quick palindrome check, a novelty message, or a stress test for how a piece of software handles unusual input, the underlying operation remains the same small, well-understood transformation that's been part of written language experimentation for centuries, now available instantly rather than requiring the writer to master mirror writing by hand.</p>
-</div>
+</article>
 
-<div class="bp-prevnext">
+<nav class="post-nav page-section" aria-label="More guides">
   <a href="/blog/word-counter-guide">&larr; Previous: <strong>Word Counter Guide</strong></a>
   <a href="/blog/random-number-generator-guide">Next: <strong>Random Number Guide</strong> &rarr;</a>
-</div>
+</nav>
 
-<div class="bp-related">
+<section class="page-section">
   <h2>Related Tools</h2>
-  <div class="bp-related-grid">
-    <a href="/tools/word-counter" class="bp-related-card"><h4>Word Counter</h4><p>Count words and characters in your text.</p></a>
-    <a href="/tools/case-converter" class="bp-related-card"><h4>Case Converter</h4><p>Convert text between capitalization styles.</p></a>
-    <a href="/tools/random-number-generator" class="bp-related-card"><h4>Random Number Generator</h4><p>Generate random numbers for any purpose.</p></a>
-    <a href="/tools/text-diff" class="bp-related-card"><h4>Text Diff</h4><p>Compare two pieces of text for differences.</p></a>
+  <div class="related-grid">
+    <a class="related-card" href="/tools/word-counter"><strong>Word Counter</strong><span>Count words and characters in your text.</span></a>
+    <a class="related-card" href="/tools/case-converter"><strong>Case Converter</strong><span>Convert text between capitalization styles.</span></a>
+    <a class="related-card" href="/tools/random-number-generator"><strong>Random Number Generator</strong><span>Generate random numbers for any purpose.</span></a>
+    <a class="related-card" href="/tools/text-diff"><strong>Text Diff</strong><span>Compare two pieces of text for differences.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

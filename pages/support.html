@@ -12,96 +12,38 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#000000">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .page-tabs { display:flex; justify-content:center; gap:6px; padding:16px 24px; background:var(--white); border-bottom:1.5px solid var(--gray-200); }
-    .page-tab { padding:8px 20px; border-radius:20px; border:1.5px solid var(--gray-200); background:var(--gray-50); font-size:.84rem; font-weight:600; font-family:var(--font-display); color:var(--gray-600); text-decoration:none; transition:var(--transition); display:flex; align-items:center; gap:6px; }
-    .page-tab:hover { border-color:var(--primary); color:var(--primary); background:var(--white); }
-    .page-tab.active { background:#dc2626; color:white; border-color:#dc2626; }
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
-    .page-hero { background:linear-gradient(135deg,#fef2f2 0%,#fee2e2 60%,#fef9c3 100%); padding:56px 24px 44px; text-align:center; border-bottom:1.5px solid var(--gray-200); }
-    .page-hero h1 { font-family:var(--font-display); font-size:clamp(1.8rem,5vw,2.6rem); font-weight:800; color:var(--gray-900); margin-bottom:10px; }
-    .page-hero h1 span { color:#dc2626; }
-    .page-hero p { font-size:.96rem; color:var(--gray-600); max-width:500px; margin:0 auto; line-height:1.7; }
-    .breadcrumb { display:flex; align-items:center; gap:6px; font-size:.8rem; color:var(--gray-400); justify-content:center; margin-bottom:14px; }
-    .breadcrumb a { color:var(--primary); text-decoration:none; }
-
-    .contact-wrap { max-width:960px; margin:0 auto; padding:52px 24px 80px; display:grid; grid-template-columns:1fr 1.5fr; gap:40px; align-items:start; }
-    .contact-info h2 { font-family:var(--font-display); font-size:1.05rem; font-weight:700; color:var(--gray-900); margin-bottom:18px; }
-
-    /* Steps */
-    .steps { display:flex; flex-direction:column; gap:12px; margin-bottom:20px; }
-    .step { display:flex; gap:14px; align-items:flex-start; padding:14px 16px; background:var(--white); border:1.5px solid var(--gray-200); border-radius:var(--radius-lg); transition:var(--transition); }
-    .step:hover { border-color:var(--gray-300); box-shadow:var(--shadow-sm); }
-    .step-num { width:28px; height:28px; background:#dc2626; color:white; border-radius:50%; font-size:.78rem; font-weight:700; font-family:var(--font-display); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-    .step-body h3 { font-family:var(--font-display); font-size:.86rem; font-weight:700; color:var(--gray-900); margin-bottom:3px; }
-    .step-body p { font-size:.8rem; color:var(--gray-500); line-height:1.5; margin:0; }
-
-    .sla-badge { background:#fff7ed; border:1.5px solid #fed7aa; border-radius:var(--radius); padding:14px 16px; margin-bottom:14px; }
-    .sla-badge .sla-title { font-family:var(--font-display); font-size:.82rem; font-weight:700; color:#c2410c; margin-bottom:4px; }
-    .sla-badge p { font-size:.8rem; color:#9a3412; line-height:1.6; margin:0; }
-
-    .common-issues { margin-top:6px; }
-    .common-issues h3 { font-family:var(--font-display); font-size:.82rem; font-weight:700; color:var(--gray-500); text-transform:uppercase; letter-spacing:.06em; margin-bottom:10px; }
-    .issue-chip { display:inline-flex; align-items:center; gap:5px; padding:5px 11px; background:var(--gray-50); border:1px solid var(--gray-200); border-radius:20px; font-size:.76rem; color:var(--gray-600); margin:3px; }
-
-    .contact-card { background:var(--white); border:1.5px solid var(--gray-200); border-radius:var(--radius-lg); padding:16px 18px; margin-bottom:12px; display:flex; align-items:flex-start; gap:14px; transition:var(--transition); }
-    .contact-card:hover { border-color:var(--gray-300); box-shadow:var(--shadow-sm); }
-    .cc-icon { font-size:1.3rem; flex-shrink:0; margin-top:1px; }
-    .contact-card h3 { font-family:var(--font-display); font-size:.88rem; font-weight:700; color:var(--gray-900); margin-bottom:4px; }
-    .contact-card p { font-size:.82rem; color:var(--gray-600); line-height:1.55; margin:0; }
-
-    .form-card { background:var(--white); border:1.5px solid var(--gray-200); border-radius:var(--radius-xl); padding:32px; box-shadow:var(--shadow-md); }
-    .form-card h2 { font-family:var(--font-display); font-size:1.1rem; font-weight:700; color:var(--gray-900); margin-bottom:24px; }
-    .cf-group { margin-bottom:16px; }
-    .cf-group label { display:block; font-size:.82rem; font-weight:600; color:var(--gray-700); margin-bottom:6px; }
-    .cf-group label .req { color:#dc2626; margin-left:2px; }
-    .cf-group label .opt { font-weight:400; color:var(--gray-400); font-size:.76rem; margin-left:4px; }
-    .cf-group input, .cf-group select, .cf-group textarea { width:100%; padding:10px 13px; border:1.5px solid var(--gray-200); border-radius:var(--radius); font-size:.88rem; font-family:var(--font-main); color:var(--gray-900); background:var(--white); outline:none; transition:var(--transition); box-sizing:border-box; }
-    .cf-group input:focus, .cf-group select:focus, .cf-group textarea:focus { border-color:#dc2626; box-shadow:0 0 0 3px rgba(220,38,38,.08); }
-    .cf-group input.error, .cf-group select.error, .cf-group textarea.error { border-color:#ef4444; }
-    .cf-group textarea { resize:vertical; min-height:110px; line-height:1.6; }
-    .field-error { font-size:.75rem; color:#ef4444; margin-top:4px; display:none; }
-    .field-error.show { display:block; }
-    .char-count { font-size:.74rem; color:var(--gray-400); text-align:right; margin-top:4px; }
-
-    .submit-btn { width:100%; padding:12px; background:linear-gradient(135deg,#dc2626,#ef4444); color:white; border:none; border-radius:var(--radius); font-size:.94rem; font-family:var(--font-display); font-weight:700; cursor:pointer; transition:var(--transition); box-shadow:0 4px 14px rgba(220,38,38,.25); display:flex; align-items:center; justify-content:center; gap:8px; }
-    .submit-btn:hover:not(:disabled) { transform:translateY(-1px); box-shadow:0 6px 20px rgba(220,38,38,.35); }
-    .submit-btn:disabled { opacity:.7; cursor:not-allowed; transform:none; }
-    .form-footer { font-size:.74rem; color:var(--gray-400); text-align:center; margin-top:12px; }
-    .form-footer a { color:var(--primary); }
-
-    .form-success { display:none; text-align:center; padding:32px 24px; background:#f0fdf4; border-radius:var(--radius-lg); border:1.5px solid #a7f3d0; }
-    .form-success .fs-icon { font-size:2.8rem; display:block; margin-bottom:14px; }
-    .form-success h3 { font-family:var(--font-display); font-size:1.1rem; font-weight:700; color:#065f46; margin-bottom:8px; }
-    .form-success p { font-size:.86rem; color:#047857; line-height:1.6; }
-    .form-success .reset-btn { margin-top:18px; padding:8px 20px; background:white; border:1.5px solid #a7f3d0; border-radius:20px; font-size:.82rem; font-weight:600; color:#059669; cursor:pointer; font-family:var(--font-display); }
-    .msg-error { display:none; padding:12px 16px; background:#fef2f2; border:1.5px solid #fecaca; border-radius:var(--radius); font-size:.84rem; color:#dc2626; margin-bottom:16px; }
-    .msg-error.show { display:block; }
-
-    @media(max-width:768px){ .contact-wrap{grid-template-columns:1fr;gap:28px;padding:28px 16px 60px;} .form-card{padding:22px 18px;} .page-tabs{top:44px;overflow-x:auto;justify-content:flex-start;padding:12px 16px;} .page-tab{white-space:nowrap;padding:7px 16px;font-size:.8rem;} }
-  </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-BPJ4332XJH');</script>
  
 </head>
-<body>
+<body class="page-support">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="page-hero">
-  <div class="breadcrumb"><a href="/">Home</a> › <a href="contact">Contact</a> › Support</div>
+<main id="main">
+
+<header class="page-hero">
+  <div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="contact">Contact</a> › Support</nav>
   <h1>Technical <span>Support</span></h1>
   <p>Tool not working? Found a bug? We're here to help. Most issues are resolved within 48 hours.</p>
-</div>
+  </div>
+</header>
 
 <div class="page-tabs">
-  <a href="contact" class="page-tab">✉️ Contact</a>
-  <a href="support" class="page-tab active">🛠️ Support</a>
-  <a href="business" class="page-tab">🤝 Business</a>
+  <a href="contact" class="page-tab"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#mail"></use></svg> Contact</a>
+  <a href="support" class="page-tab active"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg> Support</a>
+  <a href="business" class="page-tab"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#users"></use></svg> Business</a>
 </div>
 
-<div class="contact-wrap">
+<div class="contact-wrap container">
 
   <!-- LEFT -->
   <div class="contact-info">
@@ -132,15 +74,15 @@
     </div>
 
     <div class="sla-badge">
-      <div class="sla-title">⏱ Response Time</div>
+      <div class="sla-title"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#timer"></use></svg> Response Time</div>
       <p>Bug reports are reviewed within <strong>24 hours</strong> and fixes are usually deployed within <strong>48 hours</strong>. Complex issues may take longer.</p>
     </div>
 
     <div class="contact-card">
-      <span class="cc-icon">📧</span>
+      <span class="cc-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#mail"></use></svg></span>
       <div>
         <h3>Direct Email</h3>
-        <p>For urgent issues email us at <a href="mailto:support@logrith.in" style="color:var(--primary);font-weight:600;">support@logrith.in</a></p>
+        <p>For urgent issues email us at <a class="u-dbe490" href="mailto:support@logrith.in">support@logrith.in</a></p>
       </div>
     </div>
 
@@ -149,7 +91,7 @@
       <span class="issue-chip"><img src="/assets/svg/outline/convert.svg" width="16"> Image not converting</span>
       <span class="issue-chip"><img src="/assets/svg/outline/pdf.svg" width="16"> PDF merge failing</span>
       <span class="issue-chip"><img src="/assets/svg/bold/download1.svg" width="16"> Download not working</span>
-      <span class="issue-chip">📱 Mobile display</span>
+      <span class="issue-chip"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#phone"></use></svg> Mobile display</span>
       <span class="issue-chip"><img src="/assets/svg/outline/search.svg" width="16"> Search not finding</span>
       <span class="issue-chip"><img src="/assets/svg/bold/rotate.svg" width="16"> Page loading slow</span>
     </div>
@@ -157,7 +99,7 @@
 
   <!-- RIGHT FORM -->
   <div class="form-card">
-    <h2>🛠️ Report an Issue</h2>
+    <h2><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg> Report an Issue</h2>
     <div class="msg-error" id="msg-error"></div>
 
     <div id="contact-form">
@@ -181,10 +123,10 @@
       <div class="cf-group">
         <label>Issue Type</label>
         <select id="cf-issue">
-          <option value="bug">🐛 Bug — Something is broken</option>
-          <option value="not-working">⚠️ Tool Not Working</option>
-          <option value="feature">💡 Feature Request</option>
-          <option value="other">📝 Other</option>
+          <option value="bug">Bug — Something is broken</option>
+          <option value="not-working">Tool Not Working</option>
+          <option value="feature">Feature Request</option>
+          <option value="other">Other</option>
         </select>
       </div>
 
@@ -203,7 +145,7 @@
     </div>
 
     <div class="form-success" id="form-success">
-      <span class="fs-icon">✅</span>
+      <span class="fs-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg></span>
       <h3>Report Received!</h3>
       <p>Thank you for helping us improve Logrith. We'll investigate and reply within 48 hours.</p>
       <button class="reset-btn" onclick="resetForm()">Submit another report</button>
@@ -213,38 +155,39 @@
 </div>
 
 <!-- SUPPORT FAQ -->
-<section style="max-width:860px;margin:0 auto 60px;padding:0 24px;">
-  <h2 style="font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:var(--gray-900);margin-bottom:18px;">Troubleshooting Before You Report</h2>
+<section class="u-d33dc1">
+  <h2 class="u-359580">Troubleshooting Before You Report</h2>
 
-  <div style="margin-bottom:16px;">
-    <h3 style="font-size:.96rem;font-weight:700;color:var(--gray-800);margin-bottom:6px;">A tool isn't loading or the page looks broken</h3>
-    <p style="font-size:.88rem;color:var(--gray-600);line-height:1.7;">Try a hard refresh first (Ctrl+Shift+R on Windows, Cmd+Shift+R on Mac) — this clears a stale cached version of the page, which is the most common cause of a tool appearing broken. If that doesn't help, try the same tool in a different browser to narrow down whether the issue is browser-specific.</p>
+  <div class="mb-16">
+    <h3 class="u-e98619">A tool isn't loading or the page looks broken</h3>
+    <p class="u-37832d">Try a hard refresh first (Ctrl+Shift+R on Windows, Cmd+Shift+R on Mac) — this clears a stale cached version of the page, which is the most common cause of a tool appearing broken. If that doesn't help, try the same tool in a different browser to narrow down whether the issue is browser-specific.</p>
   </div>
 
-  <div style="margin-bottom:16px;">
-    <h3 style="font-size:.96rem;font-weight:700;color:var(--gray-800);margin-bottom:6px;">A file upload or download isn't working</h3>
-    <p style="font-size:.88rem;color:var(--gray-600);line-height:1.7;">Most Logrith tools process files entirely in your browser, so a failed upload is usually a browser permission issue (check that file access isn't blocked) or a very large file exceeding what your device's memory can handle. If a specific file type consistently fails, that's useful detail to include in your report.</p>
+  <div class="mb-16">
+    <h3 class="u-e98619">A file upload or download isn't working</h3>
+    <p class="u-37832d">Most Logrith tools process files entirely in your browser, so a failed upload is usually a browser permission issue (check that file access isn't blocked) or a very large file exceeding what your device's memory can handle. If a specific file type consistently fails, that's useful detail to include in your report.</p>
   </div>
 
-  <div style="margin-bottom:16px;">
-    <h3 style="font-size:.96rem;font-weight:700;color:var(--gray-800);margin-bottom:6px;">A calculation or conversion result looks wrong</h3>
-    <p style="font-size:.88rem;color:var(--gray-600);line-height:1.7;">Double-check the input units or format first — a surprising number is often a mismatched unit rather than a bug. If you're confident the result is incorrect, include your exact input and the result you got in your report so we can reproduce it precisely.</p>
+  <div class="mb-16">
+    <h3 class="u-e98619">A calculation or conversion result looks wrong</h3>
+    <p class="u-37832d">Double-check the input units or format first — a surprising number is often a mismatched unit rather than a bug. If you're confident the result is incorrect, include your exact input and the result you got in your report so we can reproduce it precisely.</p>
   </div>
 
-  <div style="margin-bottom:16px;">
-    <h3 style="font-size:.96rem;font-weight:700;color:var(--gray-800);margin-bottom:6px;">How fast do you fix reported bugs?</h3>
-    <p style="font-size:.88rem;color:var(--gray-600);line-height:1.7;">Most confirmed bugs are fixed within 48 hours of being reported. A clear, reproducible report — the tool name, the exact steps, and what you expected versus what happened — is what makes that turnaround possible.</p>
+  <div class="mb-16">
+    <h3 class="u-e98619">How fast do you fix reported bugs?</h3>
+    <p class="u-37832d">Most confirmed bugs are fixed within 48 hours of being reported. A clear, reproducible report — the tool name, the exact steps, and what you expected versus what happened — is what makes that turnaround possible.</p>
   </div>
 
   <div>
-    <h3 style="font-size:.96rem;font-weight:700;color:var(--gray-800);margin-bottom:6px;">What if my issue isn't a bug, just a missing feature?</h3>
-    <p style="font-size:.88rem;color:var(--gray-600);line-height:1.7;">That's still worth reporting here, or through the suggestion option on the <a href="contact" style="color:var(--primary);">Contact page</a>. Feature requests get reviewed alongside bug reports, and the most commonly requested ones tend to get prioritized first.</p>
+    <h3 class="u-e98619">What if my issue isn't a bug, just a missing feature?</h3>
+    <p class="u-37832d">That's still worth reporting here, or through the suggestion option on the <a class="u-035cc8" href="contact">Contact page</a>. Feature requests get reviewed alongside bug reports, and the most commonly requested ones tend to get prioritized first.</p>
   </div>
 </section>
 
+</main>
+
 <div id="footer"></div>
-<script src="/load-components.js"></script>
-<script src="/assets/js/main.js" defer></script>
+<script src="/assets/js/main.js"></script>
 <script>
 function updateCharCount(el, countId, min, max) {
   var len = el.value.length;

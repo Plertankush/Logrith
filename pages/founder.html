@@ -15,8 +15,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#000000">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {
@@ -45,27 +49,6 @@
   }
   </script>
 
-  <style>
-    .f-hero { background: linear-gradient(135deg, #f0f4ff 0%, #e8f7f5 100%); padding: 64px 24px 52px; text-align: center; border-bottom: 1.5px solid var(--gray-200); }
-    .f-hero .breadcrumb { display: flex; align-items: center; gap: 6px; font-size: .82rem; color: var(--gray-500); justify-content: center; margin-bottom: 16px; }
-    .f-hero .breadcrumb a { color: var(--primary); text-decoration: none; }
-    .f-avatar { width: 112px; height: 112px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 20px; border: 3px solid var(--white, #fff); box-shadow: 0 4px 18px rgba(0,0,0,.12); }
-    .f-hero h1 { font-family: var(--font-display); font-size: clamp(1.8rem, 5vw, 2.6rem); font-weight: 800; color: var(--gray-900); letter-spacing: -.5px; margin-bottom: 6px; }
-    .f-hero .f-alias { font-size: .95rem; color: var(--primary); font-weight: 600; margin-bottom: 14px; }
-    .f-hero p { font-size: 1rem; color: var(--gray-700); max-width: 620px; margin: 0 auto; line-height: 1.7; }
-    .f-body { max-width: 780px; margin: 0 auto; padding: 48px 24px; }
-    .f-body h2 { font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; color: var(--gray-900); margin: 36px 0 12px; }
-    .f-body h2:first-child { margin-top: 0; }
-    .f-body p { font-size: .95rem; color: var(--gray-700); line-height: 1.85; margin-bottom: 14px; }
-    .f-body strong { color: var(--gray-900); }
-    .f-social { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; margin: 20px 0 10px; }
-    .f-social a { display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--white); border: 1.5px solid var(--gray-200); border-radius: var(--radius); padding: 12px 14px; text-decoration: none; color: var(--gray-900); font-size: .88rem; font-weight: 600; transition: var(--transition); }
-    .f-social a:hover { border-color: var(--primary); color: var(--primary); }
-    .f-social svg { width: 18px; height: 18px; flex-shrink: 0; }
-    .f-note { background: var(--gray-50); border: 1.5px solid var(--gray-200); border-radius: var(--radius-lg); padding: 20px 22px; margin: 24px 0; }
-    .f-note p { margin-bottom: 0; font-size: .9rem; }
-  </style>
-
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
   <script>
@@ -75,18 +58,23 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-founder">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="f-hero">
-  <div class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/pages/about">About</a> &rsaquo; Founder</div>
+<main id="main">
+
+<header class="page-hero">
+  <div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/pages/about">About</a> &rsaquo; Founder</nav>
   <img class="f-avatar" src="/assets/images/founder-plert-ankush-maurya.jpg" alt="Plert Ankush, founder of Logrith" width="112" height="112">
   <h1>Plert Ankush</h1>
   <div class="f-alias"> Ankush Maurya <span>(Legal Name)</span></div>
   <p>Solo founder of Logrith — building free, private, browser-based tools, end to end, with AI as the entire development team.</p>
-</div>
+  </div>
+</header>
 
-<div class="f-body">
+<div class="f-body container">
 
   <h2>Who I Am</h2>
   <p>I'm <strong>Plert Ankush</strong>, a solo founder and builder — my legal name is Ankush Maurya. I use the same identity, Plert Ankush, on every platform, so anyone who finds me on one platform can trust it's genuinely the same person everywhere else.</p>
@@ -119,7 +107,7 @@
   </div>
 
   <h2>My Personal Website</h2>
-  <p>If you want to know more about me outside of Logrith, you can visit my personal site at <a href="https://plertankush.com" target="_blank" rel="noopener" style="color: var(--primary); text-decoration: none; font-weight: 600;">plertankush.com</a>.</p>
+  <p>If you want to know more about me outside of Logrith, you can visit my personal site at <a class="u-c67adc" href="https://plertankush.com" target="_blank" rel="noopener">plertankush.com</a>.</p>
 
   <h2>Find Me Online</h2>
   <p>I use the same handle, <strong>plertankush</strong>, across every platform below, so you can always verify it's genuinely me.</p>
@@ -140,8 +128,9 @@
 
 </div>
 
+</main>
+
 <div id="footer"></div>
-<script src="/load-components.js"></script>
-<script src="/assets/js/main.js" defer></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

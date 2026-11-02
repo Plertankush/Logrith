@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -51,28 +55,31 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-jwt-decoder">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/developer-tools">Developer Tools</a> › JWT Decoder</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/developer-tools">Developer Tools</a> › JWT Decoder</nav>
   <h1>Free JWT Decoder</h1>
   <p>Paste a JSON Web Token to instantly view its decoded header and payload claims — entirely in your browser.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">🔍 Header & Payload</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#search"></use></svg> Header & Payload</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:900px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Paste JWT Token</h2>
     <textarea class="tool-textarea mono" id="jwt-input" rows="5" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...."></textarea>
     <div class="btn-group mt-12">
-      <button class="btn btn-primary btn-lg" id="decode-btn">🔍 Decode</button>
-      <button class="btn btn-secondary" id="clear-btn">✕ Clear</button>
+      <button class="btn btn-primary btn-lg" id="decode-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#search"></use></svg> Decode</button>
+      <button class="btn btn-secondary" id="clear-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Clear</button>
     </div>
     <div class="status-msg" id="status-msg"></div>
   </div>
 
-  <div class="tool-card" id="result-card" style="display:none;">
+  <div class="tool-card is-hidden" id="result-card">
     <h2>Decoded Header</h2>
     <textarea class="tool-textarea mono" id="header-output" rows="4" readonly></textarea>
 
@@ -80,24 +87,42 @@
     <textarea class="tool-textarea mono" id="payload-output" rows="8" readonly></textarea>
 
     <div class="insight-box mt-16">
-      ⚠️ This tool only decodes the token — it does <strong>not verify the signature</strong>. A decoded, readable payload does not mean the token is authentic or untampered.
+      <svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#warning"></use></svg> This tool only decodes the token — it does <strong>not verify the signature</strong>. A decoded, readable payload does not mean the token is authentic or untampered.
     </div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>Does this verify the JWT signature?</h3><p>No, this tool only decodes and displays the header and payload — it doesn't verify the signature, which requires the secret or public key used to sign the token.</p></div>
-    <div class="faq-item-box"><h3>Is it safe to paste a JWT here?</h3><p>Decoding happens entirely in your browser and the token is never sent to a server, but as a general precaution avoid pasting tokens with highly sensitive production data into any tool.</p></div>
-    <div class="faq-item-box"><h3>Why can anyone read a JWT's payload?</h3><p>JWTs are Base64-URL encoded, not encrypted — this is by design, since JWTs are meant to be readable but tamper-evident via their signature, not confidential.</p></div>
-    <div class="faq-item-box"><h3>What does the "exp" claim mean in a decoded payload?</h3><p>"exp" stands for expiration time, a standard JWT claim storing a Unix timestamp indicating when the token should no longer be considered valid, used by receiving systems to reject expired tokens.</p></div>
-    <div class="faq-item-box"><h3>Why does decoding fail with an error?</h3><p>This usually means the pasted text isn't a valid JWT — check that it has exactly three dot-separated parts, and that nothing was accidentally truncated or altered when copying it.</p></div>
-    <div class="faq-item-box"><h3>Can I use this to check if my own API's tokens are structured correctly?</h3><p>Yes, this is a common use case during development — decoding a token your own backend issued to visually confirm the expected claims are present and correctly formatted before shipping.</p></div>
+    <details class="faq-item">
+      <summary class="faq-q">Does this verify the JWT signature?</summary>
+      <div class="faq-a"><p>No, this tool only decodes and displays the header and payload — it doesn't verify the signature, which requires the secret or public key used to sign the token.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is it safe to paste a JWT here?</summary>
+      <div class="faq-a"><p>Decoding happens entirely in your browser and the token is never sent to a server, but as a general precaution avoid pasting tokens with highly sensitive production data into any tool.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why can anyone read a JWT's payload?</summary>
+      <div class="faq-a"><p>JWTs are Base64-URL encoded, not encrypted — this is by design, since JWTs are meant to be readable but tamper-evident via their signature, not confidential.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What does the "exp" claim mean in a decoded payload?</summary>
+      <div class="faq-a"><p>"exp" stands for expiration time, a standard JWT claim storing a Unix timestamp indicating when the token should no longer be considered valid, used by receiving systems to reject expired tokens.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why does decoding fail with an error?</summary>
+      <div class="faq-a"><p>This usually means the pasted text isn't a valid JWT — check that it has exactly three dot-separated parts, and that nothing was accidentally truncated or altered when copying it.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I use this to check if my own API's tokens are structured correctly?</summary>
+      <div class="faq-a"><p>Yes, this is a common use case during development — decoding a token your own backend issued to visually confirm the expected claims are present and correctly formatted before shipping.</p></div>
+    </details>
   </div>
-</div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>Decode JWT Tokens Online</h2>
   <p>This tool decodes a JSON Web Token (JWT) and displays its header and payload as readable JSON, entirely in your browser. It's useful for debugging authentication issues, inspecting token claims, and understanding what data a JWT actually contains.</p>
 
@@ -117,7 +142,7 @@
   <p>Verifying a JWT's signature requires the same secret key (for HMAC algorithms like HS256) or the corresponding public key (for RSA/ECDSA algorithms like RS256) that was used to sign it — information that only the issuing server should have. Since this tool has no access to that secret, and receiving it would defeat the purpose of keeping it secret, this tool intentionally only decodes and displays the token's contents without claiming to verify its authenticity.</p>
 
   <h3>Common Use Cases for Decoding a JWT</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Debugging authentication issues</strong> — checking whether a token contains the expected user ID or role claims.</li>
     <li><strong>Verifying expiration timing</strong> — confirming a token's "exp" claim matches the expected session duration during development.</li>
     <li><strong>Understanding a third-party API's tokens</strong> — inspecting what data an external service's token actually contains.</li>
@@ -125,12 +150,24 @@
   </ul>
 
   <h3>Step-by-Step: Decoding a Token</h3>
-  <div class="tool-steps">
-    <div class="tool-step"><strong>1. Paste your JWT</strong>Copy the full token, including all three dot-separated parts.</div>
-    <div class="tool-step"><strong>2. Click Decode</strong>Instantly see the decoded header and payload as readable JSON.</div>
-    <div class="tool-step"><strong>3. Review the claims</strong>Check the decoded data against what you expect the token to contain.</div>
-    <div class="tool-step"><strong>4. Remember: this doesn't verify authenticity</strong>Decoding confirms content, not whether the token's signature is valid.</div>
-  </div>
+  <ol class="steps">
+    <li class="step">
+      <strong>Paste your JWT</strong>
+      <p>Copy the full token, including all three dot-separated parts.</p>
+    </li>
+    <li class="step">
+      <strong>Click Decode</strong>
+      <p>Instantly see the decoded header and payload as readable JSON.</p>
+    </li>
+    <li class="step">
+      <strong>Review the claims</strong>
+      <p>Check the decoded data against what you expect the token to contain.</p>
+    </li>
+    <li class="step">
+      <strong>Remember: this doesn&#x27;t verify authenticity</strong>
+      <p>Decoding confirms content, not whether the token's signature is valid.</p>
+    </li>
+  </ol>
 
   <h3>Privacy and Local Processing</h3>
   <p>All decoding happens directly in your browser using JavaScript's built-in Base64 decoding — your token is never sent to a server, logged, or stored anywhere.</p>
@@ -142,19 +179,20 @@
   <p>JWTs gained widespread adoption largely because they're self-contained and stateless — a server can verify a token's validity using just the signature and the secret key, without needing to look up a session record in a database for every single request. This makes JWTs particularly well suited to distributed systems and microservice architectures, where multiple independent services need to verify a user's identity without all querying a shared central session store. The tradeoff is that a JWT's claims, once issued, can't easily be revoked before expiration without additional infrastructure, which is a consideration worth understanding alongside the convenience this tool helps you inspect and debug.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/base64" class="tool-item"><div class="ti-text"><h4>Base64 Encode/Decode</h4><p>Encode and decode Base64 text and files.</p></div></a>
-    <a href="/tools/json-formatter" class="tool-item"><div class="ti-text"><h4>JSON Formatter</h4><p>Format and validate JSON data.</p></div></a>
-    <a href="/tools/hash-generator" class="tool-item"><div class="ti-text"><h4>Hash Generator</h4><p>Generate SHA-1, SHA-256, and other hashes.</p></div></a>
-    <a href="/tools/uuid-generator" class="tool-item"><div class="ti-text"><h4>UUID Generator</h4><p>Generate unique IDs for development use.</p></div></a>
+    <a class="related-card" href="/tools/base64"><strong>Base64 Encode/Decode</strong><span>Encode and decode Base64 text and files.</span></a>
+    <a class="related-card" href="/tools/json-formatter"><strong>JSON Formatter</strong><span>Format and validate JSON data.</span></a>
+    <a class="related-card" href="/tools/hash-generator"><strong>Hash Generator</strong><span>Generate SHA-1, SHA-256, and other hashes.</span></a>
+    <a class="related-card" href="/tools/uuid-generator"><strong>UUID Generator</strong><span>Generate unique IDs for development use.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 function base64UrlDecode(str) {
   let s = str.replace(/-/g, '+').replace(/_/g, '/');

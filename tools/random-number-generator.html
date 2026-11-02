@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -45,17 +49,20 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-random-number-generator">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/text-generators">Text & Generators</a> › Random Number Generator</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/text-generators">Text &amp; Generators</a> › Random Number Generator</nav>
   <h1>Free Random Number Generator</h1>
   <p>Generate one or many random numbers within any range, with an option to avoid duplicates.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">🎲 Custom Range</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#random"></use></svg> Custom Range</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:700px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Settings</h2>
     <div class="controls-grid">
@@ -77,36 +84,54 @@
       <label><input type="checkbox" id="sort-check"> Sort ascending</label>
     </div>
     <div class="btn-group mt-16">
-      <button class="btn btn-primary btn-lg" id="generate-btn">🎲 Generate</button>
-      <button class="btn btn-secondary" id="copy-btn">📋 Copy Results</button>
+      <button class="btn btn-primary btn-lg" id="generate-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#random"></use></svg> Generate</button>
+      <button class="btn btn-secondary" id="copy-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy Results</button>
     </div>
     <div class="status-msg" id="status-msg"></div>
   </div>
 
-  <div class="tool-card" id="result-card" style="display:none;">
+  <div class="tool-card is-hidden" id="result-card">
     <h2>Result</h2>
-    <div id="numbers-display" style="display:flex;flex-wrap:wrap;gap:8px;"></div>
+    <div id="numbers-display"></div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>Can I generate multiple unique numbers?</h3><p>Yes, enable "Unique values only" to generate a set of numbers with no repeats, useful for lottery-style draws or sampling.</p></div>
-    <div class="faq-item-box"><h3>What's the maximum range?</h3><p>You can use any minimum and maximum values, as long as the range is large enough to generate your requested quantity if uniqueness is enabled.</p></div>
-    <div class="faq-item-box"><h3>Is this truly random?</h3><p>It uses JavaScript's built-in pseudorandom number generator, suitable for games, sampling, and general randomization needs, though not cryptographically secure.</p></div>
-    <div class="faq-item-box"><h3>Can I generate negative numbers?</h3><p>Yes, enter a negative value in the Minimum field — for example, a range of -50 to 50 generates numbers across both negative and positive values.</p></div>
-    <div class="faq-item-box"><h3>Is my data or usage tracked?</h3><p>No, every number is generated locally in your browser. Nothing about the ranges or quantities you request is logged or stored anywhere.</p></div>
-    <div class="faq-item-box"><h3>Can I generate more than 1000 numbers at once?</h3><p>The tool caps quantity at 1000 per generation to keep the results readable and the page responsive. For larger batches, run the generator multiple times and combine the results.</p></div>
+    <details class="faq-item">
+      <summary class="faq-q">Can I generate multiple unique numbers?</summary>
+      <div class="faq-a"><p>Yes, enable "Unique values only" to generate a set of numbers with no repeats, useful for lottery-style draws or sampling.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What's the maximum range?</summary>
+      <div class="faq-a"><p>You can use any minimum and maximum values, as long as the range is large enough to generate your requested quantity if uniqueness is enabled.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is this truly random?</summary>
+      <div class="faq-a"><p>It uses JavaScript's built-in pseudorandom number generator, suitable for games, sampling, and general randomization needs, though not cryptographically secure.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I generate negative numbers?</summary>
+      <div class="faq-a"><p>Yes, enter a negative value in the Minimum field — for example, a range of -50 to 50 generates numbers across both negative and positive values.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my data or usage tracked?</summary>
+      <div class="faq-a"><p>No, every number is generated locally in your browser. Nothing about the ranges or quantities you request is logged or stored anywhere.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I generate more than 1000 numbers at once?</summary>
+      <div class="faq-a"><p>The tool caps quantity at 1000 per generation to keep the results readable and the page responsive. For larger batches, run the generator multiple times and combine the results.</p></div>
+    </details>
   </div>
-</div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>Random Number Generator With Custom Range</h2>
   <p>This tool generates random numbers within any range you specify, supporting single numbers or large batches, with optional uniqueness (no duplicates) and automatic sorting.</p>
 
   <h3>Common Uses</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Games and raffles</strong> — picking random winners or generating dice-roll-style results.</li>
     <li><strong>Sampling and statistics</strong> — selecting a random subset of items from a larger dataset by index.</li>
     <li><strong>Test data generation</strong> — creating sample numeric data for testing forms, spreadsheets, or databases.</li>
@@ -123,7 +148,7 @@
   <p>It's worth understanding the distinction between this tool's randomness and the kind needed for security-sensitive applications. Math.random() is a pseudorandom number generator, meaning its output is statistically well-distributed and unpredictable enough for games, sampling, raffles, and general everyday randomization — but it is not designed to resist an attacker specifically trying to predict or reverse-engineer the sequence. For anything security-related, like generating a password or a cryptographic key, a cryptographically secure generator (which uses the Web Crypto API instead) is the right tool, which is why Logrith's Password Generator and UUID Generator use that stronger method instead of this one.</p>
 
   <h3>Practical Examples of Using This Tool</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Classroom activities</strong> — randomly selecting a student number to call on, or assigning random group numbers.</li>
     <li><strong>Giveaways and contests</strong> — picking a winning entry number from a numbered list of participants.</li>
     <li><strong>Random sampling for research</strong> — selecting random row indices from a dataset for a representative sample.</li>
@@ -143,27 +168,40 @@
   <p>This tool and Logrith's dedicated Coin Flip & Dice Roller overlap in function but are built for different situations. The dice roller is purpose-built around specific, familiar dice formats — a six-sided die, a twenty-sided die, and other standard tabletop gaming dice — with visuals and a roll history tailored to that experience. This random number generator is more general-purpose: any custom range, any quantity, with options like uniqueness and sorting that a dice-specific tool doesn't need. If you're playing a game that uses standard dice, the dedicated dice roller is the more natural fit; if you need a custom range or a batch of unique values, this tool is the better choice.</p>
 
   <h3>Step-by-Step: Generating Your Numbers</h3>
-  <div class="tool-steps">
-    <div class="tool-step"><strong>1. Set your minimum and maximum</strong>Enter the lowest and highest values the generated numbers should fall between.</div>
-    <div class="tool-step"><strong>2. Choose how many numbers you need</strong>Enter a quantity from 1 up to 1000 in a single batch.</div>
-    <div class="tool-step"><strong>3. Toggle uniqueness and sorting as needed</strong>Enable "Unique values only" to avoid repeats, and "Sort ascending" for ordered results.</div>
-    <div class="tool-step"><strong>4. Generate and copy</strong>Click Generate to see your results instantly, then copy them with one click.</div>
+  <ol class="steps">
+    <li class="step">
+      <strong>Set your minimum and maximum</strong>
+      <p>Enter the lowest and highest values the generated numbers should fall between.</p>
+    </li>
+    <li class="step">
+      <strong>Choose how many numbers you need</strong>
+      <p>Enter a quantity from 1 up to 1000 in a single batch.</p>
+    </li>
+    <li class="step">
+      <strong>Toggle uniqueness and sorting as needed</strong>
+      <p>Enable "Unique values only" to avoid repeats, and "Sort ascending" for ordered results.</p>
+    </li>
+    <li class="step">
+      <strong>Generate and copy</strong>
+      <p>Click Generate to see your results instantly, then copy them with one click.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/tools/random-name-generator"><strong>Random Name Generator</strong><span>Generate random names for characters or testing.</span></a>
+    <a class="related-card" href="/tools/uuid-generator"><strong>UUID Generator</strong><span>Generate unique IDs for development use.</span></a>
+    <a class="related-card" href="/tools/flip-coin-dice-roller"><strong>Coin Flip &amp; Dice Roller</strong><span>Flip a coin or roll dice with history log.</span></a>
+    <a class="related-card" href="/tools/random-team-generator"><strong>Random Team Generator</strong><span>Split a list of names into random teams.</span></a>
   </div>
 </section>
 
-<div class="content-card related-tools">
-  <h2>Related Tools</h2>
-  <div class="related-grid">
-    <a href="/tools/random-name-generator" class="tool-item"><div class="ti-text"><h4>Random Name Generator</h4><p>Generate random names for characters or testing.</p></div></a>
-    <a href="/tools/uuid-generator" class="tool-item"><div class="ti-text"><h4>UUID Generator</h4><p>Generate unique IDs for development use.</p></div></a>
-    <a href="/tools/flip-coin-dice-roller" class="tool-item"><div class="ti-text"><h4>Coin Flip & Dice Roller</h4><p>Flip a coin or roll dice with history log.</p></div></a>
-    <a href="/tools/random-team-generator" class="tool-item"><div class="ti-text"><h4>Random Team Generator</h4><p>Split a list of names into random teams.</p></div></a>
-  </div>
-</div>
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 document.getElementById('generate-btn').addEventListener('click', () => {
   const statusEl = document.getElementById('status-msg');

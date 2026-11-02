@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -51,17 +55,20 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-bmi-calculator">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/calculate-convert">Calculate & Convert</a> › BMI Calculator</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/calculate-convert">Calculate &amp; Convert</a> › BMI Calculator</nav>
   <h1>Free BMI Calculator</h1>
   <p>Calculate your Body Mass Index instantly, with category classification and healthy weight range — in metric or imperial units.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">📏 Metric & Imperial</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#ruler"></use></svg> Metric & Imperial</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:700px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Enter Your Details</h2>
     <div class="controls-grid">
@@ -83,7 +90,7 @@
         <input type="number" id="height-cm" class="field-input" value="175" min="1" step="0.1">
       </div>
     </div>
-    <div id="imperial-fields" class="controls-grid mt-12" style="display:none;">
+    <div id="imperial-fields" class="controls-grid mt-12 is-hidden">
       <div class="control-group">
         <label>Weight (lb)</label>
         <input type="number" id="weight-lb" class="field-input" value="154" min="1" step="0.1">
@@ -98,61 +105,69 @@
       </div>
     </div>
     <div class="btn-group mt-16">
-      <button class="btn btn-primary btn-lg" id="calc-btn">⚖️ Calculate BMI</button>
-      <button class="btn btn-secondary" id="reset-btn">✕ Reset</button>
+      <button class="btn btn-primary btn-lg" id="calc-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#file-text"></use></svg> Calculate BMI</button>
+      <button class="btn btn-secondary" id="reset-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Reset</button>
     </div>
     <div class="status-msg" id="status-msg"></div>
   </div>
 
-  <div class="tool-card" id="result-card" style="display:none;">
+  <div class="tool-card is-hidden" id="result-card">
     <h2>Your BMI Result</h2>
-    <div style="text-align:center;padding:20px;background:var(--gray-50);border-radius:var(--radius-lg);">
-      <div style="font-family:var(--font-display);font-size:3rem;font-weight:800;color:var(--primary);" id="bmi-value">—</div>
-      <div style="font-size:1.1rem;font-weight:700;margin-top:4px;" id="bmi-category">—</div>
+    <div class="u-7fff2e">
+      <div id="bmi-value">—</div>
+      <div id="bmi-category">—</div>
     </div>
-    <div class="timeline-bar mt-16"><div class="timeline-fill" id="bmi-bar" style="width:0%;"></div></div>
+    <div class="timeline-bar mt-16"><div class="timeline-fill" id="bmi-bar"></div></div>
     <div class="progress-row mt-8"><span class="pr-label">Underweight</span><span class="pr-label">Normal</span><span class="pr-label">Overweight</span><span class="pr-label">Obese</span></div>
     <div class="summary-box mt-16" id="bmi-summary"></div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>What is a healthy BMI range?</h3><p>A BMI between 18.5 and 24.9 is generally considered healthy for most adults, per WHO classification.</p></div>
-    <div class="faq-item-box"><h3>Is BMI accurate for everyone?</h3><p>BMI is a useful screening tool but doesn't account for muscle mass or body composition, so it may be less accurate for athletes, elderly people, or pregnant women.</p></div>
-    <div class="faq-item-box"><h3>How is BMI calculated?</h3><p>BMI = weight in kg ÷ (height in meters)². For imperial units, BMI = 703 × weight in lb ÷ (height in inches)².</p></div>
-    <div class="faq-item-box"><h3>What does my healthy weight range mean?</h3><p>It shows the weight range that would give you a BMI between 18.5 and 24.9, based on your entered height.</p></div>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card">
-      <h2>How to Use the BMI Calculator</h2>
-      <div class="tool-steps">
-        <div class="tool-step">
-          <strong>1. Choose your unit system</strong>
-          Select Metric (kg, cm) or Imperial (lb, ft/in) from the dropdown, depending on which units you have handy.
-        </div>
-        <div class="tool-step">
-          <strong>2. Enter your weight and height</strong>
-          Fill in the weight and height fields that appear for your chosen unit system.
-        </div>
-        <div class="tool-step">
-          <strong>3. Click Calculate BMI</strong>
-          The tool instantly computes your BMI value and places it on the underweight-to-obese scale.
-        </div>
-        <div class="tool-step">
-          <strong>4. Review your category and healthy weight range</strong>
-          Check which category your BMI falls into and see the weight range that corresponds to a normal BMI at your height.
-        </div>
-      </div>
-    </div>
+    <details class="faq-item">
+      <summary class="faq-q">What is a healthy BMI range?</summary>
+      <div class="faq-a"><p>A BMI between 18.5 and 24.9 is generally considered healthy for most adults, per WHO classification.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is BMI accurate for everyone?</summary>
+      <div class="faq-a"><p>BMI is a useful screening tool but doesn't account for muscle mass or body composition, so it may be less accurate for athletes, elderly people, or pregnant women.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How is BMI calculated?</summary>
+      <div class="faq-a"><p>BMI = weight in kg ÷ (height in meters)². For imperial units, BMI = 703 × weight in lb ÷ (height in inches)².</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What does my healthy weight range mean?</summary>
+      <div class="faq-a"><p>It shows the weight range that would give you a BMI between 18.5 and 24.9, based on your entered height.</p></div>
+    </details>
   </div>
 </section>
 
-<section class="article-section">
+<section class="page-section">
+  <h2>How to Use the BMI Calculator</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Choose your unit system</strong>
+      <p>Select Metric (kg, cm) or Imperial (lb, ft/in) from the dropdown, depending on which units you have handy.</p>
+    </li>
+    <li class="step">
+      <strong>Enter your weight and height</strong>
+      <p>Fill in the weight and height fields that appear for your chosen unit system.</p>
+    </li>
+    <li class="step">
+      <strong>Click Calculate BMI</strong>
+      <p>The tool instantly computes your BMI value and places it on the underweight-to-obese scale.</p>
+    </li>
+    <li class="step">
+      <strong>Review your category and healthy weight range</strong>
+      <p>Check which category your BMI falls into and see the weight range that corresponds to a normal BMI at your height.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
   <h2>Free BMI Calculator — Metric & Imperial</h2>
   <p>Body Mass Index (BMI) is a widely used screening measure that estimates whether a person's weight is healthy relative to their height. This calculator computes your BMI instantly in either metric (kilograms and centimeters) or imperial (pounds and feet/inches) units, and shows which of the four standard WHO categories your result falls into: underweight, normal weight, overweight, or obese.</p>
 
@@ -160,7 +175,7 @@
   <p>In metric units, BMI is calculated as weight in kilograms divided by height in meters squared (kg/m²). In imperial units, the formula is adjusted with a conversion factor: 703 × weight in pounds, divided by height in inches squared. Both formulas produce the same BMI value for the same person — they're just different ways of expressing the same underlying weight-to-height-squared ratio.</p>
 
   <h3>Understanding BMI Categories</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Below 18.5 — Underweight:</strong> may indicate insufficient nutrition or an underlying health condition.</li>
     <li><strong>18.5–24.9 — Normal weight:</strong> generally associated with the lowest health risk for most adults.</li>
     <li><strong>25–29.9 — Overweight:</strong> associated with increased risk of certain health conditions.</li>
@@ -180,7 +195,7 @@
   <p>BMI was originally developed in the 1830s as the "Quetelet Index" and later adopted by the World Health Organization as a population-level screening tool because it only needs two easily measured inputs — height and weight — and correlates reasonably well with body fat percentage across large groups of people. Its simplicity is exactly why it's used in clinics, insurance assessments, and public health surveys worldwide, even though it has known limitations for individuals.</p>
 
   <h3>BMI for Different Life Stages</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Adults (20+):</strong> the standard 18.5–24.9 "normal" range used by this calculator applies to adult men and women equally; it does not adjust for sex.</li>
     <li><strong>Older adults:</strong> some health guidelines suggest a slightly higher BMI may be acceptable for people over 65, since a bit of extra reserve can be protective during illness.</li>
     <li><strong>Children and teens:</strong> BMI for growing children is interpreted using age- and sex-specific percentile charts rather than the fixed adult categories shown here, so this calculator is intended for adult use.</li>
@@ -193,7 +208,7 @@
   <p>If you lift weights regularly, track your BMI trend over time alongside a body fat percentage measurement rather than relying on BMI alone. A rising BMI from added muscle is a very different outcome than a rising BMI from added fat, and the two can look identical on this calculator. Many trainers use BMI only as a quick baseline check at intake, then switch to body fat percentage or progress photos for ongoing tracking.</p>
 
   <h3>Common Mistakes When Checking BMI</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Entering height in the wrong unit:</strong> switching unit systems without updating both height and weight fields gives a meaningless result — always double check both fields after toggling units.</li>
     <li><strong>Treating BMI as a diagnosis:</strong> a single BMI reading is a screening number, not a medical diagnosis; unusual results are worth discussing with a healthcare provider rather than acting on alone.</li>
     <li><strong>Ignoring trend over time:</strong> a single BMI snapshot is less useful than tracking it every few months alongside other health markers.</li>
@@ -203,35 +218,32 @@
   <p>People use this tool for searches like "what is my BMI," "ideal weight calculator," "BMI chart for adults," "am I overweight calculator," and "healthy weight range for my height." This calculator covers each of these with instant metric and imperial results.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/unit-converter" class="tool-item"><div class="ti-text"><h4>Unit Converter</h4><p>Convert weight, length, and more between units.</p></div></a>
-    <a href="/tools/age-calculator" class="tool-item"><div class="ti-text"><h4>Age Calculator</h4><p>Calculate exact age in years, months, and days.</p></div></a>
-    <a href="/tools/percentage-calculator" class="tool-item"><div class="ti-text"><h4>Percentage Calculator</h4><p>Calculate percentages, changes, and discounts.</p></div></a>
-    <a href="/tools/tip-split-calculator" class="tool-item"><div class="ti-text"><h4>Tip Split Calculator</h4><p>Split a bill with tip among multiple people.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">bmi calculator</span>
-        <span class="keyword-tag">bmi calculator online</span>
-        <span class="keyword-tag">body mass index calculator</span>
-        <span class="keyword-tag">calculate bmi</span>
-        <span class="keyword-tag">healthy weight calculator</span>
-        <span class="keyword-tag">bmi chart</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/unit-converter"><strong>Unit Converter</strong><span>Convert weight, length, and more between units.</span></a>
+    <a class="related-card" href="/tools/age-calculator"><strong>Age Calculator</strong><span>Calculate exact age in years, months, and days.</span></a>
+    <a class="related-card" href="/tools/percentage-calculator"><strong>Percentage Calculator</strong><span>Calculate percentages, changes, and discounts.</span></a>
+    <a class="related-card" href="/tools/tip-split-calculator"><strong>Tip Split Calculator</strong><span>Split a bill with tip among multiple people.</span></a>
   </div>
 </section>
 
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">bmi calculator</span>
+    <span class="keyword-tag">bmi calculator online</span>
+    <span class="keyword-tag">body mass index calculator</span>
+    <span class="keyword-tag">calculate bmi</span>
+    <span class="keyword-tag">healthy weight calculator</span>
+    <span class="keyword-tag">bmi chart</span>
+  </div>
+</section>
+
+</main>
+
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 document.getElementById('unit-system').addEventListener('change', e => {
   const isMetric = e.target.value === 'metric';

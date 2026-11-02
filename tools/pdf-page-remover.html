@@ -23,8 +23,13 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js" defer></script>
 
   <script type="application/ld+json">
@@ -46,88 +51,96 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-pdf-page-remover">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/image-pdf-tools">Image & PDF Tools</a> › PDF Page Remover</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/image-pdf-tools">Image &amp; PDF Tools</a> › PDF Page Remover</nav>
   <h1>Free PDF Page Remover</h1>
   <p>Delete specific pages from a PDF file. Select which pages to remove and download the cleaned-up document instantly.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">🗑️ Select Pages</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#trash"></use></svg> Select Pages</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:820px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Upload PDF</h2>
     <div class="upload-zone" id="upload-zone">
       <input type="file" id="file-input" accept="application/pdf">
-      <div class="upload-icon">📄</div>
+      <div class="upload-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#file-text"></use></svg></div>
       <h3>Drop a PDF here or click to browse</h3>
       <p>Max 20MB</p>
     </div>
     <div class="status-msg" id="status-msg"></div>
   </div>
 
-  <div class="tool-card" id="pages-card" style="display:none;">
+  <div class="tool-card is-hidden" id="pages-card">
     <h2>Select Pages to Remove</h2>
     <p class="mini-note mb-8">Click on a page to mark it for removal. Marked pages are highlighted in red.</p>
     <div class="preview-grid" id="pages-grid"></div>
     <div class="btn-group mt-16">
-      <button class="btn btn-primary" id="remove-btn">🗑️ Remove Selected Pages</button>
-      <button class="btn btn-secondary" id="clear-selection-btn">✕ Clear Selection</button>
+      <button class="btn btn-primary" id="remove-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#trash"></use></svg> Remove Selected Pages</button>
+      <button class="btn btn-secondary" id="clear-selection-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Clear Selection</button>
     </div>
   </div>
 
-  <div class="tool-card" id="result-card" style="display:none;">
+  <div class="tool-card is-hidden" id="result-card">
     <h2>Result</h2>
     <div class="summary-box" id="result-summary"></div>
     <div class="btn-group mt-16">
-      <a href="#" id="download-btn" class="btn btn-primary" download="pages-removed.pdf">⬇️ Download PDF</a>
+      <a href="#" id="download-btn" class="btn btn-primary" download="pages-removed.pdf"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#download"></use></svg> Download PDF</a>
     </div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>How do I select which pages to remove?</h3><p>After uploading, each page appears as a numbered thumbnail. Click any page to mark it for removal, then click Remove Selected Pages.</p></div>
-    <div class="faq-item-box"><h3>Can I remove multiple pages at once?</h3><p>Yes, select as many pages as you like before clicking Remove Selected Pages.</p></div>
-    <div class="faq-item-box"><h3>Is my PDF uploaded to a server?</h3><p>No, all processing happens locally in your browser using pdf-lib — your file is never uploaded anywhere.</p></div>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card">
-      <h2>How to Use the PDF Page Remover</h2>
-      <div class="tool-steps">
-        <div class="tool-step">
-          <strong>1. Upload your PDF</strong>
-          Drag your file onto the upload zone or click it to browse your device, up to 20MB.
-        </div>
-        <div class="tool-step">
-          <strong>2. Review the page thumbnails</strong>
-          Every page in the document appears as a numbered card so you can see exactly how many pages you're working with.
-        </div>
-        <div class="tool-step">
-          <strong>3. Mark pages for deletion</strong>
-          Click each page you want gone — it turns red to confirm it's selected, and you can click again to undo a selection.
-        </div>
-        <div class="tool-step">
-          <strong>4. Remove and download</strong>
-          Click Remove Selected Pages, then download the rebuilt PDF with only your kept pages, in their original order.
-        </div>
-      </div>
-    </div>
+    <details class="faq-item">
+      <summary class="faq-q">How do I select which pages to remove?</summary>
+      <div class="faq-a"><p>After uploading, each page appears as a numbered thumbnail. Click any page to mark it for removal, then click Remove Selected Pages.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I remove multiple pages at once?</summary>
+      <div class="faq-a"><p>Yes, select as many pages as you like before clicking Remove Selected Pages.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my PDF uploaded to a server?</summary>
+      <div class="faq-a"><p>No, all processing happens locally in your browser using pdf-lib — your file is never uploaded anywhere.</p></div>
+    </details>
   </div>
 </section>
 
-<section class="article-section">
+<section class="page-section">
+  <h2>How to Use the PDF Page Remover</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Upload your PDF</strong>
+      <p>Drag your file onto the upload zone or click it to browse your device, up to 20MB.</p>
+    </li>
+    <li class="step">
+      <strong>Review the page thumbnails</strong>
+      <p>Every page in the document appears as a numbered card so you can see exactly how many pages you're working with.</p>
+    </li>
+    <li class="step">
+      <strong>Mark pages for deletion</strong>
+      <p>Click each page you want gone — it turns red to confirm it's selected, and you can click again to undo a selection.</p>
+    </li>
+    <li class="step">
+      <strong>Remove and download</strong>
+      <p>Click Remove Selected Pages, then download the rebuilt PDF with only your kept pages, in their original order.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
   <h2>Remove Pages from a PDF Online</h2>
   <p>This tool lets you delete unwanted pages from a PDF file directly in your browser, without needing Adobe Acrobat or any desktop software. Upload your PDF, select the pages you want to remove, and download a clean version with just those pages gone.</p>
 
   <h3>When You Need to Remove PDF Pages</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Removing a blank scanned page</strong> that got included accidentally during scanning.</li>
     <li><strong>Trimming a cover page or table of contents</strong> before sharing a document section.</li>
     <li><strong>Deleting a signature page or personal information page</strong> before forwarding a document.</li>
@@ -177,33 +190,30 @@
   <p>After removal, it's good practice to open the downloaded file and quickly scroll through it to confirm the right pages were dropped and the remaining content still reads correctly, especially for documents where page order or numbering matters to the recipient.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/pdf-split" class="tool-item"><div class="ti-text"><h4>PDF Split</h4><p>Split a PDF into multiple separate files.</p></div></a>
-    <a href="/tools/pdf-merge" class="tool-item"><div class="ti-text"><h4>PDF Merge</h4><p>Combine multiple PDFs into one document.</p></div></a>
-    <a href="/tools/pdf-rotate" class="tool-item"><div class="ti-text"><h4>PDF Rotate</h4><p>Rotate PDF pages to fix orientation.</p></div></a>
-    <a href="/tools/pdf-watermark" class="tool-item"><div class="ti-text"><h4>PDF Watermark</h4><p>Add a text watermark across PDF pages.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">pdf page remover</span>
-        <span class="keyword-tag">delete pages from pdf</span>
-        <span class="keyword-tag">remove pdf pages online</span>
-        <span class="keyword-tag">pdf page delete tool</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/pdf-split"><strong>PDF Split</strong><span>Split a PDF into multiple separate files.</span></a>
+    <a class="related-card" href="/tools/pdf-merge"><strong>PDF Merge</strong><span>Combine multiple PDFs into one document.</span></a>
+    <a class="related-card" href="/tools/pdf-rotate"><strong>PDF Rotate</strong><span>Rotate PDF pages to fix orientation.</span></a>
+    <a class="related-card" href="/tools/pdf-watermark"><strong>PDF Watermark</strong><span>Add a text watermark across PDF pages.</span></a>
   </div>
 </section>
 
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">pdf page remover</span>
+    <span class="keyword-tag">delete pages from pdf</span>
+    <span class="keyword-tag">remove pdf pages online</span>
+    <span class="keyword-tag">pdf page delete tool</span>
+  </div>
+</section>
+
+</main>
+
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 const uploadZone = document.getElementById('upload-zone');
 const fileInput = document.getElementById('file-input');
@@ -239,7 +249,7 @@ function renderPages() {
     card.style.cursor = 'pointer';
     card.style.textAlign = 'center';
     card.dataset.page = i;
-    card.innerHTML = `<div style="font-size:2rem;">📄</div><div class="result-title">Page ${i + 1}</div>`;
+    card.innerHTML = `<div style="font-size:2rem;"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#file-text"></use></svg></div><div class="result-title">Page ${i + 1}</div>`;
     card.addEventListener('click', () => {
       if (toRemove.has(i)) { toRemove.delete(i); card.style.borderColor = 'var(--gray-200)'; card.style.background = 'var(--gray-50)'; }
       else { toRemove.add(i); card.style.borderColor = 'var(--error)'; card.style.background = '#fef2f2'; }

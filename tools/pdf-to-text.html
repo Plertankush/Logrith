@@ -23,8 +23,13 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" defer></script>
 
   <script type="application/ld+json">
@@ -52,22 +57,25 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-pdf-to-text">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/image-pdf-tools">Image & PDF Tools</a> › PDF to Text</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/image-pdf-tools">Image &amp; PDF Tools</a> › PDF to Text</nav>
   <h1>Free PDF to Text Converter</h1>
   <p>Extract all readable text from a PDF file instantly. Copy it or download as a .txt file — all in your browser.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">📄 All Pages</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#file-text"></use></svg> All Pages</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:820px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Upload PDF</h2>
     <div class="upload-zone" id="upload-zone">
       <input type="file" id="file-input" accept="application/pdf">
-      <div class="upload-icon">📄</div>
+      <div class="upload-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#file-text"></use></svg></div>
       <h3>Drop a PDF here or click to browse</h3>
       <p>Max 20MB</p>
     </div>
@@ -75,56 +83,64 @@
     <div class="status-msg" id="status-msg"></div>
   </div>
 
-  <div class="tool-card" id="result-card" style="display:none;">
+  <div class="tool-card is-hidden" id="result-card">
     <h2>Extracted Text</h2>
     <div class="stats-row mb-8" id="stats-row"></div>
-    <div style="position:relative;">
+    <div class="relative">
       <textarea class="tool-textarea" id="output-text" rows="16" readonly></textarea>
-      <button class="copy-btn" id="copy-btn">📋 Copy</button>
+      <button class="copy-btn" id="copy-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
     </div>
     <div class="btn-group mt-12">
-      <button class="btn btn-primary" id="download-btn">⬇️ Download as .txt</button>
+      <button class="btn btn-primary" id="download-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#download"></use></svg> Download as .txt</button>
     </div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>Can I extract text from a scanned PDF?</h3><p>This tool extracts embedded text layers. Scanned PDFs that are just images of text without an embedded text layer require OCR, which this tool does not perform.</p></div>
-    <div class="faq-item-box"><h3>Does this preserve original formatting?</h3><p>The tool extracts plain text in reading order. Complex layouts like columns or tables may not perfectly match the original visual structure.</p></div>
-    <div class="faq-item-box"><h3>Is my PDF uploaded to a server?</h3><p>No, extraction happens locally in your browser using PDF.js — your file is never uploaded anywhere.</p></div>
-    <div class="faq-item-box"><h3>Is there a page limit?</h3><p>No hard page limit, but very large PDFs may take longer to process since everything runs in your browser.</p></div>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card">
-      <h2>How to Use the PDF to Text Converter</h2>
-      <div class="tool-steps">
-        <div class="tool-step">
-          <strong>1. Choose a PDF file</strong>
-          Click the upload zone to browse your device, or drag and drop a PDF file directly onto it (files up to 20MB are supported).
-        </div>
-        <div class="tool-step">
-          <strong>2. Let the browser process it</strong>
-          The tool loads the file with PDF.js and reads the embedded text layer from every page, shown by a progress bar as it works.
-        </div>
-        <div class="tool-step">
-          <strong>3. Review the extracted text</strong>
-          The full text appears in a text box along with page count, word count, and character count for the document.
-        </div>
-        <div class="tool-step">
-          <strong>4. Copy or download</strong>
-          Use the Copy button to grab the text for pasting elsewhere, or download it directly as a .txt file.
-        </div>
-      </div>
-    </div>
+    <details class="faq-item">
+      <summary class="faq-q">Can I extract text from a scanned PDF?</summary>
+      <div class="faq-a"><p>This tool extracts embedded text layers. Scanned PDFs that are just images of text without an embedded text layer require OCR, which this tool does not perform.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does this preserve original formatting?</summary>
+      <div class="faq-a"><p>The tool extracts plain text in reading order. Complex layouts like columns or tables may not perfectly match the original visual structure.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my PDF uploaded to a server?</summary>
+      <div class="faq-a"><p>No, extraction happens locally in your browser using PDF.js — your file is never uploaded anywhere.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is there a page limit?</summary>
+      <div class="faq-a"><p>No hard page limit, but very large PDFs may take longer to process since everything runs in your browser.</p></div>
+    </details>
   </div>
 </section>
 
-<section class="article-section">
+<section class="page-section">
+  <h2>How to Use the PDF to Text Converter</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Choose a PDF file</strong>
+      <p>Click the upload zone to browse your device, or drag and drop a PDF file directly onto it (files up to 20MB are supported).</p>
+    </li>
+    <li class="step">
+      <strong>Let the browser process it</strong>
+      <p>The tool loads the file with PDF.js and reads the embedded text layer from every page, shown by a progress bar as it works.</p>
+    </li>
+    <li class="step">
+      <strong>Review the extracted text</strong>
+      <p>The full text appears in a text box along with page count, word count, and character count for the document.</p>
+    </li>
+    <li class="step">
+      <strong>Copy or download</strong>
+      <p>Use the Copy button to grab the text for pasting elsewhere, or download it directly as a .txt file.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
   <h2>Extract Text from PDF Files Online</h2>
   <p>This tool reads a PDF's embedded text content and extracts it as plain text you can copy or download, using the open-source PDF.js library running entirely in your browser. It's useful for pulling quotes, repurposing document content, feeding text into another tool, or simply reading a PDF's content without opening a PDF viewer.</p>
 
@@ -135,7 +151,7 @@
   <p>Not all PDFs contain a real text layer. A scanned document — a photo or scan of a printed page saved as a PDF — is really just an image, with no underlying text data to extract at all. Extracting text from this kind of PDF requires Optical Character Recognition (OCR), a more complex process that recognizes letter shapes in an image and converts them to text. This tool focuses on fast, accurate extraction from PDFs that already contain embedded text, which covers the large majority of everyday PDFs (reports, forms, invoices, articles, ebooks).</p>
 
   <h3>Common Uses</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Repurposing content</strong> — pulling text from a PDF report into an email, document, or CMS without retyping it.</li>
     <li><strong>Quoting and citing</strong> — extracting a specific passage for reference or citation.</li>
     <li><strong>Feeding other tools</strong> — getting plain text out of a PDF to paste into a word counter, translator, or text analysis tool.</li>
@@ -167,34 +183,31 @@
   <p>Alongside the extracted text, the tool shows a quick page count, word count, and character count for the document. These numbers are useful on their own — checking whether a document meets a word-count requirement, estimating reading time, or getting a rough sense of document length before deciding whether to read it in full — without needing to paste the text into a separate word counter tool afterward.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/pdf-to-jpg" class="tool-item"><div class="ti-text"><h4>PDF to JPG</h4><p>Convert PDF pages into image files.</p></div></a>
-    <a href="/tools/pdf-merge" class="tool-item"><div class="ti-text"><h4>PDF Merge</h4><p>Combine multiple PDFs into one document.</p></div></a>
-    <a href="/tools/word-counter" class="tool-item"><div class="ti-text"><h4>Word Counter</h4><p>Count words in your extracted text.</p></div></a>
-    <a href="/tools/text-diff" class="tool-item"><div class="ti-text"><h4>Text Diff Checker</h4><p>Compare two text versions for differences.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">pdf to text</span>
-        <span class="keyword-tag">pdf to text converter</span>
-        <span class="keyword-tag">extract text from pdf</span>
-        <span class="keyword-tag">pdf text extractor online</span>
-        <span class="keyword-tag">convert pdf to text free</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/pdf-to-jpg"><strong>PDF to JPG</strong><span>Convert PDF pages into image files.</span></a>
+    <a class="related-card" href="/tools/pdf-merge"><strong>PDF Merge</strong><span>Combine multiple PDFs into one document.</span></a>
+    <a class="related-card" href="/tools/word-counter"><strong>Word Counter</strong><span>Count words in your extracted text.</span></a>
+    <a class="related-card" href="/tools/text-diff"><strong>Text Diff Checker</strong><span>Compare two text versions for differences.</span></a>
   </div>
 </section>
 
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">pdf to text</span>
+    <span class="keyword-tag">pdf to text converter</span>
+    <span class="keyword-tag">extract text from pdf</span>
+    <span class="keyword-tag">pdf text extractor online</span>
+    <span class="keyword-tag">convert pdf to text free</span>
+  </div>
+</section>
+
+</main>
+
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 const uploadZone = document.getElementById('upload-zone');
 const fileInput = document.getElementById('file-input');

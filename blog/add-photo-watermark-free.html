@@ -23,47 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .bp-hero { max-width:820px;margin:0 auto;padding:48px 20px 8px; }
-    .bp-crumb { font-size:.85rem;color:var(--gray-500);margin-bottom:16px; }
-    .bp-crumb a { color:var(--primary);text-decoration:none; }
-    .bp-hero h1 { font-family:var(--font-display);font-size:2rem;line-height:1.25;color:var(--gray-900);margin-bottom:14px; }
-    .bp-hero .bp-dek { font-size:1.05rem;color:var(--gray-700);line-height:1.7;margin-bottom:20px; }
-    .bp-cta { display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:white;padding:13px 26px;border-radius:var(--radius);font-weight:700;text-decoration:none;font-size:.95rem; }
-    .bp-cta svg { width:17px;height:17px; }
-    .bp-cta:hover { background:var(--primary-dark); }
-    .bp-body { max-width:760px;margin:0 auto;padding:28px 20px 20px; }
-    .bp-body h2 { font-family:var(--font-display);font-size:1.5rem;color:var(--gray-900);margin:38px 0 14px; }
-    .bp-body h3 { font-family:var(--font-display);font-size:1.15rem;color:var(--gray-900);margin:26px 0 10px; }
-    .bp-body p { color:var(--gray-700);line-height:1.8;margin-bottom:16px;font-size:1rem; }
-    .bp-body ul, .bp-body ol { color:var(--gray-700);line-height:1.8;margin:0 0 16px 22px; }
-    .bp-body li { margin-bottom:8px; }
-    .bp-body strong { color:var(--gray-900); }
-    .bp-toc { background:var(--gray-50);border-radius:var(--radius-lg);padding:20px 24px;margin:24px 0; }
-    .bp-toc h2 { margin:0 0 10px;font-size:1.05rem; }
-    .bp-toc ol { margin:0 0 0 20px; }
-    .bp-toc a { color:var(--primary);text-decoration:none; }
-    .bp-table { width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:.92rem; }
-    .bp-table th, .bp-table td { border:1px solid var(--gray-200);padding:10px 12px;text-align:left; }
-    .bp-table th { background:var(--gray-50);font-weight:700;color:var(--gray-900); }
-    .bp-howto { counter-reset:step; list-style:none;margin-left:0; }
-    .bp-howto li { position:relative;padding-left:42px;margin-bottom:18px; }
-    .bp-howto li::before { counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;background:var(--primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem; }
-    .bp-faq-item { border-bottom:1px solid var(--gray-200);padding:16px 0; }
-    .bp-faq-item h3 { margin:0 0 8px; font-size:1.02rem; }
-    .bp-byline { font-size:.82rem;color:var(--gray-500);margin-top:10px; }
-    .bp-related { max-width:1000px;margin:0 auto;padding:20px 20px 60px; }
-    .bp-related h2 { font-family:var(--font-display);font-size:1.4rem;color:var(--gray-900);margin-bottom:18px;text-align:center; }
-    .bp-related-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px; }
-    .bp-related-card { border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:18px;text-decoration:none;color:inherit;background:var(--white); }
-    .bp-related-card h4 { font-size:.95rem;color:var(--gray-900);margin-bottom:6px; }
-    .bp-related-card p { font-size:.82rem;color:var(--gray-700);line-height:1.5; }
-    .bp-prevnext { display:flex;justify-content:space-between;gap:16px;max-width:760px;margin:0 auto;padding:0 20px 20px; }
-    .bp-prevnext a { flex:1;border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:12px 16px;text-decoration:none;color:var(--gray-700);font-size:.85rem; }
-    .bp-prevnext a strong { display:block;color:var(--gray-900);font-size:.92rem; }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -98,23 +63,26 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-add-photo-watermark-free">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="bp-hero">
-  <div class="bp-crumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/image-pdf-tools">Image & PDF Tools</a> &rsaquo; Image Watermark</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/image-pdf-tools">Image & PDF Tools</a> &rsaquo; Image Watermark</nav>
   <h1>How to Watermark Your Photos So They're Harder to Steal and Easier to Trace</h1>
-  <p class="bp-dek">Posting original photography or artwork online without any protection is an open invitation for someone else to save, repost, and claim it as their own. A well-placed text watermark won't stop a determined thief, but it changes the economics enough that most casual reuse simply doesn't happen — and understanding placement, opacity, and even font choice properly makes the difference between a watermark that actually works and one that's cropped away in three seconds.</p>
-  <a href="/tools/image-watermark" class="bp-cta">
+  <p>Posting original photography or artwork online without any protection is an open invitation for someone else to save, repost, and claim it as their own. A well-placed text watermark won't stop a determined thief, but it changes the economics enough that most casual reuse simply doesn't happen — and understanding placement, opacity, and even font choice properly makes the difference between a watermark that actually works and one that's cropped away in three seconds.</p>
+  <a href="/tools/image-watermark" class="btn btn-primary btn-lg">
     <svg class="icon"><use href="/assets/svg/icons.svg#image"></use></svg>
     Add a Watermark
   </a>
-  <p class="bp-byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
-</div>
+  <p class="byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
+</div></header>
 
-<div class="bp-body">
+<article class="page-section prose">
 
-  <div class="bp-toc">
+  <nav class="toc" aria-label="On this page">
     <h2>On This Page</h2>
     <ol>
       <li><a href="#how-to-use">How to Add a Watermark</a></li>
@@ -126,26 +94,36 @@
       <li><a href="#mistakes">Common Mistakes</a></li>
       <li><a href="#faq">Frequently Asked Questions</a></li>
     </ol>
-  </div>
+  </nav>
 
   <h2 id="how-to-use">How to Add a Watermark</h2>
-  <ol class="bp-howto">
-    <li>Open the <a href="/tools/image-watermark">Image Watermark tool</a> and upload your photo.</li>
-    <li>Type your watermark text — typically your name, a website, or a copyright notice.</li>
-    <li>Adjust position, opacity, font size, and color until it looks right in the preview.</li>
-    <li>Download the watermarked image — no upload to a server occurred at any point.</li>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the <a href="/tools/image-watermark">Image Watermark tool</a> and upload your photo.</p>
+    </li>
+    <li class="step">
+      <p>Type your watermark text — typically your name, a website, or a copyright notice.</p>
+    </li>
+    <li class="step">
+      <p>Adjust position, opacity, font size, and color until it looks right in the preview.</p>
+    </li>
+    <li class="step">
+      <p>Download the watermarked image — no upload to a server occurred at any point.</p>
+    </li>
   </ol>
 
   <h2 id="placement">Placement: Why Corners Are the Weakest Choice</h2>
   <p>A watermark tucked into a single corner is the most common choice, and also the weakest, for a simple reason: cropping out one corner of a photo often still leaves a perfectly usable image behind. Someone reusing your photo without permission can trim away a corner watermark in seconds using virtually any image editor, and the remaining photo looks completely normal. A watermark placed diagonally across the center of the image, or repeated at reduced opacity across the whole frame, is meaningfully harder to remove without visibly damaging the photo itself — cropping it out would mean cropping out the actual subject too. The tradeoff is that a more prominent, central watermark is also more visually intrusive, which is a real cost for photos meant to be genuinely enjoyed rather than purely defended, and worth weighing consciously rather than defaulting to a corner out of habit.</p>
 
   <h2 id="opacity">Choosing the Right Opacity</h2>
-  <table class="bp-table">
+  <div class="table-wrap">
+    <table class="table">
     <tr><th>Opacity Range</th><th>Effect</th><th>Best For</th></tr>
     <tr><td>10-20%</td><td>Subtle, barely visible</td><td>Photos meant primarily for viewing, with only light ownership signaling</td></tr>
     <tr><td>30-50%</td><td>Clearly visible but not overwhelming</td><td>The general-purpose sweet spot for most watermarking needs</td></tr>
     <tr><td>60%+</td><td>Prominent, hard to ignore</td><td>Preview/proof images not meant for final use, like photography portfolio previews before purchase</td></tr>
   </table>
+  </div>
   <p>Higher opacity makes a watermark harder to remove cleanly (since it obscures more of the underlying image detail an editor would need to reconstruct), but also makes the photo less pleasant to simply look at. Most everyday use cases land comfortably in the 30-50% range, which balances visibility against usability.</p>
 
   <h2>The Legal Context Behind Watermarking</h2>
@@ -172,7 +150,8 @@
   <p>Every choice that strengthens a watermark's deterrent effect — higher opacity, more central placement, larger text — also makes the photo less pleasant to simply look at, which matters for images meant to be genuinely enjoyed rather than purely defended. This tradeoff isn't something to solve once and forget; it's worth reconsidering per photo and per purpose. A personal photo shared with friends who already know and trust the source can carry a light, unobtrusive watermark, since the goal is mild attribution rather than defense against theft. A commercial preview image meant to be evaluated but not used until purchased can justify a much more assertive watermark, since here the visual cost is an acceptable tradeoff for protecting the actual sellable asset.</p>
 
   <h2 id="comparison">Comparison vs. Other Watermark Tools</h2>
-  <table class="bp-table">
+  <div class="table-wrap">
+    <table class="table">
     <tr><th>Feature</th><th>Logrith Image Watermark</th><th>Typical Free Watermark Tools</th></tr>
     <tr><td>Processing location</td><td>Entirely in-browser</td><td>Mixed — several browser-based, some upload to a server</td></tr>
     <tr><td>Text watermark</td><td>Yes, with position/opacity/font/color control</td><td>Standard across most tools</td></tr>
@@ -180,6 +159,7 @@
     <tr><td>Batch watermarking</td><td>Single image</td><td>Several competitors support batch processing across multiple photos</td></tr>
     <tr><td>Repeating/tiled watermark pattern</td><td>No — single placement only</td><td>Some tools support tiled, repeated watermark patterns across the image</td></tr>
   </table>
+  </div>
   <p>This is worth being upfront about: several competitor tools support logo-based (image) watermarks and repeating tiled patterns across an entire photo, both of which Logrith's current version doesn't offer — it's focused specifically on a single, well-controlled text watermark. If you specifically need a logo overlay or a repeating pattern for maximum tamper-resistance, a dedicated tool with those features will serve that specific need better. For the common case of adding a name, website, or copyright line to protect and attribute a photo, this tool handles that directly and privately.</p>
 
   <h2 id="mistakes">Common Mistakes</h2>
@@ -197,36 +177,51 @@
   <h3>Why Choose Logrith</h3>
   <p>Watermarking runs entirely in your browser, meaning your original, unwatermarked photo is never uploaded anywhere during the process — a meaningful consideration when the whole point is protecting the image before it's shared publicly, and one that many server-based watermarking tools can't offer with the same certainty.</p>
 
-</div>
+</article>
 
-<div class="bp-body">
+<article class="page-section prose">
   <h2 id="faq">Frequently Asked Questions</h2>
-  <div class="bp-faq-item"><h3>Does a watermark actually stop people from stealing my photos?</h3><p>A watermark doesn't prevent copying, but it makes unauthorized use immediately visible and traceable back to you, and discourages casual reuse since most people won't bother removing it.</p></div>
-  <div class="bp-faq-item"><h3>What opacity should I use?</h3><p>A moderate opacity around 30-50% is typically the sweet spot — visible enough to deter casual reuse without being so heavy that it obscures the underlying photo.</p></div>
-  <div class="bp-faq-item"><h3>Where should I position my watermark?</h3><p>Centered or diagonal placement is harder to crop out than a corner watermark, since cropping a corner away often still leaves a usable image behind.</p></div>
-  <div class="bp-faq-item"><h3>Can a watermark be removed from a photo?</h3><p>Determined actors with photo editing skills can remove many watermarks, especially light corner ones. A watermark is a deterrent and ownership signal, not an unbreakable technical protection.</p></div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">Does a watermark actually stop people from stealing my photos?</summary>
+      <div class="faq-a"><p>A watermark doesn't prevent copying, but it makes unauthorized use immediately visible and traceable back to you, and discourages casual reuse since most people won't bother removing it.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What opacity should I use?</summary>
+      <div class="faq-a"><p>A moderate opacity around 30-50% is typically the sweet spot — visible enough to deter casual reuse without being so heavy that it obscures the underlying photo.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Where should I position my watermark?</summary>
+      <div class="faq-a"><p>Centered or diagonal placement is harder to crop out than a corner watermark, since cropping a corner away often still leaves a usable image behind.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can a watermark be removed from a photo?</summary>
+      <div class="faq-a"><p>Determined actors with photo editing skills can remove many watermarks, especially light corner ones. A watermark is a deterrent and ownership signal, not an unbreakable technical protection.</p></div>
+    </details>
+  </div>
 
   <h2>Conclusion</h2>
   <p>A watermark is a deterrent, not a lock — its real value comes from making theft visible and mildly inconvenient rather than technically impossible. Getting placement and opacity right meaningfully improves that deterrent effect, turning a watermark from a cosmetic afterthought into a genuine, if imperfect, layer of protection for photos you've put real work into creating, whether they're headed to social media, a client preview, or a print storefront.</p>
-</div>
+</article>
 
-<div class="bp-prevnext">
+<nav class="post-nav page-section" aria-label="More guides">
   <a href="/blog/generate-favicon-all-sizes-online-free">&larr; Previous: <strong>Favicon Generator Guide</strong></a>
   <a href="/blog/make-a-meme-online-free">Next: <strong>Meme Generator Guide</strong> &rarr;</a>
-</div>
+</nav>
 
-<div class="bp-related">
+<section class="page-section">
   <h2>Related Tools</h2>
-  <div class="bp-related-grid">
-    <a href="/blog/image-compressor" class="bp-related-card"><h4>Image Compressor</h4><p>Compress your watermarked photo before sharing.</p></a>
-    <a href="/blog/resize-image-without-losing-quality-online" class="bp-related-card"><h4>Image Resize</h4><p>Resize before watermarking for consistent placement.</p></a>
-    <a href="/blog/image-crop" class="bp-related-card"><h4>Image Crop</h4><p>Crop to your desired composition before watermarking.</p></a>
-    <a href="/blog/image-converter" class="bp-related-card"><h4>Image Converter</h4><p>Convert your watermarked photo to a different format.</p></a>
+  <div class="related-grid">
+    <a class="related-card" href="/blog/image-compressor"><strong>Image Compressor</strong><span>Compress your watermarked photo before sharing.</span></a>
+    <a class="related-card" href="/blog/resize-image-without-losing-quality-online"><strong>Image Resize</strong><span>Resize before watermarking for consistent placement.</span></a>
+    <a class="related-card" href="/blog/image-crop"><strong>Image Crop</strong><span>Crop to your desired composition before watermarking.</span></a>
+    <a class="related-card" href="/blog/image-converter"><strong>Image Converter</strong><span>Convert your watermarked photo to a different format.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

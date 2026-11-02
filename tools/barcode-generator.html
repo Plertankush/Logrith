@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -51,17 +55,20 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-barcode-generator">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/utilities">Utilities</a> › Barcode Generator</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/utilities">Utilities</a> › Barcode Generator</nav>
   <h1>Free Barcode Generator</h1>
   <p>Generate a real, scannable CODE128 barcode from any text or numbers — download as PNG instantly.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">📊 CODE128</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#chart-bar"></use></svg> CODE128</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:700px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Enter Text or Numbers</h2>
     <input type="text" id="barcode-text" class="field-input" value="HELLO123" placeholder="e.g. PRODUCT12345">
@@ -76,58 +83,63 @@
       </div>
     </div>
     <div class="btn-group mt-16">
-      <button class="btn btn-primary btn-lg" id="generate-btn">📊 Generate Barcode</button>
+      <button class="btn btn-primary btn-lg" id="generate-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#chart-bar"></use></svg> Generate Barcode</button>
     </div>
     <div class="status-msg" id="status-msg"></div>
   </div>
 
-  <div class="tool-card" id="result-card" style="display:none;">
+  <div class="tool-card is-hidden" id="result-card">
     <h2>Generated Barcode</h2>
-    <div style="text-align:center;padding:16px;background:white;border-radius:var(--radius);">
+    <div class="u-29c30f">
       <canvas id="barcode-canvas"></canvas>
     </div>
     <div class="btn-group mt-16">
-      <a href="#" id="download-btn" class="btn btn-primary" download="barcode.png">⬇️ Download PNG</a>
+      <a href="#" id="download-btn" class="btn btn-primary" download="barcode.png"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#download"></use></svg> Download PNG</a>
     </div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>What is CODE128 barcode format?</h3><p>CODE128 is a widely used, high-density barcode format that can encode all 128 ASCII characters, commonly used in shipping, packaging, and inventory management.</p></div>
-    <div class="faq-item-box"><h3>Can these barcodes be scanned by real scanners?</h3><p>Yes, this tool generates standard-compliant CODE128 barcodes with correct checksums, readable by any standard barcode scanner or scanning app.</p></div>
-    <div class="faq-item-box"><h3>What characters can I encode?</h3><p>This tool supports standard ASCII characters (letters, numbers, and common symbols) in the CODE128 Subset B character set.</p></div>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card">
-      <h2>How to Use the Barcode Generator</h2>
-      <div class="tool-steps">
-        <div class="tool-step">
-          <strong>1. Type your text or numbers</strong>
-          Enter the product code, SKU, tracking number, or any text you want encoded into the input field.
-        </div>
-        <div class="tool-step">
-          <strong>2. Adjust bar width and height</strong>
-          Use the sliders to set how thick each bar is and how tall the barcode appears, depending on your label size or printing needs.
-        </div>
-        <div class="tool-step">
-          <strong>3. Click Generate Barcode</strong>
-          The tool encodes your text into CODE128 Subset B, calculates the checksum, and renders the barcode onto a canvas.
-        </div>
-        <div class="tool-step">
-          <strong>4. Download the PNG</strong>
-          Click Download PNG to save the generated barcode image for printing on labels or embedding in documents.
-        </div>
-      </div>
-    </div>
+    <details class="faq-item">
+      <summary class="faq-q">What is CODE128 barcode format?</summary>
+      <div class="faq-a"><p>CODE128 is a widely used, high-density barcode format that can encode all 128 ASCII characters, commonly used in shipping, packaging, and inventory management.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can these barcodes be scanned by real scanners?</summary>
+      <div class="faq-a"><p>Yes, this tool generates standard-compliant CODE128 barcodes with correct checksums, readable by any standard barcode scanner or scanning app.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What characters can I encode?</summary>
+      <div class="faq-a"><p>This tool supports standard ASCII characters (letters, numbers, and common symbols) in the CODE128 Subset B character set.</p></div>
+    </details>
   </div>
 </section>
 
-<section class="article-section">
+<section class="page-section">
+  <h2>How to Use the Barcode Generator</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Type your text or numbers</strong>
+      <p>Enter the product code, SKU, tracking number, or any text you want encoded into the input field.</p>
+    </li>
+    <li class="step">
+      <strong>Adjust bar width and height</strong>
+      <p>Use the sliders to set how thick each bar is and how tall the barcode appears, depending on your label size or printing needs.</p>
+    </li>
+    <li class="step">
+      <strong>Click Generate Barcode</strong>
+      <p>The tool encodes your text into CODE128 Subset B, calculates the checksum, and renders the barcode onto a canvas.</p>
+    </li>
+    <li class="step">
+      <strong>Download the PNG</strong>
+      <p>Click Download PNG to save the generated barcode image for printing on labels or embedding in documents.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
   <h2>Generate CODE128 Barcodes Online</h2>
   <p>This tool generates real, scannable CODE128 barcodes from any text or number sequence, using the standard CODE128 Subset B encoding table with a correctly calculated checksum, rendered as a downloadable PNG image.</p>
 
@@ -138,7 +150,7 @@
   <p>Each character you enter is mapped to a numeric value according to the CODE128 Subset B standard, and a checksum is calculated by summing each value multiplied by its position, then taking the result modulo 103 — exactly as the CODE128 specification requires. This checksum value is appended to the encoded sequence, along with mandatory start and stop patterns, ensuring the resulting barcode is standard-compliant and readable by any real barcode scanner, not just a visual approximation.</p>
 
   <h3>Common Uses for Barcodes</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Inventory management</strong> — labeling products or storage bins for quick scanning.</li>
     <li><strong>Shipping and logistics</strong> — encoding tracking numbers or reference codes.</li>
     <li><strong>Event tickets and access passes</strong> — encoding unique identifiers for scanning at entry points.</li>
@@ -176,34 +188,31 @@
   <p>For a barcode to scan reliably when printed, it needs a clear quiet zone (blank space) on either side — this tool automatically adds that margin around the generated bars. When printing, avoid scaling the image in a way that blurs the bar edges, and test a printed label with an actual scanner or a phone scanning app before producing a full batch, since printer resolution and paper quality can affect how cleanly thin bars reproduce.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/qr-generator" class="tool-item"><div class="ti-text"><h4>QR Code Generator</h4><p>Generate QR codes for URLs, text, and contacts.</p></div></a>
-    <a href="/tools/uuid-generator" class="tool-item"><div class="ti-text"><h4>UUID Generator</h4><p>Generate unique IDs for tracking and inventory.</p></div></a>
-    <a href="/tools/slug-generator" class="tool-item"><div class="ti-text"><h4>Slug Generator</h4><p>Create clean identifiers from text.</p></div></a>
-    <a href="/tools/random-number-generator" class="tool-item"><div class="ti-text"><h4>Random Number Generator</h4><p>Generate random reference numbers.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">barcode generator</span>
-        <span class="keyword-tag">barcode generator online</span>
-        <span class="keyword-tag">code128 generator</span>
-        <span class="keyword-tag">free barcode maker</span>
-        <span class="keyword-tag">generate barcode from text</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/qr-generator"><strong>QR Code Generator</strong><span>Generate QR codes for URLs, text, and contacts.</span></a>
+    <a class="related-card" href="/tools/uuid-generator"><strong>UUID Generator</strong><span>Generate unique IDs for tracking and inventory.</span></a>
+    <a class="related-card" href="/tools/slug-generator"><strong>Slug Generator</strong><span>Create clean identifiers from text.</span></a>
+    <a class="related-card" href="/tools/random-number-generator"><strong>Random Number Generator</strong><span>Generate random reference numbers.</span></a>
   </div>
 </section>
 
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">barcode generator</span>
+    <span class="keyword-tag">barcode generator online</span>
+    <span class="keyword-tag">code128 generator</span>
+    <span class="keyword-tag">free barcode maker</span>
+    <span class="keyword-tag">generate barcode from text</span>
+  </div>
+</section>
+
+</main>
+
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 const CODE128_PATTERNS = [
 "11011001100","11001101100","11001100110","10010011000","10010001100",

@@ -21,8 +21,6 @@
   <meta name="twitter:title" content="Count Characters, Words and Letter Frequency Live | Logrith">
   <meta name="twitter:description" content="See your character count with and without spaces, word count, and a full letter-frequency breakdown update as you type, no paste limit.">
 
-  <link rel="preload" href="/assets/css/style.css" as="style">
-  <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -30,20 +28,11 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
 
-  <style>
-    .freq-row { display:flex; align-items:center; gap:10px; padding:5px 0; }
-    .freq-char { width:32px; text-align:center; font-family:monospace; font-weight:700; font-size:.9rem; color:var(--gray-700); }
-    .freq-bar-wrap { flex:1; }
-    .freq-bar { height:16px; background:linear-gradient(90deg,var(--primary),var(--accent)); border-radius:3px; transition:width .3s; min-width:2px; }
-    .freq-count { width:50px; text-align:right; font-size:.8rem; color:var(--gray-500); font-weight:600; }
-    .limit-row { margin-bottom:10px; }
-    .limit-row-top { display:flex; justify-content:space-between; font-size:.82rem; margin-bottom:4px; }
-    .limit-name { font-weight:600; color:var(--gray-700); }
-    .limit-bar-track { height:8px; background:var(--gray-200); border-radius:4px; overflow:hidden; }
-    .limit-bar-fill { height:100%; border-radius:4px; transition:width .3s; background:linear-gradient(90deg,var(--primary),var(--accent)); }
-    .limit-bar-fill.over { background:var(--error); }
-    .freq-col-title { font-size:.84rem; font-weight:600; color:var(--gray-500); text-transform:uppercase; letter-spacing:.05em; margin-bottom:10px; }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {
@@ -102,48 +91,51 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-character-counter">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/text-generators">Text & Generators</a> › Character Counter</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/text-generators">Text &amp; Generators</a> › Character Counter</nav>
   <h1>Free Character Counter — Detailed Analysis</h1>
   <p>Real-time character count (with and without spaces), word count, letter/digit breakdown, character frequency charts, and social media platform limits. Perfect for Twitter posts, SEO meta tags, SMS, and essays.</p>
-  <div class="tool-tags">
-    <span class="tool-tag">✅ 100% Free</span>
-    <span class="tool-tag">⚡ Live Stats</span>
-    <span class="tool-tag">📊 Frequency Charts</span>
-    <span class="tool-tag">📱 Mobile Ready</span>
-    <span class="tool-tag">🔒 Browser Only</span>
+  <div class="tag-list">
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> 100% Free</span>
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Live Stats</span>
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#chart-bar"></use></svg> Frequency Charts</span>
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#phone"></use></svg> Mobile Ready</span>
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lock"></use></svg> Browser Only</span>
   </div>
-</div></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:920px;">
-  <div class="stat-result-grid">
-    <div class="stat-box"><span class="sb-num" id="s-total">0</span><span class="sb-lbl">Total Chars</span></div>
-    <div class="stat-box"><span class="sb-num" id="s-nospace">0</span><span class="sb-lbl">No Spaces</span></div>
-    <div class="stat-box"><span class="sb-num" id="s-words">0</span><span class="sb-lbl">Words</span></div>
-    <div class="stat-box"><span class="sb-num" id="s-letters">0</span><span class="sb-lbl">Letters</span></div>
-    <div class="stat-box"><span class="sb-num" id="s-digits">0</span><span class="sb-lbl">Digits</span></div>
-    <div class="stat-box"><span class="sb-num" id="s-spaces">0</span><span class="sb-lbl">Spaces</span></div>
-    <div class="stat-box"><span class="sb-num" id="s-upper">0</span><span class="sb-lbl">Uppercase</span></div>
-    <div class="stat-box"><span class="sb-num" id="s-lower">0</span><span class="sb-lbl">Lowercase</span></div>
-    <div class="stat-box"><span class="sb-num" id="s-punct">0</span><span class="sb-lbl">Punctuation</span></div>
+<div class="tool-workspace">
+  <div class="stat-grid">
+    <div class="stat-box"><span class="stat-num" id="s-total">0</span><span class="stat-label">Total Chars</span></div>
+    <div class="stat-box"><span class="stat-num" id="s-nospace">0</span><span class="stat-label">No Spaces</span></div>
+    <div class="stat-box"><span class="stat-num" id="s-words">0</span><span class="stat-label">Words</span></div>
+    <div class="stat-box"><span class="stat-num" id="s-letters">0</span><span class="stat-label">Letters</span></div>
+    <div class="stat-box"><span class="stat-num" id="s-digits">0</span><span class="stat-label">Digits</span></div>
+    <div class="stat-box"><span class="stat-num" id="s-spaces">0</span><span class="stat-label">Spaces</span></div>
+    <div class="stat-box"><span class="stat-num" id="s-upper">0</span><span class="stat-label">Uppercase</span></div>
+    <div class="stat-box"><span class="stat-num" id="s-lower">0</span><span class="stat-label">Lowercase</span></div>
+    <div class="stat-box"><span class="stat-num" id="s-punct">0</span><span class="stat-label">Punctuation</span></div>
   </div>
 
   <div class="tool-card">
     <h2>Enter Your Text</h2>
     <textarea class="tool-textarea" id="text-area" rows="8" placeholder="Paste or type text here for instant analysis...&#10;• Twitter posts (280 chars max)&#10;• SEO meta descriptions (155-160 chars)&#10;• SMS messages (160 chars per message)&#10;• Essays & assignments"></textarea>
     <div class="btn-group mt-12">
-      <button class="btn btn-secondary" id="clear-btn">✕ Clear All</button>
-      <button class="btn btn-secondary" id="copy-btn">📋 Copy Text</button>
-      <button class="btn btn-secondary" id="sample-btn">📝 Load Sample Text</button>
+      <button class="btn btn-secondary" id="clear-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Clear All</button>
+      <button class="btn btn-secondary" id="copy-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy Text</button>
+      <button class="btn btn-secondary" id="sample-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#edit"></use></svg> Load Sample Text</button>
     </div>
   </div>
 
   <div class="tool-card">
     <h2>Character Frequency Analysis (Top 30)</h2>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+    <div class="u-990b13">
       <div>
         <h3 class="freq-col-title">Letters (a-z)</h3>
         <div id="freq-letters"></div>
@@ -161,17 +153,29 @@
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>Why use a character counter for social media?</h3><p>Different platforms enforce different limits — Twitter/X posts are capped at 280 characters, SMS messages at 160 per segment, and Instagram captions at 2200 characters. Staying within these limits avoids truncation or split messages.</p></div>
-    <div class="faq-item-box"><h3>Does character count include spaces?</h3><p>The "Total Chars" stat includes spaces, while "No Spaces" excludes them. Both figures update live so you can reference whichever one a specific form or limit requires.</p></div>
-    <div class="faq-item-box"><h3>What is character frequency analysis used for?</h3><p>It's used in cryptography (frequency attacks on simple ciphers), language detection, SEO keyword density checks, text compression, and spotting unusual character patterns in data.</p></div>
-    <div class="faq-item-box"><h3>Does this counter work for essays and assignments?</h3><p>Yes. It gives an exact word count and character count with and without spaces, which is useful for meeting academic writing requirements that specify a minimum or maximum length.</p></div>
+    <details class="faq-item">
+      <summary class="faq-q">Why use a character counter for social media?</summary>
+      <div class="faq-a"><p>Different platforms enforce different limits — Twitter/X posts are capped at 280 characters, SMS messages at 160 per segment, and Instagram captions at 2200 characters. Staying within these limits avoids truncation or split messages.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does character count include spaces?</summary>
+      <div class="faq-a"><p>The "Total Chars" stat includes spaces, while "No Spaces" excludes them. Both figures update live so you can reference whichever one a specific form or limit requires.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What is character frequency analysis used for?</summary>
+      <div class="faq-a"><p>It's used in cryptography (frequency attacks on simple ciphers), language detection, SEO keyword density checks, text compression, and spotting unusual character patterns in data.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does this counter work for essays and assignments?</summary>
+      <div class="faq-a"><p>Yes. It gives an exact word count and character count with and without spaces, which is useful for meeting academic writing requirements that specify a minimum or maximum length.</p></div>
+    </details>
   </div>
-</div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>Complete Character Counter Guide — Social Media, SEO, Academic Writing</h2>
   <p>The Logrith Character Counter provides comprehensive text analysis for social media managers, SEO specialists, content writers, students, and developers. It tracks total characters (with and without spaces), words, letters, digits, punctuation, and an uppercase/lowercase breakdown, along with a character frequency chart, all updating in real time as you type.</p>
 
@@ -205,7 +209,7 @@
   <p>Character count and word count measure different things and are useful in different situations. Word count is a better proxy for how long something will take to read (reading speed is usually estimated in words per minute, not characters per minute), while character count is the more precise measure for hard technical limits like SMS segments, tweet length, or database field sizes. This tool reports both simultaneously, so you don't need to switch between two separate tools depending on which constraint you're working against at a given moment — whether that's a "keep it under 280 characters" tweet limit or a "keep it under 500 words" blog post brief.</p>
 
   <h3>Tips for Writing Within Tight Character Limits</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Watch the "no spaces" figure separately</strong> — some legacy systems and older form validators historically counted characters excluding spaces, so if a limit seems unusually strict, double-check which variant it's actually referring to.</li>
     <li><strong>Use the live progress bars</strong> in the platform limits section to catch overruns early, rather than writing the full text first and trimming afterward.</li>
     <li><strong>Check punctuation count</strong> if you're consistently running over a limit unexpectedly — heavy use of em-dashes, ellipses, or repeated punctuation can add up faster than it feels like while typing.</li>
@@ -213,40 +217,37 @@
   </ul>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Text Analysis Tools</h2>
   <div class="related-grid">
-    <a href="/tools/word-counter" class="tool-item"><div class="ti-text"><h4>Word Counter</h4><p>Words, sentences, paragraphs, and reading time analysis.</p></div></a>
-    <a href="/tools/case-converter" class="tool-item"><div class="ti-text"><h4>Text Case Converter</h4><p>12+ case formats: camelCase, snake_case, Title Case.</p></div></a>
-    <a href="/tools/text-diff" class="tool-item"><div class="ti-text"><h4>Text Diff Checker</h4><p>Compare document versions with highlighted changes.</p></div></a>
-    <a href="/tools/duplicate-remover" class="tool-item"><div class="ti-text"><h4>Duplicate Remover</h4><p>Remove duplicate lines or words from a block of text.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">character counter online</span>
-        <span class="keyword-tag">count characters free</span>
-        <span class="keyword-tag">letter counter</span>
-        <span class="keyword-tag">twitter character counter</span>
-        <span class="keyword-tag">sms character counter</span>
-        <span class="keyword-tag">character frequency analysis</span>
-        <span class="keyword-tag">meta description character count</span>
-        <span class="keyword-tag">char count tool</span>
-        <span class="keyword-tag">text character counter</span>
-        <span class="keyword-tag">character count with spaces</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/word-counter"><strong>Word Counter</strong><span>Words, sentences, paragraphs, and reading time analysis.</span></a>
+    <a class="related-card" href="/tools/case-converter"><strong>Text Case Converter</strong><span>12+ case formats: camelCase, snake_case, Title Case.</span></a>
+    <a class="related-card" href="/tools/text-diff"><strong>Text Diff Checker</strong><span>Compare document versions with highlighted changes.</span></a>
+    <a class="related-card" href="/tools/duplicate-remover"><strong>Duplicate Remover</strong><span>Remove duplicate lines or words from a block of text.</span></a>
   </div>
 </section>
 
-<div id="footer"></div>
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">character counter online</span>
+    <span class="keyword-tag">count characters free</span>
+    <span class="keyword-tag">letter counter</span>
+    <span class="keyword-tag">twitter character counter</span>
+    <span class="keyword-tag">sms character counter</span>
+    <span class="keyword-tag">character frequency analysis</span>
+    <span class="keyword-tag">meta description character count</span>
+    <span class="keyword-tag">char count tool</span>
+    <span class="keyword-tag">text character counter</span>
+    <span class="keyword-tag">character count with spaces</span>
+  </div>
+</section>
 
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+
 <script>
 const LIMITS = [
   {name:'Twitter/X Post', limit:280},
@@ -313,7 +314,7 @@ function analyze() {
     return `<div class="limit-row">
       <div class="limit-row-top">
         <span class="limit-name">${name}</span>
-        <span style="color:${over?'var(--error)':'var(--gray-500)'};">${tc}/${limit} (${pct}%) ${over?'⚠️ Over':''}</span>
+        <span style="color:${over?'var(--error)':'var(--gray-500)'};">${tc}/${limit} (${pct}%) ${over?'<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#warning"></use></svg> Over':''}</span>
       </div>
       <div class="limit-bar-track">
         <div class="limit-bar-fill${over?' over':''}" style="width:${pct}%"></div>
@@ -332,7 +333,7 @@ document.getElementById('copy-btn').addEventListener('click', function() {
   if(v) {
     navigator.clipboard.writeText(v).then(()=>{
       const orig = this.innerHTML;
-      this.innerHTML = '✅ Copied!';
+      this.innerHTML = '<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Copied!';
       setTimeout(()=>this.innerHTML=orig, 1500);
     });
   }

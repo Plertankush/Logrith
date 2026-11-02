@@ -1,0 +1,644 @@
+[
+ {
+  "name": "Acronym Generator",
+  "category": "Text & Generators",
+  "url": "/tools/acronym-generator",
+  "summary": "Enter a multi-word phrase and get the acronym formed from its first letters, useful for naming projects, teams or products."
+ },
+ {
+  "name": "Age Calculator",
+  "category": "Utilities",
+  "url": "/tools/age-calculator",
+  "summary": "Enter your date of birth and get your precise age down to the day, hour and minute, plus a live countdown to your next birthday. Instant, accurate, no signup."
+ },
+ {
+  "name": "AI Token & Context Calculator",
+  "category": "Global",
+  "url": "/tools/ai-context-calculator",
+  "summary": "Paste a prompt or document to estimate its token count and how much of a model's context window it would use, right in your browser."
+ },
+ {
+  "name": "Barcode Generator",
+  "category": "Utilities",
+  "url": "/tools/barcode-generator",
+  "summary": "Enter a value and generate a scannable barcode in CODE128, EAN or UPC format, ready to download as an image."
+ },
+ {
+  "name": "Base64 Encoder",
+  "category": "Developer",
+  "url": "/tools/base64",
+  "summary": "Convert text or an uploaded file to Base64, or decode a Base64 string back to its original form, instantly in your browser."
+ },
+ {
+  "name": "BMI Calculator",
+  "category": "Calculate & Convert",
+  "url": "/tools/bmi-calculator",
+  "summary": "Get your Body Mass Index and see which of the four standard WHO categories you fall into, in metric or imperial units, with an instant, accurate result."
+ },
+ {
+  "name": "Body Fat Percentage Calculator",
+  "category": "Calculate & Convert",
+  "url": "/tools/body-fat-percentage-calculator",
+  "summary": "Enter a few body measurements to get an estimated body fat percentage, calculated with the US Navy method for both men and women."
+ },
+ {
+  "name": "Browser Info Lookup",
+  "category": "Utilities",
+  "url": "/tools/browser-info-lookup",
+  "summary": "Check your browser name, version, operating system, screen size and other details that websites can see, in one quick lookup."
+ },
+ {
+  "name": "Case Converter",
+  "category": "Text & Generators",
+  "url": "/tools/case-converter",
+  "summary": "Paste any text and convert it to uppercase, lowercase, Title Case, Sentence case, camelCase or PascalCase instantly, with one-click copy."
+ },
+ {
+  "name": "Character Counter",
+  "category": "Text & Generators",
+  "url": "/tools/character-counter",
+  "summary": "See your character count with and without spaces, word count, and a full letter-frequency breakdown update as you type, no paste limit."
+ },
+ {
+  "name": "Citation Generator",
+  "category": "Text & Generators",
+  "url": "/tools/citation-generator",
+  "summary": "Enter a source's details once and get a correctly formatted citation in APA, MLA or Chicago style, ready to paste into your paper."
+ },
+ {
+  "name": "Coin Flip & Dice Roller",
+  "category": "Utilities",
+  "url": "/tools/flip-coin-dice-roller",
+  "summary": "Get an instant, unbiased coin flip or dice roll using your browser's random number generator — no app download needed."
+ },
+ {
+  "name": "Color Converter",
+  "category": "Calculate & Convert",
+  "url": "/tools/color-converter",
+  "summary": "Paste any color value and get it converted to HEX, RGB, HSL, HSV and CMYK at once, with a visual picker, shade generator and contrast checker built in."
+ },
+ {
+  "name": "Color Palette Generator",
+  "category": "Utilities",
+  "url": "/tools/random-color-palette-generator",
+  "summary": "Create a set of colors that work well together using proven color theory rules, with HEX codes ready to copy."
+ },
+ {
+  "name": "Compound Interest Calculator",
+  "category": "Calculate & Convert",
+  "url": "/tools/compound-interest-calculator",
+  "summary": "See exactly how your investment compounds over time, including regular monthly deposits, with a full year-by-year growth breakdown."
+ },
+ {
+  "name": "Countdown Timer",
+  "category": "Utilities",
+  "url": "/tools/countdown-timer-tool",
+  "summary": "Set a target date and time and watch a live countdown in days, hours, minutes and seconds update in real time."
+ },
+ {
+  "name": "Cron Expression Builder",
+  "category": "Developer",
+  "url": "/tools/cron-expression-builder",
+  "summary": "Construct a cron schedule visually and get a plain-English explanation of exactly when it will run, no syntax guessing."
+ },
+ {
+  "name": "CSS Box Shadow Generator",
+  "category": "Developer",
+  "url": "/tools/css-box-shadow-generator",
+  "summary": "Adjust offset, blur, spread and color on a live preview and get the matching box-shadow CSS generated instantly."
+ },
+ {
+  "name": "CSS Clamp Calculator",
+  "category": "Developer",
+  "url": "/tools/css-clamp-calculator",
+  "summary": "Set your minimum and maximum font sizes and viewport range to get the exact clamp() CSS for smooth, responsive scaling."
+ },
+ {
+  "name": "CSS Gradient Generator",
+  "category": "Developer",
+  "url": "/tools/css-gradient-generator",
+  "summary": "Pick colors and angles on a live preview and get the exact CSS gradient code generated for you, ready to copy."
+ },
+ {
+  "name": "CSS Minifier",
+  "category": "Developer",
+  "url": "/tools/css-minifier",
+  "summary": "Compress CSS down to its smallest size for production, or reformat minified CSS back into readable, indented code."
+ },
+ {
+  "name": "CSV Cleaner",
+  "category": "Global",
+  "url": "/tools/csv-cleaner",
+  "summary": "Strip duplicate rows, empty cells and inconsistent formatting from a CSV file, with a real parser that handles quoted fields correctly."
+ },
+ {
+  "name": "Currency Converter",
+  "category": "Calculate & Convert",
+  "url": "/tools/currency-converter",
+  "summary": "Set a custom exchange rate and convert between any two currencies instantly — no API dependency, works offline, nothing to sign up for."
+ },
+ {
+  "name": "Date Difference Calculator",
+  "category": "Calculate & Convert",
+  "url": "/tools/date-difference-calculator",
+  "summary": "Enter two dates and get the precise difference in days, weeks, months and years — useful for deadlines, ages, and project timelines."
+ },
+ {
+  "name": "Discount Stacking Calculator",
+  "category": "Calculate & Convert",
+  "url": "/tools/discount-stacking-calculator",
+  "summary": "Apply several discounts in sequence and see exactly how much each one takes off, plus the true final price — no mental math, no guessing."
+ },
+ {
+  "name": "Duplicate Line Remover",
+  "category": "Text & Generators",
+  "url": "/tools/duplicate-remover",
+  "summary": "Paste a list and strip out repeated lines in one click, with an option to ignore case or whitespace differences between near-duplicates."
+ },
+ {
+  "name": "EMI Calculator",
+  "category": "Calculate & Convert",
+  "url": "/tools/emi-calculator",
+  "summary": "Work out your monthly EMI for a home, car or personal loan, plus total interest and a month-by-month amortization breakdown — accurate and instant."
+ },
+ {
+  "name": "Fancy Text Generator",
+  "category": "Text & Generators",
+  "url": "/tools/fancy-text-generator",
+  "summary": "Type normal text and get it converted into dozens of stylish Unicode font variations, ready to paste into bios and captions."
+ },
+ {
+  "name": "Favicon Generator",
+  "category": "Image & PDF",
+  "url": "/tools/favicon-generator",
+  "summary": "Upload one image and get a complete favicon set — all sizes plus the HTML tags you need — processed in your browser."
+ },
+ {
+  "name": "File Size Converter",
+  "category": "Utilities",
+  "url": "/tools/file-size-converter",
+  "summary": "Enter a file size in any unit and instantly see it converted across bytes, KB, MB, GB and TB, both binary and decimal."
+ },
+ {
+  "name": "GST Calculator",
+  "category": "Calculate & Convert",
+  "url": "/tools/gst-calculator",
+  "summary": "Calculate GST at 5%, 12%, 18% or 28% in either direction, with the CGST, SGST and IGST split shown automatically. Accurate, instant, no signup."
+ },
+ {
+  "name": "Hash Generator",
+  "category": "Developer",
+  "url": "/tools/hash-generator",
+  "summary": "Hash any text or file to verify integrity or compare checksums, with SHA-1, SHA-256, SHA-384 and SHA-512 all computed instantly."
+ },
+ {
+  "name": "HTML Entity Converter",
+  "category": "Developer",
+  "url": "/tools/html-entity-converter",
+  "summary": "Encode characters like < > and & into safe HTML entities, or decode HTML entities back into normal text."
+ },
+ {
+  "name": "HTML Minifier",
+  "category": "Developer",
+  "url": "/tools/html-minifier",
+  "summary": "Compress HTML markup for production, or reformat minified HTML back into clean, indented, readable code."
+ },
+ {
+  "name": "HTTP Status Code Lookup",
+  "category": "Developer",
+  "url": "/tools/http-status-code-lookup",
+  "summary": "Search or browse the complete list of HTTP status codes with a plain-English explanation of what each one means."
+ },
+ {
+  "name": "Image Color Picker",
+  "category": "Image & PDF",
+  "url": "/tools/image-color-picker",
+  "summary": "Click anywhere on an uploaded image to grab the exact color underneath, with instant HEX, RGB and HSL values."
+ },
+ {
+  "name": "Image Compressor",
+  "category": "Image & PDF",
+  "url": "/tools/image-compressor",
+  "summary": "Shrink JPG, PNG and WEBP photos to a target file size or quality in your browser. Batch compress and convert in one pass — nothing is uploaded."
+ },
+ {
+  "name": "Image Converter",
+  "category": "Image & PDF",
+  "url": "/tools/image-converter",
+  "summary": "Switch any image between JPG, PNG, WEBP, BMP and GIF instantly in your browser. Batch convert multiple files — no upload required."
+ },
+ {
+  "name": "Image Crop",
+  "category": "Image & PDF",
+  "url": "/tools/image-crop",
+  "summary": "Drag to crop or enter exact pixel dimensions for JPG, PNG and WEBP photos. Preview the crop live and download instantly — your image never leaves your device."
+ },
+ {
+  "name": "Image Privacy Cleaner",
+  "category": "Global",
+  "url": "/tools/image-privacy-cleaner",
+  "summary": "Remove location, camera and timestamp metadata hidden inside a photo in one click, processed locally so the image never leaves your device."
+ },
+ {
+  "name": "Image Resize",
+  "category": "Image & PDF",
+  "url": "/tools/image-resize",
+  "summary": "Set an exact width and height or lock the aspect ratio for JPG, PNG and WEBP images, resized instantly in your browser."
+ },
+ {
+  "name": "Image Rotate",
+  "category": "Image & PDF",
+  "url": "/tools/image-rotate",
+  "summary": "Fix a sideways photo or mirror an image in one click. Rotate by 90°, 180° or 270°, or flip horizontally and vertically — all processed locally in your browser."
+ },
+ {
+  "name": "Image to Base64",
+  "category": "Image & PDF",
+  "url": "/tools/image-to-base64",
+  "summary": "Turn any image into a ready-to-paste Base64 data URI for HTML or CSS, with instant copy-to-clipboard, in your browser."
+ },
+ {
+  "name": "Image Watermark",
+  "category": "Image & PDF",
+  "url": "/tools/image-watermark",
+  "summary": "Stamp a custom text watermark onto photos with control over position, size, opacity and color, previewed live."
+ },
+ {
+  "name": "JPG to PDF Converter",
+  "category": "Image & PDF",
+  "url": "/tools/jpg-to-pdf",
+  "summary": "Combine multiple JPG, PNG or WEBP images into a single PDF, reorder pages by dragging, all processed in your browser."
+ },
+ {
+  "name": "JS Minifier",
+  "category": "Developer",
+  "url": "/tools/js-minifier",
+  "summary": "Compress JavaScript for production by stripping whitespace and comments, or reformat minified JS into readable code."
+ },
+ {
+  "name": "JSON Formatter",
+  "category": "Developer",
+  "url": "/tools/json-formatter",
+  "summary": "Paste JSON to beautify it with proper indentation, validate its syntax with exact error locations, or minify it to one line."
+ },
+ {
+  "name": "JSON Repair Tool",
+  "category": "Global",
+  "url": "/tools/json-repair",
+  "summary": "Paste invalid JSON to get it repaired automatically, with trailing commas and unquoted keys fixed and errors clearly explained."
+ },
+ {
+  "name": "JWT Decoder",
+  "category": "Developer",
+  "url": "/tools/jwt-decoder",
+  "summary": "Paste a JSON Web Token to see its decoded header, payload and signature instantly, entirely in your browser."
+ },
+ {
+  "name": "Loan Affordability Calculator",
+  "category": "Calculate & Convert",
+  "url": "/tools/loan-affordability-calculator",
+  "summary": "Enter your income and expenses to see a realistic loan amount based on your EMI-to-income ratio, so you know your limit before you apply."
+ },
+ {
+  "name": "Lorem Ipsum Generator",
+  "category": "Text & Generators",
+  "url": "/tools/lorem-ipsum",
+  "summary": "Create placeholder text for mockups and layouts in any length you need, by words, sentences or paragraphs, ready to copy instantly."
+ },
+ {
+  "name": "Markdown Previewer",
+  "category": "Text & Generators",
+  "url": "/tools/markdown-previewer",
+  "summary": "Type or paste Markdown on one side and see the formatted HTML preview update instantly on the other, side by side."
+ },
+ {
+  "name": "Markdown to HTML Converter",
+  "category": "Global",
+  "url": "/tools/markdown-to-html",
+  "summary": "Paste Markdown and get properly structured, semantic HTML back instantly, with a live rendered preview and one-click copy."
+ },
+ {
+  "name": "Meme Generator",
+  "category": "Image & PDF",
+  "url": "/tools/meme-generator",
+  "summary": "Upload any image, add top and bottom caption text, and download your meme instantly — no login, no added watermark."
+ },
+ {
+  "name": "Morse Code Translator",
+  "category": "Text & Generators",
+  "url": "/tools/morse-code-translator",
+  "summary": "Type a message to see it converted to Morse code dots and dashes, or paste Morse code to decode it back into readable text."
+ },
+ {
+  "name": "NATO Phonetic Alphabet Translator",
+  "category": "Text & Generators",
+  "url": "/tools/nato-phonetic-alphabet-translator",
+  "summary": "Type any word or phrase and get it spelled out using Alpha, Bravo, Charlie and the rest of the standard NATO phonetic alphabet."
+ },
+ {
+  "name": "Number Base Converter",
+  "category": "Calculate & Convert",
+  "url": "/tools/number-base-converter",
+  "summary": "Enter a number in any base and get accurate conversions to binary, octal, decimal and hex at once — built for programmers and students."
+ },
+ {
+  "name": "Number to Words Converter",
+  "category": "Text & Generators",
+  "url": "/tools/number-to-words-converter",
+  "summary": "Turn a numeric value into its written-out word form, useful for checks, legal documents and formal writing, accurate up to large numbers."
+ },
+ {
+  "name": "Passphrase Generator",
+  "category": "Utilities",
+  "url": "/tools/passphrase-generator",
+  "summary": "Create a strong passphrase built from random words instead of symbols, easier to remember than a password but still hard to guess."
+ },
+ {
+  "name": "Password Generator",
+  "category": "Utilities",
+  "url": "/tools/password-generator",
+  "summary": "Set the length and character types you want, then generate a cryptographically random password instantly, nothing stored or sent anywhere."
+ },
+ {
+  "name": "Password Strength Checker",
+  "category": "Utilities",
+  "url": "/tools/password-strength",
+  "summary": "Enter a password to see its strength score and an estimate of how long it would take to crack, checked locally in your browser."
+ },
+ {
+  "name": "Payment Fee Calculator",
+  "category": "Utilities",
+  "url": "/tools/percentage-fee-splitter",
+  "summary": "Work out the exact fee for a payment processor or platform that charges a percentage plus a flat fee, in one step."
+ },
+ {
+  "name": "PDF Compressor",
+  "category": "Image & PDF",
+  "url": "/tools/pdf-compressor",
+  "summary": "Reduce a large PDF to a fraction of its size for easier emailing, compressed entirely in your browser."
+ },
+ {
+  "name": "PDF Inspector",
+  "category": "Global",
+  "url": "/tools/pdf-inspector",
+  "summary": "Upload a PDF to see its metadata, embedded fonts, image count, security flags and structure, analyzed entirely in your browser."
+ },
+ {
+  "name": "PDF Merge",
+  "category": "Image & PDF",
+  "url": "/tools/pdf-merge",
+  "summary": "Combine as many PDF files as you need into one document, with drag-to-reorder, processed entirely in your browser."
+ },
+ {
+  "name": "PDF Page Remover",
+  "category": "Image & PDF",
+  "url": "/tools/pdf-page-remover",
+  "summary": "Choose exactly which pages to remove from a PDF and download the cleaned-up file instantly, in your browser."
+ },
+ {
+  "name": "PDF Password Protect",
+  "category": "Image & PDF",
+  "url": "/tools/pdf-password-protect",
+  "summary": "Encrypt any PDF with a password so only people you trust can open it, processed locally, never uploaded."
+ },
+ {
+  "name": "PDF Rotate",
+  "category": "Image & PDF",
+  "url": "/tools/pdf-rotate",
+  "summary": "Fix sideways or upside-down PDF pages. Rotate every page at once or choose individual pages, then download the corrected file instantly — nothing is uploaded."
+ },
+ {
+  "name": "PDF Split",
+  "category": "Image & PDF",
+  "url": "/tools/pdf-split",
+  "summary": "Pull out the exact pages you need or break a PDF into individual files, processed locally in your browser."
+ },
+ {
+  "name": "PDF to JPG Converter",
+  "category": "Image & PDF",
+  "url": "/tools/pdf-to-jpg",
+  "summary": "Extract each page of a PDF as a separate JPG image, ready to download individually or as a batch, in your browser."
+ },
+ {
+  "name": "PDF to Text",
+  "category": "Image & PDF",
+  "url": "/tools/pdf-to-text",
+  "summary": "Pull plain, copyable text out of a PDF in seconds, with everything processed locally in your browser."
+ },
+ {
+  "name": "PDF Watermark",
+  "category": "Image & PDF",
+  "url": "/tools/pdf-watermark",
+  "summary": "Add a custom text watermark to all pages of a PDF with control over position, rotation and opacity, processed locally."
+ },
+ {
+  "name": "Percentage Calculator",
+  "category": "Calculate & Convert",
+  "url": "/tools/percentage-calculator",
+  "summary": "Find what a percentage of a number is, the percentage change between two values, or a discounted price — four common calculations in one accurate tool."
+ },
+ {
+  "name": "Photo Resizer to KB",
+  "category": "Image & PDF",
+  "url": "/tools/photo-resizer-kb",
+  "summary": "Shrink an image to a specific kilobyte target for forms and uploads with strict size limits, automatically."
+ },
+ {
+  "name": "QR Code Generator",
+  "category": "Utilities",
+  "url": "/tools/qr-generator",
+  "summary": "Generate a scannable QR code for seven different data types, download it as PNG, and connect automatically where supported — all free."
+ },
+ {
+  "name": "Random Name Generator",
+  "category": "Text & Generators",
+  "url": "/tools/random-name-generator",
+  "summary": "Get realistic random names by category — male, female, business or fictional character — generated instantly, as many as you need."
+ },
+ {
+  "name": "Random Number Generator",
+  "category": "Text & Generators",
+  "url": "/tools/random-number-generator",
+  "summary": "Set a minimum and maximum and generate one or many random numbers instantly, with options to avoid duplicates."
+ },
+ {
+  "name": "Random Quote Generator",
+  "category": "Text & Generators",
+  "url": "/tools/random-quote-generator",
+  "summary": "Pull a random quote on motivation, success, life or other themes, with the author credited, refreshed with one click."
+ },
+ {
+  "name": "Random Team Generator",
+  "category": "Utilities",
+  "url": "/tools/random-team-generator",
+  "summary": "Paste a list of names and split them into a chosen number of teams instantly, shuffled fairly and randomly."
+ },
+ {
+  "name": "Regex Tester",
+  "category": "Developer",
+  "url": "/tools/regex-tester",
+  "summary": "Write a regex pattern and see every match highlighted live against your test string, with capture groups and flags explained."
+ },
+ {
+  "name": "Resume Analyzer",
+  "category": "AI",
+  "url": "/tools/resume-analyzer",
+  "summary": "Upload your resume to see a readability and structure score with specific suggestions to improve it, analyzed in your browser."
+ },
+ {
+  "name": "Roman Numeral Converter",
+  "category": "Calculate & Convert",
+  "url": "/tools/roman-numeral-converter",
+  "summary": "Turn any number from 1 to 3999 into Roman numerals, or convert Roman numerals back to standard numbers, with instant, accurate results."
+ },
+ {
+  "name": "Salary to Hourly Converter",
+  "category": "Calculate & Convert",
+  "url": "/tools/salary-hourly-converter",
+  "summary": "Enter an annual salary or hourly rate and instantly see the equivalent monthly, weekly, daily and hourly pay, calculated accurately both ways."
+ },
+ {
+  "name": "Simple Interest Calculator",
+  "category": "Calculate & Convert",
+  "url": "/tools/simple-interest-calculator",
+  "summary": "Enter principal, rate and time to get the interest amount and total payable, with every step of the calculation shown so you can verify it."
+ },
+ {
+  "name": "Speech to Text",
+  "category": "Text & Generators",
+  "url": "/tools/speech-to-text",
+  "summary": "Speak into your microphone and watch your words appear as text in real time, powered by your browser's built-in speech recognition."
+ },
+ {
+  "name": "SQL Formatter",
+  "category": "Developer",
+  "url": "/tools/sql-formatter",
+  "summary": "Paste a cramped or auto-generated SQL query and get it reformatted with proper indentation and line breaks, instantly."
+ },
+ {
+  "name": "SVG to PNG",
+  "category": "Image & PDF",
+  "url": "/tools/svg-to-png",
+  "summary": "Turn a vector SVG into a crisp PNG at the exact pixel size you need, converted locally in your browser."
+ },
+ {
+  "name": "Text Diff Checker",
+  "category": "Text & Generators",
+  "url": "/tools/text-diff",
+  "summary": "Paste two versions of a text or code snippet and see every added, removed and changed line highlighted side by side, instantly."
+ },
+ {
+  "name": "Text Expander & Snippet Tool",
+  "category": "Utilities",
+  "url": "/tools/text-expander-snippet-tool",
+  "summary": "Store frequently used blocks of text as named snippets and pull them up instantly, instead of retyping the same thing."
+ },
+ {
+  "name": "Text Reverser",
+  "category": "Text & Generators",
+  "url": "/tools/text-reverser",
+  "summary": "Flip any text backward character-by-character, reverse the word order, or flip line order, with results copied in one click."
+ },
+ {
+  "name": "Text Summarizer",
+  "category": "Text & Generators",
+  "url": "/tools/text-summarizer-basic",
+  "summary": "Paste a long article or document and get a condensed summary built from the most important sentences, in seconds."
+ },
+ {
+  "name": "Text to Speech",
+  "category": "Text & Generators",
+  "url": "/tools/text-to-speech",
+  "summary": "Paste any text and have it read aloud in your browser's voice, with adjustable speed and pitch, no download or account needed."
+ },
+ {
+  "name": "Time Zone Converter",
+  "category": "Calculate & Convert",
+  "url": "/tools/time-zone-converter",
+  "summary": "See what a given time looks like across major world cities at once, with daylight saving time handled automatically so the result is always correct."
+ },
+ {
+  "name": "Tip Split Calculator",
+  "category": "Calculate & Convert",
+  "url": "/tools/tip-split-calculator",
+  "summary": "Calculate the tip and divide a bill evenly or by uneven shares among any number of people, with the exact amount each person owes."
+ },
+ {
+  "name": "Unit Converter",
+  "category": "Calculate & Convert",
+  "url": "/tools/unit-converter",
+  "summary": "Switch between units for length, weight, temperature, area, volume, data size and speed, all in one accurate converter with instant, precise results."
+ },
+ {
+  "name": "Unit Price Comparator",
+  "category": "Utilities",
+  "url": "/tools/unit-price-comparator",
+  "summary": "Enter price and quantity for two products to see the true cost per unit, so you know which one is actually cheaper."
+ },
+ {
+  "name": "URL Deduplicator",
+  "category": "Global",
+  "url": "/tools/url-deduplicator",
+  "summary": "Paste a list of URLs to strip exact duplicates and near-duplicates caused by tracking parameters, trailing slashes or case differences."
+ },
+ {
+  "name": "URL Encoder & Decoder",
+  "category": "Developer",
+  "url": "/tools/url-encoder",
+  "summary": "Convert special characters in a URL to percent-encoding, or decode an encoded URL back to readable text, instantly."
+ },
+ {
+  "name": "URL Slug Generator",
+  "category": "Text & Generators",
+  "url": "/tools/slug-generator",
+  "summary": "Convert titles or phrases into lowercase, hyphenated slugs ready for a URL, with special characters stripped automatically."
+ },
+ {
+  "name": "UUID Generator",
+  "category": "Developer",
+  "url": "/tools/uuid-generator",
+  "summary": "Create cryptographically random v4 UUIDs on demand, one at a time or in bulk, with one-click copy for each."
+ },
+ {
+  "name": "Website Speed Analyzer",
+  "category": "AI",
+  "url": "/tools/website-speed-analyzer",
+  "summary": "Enter a URL to get a breakdown of load time, performance bottlenecks and concrete suggestions to make the page faster."
+ },
+ {
+  "name": "Word Counter",
+  "category": "Text & Generators",
+  "url": "/tools/word-counter",
+  "summary": "Paste any text to see live word, character, sentence and paragraph counts, plus an estimated reading and speaking time."
+ },
+ {
+  "name": "Words to Pages Converter",
+  "category": "Text & Generators",
+  "url": "/tools/words-to-pages-converter",
+  "summary": "Enter a word count and font settings to see roughly how many pages it fills, useful for planning essays and reports before you write."
+ },
+ {
+  "name": "World Clock",
+  "category": "Utilities",
+  "url": "/tools/world-clock",
+  "summary": "Track the live time across several cities and time zones side by side, updated every second, for scheduling across regions."
+ },
+ {
+  "name": "WPM Typing Speed Calculator",
+  "category": "Calculate & Convert",
+  "url": "/tools/wpm-typing-speed-calculator",
+  "summary": "Take a live typing test and get your gross WPM, net WPM and accuracy percentage, calculated the same way professional typing tests measure it."
+ },
+ {
+  "name": "XML Formatter",
+  "category": "Developer",
+  "url": "/tools/xml-formatter",
+  "summary": "Paste XML to beautify it with correct nesting and indentation, or validate its structure and catch syntax errors."
+ },
+ {
+  "name": "YAML to JSON Converter",
+  "category": "Developer",
+  "url": "/tools/yaml-json-converter",
+  "summary": "Paste YAML or JSON and get an accurate conversion to the other format instantly, with formatting preserved."
+ }
+]

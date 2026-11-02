@@ -18,8 +18,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <!-- Google tag (gtag.js) -->
  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
@@ -44,26 +48,29 @@
   {"@context": "https://schema.org", "@type": "WebApplication", "name": "URL Slug Generator", "url": "https://logrith.in/tools/slug-generator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript and a modern web browser", "description": "Generate SEO-friendly URL slugs from any text online free. Convert titles to clean URL slugs instantly. Supports custom separators.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}
   </script>
   <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Text Tools", "item": "https://logrith.in/categories/text-generators"}, {"@type": "ListItem", "position": 3, "name": "URL Slug Generator", "item": "https://logrith.in/tools/slug-generator"}]}
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Text & Generators", "item": "https://logrith.in/categories/text-generators"}, {"@type": "ListItem", "position": 3, "name": "URL Slug Generator", "item": "https://logrith.in/tools/slug-generator"}]}
   </script>
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a URL slug?", "acceptedAnswer": {"@type": "Answer", "text": "A URL slug is the readable, hyphen-separated part of a web address that identifies a specific page, typically derived from the page title."}}, {"@type": "Question", "name": "Why do SEO-friendly slugs matter?", "acceptedAnswer": {"@type": "Answer", "text": "Short, descriptive slugs make URLs easier for users to read and share, and give search engines a clear hint about a page's topic."}}, {"@type": "Question", "name": "Does the tool remove special characters and spaces?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, it converts text to lowercase, replaces spaces with your chosen separator, and strips characters that are unsafe in URLs."}}, {"@type": "Question", "name": "Can I use underscores instead of hyphens?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, the tool supports custom separators, though hyphens are generally recommended for SEO."}}]}
   </script>
 </head>
-<body>
+<body class="page-slug-generator">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/text-generators">Text Tools</a> › Slug Generator</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/text-generators">Text &amp; Generators</a> › Slug Generator</nav>
   <h1>Free URL Slug Generator</h1>
   <p>Convert any text or title into a clean, SEO-friendly URL slug. Customize separator, case, and stop word removal. Supports bulk generation.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">⚡ Real-time</span><span class="tool-tag">🔗 SEO-friendly</span><span class="tool-tag">📋 Bulk Mode</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Real-time</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#link"></use></svg> SEO-friendly</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Bulk Mode</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:760px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Slug Generator</h2>
-    <div class="control-group" style="margin-bottom:16px;">
+    <div class="control-group mb-16">
       <label>Input Text / Title</label>
       <textarea class="tool-textarea" id="slug-input" rows="4" placeholder="Enter a title or phrase...&#10;e.g. How to Build a Website in 2026!"></textarea>
     </div>
@@ -86,18 +93,18 @@
         </select>
       </div>
     </div>
-    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:12px;">
-      <label style="display:flex;align-items:center;gap:8px;font-size:.88rem;cursor:pointer;"><input type="checkbox" id="remove-stop" style="accent-color:var(--primary);width:16px;height:16px;"> Remove stop words (a, the, in...)</label>
-      <label style="display:flex;align-items:center;gap:8px;font-size:.88rem;cursor:pointer;"><input type="checkbox" id="remove-nums" style="accent-color:var(--primary);width:16px;height:16px;"> Remove numbers</label>
-      <label style="display:flex;align-items:center;gap:8px;font-size:.88rem;cursor:pointer;"><input type="checkbox" id="max-len-check" style="accent-color:var(--primary);width:16px;height:16px;"> Max length:</label>
-      <input type="number" id="max-len" value="60" min="10" max="200" style="width:70px;padding:6px 10px;border:1.5px solid var(--gray-200);border-radius:8px;font-size:.86rem;">
+    <div class="u-158811">
+      <label class="u-c1d462"><input type="checkbox" id="remove-stop"> Remove stop words (a, the, in...)</label>
+      <label class="u-c1d462"><input type="checkbox" id="remove-nums"> Remove numbers</label>
+      <label class="u-c1d462"><input type="checkbox" id="max-len-check"> Max length:</label>
+      <input type="number" id="max-len" value="60" min="10" max="200">
     </div>
 
     <div class="control-group mt-16">
       <label>Generated Slug</label>
-      <div style="position:relative;">
-        <input type="text" id="slug-output" readonly style="width:100%;padding:14px 50px 14px 16px;border:2px solid var(--primary);border-radius:var(--radius);font-family:'Courier New',monospace;font-size:1rem;font-weight:700;color:var(--primary);background:var(--gray-50);">
-        <button class="copy-btn" id="copy-btn" style="top:50%;transform:translateY(-50%);">📋 Copy</button>
+      <div class="relative">
+        <input type="text" id="slug-output" readonly>
+        <button class="copy-btn" id="copy-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
       </div>
     </div>
     <div class="stats-row mt-8" id="slug-stats"></div>
@@ -111,33 +118,53 @@
       <textarea class="tool-textarea" id="bulk-input" rows="6" placeholder="How to Learn JavaScript&#10;Best SEO Practices for 2026&#10;Free Online Tools for Developers"></textarea>
     </div>
     <div class="btn-group mt-12">
-      <button class="btn btn-accent" id="bulk-btn">⚡ Generate All Slugs</button>
-      <button class="btn btn-secondary" id="copy-bulk">📋 Copy All</button>
+      <button class="btn btn-accent" id="bulk-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Generate All Slugs</button>
+      <button class="btn btn-secondary" id="copy-bulk"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy All</button>
     </div>
-    <div class="control-group mt-12" style="position:relative;">
+    <div class="control-group mt-12 relative">
       <textarea class="tool-textarea mono" id="bulk-output" rows="6" readonly placeholder="Bulk slugs will appear here..."></textarea>
     </div>
   </div>
 </div>
 
-<div class="faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
-  <div class="faq-item"><div class="faq-q">What is a URL slug?</div><div class="faq-a">A URL slug is the part of a URL that identifies a specific page in human-readable form. For example, in "https://example.com/how-to-build-a-website", the slug is "how-to-build-a-website". Good slugs are descriptive, lowercase, and use hyphens between words.</div></div>
-  <div class="faq-item"><div class="faq-q">Should I use hyphens or underscores in slugs?</div><div class="faq-a">Google recommends hyphens (-) over underscores (_) for URL slugs. Google treats hyphens as word separators but treats underscores as word joiners. "free-tools" = two words; "free_tools" = one compound word in search engine interpretation.</div></div>
-  <div class="faq-item"><div class="faq-q">What are stop words in slug generation?</div><div class="faq-a">Stop words are common words (a, an, the, in, on, at, for, of, etc.) that add little SEO value to URLs. Removing them keeps slugs shorter and more keyword-focused. E.g., "the best tools for the web" → "best-tools-web".</div></div>
-  <div class="faq-item"><div class="faq-q">Does this tool handle special characters and accents?</div><div class="faq-a">Yes, accented characters (like é, ñ, ü) are converted to their closest plain ASCII equivalent, and symbols, punctuation, and other non-alphanumeric characters are stripped out automatically.</div></div>
-  <div class="faq-item"><div class="faq-q">How long should a URL slug be?</div><div class="faq-a">Shorter slugs that clearly describe the page content tend to work best for both readability and SEO — generally under 5-6 words is a reasonable target, though there's no strict limit.</div></div>
-  <div class="faq-item"><div class="faq-q">Is my text sent to a server when generating a slug?</div><div class="faq-a">No, the conversion happens instantly in your browser using JavaScript. Nothing you type is transmitted anywhere.</div></div>
-</div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">What is a URL slug?</summary>
+      <div class="faq-a"><p>A URL slug is the part of a URL that identifies a specific page in human-readable form. For example, in "https://example.com/how-to-build-a-website", the slug is "how-to-build-a-website". Good slugs are descriptive, lowercase, and use hyphens between words.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Should I use hyphens or underscores in slugs?</summary>
+      <div class="faq-a"><p>Google recommends hyphens (-) over underscores (_) for URL slugs. Google treats hyphens as word separators but treats underscores as word joiners. "free-tools" = two words; "free_tools" = one compound word in search engine interpretation.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What are stop words in slug generation?</summary>
+      <div class="faq-a"><p>Stop words are common words (a, an, the, in, on, at, for, of, etc.) that add little SEO value to URLs. Removing them keeps slugs shorter and more keyword-focused. E.g., "the best tools for the web" → "best-tools-web".</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does this tool handle special characters and accents?</summary>
+      <div class="faq-a"><p>Yes, accented characters (like é, ñ, ü) are converted to their closest plain ASCII equivalent, and symbols, punctuation, and other non-alphanumeric characters are stripped out automatically.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How long should a URL slug be?</summary>
+      <div class="faq-a"><p>Shorter slugs that clearly describe the page content tend to work best for both readability and SEO — generally under 5-6 words is a reasonable target, though there's no strict limit.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my text sent to a server when generating a slug?</summary>
+      <div class="faq-a"><p>No, the conversion happens instantly in your browser using JavaScript. Nothing you type is transmitted anywhere.</p></div>
+    </details>
+  </div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>About the Slug Generator Tool</h2>
   <p>The Logrith Slug Generator converts any title, heading, or phrase into a clean, URL-safe slug — lowercase, hyphen-separated, and stripped of special characters — ready to use as a page URL, blog post path, or file name. This is a small but genuinely important step in web publishing, since a well-formed slug affects both how search engines interpret a page and how readable the URL looks when shared.</p>
 
   <p>A slug is the part of a URL that identifies a specific page in a human and machine-readable way. For a blog post titled "10 Best Budget Laptops in 2024," a good slug would be "10-best-budget-laptops-2024" — all lowercase, words separated by hyphens, with punctuation removed. This tool automates that conversion, handling capitalization, spacing, punctuation, accented characters, and optional stop-word removal in one step.</p>
 
   <h3>What Makes a Good URL Slug</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Lowercase only.</strong> URLs are technically case-sensitive, and mixing cases creates inconsistency and potential duplicate-content issues if the same page is linked with different capitalization.</li>
     <li><strong>Hyphens between words, not underscores.</strong> Search engines, including Google, treat hyphens as word separators but treat underscores as joining words together into one token, which can hurt how individual keywords in the slug are interpreted.</li>
     <li><strong>No special characters.</strong> Spaces, punctuation, and symbols like &amp;, %, or # either break URLs outright or get encoded into unreadable character sequences, so they should be stripped or replaced.</li>
@@ -154,7 +181,7 @@
   <p>Titles in many languages include accented characters — é, ñ, ü, and similar — which, while valid in page titles, cause problems if left as-is in a URL, since they either break certain systems or get encoded into long percent-escaped sequences that look messy in a browser address bar. This tool automatically converts accented characters to their closest plain ASCII equivalent (é becomes e, ñ becomes n, and so on), keeping the resulting slug clean and universally compatible across browsers, servers, and content management systems.</p>
 
   <h3>Common Use Cases</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Blog post URLs</strong> — converting an article title into a clean, SEO-friendly path.</li>
     <li><strong>E-commerce product pages</strong> — generating consistent, readable URLs for product listings.</li>
     <li><strong>File and folder naming</strong> — creating consistent, web-safe file names from longer, more natural-language titles.</li>
@@ -162,12 +189,24 @@
   </ul>
 
   <h3>Step-by-Step: How to Generate a Slug</h3>
-  <div class="tool-steps">
-    <div class="tool-step"><strong>1. Enter your title or phrase</strong>Type or paste the text you want converted into a slug.</div>
-    <div class="tool-step"><strong>2. Choose a separator</strong>Select hyphens (recommended for SEO) or underscores.</div>
-    <div class="tool-step"><strong>3. Toggle stop word removal</strong>Enable this if you want a shorter, more keyword-focused slug.</div>
-    <div class="tool-step"><strong>4. Copy the result</strong>Copy the generated slug directly into your CMS, URL, or file name field.</div>
-  </div>
+  <ol class="steps">
+    <li class="step">
+      <strong>Enter your title or phrase</strong>
+      <p>Type or paste the text you want converted into a slug.</p>
+    </li>
+    <li class="step">
+      <strong>Choose a separator</strong>
+      <p>Select hyphens (recommended for SEO) or underscores.</p>
+    </li>
+    <li class="step">
+      <strong>Toggle stop word removal</strong>
+      <p>Enable this if you want a shorter, more keyword-focused slug.</p>
+    </li>
+    <li class="step">
+      <strong>Copy the result</strong>
+      <p>Copy the generated slug directly into your CMS, URL, or file name field.</p>
+    </li>
+  </ol>
 
   <h3>Why Slugs Matter for SEO</h3>
   <p>Search engines use several signals to understand what a page is about, and the URL itself is one of them — a weaker signal than the page title or heading tags, but a signal nonetheless. A slug like "best-budget-laptops-2024" tells both users and search engines what the page covers before anyone even clicks through, which can improve click-through rates from search results and makes shared links more trustworthy-looking. Beyond search engines, clean slugs also simply look better and build more trust when shared on social media, in emails, or pasted into a chat, compared to a URL full of random characters, numbers, or encoded spaces.</p>
@@ -176,39 +215,36 @@
   <p>All slug generation happens instantly in your browser using JavaScript — nothing you type is uploaded to a server, logged, or stored. This makes the tool safe to use even for unpublished or confidential page titles you aren't ready to share publicly yet.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/case-converter" class="tool-item"><div class="ti-text"><h4>Case Converter</h4><p>Convert text between uppercase, lowercase, and title case.</p></div></a>
-    <a href="/tools/url-encoder" class="tool-item"><div class="ti-text"><h4>URL Encoder</h4><p>Encode and decode URLs and query strings.</p></div></a>
-    <a href="/tools/text-reverser" class="tool-item"><div class="ti-text"><h4>Text Reverser</h4><p>Reverse text, words, or sentences instantly.</p></div></a>
-    <a href="/tools/word-counter" class="tool-item"><div class="ti-text"><h4>Word Counter</h4><p>Count words, characters, and paragraphs in your text.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">slug generator online</span>
-        <span class="keyword-tag">url slug generator free</span>
-        <span class="keyword-tag">seo friendly url generator</span>
-        <span class="keyword-tag">convert title to slug</span>
-        <span class="keyword-tag">url friendly text converter</span>
-        <span class="keyword-tag">permalink generator</span>
-        <span class="keyword-tag">slug maker online</span>
-        <span class="keyword-tag">clean url generator</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/case-converter"><strong>Case Converter</strong><span>Convert text between uppercase, lowercase, and title case.</span></a>
+    <a class="related-card" href="/tools/url-encoder"><strong>URL Encoder</strong><span>Encode and decode URLs and query strings.</span></a>
+    <a class="related-card" href="/tools/text-reverser"><strong>Text Reverser</strong><span>Reverse text, words, or sentences instantly.</span></a>
+    <a class="related-card" href="/tools/word-counter"><strong>Word Counter</strong><span>Count words, characters, and paragraphs in your text.</span></a>
   </div>
 </section>
 
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">slug generator online</span>
+    <span class="keyword-tag">url slug generator free</span>
+    <span class="keyword-tag">seo friendly url generator</span>
+    <span class="keyword-tag">convert title to slug</span>
+    <span class="keyword-tag">url friendly text converter</span>
+    <span class="keyword-tag">permalink generator</span>
+    <span class="keyword-tag">slug maker online</span>
+    <span class="keyword-tag">clean url generator</span>
+  </div>
+</section>
+
+</main>
+
 <div id="footer"></div>
+<script src="/assets/js/main.js"></script>
 
-<script src="/load-components.js"></script>
 
-<script src="/assets/js/main.js" defer></script>
 <script>
 const STOP_WORDS = new Set(['a','an','the','and','or','but','in','on','at','to','for','of','with','by','from','is','are','was','were','be','been','being','have','has','had','do','does','did','will','would','could','should','may','might','shall','can','this','that','these','those','it','its']);
 

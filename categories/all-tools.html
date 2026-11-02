@@ -14,54 +14,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#000000">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .all-hero { background:linear-gradient(135deg,#f0f4ff 0%,#e8f7f5 100%); padding:52px 24px 40px; text-align:center; border-bottom:1.5px solid var(--gray-200); }
-    .all-hero-inner { max-width:680px; margin:0 auto; }
-    .all-hero .badge { display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:var(--white);border:1px solid var(--gray-200);border-radius:20px;font-size:.78rem;font-weight:700;color:var(--primary);font-family:var(--font-display);margin-bottom:16px; }
-    .all-hero h1 { font-family:var(--font-display);font-size:clamp(1.8rem,5vw,2.6rem);font-weight:800;color:var(--gray-900);letter-spacing:-.5px;line-height:1.2;margin-bottom:12px; }
-    .all-hero h1 span { color:var(--primary); }
-    .all-hero p { font-size:.96rem;color:var(--gray-700);line-height:1.7; }
-
-    /* Filter bar */
-    .filter-bar { max-width:1200px;margin:0 auto;padding:20px 20px 0; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
-    .filter-btn { padding:6px 12px; background:var(--white); border:1.5px solid var(--gray-200); border-radius:18px; font-size:.82rem; font-weight:600; font-family:var(--font-display); color:var(--gray-700); cursor:pointer; transition:var(--transition); gap:3px; display:flex; align-items:center;}
-    .filter-btn:hover { border-color:var(--primary); color:var(--primary); }
-    .filter-btn.active { background:var(--primary); color:white; border-color:var(--primary); }
-    .filter-search { flex:1; min-width:200px; max-width:320px; position:relative; }
-    .filter-search input { width:100%; padding:9px 14px 9px 36px; border:1.5px solid var(--gray-200); border-radius:20px; font-size:.86rem; font-family:var(--font-main); outline:none; transition:var(--transition); }
-    .filter-search input:focus { border-color:var(--primary); }
-    .filter-search .si { position:absolute; left:12px; top:50%; transform:translateY(-50%); color:var(--gray-500); }
-
-    /* Section */
-    .all-section {  max-width:1280px; margin:0 auto; padding:32px 24px; }
-    .all-section-header { display:flex; align-items:center; gap:8px; margin-bottom:10px; padding-bottom:10px; border-bottom:2px solid var(--gray-100); }
-    .all-section-header h2 {  font-family:var(--font-display); font-size:1.0rem; font-weight:800; color:rgb(61, 61, 61); }
-    .all-section-header .cat-badge { padding:3px 8px; border-radius:18px; font-size:.7rem; font-weight:700; }
-    .all-section-header a { margin-left:auto; font-size:.82rem; color:var(--primary); font-weight:600; text-decoration:none; }
-    .all-section-header a:hover { text-decoration:underline; }
-
-    /* Tool items in compact list style */
-    .compact-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:10px; }
-    .compact-item { display:flex; align-items:center; gap:12px; padding:13px 16px; background:var(--white); border:1.5px solid var(--gray-200); border-radius:var(--radius); text-decoration:none; transition:var(--transition); }
-    .compact-item:hover { border-color:var(--primary); background:var(--gray-50); box-shadow:var(--shadow-sm); }
-    .compact-item.coming-soon { opacity:.5; cursor:default; }
-    .ci-icon { width:36px; height:36px; border-radius:9px; background:var(--gray-100); display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; transition:var(--transition); }
-    .compact-item:hover .ci-icon { background:var(--primary); }
-    .ci-text { flex:1; min-width:0; }
-    .ci-name { font-size:.86rem; font-weight:600; color:var(--gray-900); font-family:var(--font-display); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-    .ci-desc { font-size:.74rem; color:var(--gray-500); margin-top:1px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-    .ci-soon { font-size:.66rem; background:var(--accent); color:white; padding:1px 6px; border-radius:8px; flex-shrink:0; }
-
-    /* SEO block */
-    .seo-all { max-width:900px; margin:0 auto; padding:0 24px 48px; }
-    .seo-all h2 { font-family:var(--font-display); font-size:1.4rem; font-weight:700; color:var(--gray-900); margin-bottom:12px; margin-top:32px; }
-    .seo-all p { font-size:.93rem; color:var(--gray-700); line-height:1.8; margin-bottom:12px; }
-    .seo-all a { color:var(--primary); }
-
-    #no-results { display:none; text-align:center; padding:48px; color:var(--gray-500); font-size:.96rem; }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <!-- Google tag (gtag.js) -->
  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
@@ -74,43 +32,46 @@
  </script>
  
 </head>
-<body>
+<body class="page-all-tools">
 
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<section class="all-hero">
-  <div class="all-hero-inner">
-    <div class="tool-breadcrumb" style="justify-content:center;margin-bottom:14px;"><a href="/">Home</a> › All Tools</div>
-    <div class="badge">⚡ Complete Tool Directory</div>
+<main id="main">
+
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › All Tools</nav>
+    <div class="badge"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Complete Tool Directory</div>
     <h1>Explore All<br><span>Logrith Tools</span></h1>
     <p>Every tool on Logrith, organized by category. Filter by type or search by name to find exactly what you need.</p>
   </div>
-</section>
+</header>
 
 <!-- FILTER BAR -->
 <div class="filter-bar">
   <button class="filter-btn active" data-cat="all">All</button>
-  <button class="filter-btn" data-cat="image-pdf"><svg class="icon" style="width:13px; height:13px;" ><use href="/assets/svg/icons.svg#image"></use></svg> Image & PDF</button>
-  <button class="filter-btn" data-cat="calculate"><svg class="icon" style="width:13px; height:13px;" ><use href="/assets/svg/icons.svg#calculator"></use></svg> Calculate & Convert</button>
-  <button class="filter-btn" data-cat="text"><svg class="icon" style="width:13px; height:13px;" ><use href="/assets/svg/icons.svg#text"></use></svg> Text & Generators</button>
-  <button class="filter-btn" data-cat="dev"><svg class="icon" style="width:13px; height:13px;" ><use href="/assets/svg/icons.svg#code"></use></svg> Developer</button>
-  <button class="filter-btn" data-cat="utility"><svg class="icon" style="width:13px; height:13px;" ><use href="/assets/svg/icons.svg#settings"></use></svg> Utility</button>
-  <button class="filter-btn" data-cat="ai"><svg class="icon" style="width:13px; height:13px;" ><use href="/assets/svg/icons.svg#cloud"></use></svg> AI</button>
-  <button class="filter-btn" data-cat="global"><svg class="icon" style="width:13px; height:13px;" ><use href="/assets/svg/icons.svg#shield"></use></svg> Global</button>
+  <button class="filter-btn" data-cat="image-pdf"><svg class="icon u-054595" ><use href="/assets/svg/icons.svg#image"></use></svg> Image & PDF</button>
+  <button class="filter-btn" data-cat="calculate"><svg class="icon u-054595" ><use href="/assets/svg/icons.svg#calculator"></use></svg> Calculate & Convert</button>
+  <button class="filter-btn" data-cat="text"><svg class="icon u-054595" ><use href="/assets/svg/icons.svg#text"></use></svg> Text & Generators</button>
+  <button class="filter-btn" data-cat="dev"><svg class="icon u-054595" ><use href="/assets/svg/icons.svg#code"></use></svg> Developer</button>
+  <button class="filter-btn" data-cat="utility"><svg class="icon u-054595" ><use href="/assets/svg/icons.svg#settings"></use></svg> Utility</button>
+  <button class="filter-btn" data-cat="ai"><svg class="icon u-054595" ><use href="/assets/svg/icons.svg#cloud"></use></svg> AI</button>
+  <button class="filter-btn" data-cat="global"><svg class="icon u-054595" ><use href="/assets/svg/icons.svg#shield"></use></svg> Global</button>
   <div class="filter-search">
-    <span class="si"><svg class="icon" style="margin-top: 6px; width:18px; height:px;"><use href="/assets/svg/icons.svg#filter-img"></use></svg></span>
+    <span class="si"><svg class="icon u-e0ca01"><use href="/assets/svg/icons.svg#filter-img"></use></svg></span>
     <input type="text" id="tool-filter" placeholder="Filter tools...">
   </div>
-  <span id="tool-count" style="font-size:.82rem;color:var(--gray-500);font-weight:600;"></span>
+  <span id="tool-count"></span>
 </div>
 
 
 <!-- Calculate & Convert -->
 <div class="all-section" data-cat="calculate" >
   <div class="all-section-header">
-    <span style="font-size:1.3rem;"></span>
+    <span class="u-6e8efa"></span>
     <h2>Calculate & Convert Tools</h2>
-    <span class="cat-badge" style="background:#eff6ff;color:#1d4ed8;">20 tools</span>
+    <span class="cat-badge u-2e7050">20 tools</span>
     <a href="calculate-convert">View category →</a>
   </div>
   <div class="compact-grid">
@@ -139,11 +100,11 @@
 </div>
 
 <!-- Text & Generator -->
-<div class="all-section" data-cat="text" style="background:var(--gray-50);">
+<div class="all-section u-fb7a0c" data-cat="text">
   <div class="all-section-header">
-    <span style="font-size:1.3rem;"></span>
+    <span class="u-6e8efa"></span>
     <h2>Text & Generator Tools</h2>
-    <span class="cat-badge" style="background:#fef2f2;color:#dc2626;">22 tools</span>
+    <span class="cat-badge u-001e80">22 tools</span>
     <a href="text-generators">View category →</a>
   </div>
   <div class="compact-grid">
@@ -178,9 +139,9 @@
 <!-- DEV TOOLS -->
 <div class="all-section" data-cat="dev">
   <div class="all-section-header">
-    <span style="font-size:1.3rem;"></span>
+    <span class="u-6e8efa"></span>
     <h2>Developer Tools</h2>
-    <span class="cat-badge" style="background:#f0fdf4;color:#16a34a;">20 tools</span>
+    <span class="cat-badge u-4844c7">20 tools</span>
     <a href="developer-tools">View category →</a>
   </div>
   <div class="compact-grid">
@@ -210,9 +171,9 @@
 <!-- UTILITY TOOLS -->
 <div class="all-section" data-cat="image-pdf">
   <div class="all-section-header">
-    <span style="font-size:1.3rem;"></span>
+    <span class="u-6e8efa"></span>
     <h2>Image & PDF Tools</h2>
-    <span class="cat-badge" style="background:#f0fdfa;color:#059669;">22 tools</span>
+    <span class="cat-badge u-24e765">22 tools</span>
     <a href="image-pdf-tools">View category →</a>
   </div>
   <div class="compact-grid">
@@ -244,9 +205,9 @@
 
 <div class="all-section" data-cat="utility">
   <div class="all-section-header">
-    <span style="font-size:1.3rem;"></span>
+    <span class="u-6e8efa"></span>
     <h2>Utility Tools</h2>
-    <span class="cat-badge" style="background:#f0fdfa;color:#059669;">14 tools</span>
+    <span class="cat-badge u-24e765">14 tools</span>
     <a href="utilities">View category →</a>
   </div>
   <div class="compact-grid">
@@ -270,9 +231,9 @@
 
 <div class="all-section" data-cat="ai">
   <div class="all-section-header">
-    <span style="font-size:1.3rem;"></span>
+    <span class="u-6e8efa"></span>
     <h2>AI Tools</h2>
-    <span class="cat-badge" style="background:#f0fdfa;color:#059669;">2 tools</span>
+    <span class="cat-badge u-24e765">2 tools</span>
     <a href="ai-tools">View category →</a>
   </div>
   <div class="compact-grid">
@@ -284,9 +245,9 @@
 
 <div class="all-section" data-cat="global">
   <div class="all-section-header">
-    <span style="font-size:1.3rem;"></span>
+    <span class="u-6e8efa"></span>
     <h2>Global Tools</h2>
-    <span class="cat-badge" style="background:#f0fdf4;color:#16a34a;">7 tools</span>
+    <span class="cat-badge u-4844c7">7 tools</span>
     <a href="global-tools">View category →</a>
   </div>
   <div class="compact-grid">
@@ -324,82 +285,56 @@
 
   <h2>Frequently Asked Questions</h2>
 
-  <div class="faq-item">
-    <div class="faq-q">Are all Logrith tools completely free?</div>
-    <div class="faq-a">
-      Yes. All currently available tools on Logrith are free to use without subscriptions, registration, or hidden charges.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">Do I need to create an account?</div>
-    <div class="faq-a">
-      No. Logrith tools are designed for instant access without requiring login or account creation.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">Do the tools work on mobile devices?</div>
-    <div class="faq-a">
-      Yes. The platform is fully responsive and works across phones, tablets, laptops, and desktop devices.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">Are files processed locally in the browser?</div>
-    <div class="faq-a">
-      Many Logrith tools process files directly inside the browser for faster performance and improved privacy. Some tools may use external libraries for functionality, but the overall focus remains lightweight and privacy-friendly processing.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">What types of tools are available on Logrith?</div>
-    <div class="faq-a">
-      Logrith includes calculators, converters, PDF tools, image utilities, text generators, developer tools, formatting utilities, QR generators, password tools, and more.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">Can I use Logrith tools for commercial work?</div>
-    <div class="faq-a">
-      Yes. The tools can be used for personal, educational, freelance, creator, and business-related workflows.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">Will more tools be added in the future?</div>
-    <div class="faq-a">
-      Yes. New browser-based utilities, generators, converters, and productivity tools are regularly planned and added to the platform roadmap.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">What browsers are supported?</div>
-    <div class="faq-a">
-      Logrith supports all major modern browsers including Chrome, Edge, Firefox, Brave, and Safari.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">Can I suggest new tools for the platform?</div>
-    <div class="faq-a">
-      Yes. User-requested tools and practical browser-based workflows are prioritized for future development whenever possible.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">Does Logrith require software installation?</div>
-    <div class="faq-a">
-      No. All tools are designed to work directly in the browser without downloading desktop software or additional applications.
-    </div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">Are all Logrith tools completely free?</summary>
+      <div class="faq-a"><p>Yes. All currently available tools on Logrith are free to use without subscriptions, registration, or hidden charges.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Do I need to create an account?</summary>
+      <div class="faq-a"><p>No. Logrith tools are designed for instant access without requiring login or account creation.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Do the tools work on mobile devices?</summary>
+      <div class="faq-a"><p>Yes. The platform is fully responsive and works across phones, tablets, laptops, and desktop devices.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Are files processed locally in the browser?</summary>
+      <div class="faq-a"><p>Many Logrith tools process files directly inside the browser for faster performance and improved privacy. Some tools may use external libraries for functionality, but the overall focus remains lightweight and privacy-friendly processing.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What types of tools are available on Logrith?</summary>
+      <div class="faq-a"><p>Logrith includes calculators, converters, PDF tools, image utilities, text generators, developer tools, formatting utilities, QR generators, password tools, and more.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I use Logrith tools for commercial work?</summary>
+      <div class="faq-a"><p>Yes. The tools can be used for personal, educational, freelance, creator, and business-related workflows.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Will more tools be added in the future?</summary>
+      <div class="faq-a"><p>Yes. New browser-based utilities, generators, converters, and productivity tools are regularly planned and added to the platform roadmap.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What browsers are supported?</summary>
+      <div class="faq-a"><p>Logrith supports all major modern browsers including Chrome, Edge, Firefox, Brave, and Safari.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I suggest new tools for the platform?</summary>
+      <div class="faq-a"><p>Yes. User-requested tools and practical browser-based workflows are prioritized for future development whenever possible.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does Logrith require software installation?</summary>
+      <div class="faq-a"><p>No. All tools are designed to work directly in the browser without downloading desktop software or additional applications.</p></div>
+    </details>
   </div>
 
 </div>
 
-<div id="footer"></div>
+</main>
 
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+
 <script>
 // Filter by category
 const filterBtns = document.querySelectorAll('.filter-btn');
@@ -424,7 +359,7 @@ function applyFilter() {
     const cat = sec.dataset.cat;
     const catMatch = activeCat === 'all' || activeCat === cat;
     if (!catMatch) { sec.style.display = 'none'; return; }
-    if (!q) { sec.style.display = ''; const items = sec.querySelectorAll('.compact-item:not(.coming-soon)'); total += items.length; return; }
+    if (!q) { sec.classList.remove('is-hidden'); sec.style.display = ''; const items = sec.querySelectorAll('.compact-item:not(.coming-soon)'); total += items.length; return; }
     const items = sec.querySelectorAll('.compact-item');
     let secVisible = 0;
     items.forEach(item => {

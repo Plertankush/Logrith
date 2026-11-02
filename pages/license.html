@@ -9,255 +9,36 @@
   <link rel="canonical" href="https://logrith.in/pages/license">
   <link rel="icon" href="/favicon.ico">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    /* ── HERO ── */
-    .lic-hero {
-      padding: 56px 24px 44px;
-      text-align: center;
-      border-bottom: 1.5px solid var(--gray-200);
-      background: var(--gray-50);
-    }
-    .lic-hero .eyebrow {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: .76rem; font-weight: 700;
-      font-family: var(--font-display);
-      color: var(--primary);
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      border-radius: 20px;
-      padding: 4px 14px;
-      margin-bottom: 16px;
-      letter-spacing: .03em;
-      text-transform: uppercase;
-    }
-    .lic-hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(1.8rem, 4vw, 2.4rem);
-      font-weight: 800;
-      color: var(--gray-900);
-      margin-bottom: 10px;
-      letter-spacing: -.3px;
-    }
-    .lic-hero p {
-      font-size: .92rem;
-      color: var(--gray-500);
-      max-width: 480px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
-    .breadcrumb {
-      display: flex; align-items: center; gap: 6px;
-      font-size: .8rem; color: var(--gray-400);
-      justify-content: center; margin-bottom: 14px;
-    }
-    .breadcrumb a { color: var(--primary); text-decoration: none; }
-    .breadcrumb a:hover { text-decoration: underline; }
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
-    /* ── LAYOUT ── */
-    .lic-wrap {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 52px 24px 80px;
-    }
-
-    /* ── OWN LICENSE BLOCK ── */
-    .own-license {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      border-radius: var(--radius-xl);
-      padding: 36px 40px;
-      margin-bottom: 52px;
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-    .own-license::before {
-      content: '©';
-      position: absolute;
-      right: 32px; top: 16px;
-      font-size: 8rem;
-      font-weight: 900;
-      color: rgba(255,255,255,.04);
-      font-family: var(--font-display);
-      line-height: 1;
-    }
-    .own-license .ol-badge {
-      display: inline-block;
-      background: rgba(255,255,255,.1);
-      border: 1px solid rgba(255,255,255,.15);
-      border-radius: 6px;
-      padding: 3px 10px;
-      font-size: .72rem;
-      font-weight: 700;
-      font-family: var(--font-display);
-      color: rgba(255,255,255,.7);
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-    .own-license h2 {
-      font-family: var(--font-display);
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: white;
-      margin-bottom: 10px;
-    }
-    .own-license p {
-      font-size: .88rem;
-      color: rgba(255,255,255,.6);
-      line-height: 1.75;
-      max-width: 580px;
-    }
-    .own-license .year {
-      margin-top: 20px;
-      font-size: .8rem;
-      color: rgba(255,255,255,.35);
-      font-family: var(--font-display);
-    }
-
-    /* ── SECTION TITLE ── */
-    .section-label {
-      font-family: var(--font-display);
-      font-size: .72rem;
-      font-weight: 700;
-      color: var(--gray-400);
-      text-transform: uppercase;
-      letter-spacing: .1em;
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .section-label::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--gray-200);
-    }
-
-    /* ── LIBRARY CARDS ── */
-    .lib-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
-      background: var(--gray-200);
-      border: 1.5px solid var(--gray-200);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      margin-bottom: 48px;
-    }
-    .lib-card {
-      background: var(--white);
-      padding: 22px 24px;
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      gap: 18px;
-      align-items: start;
-      transition: background .12s;
-    }
-    .lib-card:hover { background: var(--gray-50); }
-
-    .lib-icon {
-      width: 42px; height: 42px;
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.2rem;
-      flex-shrink: 0;
-    }
-    .lib-body {color:auto}
-    .lib-name {
-      font-family: var(--font-display);
-      font-size: .95rem;
-      font-weight: 700;
-      color: var(--gray-900);
-      margin-bottom: 3px;
-    }
-    .lib-desc {
-      font-size: .82rem;
-      color: var(--gray-500);
-      line-height: 1.5;
-      margin-bottom: 8px;
-    }
-    .lib-author {
-      font-size: .78rem;
-      color: var(--gray-400);
-    }
-    .lib-meta {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 6px;
-      flex-shrink: 0;
-    }
-    .lib-badge {
-      padding: 3px 10px;
-      border-radius: 6px;
-      font-size: .72rem;
-      font-weight: 700;
-      font-family: var(--font-display);
-      white-space: nowrap;
-    }
-    .badge-mit { background: #ecfdf5; color: #059669; }
-    .badge-apache { background: #eff6ff; color: #2563eb; }
-    .badge-bsd { background: #fdf4ff; color: #9333ea; }
-    .lib-link {
-      font-size: .76rem;
-      color: var(--primary);
-      text-decoration: none;
-      display: flex; align-items: center; gap: 3px;
-    }
-    .lib-link:hover { text-decoration: underline; }
-
-    /* ── MIT TEXT ── */
-    .mit-block {
-      background: var(--gray-50);
-      border: 1.5px solid var(--gray-200);
-      border-radius: var(--radius-lg);
-      padding: 24px;
-    }
-    .mit-block h3 {
-      font-family: var(--font-display);
-      font-size: .88rem;
-      font-weight: 700;
-      color: var(--gray-700);
-      margin-bottom: 14px;
-    }
-    .mit-block pre {
-      font-family: 'Courier New', monospace;
-      font-size: .78rem;
-      color: var(--gray-600);
-      line-height: 1.8;
-      white-space: pre-wrap;
-      word-break: break-word;
-      margin: 0;
-    }
-
-    @media (max-width: 600px) {
-      .own-license { padding: 24px 20px; }
-      .lib-card { grid-template-columns: auto 1fr; }
-      .lib-meta { flex-direction: row; grid-column: 1 / -1; align-items: center; }
-      .lic-wrap { padding: 32px 16px 60px; }
-    }
-  </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-BPJ4332XJH');</script>
  
 </head>
-<body>
+<body class="page-license">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
+<main id="main">
+
 <!-- HERO -->
-<div class="lic-hero">
-  <div class="breadcrumb">
+<header class="page-hero">
+  <div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
     <a href="/">Home</a> › Legal › License
-  </div>
-  <div class="eyebrow">⚖️ Open Source</div>
+  </nav>
+  <div class="badge"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#file-text"></use></svg> Open Source</div>
   <h1>License</h1>
   <p>Logrith is built on the shoulders of amazing open source projects. Here's everything we use and credit.</p>
-</div>
+  </div>
+</header>
 
-<div class="lic-wrap">
+<div class="lic-wrap container">
 
   <!-- OWN LICENSE -->
   <div class="own-license">
@@ -273,7 +54,7 @@
   <div class="lib-grid">
 
     <div class="lib-card">
-      <div class="lib-icon" ><svg class="icon" style="width: 25px; height: 25px;"><use href="/assets/svg/icons.svg#page"></use></svg></div>
+      <div class="lib-icon" ><svg class="icon u-7d5111"><use href="/assets/svg/icons.svg#page"></use></svg></div>
       <div class="lib-body">
         <div class="lib-name">PDF-Lib</div>
         <div class="lib-desc">Create and modify PDF documents in any JavaScript environment. Used for PDF merge, split, rotate, and page manipulation on Logrith.</div>
@@ -286,7 +67,7 @@
     </div>
 
     <div class="lib-card">
-      <div class="lib-icon" ><svg class="icon" style="width: 25px; height: 25px;"><use href="/assets/svg/icons.svg#search"></use></svg></div>
+      <div class="lib-icon" ><svg class="icon u-7d5111"><use href="/assets/svg/icons.svg#search"></use></svg></div>
       <div class="lib-body">
         <div class="lib-name">PDF.js</div>
         <div class="lib-desc">A JavaScript-based PDF viewer built by Mozilla. Used on Logrith for rendering PDF pages as images (PDF to JPG conversion).</div>
@@ -299,7 +80,7 @@
     </div>
 
     <div class="lib-card">
-      <div class="lib-icon" ><svg class="icon" style="width: 25px; height: 25px;"><use href="/assets/svg/icons.svg#qr-code"></use></svg></div>
+      <div class="lib-icon" ><svg class="icon u-7d5111"><use href="/assets/svg/icons.svg#qr-code"></use></svg></div>
       <div class="lib-body">
         <div class="lib-name">QRCode.js</div>
         <div class="lib-desc">A cross-browser QR code generator using HTML5 Canvas and table DOM. Used for QR code generation on Logrith.</div>
@@ -312,7 +93,7 @@
     </div>
 
     <div class="lib-card">
-      <div class="lib-icon" ><svg class="icon" style="width: 25px; height: 25px;"><use href="/assets/svg/icons.svg#font-size"></use></svg></div>
+      <div class="lib-icon" ><svg class="icon u-7d5111"><use href="/assets/svg/icons.svg#font-size"></use></svg></div>
       <div class="lib-body">
         <div class="lib-name">Sora & DM Sans</div>
         <div class="lib-desc">Typography used throughout the Logrith interface. Served via Google Fonts CDN under the SIL Open Font License.</div>
@@ -351,29 +132,30 @@ THE SOFTWARE.</pre>
 
   <!-- WHY WE CREDIT -->
   <div class="section-label">Why this page exists</div>
-  <div style="margin-bottom:48px;">
-    <p style="font-size:.88rem;color:var(--gray-600);line-height:1.8;margin-bottom:14px;">Logrith's tools are written almost entirely in vanilla JavaScript, with no heavy framework underneath. For a handful of genuinely hard problems — reading and writing PDF files, rendering PDF pages to images, generating scannable QR codes — we rely on a small number of focused, well-maintained open source libraries instead of reinventing that work from scratch. This page exists to be transparent about exactly which libraries are used, what they do, and under what license, so anyone auditing the platform's dependencies can verify it directly.</p>
-    <p style="font-size:.88rem;color:var(--gray-600);line-height:1.8;">Every library listed above is used under its original open source license, unmodified. We don't fork, relicense, or claim authorship of any third-party code — the credit and license links above point to the original source so you can confirm the terms yourself.</p>
+  <div class="u-9fb6b3">
+    <p class="u-bb7fb8">Logrith's tools are written almost entirely in vanilla JavaScript, with no heavy framework underneath. For a handful of genuinely hard problems — reading and writing PDF files, rendering PDF pages to images, generating scannable QR codes — we rely on a small number of focused, well-maintained open source libraries instead of reinventing that work from scratch. This page exists to be transparent about exactly which libraries are used, what they do, and under what license, so anyone auditing the platform's dependencies can verify it directly.</p>
+    <p class="u-e358b7">Every library listed above is used under its original open source license, unmodified. We don't fork, relicense, or claim authorship of any third-party code — the credit and license links above point to the original source so you can confirm the terms yourself.</p>
   </div>
 
   <div class="section-label">Licensing questions</div>
-  <div style="margin-bottom:20px;">
-    <h3 style="font-size:.92rem;font-weight:700;color:var(--gray-800);margin-bottom:6px;">Can I use Logrith's output commercially?</h3>
-    <p style="font-size:.86rem;color:var(--gray-600);line-height:1.7;">Yes. Anything you create using a Logrith tool — a compressed image, a merged PDF, a generated QR code — is yours to use however you like, including commercially. The open source licenses on this page cover the libraries that power the tools, not the files you produce with them.</p>
+  <div class="mb-20">
+    <h3 class="u-8aa9ad">Can I use Logrith's output commercially?</h3>
+    <p class="u-aa9649">Yes. Anything you create using a Logrith tool — a compressed image, a merged PDF, a generated QR code — is yours to use however you like, including commercially. The open source licenses on this page cover the libraries that power the tools, not the files you produce with them.</p>
   </div>
-  <div style="margin-bottom:20px;">
-    <h3 style="font-size:.92rem;font-weight:700;color:var(--gray-800);margin-bottom:6px;">Can I reuse Logrith's design or source code?</h3>
-    <p style="font-size:.86rem;color:var(--gray-600);line-height:1.7;">The Logrith name, logo, interface design, and original source code are proprietary, as noted above. The open source libraries we depend on can of course be used by anyone under their own licenses — just not by copying them out of Logrith's codebase specifically.</p>
+  <div class="mb-20">
+    <h3 class="u-8aa9ad">Can I reuse Logrith's design or source code?</h3>
+    <p class="u-aa9649">The Logrith name, logo, interface design, and original source code are proprietary, as noted above. The open source libraries we depend on can of course be used by anyone under their own licenses — just not by copying them out of Logrith's codebase specifically.</p>
   </div>
   <div>
-    <h3 style="font-size:.92rem;font-weight:700;color:var(--gray-800);margin-bottom:6px;">What if a dependency's license changes or a library is updated?</h3>
-    <p style="font-size:.86rem;color:var(--gray-600);line-height:1.7;">This page is updated whenever the set of libraries Logrith depends on changes. If you ever spot something here that looks out of date, the <a href="contact" style="color:var(--primary);">Contact page</a> is the fastest way to flag it.</p>
+    <h3 class="u-8aa9ad">What if a dependency's license changes or a library is updated?</h3>
+    <p class="u-aa9649">This page is updated whenever the set of libraries Logrith depends on changes. If you ever spot something here that looks out of date, the <a class="u-035cc8" href="contact">Contact page</a> is the fastest way to flag it.</p>
   </div>
 
 </div>
 
+</main>
+
 <div id="footer"></div>
-<script src="/load-components.js"></script>
-<script src="/assets/js/main.js" defer></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

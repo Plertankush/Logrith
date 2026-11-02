@@ -23,47 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .bp-hero { max-width:820px;margin:0 auto;padding:48px 20px 8px; }
-    .bp-crumb { font-size:.85rem;color:var(--gray-500);margin-bottom:16px; }
-    .bp-crumb a { color:var(--primary);text-decoration:none; }
-    .bp-hero h1 { font-family:var(--font-display);font-size:2rem;line-height:1.25;color:var(--gray-900);margin-bottom:14px; }
-    .bp-hero .bp-dek { font-size:1.05rem;color:var(--gray-700);line-height:1.7;margin-bottom:20px; }
-    .bp-cta { display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:white;padding:13px 26px;border-radius:var(--radius);font-weight:700;text-decoration:none;font-size:.95rem; }
-    .bp-cta svg { width:17px;height:17px; }
-    .bp-cta:hover { background:var(--primary-dark); }
-    .bp-body { max-width:760px;margin:0 auto;padding:28px 20px 20px; }
-    .bp-body h2 { font-family:var(--font-display);font-size:1.5rem;color:var(--gray-900);margin:38px 0 14px; }
-    .bp-body h3 { font-family:var(--font-display);font-size:1.15rem;color:var(--gray-900);margin:26px 0 10px; }
-    .bp-body p { color:var(--gray-700);line-height:1.8;margin-bottom:16px;font-size:1rem; }
-    .bp-body ul, .bp-body ol { color:var(--gray-700);line-height:1.8;margin:0 0 16px 22px; }
-    .bp-body li { margin-bottom:8px; }
-    .bp-body strong { color:var(--gray-900); }
-    .bp-toc { background:var(--gray-50);border-radius:var(--radius-lg);padding:20px 24px;margin:24px 0; }
-    .bp-toc h2 { margin:0 0 10px;font-size:1.05rem; }
-    .bp-toc ol { margin:0 0 0 20px; }
-    .bp-toc a { color:var(--primary);text-decoration:none; }
-    .bp-table { width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:.92rem; }
-    .bp-table th, .bp-table td { border:1px solid var(--gray-200);padding:10px 12px;text-align:left; }
-    .bp-table th { background:var(--gray-50);font-weight:700;color:var(--gray-900); }
-    .bp-howto { counter-reset:step; list-style:none;margin-left:0; }
-    .bp-howto li { position:relative;padding-left:42px;margin-bottom:18px; }
-    .bp-howto li::before { counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;background:var(--primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem; }
-    .bp-faq-item { border-bottom:1px solid var(--gray-200);padding:16px 0; }
-    .bp-faq-item h3 { margin:0 0 8px; font-size:1.02rem; }
-    .bp-byline { font-size:.82rem;color:var(--gray-500);margin-top:10px; }
-    .bp-related { max-width:1000px;margin:0 auto;padding:20px 20px 60px; }
-    .bp-related h2 { font-family:var(--font-display);font-size:1.4rem;color:var(--gray-900);margin-bottom:18px;text-align:center; }
-    .bp-related-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px; }
-    .bp-related-card { border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:18px;text-decoration:none;color:inherit;background:var(--white); }
-    .bp-related-card h4 { font-size:.95rem;color:var(--gray-900);margin-bottom:6px; }
-    .bp-related-card p { font-size:.82rem;color:var(--gray-700);line-height:1.5; }
-    .bp-prevnext { display:flex;justify-content:space-between;gap:16px;max-width:760px;margin:0 auto;padding:0 20px 20px; }
-    .bp-prevnext a { flex:1;border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:12px 16px;text-decoration:none;color:var(--gray-700);font-size:.85rem; }
-    .bp-prevnext a strong { display:block;color:var(--gray-900);font-size:.92rem; }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -98,23 +63,26 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-rotate-pdf-pages-fix-sideways-scan">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="bp-hero">
-  <div class="bp-crumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/image-pdf-tools">Image & PDF Tools</a> &rsaquo; PDF Rotate</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/image-pdf-tools">Image & PDF Tools</a> &rsaquo; PDF Rotate</nav>
   <h1>How to Rotate Sideways Pages in a Scanned PDF, Individually or All at Once</h1>
-  <p class="bp-dek">Scanned documents come out sideways more often than any other kind of PDF problem — a page fed into a scanner at the wrong orientation, or a double-sided document where alternating pages rotate 180 degrees relative to each other. Fixing this is one of the few PDF operations that's genuinely, perfectly lossless, and understanding why makes the fix feel a lot less risky to apply, especially for documents you can't easily re-scan or recreate from scratch.</p>
-  <a href="/tools/pdf-rotate" class="bp-cta">
+  <p>Scanned documents come out sideways more often than any other kind of PDF problem — a page fed into a scanner at the wrong orientation, or a double-sided document where alternating pages rotate 180 degrees relative to each other. Fixing this is one of the few PDF operations that's genuinely, perfectly lossless, and understanding why makes the fix feel a lot less risky to apply, especially for documents you can't easily re-scan or recreate from scratch.</p>
+  <a href="/tools/pdf-rotate" class="btn btn-primary btn-lg">
     <svg class="icon"><use href="/assets/svg/icons.svg#pdf-rotate"></use></svg>
     Rotate PDF Pages
   </a>
-  <p class="bp-byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
-</div>
+  <p class="byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
+</div></header>
 
-<div class="bp-body">
+<article class="page-section prose">
 
-  <div class="bp-toc">
+  <nav class="toc" aria-label="On this page">
     <h2>On This Page</h2>
     <ol>
       <li><a href="#how-to-use">How to Rotate PDF Pages</a></li>
@@ -124,15 +92,25 @@
       <li><a href="#mistakes">Common Mistakes</a></li>
       <li><a href="#faq">Frequently Asked Questions</a></li>
     </ol>
-  </div>
+  </nav>
 
   <h2 id="how-to-use">How to Rotate PDF Pages</h2>
-  <ol class="bp-howto">
-    <li>Open the <a href="/tools/pdf-rotate">PDF Rotate tool</a> and upload your PDF.</li>
-    <li>Choose your rotation angle — 90°, 180°, or 270°.</li>
-    <li>Select which pages to apply it to: all pages, a specific page range, or odd/even pages only.</li>
-    <li>Click Rotate PDF and preview the result.</li>
-    <li>Download the corrected PDF — no upload to a server occurred at any point.</li>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the <a href="/tools/pdf-rotate">PDF Rotate tool</a> and upload your PDF.</p>
+    </li>
+    <li class="step">
+      <p>Choose your rotation angle — 90°, 180°, or 270°.</p>
+    </li>
+    <li class="step">
+      <p>Select which pages to apply it to: all pages, a specific page range, or odd/even pages only.</p>
+    </li>
+    <li class="step">
+      <p>Click Rotate PDF and preview the result.</p>
+    </li>
+    <li class="step">
+      <p>Download the corrected PDF — no upload to a server occurred at any point.</p>
+    </li>
   </ol>
 
   <h2 id="why-lossless">Why PDF Rotation Is Perfectly Lossless</h2>
@@ -149,7 +127,8 @@
   <p>Sideways or misrotated pages are disproportionately a scanned-document problem rather than a native-digital-document problem, and the reason comes down to how scanning physically works. A digital PDF exported directly from a word processor or design tool is created with the correct orientation baked in from the start — there's no physical paper involved, so there's no opportunity for an orientation mismatch. Scanning, by contrast, involves physically placing paper onto a scanner bed or feeding it through a scanner, and the resulting digital orientation depends entirely on how that physical paper happened to be positioned at the moment of capture. Multi-page documents scanned in batches, especially double-sided ones requiring the stack to be flipped partway through, introduce multiple opportunities for a page's physical orientation not to match the rest of the document, compounding across every page in the batch.</p>
 
   <h2 id="comparison">Comparison vs. Other PDF Rotators</h2>
-  <table class="bp-table">
+  <div class="table-wrap">
+    <table class="table">
     <tr><th>Feature</th><th>Logrith PDF Rotate</th><th>iLovePDF</th><th>Smallpdf</th></tr>
     <tr><td>Processing location</td><td>Entirely in-browser</td><td>Server upload</td><td>Server upload</td></tr>
     <tr><td>Rotate specific page range</td><td>Yes</td><td>Yes, per-page rotation control</td><td>Yes</td></tr>
@@ -157,6 +136,7 @@
     <tr><td>Free usage limit</td><td>Unlimited</td><td>Unlimited, with file size caps</td><td>2 tasks/day (free tier)</td></tr>
     <tr><td>Account required</td><td>No</td><td>No</td><td>No</td></tr>
   </table>
+  </div>
   <p>The odd/even page selection is a genuine practical advantage for the specific double-sided scanning problem described above — competitors typically require manually selecting each incorrectly-rotated page one at a time, which becomes tedious for a document with dozens of alternating pages. For simpler single-rotation needs (fixing one sideways page, or rotating an entire document uniformly), the tools are functionally equivalent, with Logrith's version keeping the file entirely local rather than uploading it to a server, which matters more for scanned documents than for many other file types since scans frequently contain personal identification, signatures, or other sensitive information.</p>
 
   <h2>Real-World Scenarios</h2>
@@ -190,39 +170,63 @@
   <h2>Preventing Orientation Issues at Scan Time</h2>
   <p>While rotation fixes the problem after the fact, a few scanning habits reduce how often it comes up in the first place. If your scanning software or app offers an auto-rotate or orientation-detection feature, enabling it catches many common mistakes automatically before the file is even saved. For manual double-sided scanning without a duplex feeder, consistently flipping the stack the same way each time produces a predictable, consistent rotation pattern across the whole document — which, even if it does need correcting afterward, corrects cleanly with a single odd/even rotation rather than page-by-page guesswork. None of this eliminates the occasional need for rotation entirely, but it does mean less frequent and more predictable fixes whenever the issue does eventually resurface.</p>
 
-</div>
+</article>
 
-<div class="bp-body">
+<article class="page-section prose">
   <h2 id="faq">Frequently Asked Questions</h2>
-  <div class="bp-faq-item"><h3>Does rotating a PDF page reduce quality?</h3><p>No. PDF page rotation is applied as a metadata flag rather than by re-rendering page content, meaning the underlying text and images are never touched or re-encoded — quality is perfectly preserved.</p></div>
-  <div class="bp-faq-item"><h3>Can I rotate only some pages, not all of them?</h3><p>Yes, specify a page range or specific page numbers, or use odd/even page selection, especially useful for double-sided scans where alternating pages come out rotated 180 degrees from each other.</p></div>
-  <div class="bp-faq-item"><h3>Why do double-sided scans often have alternating rotated pages?</h3><p>Some scanners capture double-sided pages by flipping the physical paper, which can result in every other page being scanned upside down relative to the rest.</p></div>
-  <div class="bp-faq-item"><h3>Does rotating change the page's visible content or just how it displays?</h3><p>It changes how the page displays — the underlying content stream isn't altered, only a rotation instruction is added that PDF viewers use to render the page correctly oriented.</p></div>
-  <div class="bp-faq-item"><h3>Will rotating a PDF increase its file size?</h3><p>No, since rotation only changes a small numeric property in each page's definition rather than the actual content, file size stays essentially unchanged after rotation.</p></div>
-  <div class="bp-faq-item"><h3>Can I rotate a PDF that's password-protected?</h3><p>You'll need to remove the password first, since the tool needs to read and modify each page's properties, which isn't possible on an encrypted file without the password.</p></div>
-  <div class="bp-faq-item"><h3>What's the difference between rotating a PDF and rotating an image inside it?</h3><p>PDF page rotation changes the entire page's display orientation via a metadata flag. If a PDF contains an embedded image that's itself rotated incorrectly within an otherwise correctly-oriented page, that requires editing the embedded image directly, which is a different and more involved operation than page rotation.</p></div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">Does rotating a PDF page reduce quality?</summary>
+      <div class="faq-a"><p>No. PDF page rotation is applied as a metadata flag rather than by re-rendering page content, meaning the underlying text and images are never touched or re-encoded — quality is perfectly preserved.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I rotate only some pages, not all of them?</summary>
+      <div class="faq-a"><p>Yes, specify a page range or specific page numbers, or use odd/even page selection, especially useful for double-sided scans where alternating pages come out rotated 180 degrees from each other.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why do double-sided scans often have alternating rotated pages?</summary>
+      <div class="faq-a"><p>Some scanners capture double-sided pages by flipping the physical paper, which can result in every other page being scanned upside down relative to the rest.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does rotating change the page's visible content or just how it displays?</summary>
+      <div class="faq-a"><p>It changes how the page displays — the underlying content stream isn't altered, only a rotation instruction is added that PDF viewers use to render the page correctly oriented.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Will rotating a PDF increase its file size?</summary>
+      <div class="faq-a"><p>No, since rotation only changes a small numeric property in each page's definition rather than the actual content, file size stays essentially unchanged after rotation.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I rotate a PDF that's password-protected?</summary>
+      <div class="faq-a"><p>You'll need to remove the password first, since the tool needs to read and modify each page's properties, which isn't possible on an encrypted file without the password.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What's the difference between rotating a PDF and rotating an image inside it?</summary>
+      <div class="faq-a"><p>PDF page rotation changes the entire page's display orientation via a metadata flag. If a PDF contains an embedded image that's itself rotated incorrectly within an otherwise correctly-oriented page, that requires editing the embedded image directly, which is a different and more involved operation than page rotation.</p></div>
+    </details>
+  </div>
 
   <h2>Conclusion</h2>
   <p>Rotating a PDF page is one of the rare document operations with genuinely zero downside — no quality tradeoff, no risk to the underlying content, just a corrected display orientation. The odd/even page option in particular solves a specific, common scanning frustration in one step rather than requiring page-by-page manual correction, making this one of the more satisfying quick fixes in a document preparation workflow, especially once you understand that the fix carries no risk to the content itself.</p>
-</div>
+</article>
 
-<div class="bp-prevnext">
+<nav class="post-nav page-section" aria-label="More guides">
   <a href="/blog/merge-multiple-pdf-files-into-one-free">&larr; Previous: <strong>PDF Merge Guide</strong></a>
   <a href="/blog/extract-pages-from-pdf-online-free">Next: <strong>PDF Split Guide</strong> &rarr;</a>
-</div>
+</nav>
 
-<div class="bp-related">
+<section class="page-section">
   <h2>Related Tools</h2>
-  <div class="bp-related-grid">
-    <a href="/blog/extract-pages-from-pdf-online-free" class="bp-related-card"><h4>PDF Split</h4><p>Split a rotated PDF into separate pages or ranges.</p></a>
-    <a href="/blog/merge-multiple-pdf-files-into-one-free" class="bp-related-card"><h4>PDF Merge</h4><p>Combine rotated pages with other documents.</p></a>
-    <a href="/blog/pdf-compressor" class="bp-related-card"><h4>PDF Compressor</h4><p>Reduce file size after fixing page orientation.</p></a>
-    <a href="/blog/rotate-flip-image-online-free" class="bp-related-card"><h4>Image Rotate</h4><p>Rotate standalone images the same way.</p></a>
+  <div class="related-grid">
+    <a class="related-card" href="/blog/extract-pages-from-pdf-online-free"><strong>PDF Split</strong><span>Split a rotated PDF into separate pages or ranges.</span></a>
+    <a class="related-card" href="/blog/merge-multiple-pdf-files-into-one-free"><strong>PDF Merge</strong><span>Combine rotated pages with other documents.</span></a>
+    <a class="related-card" href="/blog/pdf-compressor"><strong>PDF Compressor</strong><span>Reduce file size after fixing page orientation.</span></a>
+    <a class="related-card" href="/blog/rotate-flip-image-online-free"><strong>Image Rotate</strong><span>Rotate standalone images the same way.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

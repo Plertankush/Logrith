@@ -23,12 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    #shadow-preview-wrap { display:flex;align-items:center;justify-content:center;min-height:240px;background:var(--gray-50);border-radius:var(--radius-lg);border:1.5px solid var(--gray-200); }
-    #shadow-preview-box { width:140px;height:140px;background:var(--white);border-radius:12px; }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -49,17 +49,20 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-css-box-shadow-generator">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/developer-tools">Developer Tools</a> › CSS Box Shadow Generator</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/developer-tools">Developer Tools</a> › CSS Box Shadow Generator</nav>
   <h1>Free CSS Box Shadow Generator</h1>
   <p>Adjust offset, blur, spread, color, and opacity visually — get the exact box-shadow CSS code instantly.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">🎨 Live Preview</span><span class="tool-tag">⚡ Instant Code</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#palette"></use></svg> Live Preview</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant Code</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:820px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Shadow Preview</h2>
     <div id="shadow-preview-wrap"><div id="shadow-preview-box"></div></div>
@@ -83,7 +86,7 @@
       </div>
       <div class="control-group">
         <label>Color</label>
-        <input type="color" id="shadow-color" value="#000000" style="width:100%;height:42px;border-radius:8px;border:1.5px solid var(--gray-200);cursor:pointer;">
+        <input type="color" id="shadow-color" value="#000000">
       </div>
       <div class="control-group">
         <label>Opacity: <span id="opacity-val">25</span>%</label>
@@ -95,55 +98,60 @@
       <label><input type="checkbox" id="inset-check"> Inset (inner shadow)</label>
     </div>
 
-    <div class="control-group mt-16" style="position:relative;">
+    <div class="control-group mt-16 relative">
       <label>CSS Code</label>
       <textarea class="tool-textarea mono" id="css-output" rows="2" readonly></textarea>
-      <button class="copy-btn" id="copy-btn">📋 Copy</button>
+      <button class="copy-btn" id="copy-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
     </div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>What does spread do in a box shadow?</h3><p>Positive spread expands the shadow outward beyond the element's edges, while negative spread shrinks the shadow inward, useful for tighter, more subtle shadows.</p></div>
-    <div class="faq-item-box"><h3>What is an inset shadow?</h3><p>An inset shadow appears inside the element's border rather than outside it, creating a pressed-in or recessed visual effect instead of a floating one.</p></div>
-    <div class="faq-item-box"><h3>Can I add multiple shadows?</h3><p>This tool generates a single box-shadow value. Multiple shadows can be created by separating multiple values with commas in your own CSS.</p></div>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card">
-      <h2>How to Use the CSS Box Shadow Generator</h2>
-      <div class="tool-steps">
-        <div class="tool-step">
-          <strong>1. Drag the offset sliders</strong>
-          Set the horizontal and vertical offset to position the shadow relative to the box, watching the live preview update instantly.
-        </div>
-        <div class="tool-step">
-          <strong>2. Adjust blur and spread</strong>
-          Increase blur radius for a softer, more diffuse edge, and use spread to expand or shrink the shadow's overall size.
-        </div>
-        <div class="tool-step">
-          <strong>3. Pick a color and opacity</strong>
-          Choose the shadow color with the color picker, then set opacity to control how solid or transparent it appears.
-        </div>
-        <div class="tool-step">
-          <strong>4. Copy the generated CSS</strong>
-          Check the Inset box if you want an inner shadow instead of a drop shadow, then copy the box-shadow declaration into your stylesheet.
-        </div>
-      </div>
-    </div>
+    <details class="faq-item">
+      <summary class="faq-q">What does spread do in a box shadow?</summary>
+      <div class="faq-a"><p>Positive spread expands the shadow outward beyond the element's edges, while negative spread shrinks the shadow inward, useful for tighter, more subtle shadows.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What is an inset shadow?</summary>
+      <div class="faq-a"><p>An inset shadow appears inside the element's border rather than outside it, creating a pressed-in or recessed visual effect instead of a floating one.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I add multiple shadows?</summary>
+      <div class="faq-a"><p>This tool generates a single box-shadow value. Multiple shadows can be created by separating multiple values with commas in your own CSS.</p></div>
+    </details>
   </div>
 </section>
 
-<section class="article-section">
+<section class="page-section">
+  <h2>How to Use the CSS Box Shadow Generator</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Drag the offset sliders</strong>
+      <p>Set the horizontal and vertical offset to position the shadow relative to the box, watching the live preview update instantly.</p>
+    </li>
+    <li class="step">
+      <strong>Adjust blur and spread</strong>
+      <p>Increase blur radius for a softer, more diffuse edge, and use spread to expand or shrink the shadow's overall size.</p>
+    </li>
+    <li class="step">
+      <strong>Pick a color and opacity</strong>
+      <p>Choose the shadow color with the color picker, then set opacity to control how solid or transparent it appears.</p>
+    </li>
+    <li class="step">
+      <strong>Copy the generated CSS</strong>
+      <p>Check the Inset box if you want an inner shadow instead of a drop shadow, then copy the box-shadow declaration into your stylesheet.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
   <h2>Visual CSS Box Shadow Builder</h2>
   <p>This tool lets you build a CSS box-shadow visually — adjusting horizontal and vertical offset, blur radius, spread, color, and opacity with sliders — while seeing a live preview and generating the exact CSS code to copy into your stylesheet.</p>
 
   <h3>Understanding Box Shadow Properties</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Horizontal offset</strong> — moves the shadow left (negative) or right (positive) of the element.</li>
     <li><strong>Vertical offset</strong> — moves the shadow up (negative) or down (positive) of the element.</li>
     <li><strong>Blur radius</strong> — controls how soft or sharp the shadow's edges are; higher values create a more diffuse, spread-out shadow.</li>
@@ -153,7 +161,7 @@
   </ul>
 
   <h3>Common Box Shadow Use Cases</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Cards and panels</strong> — a subtle shadow lifts UI elements visually off the background.</li>
     <li><strong>Buttons</strong> — a small shadow adds depth and a sense of interactivity.</li>
     <li><strong>Modals and dropdowns</strong> — a stronger shadow helps floating elements stand out clearly from page content behind them.</li>
@@ -191,34 +199,31 @@
   <p>Many design systems define a small, consistent set of elevation levels — for example a subtle shadow for resting cards, a medium shadow for hover states, and a strong shadow for modals — rather than a unique shadow value for every component. Using this generator to dial in two or three reference shadows and reusing those exact values across a project keeps elevation visually consistent instead of every component having a slightly different, ad hoc shadow.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/css-gradient-generator" class="tool-item"><div class="ti-text"><h4>CSS Gradient Generator</h4><p>Build linear and radial gradients visually.</p></div></a>
-    <a href="/tools/color-converter" class="tool-item"><div class="ti-text"><h4>Color Converter</h4><p>Convert colors between HEX, RGB, HSL, CMYK.</p></div></a>
-    <a href="/tools/css-minifier" class="tool-item"><div class="ti-text"><h4>CSS Minifier</h4><p>Minify or beautify your CSS code.</p></div></a>
-    <a href="/tools/html-minifier" class="tool-item"><div class="ti-text"><h4>HTML Minifier</h4><p>Minify or beautify HTML code.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">css box shadow generator</span>
-        <span class="keyword-tag">box shadow generator online</span>
-        <span class="keyword-tag">css shadow tool</span>
-        <span class="keyword-tag">drop shadow css generator</span>
-        <span class="keyword-tag">box shadow css code</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/css-gradient-generator"><strong>CSS Gradient Generator</strong><span>Build linear and radial gradients visually.</span></a>
+    <a class="related-card" href="/tools/color-converter"><strong>Color Converter</strong><span>Convert colors between HEX, RGB, HSL, CMYK.</span></a>
+    <a class="related-card" href="/tools/css-minifier"><strong>CSS Minifier</strong><span>Minify or beautify your CSS code.</span></a>
+    <a class="related-card" href="/tools/html-minifier"><strong>HTML Minifier</strong><span>Minify or beautify HTML code.</span></a>
   </div>
 </section>
 
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">css box shadow generator</span>
+    <span class="keyword-tag">box shadow generator online</span>
+    <span class="keyword-tag">css shadow tool</span>
+    <span class="keyword-tag">drop shadow css generator</span>
+    <span class="keyword-tag">box shadow css code</span>
+  </div>
+</section>
+
+</main>
+
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 function hexToRgba(hex, opacity) {
   hex = hex.replace('#','');

@@ -26,52 +26,13 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
 
-  <link rel="preload" href="/assets/css/style.css" as="style">
-  <link rel="stylesheet" href="/assets/css/style.css">
-
   <meta name="keywords" content="csv cleaner, csv deduplicator, clean csv file, remove duplicate csv rows, csv validator, csv formatter online">
 
-  <style>
-    .tool-hero { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #ecfdf5 100%);}
-    .tool-hero h1 span { color: #16a34a; }
-
-    .insp-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin-top:14px; }
-    .insp-card { background:var(--gray-50); border:1px solid var(--gray-200); border-radius:12px; padding:16px; }
-    .insp-card h3 { font-family:var(--font-display); font-size:.9rem; font-weight:700; color:var(--gray-900); margin-bottom:10px; display:flex; align-items:center; gap:8px; }
-    .insp-row { display:flex; justify-content:space-between; gap:10px; padding:6px 0; border-bottom:1px solid var(--gray-100); font-size:.84rem; }
-    .insp-row:last-child { border-bottom:none; }
-    .insp-row .k { color:var(--gray-500); }
-    .insp-row .v { color:var(--gray-900); font-weight:600; text-align:right; word-break:break-word; }
-
-    .clean-opts { display:flex; flex-direction:column; gap:10px; margin-top:14px; }
-    .clean-opt { display:flex; align-items:flex-start; gap:10px; padding:10px 12px; background:var(--gray-50); border:1px solid var(--gray-200); border-radius:10px; }
-    .clean-opt input[type="checkbox"] { width:16px; height:16px; margin-top:2px; accent-color:var(--primary); cursor:pointer; flex-shrink:0; }
-    .clean-opt label { font-size:.86rem; color:var(--gray-800); font-weight:600; cursor:pointer; }
-    .clean-opt p { font-size:.78rem; color:var(--gray-500); margin-top:2px; }
-    .clean-opt .inline-select { margin-top:8px; display:flex; gap:8px; flex-wrap:wrap; }
-    .clean-opt select { padding:6px 10px; border:1px solid var(--gray-200); border-radius:8px; font-size:.82rem; background:var(--white); }
-
-    .csv-preview-wrap { overflow-x:auto; margin-top:14px; border:1px solid var(--gray-200); border-radius:10px; }
-    table.csv-preview { border-collapse:collapse; width:100%; font-size:.8rem; }
-    table.csv-preview th, table.csv-preview td { border:1px solid var(--gray-100); padding:6px 10px; text-align:left; white-space:nowrap; max-width:220px; overflow:hidden; text-overflow:ellipsis; }
-    table.csv-preview th { background:var(--gray-50); font-weight:700; color:var(--gray-700); position:sticky; top:0; }
-    table.csv-preview tr:nth-child(even) { background:var(--gray-50); }
-
-    .article-section, .faq-section, .feature-section, .related-tools, .keyword-section, .howto-section {
-      max-width: 860px; margin: 22px auto 0; background: #fff; border: 1px solid var(--gray-100); border-radius: 14px; padding: 22px;
-    }
-    .article-section h2, .faq-section h2, .feature-section h2, .related-tools h2, .keyword-section h2, .howto-section h2 { margin-bottom: 14px; }
-    .article-section p, .howto-section p { margin: 0 0 12px; line-height: 1.8; color: var(--gray-700); }
-    .feature-list, .keyword-list, .related-list, .howto-list { margin: 0; padding-left: 18px; }
-    .feature-list li, .keyword-list li, .related-list li, .howto-list li { margin-bottom: 10px; color: var(--gray-700); line-height: 1.7; }
-    .privacy-note { max-width: 860px; margin: 10px auto 0; font-size: .88rem; color: var(--gray-600); text-align: left; }
-    .faq-item { border-bottom: 1px solid var(--gray-100); padding: 14px 0; }
-    .faq-item:last-child { border-bottom: none; }
-    .faq-q { font-weight: 700; color: var(--gray-800); margin-bottom: 6px; }
-    .faq-a { color: var(--gray-700); line-height: 1.8; }
-    .related-list a { color: var(--primary); text-decoration: none; font-weight: 600; }
-    .related-list a:hover { text-decoration: underline; }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {
@@ -129,32 +90,32 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-csv-cleaner">
 <div id="navbar"></div>
 
 <main>
-  <div class="tool-hero">
-    <div class="tool-hero-inner">
-      <div class="tool-breadcrumb">
+  <header class="page-hero">
+    <div class="page-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a> › <a href="/categories/global-tools">Global Tools</a> › CSV Cleaner
-      </div>
+      </nav>
       <h1>CSV Cleaner – Clean<span> and Organize</span> CSV Files</h1>
       <p>Remove duplicate rows, trim whitespace, drop empty rows and columns, and flag invalid emails — all in your browser.</p>
-      <div class="tool-tags">
-        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
-        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#lock"></use></svg> Local Processing</span>
-        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#csv"></use></svg> Real CSV Parser</span>
-        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#speed"></use></svg> Instant</span>
+      <div class="tag-list">
+        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
+        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#lock"></use></svg> Local Processing</span>
+        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#csv"></use></svg> Real CSV Parser</span>
+        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#speed"></use></svg> Instant</span>
       </div>
     </div>
-  </div>
+  </header>
 
-  <div class="tool-workspace" style="max-width:960px;">
+  <div class="tool-workspace">
     <div class="tool-card">
       <h2>Upload or Paste a CSV</h2>
       <div class="upload-zone" id="upload-zone">
         <input type="file" id="file-input" accept=".csv,text/csv">
-        <svg class="icon" style="width:40px;height:40px;color:var(--gray-400);"><use href="/assets/svg/icons.svg#csv"></use></svg>
+        <svg class="icon u-bbd9fb"><use href="/assets/svg/icons.svg#csv"></use></svg>
         <h3>Drop a CSV file here or click to browse</h3>
         <p>Or paste raw CSV text in the box below.</p>
         <span class="upload-limit">Works with CSVs of any size your browser can handle</span>
@@ -166,17 +127,17 @@
       <div class="btn-group mt-12">
         <button class="btn btn-primary" id="parse-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#search"></use></svg> Analyze CSV</button>
       </div>
-      <div class="status-msg" id="status-msg" style="margin-top:12px;" aria-live="polite"></div>
+      <div class="status-msg mt-12" id="status-msg" aria-live="polite"></div>
     </div>
 
     <p class="privacy-note">Your CSV is processed in your browser. Files are not uploaded to Logrith.</p>
 
-    <div class="tool-card" id="summary-card" style="display:none;">
+    <div class="tool-card is-hidden" id="summary-card">
       <h2>CSV Summary</h2>
       <div class="insp-grid" id="summary-grid"></div>
     </div>
 
-    <div class="tool-card" id="options-card" style="display:none;">
+    <div class="tool-card is-hidden" id="options-card">
       <h2>Cleaning Options</h2>
       <div class="clean-opts">
         <div class="clean-opt">
@@ -226,10 +187,10 @@
       </div>
     </div>
 
-    <div class="tool-card" id="result-card" style="display:none;">
+    <div class="tool-card is-hidden" id="result-card">
       <h2>Cleaning Result</h2>
       <div class="insp-grid" id="result-grid"></div>
-      <div class="csv-preview-wrap" id="preview-wrap" style="display:none;">
+      <div class="csv-preview-wrap is-hidden" id="preview-wrap">
         <table class="csv-preview" id="preview-table"></table>
       </div>
       <div class="btn-group mt-16">
@@ -239,19 +200,27 @@
     </div>
   </div>
 
-  <section class="howto-section">
+  <section class="page-section">
     <h2>How to Clean a CSV</h2>
-    <ol class="howto-list">
-      <li>Upload a .csv file or paste raw CSV text directly into the box.</li>
-      <li>Click "Analyze CSV" to see row/column counts, duplicate count, and empty row/column counts.</li>
-      <li>Choose which cleaning operations to apply, then click "Clean CSV".</li>
-      <li>Review the before/after summary and preview table, then download or copy the cleaned result.</li>
+    <ol class="steps">
+      <li class="step">
+        <p>Upload a .csv file or paste raw CSV text directly into the box.</p>
+      </li>
+      <li class="step">
+        <p>Click "Analyze CSV" to see row/column counts, duplicate count, and empty row/column counts.</p>
+      </li>
+      <li class="step">
+        <p>Choose which cleaning operations to apply, then click "Clean CSV".</p>
+      </li>
+      <li class="step">
+        <p>Review the before/after summary and preview table, then download or copy the cleaned result.</p>
+      </li>
     </ol>
   </section>
 
-  <section class="feature-section">
+  <section class="page-section prose">
     <h2>What Problems Can It Detect?</h2>
-    <ul class="feature-list">
+    <ul>
       <li><strong>Duplicate rows:</strong> exact row matches, compared after trimming whitespace from each cell.</li>
       <li><strong>Empty rows and columns:</strong> rows where every cell is blank, and columns where every data row is blank.</li>
       <li><strong>Inconsistent whitespace:</strong> leading or trailing spaces that make otherwise-identical values look different.</li>
@@ -260,7 +229,7 @@
     </ul>
   </section>
 
-  <section class="article-section">
+  <section class="page-section prose">
     <h2>What Is a CSV Cleaner?</h2>
     <p>A CSV cleaner is a utility that reads a comma-separated-values file, finds common data problems, and fixes them in a repeatable way. CSV is a simple, text-based format, but that simplicity is also why CSV files exported from different systems — spreadsheets, databases, contact forms, e-commerce platforms — often arrive with duplicate rows, empty rows or columns, inconsistent spacing, and mismatched casing. A CSV cleaner automates the tedious part of fixing those problems by hand in a spreadsheet application.</p>
 
@@ -283,7 +252,7 @@
     <p>Every step — parsing, analysis, cleaning, and CSV re-serialization — runs locally in your browser using JavaScript. Your file is never uploaded to any server, which makes this tool suitable for cleaning files that contain personal information, customer data, or other sensitive content before you process it further elsewhere.</p>
 
     <h2>Common CSV Cleaning Tasks</h2>
-    <ul class="feature-list">
+    <ul>
       <li><strong>Cleaning an exported contact list:</strong> removing duplicate entries and empty rows left over from an export, before importing into another system.</li>
       <li><strong>Preparing data for a spreadsheet import:</strong> trimming stray whitespace and normalizing casing so lookups and filters behave consistently.</li>
       <li><strong>Deduplicating a mailing list:</strong> catching repeated email addresses or names that would otherwise result in duplicate sends.</li>
@@ -297,58 +266,59 @@
     <p>People use this tool when searching for phrases like "remove duplicate rows csv online," "clean csv file free," "csv whitespace trimmer," and "validate csv data online" — this page is built to answer those tasks directly with a working, browser-based tool rather than a manual spreadsheet workaround.</p>
   </section>
 
-  <section class="faq-section">
+  <section class="page-section">
     <h2>CSV Cleaner FAQ</h2>
-    <div class="faq-item">
-      <div class="faq-q">Does this tool detect duplicate rows?</div>
-      <div class="faq-a">Yes. It compares every cell in a row, after trimming whitespace, against every other row and flags exact matches as duplicates.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Can it handle fields that contain commas?</div>
-      <div class="faq-a">Yes. The parser correctly handles quoted fields that contain commas, quotes, or line breaks, following standard CSV quoting rules.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Will it upload my CSV file anywhere?</div>
-      <div class="faq-a">No. The file is parsed and cleaned entirely in your browser using JavaScript. Nothing is sent to a server.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Can I undo a cleaning operation?</div>
-      <div class="faq-a">The cleaning options are previewed before you download, and your original uploaded file is never modified, so you can re-upload it and try different options at any time.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Is this tool free to use?</div>
-      <div class="faq-a">Yes, this tool is completely free with no account, signup, or row limit beyond what your browser can handle.</div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">Does this tool detect duplicate rows?</summary>
+        <div class="faq-a"><p>Yes. It compares every cell in a row, after trimming whitespace, against every other row and flags exact matches as duplicates.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Can it handle fields that contain commas?</summary>
+        <div class="faq-a"><p>Yes. The parser correctly handles quoted fields that contain commas, quotes, or line breaks, following standard CSV quoting rules.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Will it upload my CSV file anywhere?</summary>
+        <div class="faq-a"><p>No. The file is parsed and cleaned entirely in your browser using JavaScript. Nothing is sent to a server.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Can I undo a cleaning operation?</summary>
+        <div class="faq-a"><p>The cleaning options are previewed before you download, and your original uploaded file is never modified, so you can re-upload it and try different options at any time.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Is this tool free to use?</summary>
+        <div class="faq-a"><p>Yes, this tool is completely free with no account, signup, or row limit beyond what your browser can handle.</p></div>
+      </details>
     </div>
   </section>
 
-  <section class="related-tools">
+  <section class="page-section">
     <h2>Related Tools</h2>
-    <ul class="related-list">
-      <li><a href="/tools/json-repair">JSON Repair Tool</a></li>
-      <li><a href="/tools/url-deduplicator">URL Deduplicator</a></li>
-      <li><a href="/tools/ai-context-calculator">AI Token & Context Calculator</a></li>
-      <li><a href="/tools/markdown-to-html">Markdown to HTML Converter</a></li>
-    </ul>
+    <div class="related-grid">
+      <a class="related-card" href="/tools/json-repair"><strong>JSON Repair Tool</strong></a>
+      <a class="related-card" href="/tools/url-deduplicator"><strong>URL Deduplicator</strong></a>
+      <a class="related-card" href="/tools/ai-context-calculator"><strong>AI Token &amp; Context Calculator</strong></a>
+      <a class="related-card" href="/tools/markdown-to-html"><strong>Markdown to HTML Converter</strong></a>
+    </div>
   </section>
 
-  <section class="keyword-section">
+  <section class="page-section">
     <h2>Top CSV Cleaner Search Queries</h2>
-    <ul class="keyword-list">
-      <li>csv cleaner online</li>
-      <li>remove duplicate csv rows</li>
-      <li>clean csv file free</li>
-      <li>csv validator online</li>
-      <li>trim csv whitespace</li>
-      <li>csv deduplicator tool</li>
-      <li>fix messy csv online</li>
-    </ul>
+    <div class="keyword-box">
+      <span class="keyword-tag">csv cleaner online</span>
+      <span class="keyword-tag">remove duplicate csv rows</span>
+      <span class="keyword-tag">clean csv file free</span>
+      <span class="keyword-tag">csv validator online</span>
+      <span class="keyword-tag">trim csv whitespace</span>
+      <span class="keyword-tag">csv deduplicator tool</span>
+      <span class="keyword-tag">fix messy csv online</span>
+    </div>
   </section>
 </main>
 
 <div id="footer"></div>
+<script src="/assets/js/main.js"></script>
 
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
 
 <script>
 /* ---------- CSV parser: character-by-character state machine ---------- */

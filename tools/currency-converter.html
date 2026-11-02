@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -51,27 +55,30 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-currency-converter">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/calculate-convert">Calculate & Convert</a> › Currency Converter</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/calculate-convert">Calculate &amp; Convert</a> › Currency Converter</nav>
   <h1>Free Currency Converter</h1>
   <p>Convert between any two currencies using your own exchange rate. Fast, works offline, and keeps a history of your recent conversions.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">🌍 Any Currency</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#globe"></use></svg> Any Currency</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:700px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Enter Conversion Details</h2>
     <div class="controls-grid">
       <div class="control-group">
         <label>From Currency Code</label>
-        <input type="text" id="from-currency" class="field-input" value="USD" maxlength="6" style="text-transform:uppercase;">
+        <input type="text" id="from-currency" class="field-input" value="USD" maxlength="6">
       </div>
       <div class="control-group">
         <label>To Currency Code</label>
-        <input type="text" id="to-currency" class="field-input" value="INR" maxlength="6" style="text-transform:uppercase;">
+        <input type="text" id="to-currency" class="field-input" value="INR" maxlength="6">
       </div>
       <div class="control-group">
         <label>Exchange Rate (1 From = ? To)</label>
@@ -83,63 +90,71 @@
       </div>
     </div>
     <div class="btn-group mt-16">
-      <button class="btn btn-primary btn-lg" id="convert-btn">🔄 Convert</button>
-      <button class="btn btn-secondary" id="swap-btn">⇅ Swap Currencies</button>
+      <button class="btn btn-primary btn-lg" id="convert-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#refresh"></use></svg> Convert</button>
+      <button class="btn btn-secondary" id="swap-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#swap"></use></svg> Swap Currencies</button>
     </div>
     <div class="status-msg" id="status-msg"></div>
   </div>
 
-  <div class="tool-card" id="result-card" style="display:none;">
+  <div class="tool-card is-hidden" id="result-card">
     <h2>Result</h2>
-    <div style="text-align:center;padding:20px;background:var(--gray-50);border-radius:var(--radius-lg);">
-      <div style="font-family:var(--font-display);font-size:2rem;font-weight:800;color:var(--primary);" id="result-value">—</div>
+    <div class="u-7fff2e">
+      <div id="result-value">—</div>
       <div class="mini-note mt-8" id="rate-note"></div>
     </div>
   </div>
 
-  <div class="tool-card" id="history-card" style="display:none;">
+  <div class="tool-card is-hidden" id="history-card">
     <h2>Recent Conversions</h2>
-    <div id="history-list" style="display:flex;flex-direction:column;gap:8px;"></div>
+    <div id="history-list"></div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>Why do I need to enter my own exchange rate?</h3><p>This tool works entirely offline in your browser without connecting to a live financial data service, so you enter the current rate yourself from a source you trust, and always know exactly which rate was used in the calculation.</p></div>
-    <div class="faq-item-box"><h3>Where can I find the current exchange rate?</h3><p>Your bank, a financial news website, or a currency data provider will show current rates. Rates fluctuate constantly, so check a live source close to when you need the conversion.</p></div>
-    <div class="faq-item-box"><h3>Can I convert any currency pair?</h3><p>Yes, enter any two currency codes and the exchange rate between them — the tool works for any currency pair, not just a fixed list.</p></div>
-    <div class="faq-item-box"><h3>Does this tool store my conversion history?</h3><p>Recent conversions are kept only in your browser's memory for the current session and are not saved or sent anywhere.</p></div>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card">
-      <h2>How to Use the Currency Converter</h2>
-      <div class="tool-steps">
-        <div class="tool-step">
-          <strong>1. Look up the current rate</strong>
-          Check your bank, a financial news site, or a currency data provider for the current exchange rate between your two currencies.
-        </div>
-        <div class="tool-step">
-          <strong>2. Enter the currency codes</strong>
-          Type the three-letter codes (like USD, EUR, INR, GBP) in the From and To fields for your own reference.
-        </div>
-        <div class="tool-step">
-          <strong>3. Enter the rate and amount</strong>
-          Fill in the exchange rate and the amount you want to convert.
-        </div>
-        <div class="tool-step">
-          <strong>4. Click Convert</strong>
-          The result appears instantly, and gets added to your recent conversions list for the session.
-        </div>
-      </div>
-    </div>
+    <details class="faq-item">
+      <summary class="faq-q">Why do I need to enter my own exchange rate?</summary>
+      <div class="faq-a"><p>This tool works entirely offline in your browser without connecting to a live financial data service, so you enter the current rate yourself from a source you trust, and always know exactly which rate was used in the calculation.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Where can I find the current exchange rate?</summary>
+      <div class="faq-a"><p>Your bank, a financial news website, or a currency data provider will show current rates. Rates fluctuate constantly, so check a live source close to when you need the conversion.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I convert any currency pair?</summary>
+      <div class="faq-a"><p>Yes, enter any two currency codes and the exchange rate between them — the tool works for any currency pair, not just a fixed list.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does this tool store my conversion history?</summary>
+      <div class="faq-a"><p>Recent conversions are kept only in your browser's memory for the current session and are not saved or sent anywhere.</p></div>
+    </details>
   </div>
 </section>
 
-<section class="article-section">
+<section class="page-section">
+  <h2>How to Use the Currency Converter</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Look up the current rate</strong>
+      <p>Check your bank, a financial news site, or a currency data provider for the current exchange rate between your two currencies.</p>
+    </li>
+    <li class="step">
+      <strong>Enter the currency codes</strong>
+      <p>Type the three-letter codes (like USD, EUR, INR, GBP) in the From and To fields for your own reference.</p>
+    </li>
+    <li class="step">
+      <strong>Enter the rate and amount</strong>
+      <p>Fill in the exchange rate and the amount you want to convert.</p>
+    </li>
+    <li class="step">
+      <strong>Click Convert</strong>
+      <p>The result appears instantly, and gets added to your recent conversions list for the session.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
   <h2>Currency Converter With Custom Exchange Rate</h2>
   <p>This currency converter lets you convert between any two currencies using an exchange rate you provide, rather than relying on a live data feed from a third-party financial API. This design makes the tool fast, reliable, and completely private — there's no dependency on an external service that could be rate-limited, go down, or require an API key.</p>
 
@@ -147,7 +162,7 @@
   <p>Live currency APIs are useful, but they come with trade-offs: they require constant internet access to a third-party service, are subject to rate limits or downtime, and often require an API key that isn't practical to expose in a purely client-side tool. By instead letting you enter the current exchange rate directly — which you can look up from your bank, a financial news site, or any currency data provider you trust — this tool stays fast, works reliably, and gives you full transparency over exactly which rate is being used in the calculation, rather than a rate that updates silently behind the scenes.</p>
 
   <h3>How to Use This Converter</h3>
-  <ol class="howto-list">
+  <ol>
     <li>Look up the current exchange rate between your two currencies from a reliable source (your bank, XE, Google Finance, or similar).</li>
     <li>Enter the currency codes (like USD, EUR, INR, GBP) for reference.</li>
     <li>Enter the exchange rate as "how many units of the target currency equal 1 unit of the source currency."</li>
@@ -167,7 +182,7 @@
   <p>The exchange rate shown by your bank, a card network, a money-changer, and a financial site like XE or Google Finance are rarely identical. Banks and card issuers typically add a margin on top of the interbank "mid-market" rate, which is the raw rate financial data sites usually display. Because this tool lets you type in whichever rate you're actually working with, you get an accurate result for your specific situation instead of a generic mid-market figure that may not match what you'll actually pay or receive.</p>
 
   <h3>Common Mistakes When Converting Currency Manually</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Using the inverse rate by accident</strong> — entering the INR-to-USD rate when you meant USD-to-INR produces a wildly wrong result; the Swap button exists specifically to avoid this.</li>
     <li><strong>Mixing up decimal points</strong> — some currency pairs involve rates like 0.012 or 83.45, and a misplaced decimal can throw off a calculation by orders of magnitude.</li>
     <li><strong>Forgetting the rate changes daily</strong> — exchange rates fluctuate constantly, so a rate looked up yesterday may no longer be accurate for today's conversion.</li>
@@ -186,34 +201,31 @@
   <p>Freelancers and small businesses billing in a foreign currency often need to show a client both the foreign-currency amount and its local-currency equivalent at the time of invoicing. Entering the day's rate here gives a quick, verifiable reference figure to include alongside an invoice, without needing accounting software or a spreadsheet formula just for one conversion.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/unit-converter" class="tool-item"><div class="ti-text"><h4>Unit Converter</h4><p>Convert length, weight, temperature, and more.</p></div></a>
-    <a href="/tools/percentage-calculator" class="tool-item"><div class="ti-text"><h4>Percentage Calculator</h4><p>Calculate percentages and ratios quickly.</p></div></a>
-    <a href="/tools/number-base-converter" class="tool-item"><div class="ti-text"><h4>Number Base Converter</h4><p>Convert between binary, decimal, and hex.</p></div></a>
-    <a href="/tools/color-converter" class="tool-item"><div class="ti-text"><h4>Color Converter</h4><p>Convert between HEX, RGB, HSL, and CMYK.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">currency converter</span>
-        <span class="keyword-tag">currency converter online</span>
-        <span class="keyword-tag">convert currency free</span>
-        <span class="keyword-tag">exchange rate calculator</span>
-        <span class="keyword-tag">usd to inr converter</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/unit-converter"><strong>Unit Converter</strong><span>Convert length, weight, temperature, and more.</span></a>
+    <a class="related-card" href="/tools/percentage-calculator"><strong>Percentage Calculator</strong><span>Calculate percentages and ratios quickly.</span></a>
+    <a class="related-card" href="/tools/number-base-converter"><strong>Number Base Converter</strong><span>Convert between binary, decimal, and hex.</span></a>
+    <a class="related-card" href="/tools/color-converter"><strong>Color Converter</strong><span>Convert between HEX, RGB, HSL, and CMYK.</span></a>
   </div>
 </section>
 
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">currency converter</span>
+    <span class="keyword-tag">currency converter online</span>
+    <span class="keyword-tag">convert currency free</span>
+    <span class="keyword-tag">exchange rate calculator</span>
+    <span class="keyword-tag">usd to inr converter</span>
+  </div>
+</section>
+
+</main>
+
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 let history = [];
 

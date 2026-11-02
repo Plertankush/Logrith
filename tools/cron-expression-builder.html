@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -51,17 +55,20 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-cron-expression-builder">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/developer-tools">Developer Tools</a> › Cron Expression Builder</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/developer-tools">Developer Tools</a> › Cron Expression Builder</nav>
   <h1>Free Cron Expression Builder</h1>
   <p>Build a cron expression visually, or paste one to get a plain-English explanation of when it runs.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">⏰ 5-Field Cron</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#clock"></use></svg> 5-Field Cron</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:820px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Build Expression</h2>
     <div class="controls-grid">
@@ -87,10 +94,10 @@
       </div>
     </div>
     <div class="insight-box mt-16">
-      <label style="font-size:.8rem;font-weight:600;color:var(--gray-500);">Generated Expression</label>
-      <div style="position:relative;margin-top:8px;">
-        <input type="text" id="cron-output" class="field-input mono" readonly style="font-size:1.1rem;font-weight:700;color:var(--primary);">
-        <button class="copy-btn" id="copy-btn" style="top:8px;">📋 Copy</button>
+      <label class="u-873a2f">Generated Expression</label>
+      <div class="u-8484c7">
+        <input type="text" id="cron-output" class="field-input mono" readonly>
+        <button class="copy-btn" id="copy-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
       </div>
       <div class="mini-note mt-8" id="cron-explanation"></div>
     </div>
@@ -102,47 +109,52 @@
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>What is a cron expression?</h3><p>A string of five fields (minute, hour, day of month, month, day of week) used to schedule recurring tasks on Unix-like systems.</p></div>
-    <div class="faq-item-box"><h3>What does an asterisk mean?</h3><p>An asterisk (*) means "every" value for that field — for example, an asterisk in the hour field means the job runs every hour.</p></div>
-    <div class="faq-item-box"><h3>How do I run a job every 15 minutes?</h3><p>Use */15 in the minute field, with all other fields set to *. This means "every 15th minute."</p></div>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card">
-      <h2>How to Use the Cron Expression Builder</h2>
-      <div class="tool-steps">
-        <div class="tool-step">
-          <strong>1. Set each of the five fields</strong>
-          Type values into Minute, Hour, Day of Month, Month, and Day of Week — use * to mean "every" for a field you don't want to restrict.
-        </div>
-        <div class="tool-step">
-          <strong>2. Read the live explanation</strong>
-          As you edit each field, the plain-English explanation below the generated expression updates automatically so you can confirm the schedule is correct.
-        </div>
-        <div class="tool-step">
-          <strong>3. Or pick a common preset</strong>
-          Click any card in the Common Cron Presets grid — such as "Every Monday 9 AM" or "Every 15 minutes" — to instantly fill in all five fields.
-        </div>
-        <div class="tool-step">
-          <strong>4. Copy the expression</strong>
-          Click Copy next to the generated expression to grab the five-field cron string and paste it into your crontab or scheduler config.
-        </div>
-      </div>
-    </div>
+    <details class="faq-item">
+      <summary class="faq-q">What is a cron expression?</summary>
+      <div class="faq-a"><p>A string of five fields (minute, hour, day of month, month, day of week) used to schedule recurring tasks on Unix-like systems.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What does an asterisk mean?</summary>
+      <div class="faq-a"><p>An asterisk (*) means "every" value for that field — for example, an asterisk in the hour field means the job runs every hour.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How do I run a job every 15 minutes?</summary>
+      <div class="faq-a"><p>Use */15 in the minute field, with all other fields set to *. This means "every 15th minute."</p></div>
+    </details>
   </div>
 </section>
 
-<section class="article-section">
+<section class="page-section">
+  <h2>How to Use the Cron Expression Builder</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Set each of the five fields</strong>
+      <p>Type values into Minute, Hour, Day of Month, Month, and Day of Week — use * to mean "every" for a field you don't want to restrict.</p>
+    </li>
+    <li class="step">
+      <strong>Read the live explanation</strong>
+      <p>As you edit each field, the plain-English explanation below the generated expression updates automatically so you can confirm the schedule is correct.</p>
+    </li>
+    <li class="step">
+      <strong>Or pick a common preset</strong>
+      <p>Click any card in the Common Cron Presets grid — such as "Every Monday 9 AM" or "Every 15 minutes" — to instantly fill in all five fields.</p>
+    </li>
+    <li class="step">
+      <strong>Copy the expression</strong>
+      <p>Click Copy next to the generated expression to grab the five-field cron string and paste it into your crontab or scheduler config.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
   <h2>Cron Expression Builder and Explainer</h2>
   <p>This tool helps you build and understand cron expressions — the standard syntax used by Unix-like systems (Linux, macOS) and many task schedulers to define when a recurring job should run. Adjust each field individually and see the generated expression update live, along with a plain-English explanation.</p>
 
   <h3>The Five Cron Fields</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Minute (0-59)</strong> — which minute of the hour the job runs.</li>
     <li><strong>Hour (0-23)</strong> — which hour of the day, in 24-hour format.</li>
     <li><strong>Day of Month (1-31)</strong> — which day of the month.</li>
@@ -151,7 +163,7 @@
   </ul>
 
   <h3>Common Cron Syntax Patterns</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>*</strong> — matches every value (every minute, every hour, etc.)</li>
     <li><strong>*/N</strong> — matches every Nth value (e.g., */15 in minutes means every 15 minutes)</li>
     <li><strong>N-M</strong> — a range of values (e.g., 9-17 in hours means 9 AM to 5 PM)</li>
@@ -177,7 +189,7 @@
   <p>When both the day-of-month and day-of-week fields are set to specific values rather than *, most cron implementations treat them as an OR condition — the job runs if either condition is true, not only when both match simultaneously. This is a frequently misunderstood part of cron syntax and worth double-checking with the generated explanation before relying on it for a production schedule.</p>
 
   <h3>Common Scheduling Use Cases</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Nightly backups</strong> — running a database or file backup once a day during low-traffic hours, such as 0 2 * * * for 2 AM daily.</li>
     <li><strong>Periodic cache clearing</strong> — using an interval like */30 * * * * to clear a cache every 30 minutes.</li>
     <li><strong>Weekly reports</strong> — sending a summary email every Monday morning with an expression like 0 9 * * 1.</li>
@@ -188,7 +200,7 @@
   <p>Before cron-style schedulers, recurring tasks had to be triggered manually or through custom scripts with their own timing logic. Cron standardized this into a compact, portable syntax that works the same way across Linux servers, container orchestrators, and many SaaS scheduling features, which is why the same five-field format keeps showing up well beyond traditional Unix systems.</p>
 
   <h3>Common Mistakes with Cron Expressions</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Confusing minute and hour order</strong> — cron lists minute before hour, which is the reverse of how people usually say a time aloud ("9:30" vs the cron order of minute-then-hour).</li>
     <li><strong>Forgetting that day-of-month and day-of-week are OR'd together</strong> — leaving one as a specific value while meaning "any" can cause a job to run on unexpected days.</li>
     <li><strong>Using the wrong day-of-week numbering</strong> — remember 0 (or 7) is Sunday, not Monday.</li>
@@ -204,34 +216,31 @@
   <p>Some schedulers extend the standard five-field format with a seconds field or special strings like @daily or @hourly as shortcuts. This tool focuses on the standard, widely portable five-field syntax supported by crontab, most CI/CD schedule triggers, and container orchestration tools, since that format is the one most systems expect by default.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/regex-tester" class="tool-item"><div class="ti-text"><h4>Regex Tester</h4><p>Test and debug regular expressions.</p></div></a>
-    <a href="/tools/date-difference-calculator" class="tool-item"><div class="ti-text"><h4>Date Difference Calculator</h4><p>Calculate days between two dates.</p></div></a>
-    <a href="/tools/time-zone-converter" class="tool-item"><div class="ti-text"><h4>Time Zone Converter</h4><p>Convert time between world time zones.</p></div></a>
-    <a href="/tools/uuid-generator" class="tool-item"><div class="ti-text"><h4>UUID Generator</h4><p>Generate unique IDs for jobs and tasks.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">cron expression builder</span>
-        <span class="keyword-tag">cron generator online</span>
-        <span class="keyword-tag">cron job builder</span>
-        <span class="keyword-tag">crontab generator</span>
-        <span class="keyword-tag">cron syntax explainer</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/regex-tester"><strong>Regex Tester</strong><span>Test and debug regular expressions.</span></a>
+    <a class="related-card" href="/tools/date-difference-calculator"><strong>Date Difference Calculator</strong><span>Calculate days between two dates.</span></a>
+    <a class="related-card" href="/tools/time-zone-converter"><strong>Time Zone Converter</strong><span>Convert time between world time zones.</span></a>
+    <a class="related-card" href="/tools/uuid-generator"><strong>UUID Generator</strong><span>Generate unique IDs for jobs and tasks.</span></a>
   </div>
 </section>
 
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">cron expression builder</span>
+    <span class="keyword-tag">cron generator online</span>
+    <span class="keyword-tag">cron job builder</span>
+    <span class="keyword-tag">crontab generator</span>
+    <span class="keyword-tag">cron syntax explainer</span>
+  </div>
+</section>
+
+</main>
+
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 const DAYS = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 const MONTHS = ['','January','February','March','April','May','June','July','August','September','October','November','December'];

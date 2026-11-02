@@ -18,21 +18,14 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js" defer></script>
-  <style>
-    .pdf-file-item { display:flex; align-items:center; gap:12px; padding:12px 16px; background:var(--gray-50); border:1.5px solid var(--gray-200); border-radius:var(--radius); margin-bottom:8px; cursor:grab; transition:var(--transition); }
-    .pdf-file-item:hover { border-color:var(--primary); }
-    .pdf-file-item.dragging { opacity:0.5; }
-    .pdf-file-item .pfi-icon { font-size:1.4rem; flex-shrink:0; }
-    .pdf-file-item .pfi-info { flex:1; min-width:0; }
-    .pdf-file-item .pfi-name { font-weight:600; font-size:.9rem; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-    .pdf-file-item .pfi-meta { font-size:.78rem; color:var(--gray-500); }
-    .pdf-file-item .pfi-remove { background:none; border:none; cursor:pointer; color:var(--gray-500); font-size:1.1rem; padding:4px; transition:var(--transition); }
-    .pdf-file-item .pfi-remove:hover { color:var(--error); }
-    .drag-handle { color:var(--gray-300); cursor:grab; font-size:1.1rem; }
-  </style>
 
   <!-- Google tag (gtag.js) -->
  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
@@ -57,78 +50,104 @@
   {"@context": "https://schema.org", "@type": "WebApplication", "name": "PDF Merge", "url": "https://logrith.in/tools/pdf-merge", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript and a modern web browser", "description": "Merge multiple PDF files into one online for free. Drag to reorder, combine PDFs instantly. No server upload, 100% browser-based PDF merger.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}
   </script>
   <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "PDF Tools", "item": "https://logrith.in/categories/image-pdf-tools"}, {"@type": "ListItem", "position": 3, "name": "PDF Merge", "item": "https://logrith.in/tools/pdf-merge"}]}
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Image & PDF Tools", "item": "https://logrith.in/categories/image-pdf-tools"}, {"@type": "ListItem", "position": 3, "name": "PDF Merge", "item": "https://logrith.in/tools/pdf-merge"}]}
   </script>
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I merge PDF files?", "acceptedAnswer": {"@type": "Answer", "text": "Upload the PDFs you want to combine, arrange them in the desired order, and download the merged file."}}, {"@type": "Question", "name": "Is there a limit to how many PDFs I can merge?", "acceptedAnswer": {"@type": "Answer", "text": "You can combine several files at once, though very large files may be limited by browser memory."}}, {"@type": "Question", "name": "Will merging change the quality of my PDFs?", "acceptedAnswer": {"@type": "Answer", "text": "No, pages are combined as they are without recompression."}}, {"@type": "Question", "name": "Are my PDFs uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No, merging happens in your browser."}}]}
   </script>
 </head>
-<body>
+<body class="page-pdf-merge">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/utilities">PDF Tools</a> › PDF Merge</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/image-pdf-tools">Image &amp; PDF Tools</a> › PDF Merge</nav>
   <h1>Free PDF Merge Online</h1>
   <p>Combine multiple PDF files into a single PDF. Drag to reorder pages before merging. No upload to any server — fully browser-based using PDF-Lib.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">🔒 Private</span><span class="tool-tag">↕️ Drag to Reorder</span><span class="tool-tag">📄 Unlimited PDFs</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lock"></use></svg> Private</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#swap"></use></svg> Drag to Reorder</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#file-text"></use></svg> Unlimited PDFs</span></div>
+</div></header>
 
 <div class="tool-workspace">
   <div class="tool-card">
     <h2>Upload PDF Files</h2>
     <div class="upload-zone" id="upload-zone">
       <input type="file" id="file-input" accept=".pdf,application/pdf" multiple>
-      <div class="upload-icon">📎</div>
+      <div class="upload-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#attachment"></use></svg></div>
       <h3>Drop PDF files here or click to browse</h3>
       <p>Select multiple PDF files to merge — Max 20MB each</p>
     </div>
   </div>
 
-  <div class="tool-card" id="files-card" style="display:none;">
+  <div class="tool-card is-hidden" id="files-card">
     <h2>PDF Files — Drag to Reorder</h2>
     <div id="file-list"></div>
     <div class="stats-row mt-12" id="files-stats"></div>
     <div class="btn-group mt-16">
-      <button class="btn btn-primary btn-lg" id="merge-btn">📎 Merge PDFs</button>
+      <button class="btn btn-primary btn-lg" id="merge-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#attachment"></use></svg> Merge PDFs</button>
       <button class="btn btn-secondary" id="add-more-btn">+ Add More Files</button>
-      <button class="btn btn-secondary" id="clear-btn">✕ Clear All</button>
+      <button class="btn btn-secondary" id="clear-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Clear All</button>
     </div>
     <div class="progress-bar mt-12" id="progress"><div class="progress-fill" id="progress-fill"></div></div>
     <div class="status-msg" id="status-msg"></div>
   </div>
 
-  <div class="tool-card" id="output-card" style="display:none;">
-    <h2>✅ PDF Merged Successfully</h2>
+  <div class="tool-card is-hidden" id="output-card">
+    <h2><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> PDF Merged Successfully</h2>
     <div id="output-info" class="stats-row mt-4"></div>
     <div class="btn-group mt-16">
-      <button class="btn btn-success btn-lg" id="download-btn">⬇️ Download Merged PDF</button>
+      <button class="btn btn-success btn-lg" id="download-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#download"></use></svg> Download Merged PDF</button>
       <button class="btn btn-secondary" id="merge-more-btn">+ Merge More PDFs</button>
     </div>
   </div>
 </div>
 
-<div class="related-tools">
+<section class="page-section">
   <h2>Related PDF Tools</h2>
   <div class="related-grid">
-    <a href="pdf-split" class="tool-item"><div class="ti-icon">✂️</div><div class="ti-text"><h4>PDF Split</h4><p>Split PDF into separate files</p></div></a>
-    <a href="jpg-to-pdf" class="tool-item"><div class="ti-icon">🖼️</div><div class="ti-text"><h4>JPG to PDF</h4><p>Convert images to PDF</p></div></a>
-    <a href="pdf-to-jpg" class="tool-item"><div class="ti-icon">📄</div><div class="ti-text"><h4>PDF to JPG</h4><p>Extract PDF pages as images</p></div></a>
-    <a href="pdf-rotate" class="tool-item"><div class="ti-icon">🔃</div><div class="ti-text"><h4>PDF Rotate</h4><p>Rotate PDF pages</p></div></a>
+    <a class="related-card" href="pdf-split"><i class="related-icon" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#scissors"></use></svg></i><div><strong>PDF Split</strong><span>Split PDF into separate files</span></div></a>
+    <a class="related-card" href="jpg-to-pdf"><i class="related-icon" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#image"></use></svg></i><div><strong>JPG to PDF</strong><span>Convert images to PDF</span></div></a>
+    <a class="related-card" href="pdf-to-jpg"><i class="related-icon" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#file-text"></use></svg></i><div><strong>PDF to JPG</strong><span>Extract PDF pages as images</span></div></a>
+    <a class="related-card" href="pdf-rotate"><i class="related-icon" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#refresh"></use></svg></i><div><strong>PDF Rotate</strong><span>Rotate PDF pages</span></div></a>
   </div>
-</div>
+</section>
 
-<div class="faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
-  <div class="faq-item"><div class="faq-q">How do I merge PDF files for free?</div><div class="faq-a">Upload your PDF files, drag to arrange them in the desired order, then click Merge PDFs. The tool combines them using PDF-Lib in your browser. Download the merged file instantly.</div></div>
-  <div class="faq-item"><div class="faq-q">Is there a limit on how many PDFs I can merge?</div><div class="faq-a">There's no hard limit, but be aware that very large PDFs may be slow to process depending on your device. Each file has a 20MB limit.</div></div>
-  <div class="faq-item"><div class="faq-q">Will the merged PDF maintain original formatting?</div><div class="faq-a">Yes! PDF-Lib preserves all page content, formatting, images, and links during the merge. The output is a faithful combination of all input PDFs.</div></div>
-  <div class="faq-item"><div class="faq-q">Are my PDFs uploaded to your servers?</div><div class="faq-a">No. All PDF processing happens entirely in your browser. Your files are never sent to any server, ensuring complete privacy.</div></div>
-  <div class="faq-item"><div class="faq-q">Can I merge PDFs of different page sizes?</div><div class="faq-a">Yes, each page keeps its own original dimensions in the merged file. Mixing A4 and Letter-sized pages, or portrait and landscape pages, works fine within a single merged PDF.</div></div>
-  <div class="faq-item"><div class="faq-q">What happens if I accidentally add the wrong file?</div><div class="faq-a">Use the ✕ button next to any file in the list to remove it before merging, or click Clear All to start over completely.</div></div>
-  <div class="faq-item"><div class="faq-q">Does merging work on mobile browsers?</div><div class="faq-a">Yes, the tool runs on any modern browser including mobile Chrome and Safari, since all processing uses standard JavaScript and canvas features supported across devices.</div></div>
-</div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">How do I merge PDF files for free?</summary>
+      <div class="faq-a"><p>Upload your PDF files, drag to arrange them in the desired order, then click Merge PDFs. The tool combines them using PDF-Lib in your browser. Download the merged file instantly.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is there a limit on how many PDFs I can merge?</summary>
+      <div class="faq-a"><p>There's no hard limit, but be aware that very large PDFs may be slow to process depending on your device. Each file has a 20MB limit.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Will the merged PDF maintain original formatting?</summary>
+      <div class="faq-a"><p>Yes! PDF-Lib preserves all page content, formatting, images, and links during the merge. The output is a faithful combination of all input PDFs.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Are my PDFs uploaded to your servers?</summary>
+      <div class="faq-a"><p>No. All PDF processing happens entirely in your browser. Your files are never sent to any server, ensuring complete privacy.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I merge PDFs of different page sizes?</summary>
+      <div class="faq-a"><p>Yes, each page keeps its own original dimensions in the merged file. Mixing A4 and Letter-sized pages, or portrait and landscape pages, works fine within a single merged PDF.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What happens if I accidentally add the wrong file?</summary>
+      <div class="faq-a"><p>Use the <svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> button next to any file in the list to remove it before merging, or click Clear All to start over completely.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does merging work on mobile browsers?</summary>
+      <div class="faq-a"><p>Yes, the tool runs on any modern browser including mobile Chrome and Safari, since all processing uses standard JavaScript and canvas features supported across devices.</p></div>
+    </details>
+  </div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>How PDF Merging Works</h2>
   <p>This tool uses PDF-Lib, a JavaScript library that works directly with a PDF's internal page structure rather than converting pages to images and stitching them together. When you merge files, each page from every uploaded PDF is copied — complete with its original text, fonts, images, and vector graphics — into a new combined document, in the exact order you've arranged them. Because pages are copied at the structural level rather than rendered and re-encoded, there's no quality loss anywhere in the process.</p>
 
@@ -136,7 +155,7 @@
   <p>When combining multiple source files into one document, the order files were uploaded in isn't always the order you want them to appear. This tool lets you drag any file up or down in the list before merging, which updates the pages' final position in the output PDF. This matters most when assembling something like a report built from several separately-authored sections, where the sections need to read in a specific sequence rather than the order the individual files happened to be created or uploaded.</p>
 
   <h3>Common Reasons to Merge PDFs</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Combining a cover letter with a resume</strong> into one file for a job application that requests a single attachment.</li>
     <li><strong>Assembling a complete report</strong> from sections written or exported separately, such as individual chapters or departmental contributions.</li>
     <li><strong>Merging scanned pages</strong> that were captured as separate files into one continuous document.</li>
@@ -160,11 +179,12 @@
   <p>It's worth pausing to consider whether merging is actually the right move for a given situation. Some contexts specifically call for a single file — an online application form that only accepts one upload, a printing job that needs to run as one continuous job, or an email where attaching one file is cleaner than several. Other contexts are better served keeping files separate, such as when each document needs to be referenced, edited, or shared independently later. Merging is a one-way convenience: once combined, you'd need to split the file again to separate the original documents, so it's generally worth keeping untouched copies of your original files before merging, just in case you need them individually again later.</p>
 </section>
 
+</main>
+
 <div id="footer"></div>
+<script src="/assets/js/main.js"></script>
 
-<script src="/load-components.js"></script>
 
-<script src="/assets/js/main.js" defer></script>
 <script>
 let pdfFiles = [], mergedBlob = null;
 let dragSrc = null;
@@ -174,12 +194,12 @@ function renderFileList() {
   list.innerHTML = pdfFiles.map((f, i) => `
     <div class="pdf-file-item" draggable="true" data-idx="${i}">
       <span class="drag-handle">⠿</span>
-      <span class="pfi-icon">📄</span>
+      <span class="pfi-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#file-text"></use></svg></span>
       <div class="pfi-info">
         <div class="pfi-name">${f.name}</div>
         <div class="pfi-meta">${formatSize(f.size)}</div>
       </div>
-      <button class="pfi-remove" data-idx="${i}">✕</button>
+      <button class="pfi-remove" data-idx="${i}"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg></button>
     </div>`).join('');
 
   list.querySelectorAll('[draggable]').forEach(el => {

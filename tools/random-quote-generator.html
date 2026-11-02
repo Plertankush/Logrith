@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -45,17 +49,20 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-random-quote-generator">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/text-generators">Text & Generators</a> › Random Quote Generator</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/text-generators">Text &amp; Generators</a> › Random Quote Generator</nav>
   <h1>Free Random Quote Generator</h1>
   <p>Get an inspiring random quote — filter by category like motivation, success, or life — and copy or share instantly.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">💬 5 Categories</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#message"></use></svg> 5 Categories</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:700px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Choose a Category</h2>
     <div class="mode-grid">
@@ -66,40 +73,64 @@
       <div class="mode-card" data-cat="wisdom"><h3>Wisdom</h3><p>Timeless insight</p></div>
     </div>
     <div class="btn-group mt-16">
-      <button class="btn btn-primary btn-lg" id="generate-btn">💬 Get Quote</button>
-      <button class="btn btn-secondary" id="copy-btn">📋 Copy</button>
+      <button class="btn btn-primary btn-lg" id="generate-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#message"></use></svg> Get Quote</button>
+      <button class="btn btn-secondary" id="copy-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
     </div>
   </div>
 
   <div class="tool-card" id="result-card">
-    <div style="text-align:center;padding:24px;">
-      <div style="font-size:2rem;color:var(--gray-300);">"</div>
-      <div style="font-family:var(--font-display);font-size:1.3rem;font-weight:600;color:var(--gray-900);line-height:1.6;" id="quote-text">Click "Get Quote" to see an inspiring quote.</div>
-      <div style="margin-top:12px;color:var(--primary);font-weight:700;" id="quote-author"></div>
+    <div class="u-4cc191">
+      <div class="u-73329a">"</div>
+      <div id="quote-text">Click "Get Quote" to see an inspiring quote.</div>
+      <div id="quote-author"></div>
     </div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>Can I filter quotes by category?</h3><p>Yes, choose from Motivation, Success, Life, or Wisdom, or select All to get a quote from any category.</p></div>
-    <div class="faq-item-box"><h3>Can I copy a quote to share it?</h3><p>Yes, click Copy to copy the current quote and author to your clipboard, ready to paste anywhere.</p></div>
-    <div class="faq-item-box"><h3>Are these quotes accurately attributed?</h3><p>Attributions reflect commonly cited sources, though exact wording and attribution of famous quotes can vary across different references over time.</p></div>
-    <div class="faq-item-box"><h3>Can I get a different quote from the same category repeatedly?</h3><p>Yes, each click randomly selects from every quote tagged with your chosen category, so clicking Get Quote repeatedly cycles through different quotes within that theme.</p></div>
-    <div class="faq-item-box"><h3>Is my usage of this tool tracked?</h3><p>No, the quote collection is built into the page itself, and generating quotes happens entirely in your browser with no server requests or logging involved.</p></div>
-    <div class="faq-item-box"><h3>Can a quote belong to more than one category?</h3><p>Yes, many quotes are tagged with multiple relevant themes — for example, a quote about perseverance might appear under both Motivation and Success — so switching categories can sometimes surface the same quote from a different angle.</p></div>
-    <div class="faq-item-box"><h3>How many quotes are in the collection?</h3><p>The collection spans several dozen curated quotes across all four categories, with new selections appearing each time you click Get Quote.</p></div>
-    <div class="faq-item-box"><h3>Can I use these quotes commercially?</h3><p>Quotes themselves are generally considered short phrases not eligible for copyright protection in most jurisdictions, though it's worth double-checking attribution accuracy before using a quote in a commercial or published context.</p></div>
+    <details class="faq-item">
+      <summary class="faq-q">Can I filter quotes by category?</summary>
+      <div class="faq-a"><p>Yes, choose from Motivation, Success, Life, or Wisdom, or select All to get a quote from any category.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I copy a quote to share it?</summary>
+      <div class="faq-a"><p>Yes, click Copy to copy the current quote and author to your clipboard, ready to paste anywhere.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Are these quotes accurately attributed?</summary>
+      <div class="faq-a"><p>Attributions reflect commonly cited sources, though exact wording and attribution of famous quotes can vary across different references over time.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I get a different quote from the same category repeatedly?</summary>
+      <div class="faq-a"><p>Yes, each click randomly selects from every quote tagged with your chosen category, so clicking Get Quote repeatedly cycles through different quotes within that theme.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my usage of this tool tracked?</summary>
+      <div class="faq-a"><p>No, the quote collection is built into the page itself, and generating quotes happens entirely in your browser with no server requests or logging involved.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can a quote belong to more than one category?</summary>
+      <div class="faq-a"><p>Yes, many quotes are tagged with multiple relevant themes — for example, a quote about perseverance might appear under both Motivation and Success — so switching categories can sometimes surface the same quote from a different angle.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How many quotes are in the collection?</summary>
+      <div class="faq-a"><p>The collection spans several dozen curated quotes across all four categories, with new selections appearing each time you click Get Quote.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I use these quotes commercially?</summary>
+      <div class="faq-a"><p>Quotes themselves are generally considered short phrases not eligible for copyright protection in most jurisdictions, though it's worth double-checking attribution accuracy before using a quote in a commercial or published context.</p></div>
+    </details>
   </div>
-</div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>Get Inspiring Random Quotes</h2>
   <p>This tool provides a curated collection of quotes across several categories — motivation, success, life, and wisdom — with a simple random generator so you can quickly find inspiration, a caption for social media, or a thought to reflect on.</p>
 
   <h3>Why People Look for Quotes</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Daily motivation</strong> — starting the day with an inspiring thought.</li>
     <li><strong>Social media captions</strong> — pairing a meaningful quote with a photo or post.</li>
     <li><strong>Presentations and speeches</strong> — opening or closing with a relevant, memorable quote.</li>
@@ -124,30 +155,43 @@
   <p>A common use for a generated quote is layering it over an image for a social media post. For the text to stay legible against a busy background, it generally helps to keep the quote itself short, use a semi-transparent overlay or solid color block behind the text, and choose a high-contrast font color against the underlying image. Shorter quotes from the Motivation or Wisdom categories tend to work especially well for this kind of visual pairing, since they fit cleanly within a single readable line or two without needing to shrink the font size to the point of being hard to read on a mobile screen, which matters since most social platforms are viewed primarily on small mobile displays.</p>
 
   <h3>Step-by-Step: Getting and Sharing a Quote</h3>
-  <div class="tool-steps">
-    <div class="tool-step"><strong>1. Pick a category</strong>Select All, Motivation, Success, Life, or Wisdom based on what fits your need.</div>
-    <div class="tool-step"><strong>2. Click Get Quote</strong>Generate a random quote matching your selected category.</div>
-    <div class="tool-step"><strong>3. Click again for another</strong>Keep clicking to cycle through different quotes within the same category.</div>
-    <div class="tool-step"><strong>4. Copy to share</strong>Click Copy to grab the quote and author, ready to paste anywhere.</div>
-  </div>
+  <ol class="steps">
+    <li class="step">
+      <strong>Pick a category</strong>
+      <p>Select All, Motivation, Success, Life, or Wisdom based on what fits your need.</p>
+    </li>
+    <li class="step">
+      <strong>Click Get Quote</strong>
+      <p>Generate a random quote matching your selected category.</p>
+    </li>
+    <li class="step">
+      <strong>Click again for another</strong>
+      <p>Keep clicking to cycle through different quotes within the same category.</p>
+    </li>
+    <li class="step">
+      <strong>Copy to share</strong>
+      <p>Click Copy to grab the quote and author, ready to paste anywhere.</p>
+    </li>
+  </ol>
 
   <h3>Privacy and Local Processing</h3>
   <p>This tool uses a built-in quote collection stored directly in the page — no external API calls or server requests are made to fetch quotes, keeping the tool fast and fully private. Nothing about which quotes or categories you view is logged or stored anywhere.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/random-name-generator" class="tool-item"><div class="ti-text"><h4>Random Name Generator</h4><p>Generate random names for characters or testing.</p></div></a>
-    <a href="/tools/citation-generator" class="tool-item"><div class="ti-text"><h4>Citation Generator</h4><p>Generate proper citations for quoted sources.</p></div></a>
-    <a href="/tools/lorem-ipsum" class="tool-item"><div class="ti-text"><h4>Lorem Ipsum Generator</h4><p>Generate placeholder text for designs.</p></div></a>
-    <a href="/tools/text-to-speech" class="tool-item"><div class="ti-text"><h4>Text to Speech</h4><p>Listen to quotes read aloud.</p></div></a>
+    <a class="related-card" href="/tools/random-name-generator"><strong>Random Name Generator</strong><span>Generate random names for characters or testing.</span></a>
+    <a class="related-card" href="/tools/citation-generator"><strong>Citation Generator</strong><span>Generate proper citations for quoted sources.</span></a>
+    <a class="related-card" href="/tools/lorem-ipsum"><strong>Lorem Ipsum Generator</strong><span>Generate placeholder text for designs.</span></a>
+    <a class="related-card" href="/tools/text-to-speech"><strong>Text to Speech</strong><span>Listen to quotes read aloud.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 const QUOTES = [
   { text: "The only way to do great work is to love what you do.", author: "Steve Jobs", cats: ['motivation','success'] },

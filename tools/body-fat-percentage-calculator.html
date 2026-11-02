@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -51,17 +55,20 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-body-fat-percentage-calculator">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/calculate-convert">Calculate & Convert</a> › Body Fat Percentage Calculator</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/calculate-convert">Calculate &amp; Convert</a> › Body Fat Percentage Calculator</nav>
   <h1>Free Body Fat Percentage Calculator</h1>
   <p>Calculate your body fat percentage using the widely-used US Navy circumference method — no special equipment needed.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">📏 US Navy Method</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#ruler"></use></svg> US Navy Method</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:700px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Enter Your Measurements</h2>
     <div class="mode-grid">
@@ -89,63 +96,68 @@
         <label>Waist Circumference</label>
         <input type="number" id="waist" class="field-input" value="85" min="1">
       </div>
-      <div class="control-group" id="hip-wrap" style="display:none;">
+      <div class="control-group is-hidden" id="hip-wrap">
         <label>Hip Circumference</label>
         <input type="number" id="hip" class="field-input" value="95" min="1">
       </div>
     </div>
 
     <div class="btn-group mt-16">
-      <button class="btn btn-primary btn-lg" id="calc-btn">📏 Calculate</button>
+      <button class="btn btn-primary btn-lg" id="calc-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#ruler"></use></svg> Calculate</button>
     </div>
     <div class="status-msg" id="status-msg"></div>
   </div>
 
-  <div class="tool-card" id="result-card" style="display:none;">
+  <div class="tool-card is-hidden" id="result-card">
     <h2>Result</h2>
-    <div style="text-align:center;padding:20px;background:var(--gray-50);border-radius:var(--radius-lg);">
-      <div style="font-family:var(--font-display);font-size:2.5rem;font-weight:800;color:var(--primary);" id="bf-value">—</div>
-      <div style="font-size:1rem;font-weight:700;margin-top:4px;" id="bf-category"></div>
+    <div class="u-7fff2e">
+      <div id="bf-value">—</div>
+      <div id="bf-category"></div>
     </div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>How accurate is the US Navy method?</h3><p>Reasonably accurate for most people (within a few percentage points) and widely used since it requires no special equipment, though less precise than DEXA scans or hydrostatic weighing.</p></div>
-    <div class="faq-item-box"><h3>What measurements do I need?</h3><p>Height, neck circumference, and waist circumference for men. Women additionally need hip circumference.</p></div>
-    <div class="faq-item-box"><h3>Where should I measure my waist?</h3><p>Typically at the navel level, measured while standing relaxed, not pulled in tight.</p></div>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card">
-      <h2>How to Use the Body Fat Percentage Calculator</h2>
-      <div class="tool-steps">
-        <div class="tool-step">
-          <strong>1. Select your gender</strong>
-          Choose Male or Female at the top — this determines which formula and measurements the calculator uses.
-        </div>
-        <div class="tool-step">
-          <strong>2. Choose your unit system</strong>
-          Pick Metric (centimeters) or Imperial (inches) to match how you took your measurements.
-        </div>
-        <div class="tool-step">
-          <strong>3. Enter your measurements</strong>
-          Fill in height, neck circumference, and waist circumference; women also enter hip circumference, which appears automatically when Female is selected.
-        </div>
-        <div class="tool-step">
-          <strong>4. Calculate your result</strong>
-          Click Calculate to see your estimated body fat percentage along with its category, from Essential Fat up to Above Average.
-        </div>
-      </div>
-    </div>
+    <details class="faq-item">
+      <summary class="faq-q">How accurate is the US Navy method?</summary>
+      <div class="faq-a"><p>Reasonably accurate for most people (within a few percentage points) and widely used since it requires no special equipment, though less precise than DEXA scans or hydrostatic weighing.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What measurements do I need?</summary>
+      <div class="faq-a"><p>Height, neck circumference, and waist circumference for men. Women additionally need hip circumference.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Where should I measure my waist?</summary>
+      <div class="faq-a"><p>Typically at the navel level, measured while standing relaxed, not pulled in tight.</p></div>
+    </details>
   </div>
 </section>
 
-<section class="article-section">
+<section class="page-section">
+  <h2>How to Use the Body Fat Percentage Calculator</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Select your gender</strong>
+      <p>Choose Male or Female at the top — this determines which formula and measurements the calculator uses.</p>
+    </li>
+    <li class="step">
+      <strong>Choose your unit system</strong>
+      <p>Pick Metric (centimeters) or Imperial (inches) to match how you took your measurements.</p>
+    </li>
+    <li class="step">
+      <strong>Enter your measurements</strong>
+      <p>Fill in height, neck circumference, and waist circumference; women also enter hip circumference, which appears automatically when Female is selected.</p>
+    </li>
+    <li class="step">
+      <strong>Calculate your result</strong>
+      <p>Click Calculate to see your estimated body fat percentage along with its category, from Essential Fat up to Above Average.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
   <h2>Calculate Body Fat Percentage — US Navy Method</h2>
   <p>This tool estimates body fat percentage using the US Navy circumference method, a formula developed by the US Navy as a practical, equipment-free way to estimate body fat using just a measuring tape and a few body circumference measurements.</p>
 
@@ -156,7 +168,7 @@
   <p>General ranges (these vary somewhat by source and age): for men, roughly 6-13% is considered athletic, 14-17% fitness, 18-24% average, and 25%+ is generally categorized as obese. For women, ranges run higher due to essential fat differences: roughly 14-20% athletic, 21-24% fitness, 25-31% average, and 32%+ generally categorized as obese.</p>
 
   <h3>Why Measure Body Fat Instead of Just Weight or BMI</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Distinguishes muscle from fat</strong> — two people at the same weight and height can have very different body compositions.</li>
     <li><strong>Better fitness tracking</strong> — body fat percentage changes reflect actual composition changes during training, which weight alone can mask.</li>
     <li><strong>More meaningful health context</strong> — body fat distribution and percentage correlate more directly with certain health risks than weight alone.</li>
@@ -181,7 +193,7 @@
   <p>Athletic ranges (roughly 6-13% for men, 14-20% for women) represent visible muscle definition and are typically maintained only with disciplined training and diet, not a casual baseline target. Most people pursuing general fitness are better served aiming for the fitness or average ranges first, since extremely low body fat percentages can be difficult to sustain and, in some cases, are associated with health trade-offs rather than benefits.</p>
 
   <h3>Common Measurement Mistakes</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Pulling the tape too tight</strong> — this compresses the measurement and produces an artificially low circumference, skewing the result toward a lower body fat estimate.</li>
     <li><strong>Measuring over thick clothing</strong> — always measure against bare skin or thin clothing for an accurate circumference.</li>
     <li><strong>Inconsistent waist measurement point</strong> — measuring at different heights on the torso between sessions makes it hard to track real progress over time.</li>
@@ -198,34 +210,31 @@
   <p>If you need a highly accurate body fat reading — for a medical reason, a bodybuilding competition, or detailed research — a DEXA scan, hydrostatic (underwater) weighing, or air displacement plethysmography (Bod Pod) will give a more precise figure than any circumference-based formula. For routine self-tracking and general fitness goals, though, the US Navy method offers a practical and consistent way to monitor trends without specialized equipment or cost.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/bmi-calculator" class="tool-item"><div class="ti-text"><h4>BMI Calculator</h4><p>Calculate Body Mass Index with healthy weight range.</p></div></a>
-    <a href="/tools/unit-converter" class="tool-item"><div class="ti-text"><h4>Unit Converter</h4><p>Convert length, weight, and more between units.</p></div></a>
-    <a href="/tools/age-calculator" class="tool-item"><div class="ti-text"><h4>Age Calculator</h4><p>Calculate exact age from date of birth.</p></div></a>
-    <a href="/tools/percentage-calculator" class="tool-item"><div class="ti-text"><h4>Percentage Calculator</h4><p>Calculate percentages and ratios.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">body fat percentage calculator</span>
-        <span class="keyword-tag">us navy body fat calculator</span>
-        <span class="keyword-tag">body fat calculator online</span>
-        <span class="keyword-tag">calculate body fat percent</span>
-        <span class="keyword-tag">navy method body fat</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/bmi-calculator"><strong>BMI Calculator</strong><span>Calculate Body Mass Index with healthy weight range.</span></a>
+    <a class="related-card" href="/tools/unit-converter"><strong>Unit Converter</strong><span>Convert length, weight, and more between units.</span></a>
+    <a class="related-card" href="/tools/age-calculator"><strong>Age Calculator</strong><span>Calculate exact age from date of birth.</span></a>
+    <a class="related-card" href="/tools/percentage-calculator"><strong>Percentage Calculator</strong><span>Calculate percentages and ratios.</span></a>
   </div>
 </section>
 
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">body fat percentage calculator</span>
+    <span class="keyword-tag">us navy body fat calculator</span>
+    <span class="keyword-tag">body fat calculator online</span>
+    <span class="keyword-tag">calculate body fat percent</span>
+    <span class="keyword-tag">navy method body fat</span>
+  </div>
+</section>
+
+</main>
+
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 let currentGender = 'male';
 

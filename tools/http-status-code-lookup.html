@@ -23,16 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .status-item { display:flex;align-items:flex-start;gap:14px;padding:14px 16px;border:1.5px solid var(--gray-200);border-radius:var(--radius);margin-bottom:8px; }
-    .status-code { font-family:var(--font-display);font-size:1.3rem;font-weight:800;min-width:56px; }
-    .status-code.c2xx { color:var(--success); }
-    .status-code.c3xx { color:var(--primary); }
-    .status-code.c4xx { color:#f59e0b; }
-    .status-code.c5xx { color:var(--error); }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -53,17 +49,20 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-http-status-code-lookup">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/developer-tools">Developer Tools</a> › HTTP Status Code Lookup</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/developer-tools">Developer Tools</a> › HTTP Status Code Lookup</nav>
   <h1>Free HTTP Status Code Lookup</h1>
   <p>Search any HTTP status code by number or keyword and get an instant, clear explanation.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">🔍 Searchable</span><span class="tool-tag">📋 Complete Reference</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#search"></use></svg> Searchable</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Complete Reference</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:820px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Search Status Codes</h2>
     <input type="text" id="search-input" class="field-input" placeholder="Search by code (404) or keyword (not found)...">
@@ -72,47 +71,52 @@
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>What do the different status code ranges mean?</h3><p>1xx = informational, 2xx = success, 3xx = redirection, 4xx = client error, 5xx = server error.</p></div>
-    <div class="faq-item-box"><h3>What's the most common error code?</h3><p>404 (Not Found) and 500 (Internal Server Error) are among the most commonly encountered status codes.</p></div>
-    <div class="faq-item-box"><h3>What's the difference between 401 and 403?</h3><p>401 (Unauthorized) means authentication is required or has failed. 403 (Forbidden) means the server understood the request but refuses to authorize it, even if authenticated.</p></div>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card">
-      <h2>How to Use the HTTP Status Code Lookup</h2>
-      <div class="tool-steps">
-        <div class="tool-step">
-          <strong>1. Open the search box.</strong>
-          Click into the search field at the top of the tool — no setup or page reload needed.
-        </div>
-        <div class="tool-step">
-          <strong>2. Type a code or keyword.</strong>
-          Enter a three-digit code like 404, or a keyword like "not found" or "forbidden".
-        </div>
-        <div class="tool-step">
-          <strong>3. Review the filtered list.</strong>
-          Matching status codes appear instantly below, color-coded by category (2xx, 3xx, 4xx, 5xx) with a short explanation for each.
-        </div>
-        <div class="tool-step">
-          <strong>4. Clear the search to browse all codes.</strong>
-          Empty the search box to see the full reference list again, sorted from informational through server error codes.
-        </div>
-      </div>
-    </div>
+    <details class="faq-item">
+      <summary class="faq-q">What do the different status code ranges mean?</summary>
+      <div class="faq-a"><p>1xx = informational, 2xx = success, 3xx = redirection, 4xx = client error, 5xx = server error.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What's the most common error code?</summary>
+      <div class="faq-a"><p>404 (Not Found) and 500 (Internal Server Error) are among the most commonly encountered status codes.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What's the difference between 401 and 403?</summary>
+      <div class="faq-a"><p>401 (Unauthorized) means authentication is required or has failed. 403 (Forbidden) means the server understood the request but refuses to authorize it, even if authenticated.</p></div>
+    </details>
   </div>
 </section>
 
-<section class="article-section">
+<section class="page-section">
+  <h2>How to Use the HTTP Status Code Lookup</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Open the search box.</strong>
+      <p>Click into the search field at the top of the tool — no setup or page reload needed.</p>
+    </li>
+    <li class="step">
+      <strong>Type a code or keyword.</strong>
+      <p>Enter a three-digit code like 404, or a keyword like "not found" or "forbidden".</p>
+    </li>
+    <li class="step">
+      <strong>Review the filtered list.</strong>
+      <p>Matching status codes appear instantly below, color-coded by category (2xx, 3xx, 4xx, 5xx) with a short explanation for each.</p>
+    </li>
+    <li class="step">
+      <strong>Clear the search to browse all codes.</strong>
+      <p>Empty the search box to see the full reference list again, sorted from informational through server error codes.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
   <h2>Complete HTTP Status Code Reference</h2>
   <p>This tool provides a searchable reference of standard HTTP status codes — the three-digit numbers servers return to indicate the result of a request. Search by code number or by keyword to instantly find an explanation.</p>
 
   <h3>The Five Status Code Categories</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>1xx (Informational)</strong> — the request was received and processing continues.</li>
     <li><strong>2xx (Success)</strong> — the request was successfully received, understood, and accepted.</li>
     <li><strong>3xx (Redirection)</strong> — further action is needed to complete the request, typically following a different URL.</li>
@@ -124,7 +128,7 @@
   <p>HTTP status codes are how servers communicate the outcome of every request to clients — browsers, APIs, and applications all rely on these codes to know whether a request succeeded, needs a redirect, was invalid, or hit a server problem. Understanding what each code means is essential for debugging web applications, building and consuming APIs, and diagnosing issues reported by monitoring tools or error logs.</p>
 
   <h3>Common Uses for This Reference</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>API development</strong> — choosing the correct status code to return for different response scenarios.</li>
     <li><strong>Debugging</strong> — quickly understanding what an unfamiliar status code in a log or network tab means.</li>
     <li><strong>Learning web development</strong> — building familiarity with the standard HTTP status code vocabulary.</li>
@@ -161,34 +165,31 @@
   <p>Anyone new to web development often encounters unfamiliar status codes for the first time while debugging a failed fetch request or a broken form submission. This reference is built to be a quick, plain-English lookup rather than a dense specification document, so it's useful as a learning aid alongside tutorials and coursework on HTTP and REST APIs.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/jwt-decoder" class="tool-item"><div class="ti-text"><h4>JWT Decoder</h4><p>Decode JSON Web Token header and payload.</p></div></a>
-    <a href="/tools/json-formatter" class="tool-item"><div class="ti-text"><h4>JSON Formatter</h4><p>Format and validate JSON API responses.</p></div></a>
-    <a href="/tools/regex-tester" class="tool-item"><div class="ti-text"><h4>Regex Tester</h4><p>Test and debug regular expressions.</p></div></a>
-    <a href="/tools/url-encoder" class="tool-item"><div class="ti-text"><h4>URL Encoder/Decoder</h4><p>Encode and decode URLs for API requests.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">http status code lookup</span>
-        <span class="keyword-tag">http status codes list</span>
-        <span class="keyword-tag">http error codes explained</span>
-        <span class="keyword-tag">status code reference</span>
-        <span class="keyword-tag">http codes cheat sheet</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/jwt-decoder"><strong>JWT Decoder</strong><span>Decode JSON Web Token header and payload.</span></a>
+    <a class="related-card" href="/tools/json-formatter"><strong>JSON Formatter</strong><span>Format and validate JSON API responses.</span></a>
+    <a class="related-card" href="/tools/regex-tester"><strong>Regex Tester</strong><span>Test and debug regular expressions.</span></a>
+    <a class="related-card" href="/tools/url-encoder"><strong>URL Encoder/Decoder</strong><span>Encode and decode URLs for API requests.</span></a>
   </div>
 </section>
 
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">http status code lookup</span>
+    <span class="keyword-tag">http status codes list</span>
+    <span class="keyword-tag">http error codes explained</span>
+    <span class="keyword-tag">status code reference</span>
+    <span class="keyword-tag">http codes cheat sheet</span>
+  </div>
+</section>
+
+</main>
+
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 const STATUS_CODES = [
   { code: 100, name: 'Continue', desc: 'The server has received the request headers and the client should proceed to send the request body.' },

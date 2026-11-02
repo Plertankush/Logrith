@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -51,46 +55,70 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-number-to-words-converter">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/text-generators">Text & Generators</a> › Number to Words Converter</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/text-generators">Text &amp; Generators</a> › Number to Words Converter</nav>
   <h1>Free Number to Words Converter</h1>
   <p>Convert any number into fully written-out words instantly — perfect for checks, legal documents, and invoices.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">🔢 Any Size Number</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#hash"></use></svg> Any Size Number</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:700px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Enter a Number</h2>
     <input type="text" id="number-input" class="field-input mono" value="1234567" placeholder="e.g. 1234567 or -42">
     <div class="mini-note mt-8">Supports whole numbers, positive or negative, up to trillions.</div>
 
     <div class="insight-box mt-16">
-      <label style="font-size:.8rem;font-weight:600;color:var(--gray-500);">In Words</label>
-      <div style="position:relative;margin-top:8px;">
-        <textarea class="tool-textarea" id="words-output" rows="3" readonly style="font-size:1.15rem;font-weight:600;color:var(--primary);text-transform:capitalize;"></textarea>
-        <button class="copy-btn" id="copy-btn">📋 Copy</button>
+      <label class="u-873a2f">In Words</label>
+      <div class="u-8484c7">
+        <textarea class="tool-textarea" id="words-output" rows="3" readonly></textarea>
+        <button class="copy-btn" id="copy-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
       </div>
     </div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>Why would I need to spell out a number?</h3><p>Writing a number in words is commonly required on checks, legal contracts, and formal invoices to prevent alteration and ensure clarity alongside the numeric figure.</p></div>
-    <div class="faq-item-box"><h3>Can this convert decimal numbers?</h3><p>This tool converts whole numbers. For amounts with cents or decimals, the whole and fractional parts are typically written out separately, as is standard on checks.</p></div>
-    <div class="faq-item-box"><h3>What's the largest number this supports?</h3><p>This tool supports numbers up into the trillions, covering virtually any everyday use case.</p></div>
-    <div class="faq-item-box"><h3>Does this handle negative numbers?</h3><p>Yes, negative numbers are converted with a "negative" prefix, such as "negative ninety-nine."</p></div>
-    <div class="faq-item-box"><h3>Is my number sent to a server?</h3><p>No, the conversion runs entirely in your browser using JavaScript. Nothing you enter is transmitted anywhere.</p></div>
-    <div class="faq-item-box"><h3>Does this use the short scale or long scale naming system?</h3><p>This tool uses the short scale, the standard in the US and most English-speaking countries, where one billion equals one thousand million. Some other countries use the long scale, where a billion equals one million million instead.</p></div>
-    <div class="faq-item-box"><h3>Can I paste a number that already has commas?</h3><p>Yes, commas in the input (like "1,234,567") are automatically stripped before conversion, so pasting a formatted number works without needing to remove the commas first.</p></div>
+    <details class="faq-item">
+      <summary class="faq-q">Why would I need to spell out a number?</summary>
+      <div class="faq-a"><p>Writing a number in words is commonly required on checks, legal contracts, and formal invoices to prevent alteration and ensure clarity alongside the numeric figure.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can this convert decimal numbers?</summary>
+      <div class="faq-a"><p>This tool converts whole numbers. For amounts with cents or decimals, the whole and fractional parts are typically written out separately, as is standard on checks.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What's the largest number this supports?</summary>
+      <div class="faq-a"><p>This tool supports numbers up into the trillions, covering virtually any everyday use case.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does this handle negative numbers?</summary>
+      <div class="faq-a"><p>Yes, negative numbers are converted with a "negative" prefix, such as "negative ninety-nine."</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my number sent to a server?</summary>
+      <div class="faq-a"><p>No, the conversion runs entirely in your browser using JavaScript. Nothing you enter is transmitted anywhere.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does this use the short scale or long scale naming system?</summary>
+      <div class="faq-a"><p>This tool uses the short scale, the standard in the US and most English-speaking countries, where one billion equals one thousand million. Some other countries use the long scale, where a billion equals one million million instead.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I paste a number that already has commas?</summary>
+      <div class="faq-a"><p>Yes, commas in the input (like "1,234,567") are automatically stripped before conversion, so pasting a formatted number works without needing to remove the commas first.</p></div>
+    </details>
   </div>
-</div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>Convert Numbers to Written Words</h2>
   <p>This tool converts any whole number into its fully spelled-out word form — for example, 1,234 becomes "one thousand two hundred thirty-four." It's commonly used for writing checks, formal documents, contracts, and any context where a number needs to be expressed unambiguously in words.</p>
 
@@ -104,7 +132,7 @@
   <p>Not every country names large numbers the same way. The short scale, used by this tool and standard across the US, UK, and most English-speaking countries today, defines a billion as a thousand million (1,000,000,000). The long scale, historically used in many European countries, instead defines a billion as a million million (1,000,000,000,000) — what the short scale calls a trillion. Most European countries have since adopted the short scale for everyday use, but the distinction occasionally still causes confusion in translated or historical documents, which is worth keeping in mind for any number translated from a long-scale source.</p>
 
   <h3>Common Uses</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Writing checks</strong> — filling in the "amount in words" line accurately.</li>
     <li><strong>Legal and formal documents</strong> — contracts, deeds, and official paperwork that require amounts spelled out.</li>
     <li><strong>Invoices and receipts</strong> — some business and government invoicing formats require both numeric and written amounts.</li>
@@ -130,19 +158,20 @@
   <p>Beyond preventing deliberate tampering, writing a number in words also protects against simple transcription or printing errors. A faint or smudged digit on a printed check could be misread as a different number, but the same ambiguity rarely occurs with a fully spelled-out word, since a misread letter is far less likely to transform one number word into a different, equally valid one. This is part of why formal legal and financial documents often include both the numeric and the written form side by side — if the two ever disagree, the written-word form is typically treated as authoritative specifically because it's harder to alter or misread, giving both parties a reliable way to catch and resolve a discrepancy before the document is finalized.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/roman-numeral-converter" class="tool-item"><div class="ti-text"><h4>Roman Numeral Converter</h4><p>Convert numbers to and from Roman numerals.</p></div></a>
-    <a href="/tools/number-base-converter" class="tool-item"><div class="ti-text"><h4>Number Base Converter</h4><p>Convert between binary, decimal, and hex.</p></div></a>
-    <a href="/tools/percentage-calculator" class="tool-item"><div class="ti-text"><h4>Percentage Calculator</h4><p>Calculate percentages and ratios.</p></div></a>
-    <a href="/tools/currency-converter" class="tool-item"><div class="ti-text"><h4>Currency Converter</h4><p>Convert between currencies with your own rate.</p></div></a>
+    <a class="related-card" href="/tools/roman-numeral-converter"><strong>Roman Numeral Converter</strong><span>Convert numbers to and from Roman numerals.</span></a>
+    <a class="related-card" href="/tools/number-base-converter"><strong>Number Base Converter</strong><span>Convert between binary, decimal, and hex.</span></a>
+    <a class="related-card" href="/tools/percentage-calculator"><strong>Percentage Calculator</strong><span>Calculate percentages and ratios.</span></a>
+    <a class="related-card" href="/tools/currency-converter"><strong>Currency Converter</strong><span>Convert between currencies with your own rate.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 const ONES = ['','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen'];
 const TENS = ['','','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety'];

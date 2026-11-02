@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -51,17 +55,20 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-words-to-pages-converter">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/text-generators">Text & Generators</a> › Words to Pages Converter</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/text-generators">Text &amp; Generators</a> › Words to Pages Converter</nav>
   <h1>Free Words to Pages Converter</h1>
   <p>Convert word count to page count, or page count to words, with spacing and font size options for accurate essay and document estimates.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">📄 Both Directions</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#file-text"></use></svg> Both Directions</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:700px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Convert</h2>
     <div class="mode-grid">
@@ -93,28 +100,49 @@
     </div>
 
     <div class="insight-box mt-16">
-      <div style="text-align:center;">
-        <div style="font-family:var(--font-display);font-size:2.2rem;font-weight:800;color:var(--primary);" id="result-value">4</div>
+      <div class="text-center">
+        <div id="result-value">4</div>
         <div class="mini-note" id="result-label">pages</div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>How many pages is 1000 words?</h3><p>At the standard academic default of double-spaced, 12-point font, 1000 words is approximately 4 pages. Single-spaced, it's approximately 2 pages.</p></div>
-    <div class="faq-item-box"><h3>How many words are on a typical page?</h3><p>A typical double-spaced page in 12-point font holds about 250 words. A single-spaced page holds about 500 words.</p></div>
-    <div class="faq-item-box"><h3>Does font choice really matter?</h3><p>Yes, different fonts and sizes fit different amounts of text per page — Arial tends to fit slightly less per page than Times New Roman at the same point size.</p></div>
-    <div class="faq-item-box"><h3>Is this exact for my specific document?</h3><p>This gives a close standard estimate. Your exact page count can vary slightly based on margins, headings, paragraph spacing, and images.</p></div>
-    <div class="faq-item-box"><h3>Is my data sent to a server?</h3><p>No, every calculation happens locally in your browser. Nothing you enter is transmitted anywhere.</p></div>
-    <div class="faq-item-box"><h3>Why does font choice affect the page count?</h3><p>Different fonts have different average character widths even at the same point size, so a font like Arial fits noticeably fewer words per line than a narrower font like Times New Roman, shifting how many words fit on a page.</p></div>
-    <div class="faq-item-box"><h3>Should I use single or double spacing for my document?</h3><p>Most academic essays and manuscripts default to double spacing unless an instructor or publisher specifies otherwise. Check your specific assignment or submission guidelines if you're unsure.</p></div>
+    <details class="faq-item">
+      <summary class="faq-q">How many pages is 1000 words?</summary>
+      <div class="faq-a"><p>At the standard academic default of double-spaced, 12-point font, 1000 words is approximately 4 pages. Single-spaced, it's approximately 2 pages.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How many words are on a typical page?</summary>
+      <div class="faq-a"><p>A typical double-spaced page in 12-point font holds about 250 words. A single-spaced page holds about 500 words.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does font choice really matter?</summary>
+      <div class="faq-a"><p>Yes, different fonts and sizes fit different amounts of text per page — Arial tends to fit slightly less per page than Times New Roman at the same point size.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is this exact for my specific document?</summary>
+      <div class="faq-a"><p>This gives a close standard estimate. Your exact page count can vary slightly based on margins, headings, paragraph spacing, and images.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my data sent to a server?</summary>
+      <div class="faq-a"><p>No, every calculation happens locally in your browser. Nothing you enter is transmitted anywhere.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why does font choice affect the page count?</summary>
+      <div class="faq-a"><p>Different fonts have different average character widths even at the same point size, so a font like Arial fits noticeably fewer words per line than a narrower font like Times New Roman, shifting how many words fit on a page.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Should I use single or double spacing for my document?</summary>
+      <div class="faq-a"><p>Most academic essays and manuscripts default to double spacing unless an instructor or publisher specifies otherwise. Check your specific assignment or submission guidelines if you're unsure.</p></div>
+    </details>
   </div>
-</div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>Convert Between Word Count and Page Count</h2>
   <p>This tool converts a word count into an estimated page count, or a page count into an estimated word count, using standard academic formatting conventions. It's commonly used by students estimating essay length, writers planning manuscripts, and anyone working against a page-count or word-count requirement.</p>
 
@@ -125,7 +153,7 @@
   <p>Beyond font and spacing, several other formatting factors shift the actual page count for a given word count — paragraph spacing before and after each block, margin width, heading frequency (a document with many short sections and headings fits fewer words per page than dense continuous prose), and the presence of images, tables, or block quotes, which all take up page space without adding to the word count. This is exactly why instructors and publishers often prefer specifying a word count rather than a page count for assignments, since word count stays consistent regardless of formatting choices, while page count can vary meaningfully between two documents with the identical word count but different formatting.</p>
 
   <h3>How to Use This Converter</h3>
-  <ol class="howto-list">
+  <ol>
     <li>Choose "Words → Pages" if you have a word count and want to know the page count, or "Pages → Words" for the reverse.</li>
     <li>Enter your word count or page count.</li>
     <li>Select single or double spacing to match your document's formatting.</li>
@@ -133,7 +161,7 @@
   </ol>
 
   <h3>Why Word-to-Page Estimates Matter</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Academic assignments</strong> — many essay prompts specify a page requirement rather than a word count, making conversion useful for planning.</li>
     <li><strong>Publishing and manuscripts</strong> — authors and editors often estimate manuscript length in pages for query letters and submissions.</li>
     <li><strong>Content planning</strong> — bloggers and content writers estimating how a target word count will translate to printed or PDF length.</li>
@@ -159,19 +187,20 @@
   <p>Beyond just planning how much to write, this same word-to-page relationship is useful in reverse for estimating how long a given document will take to read. At an average adult reading speed of roughly 200-250 words per minute, a 10-page double-spaced document (around 2,500 words) takes a reader approximately 10-12 minutes to read through at a comfortable pace. This kind of estimate is genuinely useful when deciding how much content to prepare for a presentation handout, a report meant to be read in a single sitting, or any document where you want to respect a reader's limited available time and attention span.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/word-counter" class="tool-item"><div class="ti-text"><h4>Word Counter</h4><p>Count words, characters, and reading time in your text.</p></div></a>
-    <a href="/tools/wpm-typing-speed-calculator" class="tool-item"><div class="ti-text"><h4>WPM Typing Speed Calculator</h4><p>Calculate your typing or reading speed.</p></div></a>
-    <a href="/tools/character-counter" class="tool-item"><div class="ti-text"><h4>Character Counter</h4><p>Check character count against platform limits.</p></div></a>
-    <a href="/tools/text-summarizer-basic" class="tool-item"><div class="ti-text"><h4>Text Summarizer</h4><p>Get a quick extractive summary of long text.</p></div></a>
+    <a class="related-card" href="/tools/word-counter"><strong>Word Counter</strong><span>Count words, characters, and reading time in your text.</span></a>
+    <a class="related-card" href="/tools/wpm-typing-speed-calculator"><strong>WPM Typing Speed Calculator</strong><span>Calculate your typing or reading speed.</span></a>
+    <a class="related-card" href="/tools/character-counter"><strong>Character Counter</strong><span>Check character count against platform limits.</span></a>
+    <a class="related-card" href="/tools/text-summarizer-basic"><strong>Text Summarizer</strong><span>Get a quick extractive summary of long text.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 let currentMode = 'words-to-pages';
 

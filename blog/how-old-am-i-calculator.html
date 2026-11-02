@@ -23,47 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .bp-hero { max-width:820px;margin:0 auto;padding:48px 20px 8px; }
-    .bp-crumb { font-size:.85rem;color:var(--gray-500);margin-bottom:16px; }
-    .bp-crumb a { color:var(--primary);text-decoration:none; }
-    .bp-hero h1 { font-family:var(--font-display);font-size:2rem;line-height:1.25;color:var(--gray-900);margin-bottom:14px; }
-    .bp-hero .bp-dek { font-size:1.05rem;color:var(--gray-700);line-height:1.7;margin-bottom:20px; }
-    .bp-cta { display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:white;padding:13px 26px;border-radius:var(--radius);font-weight:700;text-decoration:none;font-size:.95rem; }
-    .bp-cta svg { width:17px;height:17px; }
-    .bp-cta:hover { background:var(--primary-dark); }
-    .bp-body { max-width:760px;margin:0 auto;padding:28px 20px 20px; }
-    .bp-body h2 { font-family:var(--font-display);font-size:1.5rem;color:var(--gray-900);margin:38px 0 14px; }
-    .bp-body h3 { font-family:var(--font-display);font-size:1.15rem;color:var(--gray-900);margin:26px 0 10px; }
-    .bp-body p { color:var(--gray-700);line-height:1.8;margin-bottom:16px;font-size:1rem; }
-    .bp-body ul, .bp-body ol { color:var(--gray-700);line-height:1.8;margin:0 0 16px 22px; }
-    .bp-body li { margin-bottom:8px; }
-    .bp-body strong { color:var(--gray-900); }
-    .bp-toc { background:var(--gray-50);border-radius:var(--radius-lg);padding:20px 24px;margin:24px 0; }
-    .bp-toc h2 { margin:0 0 10px;font-size:1.05rem; }
-    .bp-toc ol { margin:0 0 0 20px; }
-    .bp-toc a { color:var(--primary);text-decoration:none; }
-    .bp-table { width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:.92rem; }
-    .bp-table th, .bp-table td { border:1px solid var(--gray-200);padding:10px 12px;text-align:left; }
-    .bp-table th { background:var(--gray-50);font-weight:700;color:var(--gray-900); }
-    .bp-howto { counter-reset:step; list-style:none;margin-left:0; }
-    .bp-howto li { position:relative;padding-left:42px;margin-bottom:18px; }
-    .bp-howto li::before { counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;background:var(--primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem; }
-    .bp-faq-item { border-bottom:1px solid var(--gray-200);padding:16px 0; }
-    .bp-faq-item h3 { margin:0 0 8px; font-size:1.02rem; }
-    .bp-byline { font-size:.82rem;color:var(--gray-500);margin-top:10px; }
-    .bp-related { max-width:1000px;margin:0 auto;padding:20px 20px 60px; }
-    .bp-related h2 { font-family:var(--font-display);font-size:1.4rem;color:var(--gray-900);margin-bottom:18px;text-align:center; }
-    .bp-related-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px; }
-    .bp-related-card { border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:18px;text-decoration:none;color:inherit;background:var(--white); }
-    .bp-related-card h4 { font-size:.95rem;color:var(--gray-900);margin-bottom:6px; }
-    .bp-related-card p { font-size:.82rem;color:var(--gray-700);line-height:1.5; }
-    .bp-prevnext { display:flex;justify-content:space-between;gap:16px;max-width:760px;margin:0 auto;padding:0 20px 20px; }
-    .bp-prevnext a { flex:1;border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:12px 16px;text-decoration:none;color:var(--gray-700);font-size:.85rem; }
-    .bp-prevnext a strong { display:block;color:var(--gray-900);font-size:.92rem; }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -97,23 +62,26 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-how-old-am-i-calculator">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="bp-hero">
-  <div class="bp-crumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/calculate-convert">Calculate & Convert</a> &rsaquo; How Old Am I</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/calculate-convert">Calculate & Convert</a> &rsaquo; How Old Am I</nav>
   <h1>How Old Am I, Really? Your Age in Days, Hours, and Minutes</h1>
-  <p class="bp-dek">"How old am I" almost always gets answered in years, but that single familiar number hides something genuinely surprising once you convert it into smaller units — the same 30-year-old is also over 10,000 days old, more than 262,000 hours old, and has lived through nearly 16 million minutes, numbers that feel enormous even though they describe exactly the same amount of time.</p>
-  <a href="/tools/age-calculator" class="bp-cta">
+  <p>"How old am I" almost always gets answered in years, but that single familiar number hides something genuinely surprising once you convert it into smaller units — the same 30-year-old is also over 10,000 days old, more than 262,000 hours old, and has lived through nearly 16 million minutes, numbers that feel enormous even though they describe exactly the same amount of time.</p>
+  <a href="/tools/age-calculator" class="btn btn-primary btn-lg">
     <svg class="icon"><use href="/assets/svg/icons.svg#clock"></use></svg>
     Calculate Your Age in Days
   </a>
-  <p class="bp-byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
-</div>
+  <p class="byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
+</div></header>
 
-<div class="bp-body">
+<article class="page-section prose">
 
-  <div class="bp-toc">
+  <nav class="toc" aria-label="On this page">
     <h2>On This Page</h2>
     <ol>
       <li><a href="#how-to-use">How to Find Your Age in Days, Weeks, and Hours</a></li>
@@ -125,21 +93,30 @@
       <li><a href="#mistakes">Common Mistakes</a></li>
       <li><a href="#faq">Frequently Asked Questions</a></li>
     </ol>
-  </div>
+  </nav>
 
   <h2 id="how-to-use">How to Find Your Age in Days, Weeks, and Hours</h2>
-  <ol class="bp-howto">
-    <li>Open the <a href="/tools/age-calculator">Age Calculator</a>.</li>
-    <li>Enter your date of birth.</li>
-    <li>View your age in years as the default result.</li>
-    <li>Check the detailed breakdown showing your exact age in days, weeks, hours, and minutes alongside the standard years-months-days figure.</li>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the <a href="/tools/age-calculator">Age Calculator</a>.</p>
+    </li>
+    <li class="step">
+      <p>Enter your date of birth.</p>
+    </li>
+    <li class="step">
+      <p>View your age in years as the default result.</p>
+    </li>
+    <li class="step">
+      <p>Check the detailed breakdown showing your exact age in days, weeks, hours, and minutes alongside the standard years-months-days figure.</p>
+    </li>
   </ol>
 
   <h2 id="why-surprising">Why Your Age in Days Feels So Much Bigger</h2>
   <p>The surprise people consistently feel seeing their age in days for the first time isn't a math error or a trick — it's simply what happens when the exact same span of elapsed time gets expressed in a much smaller unit. A year is a fairly large chunk of time, so counting in years produces small, familiar-feeling numbers. A day is a tiny fraction of a year by comparison, so counting the same span in days produces a number that's roughly 365 times larger for every year included. Thirty years, expressed in days, becomes something over 10,950 — a number that feels abstractly enormous next to the familiar "30," even though it represents exactly the same amount of lived time, just measured with a much finer-grained ruler. This is purely a psychological effect of scale, not a different or more "real" measurement of age — your age in years and your age in days describe identical elapsed time, just communicated through different-sized units.</p>
 
   <h2 id="unit-breakdown">Age Converted Across Every Common Unit</h2>
-  <table class="bp-table">
+  <div class="table-wrap">
+    <table class="table">
     <tr><th>Unit</th><th>Approximate Count for 30 Years</th></tr>
     <tr><td>Years</td><td>30</td></tr>
     <tr><td>Months</td><td>360</td></tr>
@@ -148,6 +125,7 @@
     <tr><td>Hours</td><td>~262,968</td></tr>
     <tr><td>Minutes</td><td>~15,778,080</td></tr>
   </table>
+  </div>
   <p>Each row represents the exact same 30-year span, simply expressed through a progressively smaller unit of measurement. The pattern is consistent regardless of your specific age — converting any age into a smaller unit always produces this same dramatic scale jump, since the underlying multiplication factor between years and, say, minutes (roughly 525,600 minutes per year) applies uniformly no matter what age you're starting from.</p>
 
   <h2>Real-World Scenarios</h2>
@@ -192,36 +170,51 @@
   <h3>Why Choose Logrith</h3>
   <p>Calculation happens entirely in your browser using standard JavaScript date arithmetic, with no data ever transmitted anywhere — get your exact age broken down across every common unit instantly, correctly accounting for leap years without any manual math required, whether you're chasing a milestone or simply satisfying genuine curiosity about the numbers.</p>
 
-</div>
+</article>
 
-<div class="bp-body">
+<article class="page-section prose">
   <h2 id="faq">Frequently Asked Questions</h2>
-  <div class="bp-faq-item"><h3>How many days old is someone who is 30 years old?</h3><p>Roughly 10,950 days, accounting for leap years adding a small number of extra days across three decades. The exact figure depends on precisely how many leap years fall within that specific span.</p></div>
-  <div class="bp-faq-item"><h3>Why does age in days or hours look so much bigger?</h3><p>Because days and hours are much smaller units than years, the same span of time produces a proportionally larger number when counted in smaller units, even though it represents identical elapsed time.</p></div>
-  <div class="bp-faq-item"><h3>Does age in days account for leap years?</h3><p>Yes, a correctly implemented calculation counts every actual calendar day elapsed, including the extra day in each leap year, rather than assuming a fixed 365 days per year.</p></div>
-  <div class="bp-faq-item"><h3>Is there a meaningful use for age in days beyond curiosity?</h3><p>Beyond curiosity and novelty milestones, precise day-level age is occasionally used in medical or statistical contexts where it matters more than a rounded year figure.</p></div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">How many days old is someone who is 30 years old?</summary>
+      <div class="faq-a"><p>Roughly 10,950 days, accounting for leap years adding a small number of extra days across three decades. The exact figure depends on precisely how many leap years fall within that specific span.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why does age in days or hours look so much bigger?</summary>
+      <div class="faq-a"><p>Because days and hours are much smaller units than years, the same span of time produces a proportionally larger number when counted in smaller units, even though it represents identical elapsed time.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does age in days account for leap years?</summary>
+      <div class="faq-a"><p>Yes, a correctly implemented calculation counts every actual calendar day elapsed, including the extra day in each leap year, rather than assuming a fixed 365 days per year.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is there a meaningful use for age in days beyond curiosity?</summary>
+      <div class="faq-a"><p>Beyond curiosity and novelty milestones, precise day-level age is occasionally used in medical or statistical contexts where it matters more than a rounded year figure.</p></div>
+    </details>
+  </div>
 
   <h2>Conclusion</h2>
   <p>Your age in years is the familiar, default answer to "how old am I," but converting that same span into days, hours, or minutes reveals a genuinely surprising number describing the exact same amount of lived time. Whether you're chasing a novelty milestone or just curious how the math works out, an accurate calculation needs to properly account for leap years rather than a naive fixed multiplication, which is exactly what a proper date-based calculator handles automatically, giving you a number that's both surprising and genuinely correct rather than a rough, slightly-off approximation you'd get from quick mental arithmetic alone.</p>
-</div>
+</article>
 
-<div class="bp-prevnext">
+<nav class="post-nav page-section" aria-label="More guides">
   <a href="/blog/calculate-exact-age-online">&larr; Previous: <strong>Age Calculator Guide</strong></a>
   <a href="/blog/categories/calculate-convert">More Calculate & Convert Guides &rarr;</a>
-</div>
+</nav>
 
-<div class="bp-related">
+<section class="page-section">
   <h2>Related Tools</h2>
-  <div class="bp-related-grid">
-    <a href="/tools/date-difference-calculator" class="bp-related-card"><h4>Date Difference Calculator</h4><p>Calculate days between any two dates.</p></a>
-    <a href="/tools/world-clock" class="bp-related-card"><h4>World Clock</h4><p>Check the current time anywhere live.</p></a>
-    <a href="/tools/bmi-calculator" class="bp-related-card"><h4>BMI Calculator</h4><p>Calculate your body mass index.</p></a>
-    <a href="/tools/percentage-calculator" class="bp-related-card"><h4>Percentage Calculator</h4><p>Calculate percentages and changes.</p></a>
+  <div class="related-grid">
+    <a class="related-card" href="/tools/date-difference-calculator"><strong>Date Difference Calculator</strong><span>Calculate days between any two dates.</span></a>
+    <a class="related-card" href="/tools/world-clock"><strong>World Clock</strong><span>Check the current time anywhere live.</span></a>
+    <a class="related-card" href="/tools/bmi-calculator"><strong>BMI Calculator</strong><span>Calculate your body mass index.</span></a>
+    <a class="related-card" href="/tools/percentage-calculator"><strong>Percentage Calculator</strong><span>Calculate percentages and changes.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

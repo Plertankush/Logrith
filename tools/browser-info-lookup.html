@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -51,39 +55,60 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-browser-info-lookup">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/utilities">Utilities</a> › Browser Info Lookup</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/utilities">Utilities</a> › Browser Info Lookup</nav>
   <h1>Free Browser Info Lookup</h1>
   <p>Check details your browser reports about itself — browser type, OS, screen size, timezone, and language. Not IP geolocation.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">🔒 Local Only</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lock"></use></svg> Local Only</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:820px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Your Browser-Reported Information</h2>
     <div class="insight-box mb-16">
-      ℹ️ This shows information your <strong>browser itself reports</strong> via JavaScript. It is <strong>not</strong> IP-based geolocation and does not reveal your precise location or identity.
+      <svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#info"></use></svg> This shows information your <strong>browser itself reports</strong> via JavaScript. It is <strong>not</strong> IP-based geolocation and does not reveal your precise location or identity.
     </div>
-    <div class="stat-result-grid" id="info-grid"></div>
+    <div class="stat-grid" id="info-grid"></div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>Does this show my real IP address or location?</h3><p>No, this tool only shows information your browser voluntarily reports via JavaScript, such as browser type, OS, screen size, timezone, and language. It does not perform IP-based geolocation.</p></div>
-    <div class="faq-item-box"><h3>Why does my timezone show but not my city?</h3><p>Your browser reports its configured timezone (like Asia/Kolkata) directly, but does not report your city or precise location unless you separately grant location permission.</p></div>
-    <div class="faq-item-box"><h3>Is this information sent anywhere?</h3><p>No, everything is read and displayed entirely within your browser — nothing is transmitted to a server.</p></div>
-    <div class="faq-item-box"><h3>Why would I want to check this information?</h3><p>It's useful for debugging website issues tied to a specific browser or screen size, confirming your browser's detected timezone and language settings, or simply understanding what a website can see about your browser without any special permissions.</p></div>
-    <div class="faq-item-box"><h3>Does this show my exact browser version update status?</h3><p>It shows the version your browser currently reports in its user agent string, which reflects whichever version is currently installed and running.</p></div>
-    <div class="faq-item-box"><h3>Why do screen resolution and viewport size differ?</h3><p>Screen resolution is your full physical display's pixel dimensions, while viewport size is just the visible content area of your current browser window — these differ whenever the browser isn't maximized or when browser chrome (toolbars, bookmarks bar) takes up part of the screen.</p></div>
+    <details class="faq-item">
+      <summary class="faq-q">Does this show my real IP address or location?</summary>
+      <div class="faq-a"><p>No, this tool only shows information your browser voluntarily reports via JavaScript, such as browser type, OS, screen size, timezone, and language. It does not perform IP-based geolocation.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why does my timezone show but not my city?</summary>
+      <div class="faq-a"><p>Your browser reports its configured timezone (like Asia/Kolkata) directly, but does not report your city or precise location unless you separately grant location permission.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is this information sent anywhere?</summary>
+      <div class="faq-a"><p>No, everything is read and displayed entirely within your browser — nothing is transmitted to a server.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why would I want to check this information?</summary>
+      <div class="faq-a"><p>It's useful for debugging website issues tied to a specific browser or screen size, confirming your browser's detected timezone and language settings, or simply understanding what a website can see about your browser without any special permissions.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does this show my exact browser version update status?</summary>
+      <div class="faq-a"><p>It shows the version your browser currently reports in its user agent string, which reflects whichever version is currently installed and running.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why do screen resolution and viewport size differ?</summary>
+      <div class="faq-a"><p>Screen resolution is your full physical display's pixel dimensions, while viewport size is just the visible content area of your current browser window — these differ whenever the browser isn't maximized or when browser chrome (toolbars, bookmarks bar) takes up part of the screen.</p></div>
+    </details>
   </div>
-</div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>What Your Browser Reports About Itself</h2>
   <p>This tool displays a range of information that web browsers make available to JavaScript running on any page — details like your browser name and version, operating system, screen resolution, timezone, and language preference. It's important to understand what this actually is: browser-self-reported metadata, not IP-based geolocation or any form of precise identification.</p>
 
@@ -91,7 +116,7 @@
   <p>This tool does not look up your IP address, does not determine your city or physical location, and does not access any server-side geolocation database. Real IP geolocation requires server-side infrastructure that looks up an IP address against a database of network ranges — something this purely browser-based tool doesn't do. Any location-sounding information shown here (like your timezone) comes directly from your device's own settings, not from analyzing your network connection.</p>
 
   <h3>What Information Is Actually Shown</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Browser and version</strong> — parsed from the browser's user agent string.</li>
     <li><strong>Operating system</strong> — also derived from the user agent string.</li>
     <li><strong>Screen resolution</strong> — your display's pixel dimensions, from the browser's screen API.</li>
@@ -112,7 +137,7 @@
   <p>The user agent is a text string your browser sends with every web request, originally intended to let servers identify the browser and adjust content accordingly. Over the years, this string has become somewhat messy for historical compatibility reasons — many browsers include references to other browser engines in their user agent for legacy compatibility purposes, which is why parsing it correctly to identify the actual browser in use requires more careful logic than a simple text match might suggest. This tool handles that parsing for you, extracting the actual browser name and version from what can otherwise be a confusingly layered string.</p>
 
   <h3>Common Uses for Checking This Information</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Debugging a layout or display bug</strong> that only appears on a specific browser or screen size.</li>
     <li><strong>Confirming your detected timezone</strong> matches what you expect before relying on it for a scheduling tool.</li>
     <li><strong>Checking your browser version</strong> when a website or app specifies a minimum supported version.</li>
@@ -129,19 +154,20 @@
   <p>When a user reports a bug that a development team can't reproduce on their own machines, knowing the reporting user's exact browser version, operating system, and screen resolution is often the missing piece that explains the discrepancy — a layout bug that only appears at a specific narrow viewport width, or a feature that behaves differently on an older browser version, are both extremely common root causes that are otherwise hard to diagnose without this information. Asking a user experiencing an issue to visit a page like this one and share the results is a quick, low-friction way to gather exactly the technical details needed to reproduce and fix a browser-specific bug without a lengthy back-and-forth conversation.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/password-strength" class="tool-item"><div class="ti-text"><h4>Password Strength Checker</h4><p>Check the security strength of a password.</p></div></a>
-    <a href="/tools/world-clock" class="tool-item"><div class="ti-text"><h4>World Clock</h4><p>See current time across multiple cities.</p></div></a>
-    <a href="/tools/time-zone-converter" class="tool-item"><div class="ti-text"><h4>Time Zone Converter</h4><p>Convert time between world time zones.</p></div></a>
-    <a href="/tools/file-size-converter" class="tool-item"><div class="ti-text"><h4>File Size Converter</h4><p>Convert between bytes, KB, MB, GB, TB.</p></div></a>
+    <a class="related-card" href="/tools/password-strength"><strong>Password Strength Checker</strong><span>Check the security strength of a password.</span></a>
+    <a class="related-card" href="/tools/world-clock"><strong>World Clock</strong><span>See current time across multiple cities.</span></a>
+    <a class="related-card" href="/tools/time-zone-converter"><strong>Time Zone Converter</strong><span>Convert time between world time zones.</span></a>
+    <a class="related-card" href="/tools/file-size-converter"><strong>File Size Converter</strong><span>Convert between bytes, KB, MB, GB, TB.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 function detectBrowser() {
   const ua = navigator.userAgent;
@@ -185,8 +211,8 @@ function loadInfo() {
 
   grid.innerHTML = items.map(item => `
     <div class="stat-box">
-      <span class="sb-num" style="font-size:1.1rem;">${item.value}</span>
-      <span class="sb-lbl">${item.label}</span>
+      <span class="stat-num" style="font-size:1.1rem;">${item.value}</span>
+      <span class="stat-label">${item.label}</span>
     </div>
   `).join('');
 }

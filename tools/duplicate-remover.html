@@ -21,8 +21,6 @@
   <meta name="twitter:title" content="Remove Duplicate Lines From a List Instantly | Logrith">
   <meta name="twitter:description" content="Paste a list and strip out repeated lines in one click, with an option to ignore case or whitespace differences between near-duplicates.">
 
-  <link rel="preload" href="/assets/css/style.css" as="style">
-  <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -30,15 +28,11 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
 
-  <style>
-    .option-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; }
-    .option-row label { display: flex; align-items: center; gap: 8px; font-size: .88rem; cursor: pointer; }
-    .option-row input[type="checkbox"] { accent-color: var(--primary); width: 16px; height: 16px; }
-    .editor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .editor-label { font-size: .84rem; font-weight: 600; color: var(--gray-700); display: block; margin-bottom: 6px; }
-    .output-wrap { position: relative; }
-    @media (max-width: 768px) { .editor-grid { grid-template-columns: 1fr; } }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {
@@ -101,22 +95,25 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-duplicate-remover">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/text-generators">Text & Generators</a> › Duplicate Line Remover</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/text-generators">Text &amp; Generators</a> › Duplicate Line Remover</nav>
   <h1>Free Duplicate Line Remover Online</h1>
   <p>Remove duplicate lines from any text instantly. Trim whitespace, ignore case, remove empty lines, sort unique lines, and clean repeated text online for free.</p>
-  <div class="tool-tags">
-    <span class="tool-tag">✅ Free</span>
-    <span class="tool-tag">⚡ Instant</span>
-    <span class="tool-tag">📊 Sort Lines</span>
-    <span class="tool-tag">🧹 Clean Duplicates</span>
+  <div class="tag-list">
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span>
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#chart-bar"></use></svg> Sort Lines</span>
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#sparkles"></use></svg> Clean Duplicates</span>
   </div>
-</div></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:920px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Duplicate Line Cleaner</h2>
 
@@ -137,7 +134,7 @@
         <label class="editor-label" for="output-text">Output (Duplicates Removed)</label>
         <div class="output-wrap">
           <textarea class="tool-textarea" id="output-text" rows="12" readonly placeholder="Result will appear here..."></textarea>
-          <button class="copy-btn" id="copy-btn">📋 Copy</button>
+          <button class="copy-btn" id="copy-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
         </div>
       </div>
     </div>
@@ -145,29 +142,53 @@
     <div class="stats-row mt-12" id="stats-row"></div>
 
     <div class="btn-group mt-12">
-      <button class="btn btn-primary" id="process-btn">🧹 Remove Duplicates</button>
-      <button class="btn btn-secondary" id="clear-btn">✕ Clear</button>
+      <button class="btn btn-primary" id="process-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#sparkles"></use></svg> Remove Duplicates</button>
+      <button class="btn btn-secondary" id="clear-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Clear</button>
     </div>
 
     <div class="status-msg" id="status-msg"></div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>How do I remove duplicate lines from text?</h3><p>Paste your text into the input box and click Remove Duplicates. The tool keeps the first occurrence of each line and removes all repeated lines from the output.</p></div>
-    <div class="faq-item-box"><h3>Can I sort lines alphabetically while removing duplicates?</h3><p>Yes. You can choose Sort A→Z or Sort Z→A before processing. The output will be deduplicated and sorted according to your selected order.</p></div>
-    <div class="faq-item-box"><h3>What does ignore case mean?</h3><p>Ignore case treats uppercase and lowercase text as equal. For example, Apple, APPLE, and apple will be treated as the same line.</p></div>
-    <div class="faq-item-box"><h3>Can I remove blank or empty lines too?</h3><p>Yes. Enable the remove empty lines option to automatically delete blank lines while cleaning your text.</p></div>
-    <div class="faq-item-box"><h3>Does this tool keep the first occurrence or the last one?</h3><p>This tool keeps the first occurrence of a line and removes later duplicates from the result.</p></div>
-    <div class="faq-item-box"><h3>Is this duplicate line remover free?</h3><p>Yes. You can use this duplicate line remover online for free without login, signup, or installation.</p></div>
-    <div class="faq-item-box"><h3>Can I use this tool for keyword lists, tags, and datasets?</h3><p>Yes. It works well for cleaning keyword lists, email-like line lists, tags, product names, copied logs, and many other line-based text blocks.</p></div>
-    <div class="faq-item-box"><h3>Will trimming whitespace affect the results?</h3><p>Yes. If trim whitespace is enabled, extra spaces at the start and end of each line are removed before duplicate checking, which helps catch duplicates that only differ by spaces.</p></div>
+    <details class="faq-item">
+      <summary class="faq-q">How do I remove duplicate lines from text?</summary>
+      <div class="faq-a"><p>Paste your text into the input box and click Remove Duplicates. The tool keeps the first occurrence of each line and removes all repeated lines from the output.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I sort lines alphabetically while removing duplicates?</summary>
+      <div class="faq-a"><p>Yes. You can choose Sort A→Z or Sort Z→A before processing. The output will be deduplicated and sorted according to your selected order.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What does ignore case mean?</summary>
+      <div class="faq-a"><p>Ignore case treats uppercase and lowercase text as equal. For example, Apple, APPLE, and apple will be treated as the same line.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I remove blank or empty lines too?</summary>
+      <div class="faq-a"><p>Yes. Enable the remove empty lines option to automatically delete blank lines while cleaning your text.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does this tool keep the first occurrence or the last one?</summary>
+      <div class="faq-a"><p>This tool keeps the first occurrence of a line and removes later duplicates from the result.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is this duplicate line remover free?</summary>
+      <div class="faq-a"><p>Yes. You can use this duplicate line remover online for free without login, signup, or installation.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I use this tool for keyword lists, tags, and datasets?</summary>
+      <div class="faq-a"><p>Yes. It works well for cleaning keyword lists, email-like line lists, tags, product names, copied logs, and many other line-based text blocks.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Will trimming whitespace affect the results?</summary>
+      <div class="faq-a"><p>Yes. If trim whitespace is enabled, extra spaces at the start and end of each line are removed before duplicate checking, which helps catch duplicates that only differ by spaces.</p></div>
+    </details>
   </div>
-</div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>Remove Duplicate Lines from Text Online</h2>
   <p>This free duplicate line remover helps you clean repeated text lines instantly without needing any software or signup. It's useful for writers, developers, SEO professionals, students, researchers, and anyone working with line-based text data such as keyword lists, tags, copied notes, logs, or imported records.</p>
 
@@ -177,7 +198,7 @@
   <p>Duplicate lines tend to sneak into text from a handful of very common sources: copying and pasting the same block twice by accident, merging two separate lists that overlap, exporting data from a spreadsheet or database that already contained repeated entries, or accumulating repeated log lines from a monitoring tool. In each case, manually scanning through hundreds or thousands of lines to find and delete duplicates by eye is slow and highly error-prone — it's easy to miss a duplicate that differs only by a trailing space or a capital letter. This tool automates that entire process in a single click, with configurable rules for exactly what counts as a "duplicate" in your specific case.</p>
 
   <h3>How the Deduplication Options Work Together</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Trim whitespace</strong> — removes leading and trailing spaces from each line before comparing them, so " apple" and "apple" are correctly recognized as duplicates instead of being treated as different lines because of stray spacing.</li>
     <li><strong>Ignore case</strong> — treats "Apple," "APPLE," and "apple" as the same line, which is useful for cleaning lists where capitalization is inconsistent, like manually-typed tag lists or copy-pasted names.</li>
     <li><strong>Remove empty lines</strong> — strips out blank lines entirely, which is helpful when cleaning text copied from a source that included a lot of extra line breaks for formatting.</li>
@@ -204,7 +225,7 @@
   <p>Although this tool treats every line as plain text, it works well on many kinds of structured, line-oriented data as long as each record occupies its own line — email addresses, one per line; URLs from a crawl export; SKU or product codes; IP addresses from a server log; or simple CSV files where you only care about deduplicating whole rows rather than individual columns. For more complex structured deduplication — like removing duplicate rows based on only one column of a multi-column spreadsheet — a dedicated spreadsheet tool with column-aware deduplication would be a better fit, but for straightforward whole-line duplicate removal, this tool handles the job in seconds.</p>
 
   <h3>Tips for Getting Clean Results</h3>
-  <ul class="feature-list">
+  <ul>
     <li>Enable <strong>both trim whitespace and ignore case</strong> for the most forgiving deduplication when cleaning up manually-typed or inconsistently formatted lists.</li>
     <li>Disable both options when you need <strong>exact, case-sensitive matching</strong> — useful for things like deduplicating case-sensitive variable names or codes where "ABC" and "abc" genuinely need to be treated as different values.</li>
     <li>Use <strong>sorting</strong> after deduplication when you need to eyeball the result for anything unusual, since an alphabetically sorted list makes it much easier to spot near-duplicates (like a typo'd variant) that the automated matching didn't catch.</li>
@@ -212,40 +233,37 @@
   </ul>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Text Tools</h2>
   <div class="related-grid">
-    <a href="/tools/word-counter" class="tool-item"><div class="ti-text"><h4>Word Counter</h4><p>Count words, characters, paragraphs, and sentences instantly.</p></div></a>
-    <a href="/tools/character-counter" class="tool-item"><div class="ti-text"><h4>Character Counter</h4><p>Measure text length and analyze character usage quickly.</p></div></a>
-    <a href="/tools/text-diff" class="tool-item"><div class="ti-text"><h4>Text Diff Checker</h4><p>Compare two text blocks and highlight differences clearly.</p></div></a>
-    <a href="/tools/case-converter" class="tool-item"><div class="ti-text"><h4>Case Converter</h4><p>Convert text to uppercase, lowercase, title case, and more.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">duplicate line remover</span>
-        <span class="keyword-tag">remove duplicate lines online</span>
-        <span class="keyword-tag">deduplicate text online</span>
-        <span class="keyword-tag">remove repeated lines</span>
-        <span class="keyword-tag">unique lines tool</span>
-        <span class="keyword-tag">sort lines online</span>
-        <span class="keyword-tag">remove duplicate text free</span>
-        <span class="keyword-tag">clean text list online</span>
-        <span class="keyword-tag">deduplicate keyword list</span>
-        <span class="keyword-tag">remove blank lines online</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/word-counter"><strong>Word Counter</strong><span>Count words, characters, paragraphs, and sentences instantly.</span></a>
+    <a class="related-card" href="/tools/character-counter"><strong>Character Counter</strong><span>Measure text length and analyze character usage quickly.</span></a>
+    <a class="related-card" href="/tools/text-diff"><strong>Text Diff Checker</strong><span>Compare two text blocks and highlight differences clearly.</span></a>
+    <a class="related-card" href="/tools/case-converter"><strong>Case Converter</strong><span>Convert text to uppercase, lowercase, title case, and more.</span></a>
   </div>
 </section>
 
-<div id="footer"></div>
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">duplicate line remover</span>
+    <span class="keyword-tag">remove duplicate lines online</span>
+    <span class="keyword-tag">deduplicate text online</span>
+    <span class="keyword-tag">remove repeated lines</span>
+    <span class="keyword-tag">unique lines tool</span>
+    <span class="keyword-tag">sort lines online</span>
+    <span class="keyword-tag">remove duplicate text free</span>
+    <span class="keyword-tag">clean text list online</span>
+    <span class="keyword-tag">deduplicate keyword list</span>
+    <span class="keyword-tag">remove blank lines online</span>
+  </div>
+</section>
 
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+
 
 <script>
 const inputText = document.getElementById('input-text');

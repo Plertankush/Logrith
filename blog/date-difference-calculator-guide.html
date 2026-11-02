@@ -23,47 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .bp-hero { max-width:820px;margin:0 auto;padding:48px 20px 8px; }
-    .bp-crumb { font-size:.85rem;color:var(--gray-500);margin-bottom:16px; }
-    .bp-crumb a { color:var(--primary);text-decoration:none; }
-    .bp-hero h1 { font-family:var(--font-display);font-size:2rem;line-height:1.25;color:var(--gray-900);margin-bottom:14px; }
-    .bp-hero .bp-dek { font-size:1.05rem;color:var(--gray-700);line-height:1.7;margin-bottom:20px; }
-    .bp-cta { display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:white;padding:13px 26px;border-radius:var(--radius);font-weight:700;text-decoration:none;font-size:.95rem; }
-    .bp-cta svg { width:17px;height:17px; }
-    .bp-cta:hover { background:var(--primary-dark); }
-    .bp-body { max-width:760px;margin:0 auto;padding:28px 20px 20px; }
-    .bp-body h2 { font-family:var(--font-display);font-size:1.5rem;color:var(--gray-900);margin:38px 0 14px; }
-    .bp-body h3 { font-family:var(--font-display);font-size:1.15rem;color:var(--gray-900);margin:26px 0 10px; }
-    .bp-body p { color:var(--gray-700);line-height:1.8;margin-bottom:16px;font-size:1rem; }
-    .bp-body ul, .bp-body ol { color:var(--gray-700);line-height:1.8;margin:0 0 16px 22px; }
-    .bp-body li { margin-bottom:8px; }
-    .bp-body strong { color:var(--gray-900); }
-    .bp-toc { background:var(--gray-50);border-radius:var(--radius-lg);padding:20px 24px;margin:24px 0; }
-    .bp-toc h2 { margin:0 0 10px;font-size:1.05rem; }
-    .bp-toc ol { margin:0 0 0 20px; }
-    .bp-toc a { color:var(--primary);text-decoration:none; }
-    .bp-table { width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:.92rem; }
-    .bp-table th, .bp-table td { border:1px solid var(--gray-200);padding:10px 12px;text-align:left; }
-    .bp-table th { background:var(--gray-50);font-weight:700;color:var(--gray-900); }
-    .bp-howto { counter-reset:step; list-style:none;margin-left:0; }
-    .bp-howto li { position:relative;padding-left:42px;margin-bottom:18px; }
-    .bp-howto li::before { counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;background:var(--primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem; }
-    .bp-faq-item { border-bottom:1px solid var(--gray-200);padding:16px 0; }
-    .bp-faq-item h3 { margin:0 0 8px; font-size:1.02rem; }
-    .bp-byline { font-size:.82rem;color:var(--gray-500);margin-top:10px; }
-    .bp-related { max-width:1000px;margin:0 auto;padding:20px 20px 60px; }
-    .bp-related h2 { font-family:var(--font-display);font-size:1.4rem;color:var(--gray-900);margin-bottom:18px;text-align:center; }
-    .bp-related-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px; }
-    .bp-related-card { border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:18px;text-decoration:none;color:inherit;background:var(--white); }
-    .bp-related-card h4 { font-size:.95rem;color:var(--gray-900);margin-bottom:6px; }
-    .bp-related-card p { font-size:.82rem;color:var(--gray-700);line-height:1.5; }
-    .bp-prevnext { display:flex;justify-content:space-between;gap:16px;max-width:760px;margin:0 auto;padding:0 20px 20px; }
-    .bp-prevnext a { flex:1;border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:12px 16px;text-decoration:none;color:var(--gray-700);font-size:.85rem; }
-    .bp-prevnext a strong { display:block;color:var(--gray-900);font-size:.92rem; }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -97,23 +62,26 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-date-difference-calculator-guide">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="bp-hero">
-  <div class="bp-crumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/calculate-convert">Calculate & Convert</a> &rsaquo; Date Difference Calculator</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/calculate-convert">Calculate & Convert</a> &rsaquo; Date Difference Calculator</nav>
   <h1>How to Calculate Days Between Two Dates Without Counting on a Calendar</h1>
-  <p class="bp-dek">Counting days on a physical or mental calendar is error-prone the moment a month boundary or a "business days" requirement gets involved. A dedicated calculator handles the arithmetic precisely, but knowing which specific counting convention a situation actually calls for — inclusive or exclusive, calendar days or business days — matters just as much as the calculation itself, and getting that convention wrong produces a plausible-looking but genuinely incorrect answer that's easy to miss until it causes a real problem.</p>
-  <a href="/tools/date-difference-calculator" class="bp-cta">
+  <p>Counting days on a physical or mental calendar is error-prone the moment a month boundary or a "business days" requirement gets involved. A dedicated calculator handles the arithmetic precisely, but knowing which specific counting convention a situation actually calls for — inclusive or exclusive, calendar days or business days — matters just as much as the calculation itself, and getting that convention wrong produces a plausible-looking but genuinely incorrect answer that's easy to miss until it causes a real problem.</p>
+  <a href="/tools/date-difference-calculator" class="btn btn-primary btn-lg">
     <svg class="icon"><use href="/assets/svg/icons.svg#calendar"></use></svg>
     Calculate Date Difference
   </a>
-  <p class="bp-byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
-</div>
+  <p class="byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
+</div></header>
 
-<div class="bp-body">
+<article class="page-section prose">
 
-  <div class="bp-toc">
+  <nav class="toc" aria-label="On this page">
     <h2>On This Page</h2>
     <ol>
       <li><a href="#how-to-use">How to Calculate the Difference Between Dates</a></li>
@@ -124,25 +92,35 @@
       <li><a href="#mistakes">Common Mistakes</a></li>
       <li><a href="#faq">Frequently Asked Questions</a></li>
     </ol>
-  </div>
+  </nav>
 
   <h2 id="how-to-use">How to Calculate the Difference Between Dates</h2>
-  <ol class="bp-howto">
-    <li>Open the <a href="/tools/date-difference-calculator">Date Difference Calculator</a>.</li>
-    <li>Enter your start date and end date.</li>
-    <li>Choose whether to count calendar days or business days only.</li>
-    <li>Get the instant result in days, and optionally weeks and months.</li>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the <a href="/tools/date-difference-calculator">Date Difference Calculator</a>.</p>
+    </li>
+    <li class="step">
+      <p>Enter your start date and end date.</p>
+    </li>
+    <li class="step">
+      <p>Choose whether to count calendar days or business days only.</p>
+    </li>
+    <li class="step">
+      <p>Get the instant result in days, and optionally weeks and months.</p>
+    </li>
   </ol>
 
   <h2 id="inclusive">Inclusive vs. Exclusive Day Counting</h2>
   <p>This distinction causes more real-world confusion than any other part of date-difference calculation. A pure subtraction — end date minus start date — gives the number of days that have elapsed between the two dates, which excludes one of the two endpoints from the count. If you're counting from January 1 to January 5, this exclusive method gives 4 days. But many everyday contexts actually want an inclusive count, treating both the start and end date as part of the period being measured — a hotel stay from January 1 to January 5 that includes both check-in and check-out days as part of the stay would be described as "5 days," not 4. Neither convention is universally "correct" — they answer genuinely different questions, and the right one depends entirely on what the calculation is actually being used for. Rental periods, billing cycles, and vacation day counts often use inclusive counting; pure elapsed-time calculations (how long ago something happened) typically use exclusive counting. Getting this distinction wrong doesn't produce an obviously broken result — it produces a plausible-looking number that's simply off by one, which is exactly what makes this particular mistake so easy to make and so easy to overlook when reviewing a calculation afterward.</p>
 
   <h2 id="business-days">Calendar Days vs. Business Days</h2>
-  <table class="bp-table">
+  <div class="table-wrap">
+    <table class="table">
     <tr><th>Type</th><th>What's Counted</th><th>Common Use</th></tr>
     <tr><td>Calendar days</td><td>Every day, including weekends and holidays</td><td>General elapsed time, personal date tracking, age calculation</td></tr>
     <tr><td>Business days</td><td>Weekdays only, often excluding public holidays too</td><td>Project timelines, shipping estimates, contractual deadlines</td></tr>
   </table>
+  </div>
   <p>This distinction genuinely matters for anything involving business or professional timelines: a project quoted as "10 business days" takes roughly two calendar weeks to complete, not ten calendar days, since two weekend days out of every seven don't count toward the business-day total. Failing to account for this difference is a common source of missed expectations — someone expecting a "10 day" delivery counting calendar days will be surprised when it actually takes closer to two weeks if the quote was actually referring to business days all along. Always confirm explicitly which counting convention a quoted timeframe is using, especially for anything with real consequences like a contractual deadline or a shipping estimate, since the gap between the two conventions widens the longer the quoted period is — a "20 business day" estimate spans roughly four calendar weeks, nearly double what a naive calendar-day reading of the same number would suggest.</p>
 
   <h2 id="how-it-works">Why This Calculation Is Harder Than It Looks Manually</h2>
@@ -180,14 +158,28 @@
   <h3>Why Choose Logrith</h3>
   <p>Calculation happens entirely in your browser using standard JavaScript date arithmetic, with no data ever transmitted anywhere — instant and reliably correct across month boundaries, leap years, and business-day exclusions, without the risk of manual counting errors that even careful, detail-oriented people run into when tracking these calculations by hand across a calendar.</p>
 
-</div>
+</article>
 
-<div class="bp-body">
+<article class="page-section prose">
   <h2 id="faq">Frequently Asked Questions</h2>
-  <div class="bp-faq-item"><h3>Is the start or end date included when counting?</h3><p>This depends on convention — a pure date subtraction excludes one endpoint, while an inclusive count (common in billing or rental periods) includes both. Always clarify which convention a specific situation requires before finalizing any calculation that depends on the answer.</p></div>
-  <div class="bp-faq-item"><h3>What's the difference between calendar days and business days?</h3><p>Calendar days count every day including weekends. Business days exclude weekends (and often holidays), which is why "10 business days" takes roughly two calendar weeks, not ten calendar days.</p></div>
-  <div class="bp-faq-item"><h3>Why do manual date calculations often go wrong?</h3><p>Months have different lengths, and manually counting across a month boundary requires correctly accounting for exactly how many days that month contains, a common source of off-by-a-few-days errors.</p></div>
-  <div class="bp-faq-item"><h3>Does this account for leap years automatically?</h3><p>Yes, date arithmetic through standard date libraries automatically accounts for leap years, since February's day count is correctly determined based on the actual year involved.</p></div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">Is the start or end date included when counting?</summary>
+      <div class="faq-a"><p>This depends on convention — a pure date subtraction excludes one endpoint, while an inclusive count (common in billing or rental periods) includes both. Always clarify which convention a specific situation requires before finalizing any calculation that depends on the answer.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What's the difference between calendar days and business days?</summary>
+      <div class="faq-a"><p>Calendar days count every day including weekends. Business days exclude weekends (and often holidays), which is why "10 business days" takes roughly two calendar weeks, not ten calendar days.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why do manual date calculations often go wrong?</summary>
+      <div class="faq-a"><p>Months have different lengths, and manually counting across a month boundary requires correctly accounting for exactly how many days that month contains, a common source of off-by-a-few-days errors.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does this account for leap years automatically?</summary>
+      <div class="faq-a"><p>Yes, date arithmetic through standard date libraries automatically accounts for leap years, since February's day count is correctly determined based on the actual year involved.</p></div>
+    </details>
+  </div>
 
   <h2>Real-World Scenarios</h2>
   <ul>
@@ -200,25 +192,26 @@
 
   <h2>Conclusion</h2>
   <p>Calculating the difference between two dates is a simple task for a calculator, but the real complexity lives in the conventions — inclusive versus exclusive counting, calendar days versus business days — that determine which number is actually the right answer for a given situation. Getting the calculation itself instant and error-free is the easy part; knowing which convention a specific deadline, contract, or plan actually requires is the part worth double-checking before relying on any date-difference figure for something that matters, whether that's a legal notice period, a shipping estimate, or a prorated bill that needs to reflect the exact period it covers.</p>
-</div>
+</article>
 
-<div class="bp-prevnext">
+<nav class="post-nav page-section" aria-label="More guides">
   <a href="/blog/unit-converter-guide">&larr; Previous: <strong>Unit Converter Guide</strong></a>
   <a href="/blog/loan-affordability-calculator-guide">Next: <strong>Loan Affordability Guide</strong> &rarr;</a>
-</div>
+</nav>
 
-<div class="bp-related">
+<section class="page-section">
   <h2>Related Tools</h2>
-  <div class="bp-related-grid">
-    <a href="/tools/age-calculator" class="bp-related-card"><h4>Age Calculator</h4><p>Calculate exact age in years, months, and days.</p></a>
-    <a href="/tools/unit-converter" class="bp-related-card"><h4>Unit Converter</h4><p>Convert between measurement units.</p></a>
-    <a href="/tools/percentage-calculator" class="bp-related-card"><h4>Percentage Calculator</h4><p>Calculate percentages and changes.</p></a>
-    <a href="/tools/compound-interest-calculator" class="bp-related-card"><h4>Compound Interest Calculator</h4><p>Calculate growth over specific time periods.</p></a>
+  <div class="related-grid">
+    <a class="related-card" href="/tools/age-calculator"><strong>Age Calculator</strong><span>Calculate exact age in years, months, and days.</span></a>
+    <a class="related-card" href="/tools/unit-converter"><strong>Unit Converter</strong><span>Convert between measurement units.</span></a>
+    <a class="related-card" href="/tools/percentage-calculator"><strong>Percentage Calculator</strong><span>Calculate percentages and changes.</span></a>
+    <a class="related-card" href="/tools/compound-interest-calculator"><strong>Compound Interest Calculator</strong><span>Calculate growth over specific time periods.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

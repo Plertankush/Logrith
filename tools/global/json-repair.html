@@ -26,62 +26,13 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
 
-  <link rel="preload" href="/assets/css/style.css" as="style">
-  <link rel="stylesheet" href="/assets/css/style.css">
-
   <meta name="keywords" content="json repair tool, fix json online, json validator, json formatter, json beautifier, json to typescript, json to csv">
 
-  <style>
-    .tool-hero { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #ecfdf5 100%);}
-    .tool-hero h1 span { color: #16a34a; }
-
-    .json-toolbar { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; align-items:center; }
-    .json-toolbar .spacer { flex:1; }
-    .indent-select { padding:8px 10px; border:1px solid var(--gray-200); border-radius:8px; font-size:.84rem; background:var(--white); }
-
-    .json-output-wrap { position:relative; }
-    .repair-note { margin-top:10px; padding:12px 14px; border-radius:10px; font-size:.86rem; line-height:1.6; }
-    .repair-note.ok { background:#ecfdf3; color:#166534; border:1px solid #bbf7d0; }
-    .repair-note.fail { background:#fef2f2; color:#991b1b; border:1px solid #fecaca; }
-    .repair-note ul { margin:6px 0 0 18px; }
-
-    .json-tabs { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; }
-    .json-tab { padding:7px 14px; border-radius:20px; font-size:.82rem; font-weight:700; border:1px solid var(--gray-200); background:var(--white); color:var(--gray-600); cursor:pointer; }
-    .json-tab.active { background:var(--gray-900); color:#fff; border-color:var(--gray-900); }
-    .json-panel { display:none; }
-    .json-panel.active { display:block; }
-
-    .json-tree { font-family:'Courier New',monospace; font-size:.84rem; line-height:1.7; background:var(--gray-50); border:1px solid var(--gray-200); border-radius:10px; padding:14px; overflow-x:auto; max-height:420px; overflow-y:auto; }
-    .jt-node { margin-left:16px; }
-    .jt-root { margin-left:0; }
-    .jt-toggle { cursor:pointer; user-select:none; color:var(--gray-500); font-weight:700; display:inline-block; width:14px; }
-    .jt-key { color:#9a3412; font-weight:600; }
-    .jt-string { color:#166534; }
-    .jt-number { color:#1d4ed8; }
-    .jt-bool { color:#7c3aed; }
-    .jt-null { color:var(--gray-400); }
-    .jt-children.collapsed { display:none; }
-    .jt-meta { color:var(--gray-400); font-size:.78rem; }
-
-    .example-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; margin-top:10px; }
-    .example-box { background:var(--gray-50); border:1px solid var(--gray-200); border-radius:10px; padding:12px; font-family:'Courier New',monospace; font-size:.78rem; white-space:pre-wrap; word-break:break-word; }
-    .example-box .lbl { font-family:var(--font-display); font-weight:700; font-size:.76rem; color:var(--gray-500); margin-bottom:6px; display:block; }
-
-    .article-section, .faq-section, .feature-section, .related-tools, .keyword-section, .howto-section {
-      max-width: 860px; margin: 22px auto 0; background: #fff; border: 1px solid var(--gray-100); border-radius: 14px; padding: 22px;
-    }
-    .article-section h2, .faq-section h2, .feature-section h2, .related-tools h2, .keyword-section h2, .howto-section h2 { margin-bottom: 14px; }
-    .article-section p, .howto-section p { margin: 0 0 12px; line-height: 1.8; color: var(--gray-700); }
-    .feature-list, .keyword-list, .related-list, .howto-list { margin: 0; padding-left: 18px; }
-    .feature-list li, .keyword-list li, .related-list li, .howto-list li { margin-bottom: 10px; color: var(--gray-700); line-height: 1.7; }
-    .privacy-note { max-width: 860px; margin: 10px auto 0; font-size: .88rem; color: var(--gray-600); text-align: left; }
-    .faq-item { border-bottom: 1px solid var(--gray-100); padding: 14px 0; }
-    .faq-item:last-child { border-bottom: none; }
-    .faq-q { font-weight: 700; color: var(--gray-800); margin-bottom: 6px; }
-    .faq-a { color: var(--gray-700); line-height: 1.8; }
-    .related-list a { color: var(--primary); text-decoration: none; font-weight: 600; }
-    .related-list a:hover { text-decoration: underline; }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {
@@ -141,27 +92,27 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-json-repair">
 <div id="navbar"></div>
 
 <main>
-  <div class="tool-hero">
-    <div class="tool-hero-inner">
-      <div class="tool-breadcrumb">
+  <header class="page-hero">
+    <div class="page-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a> › <a href="/categories/global-tools">Global Tools</a> › JSON Repair Tool
-      </div>
+      </nav>
       <h1>JSON Repair Tool – Fix<span> and Validate JSON</span></h1>
       <p>Paste broken JSON, validate it, auto-fix common syntax mistakes, and format, minify or convert the result, entirely in your browser.</p>
-      <div class="tool-tags">
-        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
-        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#lock"></use></svg> Local Processing</span>
-        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#json"></use></svg> Auto Repair</span>
-        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#speed"></use></svg> Instant</span>
+      <div class="tag-list">
+        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
+        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#lock"></use></svg> Local Processing</span>
+        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#json"></use></svg> Auto Repair</span>
+        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#speed"></use></svg> Instant</span>
       </div>
     </div>
-  </div>
+  </header>
 
-  <div class="tool-workspace" style="max-width:960px;">
+  <div class="tool-workspace">
     <div class="tool-card">
       <h2>Paste Your JSON</h2>
       <textarea class="tool-textarea mono" id="json-input" rows="14" spellcheck="false" placeholder='{"name": "Example", "tags": ["a", "b",], noQuotes: &apos;value&apos;}'></textarea>
@@ -183,7 +134,7 @@
       <div id="repair-note-wrap"></div>
     </div>
 
-    <div class="tool-card" id="results-card" style="display:none;">
+    <div class="tool-card is-hidden" id="results-card">
       <div class="json-tabs">
         <button class="json-tab active" data-panel="panel-output" type="button">Output</button>
         <button class="json-tab" data-panel="panel-tree" type="button">Tree View</button>
@@ -223,19 +174,27 @@
     <p class="privacy-note">Your JSON is processed in your browser. Data is not uploaded to Logrith.</p>
   </div>
 
-  <section class="howto-section">
+  <section class="page-section">
     <h2>How to Fix JSON</h2>
-    <ol class="howto-list">
-      <li>Paste or type your JSON into the input box above.</li>
-      <li>Click "Validate" to check it, or click "Auto-Repair" directly if you know it has common mistakes.</li>
-      <li>If repair succeeds, review which fixes were applied, then click "Accept repaired JSON" to replace the editor content.</li>
-      <li>Use "Format" to beautify the result, "Minify" to compress it, or switch tabs to view it as a tree, TypeScript interface, or CSV.</li>
+    <ol class="steps">
+      <li class="step">
+        <p>Paste or type your JSON into the input box above.</p>
+      </li>
+      <li class="step">
+        <p>Click "Validate" to check it, or click "Auto-Repair" directly if you know it has common mistakes.</p>
+      </li>
+      <li class="step">
+        <p>If repair succeeds, review which fixes were applied, then click "Accept repaired JSON" to replace the editor content.</p>
+      </li>
+      <li class="step">
+        <p>Use "Format" to beautify the result, "Minify" to compress it, or switch tabs to view it as a tree, TypeScript interface, or CSV.</p>
+      </li>
     </ol>
   </section>
 
-  <section class="feature-section">
+  <section class="page-section prose">
     <h2>What This JSON Repair Tool Does</h2>
-    <ul class="feature-list">
+    <ul>
       <li><strong>Validation:</strong> parses your JSON and reports the exact line and column of the first syntax error.</li>
       <li><strong>Automatic repair:</strong> fixes trailing commas, unquoted object keys, and single-quoted string values when it safely can.</li>
       <li><strong>Formatting:</strong> beautifies JSON with a selectable indent of 2 spaces, 4 spaces, or a tab.</li>
@@ -245,13 +204,13 @@
     </ul>
   </section>
 
-  <section class="article-section">
+  <section class="page-section prose">
     <h2>What Is JSON?</h2>
     <p>JSON (JavaScript Object Notation) is a lightweight, text-based data format used almost everywhere in modern software: API responses, configuration files, application settings, data exports, and the output of countless tools and scripts. It represents data as nested objects (key-value pairs in curly braces) and arrays (ordered lists in square brackets), with values that are strings, numbers, booleans, null, or further nested objects and arrays. Its simplicity is exactly why it's so widely used — and also why a single missing comma or stray quote can make an entire file unreadable to a parser.</p>
 
     <h2>Why JSON Becomes Invalid</h2>
     <p>JSON has strict, unforgiving syntax rules. Unlike some configuration formats that tolerate minor inconsistencies, a JSON parser will reject the entire document over a single misplaced character. The most common causes of invalid JSON are:</p>
-    <ul class="feature-list">
+    <ul>
       <li><strong>Missing commas</strong> between properties or array items.</li>
       <li><strong>Missing quotes</strong> around string values or object keys.</li>
       <li><strong>Extra trailing commas</strong> left after the last item in an object or array — valid in JavaScript object literals, but not in strict JSON.</li>
@@ -288,7 +247,7 @@
 
     <h2>JSON Repair</h2>
     <p>The Auto-Repair button applies three specific, well-scoped fixes, in order, and re-validates after each pass:</p>
-    <ul class="feature-list">
+    <ul>
       <li><strong>Trailing comma removal:</strong> a comma directly before a closing <code>}</code> or <code>]</code> is removed.</li>
       <li><strong>Unquoted key quoting:</strong> an object key written without quotes (a valid JavaScript identifier followed by a colon) is wrapped in double quotes. Keys that are already quoted are left untouched.</li>
       <li><strong>Single-quote conversion:</strong> string values wrapped in single quotes are converted to double-quoted strings.</li>
@@ -298,7 +257,7 @@
 
     <h2>Developer Use Cases</h2>
     <p>This tool is built for the everyday moments developers run into broken JSON:</p>
-    <ul class="feature-list">
+    <ul>
       <li><strong>Debugging API responses</strong> that fail to parse because of a server-side formatting bug.</li>
       <li><strong>Cleaning up configuration files</strong> hand-edited by someone who used JavaScript object syntax instead of strict JSON.</li>
       <li><strong>Working with AI-generated JSON output</strong>, which frequently includes trailing commas, unquoted keys, or single quotes when a model approximates JSON from training patterns rather than strict syntax.</li>
@@ -317,65 +276,66 @@
     <p>People use this tool when searching for phrases like "fix json online," "json validator," "json syntax error checker," "json repair tool," "json to typescript converter," and "json to csv converter" — this page is built to answer exactly those needs in one browser-based tool.</p>
   </section>
 
-  <section class="faq-section">
+  <section class="page-section">
     <h2>JSON Repair Tool FAQ</h2>
-    <div class="faq-item">
-      <div class="faq-q">Can this tool fix any broken JSON?</div>
-      <div class="faq-a">No. The automatic repair step targets three common, well-defined problems: trailing commas, unquoted object keys, and single-quoted string values. It cannot recover genuinely missing data, fix deeply malformed or truncated structures, or guess what you meant to write. For anything beyond those three fixes, the tool shows the exact parse error so you can correct it manually.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Is my JSON data uploaded anywhere?</div>
-      <div class="faq-a">No. Parsing, repair, formatting and conversion all happen locally in your browser using JavaScript. Nothing is sent to Logrith or any other server.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Does the tool tell me exactly where the error is?</div>
-      <div class="faq-a">Yes, when the browser's parser reports a character position, the tool converts it into a line and column number so you can locate the problem quickly.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Can I convert JSON to a TypeScript interface?</div>
-      <div class="faq-a">Yes. Once your JSON parses successfully, the tool generates a basic TypeScript interface, inferring types including nested objects and arrays.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Can I convert JSON to CSV?</div>
-      <div class="faq-a">Yes, if the top-level JSON is an array of flat objects. The tool builds a header from the union of all keys and writes one row per object. If the shape doesn't fit, it explains why rather than producing broken output.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Is this tool free to use?</div>
-      <div class="faq-a">Yes, this tool is free to use with no account, signup, or usage limit beyond what your browser can handle.</div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">Can this tool fix any broken JSON?</summary>
+        <div class="faq-a"><p>No. The automatic repair step targets three common, well-defined problems: trailing commas, unquoted object keys, and single-quoted string values. It cannot recover genuinely missing data, fix deeply malformed or truncated structures, or guess what you meant to write. For anything beyond those three fixes, the tool shows the exact parse error so you can correct it manually.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Is my JSON data uploaded anywhere?</summary>
+        <div class="faq-a"><p>No. Parsing, repair, formatting and conversion all happen locally in your browser using JavaScript. Nothing is sent to Logrith or any other server.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Does the tool tell me exactly where the error is?</summary>
+        <div class="faq-a"><p>Yes, when the browser's parser reports a character position, the tool converts it into a line and column number so you can locate the problem quickly.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Can I convert JSON to a TypeScript interface?</summary>
+        <div class="faq-a"><p>Yes. Once your JSON parses successfully, the tool generates a basic TypeScript interface, inferring types including nested objects and arrays.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Can I convert JSON to CSV?</summary>
+        <div class="faq-a"><p>Yes, if the top-level JSON is an array of flat objects. The tool builds a header from the union of all keys and writes one row per object. If the shape doesn't fit, it explains why rather than producing broken output.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Is this tool free to use?</summary>
+        <div class="faq-a"><p>Yes, this tool is free to use with no account, signup, or usage limit beyond what your browser can handle.</p></div>
+      </details>
     </div>
   </section>
 
-  <section class="related-tools">
+  <section class="page-section">
     <h2>Related Tools</h2>
-    <ul class="related-list">
-      <li><a href="/tools/json-formatter">JSON Formatter</a> — the classic formatter; use this repair tool first when your JSON won't parse at all.</li>
-      <li><a href="/tools/yaml-json-converter">YAML to JSON Converter</a></li>
-      <li><a href="/tools/xml-formatter">XML Formatter</a></li>
-      <li><a href="/tools/ai-context-calculator">AI Context Calculator</a></li>
-      <li><a href="/tools/markdown-to-html">Markdown to HTML</a></li>
-      <li><a href="/tools/csv-cleaner">CSV Cleaner</a></li>
-    </ul>
+    <div class="related-grid">
+      <a class="related-card" href="/tools/json-formatter"><strong>JSON Formatter</strong><span>the classic formatter; use this repair tool first when your JSON won't parse at all.</span></a>
+      <a class="related-card" href="/tools/yaml-json-converter"><strong>YAML to JSON Converter</strong></a>
+      <a class="related-card" href="/tools/xml-formatter"><strong>XML Formatter</strong></a>
+      <a class="related-card" href="/tools/ai-context-calculator"><strong>AI Context Calculator</strong></a>
+      <a class="related-card" href="/tools/markdown-to-html"><strong>Markdown to HTML</strong></a>
+      <a class="related-card" href="/tools/csv-cleaner"><strong>CSV Cleaner</strong></a>
+    </div>
   </section>
 
-  <section class="keyword-section">
+  <section class="page-section">
     <h2>Top JSON Repair Tool Search Queries</h2>
-    <ul class="keyword-list">
-      <li>json repair tool online</li>
-      <li>fix json syntax error</li>
-      <li>json validator free</li>
-      <li>json formatter and beautifier</li>
-      <li>json to typescript converter</li>
-      <li>json to csv converter online</li>
-      <li>fix trailing comma json</li>
-      <li>json minifier online</li>
-    </ul>
+    <div class="keyword-box">
+      <span class="keyword-tag">json repair tool online</span>
+      <span class="keyword-tag">fix json syntax error</span>
+      <span class="keyword-tag">json validator free</span>
+      <span class="keyword-tag">json formatter and beautifier</span>
+      <span class="keyword-tag">json to typescript converter</span>
+      <span class="keyword-tag">json to csv converter online</span>
+      <span class="keyword-tag">fix trailing comma json</span>
+      <span class="keyword-tag">json minifier online</span>
+    </div>
   </section>
 </main>
 
 <div id="footer"></div>
+<script src="/assets/js/main.js"></script>
 
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
 
 <script>
 const inputEl = document.getElementById('json-input');
@@ -571,13 +531,13 @@ function renderValue(key, value, isRoot) {
   if (Array.isArray(value)) {
     if (value.length === 0) return `<div class="jt-node">${keyHtml}<span class="jt-meta">[]</span></div>`;
     const children = value.map((v, i) => renderValue(String(i), v, false)).join('');
-    return `<div class="jt-node"><span class="jt-toggle">▾</span>${keyHtml}<span class="jt-meta">[${value.length}]</span><div class="jt-children">${children}</div></div>`;
+    return `<div class="jt-node"><span class="jt-toggle"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#chevron-down"></use></svg></span>${keyHtml}<span class="jt-meta">[${value.length}]</span><div class="jt-children">${children}</div></div>`;
   }
   if (typeof value === 'object') {
     const keys = Object.keys(value);
     if (keys.length === 0) return `<div class="jt-node">${keyHtml}<span class="jt-meta">{}</span></div>`;
     const children = keys.map(k => renderValue(k, value[k], false)).join('');
-    return `<div class="jt-node"><span class="jt-toggle">▾</span>${keyHtml}<span class="jt-meta">{${keys.length}}</span><div class="jt-children">${children}</div></div>`;
+    return `<div class="jt-node"><span class="jt-toggle"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#chevron-down"></use></svg></span>${keyHtml}<span class="jt-meta">{${keys.length}}</span><div class="jt-children">${children}</div></div>`;
   }
   if (typeof value === 'string') {
     return `<div class="jt-node">${keyHtml}<span class="jt-string">"${escapeHtml(value)}"</span></div>`;
@@ -599,7 +559,7 @@ function renderTree(parsed) {
       const childrenEl = t.parentElement.querySelector(':scope > .jt-children');
       if (!childrenEl) return;
       childrenEl.classList.toggle('collapsed');
-      t.textContent = childrenEl.classList.contains('collapsed') ? '▸' : '▾';
+      t.innerHTML = childrenEl.classList.contains('collapsed') ? '<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#chevron-right"></use></svg>' : '<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#chevron-down"></use></svg>';
     });
   });
 }

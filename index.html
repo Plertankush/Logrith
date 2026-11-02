@@ -25,8 +25,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#000000">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <!-- Website Schema -->
   <script type="application/ld+json">
@@ -115,311 +119,240 @@
   </script>
  
 
-<style>
- .tool-grid {
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-   gap: 12px;
-  }
-
-  @media (max-width: 480px) {
-   .tool-grid {
-     display: grid;
-     grid-template-columns: repeat(2, 1fr); /* 2 column */
-     gap: 10px;
-    }
-
-   .tool-item {
-     display: block;          /* flex hata */
-     padding: 12px;
-    }
-
-    .tool-item .ti-text p {
-     display: block;
-     font-size: 0.68rem;
-     line-height: 1.3;
-     color: var(--gray-500);
-    }
-
-   .tool-item .ti-text h4 {
-     font-size: 0.8rem;
-    }
-  }
-
-  .section-inner h2{
-   
-    color: #000000;
-  }
-
-  .icon1{
-    color: #0c0c0ca8;
-    width: 15px;
-    height: 15px;
-    
-  }
-
-</style>
 </head>
-<body>
+<body class="page-index">
 
 <!-- NAVBAR -->
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
+<main id="main">
+
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-badge">Instant Tools for Everyday Tasks.</div>
+<header class="page-hero page-hero-center">
+  <div class="page-hero-inner">
+    <div class="badge">Instant Tools for Everyday Tasks.</div>
     <h1>Free Online Tools —<br><span>Fast & Simple</span></h1>
     <p>Solve everyday tasks instantly with fast, free online tools — from calculations and conversions to text formatting and developer utilities. 100% browser-based, private, and simple to use.</p>
-    <!-- HERO SEARCH WRAP — dropdown positioned relative to this -->
     <div class="hero-search-wrap">
       <div class="hero-search">
-        <input type="text" id="hero-search" placeholder="Search for a tool... e.g. 'image compressor'" autocomplete="off">
-        <button id="hero-search-btn">Search</button>
+        <input type="search" id="hero-search" data-tool-search data-results="#hero-search-results" data-submit="#hero-search-btn" placeholder="Search for a tool... e.g. 'image compressor'" aria-label="Search tools" autocomplete="off">
+        <button type="button" id="hero-search-btn">Search</button>
       </div>
-      <!-- Hero results dropdown — z-index:9999, shows above everything -->
-      <div id="hero-search-results"></div>
+      <div id="hero-search-results" class="search-results" hidden></div>
     </div>
   </div>
-</section>
+</header>
 
 <!-- CATEGORIES -->
-<section class="section" style="background: var(--white);">
-  <div class="section-inner">
-    <div class="section-header">
+<section class="section">
+  <div class="container container-wide">
+    <div class="section-header section-header-center">
       <h2>Explore Tools by Use</h2>
       <p>Pick a category to explore all tools in that space</p>
       <!-- 2 quick action buttons -->
-      <div class="hero-quick-btns" style="margin-top:18px; margin-bottom:0;">
-        <a href="/categories/categories" class="hero-quick-btn primary"><svg class="icon"><use href="/assets/svg/icons.svg#folder"></use></svg> Categories</a>
-        <a href="/categories/all-tools" class="hero-quick-btn outline"><svg class="icon"><use href="/assets/svg/icons.svg#navigation"></use></svg> Explore Tools →</a>
+      <div class="btn-group btn-group-center mt-16">
+        <a href="/categories/categories" class="btn btn-primary"><svg class="icon"><use href="/assets/svg/icons.svg#folder"></use></svg> Categories</a>
+        <a href="/categories/all-tools" class="btn btn-secondary"><svg class="icon"><use href="/assets/svg/icons.svg#navigation"></use></svg> Explore Tools →</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ALL TOOLS GRID -->
-<section class="section" id="all-tools" style="background: var(--gray-50);">
-  <div class="section-inner">
+<section class="section section-alt" id="all-tools">
+  <div class="container container-wide">
 
-    <a href="categories/calculate-convert">
-      <div id="calculate-convert" class="section-header" style="text-align:left; margin-bottom:20px;">
-        <h2>Calculate & Convert </h2>
-      </div>
-    </a>
-    <div class="tool-grid" style="margin-bottom:40px;">
+    <h2 class="group-title" id="calculate-convert"><a href="categories/calculate-convert">Calculate & Convert</a></h2>
+    <div class="tool-grid">
 
 
-      <a href="tools/color-converter" class="tool-item"><div class="ti-text"><h4> <svg class="icon1"><use href="/assets/svg/icons.svg#color-picker"></use></svg> Color Converter</h4><p>Convert HEX ↔ RGB ↔ HSL instantly</p></div></a>
-      <a href="tools/unit-converter" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#ruler"></use></svg> Unit Converter</h4><p>Length, weight, temperature, data &amp; more</p></div></a>
-      <a href="tools/percentage-calculator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#percent"></use></svg> Percentage Calculator</h4><p>Calculate percentages, discounts, increase</p></div></a>
-      <a href="tools/gst-calculator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#gst"></use></svg> GST Calculator</h4><p>Calculate GST inclusive &amp; exclusive</p></div></a>
-      <a href="tools/emi-calculator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#emi"></use></svg> EMI Calculator</h4><p>Calculate loan EMI with full breakdown</p></div></a>
-      <a href="tools/age-calculator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#age"></use></svg> Age Calculator</h4><p>Calculate exact age in years, months, days</p></div></a>
+      <a href="tools/color-converter" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#color-picker"></use></svg> Color Converter</h3><p>Convert HEX ↔ RGB ↔ HSL instantly</p></div></a>
+      <a href="tools/unit-converter" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#ruler"></use></svg> Unit Converter</h3><p>Length, weight, temperature, data &amp; more</p></div></a>
+      <a href="tools/percentage-calculator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#percent"></use></svg> Percentage Calculator</h3><p>Calculate percentages, discounts, increase</p></div></a>
+      <a href="tools/gst-calculator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#gst"></use></svg> GST Calculator</h3><p>Calculate GST inclusive &amp; exclusive</p></div></a>
+      <a href="tools/emi-calculator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#emi"></use></svg> EMI Calculator</h3><p>Calculate loan EMI with full breakdown</p></div></a>
+      <a href="tools/age-calculator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#age"></use></svg> Age Calculator</h3><p>Calculate exact age in years, months, days</p></div></a>
 
-      <a href="tools/bmi-calculator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#percent"></use></svg> BMI Calculator</h4><p>Body Mass Index with healthy weight range</p></div></a>
-      <a href="tools/loan-affordability-calculator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#emi"></use></svg> Loan Affordability Calculator</h4><p>Find the maximum loan you can afford</p></div></a>
-      <a href="tools/compound-interest-calculator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#percent"></use></svg> Compound Interest Calculator</h4><p>Investment growth with monthly contributions</p></div></a>
-      <a href="tools/simple-interest-calculator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#percent"></use></svg> Simple Interest Calculator</h4><p>Calculate simple interest with formula</p></div></a>
-      <a href="tools/currency-converter" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#refresh"></use></svg> Currency Converter</h4><p>Convert currencies with your own rate</p></div></a>
-      <a href="tools/discount-stacking-calculator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#percent"></use></svg> Discount Stacking Calculator</h4><p>Calculate final price after multiple discounts</p></div></a>
-      <a href="tools/tip-split-calculator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#percent"></use></svg> Tip Split Calculator</h4><p>Split a bill with tip among friends</p></div></a>
-      <a href="tools/date-difference-calculator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#age"></use></svg> Date Difference Calculator</h4><p>Days between any two dates</p></div></a>
-      <a href="tools/time-zone-converter" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#refresh"></use></svg> Time Zone Converter</h4><p>Convert time across world time zones</p></div></a>
-      <a href="tools/number-base-converter" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#json"></use></svg> Number Base Converter</h4><p>Convert binary, octal, decimal, hex</p></div></a>
+      <a href="tools/bmi-calculator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#percent"></use></svg> BMI Calculator</h3><p>Body Mass Index with healthy weight range</p></div></a>
+      <a href="tools/loan-affordability-calculator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#emi"></use></svg> Loan Affordability Calculator</h3><p>Find the maximum loan you can afford</p></div></a>
+      <a href="tools/compound-interest-calculator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#percent"></use></svg> Compound Interest Calculator</h3><p>Investment growth with monthly contributions</p></div></a>
+      <a href="tools/simple-interest-calculator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#percent"></use></svg> Simple Interest Calculator</h3><p>Calculate simple interest with formula</p></div></a>
+      <a href="tools/currency-converter" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#refresh"></use></svg> Currency Converter</h3><p>Convert currencies with your own rate</p></div></a>
+      <a href="tools/discount-stacking-calculator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#percent"></use></svg> Discount Stacking Calculator</h3><p>Calculate final price after multiple discounts</p></div></a>
+      <a href="tools/tip-split-calculator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#percent"></use></svg> Tip Split Calculator</h3><p>Split a bill with tip among friends</p></div></a>
+      <a href="tools/date-difference-calculator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#age"></use></svg> Date Difference Calculator</h3><p>Days between any two dates</p></div></a>
+      <a href="tools/time-zone-converter" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#refresh"></use></svg> Time Zone Converter</h3><p>Convert time across world time zones</p></div></a>
+      <a href="tools/number-base-converter" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#json"></use></svg> Number Base Converter</h3><p>Convert binary, octal, decimal, hex</p></div></a>
 
-      <a href="tools/wpm-typing-speed-calculator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#speed"></use></svg> WPM Typing Speed Calculator</h4><p>Live typing test or manual WPM calculator</p></div></a>
-      <a href="tools/roman-numeral-converter" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#hash"></use></svg> Roman Numeral Converter</h4><p>Convert numbers to and from Roman numerals</p></div></a>
-      <a href="tools/body-fat-percentage-calculator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#ruler"></use></svg> Body Fat Percentage Calculator</h4><p>US Navy method body fat estimator</p></div></a>
-      <a href="tools/salary-hourly-converter" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#emi"></use></svg> Salary to Hourly Converter</h4><p>Convert annual salary to hourly rate</p></div></a>
+      <a href="tools/wpm-typing-speed-calculator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#speed"></use></svg> WPM Typing Speed Calculator</h3><p>Live typing test or manual WPM calculator</p></div></a>
+      <a href="tools/roman-numeral-converter" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#hash"></use></svg> Roman Numeral Converter</h3><p>Convert numbers to and from Roman numerals</p></div></a>
+      <a href="tools/body-fat-percentage-calculator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#ruler"></use></svg> Body Fat Percentage Calculator</h3><p>US Navy method body fat estimator</p></div></a>
+      <a href="tools/salary-hourly-converter" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#emi"></use></svg> Salary to Hourly Converter</h3><p>Convert annual salary to hourly rate</p></div></a>
 
     </div>
 
-    <a href="categories/text-generators">
-      <div id="text-generators" class="section-header" style="text-align:left; margin-bottom:20px;">
-       <h2>Text & Generators </h2>
-     </div>
-    </a>
-    <div class="tool-grid" style="margin-bottom:40px;">
-      <a href="tools/word-counter" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#word-count"></use></svg> Word Counter</h4><p>Count words, characters, sentences, paragraphs</p></div></a>
-      <a href="tools/case-converter" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#case"></use></svg> Case Converter</h4><p>UPPER, lower, Title, camelCase and more</p></div></a>
-      <a href="tools/character-counter" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#char-count"></use></svg> Character Counter</h4><p>Detailed character frequency analysis</p></div></a>
-      <a href="tools/lorem-ipsum" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#list-ol"></use></svg> Lorem Ipsum Generator</h4><p>Generate placeholder text instantly</p></div></a>
-      <a href="tools/text-diff" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#diff"></use></svg> Text Diff Checker</h4><p>Compare two texts and highlight differences</p></div></a>
-      <a href="tools/duplicate-remover" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#duplicate"></use></svg> Duplicate Line Remover</h4><p>Remove duplicate lines from any text</p></div></a>
-      <a href="tools/slug-generator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#slug"></use></svg> Slug Generator</h4><p>Generate URL-friendly slugs from text</p></div></a>
+    <h2 class="group-title" id="text-generators"><a href="categories/text-generators">Text & Generators</a></h2>
+    <div class="tool-grid">
+      <a href="tools/word-counter" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#word-count"></use></svg> Word Counter</h3><p>Count words, characters, sentences, paragraphs</p></div></a>
+      <a href="tools/case-converter" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#case"></use></svg> Case Converter</h3><p>UPPER, lower, Title, camelCase and more</p></div></a>
+      <a href="tools/character-counter" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#char-count"></use></svg> Character Counter</h3><p>Detailed character frequency analysis</p></div></a>
+      <a href="tools/lorem-ipsum" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#list-ol"></use></svg> Lorem Ipsum Generator</h3><p>Generate placeholder text instantly</p></div></a>
+      <a href="tools/text-diff" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#diff"></use></svg> Text Diff Checker</h3><p>Compare two texts and highlight differences</p></div></a>
+      <a href="tools/duplicate-remover" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#duplicate"></use></svg> Duplicate Line Remover</h3><p>Remove duplicate lines from any text</p></div></a>
+      <a href="tools/slug-generator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#slug"></use></svg> Slug Generator</h3><p>Generate URL-friendly slugs from text</p></div></a>
 
-      <a href="tools/random-name-generator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#user"></use></svg> Random Name Generator</h4><p>Generate random names for testing or fiction</p></div></a>
-      <a href="tools/random-number-generator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#random"></use></svg> Random Number Generator</h4><p>Generate random numbers with custom range</p></div></a>
-      <a href="tools/text-to-speech" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#volume"></use></svg> Text to Speech</h4><p>Convert text to spoken audio</p></div></a>
-      <a href="tools/speech-to-text" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#mic"></use></svg> Speech to Text</h4><p>Dictate using your microphone</p></div></a>
-      <a href="tools/markdown-previewer" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#markdown-html"></use></svg> Markdown Previewer</h4><p>Live Markdown to HTML preview</p></div></a>
-      <a href="tools/text-reverser" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#repeat"></use></svg> Text Reverser</h4><p>Reverse text characters, words, or lines</p></div></a>
-      <a href="tools/acronym-generator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#tag"></use></svg> Acronym Generator</h4><p>Turn any phrase into an acronym</p></div></a>
-      <a href="tools/text-summarizer-basic" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#file-text"></use></svg> Text Summarizer</h4><p>Extract key sentences from long text</p></div></a>
-      <a href="tools/citation-generator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#bookmark"></use></svg> Citation Generator</h4><p>Generate APA, MLA, Chicago citations</p></div></a>
-      <a href="tools/random-quote-generator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#quote"></use></svg> Random Quote Generator</h4><p>Get inspiring quotes by category</p></div></a>
+      <a href="tools/random-name-generator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#user"></use></svg> Random Name Generator</h3><p>Generate random names for testing or fiction</p></div></a>
+      <a href="tools/random-number-generator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#random"></use></svg> Random Number Generator</h3><p>Generate random numbers with custom range</p></div></a>
+      <a href="tools/text-to-speech" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#volume"></use></svg> Text to Speech</h3><p>Convert text to spoken audio</p></div></a>
+      <a href="tools/speech-to-text" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#mic"></use></svg> Speech to Text</h3><p>Dictate using your microphone</p></div></a>
+      <a href="tools/markdown-previewer" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#markdown-html"></use></svg> Markdown Previewer</h3><p>Live Markdown to HTML preview</p></div></a>
+      <a href="tools/text-reverser" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#repeat"></use></svg> Text Reverser</h3><p>Reverse text characters, words, or lines</p></div></a>
+      <a href="tools/acronym-generator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#tag"></use></svg> Acronym Generator</h3><p>Turn any phrase into an acronym</p></div></a>
+      <a href="tools/text-summarizer-basic" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#file-text"></use></svg> Text Summarizer</h3><p>Extract key sentences from long text</p></div></a>
+      <a href="tools/citation-generator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#bookmark"></use></svg> Citation Generator</h3><p>Generate APA, MLA, Chicago citations</p></div></a>
+      <a href="tools/random-quote-generator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#quote"></use></svg> Random Quote Generator</h3><p>Get inspiring quotes by category</p></div></a>
 
-      <a href="tools/words-to-pages-converter" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#pages"></use></svg> Words to Pages Converter</h4><p>Convert word count to page count, both ways</p></div></a>
-      <a href="tools/number-to-words-converter" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#hash"></use></svg> Number to Words Converter</h4><p>Spell out numbers in full written words</p></div></a>
-      <a href="tools/morse-code-translator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#code"></use></svg> Morse Code Translator</h4><p>Text to Morse code with audio playback</p></div></a>
-      <a href="tools/nato-phonetic-alphabet-translator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#navigation"></use></svg> NATO Phonetic Alphabet</h4><p>Convert text to Alpha, Bravo, Charlie</p></div></a>
-      <a href="tools/fancy-text-generator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#case"></use></svg> Fancy Text Generator</h4><p>12+ stylish unicode fonts for social bios</p></div></a>
+      <a href="tools/words-to-pages-converter" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#pages"></use></svg> Words to Pages Converter</h3><p>Convert word count to page count, both ways</p></div></a>
+      <a href="tools/number-to-words-converter" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#hash"></use></svg> Number to Words Converter</h3><p>Spell out numbers in full written words</p></div></a>
+      <a href="tools/morse-code-translator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#code"></use></svg> Morse Code Translator</h3><p>Text to Morse code with audio playback</p></div></a>
+      <a href="tools/nato-phonetic-alphabet-translator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#navigation"></use></svg> NATO Phonetic Alphabet</h3><p>Convert text to Alpha, Bravo, Charlie</p></div></a>
+      <a href="tools/fancy-text-generator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#case"></use></svg> Fancy Text Generator</h3><p>12+ stylish unicode fonts for social bios</p></div></a>
 
     
     </div>
 
-    <a href="categories/developer-tools">
-      <div id="developer-tools" class="section-header" style="text-align:left; margin-bottom:20px;" >
-       <h2>Developer Tools </h2>
-      </div>
-    </a>
-    <div class="tool-grid" style="margin-bottom:40px;">
-      <a href="tools/json-formatter" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#json"></use></svg> JSON Formatter</h4><p>Format, validate and minify JSON</p></div></a>
-      <a href="tools/base64" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#code"></use></svg> Base64 Encode/Decode</h4><p>Encode text/files to Base64 and back</p></div></a>
-      <a href="tools/url-encoder" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#link"></use></svg> URL Encoder/Decoder</h4><p>Encode and decode URLs safely</p></div></a>
-      <a href="tools/hash-generator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#hash"></use></svg>Hash Generator</h4><p>MD5, SHA1, SHA256 hash generation</p></div></a>
-      <a href="tools/uuid-generator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#uuid"></use></svg> UUID Generator</h4><p>Generate v4 UUIDs instantly</p></div></a>
-      <a href="tools/regex-tester" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#regex"></use></svg> Regex Tester</h4><p>Test and debug regular expressions</p></div></a>
-      <a href="tools/password-generator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#key"></use></svg> Password Generator</h4><p>Strong, random password generator</p></div></a>
+    <h2 class="group-title" id="developer-tools"><a href="categories/developer-tools">Developer Tools</a></h2>
+    <div class="tool-grid">
+      <a href="tools/json-formatter" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#json"></use></svg> JSON Formatter</h3><p>Format, validate and minify JSON</p></div></a>
+      <a href="tools/base64" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#code"></use></svg> Base64 Encode/Decode</h3><p>Encode text/files to Base64 and back</p></div></a>
+      <a href="tools/url-encoder" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#link"></use></svg> URL Encoder/Decoder</h3><p>Encode and decode URLs safely</p></div></a>
+      <a href="tools/hash-generator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#hash"></use></svg>Hash Generator</h3><p>MD5, SHA1, SHA256 hash generation</p></div></a>
+      <a href="tools/uuid-generator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#uuid"></use></svg> UUID Generator</h3><p>Generate v4 UUIDs instantly</p></div></a>
+      <a href="tools/regex-tester" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#regex"></use></svg> Regex Tester</h3><p>Test and debug regular expressions</p></div></a>
+      <a href="tools/password-generator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#key"></use></svg> Password Generator</h3><p>Strong, random password generator</p></div></a>
 
-      <a href="tools/css-minifier" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#css-minify"></use></svg> CSS Minifier</h4><p>Minify or beautify CSS code</p></div></a>
-      <a href="tools/js-minifier" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#js-minify"></use></svg> JS Minifier</h4><p>Minify or beautify JavaScript code</p></div></a>
-      <a href="tools/html-minifier" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#html-format"></use></svg> HTML Minifier</h4><p>Minify or beautify HTML code</p></div></a>
-      <a href="tools/html-entity-converter" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#html-preview"></use></svg> HTML Entity Converter</h4><p>Encode and decode HTML entities</p></div></a>
-      <a href="tools/cron-expression-builder" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#refresh"></use></svg> Cron Expression Builder</h4><p>Build and explain cron expressions</p></div></a>
-      <a href="tools/jwt-decoder" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#key"></use></svg> JWT Decoder</h4><p>Decode JWT header and payload</p></div></a>
-      <a href="tools/sql-formatter" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#code"></use></svg> SQL Formatter</h4><p>Beautify messy SQL queries</p></div></a>
-      <a href="tools/css-gradient-generator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#color-picker"></use></svg> CSS Gradient Generator</h4><p>Build gradients visually with CSS output</p></div></a>
-      <a href="tools/css-box-shadow-generator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#css-minify"></use></svg> CSS Box Shadow Generator</h4><p>Build box shadows visually with CSS output</p></div></a>
-      <a href="tools/http-status-code-lookup" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#info"></use></svg> HTTP Status Code Lookup</h4><p>Searchable HTTP status code reference</p></div></a>
+      <a href="tools/css-minifier" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#css-minify"></use></svg> CSS Minifier</h3><p>Minify or beautify CSS code</p></div></a>
+      <a href="tools/js-minifier" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#js-minify"></use></svg> JS Minifier</h3><p>Minify or beautify JavaScript code</p></div></a>
+      <a href="tools/html-minifier" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#html-format"></use></svg> HTML Minifier</h3><p>Minify or beautify HTML code</p></div></a>
+      <a href="tools/html-entity-converter" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#html-preview"></use></svg> HTML Entity Converter</h3><p>Encode and decode HTML entities</p></div></a>
+      <a href="tools/cron-expression-builder" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#refresh"></use></svg> Cron Expression Builder</h3><p>Build and explain cron expressions</p></div></a>
+      <a href="tools/jwt-decoder" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#key"></use></svg> JWT Decoder</h3><p>Decode JWT header and payload</p></div></a>
+      <a href="tools/sql-formatter" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#code"></use></svg> SQL Formatter</h3><p>Beautify messy SQL queries</p></div></a>
+      <a href="tools/css-gradient-generator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#color-picker"></use></svg> CSS Gradient Generator</h3><p>Build gradients visually with CSS output</p></div></a>
+      <a href="tools/css-box-shadow-generator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#css-minify"></use></svg> CSS Box Shadow Generator</h3><p>Build box shadows visually with CSS output</p></div></a>
+      <a href="tools/http-status-code-lookup" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#info"></use></svg> HTTP Status Code Lookup</h3><p>Searchable HTTP status code reference</p></div></a>
 
-      <a href="tools/xml-formatter" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#html-format"></use></svg> XML Formatter & Validator</h4><p>Format, validate, and minify XML</p></div></a>
-      <a href="tools/yaml-json-converter" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#json"></use></svg> YAML to JSON Converter</h4><p>Convert between YAML and JSON</p></div></a>
-      <a href="tools/css-clamp-calculator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#ruler"></use></svg> CSS Clamp() Calculator</h4><p>Generate fluid, responsive font-size values</p></div></a>
+      <a href="tools/xml-formatter" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#html-format"></use></svg> XML Formatter & Validator</h3><p>Format, validate, and minify XML</p></div></a>
+      <a href="tools/yaml-json-converter" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#json"></use></svg> YAML to JSON Converter</h3><p>Convert between YAML and JSON</p></div></a>
+      <a href="tools/css-clamp-calculator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#ruler"></use></svg> CSS Clamp() Calculator</h3><p>Generate fluid, responsive font-size values</p></div></a>
     </div>
 
-    <a href="categories/image-pdf-tools">
-      <div id="image-pdf-tools" class="section-header" style="text-align:left; margin-bottom:20px;">
-        <h2>Image &amp; PDF Tools </h2>
-      </div>
-    </a>
+    <h2 class="group-title" id="image-pdf-tools"><a href="categories/image-pdf-tools">Image &amp; PDF Tools</a></h2>
 
-    <div class="tool-grid" style="margin-bottom:40px;">
+    <div class="tool-grid">
 
-      <a href="tools/image-converter" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#refresh"></use></svg> Image Converter</h4><p>JPG, PNG, WEBP, BMP — convert any format</p></div></a>
-      <a href="tools/image-compressor" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#compress-img"></use></svg> Image Compressor</h4><p>Compress images without losing quality</p></div></a>
-      <a href="tools/image-resize" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#resize"></use></svg> Image Resize</h4><p>Resize images to any pixel dimension</p></div></a>
-      <a href="tools/image-crop" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#crop"></use></svg> Image Crop</h4><p>Crop images with interactive preview</p></div></a>
-      <a href="tools/image-rotate" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#pdf-rotate"></use></svg> Image Rotate &amp; Flip</h4><p>Rotate 90°/180°, flip horizontal &amp; vertical</p></div></a>
+      <a href="tools/image-converter" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#refresh"></use></svg> Image Converter</h3><p>JPG, PNG, WEBP, BMP — convert any format</p></div></a>
+      <a href="tools/image-compressor" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#compress-img"></use></svg> Image Compressor</h3><p>Compress images without losing quality</p></div></a>
+      <a href="tools/image-resize" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#resize"></use></svg> Image Resize</h3><p>Resize images to any pixel dimension</p></div></a>
+      <a href="tools/image-crop" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#crop"></use></svg> Image Crop</h3><p>Crop images with interactive preview</p></div></a>
+      <a href="tools/image-rotate" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#pdf-rotate"></use></svg> Image Rotate &amp; Flip</h3><p>Rotate 90°/180°, flip horizontal &amp; vertical</p></div></a>
 
-      <a href="tools/pdf-merge" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#pages"></use></svg> PDF Merge</h4><p>Combine multiple PDFs into one file</p></div></a>
-      <a href="tools/pdf-split" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#pdf-split"></use></svg> PDF Split</h4><p>Split PDF by page ranges or individual pages</p></div></a>
-      <a href="tools/jpg-to-pdf" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#image"></use></svg> JPG to PDF</h4><p>Convert JPG/PNG images into a PDF file</p></div></a>
-      <a href="tools/pdf-to-jpg" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#pdf"></use></svg> PDF to JPG</h4><p>Extract pages from PDF as JPG images</p></div></a>
-      <a href="tools/pdf-rotate" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#pdf-rotate"></use></svg> PDF Rotate</h4><p>Rotate PDF pages 90°, 180° or 270°</p></div></a>
+      <a href="tools/pdf-merge" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#pages"></use></svg> PDF Merge</h3><p>Combine multiple PDFs into one file</p></div></a>
+      <a href="tools/pdf-split" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#pdf-split"></use></svg> PDF Split</h3><p>Split PDF by page ranges or individual pages</p></div></a>
+      <a href="tools/jpg-to-pdf" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#image"></use></svg> JPG to PDF</h3><p>Convert JPG/PNG images into a PDF file</p></div></a>
+      <a href="tools/pdf-to-jpg" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#pdf"></use></svg> PDF to JPG</h3><p>Extract pages from PDF as JPG images</p></div></a>
+      <a href="tools/pdf-rotate" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#pdf-rotate"></use></svg> PDF Rotate</h3><p>Rotate PDF pages 90°, 180° or 270°</p></div></a>
 
-      <a href="tools/image-to-base64" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#refresh"></use></svg> Image to Base64</h4><p>Convert images to Base64 data URI</p></div></a>
-      <a href="tools/favicon-generator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#settings"></use></svg> Favicon Generator</h4><p>Generate all favicon sizes from one image</p></div></a>
-      <a href="tools/image-watermark" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#image"></use></svg> Image Watermark</h4><p>Add a custom text watermark to images</p></div></a>
-      <a href="tools/meme-generator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#image"></use></svg> Meme Generator</h4><p>Add top/bottom text captions to images</p></div></a>
-      <a href="tools/pdf-to-text" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#image"></use></svg> PDF to Text</h4><p>Extract readable text from any PDF</p></div></a>
-      <a href="tools/pdf-page-remover" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#image"></use></svg> PDF Page Remover</h4><p>Delete specific pages from a PDF</p></div></a>
-      <a href="tools/pdf-watermark" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#image"></use></svg> PDF Watermark</h4><p>Stamp a text watermark across pages</p></div></a>
-      <a href="tools/pdf-password-protect" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#lock"></use></svg> PDF Password Protect</h4><p>Add real password encryption to a PDF</p></div></a>
-      <a href="tools/image-color-picker" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#image"></use></svg> Image Color Picker</h4><p>Pick HEX/RGB colors from any photo</p></div></a>
-      <a href="tools/svg-to-png" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#refresh"></use></svg> SVG to PNG</h4><p>Convert SVG files to raster PNG images</p></div></a>
+      <a href="tools/image-to-base64" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#refresh"></use></svg> Image to Base64</h3><p>Convert images to Base64 data URI</p></div></a>
+      <a href="tools/favicon-generator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#settings"></use></svg> Favicon Generator</h3><p>Generate all favicon sizes from one image</p></div></a>
+      <a href="tools/image-watermark" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#image"></use></svg> Image Watermark</h3><p>Add a custom text watermark to images</p></div></a>
+      <a href="tools/meme-generator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#image"></use></svg> Meme Generator</h3><p>Add top/bottom text captions to images</p></div></a>
+      <a href="tools/pdf-to-text" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#image"></use></svg> PDF to Text</h3><p>Extract readable text from any PDF</p></div></a>
+      <a href="tools/pdf-page-remover" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#image"></use></svg> PDF Page Remover</h3><p>Delete specific pages from a PDF</p></div></a>
+      <a href="tools/pdf-watermark" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#image"></use></svg> PDF Watermark</h3><p>Stamp a text watermark across pages</p></div></a>
+      <a href="tools/pdf-password-protect" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#lock"></use></svg> PDF Password Protect</h3><p>Add real password encryption to a PDF</p></div></a>
+      <a href="tools/image-color-picker" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#image"></use></svg> Image Color Picker</h3><p>Pick HEX/RGB colors from any photo</p></div></a>
+      <a href="tools/svg-to-png" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#refresh"></use></svg> SVG to PNG</h3><p>Convert SVG files to raster PNG images</p></div></a>
 
-      <a href="tools/photo-resizer-kb" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#resize"></use></svg> Photo Resizer to KB</h4><p>Resize a photo to an exact target file size</p></div></a>
-      <a href="tools/pdf-compressor" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#compress-img"></use></svg> PDF Compressor</h4><p>Reduce PDF file size with adjustable quality</p></div></a>
+      <a href="tools/photo-resizer-kb" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#resize"></use></svg> Photo Resizer to KB</h3><p>Resize a photo to an exact target file size</p></div></a>
+      <a href="tools/pdf-compressor" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#compress-img"></use></svg> PDF Compressor</h3><p>Reduce PDF file size with adjustable quality</p></div></a>
 
     </div>
 
-    <a href="categories/utilities">
-      <div id="utilities" class="section-header" style="text-align:left; margin-bottom:20px;">
-        <h2>Utilities </h2>
-      </div>
-    </a>
+    <h2 class="group-title" id="utilities"><a href="categories/utilities">Utilities</a></h2>
 
-    <div class="tool-grid" style="margin-bottom:40px;">
+    <div class="tool-grid">
 
-      <a href="tools/password-strength" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#lock"></use></svg> Password Strength Checker</h4><p>Check how strong your password is</p></div></a>
-      <a href="tools/qr-generator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#qr-code"></use></svg> QR Code Generator</h4><p>Generate QR codes for URLs, text, contacts</p></div></a>
+      <a href="tools/password-strength" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#lock"></use></svg> Password Strength Checker</h3><p>Check how strong your password is</p></div></a>
+      <a href="tools/qr-generator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#qr-code"></use></svg> QR Code Generator</h3><p>Generate QR codes for URLs, text, contacts</p></div></a>
 
-      <a href="tools/barcode-generator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#barcode"></use></svg> Barcode Generator</h4><p>Generate real, scannable CODE128 barcodes</p></div></a>
-      <a href="tools/passphrase-generator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#lock"></use></svg> Passphrase Generator</h4><p>Generate secure, memorable passphrases</p></div></a>
-      <a href="tools/browser-info-lookup" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#info"></use></svg> Browser Info Lookup</h4><p>Check your browser, OS, and timezone</p></div></a>
-      <a href="tools/unit-price-comparator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#percent"></use></svg> Unit Price Comparator</h4><p>Compare price-per-unit to find the best deal</p></div></a>
-      <a href="tools/percentage-fee-splitter" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#percent"></use></svg> Payment Fee Calculator</h4><p>Calculate net payout after fees</p></div></a>
-      <a href="tools/countdown-timer-tool" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#refresh"></use></svg> Countdown Timer</h4><p>Live countdown to any date or event</p></div></a>
-      <a href="tools/world-clock" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#refresh"></use></svg> World Clock</h4><p>Live time across multiple cities</p></div></a>
-      <a href="tools/flip-coin-dice-roller" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#refresh"></use></svg> Coin Flip & Dice Roller</h4><p>Flip a coin or roll dice with history</p></div></a>
-      <a href="tools/random-team-generator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#user"></use></svg> Random Team Generator</h4><p>Split names into random balanced teams</p></div></a>
-      <a href="tools/file-size-converter" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#refresh"></use></svg> File Size Converter</h4><p>Convert bytes, KB, MB, GB, TB</p></div></a>
+      <a href="tools/barcode-generator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#barcode"></use></svg> Barcode Generator</h3><p>Generate real, scannable CODE128 barcodes</p></div></a>
+      <a href="tools/passphrase-generator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#lock"></use></svg> Passphrase Generator</h3><p>Generate secure, memorable passphrases</p></div></a>
+      <a href="tools/browser-info-lookup" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#info"></use></svg> Browser Info Lookup</h3><p>Check your browser, OS, and timezone</p></div></a>
+      <a href="tools/unit-price-comparator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#percent"></use></svg> Unit Price Comparator</h3><p>Compare price-per-unit to find the best deal</p></div></a>
+      <a href="tools/percentage-fee-splitter" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#percent"></use></svg> Payment Fee Calculator</h3><p>Calculate net payout after fees</p></div></a>
+      <a href="tools/countdown-timer-tool" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#refresh"></use></svg> Countdown Timer</h3><p>Live countdown to any date or event</p></div></a>
+      <a href="tools/world-clock" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#refresh"></use></svg> World Clock</h3><p>Live time across multiple cities</p></div></a>
+      <a href="tools/flip-coin-dice-roller" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#refresh"></use></svg> Coin Flip & Dice Roller</h3><p>Flip a coin or roll dice with history</p></div></a>
+      <a href="tools/random-team-generator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#user"></use></svg> Random Team Generator</h3><p>Split names into random balanced teams</p></div></a>
+      <a href="tools/file-size-converter" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#refresh"></use></svg> File Size Converter</h3><p>Convert bytes, KB, MB, GB, TB</p></div></a>
 
-      <a href="tools/random-color-palette-generator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#color-picker"></use></svg> Color Palette Generator</h4><p>Complementary, analogous, triadic schemes</p></div></a>
-      <a href="tools/text-expander-snippet-tool" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#duplicate"></use></svg> Text Expander & Snippet Tool</h4><p>Save and reuse text snippets locally</p></div></a>
+      <a href="tools/random-color-palette-generator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#color-picker"></use></svg> Color Palette Generator</h3><p>Complementary, analogous, triadic schemes</p></div></a>
+      <a href="tools/text-expander-snippet-tool" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#duplicate"></use></svg> Text Expander & Snippet Tool</h3><p>Save and reuse text snippets locally</p></div></a>
 
     </div>
 
-    <a href="categories/ai-tools">
-      <div id="ai" class="section-header" style="text-align:left; margin-bottom:20px;">
-        <h2>AI Tools </h2>
-      </div>
-    </a>
+    <h2 class="group-title" id="ai"><a href="categories/ai-tools">AI Tools</a></h2>
 
-    <div class="tool-grid" style="margin-bottom:40px;">
+    <div class="tool-grid">
       
-      <a href="tools/resume-analyzer" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#page"></use></svg> Resume Analyzer</h4><p>Analyze and improve your resume</p></div></a>
-      <a href="tools/website-speed-analyzer" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#loader"></use></svg> Website Speed Analyzer</h4><p>Check and improve your website's loading speed</p></div></a>
+      <a href="tools/resume-analyzer" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#page"></use></svg> Resume Analyzer</h3><p>Analyze and improve your resume</p></div></a>
+      <a href="tools/website-speed-analyzer" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#loader"></use></svg> Website Speed Analyzer</h3><p>Check and improve your website's loading speed</p></div></a>
 
     </div>
 
-    <a href="categories/global-tools">
-      <div id="global-tools" class="section-header" style="text-align:left; margin-bottom:20px;">
-        <h2>Global Tools </h2>
-      </div>
-    </a>
+    <h2 class="group-title" id="global-tools"><a href="categories/global-tools">Global Tools</a></h2>
 
-    <div class="tool-grid" style="margin-bottom:40px;">
+    <div class="tool-grid">
 
-      <a href="tools/pdf-inspector" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#pdf"></use></svg> PDF Inspector</h4><p>Analyze PDF metadata, fonts, images and structure</p></div></a>
-      <a href="tools/image-privacy-cleaner" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#image"></use></svg> Image Privacy Cleaner</h4><p>Remove EXIF and GPS metadata from photos</p></div></a>
-      <a href="tools/json-repair" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#json"></use></svg> JSON Repair Tool</h4><p>Fix, validate and format broken JSON</p></div></a>
-      <a href="tools/csv-cleaner" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#csv"></use></svg> CSV Cleaner</h4><p>Deduplicate and clean messy CSV files</p></div></a>
-      <a href="tools/ai-context-calculator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#cpu"></use></svg> AI Token & Context Calculator</h4><p>Estimate token count and context window usage</p></div></a>
-      <a href="tools/markdown-to-html" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#code"></use></svg> Markdown to HTML</h4><p>Convert Markdown to clean, semantic HTML</p></div></a>
-      <a href="tools/url-deduplicator" class="tool-item"><div class="ti-text"><h4><svg class="icon1"><use href="/assets/svg/icons.svg#link"></use></svg> URL Deduplicator</h4><p>Find and remove duplicate URLs from a list</p></div></a>
+      <a href="tools/pdf-inspector" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#pdf"></use></svg> PDF Inspector</h3><p>Analyze PDF metadata, fonts, images and structure</p></div></a>
+      <a href="tools/image-privacy-cleaner" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#image"></use></svg> Image Privacy Cleaner</h3><p>Remove EXIF and GPS metadata from photos</p></div></a>
+      <a href="tools/json-repair" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#json"></use></svg> JSON Repair Tool</h3><p>Fix, validate and format broken JSON</p></div></a>
+      <a href="tools/csv-cleaner" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#csv"></use></svg> CSV Cleaner</h3><p>Deduplicate and clean messy CSV files</p></div></a>
+      <a href="tools/ai-context-calculator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#cpu"></use></svg> AI Token & Context Calculator</h3><p>Estimate token count and context window usage</p></div></a>
+      <a href="tools/markdown-to-html" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#code"></use></svg> Markdown to HTML</h3><p>Convert Markdown to clean, semantic HTML</p></div></a>
+      <a href="tools/url-deduplicator" class="tool-item"><div class="ti-text"><h3><svg class="icon icon-sm"><use href="/assets/svg/icons.svg#link"></use></svg> URL Deduplicator</h3><p>Find and remove duplicate URLs from a list</p></div></a>
 
     </div>
   </div>
 </section>
 
 <!-- WHY SECTION -->
-<section class="section" style="background: var(--white);">
-  <div class="section-inner">
-    <div class="section-header">
+<section class="section">
+  <div class="container container-wide">
+    <div class="section-header section-header-center">
       <h2>Why Choose Logrith?</h2>
       <p>Built for speed, privacy and reliability</p>
     </div>
-    <div class="cat-grid">
-      <div class="cat-card" style="cursor:default;">
-        <div class="cat-icon"><svg class="icon" style="width:24px; height:24px;"><use href="/assets/svg/icons.svg#lock"></use></svg></div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon"><svg class="icon icon-lg"><use href="/assets/svg/icons.svg#lock"></use></svg></div>
         <h3>100% Private</h3>
         <p>All processing happens in your browser. Your files never leave your device.</p>
       </div>
-      <div class="cat-card" style="cursor:default;">
-        <div class="cat-icon"><svg class="icon" style="width:24px; height:24px;"><use href="/assets/svg/icons.svg#speed"></use></svg></div>
+      <div class="feature-card">
+        <div class="feature-icon"><svg class="icon icon-lg"><use href="/assets/svg/icons.svg#speed"></use></svg></div>
         <h3>Lightning Fast</h3>
         <p>No server round-trips. Instant processing using browser APIs and Canvas.</p>
       </div>
-      <div class="cat-card" style="cursor:default;">
-        <div class="cat-icon"><svg class="icon" style="width:24px; height:24px;"><use href="/assets/svg/icons.svg#check-circle"></use></svg></div>
+      <div class="feature-card">
+        <div class="feature-icon"><svg class="icon icon-lg"><use href="/assets/svg/icons.svg#check-circle"></use></svg></div>
         <h3>Always Free</h3>
         <p>No subscription, no credits, no watermarks. 100% free forever.</p>
       </div>
-      <div class="cat-card" style="cursor:default;">
-        <div class="cat-icon"><svg class="icon" style="width:24px; height:24px;"><use href="/assets/svg/icons.svg#users"></use></svg></div>
+      <div class="feature-card">
+        <div class="feature-icon"><svg class="icon icon-lg"><use href="/assets/svg/icons.svg#users"></use></svg></div>
         <h3>Mobile Ready</h3>
         <p>Works perfectly on phones, tablets and desktops of all sizes.</p>
       </div>
@@ -430,61 +363,54 @@
 <!-- ═══════════════════════════════════════════════════════════
      SEO FAQ SECTION
 ═══════════════════════════════════════════════════════════ -->
-<section class="section" style="background: var(--gray-50);">
-  <div class="section-inner" style="max-width: 860px; margin: 0 auto;">
-    <div class="section-header">
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header section-header-center">
       <h2>Frequently Asked Questions</h2>
       <p>Everything you need to know about Logrith</p>
     </div>
 
-    <div class="faq-item">
-      <div class="faq-q">What is Logrith?</div>
-      <div class="faq-a">Logrith is a free online platform that helps you solve everyday digital tasks instantly. It includes tools for calculations, conversions, text formatting, generators, and developer utilities — all in one place, with no login required.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">What types of tools does Logrith provide?</div>
-      <div class="faq-a">Logrith is organized into seven main categories: Image & PDF Tools (for photos and documents), Calculate & Convert (for numbers and values), Text & Generators (for content and output creation), Developer Tools (for data and coding utilities), Utilities (for common quick-use tools like password checking and QR codes), AI Tools (for resume and website analysis), and Global Tools (document, data and developer utilities built for a worldwide audience). This structure makes it easy to find tools based on what you need to do.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Is Logrith completely free to use?</div>
-      <div class="faq-a">Yes, Logrith is 100% free. There are no hidden charges, no subscriptions, no credits, and no locked features. Every tool is available to everyone without any cost.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Do I need to sign up or log in?</div>
-      <div class="faq-a">No. Logrith requires zero registration. You can open any tool and start using it instantly without creating an account or sharing any personal information.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Is my data safe when using Logrith?</div>
-      <div class="faq-a">Yes. All tools run directly in your browser, meaning your data is processed locally on your device. Nothing is uploaded to any server, ensuring complete privacy and security.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Does Logrith work on mobile devices?</div>
-      <div class="faq-a">Yes, Logrith is fully responsive and works on all modern mobile browsers. You can use all tools on Android and iOS devices without any issues.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Can I use Logrith offline?</div>
-      <div class="faq-a">Most tools can work offline after the page has loaded, since all processing happens inside your browser. However, an internet connection is required to initially open the tool.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Which browsers are supported?</div>
-      <div class="faq-a">Logrith works on all modern browsers such as Chrome, Firefox, Edge, Safari, and Brave. For the best experience, always use the latest version of your browser.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">How fast are the tools?</div>
-      <div class="faq-a">All tools are optimized for speed and run instantly in your browser. Since there is no server processing, results are generated in real time without delays.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Will Logrith remain free in the future?</div>
-      <div class="faq-a">Yes, Logrith is designed to stay free. Minimal, non-intrusive ads may be used to support the platform, but they never interrupt usage or affect tool performance.</div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">What is Logrith?</summary>
+        <div class="faq-a"><p>Logrith is a free online platform that helps you solve everyday digital tasks instantly. It includes tools for calculations, conversions, text formatting, generators, and developer utilities — all in one place, with no login required.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">What types of tools does Logrith provide?</summary>
+        <div class="faq-a"><p>Logrith is organized into seven main categories: Image &amp; PDF Tools (for photos and documents), Calculate &amp; Convert (for numbers and values), Text &amp; Generators (for content and output creation), Developer Tools (for data and coding utilities), Utilities (for common quick-use tools like password checking and QR codes), AI Tools (for resume and website analysis), and Global Tools (document, data and developer utilities built for a worldwide audience). This structure makes it easy to find tools based on what you need to do.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Is Logrith completely free to use?</summary>
+        <div class="faq-a"><p>Yes, Logrith is 100% free. There are no hidden charges, no subscriptions, no credits, and no locked features. Every tool is available to everyone without any cost.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Do I need to sign up or log in?</summary>
+        <div class="faq-a"><p>No. Logrith requires zero registration. You can open any tool and start using it instantly without creating an account or sharing any personal information.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Is my data safe when using Logrith?</summary>
+        <div class="faq-a"><p>Yes. All tools run directly in your browser, meaning your data is processed locally on your device. Nothing is uploaded to any server, ensuring complete privacy and security.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Does Logrith work on mobile devices?</summary>
+        <div class="faq-a"><p>Yes, Logrith is fully responsive and works on all modern mobile browsers. You can use all tools on Android and iOS devices without any issues.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Can I use Logrith offline?</summary>
+        <div class="faq-a"><p>Most tools can work offline after the page has loaded, since all processing happens inside your browser. However, an internet connection is required to initially open the tool.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Which browsers are supported?</summary>
+        <div class="faq-a"><p>Logrith works on all modern browsers such as Chrome, Firefox, Edge, Safari, and Brave. For the best experience, always use the latest version of your browser.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">How fast are the tools?</summary>
+        <div class="faq-a"><p>All tools are optimized for speed and run instantly in your browser. Since there is no server processing, results are generated in real time without delays.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Will Logrith remain free in the future?</summary>
+        <div class="faq-a"><p>Yes, Logrith is designed to stay free. Minimal, non-intrusive ads may be used to support the platform, but they never interrupt usage or affect tool performance.</p></div>
+      </details>
     </div>
 
   </div>
@@ -493,13 +419,13 @@
 <!-- ═══════════════════════════════════════════════════════════
      SEO ARTICLE SECTION
 ═══════════════════════════════════════════════════════════ -->
-<section class="section" style="background: var(--white);">
-  <div class="section-inner" style="max-width: 860px; margin: 0 auto;">
-    <div class="section-header" style="text-align: left;">
+<section class="section">
+  <div class="container">
+    <div class="section-header">
       <h2>Logrith — Free Online Tools to Solve Everyday Tasks Faster</h2>
     </div>
 
-    <div style="font-size: 0.95rem; color: var(--gray-700); line-height: 1.85;">
+    <div class="prose">
 
       <p>In today’s digital world, most simple tasks still feel unnecessarily complicated. You need one website to calculate something, another to convert units, a third to clean or format text, and yet another to handle developer utilities. This constant switching slows you down, breaks focus, and often introduces privacy concerns or unnecessary restrictions. Logrith is built to remove that friction completely.</p>
 
@@ -532,9 +458,10 @@
 </section>
 
 <!-- FOOTER -->
-<div id="footer"></div>
+</main>
 
-<script src="/load-components.js"></script>
-<script src="/assets/js/main.js" defer></script>
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+
 </body>
 </html>

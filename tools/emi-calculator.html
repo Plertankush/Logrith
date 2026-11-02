@@ -21,8 +21,6 @@
   <meta name="twitter:title" content="Calculate Loan EMI With an Amortization Schedule | Logrith">
   <meta name="twitter:description" content="Work out your monthly EMI for a home, car or personal loan, plus total interest and a month-by-month amortization breakdown — accurate and instant.">
 
-  <link rel="preload" href="/assets/css/style.css" as="style">
-  <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -30,17 +28,11 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
 
-  <style>
-    .donut-legend { display:flex; flex-direction:column; gap:8px; }
-    .legend-item { display:flex; align-items:center; gap:8px; font-size:.86rem; color:var(--gray-700); }
-    .legend-dot { width:14px; height:14px; border-radius:50%; flex-shrink:0; }
-    .amort-table { width:100%; border-collapse:collapse; font-size:.82rem; max-height:350px; overflow-y:auto; display:block; }
-    .amort-table th { position:sticky; top:0; background:var(--gray-50); padding:8px 10px; text-align:right; font-weight:600; color:var(--gray-500); border-bottom:1.5px solid var(--gray-200); }
-    .amort-table th:first-child { text-align:left; }
-    .amort-table td { padding:7px 10px; text-align:right; border-bottom:1px solid var(--gray-100); color:var(--gray-700); }
-    .amort-table td:first-child { text-align:left; font-weight:600; }
-    .amort-table tr:hover td { background:var(--gray-50); }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {
@@ -103,22 +95,25 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-emi-calculator">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/calculate-convert">Calculate & Convert</a> › EMI Calculator</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/calculate-convert">Calculate &amp; Convert</a> › EMI Calculator</nav>
   <h1>Free EMI Calculator Online</h1>
   <p>Calculate your monthly loan EMI, total interest payable, and full amortization schedule instantly. This calculator works for home loan, car loan, personal loan, and other common loan types.</p>
-  <div class="tool-tags">
-    <span class="tool-tag">✅ Free</span>
-    <span class="tool-tag">📊 Amortization Table</span>
-    <span class="tool-tag">🏠 All Loan Types</span>
-    <span class="tool-tag">⚡ Instant</span>
+  <div class="tag-list">
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#chart-bar"></use></svg> Amortization Table</span>
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#home"></use></svg> All Loan Types</span>
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span>
   </div>
-</div></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:800px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Loan Details</h2>
     <div class="controls-grid">
@@ -143,32 +138,32 @@
       </div>
     </div>
 
-    <div style="margin-top:12px;">
-      <label style="font-size:.82rem;font-weight:500;color:var(--gray-500);display:block;margin-bottom:8px;">Quick Presets</label>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;">
-        <button class="btn btn-sm btn-secondary" onclick="setPreset('home')">🏠 Home Loan</button>
-        <button class="btn btn-sm btn-secondary" onclick="setPreset('car')">🚗 Car Loan</button>
-        <button class="btn btn-sm btn-secondary" onclick="setPreset('personal')">💳 Personal Loan</button>
+    <div class="mt-12">
+      <label class="u-fcff89">Quick Presets</label>
+      <div class="u-180d23">
+        <button class="btn btn-sm btn-secondary" onclick="setPreset('home')"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#home"></use></svg> Home Loan</button>
+        <button class="btn btn-sm btn-secondary" onclick="setPreset('car')"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#navigation"></use></svg> Car Loan</button>
+        <button class="btn btn-sm btn-secondary" onclick="setPreset('personal')"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#credit-card"></use></svg> Personal Loan</button>
       </div>
     </div>
 
     <div class="btn-group mt-16">
-      <button class="btn btn-primary btn-lg" id="calc-btn">💰 Calculate EMI</button>
-      <button class="btn btn-secondary" id="reset-btn">✕ Reset</button>
+      <button class="btn btn-primary btn-lg" id="calc-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#currency"></use></svg> Calculate EMI</button>
+      <button class="btn btn-secondary" id="reset-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Reset</button>
     </div>
     <div class="status-msg" id="status-msg"></div>
   </div>
 
-  <div class="tool-card" id="result-card" style="display:none;">
+  <div class="tool-card is-hidden" id="result-card">
     <h2>EMI Results</h2>
-    <div class="stat-result-grid" id="emi-grid"></div>
+    <div class="stat-grid" id="emi-grid"></div>
 
-    <div style="background:var(--gray-50);border-radius:var(--radius);padding:16px;margin:16px 0;">
-      <h3 style="font-size:.9rem;font-weight:600;color:var(--gray-700);margin-bottom:12px;">Payment Breakdown</h3>
-      <div id="breakdown-bar" style="height:24px;border-radius:12px;overflow:hidden;display:flex;"></div>
+    <div class="u-7b62ce">
+      <h3 class="u-00d989">Payment Breakdown</h3>
+      <div id="breakdown-bar"></div>
       <div class="donut-legend mt-12">
-        <div class="legend-item"><div class="legend-dot" style="background:var(--primary);"></div><span id="principal-legend">Principal: —</span></div>
-        <div class="legend-item"><div class="legend-dot" style="background:var(--accent);"></div><span id="interest-legend">Total Interest: —</span></div>
+        <div class="legend-item"><div class="legend-dot u-a40d2a"></div><span id="principal-legend">Principal: —</span></div>
+        <div class="legend-item"><div class="legend-dot u-abc7f5"></div><span id="interest-legend">Total Interest: —</span></div>
       </div>
     </div>
 
@@ -176,7 +171,7 @@
       <button class="tab-btn active" data-tab="yearly">Year-wise Summary</button>
       <button class="tab-btn" data-tab="monthly">Monthly Schedule</button>
     </div>
-    <div style="overflow:auto;max-height:400px;margin-top:12px;">
+    <div class="u-b689ef">
       <table class="amort-table" id="amort-table">
         <thead id="amort-head"></thead>
         <tbody id="amort-body"></tbody>
@@ -185,23 +180,53 @@
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>People Also Ask</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>What is EMI?</h3><p>EMI stands for Equated Monthly Installment. It is the fixed monthly payment made by a borrower to repay a loan over a set period of time.</p></div>
-    <div class="faq-item-box"><h3>How is EMI calculated?</h3><p>EMI is calculated using the principal loan amount, the monthly interest rate, and the total number of monthly installments.</p></div>
-    <div class="faq-item-box"><h3>Can I use this calculator for home loan EMI?</h3><p>Yes, this EMI calculator can be used for home loans. Enter your home loan amount, interest rate, and tenure to get the result instantly.</p></div>
-    <div class="faq-item-box"><h3>Does this calculator work for car loans?</h3><p>Yes, you can use this tool for car loan EMI calculation as well. It works for most fixed-rate vehicle loans.</p></div>
-    <div class="faq-item-box"><h3>Can I calculate personal loan EMI online for free?</h3><p>Yes, this personal loan EMI calculator is free to use online and does not require login or signup.</p></div>
-    <div class="faq-item-box"><h3>What is an amortization schedule?</h3><p>An amortization schedule is a table showing each EMI payment with the split between principal repayment, interest payment, and remaining balance.</p></div>
-    <div class="faq-item-box"><h3>How can I reduce my EMI amount?</h3><p>You can reduce EMI by increasing loan tenure, getting a lower interest rate, making a larger down payment, or making part-prepayments when available.</p></div>
-    <div class="faq-item-box"><h3>What happens if I choose a longer tenure?</h3><p>A longer tenure usually lowers the monthly EMI, but it increases the total interest paid over the full loan period.</p></div>
-    <div class="faq-item-box"><h3>What happens if I choose a shorter tenure?</h3><p>A shorter tenure increases the monthly EMI, but it reduces the total interest payable on the loan.</p></div>
-    <div class="faq-item-box"><h3>Is this EMI calculator accurate?</h3><p>Yes, it uses the standard EMI formula commonly used for fixed-rate loan calculations.</p></div>
+    <details class="faq-item">
+      <summary class="faq-q">What is EMI?</summary>
+      <div class="faq-a"><p>EMI stands for Equated Monthly Installment. It is the fixed monthly payment made by a borrower to repay a loan over a set period of time.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How is EMI calculated?</summary>
+      <div class="faq-a"><p>EMI is calculated using the principal loan amount, the monthly interest rate, and the total number of monthly installments.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I use this calculator for home loan EMI?</summary>
+      <div class="faq-a"><p>Yes, this EMI calculator can be used for home loans. Enter your home loan amount, interest rate, and tenure to get the result instantly.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does this calculator work for car loans?</summary>
+      <div class="faq-a"><p>Yes, you can use this tool for car loan EMI calculation as well. It works for most fixed-rate vehicle loans.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I calculate personal loan EMI online for free?</summary>
+      <div class="faq-a"><p>Yes, this personal loan EMI calculator is free to use online and does not require login or signup.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What is an amortization schedule?</summary>
+      <div class="faq-a"><p>An amortization schedule is a table showing each EMI payment with the split between principal repayment, interest payment, and remaining balance.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How can I reduce my EMI amount?</summary>
+      <div class="faq-a"><p>You can reduce EMI by increasing loan tenure, getting a lower interest rate, making a larger down payment, or making part-prepayments when available.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What happens if I choose a longer tenure?</summary>
+      <div class="faq-a"><p>A longer tenure usually lowers the monthly EMI, but it increases the total interest paid over the full loan period.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What happens if I choose a shorter tenure?</summary>
+      <div class="faq-a"><p>A shorter tenure increases the monthly EMI, but it reduces the total interest payable on the loan.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is this EMI calculator accurate?</summary>
+      <div class="faq-a"><p>Yes, it uses the standard EMI formula commonly used for fixed-rate loan calculations.</p></div>
+    </details>
   </div>
-</div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>About This EMI Calculator</h2>
   <p>This free EMI calculator helps you estimate your monthly loan repayment amount in seconds. You can use it for home loan EMI calculation, car loan EMI calculation, personal loan EMI calculation, and other similar loan planning needs. Simply enter the loan amount, annual interest rate, and tenure to instantly get your monthly EMI, total interest payable, and total repayment amount.</p>
 
@@ -214,7 +239,7 @@
 
   <h3>Home Loan, Car Loan, and Personal Loan EMI — Key Differences</h3>
   <p>While the underlying EMI formula is identical across loan types, the typical interest rates, tenures, and loan amounts differ significantly, which is why this tool includes quick presets for each:</p>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Home loans</strong> typically involve the largest principal amounts, the longest tenures (often 15–30 years), and comparatively lower interest rates, since the property itself serves as collateral.</li>
     <li><strong>Car loans</strong> usually have moderate principal amounts, shorter tenures (typically 3–7 years), and slightly higher interest rates than home loans, reflecting the faster depreciation of the underlying asset.</li>
     <li><strong>Personal loans</strong> are usually unsecured (no collateral), which means they carry the highest interest rates of the three, along with the shortest typical tenures (often 1–5 years) and smaller principal amounts.</li>
@@ -229,7 +254,7 @@
 
   <h3>Ways to Reduce Your EMI or Total Interest</h3>
   <p>If your calculated EMI feels too high for comfortable monthly budgeting, there are a few concrete levers to adjust, all of which you can test directly in this calculator:</p>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Extend the tenure</strong> — spreading the same loan amount over more months reduces each individual EMI, at the cost of more total interest paid.</li>
     <li><strong>Negotiate a lower interest rate</strong> — even a small reduction in annual interest rate can meaningfully lower both the EMI and the total interest over a long tenure.</li>
     <li><strong>Increase your down payment</strong> — borrowing a smaller principal amount directly reduces the EMI and total interest, since there's simply less to repay.</li>
@@ -246,40 +271,37 @@
   <p>It's common to see two loans with the identical principal amount produce noticeably different EMI figures, and this always comes down to a combination of interest rate and tenure. A ₹10 lakh loan at 8% over 5 years will have a meaningfully different EMI than the same ₹10 lakh at 12% over 3 years, even though the "amount borrowed" is identical in both cases. This is exactly why comparing loan offers purely by headline interest rate, or purely by monthly EMI, can be misleading in isolation — the full picture requires looking at EMI, total interest, and total repayment together, which is precisely what this calculator's result panel is designed to surface at a glance.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/gst-calculator" class="tool-item"><div class="ti-text"><h4>GST Calculator</h4><p>Calculate GST inclusive and exclusive amounts instantly for billing and pricing.</p></div></a>
-    <a href="/tools/percentage-calculator" class="tool-item"><div class="ti-text"><h4>Percentage Calculator</h4><p>Calculate percentage increase, decrease, ratio, and discount values quickly.</p></div></a>
-    <a href="/tools/age-calculator" class="tool-item"><div class="ti-text"><h4>Age Calculator</h4><p>Find exact age in years, months, and days with a simple date input.</p></div></a>
-    <a href="/tools/unit-converter" class="tool-item"><div class="ti-text"><h4>Unit Converter</h4><p>Convert common units like length, weight, temperature, and more.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">emi calculator online</span>
-        <span class="keyword-tag">home loan emi calculator</span>
-        <span class="keyword-tag">car loan emi calculator</span>
-        <span class="keyword-tag">personal loan emi calculator</span>
-        <span class="keyword-tag">loan emi calculator free</span>
-        <span class="keyword-tag">amortization schedule calculator</span>
-        <span class="keyword-tag">monthly emi calculator</span>
-        <span class="keyword-tag">loan interest calculator</span>
-        <span class="keyword-tag">emi calculator india</span>
-        <span class="keyword-tag">reduce emi calculator</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/gst-calculator"><strong>GST Calculator</strong><span>Calculate GST inclusive and exclusive amounts instantly for billing and pricing.</span></a>
+    <a class="related-card" href="/tools/percentage-calculator"><strong>Percentage Calculator</strong><span>Calculate percentage increase, decrease, ratio, and discount values quickly.</span></a>
+    <a class="related-card" href="/tools/age-calculator"><strong>Age Calculator</strong><span>Find exact age in years, months, and days with a simple date input.</span></a>
+    <a class="related-card" href="/tools/unit-converter"><strong>Unit Converter</strong><span>Convert common units like length, weight, temperature, and more.</span></a>
   </div>
 </section>
 
-<div id="footer"></div>
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">emi calculator online</span>
+    <span class="keyword-tag">home loan emi calculator</span>
+    <span class="keyword-tag">car loan emi calculator</span>
+    <span class="keyword-tag">personal loan emi calculator</span>
+    <span class="keyword-tag">loan emi calculator free</span>
+    <span class="keyword-tag">amortization schedule calculator</span>
+    <span class="keyword-tag">monthly emi calculator</span>
+    <span class="keyword-tag">loan interest calculator</span>
+    <span class="keyword-tag">emi calculator india</span>
+    <span class="keyword-tag">reduce emi calculator</span>
+  </div>
+</section>
 
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+
 <script>
 let currentView = 'yearly';
 let schedule = [];
@@ -337,20 +359,20 @@ document.getElementById('calc-btn').addEventListener('click', () => {
 
   document.getElementById('emi-grid').innerHTML = `
     <div class="stat-box" style="background:linear-gradient(135deg,var(--primary),var(--primary-light));border:none;">
-      <span class="sb-num" style="color:white;">${fmt(monthlyEMI)}</span>
-      <span class="sb-lbl" style="color:rgba(255,255,255,0.85);">Monthly EMI</span>
+      <span class="stat-num" style="color:white;">${fmt(monthlyEMI)}</span>
+      <span class="stat-label" style="color:rgba(255,255,255,0.85);">Monthly EMI</span>
     </div>
     <div class="stat-box">
-      <span class="sb-num">${fmt(P)}</span>
-      <span class="sb-lbl">Principal Amount</span>
+      <span class="stat-num">${fmt(P)}</span>
+      <span class="stat-label">Principal Amount</span>
     </div>
     <div class="stat-box">
-      <span class="sb-num" style="color:var(--accent);">${fmt(totalInterest)}</span>
-      <span class="sb-lbl">Total Interest</span>
+      <span class="stat-num" style="color:var(--accent);">${fmt(totalInterest)}</span>
+      <span class="stat-label">Total Interest</span>
     </div>
     <div class="stat-box">
-      <span class="sb-num" style="color:var(--success);">${fmt(totalPayment)}</span>
-      <span class="sb-lbl">Total Payment</span>
+      <span class="stat-num" style="color:var(--success);">${fmt(totalPayment)}</span>
+      <span class="stat-label">Total Payment</span>
     </div>`;
 
   const principalPct = (P / totalPayment * 100).toFixed(1);

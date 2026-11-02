@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -51,17 +55,20 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-acronym-generator">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/text-generators">Text & Generators</a> › Acronym Generator</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/text-generators">Text &amp; Generators</a> › Acronym Generator</nav>
   <h1>Free Acronym Generator</h1>
   <p>Turn any phrase, title, or sentence into an acronym instantly — with an option to include or skip small connector words.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">🔤 Instant</span><span class="tool-tag">⚡ Customizable</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#case"></use></svg> Instant</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Customizable</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:700px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Enter a Phrase</h2>
     <textarea class="tool-textarea" id="phrase-input" rows="3" placeholder="e.g. National Aeronautics and Space Administration">National Aeronautics and Space Administration</textarea>
@@ -70,33 +77,51 @@
       <label><input type="checkbox" id="uppercase-check" checked> Uppercase result</label>
     </div>
     <div class="btn-group mt-12">
-      <button class="btn btn-primary btn-lg" id="generate-btn">🔤 Generate Acronym</button>
+      <button class="btn btn-primary btn-lg" id="generate-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#case"></use></svg> Generate Acronym</button>
     </div>
     <div class="status-msg" id="status-msg"></div>
   </div>
 
-  <div class="tool-card" id="result-card" style="display:none;">
+  <div class="tool-card is-hidden" id="result-card">
     <h2>Result</h2>
-    <div style="text-align:center;padding:24px;background:var(--gray-50);border-radius:var(--radius-lg);">
-      <div style="font-family:var(--font-display);font-size:2.5rem;font-weight:800;color:var(--primary);letter-spacing:2px;" id="acronym-result">—</div>
+    <div class="u-d41c73">
+      <div id="acronym-result">—</div>
     </div>
     <div class="summary-box mt-16" id="letter-breakdown"></div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>How does an acronym generator work?</h3><p>It takes the first letter of each significant word in a phrase and combines them, typically skipping small connector words like "the," "of," and "and."</p></div>
-    <div class="faq-item-box"><h3>Should small connector words be included?</h3><p>Convention varies, but most acronyms skip small words unless they're needed to make the result pronounceable or meaningful. This tool lets you toggle that behavior.</p></div>
-    <div class="faq-item-box"><h3>What's the difference between an acronym and an initialism?</h3><p>An acronym is pronounced as a word (like NASA), while an initialism is spelled out letter by letter (like FBI). This tool generates the letter combination either way — how it's pronounced depends on the specific letters.</p></div>
-    <div class="faq-item-box"><h3>Is my phrase sent to a server?</h3><p>No, generation happens entirely in your browser using JavaScript. Nothing you enter is transmitted anywhere.</p></div>
-    <div class="faq-item-box"><h3>Can I generate an acronym from a single long word?</h3><p>This tool works best with multi-word phrases, since it extracts one letter per word. A single word won't produce a meaningful acronym, since there's only one word to draw a letter from.</p></div>
-    <div class="faq-item-box"><h3>Does capitalization in my input phrase matter?</h3><p>No, the tool extracts the first letter of each word regardless of how it was originally capitalized, then applies your chosen uppercase or original-case setting to the result.</p></div>
+    <details class="faq-item">
+      <summary class="faq-q">How does an acronym generator work?</summary>
+      <div class="faq-a"><p>It takes the first letter of each significant word in a phrase and combines them, typically skipping small connector words like "the," "of," and "and."</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Should small connector words be included?</summary>
+      <div class="faq-a"><p>Convention varies, but most acronyms skip small words unless they're needed to make the result pronounceable or meaningful. This tool lets you toggle that behavior.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What's the difference between an acronym and an initialism?</summary>
+      <div class="faq-a"><p>An acronym is pronounced as a word (like NASA), while an initialism is spelled out letter by letter (like FBI). This tool generates the letter combination either way — how it's pronounced depends on the specific letters.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my phrase sent to a server?</summary>
+      <div class="faq-a"><p>No, generation happens entirely in your browser using JavaScript. Nothing you enter is transmitted anywhere.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I generate an acronym from a single long word?</summary>
+      <div class="faq-a"><p>This tool works best with multi-word phrases, since it extracts one letter per word. A single word won't produce a meaningful acronym, since there's only one word to draw a letter from.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does capitalization in my input phrase matter?</summary>
+      <div class="faq-a"><p>No, the tool extracts the first letter of each word regardless of how it was originally capitalized, then applies your chosen uppercase or original-case setting to the result.</p></div>
+    </details>
   </div>
-</div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>Generate an Acronym From Any Phrase</h2>
   <p>This tool takes any phrase, title, or sentence and generates its acronym — the sequence of first letters from each significant word. It's useful for naming organizations, projects, or creating memorable shorthand for a longer title.</p>
 
@@ -110,7 +135,7 @@
   <p>Not every sequence of first letters makes for a strong acronym. The most memorable acronyms tend to either spell an actual pronounceable word (like NASA or SCUBA) or form a short, rhythmic sequence that's easy to say aloud even as individual letters (like FBI or CEO). When naming something new, it's often worth trying a few different phrasings of the same underlying idea through this tool, since small wording changes — swapping word order, adding or removing a connector word — can shift the resulting letters into something considerably catchier.</p>
 
   <h3>Common Uses</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Naming organizations or projects</strong> — quickly seeing what acronym results from a proposed full name.</li>
     <li><strong>Creating memorable shorthand</strong> — for long process names, methodologies, or internal team names.</li>
     <li><strong>Checking existing acronyms</strong> — verifying what a known acronym stands for by reverse-checking against candidate phrases.</li>
@@ -119,12 +144,24 @@
   </ul>
 
   <h3>Step-by-Step: Generating an Acronym</h3>
-  <div class="tool-steps">
-    <div class="tool-step"><strong>1. Enter your phrase</strong>Type or paste the full phrase or title you want to abbreviate.</div>
-    <div class="tool-step"><strong>2. Toggle small-word skipping</strong>Leave it on for a more standard result, or off to include every word.</div>
-    <div class="tool-step"><strong>3. Choose casing</strong>Toggle uppercase for a traditional acronym look.</div>
-    <div class="tool-step"><strong>4. Generate and review</strong>Click Generate Acronym and check the letter-by-letter breakdown.</div>
-  </div>
+  <ol class="steps">
+    <li class="step">
+      <strong>Enter your phrase</strong>
+      <p>Type or paste the full phrase or title you want to abbreviate.</p>
+    </li>
+    <li class="step">
+      <strong>Toggle small-word skipping</strong>
+      <p>Leave it on for a more standard result, or off to include every word.</p>
+    </li>
+    <li class="step">
+      <strong>Choose casing</strong>
+      <p>Toggle uppercase for a traditional acronym look.</p>
+    </li>
+    <li class="step">
+      <strong>Generate and review</strong>
+      <p>Click Generate Acronym and check the letter-by-letter breakdown.</p>
+    </li>
+  </ol>
 
   <h3>Privacy and Local Processing</h3>
   <p>All acronym generation happens directly in your browser — nothing you enter is sent to a server, logged, or stored anywhere.</p>
@@ -142,19 +179,20 @@
   <p>Workplace and technical writing often develops its own set of internal acronyms for recurring project names, processes, or team initiatives, and having a quick way to check what letters a proposed full name would produce helps teams avoid landing on something confusing, hard to say aloud, or accidentally identical to an existing unrelated term already used elsewhere in the organization. Running a few candidate full names through this tool during the naming process, rather than after a name has already stuck, makes it easy to course-correct before an awkward acronym becomes permanently embedded in documentation and conversation.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/slug-generator" class="tool-item"><div class="ti-text"><h4>Slug Generator</h4><p>Create SEO-friendly URL slugs from titles.</p></div></a>
-    <a href="/tools/case-converter" class="tool-item"><div class="ti-text"><h4>Case Converter</h4><p>Convert text between case formats.</p></div></a>
-    <a href="/tools/random-name-generator" class="tool-item"><div class="ti-text"><h4>Random Name Generator</h4><p>Generate random names for brainstorming.</p></div></a>
-    <a href="/tools/word-counter" class="tool-item"><div class="ti-text"><h4>Word Counter</h4><p>Count words and characters in your text.</p></div></a>
+    <a class="related-card" href="/tools/slug-generator"><strong>Slug Generator</strong><span>Create SEO-friendly URL slugs from titles.</span></a>
+    <a class="related-card" href="/tools/case-converter"><strong>Case Converter</strong><span>Convert text between case formats.</span></a>
+    <a class="related-card" href="/tools/random-name-generator"><strong>Random Name Generator</strong><span>Generate random names for brainstorming.</span></a>
+    <a class="related-card" href="/tools/word-counter"><strong>Word Counter</strong><span>Count words and characters in your text.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 const SMALL_WORDS = new Set(['a','an','the','of','and','for','in','on','at','to','with','by','or','but','as']);
 

@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -45,17 +49,20 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-yaml-json-converter">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/developer-tools">Developer Tools</a> › YAML to JSON Converter</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/developer-tools">Developer Tools</a> › YAML to JSON Converter</nav>
   <h1>Free YAML to JSON Converter</h1>
   <p>Convert YAML to JSON, or JSON to YAML — supports nested objects and arrays, both directions.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">🔄 Both Directions</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#refresh"></use></svg> Both Directions</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:900px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Convert</h2>
     <div class="mode-grid">
@@ -77,54 +84,59 @@ address:
     </div>
 
     <div class="btn-group mt-12">
-      <button class="btn btn-primary btn-lg" id="convert-btn">🔄 Convert</button>
+      <button class="btn btn-primary btn-lg" id="convert-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#refresh"></use></svg> Convert</button>
     </div>
     <div class="status-msg" id="status-msg"></div>
 
-    <div class="control-group mt-16" style="position:relative;">
+    <div class="control-group mt-16 relative">
       <label id="output-label">JSON Output</label>
       <textarea class="tool-textarea mono" id="output-text" rows="10" readonly></textarea>
-      <button class="copy-btn" id="copy-btn">📋 Copy</button>
+      <button class="copy-btn" id="copy-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
     </div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>Does this support nested YAML/JSON?</h3><p>Yes, nested objects and arrays of any depth are supported in both conversion directions.</p></div>
-    <div class="faq-item-box"><h3>What YAML features are supported?</h3><p>Standard key-value pairs, nested mappings, lists, strings, numbers, booleans, and null values are supported. Advanced YAML features like anchors, aliases, and multi-document files are not.</p></div>
-    <div class="faq-item-box"><h3>Why do some projects use YAML instead of JSON?</h3><p>YAML is generally considered more human-readable for configuration files since it doesn't require quotes around keys or curly braces, though JSON remains the standard for data exchange between programs.</p></div>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card">
-      <h2>How to Use the YAML to JSON Converter</h2>
-      <div class="tool-steps">
-        <div class="tool-step">
-          <strong>1. Pick a direction</strong>
-          Choose "YAML → JSON" or "JSON → YAML" from the mode cards depending on which way you need to convert.
-        </div>
-        <div class="tool-step">
-          <strong>2. Paste or edit your data</strong>
-          Replace the sample content in the input box with your own YAML or JSON, keeping indentation consistent for YAML.
-        </div>
-        <div class="tool-step">
-          <strong>3. Click Convert</strong>
-          Press the Convert button to parse the input and generate the equivalent output instantly in your browser.
-        </div>
-        <div class="tool-step">
-          <strong>4. Copy the result</strong>
-          Use the Copy button next to the output box to grab the converted text for your config file, script, or API call.
-        </div>
-      </div>
-    </div>
+    <details class="faq-item">
+      <summary class="faq-q">Does this support nested YAML/JSON?</summary>
+      <div class="faq-a"><p>Yes, nested objects and arrays of any depth are supported in both conversion directions.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What YAML features are supported?</summary>
+      <div class="faq-a"><p>Standard key-value pairs, nested mappings, lists, strings, numbers, booleans, and null values are supported. Advanced YAML features like anchors, aliases, and multi-document files are not.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why do some projects use YAML instead of JSON?</summary>
+      <div class="faq-a"><p>YAML is generally considered more human-readable for configuration files since it doesn't require quotes around keys or curly braces, though JSON remains the standard for data exchange between programs.</p></div>
+    </details>
   </div>
 </section>
 
-<section class="article-section">
+<section class="page-section">
+  <h2>How to Use the YAML to JSON Converter</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Pick a direction</strong>
+      <p>Choose "YAML → JSON" or "JSON → YAML" from the mode cards depending on which way you need to convert.</p>
+    </li>
+    <li class="step">
+      <strong>Paste or edit your data</strong>
+      <p>Replace the sample content in the input box with your own YAML or JSON, keeping indentation consistent for YAML.</p>
+    </li>
+    <li class="step">
+      <strong>Click Convert</strong>
+      <p>Press the Convert button to parse the input and generate the equivalent output instantly in your browser.</p>
+    </li>
+    <li class="step">
+      <strong>Copy the result</strong>
+      <p>Use the Copy button next to the output box to grab the converted text for your config file, script, or API call.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
   <h2>Convert Between YAML and JSON</h2>
   <p>This tool converts YAML documents to JSON, or JSON to YAML, handling nested objects and arrays. It's useful for developers working with configuration files, Kubernetes manifests, CI/CD pipelines, and APIs that use either format.</p>
 
@@ -132,7 +144,7 @@ address:
   <p>Both YAML and JSON represent the same underlying data structures — objects (key-value mappings) and arrays (ordered lists) — but with different syntax. JSON uses curly braces, square brackets, and quoted keys, making it precise and easy for programs to parse. YAML uses indentation and minimal punctuation instead, which many developers find easier to read and write by hand, especially for configuration files, at the cost of being more sensitive to exact indentation.</p>
 
   <h3>Where YAML Is Commonly Used</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Configuration files</strong> — many modern tools (Docker Compose, GitHub Actions, Ansible) use YAML for configuration.</li>
     <li><strong>Kubernetes manifests</strong> — Kubernetes resource definitions are written almost exclusively in YAML.</li>
     <li><strong>CI/CD pipelines</strong> — build and deployment pipeline definitions are frequently written in YAML.</li>
@@ -149,7 +161,7 @@ address:
   <p>This converter reads YAML line by line, using each line's indentation level to figure out where it sits in the overall structure. When indentation increases, the parser treats that as a nested object or list; when it decreases, it closes out the current nesting level and returns to a shallower one. List items are recognized by a leading hyphen, and each key-value pair separated by a colon is interpreted either as a scalar value or the start of a new nested block depending on whether anything follows the colon on the same line.</p>
 
   <h3>Which Value Types Are Recognized</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Booleans</strong> — the literal words <code>true</code> and <code>false</code> convert to JSON booleans.</li>
     <li><strong>Null values</strong> — <code>null</code>, <code>~</code>, or an empty value convert to JSON <code>null</code>.</li>
     <li><strong>Numbers</strong> — unquoted numeric values convert to JSON numbers rather than strings.</li>
@@ -167,14 +179,14 @@ address:
   <p>This converter supports the YAML features most configuration files actually use: nested mappings, lists, and the standard scalar types. It does not support YAML anchors and aliases (<code>&amp;</code>/<code>*</code> references for reusing blocks), multi-document files separated by <code>---</code>, or flow-style inline collections like <code>{key: value}</code> written on a single line. If your YAML file relies on these advanced features, a dedicated YAML library will handle them more reliably.</p>
 
   <h3>Common Mistakes</h3>
-  <ul class="feature-list">
+  <ul>
     <li>Mixing tabs and spaces for indentation — YAML (and this parser) relies on consistent spacing, and a stray tab can shift an entire block to the wrong nesting level.</li>
     <li>Forgetting a trailing comma check in JSON mode — valid JSON never has a trailing comma after the last item in an object or array.</li>
     <li>Assuming quoted numbers stay as numbers — a YAML value like <code>"30"</code> in quotes is intentionally kept as a string, not converted to the number 30.</li>
   </ul>
 
   <h3>Frequently Searched Terms</h3>
-  <ul class="feature-list">
+  <ul>
     <li>yaml to json online converter</li>
     <li>convert kubernetes yaml to json</li>
     <li>json to yaml formatter</li>
@@ -189,34 +201,31 @@ address:
   <p>A common pattern among developers is pasting a YAML config that's behaving unexpectedly into this tool, converting it to JSON, and visually comparing the nesting against what was intended. Because JSON's braces make every level of nesting explicit, it's often faster to spot a misplaced key or an array that accidentally became an object than it is by staring at raw YAML indentation.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/json-formatter" class="tool-item"><div class="ti-text"><h4>JSON Formatter</h4><p>Format and validate JSON data.</p></div></a>
-    <a href="/tools/xml-formatter" class="tool-item"><div class="ti-text"><h4>XML Formatter</h4><p>Format and validate XML documents.</p></div></a>
-    <a href="/tools/sql-formatter" class="tool-item"><div class="ti-text"><h4>SQL Formatter</h4><p>Beautify SQL queries.</p></div></a>
-    <a href="/tools/cron-expression-builder" class="tool-item"><div class="ti-text"><h4>Cron Expression Builder</h4><p>Build cron expressions for CI/CD schedules.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">yaml to json converter</span>
-        <span class="keyword-tag">json to yaml converter</span>
-        <span class="keyword-tag">yaml json online</span>
-        <span class="keyword-tag">convert yaml online</span>
-        <span class="keyword-tag">yaml validator</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/json-formatter"><strong>JSON Formatter</strong><span>Format and validate JSON data.</span></a>
+    <a class="related-card" href="/tools/xml-formatter"><strong>XML Formatter</strong><span>Format and validate XML documents.</span></a>
+    <a class="related-card" href="/tools/sql-formatter"><strong>SQL Formatter</strong><span>Beautify SQL queries.</span></a>
+    <a class="related-card" href="/tools/cron-expression-builder"><strong>Cron Expression Builder</strong><span>Build cron expressions for CI/CD schedules.</span></a>
   </div>
 </section>
 
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">yaml to json converter</span>
+    <span class="keyword-tag">json to yaml converter</span>
+    <span class="keyword-tag">yaml json online</span>
+    <span class="keyword-tag">convert yaml online</span>
+    <span class="keyword-tag">yaml validator</span>
+  </div>
+</section>
+
+</main>
+
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 let currentMode = 'yaml-to-json';
 

@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -51,17 +55,20 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-number-base-converter">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/calculate-convert">Calculate & Convert</a> › Number Base Converter</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/calculate-convert">Calculate &amp; Convert</a> › Number Base Converter</nav>
   <h1>Free Number Base Converter</h1>
   <p>Convert numbers between binary, octal, decimal, and hexadecimal instantly — all four bases update together as you type.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">🔢 4 Bases</span><span class="tool-tag">⚡ Live Sync</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#hash"></use></svg> 4 Bases</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Live Sync</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:700px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Enter a Number in Any Base</h2>
     <div class="control-group">
@@ -81,54 +88,62 @@
       <input type="text" id="hex-input" class="field-input mono" placeholder="e.g. FF">
     </div>
     <div class="btn-group mt-16">
-      <button class="btn btn-secondary" id="clear-btn">✕ Clear All</button>
+      <button class="btn btn-secondary" id="clear-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Clear All</button>
     </div>
     <div class="status-msg" id="status-msg"></div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>What is binary number system?</h3><p>Binary is a base-2 system using only 0 and 1. It's the fundamental number system used internally by all digital computers.</p></div>
-    <div class="faq-item-box"><h3>Why do programmers use hexadecimal?</h3><p>Hex (base-16) compactly represents binary data, since each hex digit maps exactly to 4 binary bits — common for memory addresses, color codes, and byte values.</p></div>
-    <div class="faq-item-box"><h3>What is octal used for?</h3><p>Octal (base-8) was historically common in early computing and is still used for Unix file permissions, where each digit maps to 3 binary bits.</p></div>
-    <div class="faq-item-box"><h3>Can I convert negative numbers?</h3><p>This tool is designed for non-negative integer conversions, which covers the vast majority of everyday base conversion needs.</p></div>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card">
-      <h2>How to Use the Number Base Converter</h2>
-      <div class="tool-steps">
-        <div class="tool-step">
-          <strong>1. Pick the base you already have</strong>
-          Decide whether your starting value is binary, octal, decimal, or hexadecimal.
-        </div>
-        <div class="tool-step">
-          <strong>2. Type the number into that field</strong>
-          Enter the digits in the matching input box — only valid digits for that base are accepted.
-        </div>
-        <div class="tool-step">
-          <strong>3. Read the other three fields</strong>
-          The remaining three bases update automatically and simultaneously as you type.
-        </div>
-        <div class="tool-step">
-          <strong>4. Clear and repeat as needed</strong>
-          Use Clear All to reset every field before converting a new number.
-        </div>
-      </div>
-    </div>
+    <details class="faq-item">
+      <summary class="faq-q">What is binary number system?</summary>
+      <div class="faq-a"><p>Binary is a base-2 system using only 0 and 1. It's the fundamental number system used internally by all digital computers.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why do programmers use hexadecimal?</summary>
+      <div class="faq-a"><p>Hex (base-16) compactly represents binary data, since each hex digit maps exactly to 4 binary bits — common for memory addresses, color codes, and byte values.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What is octal used for?</summary>
+      <div class="faq-a"><p>Octal (base-8) was historically common in early computing and is still used for Unix file permissions, where each digit maps to 3 binary bits.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I convert negative numbers?</summary>
+      <div class="faq-a"><p>This tool is designed for non-negative integer conversions, which covers the vast majority of everyday base conversion needs.</p></div>
+    </details>
   </div>
 </section>
 
-<section class="article-section">
+<section class="page-section">
+  <h2>How to Use the Number Base Converter</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Pick the base you already have</strong>
+      <p>Decide whether your starting value is binary, octal, decimal, or hexadecimal.</p>
+    </li>
+    <li class="step">
+      <strong>Type the number into that field</strong>
+      <p>Enter the digits in the matching input box — only valid digits for that base are accepted.</p>
+    </li>
+    <li class="step">
+      <strong>Read the other three fields</strong>
+      <p>The remaining three bases update automatically and simultaneously as you type.</p>
+    </li>
+    <li class="step">
+      <strong>Clear and repeat as needed</strong>
+      <p>Use Clear All to reset every field before converting a new number.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
   <h2>Convert Between Number Bases Instantly</h2>
   <p>This tool converts a number between binary (base 2), octal (base 8), decimal (base 10), and hexadecimal (base 16) simultaneously — type a value into any field, and the other three update instantly to show the equivalent value in that base.</p>
 
   <h3>Understanding Number Bases</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Binary (base 2)</strong> — uses only digits 0 and 1. Every digital computer stores and processes data in binary at the hardware level.</li>
     <li><strong>Octal (base 8)</strong> — uses digits 0-7. Historically used in early computing (like Unix file permissions, e.g., chmod 755), since each octal digit maps cleanly to exactly 3 binary bits.</li>
     <li><strong>Decimal (base 10)</strong> — the standard base-10 counting system used in everyday life, using digits 0-9.</li>
@@ -139,7 +154,7 @@
   <p>Binary is the native language of computer hardware, but raw binary numbers get unwieldy very quickly — a single byte (8 bits) written in binary is 8 characters long, but the same value in hexadecimal is only 2 characters. This is exactly why hex and octal exist as "human-friendly" shorthand for binary: because their bases are powers of 2 (16 = 2⁴, 8 = 2³), converting between them and binary is mechanically simple — you can convert hex to binary or binary to hex digit-by-digit without doing full decimal arithmetic, which isn't true for decimal.</p>
 
   <h3>Common Use Cases</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Programming and debugging</strong> — reading memory addresses, bitmasks, or byte values that are naturally expressed in hex or binary.</li>
     <li><strong>Color codes</strong> — understanding or converting hexadecimal color values used in CSS and design tools.</li>
     <li><strong>Networking</strong> — working with subnet masks and IP-related binary/decimal conversions.</li>
@@ -162,7 +177,7 @@
   <p>The decimal number 255 converts to 11111111 in binary (eight 1s, since 255 is one less than 256, which is 2⁸), 377 in octal, and FF in hexadecimal (since each hex digit F represents the maximum value 15, and FF = 15×16 + 15 = 255). This value is commonly recognized because 255 is the maximum value a single byte can hold, which is why FF appears so often in color codes, IP subnet masks (255.255.255.0), and byte-level programming.</p>
 
   <h3>For Developers and CS Students</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Developers</strong> decoding hex memory addresses, debugging bitwise operations, or translating binary flags into readable decimal values.</li>
     <li><strong>Students</strong> learning positional number systems and checking their manual base-conversion homework against a reliable reference.</li>
     <li><strong>Network engineers</strong> converting between decimal and binary representations of IP addresses and subnet masks.</li>
@@ -175,34 +190,31 @@
   <p>Searches that lead people to this tool include "binary to decimal converter," "convert hex to binary online," "decimal to octal calculator," and "base 2 to base 16 converter." Because all four bases update together from a single input, this tool effectively covers all twelve possible conversion directions between the four bases in one place, instead of needing a separate converter for each pair.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/color-converter" class="tool-item"><div class="ti-text"><h4>Color Converter</h4><p>Convert HEX color codes to RGB, HSL, and CMYK.</p></div></a>
-    <a href="/tools/base64" class="tool-item"><div class="ti-text"><h4>Base64 Encode/Decode</h4><p>Encode and decode Base64 text and files.</p></div></a>
-    <a href="/tools/hash-generator" class="tool-item"><div class="ti-text"><h4>Hash Generator</h4><p>Generate SHA-1, SHA-256, and other hashes.</p></div></a>
-    <a href="/tools/unit-converter" class="tool-item"><div class="ti-text"><h4>Unit Converter</h4><p>Convert between length, weight, and more.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">number base converter</span>
-        <span class="keyword-tag">binary to decimal converter</span>
-        <span class="keyword-tag">decimal to hex converter</span>
-        <span class="keyword-tag">hex to binary converter</span>
-        <span class="keyword-tag">octal converter online</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/color-converter"><strong>Color Converter</strong><span>Convert HEX color codes to RGB, HSL, and CMYK.</span></a>
+    <a class="related-card" href="/tools/base64"><strong>Base64 Encode/Decode</strong><span>Encode and decode Base64 text and files.</span></a>
+    <a class="related-card" href="/tools/hash-generator"><strong>Hash Generator</strong><span>Generate SHA-1, SHA-256, and other hashes.</span></a>
+    <a class="related-card" href="/tools/unit-converter"><strong>Unit Converter</strong><span>Convert between length, weight, and more.</span></a>
   </div>
 </section>
 
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">number base converter</span>
+    <span class="keyword-tag">binary to decimal converter</span>
+    <span class="keyword-tag">decimal to hex converter</span>
+    <span class="keyword-tag">hex to binary converter</span>
+    <span class="keyword-tag">octal converter online</span>
+  </div>
+</section>
+
+</main>
+
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 const binInput = document.getElementById('bin-input');
 const octInput = document.getElementById('oct-input');

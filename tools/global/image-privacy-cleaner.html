@@ -26,46 +26,13 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
 
-  <link rel="preload" href="/assets/css/style.css" as="style">
-  <link rel="stylesheet" href="/assets/css/style.css">
-
   <meta name="keywords" content="image privacy cleaner, remove exif data, strip photo metadata, remove gps from photo, exif remover online">
 
-  <style>
-    .tool-hero { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #ecfdf5 100%);}
-    .tool-hero h1 span { color: #16a34a; }
-
-    .insp-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-top:14px; }
-    .insp-card { background:var(--gray-50); border:1px solid var(--gray-200); border-radius:12px; padding:16px; }
-    .insp-card h3 { font-family:var(--font-display); font-size:.9rem; font-weight:700; color:var(--gray-900); margin-bottom:10px; display:flex; align-items:center; gap:8px; }
-    .insp-row { display:flex; justify-content:space-between; gap:10px; padding:6px 0; border-bottom:1px solid var(--gray-100); font-size:.84rem; }
-    .insp-row:last-child { border-bottom:none; }
-    .insp-row .k { color:var(--gray-500); }
-    .insp-row .v { color:var(--gray-900); font-weight:600; text-align:right; word-break:break-word; }
-    .insp-flag { display:inline-flex; align-items:center; gap:6px; padding:3px 10px; border-radius:20px; font-size:.76rem; font-weight:700; }
-    .insp-flag.yes { background:#fff7ed; color:#9a3412; }
-    .insp-flag.no { background:#ecfdf3; color:#166534; }
-
-    .preview-row { display:flex; gap:16px; flex-wrap:wrap; margin-top:14px; }
-    .preview-box { flex:1; min-width:220px; }
-    .preview-box img { width:100%; border-radius:10px; border:1px solid var(--gray-200); display:block; }
-    .preview-box h4 { font-size:.82rem; font-weight:700; color:var(--gray-600); margin-bottom:8px; }
-
-    .article-section, .faq-section, .feature-section, .related-tools, .keyword-section, .howto-section {
-      max-width: 860px; margin: 22px auto 0; background: #fff; border: 1px solid var(--gray-100); border-radius: 14px; padding: 22px;
-    }
-    .article-section h2, .faq-section h2, .feature-section h2, .related-tools h2, .keyword-section h2, .howto-section h2 { margin-bottom: 14px; }
-    .article-section p, .howto-section p { margin: 0 0 12px; line-height: 1.8; color: var(--gray-700); }
-    .feature-list, .keyword-list, .related-list, .howto-list { margin: 0; padding-left: 18px; }
-    .feature-list li, .keyword-list li, .related-list li, .howto-list li { margin-bottom: 10px; color: var(--gray-700); line-height: 1.7; }
-    .privacy-note { max-width: 860px; margin: 10px auto 0; font-size: .88rem; color: var(--gray-600); text-align: left; }
-    .faq-item { border-bottom: 1px solid var(--gray-100); padding: 14px 0; }
-    .faq-item:last-child { border-bottom: none; }
-    .faq-q { font-weight: 700; color: var(--gray-800); margin-bottom: 6px; }
-    .faq-a { color: var(--gray-700); line-height: 1.8; }
-    .related-list a { color: var(--primary); text-decoration: none; font-weight: 600; }
-    .related-list a:hover { text-decoration: underline; }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {
@@ -123,48 +90,48 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-image-privacy-cleaner">
 <div id="navbar"></div>
 
 <main>
-  <div class="tool-hero">
-    <div class="tool-hero-inner">
-      <div class="tool-breadcrumb">
+  <header class="page-hero">
+    <div class="page-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a> › <a href="/categories/global-tools">Global Tools</a> › Image Privacy Cleaner
-      </div>
+      </nav>
       <h1>Image Privacy Cleaner – Remove<span> Photo Metadata</span></h1>
       <p>See what EXIF, camera and GPS metadata is hidden inside your photo, then remove it and download a clean copy, entirely in your browser.</p>
-      <div class="tool-tags">
-        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
-        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#lock"></use></svg> Local Processing</span>
-        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#map-pin"></use></svg> GPS Detection</span>
-        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#speed"></use></svg> Instant</span>
+      <div class="tag-list">
+        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
+        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#lock"></use></svg> Local Processing</span>
+        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#map-pin"></use></svg> GPS Detection</span>
+        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#speed"></use></svg> Instant</span>
       </div>
     </div>
-  </div>
+  </header>
 
-  <div class="tool-workspace" style="max-width:900px;">
+  <div class="tool-workspace">
     <div class="tool-card">
       <h2>Upload a Photo to Check</h2>
       <div class="upload-zone" id="upload-zone">
         <input type="file" id="file-input" accept="image/jpeg,image/jpg,image/png">
-        <svg class="icon" style="width:40px;height:40px;color:var(--gray-400);"><use href="/assets/svg/icons.svg#image"></use></svg>
+        <svg class="icon u-bbd9fb"><use href="/assets/svg/icons.svg#image"></use></svg>
         <h3>Drop a JPG or PNG here or click to browse</h3>
         <p>The file is read entirely in your browser — nothing is uploaded.</p>
         <span class="upload-limit">EXIF reading works best on JPEG photos straight from a camera or phone</span>
       </div>
-      <div class="status-msg" id="status-msg" style="margin-top:12px;" aria-live="polite"></div>
+      <div class="status-msg mt-12" id="status-msg" aria-live="polite"></div>
     </div>
 
     <p class="privacy-note">Your image is processed in your browser. Files are not uploaded to Logrith.</p>
 
-    <div class="tool-card" id="results-card" style="display:none;">
+    <div class="tool-card is-hidden" id="results-card">
       <h2>Metadata Found</h2>
       <div class="insp-grid" id="insp-grid"></div>
       <div class="btn-group mt-12">
         <button class="btn btn-primary" id="clean-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#shield-check"></use></svg> Remove Metadata &amp; Download Clean Image</button>
       </div>
-      <div class="preview-row" id="preview-row" style="display:none;">
+      <div class="preview-row is-hidden" id="preview-row">
         <div class="preview-box">
           <h4>Original</h4>
           <img id="preview-original" alt="Original uploaded image">
@@ -177,19 +144,27 @@
     </div>
   </div>
 
-  <section class="howto-section">
+  <section class="page-section">
     <h2>How to Clean Image Metadata</h2>
-    <ol class="howto-list">
-      <li>Click the upload area or drag a JPG or PNG photo into it.</li>
-      <li>The tool reads the file's raw bytes locally and parses any EXIF metadata segment it finds.</li>
-      <li>Review the camera, timestamp and GPS details that were detected, if any.</li>
-      <li>Click "Remove Metadata & Download Clean Image" to redraw the photo onto a canvas and download a copy with no metadata attached.</li>
+    <ol class="steps">
+      <li class="step">
+        <p>Click the upload area or drag a JPG or PNG photo into it.</p>
+      </li>
+      <li class="step">
+        <p>The tool reads the file's raw bytes locally and parses any EXIF metadata segment it finds.</p>
+      </li>
+      <li class="step">
+        <p>Review the camera, timestamp and GPS details that were detected, if any.</p>
+      </li>
+      <li class="step">
+        <p>Click "Remove Metadata &amp; Download Clean Image" to redraw the photo onto a canvas and download a copy with no metadata attached.</p>
+      </li>
     </ol>
   </section>
 
-  <section class="feature-section">
+  <section class="page-section prose">
     <h2>What This Tool Checks and Removes</h2>
-    <ul class="feature-list">
+    <ul>
       <li><strong>Camera details:</strong> device make and model recorded by the camera or phone that took the photo.</li>
       <li><strong>Timestamps:</strong> the date and time the photo was originally taken, and when it was last modified.</li>
       <li><strong>Software tag:</strong> the name of the software or app that last processed or exported the image.</li>
@@ -199,14 +174,14 @@
     </ul>
   </section>
 
-  <section class="article-section">
+  <section class="page-section prose">
     <h2>What Is Image Metadata?</h2>
     <p>Most photos taken on a phone or digital camera carry more information than just the pixels you see. This extra information is called metadata, and the most common format for storing it in photos is EXIF (Exchangeable Image File Format). EXIF data sits in a dedicated segment inside the JPEG file, separate from the actual image content, and can include the camera make and model, the date and time the photo was taken, camera settings, the orientation of the shot, and in many cases, the precise GPS coordinates of where the photo was captured.</p>
     <p>This information is added automatically by most phones and cameras, usually without the person taking the photo noticing. It's useful for photo organization apps that sort pictures by location or date, but it also means a photo file can carry details you may not intend to share when you post or send it.</p>
 
     <h2>Why Remove EXIF Data?</h2>
     <p>There are several practical, everyday reasons people choose to strip metadata from a photo before sharing it:</p>
-    <ul class="feature-list">
+    <ul>
       <li><strong>Location privacy:</strong> a photo with GPS coordinates reveals exactly where it was taken, which may be a home address, workplace, or other location you'd rather not attach to a public post.</li>
       <li><strong>Device information:</strong> camera make and model data can reveal what equipment or phone you use, which is sometimes irrelevant to share alongside the image itself.</li>
       <li><strong>Timestamps:</strong> the exact date and time a photo was taken is sometimes more detail than needed, particularly for images being archived, submitted, or published later.</li>
@@ -229,7 +204,7 @@
 
     <h2>When Should You Remove Image Metadata?</h2>
     <p>A few common moments where people find it useful to clean a photo's metadata first:</p>
-    <ul class="feature-list">
+    <ul>
       <li><strong>Before publishing:</strong> on a blog, portfolio, or news article, where only the visual content needs to be included.</li>
       <li><strong>Before sharing publicly:</strong> on social media, forums, or community groups, especially for photos taken at a home or private location.</li>
       <li><strong>Before uploading to websites:</strong> marketplaces, classifieds, or submission forms that don't need to know what device or location produced the photo.</li>
@@ -243,60 +218,61 @@
     <p>People use this tool when searching for phrases like "remove exif data online," "strip gps from photo," "delete metadata from image," "remove camera info from jpg," and "exif remover browser." This page is built to answer exactly those needs in one local, browser-based tool.</p>
   </section>
 
-  <section class="faq-section">
+  <section class="page-section">
     <h2>Image Privacy Cleaner FAQ</h2>
-    <div class="faq-item">
-      <div class="faq-q">Does this tool remove GPS location data from photos?</div>
-      <div class="faq-a">Yes. If the photo contains GPS coordinates in its EXIF data, the tool detects and displays them, and the cleaning step removes them along with all other metadata.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Will removing metadata change how my photo looks?</div>
-      <div class="faq-a">No. The visible pixels are not altered. Only the hidden metadata attached to the file, such as camera details, timestamps and GPS coordinates, is removed.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Is my photo uploaded to a server?</div>
-      <div class="faq-a">No. The image is read and processed entirely in your browser using JavaScript. It is never uploaded to Logrith or any other server.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Which image formats are supported?</div>
-      <div class="faq-a">EXIF reading works on JPEG photos, which is the format that typically carries camera and GPS metadata. PNG files can also be cleaned through the canvas re-export step, though PNG rarely contains EXIF data to begin with.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Is this tool free to use?</div>
-      <div class="faq-a">Yes, this tool is free to use with no account, signup, or file limit beyond what your browser can handle.</div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">Does this tool remove GPS location data from photos?</summary>
+        <div class="faq-a"><p>Yes. If the photo contains GPS coordinates in its EXIF data, the tool detects and displays them, and the cleaning step removes them along with all other metadata.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Will removing metadata change how my photo looks?</summary>
+        <div class="faq-a"><p>No. The visible pixels are not altered. Only the hidden metadata attached to the file, such as camera details, timestamps and GPS coordinates, is removed.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Is my photo uploaded to a server?</summary>
+        <div class="faq-a"><p>No. The image is read and processed entirely in your browser using JavaScript. It is never uploaded to Logrith or any other server.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Which image formats are supported?</summary>
+        <div class="faq-a"><p>EXIF reading works on JPEG photos, which is the format that typically carries camera and GPS metadata. PNG files can also be cleaned through the canvas re-export step, though PNG rarely contains EXIF data to begin with.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Is this tool free to use?</summary>
+        <div class="faq-a"><p>Yes, this tool is free to use with no account, signup, or file limit beyond what your browser can handle.</p></div>
+      </details>
     </div>
   </section>
 
-  <section class="related-tools">
+  <section class="page-section">
     <h2>Related Tools</h2>
-    <ul class="related-list">
-      <li><a href="/tools/pdf-inspector">PDF Inspector</a></li>
-      <li><a href="/tools/image-watermark">Image Watermark</a></li>
-      <li><a href="/tools/image-compressor">Image Compressor</a></li>
-      <li><a href="/tools/image-converter">Image Converter</a></li>
-      <li><a href="/tools/csv-cleaner">CSV Cleaner</a></li>
-    </ul>
+    <div class="related-grid">
+      <a class="related-card" href="/tools/pdf-inspector"><strong>PDF Inspector</strong></a>
+      <a class="related-card" href="/tools/image-watermark"><strong>Image Watermark</strong></a>
+      <a class="related-card" href="/tools/image-compressor"><strong>Image Compressor</strong></a>
+      <a class="related-card" href="/tools/image-converter"><strong>Image Converter</strong></a>
+      <a class="related-card" href="/tools/csv-cleaner"><strong>CSV Cleaner</strong></a>
+    </div>
   </section>
 
-  <section class="keyword-section">
+  <section class="page-section">
     <h2>Top Image Privacy Cleaner Search Queries</h2>
-    <ul class="keyword-list">
-      <li>image privacy cleaner</li>
-      <li>remove exif data online</li>
-      <li>strip photo metadata</li>
-      <li>remove gps from photo</li>
-      <li>exif remover online free</li>
-      <li>delete camera metadata from jpg</li>
-      <li>check photo metadata online</li>
-      <li>remove location data from image</li>
-    </ul>
+    <div class="keyword-box">
+      <span class="keyword-tag">image privacy cleaner</span>
+      <span class="keyword-tag">remove exif data online</span>
+      <span class="keyword-tag">strip photo metadata</span>
+      <span class="keyword-tag">remove gps from photo</span>
+      <span class="keyword-tag">exif remover online free</span>
+      <span class="keyword-tag">delete camera metadata from jpg</span>
+      <span class="keyword-tag">check photo metadata online</span>
+      <span class="keyword-tag">remove location data from image</span>
+    </div>
   </section>
 </main>
 
 <div id="footer"></div>
+<script src="/assets/js/main.js"></script>
 
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
 
 <script>
 const uploadZone = document.getElementById('upload-zone');

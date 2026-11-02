@@ -26,8 +26,11 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
 
-  <link rel="preload" href="/assets/css/style.css" as="style">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {
@@ -106,31 +109,34 @@
   </script>
   <meta name="keywords" content="image converter, convert image online, jpg to png, png to jpg, webp converter, image format converter free">
 </head>
-<body>
+<body class="page-tools-image-converter">
 
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero">
-  <div class="tool-hero-inner">
-    <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/#image-tools">Image Tools</a> › Image Converter</div>
+<main id="main">
+
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/image-pdf-tools">Image &amp; PDF Tools</a> › Image Converter</nav>
     <h1>Free Image Converter Online</h1>
     <p>Convert images between JPG, PNG, WEBP, BMP and GIF formats instantly. No upload to server — all processing is done in your browser for faster and more private image conversion.</p>
-    <div class="tool-tags">
-      <span class="tool-tag">✅ Free</span>
-      <span class="tool-tag">🔒 Private</span>
-      <span class="tool-tag">⚡ Instant</span>
-      <span class="tool-tag">📱 Mobile Ready</span>
-      <span class="tool-tag">🚫 No Login</span>
+    <div class="tag-list">
+      <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
+      <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lock"></use></svg> Private</span>
+      <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span>
+      <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#phone"></use></svg> Mobile Ready</span>
+      <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#ban"></use></svg> No Login</span>
     </div>
   </div>
-</div>
+</header>
 
 <div class="tool-workspace">
   <div class="tool-card">
     <h2>Upload Image</h2>
     <div class="upload-zone" id="upload-zone">
       <input type="file" id="file-input" accept="image/*" multiple>
-      <div class="upload-icon">🖼️</div>
+      <div class="upload-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#image"></use></svg></div>
       <h3>Drop your image here or click to browse</h3>
       <p>Supports JPG, PNG, WEBP, BMP and GIF image files.</p>
       <span class="upload-limit">Max 20MB per file</span>
@@ -138,7 +144,7 @@
     <div id="file-info" class="stats-row mt-12"></div>
   </div>
 
-  <div class="tool-card" id="settings-card" style="display:none;">
+  <div class="tool-card is-hidden" id="settings-card">
     <h2>Conversion Settings</h2>
     <div class="controls-grid">
       <div class="control-group">
@@ -161,8 +167,8 @@
     </div>
 
     <div class="mt-16 btn-group">
-      <button class="btn btn-primary btn-lg" id="convert-btn" type="button">🔄 Convert Image</button>
-      <button class="btn btn-secondary" id="reset-btn" type="button">✕ Reset</button>
+      <button class="btn btn-primary btn-lg" id="convert-btn" type="button"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#refresh"></use></svg> Convert Image</button>
+      <button class="btn btn-secondary" id="reset-btn" type="button"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Reset</button>
     </div>
 
     <div class="progress-bar mt-12" id="progress">
@@ -174,48 +180,44 @@
 
   <p class="privacy-note">We don't store your data.</p>
 
-  <div class="tool-card" id="output-card" style="display:none;">
+  <div class="tool-card is-hidden" id="output-card">
     <h2>Converted Image</h2>
     <div class="output-preview" id="output-preview">
       <img id="output-img" src="" alt="Converted image preview">
     </div>
     <div class="stats-row mt-12" id="output-stats"></div>
     <div class="btn-group mt-16">
-      <button class="btn btn-success" id="download-btn" type="button">⬇️ Download Image</button>
+      <button class="btn btn-success" id="download-btn" type="button"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#download"></use></svg> Download Image</button>
       <button class="btn btn-secondary" id="convert-another" type="button">+ Convert Another</button>
     </div>
   </div>
 </div>
 
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card">
-      <h2>How to Use This Image Converter</h2>
-      <div class="tool-steps">
-        <div class="tool-step">
-          <strong>1. Upload image</strong>
-          Add one or more image files, or drag and drop them into the tool.
-        </div>
-        <div class="tool-step">
-          <strong>2. Choose output format</strong>
-          Select PNG, JPG, WEBP, BMP or GIF as the target format.
-        </div>
-        <div class="tool-step">
-          <strong>3. Adjust quality</strong>
-          Fine-tune quality for formats that support compression.
-        </div>
-        <div class="tool-step">
-          <strong>4. Convert & download</strong>
-          Process locally in your browser and download the result instantly.
-        </div>
-      </div>
-    </div>
-  </div>
+<section class="page-section">
+  <h2>How to Use This Image Converter</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Upload image</strong>
+      <p>Add one or more image files, or drag and drop them into the tool.</p>
+    </li>
+    <li class="step">
+      <strong>Choose output format</strong>
+      <p>Select PNG, JPG, WEBP, BMP or GIF as the target format.</p>
+    </li>
+    <li class="step">
+      <strong>Adjust quality</strong>
+      <p>Fine-tune quality for formats that support compression.</p>
+    </li>
+    <li class="step">
+      <strong>Convert &amp; download</strong>
+      <p>Process locally in your browser and download the result instantly.</p>
+    </li>
+  </ol>
 </section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>Why Our Image Converter Is Best</h2>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Fast:</strong> Convert image files instantly in your browser without waiting for server processing.</li>
     <li><strong>Private:</strong> Local processing keeps your images on your own device during conversion.</li>
     <li><strong>Free:</strong> No signup, no watermark, no login and no hidden limits for normal use.</li>
@@ -224,7 +226,7 @@
   </ul>
 </section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>About Image Format Conversion</h2>
   <p>An image converter helps you change one image format into another so the file works better for your use case. Some people need JPG for smaller photo file sizes, others need PNG for transparency, and many website owners now prefer WEBP because it can reduce image size while keeping good visual quality. That is why a free image converter online is useful for developers, bloggers, designers, students and everyday users who want a quick format change without installing extra software.</p>
 
@@ -244,7 +246,7 @@
   <p>For JPG and WEBP output, the quality slider lets you trade off file size against visual detail. Lossless formats like PNG, BMP, GIF and ICO don't use this setting since they don't support variable compression quality, so the quality control is hidden automatically when you pick one of those formats.</p>
 
   <h3>Common Conversion Scenarios</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Web performance:</strong> Convert PNG or JPG product photos to WEBP to cut page weight without a visible quality drop.</li>
     <li><strong>Transparency needs:</strong> Convert a JPG with a white background to PNG if you later need to add transparency in an editor.</li>
     <li><strong>Platform requirements:</strong> Convert images to JPG when a form, CMS or upload field rejects WEBP or other newer formats.</li>
@@ -258,69 +260,63 @@
   <p>Each image file can be up to 20MB, which comfortably covers typical photos, screenshots, graphics and exported design files. Since processing happens entirely in your browser's memory, very large batches of high-resolution images may take a moment longer depending on your device's hardware.</p>
 </section>
 
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card faq-section">
-      <h2>Frequently Asked Questions</h2>
-      <div class="faq-list">
-        <div class="faq-item-box">
-          <h3>How do I convert JPG to PNG online for free?</h3>
-          <p>Simply upload your JPG image, select PNG as the output format, and click Convert Image. The tool processes the image in your browser and gives you an instant PNG download.</p>
-        </div>
-        <div class="faq-item-box">
-          <h3>Is my image data safe when using this converter?</h3>
-          <p>Yes. All conversion happens locally in your browser, so your image is not uploaded to a remote server during the normal conversion process.</p>
-        </div>
-        <div class="faq-item-box">
-          <h3>What is the difference between JPG and PNG?</h3>
-          <p>JPG is usually better for photos and smaller file sizes, while PNG is better for transparency, logos, screenshots and graphics with sharp edges.</p>
-        </div>
-        <div class="faq-item-box">
-          <h3>Why should I use WEBP format?</h3>
-          <p>WEBP is a modern web image format that is often used to reduce file size while maintaining good quality, which makes it useful for website performance and faster image loading.</p>
-        </div>
-        <div class="faq-item-box">
-          <h3>Can I convert multiple images at once?</h3>
-          <p>Yes. You can upload multiple images together, convert them in one action, and then download the converted outputs one by one.</p>
-        </div>
-      </div>
-    </div>
+<section class="page-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">How do I convert JPG to PNG online for free?</summary>
+      <div class="faq-a"><p>Simply upload your JPG image, select PNG as the output format, and click Convert Image. The tool processes the image in your browser and gives you an instant PNG download.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my image data safe when using this converter?</summary>
+      <div class="faq-a"><p>Yes. All conversion happens locally in your browser, so your image is not uploaded to a remote server during the normal conversion process.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What is the difference between JPG and PNG?</summary>
+      <div class="faq-a"><p>JPG is usually better for photos and smaller file sizes, while PNG is better for transparency, logos, screenshots and graphics with sharp edges.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why should I use WEBP format?</summary>
+      <div class="faq-a"><p>WEBP is a modern web image format that is often used to reduce file size while maintaining good quality, which makes it useful for website performance and faster image loading.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I convert multiple images at once?</summary>
+      <div class="faq-a"><p>Yes. You can upload multiple images together, convert them in one action, and then download the converted outputs one by one.</p></div>
+    </details>
   </div>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Image Tools</h2>
   <div class="related-grid">
-    <a href="/tools/image-compressor" class="tool-item"><div class="ti-text"><h4>Image Compressor</h4><p>Reduce image file size for websites, blogs and faster uploads.</p></div></a>
-    <a href="/tools/image-resize" class="tool-item"><div class="ti-text"><h4>Image Resize</h4><p>Resize images to custom width and height in seconds.</p></div></a>
-    <a href="/tools/image-crop" class="tool-item"><div class="ti-text"><h4>Image Crop</h4><p>Crop photos and graphics to the exact area you need.</p></div></a>
-    <a href="/tools/image-rotate" class="tool-item"><div class="ti-text"><h4>Rotate & Flip</h4><p>Rotate, flip and correct image orientation easily.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">image converter online</span>
-        <span class="keyword-tag">free image converter</span>
-        <span class="keyword-tag">jpg to png converter</span>
-        <span class="keyword-tag">png to jpg converter</span>
-        <span class="keyword-tag">png to webp converter</span>
-        <span class="keyword-tag">webp to jpg converter</span>
-        <span class="keyword-tag">convert image to webp</span>
-        <span class="keyword-tag">browser image converter</span>
-        <span class="keyword-tag">batch image converter online</span>
-        <span class="keyword-tag">image format converter free</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/image-compressor"><strong>Image Compressor</strong><span>Reduce image file size for websites, blogs and faster uploads.</span></a>
+    <a class="related-card" href="/tools/image-resize"><strong>Image Resize</strong><span>Resize images to custom width and height in seconds.</span></a>
+    <a class="related-card" href="/tools/image-crop"><strong>Image Crop</strong><span>Crop photos and graphics to the exact area you need.</span></a>
+    <a class="related-card" href="/tools/image-rotate"><strong>Rotate &amp; Flip</strong><span>Rotate, flip and correct image orientation easily.</span></a>
   </div>
 </section>
 
-<div id="footer"></div>
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">image converter online</span>
+    <span class="keyword-tag">free image converter</span>
+    <span class="keyword-tag">jpg to png converter</span>
+    <span class="keyword-tag">png to jpg converter</span>
+    <span class="keyword-tag">png to webp converter</span>
+    <span class="keyword-tag">webp to jpg converter</span>
+    <span class="keyword-tag">convert image to webp</span>
+    <span class="keyword-tag">browser image converter</span>
+    <span class="keyword-tag">batch image converter online</span>
+    <span class="keyword-tag">image format converter free</span>
+  </div>
+</section>
 
-<script src="/load-components.js"></script>
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" defer></script>
 <script>
@@ -650,7 +646,7 @@
           if (previewUrl) URL.revokeObjectURL(previewUrl);
           previewUrl = URL.createObjectURL(first.blob);
           outputImg.src = previewUrl;
-          outputImg.style.display = '';
+          outputImg.classList.remove('is-hidden'); outputImg.style.display = '';
         } else {
           if (previewUrl) { URL.revokeObjectURL(previewUrl); previewUrl = null; }
           outputImg.removeAttribute('src');
@@ -707,7 +703,7 @@
         previewUrl = null;
       }
       outputImg.removeAttribute('src');
-      outputImg.style.display = '';
+      outputImg.classList.remove('is-hidden'); outputImg.style.display = '';
     });
   }
 

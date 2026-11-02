@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -51,17 +55,20 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-citation-generator">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/text-generators">Text & Generators</a> › Citation Generator</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/text-generators">Text &amp; Generators</a> › Citation Generator</nav>
   <h1>Free Citation Generator</h1>
   <p>Generate properly formatted APA, MLA, or Chicago style citations from your source details instantly.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">📚 3 Styles</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#layers"></use></svg> 3 Styles</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:700px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Source Details</h2>
     <div class="controls-grid">
@@ -81,61 +88,79 @@
         <label>Year Published</label>
         <input type="number" id="year" class="field-input" placeholder="e.g. 2020">
       </div>
-      <div class="control-group" style="grid-column:1/-1;">
+      <div class="control-group u-1b9b41">
         <label>URL (if online source, optional)</label>
         <input type="text" id="url" class="field-input" placeholder="e.g. https://example.com/article">
       </div>
     </div>
     <div class="btn-group mt-16">
-      <button class="btn btn-primary btn-lg" id="generate-btn">📚 Generate Citations</button>
+      <button class="btn btn-primary btn-lg" id="generate-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#layers"></use></svg> Generate Citations</button>
     </div>
     <div class="status-msg" id="status-msg"></div>
   </div>
 
-  <div class="tool-card" id="result-card" style="display:none;">
+  <div class="tool-card is-hidden" id="result-card">
     <h2>Generated Citations</h2>
     <div class="control-group">
       <label>APA (7th Edition)</label>
-      <div style="position:relative;">
+      <div class="relative">
         <textarea class="tool-textarea" id="apa-output" rows="3" readonly></textarea>
-        <button class="copy-btn" id="copy-apa">📋</button>
+        <button class="copy-btn" id="copy-apa"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg></button>
       </div>
     </div>
     <div class="control-group mt-12">
       <label>MLA (9th Edition)</label>
-      <div style="position:relative;">
+      <div class="relative">
         <textarea class="tool-textarea" id="mla-output" rows="3" readonly></textarea>
-        <button class="copy-btn" id="copy-mla">📋</button>
+        <button class="copy-btn" id="copy-mla"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg></button>
       </div>
     </div>
     <div class="control-group mt-12">
       <label>Chicago (17th Edition)</label>
-      <div style="position:relative;">
+      <div class="relative">
         <textarea class="tool-textarea" id="chicago-output" rows="3" readonly></textarea>
-        <button class="copy-btn" id="copy-chicago">📋</button>
+        <button class="copy-btn" id="copy-chicago"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg></button>
       </div>
     </div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>What's the difference between APA, MLA, and Chicago?</h3><p>APA is common in social sciences, MLA in humanities and literature, and Chicago in history and other disciplines. Each has distinct formatting rules for authors, dates, and titles.</p></div>
-    <div class="faq-item-box"><h3>Do I need the exact publication date?</h3><p>Yes, an accurate publication year is an important part of a correctly formatted citation in all three styles.</p></div>
-    <div class="faq-item-box"><h3>What if I don't have a URL?</h3><p>Leave the URL field blank — the citation will be formatted as a standard print/publisher source instead of an online source.</p></div>
-    <div class="faq-item-box"><h3>Is my source information sent to a server?</h3><p>No, citation formatting runs entirely in your browser using JavaScript. The details you enter are never transmitted anywhere.</p></div>
-    <div class="faq-item-box"><h3>Can I cite multiple authors?</h3><p>This tool is built around a single primary author field. For sources with multiple authors, list them in the author field following your target style's convention for joining multiple names.</p></div>
-    <div class="faq-item-box"><h3>Does this generate in-text citations too?</h3><p>This tool generates full bibliography and works-cited entries. In-text citations typically use a shortened form (like author and year for APA) that you construct separately based on the full entry.</p></div>
+    <details class="faq-item">
+      <summary class="faq-q">What's the difference between APA, MLA, and Chicago?</summary>
+      <div class="faq-a"><p>APA is common in social sciences, MLA in humanities and literature, and Chicago in history and other disciplines. Each has distinct formatting rules for authors, dates, and titles.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Do I need the exact publication date?</summary>
+      <div class="faq-a"><p>Yes, an accurate publication year is an important part of a correctly formatted citation in all three styles.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What if I don't have a URL?</summary>
+      <div class="faq-a"><p>Leave the URL field blank — the citation will be formatted as a standard print/publisher source instead of an online source.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my source information sent to a server?</summary>
+      <div class="faq-a"><p>No, citation formatting runs entirely in your browser using JavaScript. The details you enter are never transmitted anywhere.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I cite multiple authors?</summary>
+      <div class="faq-a"><p>This tool is built around a single primary author field. For sources with multiple authors, list them in the author field following your target style's convention for joining multiple names.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does this generate in-text citations too?</summary>
+      <div class="faq-a"><p>This tool generates full bibliography and works-cited entries. In-text citations typically use a shortened form (like author and year for APA) that you construct separately based on the full entry.</p></div>
+    </details>
   </div>
-</div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>Generate Citations in APA, MLA, and Chicago Format</h2>
   <p>This tool generates properly formatted citations in three of the most widely used academic citation styles — APA, MLA, and Chicago — from the source details you provide. Enter the author, title, publisher, year, and optional URL, and get all three formats at once, ready to copy into your bibliography or works cited page.</p>
 
   <h3>When Each Citation Style Is Used</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>APA (American Psychological Association)</strong> — most common in psychology, education, and other social sciences. Uses author-date format.</li>
     <li><strong>MLA (Modern Language Association)</strong> — most common in humanities, literature, and language studies. Emphasizes author and page number.</li>
     <li><strong>Chicago</strong> — common in history and some other fields, with two distinct sub-styles (notes-bibliography and author-date), this tool generates the bibliography-style format.</li>
@@ -169,19 +194,20 @@
   <p>Citation styles aren't fixed forever — each one is periodically revised by its governing body, and the specific formatting rules can shift meaningfully between editions. APA's 7th edition, MLA's 9th edition, and Chicago's 17th edition (the versions this tool targets) each introduced changes from their respective previous editions, affecting details like how many authors to list before using "et al." or how URLs are formatted. If you're citing sources for a specific publication or institution, it's worth confirming which edition they expect, since an older or newer edition can have subtly different formatting conventions from the ones used here, and using the wrong edition's rules can cost points on an otherwise well-researched paper.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/text-summarizer-basic" class="tool-item"><div class="ti-text"><h4>Text Summarizer</h4><p>Summarize source content before citing it.</p></div></a>
-    <a href="/tools/word-counter" class="tool-item"><div class="ti-text"><h4>Word Counter</h4><p>Check word count for your assignment.</p></div></a>
-    <a href="/tools/text-diff" class="tool-item"><div class="ti-text"><h4>Text Diff Checker</h4><p>Compare draft versions of your paper.</p></div></a>
-    <a href="/tools/random-quote-generator" class="tool-item"><div class="ti-text"><h4>Random Quote Generator</h4><p>Find quotes to reference in your work.</p></div></a>
+    <a class="related-card" href="/tools/text-summarizer-basic"><strong>Text Summarizer</strong><span>Summarize source content before citing it.</span></a>
+    <a class="related-card" href="/tools/word-counter"><strong>Word Counter</strong><span>Check word count for your assignment.</span></a>
+    <a class="related-card" href="/tools/text-diff"><strong>Text Diff Checker</strong><span>Compare draft versions of your paper.</span></a>
+    <a class="related-card" href="/tools/random-quote-generator"><strong>Random Quote Generator</strong><span>Find quotes to reference in your work.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 document.getElementById('generate-btn').addEventListener('click', () => {
   const statusEl = document.getElementById('status-msg');

@@ -27,109 +27,11 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
 
-  <link rel="preload" href="/assets/css/style.css" as="style">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-
-  <style>
-    .tool-hero { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #ecfdf5 100%);}
-    .tool-hero h1 span {
-     color: #16a34a;
-    }
-    .hash-row { display:flex; align-items:flex-start; gap:12px; padding:12px 0; border-bottom:1px solid var(--gray-100); }
-    .hash-row:last-child { border-bottom:none; }
-    .hash-label { font-size:.78rem; font-weight:700; color:var(--gray-500); width:88px; flex-shrink:0; text-transform:uppercase; letter-spacing:.05em; padding-top:10px; }
-    .hash-value-wrap { flex:1; min-width:0; }
-    .hash-value { display:block; width:100%; font-family:'Courier New',monospace; font-size:.82rem; line-height:1.6; color:var(--gray-700); word-break:break-all; background:var(--gray-50); padding:10px 12px; border-radius:8px; border:1px solid var(--gray-200); }
-    .hash-copy { flex-shrink:0; align-self:center; }
-    .tool-note { margin-top:14px; font-size:.88rem; color:var(--gray-600); line-height:1.7; }
-    .compare-box { padding:14px 16px; border-radius:10px; font-weight:600; }
-    .compare-box.success { background:#ecfdf3; color:#166534; border:1px solid #bbf7d0; }
-    .compare-box.error { background:#fef2f2; color:#991b1b; border:1px solid #fecaca; }
-    .compare-box.info { background:#f8fafc; color:#334155; border:1px solid #e2e8f0; }
-    .mini-help { font-size:.82rem; color:var(--gray-500); margin-top:6px; }
-
-    .article-section, .faq-section, .feature-section, .related-tools, .keyword-section, .howto-section {
-      max-width: 860px;
-      margin: 22px auto 0;
-      background: #fff;
-      border: 1px solid var(--gray-100);
-      border-radius: 14px;
-      padding: 22px;
-    }
-
-    .article-section h2, .faq-section h2, .feature-section h2, .related-tools h2, .keyword-section h2, .howto-section h2 {
-      margin-bottom: 14px;
-    }
-
-    .article-section p, .howto-section p {
-      margin: 0 0 12px;
-      line-height: 1.8;
-      color: var(--gray-700);
-    }
-
-    .feature-list, .keyword-list, .related-list, .howto-list {
-      margin: 0;
-      padding-left: 18px;
-    }
-
-    .feature-list li, .keyword-list li, .related-list li, .howto-list li {
-      margin-bottom: 10px;
-      color: var(--gray-700);
-      line-height: 1.7;
-    }
-
-    .privacy-note {
-      max-width: 860px;
-      margin: 10px auto 0;
-      font-size: .88rem;
-      color: var(--gray-600);
-      text-align: left;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid var(--gray-100);
-      padding: 14px 0;
-    }
-
-    .faq-item:last-child {
-      border-bottom: none;
-    }
-
-    .faq-q {
-      font-weight: 700;
-      color: var(--gray-800);
-      margin-bottom: 6px;
-    }
-
-    .faq-a {
-      color: var(--gray-700);
-      line-height: 1.8;
-    }
-
-    .related-list a {
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .related-list a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 640px) {
-      .hash-row {
-        flex-direction: column;
-        gap: 8px;
-      }
-      .hash-label {
-        width: 100%;
-        padding-top: 0;
-      }
-      .hash-copy {
-        align-self: flex-start;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {
@@ -207,27 +109,27 @@
   </script>
   <meta name="keywords" content="hash generator, md5 generator, sha256 generator, sha1 hash online, generate hash free, checksum generator">
 </head>
-<body>
+<body class="page-hash-generator">
 <div id="navbar"></div>
 
 <main>
-  <div class="tool-hero">
-    <div class="tool-hero-inner">
-      <div class="tool-breadcrumb">
-        <a href="/">Home</a> › <a href="/categories/developer-tools">Dev Tools</a> › Hash Generator
-      </div>
+  <header class="page-hero">
+    <div class="page-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> › <a href="/categories/developer-tools">Developer Tools</a> › Hash Generator
+      </nav>
       <h1>Free<span> Hash Generator</span> Online</h1>
       <p>Generate SHA-1, SHA-256, SHA-384, and SHA-512 hashes for text and files. Compare hashes instantly and verify file integrity with fully local browser-based processing.</p>
-      <div class="tool-tags">
-        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
-        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#lock"></use></svg> Local Processing</span>
-        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#file-text"></use></svg> Text & Files</span>
-        <span class="tool-tag"><svg class="icon"><use href="/assets/svg/icons.svg#speed"></use></svg> Instant Compare</span>
+      <div class="tag-list">
+        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
+        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#lock"></use></svg> Local Processing</span>
+        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#file-text"></use></svg> Text & Files</span>
+        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#speed"></use></svg> Instant Compare</span>
       </div>
     </div>
-  </div>
+  </header>
 
-  <div class="tool-workspace" style="max-width:860px;">
+  <div class="tool-workspace">
     <div class="tool-card">
       <h2>Hash Generator</h2>
       <div class="tabs" role="tablist" aria-label="Hash generator modes">
@@ -244,10 +146,10 @@
         </div>
         <div class="btn-group mt-12">
           <button class="btn btn-primary" id="hash-text-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#hash"></use></svg> Generate Hashes</button>
-          <button class="btn btn-secondary" id="clear-text-btn" type="button">✕ Clear</button>
-          <div style="display:flex;align-items:center;gap:8px;margin-left:8px;">
-            <input type="checkbox" id="realtime-cb" checked style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;">
-            <label for="realtime-cb" style="font-size:.84rem;color:var(--gray-700);cursor:pointer;">Real-time</label>
+          <button class="btn btn-secondary" id="clear-text-btn" type="button"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Clear</button>
+          <div class="u-0d2299">
+            <input type="checkbox" id="realtime-cb" checked>
+            <label class="u-6180f0" for="realtime-cb">Real-time</label>
           </div>
         </div>
       </div>
@@ -255,12 +157,12 @@
       <div class="tab-panel" id="tab-file">
         <div class="upload-zone mt-12" id="upload-zone">
           <input type="file" id="file-input">
-          <div class="upload-icon">📄</div>
+          <div class="upload-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#file-text"></use></svg></div>
           <h3>Drop any file to generate hash</h3>
           <p>Supports local browser hashing for file integrity checks and checksum verification.</p>
           <span class="upload-limit">Recommended max: 100MB per file</span>
         </div>
-        <div class="status-msg" id="file-status" style="margin-top:12px;" aria-live="polite"></div>
+        <div class="status-msg mt-12" id="file-status" aria-live="polite"></div>
         <div class="stats-row mt-8" id="file-info"></div>
       </div>
 
@@ -278,14 +180,14 @@
         <div class="btn-group mt-12">
           <button class="btn btn-primary" id="compare-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#search"></use></svg> Compare Hashes</button>
         </div>
-        <div id="compare-result" style="margin-top:12px;" aria-live="polite"></div>
+        <div class="mt-12" id="compare-result" aria-live="polite"></div>
         <p class="tool-note">For best accuracy, compare hashes generated with the same algorithm, such as SHA-256 vs SHA-256.</p>
       </div>
     </div>
 
     <p class="privacy-note">We don't store your data.</p>
 
-    <div class="tool-card" id="results-card" style="display:none;">
+    <div class="tool-card is-hidden" id="results-card">
       <h2>Hash Results</h2>
       <div id="hash-results"></div>
       <div class="stats-row mt-12" id="hash-meta"></div>
@@ -293,18 +195,24 @@
     </div>
   </div>
 
-  <section class="howto-section">
+  <section class="page-section">
     <h2>How to Use Hash Generator</h2>
-    <ol class="howto-list">
-      <li>Enter your text, upload a file, or open the compare tab to paste two hashes for verification.</li>
-      <li>Click the generate or compare button, or keep real-time mode enabled for instant output while typing.</li>
-      <li>Copy the required SHA hash and use it for checksum verification, file integrity checks, development tasks, or secure comparison.</li>
+    <ol class="steps">
+      <li class="step">
+        <p>Enter your text, upload a file, or open the compare tab to paste two hashes for verification.</p>
+      </li>
+      <li class="step">
+        <p>Click the generate or compare button, or keep real-time mode enabled for instant output while typing.</p>
+      </li>
+      <li class="step">
+        <p>Copy the required SHA hash and use it for checksum verification, file integrity checks, development tasks, or secure comparison.</p>
+      </li>
     </ol>
   </section>
 
-  <section class="feature-section">
+  <section class="page-section prose">
     <h2>Why Our Hash Generator is Best</h2>
-    <ul class="feature-list">
+    <ul>
       <li><strong>Fast:</strong> Generates SHA-1, SHA-256, SHA-384, and SHA-512 hashes instantly in the browser.</li>
       <li><strong>Private:</strong> Local browser-based processing means your text and files stay on your device.</li>
       <li><strong>Free:</strong> Use the tool unlimited times without signup or installation.</li>
@@ -313,7 +221,7 @@
     </ul>
   </section>
 
-  <section class="article-section">
+  <section class="page-section prose">
     <h2>Why Use an Online Hash Generator?</h2>
     <p>A hash generator helps you create a fixed digital fingerprint for text or files. This fingerprint is useful when you need to verify file integrity, compare two pieces of data, or confirm that downloaded content has not changed. Developers often use a free hash generator to validate assets, compare outputs between environments, and verify published checksums. If even a single character changes, the output hash also changes, which makes hash tools useful for quick verification tasks.</p>
 
@@ -327,7 +235,7 @@
     <p>This tool uses the Web Crypto API's <code>crypto.subtle.digest()</code> method, a native browser function built specifically for cryptographic operations. For text input, the string is first encoded to raw bytes with <code>TextEncoder</code>; for files, the browser reads the file directly into an <code>ArrayBuffer</code>. That byte data is passed to the digest function, which returns a fixed-length binary hash that's then converted to a readable hexadecimal string. Because this is a native browser API rather than a JavaScript-only implementation, hashing runs quickly even on large files without freezing the page.</p>
 
     <h3>SHA-1 vs SHA-256 vs SHA-384 vs SHA-512</h3>
-    <ul class="feature-list">
+    <ul>
       <li><strong>SHA-1 (160-bit):</strong> produces a 40-character hex output; retained here for compatibility with older systems and legacy checksums, but collision attacks make it unsuitable for security-sensitive verification today.</li>
       <li><strong>SHA-256 (256-bit):</strong> produces a 64-character hex output; the de facto standard for file checksums, Git commit hashes, TLS certificates, and most modern software integrity checks.</li>
       <li><strong>SHA-384 (384-bit):</strong> produces a 96-character hex output; a truncated variant of SHA-512 used where a stronger hash than SHA-256 is wanted without the full SHA-512 length.</li>
@@ -338,7 +246,7 @@
     <p>Software publishers frequently list an official SHA-256 checksum next to a download link specifically so users can confirm the file wasn't corrupted in transit or tampered with. After downloading, switch to the Hash File tab, select the downloaded file, and compare the generated SHA-256 value against the one published on the official site using the Compare Hashes tab — an exact match confirms the file is byte-for-byte identical to what the publisher released.</p>
 
     <h3>For Developers: Practical Use Cases</h3>
-    <ul class="feature-list">
+    <ul>
       <li><strong>Cache-busting and asset fingerprinting:</strong> generate a short hash of a build artifact to use as a version identifier in a filename or URL.</li>
       <li><strong>Debugging data pipelines:</strong> confirm two files or payloads are byte-identical across environments without doing a manual diff.</li>
       <li><strong>Git and version control familiarity:</strong> Git itself uses SHA-1 (and increasingly SHA-256) to identify commits, so this tool is a quick way to understand how commit hashing works by hashing a file's contents directly.</li>
@@ -346,7 +254,7 @@
     </ul>
 
     <h3>Common Mistakes When Comparing Hashes</h3>
-    <ul class="feature-list">
+    <ul>
       <li><strong>Comparing hashes from different algorithms:</strong> a SHA-1 hash will never equal a SHA-256 hash even for identical input, since they're different-length outputs from different functions — always compare like with like.</li>
       <li><strong>Trailing whitespace or newlines:</strong> hashing text pasted with an extra trailing newline produces a different hash than the same text without it, since hash functions are sensitive to every byte of input.</li>
       <li><strong>Case sensitivity confusion:</strong> hex hash output is case-insensitive in meaning but displayed in lowercase here — the compare tool lowercases both inputs automatically so capitalization differences won't cause a false mismatch.</li>
@@ -356,61 +264,58 @@
     <p>People land on this tool searching for phrases like "sha256 online," "generate checksum from file," "verify file hash windows," "md5 vs sha256 checker," and "compare two hashes online." This page focuses on the SHA-1/SHA-256/SHA-384/SHA-512 family specifically, covering text hashing, file hashing, and direct hash comparison in one place.</p>
   </section>
 
-  <section class="faq-section">
+  <section class="page-section">
     <h2>Frequently Asked Questions</h2>
-
-    <div class="faq-item">
-      <div class="faq-q">What is a cryptographic hash?</div>
-      <div class="faq-a">A cryptographic hash is a fixed-size string generated from input data. The same input always creates the same output, but even a tiny change in the original text or file creates a different result.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Which algorithm should I use?</div>
-      <div class="faq-a">SHA-256 is the most practical option for general use. SHA-384 and SHA-512 produce longer outputs, while SHA-1 is older and no longer recommended for modern security-sensitive use.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Can I verify file integrity with this tool?</div>
-      <div class="faq-a">Yes. Generate the hash of your downloaded file and compare it with the official checksum provided by the software publisher. If both hashes match exactly, the file is unchanged.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Does this tool upload my file anywhere?</div>
-      <div class="faq-a">No. The hashing process runs locally in your browser, so your file remains on your device during the operation.</div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">What is a cryptographic hash?</summary>
+        <div class="faq-a"><p>A cryptographic hash is a fixed-size string generated from input data. The same input always creates the same output, but even a tiny change in the original text or file creates a different result.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Which algorithm should I use?</summary>
+        <div class="faq-a"><p>SHA-256 is the most practical option for general use. SHA-384 and SHA-512 produce longer outputs, while SHA-1 is older and no longer recommended for modern security-sensitive use.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Can I verify file integrity with this tool?</summary>
+        <div class="faq-a"><p>Yes. Generate the hash of your downloaded file and compare it with the official checksum provided by the software publisher. If both hashes match exactly, the file is unchanged.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Does this tool upload my file anywhere?</summary>
+        <div class="faq-a"><p>No. The hashing process runs locally in your browser, so your file remains on your device during the operation.</p></div>
+      </details>
     </div>
   </section>
 
-  <section class="related-tools">
+  <section class="page-section">
     <h2>Related Tools</h2>
-    <ul class="related-list">
-      <li><a href="/tools/base64">Base64 Encoder & Decoder</a></li>
-      <li><a href="/tools/json-formatter">JSON Formatter</a></li>
-      <li><a href="/tools/url-encoder">URL Encoder & Decoder</a></li>
-      <li><a href="/tools/text-diff">Text Diff Checker</a></li>
-    </ul>
+    <div class="related-grid">
+      <a class="related-card" href="/tools/base64"><strong>Base64 Encoder &amp; Decoder</strong></a>
+      <a class="related-card" href="/tools/json-formatter"><strong>JSON Formatter</strong></a>
+      <a class="related-card" href="/tools/url-encoder"><strong>URL Encoder &amp; Decoder</strong></a>
+      <a class="related-card" href="/tools/text-diff"><strong>Text Diff Checker</strong></a>
+    </div>
   </section>
 
-  <section class="keyword-section">
+  <section class="page-section">
     <h2>Top 10 Hash Generator Search Queries/Keywords</h2>
-    <ul class="keyword-list">
-      <li>hash generator online</li>
-      <li>free hash generator</li>
-      <li>sha 256 hash generator</li>
-      <li>sha 512 hash generator online</li>
-      <li>sha 1 generator</li>
-      <li>file hash generator</li>
-      <li>hash checker online</li>
-      <li>compare hashes online</li>
-      <li>checksum generator tool</li>
-      <li>browser hash generator</li>
-    </ul>
+    <div class="keyword-box">
+      <span class="keyword-tag">hash generator online</span>
+      <span class="keyword-tag">free hash generator</span>
+      <span class="keyword-tag">sha 256 hash generator</span>
+      <span class="keyword-tag">sha 512 hash generator online</span>
+      <span class="keyword-tag">sha 1 generator</span>
+      <span class="keyword-tag">file hash generator</span>
+      <span class="keyword-tag">hash checker online</span>
+      <span class="keyword-tag">compare hashes online</span>
+      <span class="keyword-tag">checksum generator tool</span>
+      <span class="keyword-tag">browser hash generator</span>
+    </div>
   </section>
 </main>
 
 <div id="footer"></div>
+<script src="/assets/js/main.js"></script>
 
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
 
 <script>
 const tabs = document.querySelectorAll('.tab-btn');
@@ -476,9 +381,9 @@ function safeCopy(hash, button) {
 
   if (navigator.clipboard && window.isSecureContext) {
     navigator.clipboard.writeText(hash).then(() => {
-      const old = button.textContent;
-      button.textContent = '✓';
-      setTimeout(() => button.textContent = old, 1200);
+      const old = button.innerHTML;
+      button.innerHTML = '<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check"></use></svg>';
+      setTimeout(() => button.innerHTML = old, 1200);
     }).catch(() => fallbackCopy(hash, button));
   } else {
     fallbackCopy(hash, button);
@@ -495,9 +400,9 @@ function fallbackCopy(text, button) {
   ta.select();
   try {
     document.execCommand('copy');
-    const old = button.textContent;
-    button.textContent = '✓';
-    setTimeout(() => button.textContent = old, 1200);
+    const old = button.innerHTML;
+    button.innerHTML = '<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check"></use></svg>';
+    setTimeout(() => button.innerHTML = old, 1200);
   } catch (e) {}
   document.body.removeChild(ta);
 }
@@ -509,7 +414,7 @@ function showHashes(hashes, metaHtml = '') {
       <div class="hash-value-wrap">
         <code class="hash-value">${value}</code>
       </div>
-      <button class="btn btn-sm btn-secondary hash-copy" data-copy="${value}" aria-label="Copy ${algorithm} hash" type="button">📋</button>
+      <button class="btn btn-sm btn-secondary hash-copy" data-copy="${value}" aria-label="Copy ${algorithm} hash" type="button"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg></button>
     </div>
   `).join('');
 
@@ -605,7 +510,7 @@ fileInput.addEventListener('change', async e => {
       `<span class="stat-chip">File: <strong>${file.name}</strong></span><span class="stat-chip">Size: <strong>${formatBytes(file.size)}</strong></span>`
     );
     setStatus(fileStatus, 'success', 'Hash generated successfully.');
-    fileInfo.innerHTML = `<span class="stat-chip">✅ <strong>${file.name}</strong></span>`;
+    fileInfo.innerHTML = `<span class="stat-chip"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> <strong>${file.name}</strong></span>`;
   } catch (err) {
     setStatus(fileStatus, 'error', 'Error: ' + err.message);
   }
@@ -628,9 +533,9 @@ document.getElementById('compare-btn').addEventListener('click', () => {
   }
 
   if (a === b) {
-    compareResult.innerHTML = `<div class="compare-box success">✅ Hashes match exactly. The compared values are identical.</div>`;
+    compareResult.innerHTML = `<div class="compare-box success"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Hashes match exactly. The compared values are identical.</div>`;
   } else {
-    compareResult.innerHTML = `<div class="compare-box error">❌ Hashes do not match. The input data or files are different.</div>`;
+    compareResult.innerHTML = `<div class="compare-box error"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#x-circle"></use></svg> Hashes do not match. The input data or files are different.</div>`;
   }
 });
 </script>

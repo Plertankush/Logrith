@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -45,29 +49,32 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-meme-generator">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/image-pdf-tools">Image & PDF Tools</a> › Meme Generator</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/image-pdf-tools">Image &amp; PDF Tools</a> › Meme Generator</nav>
   <h1>Free Meme Generator</h1>
   <p>Add classic top and bottom text captions to any image and download your meme instantly — no signup, no watermark.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">😂 Classic Style</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag">Classic Style</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:820px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Upload Image</h2>
     <div class="upload-zone" id="upload-zone">
       <input type="file" id="file-input" accept="image/*">
-      <div class="upload-icon">😂</div>
+      <div class="upload-icon"></div>
       <h3>Drop an image here or click to browse</h3>
       <p>PNG, JPG, WEBP — max 10MB</p>
     </div>
     <div class="status-msg" id="status-msg"></div>
   </div>
 
-  <div class="tool-card" id="controls-card" style="display:none;">
+  <div class="tool-card is-hidden" id="controls-card">
     <h2>Meme Text</h2>
     <div class="controls-grid">
       <div class="control-group">
@@ -84,56 +91,61 @@
       </div>
       <div class="control-group">
         <label>Text Color</label>
-        <input type="color" id="text-color" value="#ffffff" style="width:100%;height:42px;border-radius:8px;border:1.5px solid var(--gray-200);cursor:pointer;">
+        <input type="color" id="text-color" value="#ffffff">
       </div>
     </div>
   </div>
 
-  <div class="tool-card" id="result-card" style="display:none;">
+  <div class="tool-card is-hidden" id="result-card">
     <h2>Your Meme</h2>
-    <canvas id="meme-canvas" style="max-width:100%;border-radius:10px;border:1.5px solid var(--gray-200);"></canvas>
+    <canvas id="meme-canvas"></canvas>
     <div class="btn-group mt-16">
-      <a href="#" id="download-btn" class="btn btn-primary" download="meme.png">⬇️ Download Meme</a>
+      <a href="#" id="download-btn" class="btn btn-primary" download="meme.png"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#download"></use></svg> Download Meme</a>
     </div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>Can I use any image to make a meme?</h3><p>Yes, upload any PNG, JPG, or WEBP image and add your own top and bottom text captions.</p></div>
-    <div class="faq-item-box"><h3>Does the meme have a watermark?</h3><p>No, downloaded memes are clean with no watermark or branding added.</p></div>
-    <div class="faq-item-box"><h3>Is my image uploaded to a server?</h3><p>No, everything is rendered locally using the Canvas API — your image never leaves your browser.</p></div>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card">
-      <h2>How to Use the Meme Generator</h2>
-      <div class="tool-steps">
-        <div class="tool-step">
-          <strong>1. Upload your image</strong>
-          Drag and drop a PNG, JPG, or WEBP file into the upload zone, or click it to browse your device, up to 10MB.
-        </div>
-        <div class="tool-step">
-          <strong>2. Type your top and bottom text</strong>
-          Enter your caption into the Top Text and Bottom Text fields — the tool automatically converts your text to the classic all-caps style.
-        </div>
-        <div class="tool-step">
-          <strong>3. Adjust font size and color</strong>
-          Drag the font size slider to fit longer or shorter captions, and pick a text color if white doesn't suit your image.
-        </div>
-        <div class="tool-step">
-          <strong>4. Download your meme</strong>
-          Review the rendered canvas preview, then click Download Meme to save the finished PNG with no watermark.
-        </div>
-      </div>
-    </div>
+    <details class="faq-item">
+      <summary class="faq-q">Can I use any image to make a meme?</summary>
+      <div class="faq-a"><p>Yes, upload any PNG, JPG, or WEBP image and add your own top and bottom text captions.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does the meme have a watermark?</summary>
+      <div class="faq-a"><p>No, downloaded memes are clean with no watermark or branding added.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my image uploaded to a server?</summary>
+      <div class="faq-a"><p>No, everything is rendered locally using the Canvas API — your image never leaves your browser.</p></div>
+    </details>
   </div>
 </section>
 
-<section class="article-section">
+<section class="page-section">
+  <h2>How to Use the Meme Generator</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Upload your image</strong>
+      <p>Drag and drop a PNG, JPG, or WEBP file into the upload zone, or click it to browse your device, up to 10MB.</p>
+    </li>
+    <li class="step">
+      <strong>Type your top and bottom text</strong>
+      <p>Enter your caption into the Top Text and Bottom Text fields — the tool automatically converts your text to the classic all-caps style.</p>
+    </li>
+    <li class="step">
+      <strong>Adjust font size and color</strong>
+      <p>Drag the font size slider to fit longer or shorter captions, and pick a text color if white doesn't suit your image.</p>
+    </li>
+    <li class="step">
+      <strong>Download your meme</strong>
+      <p>Review the rendered canvas preview, then click Download Meme to save the finished PNG with no watermark.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
   <h2>Free Online Meme Generator</h2>
   <p>This tool recreates the classic internet meme format — bold white text with a black outline, positioned at the top and bottom of an image — using nothing but your browser's Canvas API. Upload any image, type your captions, adjust the size and color, and download the finished meme instantly.</p>
 
@@ -141,7 +153,7 @@
   <p>The bold, outlined, all-caps text style associated with early internet memes traces back to image macro culture from sites like Something Awful and later Reddit and Imgur, where a heavy sans-serif font (often Impact) with a thick black outline was used to ensure captions stayed readable over any background image, light or dark. This tool replicates that same high-contrast look using canvas text rendering with a stroked outline, so your captions stay legible regardless of what's happening in the photo underneath.</p>
 
   <h3>Tips for Good Meme Text</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Keep it short.</strong> Classic memes work best with punchy, brief captions rather than long sentences.</li>
     <li><strong>Use ALL CAPS</strong> for the traditional meme aesthetic — it's part of what makes the format instantly recognizable.</li>
     <li><strong>Watch your image's busy areas</strong> — position text over relatively plain parts of the image so it doesn't compete visually with important details.</li>
@@ -161,7 +173,7 @@
   <p>Reaction images, screenshots, and photos with a clear focal point tend to work best, since there's usually open space near the top and bottom edges for text to sit without covering an important detail. If your image is very tall or very wide, consider cropping it first with an image crop tool so the proportions match a typical meme format before adding captions.</p>
 
   <h3>Common Use Cases</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Reaction memes</strong> — turning a screenshot or photo into a shareable reaction image for group chats and social media.</li>
     <li><strong>Templates from trending formats</strong> — applying a current meme template's text pattern to your own image or situation.</li>
     <li><strong>Personal or inside jokes</strong> — captioning a photo of friends, pets, or events for private sharing.</li>
@@ -172,7 +184,7 @@
   <p>Dedicated meme apps often require an account, inject a watermark unless you pay, or compress your image on export. Because this tool runs entirely as a web page with no account system, there's no login wall, no forced watermark, and no upload step that could degrade your image quality — the output canvas is rendered at the same resolution as your original upload.</p>
 
   <h3>Common Mistakes to Avoid</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Text too large for the image</strong> — an oversized font size can push captions off the edges or force excessive line wrapping; reduce the size slider if your lines look cramped.</li>
     <li><strong>Low-contrast text color</strong> — white text usually reads well with the black outline, but on a very light image you may want to switch to a darker fill color for extra contrast.</li>
     <li><strong>Captions that are too long</strong> — classic memes read fastest with short, punchy lines; very long sentences lose the format's visual punch.</li>
@@ -188,34 +200,31 @@
   <p>If you want to change the wording after seeing the preview, you don't need to start over — editing the Top Text or Bottom Text field re-renders the canvas instantly with the new caption, so you can try several versions of a joke before picking the one you like best and downloading it.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/image-watermark" class="tool-item"><div class="ti-text"><h4>Image Watermark</h4><p>Add a branded text watermark to your images.</p></div></a>
-    <a href="/tools/image-crop" class="tool-item"><div class="ti-text"><h4>Image Crop</h4><p>Crop images to the perfect meme format.</p></div></a>
-    <a href="/tools/image-compressor" class="tool-item"><div class="ti-text"><h4>Image Compressor</h4><p>Compress your meme for faster sharing.</p></div></a>
-    <a href="/tools/image-resize" class="tool-item"><div class="ti-text"><h4>Image Resize</h4><p>Resize your meme for different platforms.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">meme generator</span>
-        <span class="keyword-tag">meme maker online</span>
-        <span class="keyword-tag">create meme free</span>
-        <span class="keyword-tag">meme creator</span>
-        <span class="keyword-tag">add text to image meme</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/image-watermark"><strong>Image Watermark</strong><span>Add a branded text watermark to your images.</span></a>
+    <a class="related-card" href="/tools/image-crop"><strong>Image Crop</strong><span>Crop images to the perfect meme format.</span></a>
+    <a class="related-card" href="/tools/image-compressor"><strong>Image Compressor</strong><span>Compress your meme for faster sharing.</span></a>
+    <a class="related-card" href="/tools/image-resize"><strong>Image Resize</strong><span>Resize your meme for different platforms.</span></a>
   </div>
 </section>
 
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">meme generator</span>
+    <span class="keyword-tag">meme maker online</span>
+    <span class="keyword-tag">create meme free</span>
+    <span class="keyword-tag">meme creator</span>
+    <span class="keyword-tag">add text to image meme</span>
+  </div>
+</section>
+
+</main>
+
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 const uploadZone = document.getElementById('upload-zone');
 const fileInput = document.getElementById('file-input');

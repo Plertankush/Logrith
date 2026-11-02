@@ -23,43 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .bp-hero { max-width:820px;margin:0 auto;padding:48px 20px 8px; }
-    .bp-crumb { font-size:.85rem;color:var(--gray-500);margin-bottom:16px; }
-    .bp-crumb a { color:var(--primary);text-decoration:none; }
-    .bp-hero h1 { font-family:var(--font-display);font-size:2rem;line-height:1.25;color:var(--gray-900);margin-bottom:14px; }
-    .bp-hero .bp-dek { font-size:1.05rem;color:var(--gray-700);line-height:1.7;margin-bottom:20px; }
-    .bp-cta { display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:white;padding:13px 26px;border-radius:var(--radius);font-weight:700;text-decoration:none;font-size:.95rem; }
-    .bp-cta svg { width:17px;height:17px; }
-    .bp-cta:hover { background:var(--primary-dark); }
-    .bp-body { max-width:760px;margin:0 auto;padding:28px 20px 20px; }
-    .bp-body h2 { font-family:var(--font-display);font-size:1.5rem;color:var(--gray-900);margin:38px 0 14px; }
-    .bp-body h3 { font-family:var(--font-display);font-size:1.15rem;color:var(--gray-900);margin:26px 0 10px; }
-    .bp-body p { color:var(--gray-700);line-height:1.8;margin-bottom:16px;font-size:1rem; }
-    .bp-body ul, .bp-body ol { color:var(--gray-700);line-height:1.8;margin:0 0 16px 22px; }
-    .bp-body li { margin-bottom:8px; }
-    .bp-body strong { color:var(--gray-900); }
-    .bp-table { width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:.92rem; }
-    .bp-table th, .bp-table td { border:1px solid var(--gray-200);padding:10px 12px;text-align:left; }
-    .bp-table th { background:var(--gray-50);font-weight:700;color:var(--gray-900); }
-    .bp-howto { counter-reset:step; list-style:none;margin-left:0; }
-    .bp-howto li { position:relative;padding-left:42px;margin-bottom:18px; }
-    .bp-howto li::before { counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;background:var(--primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem; }
-    .bp-faq-item { border-bottom:1px solid var(--gray-200);padding:16px 0; }
-    .bp-faq-item h3 { margin:0 0 8px; font-size:1.02rem; }
-    .bp-byline { font-size:.82rem;color:var(--gray-500);margin-top:10px; }
-    .bp-related { max-width:1000px;margin:0 auto;padding:20px 20px 60px; }
-    .bp-related h2 { font-family:var(--font-display);font-size:1.4rem;color:var(--gray-900);margin-bottom:18px;text-align:center; }
-    .bp-related-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px; }
-    .bp-related-card { border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:18px;text-decoration:none;color:inherit;background:var(--white); }
-    .bp-related-card h4 { font-size:.95rem;color:var(--gray-900);margin-bottom:6px; }
-    .bp-related-card p { font-size:.82rem;color:var(--gray-700);line-height:1.5; }
-    .bp-prevnext { display:flex;justify-content:space-between;gap:16px;max-width:760px;margin:0 auto;padding:0 20px 20px; }
-    .bp-prevnext a { flex:1;border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:12px 16px;text-decoration:none;color:var(--gray-700);font-size:.85rem; }
-    .bp-prevnext a strong { display:block;color:var(--gray-900);font-size:.92rem; }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -95,42 +64,57 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-rotate-flip-image-online-free">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="bp-hero">
-  <div class="bp-crumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/image-pdf-tools">Image & PDF Tools</a> &rsaquo; Image Rotate</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/image-pdf-tools">Image & PDF Tools</a> &rsaquo; Image Rotate</nav>
   <h1>How to Rotate a Sideways Photo or Flip an Image Without Losing Quality</h1>
-  <p class="bp-dek">A photo that looks perfectly upright on your phone sometimes turns sideways the moment it's uploaded somewhere else. That mismatch, along with genuinely needing a mirrored version of an image, is what rotate and flip tools solve — two related but distinct operations worth understanding clearly, including why one of them can accidentally make text and logos unreadable if applied without thinking about what the image actually contains.</p>
-  <a href="/tools/image-rotate" class="bp-cta">
+  <p>A photo that looks perfectly upright on your phone sometimes turns sideways the moment it's uploaded somewhere else. That mismatch, along with genuinely needing a mirrored version of an image, is what rotate and flip tools solve — two related but distinct operations worth understanding clearly, including why one of them can accidentally make text and logos unreadable if applied without thinking about what the image actually contains.</p>
+  <a href="/tools/image-rotate" class="btn btn-primary btn-lg">
     <svg class="icon"><use href="/assets/svg/icons.svg#refresh"></use></svg>
     Rotate an Image
   </a>
-  <p class="bp-byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
-</div>
+  <p class="byline">By the Logrith Editorial Team &middot; Reviewed for accuracy</p>
+</div></header>
 
-<div class="bp-body">
+<article class="page-section prose">
 
   <h2>How to Rotate or Flip an Image</h2>
   <p>The workflow itself is deliberately simple, since the actual decision-making happens in choosing the right operation, not in the mechanics of applying it:</p>
-  <ol class="bp-howto">
-    <li>Open the <a href="/tools/image-rotate">Image Rotate tool</a> and upload your image.</li>
-    <li>Click Rotate 90° Right or Left to turn the image, applying multiple times to reach 180° or 270° as needed.</li>
-    <li>Use Flip Horizontal or Flip Vertical to mirror the image instead of rotating it.</li>
-    <li>Combine rotate and flip operations in any order if needed, or click Reset All to start over.</li>
-    <li>Download the corrected image once it looks right in the preview.</li>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the <a href="/tools/image-rotate">Image Rotate tool</a> and upload your image.</p>
+    </li>
+    <li class="step">
+      <p>Click Rotate 90° Right or Left to turn the image, applying multiple times to reach 180° or 270° as needed.</p>
+    </li>
+    <li class="step">
+      <p>Use Flip Horizontal or Flip Vertical to mirror the image instead of rotating it.</p>
+    </li>
+    <li class="step">
+      <p>Combine rotate and flip operations in any order if needed, or click Reset All to start over.</p>
+    </li>
+    <li class="step">
+      <p>Download the corrected image once it looks right in the preview.</p>
+    </li>
   </ol>
 
   <h2>Why Phone Photos Turn Sideways</h2>
   <p>This is one of the most common photo frustrations, and it's rarely a real problem with the photo itself. Phone cameras don't actually rotate the stored pixel grid when you tilt the phone to take a photo in portrait or landscape — instead, they record an orientation flag in the image's EXIF metadata, and well-behaved software reads that flag to display the photo correctly regardless of how the raw pixels are stored. Some upload systems, older software, and specific platforms don't read this metadata correctly, displaying the photo in its raw stored orientation instead — which is why the exact same file can look correctly oriented in one app and sideways in another. Rotating the image directly, rather than relying on metadata, permanently fixes this regardless of which software eventually displays it, since the fix lives in the actual pixel arrangement rather than a flag some piece of software might ignore.</p>
 
   <h2>Rotate vs. Flip: Two Different Operations</h2>
-  <table class="bp-table">
+  <div class="table-wrap">
+    <table class="table">
     <tr><th>Operation</th><th>What It Does</th><th>Common Use</th></tr>
     <tr><td>Rotate 90°/180°/270°</td><td>Turns the entire image around its center point</td><td>Fixing a sideways or upside-down photo</td></tr>
     <tr><td>Flip Horizontal</td><td>Mirrors the image left-to-right, like a mirror reflection</td><td>Correcting a "selfie mirror" effect, or reversing an image's direction</td></tr>
     <tr><td>Flip Vertical</td><td>Mirrors the image top-to-bottom</td><td>Less common, but useful for certain design or diagram needs</td></tr>
   </table>
+  </div>
   <p>A frequent point of confusion: rotating 180 degrees and flipping both horizontally and vertically produce the same visual result for a symmetric composition, but they're computed differently and can behave differently on asymmetric images with text or directional elements — if text needs to stay readable, rotation preserves its orientation correctly while a flip would mirror it backward. Understanding this distinction up front avoids the trial-and-error of applying the wrong operation and having to undo it.</p>
 
   <h2>Does Rotating Reduce Image Quality?</h2>
@@ -170,39 +154,63 @@
   <h3>Why Choose Logrith</h3>
   <p>Rotation and flipping run entirely in your browser using the Canvas API, with no upload and no quality loss for standard 90-degree rotations. Once oriented correctly, the same image is ready for Logrith's other tools — cropping, resizing, or compressing — without switching to a different site.</p>
 
-</div>
+</article>
 
-<div class="bp-body">
+<article class="page-section prose">
   <h2>Frequently Asked Questions</h2>
-  <div class="bp-faq-item"><h3>What's the difference between rotating and flipping?</h3><p>Rotating turns the entire image around a center point, like spinning it clockwise. Flipping mirrors the image along an axis — horizontal flip mirrors left-to-right, vertical flip mirrors top-to-bottom.</p></div>
-  <div class="bp-faq-item"><h3>Why do phone photos sometimes appear sideways?</h3><p>Phones record orientation metadata rather than physically rotating pixels. Software that reads this metadata displays the photo upright; software that ignores it shows the raw stored orientation, which can appear sideways.</p></div>
-  <div class="bp-faq-item"><h3>Does rotating reduce image quality?</h3><p>Rotating by exact 90-degree increments causes no quality loss, since pixels are simply repositioned. Rotating by an arbitrary angle can introduce slight softening due to interpolation.</p></div>
-  <div class="bp-faq-item"><h3>Can I combine rotating and flipping?</h3><p>Yes, these can be applied together in any combination or order to reach the exact orientation you need.</p></div>
-  <div class="bp-faq-item"><h3>Will flipping a photo of text make it unreadable?</h3><p>Yes, flipping mirrors text and directional content backward. Rotating, not flipping, is the correct operation when a photo containing readable text needs to change orientation.</p></div>
-  <div class="bp-faq-item"><h3>Will rotating an image change its file size?</h3><p>Rotation itself doesn't meaningfully change file size, since the same pixel data is simply repositioned rather than added to or removed.</p></div>
-  <div class="bp-faq-item"><h3>Why does flipping a photo sometimes look "wrong" even though quality is unaffected?</h3><p>Flipping reverses real details from the original scene — text, logos, or asymmetric features — which can look subtly incorrect to anyone familiar with the actual scene, even though no pixel data was degraded.</p></div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">What's the difference between rotating and flipping?</summary>
+      <div class="faq-a"><p>Rotating turns the entire image around a center point, like spinning it clockwise. Flipping mirrors the image along an axis — horizontal flip mirrors left-to-right, vertical flip mirrors top-to-bottom.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why do phone photos sometimes appear sideways?</summary>
+      <div class="faq-a"><p>Phones record orientation metadata rather than physically rotating pixels. Software that reads this metadata displays the photo upright; software that ignores it shows the raw stored orientation, which can appear sideways.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does rotating reduce image quality?</summary>
+      <div class="faq-a"><p>Rotating by exact 90-degree increments causes no quality loss, since pixels are simply repositioned. Rotating by an arbitrary angle can introduce slight softening due to interpolation.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I combine rotating and flipping?</summary>
+      <div class="faq-a"><p>Yes, these can be applied together in any combination or order to reach the exact orientation you need.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Will flipping a photo of text make it unreadable?</summary>
+      <div class="faq-a"><p>Yes, flipping mirrors text and directional content backward. Rotating, not flipping, is the correct operation when a photo containing readable text needs to change orientation.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Will rotating an image change its file size?</summary>
+      <div class="faq-a"><p>Rotation itself doesn't meaningfully change file size, since the same pixel data is simply repositioned rather than added to or removed.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why does flipping a photo sometimes look "wrong" even though quality is unaffected?</summary>
+      <div class="faq-a"><p>Flipping reverses real details from the original scene — text, logos, or asymmetric features — which can look subtly incorrect to anyone familiar with the actual scene, even though no pixel data was degraded.</p></div>
+    </details>
+  </div>
 
   <h2>Conclusion</h2>
   <p>A sideways photo is almost always a metadata mismatch, not a real flaw in the image — rotating it directly resolves the issue permanently, regardless of which app or platform displays it afterward. Understanding the distinction between rotating and flipping avoids the more common mistake of accidentally mirroring text or directional content when a straightforward rotation was what was actually needed, and knowing that 90-degree rotation is inherently lossless means there's never a quality reason to hesitate before fixing an image's orientation, whether the photo is headed to a website, a document, or a social media post.</p>
-</div>
+</article>
 
-<div class="bp-prevnext">
+<nav class="post-nav page-section" aria-label="More guides">
   <a href="/blog/resize-image-without-losing-quality-online">&larr; Previous: <strong>Image Resize Guide</strong></a>
   <a href="/blog/combine-jpg-images-into-one-pdf-free">Next: <strong>JPG to PDF Guide</strong> &rarr;</a>
-</div>
+</nav>
 
-<div class="bp-related">
+<section class="page-section">
   <h2>Related Tools</h2>
-  <div class="bp-related-grid">
-    <a href="/blog/resize-image-without-losing-quality-online" class="bp-related-card"><h4>Image Resize</h4><p>Resize an image after fixing its orientation.</p></a>
-    <a href="/blog/image-crop" class="bp-related-card"><h4>Image Crop</h4><p>Crop to a specific area once orientation is correct.</p></a>
-    <a href="/blog/image-converter" class="bp-related-card"><h4>Image Converter</h4><p>Convert format alongside rotation.</p></a>
-    <a href="/blog/image-compressor" class="bp-related-card"><h4>Image Compressor</h4><p>Compress the rotated image for faster sharing.</p></a>
+  <div class="related-grid">
+    <a class="related-card" href="/blog/resize-image-without-losing-quality-online"><strong>Image Resize</strong><span>Resize an image after fixing its orientation.</span></a>
+    <a class="related-card" href="/blog/image-crop"><strong>Image Crop</strong><span>Crop to a specific area once orientation is correct.</span></a>
+    <a class="related-card" href="/blog/image-converter"><strong>Image Converter</strong><span>Convert format alongside rotation.</span></a>
+    <a class="related-card" href="/blog/image-compressor"><strong>Image Compressor</strong><span>Compress the rotated image for faster sharing.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

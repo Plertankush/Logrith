@@ -23,39 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .bp-hero { max-width:820px;margin:0 auto;padding:48px 20px 8px; }
-    .bp-crumb { font-size:.85rem;color:var(--gray-500);margin-bottom:16px; }
-    .bp-crumb a { color:var(--primary);text-decoration:none; }
-    .bp-hero h1 { font-family:var(--font-display);font-size:2rem;line-height:1.25;color:var(--gray-900);margin-bottom:14px; }
-    .bp-hero .bp-dek { font-size:1.05rem;color:var(--gray-700);line-height:1.7;margin-bottom:20px; }
-    .bp-cta { display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:white;padding:13px 26px;border-radius:var(--radius);font-weight:700;text-decoration:none;font-size:.95rem; }
-    .bp-cta svg { width:17px;height:17px; }
-    .bp-cta:hover { background:var(--primary-dark); }
-    .bp-body { max-width:760px;margin:0 auto;padding:28px 20px 20px; }
-    .bp-body h2 { font-family:var(--font-display);font-size:1.5rem;color:var(--gray-900);margin:38px 0 14px; }
-    .bp-body h3 { font-family:var(--font-display);font-size:1.15rem;color:var(--gray-900);margin:26px 0 10px; }
-    .bp-body p { color:var(--gray-700);line-height:1.8;margin-bottom:16px;font-size:1rem; }
-    .bp-body ul, .bp-body ol { color:var(--gray-700);line-height:1.8;margin:0 0 16px 22px; }
-    .bp-body li { margin-bottom:8px; }
-    .bp-body strong { color:var(--gray-900); }
-    .bp-table { width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:.92rem; }
-    .bp-table th, .bp-table td { border:1px solid var(--gray-200);padding:10px 12px;text-align:left; }
-    .bp-table th { background:var(--gray-50);font-weight:700;color:var(--gray-900); }
-    .bp-howto { counter-reset:step; list-style:none;margin-left:0; }
-    .bp-howto li { position:relative;padding-left:42px;margin-bottom:18px; }
-    .bp-howto li::before { counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;background:var(--primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem; }
-    .bp-faq-item { border-bottom:1px solid var(--gray-200);padding:16px 0; }
-    .bp-faq-item h3 { margin:0 0 8px; font-size:1.02rem; }
-    .bp-related { max-width:1000px;margin:0 auto;padding:20px 20px 60px; }
-    .bp-related h2 { font-family:var(--font-display);font-size:1.4rem;color:var(--gray-900);margin-bottom:18px;text-align:center; }
-    .bp-related-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px; }
-    .bp-related-card { border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:18px;text-decoration:none;color:inherit;background:var(--white); }
-    .bp-related-card h4 { font-size:.95rem;color:var(--gray-900);margin-bottom:6px; }
-    .bp-related-card p { font-size:.82rem;color:var(--gray-700);line-height:1.5; }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -84,20 +57,23 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-blog-image-compressor">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="bp-hero">
-  <div class="bp-crumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/image-pdf-tools">Image & PDF Tools</a> &rsaquo; Image Compressor</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <a href="/blog/categories/image-pdf-tools">Image & PDF Tools</a> &rsaquo; Image Compressor</nav>
   <h1>Image Compressor: The Complete Guide to Shrinking Photos Without Losing Quality</h1>
-  <p class="bp-dek">Every image you upload to the web costs someone time — a slower page load, a stalled form submission, a bloated email attachment. Compression fixes that, but only if you understand what you're actually trading away. This guide covers how image compression works, how to use Logrith's six-mode compressor effectively, and how it stacks up against TinyPNG and Squoosh, the two tools most people reach for first.</p>
-  <a href="/tools/image-compressor" class="bp-cta">
+  <p>Every image you upload to the web costs someone time — a slower page load, a stalled form submission, a bloated email attachment. Compression fixes that, but only if you understand what you're actually trading away. This guide covers how image compression works, how to use Logrith's six-mode compressor effectively, and how it stacks up against TinyPNG and Squoosh, the two tools most people reach for first.</p>
+  <a href="/tools/image-compressor" class="btn btn-primary btn-lg">
     <svg class="icon"><use href="/assets/svg/icons.svg#compress-img"></use></svg>
     Compress an Image
   </a>
-</div>
+</div></header>
 
-<div class="bp-body">
+<article class="page-section prose">
 
   <h2>What Image Compression Actually Does</h2>
   <p>Every digital image is, underneath its visual appearance, a grid of pixel values that needs to be stored as bytes on disk. Compression is the process of representing that same grid using fewer bytes — either by removing redundancy that doesn't change how the image looks (lossless compression), or by selectively discarding detail the human eye is least likely to notice (lossy compression). Both approaches produce a smaller file; they differ in whether the original pixel data can be perfectly reconstructed afterward.</p>
@@ -130,18 +106,29 @@
   <p>Sometimes the biggest single win available isn't adjusting quality at all — it's switching formats. A PNG screenshot of a photograph converted to JPEG, or an old JPEG converted to WebP, can shrink dramatically simply because the target format is inherently better suited to that kind of image content.</p>
 
   <h2>How to Use Logrith's Image Compressor</h2>
-  <ol class="bp-howto">
-    <li>Open the <a href="/tools/image-compressor">Image Compressor tool</a> and upload your image (up to 20MB) by clicking the upload area or dragging a file in.</li>
-    <li>Choose the mode that matches your actual goal — Quality, Resize, Exact Dimensions, Target KB, Preset, or Format Conversion — based on the explanations above.</li>
-    <li>Adjust the mode-specific setting: the quality slider, target dimensions, target file size, chosen preset, or output format.</li>
-    <li>Review the live before/after size comparison shown by the tool.</li>
-    <li>Download the compressed image directly — nothing is uploaded to a server at any point in this process.</li>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the <a href="/tools/image-compressor">Image Compressor tool</a> and upload your image (up to 20MB) by clicking the upload area or dragging a file in.</p>
+    </li>
+    <li class="step">
+      <p>Choose the mode that matches your actual goal — Quality, Resize, Exact Dimensions, Target KB, Preset, or Format Conversion — based on the explanations above.</p>
+    </li>
+    <li class="step">
+      <p>Adjust the mode-specific setting: the quality slider, target dimensions, target file size, chosen preset, or output format.</p>
+    </li>
+    <li class="step">
+      <p>Review the live before/after size comparison shown by the tool.</p>
+    </li>
+    <li class="step">
+      <p>Download the compressed image directly — nothing is uploaded to a server at any point in this process.</p>
+    </li>
   </ol>
 
   <h2>Image Compressor vs. TinyPNG vs. Squoosh: An Honest Comparison</h2>
   <p>TinyPNG and Squoosh are the two most commonly recommended free image compressors, and both are genuinely capable tools — this comparison isn't about declaring a single winner, but about being clear on what each one actually does differently, so you can pick the right one for a given task.</p>
 
-  <table class="bp-table">
+  <div class="table-wrap">
+    <table class="table">
     <tr><th>Feature</th><th>Logrith Image Compressor</th><th>TinyPNG</th><th>Squoosh</th></tr>
     <tr><td>Processing location</td><td>Entirely in-browser</td><td>Uploaded to server</td><td>Entirely in-browser</td></tr>
     <tr><td>Compression modes</td><td>6 (quality, resize, exact size, target KB, presets, format convert)</td><td>1 (automatic quality)</td><td>1 (manual quality/codec tuning)</td></tr>
@@ -151,6 +138,7 @@
     <tr><td>Account required</td><td>No</td><td>No (paid API requires one)</td><td>No</td></tr>
     <tr><td>Best for</td><td>Users who want a specific outcome (target size, exact dimensions) without manual guesswork</td><td>Fast one-click PNG/JPEG compression when privacy isn't a concern</td><td>Users who want fine-grained manual codec control</td></tr>
   </table>
+  </div>
 
   <p>TinyPNG's biggest practical strength is its PNG-specific quantization algorithm, which genuinely produces excellent results for PNG files with minimal effort — you drop a file in, and it just works. The tradeoff is that your image is uploaded to TinyPNG's servers, which matters if you're working with anything sensitive, and the free tier caps you at 5MB per file and roughly 20 images per session.</p>
   <p>Squoosh, built by the Google Chrome team, is the most technically powerful option here — it exposes real codec parameters (MozJPEG, WebP, AVIF, OxiPNG) with a side-by-side before/after preview, and it runs entirely client-side like Logrith's tool. Its limitation is workflow, not capability: it handles one image at a time with a fairly technical interface, and it has no target-file-size mode — you're manually tuning a quality slider and checking the resulting size yourself.</p>
@@ -207,25 +195,40 @@
   <p>If an image needs to be printed or archived at high fidelity, avoid aggressive lossy compression entirely. Use high quality settings (90%+) or stick with lossless PNG, since print output reveals compression artifacts far more readily than a screen does, particularly at larger physical sizes.</p>
 
   <h2>Frequently Asked Questions</h2>
-  <div class="bp-faq-item"><h3>Does compressing an image reduce its quality?</h3><p>At moderate quality settings (roughly 65-85%), the visual difference is imperceptible to most people at normal viewing size. Quality loss only becomes clearly visible at very aggressive compression, typically below 40%.</p></div>
-  <div class="bp-faq-item"><h3>Is it safe to compress images with sensitive content online?</h3><p>It depends entirely on whether the tool processes images in your browser or uploads them to a server. Logrith's Image Compressor runs entirely client-side using the Canvas API, so images never leave your device at any point.</p></div>
-  <div class="bp-faq-item"><h3>What's the difference between lossy and lossless compression?</h3><p>Lossless compression shrinks a file without discarding any image data, typically saving 10-30%. Lossy compression discards some detail the eye notices least, achieving much larger reductions (50-80%) at a controllable quality tradeoff.</p></div>
-  <div class="bp-faq-item"><h3>Should I resize or compress first?</h3><p>Resize first if your image's pixel dimensions are larger than what you'll actually display or need. Resizing to the right dimensions before compressing typically gives a much better result than compressing an oversized image alone.</p></div>
-
-</div>
-
-<div class="bp-related">
-  <h2>Related Tools</h2>
-  <div class="bp-related-grid">
-    <a href="/blog/photo-resizer-kb" class="bp-related-card"><h4>Photo Resizer to KB</h4><p>Resize a photo to an exact target file size, e.g. 50KB for forms.</p></a>
-    <a href="/blog/resize-image-without-losing-quality-online" class="bp-related-card"><h4>Image Resize</h4><p>Resize images to specific pixel dimensions.</p></a>
-    <a href="/blog/image-converter" class="bp-related-card"><h4>Image Converter</h4><p>Convert between JPG, PNG, WebP, and more formats.</p></a>
-    <a href="/blog/pdf-compressor" class="bp-related-card"><h4>PDF Compressor</h4><p>Reduce PDF file size with adjustable compression.</p></a>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">Does compressing an image reduce its quality?</summary>
+      <div class="faq-a"><p>At moderate quality settings (roughly 65-85%), the visual difference is imperceptible to most people at normal viewing size. Quality loss only becomes clearly visible at very aggressive compression, typically below 40%.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is it safe to compress images with sensitive content online?</summary>
+      <div class="faq-a"><p>It depends entirely on whether the tool processes images in your browser or uploads them to a server. Logrith's Image Compressor runs entirely client-side using the Canvas API, so images never leave your device at any point.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What's the difference between lossy and lossless compression?</summary>
+      <div class="faq-a"><p>Lossless compression shrinks a file without discarding any image data, typically saving 10-30%. Lossy compression discards some detail the eye notices least, achieving much larger reductions (50-80%) at a controllable quality tradeoff.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Should I resize or compress first?</summary>
+      <div class="faq-a"><p>Resize first if your image's pixel dimensions are larger than what you'll actually display or need. Resizing to the right dimensions before compressing typically gives a much better result than compressing an oversized image alone.</p></div>
+    </details>
   </div>
-</div>
+
+</article>
+
+<section class="page-section">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/blog/photo-resizer-kb"><strong>Photo Resizer to KB</strong><span>Resize a photo to an exact target file size, e.g. 50KB for forms.</span></a>
+    <a class="related-card" href="/blog/resize-image-without-losing-quality-online"><strong>Image Resize</strong><span>Resize images to specific pixel dimensions.</span></a>
+    <a class="related-card" href="/blog/image-converter"><strong>Image Converter</strong><span>Convert between JPG, PNG, WebP, and more formats.</span></a>
+    <a class="related-card" href="/blog/pdf-compressor"><strong>PDF Compressor</strong><span>Reduce PDF file size with adjustable compression.</span></a>
+  </div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -45,17 +49,20 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-html-minifier">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/developer-tools">Developer Tools</a> › HTML Minifier</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/developer-tools">Developer Tools</a> › HTML Minifier</nav>
   <h1>Free HTML Minifier & Beautifier</h1>
   <p>Minify HTML to reduce file size, or beautify minified HTML back into readable, indented code.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">🗜️ Minify & Beautify</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zip"></use></svg> Minify & Beautify</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:900px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>HTML Code</h2>
     <textarea class="tool-textarea mono" id="input-html" rows="12" placeholder="Paste your HTML here...">&lt;!-- comment --&gt;
@@ -63,34 +70,55 @@
   &lt;p&gt;Hello World&lt;/p&gt;
 &lt;/div&gt;</textarea>
     <div class="btn-group mt-12">
-      <button class="btn btn-primary" id="minify-btn">🗜️ Minify</button>
-      <button class="btn btn-primary" id="beautify-btn">✨ Beautify</button>
-      <button class="btn btn-secondary" id="clear-btn">✕ Clear</button>
+      <button class="btn btn-primary" id="minify-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zip"></use></svg> Minify</button>
+      <button class="btn btn-primary" id="beautify-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#sparkles"></use></svg> Beautify</button>
+      <button class="btn btn-secondary" id="clear-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Clear</button>
     </div>
     <div class="stats-row mt-8" id="stats-row"></div>
 
-    <div class="control-group mt-16" style="position:relative;">
+    <div class="control-group mt-16 relative">
       <label>Output</label>
       <textarea class="tool-textarea mono" id="output-html" rows="12" readonly></textarea>
-      <button class="copy-btn" id="copy-btn">📋 Copy</button>
+      <button class="copy-btn" id="copy-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
     </div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>Does minifying HTML remove comments?</h3><p>Yes, HTML comments (&lt;!-- like this --&gt;) are removed during minification, along with unnecessary whitespace between tags.</p></div>
-    <div class="faq-item-box"><h3>Will minification break my HTML?</h3><p>No, standard HTML minification only removes whitespace and comments — it doesn't alter tags, attributes, or content in ways that change rendering.</p></div>
-    <div class="faq-item-box"><h3>What about content inside &lt;pre&gt; or &lt;textarea&gt; tags?</h3><p>Whitespace inside these tags is meaningful and preserved by browsers, so exercise care when minifying HTML containing such elements.</p></div>
-    <div class="faq-item-box"><h3>Is my HTML code sent to a server?</h3><p>No, both minification and beautification run entirely in your browser using JavaScript. Your markup never leaves your device.</p></div>
-    <div class="faq-item-box"><h3>Does minifying affect inline CSS or JavaScript inside the HTML?</h3><p>This tool focuses on HTML structure — tags, attributes, and whitespace between them. Content inside &lt;style&gt; and &lt;script&gt; blocks is preserved as-is; use the dedicated CSS Minifier or JS Minifier separately for that embedded code.</p></div>
-    <div class="faq-item-box"><h3>Can I beautify HTML copied from a browser's "View Source"?</h3><p>Yes, pasting compact or server-rendered HTML into Beautify reformats it with proper indentation, making nested structure much easier to read and follow.</p></div>
-    <div class="faq-item-box"><h3>Does this tool validate my HTML for errors?</h3><p>No, it only reformats or compresses the markup as given — it doesn't check for unclosed tags, invalid nesting, or other HTML validity issues.</p></div>
+    <details class="faq-item">
+      <summary class="faq-q">Does minifying HTML remove comments?</summary>
+      <div class="faq-a"><p>Yes, HTML comments (&lt;!-- like this --&gt;) are removed during minification, along with unnecessary whitespace between tags.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Will minification break my HTML?</summary>
+      <div class="faq-a"><p>No, standard HTML minification only removes whitespace and comments — it doesn't alter tags, attributes, or content in ways that change rendering.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What about content inside &lt;pre&gt; or &lt;textarea&gt; tags?</summary>
+      <div class="faq-a"><p>Whitespace inside these tags is meaningful and preserved by browsers, so exercise care when minifying HTML containing such elements.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my HTML code sent to a server?</summary>
+      <div class="faq-a"><p>No, both minification and beautification run entirely in your browser using JavaScript. Your markup never leaves your device.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does minifying affect inline CSS or JavaScript inside the HTML?</summary>
+      <div class="faq-a"><p>This tool focuses on HTML structure — tags, attributes, and whitespace between them. Content inside &lt;style&gt; and &lt;script&gt; blocks is preserved as-is; use the dedicated CSS Minifier or JS Minifier separately for that embedded code.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I beautify HTML copied from a browser's "View Source"?</summary>
+      <div class="faq-a"><p>Yes, pasting compact or server-rendered HTML into Beautify reformats it with proper indentation, making nested structure much easier to read and follow.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does this tool validate my HTML for errors?</summary>
+      <div class="faq-a"><p>No, it only reformats or compresses the markup as given — it doesn't check for unclosed tags, invalid nesting, or other HTML validity issues.</p></div>
+    </details>
   </div>
-</div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>HTML Minifier and Beautifier</h2>
   <p>This tool compresses HTML code by removing comments and unnecessary whitespace between tags to reduce file size, or reformats minified HTML back into readable, properly indented code.</p>
 
@@ -98,7 +126,7 @@
   <p>Minifying HTML removes comments, extra whitespace, and line breaks between tags that exist purely for source readability but add nothing to how the page renders. Smaller HTML files transfer faster over the network, which contributes to faster initial page load — particularly noticeable for larger pages or users on slower connections. Most production web deployment pipelines minify HTML alongside CSS and JavaScript as a standard optimization step.</p>
 
   <h3>What Gets Removed</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>HTML comments</strong> — everything between <code>&lt;!--</code> and <code>--&gt;</code>.</li>
     <li><strong>Whitespace between tags</strong> — collapsed since browsers generally ignore this whitespace when rendering block-level elements.</li>
     <li><strong>Extra blank lines and indentation</strong> — condensed to reduce file size.</li>
@@ -114,18 +142,30 @@
   <p>HTML minification on its own typically yields a smaller percentage reduction than CSS or JavaScript minification, since a well-written HTML document usually has less redundant whitespace to begin with compared to heavily commented stylesheets or scripts. Even so, it's a standard part of a complete front-end optimization pass — minifying HTML, CSS, and JavaScript together, combined with image optimization and server-side compression, adds up to a meaningfully faster-loading page overall, even when each individual step contributes a modest amount on its own. Logrith's CSS Minifier and JS Minifier cover the other two pieces of that same optimization pass.</p>
 
   <h3>Step-by-Step: Minifying or Beautifying HTML</h3>
-  <div class="tool-steps">
-    <div class="tool-step"><strong>1. Paste your HTML</strong>Enter or paste your markup into the input box.</div>
-    <div class="tool-step"><strong>2. Choose Minify or Beautify</strong>Pick the direction based on whether you're compressing or reformatting.</div>
-    <div class="tool-step"><strong>3. Review the size comparison</strong>Check the original size, new size, and percentage saved after minifying.</div>
-    <div class="tool-step"><strong>4. Copy the output</strong>Copy the processed HTML for use in your project.</div>
-  </div>
+  <ol class="steps">
+    <li class="step">
+      <strong>Paste your HTML</strong>
+      <p>Enter or paste your markup into the input box.</p>
+    </li>
+    <li class="step">
+      <strong>Choose Minify or Beautify</strong>
+      <p>Pick the direction based on whether you're compressing or reformatting.</p>
+    </li>
+    <li class="step">
+      <strong>Review the size comparison</strong>
+      <p>Check the original size, new size, and percentage saved after minifying.</p>
+    </li>
+    <li class="step">
+      <strong>Copy the output</strong>
+      <p>Copy the processed HTML for use in your project.</p>
+    </li>
+  </ol>
 
   <h3>Privacy and Local Processing</h3>
   <p>All processing happens directly in your browser — your HTML code is never sent to a server, logged, or stored anywhere. This makes the tool safe to use with unpublished templates or proprietary markup, since nothing leaves your own device.</p>
 
   <h3>Common Situations Where This Tool Helps</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Compressing a static HTML page</strong> before deploying it without a full build pipeline.</li>
     <li><strong>Cleaning up HTML exported from a design or editing tool</strong>, which often includes excessive nested divs and inconsistent indentation.</li>
     <li><strong>Reading server-rendered or minified markup</strong> by beautifying it into a readable, indented structure for inspection.</li>
@@ -140,27 +180,40 @@
   <p>HTML has a specific category of elements — called void elements — that never have a closing tag and never contain child content: tags like &lt;br&gt;, &lt;img&gt;, &lt;input&gt;, &lt;hr&gt;, and &lt;meta&gt;. When beautifying HTML, these elements need to be recognized and treated differently from regular container elements, since a normal tag increases the indentation level for everything nested inside it, while a void element should never do that, as there's nothing nested inside it to indent. This tool's beautifier maintains a list of standard void elements and handles them correctly, so the indentation stays accurate even in markup that mixes void and container elements throughout, avoiding the lopsided indentation that a naive beautifier would otherwise produce.</p>
 
   <h3>Step-by-Step: Minifying or Beautifying HTML</h3>
-  <div class="tool-steps">
-    <div class="tool-step"><strong>1. Paste your HTML</strong>Enter or paste your markup into the input box.</div>
-    <div class="tool-step"><strong>2. Choose Minify or Beautify</strong>Pick the direction based on whether you're compressing or reformatting.</div>
-    <div class="tool-step"><strong>3. Review the size comparison</strong>Check the original size, new size, and percentage saved after minifying.</div>
-    <div class="tool-step"><strong>4. Copy the output</strong>Copy the processed HTML for use in your project.</div>
+  <ol class="steps">
+    <li class="step">
+      <strong>Paste your HTML</strong>
+      <p>Enter or paste your markup into the input box.</p>
+    </li>
+    <li class="step">
+      <strong>Choose Minify or Beautify</strong>
+      <p>Pick the direction based on whether you're compressing or reformatting.</p>
+    </li>
+    <li class="step">
+      <strong>Review the size comparison</strong>
+      <p>Check the original size, new size, and percentage saved after minifying.</p>
+    </li>
+    <li class="step">
+      <strong>Copy the output</strong>
+      <p>Copy the processed HTML for use in your project.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/tools/css-minifier"><strong>CSS Minifier</strong><span>Minify or beautify CSS code.</span></a>
+    <a class="related-card" href="/tools/js-minifier"><strong>JS Minifier</strong><span>Minify or beautify JavaScript code.</span></a>
+    <a class="related-card" href="/tools/html-entity-converter"><strong>HTML Entity Converter</strong><span>Encode and decode HTML entities.</span></a>
+    <a class="related-card" href="/tools/markdown-previewer"><strong>Markdown Previewer</strong><span>Convert Markdown to HTML with live preview.</span></a>
   </div>
 </section>
 
-<div class="content-card related-tools">
-  <h2>Related Tools</h2>
-  <div class="related-grid">
-    <a href="/tools/css-minifier" class="tool-item"><div class="ti-text"><h4>CSS Minifier</h4><p>Minify or beautify CSS code.</p></div></a>
-    <a href="/tools/js-minifier" class="tool-item"><div class="ti-text"><h4>JS Minifier</h4><p>Minify or beautify JavaScript code.</p></div></a>
-    <a href="/tools/html-entity-converter" class="tool-item"><div class="ti-text"><h4>HTML Entity Converter</h4><p>Encode and decode HTML entities.</p></div></a>
-    <a href="/tools/markdown-previewer" class="tool-item"><div class="ti-text"><h4>Markdown Previewer</h4><p>Convert Markdown to HTML with live preview.</p></div></a>
-  </div>
-</div>
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 function minifyHTML(html) {
   return html

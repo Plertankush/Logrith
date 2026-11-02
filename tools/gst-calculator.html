@@ -11,6 +11,12 @@
   <meta name="theme-color" content="#0D0D0D">
   <link rel="canonical" href="https://logrith.in/tools/gst-calculator">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="GST Calculator — Instant Inclusive/Exclusive Split | Logrith">
@@ -27,89 +33,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="preload" href="/assets/css/style.css" as="style">
-  <link rel="stylesheet" href="/assets/css/style.css">
-
-  <style>
-    .gst-result-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-    .gst-box { background:var(--gray-50); border:1.5px solid var(--gray-200); border-radius:var(--radius); padding:16px; }
-    .gst-box .gb-label { font-size:.78rem; font-weight:600; color:var(--gray-500); text-transform:uppercase; letter-spacing:.04em; display:block; margin-bottom:6px; }
-    .gst-box .gb-value { font-family:var(--font-display); font-size:1.6rem; font-weight:800; color:var(--primary); }
-    .gst-box.highlight { background:linear-gradient(135deg,#eff6ff,#dbeafe); border-color:var(--primary); }
-    .gst-box.highlight .gb-value { color:var(--primary-dark); }
-    .slab-grid { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
-    .slab-btn { padding:8px 16px; background:var(--gray-50); border:1.5px solid var(--gray-200); border-radius:8px; font-size:.86rem; font-weight:600; font-family:var(--font-display); color:var(--gray-700); cursor:pointer; transition:var(--transition); }
-    .slab-btn:hover, .slab-btn.active { background:var(--primary); color:white; border-color:var(--primary); }
-
-
-    .article-section, .faq-section, .feature-section, .related-tools, .keyword-section, .howto-section {
-      max-width: 860px;
-      margin: 22px auto 0;
-      background: #fff;
-      border: 1px solid var(--gray-100);
-      border-radius: 14px;
-      padding: 22px;
-    }
-
-    .article-section h2, .faq-section h2, .feature-section h2, .related-tools h2, .keyword-section h2, .howto-section h2 {
-      margin-bottom: 14px;
-    }
-
-    .article-section p, .howto-section p {
-      margin: 0 0 12px;
-      line-height: 1.8;
-      color: var(--gray-700);
-    }
-
-    .feature-list, .keyword-list, .related-list, .howto-list {
-      margin: 0;
-      padding-left: 18px;
-    }
-
-    .feature-list li, .keyword-list li, .related-list li, .howto-list li {
-      margin-bottom: 10px;
-      color: var(--gray-700);
-      line-height: 1.7;
-    }
-
-    .privacy-note {
-      max-width: 860px;
-      margin: 10px auto 0;
-      font-size: .88rem;
-      color: var(--gray-600);
-      text-align: left;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid var(--gray-100);
-      padding: 14px 0;
-    }
-
-    .faq-item:last-child {
-      border-bottom: none;
-    }
-
-    .faq-q {
-      font-weight: 700;
-      color: var(--gray-800);
-      margin-bottom: 6px;
-    }
-
-    .faq-a {
-      color: var(--gray-700);
-      line-height: 1.8;
-    }
-
-    .related-list a {
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .related-list a:hover {
-      text-decoration: underline;
-    }
-  </style>
 
   <!-- Schema: WebPage -->
   <script type="application/ld+json">
@@ -225,22 +148,25 @@
   {"@context": "https://schema.org", "@type": "WebApplication", "name": "GST Calculator", "url": "https://logrith.in/tools/gst-calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript and a modern web browser", "description": "Free GST calculator to add or remove GST from any amount. Calculates GST-inclusive and GST-exclusive prices instantly.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "publisher": {"@id": "https://logrith.in/#organization"}}
   </script>
 </head>
-<body>
+<body class="page-gst-calculator">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/utilities">Utility Tools</a> › GST Calculator</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/calculate-convert">Calculate &amp; Convert</a> › GST Calculator</nav>
   <h1>Free GST Calculator Online</h1>
   <p>Calculate GST inclusive and exclusive prices instantly. Supports all Indian GST slabs — 5%, 12%, 18%, 28%. Find CGST, SGST and IGST breakdowns.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">🇮🇳 India GST Slabs</span><span class="tool-tag">⚡ Instant</span><span class="tool-tag">📊 CGST + SGST</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#flag"></use></svg> India GST Slabs</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#chart-bar"></use></svg> CGST + SGST</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:760px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>GST Calculator</h2>
     
     <!-- GST Slabs -->
-    <label style="font-size:.84rem;font-weight:500;color:var(--gray-700);display:block;margin-bottom:8px;">Quick GST Slabs</label>
+    <label class="u-20094a">Quick GST Slabs</label>
     <div class="slab-grid">
       <button class="slab-btn" data-gst="0">0% (Exempt)</button>
       <button class="slab-btn" data-gst="5">5% Slab</button>
@@ -268,18 +194,18 @@
     </div>
 
     <div class="btn-group mt-16">
-      <button class="btn btn-primary btn-lg" id="calc-btn">💹 Calculate GST</button>
-      <button class="btn btn-secondary" id="reset-btn">✕ Reset</button>
+      <button class="btn btn-primary btn-lg" id="calc-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#trending-up"></use></svg> Calculate GST</button>
+      <button class="btn btn-secondary" id="reset-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Reset</button>
     </div>
   </div>
 
-  <div class="tool-card" id="result-card" style="display:none;">
+  <div class="tool-card is-hidden" id="result-card">
     <h2>GST Breakdown</h2>
     <div class="gst-result-grid" id="gst-grid"></div>
 
-    <div style="margin-top:20px;overflow-x:auto;">
-      <table style="width:100%;border-collapse:collapse;font-size:.88rem;">
-        <thead><tr><th style="text-align:left;padding:10px 14px;background:var(--gray-50);color:var(--gray-500);font-weight:600;border-bottom:1.5px solid var(--gray-200);">Component</th><th style="text-align:right;padding:10px 14px;background:var(--gray-50);color:var(--gray-500);font-weight:600;border-bottom:1.5px solid var(--gray-200);">Rate</th><th style="text-align:right;padding:10px 14px;background:var(--gray-50);color:var(--gray-500);font-weight:600;border-bottom:1.5px solid var(--gray-200);">Amount (₹)</th></tr></thead>
+    <div class="u-e1389a">
+      <table class="u-dc2b4d">
+        <thead><tr><th class="u-7b02bc">Component</th><th class="u-9fae84">Rate</th><th class="u-9fae84">Amount (₹)</th></tr></thead>
         <tbody id="gst-table-body"></tbody>
       </table>
     </div>
@@ -287,18 +213,24 @@
 </div>
 
 
-<section class="howto-section">
+<section class="page-section">
   <h2>How to Use Hash Generator</h2>
- <ol class="howto-list">
-   <li>Enter your text, upload a file, or open the compare tab to paste two hashes for verification.</li>
-   <li>Click the generate or compare button, or keep real-time mode enabled for instant output while typing.</li>
-   <li>Copy the required SHA hash and use it for checksum verification, file integrity checks, development tasks, or secure comparison.</li>
- </ol>
+  <ol class="steps">
+    <li class="step">
+      <p>Enter your text, upload a file, or open the compare tab to paste two hashes for verification.</p>
+    </li>
+    <li class="step">
+      <p>Click the generate or compare button, or keep real-time mode enabled for instant output while typing.</p>
+    </li>
+    <li class="step">
+      <p>Copy the required SHA hash and use it for checksum verification, file integrity checks, development tasks, or secure comparison.</p>
+    </li>
+  </ol>
 </section>
 
-<section class="feature-section">
+<section class="page-section prose">
   <h2>Why Our Hash Generator is Best</h2>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Fast:</strong> Generates SHA-1, SHA-256, SHA-384, and SHA-512 hashes instantly in the browser.</li>
     <li><strong>Private:</strong> Local browser-based processing means your text and files stay on your device.</li>
     <li><strong>Free:</strong> Use the tool unlimited times without signup or installation.</li>
@@ -307,7 +239,7 @@
  </ul>
 </section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>About GST in India And Why Use Our Tool</h2>
   <p>Goods and Services Tax (GST) is an indirect tax system levied on the supply of goods and services in India. It was implemented on July 1, 2017, to replace multiple central and state taxes with a more unified taxation structure.</p>
   <p>GST in India generally follows four major slabs: 5%, 12%, 18%, and 28%. Essential goods may fall under lower or zero tax slabs, while common goods and services usually come under 12% or 18%, and luxury or sin goods may attract 28% GST.</p>
@@ -323,7 +255,7 @@
   <p>Under India's GST structure, a sale within the same state splits the tax equally between the central government (CGST) and the state government (SGST) — so an 18% rate becomes 9% + 9%. A sale across state lines instead charges IGST at the full rate, collected by the central government and apportioned to the destination state. This calculator shows both splits at once in the breakdown table so you can read off whichever applies to your transaction without re-running the calculation.</p>
 
   <h3>Who Uses a GST Calculator</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Small business owners and shopkeepers</strong> who need to quote GST-inclusive retail prices or verify supplier invoices.</li>
     <li><strong>Freelancers and consultants</strong> invoicing clients who need to add 18% GST on professional services.</li>
     <li><strong>Accountants and bookkeepers</strong> cross-checking CGST/SGST/IGST splits on a large batch of invoices.</li>
@@ -340,62 +272,61 @@
   <h3>Runs Entirely in Your Browser</h3>
   <p>All calculations happen client-side using JavaScript the moment you click Calculate — no amount, rate, or result is sent to any server. This makes it safe to use for quick checks on real invoice figures, client billing amounts, or business pricing without that data leaving your device.</p></section>
 
-<section class="faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
-
-  <div class="faq-item">
-    <div class="faq-q">What is GST Exclusive vs GST Inclusive?</div>
-    <div class="faq-a">GST Exclusive means GST is added on top of the base price. If a product costs ₹1000 with 18% GST exclusive, total = ₹1180. GST Inclusive means the price already includes GST. If price is ₹1180 inclusive at 18%, the base = ₹1000 and GST = ₹180.</div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">What is CGST, SGST and IGST?</div>
-    <div class="faq-a">For intra-state (within same state) transactions: GST is split equally into CGST (Central GST) and SGST (State GST). For inter-state transactions: IGST (Integrated GST) applies, which equals the full GST rate. E.g., 18% GST intra-state = 9% CGST + 9% SGST.</div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">Which GST slab applies to which goods?</div>
-    <div class="faq-a">0%: Essential items such as selected fresh food products. 5%: Some packaged food items and budget services. 12%: Certain processed goods and standard products. 18%: Most services, electronics, and restaurants. 28%: Luxury goods, selected automobiles, and tobacco-related items.</div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">How to calculate GST amount from total price?</div>
-    <div class="faq-a">If the total price is inclusive of GST: GST Amount = Total Price × GST Rate / (100 + GST Rate). E.g., Total = ₹1180, GST 18%: GST = 1180 × 18/118 = ₹180. Base price = ₹1000.</div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">What is GST Exclusive vs GST Inclusive?</summary>
+      <div class="faq-a"><p>GST Exclusive means GST is added on top of the base price. If a product costs ₹1000 with 18% GST exclusive, total = ₹1180. GST Inclusive means the price already includes GST. If price is ₹1180 inclusive at 18%, the base = ₹1000 and GST = ₹180.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What is CGST, SGST and IGST?</summary>
+      <div class="faq-a"><p>For intra-state (within same state) transactions: GST is split equally into CGST (Central GST) and SGST (State GST). For inter-state transactions: IGST (Integrated GST) applies, which equals the full GST rate. E.g., 18% GST intra-state = 9% CGST + 9% SGST.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Which GST slab applies to which goods?</summary>
+      <div class="faq-a"><p>0%: Essential items such as selected fresh food products. 5%: Some packaged food items and budget services. 12%: Certain processed goods and standard products. 18%: Most services, electronics, and restaurants. 28%: Luxury goods, selected automobiles, and tobacco-related items.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How to calculate GST amount from total price?</summary>
+      <div class="faq-a"><p>If the total price is inclusive of GST: GST Amount = Total Price × GST Rate / (100 + GST Rate). E.g., Total = ₹1180, GST 18%: GST = 1180 × 18/118 = ₹180. Base price = ₹1000.</p></div>
+    </details>
   </div>
 </section>
 
 <!-- Related internal links -->
-<section class="related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
-  <ul class="related-list">
-    <li><a href="/tools/emi-calculator">EMI Calculator</a></li>
-    <li><a href="/tools/qr-generator">QR Code Generator</a></li>
-    <li><a href="/tools/age-calculator">Age Calculator</a></li>
-    <li><a href="/tools/color-converter">Color Converter</a></li>
-  </ul>
+  <div class="related-grid">
+    <a class="related-card" href="/tools/emi-calculator"><strong>EMI Calculator</strong></a>
+    <a class="related-card" href="/tools/qr-generator"><strong>QR Code Generator</strong></a>
+    <a class="related-card" href="/tools/age-calculator"><strong>Age Calculator</strong></a>
+    <a class="related-card" href="/tools/color-converter"><strong>Color Converter</strong></a>
+  </div>
 </section>
 
-<section class="keyword-section">
+<section class="page-section">
   <h2>Top 10 Hash Generator Search Queries/Keywords</h2>
-  <ul class="keyword-list">
-   <li>hash generator online</li>
-   <li>free hash generator</li>
-   <li>sha 256 hash generator</li>
-   <li>sha 512 hash generator online</li>
-   <li>sha 1 generator</li>
-   <li>file hash generator</li>
-   <li>hash checker online</li>
-   <li>compare hashes online</li>
-   <li>checksum generator tool</li>
-   <li>browser hash generator</li>
-  </ul>
+  <div class="keyword-box">
+    <span class="keyword-tag">hash generator online</span>
+    <span class="keyword-tag">free hash generator</span>
+    <span class="keyword-tag">sha 256 hash generator</span>
+    <span class="keyword-tag">sha 512 hash generator online</span>
+    <span class="keyword-tag">sha 1 generator</span>
+    <span class="keyword-tag">file hash generator</span>
+    <span class="keyword-tag">hash checker online</span>
+    <span class="keyword-tag">compare hashes online</span>
+    <span class="keyword-tag">checksum generator tool</span>
+    <span class="keyword-tag">browser hash generator</span>
+  </div>
 </section>
 
+
+</main>
 
 <div id="footer"></div>
+<script src="/assets/js/main.js"></script>
 
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
 <script>
 document.querySelectorAll('.slab-btn').forEach(btn => {
   btn.addEventListener('click', () => {

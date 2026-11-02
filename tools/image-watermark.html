@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -51,29 +55,32 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-image-watermark">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/image-pdf-tools">Image & PDF Tools</a> › Image Watermark</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/image-pdf-tools">Image &amp; PDF Tools</a> › Image Watermark</nav>
   <h1>Free Image Watermark Tool</h1>
   <p>Add a custom text watermark to your images — control position, size, color, and opacity — then download instantly.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">🎨 Full Control</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#palette"></use></svg> Full Control</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:900px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Upload Image</h2>
     <div class="upload-zone" id="upload-zone">
       <input type="file" id="file-input" accept="image/*">
-      <div class="upload-icon">🖼️</div>
+      <div class="upload-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#image"></use></svg></div>
       <h3>Drop an image here or click to browse</h3>
       <p>PNG, JPG, WEBP — max 10MB</p>
     </div>
     <div class="status-msg" id="status-msg"></div>
   </div>
 
-  <div class="tool-card" id="controls-card" style="display:none;">
+  <div class="tool-card is-hidden" id="controls-card">
     <h2>Watermark Settings</h2>
     <div class="control-group">
       <label>Watermark Text</label>
@@ -101,60 +108,68 @@
       </div>
       <div class="control-group">
         <label>Color</label>
-        <input type="color" id="wm-color" value="#ffffff" style="width:100%;height:42px;border-radius:8px;border:1.5px solid var(--gray-200);cursor:pointer;">
+        <input type="color" id="wm-color" value="#ffffff">
       </div>
     </div>
     <div class="btn-group mt-16">
-      <button class="btn btn-primary" id="apply-btn">✨ Apply Watermark</button>
+      <button class="btn btn-primary" id="apply-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#sparkles"></use></svg> Apply Watermark</button>
     </div>
   </div>
 
-  <div class="tool-card" id="result-card" style="display:none;">
+  <div class="tool-card is-hidden" id="result-card">
     <h2>Result</h2>
-    <canvas id="output-canvas" style="max-width:100%;border-radius:10px;border:1.5px solid var(--gray-200);"></canvas>
+    <canvas id="output-canvas"></canvas>
     <div class="btn-group mt-16">
-      <a href="#" id="download-btn" class="btn btn-primary" download="watermarked-image.png">⬇️ Download Image</a>
+      <a href="#" id="download-btn" class="btn btn-primary" download="watermarked-image.png"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#download"></use></svg> Download Image</a>
     </div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>Why add a watermark to an image?</h3><p>Watermarks help protect ownership of photos and graphics shared online, discourage unauthorized reuse, and add branding to shared images.</p></div>
-    <div class="faq-item-box"><h3>Will the watermark reduce image quality?</h3><p>No. The watermark text is drawn on top of the original image at full resolution — the underlying photo quality is unaffected.</p></div>
-    <div class="faq-item-box"><h3>Can I tile the watermark across the whole image?</h3><p>Yes. Select "Tiled" as the position to repeat the watermark text in a grid pattern, which makes it much harder to crop out.</p></div>
-    <div class="faq-item-box"><h3>Is my image uploaded to a server?</h3><p>No, everything is processed locally using the Canvas API — your image never leaves your browser.</p></div>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card">
-      <h2>How to Use the Image Watermark Tool</h2>
-      <div class="tool-steps">
-        <div class="tool-step">
-          <strong>1. Upload your image</strong>
-          Drag a PNG, JPG, or WEBP file into the upload zone, or click it to browse your device — files up to 10MB are supported.
-        </div>
-        <div class="tool-step">
-          <strong>2. Type your watermark text</strong>
-          Enter the text you want overlaid on the image, such as a name, brand, or copyright line.
-        </div>
-        <div class="tool-step">
-          <strong>3. Adjust position, size, color, and opacity</strong>
-          Pick a corner, center, or tiled placement, then fine-tune the font size, color, and transparency until the preview looks right.
-        </div>
-        <div class="tool-step">
-          <strong>4. Download the watermarked image</strong>
-          Click Download to save the final PNG with the watermark baked permanently into the image.
-        </div>
-      </div>
-    </div>
+    <details class="faq-item">
+      <summary class="faq-q">Why add a watermark to an image?</summary>
+      <div class="faq-a"><p>Watermarks help protect ownership of photos and graphics shared online, discourage unauthorized reuse, and add branding to shared images.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Will the watermark reduce image quality?</summary>
+      <div class="faq-a"><p>No. The watermark text is drawn on top of the original image at full resolution — the underlying photo quality is unaffected.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I tile the watermark across the whole image?</summary>
+      <div class="faq-a"><p>Yes. Select "Tiled" as the position to repeat the watermark text in a grid pattern, which makes it much harder to crop out.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my image uploaded to a server?</summary>
+      <div class="faq-a"><p>No, everything is processed locally using the Canvas API — your image never leaves your browser.</p></div>
+    </details>
   </div>
 </section>
 
-<section class="article-section">
+<section class="page-section">
+  <h2>How to Use the Image Watermark Tool</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Upload your image</strong>
+      <p>Drag a PNG, JPG, or WEBP file into the upload zone, or click it to browse your device — files up to 10MB are supported.</p>
+    </li>
+    <li class="step">
+      <strong>Type your watermark text</strong>
+      <p>Enter the text you want overlaid on the image, such as a name, brand, or copyright line.</p>
+    </li>
+    <li class="step">
+      <strong>Adjust position, size, color, and opacity</strong>
+      <p>Pick a corner, center, or tiled placement, then fine-tune the font size, color, and transparency until the preview looks right.</p>
+    </li>
+    <li class="step">
+      <strong>Download the watermarked image</strong>
+      <p>Click Download to save the final PNG with the watermark baked permanently into the image.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
   <h2>Free Text Watermark Tool for Images</h2>
   <p>This tool lets you add a customizable text watermark to any image directly in your browser — no software, no signup, and no uploads to a server. You control the watermark text, position, font size, color, and opacity, then download the result as a full-resolution PNG.</p>
 
@@ -162,7 +177,7 @@
   <p>Watermarking is a simple, low-effort way to protect creative work shared publicly online. Photographers, designers, and content creators commonly add a subtle watermark — a name, logo text, or website URL — to portfolio previews, social media posts, and stock samples, making it harder for others to claim the work as their own or use it without permission. A watermark doesn't prevent copying outright, but it does make casual misuse more visible and less appealing, and it reinforces attribution wherever the image circulates.</p>
 
   <h3>Choosing the Right Watermark Settings</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Position:</strong> corner placements (bottom-right is most common) keep the watermark unobtrusive while still visible; center placement is bolder and harder to crop out.</li>
     <li><strong>Tiled mode:</strong> repeats the watermark across the entire image in a grid, making it very difficult to remove by cropping — useful for preview images you don't want reused at all.</li>
     <li><strong>Opacity:</strong> lower opacity (20–40%) keeps the watermark subtle and less distracting from the image itself; higher opacity makes it more prominent and harder to ignore or edit out.</li>
@@ -176,7 +191,7 @@
   <p>All watermarking happens locally in your browser using the Canvas API. Your original image is never uploaded to a server, keeping unpublished photos and designs completely private until you choose to share them.</p>
 
   <h3>Common Use Cases for Text Watermarks</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Freelance photographers:</strong> watermark proof galleries before sending to clients, so low-resolution previews can't be used without payment.</li>
     <li><strong>E-commerce sellers:</strong> stamp a store name or URL across product photos to stop competitors from lifting images for their own listings.</li>
     <li><strong>Bloggers and writers:</strong> add a site name to featured images and infographics so screenshots shared on social media still credit the source.</li>
@@ -197,7 +212,7 @@
   <p>A light color such as white or pale yellow typically reads best on darker photos, while black or dark gray stands out better on bright backgrounds. If an image has mixed tones, a mid-opacity gray often stays legible across both light and dark areas without needing to pick a single best-contrast color.</p>
 
   <h3>Common Mistakes to Avoid</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Placing the watermark too close to the edge:</strong> text that touches the image border is easy to crop off entirely — leave some padding.</li>
     <li><strong>Using very high opacity on photo subjects:</strong> a watermark at 90–100% opacity over a face or focal point can make the image look damaged rather than protected; keep it subtle for most photography use.</li>
     <li><strong>Forgetting to re-export after each change:</strong> always check the live preview and re-download after adjusting text, position, or color, since the download link reflects the canvas at the time you click it.</li>
@@ -207,34 +222,31 @@
   <p>People looking for this feature often search for phrases like "add text to photo online," "copyright stamp image free," "how to watermark photos for Instagram," "bulk watermark alternative," and "protect photos from theft online." This tool covers the single-image text watermarking case for all of these without requiring an account or software download.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/meme-generator" class="tool-item"><div class="ti-text"><h4>Meme Generator</h4><p>Add classic top/bottom text captions to any image.</p></div></a>
-    <a href="/tools/image-compressor" class="tool-item"><div class="ti-text"><h4>Image Compressor</h4><p>Reduce file size after watermarking for faster sharing.</p></div></a>
-    <a href="/tools/image-resize" class="tool-item"><div class="ti-text"><h4>Image Resize</h4><p>Resize images before or after watermarking.</p></div></a>
-    <a href="/tools/image-crop" class="tool-item"><div class="ti-text"><h4>Image Crop</h4><p>Crop images to the exact area you need.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">image watermark tool</span>
-        <span class="keyword-tag">add watermark to image online</span>
-        <span class="keyword-tag">text watermark generator</span>
-        <span class="keyword-tag">photo watermark free</span>
-        <span class="keyword-tag">watermark maker online</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/meme-generator"><strong>Meme Generator</strong><span>Add classic top/bottom text captions to any image.</span></a>
+    <a class="related-card" href="/tools/image-compressor"><strong>Image Compressor</strong><span>Reduce file size after watermarking for faster sharing.</span></a>
+    <a class="related-card" href="/tools/image-resize"><strong>Image Resize</strong><span>Resize images before or after watermarking.</span></a>
+    <a class="related-card" href="/tools/image-crop"><strong>Image Crop</strong><span>Crop images to the exact area you need.</span></a>
   </div>
 </section>
 
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">image watermark tool</span>
+    <span class="keyword-tag">add watermark to image online</span>
+    <span class="keyword-tag">text watermark generator</span>
+    <span class="keyword-tag">photo watermark free</span>
+    <span class="keyword-tag">watermark maker online</span>
+  </div>
+</section>
+
+</main>
+
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 const uploadZone = document.getElementById('upload-zone');
 const fileInput = document.getElementById('file-input');

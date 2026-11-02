@@ -14,31 +14,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#000000">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .page-hero { background: linear-gradient(135deg, #f0f4ff 0%, #e8f7f5 100%); padding: 64px 24px 52px; text-align: center; border-bottom: 1.5px solid var(--gray-200); }
-    .page-hero h1 { font-family: var(--font-display); font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 800; color: var(--gray-900); letter-spacing: -.5px; margin-bottom: 14px; }
-    .page-hero h1 span { color: var(--primary); }
-    .page-hero p { font-size: 1rem; color: var(--gray-700); max-width: 600px; margin: 0 auto; line-height: 1.7; }
-    .breadcrumb { display: flex; align-items: center; gap: 6px; font-size: .82rem; color: var(--gray-500); justify-content: center; margin-bottom: 16px; }
-    .breadcrumb a { color: var(--primary); text-decoration: none; }
-    .breadcrumb a:hover { text-decoration: underline; }
-    .about-body { max-width: 860px; margin: 0 auto; padding: 48px 24px; }
-    .about-body h2 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--gray-900); margin: 36px 0 12px; }
-    .about-body h2:first-child { margin-top: 0; }
-    .about-body p { font-size: .95rem; color: var(--gray-700); line-height: 1.85; margin-bottom: 14px; }
-    .about-body strong { color: var(--gray-900); }
-    .values-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; margin: 20px 0 32px; }
-    .value-card { background: var(--white); border: 1.5px solid var(--gray-200); border-radius: var(--radius-lg); padding: 22px 18px; }
-    .value-card .vi { font-size: 1.8rem; margin-bottom: 10px; }
-    .value-card h3 { font-family: var(--font-display); font-size: .95rem; font-weight: 700; color: var(--gray-900); margin-bottom: 6px; }
-    .value-card p { font-size: .83rem; color: var(--gray-600); line-height: 1.6; margin: 0; }
-    .stat-banner { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; background: #4c88ff;  border-radius: var(--radius-xl); padding: 32px 24px; margin: 32px 0; text-align: center; }
-    .stat-banner .sb-num { font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: rgba(255, 255, 255, 0.637); display: block; }
-    .stat-banner .sb-lbl { font-size: .78rem; color: white; margin-top: 4px; display: block; }
-    @media(max-width:600px){ .stat-banner { grid-template-columns: 1fr 1fr; } }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <!-- Google tag (gtag.js) -->
  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
@@ -51,31 +32,36 @@
  </script>
  
 </head>
-<body>
+<body class="page-about">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="page-hero">
-  <div class="breadcrumb"><a href="/">Home</a> › About</div>
+<main id="main">
+
+<header class="page-hero">
+  <div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › About</nav>
   <h1>About <span>Logrith</span></h1>
   <p>We built the tool platform we always wished existed — free, private, fast, and genuinely useful for everyone.</p>
-</div>
+  </div>
+</header>
 
-<div class="about-body">
+<div class="about-body container">
 
   <h2>Our Mission</h2>
   <p>Logrith was built on a simple belief: <strong>the best tools should be free and accessible to everyone</strong>, regardless of technical skill, budget, or location. We saw people paying for subscriptions just to convert a JPG, or uploading sensitive documents to unknown servers just to merge a PDF. That felt wrong.</p>
   <p>Our mission is to provide professional-grade digital tools that run entirely in your browser — no server uploads, no accounts, no paywalls, no watermarks. Just tools that work, instantly, for free.</p>
 
   <div class="stat-banner">
-    <div><span class="sb-num">100+</span><span class="sb-lbl">Total Tools</span></div>
-    <div><span class="sb-num">100+</span><span class="sb-lbl">Live Today</span></div>
-    <div><span class="sb-num">0</span><span class="sb-lbl">Files Uploaded</span></div>
-    <div><span class="sb-num">100%</span><span class="sb-lbl">Free Forever</span></div>
+    <div><span class="stat-num">100+</span><span class="stat-label">Total Tools</span></div>
+    <div><span class="stat-num">100+</span><span class="stat-label">Live Today</span></div>
+    <div><span class="stat-num">0</span><span class="stat-label">Files Uploaded</span></div>
+    <div><span class="stat-num">100%</span><span class="stat-label">Free Forever</span></div>
   </div>
 
   <h2>What Makes Logrith Different</h2>
   <p>Most online tool sites upload your files to their servers for processing. This creates delays, privacy risks, and often requires paid plans for larger files. Logrith is architecturally different — every operation runs using modern browser APIs:</p>
-  <ul style="padding-left:20px;margin-bottom:16px;line-height:2;color:var(--gray-700);font-size:.95rem;">
+  <ul class="u-e62acf">
     <li><strong>Image tools</strong> — HTML5 Canvas API (your images never leave your device)</li>
     <li><strong>PDF tools</strong> — PDF-Lib + PDF.js running entirely client-side</li>
     <li><strong>Crypto tools</strong> — Web Crypto API (same standard used by banks)</li>
@@ -86,12 +72,12 @@
 
   <h2>Our Core Values</h2>
   <div class="values-grid">
-    <div class="value-card"><div class="vi"><svg class="icon" style="width: 24px; height: 24px;"><use href="/assets/svg/icons.svg#shield-check"></use></svg></div><h3>Privacy First</h3><p>Your files never leave your device. No logging, no analysis, no data collection of any kind.</p></div>
-    <div class="value-card"><div class="vi"><svg class="icon" style="width: 24px; height: 24px;"><use href="/assets/svg/icons.svg#check-circle"></use></svg></div><h3>Always Free</h3><p>No freemium tricks. No "upgrade to download". Every feature, every tool, free forever.</p></div>
-    <div class="value-card"><div class="vi"><svg class="icon" style="width: 24px; height: 24px;"><use href="/assets/svg/icons.svg#speed"></use></svg></div><h3>Speed</h3><p>Browser-native processing means results in milliseconds, not seconds of upload waiting.</p></div>
-    <div class="value-card"><div class="vi"><svg class="icon" style="width: 24px; height: 24px;"><use href="/assets/svg/icons.svg#layers"></use></svg></div><h3>Simplicity</h3><p>Tools that anyone can use without tutorials or technical knowledge. Upload → Process → Download.</p></div>
-    <div class="value-card"><div class="vi"><svg class="icon" style="width: 24px; height: 24px;"><use href="/assets/svg/icons.svg#users"></use></svg></div><h3>Accessibility</h3><p>Works on any device, any screen size, any modern browser. Mobile-first design throughout.</p></div>
-    <div class="value-card"><div class="vi"><svg class="icon" style="width: 24px; height: 24px;"><use href="/assets/svg/icons.svg#trending-up"></use></svg></div><h3>Growing</h3><p>New tools added regularly based on user needs. 100+ live today, with more on the way.</p></div>
+    <div class="value-card"><div class="vi"><svg class="icon u-f70f93"><use href="/assets/svg/icons.svg#shield-check"></use></svg></div><h3>Privacy First</h3><p>Your files never leave your device. No logging, no analysis, no data collection of any kind.</p></div>
+    <div class="value-card"><div class="vi"><svg class="icon u-f70f93"><use href="/assets/svg/icons.svg#check-circle"></use></svg></div><h3>Always Free</h3><p>No freemium tricks. No "upgrade to download". Every feature, every tool, free forever.</p></div>
+    <div class="value-card"><div class="vi"><svg class="icon u-f70f93"><use href="/assets/svg/icons.svg#speed"></use></svg></div><h3>Speed</h3><p>Browser-native processing means results in milliseconds, not seconds of upload waiting.</p></div>
+    <div class="value-card"><div class="vi"><svg class="icon u-f70f93"><use href="/assets/svg/icons.svg#layers"></use></svg></div><h3>Simplicity</h3><p>Tools that anyone can use without tutorials or technical knowledge. Upload → Process → Download.</p></div>
+    <div class="value-card"><div class="vi"><svg class="icon u-f70f93"><use href="/assets/svg/icons.svg#users"></use></svg></div><h3>Accessibility</h3><p>Works on any device, any screen size, any modern browser. Mobile-first design throughout.</p></div>
+    <div class="value-card"><div class="vi"><svg class="icon u-f70f93"><use href="/assets/svg/icons.svg#trending-up"></use></svg></div><h3>Growing</h3><p>New tools added regularly based on user needs. 100+ live today, with more on the way.</p></div>
   </div>
 
   <h2>Who Uses Logrith?</h2>
@@ -103,24 +89,25 @@
   <p>We use established open-source libraries for complex operations: <strong>PDF-Lib</strong> for PDF manipulation, <strong>PDF.js</strong> from Mozilla for PDF rendering, and <strong>QRCode.js</strong> for QR generation. All other tools are written in vanilla JavaScript using native browser APIs.</p>
 
   <h2>Who's Behind Logrith</h2>
-  <p>Logrith is built and run by a single founder, Ankush Maurya. Want to know more about who's building this and why? Visit the <a href="/pages/founder" style="color:var(--primary);">Founder page</a>.</p>
+  <p>Logrith is built and run by a single founder, Ankush Maurya. Want to know more about who's building this and why? Visit the <a class="u-035cc8" href="/pages/founder">Founder page</a>.</p>
 
   <h2>How We Keep Every Tool Free</h2>
-  <p>Running 100+ browser-based tools costs money — hosting, a CDN for the PDF and QR libraries, and the time spent building and maintaining each page. We cover that through modest, clearly-labeled display advertising rather than subscriptions, file limits, or "pro" tiers. Ads never sit inside a tool's working area, never interrupt a conversion in progress, and never influence which tool we build next or how it's ranked against another — those decisions come from what people actually ask for through the <a href=" /pages/contact" style="color:var(--primary);">Contact page</a>.</p>
+  <p>Running 100+ browser-based tools costs money — hosting, a CDN for the PDF and QR libraries, and the time spent building and maintaining each page. We cover that through modest, clearly-labeled display advertising rather than subscriptions, file limits, or "pro" tiers. Ads never sit inside a tool's working area, never interrupt a conversion in progress, and never influence which tool we build next or how it's ranked against another — those decisions come from what people actually ask for through the <a class="u-035cc8" href=" /pages/contact">Contact page</a>.</p>
   <p>We considered the alternative — charging for the heavier tools like PDF merging or bulk image conversion — and decided against it. The whole point of Logrith was to remove the paywall that sent us looking for a browser-based alternative in the first place.</p>
 
   <h2>Common Questions About Logrith</h2>
   <p><strong>Is Logrith actually free, or is there a catch?</strong> No catch. Every tool, every feature, no usage caps, no account wall. We're supported by advertising, not by upselling you later.</p>
   <p><strong>Do you ever plan to add paid plans?</strong> Not for the core tools. If we ever build something that genuinely needs server-side processing — a large batch job, for instance — any paid option would sit alongside the free version, never replace it.</p>
-  <p><strong>How often is the site updated?</strong> New tools and fixes ship in small, regular batches rather than big quarterly releases. If you spot something broken, the <a href=" /pages/support" style="color:var(--primary);">Support page</a> is the fastest way to get it looked at.</p>
+  <p><strong>How often is the site updated?</strong> New tools and fixes ship in small, regular batches rather than big quarterly releases. If you spot something broken, the <a class="u-035cc8" href=" /pages/support">Support page</a> is the fastest way to get it looked at.</p>
   <p><strong>Can I suggest a tool that doesn't exist yet?</strong> Yes — that's how most of Logrith's current catalog started. Send it through the Contact page and we'll let you know if and when it gets built.</p>
 
   <h2>Contact & Feedback</h2>
-  <p>We actively read and respond to user feedback. If a tool isn't working correctly, if you have a feature request, or if you'd like to suggest a new tool, please reach out through our <a href=" /pages/contact" style="color:var(--primary);">Contact page</a>. The most requested tools get added in each update cycle.</p>
+  <p>We actively read and respond to user feedback. If a tool isn't working correctly, if you have a feature request, or if you'd like to suggest a new tool, please reach out through our <a class="u-035cc8" href=" /pages/contact">Contact page</a>. The most requested tools get added in each update cycle.</p>
 </div>
 
+</main>
+
 <div id="footer"></div>
-<script src="/load-components.js"></script>
-<script src="/assets/js/main.js" defer></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

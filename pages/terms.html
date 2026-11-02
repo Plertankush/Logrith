@@ -13,182 +13,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#000000">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    .legal-hero {
-      background: linear-gradient(135deg, #f0f4ff 0%, #e8f7f5 100%);
-      padding: 52px 24px 40px;
-      text-align: center;
-      border-bottom: 1.5px solid var(--gray-200);
-    }
-    .legal-hero .badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: var(--white); border: 1px solid var(--gray-200);
-      border-radius: 20px; padding: 4px 14px;
-      font-size: .78rem; color: var(--gray-500); margin-bottom: 14px;
-    }
-    .legal-hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(1.8rem, 4vw, 2.4rem);
-      font-weight: 800; color: var(--gray-900); margin-bottom: 10px;
-    }
-    .legal-hero h1 span { color: var(--primary); }
-    .legal-hero p { font-size: .9rem; color: var(--gray-500); }
-
-    .breadcrumb {
-      display: flex; align-items: center; gap: 6px;
-      font-size: .82rem; color: var(--gray-500);
-      justify-content: center; margin-bottom: 14px;
-    }
-    .breadcrumb a { color: var(--primary); text-decoration: none; }
-
-    /* Page switch tabs */
-    .page-switch {
-      display: flex; justify-content: center; gap: 8px;
-      padding: 18px 24px;
-      background: var(--white);
-      border-bottom: 1.5px solid var(--gray-200);
-      position: sticky; top: 50px; z-index: 100;
-    }
-    .page-switch a {
-      padding: 8px 22px;
-      background: var(--gray-50);
-      border: 1.5px solid var(--gray-200);
-      border-radius: 20px;
-      font-size: .86rem; font-weight: 600;
-      font-family: var(--font-display);
-      color: var(--gray-600);
-      text-decoration: none;
-      transition: var(--transition);
-    }
-    .page-switch a.active,
-    .page-switch a:hover {
-      background: var(--primary);
-      color: white;
-      border-color: var(--primary);
-    }
-
-    /* Legal content */
-    .legal-wrap {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 48px 24px 80px;
-    }
-    .tldr-box {
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      border-radius: var(--radius);
-      padding: 16px 20px;
-      margin-bottom: 36px;
-      font-size: .9rem;
-      color: #1e40af;
-      line-height: 1.7;
-    }
-    .legal-section {
-      border-bottom: 1px solid var(--gray-100);
-      padding: 28px 0;
-    }
-    .legal-section:last-child { border-bottom: none; }
-    .section-num {
-      display: inline-block;
-      width: 28px; height: 28px;
-      background: var(--primary);
-      color: white;
-      border-radius: 50%;
-      font-size: .76rem;
-      font-weight: 700;
-      font-family: var(--font-display);
-      text-align: center;
-      line-height: 28px;
-      flex-shrink: 0;
-      margin-right: 10px;
-    }
-    .legal-section h2 {
-      font-family: var(--font-display);
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--gray-900);
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-    }
-    .legal-section p {
-      font-size: .92rem;
-      color: var(--gray-700);
-      line-height: 1.85;
-      margin-bottom: 10px;
-    }
-    .legal-section ul {
-      padding-left: 0;
-      margin: 10px 0;
-      list-style: none;
-    }
-    .legal-section ul li {
-      font-size: .92rem;
-      color: var(--gray-700);
-      line-height: 1.8;
-      padding: 6px 0 6px 20px;
-      position: relative;
-      border-bottom: 1px solid var(--gray-100);
-    }
-    .legal-section ul li:last-child { border-bottom: none; }
-    .legal-section ul li::before {
-      content: '–';
-      position: absolute;
-      left: 0;
-      color: var(--gray-400);
-    }
-    .legal-section strong { color: var(--gray-900); }
-    .legal-section a { color: var(--primary); }
-
-    /* Sidebar TOC on desktop */
-    .legal-layout {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 48px 24px 80px;
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 48px;
-      align-items: start;
-    }
-    .legal-toc {
-      position: sticky;
-      top: 100px;
-      background: var(--white);
-      border: 1.5px solid var(--gray-200);
-      border-radius: var(--radius-lg);
-      padding: 18px;
-    }
-    .legal-toc h3 {
-      font-family: var(--font-display);
-      font-size: .78rem;
-      font-weight: 700;
-      color: var(--gray-500);
-      text-transform: uppercase;
-      letter-spacing: .06em;
-      margin-bottom: 12px;
-    }
-    .legal-toc a {
-      display: block;
-      padding: 6px 0;
-      font-size: .8rem;
-      color: var(--gray-600);
-      text-decoration: none;
-      border-bottom: 1px solid var(--gray-100);
-      line-height: 1.4;
-      transition: color .15s;
-    }
-    .legal-toc a:last-child { border-bottom: none; }
-    .legal-toc a:hover { color: var(--primary); }
-
-    @media (max-width: 700px) {
-      .legal-layout { grid-template-columns: 1fr; padding: 28px 16px 60px; }
-      .legal-toc { position: static; }
-      .page-switch { top: 44px; padding: 12px 16px; }
-      .page-switch a { padding: 7px 16px; font-size: .82rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <!-- Google tag (gtag.js) -->
  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
@@ -201,24 +31,26 @@
  </script>
  
 </head>
-<body>
+<body class="page-terms">
 <div id="navbar"></div>
 
 <!-- HERO -->
-<div class="legal-hero">
-  <div class="breadcrumb">
+<header class="page-hero">
+  <div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
     <a href="/">Home</a> ›
     <a href=" /pages/terms">Legal</a> ›
     Terms of Service
-  </div>
+  </nav>
   <div class="badge"><svg class="icon"><use href="/assets/svg/icons.svg#pdf"></use></svg> Legal Document</div>
   <h1>Terms of <span>Service</span></h1>
   <p>Last updated: January 2026 · Effective immediately</p>
-</div>
+  </div>
+</header>
 
 
 <!-- CONTENT -->
-<div class="legal-layout">
+<div class="legal-layout container">
 
   <!-- TOC -->
   <aside class="legal-toc">
@@ -320,7 +152,6 @@
 </div>
 
 <div id="footer"></div>
-<script src="/load-components.js"></script>
-<script src="/assets/js/main.js" defer></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

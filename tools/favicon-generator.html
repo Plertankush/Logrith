@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -52,86 +56,97 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-favicon-generator">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/image-pdf-tools">Image & PDF Tools</a> › Favicon Generator</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/image-pdf-tools">Image &amp; PDF Tools</a> › Favicon Generator</nav>
   <h1>Free Favicon Generator</h1>
   <p>Upload one image and instantly generate every favicon size your website needs — 16×16 up to 512×512 — ready to download.</p>
-  <div class="tool-tags">
-    <span class="tool-tag">✅ Free</span>
-    <span class="tool-tag">📐 6 Sizes</span>
-    <span class="tool-tag">⚡ Instant</span>
-    <span class="tool-tag">🔒 Browser Only</span>
+  <div class="tag-list">
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#ruler"></use></svg> 6 Sizes</span>
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span>
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lock"></use></svg> Browser Only</span>
   </div>
-</div></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:820px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Upload Source Image</h2>
     <div class="upload-zone" id="upload-zone">
       <input type="file" id="file-input" accept="image/*">
-      <div class="upload-icon">🎨</div>
+      <div class="upload-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#palette"></use></svg></div>
       <h3>Drop a square image here or click to browse</h3>
       <p>PNG or JPG recommended, at least 512×512px, max 8MB</p>
     </div>
     <div class="status-msg" id="status-msg"></div>
   </div>
 
-  <div class="tool-card" id="result-card" style="display:none;">
+  <div class="tool-card is-hidden" id="result-card">
     <h2>Generated Favicons</h2>
     <div class="preview-grid" id="favicon-grid"></div>
     <div class="btn-group mt-16">
-      <button class="btn btn-primary" id="download-all-btn">⬇️ Download All Sizes</button>
+      <button class="btn btn-primary" id="download-all-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#download"></use></svg> Download All Sizes</button>
     </div>
     <div class="insight-box mt-16">
       <strong>HTML to add in your &lt;head&gt;:</strong>
-      <div style="position:relative;margin-top:8px;">
+      <div class="u-8484c7">
         <textarea class="tool-textarea mono" id="html-snippet" rows="6" readonly></textarea>
-        <button class="copy-btn" id="copy-html">📋 Copy</button>
+        <button class="copy-btn" id="copy-html"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
       </div>
     </div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>What sizes of favicon do I need?</h3><p>Modern sites typically need 16×16 and 32×32 for browser tabs, 180×180 for the Apple touch icon, and 192×192 plus 512×512 for Android home screens and PWA manifests.</p></div>
-    <div class="faq-item-box"><h3>What image should I upload?</h3><p>A square image works best, ideally at least 512×512px, with a simple, recognizable design since favicons display very small.</p></div>
-    <div class="faq-item-box"><h3>Do I need a .ico file specifically?</h3><p>Most modern browsers accept PNG favicons via link tags, but a classic favicon.ico is still a good fallback for older browsers.</p></div>
-    <div class="faq-item-box"><h3>Is my image uploaded anywhere?</h3><p>No. All resizing happens locally in your browser using the Canvas API — nothing is uploaded to a server.</p></div>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card">
-      <h2>How to Use the Favicon Generator</h2>
-      <div class="tool-steps">
-        <div class="tool-step">
-          <strong>1. Upload a source image</strong>
-          Drag a PNG or JPG into the upload zone, ideally at least 512×512px for sharp results at every size.
-        </div>
-        <div class="tool-step">
-          <strong>2. Let the tool generate all sizes</strong>
-          It automatically center-crops your image to a square and renders it at 16×16, 32×32, 48×48, 180×180, 192×192, and 512×512.
-        </div>
-        <div class="tool-step">
-          <strong>3. Download individual sizes or all at once</strong>
-          Click Download under any size you need, or use Download All Sizes to save every PNG in one click.
-        </div>
-        <div class="tool-step">
-          <strong>4. Copy the HTML snippet into your site</strong>
-          Paste the generated link tags into your page's &lt;head&gt; so browsers and devices pick up the right icon automatically.
-        </div>
-      </div>
-    </div>
+    <details class="faq-item">
+      <summary class="faq-q">What sizes of favicon do I need?</summary>
+      <div class="faq-a"><p>Modern sites typically need 16×16 and 32×32 for browser tabs, 180×180 for the Apple touch icon, and 192×192 plus 512×512 for Android home screens and PWA manifests.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What image should I upload?</summary>
+      <div class="faq-a"><p>A square image works best, ideally at least 512×512px, with a simple, recognizable design since favicons display very small.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Do I need a .ico file specifically?</summary>
+      <div class="faq-a"><p>Most modern browsers accept PNG favicons via link tags, but a classic favicon.ico is still a good fallback for older browsers.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my image uploaded anywhere?</summary>
+      <div class="faq-a"><p>No. All resizing happens locally in your browser using the Canvas API — nothing is uploaded to a server.</p></div>
+    </details>
   </div>
 </section>
 
-<section class="article-section">
+<section class="page-section">
+  <h2>How to Use the Favicon Generator</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Upload a source image</strong>
+      <p>Drag a PNG or JPG into the upload zone, ideally at least 512×512px for sharp results at every size.</p>
+    </li>
+    <li class="step">
+      <strong>Let the tool generate all sizes</strong>
+      <p>It automatically center-crops your image to a square and renders it at 16×16, 32×32, 48×48, 180×180, 192×192, and 512×512.</p>
+    </li>
+    <li class="step">
+      <strong>Download individual sizes or all at once</strong>
+      <p>Click Download under any size you need, or use Download All Sizes to save every PNG in one click.</p>
+    </li>
+    <li class="step">
+      <strong>Copy the HTML snippet into your site</strong>
+      <p>Paste the generated link tags into your page's &lt;head&gt; so browsers and devices pick up the right icon automatically.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
   <h2>Free Favicon Generator — All Sizes From One Image</h2>
   <p>This tool takes a single source image and generates all the favicon sizes a modern website typically needs — 16×16, 32×32, 48×48, 180×180 (Apple touch icon), 192×192, and 512×512 — using the browser's Canvas API to resize with high-quality smoothing. Each size is available as an individual PNG download, along with a ready-to-paste HTML snippet for your site's <code>&lt;head&gt;</code>.</p>
 
@@ -139,7 +154,7 @@
   <p>Favicons aren't just for the browser tab anymore. Different platforms and contexts request different sizes: browser tabs typically use 16×16 or 32×32, iOS home screen bookmarks use a 180×180 "apple touch icon," and Android and Progressive Web App manifests commonly request 192×192 and 512×512 versions for home screen icons and app-like installations. Providing all of these sizes ensures your site's icon looks crisp everywhere it appears, rather than being awkwardly stretched or blurred from a single small image.</p>
 
   <h3>Tips for a Good Favicon Source Image</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Start square.</strong> A non-square image will be generated as a square anyway, so cropping to a 1:1 ratio yourself gives you full control over composition.</li>
     <li><strong>Keep it simple.</strong> Favicons render extremely small — intricate details or small text become an unreadable blur at 16×16.</li>
     <li><strong>Use a high-resolution source.</strong> Starting from at least 512×512 ensures the largest generated size stays sharp, since scaling up a small image (rather than down) always introduces blur.</li>
@@ -159,7 +174,7 @@
   <p>If you upload a rectangular image, the tool automatically center-crops it to the largest possible square before resizing, rather than squashing it to fit. This keeps the center of your image intact and avoids the distortion that stretching would cause, but it does mean content near the top, bottom, left, or right edges of a non-square source may get cropped out — so for full control over composition, crop to a square yourself before uploading.</p>
 
   <h3>Where Each Favicon Size Is Used</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>16×16 and 32×32:</strong> displayed in browser tabs, bookmark bars, and browser history lists — the most frequently seen sizes.</li>
     <li><strong>48×48:</strong> used by some Windows site shortcuts and older browser UI elements.</li>
     <li><strong>180×180 (Apple touch icon):</strong> shown when a user adds your site to their iOS or iPadOS home screen.</li>
@@ -174,7 +189,7 @@
   <p>Manually resizing a logo into six separate files in an image editor means repeating the same crop-and-export steps six times, keeping track of exact pixel dimensions, and manually writing the HTML link tags. This tool does the center-crop, resize, and smoothing for every required size in one pass and generates the matching HTML automatically, cutting a repetitive 15–20 minute task down to a few seconds.</p>
 
   <h3>Common Mistakes to Avoid</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Uploading a low-resolution source:</strong> starting below 512×512 means the largest generated sizes will look soft, since upscaling introduces blur that downscaling avoids.</li>
     <li><strong>Using a busy or detailed logo:</strong> fine detail, thin lines, or small text disappear at 16×16 — favicons work best as simple, bold shapes or a single letter/mark.</li>
     <li><strong>Forgetting the manifest reference:</strong> if you're building an installable PWA, make sure your <code>site.webmanifest</code> file also references the 192×192 and 512×512 icons, not just the HTML <code>&lt;link&gt;</code> tags.</li>
@@ -184,36 +199,33 @@
   <p>People searching for this feature often use terms like "favicon generator from logo," "apple touch icon size," "how to add favicon to website," "generate ico file online," and "PWA icon sizes generator." This tool produces all the common sizes needed to answer each of these searches in one step.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/image-resize" class="tool-item"><div class="ti-text"><h4>Image Resize</h4><p>Resize any image to custom dimensions.</p></div></a>
-    <a href="/tools/image-crop" class="tool-item"><div class="ti-text"><h4>Image Crop</h4><p>Crop images to a perfect square before generating a favicon.</p></div></a>
-    <a href="/tools/svg-to-png" class="tool-item"><div class="ti-text"><h4>SVG to PNG</h4><p>Convert an SVG logo to PNG before using it as a favicon source.</p></div></a>
-    <a href="/tools/image-compressor" class="tool-item"><div class="ti-text"><h4>Image Compressor</h4><p>Compress images for faster website loading.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">favicon generator</span>
-        <span class="keyword-tag">favicon generator online</span>
-        <span class="keyword-tag">generate favicon from image</span>
-        <span class="keyword-tag">favicon.ico generator</span>
-        <span class="keyword-tag">apple touch icon generator</span>
-        <span class="keyword-tag">free favicon maker</span>
-        <span class="keyword-tag">favicon sizes generator</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/image-resize"><strong>Image Resize</strong><span>Resize any image to custom dimensions.</span></a>
+    <a class="related-card" href="/tools/image-crop"><strong>Image Crop</strong><span>Crop images to a perfect square before generating a favicon.</span></a>
+    <a class="related-card" href="/tools/svg-to-png"><strong>SVG to PNG</strong><span>Convert an SVG logo to PNG before using it as a favicon source.</span></a>
+    <a class="related-card" href="/tools/image-compressor"><strong>Image Compressor</strong><span>Compress images for faster website loading.</span></a>
   </div>
 </section>
 
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">favicon generator</span>
+    <span class="keyword-tag">favicon generator online</span>
+    <span class="keyword-tag">generate favicon from image</span>
+    <span class="keyword-tag">favicon.ico generator</span>
+    <span class="keyword-tag">apple touch icon generator</span>
+    <span class="keyword-tag">free favicon maker</span>
+    <span class="keyword-tag">favicon sizes generator</span>
+  </div>
+</section>
+
+</main>
+
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 const SIZES = [16, 32, 48, 180, 192, 512];
 const uploadZone = document.getElementById('upload-zone');
@@ -266,7 +278,7 @@ function generateFavicons(img) {
       <img src="${dataUrl}" style="width:${Math.min(size,64)}px;height:${Math.min(size,64)}px;image-rendering:pixelated;display:block;margin:0 auto;background:var(--white);border:1px solid var(--gray-200);border-radius:6px;">
       <div class="result-title" style="text-align:center;margin-top:8px;">${size}×${size}</div>
       <div class="btn-group" style="justify-content:center;margin-top:8px;">
-        <a href="${dataUrl}" download="favicon-${size}x${size}.png" class="btn btn-secondary btn-sm">⬇️ Download</a>
+        <a href="${dataUrl}" download="favicon-${size}x${size}.png" class="btn btn-secondary btn-sm"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#download"></use></svg> Download</a>
       </div>`;
     grid.appendChild(card);
   });

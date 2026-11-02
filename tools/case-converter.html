@@ -21,14 +21,18 @@
   <meta name="twitter:title" content="Switch Text Between UPPERCASE and camelCase | Logrith">
   <meta name="twitter:description" content="Paste any text and convert it to uppercase, lowercase, Title Case, Sentence case, camelCase or PascalCase instantly, with one-click copy.">
 
-  <link rel="preload" href="/assets/css/style.css" as="style">
-  <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {
@@ -104,23 +108,26 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-case-converter">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/text-generators">Text & Generators</a> › Case Converter</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/text-generators">Text &amp; Generators</a> › Case Converter</nav>
   <h1>Free Text Case Converter — 12+ Formats</h1>
   <p>Convert text instantly between UPPERCASE, lowercase, Title Case, camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE, dot.case and more. Perfect for developers, writers, SEO, and content formatting.</p>
-  <div class="tool-tags">
-    <span class="tool-tag">✅ 100% Free</span>
-    <span class="tool-tag">⚡ Live Preview</span>
-    <span class="tool-tag">12+ Formats</span>
-    <span class="tool-tag">📱 Mobile-Friendly</span>
-    <span class="tool-tag">🔒 Browser Only</span>
+  <div class="tag-list">
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> 100% Free</span>
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Live Preview</span>
+    <span class="tag">12+ Formats</span>
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#phone"></use></svg> Mobile-Friendly</span>
+    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lock"></use></svg> Browser Only</span>
   </div>
-</div></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:920px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Input Text</h2>
     <textarea class="tool-textarea" id="input-text" rows="6" placeholder="Paste or type your text here...&#10;Supports multiple paragraphs, code snippets, titles, variable names"></textarea>
@@ -148,30 +155,45 @@
       <button class="mode-card" data-case="inverse"><h3>InVeRsE CaSe</h3><p>ReVeRsE</p></button>
     </div>
 
-    <div class="control-group" style="position:relative;">
+    <div class="control-group relative">
       <label>Output (Ready to Copy)</label>
       <textarea class="tool-textarea" id="output-text" rows="6" readonly placeholder="Click any case format above to convert..."></textarea>
-      <button class="copy-btn" id="copy-btn" title="Copy converted text">📋 Copy</button>
+      <button class="copy-btn" id="copy-btn" title="Copy converted text"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
     </div>
     <div class="btn-group mt-12">
-      <button class="btn btn-secondary" id="clear-btn">✕ Clear All</button>
-      <button class="btn btn-secondary" id="swap-btn">⇅ Swap Input/Output</button>
+      <button class="btn btn-secondary" id="clear-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Clear All</button>
+      <button class="btn btn-secondary" id="swap-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#swap"></use></svg> Swap Input/Output</button>
     </div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>What is camelCase and when should I use it?</h3><p>camelCase starts words with lowercase, then uppercase for each following word, like helloWorld. It's used for JavaScript variables, function names, and Python method names.</p></div>
-    <div class="faq-item-box"><h3>PascalCase vs camelCase — what's the difference?</h3><p>PascalCase capitalizes every word including the first, like HelloWorld. It's used for classes, React components, and TypeScript types. camelCase (helloWorld) is used for variables and functions.</p></div>
-    <div class="faq-item-box"><h3>snake_case vs kebab-case — which should I use for what?</h3><p>snake_case (hello_world) is common in Python variables, database columns, and Ruby. kebab-case (hello-world) is common in CSS classes, HTML data attributes, and URL slugs.</p></div>
-    <div class="faq-item-box"><h3>What is Title Case vs Sentence case?</h3><p>Title Case capitalizes every major word (Hello World). Sentence case capitalizes only the first word (Hello world). Title Case suits headlines; Sentence case suits body text.</p></div>
-    <div class="faq-item-box"><h3>Can I convert code variable names?</h3><p>Yes. Convert between camelCase, snake_case, kebab-case, and PascalCase instantly — useful when refactoring naming conventions across languages or frameworks.</p></div>
+    <details class="faq-item">
+      <summary class="faq-q">What is camelCase and when should I use it?</summary>
+      <div class="faq-a"><p>camelCase starts words with lowercase, then uppercase for each following word, like helloWorld. It's used for JavaScript variables, function names, and Python method names.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">PascalCase vs camelCase — what's the difference?</summary>
+      <div class="faq-a"><p>PascalCase capitalizes every word including the first, like HelloWorld. It's used for classes, React components, and TypeScript types. camelCase (helloWorld) is used for variables and functions.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">snake_case vs kebab-case — which should I use for what?</summary>
+      <div class="faq-a"><p>snake_case (hello_world) is common in Python variables, database columns, and Ruby. kebab-case (hello-world) is common in CSS classes, HTML data attributes, and URL slugs.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What is Title Case vs Sentence case?</summary>
+      <div class="faq-a"><p>Title Case capitalizes every major word (Hello World). Sentence case capitalizes only the first word (Hello world). Title Case suits headlines; Sentence case suits body text.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I convert code variable names?</summary>
+      <div class="faq-a"><p>Yes. Convert between camelCase, snake_case, kebab-case, and PascalCase instantly — useful when refactoring naming conventions across languages or frameworks.</p></div>
+    </details>
   </div>
-</div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>Complete Text Case Converter Guide — 12+ Formats</h2>
   <p>The Logrith Text Case Converter transforms text between more than a dozen popular formats instantly: UPPERCASE, lowercase, Title Case, Sentence case, camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE, dot.case, AlTeRnAtE, and InVeRsE CaSe. It's built for developers refactoring code, writers formatting content, SEO specialists optimizing slugs, and anyone who regularly deals with text in more than one naming convention.</p>
 
@@ -179,7 +201,7 @@
 
   <h3>Understanding Each Case Format</h3>
   <p>Different case formats exist because different programming languages, style guides, and platforms adopted different conventions over time, and each format still serves a specific, well-established purpose today:</p>
-  <ul class="feature-list">
+  <ul>
     <li><strong>UPPERCASE</strong> — every letter capitalized. Used for emphasis, constants in some older codebases, and acronyms.</li>
     <li><strong>lowercase</strong> — every letter lowercase. Used for casual text, some URL formats, and normalized search input.</li>
     <li><strong>Title Case</strong> — the first letter of each major word capitalized. Used for headlines, book and article titles, and UI button labels.</li>
@@ -202,7 +224,7 @@
   <p>To convert between these formats, the tool first needs to identify the individual "words" inside your input, regardless of what format it started in. It does this by detecting boundaries between lowercase and uppercase letters (to split camelCase and PascalCase input back into words) and by splitting on underscores, hyphens, and periods (to split snake_case, kebab-case, and dot.case input). Once the text is broken into a clean list of words, each case format simply applies its own capitalization and separator rules to reassemble those words — capitalizing the first letter of each word for Title Case, joining with underscores for snake_case, and so on.</p>
 
   <h3>Practical Workflows This Tool Supports</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>Code reviews and refactors</strong> — standardizing variable and function naming conventions across a file or module.</li>
     <li><strong>Content pipelines</strong> — keeping headline casing and body text casing consistent across a large set of articles or product pages.</li>
     <li><strong>Database migrations</strong> — converting column names between snake_case and camelCase when moving data between systems with different conventions.</li>
@@ -228,7 +250,7 @@
 
   <h3>Frequently Confused Format Pairs</h3>
   <p>A few pairs of case formats look superficially similar but are used in very different contexts, and mixing them up is a common source of small bugs or style-guide violations:</p>
-  <ul class="feature-list">
+  <ul>
     <li><strong>camelCase vs PascalCase</strong> — differ only in whether the first letter is capitalized, but this single difference is the convention that separates "this is a variable" from "this is a class or component" in most style guides.</li>
     <li><strong>snake_case vs CONSTANT_CASE</strong> — both use underscores, but snake_case stays lowercase for regular variables while CONSTANT_CASE signals an unchanging constant value, purely through capitalization.</li>
     <li><strong>kebab-case vs dot.case</strong> — both use a single-character separator, but kebab-case is the near-universal standard for URLs and CSS, while dot.case shows up more narrowly in certain configuration key naming schemes.</li>
@@ -236,40 +258,37 @@
   </ul>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Text Tools</h2>
   <div class="related-grid">
-    <a href="/tools/word-counter" class="tool-item"><div class="ti-text"><h4>Word Counter</h4><p>Count words, characters, and paragraphs with reading time.</p></div></a>
-    <a href="/tools/slug-generator" class="tool-item"><div class="ti-text"><h4>Slug Generator</h4><p>Create SEO-friendly URL slugs from titles.</p></div></a>
-    <a href="/tools/text-diff" class="tool-item"><div class="ti-text"><h4>Text Diff Checker</h4><p>Compare two versions of text with highlighted changes.</p></div></a>
-    <a href="/tools/duplicate-remover" class="tool-item"><div class="ti-text"><h4>Duplicate Remover</h4><p>Remove duplicate lines or words from a block of text.</p></div></a>
-  </div>
-</div>
-
-<section class="seo-section">
-  <div class="seo-wrap">
-    <div class="content-card keyword-section">
-      <h2>Popular Searches</h2>
-      <div class="keyword-box">
-        <span class="keyword-tag">text case converter</span>
-        <span class="keyword-tag">camelcase converter</span>
-        <span class="keyword-tag">pascalcase converter</span>
-        <span class="keyword-tag">snake case converter</span>
-        <span class="keyword-tag">kebab case converter</span>
-        <span class="keyword-tag">uppercase to lowercase converter</span>
-        <span class="keyword-tag">title case converter</span>
-        <span class="keyword-tag">sentence case converter</span>
-        <span class="keyword-tag">constant case converter</span>
-        <span class="keyword-tag">free case converter online</span>
-      </div>
-    </div>
+    <a class="related-card" href="/tools/word-counter"><strong>Word Counter</strong><span>Count words, characters, and paragraphs with reading time.</span></a>
+    <a class="related-card" href="/tools/slug-generator"><strong>Slug Generator</strong><span>Create SEO-friendly URL slugs from titles.</span></a>
+    <a class="related-card" href="/tools/text-diff"><strong>Text Diff Checker</strong><span>Compare two versions of text with highlighted changes.</span></a>
+    <a class="related-card" href="/tools/duplicate-remover"><strong>Duplicate Remover</strong><span>Remove duplicate lines or words from a block of text.</span></a>
   </div>
 </section>
 
-<div id="footer"></div>
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">text case converter</span>
+    <span class="keyword-tag">camelcase converter</span>
+    <span class="keyword-tag">pascalcase converter</span>
+    <span class="keyword-tag">snake case converter</span>
+    <span class="keyword-tag">kebab case converter</span>
+    <span class="keyword-tag">uppercase to lowercase converter</span>
+    <span class="keyword-tag">title case converter</span>
+    <span class="keyword-tag">sentence case converter</span>
+    <span class="keyword-tag">constant case converter</span>
+    <span class="keyword-tag">free case converter online</span>
+  </div>
+</section>
 
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+
 <script>
 const inputText = document.getElementById('input-text');
 const outputText = document.getElementById('output-text');
@@ -328,7 +347,7 @@ document.getElementById('copy-btn').addEventListener('click', function() {
   if(outputText.value) {
     navigator.clipboard.writeText(outputText.value).then(()=>{
       const orig = this.innerHTML;
-      this.innerHTML = '✅ Copied!';
+      this.innerHTML = '<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Copied!';
       setTimeout(()=>this.innerHTML=orig, 1500);
     });
   }

@@ -23,8 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D0D0D">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
@@ -51,17 +55,20 @@
     gtag('config', 'G-BPJ4332XJH');
   </script>
 </head>
-<body>
+<body class="page-tip-split-calculator">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
-<div class="tool-hero"><div class="tool-hero-inner">
-  <div class="tool-breadcrumb"><a href="/">Home</a> › <a href="/categories/calculate-convert">Calculate & Convert</a> › Tip Split Calculator</div>
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/categories/calculate-convert">Calculate &amp; Convert</a> › Tip Split Calculator</nav>
   <h1>Free Tip Calculator & Bill Splitter</h1>
   <p>Calculate the tip and split the total bill equally, or by custom uneven shares, among any number of people.</p>
-  <div class="tool-tags"><span class="tool-tag">✅ Free</span><span class="tool-tag">🍽️ Equal or Uneven Split</span><span class="tool-tag">⚡ Instant</span></div>
-</div></div>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#tag"></use></svg> Equal or Uneven Split</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
 
-<div class="tool-workspace" style="max-width:700px;">
+<div class="tool-workspace">
   <div class="tool-card">
     <h2>Bill Details</h2>
     <div class="controls-grid">
@@ -87,39 +94,57 @@
     </div>
 
     <div class="sub-panel" id="panel-uneven">
-      <div id="uneven-inputs" class="mt-12" style="display:flex;flex-direction:column;gap:8px;"></div>
+      <div id="uneven-inputs" class="mt-12"></div>
       <div class="btn-group mt-8">
-        <button class="btn btn-secondary btn-sm" id="add-person-btn">➕ Add Person</button>
+        <button class="btn btn-secondary btn-sm" id="add-person-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#plus"></use></svg> Add Person</button>
       </div>
     </div>
 
     <div class="btn-group mt-16">
-      <button class="btn btn-primary btn-lg" id="calc-btn">🍽️ Calculate Split</button>
-      <button class="btn btn-secondary" id="reset-btn">✕ Reset</button>
+      <button class="btn btn-primary btn-lg" id="calc-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#tag"></use></svg> Calculate Split</button>
+      <button class="btn btn-secondary" id="reset-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Reset</button>
     </div>
     <div class="status-msg" id="status-msg"></div>
   </div>
 
-  <div class="tool-card" id="result-card" style="display:none;">
+  <div class="tool-card is-hidden" id="result-card">
     <h2>Split Result</h2>
-    <div class="stat-result-grid" id="result-grid"></div>
+    <div class="stat-grid" id="result-grid"></div>
     <div id="per-person-breakdown" class="mt-16"></div>
   </div>
 </div>
 
-<div class="content-card faq-section">
+<section class="page-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item-box"><h3>What is a standard tip percentage?</h3><p>Tip customs vary by country — 15-20% is common in the US for restaurant service, while other regions have different norms or include service charges automatically.</p></div>
-    <div class="faq-item-box"><h3>Can I split the bill unevenly?</h3><p>Yes, switch to "Uneven Split" mode and enter each person's individual bill share — the tip is calculated proportionally.</p></div>
-    <div class="faq-item-box"><h3>Is the tip split equally in uneven mode too?</h3><p>Each person's tip is calculated as the same percentage of their own share, so someone with a larger share pays a proportionally larger tip.</p></div>
-    <div class="faq-item-box"><h3>Is my bill information sent to a server?</h3><p>No, every calculation runs locally in your browser. Bill amounts and individual shares are never transmitted anywhere.</p></div>
-    <div class="faq-item-box"><h3>Should tax be included in the bill amount before tipping?</h3><p>Tipping conventions vary, but many people calculate tip based on the pre-tax subtotal rather than the tax-inclusive total. Enter whichever amount matches your preferred convention.</p></div>
-    <div class="faq-item-box"><h3>Can I use this for splitting bills that aren't restaurant related?</h3><p>Yes, the same equal or uneven split logic works for any shared expense — a group trip, a shared grocery run, or any cost being divided among several people, with or without an added tip or service percentage.</p></div>
+    <details class="faq-item">
+      <summary class="faq-q">What is a standard tip percentage?</summary>
+      <div class="faq-a"><p>Tip customs vary by country — 15-20% is common in the US for restaurant service, while other regions have different norms or include service charges automatically.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I split the bill unevenly?</summary>
+      <div class="faq-a"><p>Yes, switch to "Uneven Split" mode and enter each person's individual bill share — the tip is calculated proportionally.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is the tip split equally in uneven mode too?</summary>
+      <div class="faq-a"><p>Each person's tip is calculated as the same percentage of their own share, so someone with a larger share pays a proportionally larger tip.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my bill information sent to a server?</summary>
+      <div class="faq-a"><p>No, every calculation runs locally in your browser. Bill amounts and individual shares are never transmitted anywhere.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Should tax be included in the bill amount before tipping?</summary>
+      <div class="faq-a"><p>Tipping conventions vary, but many people calculate tip based on the pre-tax subtotal rather than the tax-inclusive total. Enter whichever amount matches your preferred convention.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I use this for splitting bills that aren't restaurant related?</summary>
+      <div class="faq-a"><p>Yes, the same equal or uneven split logic works for any shared expense — a group trip, a shared grocery run, or any cost being divided among several people, with or without an added tip or service percentage.</p></div>
+    </details>
   </div>
-</div>
+</section>
 
-<section class="article-section">
+<section class="page-section prose">
   <h2>Tip Calculator and Bill Splitter</h2>
   <p>This tool calculates the tip on a restaurant bill and splits the total among a group, supporting both a simple equal split and a more flexible uneven split for situations where people ordered different amounts.</p>
 
@@ -133,7 +158,7 @@
   <p>A common but arguably less fair approach to group dining is splitting the tip equally regardless of what each person ordered, while splitting the base bill proportionally — or vice versa. Calculating tip as a consistent percentage applied to each person's own share, as this tool does in uneven mode, means someone who ordered a $40 steak and a cocktail pays proportionally more tip than someone who ordered an $8 side salad, which most people consider the more equitable outcome compared to splitting the tip evenly regardless of individual order size.</p>
 
   <h3>Common Tipping Practices</h3>
-  <ul class="feature-list">
+  <ul>
     <li><strong>15-20%</strong> is a common range for restaurant service in the United States.</li>
     <li><strong>Some countries</strong> already include a service charge in the bill, making additional tipping optional or unusual.</li>
     <li><strong>Group dining</strong> often defaults to splitting the tip evenly, even when the bill itself is split unevenly, though this calculator supports proportional tip splitting for a fairer approach.</li>
@@ -141,12 +166,24 @@
   </ul>
 
   <h3>Step-by-Step: Splitting a Bill</h3>
-  <div class="tool-steps">
-    <div class="tool-step"><strong>1. Enter the bill amount</strong>Type in the total bill, or switch to uneven mode to enter individual shares.</div>
-    <div class="tool-step"><strong>2. Set the tip percentage</strong>Enter the percentage you'd like to tip.</div>
-    <div class="tool-step"><strong>3. Choose equal or uneven split</strong>Pick equal for a simple divide, or uneven to enter each person's actual share.</div>
-    <div class="tool-step"><strong>4. Calculate and review</strong>Click Calculate Split to see each person's exact amount owed.</div>
-  </div>
+  <ol class="steps">
+    <li class="step">
+      <strong>Enter the bill amount</strong>
+      <p>Type in the total bill, or switch to uneven mode to enter individual shares.</p>
+    </li>
+    <li class="step">
+      <strong>Set the tip percentage</strong>
+      <p>Enter the percentage you'd like to tip.</p>
+    </li>
+    <li class="step">
+      <strong>Choose equal or uneven split</strong>
+      <p>Pick equal for a simple divide, or uneven to enter each person's actual share.</p>
+    </li>
+    <li class="step">
+      <strong>Calculate and review</strong>
+      <p>Click Calculate Split to see each person's exact amount owed.</p>
+    </li>
+  </ol>
 
   <h3>Privacy and Local Processing</h3>
   <p>All calculations run directly in your browser — no bill amounts or personal details are sent to a server, logged, or stored anywhere.</p>
@@ -164,19 +201,20 @@
   <p>Beyond one-off restaurant visits, the same equal-or-uneven split logic applies to any recurring shared cost among a consistent group — a monthly subscription split between roommates, a recurring group outing, or shared household expenses. For these situations, keeping a simple running record outside this tool of who's paid what over time helps avoid the small discrepancies that can build up when the same group splits costs repeatedly across multiple occasions.</p>
 </section>
 
-<div class="content-card related-tools">
+<section class="page-section">
   <h2>Related Tools</h2>
   <div class="related-grid">
-    <a href="/tools/percentage-calculator" class="tool-item"><div class="ti-text"><h4>Percentage Calculator</h4><p>Calculate percentages and discounts.</p></div></a>
-    <a href="/tools/discount-stacking-calculator" class="tool-item"><div class="ti-text"><h4>Discount Stacking Calculator</h4><p>Calculate final price after multiple discounts.</p></div></a>
-    <a href="/tools/unit-price-comparator" class="tool-item"><div class="ti-text"><h4>Unit Price Comparator</h4><p>Compare price-per-unit to find the better deal.</p></div></a>
-    <a href="/tools/gst-calculator" class="tool-item"><div class="ti-text"><h4>GST Calculator</h4><p>Calculate GST inclusive and exclusive amounts.</p></div></a>
+    <a class="related-card" href="/tools/percentage-calculator"><strong>Percentage Calculator</strong><span>Calculate percentages and discounts.</span></a>
+    <a class="related-card" href="/tools/discount-stacking-calculator"><strong>Discount Stacking Calculator</strong><span>Calculate final price after multiple discounts.</span></a>
+    <a class="related-card" href="/tools/unit-price-comparator"><strong>Unit Price Comparator</strong><span>Compare price-per-unit to find the better deal.</span></a>
+    <a class="related-card" href="/tools/gst-calculator"><strong>GST Calculator</strong><span>Calculate GST inclusive and exclusive amounts.</span></a>
   </div>
-</div>
+</section>
+
+</main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js" defer></script>
-<script src="/load-components.js"></script>
+<script src="/assets/js/main.js"></script>
 <script>
 let currentMode = 'equal';
 
@@ -219,11 +257,11 @@ document.getElementById('calc-btn').addEventListener('click', () => {
     const perPerson = total / numPeople;
 
     document.getElementById('result-grid').innerHTML = `
-      <div class="stat-box"><span class="sb-num">${fmt(bill)}</span><span class="sb-lbl">Bill Amount</span></div>
-      <div class="stat-box"><span class="sb-num" style="color:var(--success);">${fmt(tipAmount)}</span><span class="sb-lbl">Tip (${tipPct}%)</span></div>
-      <div class="stat-box"><span class="sb-num">${fmt(total)}</span><span class="sb-lbl">Total with Tip</span></div>
+      <div class="stat-box"><span class="stat-num">${fmt(bill)}</span><span class="stat-label">Bill Amount</span></div>
+      <div class="stat-box"><span class="stat-num" style="color:var(--success);">${fmt(tipAmount)}</span><span class="stat-label">Tip (${tipPct}%)</span></div>
+      <div class="stat-box"><span class="stat-num">${fmt(total)}</span><span class="stat-label">Total with Tip</span></div>
       <div class="stat-box" style="background:linear-gradient(135deg,var(--primary),var(--primary-light));border:none;">
-        <span class="sb-num" style="color:white;">${fmt(perPerson)}</span><span class="sb-lbl" style="color:rgba(255,255,255,0.85);">Per Person (${numPeople})</span>
+        <span class="stat-num" style="color:white;">${fmt(perPerson)}</span><span class="stat-label" style="color:rgba(255,255,255,0.85);">Per Person (${numPeople})</span>
       </div>`;
     document.getElementById('per-person-breakdown').innerHTML = '';
   } else {
@@ -236,10 +274,10 @@ document.getElementById('calc-btn').addEventListener('click', () => {
     const grandTotal = totalBill + totalTip;
 
     document.getElementById('result-grid').innerHTML = `
-      <div class="stat-box"><span class="sb-num">${fmt(totalBill)}</span><span class="sb-lbl">Total Bill</span></div>
-      <div class="stat-box"><span class="sb-num" style="color:var(--success);">${fmt(totalTip)}</span><span class="sb-lbl">Total Tip (${tipPct}%)</span></div>
+      <div class="stat-box"><span class="stat-num">${fmt(totalBill)}</span><span class="stat-label">Total Bill</span></div>
+      <div class="stat-box"><span class="stat-num" style="color:var(--success);">${fmt(totalTip)}</span><span class="stat-label">Total Tip (${tipPct}%)</span></div>
       <div class="stat-box" style="background:linear-gradient(135deg,var(--primary),var(--primary-light));border:none;">
-        <span class="sb-num" style="color:white;">${fmt(grandTotal)}</span><span class="sb-lbl" style="color:rgba(255,255,255,0.85);">Grand Total</span>
+        <span class="stat-num" style="color:white;">${fmt(grandTotal)}</span><span class="stat-label" style="color:rgba(255,255,255,0.85);">Grand Total</span>
       </div>`;
 
     document.getElementById('per-person-breakdown').innerHTML = shares.map((share, i) => {

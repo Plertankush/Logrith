@@ -12,245 +12,40 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#000000">
-  <link rel="preload" href="/assets/css/style.css" as="style">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-    /* ── PAGE SWITCH TABS ── */
-    .page-tabs {
-      display: flex;
-      justify-content: center;
-      gap: 6px;
-      padding: 16px 24px;
-      background: var(--white);
-      border-bottom: 1.5px solid var(--gray-200);
-    }
-    .page-tab {
-      padding: 8px 20px;
-      border-radius: 20px;
-      border: 1.5px solid var(--gray-200);
-      background: var(--gray-50);
-      font-size: .84rem;
-      font-weight: 600;
-      font-family: var(--font-display);
-      color: var(--gray-600);
-      text-decoration: none;
-      transition: var(--transition);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .page-tab:hover { border-color: var(--primary); color: var(--primary); background: var(--white); }
-    .page-tab.active { background: var(--primary); color: white; border-color: var(--primary); }
+  <link rel="stylesheet" href="/assets/css/pages.css">
 
-    /* ── HERO ── */
-    .page-hero {
-      background: linear-gradient(135deg, #f0f4ff 0%, #e8f7f5 100%);
-      padding: 56px 24px 44px;
-      text-align: center;
-      border-bottom: 1.5px solid var(--gray-200);
-    }
-    .page-hero h1 { font-family: var(--font-display); font-size: clamp(1.8rem,5vw,2.6rem); font-weight: 800; color: var(--gray-900); margin-bottom: 10px; }
-    .page-hero h1 span { color: var(--primary); }
-    .page-hero p { font-size: .96rem; color: var(--gray-600); max-width: 500px; margin: 0 auto; line-height: 1.7; }
-    .breadcrumb { display:flex; align-items:center; gap:6px; font-size:.8rem; color:var(--gray-400); justify-content:center; margin-bottom:14px; }
-    .breadcrumb a { color:var(--primary); text-decoration:none; }
-
-    /* ── LAYOUT ── */
-    .contact-wrap {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 52px 24px 80px;
-      display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      gap: 40px;
-      align-items: start;
-    }
-
-    /* ── LEFT INFO CARDS ── */
-    .contact-info h2 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; color: var(--gray-900); margin-bottom: 18px; }
-    .contact-card {
-      background: var(--white);
-      border: 1.5px solid var(--gray-200);
-      border-radius: var(--radius-lg);
-      padding: 16px 18px;
-      margin-bottom: 12px;
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      transition: var(--transition);
-    }
-    .contact-card:hover { border-color: var(--gray-300); box-shadow: var(--shadow-sm); }
-    .cc-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 1px; }
-    .contact-card h3 { font-family: var(--font-display); font-size: .88rem; font-weight: 700; color: var(--gray-900); margin-bottom: 4px; }
-    .contact-card p { font-size: .82rem; color: var(--gray-600); line-height: 1.55; margin: 0; }
-    .contact-card a { color: var(--primary); text-decoration: none; font-weight: 600; }
-    .info-note {
-      background: var(--gray-50);
-      border-radius: var(--radius);
-      border: 1px solid var(--gray-200);
-      padding: 14px 16px;
-      font-size: .8rem;
-      color: var(--gray-500);
-      line-height: 1.65;
-      margin-top: 6px;
-    }
-    .page-links { margin-top: 20px; }
-    .page-links p { font-size: .82rem; color: var(--gray-500); margin-bottom: 8px; }
-    .page-links a {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 14px;
-      background: var(--white);
-      border: 1.5px solid var(--gray-200);
-      border-radius: var(--radius);
-      font-size: .84rem;
-      font-weight: 600;
-      color: var(--gray-700);
-      text-decoration: none;
-      margin-bottom: 8px;
-      transition: var(--transition);
-    }
-    .page-links a:hover { border-color: var(--primary); color: var(--primary); }
-
-    /* ── FORM CARD ── */
-    .form-card {
-      background: var(--white);
-      border: 1.5px solid var(--gray-200);
-      border-radius: var(--radius-xl);
-      padding: 32px;
-      box-shadow: var(--shadow-md);
-    }
-    .form-card h2 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 24px; }
-    .cf-group { margin-bottom: 16px; }
-    .cf-group label {
-      display: block;
-      font-size: .82rem;
-      font-weight: 600;
-      color: var(--gray-700);
-      margin-bottom: 6px;
-    }
-    .cf-group label .req { color: var(--primary); margin-left: 2px; }
-    .cf-group input,
-    .cf-group select,
-    .cf-group textarea {
-      width: 100%;
-      padding: 10px 13px;
-      border: 1.5px solid var(--gray-200);
-      border-radius: var(--radius);
-      font-size: .88rem;
-      font-family: var(--font-main);
-      color: var(--gray-900);
-      background: var(--white);
-      outline: none;
-      transition: var(--transition);
-      box-sizing: border-box;
-    }
-    .cf-group input:focus,
-    .cf-group select:focus,
-    .cf-group textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(0,87,255,.08); }
-    .cf-group input.error,
-    .cf-group select.error,
-    .cf-group textarea.error { border-color: #ef4444; }
-    .cf-group textarea { resize: vertical; min-height: 110px; line-height: 1.6; }
-    .field-error { font-size: .75rem; color: #ef4444; margin-top: 4px; display: none; }
-    .field-error.show { display: block; }
-    .char-count { font-size: .74rem; color: var(--gray-400); text-align: right; margin-top: 4px; }
-
-    .contact-card { background:var(--white); border:1.5px solid var(--gray-200); border-radius:var(--radius-lg); padding:16px 18px; margin-bottom:12px; display:flex; align-items:flex-start; gap:14px; transition:var(--transition); }
-    .contact-card:hover { border-color:var(--gray-300); box-shadow:var(--shadow-sm); }
-    .cc-icon { font-size:1.3rem; flex-shrink:0; margin-top:1px; }
-    .contact-card h3 { font-family:var(--font-display); font-size:.88rem; font-weight:700; color:var(--gray-900); margin-bottom:4px; }
-    .contact-card p { font-size:.82rem; color:var(--gray-600); line-height:1.55; margin:0; }
-
-    .submit-btn {
-      width: 100%;
-      padding: 12px;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light, #3b82f6) 100%);
-      color: white;
-      border: none;
-      border-radius: var(--radius);
-      font-size: .94rem;
-      font-family: var(--font-display);
-      font-weight: 700;
-      cursor: pointer;
-      transition: var(--transition);
-      box-shadow: 0 4px 14px rgba(0,87,255,.25);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-    .submit-btn:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,87,255,.35); }
-    .submit-btn:disabled { opacity: .7; cursor: not-allowed; transform: none; }
-    .form-footer { font-size: .74rem; color: var(--gray-400); text-align: center; margin-top: 12px; }
-    .form-footer a { color: var(--primary); }
-
-    /* ── SUCCESS / ERROR STATES ── */
-    .form-success {
-      display: none;
-      text-align: center;
-      padding: 32px 24px;
-      background: #f0fdf4;
-      border-radius: var(--radius-lg);
-      border: 1.5px solid #a7f3d0;
-    }
-    .form-success .fs-icon { font-size: 2.8rem; display: block; margin-bottom: 14px; }
-    .form-success h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: #065f46; margin-bottom: 8px; }
-    .form-success p { font-size: .86rem; color: #047857; line-height: 1.6; }
-    .form-success .reset-btn {
-      margin-top: 18px;
-      padding: 8px 20px;
-      background: white;
-      border: 1.5px solid #a7f3d0;
-      border-radius: 20px;
-      font-size: .82rem;
-      font-weight: 600;
-      color: #059669;
-      cursor: pointer;
-      font-family: var(--font-display);
-    }
-    .msg-error {
-      display: none;
-      padding: 12px 16px;
-      background: #fef2f2;
-      border: 1.5px solid #fecaca;
-      border-radius: var(--radius);
-      font-size: .84rem;
-      color: #dc2626;
-      margin-bottom: 16px;
-    }
-    .msg-error.show { display: block; }
-
-    @media (max-width: 768px) {
-      .contact-wrap { grid-template-columns: 1fr; gap: 28px; padding: 28px 16px 60px; }
-      .form-card { padding: 22px 18px; }
-      .page-tabs { top: 44px; overflow-x: auto; justify-content: flex-start; padding: 12px 16px; }
-      .page-tab { white-space: nowrap; padding: 7px 16px; font-size: .8rem; }
-    }
-  </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-BPJ4332XJH');</script>
  
 </head>
-<body>
+<body class="page-contact">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="navbar"></div>
 
+<main id="main">
+
 <!-- HERO -->
-<div class="page-hero">
-  <div class="breadcrumb"><a href="/">Home</a> › Contact</div>
+<header class="page-hero">
+  <div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › Contact</nav>
   <h1>Get in <span>Touch</span></h1>
   <p>Have a question, found a bug, or want to suggest a new tool? We read every message and respond within 24 hours.</p>
-</div>
+  </div>
+</header>
 
 <!-- PAGE TABS -->
 <div class="page-tabs">
-  <a href="contact" class="page-tab active">✉️ Contact</a>
-  <a href="support" class="page-tab">🛠️ Support</a>
-  <a href="business" class="page-tab">🤝 Business</a>
+  <a href="contact" class="page-tab active"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#mail"></use></svg> Contact</a>
+  <a href="support" class="page-tab"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg> Support</a>
+  <a href="business" class="page-tab"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#users"></use></svg> Business</a>
 </div>
 
-<div class="contact-wrap">
+<div class="contact-wrap container">
 
   <!-- LEFT -->
   <div class="contact-info">
@@ -289,10 +84,10 @@
     </div>
 
     <div class="contact-card">
-      <span class="cc-icon">📧</span>
+      <span class="cc-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#mail"></use></svg></span>
       <div>
         <h3>Direct Email</h3>
-        <p>email us at <a href="mailto:hello@logrith.in" style="color:var(--primary);font-weight:600;">hello@logrith.in</a></p>
+        <p>email us at <a class="u-dbe490" href="mailto:hello@logrith.in">hello@logrith.in</a></p>
       </div>
     </div>
 
@@ -325,10 +120,10 @@
         <label>Subject</label>
         <select id="cf-subject">
           <option value="general">General Inquiry</option>
-          <option value="bug">🐛 Bug Report</option>
-          <option value="suggestion">💡 Tool Suggestion</option>
-          <option value="business">🤝 Business / Partnership</option>
-          <option value="other">📝 Other</option>
+          <option value="bug">Bug Report</option>
+          <option value="suggestion">Tool Suggestion</option>
+          <option value="business">Business / Partnership</option>
+          <option value="other">Other</option>
         </select>
       </div>
 
@@ -347,7 +142,7 @@
     </div>
 
     <div class="form-success" id="form-success">
-      <span class="fs-icon">✅</span>
+      <span class="fs-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg></span>
       <h3>Message Sent!</h3>
       <p>Thank you for reaching out. We'll get back to you within 24 hours at the email address you provided.</p>
       <button class="reset-btn" onclick="resetForm()">Send another message</button>
@@ -357,38 +152,39 @@
 </div>
 
 <!-- CONTACT FAQ -->
-<section style="max-width:860px;margin:0 auto 60px;padding:0 24px;">
-  <h2 style="font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:var(--gray-900);margin-bottom:18px;">Before You Write In</h2>
+<section class="u-d33dc1">
+  <h2 class="u-359580">Before You Write In</h2>
 
-  <div style="margin-bottom:16px;">
-    <h3 style="font-size:.96rem;font-weight:700;color:var(--gray-800);margin-bottom:6px;">Do I need to create an account to contact you?</h3>
-    <p style="font-size:.88rem;color:var(--gray-600);line-height:1.7;">No. The form on this page doesn't require a login, and we don't ask for an account when you email us directly. Just send your message and we'll reply to the email address you provide.</p>
+  <div class="mb-16">
+    <h3 class="u-e98619">Do I need to create an account to contact you?</h3>
+    <p class="u-37832d">No. The form on this page doesn't require a login, and we don't ask for an account when you email us directly. Just send your message and we'll reply to the email address you provide.</p>
   </div>
 
-  <div style="margin-bottom:16px;">
-    <h3 style="font-size:.96rem;font-weight:700;color:var(--gray-800);margin-bottom:6px;">What should I include in a bug report?</h3>
-    <p style="font-size:.88rem;color:var(--gray-600);line-height:1.7;">The name of the tool, what you were trying to do, what actually happened, and your browser and device if you know them (for example, "Chrome on Android"). A screenshot helps but isn't required — a clear description is usually enough for us to reproduce the issue.</p>
+  <div class="mb-16">
+    <h3 class="u-e98619">What should I include in a bug report?</h3>
+    <p class="u-37832d">The name of the tool, what you were trying to do, what actually happened, and your browser and device if you know them (for example, "Chrome on Android"). A screenshot helps but isn't required — a clear description is usually enough for us to reproduce the issue.</p>
   </div>
 
-  <div style="margin-bottom:16px;">
-    <h3 style="font-size:.96rem;font-weight:700;color:var(--gray-800);margin-bottom:6px;">How do you decide which tool suggestions to build?</h3>
-    <p style="font-size:.88rem;color:var(--gray-600);line-height:1.7;">We track every suggestion that comes in through this form. Tools that get requested more than once, or that fill an obvious gap in an existing category, tend to move up the list first. There's no guaranteed timeline, but nothing submitted is ignored.</p>
+  <div class="mb-16">
+    <h3 class="u-e98619">How do you decide which tool suggestions to build?</h3>
+    <p class="u-37832d">We track every suggestion that comes in through this form. Tools that get requested more than once, or that fill an obvious gap in an existing category, tend to move up the list first. There's no guaranteed timeline, but nothing submitted is ignored.</p>
   </div>
 
-  <div style="margin-bottom:16px;">
-    <h3 style="font-size:.96rem;font-weight:700;color:var(--gray-800);margin-bottom:6px;">Is this page the right place for a data or privacy question?</h3>
-    <p style="font-size:.88rem;color:var(--gray-600);line-height:1.7;">Yes, general privacy questions are welcome here. For the full details on how Logrith handles data, see the <a href="privacy" style="color:var(--primary);">Privacy Policy</a> first — most questions are already answered there.</p>
+  <div class="mb-16">
+    <h3 class="u-e98619">Is this page the right place for a data or privacy question?</h3>
+    <p class="u-37832d">Yes, general privacy questions are welcome here. For the full details on how Logrith handles data, see the <a class="u-035cc8" href="privacy">Privacy Policy</a> first — most questions are already answered there.</p>
   </div>
 
   <div>
-    <h3 style="font-size:.96rem;font-weight:700;color:var(--gray-800);margin-bottom:6px;">I sent a message but haven't heard back — what now?</h3>
-    <p style="font-size:.88rem;color:var(--gray-600);line-height:1.7;">We aim to reply within 24 hours on business days. If it's been longer than that, check your spam folder first, then try emailing <a href="mailto:hello@logrith.in" style="color:var(--primary);">hello@logrith.in</a> directly in case the original message didn't go through.</p>
+    <h3 class="u-e98619">I sent a message but haven't heard back — what now?</h3>
+    <p class="u-37832d">We aim to reply within 24 hours on business days. If it's been longer than that, check your spam folder first, then try emailing <a class="u-035cc8" href="mailto:hello@logrith.in">hello@logrith.in</a> directly in case the original message didn't go through.</p>
   </div>
 </section>
 
+</main>
+
 <div id="footer"></div>
-<script src="/load-components.js"></script>
-<script src="/assets/js/main.js" defer></script>
+<script src="/assets/js/main.js"></script>
 <script>
 /* ── SHARED FORM UTILITIES ── */
 function updateCharCount(el, countId, min, max) {
