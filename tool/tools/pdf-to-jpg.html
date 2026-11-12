@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turn Every PDF Page Into a High-Quality JPG | Logrith</title>
+  <meta name="description" content="Extract each page of a PDF as a separate JPG image, ready to download individually or as a batch, in your browser.">
+  <link rel="canonical" href="https://logrith.in/tool/tools/pdf-to-jpg">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Logrith">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://logrith.in/tool/tools/pdf-to-jpg">
+  <meta property="og:site_name" content="Logrith">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Turn Every PDF Page Into a High-Quality JPG | Logrith">
+  <meta name="twitter:description" content="Extract every PDF page as a JPG image, individually or as a batch, entirely in your browser.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" defer></script>
+
+  <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+ <script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+
+   gtag('config', 'G-BPJ4332XJH');
+ </script>
+ 
+  <meta name="keywords" content="pdf to jpg, convert pdf to jpg, pdf to image, pdf to jpg converter free, extract images from pdf">
+  <meta property="og:title" content="Turn Every PDF Page Into a High-Quality JPG | Logrith">
+  <meta property="og:description" content="Extract each page of a PDF as a separate JPG image, ready to download individually or as a batch, entirely in your browser.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://logrith.in/tool/tools/pdf-to-jpg">
+  <meta property="og:site_name" content="Logrith">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "WebApplication", "name": "PDF to JPG Converter", "url": "https://logrith.in/tool/tools/pdf-to-jpg", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript and a modern web browser", "description": "Convert PDF pages to JPG images online for free. Extract every page as a high-quality JPG. No server upload, 100% browser-based.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Image & PDF Tools", "item": "https://logrith.in/tool/categories/image-pdf-tools"}, {"@type": "ListItem", "position": 4, "name": "PDF to JPG Converter", "item": "https://logrith.in/tool/tools/pdf-to-jpg"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I convert a PDF to JPG?", "acceptedAnswer": {"@type": "Answer", "text": "Upload your PDF and the tool renders each page as a JPG image you can download."}}, {"@type": "Question", "name": "Can I choose the image quality or DPI?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, higher DPI settings produce sharper images at the cost of larger file sizes."}}, {"@type": "Question", "name": "Does each PDF page become a separate image?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, each page is converted into its own JPG."}}, {"@type": "Question", "name": "Is my PDF uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No, conversion happens in your browser."}}]}
+  </script>
+</head>
+<body class="page-pdf-to-jpg">
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="navbar"></div>
+
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/tool/">Tools</a> › <a href="/tool/categories/image-pdf-tools">Image &amp; PDF Tools</a> › PDF to JPG</nav>
+  <h1>Free PDF to JPG Converter</h1>
+  <p>Extract each page of a PDF as a high-quality JPG or PNG image. Choose DPI for quality. All processing is done locally in your browser.</p>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lock"></use></svg> No Upload</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#camera"></use></svg> High DPI</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#file-text"></use></svg> All Pages</span></div>
+</div></header>
+
+<div class="tool-workspace">
+  <div class="tool-card">
+    <h2>Upload PDF</h2>
+    <div class="upload-zone" id="upload-zone">
+      <input type="file" id="file-input" accept=".pdf,application/pdf">
+      <div class="upload-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#file-text"></use></svg></div>
+      <h3>Drop your PDF here or click to browse</h3>
+      <p>Max 20MB</p>
+    </div>
+    <div class="stats-row mt-12" id="pdf-info"></div>
+  </div>
+
+  <div class="tool-card is-hidden" id="settings-card">
+    <h2>Conversion Settings</h2>
+    <div class="controls-grid">
+      <div class="control-group">
+        <label>Output Format</label>
+        <select id="out-fmt">
+          <option value="image/jpeg">JPG</option>
+          <option value="image/png">PNG (transparent)</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <label>Quality / DPI Scale</label>
+        <select id="dpi-scale">
+          <option value="1">Standard (72 DPI)</option>
+          <option value="1.5">Medium (108 DPI)</option>
+          <option value="2" selected>High (144 DPI)</option>
+          <option value="3">Ultra (216 DPI)</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <label>Pages</label>
+        <select id="pages-mode">
+          <option value="all">All Pages</option>
+          <option value="range">Custom Range</option>
+        </select>
+      </div>
+      <div class="control-group is-hidden" id="range-group">
+        <label>Page Range (e.g. 1-3, 5)</label>
+        <input type="text" id="page-range" placeholder="1-3, 5, 7">
+      </div>
+    </div>
+    <div class="mt-16 btn-group">
+      <button class="btn btn-primary btn-lg" id="convert-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#image"></use></svg> Convert to Images</button>
+      <button class="btn btn-secondary" id="reset-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Reset</button>
+    </div>
+    <div class="progress-bar mt-12" id="progress"><div class="progress-fill" id="pfill"></div></div>
+    <div class="status-msg" id="status-msg"></div>
+  </div>
+
+  <div class="tool-card is-hidden" id="output-card">
+    <h2>Converted Pages</h2>
+    <div id="pages-grid"></div>
+    <div class="btn-group mt-16">
+      <button class="btn btn-success" id="dl-all-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#download"></use></svg> Download All</button>
+      <button class="btn btn-secondary" id="convert-more-btn">+ Convert Another</button>
+    </div>
+  </div>
+</div>
+
+<section class="page-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">How do I convert PDF pages to JPG images?</summary>
+      <div class="faq-a"><p>Upload your PDF, choose quality and format, then click Convert. The tool renders each PDF page using PDF.js and saves them as individual image files you can download.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What DPI should I choose?</summary>
+      <div class="faq-a"><p>For web use: Standard (72 DPI) is fine. For print or high quality: choose High (144 DPI) or Ultra (216 DPI). Higher DPI means larger file sizes but sharper images.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I convert only specific pages?</summary>
+      <div class="faq-a"><p>Yes! Select "Custom Range" and enter pages like "1-3, 5, 7-10". Only those pages will be converted and available for download.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">PNG vs JPG — which should I choose?</summary>
+      <div class="faq-a"><p>Choose PNG if your PDF has transparent backgrounds or sharp text/diagrams you need at pixel-perfect quality. Choose JPG for smaller file sizes with photos or general content.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why does conversion take longer for some PDFs?</summary>
+      <div class="faq-a"><p>PDFs with many pages, high-resolution embedded images, or complex vector graphics take longer to render, since each page is drawn fresh onto a canvas at your chosen DPI before being saved as an image.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my PDF uploaded to any server during conversion?</summary>
+      <div class="faq-a"><p>No, the entire conversion runs using PDF.js directly in your browser. Your file is read locally and never transmitted anywhere.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I download all converted pages at once?</summary>
+      <div class="faq-a"><p>Yes, after conversion finishes, use the "Download All" button to save every converted page in one action instead of downloading each image individually.</p></div>
+    </details>
+  </div>
+</section>
+
+<section class="page-section prose">
+  <h2>How PDF to JPG Conversion Works</h2>
+  <p>This tool uses PDF.js, the same open-source rendering engine that powers Firefox's built-in PDF viewer, to draw each page of your PDF onto an HTML5 canvas at a resolution you choose. Once a page is rendered onto the canvas, the browser's native image encoding converts that canvas into a JPG or PNG file, ready to download. Because rendering happens through the same engine used to display PDFs in a browser, text, vector graphics, and embedded images all come through with high fidelity — nothing is approximated or simplified.</p>
+
+  <h3>Choosing the Right DPI for Your Use Case</h3>
+  <p>DPI (dots per inch) controls how much detail is captured in the output image, and the right setting depends entirely on what the image is for. For content that will only ever be viewed on a screen — a slide in a presentation, an image embedded in a webpage, a quick preview — Standard (72 DPI) keeps file sizes small without sacrificing noticeable quality at typical screen resolutions. For anything headed to print, or where text needs to stay crisp when zoomed in, High (144 DPI) or Ultra (216 DPI) produces noticeably sharper results, at the cost of a larger file. A useful way to think about it: double the DPI roughly quadruples the pixel count and file size, so it's worth matching the setting to the actual destination rather than defaulting to the highest option every time.</p>
+
+  <h3>Converting a Specific Page Range vs. the Whole Document</h3>
+  <p>Not every situation calls for converting an entire PDF. If you only need a cover page, a single diagram, or a specific chapter as images, the custom range option avoids processing — and waiting for — pages you don't need. The range field accepts the same flexible format used elsewhere on Logrith: individual page numbers and hyphenated ranges separated by commas, so "1-3, 5, 7-10" converts exactly those seven pages and skips everything else in the document.</p>
+
+  <h3>JPG vs. PNG Output: A Closer Look</h3>
+  <p>The two output formats serve different purposes. JPG uses lossy compression, which produces smaller files and works well for pages containing photographs or continuous-tone images, where minor compression artifacts are rarely noticeable. PNG uses lossless compression and supports transparency, which matters for PDF pages containing sharp text, line art, logos, or diagrams where compression artifacts around hard edges would be more visible — and essential if the original content relies on a transparent background. As a rule of thumb, scanned photo-heavy pages usually look fine as JPG, while text-heavy or graphic-heavy pages benefit from PNG's lossless precision.</p>
+
+  <h3>Common Situations Where This Conversion Is Useful</h3>
+  <ul>
+    <li><strong>Embedding a PDF page into a presentation or webpage</strong>, where only image formats are supported, not PDF embeds.</li>
+    <li><strong>Sharing a single diagram or chart</strong> from a larger report without sending the whole document.</li>
+    <li><strong>Creating thumbnails or previews</strong> of document pages for a gallery, catalog, or content management system.</li>
+    <li><strong>Extracting a scanned signature or stamp</strong> from a signed PDF to reuse as a standalone image.</li>
+    <li><strong>Archiving visual records</strong> of specific pages in an image format that's universally viewable without a PDF reader.</li>
+  </ul>
+
+  <h3>Troubleshooting: What to Check If Conversion Fails</h3>
+  <p>If the conversion doesn't complete, the most common cause is a slow or interrupted internet connection, since PDF.js itself loads from a content delivery network the first time the page runs. A corrupted or password-protected PDF can also prevent rendering — if your file is password-protected, remove the password first using a PDF password tool before converting. For very large files approaching the 20MB limit, converting at a lower DPI or a smaller page range can help the browser process the file more reliably, since high-DPI rendering of many pages at once is genuinely demanding on browser memory.</p>
+
+  <h3>How This Compares to Taking Screenshots of PDF Pages</h3>
+  <p>Some people try to get images out of a PDF by simply taking a screenshot of each page while viewing it in a PDF reader. This works in a pinch but has real downsides compared to proper rendering: screenshot resolution is limited to your screen's resolution and zoom level, text can appear blurry if the zoom wasn't high enough, and capturing many pages this way is slow and repetitive. Rendering each page directly at a chosen DPI, as this tool does, produces consistent, predictable quality across every page regardless of screen size or zoom level, and handles an entire document in the time it takes to click one button.</p>
+
+  <h3>Privacy and Browser-Based Processing</h3>
+  <p>Every step of this conversion — reading the PDF, rendering each page, and encoding the final images — happens locally in your browser. Your document is never uploaded to a remote server, stored, or logged anywhere, which makes this tool a safe choice for converting personal, financial, or otherwise confidential PDF pages into images without that data leaving your device.</p>
+</section>
+
+<section class="page-section">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/tool/tools/jpg-to-pdf"><strong>JPG to PDF</strong><span>Combine images into a single PDF document.</span></a>
+    <a class="related-card" href="/tool/tools/pdf-compressor"><strong>PDF Compressor</strong><span>Reduce PDF file size while keeping content readable.</span></a>
+    <a class="related-card" href="/tool/tools/pdf-password-protect"><strong>PDF Password Protect</strong><span>Add or remove password protection from a PDF.</span></a>
+    <a class="related-card" href="/tool/tools/image-converter"><strong>Image Converter</strong><span>Convert images between JPG, PNG, WEBP, and other formats.</span></a>
+  </div>
+</section>
+
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+
+
+<script>
+let pdfFile = null;
+let convertedBlobs = [];
+document.getElementById('pages-mode').addEventListener('change', e => {
+  document.getElementById('range-group').style.display = e.target.value === 'range' ? 'block' : 'none';
+});
+
+function parseRange(str, max) {
+  const s = new Set();
+  str.split(',').forEach(p => {
+    p = p.trim();
+    if (p.includes('-')) { const [a,b]=p.split('-').map(n=>parseInt(n)); for(let i=a;i<=Math.min(b,max);i++) if(i>=1) s.add(i); }
+    else { const n=parseInt(p); if(n>=1&&n<=max) s.add(n); }
+  });
+  return Array.from(s).sort((a,b)=>a-b);
+}
+
+function handleFile(file) {
+  if (file.size > 20*1024*1024) { alert('Max 20MB'); return; }
+  pdfFile = file;
+  document.getElementById('pdf-info').innerHTML = `<span class="stat-chip">File: <strong>${file.name}</strong></span><span class="stat-chip">Size: <strong>${formatSize(file.size)}</strong></span>`;
+  document.getElementById('settings-card').style.display = 'block';
+  document.getElementById('output-card').style.display = 'none';
+}
+document.getElementById('file-input').addEventListener('change', e => handleFile(e.target.files[0]));
+initDragDrop(document.getElementById('upload-zone'), f => handleFile(f[0]));
+
+document.getElementById('convert-btn').addEventListener('click', async () => {
+  if (!pdfFile) return;
+  document.getElementById('convert-btn').disabled = true;
+  document.getElementById('progress').classList.add('active');
+  convertedBlobs = [];
+  document.getElementById('pages-grid').innerHTML = '';
+
+  try {
+    // Use pdf.js worker
+    if (typeof pdfjsLib === 'undefined') { throw new Error('PDF.js not loaded. Check internet.'); }
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    const ab = await pdfFile.arrayBuffer();
+    const pdf = await pdfjsLib.getDocument({ data: ab }).promise;
+    const total = pdf.numPages;
+    const mode = document.getElementById('pages-mode').value;
+    const pages = mode === 'all' ? Array.from({length:total},(_,i)=>i+1) : parseRange(document.getElementById('page-range').value, total);
+    if (!pages.length) { throw new Error('No valid pages selected.'); }
+    const scale = parseFloat(document.getElementById('dpi-scale').value);
+    const fmt = document.getElementById('out-fmt').value;
+    const ext = fmt === 'image/png' ? 'png' : 'jpg';
+
+    for (let i = 0; i < pages.length; i++) {
+      document.getElementById('pfill').style.width = ((i+1)/pages.length*100)+'%';
+      const page = await pdf.getPage(pages[i]);
+      const vp = page.getViewport({ scale });
+      const canvas = document.createElement('canvas');
+      canvas.width = vp.width; canvas.height = vp.height;
+      const ctx = canvas.getContext('2d');
+      if (fmt === 'image/jpeg') { ctx.fillStyle='#fff'; ctx.fillRect(0,0,canvas.width,canvas.height); }
+      await page.render({ canvasContext: ctx, canvas, viewport: vp }).promise;
+      const blob = await new Promise(res => canvas.toBlob(res, fmt, 0.92));
+      convertedBlobs.push({ blob, name: `page-${pages[i]}.${ext}` });
+      const url = URL.createObjectURL(blob);
+      document.getElementById('pages-grid').innerHTML += `
+        <div style="text-align:center;">
+          <img src="${url}" style="width:100%;border-radius:8px;border:1.5px solid var(--gray-200);margin-bottom:6px;">
+          <div style="font-size:.78rem;color:var(--gray-500);margin-bottom:6px;">Page ${pages[i]}</div>
+          <button class="btn btn-sm btn-success" onclick="downloadBlob(convertedBlobs[${i}].blob,'${`page-${pages[i]}.${ext}`}')"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#download"></use></svg> Download</button>
+        </div>`;
+    }
+    document.getElementById('output-card').style.display = 'block';
+    showStatus(document.getElementById('status-msg'), 'success', `${pages.length} page(s) converted!`);
+  } catch(e) { showStatus(document.getElementById('status-msg'), 'error', 'Error: ' + e.message); }
+
+  document.getElementById('progress').classList.remove('active');
+  document.getElementById('convert-btn').disabled = false;
+});
+
+document.getElementById('dl-all-btn').addEventListener('click', () => {
+  convertedBlobs.forEach(({blob, name}) => downloadBlob(blob, name));
+});
+document.getElementById('reset-btn').addEventListener('click', () => { pdfFile=null; document.getElementById('pdf-info').innerHTML=''; document.getElementById('settings-card').style.display='none'; document.getElementById('output-card').style.display='none'; });
+document.getElementById('convert-more-btn').addEventListener('click', () => { document.getElementById('output-card').style.display='none'; document.getElementById('file-input').click(); });
+</script>
+</body></html>

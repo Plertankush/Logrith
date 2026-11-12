@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design a CSS Box Shadow With a Live Visual Preview | Logrith</title>
+  <meta name="description" content="Adjust offset, blur, spread and color on a live preview and get the matching box-shadow CSS generated instantly.">
+  <meta name="keywords" content="css box shadow generator, box shadow generator online, css shadow tool, box shadow css code generator, drop shadow css generator">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Logrith">
+  <link rel="canonical" href="https://logrith.in/tool/tools/css-box-shadow-generator">
+  <meta property="og:title" content="Design a CSS Box Shadow With a Live Visual Preview | Logrith">
+  <meta property="og:description" content="Adjust offset, blur, spread and color on a live preview and get the matching box-shadow CSS generated instantly.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://logrith.in/tool/tools/css-box-shadow-generator">
+  <meta property="og:site_name" content="Logrith">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Design a CSS Box Shadow With a Live Visual Preview | Logrith">
+  <meta name="twitter:description" content="Adjust offset, blur, spread and color on a live preview and get the matching box-shadow CSS generated instantly.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"CSS Box Shadow Generator","url":"https://logrith.in/tool/tools/css-box-shadow-generator","applicationCategory":"DesignApplication","operatingSystem":"Any","description":"Free online visual CSS box-shadow generator.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://logrith.in/#organization"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Developer Tools", "item": "https://logrith.in/tool/categories/developer-tools"}, {"@type": "ListItem", "position": 4, "name": "CSS Box Shadow Generator", "item": "https://logrith.in/tool/tools/css-box-shadow-generator"}]}
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+</head>
+<body class="page-css-box-shadow-generator">
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="navbar"></div>
+
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/tool/">Tools</a> › <a href="/tool/categories/developer-tools">Developer Tools</a> › CSS Box Shadow Generator</nav>
+  <h1>Free CSS Box Shadow Generator</h1>
+  <p>Adjust offset, blur, spread, color, and opacity visually — get the exact box-shadow CSS code instantly.</p>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#palette"></use></svg> Live Preview</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant Code</span></div>
+</div></header>
+
+<div class="tool-workspace">
+  <div class="tool-card">
+    <h2>Shadow Preview</h2>
+    <div id="shadow-preview-wrap"><div id="shadow-preview-box"></div></div>
+
+    <div class="controls-grid mt-16">
+      <div class="control-group">
+        <label>Horizontal Offset: <span id="x-val">0</span>px</label>
+        <input type="range" id="x-offset" min="-50" max="50" value="0">
+      </div>
+      <div class="control-group">
+        <label>Vertical Offset: <span id="y-val">10</span>px</label>
+        <input type="range" id="y-offset" min="-50" max="50" value="10">
+      </div>
+      <div class="control-group">
+        <label>Blur Radius: <span id="blur-val">20</span>px</label>
+        <input type="range" id="blur" min="0" max="100" value="20">
+      </div>
+      <div class="control-group">
+        <label>Spread: <span id="spread-val">0</span>px</label>
+        <input type="range" id="spread" min="-30" max="30" value="0">
+      </div>
+      <div class="control-group">
+        <label>Color</label>
+        <input type="color" id="shadow-color" value="#000000">
+      </div>
+      <div class="control-group">
+        <label>Opacity: <span id="opacity-val">25</span>%</label>
+        <input type="range" id="opacity" min="0" max="100" value="25">
+      </div>
+    </div>
+
+    <div class="option-row mt-12">
+      <label><input type="checkbox" id="inset-check"> Inset (inner shadow)</label>
+    </div>
+
+    <div class="control-group mt-16 relative">
+      <label>CSS Code</label>
+      <textarea class="tool-textarea mono" id="css-output" rows="2" readonly></textarea>
+      <button class="copy-btn" id="copy-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
+    </div>
+  </div>
+</div>
+
+<section class="page-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">What does spread do in a box shadow?</summary>
+      <div class="faq-a"><p>Positive spread expands the shadow outward beyond the element's edges, while negative spread shrinks the shadow inward, useful for tighter, more subtle shadows.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What is an inset shadow?</summary>
+      <div class="faq-a"><p>An inset shadow appears inside the element's border rather than outside it, creating a pressed-in or recessed visual effect instead of a floating one.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I add multiple shadows?</summary>
+      <div class="faq-a"><p>This tool generates a single box-shadow value. Multiple shadows can be created by separating multiple values with commas in your own CSS.</p></div>
+    </details>
+  </div>
+</section>
+
+<section class="page-section">
+  <h2>How to Use the CSS Box Shadow Generator</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Drag the offset sliders</strong>
+      <p>Set the horizontal and vertical offset to position the shadow relative to the box, watching the live preview update instantly.</p>
+    </li>
+    <li class="step">
+      <strong>Adjust blur and spread</strong>
+      <p>Increase blur radius for a softer, more diffuse edge, and use spread to expand or shrink the shadow's overall size.</p>
+    </li>
+    <li class="step">
+      <strong>Pick a color and opacity</strong>
+      <p>Choose the shadow color with the color picker, then set opacity to control how solid or transparent it appears.</p>
+    </li>
+    <li class="step">
+      <strong>Copy the generated CSS</strong>
+      <p>Check the Inset box if you want an inner shadow instead of a drop shadow, then copy the box-shadow declaration into your stylesheet.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
+  <h2>Visual CSS Box Shadow Builder</h2>
+  <p>This tool lets you build a CSS box-shadow visually — adjusting horizontal and vertical offset, blur radius, spread, color, and opacity with sliders — while seeing a live preview and generating the exact CSS code to copy into your stylesheet.</p>
+
+  <h3>Understanding Box Shadow Properties</h3>
+  <ul>
+    <li><strong>Horizontal offset</strong> — moves the shadow left (negative) or right (positive) of the element.</li>
+    <li><strong>Vertical offset</strong> — moves the shadow up (negative) or down (positive) of the element.</li>
+    <li><strong>Blur radius</strong> — controls how soft or sharp the shadow's edges are; higher values create a more diffuse, spread-out shadow.</li>
+    <li><strong>Spread</strong> — expands (positive) or shrinks (negative) the shadow's overall size independent of blur.</li>
+    <li><strong>Color and opacity</strong> — sets the shadow's color and how transparent or solid it appears.</li>
+    <li><strong>Inset</strong> — flips the shadow from an outer drop shadow to an inner, recessed shadow.</li>
+  </ul>
+
+  <h3>Common Box Shadow Use Cases</h3>
+  <ul>
+    <li><strong>Cards and panels</strong> — a subtle shadow lifts UI elements visually off the background.</li>
+    <li><strong>Buttons</strong> — a small shadow adds depth and a sense of interactivity.</li>
+    <li><strong>Modals and dropdowns</strong> — a stronger shadow helps floating elements stand out clearly from page content behind them.</li>
+    <li><strong>Input fields</strong> — an inset shadow can create a subtle recessed, "pressed-in" appearance.</li>
+  </ul>
+
+  <h3>Privacy and Local Processing</h3>
+  <p>All shadow building happens directly in your browser — nothing is sent to a server.</p>
+
+  <h3>How the Generated CSS Is Built</h3>
+  <p>The tool converts your chosen color and opacity into an rgba() value — reading the red, green, and blue channels from the hex color picker and combining them with the opacity percentage as the alpha channel — because box-shadow needs a color with built-in transparency rather than a separate opacity property. It then assembles the final declaration in the standard order the box-shadow property expects: horizontal offset, vertical offset, blur radius, spread radius, and color, with "inset" prepended when the inset checkbox is checked.</p>
+
+  <h3>Offset, Blur, and Spread Working Together</h3>
+  <p>These three values interact rather than acting independently. A shadow with large offset but no blur looks like a hard, duplicated copy of the element; adding blur softens that duplicate into a realistic-looking shadow; and spread then controls whether the blurred shadow reads as larger or smaller than the element it belongs to. For a natural-looking drop shadow, a common starting point is a moderate vertical offset, a blur roughly two to three times the offset, and zero or slightly negative spread.</p>
+
+  <h3>Inset Shadows Explained</h3>
+  <p>Checking the Inset box doesn't change any of the numeric values — it only adds the "inset" keyword to the CSS output, which tells the browser to draw the shadow inside the element's border box instead of outside it. The same offset, blur, spread, and color values that create a floating drop shadow when unchecked will instead create a pressed-in, recessed look when inset is enabled, which is why the live preview is useful for comparing both versions of the same shadow before deciding which one fits your design.</p>
+
+  <h3>For Developers and Designers</h3>
+  <p>Hand-tuning a box-shadow by editing raw CSS numbers and reloading the browser to check the result is slow, especially when balancing offset against blur to get a shadow that looks neither too harsh nor too faint. Moving the sliders here and watching the preview box update in real time gets you to a usable value much faster, and the exact CSS is generated automatically so there's no risk of a typo in the property order or a missed unit.</p>
+
+  <h3>Combining Multiple Shadows</h3>
+  <p>CSS allows several shadow layers on one element by separating comma-separated box-shadow values, which is often used to combine a sharp, close shadow with a soft, far one for a more realistic layered effect. This generator produces one shadow value at a time — build each layer here individually, copy each one, and combine them manually in your stylesheet separated by commas.</p>
+
+  <h3>Common Mistakes to Avoid</h3>
+  <p>A shadow with 100% opacity and a dark color often looks too heavy and artificial on light backgrounds — most realistic-looking shadows use 15-35% opacity. Another common mistake is using a large blur with zero spread on a small element, which can make the shadow look like a blurry halo rather than a grounded shadow; a small amount of negative spread combined with blur usually reads more naturally.</p>
+
+  <h3>Frequently Searched Terms</h3>
+  <p>Visitors reach this tool searching for "css box shadow generator free," "box shadow preview tool," "css drop shadow code generator," "inset shadow css generator," and "box shadow rgba generator." This page covers all of these with a live, slider-driven preview and copyable CSS output.</p>
+
+  <h3>Box Shadow vs. Text Shadow and Filter Drop-Shadow</h3>
+  <p>box-shadow draws a shadow around an element's box — including rectangular and rounded-corner shapes — and is separate from text-shadow, which shadows individual glyphs, and filter: drop-shadow(), which follows the actual alpha shape of an image or SVG rather than its bounding box. If you need a shadow that hugs a transparent PNG's silhouette rather than its rectangular frame, filter: drop-shadow() is the right property instead of box-shadow, though the offset, blur, and color concepts carry over directly.</p>
+
+  <h3>Matching Shadows to a Design System</h3>
+  <p>Many design systems define a small, consistent set of elevation levels — for example a subtle shadow for resting cards, a medium shadow for hover states, and a strong shadow for modals — rather than a unique shadow value for every component. Using this generator to dial in two or three reference shadows and reusing those exact values across a project keeps elevation visually consistent instead of every component having a slightly different, ad hoc shadow.</p>
+</section>
+
+<section class="page-section">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/tool/tools/css-gradient-generator"><strong>CSS Gradient Generator</strong><span>Build linear and radial gradients visually.</span></a>
+    <a class="related-card" href="/tool/tools/color-converter"><strong>Color Converter</strong><span>Convert colors between HEX, RGB, HSL, CMYK.</span></a>
+    <a class="related-card" href="/tool/tools/css-minifier"><strong>CSS Minifier</strong><span>Minify or beautify your CSS code.</span></a>
+    <a class="related-card" href="/tool/tools/html-minifier"><strong>HTML Minifier</strong><span>Minify or beautify HTML code.</span></a>
+  </div>
+</section>
+
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">css box shadow generator</span>
+    <span class="keyword-tag">box shadow generator online</span>
+    <span class="keyword-tag">css shadow tool</span>
+    <span class="keyword-tag">drop shadow css generator</span>
+    <span class="keyword-tag">box shadow css code</span>
+  </div>
+</section>
+
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+<script>
+function hexToRgba(hex, opacity) {
+  hex = hex.replace('#','');
+  const r = parseInt(hex.slice(0,2),16);
+  const g = parseInt(hex.slice(2,4),16);
+  const b = parseInt(hex.slice(4,6),16);
+  return `rgba(${r}, ${g}, ${b}, ${(opacity/100).toFixed(2)})`;
+}
+
+function updateShadow() {
+  const x = document.getElementById('x-offset').value;
+  const y = document.getElementById('y-offset').value;
+  const blur = document.getElementById('blur').value;
+  const spread = document.getElementById('spread').value;
+  const color = document.getElementById('shadow-color').value;
+  const opacity = document.getElementById('opacity').value;
+  const inset = document.getElementById('inset-check').checked;
+
+  document.getElementById('x-val').textContent = x;
+  document.getElementById('y-val').textContent = y;
+  document.getElementById('blur-val').textContent = blur;
+  document.getElementById('spread-val').textContent = spread;
+  document.getElementById('opacity-val').textContent = opacity;
+
+  const rgba = hexToRgba(color, opacity);
+  const shadowValue = `${inset ? 'inset ' : ''}${x}px ${y}px ${blur}px ${spread}px ${rgba}`;
+
+  document.getElementById('shadow-preview-box').style.boxShadow = shadowValue;
+  document.getElementById('css-output').value = `box-shadow: ${shadowValue};`;
+}
+
+['x-offset','y-offset','blur','spread','shadow-color','opacity','inset-check'].forEach(id => {
+  document.getElementById(id).addEventListener('input', updateShadow);
+});
+
+document.getElementById('copy-btn').addEventListener('click', function() {
+  const v = document.getElementById('css-output').value;
+  if (v) copyText(v, this);
+});
+
+updateShadow();
+</script>
+</body>
+</html>

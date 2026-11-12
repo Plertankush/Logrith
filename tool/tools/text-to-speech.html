@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convert Written Text Into Natural Spoken Audio | Logrith</title>
+  <meta name="description" content="Paste any text and have it read aloud in your browser's voice, with adjustable speed and pitch, no download or account needed.">
+  <meta name="keywords" content="text to speech, text to speech online, tts online free, text to speech converter, read text aloud online">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Logrith">
+  <link rel="canonical" href="https://logrith.in/tool/tools/text-to-speech">
+  <meta property="og:title" content="Convert Written Text Into Natural Spoken Audio | Logrith">
+  <meta property="og:description" content="Paste any text and have it read aloud in your browser's voice, with adjustable speed and pitch, no download or account needed.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://logrith.in/tool/tools/text-to-speech">
+  <meta property="og:site_name" content="Logrith">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Convert Written Text Into Natural Spoken Audio | Logrith">
+  <meta name="twitter:description" content="Paste any text and have it read aloud in your browser's voice, with adjustable speed and pitch, no download or account needed.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Text to Speech","url":"https://logrith.in/tool/tools/text-to-speech","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Free online text to speech tool using the browser's built-in speech synthesis voices.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://logrith.in/#organization"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Text & Generators", "item": "https://logrith.in/tool/categories/text-generators"}, {"@type": "ListItem", "position": 4, "name": "Text to Speech", "item": "https://logrith.in/tool/tools/text-to-speech"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Does this work without an internet connection?","acceptedAnswer":{"@type":"Answer","text":"Many voices work offline once loaded, since they use your browser and operating system's built-in speech engine, though some voices may require an internet connection depending on your browser and OS."}},
+    {"@type":"Question","name":"Can I change the voice used?","acceptedAnswer":{"@type":"Answer","text":"Yes, this tool lists every voice available in your browser, including different languages and accents if installed on your device."}}
+  ]}
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+</head>
+<body class="page-text-to-speech">
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="navbar"></div>
+
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/tool/">Tools</a> › <a href="/tool/categories/text-generators">Text &amp; Generators</a> › Text to Speech</nav>
+  <h1>Free Text to Speech</h1>
+  <p>Convert any text into spoken audio using your browser's built-in voices — control speed, pitch, and voice selection.</p>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#volume"></use></svg> Multiple Voices</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
+
+<div class="tool-workspace">
+  <div class="tool-card">
+    <h2>Enter Text</h2>
+    <textarea class="tool-textarea" id="tts-text" rows="8" placeholder="Type or paste text here to have it read aloud...">Hello! This is a free text to speech tool. You can type anything here and it will be read aloud using your browser's voices.</textarea>
+    <div class="controls-grid mt-12">
+      <div class="control-group">
+        <label>Voice</label>
+        <select id="voice-select"></select>
+      </div>
+      <div class="control-group">
+        <label>Speed: <span id="rate-val">1</span>x</label>
+        <input type="range" id="rate-slider" min="0.5" max="2" step="0.1" value="1">
+      </div>
+      <div class="control-group">
+        <label>Pitch: <span id="pitch-val">1</span></label>
+        <input type="range" id="pitch-slider" min="0" max="2" step="0.1" value="1">
+      </div>
+    </div>
+    <div class="btn-group mt-16">
+      <button class="btn btn-primary btn-lg" id="speak-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#volume"></use></svg> Speak</button>
+      <button class="btn btn-secondary" id="pause-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#pause"></use></svg> Pause</button>
+      <button class="btn btn-secondary" id="stop-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#stop"></use></svg> Stop</button>
+    </div>
+    <div class="status-msg" id="status-msg"></div>
+  </div>
+</div>
+
+<section class="page-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">Does this work offline?</summary>
+      <div class="faq-a"><p>Many voices work offline once your browser's speech engine is loaded, though some voices may require an internet connection depending on your OS and browser.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I change the voice?</summary>
+      <div class="faq-a"><p>Yes, this tool lists every voice available on your device, including different languages and accents if installed.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is there a text length limit?</summary>
+      <div class="faq-a"><p>No hard limit is imposed by this tool, though very long text may take a while to finish reading aloud.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my text sent to a server?</summary>
+      <div class="faq-a"><p>No, this uses your browser's built-in Speech Synthesis API — text is processed by your device's speech engine, not uploaded anywhere by this tool.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why do some voices sound more natural than others?</summary>
+      <div class="faq-a"><p>Voice quality depends on the underlying engine your operating system uses — some are basic synthetic voices, while others use more advanced neural text-to-speech models, which is why the same sentence can sound noticeably different between voice options.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I download the generated audio as a file?</summary>
+      <div class="faq-a"><p>This tool plays audio directly through your speakers using the browser's speech engine rather than generating a downloadable audio file. For a saved audio file, a dedicated audio-recording or screen-recording tool would be needed to capture the output separately.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why don't I see any voices listed?</summary>
+      <div class="faq-a"><p>Some browsers load voices asynchronously after the page loads, so the list can briefly appear empty before populating. If it stays empty, try refreshing the page or checking that your browser supports the Web Speech API.</p></div>
+    </details>
+  </div>
+</section>
+
+<section class="page-section prose">
+  <h2>Free Browser-Based Text to Speech</h2>
+  <p>This tool converts written text into spoken audio using the Web Speech API's SpeechSynthesis feature, built into modern browsers. There's no server processing involved — your device's own speech engine reads the text aloud using whichever voices are installed on your system.</p>
+
+  <h3>How This Tool Works</h3>
+  <p>The SpeechSynthesis API is a standard web browser feature that gives JavaScript direct access to your operating system's text-to-speech engine. When you click Speak, this tool passes your text, along with your chosen voice, speed, and pitch settings, directly to that engine, which then produces audio output through your device's speakers or connected audio device.</p>
+
+  <h3>Available Voices</h3>
+  <p>The list of voices available depends entirely on your device and browser — different operating systems and browsers ship with different sets of built-in voices, often including multiple languages, accents, and both male and female voice options. This tool automatically detects and lists every voice your browser reports as available, so the exact options you see may differ from what someone using a different device or browser sees.</p>
+
+  <h3>Understanding Speed and Pitch Controls</h3>
+  <p>The speed control adjusts how quickly the voice speaks, with 1x being the engine's normal default pace — values below 1 slow the speech down, useful for language learning or carefully proofreading dense technical text, while values above 1 speed it up, useful for quickly skimming through long content. Pitch adjusts the perceived tone of the voice without changing its speed, which can help make a particular voice sound more natural for certain content, though extreme settings in either direction tend to make speech harder to understand clearly.</p>
+
+  <h3>Common Uses</h3>
+  <ul>
+    <li><strong>Proofreading</strong> — hearing your own writing read aloud often reveals awkward phrasing or errors that are easy to miss when reading silently.</li>
+    <li><strong>Accessibility</strong> — making written content accessible to people who prefer or need audio.</li>
+    <li><strong>Language learning</strong> — hearing correct pronunciation of words and phrases.</li>
+    <li><strong>Multitasking</strong> — listening to text content while doing something else.</li>
+    <li><strong>Reviewing scripts or speeches</strong> — hearing how written content sounds when spoken aloud before a live presentation.</li>
+  </ul>
+
+  <h3>Why Hearing Your Writing Read Aloud Helps</h3>
+  <p>Proofreading by reading silently is prone to a specific blind spot: your brain tends to auto-correct small errors and awkward phrasing because it already knows what you meant to write. Hearing the same text read aloud by a voice with no knowledge of your intent exposes these issues much more reliably — run-on sentences become obviously too long, repeated words stand out, and awkward phrasing that reads fine silently often sounds clearly off once spoken. This is a widely used technique among professional editors and writers for exactly this reason.</p>
+
+  <h3>Privacy and Local Processing</h3>
+  <p>Your text is processed by your browser's built-in speech engine — this tool does not upload, log, or store the text you enter anywhere.</p>
+
+  <h3>Choosing a Voice That Fits Your Content</h3>
+  <p>With multiple voices often available, picking one that suits the content can noticeably improve how natural the output sounds. A calmer, slower-paced voice tends to work better for long-form content like articles or documents, where listener fatigue over a longer session matters. A brighter, more energetic voice can suit shorter announcements or promotional text better. Testing the same piece of text with two or three different voices before settling on one is a quick way to find the best match, since the ideal choice varies both by content type and by personal listening preference.</p>
+
+  <h3>Text to Speech as an Accessibility Tool</h3>
+  <p>Beyond convenience, browser-based text to speech plays a meaningful accessibility role for people with dyslexia, low vision, or other conditions that make reading dense text more difficult, since hearing the same content read aloud provides an alternative way to absorb written information. Because this feature is built directly into the browser rather than requiring a separate paid screen reader or app, it's immediately available on most modern devices without any additional setup, which matters for making content genuinely accessible rather than accessible only to those who've already invested in specialized tools.</p>
+
+  <h3>Formatting Text for Better Speech Output</h3>
+  <p>A few small adjustments to how text is written can noticeably improve how natural it sounds when read aloud. Spelling out abbreviations and acronyms rather than leaving them as letters can help, since speech engines don't always pronounce abbreviations the way a human reader would expect. Breaking very long sentences into shorter ones also tends to produce more natural-sounding pacing, since synthetic voices generally handle sentence-level pauses better than mid-sentence ones in an overly long run-on sentence, which otherwise can come out sounding rushed or oddly monotone.</p>
+</section>
+
+<section class="page-section">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/tool/tools/speech-to-text"><strong>Speech to Text</strong><span>Convert spoken words into written text.</span></a>
+    <a class="related-card" href="/tool/tools/word-counter"><strong>Word Counter</strong><span>Count words and characters in your text.</span></a>
+    <a class="related-card" href="/tool/tools/text-summarizer-basic"><strong>Text Summarizer</strong><span>Get a quick extractive summary of long text.</span></a>
+    <a class="related-card" href="/tool/tools/case-converter"><strong>Case Converter</strong><span>Convert text between case formats.</span></a>
+  </div>
+</section>
+
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+<script>
+const synth = window.speechSynthesis;
+let voices = [];
+const voiceSelect = document.getElementById('voice-select');
+const statusEl = document.getElementById('status-msg');
+
+function loadVoices() {
+  voices = synth.getVoices();
+  if (!voices.length) return;
+  voiceSelect.innerHTML = voices.map((v, i) => `<option value="${i}">${v.name} (${v.lang})</option>`).join('');
+}
+loadVoices();
+if (typeof speechSynthesis !== 'undefined') {
+  speechSynthesis.onvoiceschanged = loadVoices;
+}
+
+document.getElementById('rate-slider').addEventListener('input', e => document.getElementById('rate-val').textContent = e.target.value);
+document.getElementById('pitch-slider').addEventListener('input', e => document.getElementById('pitch-val').textContent = e.target.value);
+
+document.getElementById('speak-btn').addEventListener('click', () => {
+  if (typeof speechSynthesis === 'undefined') {
+    showStatus(statusEl, 'error', 'Text to speech is not supported in this browser.');
+    return;
+  }
+  const text = document.getElementById('tts-text').value.trim();
+  if (!text) { showStatus(statusEl, 'error', 'Please enter some text.'); return; }
+
+  synth.cancel();
+  const utterance = new SpeechSynthesisUtterance(text);
+  const selectedVoice = voices[parseInt(voiceSelect.value)];
+  if (selectedVoice) utterance.voice = selectedVoice;
+  utterance.rate = parseFloat(document.getElementById('rate-slider').value);
+  utterance.pitch = parseFloat(document.getElementById('pitch-slider').value);
+
+  utterance.onend = () => showStatus(statusEl, 'success', 'Finished speaking.');
+  utterance.onerror = () => showStatus(statusEl, 'error', 'Speech playback error.');
+
+  synth.speak(utterance);
+  showStatus(statusEl, 'success', 'Speaking...');
+});
+
+document.getElementById('pause-btn').addEventListener('click', () => {
+  if (synth.speaking && !synth.paused) synth.pause();
+  else if (synth.paused) synth.resume();
+});
+
+document.getElementById('stop-btn').addEventListener('click', () => {
+  synth.cancel();
+  showStatus(statusEl, 'success', 'Stopped.');
+});
+</script>
+</body>
+</html>

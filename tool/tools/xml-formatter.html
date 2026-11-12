@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Format and Validate XML With Proper Indentation | Logrith</title>
+  <meta name="description" content="Paste XML to beautify it with correct nesting and indentation, or validate its structure and catch syntax errors.">
+  <meta name="keywords" content="xml formatter, xml formatter online, xml validator, beautify xml, xml pretty print online">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Logrith">
+  <link rel="canonical" href="https://logrith.in/tool/tools/xml-formatter">
+  <meta property="og:title" content="Format and Validate XML With Proper Indentation | Logrith">
+  <meta property="og:description" content="Paste XML to beautify it with correct nesting and indentation, or validate its structure and catch syntax errors.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://logrith.in/tool/tools/xml-formatter">
+  <meta property="og:site_name" content="Logrith">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Format and Validate XML With Proper Indentation | Logrith">
+  <meta name="twitter:description" content="Paste XML to beautify it with correct nesting and indentation, or validate its structure and catch syntax errors.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"XML Formatter","url":"https://logrith.in/tool/tools/xml-formatter","applicationCategory":"DeveloperApplication","operatingSystem":"Any","description":"Free online XML formatter, beautifier, and validator.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://logrith.in/#organization"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Developer Tools", "item": "https://logrith.in/tool/categories/developer-tools"}, {"@type": "ListItem", "position": 4, "name": "XML Formatter", "item": "https://logrith.in/tool/tools/xml-formatter"}]}
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+</head>
+<body class="page-xml-formatter">
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="navbar"></div>
+
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/tool/">Tools</a> › <a href="/tool/categories/developer-tools">Developer Tools</a> › XML Formatter</nav>
+  <h1>Free XML Formatter & Validator</h1>
+  <p>Format messy XML into readable, indented code, validate its structure, or minify it down to a single line.</p>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check"></use></svg> Validates Syntax</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
+
+<div class="tool-workspace">
+  <div class="tool-card">
+    <h2>XML Input</h2>
+    <textarea class="tool-textarea mono" id="input-xml" rows="10" placeholder="Paste your XML here...">&lt;?xml version="1.0"?&gt;&lt;catalog&gt;&lt;book id="1"&gt;&lt;title&gt;Example Book&lt;/title&gt;&lt;author&gt;Jane Doe&lt;/author&gt;&lt;/book&gt;&lt;/catalog&gt;</textarea>
+    <div class="btn-group mt-12">
+      <button class="btn btn-primary" id="format-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#ruler"></use></svg> Format</button>
+      <button class="btn btn-primary" id="minify-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zip"></use></svg> Minify</button>
+      <button class="btn btn-secondary" id="clear-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Clear</button>
+    </div>
+    <div class="status-msg" id="status-msg"></div>
+
+    <div class="control-group mt-16 relative">
+      <label>Output</label>
+      <textarea class="tool-textarea mono" id="output-xml" rows="12" readonly></textarea>
+      <button class="copy-btn" id="copy-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
+    </div>
+  </div>
+</div>
+
+<section class="page-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">Does this validate my XML is well-formed?</summary>
+      <div class="faq-a"><p>Yes, the tool checks basic XML structure (matching tags, proper nesting) using the browser's built-in XML parser and reports errors if the document isn't well-formed.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What's the difference between formatting and minifying?</summary>
+      <div class="faq-a"><p>Formatting adds indentation and line breaks for readability. Minifying removes all unnecessary whitespace to reduce file size for production use.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does this validate against a schema (XSD/DTD)?</summary>
+      <div class="faq-a"><p>No, this checks only that the XML is well-formed (correct syntax), not that it conforms to a specific schema definition.</p></div>
+    </details>
+  </div>
+</section>
+
+<section class="page-section">
+  <h2>How to Use the XML Formatter</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Paste your XML</strong>
+      <p>Replace the sample content in the input box with your own XML — a full document, a fragment, or an API response.</p>
+    </li>
+    <li class="step">
+      <strong>Format or minify</strong>
+      <p>Click "Format" to pretty-print it with indentation, or "Minify" to collapse it down to a single compact line.</p>
+    </li>
+    <li class="step">
+      <strong>Check the validation result</strong>
+      <p>The status message tells you immediately if the XML is well-formed or if there's a syntax problem like an unclosed tag.</p>
+    </li>
+    <li class="step">
+      <strong>Copy the output</strong>
+      <p>Use the Copy button next to the output box to grab the formatted or minified result for your project.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
+  <h2>XML Formatter, Beautifier, and Validator</h2>
+  <p>This tool formats XML documents with proper indentation for readability, validates that the XML is well-formed, and can also minify XML down to a single compact line for production use.</p>
+
+  <h3>Why Format XML?</h3>
+  <p>XML generated by APIs, exported from software, or minified for production is often compressed onto a single line or has inconsistent indentation, making its nested structure hard to follow. Proper formatting — with each element on its own line and consistent indentation reflecting the document's nesting — makes the structure immediately clear, which speeds up debugging, reviewing API responses, and understanding configuration files.</p>
+
+  <h3>What "Well-Formed" Means</h3>
+  <p>A well-formed XML document follows XML's basic syntax rules: every opening tag has a matching closing tag (or is self-closing), tags are properly nested without overlapping, and there's exactly one root element containing everything else. This tool checks for well-formedness using the browser's built-in XML parser — but note that well-formed is different from "valid against a schema," which would additionally check that the document matches a specific expected structure (defined by a DTD or XSD), something this tool doesn't check.</p>
+
+  <h3>Common Uses for XML</h3>
+  <ul>
+    <li><strong>API responses and requests</strong> — many SOAP APIs and legacy systems still communicate using XML.</li>
+    <li><strong>Configuration files</strong> — many applications, build tools, and frameworks use XML for configuration.</li>
+    <li><strong>Data exchange</strong> — XML remains common for structured data exchange between systems, especially in enterprise and legacy contexts.</li>
+    <li><strong>Document formats</strong> — formats like SVG, RSS feeds, and Office Open XML documents are built on XML.</li>
+  </ul>
+
+  <h3>Privacy and Local Processing</h3>
+  <p>All formatting, validation, and minification happens directly in your browser — your XML content is never sent to a server.</p>
+
+  <h3>How the Formatter Rebuilds Indentation</h3>
+  <p>The formatter first strips out all existing whitespace between tags, collapsing the document to its tightest form, then rebuilds it token by token. Each opening tag increases the indent level for everything nested inside it, each closing tag decreases it back, and self-closing tags stay at the current level without affecting what follows. Elements that contain only a short text value (like <code>&lt;title&gt;Example Book&lt;/title&gt;</code>) are kept on a single line rather than being split across three lines, which keeps the output compact and readable instead of needlessly verbose.</p>
+
+  <h3>How the Minify Function Works</h3>
+  <p>Minifying does the opposite: it removes all whitespace sitting between tags, collapsing the document down to the smallest form that's still valid XML. This matters for production use because XML payloads sent over an API or embedded in a build are typically charged or measured by size — stripping the formatting whitespace that only exists for human readability reduces that size with no change in meaning.</p>
+
+  <h3>What Counts as a Syntax Error</h3>
+  <ul>
+    <li><strong>Unclosed tags</strong> — an opening tag with no matching closing tag, or vice versa.</li>
+    <li><strong>Mismatched tags</strong> — a closing tag that doesn't match the most recently opened tag, such as <code>&lt;book&gt;...&lt;/catalog&gt;</code>.</li>
+    <li><strong>Multiple root elements</strong> — XML requires exactly one top-level element wrapping everything else; two sibling root elements make a document invalid.</li>
+    <li><strong>Unescaped special characters</strong> — characters like <code>&amp;</code> or <code>&lt;</code> appearing in text content without being escaped as entities.</li>
+  </ul>
+
+  <h3>For Developers Working with APIs and SOAP</h3>
+  <p>Legacy enterprise systems and SOAP-based APIs frequently exchange data as XML rather than JSON. When debugging a request or response from one of these systems, pasting the raw payload here and formatting it makes the nested envelope, header, and body structure visible at a glance, which is far faster than scanning an unindented wall of tags.</p>
+
+  <h3>XML vs. Schema Validation</h3>
+  <p>It's worth being clear about what this tool checks: "well-formed" means the XML follows correct syntax (matching tags, proper nesting, one root element). It does not mean the document is "valid" in the stricter sense of conforming to a DTD or XSD schema, which would additionally verify that specific elements, attributes, and their order match a predefined contract. A document can be perfectly well-formed and still fail schema validation if, say, a required attribute is missing.</p>
+
+  <h3>Frequently Searched Terms</h3>
+  <ul>
+    <li>xml beautifier online</li>
+    <li>xml pretty print tool</li>
+    <li>validate xml syntax online</li>
+    <li>minify xml for production</li>
+    <li>format soap xml response</li>
+  </ul>
+
+  <h3>XML in Document and Image Formats</h3>
+  <p>Several file formats people don't immediately think of as XML are actually built on it under the hood — SVG images, RSS and Atom feeds, and the Office Open XML formats behind modern .docx, .xlsx, and .pptx files are all XML documents with a specific vocabulary of tags. Opening one of these in a text editor usually shows a single unreadable line; running it through this formatter turns it into a structure you can actually inspect, which is useful when debugging a broken SVG icon or a malformed RSS feed.</p>
+
+  <h3>Comparing Formatting by Hand vs. This Tool</h3>
+  <p>Manually re-indenting a large XML document — counting nesting levels and adding spaces by hand — is slow and error-prone, especially once a document is more than a few dozen lines. A single miscounted indent doesn't break the XML (since indentation isn't meaningful to the parser the way it is in YAML), but it does make the document harder to read for anyone who opens it next. Running it through this tool fixes the whole document's indentation consistently in one pass.</p>
+
+  <h3>Handling Attributes and Self-Closing Tags</h3>
+  <p>The formatter preserves tag attributes exactly as written — such as the <code>id="1"</code> in <code>&lt;book id="1"&gt;</code> — without reordering or reformatting them, since attribute order can matter for some consumers even though the XML spec doesn't require a specific order. Self-closing tags like <code>&lt;br/&gt;</code> or <code>&lt;item value="x"/&gt;</code> are recognized and kept on their own line at the correct indent level rather than being mistaken for an opening tag awaiting a separate closing tag.</p>
+</section>
+
+<section class="page-section">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/tool/tools/json-formatter"><strong>JSON Formatter</strong><span>Format and validate JSON data.</span></a>
+    <a class="related-card" href="/tool/tools/yaml-json-converter"><strong>YAML to JSON Converter</strong><span>Convert between YAML and JSON formats.</span></a>
+    <a class="related-card" href="/tool/tools/html-minifier"><strong>HTML Minifier</strong><span>Minify or beautify HTML code.</span></a>
+    <a class="related-card" href="/tool/tools/svg-to-png"><strong>SVG to PNG Converter</strong><span>Convert SVG (an XML format) to PNG images.</span></a>
+  </div>
+</section>
+
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">xml formatter</span>
+    <span class="keyword-tag">xml formatter online</span>
+    <span class="keyword-tag">xml validator</span>
+    <span class="keyword-tag">beautify xml</span>
+    <span class="keyword-tag">xml pretty print</span>
+  </div>
+</section>
+
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+<script>
+function validateXML(xml) {
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(xml, 'application/xml');
+  const errorNode = doc.querySelector('parsererror');
+  return errorNode ? errorNode.textContent : null;
+}
+
+function formatXML(xml) {
+  let formatted = '';
+  let indent = 0;
+  const cleaned = xml.replace(/>\s*</g, '><').trim();
+  const tokens = cleaned.match(/<[^>]+>|[^<]+/g) || [];
+
+  let i = 0;
+  while (i < tokens.length) {
+    const token = tokens[i];
+    if (token.startsWith('<?') || token.startsWith('<!')) {
+      formatted += token + '\n';
+      i++;
+    } else if (token.startsWith('</')) {
+      indent = Math.max(0, indent - 1);
+      formatted += '  '.repeat(indent) + token + '\n';
+      i++;
+    } else if (token.startsWith('<') && token.endsWith('/>')) {
+      formatted += '  '.repeat(indent) + token + '\n';
+      i++;
+    } else if (token.startsWith('<')) {
+      const next = tokens[i+1];
+      const afterNext = tokens[i+2];
+      if (next && !next.startsWith('<') && afterNext && afterNext.startsWith('</')) {
+        formatted += '  '.repeat(indent) + token + next.trim() + afterNext + '\n';
+        i += 3;
+      } else {
+        formatted += '  '.repeat(indent) + token + '\n';
+        indent++;
+        i++;
+      }
+    } else {
+      if (token.trim()) formatted += '  '.repeat(indent) + token.trim() + '\n';
+      i++;
+    }
+  }
+  return formatted.trim();
+}
+
+function minifyXML(xml) {
+  return xml.replace(/>\s+</g, '><').trim();
+}
+
+document.getElementById('format-btn').addEventListener('click', () => {
+  const statusEl = document.getElementById('status-msg');
+  const input = document.getElementById('input-xml').value;
+  const error = validateXML(input);
+
+  if (error) {
+    showStatus(statusEl, 'error', 'This XML is not well-formed. Please check for unclosed or mismatched tags.');
+    document.getElementById('output-xml').value = '';
+    return;
+  }
+
+  document.getElementById('output-xml').value = formatXML(input);
+  showStatus(statusEl, 'success', 'Valid XML — formatted successfully!');
+});
+
+document.getElementById('minify-btn').addEventListener('click', () => {
+  const input = document.getElementById('input-xml').value;
+  document.getElementById('output-xml').value = minifyXML(input);
+  document.getElementById('status-msg').style.display = 'none';
+});
+
+document.getElementById('clear-btn').addEventListener('click', () => {
+  document.getElementById('input-xml').value = '';
+  document.getElementById('output-xml').value = '';
+  document.getElementById('status-msg').style.display = 'none';
+});
+
+document.getElementById('copy-btn').addEventListener('click', function() {
+  const v = document.getElementById('output-xml').value;
+  if (v) copyText(v, this);
+});
+
+document.getElementById('format-btn').click();
+</script>
+</body>
+</html>

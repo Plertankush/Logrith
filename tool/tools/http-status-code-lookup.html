@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Look Up Any HTTP Status Code and What It Means | Logrith</title>
+  <meta name="description" content="Search or browse the complete list of HTTP status codes with a plain-English explanation of what each one means.">
+  <meta name="keywords" content="http status code lookup, http status codes list, http error codes explained, status code reference, http codes cheat sheet">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Logrith">
+  <link rel="canonical" href="https://logrith.in/tool/tools/http-status-code-lookup">
+  <meta property="og:title" content="Look Up Any HTTP Status Code and What It Means | Logrith">
+  <meta property="og:description" content="Search or browse the complete list of HTTP status codes with a plain-English explanation of what each one means.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://logrith.in/tool/tools/http-status-code-lookup">
+  <meta property="og:site_name" content="Logrith">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Look Up Any HTTP Status Code and What It Means | Logrith">
+  <meta name="twitter:description" content="Search or browse the complete list of HTTP status codes with a plain-English explanation of what each one means.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"HTTP Status Code Lookup","url":"https://logrith.in/tool/tools/http-status-code-lookup","applicationCategory":"DeveloperApplication","operatingSystem":"Any","description":"Free searchable reference of HTTP status codes with explanations.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://logrith.in/#organization"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Developer Tools", "item": "https://logrith.in/tool/categories/developer-tools"}, {"@type": "ListItem", "position": 4, "name": "HTTP Status Code Lookup", "item": "https://logrith.in/tool/tools/http-status-code-lookup"}]}
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+</head>
+<body class="page-http-status-code-lookup">
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="navbar"></div>
+
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/tool/">Tools</a> › <a href="/tool/categories/developer-tools">Developer Tools</a> › HTTP Status Code Lookup</nav>
+  <h1>Free HTTP Status Code Lookup</h1>
+  <p>Search any HTTP status code by number or keyword and get an instant, clear explanation.</p>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#search"></use></svg> Searchable</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Complete Reference</span></div>
+</div></header>
+
+<div class="tool-workspace">
+  <div class="tool-card">
+    <h2>Search Status Codes</h2>
+    <input type="text" id="search-input" class="field-input" placeholder="Search by code (404) or keyword (not found)...">
+    <div class="stats-row mt-8" id="results-count"></div>
+    <div id="status-list" class="mt-12"></div>
+  </div>
+</div>
+
+<section class="page-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">What do the different status code ranges mean?</summary>
+      <div class="faq-a"><p>1xx = informational, 2xx = success, 3xx = redirection, 4xx = client error, 5xx = server error.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What's the most common error code?</summary>
+      <div class="faq-a"><p>404 (Not Found) and 500 (Internal Server Error) are among the most commonly encountered status codes.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What's the difference between 401 and 403?</summary>
+      <div class="faq-a"><p>401 (Unauthorized) means authentication is required or has failed. 403 (Forbidden) means the server understood the request but refuses to authorize it, even if authenticated.</p></div>
+    </details>
+  </div>
+</section>
+
+<section class="page-section">
+  <h2>How to Use the HTTP Status Code Lookup</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Open the search box.</strong>
+      <p>Click into the search field at the top of the tool — no setup or page reload needed.</p>
+    </li>
+    <li class="step">
+      <strong>Type a code or keyword.</strong>
+      <p>Enter a three-digit code like 404, or a keyword like "not found" or "forbidden".</p>
+    </li>
+    <li class="step">
+      <strong>Review the filtered list.</strong>
+      <p>Matching status codes appear instantly below, color-coded by category (2xx, 3xx, 4xx, 5xx) with a short explanation for each.</p>
+    </li>
+    <li class="step">
+      <strong>Clear the search to browse all codes.</strong>
+      <p>Empty the search box to see the full reference list again, sorted from informational through server error codes.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
+  <h2>Complete HTTP Status Code Reference</h2>
+  <p>This tool provides a searchable reference of standard HTTP status codes — the three-digit numbers servers return to indicate the result of a request. Search by code number or by keyword to instantly find an explanation.</p>
+
+  <h3>The Five Status Code Categories</h3>
+  <ul>
+    <li><strong>1xx (Informational)</strong> — the request was received and processing continues.</li>
+    <li><strong>2xx (Success)</strong> — the request was successfully received, understood, and accepted.</li>
+    <li><strong>3xx (Redirection)</strong> — further action is needed to complete the request, typically following a different URL.</li>
+    <li><strong>4xx (Client Error)</strong> — the request contains bad syntax or cannot be fulfilled due to something on the client's side.</li>
+    <li><strong>5xx (Server Error)</strong> — the server failed to fulfill an apparently valid request due to a server-side problem.</li>
+  </ul>
+
+  <h3>Why Status Codes Matter</h3>
+  <p>HTTP status codes are how servers communicate the outcome of every request to clients — browsers, APIs, and applications all rely on these codes to know whether a request succeeded, needs a redirect, was invalid, or hit a server problem. Understanding what each code means is essential for debugging web applications, building and consuming APIs, and diagnosing issues reported by monitoring tools or error logs.</p>
+
+  <h3>Common Uses for This Reference</h3>
+  <ul>
+    <li><strong>API development</strong> — choosing the correct status code to return for different response scenarios.</li>
+    <li><strong>Debugging</strong> — quickly understanding what an unfamiliar status code in a log or network tab means.</li>
+    <li><strong>Learning web development</strong> — building familiarity with the standard HTTP status code vocabulary.</li>
+  </ul>
+
+  <h3>Privacy and Local Processing</h3>
+  <p>This tool uses a built-in reference list stored directly in the page — no external API calls or server requests are needed to search or filter results.</p>
+
+  <h3>How the Search Actually Works</h3>
+  <p>Every keystroke in the search box runs a simple match against three fields for each status code: the numeric code itself, its short name, and its longer description. So typing "gateway" surfaces both 502 Bad Gateway and 504 Gateway Timeout, while typing "50" surfaces every code that starts with those digits as well as any code whose description happens to mention the number 50. This makes the lookup forgiving — you don't need to remember the exact code number to find what you're looking for.</p>
+
+  <h3>Status Codes Developers Look Up Most Often</h3>
+  <p>In practice, a small handful of codes account for most lookups: 200, 201, 204 on the success side; 301, 302, 304 for redirects and caching; 400, 401, 403, 404, 429 for client-side errors; and 500, 502, 503, 504 for server and gateway failures. Knowing the difference between adjacent codes — like 401 versus 403, or 502 versus 503 versus 504 — is often what actually matters when debugging, since each implies a different place to look for the root cause.</p>
+
+  <h3>Reading Status Codes in Browser DevTools</h3>
+  <p>When a page or API call fails, the Network tab in browser developer tools shows the returned status code next to each request. Pasting that number into this lookup gives an instant explanation without needing to search documentation or remember the full HTTP specification.</p>
+
+  <h3>Status Codes in API Design</h3>
+  <p>When building an API, picking the right status code for each response is part of making the API predictable for whoever consumes it. A POST that creates a resource should typically return 201 rather than a plain 200; a request that's syntactically fine but semantically invalid is often better served by 422 than a generic 400; and rate-limited clients should see 429 rather than a vague 403. This reference is useful for confirming the precise meaning of a code before committing to it in API documentation.</p>
+
+  <h3>The Teapot Code and Other Oddities</h3>
+  <p>Not every status code is purely functional — 418 I'm a Teapot originated as an April Fools joke in RFC 2324 and has since been kept alive informally by various frameworks and services as a nod to internet history. It's a good reminder that the HTTP status registry, while standardized, has some quirks worth knowing if you ever encounter it in the wild.</p>
+
+  <h3>Frequently Searched Terms</h3>
+  <p>People commonly search this tool using phrases like "what does 403 mean", "404 vs 410", "http error code list", "status code meaning", and "what is a 5xx error" — the search box handles all of these naturally since it matches against both the numeric code and the plain-English description.</p>
+
+  <h3>Difference Between 401 and 403</h3>
+  <p>These two codes are frequently confused. A 401 Unauthorized means the request lacks valid authentication credentials altogether — you haven't proven who you are yet. A 403 Forbidden means the server knows who you are but has decided you don't have permission to access that specific resource. Mixing these up in an API response can mislead whoever is consuming it into retrying with the wrong fix, such as re-logging in when the real issue is a missing permission.</p>
+
+  <h3>Difference Between 502, 503, and 504</h3>
+  <p>These three server-side codes often get grouped together but mean different things. A 502 Bad Gateway means a server acting as a proxy got an invalid response from an upstream server. A 503 Service Unavailable means the server is temporarily overloaded or down for maintenance. A 504 Gateway Timeout means a proxy server didn't get a response from the upstream server in time. Telling these apart helps narrow down whether the problem is the origin server, a timeout, or a proxy layer in between.</p>
+
+  <h3>Students and New Developers</h3>
+  <p>Anyone new to web development often encounters unfamiliar status codes for the first time while debugging a failed fetch request or a broken form submission. This reference is built to be a quick, plain-English lookup rather than a dense specification document, so it's useful as a learning aid alongside tutorials and coursework on HTTP and REST APIs.</p>
+</section>
+
+<section class="page-section">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/tool/tools/jwt-decoder"><strong>JWT Decoder</strong><span>Decode JSON Web Token header and payload.</span></a>
+    <a class="related-card" href="/tool/tools/json-formatter"><strong>JSON Formatter</strong><span>Format and validate JSON API responses.</span></a>
+    <a class="related-card" href="/tool/tools/regex-tester"><strong>Regex Tester</strong><span>Test and debug regular expressions.</span></a>
+    <a class="related-card" href="/tool/tools/url-encoder"><strong>URL Encoder/Decoder</strong><span>Encode and decode URLs for API requests.</span></a>
+  </div>
+</section>
+
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">http status code lookup</span>
+    <span class="keyword-tag">http status codes list</span>
+    <span class="keyword-tag">http error codes explained</span>
+    <span class="keyword-tag">status code reference</span>
+    <span class="keyword-tag">http codes cheat sheet</span>
+  </div>
+</section>
+
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+<script>
+const STATUS_CODES = [
+  { code: 100, name: 'Continue', desc: 'The server has received the request headers and the client should proceed to send the request body.' },
+  { code: 101, name: 'Switching Protocols', desc: 'The requester has asked the server to switch protocols and the server has agreed.' },
+  { code: 200, name: 'OK', desc: 'The request has succeeded. The most common success status code.' },
+  { code: 201, name: 'Created', desc: 'The request has succeeded and a new resource has been created as a result.' },
+  { code: 202, name: 'Accepted', desc: 'The request has been received but not yet acted upon.' },
+  { code: 204, name: 'No Content', desc: 'The server successfully processed the request but is not returning any content.' },
+  { code: 301, name: 'Moved Permanently', desc: 'The requested resource has been permanently moved to a new URL.' },
+  { code: 302, name: 'Found', desc: 'The requested resource temporarily resides at a different URL.' },
+  { code: 304, name: 'Not Modified', desc: 'Indicates the resource has not been modified since the version specified by request headers, allowing cached versions to be used.' },
+  { code: 307, name: 'Temporary Redirect', desc: 'The request should be repeated with another URL, but future requests should still use the original URL.' },
+  { code: 308, name: 'Permanent Redirect', desc: 'The resource has permanently moved, and future requests should use the new URL, preserving the original request method.' },
+  { code: 400, name: 'Bad Request', desc: 'The server cannot process the request due to a client error, such as malformed syntax.' },
+  { code: 401, name: 'Unauthorized', desc: 'Authentication is required and has failed or has not been provided.' },
+  { code: 403, name: 'Forbidden', desc: 'The server understood the request but refuses to authorize it, regardless of authentication.' },
+  { code: 404, name: 'Not Found', desc: 'The requested resource could not be found on the server. One of the most common status codes.' },
+  { code: 405, name: 'Method Not Allowed', desc: 'The request method is not supported for the requested resource.' },
+  { code: 408, name: 'Request Timeout', desc: 'The server timed out waiting for the request from the client.' },
+  { code: 409, name: 'Conflict', desc: 'The request conflicts with the current state of the target resource.' },
+  { code: 410, name: 'Gone', desc: 'The requested resource is no longer available and has been permanently removed.' },
+  { code: 418, name: "I'm a Teapot", desc: 'An April Fools joke status code from RFC 2324, indicating the server refuses to brew coffee because it is a teapot.' },
+  { code: 422, name: 'Unprocessable Entity', desc: 'The request was well-formed but contains semantic errors preventing processing.' },
+  { code: 429, name: 'Too Many Requests', desc: 'The client has sent too many requests in a given time period (rate limiting).' },
+  { code: 500, name: 'Internal Server Error', desc: 'A generic error indicating the server encountered an unexpected condition.' },
+  { code: 501, name: 'Not Implemented', desc: 'The server does not support the functionality required to fulfill the request.' },
+  { code: 502, name: 'Bad Gateway', desc: 'The server, acting as a gateway, received an invalid response from an upstream server.' },
+  { code: 503, name: 'Service Unavailable', desc: 'The server is currently unable to handle the request, often due to maintenance or overload.' },
+  { code: 504, name: 'Gateway Timeout', desc: 'The server, acting as a gateway, did not receive a timely response from an upstream server.' },
+];
+
+function getCategoryClass(code) {
+  if (code < 200) return 'c1xx';
+  if (code < 300) return 'c2xx';
+  if (code < 400) return 'c3xx';
+  if (code < 500) return 'c4xx';
+  return 'c5xx';
+}
+
+function renderList(list) {
+  const container = document.getElementById('status-list');
+  document.getElementById('results-count').innerHTML = `<span class="stat-chip">${list.length} of ${STATUS_CODES.length} status codes</span>`;
+  container.innerHTML = list.map(s => `
+    <div class="status-item">
+      <div class="status-code ${getCategoryClass(s.code)}">${s.code}</div>
+      <div>
+        <div style="font-weight:700;color:var(--gray-900);">${s.name}</div>
+        <div style="font-size:.88rem;color:var(--gray-600);margin-top:4px;line-height:1.6;">${s.desc}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+document.getElementById('search-input').addEventListener('input', e => {
+  const q = e.target.value.toLowerCase().trim();
+  const filtered = q
+    ? STATUS_CODES.filter(s => String(s.code).includes(q) || s.name.toLowerCase().includes(q) || s.desc.toLowerCase().includes(q))
+    : STATUS_CODES;
+  renderList(filtered);
+});
+
+renderList(STATUS_CODES);
+</script>
+</body>
+</html>

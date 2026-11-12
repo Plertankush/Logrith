@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convert SVG Files to PNG at Any Resolution | Logrith</title>
+  <meta name="description" content="Turn a vector SVG into a crisp PNG at the exact pixel size you need, converted locally in your browser.">
+  <meta name="keywords" content="svg to png, svg to png converter, convert svg to png online, svg to image converter, svg raster converter free">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Logrith">
+  <link rel="canonical" href="https://logrith.in/tool/tools/svg-to-png">
+  <meta property="og:title" content="Convert SVG Files to PNG at Any Resolution | Logrith">
+  <meta property="og:description" content="Turn a vector SVG into a crisp PNG image at the exact pixel size you need, converted locally in your browser.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://logrith.in/tool/tools/svg-to-png">
+  <meta property="og:site_name" content="Logrith">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Convert SVG Files to PNG at Any Resolution | Logrith">
+  <meta name="twitter:description" content="Turn an SVG into a crisp PNG at any resolution, converted locally in your browser.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"SVG to PNG Converter","url":"https://logrith.in/tool/tools/svg-to-png","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Free online tool to convert SVG files or code into raster PNG images at custom resolution.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://logrith.in/#organization"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Image & PDF Tools", "item": "https://logrith.in/tool/categories/image-pdf-tools"}, {"@type": "ListItem", "position": 4, "name": "SVG to PNG", "item": "https://logrith.in/tool/tools/svg-to-png"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Why convert SVG to PNG?","acceptedAnswer":{"@type":"Answer","text":"PNG is a raster format supported everywhere, including some platforms and older software that don't support SVG, such as certain email clients or older browsers."}},
+    {"@type":"Question","name":"Will the PNG look as sharp as the SVG?","acceptedAnswer":{"@type":"Answer","text":"Yes, if you export at a sufficiently high resolution, since SVG is vector-based and can be rendered at any size without quality loss before being rasterized to PNG."}}
+  ]}
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+</head>
+<body class="page-svg-to-png">
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="navbar"></div>
+
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/tool/">Tools</a> › <a href="/tool/categories/image-pdf-tools">Image &amp; PDF Tools</a> › SVG to PNG</nav>
+  <h1>Free SVG to PNG Converter</h1>
+  <p>Convert an SVG file or SVG code into a PNG raster image at any resolution — with transparent or solid background options.</p>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#ruler"></use></svg> Custom Resolution</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
+
+<div class="tool-workspace">
+  <div class="tool-card">
+    <h2>Provide SVG</h2>
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="upload">Upload SVG File</button>
+      <button class="tab-btn" data-tab="paste">Paste SVG Code</button>
+    </div>
+    <div class="tab-panel active" id="tab-upload">
+      <div class="upload-zone" id="upload-zone">
+        <input type="file" id="file-input" accept=".svg,image/svg+xml">
+        <div class="upload-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#image"></use></svg></div>
+        <h3>Drop an SVG file here or click to browse</h3>
+        <p>Max 5MB</p>
+      </div>
+    </div>
+    <div class="tab-panel" id="tab-paste">
+      <textarea class="tool-textarea mono" id="svg-code-input" rows="8" placeholder="Paste SVG code here, e.g. <svg>...</svg>"></textarea>
+      <div class="btn-group mt-12">
+        <button class="btn btn-primary" id="load-code-btn">Load SVG Code</button>
+      </div>
+    </div>
+    <div class="status-msg" id="status-msg"></div>
+  </div>
+
+  <div class="tool-card is-hidden" id="controls-card">
+    <h2>Export Settings</h2>
+    <div class="controls-grid">
+      <div class="control-group">
+        <label>Width (px)</label>
+        <input type="number" id="out-width" class="field-input" value="512" min="16" max="4096">
+      </div>
+      <div class="control-group">
+        <label>Height (px)</label>
+        <input type="number" id="out-height" class="field-input" value="512" min="16" max="4096">
+      </div>
+      <div class="control-group">
+        <label>Background</label>
+        <select id="bg-mode">
+          <option value="transparent">Transparent</option>
+          <option value="white">White</option>
+          <option value="custom">Custom Color</option>
+        </select>
+      </div>
+      <div class="control-group is-hidden" id="custom-color-wrap">
+        <label>Background Color</label>
+        <input type="color" id="bg-color" value="#ffffff">
+      </div>
+    </div>
+    <div class="btn-group mt-16">
+      <button class="btn btn-primary" id="convert-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#sparkles"></use></svg> Convert to PNG</button>
+    </div>
+  </div>
+
+  <div class="tool-card is-hidden" id="result-card">
+    <h2>Result</h2>
+    <canvas id="output-canvas"></canvas>
+    <div class="btn-group mt-16">
+      <a href="#" id="download-btn" class="btn btn-primary" download="converted.png"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#download"></use></svg> Download PNG</a>
+    </div>
+  </div>
+</div>
+
+<section class="page-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">Why convert SVG to PNG?</summary>
+      <div class="faq-a"><p>PNG is supported everywhere, including platforms and older software that don't support SVG, such as some email clients or legacy applications.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Will the PNG look as sharp as the SVG?</summary>
+      <div class="faq-a"><p>Yes, if exported at a sufficiently high resolution — SVG is vector-based and renders cleanly at any size before being converted to PNG pixels.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I get a transparent background?</summary>
+      <div class="faq-a"><p>Yes, select "Transparent" background mode to preserve transparency in the exported PNG.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my SVG uploaded to a server?</summary>
+      <div class="faq-a"><p>No, conversion happens locally in your browser using the Canvas API.</p></div>
+    </details>
+  </div>
+</section>
+
+<section class="page-section">
+  <h2>How to Use the SVG to PNG Converter</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Provide your SVG</strong>
+      <p>Upload an .svg file by dragging it into the upload zone, or switch to the Paste SVG Code tab and paste raw SVG markup directly.</p>
+    </li>
+    <li class="step">
+      <strong>Set the output width and height</strong>
+      <p>The tool reads the SVG's own width and height attributes as a starting point — adjust them to the exact pixel dimensions you need.</p>
+    </li>
+    <li class="step">
+      <strong>Pick a background</strong>
+      <p>Choose Transparent to preserve see-through areas, White for a solid backdrop, or Custom Color to fill with any color you pick.</p>
+    </li>
+    <li class="step">
+      <strong>Convert and download</strong>
+      <p>Click Convert to PNG, preview the rasterized result on the checkered canvas, then download the PNG file.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
+  <h2>Convert SVG to PNG Online — Free and Instant</h2>
+  <p>This tool converts SVG (Scalable Vector Graphics) files or raw SVG code into PNG raster images at any resolution you choose, directly in your browser. Upload an .svg file or paste SVG markup, set your desired output dimensions and background, and download a PNG instantly.</p>
+
+  <h3>SVG vs. PNG: What's the Difference?</h3>
+  <p>SVG is a vector image format — it describes shapes, paths, and text mathematically, which means it can be scaled to any size without losing sharpness or quality. PNG, by contrast, is a raster (pixel-based) format — it stores a fixed grid of colored pixels, so scaling a PNG up beyond its native resolution causes blurriness. SVG is ideal for logos, icons, and illustrations that need to work at multiple sizes, while PNG is the more universally compatible format for situations where vector support isn't available or isn't needed.</p>
+
+  <h3>Why Convert SVG to PNG?</h3>
+  <ul>
+    <li><strong>Compatibility</strong> — some platforms, email clients, and older software don't render SVG reliably, but virtually everything supports PNG.</li>
+    <li><strong>Social media and thumbnails</strong> — many platforms require raster image uploads rather than vector files.</li>
+    <li><strong>Favicon and app icon generation</strong> — raster PNG is typically the required input format for these workflows.</li>
+    <li><strong>Consistent rendering</strong> — a PNG looks exactly the same everywhere, while SVG rendering can vary slightly between browsers and renderers.</li>
+  </ul>
+
+  <h3>Choosing the Right Export Resolution</h3>
+  <p>Because SVG is resolution-independent, you can export it to PNG at any size without the source file itself needing to change — the tool simply renders the vector data at your chosen pixel dimensions. For sharp results at any target size (like a retina-display icon or a large print asset), export at 2x or higher than the size you'll actually display it at, since it's always safe to scale a high-resolution PNG down, but scaling a low-resolution PNG up introduces blur.</p>
+
+  <h3>How This Tool Works</h3>
+  <p>The tool loads your SVG (either from a file or pasted code) into an image element, then draws it onto an HTML canvas set to your specified output dimensions. If you choose a background color, it's filled in before the SVG is drawn on top; choosing "transparent" skips this step, preserving any transparency in the original SVG. The canvas is then exported as a PNG file ready to download.</p>
+
+  <h3>Privacy and Local Processing</h3>
+  <p>All conversion happens locally in your browser using the Canvas API — your SVG file or code is never uploaded to any server.</p>
+
+  <h3>For Developers: Pasting SVG Code Directly</h3>
+  <p>If you're working with inline SVG markup from a codebase, a design export, or an icon library, the Paste SVG Code tab skips the file step entirely — paste the raw <code>&lt;svg&gt;...&lt;/svg&gt;</code> markup and the tool parses it with <code>DOMParser</code> to read its native width and height before rendering it to canvas. This is faster than saving a temporary .svg file just to convert it, and it works for SVG snippets copied straight from a React component, a CSS-in-JS icon, or a Figma export panel.</p>
+
+  <h3>Common Use Cases</h3>
+  <ul>
+    <li><strong>App icon and favicon prep:</strong> convert a vector logo to PNG before feeding it into a favicon or app-icon generator that requires raster input.</li>
+    <li><strong>Email signatures and newsletters:</strong> many email clients strip or mishandle SVG, so converting a logo to PNG first avoids broken images in Outlook or Gmail.</li>
+    <li><strong>Social media graphics:</strong> platforms like Twitter/X, LinkedIn, and Instagram require raster uploads, so an SVG illustration needs to become a PNG before posting.</li>
+    <li><strong>Print and presentation assets:</strong> some design tools and older versions of PowerPoint or Word handle PNG more reliably than embedded SVG.</li>
+    <li><strong>Placeholder and thumbnail generation:</strong> quickly rasterize an icon set to PNG thumbnails for a style guide or asset preview page.</li>
+  </ul>
+
+  <h3>Transparent Backgrounds Explained</h3>
+  <p>When you select the Transparent background option, the tool skips filling the canvas with any color before drawing the SVG, so any pixels not covered by SVG shapes stay fully transparent in the alpha channel of the exported PNG. This only works correctly if the source SVG itself doesn't already have an opaque background rectangle — if your SVG was exported with a solid background shape included, you'll need to remove that from the SVG code first for true transparency.</p>
+
+  <h3>Handling SVGs Without Explicit Dimensions</h3>
+  <p>Not every SVG file specifies width and height attributes — some only define a <code>viewBox</code>. When no explicit size is found, the tool falls back to the default 512×512 output dimensions, which you can then override manually. For best results with viewBox-only SVGs, set the output width and height to match the viewBox's aspect ratio so the image isn't stretched or distorted.</p>
+
+  <h3>Common Mistakes to Avoid</h3>
+  <ul>
+    <li><strong>Exporting at too low a resolution:</strong> since PNG can't be scaled up without blurring later, always export larger than you think you need — downscaling later is lossless, upscaling isn't.</li>
+    <li><strong>Forgetting the aspect ratio:</strong> changing width and height independently without matching the SVG's original proportions will stretch or squash the image.</li>
+    <li><strong>Pasting incomplete SVG code:</strong> the code must include the full <code>&lt;svg&gt;</code> opening and closing tags with valid XML; a partial snippet copied from inside an SVG won't render.</li>
+  </ul>
+
+  <h3>Frequently Searched Terms</h3>
+  <p>Common searches that lead people to this tool include "convert svg to png free," "svg to png transparent background," "svg code to image online," "export svg as png high resolution," and "vector to raster converter online." This tool handles each of these cases directly in the browser with no installation required.</p>
+</section>
+
+<section class="page-section">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/tool/tools/favicon-generator"><strong>Favicon Generator</strong><span>Generate all favicon sizes from a PNG source.</span></a>
+    <a class="related-card" href="/tool/tools/image-resize"><strong>Image Resize</strong><span>Resize any raster image to custom dimensions.</span></a>
+    <a class="related-card" href="/tool/tools/image-compressor"><strong>Image Compressor</strong><span>Compress the resulting PNG for faster loading.</span></a>
+    <a class="related-card" href="/tool/tools/image-converter"><strong>Image Converter</strong><span>Convert between other image formats like JPG and WEBP.</span></a>
+  </div>
+</section>
+
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">svg to png</span>
+    <span class="keyword-tag">svg to png converter</span>
+    <span class="keyword-tag">convert svg to png online</span>
+    <span class="keyword-tag">svg to image converter</span>
+    <span class="keyword-tag">svg raster converter</span>
+  </div>
+</section>
+
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+<script>
+const uploadZone = document.getElementById('upload-zone');
+const fileInput = document.getElementById('file-input');
+let currentSvgText = '';
+
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-'+btn.dataset.tab).classList.add('active');
+  });
+});
+
+document.getElementById('bg-mode').addEventListener('change', e => {
+  document.getElementById('custom-color-wrap').style.display = e.target.value === 'custom' ? 'block' : 'none';
+});
+
+function handleFile(file) {
+  const statusEl = document.getElementById('status-msg');
+  if (!file || (!file.name.endsWith('.svg') && file.type !== 'image/svg+xml')) { showStatus(statusEl,'error','Please select a valid SVG file.'); return; }
+  if (file.size > 5*1024*1024) { showStatus(statusEl,'error','File too large. Max 5MB.'); return; }
+
+  const reader = new FileReader();
+  reader.onload = e => {
+    currentSvgText = e.target.result;
+    loadSvgDimensions();
+    document.getElementById('controls-card').style.display = 'block';
+    showStatus(statusEl, 'success', 'SVG loaded! Set export settings and convert.');
+  };
+  reader.readAsText(file);
+}
+
+document.getElementById('load-code-btn').addEventListener('click', () => {
+  const statusEl = document.getElementById('status-msg');
+  const code = document.getElementById('svg-code-input').value.trim();
+  if (!code || !code.includes('<svg')) { showStatus(statusEl,'error','Please paste valid SVG code.'); return; }
+  currentSvgText = code;
+  loadSvgDimensions();
+  document.getElementById('controls-card').style.display = 'block';
+  showStatus(statusEl, 'success', 'SVG code loaded! Set export settings and convert.');
+});
+
+function loadSvgDimensions() {
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(currentSvgText, 'image/svg+xml');
+  const svgEl = doc.querySelector('svg');
+  if (svgEl) {
+    const w = svgEl.getAttribute('width');
+    const h = svgEl.getAttribute('height');
+    if (w) document.getElementById('out-width').value = parseInt(w) || 512;
+    if (h) document.getElementById('out-height').value = parseInt(h) || 512;
+  }
+}
+
+document.getElementById('convert-btn').addEventListener('click', () => {
+  const statusEl = document.getElementById('status-msg');
+  if (!currentSvgText) { showStatus(statusEl, 'error', 'Please provide an SVG first.'); return; }
+
+  const width = parseInt(document.getElementById('out-width').value) || 512;
+  const height = parseInt(document.getElementById('out-height').value) || 512;
+  const bgMode = document.getElementById('bg-mode').value;
+
+  const svgBlob = new Blob([currentSvgText], { type: 'image/svg+xml;charset=utf-8' });
+  const url = URL.createObjectURL(svgBlob);
+  const img = new Image();
+
+  img.onload = () => {
+    const canvas = document.getElementById('output-canvas');
+    canvas.width = width;
+    canvas.height = height;
+    const ctx = canvas.getContext('2d');
+
+    if (bgMode === 'white') { ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, width, height); }
+    else if (bgMode === 'custom') { ctx.fillStyle = document.getElementById('bg-color').value; ctx.fillRect(0, 0, width, height); }
+
+    ctx.drawImage(img, 0, 0, width, height);
+    URL.revokeObjectURL(url);
+
+    document.getElementById('download-btn').href = canvas.toDataURL('image/png');
+    document.getElementById('result-card').style.display = 'block';
+    showStatus(statusEl, 'success', 'Converted to PNG!');
+  };
+  img.onerror = () => {
+    showStatus(statusEl, 'error', 'Could not render this SVG. Please check the SVG code is valid.');
+  };
+  img.src = url;
+});
+
+fileInput.addEventListener('change', e => { if (e.target.files[0]) handleFile(e.target.files[0]); });
+uploadZone.addEventListener('dragover', e => { e.preventDefault(); uploadZone.classList.add('dragover'); });
+uploadZone.addEventListener('dragleave', () => uploadZone.classList.remove('dragover'));
+uploadZone.addEventListener('drop', e => { e.preventDefault(); uploadZone.classList.remove('dragover'); if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]); });
+</script>
+</body>
+</html>

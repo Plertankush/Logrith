@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generate a Memorable, Secure Word-Based Passphrase | Logrith</title>
+  <meta name="description" content="Create a strong passphrase built from random words instead of symbols, easier to remember than a password but still hard to guess.">
+  <meta name="keywords" content="passphrase generator, diceware passphrase generator, memorable password generator, word based password generator, secure passphrase online">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Logrith">
+  <link rel="canonical" href="https://logrith.in/tool/tools/passphrase-generator">
+  <meta property="og:title" content="Generate a Memorable, Secure Word-Based Passphrase | Logrith">
+  <meta property="og:description" content="Create a strong passphrase built from random words instead of symbols, easier to remember than a password but still hard to guess.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://logrith.in/tool/tools/passphrase-generator">
+  <meta property="og:site_name" content="Logrith">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Generate a Memorable, Secure Word-Based Passphrase | Logrith">
+  <meta name="twitter:description" content="Create a strong passphrase built from random words instead of symbols, easier to remember than a password but still hard to guess.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Passphrase Generator","url":"https://logrith.in/tool/tools/passphrase-generator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Free online diceware-style passphrase generator using crypto-secure randomness.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://logrith.in/#organization"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Utilities", "item": "https://logrith.in/tool/categories/utilities"}, {"@type": "ListItem", "position": 4, "name": "Passphrase Generator", "item": "https://logrith.in/tool/tools/passphrase-generator"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is a diceware passphrase?","acceptedAnswer":{"@type":"Answer","text":"A diceware passphrase is created by randomly selecting words from a large word list, originally using physical dice rolls. The resulting multi-word phrase is easier to remember than random characters while still being highly resistant to guessing."}},
+    {"@type":"Question","name":"Is a passphrase more secure than a random password?","acceptedAnswer":{"@type":"Answer","text":"A sufficiently long passphrase (4+ random words) can have comparable or greater entropy than a shorter random-character password, while being significantly easier to remember and type."}}
+  ]}
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+</head>
+<body class="page-passphrase-generator">
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="navbar"></div>
+
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/tool/">Tools</a> › <a href="/tool/categories/utilities">Utilities</a> › Passphrase Generator</nav>
+  <h1>Free Passphrase Generator</h1>
+  <p>Generate secure, memorable passphrases made of random dictionary words — easier to remember than random characters, still highly secure.</p>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#cpu"></use></svg> Memorable</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lock"></use></svg> Crypto-Secure</span></div>
+</div></header>
+
+<div class="tool-workspace">
+  <div class="tool-card">
+    <h2>Passphrase Settings</h2>
+    <div class="controls-grid">
+      <div class="control-group">
+        <label>Number of Words: <span id="count-val">4</span></label>
+        <input type="range" id="word-count" min="3" max="8" value="4">
+      </div>
+      <div class="control-group">
+        <label>Separator</label>
+        <select id="separator">
+          <option value="-">Hyphen (-)</option>
+          <option value=".">Dot (.)</option>
+          <option value="_">Underscore (_)</option>
+          <option value=" ">Space</option>
+        </select>
+      </div>
+    </div>
+    <div class="option-row mt-12">
+      <label><input type="checkbox" id="capitalize-check" checked> Capitalize each word</label>
+      <label><input type="checkbox" id="number-check" checked> Add a random number</label>
+    </div>
+    <div class="btn-group mt-16">
+      <button class="btn btn-primary btn-lg" id="generate-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#cpu"></use></svg> Generate Passphrase</button>
+      <button class="btn btn-secondary" id="copy-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
+    </div>
+  </div>
+
+  <div class="tool-card" id="result-card">
+    <h2>Your Passphrase</h2>
+    <div class="u-7fff2e">
+      <div id="passphrase-output">—</div>
+    </div>
+    <div class="stats-row mt-12" id="entropy-stats"></div>
+  </div>
+</div>
+
+<section class="page-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">What is a diceware passphrase?</summary>
+      <div class="faq-a"><p>A passphrase created by randomly selecting words from a large word list, originally using physical dice. The resulting phrase is easier to remember than random characters while resisting guessing.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is a passphrase more secure than a random password?</summary>
+      <div class="faq-a"><p>A sufficiently long passphrase (4+ random words) can match or exceed the entropy of a shorter random-character password, while being much easier to remember and type.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How is this different from the Password Generator tool?</summary>
+      <div class="faq-a"><p>The Password Generator creates random character strings (like "K9#mP2$vL"). This tool creates memorable multi-word phrases (like "Tiger-River-Cloud-42") that are easier for humans to recall.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my generated passphrase sent to a server?</summary>
+      <div class="faq-a"><p>No, generation happens entirely in your browser using the Web Crypto API. Nothing is transmitted anywhere.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Where does the word "diceware" come from?</summary>
+      <div class="faq-a"><p>Diceware is named after its original method: rolling physical dice to randomly select words from a numbered list, a technique developed specifically to generate passphrases with verifiable, unbiased randomness before computers made digital random generation convenient.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Should I add a number or symbol to my passphrase?</summary>
+      <div class="faq-a"><p>Yes, where the account allows it. A random number appended to the end meaningfully increases the total possible combinations with minimal added difficulty to remember or type.</p></div>
+    </details>
+  </div>
+</section>
+
+<section class="page-section prose">
+  <h2>Diceware-Style Passphrase Generator</h2>
+  <p>This tool generates secure passphrases by randomly combining common dictionary words, using cryptographically secure random number generation. Unlike a random string of characters, a multi-word passphrase is genuinely easier for humans to remember and type accurately, while still providing strong resistance against guessing attacks when enough words are used.</p>
+
+  <h3>Why Passphrases Work Well</h3>
+  <p>The security of a passphrase comes from the total number of possible combinations, not from using obscure symbols. If you randomly select from a word list of, say, 150 words, each additional word multiplies the total number of possible passphrases by 150. Four random words from such a list already produce well over 500 million possible combinations — far more resistant to automated guessing than most people expect, while remaining genuinely memorable, unlike a string like "Xk9#mQ2$vLp."</p>
+
+  <h3>Passphrase vs. Traditional Password</h3>
+  <p>Traditional advice pushed for short, complex passwords mixing uppercase, lowercase, numbers, and symbols — but these are often hard to remember and prone to being written down or reused. A longer passphrase built from multiple random words achieves comparable or better resistance to brute-force guessing, while being significantly easier for a person to actually remember without writing it down, which reduces a different, very common security risk.</p>
+
+  <h3>Why Word Count Matters More Than Word Complexity</h3>
+  <p>A common instinct is to pick obscure or unusual words to feel more secure, but this misunderstands where a passphrase's strength actually comes from. Security comes from the total search space an attacker would need to try — which depends on how many words are randomly selected and how large the word list is, not on whether any individual word feels exotic. Using unusual words instead of common ones doesn't meaningfully increase security if drawn from the same size word list; what matters is adding another random word to the phrase, since each additional word multiplies the total combinations by the full size of the word list.</p>
+
+  <h3>Tips for Using This Tool</h3>
+  <ul>
+    <li><strong>Use at least 4 words</strong> for meaningful security — more words meaningfully increase the total combinations.</li>
+    <li><strong>Adding a number</strong> further increases the search space an attacker would need to try.</li>
+    <li><strong>Choose a consistent separator</strong> that's easy for you to type reliably.</li>
+    <li><strong>Still use a password manager</strong> where possible — passphrases are for cases where you need to actually remember and type a credential yourself.</li>
+  </ul>
+
+  <h3>How This Tool's Word List Was Chosen</h3>
+  <p>The word list used for generation draws from common, easy-to-spell, everyday English words, deliberately avoiding obscure terms, homophones, or words with ambiguous spelling that could make a generated passphrase harder to type back correctly from memory. This matters because a passphrase that's technically random but full of hard-to-spell words defeats part of the purpose — the whole point of a passphrase over a random character string is that a human can reliably reproduce it, which requires every word in the pool to be unambiguous and simple to type correctly on the first attempt.</p>
+
+  <h3>When a Passphrase Is the Better Choice</h3>
+  <p>A passphrase makes the most sense specifically for credentials you need to type manually and remember without a password manager — a device unlock passcode, a master password for a password manager itself, or a shared household WiFi password that multiple people need to type on different devices. For every other account, where a password manager can generate and store a long random password you never need to type or memorize, a traditional random-character password remains a perfectly strong choice, and the two approaches aren't in competition so much as suited to different situations.</p>
+
+  <h3>Step-by-Step: Generating a Passphrase</h3>
+  <ol class="steps">
+    <li class="step">
+      <strong>Set your word count</strong>
+      <p>Use the slider to choose between 3 and 8 words.</p>
+    </li>
+    <li class="step">
+      <strong>Choose a separator</strong>
+      <p>Pick a hyphen, dot, underscore, or space.</p>
+    </li>
+    <li class="step">
+      <strong>Toggle capitalization and number</strong>
+      <p>Enable these for extra complexity where the account allows.</p>
+    </li>
+    <li class="step">
+      <strong>Generate and copy</strong>
+      <p>Click Generate Passphrase and copy the result.</p>
+    </li>
+  </ol>
+
+  <h3>Privacy and Local Processing</h3>
+  <p>All passphrase generation happens directly in your browser using the Web Crypto API's cryptographically secure random number generator — nothing is sent to a server, logged, or stored.</p>
+
+  <h3>Why Predictable Word Patterns Weaken a Passphrase</h3>
+  <p>The security math behind passphrases assumes the words are genuinely randomly selected from the full word list — not chosen by a person trying to construct something memorable, which tends to introduce predictable patterns. A passphrase like "correct-horse-battery-staple," while a well-known example of the concept, would actually be a weak real-world choice specifically because it's now widely recognized, meaning an attacker's guessing list would likely include it directly. This is exactly why this tool uses true random selection rather than letting you hand-pick memorable words — genuine randomness, not perceived cleverness, is what provides real security against automated guessing.</p>
+
+  <h3>Memorization Tips for a Newly Generated Passphrase</h3>
+  <p>A freshly generated random passphrase won't feel memorable immediately, but a few techniques help it stick faster than simply staring at it repeatedly. Try constructing a brief, even absurd, mental image or short story connecting the words in order — the more vivid or unusual the imagined scene, the more memorable it tends to be, since human memory generally retains distinctive imagery better than arbitrary text. Typing the passphrase out manually several times in the minutes after generating it, rather than only reading it silently, also reinforces muscle memory in a way that pure visual review doesn't achieve nearly as effectively, especially for a passphrase you'll need to type from memory regularly.</p>
+</section>
+
+<section class="page-section">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/tool/tools/password-generator"><strong>Password Generator</strong><span>Generate strong random character passwords.</span></a>
+    <a class="related-card" href="/tool/tools/password-strength"><strong>Password Strength Checker</strong><span>Check how strong your password or passphrase is.</span></a>
+    <a class="related-card" href="/tool/tools/uuid-generator"><strong>UUID Generator</strong><span>Generate unique IDs for development use.</span></a>
+    <a class="related-card" href="/tool/tools/random-name-generator"><strong>Random Name Generator</strong><span>Generate random names for various uses.</span></a>
+  </div>
+</section>
+
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+<script>
+const WORD_LIST = ['apple','river','mountain','tiger','cloud','forest','ocean','stone','flame','shadow',
+'garden','bridge','castle','desert','eagle','falcon','glacier','harbor','island','jungle',
+'kernel','lantern','meadow','nebula','orchard','pepper','quartz','rocket','summit','thunder',
+'umbrella','valley','whisper','yellow','zephyr','anchor','breeze','copper','dragon','ember',
+'feather','granite','hollow','ivory','jasper','kingdom','lagoon','marble','nectar','oasis',
+'pebble','quiver','ripple','sapphire','tundra','velvet','willow','xenon','yonder','zenith',
+'amber','blossom','canyon','driftwood','emerald','fjord','glimmer','horizon','indigo','juniper',
+'kelp','lunar','mirage','nomad','opal','plateau','quill','reef','shimmer','twilight',
+'unity','vortex','wander','abyss','beacon','crimson','dune','echo','frost','grove',
+'haze','iris','jade','knoll','lush','mist','north','olive','pine','quest',
+'rustic','sage','timber','urban','vapor','wisp','yolk','zeal','brook','clover',
+'dawn','ferry','glow','haven','ink','joy','kite','loft','moss','nest',
+'onyx','path','quiet','ridge','spring','trail','vine','wave','arc','bloom'];
+
+crypto.getRandomValuesSafe = function(n) {
+  const arr = new Uint32Array(n);
+  crypto.getRandomValues(arr);
+  return arr;
+};
+
+function generatePassphrase() {
+  const wordCount = parseInt(document.getElementById('word-count').value);
+  const separator = document.getElementById('separator').value;
+  const capitalize = document.getElementById('capitalize-check').checked;
+  const addNumber = document.getElementById('number-check').checked;
+
+  const randomVals = crypto.getRandomValuesSafe(wordCount);
+  let selected = Array.from(randomVals).map(n => WORD_LIST[n % WORD_LIST.length]);
+  if (capitalize) selected = selected.map(w => w[0].toUpperCase() + w.slice(1));
+
+  let result = selected.join(separator);
+  if (addNumber) {
+    const numArr = new Uint32Array(1);
+    crypto.getRandomValues(numArr);
+    result += separator + (numArr[0] % 90 + 10);
+  }
+
+  document.getElementById('passphrase-output').textContent = result;
+
+  const totalCombos = Math.pow(WORD_LIST.length, wordCount) * (addNumber ? 90 : 1);
+  const entropyBits = Math.log2(totalCombos);
+  document.getElementById('entropy-stats').innerHTML = `
+    <span class="stat-chip">Words: <strong>${wordCount}</strong></span>
+    <span class="stat-chip">Wordlist size: <strong>${WORD_LIST.length}</strong></span>
+    <span class="stat-chip">Entropy: <strong>~${entropyBits.toFixed(0)} bits</strong></span>`;
+}
+
+document.getElementById('word-count').addEventListener('input', e => {
+  document.getElementById('count-val').textContent = e.target.value;
+  generatePassphrase();
+});
+['separator','capitalize-check','number-check'].forEach(id => {
+  document.getElementById(id).addEventListener('input', generatePassphrase);
+});
+document.getElementById('generate-btn').addEventListener('click', generatePassphrase);
+document.getElementById('copy-btn').addEventListener('click', function() {
+  const v = document.getElementById('passphrase-output').textContent;
+  if (v && v !== '—') copyText(v, this);
+});
+
+generatePassphrase();
+</script>
+</body>
+</html>

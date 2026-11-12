@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Software &amp; Developer Ecosystem Guides and Tools | Logrith</title>
+  <meta name="description" content="Guides to the tools, formats and practices developers rely on: APIs, data formats, web performance, debugging and day-to-day workflow.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Plert Ankush">
+  <link rel="canonical" href="https://logrith.in/ai-technology/software-developer-ecosystem">
+  <meta property="og:title" content="Software &amp; Developer Ecosystem Guides and Tools | Logrith">
+  <meta property="og:description" content="Guides to the tools, formats and practices developers rely on: APIs, data formats, web performance, debugging and day-to-day workflow.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://logrith.in/ai-technology/software-developer-ecosystem">
+  <meta property="og:site_name" content="Logrith">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Software &amp; Developer Ecosystem Guides and Tools | Logrith">
+  <meta name="twitter:description" content="Guides to the tools, formats and practices developers rely on: APIs, data formats, web performance, debugging and day-to-day workflow.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0A0A0A">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Software & Developer Ecosystem",
+    "url": "https://logrith.in/ai-technology/software-developer-ecosystem",
+    "description": "Guides to the tools, formats and practices developers rely on: APIs, data formats, web performance, debugging and day-to-day workflow.",
+    "author": {
+      "@type": "Person",
+      "name": "Plert Ankush",
+      "url": "https://logrith.in/pages/founder"
+    },
+    "isPartOf": {
+      "@id": "https://logrith.in/#website"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://logrith.in/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "AI & Technology",
+        "item": "https://logrith.in/ai-technology/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Software & Developer Ecosystem",
+        "item": "https://logrith.in/ai-technology/software-developer-ecosystem"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="navbar"></div>
+
+<main id="main">
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/ai-technology/">AI &amp; Technology</a> › Software &amp; Developer Ecosystem</nav>
+    <div class="badge"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#code"></use></svg> AI &amp; Technology</div>
+    <h1>Software &amp; Developer Ecosystem</h1>
+    <p>Guides to the tools, formats and practices developers rely on: APIs, data formats, web performance, debugging and day-to-day workflow.</p>
+    <p class="byline">By <a href="/pages/founder" rel="author">Plert Ankush</a></p>
+  </div>
+</header>
+
+<section class="page-section">
+  <div class="prose hub-prose">
+    <h2>Overview</h2>
+    <p>Most software work is not writing new algorithms. It is moving data between systems, reading other people&#x27;s formats, tracking down why something fails and keeping a codebase understandable. The developer ecosystem is the collection of formats, tools and conventions that make that possible.</p>
+<p>This sub-topic explains those building blocks: how JSON and YAML differ, what an HTTP status code is telling you, why regular expressions are both powerful and risky, and how web performance is measured. The goal is fluency, so you can read an error message and know where to look next.</p>
+
+    <h2>What this section covers</h2>
+    <ul class="check-list">
+<li>Data formats in practice: JSON, YAML, XML and CSV, and converting between them</li>
+<li>Reading HTTP status codes and API errors</li>
+<li>Regular expressions: when to use them and when to parse instead</li>
+<li>Web performance basics: what slows a page down and how to measure it</li>
+<li>Hashing, encoding and encryption: three different things</li>
+<li>Habits that keep code readable for the next developer</li>
+    </ul>
+
+    <h2>Core concepts</h2>
+    <div class="concept-grid">
+<div class="concept"><h3>API</h3><p>A defined way for one program to ask another for data or an action, usually over HTTP.</p></div>
+<div class="concept"><h3>Encoding vs hashing vs encryption</h3><p>Encoding changes representation and is reversible by anyone. Hashing is one-way. Encryption is reversible only with a key.</p></div>
+<div class="concept"><h3>Idempotent request</h3><p>A request that has the same effect whether it is sent once or many times, which makes retries safe.</p></div>
+<div class="concept"><h3>Technical debt</h3><p>The future cost of a shortcut taken today. It is acceptable when chosen deliberately and tracked.</p></div>
+    </div>
+
+    <h2>Where to start</h2>
+    <p>Pick the data format you handle most, paste a real sample into a formatter and learn what each error message means. Reading failures calmly is the most transferable skill in software.</p>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="section-header"><h2>Free tools for this topic</h2><p>Browser-based, no sign-up, and your files stay on your device.</p></div>
+  <div class="tool-list">
+    <a href="/tool/tools/json-formatter" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">JSON Formatter</div><div class="tool-row-desc">Paste JSON to beautify it with proper indentation, validate its syntax with exact error locations, or minify it to one line.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+    <a href="/tool/tools/regex-tester" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Regex Tester</div><div class="tool-row-desc">Write a regex pattern and see every match highlighted live against your test string, with capture groups and flags explained.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+    <a href="/tool/tools/http-status-code-lookup" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">HTTP Status Code Lookup</div><div class="tool-row-desc">Search or browse the complete list of HTTP status codes with a plain-English explanation of what each one means.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+    <a href="/tool/tools/yaml-json-converter" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">YAML to JSON Converter</div><div class="tool-row-desc">Paste YAML or JSON and get an accurate conversion to the other format instantly, with formatting preserved.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+    <a href="/tool/tools/sql-formatter" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">SQL Formatter</div><div class="tool-row-desc">Paste a cramped or auto-generated SQL query and get it reformatted with proper indentation and line breaks, instantly.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+    <a href="/tool/tools/cron-expression-builder" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Cron Expression Builder</div><div class="tool-row-desc">Construct a cron schedule visually and get a plain-English explanation of exactly when it will run, no syntax guessing.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="section-header"><h2>More in AI &amp; Technology</h2></div>
+  <div class="related-links">
+<a href="/ai-technology/artificial-intelligence-ml" class="related-link"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#sparkles"></use></svg><span>Artificial Intelligence &amp; ML</span></a>
+<a href="/ai-technology/cybersecurity-open-source" class="related-link"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#shield-check"></use></svg><span>Cybersecurity &amp; Open Source</span></a>
+  </div>
+</section>
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

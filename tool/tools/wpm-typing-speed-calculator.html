@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Your Typing Speed and See Your Real WPM | Logrith</title>
+  <meta name="description" content="Take a live typing test and get your gross WPM, net WPM and accuracy percentage, calculated the same way professional typing tests measure it.">
+  <meta name="keywords" content="wpm calculator, typing speed test, words per minute calculator, typing test online free, wpm test">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Logrith">
+  <link rel="canonical" href="https://logrith.in/tool/tools/wpm-typing-speed-calculator">
+  <meta property="og:title" content="Test Your Typing Speed and See Your Real WPM | Logrith">
+  <meta property="og:description" content="Take a live typing test and get your gross WPM, net WPM and accuracy percentage, calculated the same way professional typing tests measure it.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://logrith.in/tool/tools/wpm-typing-speed-calculator">
+  <meta property="og:site_name" content="Logrith">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Test Your Typing Speed and See Your Real WPM | Logrith">
+  <meta name="twitter:description" content="Take a live typing test and get your gross WPM, net WPM and accuracy percentage, calculated the same way professional typing tests measure it.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"WPM Typing Speed Calculator","url":"https://logrith.in/tool/tools/wpm-typing-speed-calculator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Free online WPM typing speed calculator and live typing test.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://logrith.in/#organization"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Calculate & Convert", "item": "https://logrith.in/tool/categories/calculate-convert"}, {"@type": "ListItem", "position": 4, "name": "WPM Typing Speed Calculator", "item": "https://logrith.in/tool/tools/wpm-typing-speed-calculator"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is a good typing speed?","acceptedAnswer":{"@type":"Answer","text":"The average typing speed is around 40 WPM. Professional typists often reach 65-75 WPM, while touch-typing experts can exceed 100 WPM."}},
+    {"@type":"Question","name":"What's the difference between gross WPM and net WPM?","acceptedAnswer":{"@type":"Answer","text":"Gross WPM counts all words typed without penalty. Net WPM subtracts errors from the total, giving a more accurate picture of effective typing speed."}}
+  ]}
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+</head>
+<body class="page-wpm-typing-speed-calculator">
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="navbar"></div>
+
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/tool/">Tools</a> › <a href="/tool/categories/calculate-convert">Calculate &amp; Convert</a> › WPM Typing Speed Calculator</nav>
+  <h1>Free WPM Typing Speed Calculator & Test</h1>
+  <p>Take a live typing test or manually calculate your words-per-minute typing speed, with gross WPM, net WPM, and accuracy.</p>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#terminal"></use></svg> Live Test</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant Results</span></div>
+</div></header>
+
+<div class="tool-workspace">
+  <div class="tool-card">
+    <h2>Live Typing Test</h2>
+    <div id="typing-area"></div>
+    <textarea class="tool-textarea mt-12" id="typing-input" rows="3" placeholder="Click here and start typing to begin the test..."></textarea>
+    <div class="stats-row mt-12" id="live-stats"></div>
+    <div class="btn-group mt-12">
+      <button class="btn btn-secondary" id="restart-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#refresh"></use></svg> New Test</button>
+    </div>
+  </div>
+
+  <div class="tool-card">
+    <h2>Manual Calculator</h2>
+    <p class="mini-note mb-8">Already know your word count and time? Calculate manually instead.</p>
+    <div class="controls-grid">
+      <div class="control-group">
+        <label>Words Typed</label>
+        <input type="number" id="manual-words" class="field-input" value="200" min="0">
+      </div>
+      <div class="control-group">
+        <label>Time (seconds)</label>
+        <input type="number" id="manual-seconds" class="field-input" value="60" min="1">
+      </div>
+      <div class="control-group">
+        <label>Errors</label>
+        <input type="number" id="manual-errors" class="field-input" value="3" min="0">
+      </div>
+    </div>
+    <div class="btn-group mt-12">
+      <button class="btn btn-primary" id="manual-calc-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#calculator"></use></svg> Calculate</button>
+    </div>
+    <div class="stat-grid mt-12" id="manual-result"></div>
+  </div>
+</div>
+
+<section class="page-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">What is a good typing speed?</summary>
+      <div class="faq-a"><p>The average typing speed is around 40 WPM. Professional typists often reach 65-75 WPM, while touch-typing experts can exceed 100 WPM.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What's the difference between gross and net WPM?</summary>
+      <div class="faq-a"><p>Gross WPM counts all words typed without penalty. Net WPM subtracts errors from the total, giving a more accurate picture of effective typing speed.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How is a "word" defined for typing speed?</summary>
+      <div class="faq-a"><p>By convention, one "word" equals 5 characters (including spaces), regardless of actual word length, providing a standardized way to compare typing speeds.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does the live test measure reading speed too?</summary>
+      <div class="faq-a"><p>This tool measures typing speed specifically. Reading speed is a related but different skill, typically measured separately.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is anything I type uploaded to a server?</summary>
+      <div class="faq-a"><p>No, both the live test and manual calculator run entirely in your browser. Nothing you type is transmitted anywhere.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why does my WPM seem to change throughout the test?</summary>
+      <div class="faq-a"><p>Live WPM is calculated continuously based on elapsed time, so it naturally fluctuates early in a test before settling into a more stable, representative number as more time and words accumulate.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I practice with the same passage repeatedly?</summary>
+      <div class="faq-a"><p>Each new test pulls a random sample passage, so repeating the exact same text isn't guaranteed, but trying the test multiple times gives a good sense of your consistency across different passages.</p></div>
+    </details>
+  </div>
+</section>
+
+<section class="page-section prose">
+  <h2>Measure Your Typing Speed in WPM</h2>
+  <p>This tool offers two ways to measure typing speed: a live typing test where you type a given passage and get instant results, or a manual calculator if you already know your word count, time, and error count from another source.</p>
+
+  <h3>How WPM Is Calculated</h3>
+  <p>Words per minute (WPM) is calculated by dividing the number of words typed by the time taken in minutes. Since actual word lengths vary widely, the typing industry standard defines one "word" as exactly 5 characters (including spaces) — this way, a burst of typing gets measured consistently regardless of whether the actual words were short or long. Gross WPM is this raw calculation; net WPM subtracts a penalty for errors, giving a more realistic measure of productive typing speed.</p>
+
+  <h3>Gross WPM vs. Net WPM vs. Accuracy</h3>
+  <ul>
+    <li><strong>Gross WPM</strong> — total words typed divided by time, without accounting for mistakes.</li>
+    <li><strong>Net WPM</strong> — gross WPM minus errors per minute, reflecting your effective, usable typing speed.</li>
+    <li><strong>Accuracy</strong> — the percentage of typed words that were correct, a separate but related measure of typing quality.</li>
+  </ul>
+
+  <h3>How Typing Speed Compares Across Skill Levels</h3>
+  <p>Typing speed varies enormously depending on experience, technique, and practice. Hunt-and-peck typists, who look at the keyboard and use only a few fingers, commonly type in the 10-25 WPM range. Casual touch-typists who learned proper finger placement but don't type daily for work often land somewhere in the 35-50 WPM range. Professionals who type extensively — data entry specialists, transcriptionists, programmers — frequently reach 65-85 WPM with practice, and competitive typists and stenographers can exceed 120 WPM, though these top speeds require years of dedicated practice and often specialized keyboard techniques.</p>
+
+  <h3>Why Accuracy Matters as Much as Raw Speed</h3>
+  <p>Raw typing speed alone can be a misleading measure of real-world typing ability. Someone typing 80 gross WPM with 70% accuracy is spending significant time going back to fix errors, which often makes their effective output slower than someone typing a more modest 55 WPM at 98% accuracy with minimal corrections needed. This is exactly why net WPM — which factors in errors — is generally considered the more meaningful number for comparing typing proficiency, rather than gross WPM alone.</p>
+
+  <h3>Why Typing Speed Matters</h3>
+  <ul>
+    <li><strong>Job requirements</strong> — many administrative, data entry, and transcription roles specify a minimum WPM requirement.</li>
+    <li><strong>Productivity</strong> — faster, accurate typing directly reduces time spent on any text-heavy work.</li>
+    <li><strong>Skill tracking</strong> — measuring progress as you practice and improve your typing.</li>
+    <li><strong>Remote work and coding</strong> — roles involving heavy daily typing benefit measurably from even modest speed improvements over time.</li>
+  </ul>
+
+  <h3>Tips for Improving Your Typing Speed</h3>
+  <p>Consistent, deliberate practice tends to improve typing speed far more reliably than simply typing a lot in daily work, since everyday typing often reinforces existing habits rather than correcting them. Focusing on accuracy first, and allowing speed to increase naturally as muscle memory develops, tends to produce better long-term results than prioritizing raw speed at the cost of frequent errors. Proper touch-typing technique — keeping fingers on the home row and avoiding looking at the keyboard — is the single biggest factor separating faster typists from slower ones.</p>
+
+  <h3>Privacy and Local Processing</h3>
+  <p>All typing test measurement and calculation happens directly in your browser — nothing you type is sent to a server, logged, or stored anywhere.</p>
+
+  <h3>Using the Manual Calculator Instead of the Live Test</h3>
+  <p>The manual calculator exists for situations where you already have the raw numbers from somewhere else — a typing test taken on a different platform, a timed writing exercise completed offline, or simply wanting to retroactively calculate WPM for a block of writing you produced under time pressure. Enter the word count, the time taken in seconds, and the number of errors, and the calculator applies the same standard WPM formula used by the live test, giving you a consistent way to compare results across different sources rather than relying on each platform's own potentially different scoring method.</p>
+
+  <h3>Setting Realistic Improvement Goals</h3>
+  <p>Typing speed tends to improve in a predictable pattern: rapid early gains as basic finger placement and habits form, followed by a slower, more gradual climb as further improvement depends increasingly on consistent practice rather than simply learning the basics. Someone starting from hunt-and-peck typing can often reach a comfortable 40-50 WPM within a few weeks of regular practice, while pushing from 50 to 80 WPM typically takes considerably longer and benefits from deliberate accuracy-focused practice rather than just typing more in daily work. Setting an incremental target — a few WPM higher than your current baseline — tends to feel more achievable and motivating than aiming directly for an ambitious long-term number.</p>
+
+  <h3>Step-by-Step: Taking the Live Test</h3>
+  <ol class="steps">
+    <li class="step">
+      <strong>Click into the text box</strong>
+      <p>Start typing to begin the timer automatically.</p>
+    </li>
+    <li class="step">
+      <strong>Type the displayed passage</strong>
+      <p>Match the sample text as accurately as you can.</p>
+    </li>
+    <li class="step">
+      <strong>Watch your live stats</strong>
+      <p>See your WPM and accuracy update in real time as you type.</p>
+    </li>
+    <li class="step">
+      <strong>Review your final result</strong>
+      <p>Check gross WPM, net WPM, and accuracy once you finish the passage.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/tool/tools/word-counter"><strong>Word Counter</strong><span>Count words and characters in your text.</span></a>
+    <a class="related-card" href="/tool/tools/words-to-pages-converter"><strong>Words to Pages Converter</strong><span>Convert word count to estimated page count.</span></a>
+    <a class="related-card" href="/tool/tools/text-to-speech"><strong>Text to Speech</strong><span>Have text read aloud using browser voices.</span></a>
+    <a class="related-card" href="/tool/tools/speech-to-text"><strong>Speech to Text</strong><span>Dictate text using your microphone.</span></a>
+  </div>
+</section>
+
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+<script>
+const SAMPLE_TEXTS = [
+  "The quick brown fox jumps over the lazy dog while the sun sets behind the distant mountains.",
+  "Technology continues to reshape how we communicate, work, and learn in ways nobody predicted a decade ago.",
+  "Practice makes perfect, especially when it comes to building consistent and accurate typing habits.",
+  "A journey of a thousand miles begins with a single step, and every skill starts with basic practice."
+];
+
+let currentText = '';
+let startTime = null;
+let testActive = false;
+
+function loadNewText() {
+  currentText = SAMPLE_TEXTS[Math.floor(Math.random() * SAMPLE_TEXTS.length)];
+  renderTypingArea('');
+  document.getElementById('typing-input').value = '';
+  document.getElementById('live-stats').innerHTML = '';
+  startTime = null;
+  testActive = false;
+}
+
+function renderTypingArea(typed) {
+  const area = document.getElementById('typing-area');
+  let html = '';
+  for (let i = 0; i < currentText.length; i++) {
+    const ch = currentText[i];
+    if (i < typed.length) {
+      html += `<span class="${typed[i] === ch ? 'correct' : 'incorrect'}">${ch}</span>`;
+    } else if (i === typed.length) {
+      html += `<span class="current">${ch}</span>`;
+    } else {
+      html += ch;
+    }
+  }
+  area.innerHTML = html;
+}
+
+document.getElementById('typing-input').addEventListener('input', e => {
+  const typed = e.target.value;
+
+  if (!testActive && typed.length > 0) {
+    testActive = true;
+    startTime = Date.now();
+  }
+
+  renderTypingArea(typed);
+
+  if (testActive) {
+    const elapsedSec = (Date.now() - startTime) / 1000;
+    const minutes = elapsedSec / 60;
+    const wordsTyped = typed.length / 5;
+    let errors = 0;
+    for (let i = 0; i < typed.length; i++) if (typed[i] !== currentText[i]) errors++;
+    const grossWPM = minutes > 0 ? Math.round(wordsTyped / minutes) : 0;
+    const netWPM = Math.max(0, Math.round(grossWPM - (errors / minutes || 0)));
+    const accuracy = typed.length > 0 ? Math.round(((typed.length - errors) / typed.length) * 100) : 100;
+
+    document.getElementById('live-stats').innerHTML = `
+      <span class="stat-chip">Gross WPM: <strong>${grossWPM}</strong></span>
+      <span class="stat-chip">Net WPM: <strong>${netWPM}</strong></span>
+      <span class="stat-chip">Accuracy: <strong>${accuracy}%</strong></span>
+      <span class="stat-chip">Time: <strong>${elapsedSec.toFixed(1)}s</strong></span>`;
+  }
+
+  if (typed.length >= currentText.length) {
+    e.target.disabled = true;
+  }
+});
+
+document.getElementById('restart-btn').addEventListener('click', () => {
+  document.getElementById('typing-input').disabled = false;
+  loadNewText();
+});
+
+document.getElementById('manual-calc-btn').addEventListener('click', () => {
+  const words = parseFloat(document.getElementById('manual-words').value) || 0;
+  const seconds = parseFloat(document.getElementById('manual-seconds').value) || 1;
+  const errors = parseFloat(document.getElementById('manual-errors').value) || 0;
+
+  const minutes = seconds / 60;
+  const grossWPM = words / minutes;
+  const netWPM = Math.max(0, grossWPM - (errors / minutes));
+  const accuracy = words > 0 ? ((words - errors) / words) * 100 : 100;
+
+  document.getElementById('manual-result').innerHTML = `
+    <div class="stat-box"><span class="stat-num">${grossWPM.toFixed(0)}</span><span class="stat-label">Gross WPM</span></div>
+    <div class="stat-box" style="background:linear-gradient(135deg,var(--primary),var(--primary-light));border:none;"><span class="stat-num" style="color:white;">${netWPM.toFixed(0)}</span><span class="stat-label" style="color:rgba(255,255,255,0.85);">Net WPM</span></div>
+    <div class="stat-box"><span class="stat-num">${accuracy.toFixed(1)}%</span><span class="stat-label">Accuracy</span></div>`;
+});
+
+loadNewText();
+document.getElementById('manual-calc-btn').click();
+</script>
+</body>
+</html>

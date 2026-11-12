@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Write Markdown and See the Rendered Output Live | Logrith</title>
+  <meta name="description" content="Type or paste Markdown on one side and see the formatted HTML preview update instantly on the other, side by side.">
+  <meta name="keywords" content="markdown previewer, markdown editor online, live markdown preview, markdown to html converter, free markdown editor">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Logrith">
+  <link rel="canonical" href="https://logrith.in/tool/tools/markdown-previewer">
+  <meta property="og:title" content="Write Markdown and See the Rendered Output Live | Logrith">
+  <meta property="og:description" content="Type or paste Markdown on one side and see the formatted HTML preview update instantly on the other, side by side.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://logrith.in/tool/tools/markdown-previewer">
+  <meta property="og:site_name" content="Logrith">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Write Markdown and See the Rendered Output Live | Logrith">
+  <meta name="twitter:description" content="Type or paste Markdown on one side and see the formatted HTML preview update instantly on the other, side by side.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Markdown Previewer","url":"https://logrith.in/tool/tools/markdown-previewer","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Free online markdown editor with live HTML preview.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://logrith.in/#organization"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Text & Generators", "item": "https://logrith.in/tool/categories/text-generators"}, {"@type": "ListItem", "position": 4, "name": "Markdown Previewer", "item": "https://logrith.in/tool/tools/markdown-previewer"}]}
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+</head>
+<body class="page-markdown-previewer">
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="navbar"></div>
+
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/tool/">Tools</a> › <a href="/tool/categories/text-generators">Text &amp; Generators</a> › Markdown Previewer</nav>
+  <h1>Free Markdown Previewer</h1>
+  <p>Write Markdown on the left and see the rendered HTML preview update live on the right — supports headings, bold, italic, links, lists, and code.</p>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#eye"></use></svg> Live Preview</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
+
+<div class="tool-workspace">
+  <div class="tool-card">
+    <h2>Markdown Editor</h2>
+    <div class="editor-split">
+      <div>
+        <label class="mini-note mb-8 u-fa9aec">Markdown Input</label>
+        <textarea class="tool-textarea mono" id="md-input" rows="16"># Welcome
+
+This is a **live Markdown previewer**. Try editing this text!
+
+## Features
+- Headings
+- **Bold** and *italic* text
+- `inline code`
+- [Links](https://logrith.in)
+
+> This is a blockquote.
+
+---
+
+Happy writing!</textarea>
+      </div>
+      <div>
+        <label class="mini-note mb-8 u-fa9aec">Live Preview</label>
+        <div id="md-preview"></div>
+      </div>
+    </div>
+    <div class="btn-group mt-16">
+      <button class="btn btn-secondary" id="copy-html-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy HTML</button>
+      <button class="btn btn-secondary" id="clear-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Clear</button>
+    </div>
+  </div>
+</div>
+
+<section class="page-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">What Markdown syntax is supported?</summary>
+      <div class="faq-a"><p>Headings (#, ##, ###), bold (**text**), italic (*text*), inline code (`code`), links ([text](url)), blockquotes (&gt; text), horizontal rules (---), and basic lists (* item).</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I copy the rendered HTML?</summary>
+      <div class="faq-a"><p>Yes, click "Copy HTML" to copy the rendered HTML output, ready to paste into a webpage or email.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is this a full Markdown implementation?</summary>
+      <div class="faq-a"><p>This covers the most commonly used Markdown syntax for quick previewing. For advanced features like tables or nested lists, a dedicated Markdown editor may be needed.</p></div>
+    </details>
+  </div>
+</section>
+
+<section class="page-section">
+  <h2>How to Use the Markdown Previewer</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Clear or keep the sample text</strong>
+      <p>The editor loads with sample Markdown so you can see how headings, bold text, and lists render; click "Clear" if you want to start from a blank editor.</p>
+    </li>
+    <li class="step">
+      <strong>Type or paste your Markdown</strong>
+      <p>Write directly in the left-hand editor, or paste in Markdown copied from a README, a notes app, or another editor.</p>
+    </li>
+    <li class="step">
+      <strong>Watch the live preview update</strong>
+      <p>As you type, the right-hand panel re-renders the HTML output instantly, so you can check headings, formatting, and links look right.</p>
+    </li>
+    <li class="step">
+      <strong>Copy the rendered HTML</strong>
+      <p>Click "Copy HTML" to grab the generated HTML markup, ready to paste into a web page, email template, or CMS that accepts raw HTML.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
+  <h2>Live Markdown Previewer</h2>
+  <p>This tool lets you write Markdown — a lightweight text formatting syntax — and see the rendered HTML output update live as you type, side by side. It's useful for drafting README files, documentation, forum posts, or any content destined for a platform that uses Markdown.</p>
+
+  <h3>What Is Markdown?</h3>
+  <p>Markdown is a simple, readable plain-text syntax for formatting documents, designed so that even the unformatted source text remains easy to read. Instead of clicking buttons in a rich text editor, you type simple symbols — like <code>**text**</code> for bold or <code># Heading</code> for a title — and the Markdown gets converted into properly formatted HTML. It's the standard formatting syntax on platforms like GitHub, many blogging tools, Reddit, and countless documentation systems.</p>
+
+  <h3>Supported Markdown Syntax</h3>
+  <ul>
+    <li><strong>Headings:</strong> <code># H1</code>, <code>## H2</code>, <code>### H3</code></li>
+    <li><strong>Bold:</strong> <code>**bold text**</code></li>
+    <li><strong>Italic:</strong> <code>*italic text*</code></li>
+    <li><strong>Inline code:</strong> <code>`code`</code></li>
+    <li><strong>Links:</strong> <code>[link text](https://example.com)</code></li>
+    <li><strong>Blockquotes:</strong> <code>&gt; quoted text</code></li>
+    <li><strong>Horizontal rule:</strong> <code>---</code></li>
+    <li><strong>Simple lists:</strong> lines starting with <code>* </code></li>
+  </ul>
+
+  <h3>Why Preview Markdown Before Publishing?</h3>
+  <p>Markdown's plain-text syntax is easy to write but not always intuitive to read in raw form, especially for people unfamiliar with it. Previewing your Markdown as rendered HTML before publishing helps catch formatting mistakes — like a missing closing asterisk that leaves text unintentionally italicized, or a heading level that doesn't look right — before your content goes live on GitHub, a blog, or documentation site.</p>
+
+  <h3>Privacy and Local Processing</h3>
+  <p>All Markdown parsing and rendering happens directly in your browser using JavaScript — your content is never sent to a server.</p>
+
+  <h3>How the Live Preview Works</h3>
+  <p>Every keystroke in the editor triggers an input event that re-runs the Markdown-to-HTML conversion on the full text and replaces the contents of the preview pane. The converter processes the text line by line first, matching patterns for headings, blockquotes, horizontal rules, and list items, and wrapping each line in the appropriate block-level tag. A second pass then scans the joined output for inline patterns — bold, italic, inline code, and links — so that formatting inside a paragraph or list item is still picked up even after the line-by-line pass has already wrapped it in a block tag.</p>
+
+  <h3>Writing a README with Markdown</h3>
+  <p>GitHub, GitLab, and most package registries render a repository's README.md file as formatted HTML automatically. Previewing your README here before committing it lets you confirm that section headings, code blocks, and bullet lists look the way you intend, without needing to push a commit and wait for GitHub to render it just to check formatting.</p>
+
+  <h3>Markdown for Documentation and Notes</h3>
+  <p>Many documentation platforms, static site generators, and note-taking apps — including Jekyll, Hugo, Obsidian, and Notion's Markdown import — use the same core syntax. Drafting content here first means you can verify structure and emphasis before pasting it into whichever platform you actually publish to.</p>
+
+  <h3>Common Formatting Mistakes This Catches</h3>
+  <ul>
+    <li>A missing space after <code>#</code> in a heading, which some parsers ignore but others render as literal text</li>
+    <li>An unmatched <code>**</code> or <code>*</code> that leaves the rest of a paragraph unexpectedly bold or italic</li>
+    <li>A list item that doesn't start with the expected <code>* </code> marker and so renders as plain text instead of a bullet</li>
+    <li>A link written without the closing parenthesis, which breaks the URL instead of producing a clickable link</li>
+  </ul>
+
+  <h3>Markdown vs. a Rich Text Editor</h3>
+  <p>A rich text editor applies formatting through toolbar buttons and stores it as hidden markup, which makes the underlying file harder to read, diff, or version in a tool like Git. Markdown keeps formatting visible as plain-text symbols, so a file stays readable even before rendering, and changes between two versions of a document are easy to compare line by line.</p>
+
+  <h3>Who Uses a Markdown Previewer</h3>
+  <p>Developers use it to check README files and code comments before pushing to a repository. Technical writers use it to draft documentation that will later be rendered by a static site generator. Bloggers and forum users format posts in Markdown for platforms like Reddit, Dev.to, or Hashnode and want to confirm the output before posting, since many of these platforms don't offer a live preview of their own.</p>
+
+  <h3>Limitations to Keep in Mind</h3>
+  <p>This previewer covers the core Markdown syntax — headings, emphasis, links, blockquotes, horizontal rules, inline code, and simple single-level lists. It does not parse tables, nested or numbered lists, fenced code blocks with language-specific syntax highlighting, or images. If your target platform supports these extended features, test the final formatting on that platform directly after drafting the basic structure here.</p>
+
+  <h3>Side-by-Side Editing vs. Switching Tabs</h3>
+  <p>Some Markdown tools make you click a separate "Preview" tab to see how your formatting looks, which breaks the writing flow since you lose sight of your source text. Because this tool shows the editor and the rendered output side by side at the same time, you can keep both the raw Markdown and its formatted appearance in view while you write, which makes it faster to spot a formatting error right where it happened instead of hunting for it after switching views.</p>
+
+  <h3>Frequently Searched Terms</h3>
+  <p>People land on this page looking for a "markdown to html converter online," "markdown live preview tool," "md file previewer," "markdown renderer without download," or a way to "test markdown formatting before posting." All of these describe the same core function this tool provides: typing Markdown and immediately seeing the rendered result.</p>
+</section>
+
+<section class="page-section">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/tool/tools/html-minifier"><strong>HTML Minifier</strong><span>Minify or beautify HTML code.</span></a>
+    <a class="related-card" href="/tool/tools/word-counter"><strong>Word Counter</strong><span>Count words in your Markdown content.</span></a>
+    <a class="related-card" href="/tool/tools/text-diff"><strong>Text Diff Checker</strong><span>Compare two versions of your document.</span></a>
+    <a class="related-card" href="/tool/tools/html-entity-converter"><strong>HTML Entity Converter</strong><span>Encode and decode HTML entities.</span></a>
+  </div>
+</section>
+
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">markdown previewer</span>
+    <span class="keyword-tag">markdown editor online</span>
+    <span class="keyword-tag">live markdown preview</span>
+    <span class="keyword-tag">markdown to html converter</span>
+    <span class="keyword-tag">free markdown editor</span>
+  </div>
+</section>
+
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+<script>
+function markdownToHtml(md) {
+  let html = md
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+  const lines = html.split('\n');
+  let result = [];
+  let inList = false;
+
+  for (let line of lines) {
+    if (/^### (.*)/.test(line)) { result.push(line.replace(/^### (.*)/, '<h3>$1</h3>')); continue; }
+    if (/^## (.*)/.test(line)) { result.push(line.replace(/^## (.*)/, '<h2>$1</h2>')); continue; }
+    if (/^# (.*)/.test(line)) { result.push(line.replace(/^# (.*)/, '<h1>$1</h1>')); continue; }
+    if (/^&gt; (.*)/.test(line)) { result.push(line.replace(/^&gt; (.*)/, '<blockquote>$1</blockquote>')); continue; }
+    if (/^---$/.test(line.trim())) { result.push('<hr>'); continue; }
+    if (/^\* (.*)/.test(line)) {
+      if (!inList) { result.push('<ul>'); inList = true; }
+      result.push(line.replace(/^\* (.*)/, '<li>$1</li>'));
+      continue;
+    } else if (inList) {
+      result.push('</ul>');
+      inList = false;
+    }
+    if (line.trim() === '') { result.push(''); continue; }
+    result.push('<p>' + line + '</p>');
+  }
+  if (inList) result.push('</ul>');
+
+  let joined = result.join('\n');
+  joined = joined
+    .replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>')
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.*?)\*/g, '<em>$1</em>')
+    .replace(/`([^`]+)`/g, '<code>$1</code>')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+
+  return joined;
+}
+
+function updatePreview() {
+  const md = document.getElementById('md-input').value;
+  document.getElementById('md-preview').innerHTML = markdownToHtml(md);
+}
+
+document.getElementById('md-input').addEventListener('input', updatePreview);
+
+document.getElementById('copy-html-btn').addEventListener('click', function() {
+  const html = document.getElementById('md-preview').innerHTML;
+  copyText(html, this);
+});
+
+document.getElementById('clear-btn').addEventListener('click', () => {
+  document.getElementById('md-input').value = '';
+  updatePreview();
+});
+
+updatePreview();
+</script>
+</body>
+</html>

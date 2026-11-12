@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convert YAML to JSON or JSON to YAML, Both Ways | Logrith</title>
+  <meta name="description" content="Paste YAML or JSON and get an accurate conversion to the other format instantly, with formatting preserved.">
+  <meta name="keywords" content="yaml to json converter, json to yaml converter, yaml json online, convert yaml online, yaml validator">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Logrith">
+  <link rel="canonical" href="https://logrith.in/tool/tools/yaml-json-converter">
+  <meta property="og:title" content="Convert YAML to JSON or JSON to YAML, Both Ways | Logrith">
+  <meta property="og:description" content="Paste YAML or JSON and get an accurate conversion to the other format instantly, with formatting preserved.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://logrith.in/tool/tools/yaml-json-converter">
+  <meta property="og:site_name" content="Logrith">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Convert YAML to JSON or JSON to YAML, Both Ways | Logrith">
+  <meta name="twitter:description" content="Paste YAML or JSON and get an accurate conversion to the other format instantly, with formatting preserved.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"YAML to JSON Converter","url":"https://logrith.in/tool/tools/yaml-json-converter","applicationCategory":"DeveloperApplication","operatingSystem":"Any","description":"Free online converter between YAML and JSON formats.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://logrith.in/#organization"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Developer Tools", "item": "https://logrith.in/tool/categories/developer-tools"}, {"@type": "ListItem", "position": 4, "name": "YAML to JSON Converter", "item": "https://logrith.in/tool/tools/yaml-json-converter"}]}
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+</head>
+<body class="page-yaml-json-converter">
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="navbar"></div>
+
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/tool/">Tools</a> › <a href="/tool/categories/developer-tools">Developer Tools</a> › YAML to JSON Converter</nav>
+  <h1>Free YAML to JSON Converter</h1>
+  <p>Convert YAML to JSON, or JSON to YAML — supports nested objects and arrays, both directions.</p>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#refresh"></use></svg> Both Directions</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
+
+<div class="tool-workspace">
+  <div class="tool-card">
+    <h2>Convert</h2>
+    <div class="mode-grid">
+      <div class="mode-card active" data-mode="yaml-to-json"><h3>YAML → JSON</h3></div>
+      <div class="mode-card" data-mode="json-to-yaml"><h3>JSON → YAML</h3></div>
+    </div>
+
+    <div class="control-group mt-16">
+      <label id="input-label">YAML Input</label>
+      <textarea class="tool-textarea mono" id="input-text" rows="10">name: John
+age: 30
+active: true
+tags:
+  - admin
+  - user
+address:
+  city: NYC
+  zip: 10001</textarea>
+    </div>
+
+    <div class="btn-group mt-12">
+      <button class="btn btn-primary btn-lg" id="convert-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#refresh"></use></svg> Convert</button>
+    </div>
+    <div class="status-msg" id="status-msg"></div>
+
+    <div class="control-group mt-16 relative">
+      <label id="output-label">JSON Output</label>
+      <textarea class="tool-textarea mono" id="output-text" rows="10" readonly></textarea>
+      <button class="copy-btn" id="copy-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
+    </div>
+  </div>
+</div>
+
+<section class="page-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">Does this support nested YAML/JSON?</summary>
+      <div class="faq-a"><p>Yes, nested objects and arrays of any depth are supported in both conversion directions.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What YAML features are supported?</summary>
+      <div class="faq-a"><p>Standard key-value pairs, nested mappings, lists, strings, numbers, booleans, and null values are supported. Advanced YAML features like anchors, aliases, and multi-document files are not.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why do some projects use YAML instead of JSON?</summary>
+      <div class="faq-a"><p>YAML is generally considered more human-readable for configuration files since it doesn't require quotes around keys or curly braces, though JSON remains the standard for data exchange between programs.</p></div>
+    </details>
+  </div>
+</section>
+
+<section class="page-section">
+  <h2>How to Use the YAML to JSON Converter</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Pick a direction</strong>
+      <p>Choose "YAML → JSON" or "JSON → YAML" from the mode cards depending on which way you need to convert.</p>
+    </li>
+    <li class="step">
+      <strong>Paste or edit your data</strong>
+      <p>Replace the sample content in the input box with your own YAML or JSON, keeping indentation consistent for YAML.</p>
+    </li>
+    <li class="step">
+      <strong>Click Convert</strong>
+      <p>Press the Convert button to parse the input and generate the equivalent output instantly in your browser.</p>
+    </li>
+    <li class="step">
+      <strong>Copy the result</strong>
+      <p>Use the Copy button next to the output box to grab the converted text for your config file, script, or API call.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
+  <h2>Convert Between YAML and JSON</h2>
+  <p>This tool converts YAML documents to JSON, or JSON to YAML, handling nested objects and arrays. It's useful for developers working with configuration files, Kubernetes manifests, CI/CD pipelines, and APIs that use either format.</p>
+
+  <h3>YAML vs. JSON</h3>
+  <p>Both YAML and JSON represent the same underlying data structures — objects (key-value mappings) and arrays (ordered lists) — but with different syntax. JSON uses curly braces, square brackets, and quoted keys, making it precise and easy for programs to parse. YAML uses indentation and minimal punctuation instead, which many developers find easier to read and write by hand, especially for configuration files, at the cost of being more sensitive to exact indentation.</p>
+
+  <h3>Where YAML Is Commonly Used</h3>
+  <ul>
+    <li><strong>Configuration files</strong> — many modern tools (Docker Compose, GitHub Actions, Ansible) use YAML for configuration.</li>
+    <li><strong>Kubernetes manifests</strong> — Kubernetes resource definitions are written almost exclusively in YAML.</li>
+    <li><strong>CI/CD pipelines</strong> — build and deployment pipeline definitions are frequently written in YAML.</li>
+    <li><strong>Static site generators</strong> — front matter in many static site generators uses YAML syntax.</li>
+  </ul>
+
+  <h3>Why Convert Between the Two</h3>
+  <p>Converting between YAML and JSON is useful when an API expects one format but your source data is in the other, when debugging by viewing YAML config in more explicit JSON form, or when migrating a project's configuration format. Since both represent identical underlying data, conversion between them is lossless for standard data types.</p>
+
+  <h3>Privacy and Local Processing</h3>
+  <p>All conversion happens directly in your browser — your data is never sent to a server.</p>
+
+  <h3>How the YAML Parser Handles Structure</h3>
+  <p>This converter reads YAML line by line, using each line's indentation level to figure out where it sits in the overall structure. When indentation increases, the parser treats that as a nested object or list; when it decreases, it closes out the current nesting level and returns to a shallower one. List items are recognized by a leading hyphen, and each key-value pair separated by a colon is interpreted either as a scalar value or the start of a new nested block depending on whether anything follows the colon on the same line.</p>
+
+  <h3>Which Value Types Are Recognized</h3>
+  <ul>
+    <li><strong>Booleans</strong> — the literal words <code>true</code> and <code>false</code> convert to JSON booleans.</li>
+    <li><strong>Null values</strong> — <code>null</code>, <code>~</code>, or an empty value convert to JSON <code>null</code>.</li>
+    <li><strong>Numbers</strong> — unquoted numeric values convert to JSON numbers rather than strings.</li>
+    <li><strong>Quoted strings</strong> — values wrapped in single or double quotes have the quotes stripped and are kept as plain strings.</li>
+    <li><strong>Plain strings</strong> — anything that isn't a recognized boolean, null, or number is treated as a string.</li>
+  </ul>
+
+  <h3>What Happens When Converting JSON Back to YAML</h3>
+  <p>In the reverse direction, the tool walks the parsed JSON object recursively: nested objects become indented blocks, arrays become hyphen-prefixed lists (with nested objects inside an array getting their own indented block), and scalar values are written as plain text unless they look like they could be misread as a number, boolean, or null — in which case they're quoted to preserve their original type as a string.</p>
+
+  <h3>For Developers Working with Kubernetes and CI/CD</h3>
+  <p>Kubernetes manifests, GitHub Actions workflows, and Docker Compose files are all written in YAML, but debugging tools, APIs, and many programming language standard libraries work more naturally with JSON. Converting a manifest to JSON temporarily makes it easier to validate structure, diff against an API response, or feed into a JSON Schema validator, then convert back to YAML once you're done.</p>
+
+  <h3>Limitations to Be Aware Of</h3>
+  <p>This converter supports the YAML features most configuration files actually use: nested mappings, lists, and the standard scalar types. It does not support YAML anchors and aliases (<code>&amp;</code>/<code>*</code> references for reusing blocks), multi-document files separated by <code>---</code>, or flow-style inline collections like <code>{key: value}</code> written on a single line. If your YAML file relies on these advanced features, a dedicated YAML library will handle them more reliably.</p>
+
+  <h3>Common Mistakes</h3>
+  <ul>
+    <li>Mixing tabs and spaces for indentation — YAML (and this parser) relies on consistent spacing, and a stray tab can shift an entire block to the wrong nesting level.</li>
+    <li>Forgetting a trailing comma check in JSON mode — valid JSON never has a trailing comma after the last item in an object or array.</li>
+    <li>Assuming quoted numbers stay as numbers — a YAML value like <code>"30"</code> in quotes is intentionally kept as a string, not converted to the number 30.</li>
+  </ul>
+
+  <h3>Frequently Searched Terms</h3>
+  <ul>
+    <li>yaml to json online converter</li>
+    <li>convert kubernetes yaml to json</li>
+    <li>json to yaml formatter</li>
+    <li>yaml parser online free</li>
+    <li>convert docker compose yaml to json</li>
+  </ul>
+
+  <h3>Why Indentation Matters More in YAML Than JSON</h3>
+  <p>JSON's structure is defined by its braces and brackets, so whitespace between tokens is purely cosmetic — you can minify a JSON file to a single line and it still parses correctly. YAML has no such delimiters; indentation is the only thing telling the parser where one block ends and another begins. This is why a YAML file that looks almost identical to a working one can fail to parse if a single line is indented with one space instead of two — it's also why converting to JSON is a useful sanity check, since the resulting braces make the actual nesting visible and unambiguous.</p>
+
+  <h3>Typical Workflow for Config File Debugging</h3>
+  <p>A common pattern among developers is pasting a YAML config that's behaving unexpectedly into this tool, converting it to JSON, and visually comparing the nesting against what was intended. Because JSON's braces make every level of nesting explicit, it's often faster to spot a misplaced key or an array that accidentally became an object than it is by staring at raw YAML indentation.</p>
+</section>
+
+<section class="page-section">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/tool/tools/json-formatter"><strong>JSON Formatter</strong><span>Format and validate JSON data.</span></a>
+    <a class="related-card" href="/tool/tools/xml-formatter"><strong>XML Formatter</strong><span>Format and validate XML documents.</span></a>
+    <a class="related-card" href="/tool/tools/sql-formatter"><strong>SQL Formatter</strong><span>Beautify SQL queries.</span></a>
+    <a class="related-card" href="/tool/tools/cron-expression-builder"><strong>Cron Expression Builder</strong><span>Build cron expressions for CI/CD schedules.</span></a>
+  </div>
+</section>
+
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">yaml to json converter</span>
+    <span class="keyword-tag">json to yaml converter</span>
+    <span class="keyword-tag">yaml json online</span>
+    <span class="keyword-tag">convert yaml online</span>
+    <span class="keyword-tag">yaml validator</span>
+  </div>
+</section>
+
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+<script>
+let currentMode = 'yaml-to-json';
+
+function parseValue(val) {
+  if (val === 'true') return true;
+  if (val === 'false') return false;
+  if (val === 'null' || val === '~' || val === '') return null;
+  if (val !== '' && !isNaN(val)) return Number(val);
+  if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) return val.slice(1, -1);
+  return val;
+}
+
+function parseYAML(yamlStr) {
+  const lines = yamlStr.split('\n').filter(l => l.trim() && !l.trim().startsWith('#'));
+  const root = {};
+  const stack = [{ indent: -1, obj: root }];
+
+  for (let idx = 0; idx < lines.length; idx++) {
+    const line = lines[idx];
+    const indent = line.search(/\S/);
+    const trimmed = line.trim();
+
+    while (stack.length > 1 && indent <= stack[stack.length - 1].indent) {
+      stack.pop();
+    }
+    const top = stack[stack.length - 1];
+
+    if (trimmed.startsWith('- ')) {
+      const val = trimmed.slice(2).trim();
+      if (!Array.isArray(top.obj)) continue;
+      const colonIdx = val.indexOf(':');
+      if (colonIdx > -1) {
+        const newObj = {};
+        const key = val.slice(0, colonIdx).trim();
+        const v = val.slice(colonIdx + 1).trim();
+        newObj[key] = v ? parseValue(v) : {};
+        top.obj.push(newObj);
+        stack.push({ indent, obj: newObj });
+      } else {
+        top.obj.push(parseValue(val));
+      }
+      continue;
+    }
+
+    const colonIdx = trimmed.indexOf(':');
+    if (colonIdx === -1) continue;
+    const key = trimmed.slice(0, colonIdx).trim();
+    let val = trimmed.slice(colonIdx + 1).trim();
+
+    if (val === '') {
+      const nextLine = lines[idx + 1];
+      const isArray = nextLine && nextLine.trim().startsWith('- ');
+      const newContainer = isArray ? [] : {};
+      if (Array.isArray(top.obj)) top.obj.push(newContainer);
+      else top.obj[key] = newContainer;
+      stack.push({ indent, obj: newContainer });
+    } else {
+      top.obj[key] = parseValue(val);
+    }
+  }
+  return root;
+}
+
+function formatScalar(val) {
+  if (typeof val === 'string') {
+    if (val === '' || /^[\d.]+$/.test(val) || ['true','false','null'].includes(val)) return `"${val}"`;
+    return val;
+  }
+  if (val === null) return 'null';
+  return String(val);
+}
+
+function jsonToYAML(obj, indent = 0) {
+  const pad = '  '.repeat(indent);
+  let result = '';
+
+  if (Array.isArray(obj)) {
+    for (const item of obj) {
+      if (typeof item === 'object' && item !== null) {
+        result += pad + '-\n' + jsonToYAML(item, indent + 1);
+      } else {
+        result += pad + '- ' + formatScalar(item) + '\n';
+      }
+    }
+  } else if (typeof obj === 'object' && obj !== null) {
+    for (const [key, val] of Object.entries(obj)) {
+      if (Array.isArray(val)) {
+        result += val.length === 0 ? pad + key + ': []\n' : pad + key + ':\n' + jsonToYAML(val, indent);
+      } else if (typeof val === 'object' && val !== null) {
+        result += pad + key + ':\n' + jsonToYAML(val, indent + 1);
+      } else {
+        result += pad + key + ': ' + formatScalar(val) + '\n';
+      }
+    }
+  }
+  return result;
+}
+
+document.querySelectorAll('.mode-card').forEach(card => {
+  card.addEventListener('click', () => {
+    document.querySelectorAll('.mode-card').forEach(c => c.classList.remove('active'));
+    card.classList.add('active');
+    currentMode = card.dataset.mode;
+    const isYamlToJson = currentMode === 'yaml-to-json';
+    document.getElementById('input-label').textContent = isYamlToJson ? 'YAML Input' : 'JSON Input';
+    document.getElementById('output-label').textContent = isYamlToJson ? 'JSON Output' : 'YAML Output';
+    document.getElementById('input-text').value = isYamlToJson
+      ? 'name: John\nage: 30\nactive: true\ntags:\n  - admin\n  - user\naddress:\n  city: NYC\n  zip: 10001'
+      : '{\n  "name": "John",\n  "age": 30,\n  "active": true,\n  "tags": ["admin", "user"],\n  "address": {"city": "NYC", "zip": 10001}\n}';
+    document.getElementById('output-text').value = '';
+    document.getElementById('status-msg').style.display = 'none';
+  });
+});
+
+document.getElementById('convert-btn').addEventListener('click', () => {
+  const statusEl = document.getElementById('status-msg');
+  const input = document.getElementById('input-text').value;
+
+  try {
+    if (currentMode === 'yaml-to-json') {
+      const parsed = parseYAML(input);
+      document.getElementById('output-text').value = JSON.stringify(parsed, null, 2);
+    } else {
+      const parsed = JSON.parse(input);
+      document.getElementById('output-text').value = jsonToYAML(parsed).trim();
+    }
+    showStatus(statusEl, 'success', 'Converted successfully!');
+  } catch (e) {
+    showStatus(statusEl, 'error', 'Could not parse input. Please check the syntax.');
+    document.getElementById('output-text').value = '';
+  }
+});
+
+document.getElementById('copy-btn').addEventListener('click', function() {
+  const v = document.getElementById('output-text').value;
+  if (v) copyText(v, this);
+});
+
+document.getElementById('convert-btn').click();
+</script>
+</body>
+</html>

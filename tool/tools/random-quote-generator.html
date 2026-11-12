@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Random Inspirational Quotes by Category | Logrith</title>
+  <meta name="description" content="Pull a random quote on motivation, success, life or other themes, with the author credited, refreshed with one click.">
+  <meta name="keywords" content="random quote generator, inspirational quotes generator, motivational quotes online, quote generator free, daily quote generator">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Logrith">
+  <link rel="canonical" href="https://logrith.in/tool/tools/random-quote-generator">
+  <meta property="og:title" content="Get Random Inspirational Quotes by Category | Logrith">
+  <meta property="og:description" content="Pull a random quote on motivation, success, life or other themes, with the author credited, refreshed with one click.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://logrith.in/tool/tools/random-quote-generator">
+  <meta property="og:site_name" content="Logrith">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Get Random Inspirational Quotes by Category | Logrith">
+  <meta name="twitter:description" content="Pull a random quote on motivation, success, life or other themes, with the author credited, refreshed with one click.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Random Quote Generator","url":"https://logrith.in/tool/tools/random-quote-generator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Free online random quote generator with category filtering.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://logrith.in/#organization"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Text & Generators", "item": "https://logrith.in/tool/categories/text-generators"}, {"@type": "ListItem", "position": 4, "name": "Random Quote Generator", "item": "https://logrith.in/tool/tools/random-quote-generator"}]}
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+</head>
+<body class="page-random-quote-generator">
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="navbar"></div>
+
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/tool/">Tools</a> › <a href="/tool/categories/text-generators">Text &amp; Generators</a> › Random Quote Generator</nav>
+  <h1>Free Random Quote Generator</h1>
+  <p>Get an inspiring random quote — filter by category like motivation, success, or life — and copy or share instantly.</p>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#message"></use></svg> 5 Categories</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
+
+<div class="tool-workspace">
+  <div class="tool-card">
+    <h2>Choose a Category</h2>
+    <div class="mode-grid">
+      <div class="mode-card active" data-cat="all"><h3>All</h3><p>Any category</p></div>
+      <div class="mode-card" data-cat="motivation"><h3>Motivation</h3><p>Push forward</p></div>
+      <div class="mode-card" data-cat="success"><h3>Success</h3><p>Achievement</p></div>
+      <div class="mode-card" data-cat="life"><h3>Life</h3><p>Wisdom & reflection</p></div>
+      <div class="mode-card" data-cat="wisdom"><h3>Wisdom</h3><p>Timeless insight</p></div>
+    </div>
+    <div class="btn-group mt-16">
+      <button class="btn btn-primary btn-lg" id="generate-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#message"></use></svg> Get Quote</button>
+      <button class="btn btn-secondary" id="copy-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
+    </div>
+  </div>
+
+  <div class="tool-card" id="result-card">
+    <div class="u-4cc191">
+      <div class="u-73329a">"</div>
+      <div id="quote-text">Click "Get Quote" to see an inspiring quote.</div>
+      <div id="quote-author"></div>
+    </div>
+  </div>
+</div>
+
+<section class="page-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">Can I filter quotes by category?</summary>
+      <div class="faq-a"><p>Yes, choose from Motivation, Success, Life, or Wisdom, or select All to get a quote from any category.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I copy a quote to share it?</summary>
+      <div class="faq-a"><p>Yes, click Copy to copy the current quote and author to your clipboard, ready to paste anywhere.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Are these quotes accurately attributed?</summary>
+      <div class="faq-a"><p>Attributions reflect commonly cited sources, though exact wording and attribution of famous quotes can vary across different references over time.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I get a different quote from the same category repeatedly?</summary>
+      <div class="faq-a"><p>Yes, each click randomly selects from every quote tagged with your chosen category, so clicking Get Quote repeatedly cycles through different quotes within that theme.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my usage of this tool tracked?</summary>
+      <div class="faq-a"><p>No, the quote collection is built into the page itself, and generating quotes happens entirely in your browser with no server requests or logging involved.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can a quote belong to more than one category?</summary>
+      <div class="faq-a"><p>Yes, many quotes are tagged with multiple relevant themes — for example, a quote about perseverance might appear under both Motivation and Success — so switching categories can sometimes surface the same quote from a different angle.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How many quotes are in the collection?</summary>
+      <div class="faq-a"><p>The collection spans several dozen curated quotes across all four categories, with new selections appearing each time you click Get Quote.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I use these quotes commercially?</summary>
+      <div class="faq-a"><p>Quotes themselves are generally considered short phrases not eligible for copyright protection in most jurisdictions, though it's worth double-checking attribution accuracy before using a quote in a commercial or published context.</p></div>
+    </details>
+  </div>
+</section>
+
+<section class="page-section prose">
+  <h2>Get Inspiring Random Quotes</h2>
+  <p>This tool provides a curated collection of quotes across several categories — motivation, success, life, and wisdom — with a simple random generator so you can quickly find inspiration, a caption for social media, or a thought to reflect on.</p>
+
+  <h3>Why People Look for Quotes</h3>
+  <ul>
+    <li><strong>Daily motivation</strong> — starting the day with an inspiring thought.</li>
+    <li><strong>Social media captions</strong> — pairing a meaningful quote with a photo or post.</li>
+    <li><strong>Presentations and speeches</strong> — opening or closing with a relevant, memorable quote.</li>
+    <li><strong>Journaling and reflection</strong> — using a quote as a prompt for personal writing.</li>
+    <li><strong>Gifts and cards</strong> — finding the right words for a card or message.</li>
+    <li><strong>Classroom and teaching material</strong> — opening a lesson with a thought-provoking line to set the tone.</li>
+  </ul>
+
+  <h3>Why Short Quotes Are So Memorable</h3>
+  <p>There's a reason certain quotes get repeated across generations while most sentences from the same era are forgotten entirely — brevity and rhythm matter enormously for memorability. A quote that condenses a complex idea into a single, well-constructed sentence is far easier for a human brain to encode and recall than a long paragraph making the same point. Many of the most enduring quotes also use contrast, repetition, or a surprising turn of phrase, techniques that make the sentence structurally distinctive and therefore more likely to stick. This is part of why a single well-chosen quote can carry more weight in a presentation or social post than several sentences of original explanation covering the same ground, and why good quotes get reused across so many different contexts decades after they were first spoken or written.</p>
+
+  <h3>How the Categories Work</h3>
+  <p>Each quote in this collection is tagged with one or more themes — motivation for pushing through challenges, success for achievement-focused thinking, life for broader reflection on living well, and wisdom for timeless, philosophical insight. Selecting a specific category filters the random selection to only quotes tagged with that theme, while "All" draws from the full collection regardless of theme, giving you the broadest possible variety in a single click.</p>
+
+  <h3>Choosing the Right Category for Your Purpose</h3>
+  <p>Different situations call for different kinds of quotes. Motivation-tagged quotes tend to be short, energetic, and action-oriented — well suited for a morning routine or kicking off a workout. Success-tagged quotes lean toward achievement and perseverance, fitting well in a professional context like a presentation closing or a LinkedIn post. Life-tagged quotes are more reflective and broadly applicable, useful for a journal prompt or a thoughtful caption. Wisdom-tagged quotes tend toward philosophical, timeless insight, which suits a more contemplative context like a commencement speech or a card for a significant life event. Starting with "All" and seeing what resonates is also a perfectly reasonable approach if you're not sure which category fits your situation, since you can always narrow down to a specific theme once something catches your attention.</p>
+
+  <h3>Using Quotes Responsibly</h3>
+  <p>Quotes attributed to historical and public figures are widely circulated and commonly used for personal inspiration, social sharing, and educational purposes. That said, exact wording of famous quotes sometimes varies between sources, since quotes often get paraphrased, translated, or slightly altered as they're passed along over decades. If precise, citation-grade accuracy matters for your use — academic writing, a formal publication — it's worth cross-referencing a quote against a dedicated quotation reference work rather than relying solely on any single generator, since minor wording variations between sources are common for quotes passed down over many decades.</p>
+
+  <h3>Pairing a Quote With Visual Content</h3>
+  <p>A common use for a generated quote is layering it over an image for a social media post. For the text to stay legible against a busy background, it generally helps to keep the quote itself short, use a semi-transparent overlay or solid color block behind the text, and choose a high-contrast font color against the underlying image. Shorter quotes from the Motivation or Wisdom categories tend to work especially well for this kind of visual pairing, since they fit cleanly within a single readable line or two without needing to shrink the font size to the point of being hard to read on a mobile screen, which matters since most social platforms are viewed primarily on small mobile displays.</p>
+
+  <h3>Step-by-Step: Getting and Sharing a Quote</h3>
+  <ol class="steps">
+    <li class="step">
+      <strong>Pick a category</strong>
+      <p>Select All, Motivation, Success, Life, or Wisdom based on what fits your need.</p>
+    </li>
+    <li class="step">
+      <strong>Click Get Quote</strong>
+      <p>Generate a random quote matching your selected category.</p>
+    </li>
+    <li class="step">
+      <strong>Click again for another</strong>
+      <p>Keep clicking to cycle through different quotes within the same category.</p>
+    </li>
+    <li class="step">
+      <strong>Copy to share</strong>
+      <p>Click Copy to grab the quote and author, ready to paste anywhere.</p>
+    </li>
+  </ol>
+
+  <h3>Privacy and Local Processing</h3>
+  <p>This tool uses a built-in quote collection stored directly in the page — no external API calls or server requests are made to fetch quotes, keeping the tool fast and fully private. Nothing about which quotes or categories you view is logged or stored anywhere.</p>
+</section>
+
+<section class="page-section">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/tool/tools/random-name-generator"><strong>Random Name Generator</strong><span>Generate random names for characters or testing.</span></a>
+    <a class="related-card" href="/tool/tools/citation-generator"><strong>Citation Generator</strong><span>Generate proper citations for quoted sources.</span></a>
+    <a class="related-card" href="/tool/tools/lorem-ipsum"><strong>Lorem Ipsum Generator</strong><span>Generate placeholder text for designs.</span></a>
+    <a class="related-card" href="/tool/tools/text-to-speech"><strong>Text to Speech</strong><span>Listen to quotes read aloud.</span></a>
+  </div>
+</section>
+
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+<script>
+const QUOTES = [
+  { text: "The only way to do great work is to love what you do.", author: "Steve Jobs", cats: ['motivation','success'] },
+  { text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "Winston Churchill", cats: ['success','motivation'] },
+  { text: "Life is what happens when you're busy making other plans.", author: "John Lennon", cats: ['life'] },
+  { text: "The unexamined life is not worth living.", author: "Socrates", cats: ['wisdom','life'] },
+  { text: "It does not matter how slowly you go as long as you do not stop.", author: "Confucius", cats: ['motivation','wisdom'] },
+  { text: "In the middle of difficulty lies opportunity.", author: "Albert Einstein", cats: ['motivation','wisdom'] },
+  { text: "The way to get started is to quit talking and begin doing.", author: "Walt Disney", cats: ['motivation','success'] },
+  { text: "Whether you think you can or you think you can't, you're right.", author: "Henry Ford", cats: ['motivation'] },
+  { text: "Life is 10% what happens to us and 90% how we react to it.", author: "Charles R. Swindoll", cats: ['life','wisdom'] },
+  { text: "Success is not the key to happiness. Happiness is the key to success.", author: "Albert Schweitzer", cats: ['success','life'] },
+  { text: "Knowing yourself is the beginning of all wisdom.", author: "Aristotle", cats: ['wisdom'] },
+  { text: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt", cats: ['motivation'] },
+  { text: "Do not wait for the perfect moment, take the moment and make it perfect.", author: "Unknown", cats: ['motivation','life'] },
+  { text: "What we think, we become.", author: "Buddha", cats: ['wisdom'] },
+  { text: "Opportunities don't happen. You create them.", author: "Chris Grosser", cats: ['success','motivation'] },
+];
+
+let currentCat = 'all';
+
+document.querySelectorAll('.mode-card').forEach(card => {
+  card.addEventListener('click', () => {
+    document.querySelectorAll('.mode-card').forEach(c => c.classList.remove('active'));
+    card.classList.add('active');
+    currentCat = card.dataset.cat;
+  });
+});
+
+function getRandomQuote() {
+  const pool = currentCat === 'all' ? QUOTES : QUOTES.filter(q => q.cats.includes(currentCat));
+  const list = pool.length ? pool : QUOTES;
+  return list[Math.floor(Math.random() * list.length)];
+}
+
+document.getElementById('generate-btn').addEventListener('click', () => {
+  const q = getRandomQuote();
+  document.getElementById('quote-text').textContent = q.text;
+  document.getElementById('quote-author').textContent = '— ' + q.author;
+});
+
+document.getElementById('copy-btn').addEventListener('click', function() {
+  const text = document.getElementById('quote-text').textContent;
+  const author = document.getElementById('quote-author').textContent;
+  copyText(`"${text}" ${author}`, this);
+});
+
+document.getElementById('generate-btn').click();
+</script>
+</body>
+</html>

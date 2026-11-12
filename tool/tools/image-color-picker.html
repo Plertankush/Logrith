@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pick Any Color From a Photo and Get Its Hex Code | Logrith</title>
+  <meta name="description" content="Click anywhere on an uploaded image to grab the exact color underneath, with instant HEX, RGB and HSL values.">
+  <meta name="keywords" content="image color picker, color picker from image, extract colors from photo, pixel color picker online, dominant color palette generator">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Logrith">
+  <link rel="canonical" href="https://logrith.in/tool/tools/image-color-picker">
+  <meta property="og:title" content="Pick Any Color From a Photo and Get Its Hex Code | Logrith">
+  <meta property="og:description" content="Click anywhere on an uploaded image to grab the exact color underneath, with instant HEX, RGB and HSL values.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://logrith.in/tool/tools/image-color-picker">
+  <meta property="og:site_name" content="Logrith">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pick Any Color From a Photo and Get Its Hex Code | Logrith">
+  <meta name="twitter:description" content="Click anywhere on a photo to grab its exact color — instant HEX, RGB and HSL values.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Image Color Picker","url":"https://logrith.in/tool/tools/image-color-picker","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Free online tool to pick exact colors from an image and extract a dominant color palette.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://logrith.in/#organization"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Image & PDF Tools", "item": "https://logrith.in/tool/categories/image-pdf-tools"}, {"@type": "ListItem", "position": 4, "name": "Image Color Picker", "item": "https://logrith.in/tool/tools/image-color-picker"}]}
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+</head>
+<body class="page-image-color-picker">
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="navbar"></div>
+
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/tool/">Tools</a> › <a href="/tool/categories/image-pdf-tools">Image &amp; PDF Tools</a> › Image Color Picker</nav>
+  <h1>Free Image Color Picker</h1>
+  <p>Click anywhere on an image to get the exact HEX and RGB color, plus an automatic dominant color palette extracted from the whole photo.</p>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#palette"></use></svg> Palette Extraction</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
+
+<div class="tool-workspace">
+  <div class="tool-card">
+    <h2>Upload Image</h2>
+    <div class="upload-zone" id="upload-zone">
+      <input type="file" id="file-input" accept="image/*">
+      <div class="upload-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#palette"></use></svg></div>
+      <h3>Drop an image here or click to browse</h3>
+      <p>PNG, JPG, WEBP — max 10MB</p>
+    </div>
+    <div class="status-msg" id="status-msg"></div>
+  </div>
+
+  <div class="tool-card is-hidden" id="picker-card">
+    <h2>Click Anywhere to Pick a Color</h2>
+    <canvas id="picker-canvas"></canvas>
+    <div class="mt-16 u-041960">
+      <div class="picked-swatch" id="picked-swatch"></div>
+      <div class="stats-row" id="picked-info"></div>
+    </div>
+  </div>
+
+  <div class="tool-card is-hidden" id="palette-card">
+    <h2>Dominant Color Palette</h2>
+    <div class="preview-grid" id="palette-grid"></div>
+  </div>
+</div>
+
+<section class="page-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">How do I pick a color from an image?</summary>
+      <div class="faq-a"><p>Upload your image, then click anywhere on it — the exact HEX and RGB color at that pixel appears instantly.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What is a dominant color palette?</summary>
+      <div class="faq-a"><p>It's a set of the most common colors found across the whole image, automatically extracted and displayed as clickable swatches.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my image uploaded to a server?</summary>
+      <div class="faq-a"><p>No, all color analysis happens locally using the Canvas API — your image never leaves your browser.</p></div>
+    </details>
+  </div>
+</section>
+
+<section class="page-section">
+  <h2>How to Use the Image Color Picker</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Upload your image</strong>
+      <p>Drag and drop a PNG, JPG, or WEBP file onto the upload zone, or click it to browse your device (up to 10MB).</p>
+    </li>
+    <li class="step">
+      <strong>Click anywhere on the image</strong>
+      <p>Once it loads onto the canvas, click any point to read the exact HEX and RGB color at that pixel, along with its x/y position.</p>
+    </li>
+    <li class="step">
+      <strong>Review the dominant palette</strong>
+      <p>Scroll down to see the automatically extracted palette of the ten most common colors found across the whole photo.</p>
+    </li>
+    <li class="step">
+      <strong>Copy any swatch</strong>
+      <p>Click a palette swatch to copy its HEX code to your clipboard for use in design tools or CSS.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
+  <h2>Pick Exact Colors From Any Image</h2>
+  <p>This tool lets you click anywhere on an uploaded image to get the exact color at that pixel, shown as both HEX and RGB values ready to copy. It also automatically extracts a dominant color palette from the entire image, useful for quickly identifying a photo's overall color scheme.</p>
+
+  <h3>Why Pick Colors From an Image?</h3>
+  <ul>
+    <li><strong>Matching brand colors</strong> from a logo or reference photo when building a website or design.</li>
+    <li><strong>Building a color palette</strong> inspired by a photograph, artwork, or mood board.</li>
+    <li><strong>Checking exact color values</strong> for design consistency across assets.</li>
+    <li><strong>Sampling skin tones, sky colors, or material shades</strong> for illustration and digital painting reference.</li>
+  </ul>
+
+  <h3>How This Tool Works</h3>
+  <p>Your uploaded image is drawn onto an HTML canvas, which gives direct pixel-level access to color data. When you click anywhere on the image, the tool reads the exact red, green, and blue values at that pixel coordinate and converts them to both RGB and HEX notation instantly. For the dominant palette, the tool samples pixels across the entire image, groups similar colors together, and surfaces the most frequently occurring colors as a clickable swatch grid.</p>
+
+  <h3>Privacy and Local Processing</h3>
+  <p>All color analysis happens locally in your browser using the Canvas API's pixel data access — your image is never uploaded to any server, keeping unpublished photos and designs completely private.</p>
+
+  <h3>How the Dominant Palette Is Extracted</h3>
+  <p>To find the most common colors across a potentially large image without scanning every single pixel, the tool samples pixels at a calculated interval based on the image's total pixel count, keeping the analysis fast even on large photos. Each sampled pixel's red, green, and blue values are rounded down to the nearest multiple of 32, which groups visually similar shades (like slightly different greens in foliage) into the same bucket rather than treating every minor variation as a separate color. The ten buckets with the highest pixel counts become the final palette, ordered from most to least common.</p>
+
+  <h3>Why Colors Are Rounded Into Buckets</h3>
+  <p>A typical photo can contain tens of thousands of distinct exact RGB values even in a small area, because of lighting gradients, compression artifacts, and natural color variation. Without rounding, a true "most common color" count would be almost meaningless — nearly every pixel would be unique. Rounding to steps of 32 per channel groups nearby shades together so the resulting palette reflects the image's real visual color regions (sky, skin, foliage, background) rather than noise.</p>
+
+  <h3>For Designers Matching Brand or Reference Colors</h3>
+  <p>When a client sends a logo, product photo, or mood board and you need the exact colors used in it, clicking directly on the relevant area gives you the precise HEX value at that pixel rather than an eyeballed approximation. This is more reliable than guessing a color value by eye, especially for colors that look similar but differ in ways that matter for brand consistency, like two shades of blue that look nearly identical on screen but have different HEX codes.</p>
+
+  <h3>For Illustrators and Digital Painters</h3>
+  <p>Sampling real-world reference photos is a common technique for picking believable colors for skin tones, skies, water, and materials. Uploading a reference photo and clicking across different lit and shadowed areas gives exact color values that can be plugged directly into digital painting software, rather than relying on memory or approximation for how a highlight or shadow color should look.</p>
+
+  <h3>Canvas-Based Pixel Reading Explained</h3>
+  <p>The tool draws your uploaded image onto an HTML5 canvas element, which exposes a getImageData() method giving direct access to the raw RGBA value of any pixel coordinate. When you click the image, the click position is translated from screen coordinates to canvas pixel coordinates (accounting for any scaling if the image was resized to fit the display area), and that exact pixel's color is read and displayed. This is the same low-level approach browser-based image editing tools use internally for color sampling.</p>
+
+  <h3>Common Use Cases</h3>
+  <ul>
+    <li><strong>Web development</strong> — pulling an exact background or accent color from a design mockup screenshot.</li>
+    <li><strong>Social media graphics</strong> — matching new graphics to the dominant colors of an existing brand photo.</li>
+    <li><strong>Print and packaging</strong> — checking color values from a product photo before ordering materials.</li>
+    <li><strong>Accessibility checks</strong> — reading exact foreground and background colors from a screenshot to check contrast ratios elsewhere.</li>
+  </ul>
+
+  <h3>Frequently Searched Terms</h3>
+  <p>People search for this tool using phrases like "pick color from image online," "eyedropper tool online free," "get hex code from photo," "dominant color extractor," and "image to color palette generator." This page covers each of these with a click-to-sample eyedropper and an automatic palette extractor in one tool.</p>
+
+  <h3>Image Size and Display Scaling</h3>
+  <p>Large images are automatically scaled down to fit within a maximum display width so the canvas stays usable on screen, but the color sampling still reads the correct pixel because click coordinates are converted back through the scale ratio before looking up the color. This means the HEX and RGB values you get are accurate to the image as displayed, regardless of how large the original upload was.</p>
+
+  <h3>Difference From a Desktop Eyedropper Tool</h3>
+  <p>A system-level eyedropper (like the one built into some operating systems or design apps) can sample any pixel on your entire screen, while this tool only samples pixels within the uploaded image itself. That's usually an advantage for web work, since it means you can share just the image file with the tool rather than needing the full design app open, and the sampling works identically across any device with a browser.</p>
+</section>
+
+<section class="page-section">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/tool/tools/color-converter"><strong>Color Converter</strong><span>Convert any color between HEX, RGB, HSL, and CMYK.</span></a>
+    <a class="related-card" href="/tool/tools/image-compressor"><strong>Image Compressor</strong><span>Reduce image file size while keeping quality.</span></a>
+    <a class="related-card" href="/tool/tools/svg-to-png"><strong>SVG to PNG</strong><span>Convert SVG graphics to raster PNG images.</span></a>
+    <a class="related-card" href="/tool/tools/image-crop"><strong>Image Crop</strong><span>Crop images to focus on a specific area.</span></a>
+  </div>
+</section>
+
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">image color picker</span>
+    <span class="keyword-tag">color picker from image</span>
+    <span class="keyword-tag">extract colors from photo</span>
+    <span class="keyword-tag">pixel color picker online</span>
+    <span class="keyword-tag">dominant color palette generator</span>
+  </div>
+</section>
+
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+<script>
+const uploadZone = document.getElementById('upload-zone');
+const fileInput = document.getElementById('file-input');
+let ctx, canvas;
+
+function handleFile(file) {
+  const statusEl = document.getElementById('status-msg');
+  if (!file || !file.type.startsWith('image/')) { showStatus(statusEl,'error','Please select a valid image file.'); return; }
+  if (file.size > 10*1024*1024) { showStatus(statusEl,'error','File too large. Max 10MB.'); return; }
+
+  const reader = new FileReader();
+  reader.onload = e => {
+    const img = new Image();
+    img.onload = () => {
+      canvas = document.getElementById('picker-canvas');
+      const maxW = 700;
+      const scale = img.width > maxW ? maxW / img.width : 1;
+      canvas.width = img.width * scale;
+      canvas.height = img.height * scale;
+      ctx = canvas.getContext('2d', { willReadFrequently: true });
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+      document.getElementById('picker-card').style.display = 'block';
+      extractPalette();
+      document.getElementById('palette-card').style.display = 'block';
+      showStatus(statusEl, 'success', 'Image loaded! Click anywhere to pick a color.');
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+function rgbToHex(r,g,b){ return '#'+[r,g,b].map(v=>v.toString(16).padStart(2,'0')).join('').toUpperCase(); }
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('upload-zone').addEventListener('click', () => {}); // no-op, upload-zone handles click via input
+});
+
+function setupCanvasClick() {
+  canvas.addEventListener('click', e => {
+    const rect = canvas.getBoundingClientRect();
+    const x = Math.floor((e.clientX - rect.left) * (canvas.width / rect.width));
+    const y = Math.floor((e.clientY - rect.top) * (canvas.height / rect.height));
+    const pixel = ctx.getImageData(x, y, 1, 1).data;
+    const [r,g,b] = pixel;
+    const hex = rgbToHex(r,g,b);
+    document.getElementById('picked-swatch').style.background = hex;
+    document.getElementById('picked-info').innerHTML = `
+      <span class="stat-chip">HEX: <strong>${hex}</strong></span>
+      <span class="stat-chip">RGB: <strong>rgb(${r}, ${g}, ${b})</strong></span>
+      <span class="stat-chip">Position: <strong>${x}, ${y}</strong></span>`;
+  });
+}
+
+function extractPalette() {
+  const w = canvas.width, h = canvas.height;
+  const data = ctx.getImageData(0, 0, w, h).data;
+  const buckets = {};
+  const step = Math.max(1, Math.floor((w * h) / 20000)); // sample for performance
+
+  for (let i = 0; i < data.length; i += 4 * step) {
+    const r = Math.round(data[i] / 32) * 32;
+    const g = Math.round(data[i+1] / 32) * 32;
+    const b = Math.round(data[i+2] / 32) * 32;
+    const key = `${r},${g},${b}`;
+    buckets[key] = (buckets[key] || 0) + 1;
+  }
+
+  const sorted = Object.entries(buckets).sort((a,b) => b[1] - a[1]).slice(0, 10);
+  const grid = document.getElementById('palette-grid');
+  grid.innerHTML = sorted.map(([rgb, count]) => {
+    const [r,g,b] = rgb.split(',').map(Number);
+    const hex = rgbToHex(r,g,b);
+    return `<div style="text-align:center;">
+      <div class="palette-swatch" style="background:${hex};" onclick="navigator.clipboard.writeText('${hex}')" title="Click to copy ${hex}"></div>
+      <div style="font-size:.78rem;color:var(--gray-600);margin-top:6px;font-family:monospace;">${hex}</div>
+    </div>`;
+  }).join('');
+}
+
+fileInput.addEventListener('change', e => { if (e.target.files[0]) { handleFile(e.target.files[0]); setTimeout(setupCanvasClick, 100); } });
+uploadZone.addEventListener('dragover', e => { e.preventDefault(); uploadZone.classList.add('dragover'); });
+uploadZone.addEventListener('dragleave', () => uploadZone.classList.remove('dragover'));
+uploadZone.addEventListener('drop', e => { e.preventDefault(); uploadZone.classList.remove('dragover'); if (e.dataTransfer.files[0]) { handleFile(e.dataTransfer.files[0]); setTimeout(setupCanvasClick, 100); } });
+</script>
+</body>
+</html>

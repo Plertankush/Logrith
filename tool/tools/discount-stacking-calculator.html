@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>See the Real Price After Stacked Discounts | Logrith</title>
+  <meta name="description" content="Apply several discounts in sequence and see exactly how much each one takes off, plus the true final price — no mental math, no guessing.">
+  <meta name="keywords" content="discount stacking calculator, multiple discount calculator, stacked discount calculator online, combined discount calculator free, successive discount calculator">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Logrith">
+  <link rel="canonical" href="https://logrith.in/tool/tools/discount-stacking-calculator">
+  <meta property="og:title" content="See the Real Price After Stacked Discounts | Logrith">
+  <meta property="og:description" content="Apply several discounts in sequence and see exactly how much each one takes off, plus the true final price — no mental math, no guessing.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://logrith.in/tool/tools/discount-stacking-calculator">
+  <meta property="og:site_name" content="Logrith">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="See the Real Price After Stacked Discounts | Logrith">
+  <meta name="twitter:description" content="Apply several discounts in sequence and see exactly how much each one takes off, plus the true final price — no mental math, no guessing.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Discount Stacking Calculator","url":"https://logrith.in/tool/tools/discount-stacking-calculator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Free online calculator for computing the final price after applying multiple sequential discounts.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://logrith.in/#organization"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Calculate & Convert", "item": "https://logrith.in/tool/categories/calculate-convert"}, {"@type": "ListItem", "position": 4, "name": "Discount Stacking Calculator", "item": "https://logrith.in/tool/tools/discount-stacking-calculator"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Does 20% off plus 10% off equal 30% off?","acceptedAnswer":{"@type":"Answer","text":"No. Stacked discounts are applied sequentially, each on the already-discounted price, so 20% then 10% off results in a 28% total discount, not 30%."}},
+    {"@type":"Question","name":"In what order should discounts be applied?","acceptedAnswer":{"@type":"Answer","text":"Store policies vary, but typically discounts are applied in the order listed on the receipt or checkout process. The final price can differ slightly depending on the order for percentage-based discounts combined with flat discounts."}}
+  ]}
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+</head>
+<body class="page-discount-stacking-calculator">
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="navbar"></div>
+
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/tool/">Tools</a> › <a href="/tool/categories/calculate-convert">Calculate &amp; Convert</a> › Discount Stacking Calculator</nav>
+  <h1>Free Discount Stacking Calculator</h1>
+  <p>Calculate the final price after applying multiple discounts one after another — see exactly how much each discount saves, step by step.</p>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#shopping-cart"></use></svg> Multiple Discounts</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
+
+<div class="tool-workspace">
+  <div class="tool-card">
+    <h2>Enter Price and Discounts</h2>
+    <div class="control-group">
+      <label>Original Price (₹)</label>
+      <input type="number" id="orig-price" class="field-input" value="1000" min="0">
+    </div>
+    <div id="discount-inputs" class="mt-12">
+      <div class="control-group">
+        <label>Discount 1 (%)</label>
+        <input type="number" class="field-input discount-input" value="20" min="0" max="100">
+      </div>
+      <div class="control-group">
+        <label>Discount 2 (%)</label>
+        <input type="number" class="field-input discount-input" value="10" min="0" max="100">
+      </div>
+    </div>
+    <div class="btn-group mt-12">
+      <button class="btn btn-secondary btn-sm" id="add-discount-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#plus"></use></svg> Add Another Discount</button>
+    </div>
+    <div class="btn-group mt-16">
+      <button class="btn btn-primary btn-lg" id="calc-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#shopping-cart"></use></svg> Calculate Final Price</button>
+      <button class="btn btn-secondary" id="reset-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Reset</button>
+    </div>
+    <div class="status-msg" id="status-msg"></div>
+  </div>
+
+  <div class="tool-card is-hidden" id="result-card">
+    <h2>Result</h2>
+    <div class="stat-grid" id="result-grid"></div>
+    <div class="breakdown-list mt-16" id="steps-breakdown"></div>
+  </div>
+</div>
+
+<section class="page-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">Does 20% off plus 10% off equal 30% off?</summary>
+      <div class="faq-a"><p>No. Stacked discounts apply sequentially, each on the already-discounted price, so 20% then 10% off results in a 28% total discount, not 30%.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">In what order should discounts be applied?</summary>
+      <div class="faq-a"><p>Store policies vary, but discounts are typically applied in the order shown at checkout. The final price can differ slightly depending on order when flat and percentage discounts are combined.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How many discounts can I stack?</summary>
+      <div class="faq-a"><p>You can add as many discount steps as you need using the "Add Another Discount" button.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my pricing data sent to a server?</summary>
+      <div class="faq-a"><p>No, every calculation runs locally in your browser. Prices and discount percentages you enter are never transmitted anywhere.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does the order of discounts change the final price?</summary>
+      <div class="faq-a"><p>For purely percentage-based discounts, the order doesn't change the final result mathematically, since multiplying by several percentages gives the same product regardless of order. Order can matter when flat-amount discounts are mixed with percentage discounts.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I use this for business margin planning?</summary>
+      <div class="faq-a"><p>Yes, the same sequential logic applies whether you're checking a shopper's final price or modeling how multiple markdowns affect a product's margin from a business perspective.</p></div>
+    </details>
+  </div>
+</section>
+
+<section class="page-section prose">
+  <h2>Understanding Stacked Discounts</h2>
+  <p>When a store offers multiple discounts at once — like a seasonal sale plus a coupon code plus a loyalty discount — these discounts are almost always applied sequentially, one after another, rather than added together. This calculator shows exactly how a price moves through each discount step, so you always know the true final price and total savings.</p>
+
+  <h3>Why Stacked Discounts Aren't Additive</h3>
+  <p>A common shopping misconception is that "20% off" plus "10% off" equals "30% off" — but this isn't how sequential discounts actually work. Each discount is applied to the price remaining after the previous discount, not to the original price. So a ₹1,000 item with 20% off first becomes ₹800, and then a further 10% off is calculated on that ₹800 (not the original ₹1,000), taking ₹80 off to reach ₹720 — an effective total discount of 28%, not 30%. The more discounts you stack, and the higher each percentage, the bigger this gap between the "naive sum" and the true sequential result becomes.</p>
+
+  <h3>How This Calculator Works</h3>
+  <p>Starting from your entered original price, this tool applies each discount percentage in the order you've listed them, recalculating the remaining price after every step. It shows the running price after each individual discount, the amount saved at that step, and the final total price and total amount saved across all discounts combined.</p>
+
+  <h3>Why Percentage Discount Order Doesn't Change the Final Result</h3>
+  <p>Interestingly, while the step-by-step savings amounts differ depending on which order percentage discounts are applied in, the final price ends up exactly the same regardless of order — because multiplying a price by several percentage factors gives the same product no matter what sequence you multiply them in. Whether you apply 20% off first and then 10% off, or 10% off first and then 20% off, both paths land on the same final price. This only holds for pure percentage discounts; mixing in a flat-amount discount (like "₹100 off") does make order matter, since a flat amount taken off a higher starting price represents a smaller effective percentage than the same flat amount taken off a lower price.</p>
+
+  <h3>Checking a Store's Advertised Savings Claim</h3>
+  <p>Retailers occasionally advertise a combined savings figure that doesn't quite match the true sequential calculation, whether through simple arithmetic error or more deliberately generous rounding. Running the actual listed discounts through this calculator before checkout gives you a quick, independent check against any advertised total savings figure, letting you confirm the real numbers rather than taking a marketing claim at face value.</p>
+
+  <h3>Practical Uses</h3>
+  <ul>
+    <li><strong>Shopping during sales</strong> — verifying the actual final price when a store advertises multiple stacked discounts or coupon codes.</li>
+    <li><strong>Comparing deals</strong> — checking whether "30% off" at one store beats "20% off plus an extra 10% off" at another (they are not the same).</li>
+    <li><strong>Business pricing</strong> — modeling how sequential markdowns or promotional discounts affect final margins.</li>
+    <li><strong>Understanding coupon stacking rules</strong> — seeing the real combined effect before assuming discounts simply add together.</li>
+  </ul>
+
+  <h3>Step-by-Step: Calculating Your Stacked Discount</h3>
+  <ol class="steps">
+    <li class="step">
+      <strong>Enter the original price</strong>
+      <p>Type in the starting price before any discounts.</p>
+    </li>
+    <li class="step">
+      <strong>Add each discount</strong>
+      <p>Enter every discount percentage, adding more rows as needed.</p>
+    </li>
+    <li class="step">
+      <strong>Calculate</strong>
+      <p>Click Calculate Final Price to see the step-by-step breakdown.</p>
+    </li>
+    <li class="step">
+      <strong>Review the effective discount</strong>
+      <p>Check the final price and the true combined percentage saved.</p>
+    </li>
+  </ol>
+
+  <h3>Privacy and Local Processing</h3>
+  <p>All calculations run directly in your browser — no prices or discount details are sent to a server, logged, or stored anywhere.</p>
+
+  <h3>Recognizing Marketing That Relies on This Confusion</h3>
+  <p>Some promotions are structured specifically to make a combined discount sound bigger than it actually is, relying on shoppers doing the naive addition instead of the correct sequential math. Seeing "up to 50% off" advertised as two separate 25% discounts stacked together is a common example — the actual combined effect is 43.75% off, not 50%, since the second 25% applies only to the already-reduced price. This isn't necessarily deceptive so much as a natural consequence of how percentages compound, but knowing the real math helps you evaluate whether a "stacked" promotion is actually as generous as its headline framing suggests.</p>
+
+  <h3>Flat Discounts Combined With Percentage Discounts</h3>
+  <p>When a flat-amount discount (like "$10 off") is combined with a percentage discount, the order in which they're applied does change the final price, unlike pure percentage-on-percentage stacking. Applying the percentage discount first, then the flat amount off the reduced price, results in a different final price than applying the flat amount first and then taking a percentage off that already-reduced total — because a flat amount represents a different effective percentage depending on what price it's being subtracted from. If a store's checkout process isn't transparent about which order it applies these in, checking this calculator's result against your actual receipt is a good way to confirm you received the discount correctly.</p>
+
+  <h3>Retail Pricing Psychology Behind Stacked Promotions</h3>
+  <p>Retailers often intentionally structure promotions as multiple stacked discounts rather than one single equivalent discount, because the perceived value of "25% off, plus an extra 10% off" tends to feel larger to shoppers than the mathematically equivalent single discount, even when the two are worth the same or the stacked version is actually worth less once calculated correctly. This is a well-documented effect in behavioral pricing research — breaking a deal into multiple stages creates an impression of layered value that a single number doesn't convey as strongly, even though a careful shopper running the real numbers through a calculator like this one sees the true combined effect clearly and can shop with full confidence in the actual savings.</p>
+</section>
+
+<section class="page-section">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/tool/tools/percentage-calculator"><strong>Percentage Calculator</strong><span>Calculate percentages, change, and single discounts.</span></a>
+    <a class="related-card" href="/tool/tools/tip-split-calculator"><strong>Tip Split Calculator</strong><span>Split a bill with tip among multiple people.</span></a>
+    <a class="related-card" href="/tool/tools/unit-price-comparator"><strong>Unit Price Comparator</strong><span>Compare price-per-unit to find the better deal.</span></a>
+    <a class="related-card" href="/tool/tools/gst-calculator"><strong>GST Calculator</strong><span>Calculate GST inclusive and exclusive amounts.</span></a>
+  </div>
+</section>
+
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+<script>
+document.getElementById('add-discount-btn').addEventListener('click', () => {
+  const container = document.getElementById('discount-inputs');
+  const count = container.querySelectorAll('.discount-input').length + 1;
+  const div = document.createElement('div');
+  div.className = 'control-group';
+  div.innerHTML = `<label>Discount ${count} (%)</label><input type="number" class="field-input discount-input" value="5" min="0" max="100">`;
+  container.appendChild(div);
+});
+
+document.getElementById('calc-btn').addEventListener('click', () => {
+  const statusEl = document.getElementById('status-msg');
+  const origPrice = parseFloat(document.getElementById('orig-price').value);
+  const discountInputs = document.querySelectorAll('.discount-input');
+  const discounts = Array.from(discountInputs).map(el => parseFloat(el.value)).filter(v => !isNaN(v) && v >= 0);
+
+  if (!origPrice || origPrice <= 0 || discounts.length === 0) {
+    showStatus(statusEl, 'error', 'Please enter a valid price and at least one discount.');
+    return;
+  }
+
+  let current = origPrice;
+  const steps = [];
+  discounts.forEach((d, i) => {
+    const saved = current * (d / 100);
+    const newPrice = current - saved;
+    steps.push({ step: i + 1, discount: d, before: current, saved, after: newPrice });
+    current = newPrice;
+  });
+
+  const totalSaved = origPrice - current;
+  const effectivePct = (totalSaved / origPrice) * 100;
+  const fmt = v => '₹' + v.toLocaleString('en-IN', {maximumFractionDigits: 2});
+
+  document.getElementById('result-grid').innerHTML = `
+    <div class="stat-box"><span class="stat-num">${fmt(origPrice)}</span><span class="stat-label">Original Price</span></div>
+    <div class="stat-box"><span class="stat-num" style="color:var(--success);">${fmt(totalSaved)}</span><span class="stat-label">Total Saved</span></div>
+    <div class="stat-box" style="background:linear-gradient(135deg,var(--primary),var(--primary-light));border:none;">
+      <span class="stat-num" style="color:white;">${fmt(current)}</span><span class="stat-label" style="color:rgba(255,255,255,0.85);">Final Price</span>
+    </div>
+    <div class="stat-box"><span class="stat-num">${effectivePct.toFixed(1)}%</span><span class="stat-label">Effective Discount</span></div>`;
+
+  document.getElementById('steps-breakdown').innerHTML = steps.map(s =>
+    `<div class="breakdown-item"><strong>Step ${s.step}: ${s.discount}% off</strong>${fmt(s.before)} → ${fmt(s.after)} (saved ${fmt(s.saved)})</div>`
+  ).join('');
+
+  document.getElementById('result-card').style.display = 'block';
+  showStatus(statusEl, 'success', 'Calculated!');
+});
+
+document.getElementById('reset-btn').addEventListener('click', () => {
+  document.getElementById('orig-price').value = '1000';
+  document.querySelectorAll('.discount-input').forEach((el, i) => { el.value = i === 0 ? '20' : i === 1 ? '10' : '5'; });
+  document.getElementById('result-card').style.display = 'none';
+  document.getElementById('status-msg').style.display = 'none';
+});
+</script>
+</body>
+</html>

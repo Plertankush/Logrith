@@ -1,8 +1,8 @@
 # Logrith
 
-> Logrith is a free, browser-based online tools platform offering 100+ utilities across image/PDF editing, calculators and converters, text and generators, developer tools, and general utilities. All tools run directly in the browser where technically possible — no signup, no file uploads to third-party servers for most tools, no unnecessary data collection, and no paywall.
+> Logrith is an independent publication about technology, startups and digital business, with a library of 100+ free browser-based tools. Content is organised into three topics (AI & Technology, Startups & Business, Marketing & Growth) plus a separate Tools section. Most tools run entirely in the browser with no signup and no file uploads.
 
-Logrith's positioning: a simple, fast, privacy-respecting place to get a small digital task done — compress, convert, calculate, generate, clean, format, transform, check, compare, create.
+Logrith's positioning: clear, practical explanations for people who build things online, alongside simple, fast, privacy-respecting utilities for everyday digital tasks.
 
 ## Founder
 
@@ -11,51 +11,55 @@ Logrith is built and run by a solo founder, Ankush Maurya (online identity: Pler
 ## Key Pages
 
 - Homepage: https://logrith.in/
+- AI & Technology: https://logrith.in/ai-technology/
+- Startups & Business: https://logrith.in/startups-business/
+- Marketing & Growth: https://logrith.in/marketing-growth/
+- Tools hub: https://logrith.in/tool/
 - About: https://logrith.in/pages/about
 - Founder: https://logrith.in/pages/founder
 - Contact: https://logrith.in/pages/contact
 - Privacy Policy: https://logrith.in/pages/privacy
 - Terms of Service: https://logrith.in/pages/terms
-- Blog: https://logrith.in/blog/
-- All Tools: https://logrith.in/categories/all-tools
+- Blog: https://logrith.in/tool/blog/
+- All Tools: https://logrith.in/tool/categories/all-tools
 
 ## Tool Categories
 
-- Image & PDF Tools: https://logrith.in/categories/image-pdf-tools
-- Calculate & Convert: https://logrith.in/categories/calculate-convert
-- Text & Generators: https://logrith.in/categories/text-generators
-- Developer Tools: https://logrith.in/categories/developer-tools
-- Utilities: https://logrith.in/categories/utilities
-- AI Tools: https://logrith.in/categories/ai-tools
-- Global Tools: https://logrith.in/categories/global-tools
+- Image & PDF Tools: https://logrith.in/tool/categories/image-pdf-tools
+- Calculate & Convert: https://logrith.in/tool/categories/calculate-convert
+- Text & Generators: https://logrith.in/tool/categories/text-generators
+- Developer Tools: https://logrith.in/tool/categories/developer-tools
+- Utilities: https://logrith.in/tool/categories/utilities
+- AI Tools: https://logrith.in/tool/categories/ai-tools
+- Global Tools: https://logrith.in/tool/categories/global-tools
 
 ## Notable Tools (high traffic / high utility)
 
-- Age Calculator: https://logrith.in/tools/age-calculator — exact age by date of birth, in years/months/days/hours/minutes
-- World Clock: https://logrith.in/tools/world-clock — live time across multiple cities and timezones
-- File Size Converter: https://logrith.in/tools/file-size-converter — convert between bytes, KB, MB, GB, TB (binary and decimal)
-- Word Counter: https://logrith.in/tools/word-counter — words, characters, sentences, paragraphs, reading time
-- Text Reverser: https://logrith.in/tools/text-reverser — reverse text by character or word order
-- Image Compressor: https://logrith.in/tools/image-compressor — reduce image file size in-browser
-- PDF to Text: https://logrith.in/tools/pdf-to-text — extract plain text from PDF files
-- Random Number Generator: https://logrith.in/tools/random-number-generator
-- Barcode Generator: https://logrith.in/tools/barcode-generator — CODE128, EAN, UPC formats
-- CSS Box Shadow Generator: https://logrith.in/tools/css-box-shadow-generator
-- Percentage Fee Splitter: https://logrith.in/tools/percentage-fee-splitter
-- Date Difference Calculator: https://logrith.in/tools/date-difference-calculator
-- Unit Converter: https://logrith.in/tools/unit-converter
-- JSON Formatter: https://logrith.in/tools/json-formatter
-- QR Code Generator: https://logrith.in/tools/qr-generator
-- Password Generator: https://logrith.in/tools/password-generator
-- UUID Generator: https://logrith.in/tools/uuid-generator
-- Regex Tester: https://logrith.in/tools/regex-tester
-- PDF Inspector: https://logrith.in/tools/pdf-inspector — inspect PDF metadata, fonts, embedded images, structure, and security flags
-- Image Privacy Cleaner: https://logrith.in/tools/image-privacy-cleaner — strip EXIF and GPS metadata from photos entirely in-browser
-- JSON Repair Tool: https://logrith.in/tools/json-repair — fix broken JSON, view as a tree, export as TypeScript or CSV
-- CSV Cleaner: https://logrith.in/tools/csv-cleaner — remove duplicate rows, trim whitespace, validate CSV data
-- AI Token & Context Calculator: https://logrith.in/tools/ai-context-calculator — estimate token count and context-window usage for AI prompts
-- Markdown to HTML Converter: https://logrith.in/tools/markdown-to-html — convert Markdown to clean, semantic HTML
-- URL Deduplicator: https://logrith.in/tools/url-deduplicator — remove exact and near-duplicate URLs from a list
+- Age Calculator: https://logrith.in/tool/tools/age-calculator — exact age by date of birth, in years/months/days/hours/minutes
+- World Clock: https://logrith.in/tool/tools/world-clock — live time across multiple cities and timezones
+- File Size Converter: https://logrith.in/tool/tools/file-size-converter — convert between bytes, KB, MB, GB, TB (binary and decimal)
+- Word Counter: https://logrith.in/tool/tools/word-counter — words, characters, sentences, paragraphs, reading time
+- Text Reverser: https://logrith.in/tool/tools/text-reverser — reverse text by character or word order
+- Image Compressor: https://logrith.in/tool/tools/image-compressor — reduce image file size in-browser
+- PDF to Text: https://logrith.in/tool/tools/pdf-to-text — extract plain text from PDF files
+- Random Number Generator: https://logrith.in/tool/tools/random-number-generator
+- Barcode Generator: https://logrith.in/tool/tools/barcode-generator — CODE128, EAN, UPC formats
+- CSS Box Shadow Generator: https://logrith.in/tool/tools/css-box-shadow-generator
+- Percentage Fee Splitter: https://logrith.in/tool/tools/percentage-fee-splitter
+- Date Difference Calculator: https://logrith.in/tool/tools/date-difference-calculator
+- Unit Converter: https://logrith.in/tool/tools/unit-converter
+- JSON Formatter: https://logrith.in/tool/tools/json-formatter
+- QR Code Generator: https://logrith.in/tool/tools/qr-generator
+- Password Generator: https://logrith.in/tool/tools/password-generator
+- UUID Generator: https://logrith.in/tool/tools/uuid-generator
+- Regex Tester: https://logrith.in/tool/tools/regex-tester
+- PDF Inspector: https://logrith.in/tool/tools/pdf-inspector — inspect PDF metadata, fonts, embedded images, structure, and security flags
+- Image Privacy Cleaner: https://logrith.in/tool/tools/image-privacy-cleaner — strip EXIF and GPS metadata from photos entirely in-browser
+- JSON Repair Tool: https://logrith.in/tool/tools/json-repair — fix broken JSON, view as a tree, export as TypeScript or CSV
+- CSV Cleaner: https://logrith.in/tool/tools/csv-cleaner — remove duplicate rows, trim whitespace, validate CSV data
+- AI Token & Context Calculator: https://logrith.in/tool/tools/ai-context-calculator — estimate token count and context-window usage for AI prompts
+- Markdown to HTML Converter: https://logrith.in/tool/tools/markdown-to-html — convert Markdown to clean, semantic HTML
+- URL Deduplicator: https://logrith.in/tool/tools/url-deduplicator — remove exact and near-duplicate URLs from a list
 
 ## Full Tool Index
 
@@ -75,7 +79,7 @@ Global Tools: pdf-inspector, image-privacy-cleaner, json-repair, csv-cleaner, ai
 
 ## Content & Blog
 
-Logrith publishes explainer blog posts for its highest-traffic tools at https://logrith.in/blog/ — these cover how each tool works, common misconceptions, and practical usage guidance rather than generic SEO filler.
+Logrith publishes explainer blog posts for its highest-traffic tools at https://logrith.in/tool/blog/ — these cover how each tool works, common misconceptions, and practical usage guidance rather than generic SEO filler.
 
 ## Technical Notes for Crawlers/Agents
 

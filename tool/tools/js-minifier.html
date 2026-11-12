@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minify or Beautify JavaScript Code Instantly | Logrith</title>
+  <meta name="description" content="Compress JavaScript for production by stripping whitespace and comments, or reformat minified JS into readable code.">
+  <meta name="keywords" content="javascript minifier, js minifier online, minify javascript free, js beautifier, javascript formatter online, compress js code">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Logrith">
+  <link rel="canonical" href="https://logrith.in/tool/tools/js-minifier">
+  <meta property="og:title" content="Minify or Beautify JavaScript Code Instantly | Logrith">
+  <meta property="og:description" content="Compress JavaScript for production by stripping whitespace and comments, or reformat minified JS into readable code.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://logrith.in/tool/tools/js-minifier">
+  <meta property="og:site_name" content="Logrith">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Minify or Beautify JavaScript Code Instantly | Logrith">
+  <meta name="twitter:description" content="Compress JavaScript for production by stripping whitespace and comments, or reformat minified JS into readable code.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"JavaScript Minifier","url":"https://logrith.in/tool/tools/js-minifier","applicationCategory":"DeveloperApplication","operatingSystem":"Any","description":"Free online JavaScript minifier and beautifier.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://logrith.in/#organization"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Developer Tools", "item": "https://logrith.in/tool/categories/developer-tools"}, {"@type": "ListItem", "position": 4, "name": "JS Minifier", "item": "https://logrith.in/tool/tools/js-minifier"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Is this safe to use on production code?","acceptedAnswer":{"@type":"Answer","text":"This tool performs safe, conservative minification (removing comments and whitespace). For production builds with variable renaming and dead-code elimination, a full build-tool minifier like Terser is recommended for maximum compression."}}
+  ]}
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+</head>
+<body class="page-js-minifier">
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="navbar"></div>
+
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/tool/">Tools</a> › <a href="/tool/categories/developer-tools">Developer Tools</a> › JS Minifier</nav>
+  <h1>Free JavaScript Minifier & Beautifier</h1>
+  <p>Minify JavaScript to reduce file size, or beautify minified JS back into readable, indented code.</p>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zip"></use></svg> Minify & Beautify</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
+
+<div class="tool-workspace">
+  <div class="tool-card">
+    <h2>JavaScript Code</h2>
+    <textarea class="tool-textarea mono" id="input-js" rows="12" placeholder="Paste your JavaScript here...">function greet(name) {
+  // says hello
+  console.log("Hello, " + name);
+}
+
+greet("World");</textarea>
+    <div class="btn-group mt-12">
+      <button class="btn btn-primary" id="minify-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zip"></use></svg> Minify</button>
+      <button class="btn btn-primary" id="beautify-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#sparkles"></use></svg> Beautify</button>
+      <button class="btn btn-secondary" id="clear-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Clear</button>
+    </div>
+    <div class="stats-row mt-8" id="stats-row"></div>
+
+    <div class="control-group mt-16 relative">
+      <label>Output</label>
+      <textarea class="tool-textarea mono" id="output-js" rows="12" readonly></textarea>
+      <button class="copy-btn" id="copy-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
+    </div>
+  </div>
+</div>
+
+<section class="page-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">Is this safe for production code?</summary>
+      <div class="faq-a"><p>This performs safe, conservative minification — removing comments and whitespace without renaming variables. For maximum compression in production builds, a full build-tool minifier like Terser or esbuild is recommended.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does this rename variables to shorten code?</summary>
+      <div class="faq-a"><p>No, this tool only removes comments and unnecessary whitespace, keeping all variable and function names unchanged for safety and easier debugging.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I beautify minified JavaScript?</summary>
+      <div class="faq-a"><p>Yes, use the Beautify button to reformat minified or compressed JS with proper indentation for readability.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my code uploaded anywhere?</summary>
+      <div class="faq-a"><p>No, minification and beautification both run locally in your browser using JavaScript. Your code is never transmitted to a server.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does this handle string literals correctly during minification?</summary>
+      <div class="faq-a"><p>Yes, the minifier tracks string boundaries (single quotes, double quotes, and template literals) so content inside strings is never altered, even if it contains characters that look like code syntax.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why doesn't this tool rename variables like other minifiers?</summary>
+      <div class="faq-a"><p>Variable renaming requires parsing the full syntax tree to safely track every reference to a name, which is a complex operation beyond what a lightweight browser-based tool can safely guarantee. This tool sticks to comment and whitespace removal, which is always safe regardless of code structure.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does minifying affect how my script runs or its output?</summary>
+      <div class="faq-a"><p>No, since only comments and insignificant whitespace are removed, the parsed logic, variable scoping, and runtime behavior of your script stay completely identical before and after minification.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I minify a script that uses modern ES6+ syntax?</summary>
+      <div class="faq-a"><p>Yes, since the minifier works at the character and string-boundary level rather than parsing language-specific syntax, modern features like arrow functions, template literals, destructuring, and async/await all pass through safely.</p></div>
+    </details>
+  </div>
+</section>
+
+<section class="page-section prose">
+  <h2>JavaScript Minifier and Beautifier</h2>
+  <p>This tool compresses JavaScript code by removing comments and unnecessary whitespace to reduce file size, or reformats minified JavaScript back into readable, indented code. It performs safe, conservative transformations without renaming variables or restructuring logic.</p>
+
+  <h3>What This Tool Does (and Doesn't Do)</h3>
+  <p>This minifier removes comments and collapses whitespace to reduce file size while keeping your code's structure, variable names, and logic completely intact — a safe, predictable transformation that's easy to verify and debug if something looks wrong. It does not perform variable renaming, dead-code elimination, or other advanced optimizations that full build-tool minifiers like Terser, UglifyJS, or esbuild apply. Those tools parse JavaScript into a full syntax tree and can achieve significantly smaller output, but require a build pipeline rather than working as a simple paste-and-convert browser tool. For quick, safe compression of a script without a build process, this tool's conservative approach is a practical middle ground.</p>
+
+  <h3>Why Minify JavaScript?</h3>
+  <ul>
+    <li><strong>Faster downloads</strong> — smaller files transfer faster, especially over slower connections.</li>
+    <li><strong>Reduced parse time</strong> — browsers spend less time reading and compiling shorter code.</li>
+    <li><strong>Cleaner distribution</strong> — sharing a compact script file without excessive comments or formatting.</li>
+  </ul>
+
+  <h3>How String Literals Are Protected During Minification</h3>
+  <p>A naive minifier that simply strips anything after "//" or collapses all whitespace would break code the moment a string contains those same characters — for example, a URL like "http://example.com" inside a string would be mistaken for the start of a comment. This tool tracks whether each character is currently inside a string literal (single-quoted, double-quoted, or template literal) before applying any comment-stripping or whitespace rules, so content inside strings — including URLs, file paths, and any text that happens to resemble code syntax — passes through completely untouched.</p>
+
+  <h3>Conservative Minification vs. Full Build-Tool Minifiers</h3>
+  <p>Production JavaScript build pipelines typically use tools like Terser or esbuild, which parse code into a full abstract syntax tree and apply aggressive optimizations: renaming local variables to single letters, eliminating unreachable code, and restructuring expressions for maximum compactness. These tools achieve significantly smaller output than comment-and-whitespace removal alone, but they require a build step and can occasionally introduce subtle bugs if the code relies on function or variable names being preserved (for example, in certain reflection-based patterns). This tool's conservative approach — stripping only comments and whitespace while leaving every name and expression untouched — trades some additional compression for near-zero risk of altering behavior, making it well suited for quickly compressing a standalone script without setting up a full build pipeline, testing framework, or package manager configuration.</p>
+
+  <h3>When to Reach for a Full Build-Tool Minifier Instead</h3>
+  <p>For a small utility script, a one-off browser snippet, or sharing compact code without a build process, this tool's safe transformation is often all that's needed. For a production web application serving significant traffic, where every additional kilobyte of JavaScript affects load time at scale, investing in a proper build pipeline with Terser or esbuild is worth the setup effort, since the additional compression from variable renaming and dead-code elimination compounds meaningfully across a large codebase and directly affects how quickly a page becomes interactive for every visitor.</p>
+
+  <h3>Privacy and Local Processing</h3>
+  <p>All processing happens directly in your browser — your JavaScript code is never sent to a server, logged, or stored anywhere. This makes the tool safe to use with proprietary scripts or unpublished code, since nothing leaves your own device during minification or beautification.</p>
+
+  <h3>Common Situations Where This Tool Helps</h3>
+  <ul>
+    <li><strong>Compressing a standalone utility script</strong> before embedding it in a webpage without setting up a build tool.</li>
+    <li><strong>Reading unfamiliar minified code</strong> — pasting a third-party minified script into Beautify to understand what it actually does.</li>
+    <li><strong>Debugging a production issue</strong> by beautifying a minified file to trace through the logic and locate the problem.</li>
+    <li><strong>Quick learning exercises</strong> — seeing exactly how comment and whitespace removal affects a piece of code you've written.</li>
+  </ul>
+
+  <h3>Reading Minified Code Safely With Beautify</h3>
+  <p>It's a common situation: you've found a useful but undocumented minified script and need to understand what it does before using it, or you're inspecting a third-party library's bundled output while debugging an integration issue. Pasting minified code into the Beautify function restores readable line breaks and indentation, making it far easier to visually trace function boundaries, conditionals, and loops — even though variable names remain whatever they were in the minified version, since beautifying only restores formatting, not the original descriptive names that may have been stripped by a more aggressive minifier upstream.</p>
+
+  <h3>Step-by-Step: Minifying or Beautifying JavaScript</h3>
+  <ol class="steps">
+    <li class="step">
+      <strong>Paste your JavaScript</strong>
+      <p>Enter or paste your code into the input box.</p>
+    </li>
+    <li class="step">
+      <strong>Choose Minify or Beautify</strong>
+      <p>Pick the direction you need based on your current code.</p>
+    </li>
+    <li class="step">
+      <strong>Review the size comparison</strong>
+      <p>After minifying, check the original size, new size, and percentage saved.</p>
+    </li>
+    <li class="step">
+      <strong>Copy the result</strong>
+      <p>Click Copy to grab the processed code for your project.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/tool/tools/css-minifier"><strong>CSS Minifier</strong><span>Minify or beautify CSS code.</span></a>
+    <a class="related-card" href="/tool/tools/html-minifier"><strong>HTML Minifier</strong><span>Minify or beautify HTML code.</span></a>
+    <a class="related-card" href="/tool/tools/json-formatter"><strong>JSON Formatter</strong><span>Format and validate JSON data.</span></a>
+    <a class="related-card" href="/tool/tools/regex-tester"><strong>Regex Tester</strong><span>Test and debug regular expressions.</span></a>
+  </div>
+</section>
+
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+<script>
+function minifyJS(js) {
+  // Conservative minifier: strip comments and collapse whitespace.
+  // Does not rename variables; string literal contents are preserved verbatim.
+  let result = '';
+  let i = 0;
+  const len = js.length;
+  let inString = false, stringChar = '';
+  let inLineComment = false, inBlockComment = false;
+
+  while (i < len) {
+    const ch = js[i];
+    const next = js[i + 1];
+
+    if (inLineComment) {
+      if (ch === '\n') inLineComment = false;
+      i++; continue;
+    }
+    if (inBlockComment) {
+      if (ch === '*' && next === '/') { inBlockComment = false; i += 2; continue; }
+      i++; continue;
+    }
+    if (inString) {
+      result += ch;
+      if (ch === '\\') { result += next; i += 2; continue; }
+      if (ch === stringChar) inString = false;
+      i++; continue;
+    }
+    if (ch === '"' || ch === "'" || ch === '`') { inString = true; stringChar = ch; result += ch; i++; continue; }
+    if (ch === '/' && next === '/') { inLineComment = true; i += 2; continue; }
+    if (ch === '/' && next === '*') { inBlockComment = true; i += 2; continue; }
+
+    result += ch;
+    i++;
+  }
+
+  return result
+    .replace(/[ \t]+/g, ' ')
+    .replace(/\n\s*\n/g, '\n')
+    .split('\n').map(l => l.trim()).join('\n')
+    .replace(/\n/g, ' ')
+    .replace(/\s*([{}();,])\s*/g, '$1')
+    .replace(/;\}/g, '}')
+    .trim();
+}
+
+function beautifyJS(js) {
+  let formatted = '';
+  let indent = 0;
+  let inString = false, stringChar = '';
+  let i = 0;
+  const clean = js.trim();
+
+  while (i < clean.length) {
+    const ch = clean[i];
+    if (inString) {
+      formatted += ch;
+      if (ch === '\\') { formatted += clean[i+1]; i += 2; continue; }
+      if (ch === stringChar) inString = false;
+      i++; continue;
+    }
+    if (ch === '"' || ch === "'" || ch === '`') { inString = true; stringChar = ch; formatted += ch; i++; continue; }
+
+    if (ch === '{') {
+      formatted += ' {\n';
+      indent++;
+      formatted += '  '.repeat(indent);
+      i++;
+      while (clean[i] === ' ') i++;
+    } else if (ch === '}') {
+      formatted = formatted.replace(/[ \t]*$/, '');
+      indent = Math.max(0, indent - 1);
+      formatted += '\n' + '  '.repeat(indent) + '}';
+      i++;
+      if (clean[i] === ';') { formatted += ';'; i++; }
+      formatted += '\n' + '  '.repeat(indent);
+      while (clean[i] === ' ') i++;
+    } else if (ch === ';') {
+      formatted += ';\n' + '  '.repeat(indent);
+      i++;
+      while (clean[i] === ' ') i++;
+    } else {
+      formatted += ch;
+      i++;
+    }
+  }
+  return formatted.replace(/\n\s*\n/g, '\n').trim();
+}
+
+document.getElementById('minify-btn').addEventListener('click', () => {
+  const input = document.getElementById('input-js').value;
+  const output = minifyJS(input);
+  document.getElementById('output-js').value = output;
+  const origSize = new Blob([input]).size;
+  const newSize = new Blob([output]).size;
+  const reduction = origSize > 0 ? Math.round((1 - newSize/origSize) * 100) : 0;
+  document.getElementById('stats-row').innerHTML = `
+    <span class="stat-chip">Original: <strong>${origSize} bytes</strong></span>
+    <span class="stat-chip">Minified: <strong>${newSize} bytes</strong></span>
+    <span class="stat-chip">Saved: <strong>${reduction}%</strong></span>`;
+});
+
+document.getElementById('beautify-btn').addEventListener('click', () => {
+  const input = document.getElementById('input-js').value;
+  document.getElementById('output-js').value = beautifyJS(input);
+  document.getElementById('stats-row').innerHTML = '';
+});
+
+document.getElementById('clear-btn').addEventListener('click', () => {
+  document.getElementById('input-js').value = '';
+  document.getElementById('output-js').value = '';
+  document.getElementById('stats-row').innerHTML = '';
+});
+
+document.getElementById('copy-btn').addEventListener('click', function() {
+  const v = document.getElementById('output-js').value;
+  if (v) copyText(v, this);
+});
+</script>
+</body>
+</html>

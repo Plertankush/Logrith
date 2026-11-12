@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Instant Feedback and a Score on Your Resume | Logrith</title>
+  <meta name="description" content="Upload your resume to see a readability and structure score with specific suggestions to improve it, analyzed in your browser.">
+  <meta name="keywords" content="ai resume analyzer free, resume checker online, ats resume checker, resume score tool, resume feedback free, resume review online, resume analyzer no signup">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Logrith">
+  <link rel="canonical" href="https://logrith.in/tool/tools/resume-analyzer">
+  <meta property="og:title" content="Get Instant Feedback and a Score on Your Resume | Logrith">
+  <meta property="og:description" content="Upload your resume to see a readability and structure score with specific suggestions to improve it, analyzed in your browser.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://logrith.in/tool/tools/resume-analyzer">
+  <meta property="og:site_name" content="Logrith">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Get Instant Feedback and a Score on Your Resume | Logrith">
+  <meta name="twitter:description" content="Upload your resume to see a readability and structure score with specific suggestions to improve it, analyzed in your browser.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "AI Resume Analyzer",
+        "url": "https://logrith.in/tool/tools/resume-analyzer",
+        "description": "Free AI-powered resume analyzer that checks ATS compatibility, content quality, keyword usage, and provides actionable improvement suggestions.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "Logrith",
+          "url": "https://logrith.in"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://logrith.in/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": "https://logrith.in/tool/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "AI Tools",
+            "item": "https://logrith.in/tool/categories/ai-tools"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "AI Resume Analyzer"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What does the AI Resume Analyzer check?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It analyzes ATS compatibility, contact information completeness, keyword density, quantified achievements, action verbs usage, section structure, resume length, and overall content quality."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is an ATS score?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ATS (Applicant Tracking System) score measures how well your resume will perform when scanned by automated HR software. Over 90% of Fortune 500 companies use ATS to filter resumes before a human sees them."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my resume data stored?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Your resume text is analyzed entirely using the Anthropic Claude API, but nothing is stored permanently. Each analysis is independent and not retained."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What makes a good ATS-friendly resume?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An ATS-friendly resume uses standard section headings (Experience, Education, Skills), avoids tables and graphics, includes relevant keywords from the job description, and uses simple formatting."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How should I paste my resume?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Copy all text from your resume (Ctrl+A, Ctrl+C in Word or PDF) and paste it into the text area. Include all sections: contact info, summary, experience, education, and skills."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-BPJ4332XJH');</script>
+</head>
+<body class="page-resume-analyzer">
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="navbar"></div>
+
+<main id="main">
+
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/tool/">Tools</a> › <a href="/tool/categories/ai-tools">AI Tools</a> › AI Resume Analyzer</nav>
+    <h1>AI Resume Analyzer</h1><p>Get instant ATS score, keyword gaps & actionable feedback powered by Claude AI</p>
+    <div class="tag-list">
+      <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#cpu"></use></svg> Claude AI</span>
+      <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#chart-bar"></use></svg> ATS Score</span>
+      <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#key"></use></svg> Keyword Analysis</span>
+      <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
+      <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lock"></use></svg> Private</span>
+    </div>
+  </div>
+</header>
+
+<div class="tool-wrap">
+
+  <!-- INPUT CARD -->
+  <div class="input-card" id="input-card">
+    <div class="input-row">
+      <div class="field-group">
+        <label>Job Role You're Applying For</label>
+        <input type="text" id="job-role" placeholder="e.g. Software Engineer, Product Manager">
+      </div>
+      <div class="field-group">
+        <label>Experience Level</label>
+        <select id="exp-level">
+          <option value="fresher">Fresher / Entry Level (0-1 years)</option>
+          <option value="junior" selected>Junior (1-3 years)</option>
+          <option value="mid">Mid Level (3-6 years)</option>
+          <option value="senior">Senior (6-10 years)</option>
+          <option value="lead">Lead / Manager (10+ years)</option>
+        </select>
+      </div>
+    </div>
+    <div class="field-group">
+      <label>Paste Your Resume Text *</label>
+      <textarea class="resume-textarea" id="resume-text" placeholder="Paste your complete resume text here...
+
+Include:
+• Contact information
+• Professional summary / objective
+• Work experience with job titles, companies, dates
+• Education details
+• Skills section
+• Any certifications or projects" oninput="updateResumeStats()"></textarea>
+      <div class="char-row">
+        <span class="char-hint" id="resume-stats">0 words · 0 characters</span>
+        <span class="char-hint"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lightbulb"></use></svg> Include all sections for best results</span>
+      </div>
+    </div>
+    <button class="analyze-btn" id="analyze-btn" onclick="analyzeResume()">
+      <span><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#cpu"></use></svg> Analyze with AI</span>
+    </button>
+  </div>
+
+  <!-- LOADING -->
+  <div class="loading-card" id="loading-card">
+    <div class="ai-spinner"></div>
+    <p class="u-bffcff">AI is reviewing your resume...</p>
+    <p class="u-c78774">This takes about 10-15 seconds</p>
+    <div class="loading-steps">
+      <div class="ls-item done" id="ls1"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Parsing resume structure</div>
+      <div class="ls-item active" id="ls2">⟳ Analyzing content quality</div>
+      <div class="ls-item" id="ls3"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#circle"></use></svg> Checking ATS compatibility</div>
+      <div class="ls-item" id="ls4"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#circle"></use></svg> Identifying keyword gaps</div>
+      <div class="ls-item" id="ls5"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#circle"></use></svg> Generating recommendations</div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-card" id="results-card">
+    <div id="results-content"></div>
+    <div class="result-actions">
+      <button class="ra-btn primary" onclick="analyzeAgain()"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#refresh"></use></svg> Analyze Again</button>
+      <button class="ra-btn" onclick="copyReport()"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy Report</button>
+      <button class="ra-btn" onclick="downloadReport()"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#download"></use></svg> Download PDF</button>
+    </div>
+  </div>
+
+  <!-- SEO SECTION -->
+  <h2>How to Use AI Resume Analyzer</h2>
+  <div class="how-steps">
+    <div class="how-step"><div class="step-n">1</div><div class="step-body"><h4>Enter Job Details</h4><p>Type the job role you're applying for and select your experience level.</p></div></div>
+    <div class="how-step"><div class="step-n">2</div><div class="step-body"><h4>Paste Resume Text</h4><p>Copy all text from your Word or PDF resume and paste it in the text area.</p></div></div>
+    <div class="how-step"><div class="step-n">3</div><div class="step-body"><h4>Get AI Analysis</h4><p>Click Analyze to receive ATS score, keyword analysis, and improvement tips.</p></div></div>
+    <div class="how-step"><div class="step-n">4</div><div class="step-body"><h4>Apply Improvements</h4><p>Follow the recommendations to improve your resume and re-analyze.</p></div></div>
+  </div>
+
+  <h2 class="mt-32">What is ATS and Why Does It Matter?</h2>
+  <p>ATS (Applicant Tracking System) is software used by over 90% of Fortune 500 companies to automatically screen resumes before a human recruiter ever sees them. If your resume does not pass ATS filters, it gets rejected automatically — regardless of how qualified you are. Studies show that 75% of resumes are rejected by ATS before reaching a recruiter.</p>
+  <p>ATS systems scan resumes for specific keywords matching the job description, check for proper section headings (Experience, Education, Skills), and penalize complex formatting like tables, text boxes, headers/footers, and non-standard fonts. A resume that looks beautiful in PDF may completely fail in ATS if it uses graphics or multi-column layouts.</p>
+  <p>This AI-powered analyzer uses Claude by Anthropic to evaluate your resume across 8 critical dimensions: ATS compatibility, contact information, professional summary, work experience quality, education section, skills relevance, keyword density, and action verb usage. The result is a comprehensive score with specific, actionable improvements tailored to your target role.</p>
+
+  <h2 class="u-47c857">How the Analysis Actually Works</h2>
+  <p>When you click Analyze, the tool sends your resume text, target job role, and experience level to Claude (Anthropic's AI model) through a direct API call from your browser. Claude reads the full resume and returns a structured breakdown — scores for each section, strengths, gaps, missing keywords for your target role, and a prioritized list of next steps. If that API call fails for any reason (network issue, rate limit, or timeout), the tool automatically falls back to a built-in heuristic analyzer that runs entirely in your browser. This fallback checks for things like the presence of an email and phone number, common section headings (Experience, Education, Skills, Summary), a list of common action verbs, and whether the text contains quantified numbers or percentages — it is a rule-based approximation, not an AI judgment, but it still gives a usable score and basic feedback so the tool never leaves you with a blank result.</p>
+
+  <h3>Why Keyword Gaps Matter More Than You'd Think</h3>
+  <p>Most ATS platforms rank candidates by how closely resume text matches the job description, not by a human's subjective read. Two resumes with identical experience can score very differently if one uses the exact phrasing from the job posting ("cross-functional team leadership") and the other uses a synonym ("worked with different departments"). The keyword gap section exists specifically to catch this mismatch — it lists terms found in your resume versus terms commonly expected for your stated job role, so you can adjust wording before you apply rather than after a rejection.</p>
+
+  <h3>For Freshers and Career Switchers</h3>
+  <p>If you select "Fresher / Entry Level" or are switching fields, the analysis weighs things differently — it looks harder at projects, internships, certifications, and transferable skills instead of expecting a long work history. A common mistake at this stage is leaving the professional summary generic ("hardworking fresher seeking opportunities") instead of naming the specific role and skills being targeted, which both humans and ATS keyword matching tend to penalize.</p>
+
+  <h3>For Experienced and Senior Candidates</h3>
+  <p>At the senior and lead level, the scoring leans more heavily on quantified achievements — revenue impact, team size managed, percentage improvements — rather than just listing responsibilities. A resume that says "responsible for backend systems" scores lower on the experience metric than one that says "led a team of 6 engineers to rebuild backend systems, cutting latency by 40%." The improvements list will usually flag unquantified bullet points first, since this is the single most common weakness in experienced resumes.</p>
+
+  <h3>Common Resume Mistakes This Tool Catches</h3>
+  <ul>
+    <li>Missing or incomplete contact information (no email, no working phone format)</li>
+    <li>No professional summary or an objective that doesn't mention the target role</li>
+    <li>Work experience bullets that describe duties instead of measurable outcomes</li>
+    <li>Resume length that is too short (under ~200 words, looks incomplete) or too long for one role</li>
+    <li>Missing role-specific keywords that an ATS would be scanning for</li>
+    <li>Weak or repeated action verbs at the start of bullet points</li>
+  </ul>
+
+  <h3>Frequently Searched Terms</h3>
+  <p>People land on this tool searching for phrases like "free resume checker online," "ATS score checker," "resume keyword scanner," "will my resume pass ATS," and "AI resume feedback free." If that's what brought you here — paste your resume text above, add the job title you're targeting, and run the analysis to see where it stands before you submit an application.</p>
+
+  <h3>Doing This Manually vs. Using the Analyzer</h3>
+  <p>Manually reviewing a resume against a job description means reading both side by side, highlighting matching and missing terms, and guessing at how an ATS might parse your formatting — a process that easily takes 20-30 minutes per application if done carefully, and most people skip it entirely after the first couple of applications. This tool compresses that same comparison into a single pass: it reads your resume text and your stated job role together and returns the keyword gaps, section-by-section scores, and formatting flags in one report, so you can re-run it after every edit instead of only checking once before the first submission.</p>
+
+  <h3>A Note on What Gets Sent and Why</h3>
+  <p>Your resume text is sent to Claude's API only for the duration of that single analysis request — it is not saved to a database or reused for any other purpose by this tool. Still, it's good practice to avoid pasting sensitive identifiers like Aadhaar, PAN, or bank account numbers into any online text box, including this one, since none of that information is needed for a resume review.</p>
+
+  <h2 class="u-47c857">Related Tools</h2>
+  <div class="related-grid">
+    <a href="fake-data-generator" class="related-card"><span class="ri"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#random"></use></svg></span><span>Fake Data Generator</span></a>
+    <a href="word-counter" class="related-card"><span class="ri"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#edit"></use></svg></span><span>Word Counter</span></a>
+    <a href="seo-title-generator" class="related-card"><span class="ri"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#edit"></use></svg></span><span>Title Generator</span></a>
+    <a href="blog-outline-generator" class="related-card"><span class="ri"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg></span><span>Blog Outline</span></a>
+    <a href="case-converter" class="related-card"><span class="ri">Aa</span><span>Case Converter</span></a>
+    <a href="pdf-to-text" class="related-card"><span class="ri"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#file-text"></use></svg></span><span>PDF to Text</span></a>
+  </div>
+
+  <div class="u-d3a180">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item"><div class="faq-q">What does the AI analyze in my resume?</div><div class="faq-a">8 dimensions: ATS compatibility, contact information completeness, professional summary quality, work experience (quantified achievements, action verbs), education section, skills relevance, keyword density for your target role, and overall formatting.</div></div>
+    <div class="faq-item"><div class="faq-q">What is a good ATS score?</div><div class="faq-a">70+ is considered good. 85+ is excellent. Below 60 means your resume is likely getting filtered out by ATS systems. The most important fixes are adding relevant keywords, using standard section headings, and removing complex formatting.</div></div>
+    <div class="faq-item"><div class="faq-q">Is my resume data stored?</div><div class="faq-a">No. Your resume is analyzed by the Claude AI API in real time and not stored permanently. Each analysis is independent. Do not include sensitive info like Aadhaar/PAN numbers in the text you paste.</div></div>
+    <div class="faq-item"><div class="faq-q">How do I paste my PDF resume?</div><div class="faq-a">Open your PDF resume, press Ctrl+A to select all, then Ctrl+C to copy. Paste into the text area. Alternatively use our PDF to Text tool to extract clean text from your PDF first.</div></div>
+    <div class="faq-item"><div class="faq-q">How often should I analyze my resume?</div><div class="faq-a">Analyze every time you update your resume, and customize it for each job application by adding role-specific keywords. ATS filtering is job-specific — a resume optimized for one role may miss keywords for another.</div></div>
+  </div>
+</div>
+
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+<script>
+let lastReport = '';
+
+function updateResumeStats() {
+  const txt = document.getElementById('resume-text').value;
+  const words = txt.trim() ? txt.trim().split(/\s+/).length : 0;
+  document.getElementById('resume-stats').textContent = `${words} words · ${txt.length} characters`;
+}
+
+async function analyzeResume() {
+  const resumeText = document.getElementById('resume-text').value.trim();
+  const jobRole = document.getElementById('job-role').value.trim() || 'General Position';
+  const expLevel = document.getElementById('exp-level').value;
+
+  if (!resumeText) { alert('Please paste your resume text first.'); return; }
+  if (resumeText.split(/\s+/).length < 50) { alert('Resume seems too short. Please paste the complete resume text for accurate analysis.'); return; }
+
+  // Show loading
+  document.getElementById('input-card').style.display = 'none';
+  document.getElementById('loading-card').className = 'loading-card show';
+  document.getElementById('results-card').className = 'results-card';
+
+  // Animate loading steps
+  const steps = ['ls1','ls2','ls3','ls4','ls5'];
+  let stepIdx = 1;
+  const stepInterval = setInterval(() => {
+    if(stepIdx < steps.length) {
+      document.getElementById(steps[stepIdx-1]).className = 'ls-item done';
+      document.getElementById(steps[stepIdx-1]).innerHTML = document.getElementById(steps[stepIdx-1]).innerHTML.replace(/#(loader|circle)"/, '#check-circle"');
+      document.getElementById(steps[stepIdx]).className = 'ls-item active';
+      document.getElementById(steps[stepIdx]).innerHTML = document.getElementById(steps[stepIdx]).innerHTML.replace('#circle"', '#loader"');
+      stepIdx++;
+    }
+  }, 2500);
+
+  const expLabels = {
+    fresher: 'Fresher / Entry Level (0-1 years)',
+    junior: 'Junior (1-3 years)',
+    mid: 'Mid Level (3-6 years)',
+    senior: 'Senior (6-10 years)',
+    lead: 'Lead / Manager (10+ years)'
+  };
+
+  const prompt = `You are an expert resume reviewer and ATS optimization specialist. Analyze the following resume and provide a comprehensive, structured review.
+
+JOB ROLE TARGET: ${jobRole}
+EXPERIENCE LEVEL: ${expLabels[expLevel]}
+
+RESUME TEXT:
+---
+${resumeText.substring(0, 3000)}
+---
+
+Provide your analysis in the following EXACT JSON format (respond with JSON only, no other text):
+
+{
+  "overall_score": <0-100 integer>,
+  "ats_score": <0-100 integer>,
+  "grade": "<A+|A|B+|B|C+|C|D>",
+  "headline": "<one line summary of the resume quality>",
+  "scores": {
+    "contact_info": <0-100>,
+    "summary": <0-100>,
+    "experience": <0-100>,
+    "education": <0-100>,
+    "skills": <0-100>,
+    "keywords": <0-100>,
+    "formatting": <0-100>,
+    "action_verbs": <0-100>
+  },
+  "strengths": ["<strength 1>", "<strength 2>", "<strength 3>"],
+  "improvements": ["<specific improvement 1>", "<specific improvement 2>", "<specific improvement 3>", "<specific improvement 4>"],
+  "critical_issues": ["<critical issue 1 if any>"],
+  "keywords_found": ["<keyword1>", "<keyword2>", "<keyword3>", "<keyword4>", "<keyword5>"],
+  "keywords_missing": ["<missing keyword1 for ${jobRole}>", "<missing keyword2>", "<missing keyword3>", "<missing keyword4>"],
+  "ats_tips": ["<ATS tip 1>", "<ATS tip 2>", "<ATS tip 3>"],
+  "word_count_assessment": "<assessment of resume length>",
+  "next_steps": ["<actionable next step 1>", "<actionable next step 2>", "<actionable next step 3>"]
+}`;
+
+  try {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1500,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+
+    clearInterval(stepInterval);
+
+    if (!response.ok) throw new Error('API error ' + response.status);
+    const data = await response.json();
+    const raw = data.content.map(c => c.text || '').join('');
+    const clean = raw.replace(/```json|```/g, '').trim();
+    const result = JSON.parse(clean);
+
+    renderResults(result, jobRole);
+    lastReport = buildReportText(result, jobRole, expLabels[expLevel]);
+
+  } catch (err) {
+    clearInterval(stepInterval);
+    // Fallback to static analysis if API fails
+    const fallback = staticAnalyze(resumeText, jobRole);
+    renderResults(fallback, jobRole);
+    lastReport = buildReportText(fallback, jobRole, expLabels[expLevel]);
+  }
+
+  document.getElementById('loading-card').className = 'loading-card';
+  document.getElementById('results-card').className = 'results-card show';
+}
+
+// Static fallback analyzer
+function staticAnalyze(text, role) {
+  const words = text.toLowerCase();
+  const wordCount = text.split(/\s+/).length;
+  const hasEmail = /\w+@\w+\.\w+/.test(text);
+  const hasPhone = /[\d\-\(\)]{10,}/.test(text);
+  const hasLinkedIn = /linkedin/.test(words);
+  const hasExperience = /experience|work|employment|position/i.test(text);
+  const hasEducation = /education|degree|university|college|bachelor|master/i.test(text);
+  const hasSkills = /skills|technologies|proficient/i.test(text);
+  const hasSummary = /summary|objective|profile/i.test(text);
+  const actionVerbs = ['led','managed','developed','created','increased','improved','implemented','designed','built','achieved','reduced','delivered','launched','collaborated','optimized'].filter(v => words.includes(v));
+  const hasNumbers = /\d+%|\d+\+|\$\d+/i.test(text);
+
+  const contactScore = ((hasEmail?30:0)+(hasPhone?30:0)+(hasLinkedIn?20:0)+20);
+  const expScore = hasExperience ? (hasNumbers ? 80 : 60) : 20;
+  const eduScore = hasEducation ? 85 : 30;
+  const skillsScore = hasSkills ? 75 : 40;
+  const summaryScore = hasSummary ? 70 : 35;
+  const actionScore = Math.min(100, actionVerbs.length * 10 + 20);
+  const kwScore = 55;
+  const fmtScore = wordCount > 300 && wordCount < 900 ? 80 : wordCount > 150 ? 60 : 40;
+
+  const overall = Math.round((contactScore+expScore+eduScore+skillsScore+summaryScore+actionScore+kwScore+fmtScore)/8);
+  const ats = Math.round(overall * 0.9 + (hasEmail?5:0));
+
+  return {
+    overall_score: overall, ats_score: Math.min(95, ats),
+    grade: overall >= 85?'A':overall >= 75?'B+':overall >= 65?'B':overall >= 55?'C+':'C',
+    headline: `Resume scored ${overall}/100 — ${overall >= 75 ? 'Good foundation with room for improvement' : 'Needs significant improvements for competitive roles'}`,
+    scores: { contact_info: contactScore, summary: summaryScore, experience: expScore, education: eduScore, skills: skillsScore, keywords: kwScore, formatting: fmtScore, action_verbs: actionScore },
+    strengths: [hasEmail && hasPhone ? 'Contact information is present' : 'Basic contact info included', hasExperience ? 'Work experience section found' : 'Has some content structure', hasSkills ? 'Skills section present' : 'Resume has key sections'],
+    improvements: ['Add quantified achievements (e.g., "Increased sales by 35%")', 'Use more action verbs at the start of bullet points', !hasSummary ? 'Add a professional summary section' : 'Strengthen your professional summary', 'Tailor keywords to match the job description'],
+    critical_issues: [!hasEmail ? 'Email address not found — add contact information' : '', !hasExperience ? 'No experience section detected' : ''].filter(Boolean),
+    keywords_found: actionVerbs.slice(0,5),
+    keywords_missing: [`${role} specific skills`, 'Industry keywords', 'Technical tools', 'Certifications'],
+    ats_tips: ['Use standard section headings (Experience, Education, Skills)', 'Avoid tables, columns, and text boxes', 'Save as clean .docx or ATS-friendly PDF'],
+    word_count_assessment: wordCount < 200 ? 'Resume is too short — expand work experience and skills' : wordCount > 800 ? 'Resume may be too long for ATS — aim for 1-2 pages' : 'Good length for ATS scanning',
+    next_steps: ['Add specific metrics and numbers to work experience', `Research ${role} job descriptions and add matching keywords`, 'Have someone proofread for typos and formatting']
+  };
+}
+
+function scoreColor(s) { return s >= 75 ? '#16a34a' : s >= 55 ? '#d97706' : '#ef4444'; }
+function scoreLabel(s) { return s >= 75 ? '<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Good' : s >= 55 ? '<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#warning"></use></svg> Improve' : '<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#x-circle"></use></svg> Weak'; }
+
+function renderResults(r, role) {
+  const gradeColors = {'A+':'#10b981','A':'#16a34a','B+':'#3b82f6','B':'#60a5fa','C+':'#f59e0b','C':'#f97316','D':'#ef4444'};
+  const gc = gradeColors[r.grade] || '#3b82f6';
+  const circumference = 2 * Math.PI * 40;
+  const dashOffset = circumference - (r.overall_score / 100) * circumference;
+
+  const scoreNames = { contact_info:'Contact Info', summary:'Summary', experience:'Experience', education:'Education', skills:'Skills', keywords:'Keywords', formatting:'Format & Length', action_verbs:'Action Verbs' };
+
+  let html = `
+  <div class="score-header">
+    <div class="score-circle">
+      <svg viewBox="0 0 100 100" width="100" height="100">
+        <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="8"/>
+        <circle cx="50" cy="50" r="40" fill="none" stroke="${gc}" stroke-width="8" stroke-dasharray="${circumference}" stroke-dashoffset="${dashOffset}" stroke-linecap="round"/>
+      </svg>
+      <span class="sc-val">${r.overall_score}</span>
+      <span class="sc-label">/ 100</span>
+    </div>
+    <div class="score-info">
+      <div class="score-title">Resume Score: ${r.grade} — ${r.overall_score >= 85 ? 'Excellent' : r.overall_score >= 70 ? 'Good' : r.overall_score >= 55 ? 'Needs Work' : 'Major Improvements Needed'}</div>
+      <div class="score-subtitle">${r.headline}</div>
+      <div class="score-pills">
+        <span class="score-pill pill-${r.ats_score >= 75 ? 'green' : r.ats_score >= 55 ? 'yellow' : 'red'}">ATS Score: ${r.ats_score}/100</span>
+        <span class="score-pill pill-${r.overall_score >= 75 ? 'green' : 'yellow'}">Overall: ${r.grade}</span>
+        <span class="score-pill" style="background:rgba(255,255,255,.08);color:#94a3b8;">Target: ${role}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="scores-grid">
+    ${Object.entries(r.scores).map(([k,v]) => `
+      <div class="score-metric">
+        <div class="sm-header">
+          <span class="sm-label">${scoreNames[k]||k}</span>
+          <span class="sm-score" style="color:${scoreColor(v)}">${v}/100</span>
+        </div>
+        <div class="score-bar-wrap">
+          <div class="score-bar-fill" style="width:${v}%;background:${scoreColor(v)}"></div>
+        </div>
+      </div>`).join('')}
+  </div>`;
+
+  // Strengths
+  if(r.strengths?.length) {
+    html += `<div class="feedback-section">
+      <div class="fs-header"><span class="fs-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg></span><span class="fs-title">Strengths</span><span class="fs-badge badge-good">Good</span></div>
+      <ul class="feedback-list">${r.strengths.map(s=>`<li><span class="fi"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg></span><span>${s}</span></li>`).join('')}</ul>
+    </div>`;
+  }
+
+  // Improvements
+  if(r.improvements?.length) {
+    html += `<div class="feedback-section">
+      <div class="fs-header"><span class="fs-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lightbulb"></use></svg></span><span class="fs-title">Recommended Improvements</span><span class="fs-badge badge-improve">Action Needed</span></div>
+      <ul class="feedback-list">${r.improvements.map(s=>`<li><span class="fi"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lightbulb"></use></svg></span><span>${s}</span></li>`).join('')}</ul>
+    </div>`;
+  }
+
+  // Critical
+  if(r.critical_issues?.length) {
+    html += `<div class="feedback-section">
+      <div class="fs-header"><span class="fs-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#warning"></use></svg></span><span class="fs-title">Critical Issues</span><span class="fs-badge badge-critical">Fix First</span></div>
+      <ul class="feedback-list">${r.critical_issues.map(s=>`<li><span class="fi"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#warning"></use></svg></span><span>${s}</span></li>`).join('')}</ul>
+    </div>`;
+  }
+
+  // Keywords
+  html += `<div class="feedback-section">
+    <div class="fs-header"><span class="fs-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#key"></use></svg></span><span class="fs-title">Keyword Analysis</span></div>
+    <p style="font-size:.84rem;color:var(--gray-600);margin-bottom:8px;">Found in your resume:</p>
+    <div class="keywords-found">${(r.keywords_found||[]).map(k=>`<span class="kw-chip kw-found"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check"></use></svg> ${k}</span>`).join('')}</div>
+    <p style="font-size:.84rem;color:var(--gray-600);margin:12px 0 8px;">Consider adding for <strong>${role}</strong>:</p>
+    <div class="keywords-found">${(r.keywords_missing||[]).map(k=>`<span class="kw-chip kw-missing"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#x-circle"></use></svg> ${k}</span>`).join('')}</div>
+  </div>`;
+
+  // ATS Tips
+  html += `<div class="feedback-section">
+    <div class="fs-header"><span class="fs-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#cpu"></use></svg></span><span class="fs-title">ATS Optimization Tips</span><span class="fs-badge badge-${r.ats_score>=75?'good':'improve'}">ATS: ${r.ats_score}/100</span></div>
+    <ul class="feedback-list">${(r.ats_tips||[]).map(s=>`<li><span class="fi"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#cpu"></use></svg></span><span>${s}</span></li>`).join('')}</ul>
+  </div>`;
+
+  // Next steps
+  html += `<div class="feedback-section">
+    <div class="fs-header"><span class="fs-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#send"></use></svg></span><span class="fs-title">Your Next Steps</span></div>
+    <ul class="feedback-list">${(r.next_steps||[]).map((s,i)=>`<li><span class="fi" style="background:#eff6ff;padding:1px 6px;border-radius:4px;font-size:.7rem;font-weight:700;color:var(--primary);">${i+1}</span><span>${s}</span></li>`).join('')}</ul>
+  </div>`;
+
+  document.getElementById('results-content').innerHTML = html;
+}
+
+function buildReportText(r, role, exp) {
+  let t = `RESUME ANALYSIS REPORT — Logrith.in\n${'='.repeat(50)}\n`;
+  t += `Target Role: ${role}\nExperience Level: ${exp}\n\n`;
+  t += `OVERALL SCORE: ${r.overall_score}/100 (Grade: ${r.grade})\n`;
+  t += `ATS SCORE: ${r.ats_score}/100\n\n`;
+  t += `STRENGTHS:\n${(r.strengths||[]).map(s=>`• ${s}`).join('\n')}\n\n`;
+  t += `IMPROVEMENTS NEEDED:\n${(r.improvements||[]).map(s=>`• ${s}`).join('\n')}\n\n`;
+  t += `KEYWORDS TO ADD: ${(r.keywords_missing||[]).join(', ')}\n\n`;
+  t += `NEXT STEPS:\n${(r.next_steps||[]).map((s,i)=>`${i+1}. ${s}`).join('\n')}\n`;
+  return t;
+}
+
+function analyzeAgain() {
+  document.getElementById('input-card').classList.remove('is-hidden'); document.getElementById('input-card').style.display = '';
+  document.getElementById('results-card').className = 'results-card';
+}
+
+function copyReport() {
+  if(!lastReport) return;
+  navigator.clipboard.writeText(lastReport).then(() => {
+    const btn = document.querySelectorAll('.ra-btn')[1];
+    btn.innerHTML = '<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Copied!'; setTimeout(() => btn.innerHTML = '<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy Report', 2000);
+  });
+}
+
+function downloadReport() {
+  if(!lastReport) return;
+  const blob = new Blob([lastReport], {type:'text/plain'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'resume-analysis-logrith.txt';
+  a.click();
+}
+</script>
+</body>
+</html>

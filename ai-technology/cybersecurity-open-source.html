@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybersecurity &amp; Open Source Guides and Tools | Logrith</title>
+  <meta name="description" content="Practical security for individuals and small teams, plus how open source licensing and projects work and how to depend on them safely.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Plert Ankush">
+  <link rel="canonical" href="https://logrith.in/ai-technology/cybersecurity-open-source">
+  <meta property="og:title" content="Cybersecurity &amp; Open Source Guides and Tools | Logrith">
+  <meta property="og:description" content="Practical security for individuals and small teams, plus how open source licensing and projects work and how to depend on them safely.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://logrith.in/ai-technology/cybersecurity-open-source">
+  <meta property="og:site_name" content="Logrith">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cybersecurity &amp; Open Source Guides and Tools | Logrith">
+  <meta name="twitter:description" content="Practical security for individuals and small teams, plus how open source licensing and projects work and how to depend on them safely.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0A0A0A">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Cybersecurity & Open Source",
+    "url": "https://logrith.in/ai-technology/cybersecurity-open-source",
+    "description": "Practical security for individuals and small teams, plus how open source licensing and projects work and how to depend on them safely.",
+    "author": {
+      "@type": "Person",
+      "name": "Plert Ankush",
+      "url": "https://logrith.in/pages/founder"
+    },
+    "isPartOf": {
+      "@id": "https://logrith.in/#website"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://logrith.in/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "AI & Technology",
+        "item": "https://logrith.in/ai-technology/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Cybersecurity & Open Source",
+        "item": "https://logrith.in/ai-technology/cybersecurity-open-source"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="navbar"></div>
+
+<main id="main">
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/ai-technology/">AI &amp; Technology</a> › Cybersecurity &amp; Open Source</nav>
+    <div class="badge"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#shield-check"></use></svg> AI &amp; Technology</div>
+    <h1>Cybersecurity &amp; Open Source</h1>
+    <p>Practical security for individuals and small teams, plus how open source licensing and projects work and how to depend on them safely.</p>
+    <p class="byline">By <a href="/pages/founder" rel="author">Plert Ankush</a></p>
+  </div>
+</header>
+
+<section class="page-section">
+  <div class="prose hub-prose">
+    <h2>Overview</h2>
+    <p>Most security incidents for small teams and individuals come from ordinary causes: reused passwords, unpatched software, leaked keys and convincing phishing messages. Good security is mostly consistent habits, not exotic tools.</p>
+<p>Open source sits underneath almost everything you use. Knowing how licences differ, how to judge whether a project is maintained and how to keep dependencies updated is now a basic part of building anything on the web.</p>
+
+    <h2>What this section covers</h2>
+    <ul class="check-list">
+<li>Passwords, passphrases and password managers: what actually helps</li>
+<li>Two-factor authentication and the weak points of each method</li>
+<li>Spotting phishing and social-engineering attempts</li>
+<li>Keeping secrets such as API keys out of code and screenshots</li>
+<li>Open source licences explained: permissive vs copyleft</li>
+<li>Choosing and updating open source dependencies safely</li>
+    </ul>
+
+    <h2>Core concepts</h2>
+    <div class="concept-grid">
+<div class="concept"><h3>Entropy</h3><p>A measure of how unpredictable a password is. Length usually matters more than clever substitutions.</p></div>
+<div class="concept"><h3>Least privilege</h3><p>Giving an account or key only the access it needs, so a leak does limited damage.</p></div>
+<div class="concept"><h3>Permissive vs copyleft</h3><p>Permissive licences allow broad reuse with few conditions. Copyleft licences require derivative work to stay open under similar terms.</p></div>
+<div class="concept"><h3>Supply-chain risk</h3><p>The risk that a library you depend on, or one of its dependencies, is compromised or abandoned.</p></div>
+    </div>
+
+    <h2>Where to start</h2>
+    <p>Do three things this week: move your important accounts to unique passwords from a manager, turn on two-factor authentication for email, and check that no keys or tokens sit in public repositories or screenshots.</p>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="section-header"><h2>Free tools for this topic</h2><p>Browser-based, no sign-up, and your files stay on your device.</p></div>
+  <div class="tool-list">
+    <a href="/tool/tools/password-strength" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Password Strength Checker</div><div class="tool-row-desc">Enter a password to see its strength score and an estimate of how long it would take to crack, checked locally in your browser.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+    <a href="/tool/tools/password-generator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Password Generator</div><div class="tool-row-desc">Set the length and character types you want, then generate a cryptographically random password instantly, nothing stored or sent anywhere.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+    <a href="/tool/tools/passphrase-generator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Passphrase Generator</div><div class="tool-row-desc">Create a strong passphrase built from random words instead of symbols, easier to remember than a password but still hard to guess.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+    <a href="/tool/tools/hash-generator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Hash Generator</div><div class="tool-row-desc">Hash any text or file to verify integrity or compare checksums, with SHA-1, SHA-256, SHA-384 and SHA-512 all computed instantly.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+    <a href="/tool/tools/jwt-decoder" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">JWT Decoder</div><div class="tool-row-desc">Paste a JSON Web Token to see its decoded header, payload and signature instantly, entirely in your browser.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+    <a href="/tool/tools/image-privacy-cleaner" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Image Privacy Cleaner</div><div class="tool-row-desc">Remove location, camera and timestamp metadata hidden inside a photo in one click, processed locally so the image never leaves your device.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="section-header"><h2>More in AI &amp; Technology</h2></div>
+  <div class="related-links">
+<a href="/ai-technology/artificial-intelligence-ml" class="related-link"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#sparkles"></use></svg><span>Artificial Intelligence &amp; ML</span></a>
+<a href="/ai-technology/software-developer-ecosystem" class="related-link"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#code"></use></svg><span>Software &amp; Developer Ecosystem</span></a>
+  </div>
+</section>
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

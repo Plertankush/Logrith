@@ -58,16 +58,16 @@ def breadcrumb(text):
 
 def main():
     tools = []
-    for page in sorted((ROOT / 'tools').rglob('*.html')):
+    for page in sorted((ROOT / 'tool' / 'tools').rglob('*.html')):
         text = page.read_text(encoding='utf-8')
         canonical = first(r'<link rel="canonical" href="([^"]+)"', text)
-        url = urlparse(canonical).path if canonical else f'/tools/{page.stem}'
+        url = urlparse(canonical).path if canonical else f'/tool/tools/{page.stem}'
         crumbs = breadcrumb(text)
         if page.stem in OVERRIDES:
             name, slug = OVERRIDES[page.stem]
         elif len(crumbs) >= 3:
             name = crumbs[-1]['name']
-            slug = urlparse(crumbs[1]['item']).path.rsplit('/', 1)[-1]
+            slug = urlparse(crumbs[-2]['item']).path.rsplit('/', 1)[-1]
         else:
             print(f'skipped {page.relative_to(ROOT)}: no breadcrumb schema and no override')
             continue

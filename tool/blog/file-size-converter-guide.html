@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Size Converter: Why 1TB Shows 931GB | Logrith</title>
+  <meta name="description" content="The real difference between binary and decimal file sizes, why a 1TB drive reads as 931GB, and how to convert correctly.">
+  <meta name="keywords" content="file size converter online free, kb mb gb tb converter, binary vs decimal bytes, why is my hard drive smaller than advertised">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Plert Ankush">
+  <link rel="canonical" href="https://logrith.in/tool/blog/file-size-converter-guide">
+  <meta property="og:title" content="File Size Converter: Why 1TB Shows 931GB | Logrith">
+  <meta property="og:description" content="The real difference between binary and decimal file sizes, why a 1TB drive reads as 931GB, and how to convert correctly.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://logrith.in/tool/blog/file-size-converter-guide">
+  <meta property="og:site_name" content="Logrith">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="File Size Converter: Why 1TB Shows 931GB | Logrith">
+  <meta name="twitter:description" content="The real difference between binary and decimal file sizes, why a 1TB drive reads as 931GB, and how to convert correctly.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","datePublished":"2026-10-20","dateModified":"2026-10-31","headline":"File Size Converter: Why Your 1TB Drive Shows 931GB","description":"How to convert between bytes, KB, MB, GB, and TB, and why storage sizes never quite match expectations.","author":{"@type":"Person","name":"Plert Ankush","url":"https://logrith.in/pages/founder"},"publisher":{"@id":"https://logrith.in/#organization"},"mainEntityOfPage":"https://logrith.in/tool/blog/file-size-converter-guide"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"File Size Converter Guide","url":"https://logrith.in/tool/blog/file-size-converter-guide","isPartOf":{"@type":"Blog","name":"Logrith Blog","url":"https://logrith.in/tool/blog/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"File Size Converter","url":"https://logrith.in/tool/tools/file-size-converter","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Tool Guides", "item": "https://logrith.in/tool/blog/"}, {"@type": "ListItem", "position": 4, "name": "Utilities", "item": "https://logrith.in/tool/blog/categories/utilities"}, {"@type": "ListItem", "position": 5, "name": "File Size Converter", "item": "https://logrith.in/tool/blog/file-size-converter-guide"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Why does my new hard drive show less storage than what was advertised?","acceptedAnswer":{"@type":"Answer","text":"Storage manufacturers calculate capacity using decimal units (1 GB = 1,000,000,000 bytes), while operating systems typically display capacity using binary units (1 GB = 1,073,741,824 bytes). A drive advertised as 1TB shows as roughly 931GB in an operating system using binary calculation, even though no storage is actually missing."}},
+    {"@type":"Question","name":"What's the difference between a kilobyte and a kibibyte?","acceptedAnswer":{"@type":"Answer","text":"A kilobyte (KB), strictly defined, is 1,000 bytes, following decimal (base-10) convention. A kibibyte (KiB) is 1,024 bytes, following binary (base-2) convention. In casual usage, 'KB' is frequently used to mean either value, which is the root of most file-size confusion."}},
+    {"@type":"Question","name":"Why is 1 megabyte sometimes 1,000 kilobytes and sometimes 1,024 kilobytes?","acceptedAnswer":{"@type":"Answer","text":"This depends on whether decimal (1,000) or binary (1,024) convention is being used. Storage manufacturers and network speed measurements typically use decimal; operating systems and memory measurements typically use binary — the same unit names get used for both conventions in common practice."}},
+    {"@type":"Question","name":"Is my internet speed test using the same units as my file sizes?","acceptedAnswer":{"@type":"Answer","text":"Usually not directly comparable without conversion. Internet speeds are measured in bits per second (lowercase b), while file sizes are measured in bytes (uppercase B) — 8 bits equal 1 byte, so a connection speed needs to be divided by 8 to estimate an equivalent file download rate in bytes per second."}}
+  ]}
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+</head>
+<body class="page-file-size-converter-guide">
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="navbar"></div>
+
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/tool/">Tools</a> &rsaquo; <a href="/tool/blog/">Tool Guides</a> &rsaquo; <a href="/tool/blog/categories/utilities">Utilities</a> &rsaquo; File Size Converter</nav>
+  <h1>Why a 1TB Hard Drive Shows Up as 931GB, and Other File Size Mysteries</h1>
+  <p>Buy a drive advertised as 1TB, plug it in, and your operating system reports something closer to 931GB — no storage vanished, and nobody made a mistake. This is one of computing's most persistent, most confusing conventions, and understanding it makes every file size, download estimate, and storage purchase make a lot more sense, from a quick glance at a phone's storage settings to a full comparison of competing cloud storage plans.</p>
+  <a href="/tool/tools/file-size-converter" class="btn btn-primary btn-lg">
+    <svg class="icon"><use href="/assets/svg/icons.svg#hard-drive"></use></svg>
+    Convert File Sizes
+  </a>
+  <p class="byline">By <a href="/pages/founder" rel="author">Plert Ankush</a> &middot; Published <time datetime="2026-10-20">Oct 20, 2026</time> &middot; Updated <time datetime="2026-10-31">Oct 31, 2026</time></p>
+</div></header>
+
+<article class="page-section prose">
+
+  <nav class="toc" aria-label="On this page">
+    <h2>On This Page</h2>
+    <ol>
+      <li><a href="#how-to-use">How to Convert File Sizes</a></li>
+      <li><a href="#binary-decimal">Binary vs. Decimal: The Root of the Confusion</a></li>
+      <li><a href="#missing-storage">Why Your Drive Shows Less Than Advertised</a></li>
+      <li><a href="#kib-vs-kb">KB vs. KiB: The "Correct" Terminology Nobody Uses</a></li>
+      <li><a href="#bits-vs-bytes">Bits vs. Bytes: A Separate, Equally Confusing Issue</a></li>
+      <li><a href="#uses">Common Reasons People Convert File Sizes</a></li>
+      <li><a href="#mistakes">Common Mistakes</a></li>
+      <li><a href="#faq">Frequently Asked Questions</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="how-to-use">How to Convert File Sizes</h2>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the <a href="/tool/tools/file-size-converter">File Size Converter</a> to begin converting.</p>
+    </li>
+    <li class="step">
+      <p>Enter a value and choose its unit — bytes, KB, MB, GB, or TB.</p>
+    </li>
+    <li class="step">
+      <p>Select whether to convert using binary (1024-based) or decimal (1000-based) calculation.</p>
+    </li>
+    <li class="step">
+      <p>Get the instant converted result in your target unit, calculated precisely either way.</p>
+    </li>
+  </ol>
+
+  <h2 id="binary-decimal">Binary vs. Decimal: The Root of the Confusion</h2>
+  <div class="table-wrap">
+    <table class="table">
+    <tr><th>System</th><th>1 KB equals</th><th>1 MB equals</th><th>Used by</th></tr>
+    <tr><td>Decimal (base-10)</td><td>1,000 bytes</td><td>1,000,000 bytes</td><td>Storage manufacturers, network speeds</td></tr>
+    <tr><td>Binary (base-2)</td><td>1,024 bytes</td><td>1,048,576 bytes</td><td>Operating systems, memory (RAM)</td></tr>
+  </table>
+  </div>
+  <p>This is the single root cause behind nearly every file-size discrepancy anyone encounters. Computers fundamentally operate in binary, and 1,024 (2 to the 10th power) is a natural, clean number in binary arithmetic, which is why early computing conventions built storage measurement around powers of 1,024 rather than 1,000. Decimal units, using clean round numbers like 1,000, are more intuitive for humans and align with how every other measurement system (money, distance, weight) scales. Both conventions reused the same unit names — kilobyte, megabyte, gigabyte — for genuinely different underlying values, and that naming collision is the entire source of the confusion that follows.</p>
+
+  <h2 id="missing-storage">Why Your Drive Shows Less Than Advertised</h2>
+  <p>Storage manufacturers calculate and advertise capacity using decimal units, since it produces cleaner, larger-sounding numbers and aligns with international standards bodies' formal definitions of these unit prefixes. A drive labeled "1TB" genuinely contains 1,000,000,000,000 bytes, exactly as advertised — no deception involved. But when that drive is plugged in, most operating systems calculate and display its capacity using binary units, where "1TB" (or more precisely, what should be labeled 1 TiB) equals 1,099,511,627,776 bytes. Dividing the drive's actual byte count (1,000,000,000,000) by the binary definition of a terabyte produces roughly 0.909, which the operating system then reports as approximately 931GB using its own binary-based GB definition. The drive genuinely contains every byte it was advertised with — the discrepancy is purely a difference in how two different systems label and communicate the same underlying byte count, not a case of missing or defective storage.</p>
+
+  <h2 id="kib-vs-kb">KB vs. KiB: The "Correct" Terminology Nobody Uses</h2>
+  <p>International standards bodies actually solved this naming ambiguity decades ago by introducing binary-specific prefixes: kibibyte (KiB) for 1,024 bytes, mebibyte (MiB) for 1,048,576 bytes, and gibibyte (GiB) for the binary gigabyte value, explicitly distinguishing them from the decimal kilobyte (KB), megabyte (MB), and gigabyte (GB). In principle, this resolves the ambiguity completely — KB should always mean 1,000 bytes, KiB should always mean 1,024. In practice, almost nobody uses the "correct" binary terminology in everyday software, operating systems, or casual conversation — "KB," "MB," and "GB" get used loosely to mean either value depending entirely on context, and the properly disambiguating "KiB/MiB/GiB" terms remain largely confined to technical documentation and standards discussions rather than mainstream software interfaces or everyday speech. This gap between the technically correct terminology and what people actually say and see in software interfaces is unlikely to close anytime soon, since changing decades of established labeling across every operating system, every piece of consumer software, and every casual conversation about file sizes would require a coordinated effort that no single organization has the authority or incentive to drive forward.</p>
+
+  <h2 id="bits-vs-bytes">Bits vs. Bytes: A Separate, Equally Confusing Issue</h2>
+  <p>Layered on top of the binary-versus-decimal confusion is an entirely separate distinction: bits versus bytes, conventionally denoted with a lowercase "b" for bits and uppercase "B" for bytes. Eight bits make one byte, and this distinction matters most visibly for internet connection speeds, which are conventionally advertised in megabits per second (Mbps), while file sizes are conventionally measured in megabytes (MB). A "100 Mbps" internet connection therefore downloads at a theoretical maximum of roughly 12.5 megabytes per second, not 100 megabytes per second, since the advertised speed needs to be divided by 8 to convert from bits to bytes before it becomes directly comparable to a file size measured in the more familiar byte-based unit. This is a genuinely common point of confusion for anyone estimating how long a download will take based on an advertised connection speed, and it's a completely separate issue from the binary-versus-decimal confusion covered above, even though both contribute to file-size-related numbers rarely matching naive expectations. The convention of measuring network speed in bits rather than bytes traces back to how data is actually transmitted at the physical signal level — individual bits, one at a time, over a communication channel — which made bits the natural unit for describing raw transmission rate, even though end users almost always think in terms of bytes when reasoning about file sizes and download completion times.</p>
+
+  <h2>Real-World Scenarios</h2>
+  <ul>
+    <li><strong>"I just bought a 500GB SSD and my computer shows 465GB — is it defective?"</strong> No, this is the standard binary/decimal discrepancy — a 500GB drive (decimal) genuinely contains all 500,000,000,000 bytes advertised, which a binary-calculating operating system reports as approximately 465GB, with every byte fully accounted for.</li>
+    <li><strong>"My email won't let me attach a file — is it over the limit?"</strong> Check the file's reported size against the platform's stated limit, keeping in mind the platform may state its limit in either binary or decimal MB — if you're right at the boundary, the specific convention used can matter.</li>
+    <li><strong>"My 1Gbps internet connection isn't downloading at 1GB per second."</strong> This is expected — 1 gigabit per second (the advertised connection speed) divides by 8 to give a theoretical maximum of roughly 125 megabytes per second, still very fast, but genuinely different from the raw advertised number.</li>
+    <li><strong>"I'm comparing two cloud storage plans listed in different units."</strong> Convert both to the same unit and convention before comparing, since a provider using decimal GB and one using binary GB for otherwise identical stated numbers actually offer slightly different real capacities.</li>
+  </ul>
+
+  <h2>How This Discrepancy Became So Deeply Entrenched</h2>
+  <p>This isn't a recent problem or a deliberate deception by any single party — it's the accumulated result of decades of parallel, independently reasonable conventions that were never fully reconciled across the computing industry. Early computer engineers naturally gravitated toward powers of 1,024 because binary arithmetic makes those numbers clean and efficient to work with internally. Storage manufacturers, meanwhile, had commercial and regulatory incentives to use decimal units — they're simpler for consumers to understand, align with international measurement standards used everywhere else, and, not coincidentally, produce larger-sounding capacity figures for the same actual byte count. Operating system developers largely continued using the binary convention that predated the widespread consumer storage market, inheriting it from earlier engineering-focused computing contexts rather than deliberately choosing it to create confusion. By the time this discrepancy became a genuinely visible consumer issue — as drives grew large enough that the accumulated binary/decimal gap became a noticeably large number of gigabytes rather than a negligible rounding difference — the conventions were already too deeply embedded in both industries to easily unify, leaving consumers to navigate the resulting confusion largely on their own, aided at best by an occasional footnote on product packaging.</p>
+
+  <h2 id="uses">Common Reasons People Convert File Sizes</h2>
+  <ul>
+    <li><strong>Checking if a file fits an upload limit.</strong> Email attachment limits, cloud storage quotas, and upload restrictions are typically stated in MB or GB, requiring a quick conversion from a file's reported byte size.</li>
+    <li><strong>Understanding storage device capacity discrepancies.</strong> Knowing why an advertised drive size differs from the operating system's reported size avoids the mistaken impression that storage is missing or defective.</li>
+    <li><strong>Estimating download or transfer time.</strong> Converting a file size and a connection speed into consistent units (both in bytes, or both in bits) allows a genuinely accurate time estimate.</li>
+    <li><strong>Comparing storage plans or specifications.</strong> Cloud storage tiers, phone storage options, and server specifications are all typically listed in GB or TB, and converting between them helps compare options on equal footing.</li>
+  </ul>
+
+  <h2 id="mistakes">Common Mistakes</h2>
+  <ul>
+    <li><strong>Assuming missing storage when none is actually missing.</strong> The binary/decimal discrepancy accounts for the vast majority of "my drive shows less space than advertised" situations — the storage is genuinely all present, just labeled using a different counting convention than the manufacturer used.</li>
+    <li><strong>Confusing megabits with megabytes when estimating download speed.</strong> These differ by a factor of 8 — always confirm which unit an advertised speed actually uses before estimating transfer time, since mixing them up produces an estimate that's off by nearly an order of magnitude.</li>
+    <li><strong>Assuming all software uses the same convention consistently.</strong> Some software uses binary calculation, some uses decimal, and some inconsistently mixes both — check a specific tool's documentation if precise consistency matters for your use case.</li>
+    <li><strong>Not accounting for filesystem overhead.</strong> Beyond the binary/decimal discrepancy, a small additional portion of any drive's capacity is used by the filesystem itself for organizational structures, slightly reducing the space actually available for files beyond even the binary/decimal conversion difference.</li>
+    <li><strong>Believing storage manufacturers are being deceptive.</strong> Decimal capacity measurement is the internationally standardized definition for these unit prefixes — it's the operating system's binary display convention that diverges from the formal standard, not the other way around.</li>
+  </ul>
+
+  <h3>Why Choose Logrith</h3>
+  <p>Conversion happens entirely in your browser using standard JavaScript arithmetic, with no data ever transmitted anywhere — instant results in both binary and decimal calculation, letting you check exactly which convention applies to whatever specific number you're trying to make sense of, whether that's a puzzling drive capacity or a download speed estimate that never quite matches what the advertised connection speed seemed to promise.</p>
+
+</article>
+
+<article class="page-section prose">
+  <h2 id="faq">Frequently Asked Questions</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">Why does my new drive show less storage than advertised?</summary>
+      <div class="faq-a"><p>Manufacturers use decimal units (1 GB = 1,000,000,000 bytes), while operating systems typically use binary units (1 GB = 1,073,741,824 bytes). A 1TB drive shows as roughly 931GB in binary calculation, with no storage actually missing.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What's the difference between a kilobyte and a kibibyte?</summary>
+      <div class="faq-a"><p>A kilobyte (KB) is technically 1,000 bytes (decimal). A kibibyte (KiB) is 1,024 bytes (binary). In casual usage, "KB" is used loosely to mean either, which is the root of most file-size confusion.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why is 1 megabyte sometimes 1,000 KB and sometimes 1,024 KB?</summary>
+      <div class="faq-a"><p>This depends on whether decimal or binary convention is used. Storage manufacturers and network speeds typically use decimal; operating systems and memory typically use binary.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my internet speed measured the same way as file sizes?</summary>
+      <div class="faq-a"><p>Usually not directly comparable. Internet speeds are measured in bits per second; file sizes in bytes. Divide a speed in bits by 8 to estimate an equivalent download rate in bytes per second.</p></div>
+    </details>
+  </div>
+
+  <h2>Conclusion</h2>
+  <p>Nearly every confusing file-size discrepancy anyone runs into traces back to one of two overlapping issues: binary versus decimal calculation of the same unit names, or bits versus bytes in speed and size measurements. Neither represents an error or missing data — they're simply two legitimate, differently-motivated conventions that happen to share identical unit names, and knowing which convention applies to a specific number is usually all it takes to make an otherwise mysterious figure make complete sense, whether that's a hard drive that seems smaller than advertised or an internet connection that seems slower than its stated speed.</p>
+</article>
+
+<nav class="post-nav page-section" aria-label="More guides">
+  <a href="/tool/blog/">&larr; Back to Blog</a>
+  <a href="/tool/blog/categories/utilities">More Utilities Guides &rarr;</a>
+</nav>
+
+<section class="page-section">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/tool/tools/unit-converter"><strong>Unit Converter</strong><span>Convert between other measurement units.</span></a>
+    <a class="related-card" href="/tool/tools/image-compressor"><strong>Image Compressor</strong><span>Reduce image file sizes for uploads.</span></a>
+    <a class="related-card" href="/tool/tools/pdf-compressor"><strong>PDF Compressor</strong><span>Reduce PDF file sizes for email or upload limits.</span></a>
+    <a class="related-card" href="/tool/tools/percentage-calculator"><strong>Percentage Calculator</strong><span>Calculate storage usage percentages.</span></a>
+  </div>
+</section>
+
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

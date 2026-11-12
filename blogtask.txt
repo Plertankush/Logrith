@@ -290,16 +290,16 @@ ORIGINAL (v1) CORE RULES — STILL APPLY, NOW AUGMENTED BY THE ABOVE
 SITE STRUCTURE FOR BLOG SECTION
 =====================================================================
 
-/blog/index.html                  — main blog entry/listing page
-/blog/categories/<category>.html  — 6 category blog landing pages:
+/tool/blog/index.html                  — main blog entry/listing page
+/tool/blog/categories/<category>.html  — 6 category blog landing pages:
     1. image-pdf-tools.html
     2. calculate-convert.html
     3. text-generators.html
     4. developer-tools.html
     5. utilities.html
     6. ai-tools.html
-/blog/<tool-slug>.html            — 100 individual tool blog posts
-    (slug matches the tool's own slug, e.g. /blog/word-counter.html
+/tool/blog/<tool-slug>.html            — 100 individual tool blog posts
+    (slug matches the tool's own slug, e.g. /tool/blog/word-counter.html
     for the word-counter tool)
 
 Total new files: 100 (tool posts) + 1 (index) + 6 (category pages) = 107
@@ -311,7 +311,7 @@ LINKING REQUIREMENTS (once posts are built)
 - Each blog post links to 3-4 related tool blog posts
 - Each category blog page lists all blog posts in that category
 - Blog index page links to all 6 category pages + highlights posts
-- Add /blog/ entry point to main navbar and/or footer
+- Add /tool/blog/ entry point to main navbar and/or footer
 - Add all 107 blog URLs to a new sitemap-blog.xml (blog URLs ONLY,
   kept separate from sitemap-pages.xml and sitemap-tools.xml),
   referenced from the main sitemap.xml index
@@ -325,7 +325,7 @@ Given the volume (107 long-form pages, tiered 1,200-4,000+ words
 depending on tool complexity per the v2 length system above), this
 is built in batches by category, tracked here as progress is made.
 
-[x] Blog index page (/blog/index.html)
+[x] Blog index page (/tool/blog/index.html)
 [x] Category blog page 1: Image & PDF Tools
 [x] Category blog page 2: Calculate & Convert
 [x] Category blog page 3: Text & Generators

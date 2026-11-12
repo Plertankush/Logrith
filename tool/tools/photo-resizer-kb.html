@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resize a Photo to Hit an Exact File Size in KB | Logrith</title>
+  <meta name="description" content="Shrink an image to a specific kilobyte target for forms and uploads with strict size limits, automatically.">
+  <meta name="keywords" content="resize image to 50kb, photo resizer kb, reduce photo size to kb, image compressor target size, resize photo for exam form">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Logrith">
+  <link rel="canonical" href="https://logrith.in/tool/tools/photo-resizer-kb">
+  <meta property="og:title" content="Resize a Photo to Hit an Exact File Size in KB | Logrith">
+  <meta property="og:description" content="Shrink an image down to a specific kilobyte target for forms and uploads with strict size limits, adjusted automatically.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://logrith.in/tool/tools/photo-resizer-kb">
+  <meta property="og:site_name" content="Logrith">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Resize a Photo to Hit an Exact File Size in KB | Logrith">
+  <meta name="twitter:description" content="Shrink a photo to an exact KB target for forms with strict upload size limits.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Photo Resizer to KB","url":"https://logrith.in/tool/tools/photo-resizer-kb","applicationCategory":"MultimediaApplication","operatingSystem":"Any","description":"Free online tool to resize a photo to a specific target file size in KB.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://logrith.in/#organization"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Image & PDF Tools", "item": "https://logrith.in/tool/categories/image-pdf-tools"}, {"@type": "ListItem", "position": 4, "name": "Photo Resizer to KB", "item": "https://logrith.in/tool/tools/photo-resizer-kb"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Why do forms require a specific photo file size?","acceptedAnswer":{"@type":"Answer","text":"Many exam, visa, and government application forms enforce strict file size limits (like 20-50KB) to keep upload systems fast and storage manageable, especially for high-volume application processing."}},
+    {"@type":"Question","name":"Will resizing to a smaller file size reduce image quality?","acceptedAnswer":{"@type":"Answer","text":"Yes, hitting a much smaller target size requires more compression, which does reduce quality somewhat. This tool finds the best quality achievable within your target size."}}
+  ]}
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+</head>
+<body class="page-tools-photo-resizer-kb">
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="navbar"></div>
+
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/tool/">Tools</a> › <a href="/tool/categories/image-pdf-tools">Image &amp; PDF Tools</a> › Photo Resizer to KB</nav>
+  <h1>Free Photo Resizer to KB</h1>
+  <p>Resize a photo to a specific target file size in KB — perfect for exam forms, job applications, and government portals with strict upload limits.</p>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#target"></use></svg> Exact Target Size</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
+
+<div class="tool-workspace">
+  <div class="tool-card">
+    <h2>Upload Photo</h2>
+    <div class="upload-zone" id="upload-zone">
+      <input class="is-hidden" type="file" id="file-input" accept="image/*">
+      <p><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#upload"></use></svg> Click or drag an image here</p>
+    </div>
+    <div id="preview-wrap">
+      <img id="preview-img">
+    </div>
+
+    <div class="controls-grid mt-16">
+      <div class="control-group">
+        <label>Target Size</label>
+        <input type="number" id="target-kb" class="field-input" value="50" min="1">
+      </div>
+      <div class="control-group">
+        <label>Unit</label>
+        <select id="target-unit">
+          <option value="KB">KB</option>
+          <option value="MB">MB</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="btn-group mt-12">
+      <button class="btn btn-primary btn-lg" id="resize-btn" disabled><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#target"></use></svg> Resize to Target</button>
+    </div>
+    <div class="status-msg" id="status-msg"></div>
+  </div>
+
+  <div class="tool-card is-hidden" id="result-card">
+    <h2>Result</h2>
+    <div class="stats-row" id="result-stats"></div>
+    <div class="btn-group mt-12">
+      <a href="#" id="download-btn" class="btn btn-primary" download="resized-photo.jpg"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#download"></use></svg> Download</a>
+    </div>
+  </div>
+</div>
+
+<section class="page-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">Why do forms require a specific file size?</summary>
+      <div class="faq-a"><p>Many exam, visa, and government application forms enforce strict size limits (like 20-50KB) to keep upload systems fast and storage manageable at high volume.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Will this reduce image quality?</summary>
+      <div class="faq-a"><p>Yes, hitting a much smaller target size requires more compression, which does reduce quality somewhat. This tool finds the best quality achievable within your target size.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">What if the target size can't be reached?</summary>
+      <div class="faq-a"><p>If the target is extremely small relative to the image dimensions, the tool will also reduce the image's pixel dimensions to help reach the target while preserving as much clarity as possible.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my photo uploaded to a server?</summary>
+      <div class="faq-a"><p>No, all compression and resizing happens locally using the browser's Canvas API. Your photo never leaves your device.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why does the tool sometimes shrink the image dimensions too?</summary>
+      <div class="faq-a"><p>Very small KB targets can't always be reached through compression quality alone without the image becoming visibly degraded. Reducing pixel dimensions slightly, alongside compression, usually produces a clearer final result than compressing a full-size image down to an extremely low quality setting.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does this work for passport or exam-size photos specifically?</summary>
+      <div class="faq-a"><p>Yes, this tool targets file size rather than a specific photo standard, so it works well as a final step after cropping a photo to the exact dimensions a particular form requires.</p></div>
+    </details>
+  </div>
+</section>
+
+<section class="page-section prose">
+  <h2>Resize a Photo to an Exact File Size</h2>
+  <p>This tool resizes a photo to hit a specific target file size, such as 50KB or 200KB — a common requirement for exam registration forms, visa applications, government portals, and job application systems that enforce strict upload size limits.</p>
+
+  <h3>How This Tool Finds the Target Size</h3>
+  <p>Rather than using a single fixed compression level, this tool performs an automated search: it repeatedly compresses your image at different JPEG quality levels, checking the resulting file size against your target each time, and converges on the highest quality setting that still fits within your specified size limit. If quality reduction alone can't reach a very small target, the tool also reduces the image's pixel dimensions to help hit the target while keeping the image as clear as possible.</p>
+
+  <h3>Why a Binary Search Finds the Best Quality Faster</h3>
+  <p>Finding the ideal compression quality for a target file size isn't something you can calculate directly, since file size depends on image content in ways that are hard to predict mathematically in advance. Instead, this tool uses a binary search approach: it tries a quality setting roughly in the middle of the possible range, checks whether the resulting file is above or below the target, then narrows the search to the half of the range that's likely to contain the right answer, repeating this process several times. This converges on a quality setting very close to the maximum achievable within your target size in just a handful of compression attempts, rather than blindly trying many quality levels one at a time.</p>
+
+  <h3>Why Forms Enforce File Size Limits</h3>
+  <ul>
+    <li><strong>Upload system performance</strong> — smaller required file sizes keep high-volume application portals fast and responsive.</li>
+    <li><strong>Storage constraints</strong> — government and institutional systems processing millions of applications need to manage total storage.</li>
+    <li><strong>Print consistency</strong> — many forms print photos at a fixed small size, so extremely high resolution isn't necessary.</li>
+  </ul>
+
+  <h3>Tips for Getting the Best Result</h3>
+  <p>Starting from a higher-resolution, well-lit original photo generally produces a noticeably better result than starting from an already-small or poor-quality image, since the compression process has more genuine detail to work with before needing to discard information to hit the target size. A simple, evenly lit background with good contrast against the subject also compresses more cleanly than a busy or low-contrast photo, since JPEG compression handles smooth, simple areas of an image more efficiently than high-detail or noisy ones.</p>
+
+  <h3>Common Uses</h3>
+  <ul>
+    <li><strong>Exam registration forms</strong> — many exams require photo uploads under a specific KB limit.</li>
+    <li><strong>Visa and passport applications</strong> — government portals frequently enforce strict photo size requirements.</li>
+    <li><strong>Job application portals</strong> — some hiring systems cap profile photo upload sizes.</li>
+    <li><strong>Any form with an upload size limit</strong> — quickly meeting a size requirement without manual trial and error.</li>
+  </ul>
+
+  <h3>Step-by-Step: Resizing to a Target Size</h3>
+  <ol class="steps">
+    <li class="step">
+      <strong>Upload your photo</strong>
+      <p>Drag and drop or click to select the image you need to resize.</p>
+    </li>
+    <li class="step">
+      <strong>Enter your target size</strong>
+      <p>Type the exact KB or MB limit your form requires.</p>
+    </li>
+    <li class="step">
+      <strong>Click Resize to Target</strong>
+      <p>Let the tool automatically find the best quality setting for your target.</p>
+    </li>
+    <li class="step">
+      <strong>Download your result</strong>
+      <p>Check the final size and dimensions, then download the compressed photo.</p>
+    </li>
+  </ol>
+
+  <h3>Privacy and Local Processing</h3>
+  <p>All resizing and compression happens directly in your browser using the Canvas API — your photo is never uploaded to a server, logged, or stored anywhere.</p>
+
+  <h3>Common File Size Requirements You Might Encounter</h3>
+  <p>Different institutions and platforms set wildly different size limits, which is part of why a flexible, exact-target tool is useful rather than a single fixed preset. Many government exam portals specify something in the 20-50KB range for passport-style photos. Some visa application systems require photos between 10-300KB depending on the specific country and form. University and job application portals vary even more widely, sometimes specifying a maximum in MB rather than KB. Always double-check the exact limit stated on your specific form, since even small differences — 50KB versus 100KB — can mean the difference between a successful upload and a rejected one.</p>
+
+  <h3>What Happens When Compression Alone Isn't Enough</h3>
+  <p>For very aggressive size targets relative to a photo's original dimensions — say, squeezing a high-resolution 4000×3000 photo down to just 20KB — quality compression alone eventually hits a point of diminishing returns, where further reducing quality produces visibly poor results without actually reaching the target size efficiently. This is exactly when the tool's fallback step kicks in, incrementally shrinking the image's pixel dimensions alongside moderate compression, since a smaller image at reasonable quality generally looks clearer than a full-size image compressed to an extreme degree.</p>
+
+  <h3>JPEG Compression and Why Quality Settings Affect File Size</h3>
+  <p>JPEG compression works by selectively discarding image detail that the human eye is less sensitive to, with the quality setting controlling how aggressively this discarding happens. At high quality settings, very little detail is thrown away and the file stays large but visually near-identical to the original. At low quality settings, significantly more detail is discarded, shrinking the file considerably but introducing visible artifacts — blocky patterns, color banding, and blurred fine detail, especially noticeable around sharp edges and text. This tool searches across this quality range automatically to find the highest setting that still fits your target size, rather than requiring you to guess and manually check each attempt yourself.</p>
+</section>
+
+<section class="page-section">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/tool/tools/image-compressor"><strong>Image Compressor</strong><span>Compress images by quality percentage.</span></a>
+    <a class="related-card" href="/tool/tools/image-resize"><strong>Image Resize</strong><span>Resize images to specific pixel dimensions.</span></a>
+    <a class="related-card" href="/tool/tools/image-crop"><strong>Image Crop</strong><span>Crop images to a specific area or aspect ratio.</span></a>
+    <a class="related-card" href="/tool/tools/file-size-converter"><strong>File Size Converter</strong><span>Convert between bytes, KB, MB, GB.</span></a>
+  </div>
+</section>
+
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+<script>
+let uploadedImage = null;
+let resultBlob = null;
+
+const uploadZone = document.getElementById('upload-zone');
+const fileInput = document.getElementById('file-input');
+
+uploadZone.addEventListener('click', () => fileInput.click());
+initDragDrop(uploadZone, handleFile);
+
+fileInput.addEventListener('change', e => {
+  if (e.target.files[0]) handleFile(e.target.files[0]);
+});
+
+function handleFile(file) {
+  if (!file.type.startsWith('image/')) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    const img = new Image();
+    img.onload = () => {
+      uploadedImage = img;
+      document.getElementById('preview-img').src = e.target.result;
+      document.getElementById('preview-wrap').style.display = 'block';
+      document.getElementById('resize-btn').disabled = false;
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+function canvasToBlob(canvas, quality) {
+  return new Promise(resolve => {
+    canvas.toBlob(blob => resolve(blob), 'image/jpeg', quality);
+  });
+}
+
+async function resizeToTarget(img, targetBytes) {
+  let canvas = document.createElement('canvas');
+  let width = img.width;
+  let height = img.height;
+  canvas.width = width;
+  canvas.height = height;
+  let ctx = canvas.getContext('2d');
+  ctx.drawImage(img, 0, 0, width, height);
+
+  let quality = 0.92;
+  let blob = await canvasToBlob(canvas, quality);
+
+  // Binary search on quality first
+  let low = 0.02, high = 0.98;
+  for (let i = 0; i < 8; i++) {
+    quality = (low + high) / 2;
+    blob = await canvasToBlob(canvas, quality);
+    if (blob.size > targetBytes) high = quality;
+    else low = quality;
+  }
+
+  // If still too big even at lowest quality, reduce dimensions
+  let attempts = 0;
+  while (blob.size > targetBytes && attempts < 6) {
+    width = Math.round(width * 0.85);
+    height = Math.round(height * 0.85);
+    canvas.width = width;
+    canvas.height = height;
+    ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0, width, height);
+    blob = await canvasToBlob(canvas, 0.7);
+    attempts++;
+  }
+
+  return { blob, width, height };
+}
+
+document.getElementById('resize-btn').addEventListener('click', async () => {
+  if (!uploadedImage) return;
+  const statusEl = document.getElementById('status-msg');
+  const targetVal = parseFloat(document.getElementById('target-kb').value);
+  const unit = document.getElementById('target-unit').value;
+  const targetBytes = unit === 'MB' ? targetVal * 1024 * 1024 : targetVal * 1024;
+
+  showStatus(statusEl, 'info', 'Resizing... this may take a moment.');
+  document.getElementById('resize-btn').disabled = true;
+
+  const { blob, width, height } = await resizeToTarget(uploadedImage, targetBytes);
+  resultBlob = blob;
+
+  const finalKB = (blob.size / 1024).toFixed(1);
+  document.getElementById('result-stats').innerHTML = `
+    <span class="stat-chip">Final Size: <strong>${finalKB} KB</strong></span>
+    <span class="stat-chip">Dimensions: <strong>${width} × ${height}</strong></span>`;
+
+  const url = URL.createObjectURL(blob);
+  document.getElementById('download-btn').href = url;
+  document.getElementById('result-card').style.display = 'block';
+  document.getElementById('resize-btn').disabled = false;
+
+  const withinTarget = blob.size <= targetBytes * 1.1;
+  showStatus(statusEl, withinTarget ? 'success' : 'error',
+    withinTarget ? 'Resized successfully!' : 'Could not reach exact target — reduced as much as possible while keeping the image usable.');
+});
+</script>
+</body>
+</html>

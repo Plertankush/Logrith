@@ -1,11 +1,23 @@
+# Logrith 2.0: old home, categories and guides moved under /tool/
+/blog                     /tool/blog                301
+/blog/*                   /tool/blog/:splat         301
+/categories               /tool/                    301
+/categories/*             /tool/categories/:splat   301
+
+# Old tool URLs (before the /tool/ folder) -> new locations
+/tools                    /tool/                     301
+/tools/blog/*             /tool/blog/:splat          301
+/tools/categories/*       /tool/categories/:splat    301
+/tools/*                  /tool/tools/:splat         301
+
 /en/*        /:splat            301
 /legacy/*    /:splat            301
 
-# Global Tools category — files live in /tools/global/, served at clean /tools/ URLs
-/tools/pdf-inspector            /tools/global/pdf-inspector.html            200
-/tools/image-privacy-cleaner    /tools/global/image-privacy-cleaner.html    200
-/tools/json-repair              /tools/global/json-repair.html              200
-/tools/csv-cleaner              /tools/global/csv-cleaner.html              200
-/tools/ai-context-calculator    /tools/global/ai-context-calculator.html    200
-/tools/markdown-to-html         /tools/global/markdown-to-html.html         200
-/tools/url-deduplicator         /tools/global/url-deduplicator.html         200
+# Global Tools category — files live in /tool/tools/global/, served at clean /tool/ URLs
+/tool/tools/pdf-inspector            /tool/tools/global/pdf-inspector.html            200
+/tool/tools/image-privacy-cleaner    /tool/tools/global/image-privacy-cleaner.html    200
+/tool/tools/json-repair              /tool/tools/global/json-repair.html              200
+/tool/tools/csv-cleaner              /tool/tools/global/csv-cleaner.html              200
+/tool/tools/ai-context-calculator    /tool/tools/global/ai-context-calculator.html    200
+/tool/tools/markdown-to-html         /tool/tools/global/markdown-to-html.html         200
+/tool/tools/url-deduplicator         /tool/tools/global/url-deduplicator.html         200

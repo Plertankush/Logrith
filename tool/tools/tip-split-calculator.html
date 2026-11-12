@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Split a Restaurant Bill and Tip Between Anyone | Logrith</title>
+  <meta name="description" content="Calculate the tip and divide a bill evenly or by uneven shares among any number of people, with the exact amount each person owes.">
+  <meta name="keywords" content="tip calculator, bill splitter, split bill with tip, restaurant tip calculator online, tip split calculator free, group bill splitter">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Logrith">
+  <link rel="canonical" href="https://logrith.in/tool/tools/tip-split-calculator">
+  <meta property="og:title" content="Split a Restaurant Bill and Tip Between Anyone | Logrith">
+  <meta property="og:description" content="Calculate the tip and divide a bill evenly or by uneven shares among any number of people, with the exact amount each person owes.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://logrith.in/tool/tools/tip-split-calculator">
+  <meta property="og:site_name" content="Logrith">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Split a Restaurant Bill and Tip Between Anyone | Logrith">
+  <meta name="twitter:description" content="Calculate the tip and divide a bill evenly or by uneven shares among any number of people, with the exact amount each person owes.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Tip Calculator & Bill Splitter","url":"https://logrith.in/tool/tools/tip-split-calculator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Free online tip calculator and bill splitter supporting equal and uneven splits among a group.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://logrith.in/#organization"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Calculate & Convert", "item": "https://logrith.in/tool/categories/calculate-convert"}, {"@type": "ListItem", "position": 4, "name": "Tip Split Calculator", "item": "https://logrith.in/tool/tools/tip-split-calculator"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is a standard tip percentage?","acceptedAnswer":{"@type":"Answer","text":"Tip customs vary by country, but 15-20% is common in the United States for restaurant service, while other regions have different norms or include service charges automatically."}},
+    {"@type":"Question","name":"Can I split the bill unevenly?","acceptedAnswer":{"@type":"Answer","text":"Yes, this calculator supports both equal splits and custom uneven shares if some people ordered more expensive items than others."}}
+  ]}
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+</head>
+<body class="page-tip-split-calculator">
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="navbar"></div>
+
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/tool/">Tools</a> › <a href="/tool/categories/calculate-convert">Calculate &amp; Convert</a> › Tip Split Calculator</nav>
+  <h1>Free Tip Calculator & Bill Splitter</h1>
+  <p>Calculate the tip and split the total bill equally, or by custom uneven shares, among any number of people.</p>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#tag"></use></svg> Equal or Uneven Split</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
+
+<div class="tool-workspace">
+  <div class="tool-card">
+    <h2>Bill Details</h2>
+    <div class="controls-grid">
+      <div class="control-group">
+        <label>Bill Amount (₹)</label>
+        <input type="number" id="bill-amount" class="field-input" value="1000" min="0">
+      </div>
+      <div class="control-group">
+        <label>Tip Percentage (%)</label>
+        <input type="number" id="tip-pct" class="field-input" value="15" min="0" max="100">
+      </div>
+    </div>
+    <div class="mode-grid mt-12">
+      <div class="mode-card active" data-mode="equal"><h3>Equal Split</h3><p>Divide evenly among people</p></div>
+      <div class="mode-card" data-mode="uneven"><h3>Uneven Split</h3><p>Custom share per person</p></div>
+    </div>
+
+    <div class="sub-panel active" id="panel-equal">
+      <div class="control-group mt-12">
+        <label>Number of People</label>
+        <input type="number" id="num-people" class="field-input" value="4" min="1" max="50">
+      </div>
+    </div>
+
+    <div class="sub-panel" id="panel-uneven">
+      <div id="uneven-inputs" class="mt-12"></div>
+      <div class="btn-group mt-8">
+        <button class="btn btn-secondary btn-sm" id="add-person-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#plus"></use></svg> Add Person</button>
+      </div>
+    </div>
+
+    <div class="btn-group mt-16">
+      <button class="btn btn-primary btn-lg" id="calc-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#tag"></use></svg> Calculate Split</button>
+      <button class="btn btn-secondary" id="reset-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Reset</button>
+    </div>
+    <div class="status-msg" id="status-msg"></div>
+  </div>
+
+  <div class="tool-card is-hidden" id="result-card">
+    <h2>Split Result</h2>
+    <div class="stat-grid" id="result-grid"></div>
+    <div id="per-person-breakdown" class="mt-16"></div>
+  </div>
+</div>
+
+<section class="page-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">What is a standard tip percentage?</summary>
+      <div class="faq-a"><p>Tip customs vary by country — 15-20% is common in the US for restaurant service, while other regions have different norms or include service charges automatically.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I split the bill unevenly?</summary>
+      <div class="faq-a"><p>Yes, switch to "Uneven Split" mode and enter each person's individual bill share — the tip is calculated proportionally.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is the tip split equally in uneven mode too?</summary>
+      <div class="faq-a"><p>Each person's tip is calculated as the same percentage of their own share, so someone with a larger share pays a proportionally larger tip.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my bill information sent to a server?</summary>
+      <div class="faq-a"><p>No, every calculation runs locally in your browser. Bill amounts and individual shares are never transmitted anywhere.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Should tax be included in the bill amount before tipping?</summary>
+      <div class="faq-a"><p>Tipping conventions vary, but many people calculate tip based on the pre-tax subtotal rather than the tax-inclusive total. Enter whichever amount matches your preferred convention.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I use this for splitting bills that aren't restaurant related?</summary>
+      <div class="faq-a"><p>Yes, the same equal or uneven split logic works for any shared expense — a group trip, a shared grocery run, or any cost being divided among several people, with or without an added tip or service percentage.</p></div>
+    </details>
+  </div>
+</section>
+
+<section class="page-section prose">
+  <h2>Tip Calculator and Bill Splitter</h2>
+  <p>This tool calculates the tip on a restaurant bill and splits the total among a group, supporting both a simple equal split and a more flexible uneven split for situations where people ordered different amounts.</p>
+
+  <h3>Equal Split vs. Uneven Split</h3>
+  <p>Equal split simply divides the bill plus tip evenly among everyone in the group — the simplest and most common approach when everyone ordered roughly similar amounts. Uneven split lets you enter each person's individual portion of the bill, then calculates their proportional share of the tip based on what they actually ordered — a fairer approach when there's a significant difference between what different people spent, such as one person ordering drinks and appetizers while another had just a small dish.</p>
+
+  <h3>How Tip Percentage Is Calculated</h3>
+  <p>The tip amount is simply the bill total multiplied by the tip percentage. For an equal split, this combined bill-plus-tip total is then divided evenly by the number of people. For an uneven split, each person's individual bill amount is used to calculate their own proportional tip, and their final share is their bill amount plus their calculated tip.</p>
+
+  <h3>Why Proportional Tipping Is Fairer for Uneven Orders</h3>
+  <p>A common but arguably less fair approach to group dining is splitting the tip equally regardless of what each person ordered, while splitting the base bill proportionally — or vice versa. Calculating tip as a consistent percentage applied to each person's own share, as this tool does in uneven mode, means someone who ordered a $40 steak and a cocktail pays proportionally more tip than someone who ordered an $8 side salad, which most people consider the more equitable outcome compared to splitting the tip evenly regardless of individual order size.</p>
+
+  <h3>Common Tipping Practices</h3>
+  <ul>
+    <li><strong>15-20%</strong> is a common range for restaurant service in the United States.</li>
+    <li><strong>Some countries</strong> already include a service charge in the bill, making additional tipping optional or unusual.</li>
+    <li><strong>Group dining</strong> often defaults to splitting the tip evenly, even when the bill itself is split unevenly, though this calculator supports proportional tip splitting for a fairer approach.</li>
+    <li><strong>Large groups</strong> at some restaurants have an automatic gratuity already added to the bill — check your receipt before adding an additional tip on top.</li>
+  </ul>
+
+  <h3>Step-by-Step: Splitting a Bill</h3>
+  <ol class="steps">
+    <li class="step">
+      <strong>Enter the bill amount</strong>
+      <p>Type in the total bill, or switch to uneven mode to enter individual shares.</p>
+    </li>
+    <li class="step">
+      <strong>Set the tip percentage</strong>
+      <p>Enter the percentage you'd like to tip.</p>
+    </li>
+    <li class="step">
+      <strong>Choose equal or uneven split</strong>
+      <p>Pick equal for a simple divide, or uneven to enter each person's actual share.</p>
+    </li>
+    <li class="step">
+      <strong>Calculate and review</strong>
+      <p>Click Calculate Split to see each person's exact amount owed.</p>
+    </li>
+  </ol>
+
+  <h3>Privacy and Local Processing</h3>
+  <p>All calculations run directly in your browser — no bill amounts or personal details are sent to a server, logged, or stored anywhere.</p>
+
+  <h3>Tipping Norms Around the World</h3>
+  <p>Tipping culture varies dramatically by country, and what feels standard in one place can feel unusual or even rude in another. In the United States, tipping 15-20% at restaurants is deeply embedded and often forms a significant part of service workers' actual income. In Japan, tipping is generally not practiced and can occasionally be seen as awkward, since excellent service is considered a standard part of the job rather than something requiring an extra reward. Many European countries fall somewhere in between, with a smaller tip or rounding up the bill being common, often because service charges are already partially built into menu prices. If you're traveling, it's worth a quick check on local norms before assuming your home country's tipping percentage applies everywhere.</p>
+
+  <h3>Handling a Bill With Multiple Rounds of Ordering</h3>
+  <p>For a long meal where people order and re-order across several rounds — drinks, appetizers, mains, dessert — tracking exactly who ordered what can get complicated fast. In these situations, equal split is often the practical choice even when orders weren't perfectly equal, since the time spent itemizing every round rarely feels worth it for a casual meal among friends. Uneven split becomes more worthwhile specifically when there's a clear, simple difference worth accounting for — one person ordering alcohol while others didn't, for example — rather than trying to reconcile a long and complicated running tab item by item.</p>
+
+  <h3>Why People Round Up Tip Amounts</h3>
+  <p>Many people round their final tip up to a clean total rather than paying the exact calculated percentage — leaving $18 instead of $17.43, for example. This is partly a convenience habit around cash and card payments, and partly a social norm, since a slightly generous rounded tip can feel more natural to hand over than an oddly precise figure. This calculator gives the exact mathematical result for your chosen percentage, which you're always free to round up from if that better matches your personal preference or local custom.</p>
+
+  <h3>Splitting Bills for Recurring Group Expenses</h3>
+  <p>Beyond one-off restaurant visits, the same equal-or-uneven split logic applies to any recurring shared cost among a consistent group — a monthly subscription split between roommates, a recurring group outing, or shared household expenses. For these situations, keeping a simple running record outside this tool of who's paid what over time helps avoid the small discrepancies that can build up when the same group splits costs repeatedly across multiple occasions.</p>
+</section>
+
+<section class="page-section">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/tool/tools/percentage-calculator"><strong>Percentage Calculator</strong><span>Calculate percentages and discounts.</span></a>
+    <a class="related-card" href="/tool/tools/discount-stacking-calculator"><strong>Discount Stacking Calculator</strong><span>Calculate final price after multiple discounts.</span></a>
+    <a class="related-card" href="/tool/tools/unit-price-comparator"><strong>Unit Price Comparator</strong><span>Compare price-per-unit to find the better deal.</span></a>
+    <a class="related-card" href="/tool/tools/gst-calculator"><strong>GST Calculator</strong><span>Calculate GST inclusive and exclusive amounts.</span></a>
+  </div>
+</section>
+
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+<script>
+let currentMode = 'equal';
+
+document.querySelectorAll('.mode-card').forEach(card => {
+  card.addEventListener('click', () => {
+    document.querySelectorAll('.mode-card').forEach(c => c.classList.remove('active'));
+    card.classList.add('active');
+    currentMode = card.dataset.mode;
+    document.querySelectorAll('.sub-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('panel-' + currentMode).classList.add('active');
+    if (currentMode === 'uneven' && document.getElementById('uneven-inputs').children.length === 0) {
+      addPersonInput(); addPersonInput();
+    }
+  });
+});
+
+function addPersonInput() {
+  const container = document.getElementById('uneven-inputs');
+  const count = container.children.length + 1;
+  const div = document.createElement('div');
+  div.className = 'control-group';
+  div.innerHTML = `<label>Person ${count} Share (₹)</label><input type="number" class="field-input person-share" value="250" min="0">`;
+  container.appendChild(div);
+}
+document.getElementById('add-person-btn').addEventListener('click', addPersonInput);
+
+document.getElementById('calc-btn').addEventListener('click', () => {
+  const statusEl = document.getElementById('status-msg');
+  const bill = parseFloat(document.getElementById('bill-amount').value);
+  const tipPct = parseFloat(document.getElementById('tip-pct').value);
+  const fmt = v => '₹' + v.toLocaleString('en-IN', {maximumFractionDigits: 2});
+
+  if (isNaN(tipPct) || tipPct < 0) { showStatus(statusEl, 'error', 'Please enter a valid tip percentage.'); return; }
+
+  if (currentMode === 'equal') {
+    if (!bill || bill <= 0) { showStatus(statusEl, 'error', 'Please enter a valid bill amount.'); return; }
+    const numPeople = parseInt(document.getElementById('num-people').value) || 1;
+    const tipAmount = bill * (tipPct / 100);
+    const total = bill + tipAmount;
+    const perPerson = total / numPeople;
+
+    document.getElementById('result-grid').innerHTML = `
+      <div class="stat-box"><span class="stat-num">${fmt(bill)}</span><span class="stat-label">Bill Amount</span></div>
+      <div class="stat-box"><span class="stat-num" style="color:var(--success);">${fmt(tipAmount)}</span><span class="stat-label">Tip (${tipPct}%)</span></div>
+      <div class="stat-box"><span class="stat-num">${fmt(total)}</span><span class="stat-label">Total with Tip</span></div>
+      <div class="stat-box" style="background:linear-gradient(135deg,var(--primary),var(--primary-light));border:none;">
+        <span class="stat-num" style="color:white;">${fmt(perPerson)}</span><span class="stat-label" style="color:rgba(255,255,255,0.85);">Per Person (${numPeople})</span>
+      </div>`;
+    document.getElementById('per-person-breakdown').innerHTML = '';
+  } else {
+    const shareInputs = document.querySelectorAll('.person-share');
+    const shares = Array.from(shareInputs).map(el => parseFloat(el.value) || 0);
+    const totalBill = shares.reduce((a,b) => a+b, 0);
+    if (totalBill <= 0) { showStatus(statusEl, 'error', 'Please enter valid shares for each person.'); return; }
+
+    const totalTip = totalBill * (tipPct / 100);
+    const grandTotal = totalBill + totalTip;
+
+    document.getElementById('result-grid').innerHTML = `
+      <div class="stat-box"><span class="stat-num">${fmt(totalBill)}</span><span class="stat-label">Total Bill</span></div>
+      <div class="stat-box"><span class="stat-num" style="color:var(--success);">${fmt(totalTip)}</span><span class="stat-label">Total Tip (${tipPct}%)</span></div>
+      <div class="stat-box" style="background:linear-gradient(135deg,var(--primary),var(--primary-light));border:none;">
+        <span class="stat-num" style="color:white;">${fmt(grandTotal)}</span><span class="stat-label" style="color:rgba(255,255,255,0.85);">Grand Total</span>
+      </div>`;
+
+    document.getElementById('per-person-breakdown').innerHTML = shares.map((share, i) => {
+      const personTip = share * (tipPct / 100);
+      const personTotal = share + personTip;
+      return `<div class="tool-step"><strong>Person ${i+1}:</strong> ${fmt(share)} + ${fmt(personTip)} tip = <strong>${fmt(personTotal)}</strong></div>`;
+    }).join('');
+  }
+
+  document.getElementById('result-card').style.display = 'block';
+  showStatus(statusEl, 'success', 'Calculated!');
+});
+
+document.getElementById('reset-btn').addEventListener('click', () => {
+  document.getElementById('bill-amount').value = '1000';
+  document.getElementById('tip-pct').value = '15';
+  document.getElementById('num-people').value = '4';
+  document.getElementById('result-card').style.display = 'none';
+  document.getElementById('status-msg').style.display = 'none';
+});
+</script>
+</body>
+</html>

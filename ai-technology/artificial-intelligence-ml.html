@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artificial Intelligence &amp; ML Guides and Tools | Logrith</title>
+  <meta name="description" content="How machine learning and large language models work, what they are good and bad at, and how to use AI tools sensibly in real projects.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Plert Ankush">
+  <link rel="canonical" href="https://logrith.in/ai-technology/artificial-intelligence-ml">
+  <meta property="og:title" content="Artificial Intelligence &amp; ML Guides and Tools | Logrith">
+  <meta property="og:description" content="How machine learning and large language models work, what they are good and bad at, and how to use AI tools sensibly in real projects.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://logrith.in/ai-technology/artificial-intelligence-ml">
+  <meta property="og:site_name" content="Logrith">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Artificial Intelligence &amp; ML Guides and Tools | Logrith">
+  <meta name="twitter:description" content="How machine learning and large language models work, what they are good and bad at, and how to use AI tools sensibly in real projects.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0A0A0A">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Artificial Intelligence & ML",
+    "url": "https://logrith.in/ai-technology/artificial-intelligence-ml",
+    "description": "How machine learning and large language models work, what they are good and bad at, and how to use AI tools sensibly in real projects.",
+    "author": {
+      "@type": "Person",
+      "name": "Plert Ankush",
+      "url": "https://logrith.in/pages/founder"
+    },
+    "isPartOf": {
+      "@id": "https://logrith.in/#website"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://logrith.in/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "AI & Technology",
+        "item": "https://logrith.in/ai-technology/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Artificial Intelligence & ML",
+        "item": "https://logrith.in/ai-technology/artificial-intelligence-ml"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="navbar"></div>
+
+<main id="main">
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/ai-technology/">AI &amp; Technology</a> › Artificial Intelligence &amp; ML</nav>
+    <div class="badge"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#sparkles"></use></svg> AI &amp; Technology</div>
+    <h1>Artificial Intelligence &amp; ML</h1>
+    <p>How machine learning and large language models work, what they are good and bad at, and how to use AI tools sensibly in real projects.</p>
+    <p class="byline">By <a href="/pages/founder" rel="author">Plert Ankush</a></p>
+  </div>
+</header>
+
+<section class="page-section">
+  <div class="prose hub-prose">
+    <h2>Overview</h2>
+    <p>Artificial intelligence is a broad label. In practice most of what people use today is machine learning: software that learns patterns from examples instead of following hand-written rules. Large language models, image generators and recommendation systems are all variations on that idea, trained on very different data for very different jobs.</p>
+<p>Understanding the basics changes how you use these systems. A language model predicts likely text; it does not look facts up unless it is connected to a source. That single idea explains why it can write fluent prose, why it sometimes states false things confidently and why good prompts and good checks matter.</p>
+
+    <h2>What this section covers</h2>
+    <ul class="check-list">
+<li>How language models are trained and why they produce errors</li>
+<li>Tokens, context windows and what they mean for long documents and cost</li>
+<li>Prompting habits that improve results: context, examples, constraints</li>
+<li>Choosing between hosted AI services, open models and simple rules</li>
+<li>Evaluating AI output: spot checks, test sets and human review</li>
+<li>Privacy and data handling when you send text to an AI service</li>
+    </ul>
+
+    <h2>Core concepts</h2>
+    <div class="concept-grid">
+<div class="concept"><h3>Token</h3><p>The small chunk of text a model reads and writes. Usage limits and pricing are usually counted in tokens, not words.</p></div>
+<div class="concept"><h3>Context window</h3><p>The amount of text a model can consider at once, including your prompt and its own reply.</p></div>
+<div class="concept"><h3>Hallucination</h3><p>A fluent but unsupported answer. It is a property of how the model generates text, so checking matters for facts, numbers and citations.</p></div>
+<div class="concept"><h3>Fine-tuning vs prompting</h3><p>Prompting changes the instructions you give a model. Fine-tuning changes the model itself and needs examples and effort. Most projects should start with prompting.</p></div>
+    </div>
+
+    <h2>Where to start</h2>
+    <p>Start with a small, low-risk task you already do by hand, such as summarising meeting notes or drafting a first outline. Compare the AI result with your own, note what it gets wrong and decide what a reviewer must always check. That habit scales better than any single prompt trick.</p>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="section-header"><h2>Free tools for this topic</h2><p>Browser-based, no sign-up, and your files stay on your device.</p></div>
+  <div class="tool-list">
+    <a href="/tool/tools/ai-context-calculator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">AI Token &amp; Context Calculator</div><div class="tool-row-desc">Paste a prompt or document to estimate its token count and how much of a model&#x27;s context window it would use, right in your browser.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+    <a href="/tool/tools/resume-analyzer" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Resume Analyzer</div><div class="tool-row-desc">Upload your resume to see a readability and structure score with specific suggestions to improve it, analyzed in your browser.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+    <a href="/tool/tools/text-summarizer-basic" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Text Summarizer</div><div class="tool-row-desc">Paste a long article or document and get a condensed summary built from the most important sentences, in seconds.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+    <a href="/tool/tools/website-speed-analyzer" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Website Speed Analyzer</div><div class="tool-row-desc">Enter a URL to get a breakdown of load time, performance bottlenecks and concrete suggestions to make the page faster.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="section-header"><h2>More in AI &amp; Technology</h2></div>
+  <div class="related-links">
+<a href="/ai-technology/software-developer-ecosystem" class="related-link"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#code"></use></svg><span>Software &amp; Developer Ecosystem</span></a>
+<a href="/ai-technology/cybersecurity-open-source" class="related-link"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#shield-check"></use></svg><span>Cybersecurity &amp; Open Source</span></a>
+  </div>
+</section>
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

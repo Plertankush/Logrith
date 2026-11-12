@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Percentage Fee Splitter: Who Pays What | Logrith</title>
+  <meta name="description" content="How percentage-plus-fixed payment fees actually get split between parties, and how to calculate the exact amount each owes.">
+  <meta name="keywords" content="percentage fee splitter online free, payment processing fee calculator, gross up fee calculator, who pays the fee split">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Plert Ankush">
+  <link rel="canonical" href="https://logrith.in/tool/blog/percentage-fee-splitter-guide">
+  <meta property="og:title" content="Percentage Fee Splitter: Who Pays What | Logrith">
+  <meta property="og:description" content="How percentage-plus-fixed payment fees actually get split between parties, and how to calculate the exact amount each owes.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://logrith.in/tool/blog/percentage-fee-splitter-guide">
+  <meta property="og:site_name" content="Logrith">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Percentage Fee Splitter: Who Pays What | Logrith">
+  <meta name="twitter:description" content="How percentage-plus-fixed payment fees actually get split between parties, and how to calculate the exact amount each owes.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","datePublished":"2026-10-20","dateModified":"2026-10-31","headline":"Percentage Fee Splitter: Who Pays What When Fees Are Involved","description":"How to correctly split a percentage-based fee between two parties, and why the math is trickier than it looks.","author":{"@type":"Person","name":"Plert Ankush","url":"https://logrith.in/pages/founder"},"publisher":{"@id":"https://logrith.in/#organization"},"mainEntityOfPage":"https://logrith.in/tool/blog/percentage-fee-splitter-guide"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"Percentage Fee Splitter Guide","url":"https://logrith.in/tool/blog/percentage-fee-splitter-guide","isPartOf":{"@type":"Blog","name":"Logrith Blog","url":"https://logrith.in/tool/blog/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Percentage Fee Splitter","url":"https://logrith.in/tool/tools/percentage-fee-splitter","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Tool Guides", "item": "https://logrith.in/tool/blog/"}, {"@type": "ListItem", "position": 4, "name": "Utilities", "item": "https://logrith.in/tool/blog/categories/utilities"}, {"@type": "ListItem", "position": 5, "name": "Percentage Fee Splitter", "item": "https://logrith.in/tool/blog/percentage-fee-splitter-guide"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What's the difference between adding a fee on top and taking a fee off the top?","acceptedAnswer":{"@type":"Answer","text":"Adding a fee on top means the fee is calculated on the base amount and added to it, increasing the total. Taking a fee off the top means the fee is subtracted from a fixed total, meaning the base amount must be 'grossed up' to a higher figure so that after the fee is deducted, the intended net amount remains."}},
+    {"@type":"Question","name":"Why does 'covering the processing fee' require more than just adding the fee percentage?","acceptedAnswer":{"@type":"Answer","text":"If you want to receive exactly $100 after a 3% fee is deducted, simply adding 3% to $100 (getting $103) is insufficient, since 3% of $103 is more than 3% of $100. The correct calculation requires dividing by (1 minus the fee rate) rather than multiplying by (1 plus the fee rate)."}},
+    {"@type":"Question","name":"Who typically pays payment processing fees, the buyer or the seller?","acceptedAnswer":{"@type":"Answer","text":"This varies by platform, agreement, and jurisdiction. Some marketplaces deduct fees from the seller's proceeds; others allow or require passing the fee to the buyer. Payment processor and platform terms of service specify which arrangement applies for any given transaction."}},
+    {"@type":"Question","name":"How do you split a fee evenly between two parties?</Question>","acceptedAnswer":{"@type":"Answer","text":"An even split typically means each party absorbs half the fee amount, calculated on the transaction total, though the specific method (splitting the fee itself vs. adjusting each party's price to share the burden) depends on the agreement between the parties."}}
+  ]}
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+</head>
+<body class="page-percentage-fee-splitter-guide">
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="navbar"></div>
+
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/tool/">Tools</a> &rsaquo; <a href="/tool/blog/">Tool Guides</a> &rsaquo; <a href="/tool/blog/categories/utilities">Utilities</a> &rsaquo; Percentage Fee Splitter</nav>
+  <h1>Splitting a Percentage Fee Correctly: Why "Add It On" Isn't Always Right</h1>
+  <p>Payment processing fees, marketplace commissions, and service charges all take a percentage cut somewhere in a transaction, and figuring out exactly who ends up paying how much depends entirely on whether the fee comes off the top or gets added on top — two calculations that sound similar but produce genuinely different numbers, and getting this wrong is one of the most common quiet pricing mistakes among freelancers and small sellers.</p>
+  <a href="/tool/tools/percentage-fee-splitter" class="btn btn-primary btn-lg">
+    <svg class="icon"><use href="/assets/svg/icons.svg#percent"></use></svg>
+    Split a Fee
+  </a>
+  <p class="byline">By <a href="/pages/founder" rel="author">Plert Ankush</a> &middot; Published <time datetime="2026-10-20">Oct 20, 2026</time> &middot; Updated <time datetime="2026-10-31">Oct 31, 2026</time></p>
+</div></header>
+
+<article class="page-section prose">
+
+  <nav class="toc" aria-label="On this page">
+    <h2>On This Page</h2>
+    <ol>
+      <li><a href="#how-to-use">How to Split a Percentage Fee</a></li>
+      <li><a href="#two-directions">Fee Added On vs. Fee Taken Off</a></li>
+      <li><a href="#gross-up">Why "Covering the Fee" Requires Grossing Up, Not Just Adding</a></li>
+      <li><a href="#how-it-works">The Gross-Up Formula Explained</a></li>
+      <li><a href="#who-pays">Who Actually Pays Payment Processing Fees</a></li>
+      <li><a href="#uses">Common Reasons People Split Fees</a></li>
+      <li><a href="#mistakes">Common Mistakes</a></li>
+      <li><a href="#faq">Frequently Asked Questions</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="how-to-use">How to Split a Percentage Fee</h2>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the <a href="/tool/tools/percentage-fee-splitter">Percentage Fee Splitter</a> to begin the calculation.</p>
+    </li>
+    <li class="step">
+      <p>Enter the transaction amount and the fee percentage involved.</p>
+    </li>
+    <li class="step">
+      <p>Choose whether the fee is deducted from the total or needs to be added so a specific net amount remains after the fee.</p>
+    </li>
+    <li class="step">
+      <p>Get the instant breakdown of gross amount, fee amount, and net amount, calculated correctly either way.</p>
+    </li>
+  </ol>
+
+  <h2 id="two-directions">Fee Added On vs. Fee Taken Off</h2>
+  <div class="table-wrap">
+    <table class="table">
+    <tr><th>Scenario</th><th>What Happens</th><th>Example</th></tr>
+    <tr><td>Fee added on top</td><td>Fee is calculated on the base amount and added to it</td><td>$100 + 3% fee = $103 total charged</td></tr>
+    <tr><td>Fee taken off the top</td><td>Fee is deducted from a fixed total, reducing what's received</td><td>$100 transaction − 3% fee = $97 received</td></tr>
+  </table>
+  </div>
+  <p>Both of these are straightforward, and most fee situations are one or the other. The genuinely tricky case, covered in detail below, is a third scenario: wanting to receive a specific exact net amount after a percentage fee is deducted, which requires a different calculation entirely from either of the two simple cases above, and it's exactly the scenario most likely to catch someone off guard the first time they need to solve it without realizing a third distinct formula is required.</p>
+
+  <h2 id="gross-up">Why "Covering the Fee" Requires Grossing Up, Not Just Adding</h2>
+  <p>This is the scenario that trips up nearly everyone the first time they encounter it, and it's worth working through carefully. Imagine you want to receive exactly $100 after a payment processor takes a 3% fee. The intuitive but incorrect approach is to simply add 3% of $100 ($3) to get $103, then charge $103. The problem: 3% of $103 is $3.09, not $3, meaning after the processor takes their 3% cut of the actual $103 charged, you're left with $99.91, not the $100 you wanted. The fee percentage is calculated on whatever the final charged amount actually is, not on the amount you started with, which means simply adding the fee percentage to your target amount always slightly undershoots the correct charge — a small gap on a single transaction, but one that compounds meaningfully across many transactions if the pricing mistake goes uncorrected.</p>
+
+  <h2 id="how-it-works">The Gross-Up Formula Explained</h2>
+  <p>The correct calculation, called "grossing up," is: <code>gross amount = net amount ÷ (1 − fee rate)</code>. For the $100-net, 3%-fee example above, this gives $100 ÷ 0.97 = $103.09 (rounded). Charging exactly $103.09 means the processor's 3% cut is $3.09, leaving exactly $100.00 net — the number actually works out correctly this time. The key insight is that dividing by (1 minus the fee rate) rather than multiplying by (1 plus the fee rate) correctly accounts for the fee being calculated on the larger, grossed-up total rather than on the original smaller target amount, closing the small gap that the naive addition approach leaves behind. This same formula structure — dividing by one minus a rate rather than multiplying by one plus that rate — shows up in several other financial contexts where a fee, tax, or deduction is calculated on a final amount rather than a starting amount, making it a genuinely reusable piece of financial reasoning well beyond just payment processing specifically.</p>
+
+  <h2>Real-World Scenarios</h2>
+  <ul>
+    <li><strong>"I'm selling on a marketplace that takes a 10% commission and want to net $50 per item."</strong> Use the gross-up formula: $50 ÷ 0.90 = $55.56, list the item at that price, and after the marketplace's 10% commission is deducted, you'll receive your intended $50, exactly matching your target rather than falling slightly short.</li>
+    <li><strong>"My payment processor charges 2.9% plus a flat fee — how do I account for both?"</strong> Handle the percentage portion with the gross-up formula first, then add the flat fee separately on top, since a flat fee doesn't scale with the transaction amount the way a percentage does and needs to be treated as a distinct, separate addition to the calculation.</li>
+    <li><strong>"I'm splitting a restaurant bill with a service charge among friends."</strong> Calculate each person's share of the pre-fee total, then determine each person's proportional share of the service charge itself, adding both together for each individual's final amount owed.</li>
+    <li><strong>"I need to invoice a client an amount that nets me exactly a round number after wire transfer fees."</strong> Apply the gross-up formula using the wire transfer's percentage fee (and any flat fee, added separately) to determine the exact invoice amount that leaves you with your intended round net figure.</li>
+  </ul>
+
+  <h2>Why This Confusion Is So Persistent Across Industries</h2>
+  <p>The gross-up miscalculation isn't a niche mistake — it shows up repeatedly across freelancing, e-commerce, payment processing, and financial planning precisely because the intuitive mental shortcut (just add the percentage) is genuinely close enough to correct that it often goes unnoticed for small fee percentages or small transaction amounts, where the gap between the naive addition and the correct gross-up figure is small enough in absolute dollar terms to not draw attention. The discrepancy becomes far more noticeable and financially consequential at higher fee percentages or larger transaction amounts, where even a small percentage-point miscalculation compounds into a meaningful dollar shortfall across many transactions over time — which is exactly the situation many freelancers, small business owners, and marketplace sellers find themselves in without realizing their pricing has been quietly under-covering the fees they're actually paying, transaction after transaction, until the cumulative shortfall becomes noticeable in their overall revenue.</p>
+
+  <h2 id="who-pays">Who Actually Pays Payment Processing Fees</h2>
+  <p>This varies considerably by platform, agreement, and business model, and there's no single universal answer. Some marketplaces and payment processors deduct their fee directly from the seller's proceeds, meaning the seller receives less than the buyer paid, with the difference going to the platform. Other arrangements pass the fee explicitly to the buyer, adding it as a visible surcharge on top of the listed price — sometimes required, sometimes prohibited depending on the specific payment network's rules and local regulations, since some card networks have historically restricted merchants from passing card processing fees directly onto customers in certain contexts. Freelancers and small business owners setting their own prices often need to decide deliberately whether to absorb a platform's fee into their stated price or gross up their price so that after the fee, they receive their intended target amount — exactly the gross-up calculation covered above, and a decision that meaningfully affects both how competitive a stated price looks to a buyer and how much a seller actually walks away with once every deduction has been applied.</p>
+
+  <h2 id="uses">Common Reasons People Split Fees</h2>
+  <ul>
+    <li><strong>Setting freelance or service rates that account for platform fees.</strong> Grossing up a target take-home rate ensures a freelancer actually receives their intended amount after a marketplace's percentage cut, rather than quietly underpricing every invoice by a small but accumulating margin.</li>
+    <li><strong>Splitting a shared cost or bill including a service charge.</strong> Determining each person's fair share when a percentage-based fee or gratuity is added to a group total.</li>
+    <li><strong>Pricing products sold through a marketplace with seller fees.</strong> Setting a listing price that yields a specific desired net proceeds after the marketplace's cut.</li>
+    <li><strong>Understanding exactly how much a payment processor is taking.</strong> Verifying that a deducted fee matches the stated percentage, useful for confirming invoices or statements are accurate.</li>
+  </ul>
+
+  <h2>Why This Confusion Is So Persistent Across Industries</h2>
+  <p>The gross-up miscalculation isn't a niche mistake — it shows up repeatedly across freelancing, e-commerce, payment processing, and financial planning precisely because the intuitive mental shortcut of simply adding the percentage is genuinely close enough to correct that it often goes unnoticed for small fee percentages or small transaction amounts, where the gap between the naive addition and the correct gross-up figure is small enough in absolute dollar terms to not draw attention. The discrepancy becomes far more noticeable and financially consequential at higher fee percentages or larger transaction amounts, where even a small percentage-point miscalculation compounds into a meaningful dollar shortfall across many transactions over time.</p>
+
+  <h2 id="mistakes">Common Mistakes</h2>
+  <ul>
+    <li><strong>Simply adding the fee percentage when trying to hit a specific net target.</strong> As covered above, this consistently undershoots the correct amount — use the gross-up division formula instead, dividing by one minus the fee rate rather than multiplying by one plus it.</li>
+    <li><strong>Confusing "fee added on" with "fee taken off" scenarios.</strong> These require genuinely different calculations — be clear about which situation actually applies before calculating, since applying the wrong formula produces a plausible-looking but incorrect result either way.</li>
+    <li><strong>Assuming all platforms handle fees the same way.</strong> Fee structures and who bears them vary significantly across payment processors and marketplaces — check the specific terms for any platform involved rather than assuming a familiar arrangement applies universally.</li>
+    <li><strong>Not accounting for compounding when multiple fees apply.</strong> If several percentage-based fees or taxes stack on the same transaction, each needs to be calculated in the correct order and against the correct base, similar to the sequential percentage calculations covered in general percentage guides.</li>
+    <li><strong>Forgetting to separately handle a flat fee component alongside a percentage fee.</strong> Many real-world processors charge both a percentage and a fixed flat amount — the gross-up formula handles the percentage portion, but a flat fee needs to be added separately as its own distinct step.</li>
+  </ul>
+
+  <h3>Why Choose Logrith</h3>
+  <p>Calculation happens entirely in your browser using standard JavaScript arithmetic, with no data ever transmitted anywhere — instant, accurate fee splitting whether you're adding a fee on top, taking one off, or grossing up to hit a specific net target, without the risk of quietly under-pricing your own transactions over time.</p>
+
+</article>
+
+<article class="page-section prose">
+  <h2 id="faq">Frequently Asked Questions</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">What's the difference between adding a fee on top and taking it off?</summary>
+      <div class="faq-a"><p>Adding on top means the fee is calculated on the base and added, increasing the total. Taking it off the top means the fee is subtracted from a fixed total, requiring the base to be "grossed up" so the intended net amount remains after deduction.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why does covering a fee require more than just adding the percentage?</summary>
+      <div class="faq-a"><p>Adding 3% to $100 gives $103, but 3% of $103 is more than 3% of $100, so simply adding the percentage undershoots the target. The correct approach divides by (1 minus the fee rate) instead, correctly accounting for the fee being calculated on the larger final amount.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Who pays payment processing fees, the buyer or seller?</summary>
+      <div class="faq-a"><p>This varies by platform and agreement. Some marketplaces deduct fees from seller proceeds; others allow passing fees to buyers. Platform terms specify which arrangement applies.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How do you split a fee evenly between two parties?</summary>
+      <div class="faq-a"><p>An even split typically means each party absorbs half the fee amount, though the specific method depends on the agreement between the parties involved.</p></div>
+    </details>
+  </div>
+
+  <h2>Conclusion</h2>
+  <p>Splitting or covering a percentage-based fee is straightforward once you identify which of the three scenarios actually applies — fee added on, fee taken off, or grossing up to hit a specific net target — since each requires a genuinely different calculation. The gross-up case specifically trips up nearly everyone on first encounter, since the intuitive approach of simply adding the fee percentage always falls slightly short of the correct answer, a small gap that quietly compounds into a meaningful shortfall across many transactions if left uncorrected, making the correct formula worth remembering for anyone who regularly prices services, sells through a marketplace, or invoices clients with fees involved.</p>
+</article>
+
+<nav class="post-nav page-section" aria-label="More guides">
+  <a href="/tool/blog/">&larr; Back to Blog</a>
+  <a href="/tool/blog/barcode-generator-guide">Next: <strong>Barcode Generator Guide</strong> &rarr;</a>
+</nav>
+
+<section class="page-section">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/tool/tools/percentage-calculator"><strong>Percentage Calculator</strong><span>Calculate percentages, increases, and decreases.</span></a>
+    <a class="related-card" href="/tool/tools/tip-split-calculator"><strong>Tip Split Calculator</strong><span>Split a bill and tip between multiple people.</span></a>
+    <a class="related-card" href="/tool/tools/compound-interest-calculator"><strong>Compound Interest Calculator</strong><span>Calculate investment growth over time.</span></a>
+    <a class="related-card" href="/tool/tools/currency-converter"><strong>Currency Converter</strong><span>Convert transaction amounts between currencies.</span></a>
+  </div>
+</section>
+
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

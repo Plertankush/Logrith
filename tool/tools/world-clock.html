@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>See the Current Time in Multiple Cities at Once | Logrith</title>
+  <meta name="description" content="Track the live time across several cities and time zones side by side, updated every second, for scheduling across regions.">
+  <meta name="keywords" content="world clock, world clock online, current time in cities, live world time, multiple time zone clock free">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Logrith">
+  <link rel="canonical" href="https://logrith.in/tool/tools/world-clock">
+  <meta property="og:title" content="See the Current Time in Multiple Cities at Once | Logrith">
+  <meta property="og:description" content="Track the live time across several cities and time zones side by side, updated every second, for scheduling across regions.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://logrith.in/tool/tools/world-clock">
+  <meta property="og:site_name" content="Logrith">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="See the Current Time in Multiple Cities at Once | Logrith">
+  <meta name="twitter:description" content="Track the live time across several cities and time zones side by side, updated every second, for scheduling across regions.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"World Clock","url":"https://logrith.in/tool/tools/world-clock","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Free online world clock showing live time across multiple selectable cities.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://logrith.in/#organization"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Utilities", "item": "https://logrith.in/tool/categories/utilities"}, {"@type": "ListItem", "position": 4, "name": "World Clock", "item": "https://logrith.in/tool/tools/world-clock"}]}
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+</head>
+<body class="page-world-clock">
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="navbar"></div>
+
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/tool/">Tools</a> › <a href="/tool/categories/utilities">Utilities</a> › World Clock</nav>
+  <h1>Free World Clock</h1>
+  <p>See the live current time across multiple cities worldwide, updating every second — add or remove cities as needed.</p>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#globe"></use></svg> Live Updates</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Add Cities</span></div>
+</div></header>
+
+<div class="tool-workspace">
+  <div class="tool-card">
+    <h2>Add a City</h2>
+    <div class="u-871a87">
+      <select id="city-select" class="field-input"></select>
+      <button class="btn btn-primary" id="add-city-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#plus"></use></svg> Add</button>
+    </div>
+  </div>
+
+  <div class="tool-card">
+    <h2>Your Clocks</h2>
+    <div class="preview-grid" id="clocks-grid"></div>
+  </div>
+</div>
+
+<section class="page-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">Does this account for daylight saving time?</summary>
+      <div class="faq-a"><p>Yes, all times are calculated using the browser's built-in timezone database, which automatically accounts for daylight saving time rules for each location.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I add my own city?</summary>
+      <div class="faq-a"><p>Choose from the provided list of major world cities covering all time zones. Select any city to add its live clock to your display.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does this clock stay accurate over time?</summary>
+      <div class="faq-a"><p>Yes, each clock updates every second based on your device's current time, staying accurate as long as your device's clock is correctly set.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I add the same city twice?</summary>
+      <div class="faq-a"><p>No, the tool checks for duplicates and won't add a city that's already in your current list, keeping the display clean.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does my city selection save between visits?</summary>
+      <div class="faq-a"><p>No, your selected cities reset to the default set each time you reload the page, since nothing is saved to a server or stored permanently.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How many cities can I display at once?</summary>
+      <div class="faq-a"><p>There's no hard limit — add as many cities as you need from the list, and the grid layout adjusts automatically to fit them.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Why does the date sometimes differ between two clocks?</summary>
+      <div class="faq-a"><p>Because time zones can be more than 12 hours apart, it's entirely normal for one city to already be in "tomorrow" relative to another — each clock card shows its own local date alongside the time to make this clear.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does this work correctly on mobile devices?</summary>
+      <div class="faq-a"><p>Yes, the tool runs on any modern mobile browser, pulling the same timezone data as desktop browsers, and the clock grid automatically rearranges to fit smaller screens.</p></div>
+    </details>
+  </div>
+</section>
+
+<section class="page-section prose">
+  <h2>Live World Clock for Multiple Cities</h2>
+  <p>This tool displays the current, continuously updating time across any combination of world cities you choose, making it easy to see at a glance what time it is for colleagues, clients, or friends in different parts of the world.</p>
+
+  <h3>Why a Multi-City Clock Is Useful</h3>
+  <ul>
+    <li><strong>Coordinating international meetings</strong> — instantly seeing what time a meeting slot corresponds to across every participant's location.</li>
+    <li><strong>Remote and distributed teams</strong> — keeping track of working hours across multiple offices or team members in different time zones.</li>
+    <li><strong>Travel planning</strong> — staying aware of the time difference between your current location and an upcoming destination.</li>
+    <li><strong>Staying in touch</strong> — knowing a good time to call or message friends and family abroad.</li>
+  </ul>
+
+  <h3>How This Tool Works</h3>
+  <p>Each clock uses the Intl.DateTimeFormat API, a standard browser feature, to format the current moment according to a specific city's timezone rules — automatically accounting for daylight saving time changes based on that location's specific rules and the current date. This means the displayed times are always accurate, even during periods when different regions have shifted their clocks for daylight saving at different times of year.</p>
+
+  <h3>How Daylight Saving Time Is Handled Automatically</h3>
+  <p>One of the trickiest parts of tracking time across multiple locations is that not every region observes daylight saving time, and the ones that do don't all switch on the same dates. The Intl.DateTimeFormat API that powers this tool doesn't rely on a fixed, manually maintained offset for each city — it looks up the correct rules for that specific timezone and date from the browser's built-in timezone database (the IANA Time Zone Database), which is kept current with daylight saving changes worldwide. This means a city like New York correctly shifts by an hour each spring and fall, while a city like Mumbai, which doesn't observe daylight saving at all, stays on a fixed offset year-round, all without any special handling needed on this page.</p>
+
+  <h3>Common Time Zone Confusion This Tool Helps Avoid</h3>
+  <p>Scheduling across time zones is a notoriously easy place to make mistakes — mental math with UTC offsets breaks down the moment daylight saving time is involved, since the offset between two cities can actually change by an hour depending on the time of year, even if neither city itself changes its own clock on exactly the same date as the other. Seeing live, correctly calculated times side by side removes this guesswork entirely, since each clock reflects the real current time in that location rather than a manually calculated estimate that might be an hour off during a daylight saving transition period. This is especially relevant for teams spanning the Northern and Southern Hemispheres, since their daylight saving transitions happen at opposite times of year, making a fixed mental offset unreliable for roughly half the calendar.</p>
+
+  <h3>Setting Up Your Clock for Regular Use</h3>
+  <p>If you regularly coordinate with the same set of locations — say, a distributed team across three offices — it's worth taking a moment to add all the relevant cities at once rather than re-adding them individually each time you need the information. Since the selection doesn't persist between visits, bookmarking this page gives you quick access, and you can quickly re-add your usual set of cities each time you return, which takes only a few seconds once you're familiar with where each one sits in the dropdown list.</p>
+
+  <h3>Privacy and Local Processing</h3>
+  <p>All time calculations happen directly in your browser using built-in JavaScript APIs — no data about which cities you select or view is sent to a server, logged, or stored anywhere.</p>
+
+  <h3>World Clock vs. Time Zone Converter: Which to Use</h3>
+  <p>This tool and Logrith's Time Zone Converter solve related but slightly different problems. The world clock shows the current, continuously updating time right now across several cities at once, which is what you want for an always-on reference or a quick glance at "what time is it there currently." The Time Zone Converter instead lets you pick a specific time — not necessarily right now — and see what that exact moment translates to in a different zone, which is the better tool when scheduling a future meeting or event rather than checking the current moment.</p>
+
+  <h3>Step-by-Step: Setting Up Your Clock Display</h3>
+  <ol class="steps">
+    <li class="step">
+      <strong>Open the city dropdown</strong>
+      <p>Browse the list of major world cities covering every time zone.</p>
+    </li>
+    <li class="step">
+      <strong>Select and add a city</strong>
+      <p>Choose a city and click Add to place its live clock on your display.</p>
+    </li>
+    <li class="step">
+      <strong>Repeat for every location you need</strong>
+      <p>Add as many cities as relevant to your team, clients, or travel plans.</p>
+    </li>
+    <li class="step">
+      <strong>Remove cities as needed</strong>
+      <p>Click the <svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> on any clock card to remove it from your current display.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/tool/tools/time-zone-converter"><strong>Time Zone Converter</strong><span>Convert a specific time between time zones.</span></a>
+    <a class="related-card" href="/tool/tools/countdown-timer-tool"><strong>Countdown Timer</strong><span>Create a live countdown to any event.</span></a>
+    <a class="related-card" href="/tool/tools/date-difference-calculator"><strong>Date Difference Calculator</strong><span>Calculate days between any two dates.</span></a>
+    <a class="related-card" href="/tool/tools/browser-info-lookup"><strong>Browser Info Lookup</strong><span>Check your browser's configured timezone.</span></a>
+  </div>
+</section>
+
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+<script>
+const ALL_CITIES = [
+  { name: 'New York', tz: 'America/New_York' },
+  { name: 'Los Angeles', tz: 'America/Los_Angeles' },
+  { name: 'São Paulo', tz: 'America/Sao_Paulo' },
+  { name: 'London', tz: 'Europe/London' },
+  { name: 'Paris', tz: 'Europe/Paris' },
+  { name: 'Moscow', tz: 'Europe/Moscow' },
+  { name: 'Dubai', tz: 'Asia/Dubai' },
+  { name: 'Mumbai / Delhi', tz: 'Asia/Kolkata' },
+  { name: 'Singapore', tz: 'Asia/Singapore' },
+  { name: 'Hong Kong', tz: 'Asia/Hong_Kong' },
+  { name: 'Tokyo', tz: 'Asia/Tokyo' },
+  { name: 'Sydney', tz: 'Australia/Sydney' },
+  { name: 'Auckland', tz: 'Pacific/Auckland' },
+  { name: 'Johannesburg', tz: 'Africa/Johannesburg' },
+  { name: 'Cairo', tz: 'Africa/Cairo' },
+];
+
+let myCities = [];
+const localTz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+const localMatch = ALL_CITIES.find(c => c.tz === localTz);
+myCities = localMatch ? [localMatch, ALL_CITIES.find(c => c.tz === 'Europe/London'), ALL_CITIES.find(c => c.tz === 'Asia/Tokyo')].filter(Boolean)
+                      : [ALL_CITIES.find(c => c.tz === 'America/New_York'), ALL_CITIES.find(c => c.tz === 'Europe/London'), ALL_CITIES.find(c => c.tz === 'Asia/Tokyo')];
+
+const citySelect = document.getElementById('city-select');
+ALL_CITIES.forEach(c => {
+  const opt = document.createElement('option');
+  opt.value = c.tz;
+  opt.textContent = c.name;
+  citySelect.appendChild(opt);
+});
+
+function renderClocks() {
+  const grid = document.getElementById('clocks-grid');
+  grid.innerHTML = myCities.map((c, i) => `
+    <div class="clock-card">
+      <button class="clock-remove" data-idx="${i}"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg></button>
+      <div style="font-weight:700;color:var(--gray-900);">${c.name}</div>
+      <div class="clock-time" data-tz="${c.tz}">--:--:--</div>
+      <div class="clock-date" data-tz-date="${c.tz}"></div>
+    </div>
+  `).join('');
+
+  grid.querySelectorAll('.clock-remove').forEach(btn => {
+    btn.addEventListener('click', e => {
+      myCities.splice(e.target.dataset.idx, 1);
+      renderClocks();
+    });
+  });
+  updateClocks();
+}
+
+function updateClocks() {
+  document.querySelectorAll('[data-tz]').forEach(el => {
+    const tz = el.dataset.tz;
+    el.textContent = new Intl.DateTimeFormat('en-US', { timeZone: tz, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true }).format(new Date());
+  });
+  document.querySelectorAll('[data-tz-date]').forEach(el => {
+    const tz = el.dataset.tzDate;
+    el.textContent = new Intl.DateTimeFormat('en-US', { timeZone: tz, weekday: 'short', month: 'short', day: 'numeric' }).format(new Date());
+  });
+}
+
+document.getElementById('add-city-btn').addEventListener('click', () => {
+  const tz = citySelect.value;
+  const city = ALL_CITIES.find(c => c.tz === tz);
+  if (city && !myCities.some(c => c.tz === tz)) {
+    myCities.push(city);
+    renderClocks();
+  }
+});
+
+renderClocks();
+setInterval(updateClocks, 1000);
+</script>
+</body>
+</html>

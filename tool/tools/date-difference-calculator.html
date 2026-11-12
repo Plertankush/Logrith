@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Count the Exact Days Between Two Dates | Logrith</title>
+  <meta name="description" content="Enter two dates and get the precise difference in days, weeks, months and years — useful for deadlines, ages, and project timelines.">
+  <meta name="keywords" content="date difference calculator, days between two dates, date calculator online, calculate days between dates, date duration calculator free">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Logrith">
+  <link rel="canonical" href="https://logrith.in/tool/tools/date-difference-calculator">
+  <meta property="og:title" content="Count the Exact Days Between Two Dates | Logrith">
+  <meta property="og:description" content="Enter two dates and get the precise difference in days, weeks, months and years — useful for deadlines, ages, and project timelines.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://logrith.in/tool/tools/date-difference-calculator">
+  <meta property="og:site_name" content="Logrith">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Count the Exact Days Between Two Dates | Logrith">
+  <meta name="twitter:description" content="Enter two dates and get the precise difference in days, weeks, months and years — useful for deadlines, ages, and project timelines.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Date Difference Calculator","url":"https://logrith.in/tool/tools/date-difference-calculator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Free online calculator for the exact difference between any two dates in years, months, days, and weeks.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://logrith.in/#organization"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Calculate & Convert", "item": "https://logrith.in/tool/categories/calculate-convert"}, {"@type": "ListItem", "position": 4, "name": "Date Difference Calculator", "item": "https://logrith.in/tool/tools/date-difference-calculator"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How is date difference calculated?","acceptedAnswer":{"@type":"Answer","text":"The calculator finds the exact number of years, months, and days between two dates, accounting for varying month lengths and leap years, plus the total number of days and weeks."}},
+    {"@type":"Question","name":"Can I calculate the number of working days between two dates?","acceptedAnswer":{"@type":"Answer","text":"This tool calculates total calendar days. It also provides the count of weekdays (excluding Saturdays and Sundays) between the two dates."}}
+  ]}
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+</head>
+<body class="page-date-difference-calculator">
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="navbar"></div>
+
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/tool/">Tools</a> › <a href="/tool/categories/calculate-convert">Calculate &amp; Convert</a> › Date Difference Calculator</nav>
+  <h1>Free Date Difference Calculator</h1>
+  <p>Calculate the exact number of years, months, days, and weeks between any two dates — plus weekday count.</p>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#calendar"></use></svg> Any Two Dates</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
+
+<div class="tool-workspace">
+  <div class="tool-card">
+    <h2>Select Dates</h2>
+    <div class="controls-grid">
+      <div class="control-group">
+        <label>Start Date</label>
+        <input type="date" id="start-date" class="field-input">
+      </div>
+      <div class="control-group">
+        <label>End Date</label>
+        <input type="date" id="end-date" class="field-input">
+      </div>
+    </div>
+    <div class="btn-group mt-16">
+      <button class="btn btn-primary btn-lg" id="calc-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#calendar"></use></svg> Calculate Difference</button>
+      <button class="btn btn-secondary" id="reset-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Reset</button>
+    </div>
+    <div class="status-msg" id="status-msg"></div>
+  </div>
+
+  <div class="tool-card is-hidden" id="result-card">
+    <h2>Result</h2>
+    <div class="stat-grid" id="result-grid"></div>
+    <div class="summary-box mt-16" id="result-summary"></div>
+  </div>
+</div>
+
+<section class="page-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">How is date difference calculated?</summary>
+      <div class="faq-a"><p>The calculator finds the exact years, months, and days between two dates, accounting for varying month lengths and leap years, plus the total number of days and weeks.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I calculate working days between two dates?</summary>
+      <div class="faq-a"><p>This tool calculates total calendar days and also shows the count of weekdays (excluding Saturdays and Sundays) between the two dates.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does the order of dates matter?</summary>
+      <div class="faq-a"><p>No, you can enter either date as start or end — the tool automatically calculates the absolute difference regardless of order.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How is this different from the Age Calculator?</summary>
+      <div class="faq-a"><p>The Age Calculator is specifically for calculating age from a date of birth to today (or another date). This tool calculates the difference between any two arbitrary dates, for any purpose.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my date data sent to a server?</summary>
+      <div class="faq-a"><p>No, every calculation runs locally in your browser using JavaScript's date handling. The dates you enter are never transmitted anywhere.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does this account for leap years correctly?</summary>
+      <div class="faq-a"><p>Yes, the years/months/days breakdown is calculated using calendar-aware logic that correctly accounts for February's varying length in leap versus non-leap years.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Does the weekday count account for public holidays?</summary>
+      <div class="faq-a"><p>No, the weekday count only distinguishes Monday-Friday from Saturday-Sunday based on the calendar. It doesn't know about regional public holidays, which would need to be subtracted separately for a true business-day count.</p></div>
+    </details>
+  </div>
+</section>
+
+<section class="page-section prose">
+  <h2>Calculate the Difference Between Any Two Dates</h2>
+  <p>This tool calculates the exact time span between any two dates — not limited to age or birth dates — expressed in years, months, and days, along with total days, weeks, and weekday count. It's useful for project planning, event countdowns, contract terms, and any situation where you need to know exactly how much time separates two dates.</p>
+
+  <h3>How the Calculation Works</h3>
+  <p>The tool first determines which of your two entered dates is earlier, then calculates the difference using calendar-aware arithmetic that correctly accounts for varying month lengths (28-31 days) and leap years, producing an accurate years/months/days breakdown. Alongside this, it computes the total number of calendar days and weeks between the dates using straightforward millisecond-based subtraction, plus a count of weekdays (Monday through Friday) versus weekend days within the span.</p>
+
+  <h3>Why Calendar-Aware Math Matters Here</h3>
+  <p>A naive approach to finding the difference between two dates in years, months, and days might simply subtract year, month, and day numbers independently, but this breaks down the moment the day-of-month numbers don't align cleanly — subtracting March 5 from February 28 can't just subtract "5 minus 28" without borrowing from the month above, exactly like borrowing in manual subtraction with regular numbers. This tool's calculation correctly borrows from the preceding month or year when needed, and correctly accounts for the fact that months have different lengths (28, 29, 30, or 31 days) depending on which month and whether it's a leap year, producing an accurate breakdown rather than one that's subtly wrong around month and year boundaries.</p>
+
+  <h3>Working Backward: Finding a Date From a Known Duration</h3>
+  <p>While this tool is built around finding the difference between two known dates, the same underlying date arithmetic naturally supports the reverse question too — if you know a duration and one endpoint, you can work out the other endpoint by entering your known date alongside an estimated target and adjusting until the calculated difference matches your intended duration. This back-and-forth approach is a practical way to pin down a specific date when you know how far it should be from a reference point but aren't certain of the exact calendar date itself.</p>
+
+  <h3>Common Uses for Date Difference Calculations</h3>
+  <ul>
+    <li><strong>Project and deadline planning</strong> — figuring out exactly how many days remain until a deadline or milestone.</li>
+    <li><strong>Contract and lease terms</strong> — calculating the exact duration of an agreement between a start and end date.</li>
+    <li><strong>Event planning</strong> — counting down to a wedding, launch date, or other significant event.</li>
+    <li><strong>Historical or research calculations</strong> — determining the time span between two historical dates.</li>
+    <li><strong>Billing and invoicing</strong> — calculating the exact number of days in a billing period.</li>
+  </ul>
+
+  <h3>Understanding Weekday vs. Total Day Counts</h3>
+  <p>This tool distinguishes between total calendar days (every day, including weekends) and weekday count (only Monday through Friday), since many practical applications — like calculating business days for a project timeline or a service level agreement — specifically care about working days rather than the full calendar span.</p>
+
+  <h3>A Note on Business Days vs. Weekdays</h3>
+  <p>It's worth distinguishing "weekdays" from "business days" precisely, since they're not always the same thing. This tool's weekday count reflects purely calendar-based Monday-through-Friday counting, without any awareness of public holidays specific to a country or region. A true business-day count for contract or payroll purposes in a specific location would need to additionally subtract any relevant public holidays that fall within the date range, which this tool doesn't account for since holiday calendars vary significantly by country and even by region within a country.</p>
+
+  <h3>Step-by-Step: Calculating a Date Difference</h3>
+  <ol class="steps">
+    <li class="step">
+      <strong>Select the start date</strong>
+      <p>Choose the earlier date in your range.</p>
+    </li>
+    <li class="step">
+      <strong>Select the end date</strong>
+      <p>Choose the later date, or any second date to compare.</p>
+    </li>
+    <li class="step">
+      <strong>Click Calculate</strong>
+      <p>Get the full breakdown instantly.</p>
+    </li>
+    <li class="step">
+      <strong>Review the results</strong>
+      <p>Check years/months/days, total days, weeks, and weekday count.</p>
+    </li>
+  </ol>
+
+  <h3>Privacy and Local Processing</h3>
+  <p>All calculations run directly in your browser using JavaScript's built-in date handling — no dates you enter are sent to a server, logged, or stored anywhere.</p>
+
+  <h3>Choosing Years/Months/Days vs. Total Days</h3>
+  <p>Which output format matters most depends on what you're actually trying to communicate. "2 years, 3 months, 14 days" reads naturally and intuitively for describing someone's age or a relationship's duration, but is awkward for precise scheduling math. "823 total days" is harder to intuitively grasp but is exactly what's needed for calculations like figuring out a per-day rate, confirming a contract's precise duration against a stated day-count clause, or any context where the figure needs to be used in further arithmetic. This tool provides both formats together specifically so you don't have to choose in advance which one your situation will end up needing.</p>
+
+  <h3>Common Scenarios Where Exact Day Counts Matter</h3>
+  <p>Precise day counts matter more often than people expect in everyday situations — a prorated rent or subscription calculation needs the exact number of days in a partial billing period, a legal notice period often specifies an exact number of days rather than a rounded month, and travel insurance or visa duration limits are frequently expressed and enforced in precise day counts rather than approximate months. In all of these cases, counting days by hand on a calendar is both tedious and genuinely error-prone, particularly across a month boundary, which is exactly the kind of calculation this tool is built to handle instantly and reliably every time.</p>
+</section>
+
+<section class="page-section">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/tool/tools/age-calculator"><strong>Age Calculator</strong><span>Calculate exact age from a date of birth.</span></a>
+    <a class="related-card" href="/tool/tools/countdown-timer-tool"><strong>Countdown Timer</strong><span>Create a countdown to a specific event or date.</span></a>
+    <a class="related-card" href="/tool/tools/world-clock"><strong>World Clock</strong><span>See current time across multiple cities.</span></a>
+    <a class="related-card" href="/tool/tools/time-zone-converter"><strong>Time Zone Converter</strong><span>Convert a time between world time zones.</span></a>
+  </div>
+</section>
+
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+<script>
+const today = new Date();
+const pad = n => String(n).padStart(2,'0');
+const todayStr = `${today.getFullYear()}-${pad(today.getMonth()+1)}-${pad(today.getDate())}`;
+document.getElementById('end-date').value = todayStr;
+
+document.getElementById('calc-btn').addEventListener('click', () => {
+  const statusEl = document.getElementById('status-msg');
+  const startVal = document.getElementById('start-date').value;
+  const endVal = document.getElementById('end-date').value;
+
+  if (!startVal || !endVal) { showStatus(statusEl, 'error', 'Please select both dates.'); return; }
+
+  let d1 = new Date(startVal);
+  let d2 = new Date(endVal);
+  const start = d1 < d2 ? d1 : d2;
+  const end = d1 < d2 ? d2 : d1;
+
+  let years = end.getFullYear() - start.getFullYear();
+  let months = end.getMonth() - start.getMonth();
+  let days = end.getDate() - start.getDate();
+  if (days < 0) { months--; const prevMonth = new Date(end.getFullYear(), end.getMonth(), 0); days += prevMonth.getDate(); }
+  if (months < 0) { years--; months += 12; }
+
+  const totalDays = Math.round((end - start) / 86400000);
+  const totalWeeks = Math.floor(totalDays / 7);
+  const totalMonths = years * 12 + months;
+
+  let weekdays = 0, weekends = 0;
+  const cursor = new Date(start);
+  for (let i = 0; i < totalDays; i++) {
+    const day = cursor.getDay();
+    if (day === 0 || day === 6) weekends++; else weekdays++;
+    cursor.setDate(cursor.getDate() + 1);
+  }
+
+  document.getElementById('result-grid').innerHTML = `
+    <div class="stat-box"><span class="stat-num">${years}</span><span class="stat-label">Years</span></div>
+    <div class="stat-box"><span class="stat-num">${months}</span><span class="stat-label">Months</span></div>
+    <div class="stat-box"><span class="stat-num">${days}</span><span class="stat-label">Days</span></div>
+    <div class="stat-box"><span class="stat-num">${totalDays.toLocaleString()}</span><span class="stat-label">Total Days</span></div>
+    <div class="stat-box"><span class="stat-num">${totalWeeks.toLocaleString()}</span><span class="stat-label">Total Weeks</span></div>
+    <div class="stat-box"><span class="stat-num">${totalMonths.toLocaleString()}</span><span class="stat-label">Total Months</span></div>
+    <div class="stat-box"><span class="stat-num">${weekdays.toLocaleString()}</span><span class="stat-label">Weekdays</span></div>
+    <div class="stat-box"><span class="stat-num">${weekends.toLocaleString()}</span><span class="stat-label">Weekend Days</span></div>`;
+
+  document.getElementById('result-summary').innerHTML =
+    `From <strong>${start.toDateString()}</strong> to <strong>${end.toDateString()}</strong> is <strong>${years} years, ${months} months, ${days} days</strong> (${totalDays.toLocaleString()} total days).`;
+
+  document.getElementById('result-card').style.display = 'block';
+  showStatus(statusEl, 'success', 'Calculated!');
+});
+
+document.getElementById('reset-btn').addEventListener('click', () => {
+  document.getElementById('start-date').value = '';
+  document.getElementById('end-date').value = todayStr;
+  document.getElementById('result-card').style.display = 'none';
+  document.getElementById('status-msg').style.display = 'none';
+});
+</script>
+</body>
+</html>

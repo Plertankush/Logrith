@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Specific Pages From a PDF Without Software | Logrith</title>
+  <meta name="description" content="Choose exactly which pages to remove from a PDF and download the cleaned-up file instantly, in your browser.">
+  <meta name="keywords" content="pdf page remover, delete pages from pdf, remove pdf pages online, pdf page delete tool free">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Logrith">
+  <link rel="canonical" href="https://logrith.in/tool/tools/pdf-page-remover">
+  <meta property="og:title" content="Delete Specific Pages From a PDF Without Software | Logrith">
+  <meta property="og:description" content="Choose exactly which pages to remove from a PDF and download the cleaned-up file instantly, entirely in your browser.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://logrith.in/tool/tools/pdf-page-remover">
+  <meta property="og:site_name" content="Logrith">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Delete Specific Pages From a PDF Without Software | Logrith">
+  <meta name="twitter:description" content="Choose exactly which pages to remove from a PDF, download instantly, entirely in your browser.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js" defer></script>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"PDF Page Remover","url":"https://logrith.in/tool/tools/pdf-page-remover","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Free online tool to remove specific pages from a PDF file.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://logrith.in/#organization"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Image & PDF Tools", "item": "https://logrith.in/tool/categories/image-pdf-tools"}, {"@type": "ListItem", "position": 4, "name": "PDF Page Remover", "item": "https://logrith.in/tool/tools/pdf-page-remover"}]}
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+</head>
+<body class="page-pdf-page-remover">
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="navbar"></div>
+
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/tool/">Tools</a> › <a href="/tool/categories/image-pdf-tools">Image &amp; PDF Tools</a> › PDF Page Remover</nav>
+  <h1>Free PDF Page Remover</h1>
+  <p>Delete specific pages from a PDF file. Select which pages to remove and download the cleaned-up document instantly.</p>
+  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#trash"></use></svg> Select Pages</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+</div></header>
+
+<div class="tool-workspace">
+  <div class="tool-card">
+    <h2>Upload PDF</h2>
+    <div class="upload-zone" id="upload-zone">
+      <input type="file" id="file-input" accept="application/pdf">
+      <div class="upload-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#file-text"></use></svg></div>
+      <h3>Drop a PDF here or click to browse</h3>
+      <p>Max 20MB</p>
+    </div>
+    <div class="status-msg" id="status-msg"></div>
+  </div>
+
+  <div class="tool-card is-hidden" id="pages-card">
+    <h2>Select Pages to Remove</h2>
+    <p class="mini-note mb-8">Click on a page to mark it for removal. Marked pages are highlighted in red.</p>
+    <div class="preview-grid" id="pages-grid"></div>
+    <div class="btn-group mt-16">
+      <button class="btn btn-primary" id="remove-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#trash"></use></svg> Remove Selected Pages</button>
+      <button class="btn btn-secondary" id="clear-selection-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Clear Selection</button>
+    </div>
+  </div>
+
+  <div class="tool-card is-hidden" id="result-card">
+    <h2>Result</h2>
+    <div class="summary-box" id="result-summary"></div>
+    <div class="btn-group mt-16">
+      <a href="#" id="download-btn" class="btn btn-primary" download="pages-removed.pdf"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#download"></use></svg> Download PDF</a>
+    </div>
+  </div>
+</div>
+
+<section class="page-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">How do I select which pages to remove?</summary>
+      <div class="faq-a"><p>After uploading, each page appears as a numbered thumbnail. Click any page to mark it for removal, then click Remove Selected Pages.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Can I remove multiple pages at once?</summary>
+      <div class="faq-a"><p>Yes, select as many pages as you like before clicking Remove Selected Pages.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is my PDF uploaded to a server?</summary>
+      <div class="faq-a"><p>No, all processing happens locally in your browser using pdf-lib — your file is never uploaded anywhere.</p></div>
+    </details>
+  </div>
+</section>
+
+<section class="page-section">
+  <h2>How to Use the PDF Page Remover</h2>
+  <ol class="steps">
+    <li class="step">
+      <strong>Upload your PDF</strong>
+      <p>Drag your file onto the upload zone or click it to browse your device, up to 20MB.</p>
+    </li>
+    <li class="step">
+      <strong>Review the page thumbnails</strong>
+      <p>Every page in the document appears as a numbered card so you can see exactly how many pages you're working with.</p>
+    </li>
+    <li class="step">
+      <strong>Mark pages for deletion</strong>
+      <p>Click each page you want gone — it turns red to confirm it's selected, and you can click again to undo a selection.</p>
+    </li>
+    <li class="step">
+      <strong>Remove and download</strong>
+      <p>Click Remove Selected Pages, then download the rebuilt PDF with only your kept pages, in their original order.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="page-section prose">
+  <h2>Remove Pages from a PDF Online</h2>
+  <p>This tool lets you delete unwanted pages from a PDF file directly in your browser, without needing Adobe Acrobat or any desktop software. Upload your PDF, select the pages you want to remove, and download a clean version with just those pages gone.</p>
+
+  <h3>When You Need to Remove PDF Pages</h3>
+  <ul>
+    <li><strong>Removing a blank scanned page</strong> that got included accidentally during scanning.</li>
+    <li><strong>Trimming a cover page or table of contents</strong> before sharing a document section.</li>
+    <li><strong>Deleting a signature page or personal information page</strong> before forwarding a document.</li>
+    <li><strong>Cutting down a large document</strong> to just the relevant sections for a specific recipient.</li>
+  </ul>
+
+  <h3>How This Tool Works</h3>
+  <p>After uploading, the tool renders a numbered list of every page in your PDF. Click any page to mark it for removal — marked pages are visually highlighted. When you click Remove Selected Pages, the tool uses the pdf-lib library to build a new PDF document containing only the pages you didn't mark, preserving the original page order and content for everything that remains.</p>
+
+  <h3>Privacy and Local Processing</h3>
+  <p>All page removal happens locally in your browser using pdf-lib — your PDF is never uploaded to a server, which keeps sensitive or confidential documents completely private.</p>
+
+  <h3>Why a Dedicated Page Remover Helps</h3>
+  <p>Opening a full PDF editor just to drop a couple of pages is overkill for most people, and many editors either cost money or require an account before they let you export. A page remover that does one job — select pages, delete them, download — gets you from a messy document to a clean one in a few clicks without installing anything or learning a new interface.</p>
+
+  <h3>How Page Selection and Rebuilding Actually Works</h3>
+  <p>Rather than editing your original file in place, the tool creates a brand-new, empty PDF document and copies over only the pages you didn't mark for removal, using pdf-lib's copyPages function. This approach preserves the content, formatting, and embedded fonts or images of every page that survives, because each kept page is copied as-is rather than regenerated from scratch.</p>
+
+  <h3>For Students and Professionals</h3>
+  <p>Students often need to strip a syllabus cover sheet or blank instruction page before submitting an assignment, while professionals frequently need to remove a signature page, letterhead, or confidential cover memo before forwarding a contract or report to a third party. Both cases are handled the same way here: mark the pages, remove them, download the result.</p>
+
+  <h3>Handling Large or Multi-Section Documents</h3>
+  <p>For a PDF with dozens of pages, such as a scanned book chapter or a compiled report, the thumbnail grid makes it easy to spot exactly which pages are unwanted — blank scan artifacts, duplicate pages, or an appendix you don't need to share — without having to open the file in a separate viewer first to check page numbers.</p>
+
+  <h3>What Happens to Page Order</h3>
+  <p>The tool always preserves the original page order for everything you keep. If you remove page 3 out of a 10-page document, the result is a 9-page document where the old page 4 becomes the new page 3, and so on, with no re-shuffling.</p>
+
+  <h3>Why At Least One Page Must Remain</h3>
+  <p>A PDF file cannot have zero pages, so the tool blocks you from selecting every single page for removal. If you need to discard all the content, you're better off creating a fresh document instead.</p>
+
+  <h3>Frequently Searched Terms</h3>
+  <p>People land on this tool searching for phrases like "delete a page from PDF free," "remove blank page from scanned PDF," and "PDF page remover no watermark" — this tool covers exactly that: free, unlimited, and with no watermark added to your output file.</p>
+
+  <h3>Comparing This to Desktop PDF Editors</h3>
+  <p>A desktop PDF editor typically requires installation, a license fee, or a trial-period signup just to export an edited file without a watermark. Because this tool runs entirely in the browser with no account system, there's no install step, no trial limitation, and no recurring cost — the full page removal and export feature is available on first visit.</p>
+
+  <h3>Mobile and Cross-Device Use</h3>
+  <p>Since the tool works through a standard web browser rather than a native app, it functions the same way on a phone, tablet, or desktop computer. This is useful for someone who needs to quickly trim a PDF they just received on their phone without switching to a computer or installing a mobile PDF app.</p>
+
+  <h3>File Size and Page Count Limits</h3>
+  <p>Because processing happens in your browser's own memory rather than on a remote server, very large PDFs with hundreds of pages or heavy embedded images may take a moment longer to render the page thumbnails. For typical documents — contracts, reports, scanned forms, assignments — the tool processes instantly.</p>
+
+  <h3>No Signup, No File Retention</h3>
+  <p>There's no account to create and no file history saved anywhere. Once you close or refresh the tab, the uploaded PDF and the edited result are gone from memory, since nothing is ever stored outside the browser session you're currently in.</p>
+
+  <h3>Checking Your Result Before Sharing</h3>
+  <p>After removal, it's good practice to open the downloaded file and quickly scroll through it to confirm the right pages were dropped and the remaining content still reads correctly, especially for documents where page order or numbering matters to the recipient.</p>
+</section>
+
+<section class="page-section">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/tool/tools/pdf-split"><strong>PDF Split</strong><span>Split a PDF into multiple separate files.</span></a>
+    <a class="related-card" href="/tool/tools/pdf-merge"><strong>PDF Merge</strong><span>Combine multiple PDFs into one document.</span></a>
+    <a class="related-card" href="/tool/tools/pdf-rotate"><strong>PDF Rotate</strong><span>Rotate PDF pages to fix orientation.</span></a>
+    <a class="related-card" href="/tool/tools/pdf-watermark"><strong>PDF Watermark</strong><span>Add a text watermark across PDF pages.</span></a>
+  </div>
+</section>
+
+<section class="page-section">
+  <h2>Popular Searches</h2>
+  <div class="keyword-box">
+    <span class="keyword-tag">pdf page remover</span>
+    <span class="keyword-tag">delete pages from pdf</span>
+    <span class="keyword-tag">remove pdf pages online</span>
+    <span class="keyword-tag">pdf page delete tool</span>
+  </div>
+</section>
+
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+<script>
+const uploadZone = document.getElementById('upload-zone');
+const fileInput = document.getElementById('file-input');
+let pdfBytes = null, totalPages = 0;
+let toRemove = new Set();
+
+async function handleFile(file) {
+  const statusEl = document.getElementById('status-msg');
+  if (!file || file.type !== 'application/pdf') { showStatus(statusEl,'error','Please select a valid PDF file.'); return; }
+  if (file.size > 20*1024*1024) { showStatus(statusEl,'error','File too large. Max 20MB.'); return; }
+  if (typeof PDFLib === 'undefined') { showStatus(statusEl,'error','PDF library loading... please wait and try again.'); return; }
+
+  try {
+    pdfBytes = await file.arrayBuffer();
+    const pdf = await PDFLib.PDFDocument.load(pdfBytes);
+    totalPages = pdf.getPageCount();
+    toRemove = new Set();
+    renderPages();
+    document.getElementById('pages-card').style.display = 'block';
+    document.getElementById('result-card').style.display = 'none';
+    showStatus(statusEl, 'success', `Loaded PDF with ${totalPages} page(s).`);
+  } catch (err) {
+    showStatus(statusEl, 'error', 'Could not read this PDF. It may be corrupted or password-protected.');
+  }
+}
+
+function renderPages() {
+  const grid = document.getElementById('pages-grid');
+  grid.innerHTML = '';
+  for (let i = 0; i < totalPages; i++) {
+    const card = document.createElement('div');
+    card.className = 'preview-card';
+    card.style.cursor = 'pointer';
+    card.style.textAlign = 'center';
+    card.dataset.page = i;
+    card.innerHTML = `<div style="font-size:2rem;"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#file-text"></use></svg></div><div class="result-title">Page ${i + 1}</div>`;
+    card.addEventListener('click', () => {
+      if (toRemove.has(i)) { toRemove.delete(i); card.style.borderColor = 'var(--gray-200)'; card.style.background = 'var(--gray-50)'; }
+      else { toRemove.add(i); card.style.borderColor = 'var(--error)'; card.style.background = '#fef2f2'; }
+    });
+    grid.appendChild(card);
+  }
+}
+
+document.getElementById('clear-selection-btn').addEventListener('click', () => {
+  toRemove.clear();
+  renderPages();
+});
+
+document.getElementById('remove-btn').addEventListener('click', async () => {
+  const statusEl = document.getElementById('status-msg');
+  if (toRemove.size === 0) { showStatus(statusEl, 'error', 'Select at least one page to remove.'); return; }
+  if (toRemove.size === totalPages) { showStatus(statusEl, 'error', 'Cannot remove all pages — at least one must remain.'); return; }
+
+  try {
+    const srcPdf = await PDFLib.PDFDocument.load(pdfBytes);
+    const newPdf = await PDFLib.PDFDocument.create();
+    const keepIndexes = [];
+    for (let i = 0; i < totalPages; i++) if (!toRemove.has(i)) keepIndexes.push(i);
+
+    const copiedPages = await newPdf.copyPages(srcPdf, keepIndexes);
+    copiedPages.forEach(p => newPdf.addPage(p));
+
+    const outBytes = await newPdf.save();
+    const blob = new Blob([outBytes], { type: 'application/pdf' });
+    const url = URL.createObjectURL(blob);
+
+    document.getElementById('download-btn').href = url;
+    document.getElementById('result-summary').innerHTML =
+      `<strong>Removed ${toRemove.size} page(s).</strong><br>Original: ${totalPages} pages → New: ${keepIndexes.length} pages`;
+    document.getElementById('result-card').style.display = 'block';
+    showStatus(statusEl, 'success', 'Pages removed successfully!');
+  } catch (err) {
+    showStatus(statusEl, 'error', 'Something went wrong while processing the PDF.');
+  }
+});
+
+fileInput.addEventListener('change', e => { if (e.target.files[0]) handleFile(e.target.files[0]); });
+uploadZone.addEventListener('dragover', e => { e.preventDefault(); uploadZone.classList.add('dragover'); });
+uploadZone.addEventListener('dragleave', () => uploadZone.classList.remove('dragover'));
+uploadZone.addEventListener('drop', e => { e.preventDefault(); uploadZone.classList.remove('dragover'); if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]); });
+</script>
+</body>
+</html>
