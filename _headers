@@ -1,0 +1,6 @@
+# Cache shared components and static assets so repeat page views are instant.
+/components/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/assets/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400

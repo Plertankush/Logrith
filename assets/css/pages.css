@@ -1893,6 +1893,9 @@
   transition: var(--transition);
 }
 
+/* The numbered badge is the .step-num element; drop the generic counter badge. */
+.page-support .step::before { content: none; }
+
 .page-support .step:hover {
   border-color: var(--gray-300);
   box-shadow: var(--shadow-sm);
@@ -1914,15 +1917,15 @@
 }
 
 .page-support .step-body h3 {
-  font-family: var(--font-display);
-  font-size: .86rem;
+  font-family: var(--font-main);
+  font-size: .95rem;
   font-weight: 700;
   color: var(--gray-900);
   margin-bottom: 3px;
 }
 
 .page-support .step-body p {
-  font-size: .8rem;
+  font-size: .88rem;
   color: var(--gray-500);
   line-height: 1.5;
   margin: 0;

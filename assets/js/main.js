@@ -34,7 +34,8 @@
   function markCurrentLinks(root) {
     const path = location.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
     root.querySelectorAll('.site-nav a').forEach((link) => {
-      if (new URL(link.href).pathname === path) link.setAttribute('aria-current', 'page');
+      const target = new URL(link.href).pathname;
+      if (path === target || (target !== '/' && path.startsWith(target))) link.setAttribute('aria-current', 'page');
     });
   }
 

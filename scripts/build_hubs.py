@@ -14,10 +14,13 @@ import json
 from html import escape
 from pathlib import Path
 
+from articles import load_articles
 from hub_content import SITE, TOPICS
 
 ROOT = Path(__file__).resolve().parent.parent
 TOOLS = {t['url'].rsplit('/', 1)[-1]: t for t in json.loads((ROOT / 'assets/data/tools.json').read_text())}
+ARTICLES = load_articles()
+FEATURED_ARTICLES = ['how-large-language-models-work', 'how-to-validate-a-startup-idea', 'technical-seo-checklist-for-small-websites', 'saas-pricing-models-explained', 'hashing-vs-encryption-vs-encoding', 'how-to-write-a-value-proposition']
 FEATURED_TOOLS = ['image-compressor', 'pdf-merge', 'json-formatter', 'password-generator', 'emi-calculator', 'word-counter']
 
 
@@ -54,6 +57,8 @@ def head(title, description, path, schema):
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+  <link rel="preload" href="/components/navbar.html" as="fetch" type="text/html" crossorigin>
+  <link rel="preload" href="/components/footer.html" as="fetch" type="text/html" crossorigin>
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/pages.css">
 
@@ -119,6 +124,16 @@ def tool_rows(slugs):
     return '\n'.join(rows)
 
 
+def article_cards(articles):
+    topics = {t['slug']: t['title'] for t in TOPICS}
+    return '\n'.join(f'''    <a href="/{a['topic']}/{a['slug']}" class="article-card">
+      <span class="article-card-topic">{escape(topics[a['topic']])}</span>
+      <h3>{escape(a['title'])}</h3>
+      <p>{escape(a['description'])}</p>
+      <span class="article-card-meta">{a['minutes']} min read</span>
+    </a>''' for a in articles)
+
+
 def sub_links(topic):
     return '\n'.join(
         f'<li><a href="/{topic["slug"]}/{sub["slug"]}">{icon(sub["icon"])}<span>{escape(sub["title"])}</span></a></li>'
@@ -126,10 +141,23 @@ def sub_links(topic):
 
 
 # ---------------------------------------------------------------- sub-topic
+def guides_section(articles, heading):
+    if not articles:
+        return ''
+    return f'''<section class="page-section">
+  <div class="section-header"><h2>{heading}</h2></div>
+  <div class="article-list">
+{article_cards(articles)}
+  </div>
+</section>
+'''
+
+
 def build_subtopic(topic, sub):
     path = f'/{topic["slug"]}/{sub["slug"]}'
     trail = [('Home', '/'), (topic['title'], f'/{topic["slug"]}/'), (sub['title'], path)]
     siblings = [s for s in topic['subtopics'] if s is not sub]
+    sub_articles = [a for a in ARTICLES if a['subtopic'] == sub['slug']]
     intro = '\n'.join(f'<p>{escape(p)}</p>' for p in sub['intro'])
     topics = '\n'.join(f'<li>{escape(t)}</li>' for t in sub['topics'])
     concepts = '\n'.join(f'<div class="concept"><h3>{escape(term)}</h3><p>{escape(text)}</p></div>' for term, text in sub['concepts'])
@@ -165,6 +193,7 @@ def build_subtopic(topic, sub):
   </div>
 </section>
 
+{guides_section(sub_articles, 'Guides in this area')}
 <section class="page-section">
   <div class="section-header"><h2>Free tools for this topic</h2><p>Browser-based, no sign-up, and your files stay on your device.</p></div>
   <div class="tool-list">
@@ -222,6 +251,7 @@ def build_topic(topic):
   </div>
 </section>
 
+{guides_section([a for a in ARTICLES if a['topic'] == topic['slug']], 'In-depth guides')}
 <section class="page-section">
   <div class="section-header"><h2>Useful free tools</h2><p>Hand-picked from the Logrith tools library.</p></div>
   <div class="tool-list">
@@ -295,6 +325,7 @@ def build_home():
   </div>
 </section>
 
+{guides_section([a for slug in FEATURED_ARTICLES for a in ARTICLES if a['slug'] == slug], 'Featured guides')}
 <section class="page-section">
   <div class="section-header">
     <h2>Free tools, always available</h2>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open Source Licenses Explained: MIT, Apache, GPL and How to Choose | Logrith</title>
+  <meta name="description" content="A practical guide to open source licenses: permissive vs copyleft, how MIT, Apache 2.0, GPL and AGPL differ, and how to choose or comply with one.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Plert Ankush">
+  <link rel="canonical" href="https://logrith.in/ai-technology/open-source-licenses-explained">
+  <meta property="og:title" content="Open Source Licenses Explained: MIT, Apache, GPL and How to Choose | Logrith">
+  <meta property="og:description" content="A practical guide to open source licenses: permissive vs copyleft, how MIT, Apache 2.0, GPL and AGPL differ, and how to choose or comply with one.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://logrith.in/ai-technology/open-source-licenses-explained">
+  <meta property="og:site_name" content="Logrith">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Open Source Licenses Explained: MIT, Apache, GPL and How to Choose | Logrith">
+  <meta name="twitter:description" content="A practical guide to open source licenses: permissive vs copyleft, how MIT, Apache 2.0, GPL and AGPL differ, and how to choose or comply with one.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0A0A0A">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+  <link rel="preload" href="/components/navbar.html" as="fetch" type="text/html" crossorigin>
+  <link rel="preload" href="/components/footer.html" as="fetch" type="text/html" crossorigin>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Open Source Licenses Explained: MIT, Apache, GPL and How to Choose",
+    "description": "A practical guide to open source licenses: permissive vs copyleft, how MIT, Apache 2.0, GPL and AGPL differ, and how to choose or comply with one.",
+    "url": "https://logrith.in/ai-technology/open-source-licenses-explained",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://logrith.in/ai-technology/open-source-licenses-explained"
+    },
+    "datePublished": "2026-11-12",
+    "dateModified": "2026-11-12",
+    "author": {
+      "@type": "Person",
+      "name": "Plert Ankush",
+      "url": "https://logrith.in/pages/founder"
+    },
+    "publisher": {
+      "@id": "https://logrith.in/#organization"
+    },
+    "isPartOf": {
+      "@id": "https://logrith.in/#website"
+    },
+    "inLanguage": "en"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://logrith.in/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "AI & Technology",
+        "item": "https://logrith.in/ai-technology/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Cybersecurity & Open Source",
+        "item": "https://logrith.in/ai-technology/cybersecurity-open-source"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Open Source Licenses Explained: MIT, Apache, GPL and How to Choose",
+        "item": "https://logrith.in/ai-technology/open-source-licenses-explained"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I use MIT-licensed code in a commercial product?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The MIT licence allows commercial use, modification and distribution as long as you include the copyright notice and licence text."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does using GPL software force me to open-source my own code?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on how you use it. If you distribute a combined work that is a derivative of GPL code, the GPL requires you to release it under the GPL. Running unmodified GPL software internally generally does not trigger that. Check with a qualified lawyer for your specific situation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if a project has no licence?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "By default the author keeps all rights, so you are not allowed to copy, modify or distribute it without permission."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is open source free of charge?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Usually you can obtain it without paying, but \"open source\" is about the freedoms the licence grants, not the price."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="navbar"></div>
+
+<main id="main">
+<header class="page-hero page-hero-article">
+  <div class="page-hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/ai-technology/">AI &amp; Technology</a> › <a href="/ai-technology/cybersecurity-open-source">Cybersecurity &amp; Open Source</a> › Open Source Licenses Explained: MIT, Apache, GPL and How to Choose</nav>
+    <div class="badge"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#shield-check"></use></svg> Cybersecurity &amp; Open Source</div>
+    <h1>Open Source Licenses Explained: MIT, Apache, GPL and How to Choose</h1>
+    <p class="byline">By <a href="/pages/founder" rel="author">Plert Ankush</a> &middot; Published <time datetime="2026-11-12">Nov 12, 2026</time> &middot; Updated <time datetime="2026-11-12">Nov 12, 2026</time> &middot; 3 min read</p>
+  </div>
+</header>
+
+<article class="page-section">
+  <div class="prose hub-prose article-body">
+    <p>Almost every modern project depends on open source code, and every piece of that code comes with a licence. The licence decides what you may do with it: use it commercially, modify it, keep your own changes private or ship it inside a product. Getting this wrong can mean legal trouble or a forced rewrite, and getting it right takes less effort than most people expect.</p>
+<p>This guide explains the main licence families and the popular licences within them, and offers a simple way to choose one for your own project. It is general information, not legal advice.</p>
+
+    <aside class="takeaways" aria-label="Key takeaways">
+      <h2>Key takeaways</h2>
+      <ul class="check-list">
+<li>No licence does not mean free to use. By default, code without a licence is all rights reserved.</li>
+<li>Permissive licences (MIT, BSD, Apache 2.0) allow broad reuse with light conditions.</li>
+<li>Copyleft licences (GPL, AGPL) require derivative work to be shared under similar terms.</li>
+<li>For your own project, MIT or Apache 2.0 are common, low-friction choices.</li>
+      </ul>
+    </aside>
+
+    <nav class="article-toc" aria-label="In this guide">
+      <h2>In this guide</h2>
+      <ol>
+<li><a href="#basics">What an open source licence does</a></li>
+<li><a href="#two-families">Two families: permissive and copyleft</a></li>
+<li><a href="#popular">The licences you will meet most</a></li>
+<li><a href="#patents">Why the patent grant matters</a></li>
+<li><a href="#using">Using other people&#x27;s open source safely</a></li>
+<li><a href="#choosing">Choosing a licence for your project</a></li>
+<li><a href="#not-software">Licences for things that are not code</a></li>
+      </ol>
+    </nav>
+
+<section id="basics">
+<h2>What an open source licence does</h2>
+<p>Copyright law gives creators exclusive rights over their work. An open source licence grants other people specific permissions in advance, usually to use, copy, modify and distribute the code, in return for following certain conditions. Those conditions are the whole difference between licences.</p>
+<p>The Open Source Initiative maintains a list of licences that meet the open source definition. Licences that restrict commercial use or certain fields are not open source, even if the code is publicly visible.</p>
+</section>
+<section id="two-families">
+<h2>Two families: permissive and copyleft</h2>
+<p><strong>Permissive licences</strong> let you do almost anything, including using the code in closed-source commercial products, provided you keep the copyright notice and licence text. <strong>Copyleft licences</strong> add a requirement: if you distribute a work based on the code, you must release your version under the same or a compatible licence. The goal is to keep the code and its descendants open.</p>
+</section>
+<section id="popular">
+<h2>The licences you will meet most</h2>
+<table>
+<thead><tr><th>Licence</th><th>Type</th><th>Key points</th></tr></thead>
+<tbody>
+<tr><td>MIT</td><td>Permissive</td><td>Very short. Do almost anything, keep the copyright and licence notice. No explicit patent grant.</td></tr>
+<tr><td>BSD (2 and 3-clause)</td><td>Permissive</td><td>Similar to MIT. The 3-clause version adds a rule against using the authors' names to endorse your product.</td></tr>
+<tr><td>Apache 2.0</td><td>Permissive</td><td>Includes an explicit patent grant and requires noting changes. Common in larger projects.</td></tr>
+<tr><td>MPL 2.0</td><td>Weak copyleft</td><td>Copyleft applies per file. Changes to MPL files must be shared, but you can combine them with other code.</td></tr>
+<tr><td>LGPL</td><td>Weak copyleft</td><td>Designed for libraries. You can link to it from other software under conditions, but changes to the library itself must be shared.</td></tr>
+<tr><td>GPL (v2, v3)</td><td>Strong copyleft</td><td>Distributed derivative works must be released under the GPL, with source available.</td></tr>
+<tr><td>AGPL v3</td><td>Strong copyleft</td><td>Like GPL, and extends the requirement to software offered over a network, such as a hosted service.</td></tr>
+</tbody>
+</table>
+</section>
+<section id="patents">
+<h2>Why the patent grant matters</h2>
+<p>Copyright and patents are separate rights. Someone could contribute code and later claim patent rights over it. Apache 2.0 and GPL v3 include explicit patent licences, which gives users more certainty. MIT and BSD are silent on patents, which is fine for many small projects but is one reason larger organisations often prefer Apache 2.0.</p>
+</section>
+<section id="using">
+<h2>Using other people&#x27;s open source safely</h2>
+<ol>
+<li><strong>Know what you depend on.</strong> List direct and indirect dependencies and their licences. Most package managers can produce this report.</li>
+<li><strong>Keep the notices.</strong> Almost every licence requires you to keep the copyright notice and licence text. Many sites collect them on a credits or licence page.</li>
+<li><strong>Check copyleft before you ship.</strong> If you distribute software that includes GPL code, or offer AGPL code as a network service, understand the sharing obligations first.</li>
+<li><strong>Treat unlicensed code as off limits.</strong> If a repository has no licence file, you do not have permission to reuse it.</li>
+<li><strong>Keep dependencies updated.</strong> Maintained projects fix security issues. Abandoned ones become a liability.</li>
+</ol>
+</section>
+<section id="choosing">
+<h2>Choosing a licence for your project</h2>
+<ul>
+<li><strong>You want maximum adoption with minimal fuss:</strong> MIT.</li>
+<li><strong>You want the same, plus patent protection and clear contribution terms:</strong> Apache 2.0.</li>
+<li><strong>You want improvements to stay open:</strong> GPL v3 for applications, or LGPL for libraries.</li>
+<li><strong>You run a hosted service and do not want others to host a closed fork:</strong> AGPL v3.</li>
+</ul>
+<p>Add a <code>LICENSE</code> file at the root of your repository and mention the licence in your README. Resources such as choosealicense.com walk through the decision in more detail.</p>
+</section>
+<section id="not-software">
+<h2>Licences for things that are not code</h2>
+<p>Creative Commons licences suit articles, images and other creative works, not software. If you publish both code and content, use a software licence for the code and a Creative Commons licence for the content. On Logrith, the credits for libraries used in the browser tools are collected on the <a href="/pages/license">licence page</a>.</p>
+</section>
+
+    <section id="faq">
+      <h2>Frequently asked questions</h2>
+      <div class="faq-list">
+<details class="faq-item">
+  <summary class="faq-q">Can I use MIT-licensed code in a commercial product?</summary>
+  <div class="faq-a"><p>Yes. The MIT licence allows commercial use, modification and distribution as long as you include the copyright notice and licence text.</p></div>
+</details>
+<details class="faq-item">
+  <summary class="faq-q">Does using GPL software force me to open-source my own code?</summary>
+  <div class="faq-a"><p>It depends on how you use it. If you distribute a combined work that is a derivative of GPL code, the GPL requires you to release it under the GPL. Running unmodified GPL software internally generally does not trigger that. Check with a qualified lawyer for your specific situation.</p></div>
+</details>
+<details class="faq-item">
+  <summary class="faq-q">What happens if a project has no licence?</summary>
+  <div class="faq-a"><p>By default the author keeps all rights, so you are not allowed to copy, modify or distribute it without permission.</p></div>
+</details>
+<details class="faq-item">
+  <summary class="faq-q">Is open source free of charge?</summary>
+  <div class="faq-a"><p>Usually you can obtain it without paying, but &quot;open source&quot; is about the freedoms the licence grants, not the price.</p></div>
+</details>
+      </div>
+    </section>
+
+    <aside class="author-box">
+      <strong>Written by <a href="/pages/founder" rel="author">Plert Ankush</a></strong>
+      <p>Independent founder and publisher of Logrith. Articles are developed with AI assistance, then directed and reviewed by the author. Spotted a mistake? <a href="/pages/contact">Tell us</a> and we will correct it.</p>
+    </aside>
+  </div>
+</article>
+
+<section class="page-section">
+  <div class="section-header"><h2>Free tools mentioned in this guide</h2></div>
+  <div class="tool-list">
+    <a href="/tool/tools/hash-generator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Hash Generator</div><div class="tool-row-desc">Hash any text or file to verify integrity or compare checksums, with SHA-1, SHA-256, SHA-384 and SHA-512 all computed instantly.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+    <a href="/tool/tools/password-strength" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Password Strength Checker</div><div class="tool-row-desc">Enter a password to see its strength score and an estimate of how long it would take to crack, checked locally in your browser.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+    <a href="/tool/tools/image-privacy-cleaner" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Image Privacy Cleaner</div><div class="tool-row-desc">Remove location, camera and timestamp metadata hidden inside a photo in one click, processed locally so the image never leaves your device.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="section-header"><h2>More in AI &amp; Technology</h2></div>
+  <div class="article-list">
+    <a href="/ai-technology/how-large-language-models-work" class="article-card">
+      <span class="article-card-topic">AI &amp; Technology</span>
+      <h3>How Large Language Models Work: A Plain-English Guide</h3>
+      <p>A clear explanation of how large language models are trained, what tokens and context windows are, why they make mistakes, and how to use them sensibly.</p>
+      <span class="article-card-meta">5 min read</span>
+    </a>
+    <a href="/ai-technology/json-vs-yaml-vs-xml-vs-csv" class="article-card">
+      <span class="article-card-topic">AI &amp; Technology</span>
+      <h3>JSON vs YAML vs XML vs CSV: Which Data Format Should You Use?</h3>
+      <p>Compare JSON, YAML, XML and CSV: strengths, weaknesses, common pitfalls and a simple rule for choosing the right data format for your project.</p>
+      <span class="article-card-meta">4 min read</span>
+    </a>
+    <a href="/ai-technology/hashing-vs-encryption-vs-encoding" class="article-card">
+      <span class="article-card-topic">AI &amp; Technology</span>
+      <h3>Hashing vs Encryption vs Encoding: The Difference Explained</h3>
+      <p>Hashing, encryption and encoding are often confused. Learn what each one does, when to use it and which mistakes lead to real security problems.</p>
+      <span class="article-card-meta">3 min read</span>
+    </a>
+  </div>
+</section>
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hashing vs Encryption vs Encoding: The Difference Explained | Logrith</title>
+  <meta name="description" content="Hashing, encryption and encoding are often confused. Learn what each one does, when to use it and which mistakes lead to real security problems.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Plert Ankush">
+  <link rel="canonical" href="https://logrith.in/ai-technology/hashing-vs-encryption-vs-encoding">
+  <meta property="og:title" content="Hashing vs Encryption vs Encoding: The Difference Explained | Logrith">
+  <meta property="og:description" content="Hashing, encryption and encoding are often confused. Learn what each one does, when to use it and which mistakes lead to real security problems.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://logrith.in/ai-technology/hashing-vs-encryption-vs-encoding">
+  <meta property="og:site_name" content="Logrith">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hashing vs Encryption vs Encoding: The Difference Explained | Logrith">
+  <meta name="twitter:description" content="Hashing, encryption and encoding are often confused. Learn what each one does, when to use it and which mistakes lead to real security problems.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0A0A0A">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+  <link rel="preload" href="/components/navbar.html" as="fetch" type="text/html" crossorigin>
+  <link rel="preload" href="/components/footer.html" as="fetch" type="text/html" crossorigin>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Hashing vs Encryption vs Encoding: The Difference Explained",
+    "description": "Hashing, encryption and encoding are often confused. Learn what each one does, when to use it and which mistakes lead to real security problems.",
+    "url": "https://logrith.in/ai-technology/hashing-vs-encryption-vs-encoding",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://logrith.in/ai-technology/hashing-vs-encryption-vs-encoding"
+    },
+    "datePublished": "2026-11-12",
+    "dateModified": "2026-11-12",
+    "author": {
+      "@type": "Person",
+      "name": "Plert Ankush",
+      "url": "https://logrith.in/pages/founder"
+    },
+    "publisher": {
+      "@id": "https://logrith.in/#organization"
+    },
+    "isPartOf": {
+      "@id": "https://logrith.in/#website"
+    },
+    "inLanguage": "en"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://logrith.in/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "AI & Technology",
+        "item": "https://logrith.in/ai-technology/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Software & Developer Ecosystem",
+        "item": "https://logrith.in/ai-technology/software-developer-ecosystem"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Hashing vs Encryption vs Encoding: The Difference Explained",
+        "item": "https://logrith.in/ai-technology/hashing-vs-encryption-vs-encoding"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is Base64 encryption?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Base64 is encoding. Anyone can decode it without a key, so it offers no confidentiality."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a hash be reversed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not mathematically, but weak or common inputs can be found by guessing and checking, which is why passwords need slow hashes and salts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is MD5 considered broken?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Researchers can produce two different inputs with the same MD5 hash, called a collision, so it cannot be trusted where tampering is a concern."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between a hash and a checksum?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A checksum detects accidental errors and is often simple. A cryptographic hash is designed to resist deliberate tampering as well."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="navbar"></div>
+
+<main id="main">
+<header class="page-hero page-hero-article">
+  <div class="page-hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/ai-technology/">AI &amp; Technology</a> › <a href="/ai-technology/software-developer-ecosystem">Software &amp; Developer Ecosystem</a> › Hashing vs Encryption vs Encoding: The Difference Explained</nav>
+    <div class="badge"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#code"></use></svg> Software &amp; Developer Ecosystem</div>
+    <h1>Hashing vs Encryption vs Encoding: The Difference Explained</h1>
+    <p class="byline">By <a href="/pages/founder" rel="author">Plert Ankush</a> &middot; Published <time datetime="2026-11-12">Nov 12, 2026</time> &middot; Updated <time datetime="2026-11-12">Nov 12, 2026</time> &middot; 3 min read</p>
+  </div>
+</header>
+
+<article class="page-section">
+  <div class="prose hub-prose article-body">
+    <p>Developers and non-developers alike mix up hashing, encryption and encoding. They all turn data into something that looks different, but they solve different problems, and using the wrong one is a classic security mistake. Storing passwords with Base64, for example, protects nothing.</p>
+<p>This guide gives each concept a clear definition, a comparison table and practical rules for when to use which.</p>
+
+    <aside class="takeaways" aria-label="Key takeaways">
+      <h2>Key takeaways</h2>
+      <ul class="check-list">
+<li>Encoding changes the format of data so systems can handle it. Anyone can reverse it, and it provides no secrecy.</li>
+<li>Hashing produces a fixed-size fingerprint and cannot be reversed. It is used for integrity checks and, with the right algorithms, for passwords.</li>
+<li>Encryption hides data and can be reversed only with the right key.</li>
+<li>Never store passwords with plain encoding, encryption you can decrypt, or fast general-purpose hashes.</li>
+      </ul>
+    </aside>
+
+    <nav class="article-toc" aria-label="In this guide">
+      <h2>In this guide</h2>
+      <ol>
+<li><a href="#comparison">The difference in one table</a></li>
+<li><a href="#encoding">Encoding: changing the format</a></li>
+<li><a href="#hashing">Hashing: a one-way fingerprint</a></li>
+<li><a href="#passwords">Hashing passwords is a special case</a></li>
+<li><a href="#encryption">Encryption: secrecy with a key</a></li>
+<li><a href="#hmac">A related tool: HMAC and signed tokens</a></li>
+<li><a href="#rules">Practical rules</a></li>
+      </ol>
+    </nav>
+
+<section id="comparison">
+<h2>The difference in one table</h2>
+<table>
+<thead><tr><th></th><th>Encoding</th><th>Hashing</th><th>Encryption</th></tr></thead>
+<tbody>
+<tr><td>Purpose</td><td>Make data usable by another system</td><td>Create a fingerprint of data</td><td>Keep data secret</td></tr>
+<tr><td>Reversible?</td><td>Yes, by anyone</td><td>No (one-way)</td><td>Yes, with the key</td></tr>
+<tr><td>Needs a key?</td><td>No</td><td>No (HMAC uses one)</td><td>Yes</td></tr>
+<tr><td>Output size</td><td>Grows with input</td><td>Fixed</td><td>Roughly input size plus overhead</td></tr>
+<tr><td>Examples</td><td>Base64, URL encoding</td><td>SHA-256, bcrypt, Argon2</td><td>AES, RSA</td></tr>
+</tbody>
+</table>
+</section>
+<section id="encoding">
+<h2>Encoding: changing the format</h2>
+<p>Encoding converts data from one representation to another so it can travel safely through a system that expects a certain format. <strong>Base64</strong> turns binary data into plain text characters so it can sit inside JSON or an email. <strong>URL encoding</strong> replaces unsafe characters in a web address with percent codes.</p>
+<p>There is no secret. If you can see Base64 text, you can decode it instantly. Try it yourself with the <a href="/tool/tools/base64">Base64 tool</a> or the <a href="/tool/tools/url-encoder">URL encoder</a>. Treat encoding as packaging, never as protection.</p>
+</section>
+<section id="hashing">
+<h2>Hashing: a one-way fingerprint</h2>
+<p>A hash function takes any input and produces a fixed-length output, called a hash or digest. The same input always gives the same output, a tiny change in the input produces a completely different output, and you cannot work backwards from the hash to the original data.</p>
+<p>Common uses include:</p>
+<ul>
+<li><strong>Integrity checks.</strong> Publish the SHA-256 hash of a download so users can verify the file was not altered.</li>
+<li><strong>Deduplication.</strong> Identical files produce identical hashes.</li>
+<li><strong>Digital signatures and data structures.</strong> Hashes sit inside many security systems.</li>
+</ul>
+<p>Not all hash functions are equally safe. MD5 and SHA-1 have known collision weaknesses and should not be used for security purposes, whereas the SHA-2 family, such as SHA-256, remains widely used. You can generate and compare digests with the <a href="/tool/tools/hash-generator">Hash Generator</a>.</p>
+</section>
+<section id="passwords">
+<h2>Hashing passwords is a special case</h2>
+<p>Websites should never store your password itself. They store a hash and compare the hash of whatever you type at login. But a plain, fast hash such as SHA-256 is the wrong tool, because attackers can test billions of guesses per second against stolen hashes.</p>
+<p>Password storage should use a deliberately slow algorithm built for the job, such as <strong>Argon2</strong>, <strong>bcrypt</strong> or <strong>scrypt</strong>, with a unique random <strong>salt</strong> for each password. The salt ensures that two users with the same password get different hashes and defeats precomputed lookup tables. Use a well-reviewed library instead of writing this yourself.</p>
+</section>
+<section id="encryption">
+<h2>Encryption: secrecy with a key</h2>
+<p>Encryption scrambles data so that only someone with the correct key can read it. There are two families:</p>
+<ul>
+<li><strong>Symmetric encryption</strong> (for example AES) uses the same key to encrypt and decrypt. It is fast and used for files, disks and most data in transit once a connection is set up.</li>
+<li><strong>Asymmetric encryption</strong> (for example RSA or elliptic-curve systems) uses a public key to encrypt and a private key to decrypt. It solves the problem of sharing keys, and underlies HTTPS certificates and signatures.</li>
+</ul>
+<p>The strength of encryption depends on keeping the key secret and on using a modern, well-reviewed algorithm. Inventing your own scheme is almost always a mistake.</p>
+</section>
+<section id="hmac">
+<h2>A related tool: HMAC and signed tokens</h2>
+<p>Sometimes you need to prove that data came from someone who knows a secret and was not changed. An <strong>HMAC</strong> combines a hash function with a secret key to produce that proof. It is how many APIs sign webhooks, and how JSON Web Tokens can be signed. You can inspect the readable parts of a token with the <a href="/tool/tools/jwt-decoder">JWT Decoder</a>, remembering that a token's contents are encoded, not encrypted, unless it is specifically an encrypted token.</p>
+</section>
+<section id="rules">
+<h2>Practical rules</h2>
+<ol>
+<li>Need data to travel in a different format? <strong>Encode</strong>.</li>
+<li>Need to verify that data has not changed, or to store passwords? <strong>Hash</strong>, using SHA-256 for integrity and a password-hashing algorithm for passwords.</li>
+<li>Need to keep data secret but readable later? <strong>Encrypt</strong>, with a modern algorithm and carefully protected keys.</li>
+<li>Do not use encoding as security, and do not use fast hashes for passwords.</li>
+</ol>
+</section>
+
+    <section id="faq">
+      <h2>Frequently asked questions</h2>
+      <div class="faq-list">
+<details class="faq-item">
+  <summary class="faq-q">Is Base64 encryption?</summary>
+  <div class="faq-a"><p>No. Base64 is encoding. Anyone can decode it without a key, so it offers no confidentiality.</p></div>
+</details>
+<details class="faq-item">
+  <summary class="faq-q">Can a hash be reversed?</summary>
+  <div class="faq-a"><p>Not mathematically, but weak or common inputs can be found by guessing and checking, which is why passwords need slow hashes and salts.</p></div>
+</details>
+<details class="faq-item">
+  <summary class="faq-q">Why is MD5 considered broken?</summary>
+  <div class="faq-a"><p>Researchers can produce two different inputs with the same MD5 hash, called a collision, so it cannot be trusted where tampering is a concern.</p></div>
+</details>
+<details class="faq-item">
+  <summary class="faq-q">What is the difference between a hash and a checksum?</summary>
+  <div class="faq-a"><p>A checksum detects accidental errors and is often simple. A cryptographic hash is designed to resist deliberate tampering as well.</p></div>
+</details>
+      </div>
+    </section>
+
+    <aside class="author-box">
+      <strong>Written by <a href="/pages/founder" rel="author">Plert Ankush</a></strong>
+      <p>Independent founder and publisher of Logrith. Articles are developed with AI assistance, then directed and reviewed by the author. Spotted a mistake? <a href="/pages/contact">Tell us</a> and we will correct it.</p>
+    </aside>
+  </div>
+</article>
+
+<section class="page-section">
+  <div class="section-header"><h2>Free tools mentioned in this guide</h2></div>
+  <div class="tool-list">
+    <a href="/tool/tools/hash-generator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Hash Generator</div><div class="tool-row-desc">Hash any text or file to verify integrity or compare checksums, with SHA-1, SHA-256, SHA-384 and SHA-512 all computed instantly.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+    <a href="/tool/tools/base64" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Base64 Encoder</div><div class="tool-row-desc">Convert text or an uploaded file to Base64, or decode a Base64 string back to its original form, instantly in your browser.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+    <a href="/tool/tools/url-encoder" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">URL Encoder &amp; Decoder</div><div class="tool-row-desc">Convert special characters in a URL to percent-encoding, or decode an encoded URL back to readable text, instantly.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+    <a href="/tool/tools/jwt-decoder" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">JWT Decoder</div><div class="tool-row-desc">Paste a JSON Web Token to see its decoded header, payload and signature instantly, entirely in your browser.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+    <a href="/tool/tools/password-generator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Password Generator</div><div class="tool-row-desc">Set the length and character types you want, then generate a cryptographically random password instantly, nothing stored or sent anywhere.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="section-header"><h2>More in AI &amp; Technology</h2></div>
+  <div class="article-list">
+    <a href="/ai-technology/how-large-language-models-work" class="article-card">
+      <span class="article-card-topic">AI &amp; Technology</span>
+      <h3>How Large Language Models Work: A Plain-English Guide</h3>
+      <p>A clear explanation of how large language models are trained, what tokens and context windows are, why they make mistakes, and how to use them sensibly.</p>
+      <span class="article-card-meta">5 min read</span>
+    </a>
+    <a href="/ai-technology/json-vs-yaml-vs-xml-vs-csv" class="article-card">
+      <span class="article-card-topic">AI &amp; Technology</span>
+      <h3>JSON vs YAML vs XML vs CSV: Which Data Format Should You Use?</h3>
+      <p>Compare JSON, YAML, XML and CSV: strengths, weaknesses, common pitfalls and a simple rule for choosing the right data format for your project.</p>
+      <span class="article-card-meta">4 min read</span>
+    </a>
+    <a href="/ai-technology/open-source-licenses-explained" class="article-card">
+      <span class="article-card-topic">AI &amp; Technology</span>
+      <h3>Open Source Licenses Explained: MIT, Apache, GPL and How to Choose</h3>
+      <p>A practical guide to open source licenses: permissive vs copyleft, how MIT, Apache 2.0, GPL and AGPL differ, and how to choose or comply with one.</p>
+      <span class="article-card-meta">3 min read</span>
+    </a>
+  </div>
+</section>
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

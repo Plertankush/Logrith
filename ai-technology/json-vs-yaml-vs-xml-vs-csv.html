@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON vs YAML vs XML vs CSV: Which Data Format Should You Use? | Logrith</title>
+  <meta name="description" content="Compare JSON, YAML, XML and CSV: strengths, weaknesses, common pitfalls and a simple rule for choosing the right data format for your project.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Plert Ankush">
+  <link rel="canonical" href="https://logrith.in/ai-technology/json-vs-yaml-vs-xml-vs-csv">
+  <meta property="og:title" content="JSON vs YAML vs XML vs CSV: Which Data Format Should You Use? | Logrith">
+  <meta property="og:description" content="Compare JSON, YAML, XML and CSV: strengths, weaknesses, common pitfalls and a simple rule for choosing the right data format for your project.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://logrith.in/ai-technology/json-vs-yaml-vs-xml-vs-csv">
+  <meta property="og:site_name" content="Logrith">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="JSON vs YAML vs XML vs CSV: Which Data Format Should You Use? | Logrith">
+  <meta name="twitter:description" content="Compare JSON, YAML, XML and CSV: strengths, weaknesses, common pitfalls and a simple rule for choosing the right data format for your project.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0A0A0A">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+  <link rel="preload" href="/components/navbar.html" as="fetch" type="text/html" crossorigin>
+  <link rel="preload" href="/components/footer.html" as="fetch" type="text/html" crossorigin>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "JSON vs YAML vs XML vs CSV: Which Data Format Should You Use?",
+    "description": "Compare JSON, YAML, XML and CSV: strengths, weaknesses, common pitfalls and a simple rule for choosing the right data format for your project.",
+    "url": "https://logrith.in/ai-technology/json-vs-yaml-vs-xml-vs-csv",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://logrith.in/ai-technology/json-vs-yaml-vs-xml-vs-csv"
+    },
+    "datePublished": "2026-11-12",
+    "dateModified": "2026-11-12",
+    "author": {
+      "@type": "Person",
+      "name": "Plert Ankush",
+      "url": "https://logrith.in/pages/founder"
+    },
+    "publisher": {
+      "@id": "https://logrith.in/#organization"
+    },
+    "isPartOf": {
+      "@id": "https://logrith.in/#website"
+    },
+    "inLanguage": "en"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://logrith.in/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "AI & Technology",
+        "item": "https://logrith.in/ai-technology/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Software & Developer Ecosystem",
+        "item": "https://logrith.in/ai-technology/software-developer-ecosystem"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "JSON vs YAML vs XML vs CSV: Which Data Format Should You Use?",
+        "item": "https://logrith.in/ai-technology/json-vs-yaml-vs-xml-vs-csv"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is YAML a superset of JSON?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Valid JSON is generally valid YAML 1.2, so most JSON files can be read by a YAML parser. The reverse is not true, because YAML has many features JSON lacks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is JSON more common than XML for web APIs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It is lighter, simpler to read, and maps directly to the objects and arrays used in most programming languages."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can CSV hold nested data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not directly. You can flatten nested data into columns or store a JSON string in a cell, but at that point JSON is usually a better fit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which format is fastest?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on the parser and the data. For most applications readability, tooling and correctness matter more than raw parsing speed."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="navbar"></div>
+
+<main id="main">
+<header class="page-hero page-hero-article">
+  <div class="page-hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/ai-technology/">AI &amp; Technology</a> › <a href="/ai-technology/software-developer-ecosystem">Software &amp; Developer Ecosystem</a> › JSON vs YAML vs XML vs CSV: Which Data Format Should You Use?</nav>
+    <div class="badge"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#code"></use></svg> Software &amp; Developer Ecosystem</div>
+    <h1>JSON vs YAML vs XML vs CSV: Which Data Format Should You Use?</h1>
+    <p class="byline">By <a href="/pages/founder" rel="author">Plert Ankush</a> &middot; Published <time datetime="2026-11-12">Nov 12, 2026</time> &middot; Updated <time datetime="2026-11-12">Nov 12, 2026</time> &middot; 4 min read</p>
+  </div>
+</header>
+
+<article class="page-section">
+  <div class="prose hub-prose article-body">
+    <p>Every application eventually has to store data in a file or send it to another system. The four formats you will meet most often are JSON, YAML, XML and CSV. They overlap enough that people argue about them, yet each has a clear sweet spot.</p>
+<p>This guide compares them side by side, points out the mistakes that cause real bugs and finishes with a simple way to choose.</p>
+
+    <aside class="takeaways" aria-label="Key takeaways">
+      <h2>Key takeaways</h2>
+      <ul class="check-list">
+<li>Use JSON for APIs and data exchange between programs.</li>
+<li>Use YAML for human-edited configuration, and watch its whitespace and type-guessing traps.</li>
+<li>Use XML when you need documents with mixed content, namespaces or strict schemas.</li>
+<li>Use CSV for flat tables you want to open in a spreadsheet. It has no types and no nesting.</li>
+      </ul>
+    </aside>
+
+    <nav class="article-toc" aria-label="In this guide">
+      <h2>In this guide</h2>
+      <ol>
+<li><a href="#overview">The four formats at a glance</a></li>
+<li><a href="#json">JSON: the default for data exchange</a></li>
+<li><a href="#yaml">YAML: readable configuration</a></li>
+<li><a href="#xml">XML: structure for documents</a></li>
+<li><a href="#csv">CSV: simple tables</a></li>
+<li><a href="#choose">A simple way to choose</a></li>
+<li><a href="#mistakes">Common mistakes to avoid</a></li>
+      </ol>
+    </nav>
+
+<section id="overview">
+<h2>The four formats at a glance</h2>
+<table>
+<thead><tr><th>Format</th><th>Structure</th><th>Comments</th><th>Best for</th></tr></thead>
+<tbody>
+<tr><td>JSON</td><td>Nested objects and arrays</td><td>No</td><td>APIs, app data, browser and server exchange</td></tr>
+<tr><td>YAML</td><td>Nested, indentation-based</td><td>Yes</td><td>Configuration files people edit by hand</td></tr>
+<tr><td>XML</td><td>Nested tags and attributes</td><td>Yes</td><td>Documents, feeds, enterprise integrations</td></tr>
+<tr><td>CSV</td><td>Flat rows and columns</td><td>No</td><td>Spreadsheets and tabular exports</td></tr>
+</tbody>
+</table>
+</section>
+<section id="json">
+<h2>JSON: the default for data exchange</h2>
+<p>JSON (JavaScript Object Notation) represents data as objects (key-value pairs), arrays, strings, numbers, booleans and null. It is compact, easy for programs to parse in virtually every language and strict enough that parsing errors are easy to detect.</p>
+<p><strong>Strengths:</strong> universal support, small and predictable syntax, clear data types.</p>
+<p><strong>Weaknesses:</strong> no comments, no trailing commas, every key and string needs double quotes, and large numbers can lose precision in some languages. Hand-editing is tedious for big files.</p>
+<p>When a JSON file will not parse, the cause is usually a missing comma, a trailing comma or single quotes. Paste it into a <a href="/tool/tools/json-formatter">JSON formatter</a> to see exactly where it breaks, or try <a href="/tool/tools/json-repair">JSON Repair</a> for common mistakes.</p>
+</section>
+<section id="yaml">
+<h2>YAML: readable configuration</h2>
+<p>YAML aims to be easy for humans to read and write. It uses indentation instead of braces, allows comments and supports the same kinds of structures as JSON. It is widely used for configuration, such as CI pipelines and container definitions.</p>
+<p><strong>Strengths:</strong> very readable, supports comments, concise for nested configuration.</p>
+<p><strong>Weaknesses:</strong></p>
+<ul>
+<li><strong>Whitespace matters.</strong> A wrong indent changes the meaning, or breaks the file. Use spaces, never tabs.</li>
+<li><strong>Type guessing.</strong> Unquoted values can be interpreted as other types. In YAML 1.1, words like <code>no</code> or <code>off</code> may be read as booleans, which has caused the well-known "Norway problem" where the country code NO becomes false. Quote ambiguous strings.</li>
+<li><strong>Complexity.</strong> Features like anchors and multi-document files are powerful but easy to misuse.</li>
+</ul>
+<p>Need to move between the two? A <a href="/tool/tools/yaml-json-converter">YAML to JSON converter</a> helps you check that a config means what you think it means.</p>
+</section>
+<section id="xml">
+<h2>XML: structure for documents</h2>
+<p>XML wraps data in named tags and attributes. It is verbose, but that verbosity supports features the others lack: namespaces to avoid name clashes, schemas that validate structure strictly, and mixed content where text and markup interleave, as in documents.</p>
+<p><strong>Strengths:</strong> strong validation, mature tooling, ideal for document-like data, and still common in feeds, office file formats and enterprise or government integrations.</p>
+<p><strong>Weaknesses:</strong> verbose, heavier to parse and harder to read than JSON for plain data. A <a href="/tool/tools/xml-formatter">XML formatter</a> makes large files bearable to inspect.</p>
+</section>
+<section id="csv">
+<h2>CSV: simple tables</h2>
+<p>CSV stores one record per line with values separated by commas. Every spreadsheet program can open it, which makes it the standard export format for tabular data.</p>
+<p><strong>Strengths:</strong> tiny, universal, perfect for rows and columns.</p>
+<p><strong>Weaknesses:</strong> no data types (everything is text until a program guesses), no nesting, and several subtle traps:</p>
+<ul>
+<li>Values containing commas or line breaks must be wrapped in quotes, and quotes inside must be doubled.</li>
+<li>Different tools use different delimiters (comma, semicolon, tab) and encodings.</li>
+<li>Spreadsheets may silently reformat values, such as dropping leading zeros from IDs or turning gene names into dates.</li>
+</ul>
+<p>If a file is messy, the <a href="/tool/tools/csv-cleaner">CSV Cleaner</a> can tidy common problems before you import it.</p>
+</section>
+<section id="choose">
+<h2>A simple way to choose</h2>
+<ol>
+<li><strong>Will programs exchange it?</strong> Use JSON.</li>
+<li><strong>Will a person edit it often, with comments helpful?</strong> Use YAML, carefully quoted, or JSON if you can live without comments.</li>
+<li><strong>Is it a document or must it satisfy a formal schema or an existing standard?</strong> Use XML.</li>
+<li><strong>Is it a flat table meant for a spreadsheet or analysis tool?</strong> Use CSV.</li>
+</ol>
+<p>If you are unsure, start with JSON. It is supported everywhere, and converting later is usually straightforward.</p>
+</section>
+<section id="mistakes">
+<h2>Common mistakes to avoid</h2>
+<ul>
+<li>Putting comments in JSON. They are not allowed, so use a "_comment" field or switch to YAML.</li>
+<li>Using YAML for data that machines write and read. Prefer JSON for generated files.</li>
+<li>Opening and re-saving CSV in a spreadsheet, which can change values without warning.</li>
+<li>Mixing tabs and spaces in YAML.</li>
+<li>Choosing XML out of habit when the data is a simple object.</li>
+</ul>
+</section>
+
+    <section id="faq">
+      <h2>Frequently asked questions</h2>
+      <div class="faq-list">
+<details class="faq-item">
+  <summary class="faq-q">Is YAML a superset of JSON?</summary>
+  <div class="faq-a"><p>Valid JSON is generally valid YAML 1.2, so most JSON files can be read by a YAML parser. The reverse is not true, because YAML has many features JSON lacks.</p></div>
+</details>
+<details class="faq-item">
+  <summary class="faq-q">Why is JSON more common than XML for web APIs?</summary>
+  <div class="faq-a"><p>It is lighter, simpler to read, and maps directly to the objects and arrays used in most programming languages.</p></div>
+</details>
+<details class="faq-item">
+  <summary class="faq-q">Can CSV hold nested data?</summary>
+  <div class="faq-a"><p>Not directly. You can flatten nested data into columns or store a JSON string in a cell, but at that point JSON is usually a better fit.</p></div>
+</details>
+<details class="faq-item">
+  <summary class="faq-q">Which format is fastest?</summary>
+  <div class="faq-a"><p>It depends on the parser and the data. For most applications readability, tooling and correctness matter more than raw parsing speed.</p></div>
+</details>
+      </div>
+    </section>
+
+    <aside class="author-box">
+      <strong>Written by <a href="/pages/founder" rel="author">Plert Ankush</a></strong>
+      <p>Independent founder and publisher of Logrith. Articles are developed with AI assistance, then directed and reviewed by the author. Spotted a mistake? <a href="/pages/contact">Tell us</a> and we will correct it.</p>
+    </aside>
+  </div>
+</article>
+
+<section class="page-section">
+  <div class="section-header"><h2>Free tools mentioned in this guide</h2></div>
+  <div class="tool-list">
+    <a href="/tool/tools/json-formatter" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">JSON Formatter</div><div class="tool-row-desc">Paste JSON to beautify it with proper indentation, validate its syntax with exact error locations, or minify it to one line.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+    <a href="/tool/tools/yaml-json-converter" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">YAML to JSON Converter</div><div class="tool-row-desc">Paste YAML or JSON and get an accurate conversion to the other format instantly, with formatting preserved.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+    <a href="/tool/tools/xml-formatter" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">XML Formatter</div><div class="tool-row-desc">Paste XML to beautify it with correct nesting and indentation, or validate its structure and catch syntax errors.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+    <a href="/tool/tools/csv-cleaner" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">CSV Cleaner</div><div class="tool-row-desc">Strip duplicate rows, empty cells and inconsistent formatting from a CSV file, with a real parser that handles quoted fields correctly.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+    <a href="/tool/tools/json-repair" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">JSON Repair Tool</div><div class="tool-row-desc">Paste invalid JSON to get it repaired automatically, with trailing commas and unquoted keys fixed and errors clearly explained.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="section-header"><h2>More in AI &amp; Technology</h2></div>
+  <div class="article-list">
+    <a href="/ai-technology/how-large-language-models-work" class="article-card">
+      <span class="article-card-topic">AI &amp; Technology</span>
+      <h3>How Large Language Models Work: A Plain-English Guide</h3>
+      <p>A clear explanation of how large language models are trained, what tokens and context windows are, why they make mistakes, and how to use them sensibly.</p>
+      <span class="article-card-meta">5 min read</span>
+    </a>
+    <a href="/ai-technology/hashing-vs-encryption-vs-encoding" class="article-card">
+      <span class="article-card-topic">AI &amp; Technology</span>
+      <h3>Hashing vs Encryption vs Encoding: The Difference Explained</h3>
+      <p>Hashing, encryption and encoding are often confused. Learn what each one does, when to use it and which mistakes lead to real security problems.</p>
+      <span class="article-card-meta">3 min read</span>
+    </a>
+    <a href="/ai-technology/open-source-licenses-explained" class="article-card">
+      <span class="article-card-topic">AI &amp; Technology</span>
+      <h3>Open Source Licenses Explained: MIT, Apache, GPL and How to Choose</h3>
+      <p>A practical guide to open source licenses: permissive vs copyleft, how MIT, Apache 2.0, GPL and AGPL differ, and how to choose or comply with one.</p>
+      <span class="article-card-meta">3 min read</span>
+    </a>
+  </div>
+</section>
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

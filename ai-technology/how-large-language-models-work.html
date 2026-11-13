@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Large Language Models Work: A Plain-English Guide | Logrith</title>
+  <meta name="description" content="A clear explanation of how large language models are trained, what tokens and context windows are, why they make mistakes, and how to use them sensibly.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Plert Ankush">
+  <link rel="canonical" href="https://logrith.in/ai-technology/how-large-language-models-work">
+  <meta property="og:title" content="How Large Language Models Work: A Plain-English Guide | Logrith">
+  <meta property="og:description" content="A clear explanation of how large language models are trained, what tokens and context windows are, why they make mistakes, and how to use them sensibly.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://logrith.in/ai-technology/how-large-language-models-work">
+  <meta property="og:site_name" content="Logrith">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How Large Language Models Work: A Plain-English Guide | Logrith">
+  <meta name="twitter:description" content="A clear explanation of how large language models are trained, what tokens and context windows are, why they make mistakes, and how to use them sensibly.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0A0A0A">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+  <link rel="preload" href="/components/navbar.html" as="fetch" type="text/html" crossorigin>
+  <link rel="preload" href="/components/footer.html" as="fetch" type="text/html" crossorigin>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How Large Language Models Work: A Plain-English Guide",
+    "description": "A clear explanation of how large language models are trained, what tokens and context windows are, why they make mistakes, and how to use them sensibly.",
+    "url": "https://logrith.in/ai-technology/how-large-language-models-work",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://logrith.in/ai-technology/how-large-language-models-work"
+    },
+    "datePublished": "2026-11-12",
+    "dateModified": "2026-11-12",
+    "author": {
+      "@type": "Person",
+      "name": "Plert Ankush",
+      "url": "https://logrith.in/pages/founder"
+    },
+    "publisher": {
+      "@id": "https://logrith.in/#organization"
+    },
+    "isPartOf": {
+      "@id": "https://logrith.in/#website"
+    },
+    "inLanguage": "en"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://logrith.in/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "AI & Technology",
+        "item": "https://logrith.in/ai-technology/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Artificial Intelligence & ML",
+        "item": "https://logrith.in/ai-technology/artificial-intelligence-ml"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "How Large Language Models Work: A Plain-English Guide",
+        "item": "https://logrith.in/ai-technology/how-large-language-models-work"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do large language models understand what they say?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "They model patterns in language very well, and that can look like understanding. Whether it counts as understanding in a human sense is debated, but in practice you should treat the output as plausible text that needs checking, not as verified knowledge."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are LLMs the same as search engines?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. A search engine retrieves existing pages. An LLM generates new text from learned patterns. Some products combine both, so the model can cite retrieved sources, but the two are different mechanisms."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can an LLM learn from my conversation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Within a single conversation it can use what you have written because it is in the context window. Whether your chats are used to train future models depends on the provider and your settings, so check their policy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How big is \"large\"?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Large language models have billions of parameters and are trained on very large text collections. The exact sizes vary by model and are not always published."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="navbar"></div>
+
+<main id="main">
+<header class="page-hero page-hero-article">
+  <div class="page-hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/ai-technology/">AI &amp; Technology</a> › <a href="/ai-technology/artificial-intelligence-ml">Artificial Intelligence &amp; ML</a> › How Large Language Models Work: A Plain-English Guide</nav>
+    <div class="badge"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#sparkles"></use></svg> Artificial Intelligence &amp; ML</div>
+    <h1>How Large Language Models Work: A Plain-English Guide</h1>
+    <p class="byline">By <a href="/pages/founder" rel="author">Plert Ankush</a> &middot; Published <time datetime="2026-11-12">Nov 12, 2026</time> &middot; Updated <time datetime="2026-11-12">Nov 12, 2026</time> &middot; 5 min read</p>
+  </div>
+</header>
+
+<article class="page-section">
+  <div class="prose hub-prose article-body">
+    <p>Large language models, or LLMs, power chatbots, writing assistants and coding tools. They can draft an email, explain a concept or write a function, and they can also state something false in a perfectly confident tone. Both behaviours come from the same mechanism, and understanding it makes you a far better user.</p>
+<p>This guide explains how an LLM is built and how it produces an answer, with no maths required. By the end you will know what a token is, why context limits matter, why "hallucinations" happen and how to get more reliable results.</p>
+
+    <aside class="takeaways" aria-label="Key takeaways">
+      <h2>Key takeaways</h2>
+      <ul class="check-list">
+<li>An LLM is trained to predict the next piece of text. Everything else it does is built on that skill.</li>
+<li>Models read and write in tokens, and limits and prices are counted in tokens rather than words.</li>
+<li>Fluent text is not the same as true text. Check facts, numbers and citations.</li>
+<li>Better results come from clear context, examples and constraints, plus a review step.</li>
+      </ul>
+    </aside>
+
+    <nav class="article-toc" aria-label="In this guide">
+      <h2>In this guide</h2>
+      <ol>
+<li><a href="#what-it-is">What a large language model actually is</a></li>
+<li><a href="#tokens">Tokens: the unit models read and write</a></li>
+<li><a href="#training">How a model is trained</a></li>
+<li><a href="#attention">Attention: how the model uses context</a></li>
+<li><a href="#context-window">The context window</a></li>
+<li><a href="#hallucinations">Why models make things up</a></li>
+<li><a href="#randomness">Why you get different answers each time</a></li>
+<li><a href="#using-well">How to get better results</a></li>
+<li><a href="#privacy">Privacy and data handling</a></li>
+      </ol>
+    </nav>
+
+<section id="what-it-is">
+<h2>What a large language model actually is</h2>
+<p>A large language model is a program that has learned statistical patterns in a huge amount of text. Given some text, it estimates which piece of text is most likely to come next, adds it and repeats. Do that a few hundred times and you have a paragraph.</p>
+<p>That description sounds too simple to explain what these systems can do, but the scale changes things. To predict the next word well across millions of documents, the model has to pick up grammar, facts, writing styles, reasoning patterns and the structure of code. Those abilities are not programmed in one by one. They emerge from the prediction task.</p>
+</section>
+<section id="tokens">
+<h2>Tokens: the unit models read and write</h2>
+<p>Models do not read letters or whole words. They read <strong>tokens</strong>, which are chunks of text. A common word may be one token, a rare word may be split into several, and punctuation and spaces count too. As a rough rule of thumb for English, one token is about four characters, or three quarters of a word, though the exact split depends on the model.</p>
+<p>Tokens matter because almost everything practical is measured in them. Providers usually price usage per token, and every model has a maximum number of tokens it can handle at once. If you want to estimate how much text fits or what a job might cost, the <a href="/tool/tools/ai-context-calculator">AI Context Calculator</a> gives a quick approximation in your browser.</p>
+</section>
+<section id="training">
+<h2>How a model is trained</h2>
+<p>Training happens in stages.</p>
+<ol>
+<li><strong>Pre-training.</strong> The model reads an enormous collection of text and repeatedly tries to predict the next token. When it is wrong, its internal numbers (called parameters) are adjusted slightly. After billions of adjustments it becomes a strong text predictor.</li>
+<li><strong>Instruction tuning.</strong> A pre-trained model completes text but does not naturally follow requests. It is further trained on examples of instructions paired with good responses, so it behaves like an assistant.</li>
+<li><strong>Preference tuning.</strong> People or automated systems compare alternative answers, and the model is nudged toward the ones judged better: more helpful, more careful or less harmful.</li>
+</ol>
+<p>The details vary between providers and change quickly, but this three-stage shape is common. The important point is that the model learns from patterns in text, not from a verified database of facts.</p>
+</section>
+<section id="attention">
+<h2>Attention: how the model uses context</h2>
+<p>Most modern LLMs use an architecture called the transformer. Its key idea is <strong>attention</strong>, a mechanism that lets the model weigh how relevant every earlier token is when predicting the next one. In the sentence "The trophy did not fit in the suitcase because it was too big", attention helps the model connect "it" with the trophy rather than the suitcase.</p>
+<p>You do not need the mathematics to benefit from the intuition: the model considers your whole prompt at once and decides what to focus on. This is why clear, well-organised instructions help, and why burying the key requirement in the middle of a long, messy prompt can hurt.</p>
+</section>
+<section id="context-window">
+<h2>The context window</h2>
+<p>The <strong>context window</strong> is the maximum number of tokens a model can consider in one go. It includes your instructions, any documents you paste in, the conversation so far and the answer being written. When a conversation exceeds the window, older content has to be dropped or summarised, and the model can no longer "see" it.</p>
+<p>Larger windows allow longer documents, but they are not a guarantee of perfect recall. Models can still overlook details buried in very long inputs, and longer inputs cost more and run slower. For important work, ask about specific passages and verify the answers against the source.</p>
+</section>
+<section id="hallucinations">
+<h2>Why models make things up</h2>
+<p>A "hallucination" is an answer that sounds right but is not supported by facts. It follows directly from how the model works. It is rewarded for producing plausible text, not for checking truth, so when it lacks reliable knowledge it can still produce a fluent guess.</p>
+<p>Hallucinations are more likely when you ask for:</p>
+<ul>
+<li>precise numbers, dates, quotations or citations;</li>
+<li>obscure facts, recent events or niche topics;</li>
+<li>details about a document the model has not actually been given.</li>
+</ul>
+<p>Some products reduce the problem by letting the model search the web or retrieve text from your documents before answering. That helps, but it does not remove the need to check anything that matters.</p>
+</section>
+<section id="randomness">
+<h2>Why you get different answers each time</h2>
+<p>When choosing the next token, a model usually samples from a ranked list of likely options rather than always picking the top one. A setting often called <em>temperature</em> controls how adventurous that sampling is. Lower values give more predictable output, higher values give more varied output. This is why the same prompt can produce different wording on different runs.</p>
+</section>
+<section id="using-well">
+<h2>How to get better results</h2>
+<p>You cannot change how the model works, but you can change what you give it.</p>
+<ul>
+<li><strong>State the goal and the audience.</strong> "Explain DNS to a non-technical manager in 150 words" beats "explain DNS".</li>
+<li><strong>Provide the material.</strong> Paste the text you want summarised or the data you want analysed instead of relying on the model's memory.</li>
+<li><strong>Show an example.</strong> One sample of the format you want often works better than a paragraph of description.</li>
+<li><strong>Set constraints.</strong> Length, tone, what to include and what to avoid.</li>
+<li><strong>Ask it to show its work</strong> on reasoning tasks, then check the steps.</li>
+<li><strong>Review before you rely.</strong> Treat output as a fast first draft from a capable but unreliable assistant.</li>
+</ul>
+</section>
+<section id="privacy">
+<h2>Privacy and data handling</h2>
+<p>When you type into a hosted AI service, your text is sent to the provider. Whether it can be retained or used to improve models depends on the provider, the plan and your settings, so read the data policy before pasting anything confidential. As a habit, remove personal data, credentials and client secrets from prompts unless you are certain how they are handled.</p>
+</section>
+
+    <section id="faq">
+      <h2>Frequently asked questions</h2>
+      <div class="faq-list">
+<details class="faq-item">
+  <summary class="faq-q">Do large language models understand what they say?</summary>
+  <div class="faq-a"><p>They model patterns in language very well, and that can look like understanding. Whether it counts as understanding in a human sense is debated, but in practice you should treat the output as plausible text that needs checking, not as verified knowledge.</p></div>
+</details>
+<details class="faq-item">
+  <summary class="faq-q">Are LLMs the same as search engines?</summary>
+  <div class="faq-a"><p>No. A search engine retrieves existing pages. An LLM generates new text from learned patterns. Some products combine both, so the model can cite retrieved sources, but the two are different mechanisms.</p></div>
+</details>
+<details class="faq-item">
+  <summary class="faq-q">Can an LLM learn from my conversation?</summary>
+  <div class="faq-a"><p>Within a single conversation it can use what you have written because it is in the context window. Whether your chats are used to train future models depends on the provider and your settings, so check their policy.</p></div>
+</details>
+<details class="faq-item">
+  <summary class="faq-q">How big is &quot;large&quot;?</summary>
+  <div class="faq-a"><p>Large language models have billions of parameters and are trained on very large text collections. The exact sizes vary by model and are not always published.</p></div>
+</details>
+      </div>
+    </section>
+
+    <aside class="author-box">
+      <strong>Written by <a href="/pages/founder" rel="author">Plert Ankush</a></strong>
+      <p>Independent founder and publisher of Logrith. Articles are developed with AI assistance, then directed and reviewed by the author. Spotted a mistake? <a href="/pages/contact">Tell us</a> and we will correct it.</p>
+    </aside>
+  </div>
+</article>
+
+<section class="page-section">
+  <div class="section-header"><h2>Free tools mentioned in this guide</h2></div>
+  <div class="tool-list">
+    <a href="/tool/tools/ai-context-calculator" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">AI Token &amp; Context Calculator</div><div class="tool-row-desc">Paste a prompt or document to estimate its token count and how much of a model&#x27;s context window it would use, right in your browser.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+    <a href="/tool/tools/text-summarizer-basic" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Text Summarizer</div><div class="tool-row-desc">Paste a long article or document and get a condensed summary built from the most important sentences, in seconds.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+    <a href="/tool/tools/word-counter" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Word Counter</div><div class="tool-row-desc">Paste any text to see live word, character, sentence and paragraph counts, plus an estimated reading and speaking time.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="section-header"><h2>More in AI &amp; Technology</h2></div>
+  <div class="article-list">
+    <a href="/ai-technology/json-vs-yaml-vs-xml-vs-csv" class="article-card">
+      <span class="article-card-topic">AI &amp; Technology</span>
+      <h3>JSON vs YAML vs XML vs CSV: Which Data Format Should You Use?</h3>
+      <p>Compare JSON, YAML, XML and CSV: strengths, weaknesses, common pitfalls and a simple rule for choosing the right data format for your project.</p>
+      <span class="article-card-meta">4 min read</span>
+    </a>
+    <a href="/ai-technology/hashing-vs-encryption-vs-encoding" class="article-card">
+      <span class="article-card-topic">AI &amp; Technology</span>
+      <h3>Hashing vs Encryption vs Encoding: The Difference Explained</h3>
+      <p>Hashing, encryption and encoding are often confused. Learn what each one does, when to use it and which mistakes lead to real security problems.</p>
+      <span class="article-card-meta">3 min read</span>
+    </a>
+    <a href="/ai-technology/open-source-licenses-explained" class="article-card">
+      <span class="article-card-topic">AI &amp; Technology</span>
+      <h3>Open Source Licenses Explained: MIT, Apache, GPL and How to Choose</h3>
+      <p>A practical guide to open source licenses: permissive vs copyleft, how MIT, Apache 2.0, GPL and AGPL differ, and how to choose or comply with one.</p>
+      <span class="article-card-meta">3 min read</span>
+    </a>
+  </div>
+</section>
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
