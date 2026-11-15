@@ -60,6 +60,12 @@
   "summary": "See your character count with and without spaces, word count, and a full letter-frequency breakdown update as you type, no paste limit."
  },
  {
+  "name": "Circle Image Cropper",
+  "category": "Image & PDF",
+  "url": "/tool/tools/image-circle-crop",
+  "summary": "Crop any photo into a perfect circle online. Drag and zoom to position, set the exact output size, add an optional ring, and download a transparent PNG. Nothing is uploaded."
+ },
+ {
   "name": "Citation Generator",
   "category": "Text & Generators",
   "url": "/tool/tools/citation-generator",
@@ -490,6 +496,12 @@
   "category": "Calculate & Convert",
   "url": "/tool/tools/roman-numeral-converter",
   "summary": "Turn any number from 1 to 3999 into Roman numerals, or convert Roman numerals back to standard numbers, with instant, accurate results."
+ },
+ {
+  "name": "Round Image Corners",
+  "category": "Image & PDF",
+  "url": "/tool/tools/round-image-corners",
+  "summary": "Round the corners of any image online. Set the radius in pixels or percent, link or separate each corner, preview live and download a transparent PNG. Nothing is uploaded."
  },
  {
   "name": "Salary to Hourly Converter",

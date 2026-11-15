@@ -14,13 +14,13 @@ SITE = 'https://logrith.in'
 TOPICS = [
     {
         'slug': 'ai-technology',
-        'title': 'AI & Technology',
+        'title': 'AI & Developer Tools',
         'icon': 'cpu',
-        'tagline': 'Artificial intelligence, software and the digital ecosystem.',
-        'meta': 'Plain-English guides to artificial intelligence, software development, cybersecurity and open source: what the technology does, how it works and how to use it.',
+        'tagline': 'How AI and developer tools work, and how to use them well.',
+        'meta': 'Practical guides to AI tools, developer workflows, data formats, security and open source for people who build things with software.',
         'intro': [
-            'Technology moves quickly, but the questions people ask about it are remarkably stable. What does this system actually do? What can go wrong? Is it worth learning, building on or paying for? This section answers those questions for three areas that shape most modern products: artificial intelligence, the software and developer ecosystem, and security and open source.',
-            'Each sub-topic below opens with the core ideas in plain language, lists the questions we cover and links to free browser tools you can try while you read. We aim for explanations a working professional can act on, not announcements to skim.',
+            'Most of what people build today involves AI, data and code in some combination. This section explains how those pieces work so you can choose tools with confidence: what a language model can and cannot do, how data formats and APIs fit together, and how to keep what you build secure.',
+            'Each guide is paired with free browser tools you can use straight away, such as a JSON formatter, a regex tester or the AI context calculator. We explain the idea first and keep jargon to a minimum.',
         ],
         'subtopics': [
             {
@@ -105,13 +105,13 @@ TOPICS = [
     },
     {
         'slug': 'startups-business',
-        'title': 'Startups & Business',
+        'title': 'Build & Ship',
         'icon': 'rocket',
-        'tagline': 'Building companies, products and businesses.',
-        'meta': 'Guides for founders and operators: validating startup ideas, building SaaS products, and understanding business models, finance and operations.',
+        'tagline': 'Turning an idea into a small, working product.',
+        'meta': 'Guides for solo builders and small teams: validating a product idea, building and pricing a SaaS tool, and understanding the money behind it.',
         'intro': [
-            'Most new businesses fail for ordinary reasons: they build something few people need, price it badly or run out of cash before they learn. This section is about reducing those risks with simple, repeatable thinking. It covers how to test an idea cheaply, how to build and ship a software product, and how to understand the money behind a business.',
-            'The guides are written for first-time founders and small teams. They favour clear frameworks, worked examples and the calculators you actually need over inspirational stories.',
+            'Most small products fail before they reach customers, not after. This section covers the practical middle: testing whether an idea is worth building, shipping a first version of a software product and understanding the pricing and money behind it.',
+            'It is written for solo builders and small teams who use AI and modern tools to ship faster. The guides favour checklists, worked examples and honest trade-offs over hype.',
         ],
         'subtopics': [
             {
@@ -191,97 +191,6 @@ TOPICS = [
                 ],
                 'tools': ['emi-calculator', 'compound-interest-calculator', 'gst-calculator', 'percentage-calculator', 'discount-stacking-calculator', 'salary-hourly-converter', 'loan-affordability-calculator', 'currency-converter'],
                 'start': 'Take your most important product or service and write one line of unit economics: what a customer pays, what it costs you to serve them and what is left. If you cannot fill that line in, that is the first thing to find out.',
-            },
-        ],
-    },
-    {
-        'slug': 'marketing-growth',
-        'title': 'Marketing & Growth',
-        'icon': 'megaphone',
-        'tagline': 'Growing products, audiences and brands.',
-        'meta': 'Guides to SEO and content marketing, social media and the creator economy, and branding, sales and growth for small teams and independent builders.',
-        'intro': [
-            'Building something useful is only half the work; people also have to find it. Marketing is the discipline of being easy to find, easy to understand and easy to trust. This section covers the three channels that matter most to independent builders: search and content, social platforms and creators, and the brand and sales work that turns attention into customers.',
-            'The emphasis is on durable practices over tricks. Search engines, platforms and audiences change, but clear writing, honest positioning and consistent publishing keep paying off.',
-        ],
-        'subtopics': [
-            {
-                'slug': 'seo-content-marketing',
-                'title': 'SEO & Content Marketing',
-                'icon': 'search',
-                'summary': 'How search engines evaluate pages, how to plan and write content that earns traffic, and how to build a site Google and readers trust.',
-                'intro': [
-                    'Search engine optimisation is the practice of making your pages easy for search engines to understand and genuinely useful to the people who find them. The two goals are the same in the long run: engines reward pages that satisfy readers.',
-                    'Content marketing is the publishing side. You answer real questions in depth, build a library over time and let search bring a steady audience. It is slower than ads, but the work compounds.',
-                ],
-                'topics': [
-                    'Keyword research: intent, difficulty and realistic targets',
-                    'On-page basics: titles, descriptions, headings, internal links, canonical tags',
-                    'Technical SEO: crawlability, sitemaps, speed and structured data',
-                    'Writing content that is original and useful rather than padded',
-                    'E-E-A-T: experience, expertise, authoritativeness, trust',
-                    'Measuring progress with Search Console and analytics',
-                ],
-                'concepts': [
-                    ('Search intent', 'What the searcher actually wants: an answer, a comparison, a tool or a purchase. Content must match it.'),
-                    ('Canonical tag', 'A tag telling search engines which URL is the preferred version of a page, which prevents duplicate-content confusion.'),
-                    ('Internal linking', 'Links between your own pages, which help readers and crawlers discover and understand related content.'),
-                    ('Thin content', 'Pages that add little unique value. Expanding them with real substance is better than hiding them.'),
-                ],
-                'tools': ['slug-generator', 'word-counter', 'character-counter', 'website-speed-analyzer', 'markdown-to-html', 'url-deduplicator', 'favicon-generator'],
-                'start': 'Choose ten questions your audience genuinely asks, write one thorough answer for the most common and publish it. Then check Search Console after a few weeks to see which queries it starts to appear for.',
-            },
-            {
-                'slug': 'social-media-creator-economy',
-                'title': 'Social Media & Creator Economy',
-                'icon': 'users',
-                'summary': 'How creators build audiences and income: platform basics, content planning, community and the realistic ways creators earn.',
-                'intro': [
-                    'The creator economy is the set of businesses built on personal audiences: writers, video makers, educators and independent builders who earn directly from the people who follow them. Each platform rewards different habits, so understanding how a platform distributes content matters more than copying a format.',
-                    'Sustainable creator income usually comes from several sources over time: advertising, sponsorships, products, services and memberships. Audience trust is the asset that supports all of them.',
-                ],
-                'topics': [
-                    'Choosing a primary platform and a consistent format',
-                    'Planning content around a repeatable series',
-                    'Writing hooks, captions and descriptions that earn attention',
-                    'Community: replying, listening and turning followers into customers',
-                    'Monetisation paths: ads, sponsorships, digital products, memberships',
-                    'Avoiding burnout with a realistic publishing rhythm',
-                ],
-                'concepts': [
-                    ('Hook', 'The opening line or frame that gives a viewer a reason to keep going.'),
-                    ('Engagement rate', 'The share of viewers who react, comment or share, which signals how well content resonates.'),
-                    ('Owned audience', 'People you can reach directly, such as an email list, rather than only through a platform\'s algorithm.'),
-                    ('Content pillar', 'A recurring theme your content returns to, which makes your focus clear to new followers.'),
-                ],
-                'tools': ['image-crop', 'image-resize', 'meme-generator', 'qr-generator', 'random-color-palette-generator', 'fancy-text-generator', 'image-compressor'],
-                'start': 'Pick one platform and one format, publish a small batch on a fixed schedule for a month and review what people actually watch or share. Adjust the format based on that, not on guesses.',
-            },
-            {
-                'slug': 'branding-sales-growth',
-                'title': 'Branding, Sales & Growth',
-                'icon': 'trending-up',
-                'summary': 'Positioning, brand identity, simple sales processes and growth loops that help a small business win and keep customers.',
-                'intro': [
-                    'A brand is the set of expectations people have of you. Clear positioning, a consistent look and honest communication make those expectations easy to form and easy to meet. For a small business, good branding is mostly clarity: who you serve, what you do better and why that matters.',
-                    'Sales and growth turn attention into revenue. Most small businesses do better with a simple, repeatable process than with elaborate funnels, and they grow fastest when customers come back and recommend them.',
-                ],
-                'topics': [
-                    'Positioning: who you are for, and who you are not for',
-                    'Visual identity basics: colour, type, logo and consistency',
-                    'Writing a clear value proposition',
-                    'A simple sales process: lead, conversation, proposal, follow-up',
-                    'Pricing conversations and handling objections',
-                    'Growth loops: referrals, content, product-led sharing',
-                ],
-                'concepts': [
-                    ('Positioning', 'The specific place your product holds in a customer\'s mind compared with the alternatives.'),
-                    ('Value proposition', 'A short statement of the outcome you deliver and why it is better than other options.'),
-                    ('Conversion rate', 'The share of people at one stage, such as visitors, who take the next step, such as signing up.'),
-                    ('Growth loop', 'A cycle where each customer or piece of output helps bring in the next, such as sharing a result with a visible link.'),
-                ],
-                'tools': ['color-converter', 'random-color-palette-generator', 'css-gradient-generator', 'favicon-generator', 'image-color-picker', 'percentage-calculator', 'qr-generator'],
-                'start': 'Write one sentence that finishes "We help ___ do ___ so they can ___." Test it with five customers. If they cannot repeat it back, simplify it before you design anything.',
             },
         ],
     },

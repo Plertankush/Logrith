@@ -23,7 +23,7 @@ SKIP = {'404.html'}
 # child sitemap -> (predicate on URL path, changefreq, priority)
 GROUPS = [
     ('sitemap-pages.xml',  lambda p: p == '/' or p.startswith('/pages/') or p == '/tool/' or p.startswith('/tool/categories/'), 'weekly', '0.8'),
-    ('sitemap-topics.xml', lambda p: p.split('/')[1] in ('ai-technology', 'startups-business', 'marketing-growth'), 'weekly', '0.9'),
+    ('sitemap-topics.xml', lambda p: p.split('/')[1] in ('ai-technology', 'startups-business'), 'weekly', '0.9'),
     ('sitemap-blog.xml',   lambda p: p.startswith('/tool/blog/'), 'monthly', '0.6'),
     ('sitemap-global.xml', lambda p: p.startswith('/tool/tools/') and p in GLOBAL_PATHS, 'monthly', '0.7'),
     ('sitemap-tools.xml',  lambda p: p.startswith('/tool/tools/'), 'monthly', '0.8'),

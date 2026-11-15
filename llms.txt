@@ -1,6 +1,6 @@
 # Logrith
 
-> Logrith is an independent publication about technology, startups and digital business, with a library of 100+ free browser-based tools. Content is organised into three topics (AI & Technology, Startups & Business, Marketing & Growth) plus a separate Tools section. Most tools run entirely in the browser with no signup and no file uploads.
+> Logrith is an independent publication about AI, developer and creator tools, with a library of 100+ free browser-based tools. Content is organised into two topics (AI & Developer Tools, Build & Ship) plus a separate Tools section. Most tools run entirely in the browser with no signup and no file uploads.
 
 Logrith's positioning: clear, practical explanations for people who build things online, alongside simple, fast, privacy-respecting utilities for everyday digital tasks.
 
@@ -11,9 +11,8 @@ Logrith is built and run by a solo founder, Ankush Maurya (online identity: Pler
 ## Key Pages
 
 - Homepage: https://logrith.in/
-- AI & Technology: https://logrith.in/ai-technology/
-- Startups & Business: https://logrith.in/startups-business/
-- Marketing & Growth: https://logrith.in/marketing-growth/
+- AI & Developer Tools: https://logrith.in/ai-technology/
+- Build & Ship: https://logrith.in/startups-business/
 - Tools hub: https://logrith.in/tool/
 - About: https://logrith.in/pages/about
 - Founder: https://logrith.in/pages/founder

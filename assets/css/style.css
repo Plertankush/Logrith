@@ -1068,7 +1068,12 @@ textarea.mono { font-family: var(--font-mono); font-size: .86rem; }
 .cropper-handle[data-handle="sw"] { left: 0; top: 100%; cursor: nesw-resize; }
 .cropper-handle[data-handle="w"]  { left: 0; top: 50%; cursor: ew-resize; }
 .angle-row { display: grid; grid-template-columns: 1fr 96px; align-items: center; gap: var(--space-3); }
-#preview-canvas { max-width: 100%; height: auto; background: repeating-conic-gradient(var(--gray-100) 0% 25%, var(--white) 0% 50%) 50% / 16px 16px; }
+#preview-canvas, .checker-canvas { max-width: 100%; height: auto; background: repeating-conic-gradient(var(--gray-100) 0% 25%, var(--white) 0% 50%) 50% / 16px 16px; }
+.checker-canvas { display: block; margin-inline: auto; border: 1px solid var(--gray-200); border-radius: var(--radius-sm); }
+#circle-canvas { width: min(100%, 380px); cursor: grab; touch-action: none; user-select: none; }
+#circle-canvas.is-dragging { cursor: grabbing; }
+#corner-canvas { max-height: 60vh; width: auto; }
+.color-field input[type="color"] { width: 100%; height: 40px; padding: 2px; cursor: pointer; }
 .btn.is-active { color: var(--white); background: var(--primary); border-color: var(--primary); }
 
 /* 12. Site header & mobile drawer
@@ -1282,7 +1287,7 @@ textarea.mono { font-family: var(--font-mono); font-size: .86rem; }
 /* Brand, company and legal links. */
 .footer-grid {
   display: grid;
-  grid-template-columns: minmax(220px, 1.6fr) repeat(5, minmax(130px, 1fr));
+  grid-template-columns: minmax(220px, 1.6fr) repeat(4, minmax(130px, 1fr));
   gap: var(--space-6) var(--space-5);
   padding-top: var(--space-6);
 }

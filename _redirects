@@ -1,3 +1,8 @@
+# Creator & Growth section retired (2026-11)
+/marketing-growth          /startups-business/   301
+/marketing-growth/         /startups-business/   301
+/marketing-growth/*        /startups-business/   301
+
 # Logrith 2.0: old home, categories and guides moved under /tool/
 /blog                     /tool/blog                301
 /blog/*                   /tool/blog/:splat         301

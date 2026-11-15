@@ -1,4 +1,4 @@
-"""Articles for the Startups & Business topic. Rendered by scripts/build_articles.py."""
+"""Articles for the Build & Ship topic. Rendered by scripts/build_articles.py."""
 
 ARTICLES = [
     {

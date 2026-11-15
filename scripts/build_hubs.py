@@ -20,8 +20,8 @@ from hub_content import SITE, TOPICS
 ROOT = Path(__file__).resolve().parent.parent
 TOOLS = {t['url'].rsplit('/', 1)[-1]: t for t in json.loads((ROOT / 'assets/data/tools.json').read_text())}
 ARTICLES = load_articles()
-FEATURED_ARTICLES = ['how-large-language-models-work', 'how-to-validate-a-startup-idea', 'technical-seo-checklist-for-small-websites', 'saas-pricing-models-explained', 'hashing-vs-encryption-vs-encoding', 'how-to-write-a-value-proposition']
-FEATURED_TOOLS = ['image-compressor', 'pdf-merge', 'json-formatter', 'password-generator', 'emi-calculator', 'word-counter']
+FEATURED_ARTICLES = ['how-large-language-models-work', 'how-to-validate-a-startup-idea', 'saas-pricing-models-explained', 'hashing-vs-encryption-vs-encoding', 'json-vs-yaml-vs-xml-vs-csv', 'strong-passwords-and-passphrases-guide']
+FEATURED_TOOLS = ['json-formatter', 'image-compressor', 'pdf-merge', 'regex-tester', 'ai-context-calculator', 'word-counter']
 
 
 def icon(name, cls='icon icon-inline'):
@@ -268,7 +268,7 @@ def build_topic(topic):
 
 # --------------------------------------------------------------------- home
 HOME_FAQ = [
-    ('What is Logrith?', 'Logrith is an independent publication about technology, startups and digital business, with a library of free browser-based tools alongside the writing.'),
+    ('What is Logrith?', 'Logrith is an independent publication about AI, developer and creator tools, with a library of free browser-based tools alongside the writing.'),
     ('Are the tools really free?', 'Yes. Every tool is free, needs no account and runs in your browser. The site is supported by advertising.'),
     ('Do my files get uploaded?', 'The image, PDF and text tools process files inside your browser, so documents stay on your device. Each tool page explains how that tool handles data.'),
     ('Who writes Logrith?', 'Logrith is built and published by Plert Ankush, an independent founder. You can read more on the founder page.'),
@@ -276,7 +276,7 @@ HOME_FAQ = [
 
 
 def build_home():
-    description = 'Logrith is an independent publication on technology, startups and digital business, with free browser-based tools for everyday work.'
+    description = 'Logrith is an independent publication on AI, developer and creator tools, with free browser-based tools for everyday work.'
     cards = '\n'.join(f'''    <article class="topic-card topic-card-lg">
       <span class="topic-card-icon">{icon(t['icon'], 'icon')}</span>
       <h3><a href="/{t['slug']}/">{escape(t['title'])}</a></h3>
@@ -287,7 +287,7 @@ def build_home():
     </article>''' for t in TOPICS)
     principles = [
         ('file-text', 'Plain language', 'Every guide explains the idea first and the jargon second, so you can act on it the same day.'),
-        ('check-circle', 'Practical first', 'Frameworks, worked examples and calculators you can use, not predictions or hype.'),
+        ('check-circle', 'Practical first', 'Worked examples and tools you can try while you read, not predictions or hype.'),
         ('lock', 'Private by default', 'The tools run in your browser. We do not ask you to sign up or upload your files.'),
     ]
     principle_html = '\n'.join(f'''    <div class="feature-card">
@@ -301,18 +301,18 @@ def build_home():
   </details>''' for q, a in HOME_FAQ)
     body = f'''<header class="page-hero home-hero">
   <div class="page-hero-inner">
-    <div class="badge">{icon('globe')} Technology, startups and digital business</div>
-    <h1>Clear thinking on technology, startups and <span>growth</span>.</h1>
-    <p>Practical guides for people who build things online, plus a library of free tools that run right in your browser.</p>
+    <div class="badge">{icon('globe')} AI, developer and creator tools</div>
+    <h1>Practical AI, developer and creator <span>tools</span>.</h1>
+    <p>Plain-English guides for people who build and publish online, next to 100+ free tools that run in your browser. No sign-up, no uploads.</p>
     <div class="btn-group">
-      <a href="#topics" class="btn btn-primary btn-lg">Explore topics</a>
+      <a href="#topics" class="btn btn-primary btn-lg">Read the guides</a>
       <a href="/tool/" class="btn btn-secondary btn-lg">Browse free tools</a>
     </div>
   </div>
 </header>
 
 <section class="page-section" id="topics">
-  <div class="section-header"><h2>Three topics, nine areas</h2><p>Start with the subject you are working on today.</p></div>
+  <div class="section-header"><h2>One audience, two areas</h2><p>Everything here is written for people who build and publish with software: developers, solo founders and creators.</p></div>
   <div class="topic-grid topic-grid-3">
 {cards}
   </div>
@@ -328,8 +328,8 @@ def build_home():
 {guides_section([a for slug in FEATURED_ARTICLES for a in ARTICLES if a['slug'] == slug], 'Featured guides')}
 <section class="page-section">
   <div class="section-header">
-    <h2>Free tools, always available</h2>
-    <p>Compress an image, merge a PDF, format JSON or run a loan calculation without creating an account.</p>
+    <h2>Free tools that go with the guides</h2>
+    <p>Format JSON, test a regex, count tokens, compress an image or merge a PDF without creating an account.</p>
   </div>
   <div class="tool-list">
 {tool_rows(FEATURED_TOOLS)}
@@ -352,7 +352,7 @@ def build_home():
         {'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': [
             {'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in HOME_FAQ]},
     ]
-    return '/', page('Logrith: Technology, Startups & Digital Business', description, '/', schemas, body)
+    return '/', page('Logrith: AI, Developer & Creator Tools', description, '/', schemas, body)
 
 
 def main():

@@ -1,4 +1,4 @@
-"""Articles for the AI & Technology topic. Rendered by scripts/build_articles.py.
+"""Articles for the AI & Developer Tools topic. Rendered by scripts/build_articles.py.
 
 Fields: slug, topic, subtopic, title, description, intro (HTML), takeaways (list),
 sections [(anchor, heading, HTML)], faq [(question, answer)], tools [tool slugs].
