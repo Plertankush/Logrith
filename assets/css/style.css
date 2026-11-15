@@ -1074,6 +1074,13 @@ textarea.mono { font-family: var(--font-mono); font-size: .86rem; }
 #circle-canvas.is-dragging { cursor: grabbing; }
 #corner-canvas { max-height: 60vh; width: auto; }
 .color-field input[type="color"] { width: 100%; height: 40px; padding: 2px; cursor: pointer; }
+.result-list { display: grid; gap: var(--space-2); margin-top: var(--space-3); }
+.result-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-1) var(--space-4); padding: var(--space-2) var(--space-3); background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius-sm); }
+.result-label { font-size: .85rem; color: var(--gray-500); }
+.result-row code { font-size: .9rem; word-break: break-all; user-select: all; }
+.now-box { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3) var(--space-6); padding: var(--space-4); background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius); }
+.now-box strong { display: block; font-family: var(--font-mono, monospace); font-size: 1.4rem; }
+.now-box span { font-size: .8rem; color: var(--gray-500); }
 .btn.is-active { color: var(--white); background: var(--primary); border-color: var(--primary); }
 
 /* 12. Site header & mobile drawer

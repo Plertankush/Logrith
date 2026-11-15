@@ -259,6 +259,12 @@
 <priority>0.8</priority>
 </url>
 <url>
+<loc>https://logrith.in/tool/tools/json-csv-converter</loc>
+<lastmod>2026-11-15</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
 <loc>https://logrith.in/tool/tools/json-formatter</loc>
 <lastmod>2026-11-15</lastmod>
 <changefreq>monthly</changefreq>
@@ -554,6 +560,12 @@
 </url>
 <url>
 <loc>https://logrith.in/tool/tools/unit-price-comparator</loc>
+<lastmod>2026-11-15</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://logrith.in/tool/tools/unix-timestamp-converter</loc>
 <lastmod>2026-11-15</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>

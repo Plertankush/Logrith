@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON for Developers: A Part-by-Part Guide | Logrith</title>
+  <meta name="description" content="A five-part guide to JSON: syntax, the errors that break it, using it in code, converting it to CSV and YAML, and getting reliable JSON from AI models.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Plert Ankush">
+  <link rel="canonical" href="https://logrith.in/ai-technology/json-guide-for-developers">
+  <meta property="og:title" content="JSON for Developers: A Part-by-Part Guide | Logrith">
+  <meta property="og:description" content="A five-part guide to JSON: syntax, the errors that break it, using it in code, converting it to CSV and YAML, and getting reliable JSON from AI models.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://logrith.in/ai-technology/json-guide-for-developers">
+  <meta property="og:site_name" content="Logrith">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="JSON for Developers: A Part-by-Part Guide | Logrith">
+  <meta name="twitter:description" content="A five-part guide to JSON: syntax, the errors that break it, using it in code, converting it to CSV and YAML, and getting reliable JSON from AI models.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0A0A0A">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+  <link rel="preload" href="/components/navbar.html" as="fetch" type="text/html" crossorigin>
+  <link rel="preload" href="/components/footer.html" as="fetch" type="text/html" crossorigin>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "JSON for Developers: A Part-by-Part Guide",
+    "description": "A five-part guide to JSON: syntax, the errors that break it, using it in code, converting it to CSV and YAML, and getting reliable JSON from AI models.",
+    "url": "https://logrith.in/ai-technology/json-guide-for-developers",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://logrith.in/ai-technology/json-guide-for-developers"
+    },
+    "datePublished": "2026-11-12",
+    "dateModified": "2026-11-12",
+    "author": {
+      "@type": "Person",
+      "name": "Plert Ankush",
+      "url": "https://logrith.in/pages/founder"
+    },
+    "publisher": {
+      "@id": "https://logrith.in/#organization"
+    },
+    "isPartOf": {
+      "@id": "https://logrith.in/#website"
+    },
+    "inLanguage": "en"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://logrith.in/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "AI & Developer Tools",
+        "item": "https://logrith.in/ai-technology/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Software & Developer Ecosystem",
+        "item": "https://logrith.in/ai-technology/software-developer-ecosystem"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "JSON for Developers: A Part-by-Part Guide",
+        "item": "https://logrith.in/ai-technology/json-guide-for-developers"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is JSON the same as a JavaScript object?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. JSON is a text format with stricter rules: keys and strings must use double quotes, and comments, functions and undefined are not allowed. A JavaScript object is an in-memory value that you convert to and from JSON text."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does JSON not allow comments?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The format was kept deliberately minimal so it parses the same way everywhere. If you need comments, use YAML, a format such as JSON5 where both sides support it, or a reserved \"_comment\" key."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I store a date in JSON?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "As a string in ISO 8601 form, for example \"2026-11-15T10:30:00Z\", or as a Unix timestamp number. Pick one convention, document it and parse it explicitly after loading."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between JSON and JSON Lines?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "JSON Lines (NDJSON) stores one complete JSON object per line. It is easy to stream and append to, which makes it common for logs and large datasets, but a whole file is not a single valid JSON document."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I trust JSON written by an AI model?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Treat it like any untrusted input. Use a structured output feature if your provider offers one, then parse safely and validate the result against a schema before your code relies on it."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="navbar"></div>
+
+<main id="main">
+<header class="page-hero page-hero-article">
+  <div class="page-hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/ai-technology/">AI &amp; Developer Tools</a> › <a href="/ai-technology/software-developer-ecosystem">Software &amp; Developer Ecosystem</a> › JSON for Developers: A Part-by-Part Guide</nav>
+    <div class="badge"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#code"></use></svg> Software &amp; Developer Ecosystem</div>
+    <h1>JSON for Developers: A Part-by-Part Guide</h1>
+    <p class="byline">By <a href="/pages/founder" rel="author">Plert Ankush</a> &middot; Published <time datetime="2026-11-12">Nov 12, 2026</time> &middot; Updated <time datetime="2026-11-12">Nov 12, 2026</time> &middot; 6 min read</p>
+  </div>
+</header>
+
+<article class="page-section">
+  <div class="prose hub-prose article-body">
+    <p>JSON is the format behind most web APIs, configuration files and data exports, and it is also what AI models are increasingly asked to produce. You can learn the essentials in an afternoon, yet the same few mistakes cause most of the bugs.</p>
+<p>This guide is split into five short parts. Read them in order, or jump to the part you need. Each part links to a free browser tool so you can try the idea on your own data as you read.</p>
+
+    <aside class="takeaways" aria-label="Key takeaways">
+      <h2>Key takeaways</h2>
+      <ul class="check-list">
+<li>JSON has only six value types and strict syntax: double quotes, no comments and no trailing commas.</li>
+<li>Most parse errors come from the same handful of mistakes, so learn to spot them.</li>
+<li>Always parse in a try/catch (or equivalent) and never trust the shape of data you did not create.</li>
+<li>Flat records convert cleanly to CSV; nested data needs flattening or should stay as JSON.</li>
+<li>When an AI model produces JSON, validate it against a schema instead of assuming it is correct.</li>
+      </ul>
+    </aside>
+
+    <nav class="article-toc" aria-label="In this guide">
+      <h2>In this guide</h2>
+      <ol>
+<li><a href="#part-1">Part 1: What JSON is and what it can hold</a></li>
+<li><a href="#part-2">Part 2: Syntax rules and the errors that break JSON</a></li>
+<li><a href="#part-3">Part 3: Reading and writing JSON in code</a></li>
+<li><a href="#part-4">Part 4: Converting JSON to CSV, YAML and back</a></li>
+<li><a href="#part-5">Part 5: JSON and AI models</a></li>
+<li><a href="#checklist">Quick checklist</a></li>
+      </ol>
+    </nav>
+
+<section id="part-1">
+<h2>Part 1: What JSON is and what it can hold</h2>
+<p>JSON stands for JavaScript Object Notation. It is a plain-text format for structured data, created from the way JavaScript writes objects but now used by almost every programming language. A JSON document is built from just six kinds of value:</p>
+<ul>
+<li><strong>Object:</strong> unordered key-value pairs in curly braces, such as <code>{"name": "Asha"}</code>.</li>
+<li><strong>Array:</strong> an ordered list in square brackets, such as <code>[1, 2, 3]</code>.</li>
+<li><strong>String:</strong> text in double quotes.</li>
+<li><strong>Number:</strong> integer or decimal, with no leading plus sign and no quotes.</li>
+<li><strong>Boolean:</strong> <code>true</code> or <code>false</code>, in lowercase.</li>
+<li><strong>Null:</strong> <code>null</code>, meaning an intentionally empty value.</li>
+</ul>
+<p>Objects and arrays can contain other objects and arrays to any depth, which is what lets JSON describe real-world data such as a customer with several orders, each with several items.</p>
+<p>What JSON cannot hold matters just as much. There is no date type, so dates are written as strings, usually in ISO 8601 form such as <code>"2026-11-15T10:30:00Z"</code>. There is no comment syntax, no undefined, no function and no special value for infinity or not-a-number. If you need any of these, you have to agree on a convention with whoever reads your data.</p>
+</section>
+<section id="part-2">
+<h2>Part 2: Syntax rules and the errors that break JSON</h2>
+<p>JSON is stricter than JavaScript. A file that looks right to a human often fails a parser. These are the mistakes behind most "Unexpected token" errors:</p>
+<table>
+<thead><tr><th>Mistake</th><th>Example</th><th>Fix</th></tr></thead>
+<tbody>
+<tr><td>Trailing comma</td><td><code>{"a": 1,}</code></td><td>Remove the last comma</td></tr>
+<tr><td>Single quotes</td><td><code>{'a': 1}</code></td><td>Use double quotes for keys and strings</td></tr>
+<tr><td>Unquoted key</td><td><code>{a: 1}</code></td><td>Write <code>"a"</code></td></tr>
+<tr><td>Comment</td><td><code>// note</code></td><td>Delete it, or store it in a "_comment" field</td></tr>
+<tr><td>Missing comma</td><td><code>{"a": 1 "b": 2}</code></td><td>Add a comma between pairs</td></tr>
+<tr><td>Unescaped quote or newline in a string</td><td><code>"say "hi""</code></td><td>Escape as <code>\"</code> and <code>\n</code></td></tr>
+<tr><td>Wrong literal</td><td><code>True</code>, <code>None</code>, <code>NaN</code></td><td>Use <code>true</code>, <code>null</code>, and avoid NaN</td></tr>
+</tbody>
+</table>
+<p>To find the exact spot, paste your text into the <a href="/tool/tools/json-formatter">JSON Formatter</a>, which validates it and shows the position of the first error. If the data came from a log, a chat message or an AI model and has several of these problems at once, the <a href="/tool/tools/json-repair">JSON Repair</a> tool can fix the common ones automatically.</p>
+<p>Two more details trip people up. Duplicate keys are technically allowed by the syntax but behave differently between parsers, so avoid them. And numbers have no size limit in the format, but most languages read them as 64-bit floating point, so integers larger than 9,007,199,254,740,991 can lose precision in JavaScript. Send very large IDs as strings.</p>
+</section>
+<section id="part-3">
+<h2>Part 3: Reading and writing JSON in code</h2>
+<p>Every mainstream language has a built-in or standard JSON library. The two operations you need are parsing (text to data) and serializing (data to text).</p>
+<p><strong>JavaScript</strong> uses <code>JSON.parse(text)</code> and <code>JSON.stringify(value, null, 2)</code>, where the last two arguments produce readable output with two-space indentation. <strong>Python</strong> uses <code>json.loads(text)</code> and <code>json.dumps(value, indent=2)</code>, plus <code>json.load</code> and <code>json.dump</code> for files.</p>
+<p>Good habits that prevent most production bugs:</p>
+<ol>
+<li><strong>Wrap parsing in error handling.</strong> Invalid input raises an exception, and a single bad response should not crash your program.</li>
+<li><strong>Do not assume the shape.</strong> Check that the keys you need exist and have the type you expect before using them. Optional chaining in JavaScript and <code>dict.get()</code> in Python help.</li>
+<li><strong>Never use <code>eval</code> to parse JSON.</strong> It can execute code. Use the real parser.</li>
+<li><strong>Handle dates on purpose.</strong> Parse ISO strings into date objects after loading, and convert back when saving. A <a href="/tool/tools/unix-timestamp-converter">Unix timestamp converter</a> is useful when an API gives you epoch numbers instead.</li>
+<li><strong>Pretty-print for people, minify for machines.</strong> Indentation is for reading; removing whitespace makes payloads smaller.</li>
+</ol>
+<p>When you work with APIs, also check the <code>Content-Type: application/json</code> header and the HTTP status code before parsing. An error page that comes back as HTML will otherwise show up as a confusing JSON parse error. The <a href="/tool/tools/http-status-code-lookup">HTTP status code lookup</a> explains what each code means.</p>
+</section>
+<section id="part-4">
+<h2>Part 4: Converting JSON to CSV, YAML and back</h2>
+<p>JSON often has to move into other formats. The right approach depends on the target.</p>
+<p><strong>JSON to CSV.</strong> CSV is a flat table, so an array of similar objects maps neatly: each object becomes a row and each key becomes a column. Nested objects can be flattened into dot-notation columns such as <code>address.city</code>, and arrays are best kept as JSON text inside one cell. The <a href="/tool/tools/json-csv-converter">JSON to CSV converter</a> does both directions and handles quoting of commas and line breaks. Check the result in a spreadsheet, and remember that spreadsheets can silently reformat values such as long numbers and IDs with leading zeros.</p>
+<p><strong>JSON to YAML.</strong> YAML expresses the same structures with indentation and allows comments, which makes it popular for configuration. Because most JSON is valid YAML, conversion is usually lossless, but converting back can change types if YAML guesses wrongly, for example reading <code>no</code> as a boolean. Use the <a href="/tool/tools/yaml-json-converter">YAML and JSON converter</a> to confirm that a config still means what you intended.</p>
+<p>Not sure which format fits your project? The comparison in <a href="/ai-technology/json-vs-yaml-vs-xml-vs-csv">JSON vs YAML vs XML vs CSV</a> gives a simple rule for choosing.</p>
+</section>
+<section id="part-5">
+<h2>Part 5: JSON and AI models</h2>
+<p>Many applications now ask a language model to return JSON so that other code can use the answer: a list of extracted fields, a classification or a set of tags. This works well, but only if you treat the output as untrusted input.</p>
+<p>Models can produce JSON that is almost right: wrapped in extra text or a markdown code fence, with a trailing comma, a missing field or a value of the wrong type. Newer APIs offer a structured output mode that constrains the model to a schema you provide, which reduces these failures a lot. Even so, build a safety net:</p>
+<ol>
+<li><strong>Ask for JSON only.</strong> State the exact keys and types you expect, and include a short example.</li>
+<li><strong>Strip wrappers.</strong> Remove code fences and any text before the first brace and after the last one before parsing.</li>
+<li><strong>Parse in a try/catch,</strong> and on failure retry once with the error message, or fall back safely.</li>
+<li><strong>Validate against a schema.</strong> Check required keys, types and allowed values with a validator such as JSON Schema, rather than trusting the model.</li>
+<li><strong>Mind the length.</strong> Long outputs can be cut off mid-object when they hit the model&rsquo;s output limit, which leaves invalid JSON. Keep outputs small or request them in pieces. The <a href="/tool/tools/ai-context-calculator">AI context calculator</a> helps you estimate how much text fits.</li>
+</ol>
+<p>If a response is only slightly broken, the <a href="/tool/tools/json-repair">JSON Repair</a> tool shows what a fix looks like. In production, though, prefer prevention (schemas and validation) over repair, because silently repaired data can hide real problems. To understand why models make these formatting slips at all, read <a href="/ai-technology/how-large-language-models-work">how large language models work</a>.</p>
+</section>
+<section id="checklist">
+<h2>Quick checklist</h2>
+<ul>
+<li>Double quotes everywhere, no trailing commas, no comments.</li>
+<li>Large IDs sent as strings.</li>
+<li>Dates in ISO 8601 or as explicit timestamps.</li>
+<li>Parsing wrapped in error handling, with shape checks after.</li>
+<li>CSV exports checked for lost leading zeros and wrong delimiters.</li>
+<li>AI-generated JSON validated against a schema before use.</li>
+</ul>
+</section>
+
+    <section id="faq">
+      <h2>Frequently asked questions</h2>
+      <div class="faq-list">
+<details class="faq-item">
+  <summary class="faq-q">Is JSON the same as a JavaScript object?</summary>
+  <div class="faq-a"><p>No. JSON is a text format with stricter rules: keys and strings must use double quotes, and comments, functions and undefined are not allowed. A JavaScript object is an in-memory value that you convert to and from JSON text.</p></div>
+</details>
+<details class="faq-item">
+  <summary class="faq-q">Why does JSON not allow comments?</summary>
+  <div class="faq-a"><p>The format was kept deliberately minimal so it parses the same way everywhere. If you need comments, use YAML, a format such as JSON5 where both sides support it, or a reserved &quot;_comment&quot; key.</p></div>
+</details>
+<details class="faq-item">
+  <summary class="faq-q">How do I store a date in JSON?</summary>
+  <div class="faq-a"><p>As a string in ISO 8601 form, for example &quot;2026-11-15T10:30:00Z&quot;, or as a Unix timestamp number. Pick one convention, document it and parse it explicitly after loading.</p></div>
+</details>
+<details class="faq-item">
+  <summary class="faq-q">What is the difference between JSON and JSON Lines?</summary>
+  <div class="faq-a"><p>JSON Lines (NDJSON) stores one complete JSON object per line. It is easy to stream and append to, which makes it common for logs and large datasets, but a whole file is not a single valid JSON document.</p></div>
+</details>
+<details class="faq-item">
+  <summary class="faq-q">Can I trust JSON written by an AI model?</summary>
+  <div class="faq-a"><p>Treat it like any untrusted input. Use a structured output feature if your provider offers one, then parse safely and validate the result against a schema before your code relies on it.</p></div>
+</details>
+      </div>
+    </section>
+
+    <aside class="author-box">
+      <strong>Written by <a href="/pages/founder" rel="author">Plert Ankush</a></strong>
+      <p>Independent founder and publisher of Logrith. Articles are developed with AI assistance, then directed and reviewed by the author. Spotted a mistake? <a href="/pages/contact">Tell us</a> and we will correct it.</p>
+    </aside>
+  </div>
+</article>
+
+<section class="page-section">
+  <div class="section-header"><h2>Free tools mentioned in this guide</h2></div>
+  <div class="tool-list">
+    <a href="/tool/tools/json-formatter" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">JSON Formatter</div><div class="tool-row-desc">Paste JSON to beautify it with proper indentation, validate its syntax with exact error locations, or minify it to one line.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+    <a href="/tool/tools/json-repair" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">JSON Repair Tool</div><div class="tool-row-desc">Paste invalid JSON to get it repaired automatically, with trailing commas and unquoted keys fixed and errors clearly explained.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+    <a href="/tool/tools/json-csv-converter" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">JSON to CSV Converter</div><div class="tool-row-desc">Convert JSON to CSV or CSV to JSON online. Flattens nested objects, handles quoted fields and commas, supports comma, semicolon and tab delimiters. Free and private.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+    <a href="/tool/tools/yaml-json-converter" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">YAML to JSON Converter</div><div class="tool-row-desc">Paste YAML or JSON and get an accurate conversion to the other format instantly, with formatting preserved.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+    <a href="/tool/tools/unix-timestamp-converter" class="tool-row">
+      <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+      <div class="tool-row-body"><div class="tool-row-name">Unix Timestamp Converter</div><div class="tool-row-desc">Convert Unix timestamps to human-readable dates and dates back to epoch seconds or milliseconds. Live clock, automatic unit detection and time zone support. Free, runs in your browser.</div></div>
+      <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+    </a>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="section-header"><h2>More in AI &amp; Developer Tools</h2></div>
+  <div class="article-list">
+    <a href="/ai-technology/how-large-language-models-work" class="article-card">
+      <span class="article-card-topic">AI &amp; Developer Tools</span>
+      <h3>How Large Language Models Work: A Plain-English Guide</h3>
+      <p>A clear explanation of how large language models are trained, what tokens and context windows are, why they make mistakes, and how to use them sensibly.</p>
+      <span class="article-card-meta">5 min read</span>
+    </a>
+    <a href="/ai-technology/json-vs-yaml-vs-xml-vs-csv" class="article-card">
+      <span class="article-card-topic">AI &amp; Developer Tools</span>
+      <h3>JSON vs YAML vs XML vs CSV: Which Data Format Should You Use?</h3>
+      <p>Compare JSON, YAML, XML and CSV: strengths, weaknesses, common pitfalls and a simple rule for choosing the right data format for your project.</p>
+      <span class="article-card-meta">4 min read</span>
+    </a>
+    <a href="/ai-technology/hashing-vs-encryption-vs-encoding" class="article-card">
+      <span class="article-card-topic">AI &amp; Developer Tools</span>
+      <h3>Hashing vs Encryption vs Encoding: The Difference Explained</h3>
+      <p>Hashing, encryption and encoding are often confused. Learn what each one does, when to use it and which mistakes lead to real security problems.</p>
+      <span class="article-card-meta">3 min read</span>
+    </a>
+  </div>
+</section>
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

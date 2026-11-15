@@ -313,4 +313,89 @@ ARTICLES = [
         ],
         'tools': ['password-strength', 'passphrase-generator', 'password-generator', 'hash-generator'],
     },
+    {
+        'slug': 'json-guide-for-developers',
+        'topic': 'ai-technology',
+        'subtopic': 'software-developer-ecosystem',
+        'title': 'JSON for Developers: A Part-by-Part Guide',
+        'description': 'A five-part guide to JSON: syntax, the errors that break it, using it in code, converting it to CSV and YAML, and getting reliable JSON from AI models.',
+        'intro': '''<p>JSON is the format behind most web APIs, configuration files and data exports, and it is also what AI models are increasingly asked to produce. You can learn the essentials in an afternoon, yet the same few mistakes cause most of the bugs.</p>
+<p>This guide is split into five short parts. Read them in order, or jump to the part you need. Each part links to a free browser tool so you can try the idea on your own data as you read.</p>''',
+        'takeaways': [
+            'JSON has only six value types and strict syntax: double quotes, no comments and no trailing commas.',
+            'Most parse errors come from the same handful of mistakes, so learn to spot them.',
+            'Always parse in a try/catch (or equivalent) and never trust the shape of data you did not create.',
+            'Flat records convert cleanly to CSV; nested data needs flattening or should stay as JSON.',
+            'When an AI model produces JSON, validate it against a schema instead of assuming it is correct.',
+        ],
+        'sections': [
+            ('part-1', 'Part 1: What JSON is and what it can hold', '''<p>JSON stands for JavaScript Object Notation. It is a plain-text format for structured data, created from the way JavaScript writes objects but now used by almost every programming language. A JSON document is built from just six kinds of value:</p>
+<ul>
+<li><strong>Object:</strong> unordered key-value pairs in curly braces, such as <code>{"name": "Asha"}</code>.</li>
+<li><strong>Array:</strong> an ordered list in square brackets, such as <code>[1, 2, 3]</code>.</li>
+<li><strong>String:</strong> text in double quotes.</li>
+<li><strong>Number:</strong> integer or decimal, with no leading plus sign and no quotes.</li>
+<li><strong>Boolean:</strong> <code>true</code> or <code>false</code>, in lowercase.</li>
+<li><strong>Null:</strong> <code>null</code>, meaning an intentionally empty value.</li>
+</ul>
+<p>Objects and arrays can contain other objects and arrays to any depth, which is what lets JSON describe real-world data such as a customer with several orders, each with several items.</p>
+<p>What JSON cannot hold matters just as much. There is no date type, so dates are written as strings, usually in ISO 8601 form such as <code>"2026-11-15T10:30:00Z"</code>. There is no comment syntax, no undefined, no function and no special value for infinity or not-a-number. If you need any of these, you have to agree on a convention with whoever reads your data.</p>'''),
+            ('part-2', 'Part 2: Syntax rules and the errors that break JSON', '''<p>JSON is stricter than JavaScript. A file that looks right to a human often fails a parser. These are the mistakes behind most "Unexpected token" errors:</p>
+<table>
+<thead><tr><th>Mistake</th><th>Example</th><th>Fix</th></tr></thead>
+<tbody>
+<tr><td>Trailing comma</td><td><code>{"a": 1,}</code></td><td>Remove the last comma</td></tr>
+<tr><td>Single quotes</td><td><code>{'a': 1}</code></td><td>Use double quotes for keys and strings</td></tr>
+<tr><td>Unquoted key</td><td><code>{a: 1}</code></td><td>Write <code>"a"</code></td></tr>
+<tr><td>Comment</td><td><code>// note</code></td><td>Delete it, or store it in a "_comment" field</td></tr>
+<tr><td>Missing comma</td><td><code>{"a": 1 "b": 2}</code></td><td>Add a comma between pairs</td></tr>
+<tr><td>Unescaped quote or newline in a string</td><td><code>"say "hi""</code></td><td>Escape as <code>\\"</code> and <code>\\n</code></td></tr>
+<tr><td>Wrong literal</td><td><code>True</code>, <code>None</code>, <code>NaN</code></td><td>Use <code>true</code>, <code>null</code>, and avoid NaN</td></tr>
+</tbody>
+</table>
+<p>To find the exact spot, paste your text into the <a href="/tool/tools/json-formatter">JSON Formatter</a>, which validates it and shows the position of the first error. If the data came from a log, a chat message or an AI model and has several of these problems at once, the <a href="/tool/tools/json-repair">JSON Repair</a> tool can fix the common ones automatically.</p>
+<p>Two more details trip people up. Duplicate keys are technically allowed by the syntax but behave differently between parsers, so avoid them. And numbers have no size limit in the format, but most languages read them as 64-bit floating point, so integers larger than 9,007,199,254,740,991 can lose precision in JavaScript. Send very large IDs as strings.</p>'''),
+            ('part-3', 'Part 3: Reading and writing JSON in code', '''<p>Every mainstream language has a built-in or standard JSON library. The two operations you need are parsing (text to data) and serializing (data to text).</p>
+<p><strong>JavaScript</strong> uses <code>JSON.parse(text)</code> and <code>JSON.stringify(value, null, 2)</code>, where the last two arguments produce readable output with two-space indentation. <strong>Python</strong> uses <code>json.loads(text)</code> and <code>json.dumps(value, indent=2)</code>, plus <code>json.load</code> and <code>json.dump</code> for files.</p>
+<p>Good habits that prevent most production bugs:</p>
+<ol>
+<li><strong>Wrap parsing in error handling.</strong> Invalid input raises an exception, and a single bad response should not crash your program.</li>
+<li><strong>Do not assume the shape.</strong> Check that the keys you need exist and have the type you expect before using them. Optional chaining in JavaScript and <code>dict.get()</code> in Python help.</li>
+<li><strong>Never use <code>eval</code> to parse JSON.</strong> It can execute code. Use the real parser.</li>
+<li><strong>Handle dates on purpose.</strong> Parse ISO strings into date objects after loading, and convert back when saving. A <a href="/tool/tools/unix-timestamp-converter">Unix timestamp converter</a> is useful when an API gives you epoch numbers instead.</li>
+<li><strong>Pretty-print for people, minify for machines.</strong> Indentation is for reading; removing whitespace makes payloads smaller.</li>
+</ol>
+<p>When you work with APIs, also check the <code>Content-Type: application/json</code> header and the HTTP status code before parsing. An error page that comes back as HTML will otherwise show up as a confusing JSON parse error. The <a href="/tool/tools/http-status-code-lookup">HTTP status code lookup</a> explains what each code means.</p>'''),
+            ('part-4', 'Part 4: Converting JSON to CSV, YAML and back', '''<p>JSON often has to move into other formats. The right approach depends on the target.</p>
+<p><strong>JSON to CSV.</strong> CSV is a flat table, so an array of similar objects maps neatly: each object becomes a row and each key becomes a column. Nested objects can be flattened into dot-notation columns such as <code>address.city</code>, and arrays are best kept as JSON text inside one cell. The <a href="/tool/tools/json-csv-converter">JSON to CSV converter</a> does both directions and handles quoting of commas and line breaks. Check the result in a spreadsheet, and remember that spreadsheets can silently reformat values such as long numbers and IDs with leading zeros.</p>
+<p><strong>JSON to YAML.</strong> YAML expresses the same structures with indentation and allows comments, which makes it popular for configuration. Because most JSON is valid YAML, conversion is usually lossless, but converting back can change types if YAML guesses wrongly, for example reading <code>no</code> as a boolean. Use the <a href="/tool/tools/yaml-json-converter">YAML and JSON converter</a> to confirm that a config still means what you intended.</p>
+<p>Not sure which format fits your project? The comparison in <a href="/ai-technology/json-vs-yaml-vs-xml-vs-csv">JSON vs YAML vs XML vs CSV</a> gives a simple rule for choosing.</p>'''),
+            ('part-5', 'Part 5: JSON and AI models', '''<p>Many applications now ask a language model to return JSON so that other code can use the answer: a list of extracted fields, a classification or a set of tags. This works well, but only if you treat the output as untrusted input.</p>
+<p>Models can produce JSON that is almost right: wrapped in extra text or a markdown code fence, with a trailing comma, a missing field or a value of the wrong type. Newer APIs offer a structured output mode that constrains the model to a schema you provide, which reduces these failures a lot. Even so, build a safety net:</p>
+<ol>
+<li><strong>Ask for JSON only.</strong> State the exact keys and types you expect, and include a short example.</li>
+<li><strong>Strip wrappers.</strong> Remove code fences and any text before the first brace and after the last one before parsing.</li>
+<li><strong>Parse in a try/catch,</strong> and on failure retry once with the error message, or fall back safely.</li>
+<li><strong>Validate against a schema.</strong> Check required keys, types and allowed values with a validator such as JSON Schema, rather than trusting the model.</li>
+<li><strong>Mind the length.</strong> Long outputs can be cut off mid-object when they hit the model&rsquo;s output limit, which leaves invalid JSON. Keep outputs small or request them in pieces. The <a href="/tool/tools/ai-context-calculator">AI context calculator</a> helps you estimate how much text fits.</li>
+</ol>
+<p>If a response is only slightly broken, the <a href="/tool/tools/json-repair">JSON Repair</a> tool shows what a fix looks like. In production, though, prefer prevention (schemas and validation) over repair, because silently repaired data can hide real problems. To understand why models make these formatting slips at all, read <a href="/ai-technology/how-large-language-models-work">how large language models work</a>.</p>'''),
+            ('checklist', 'Quick checklist', '''<ul>
+<li>Double quotes everywhere, no trailing commas, no comments.</li>
+<li>Large IDs sent as strings.</li>
+<li>Dates in ISO 8601 or as explicit timestamps.</li>
+<li>Parsing wrapped in error handling, with shape checks after.</li>
+<li>CSV exports checked for lost leading zeros and wrong delimiters.</li>
+<li>AI-generated JSON validated against a schema before use.</li>
+</ul>'''),
+        ],
+        'faq': [
+            ('Is JSON the same as a JavaScript object?', 'No. JSON is a text format with stricter rules: keys and strings must use double quotes, and comments, functions and undefined are not allowed. A JavaScript object is an in-memory value that you convert to and from JSON text.'),
+            ('Why does JSON not allow comments?', 'The format was kept deliberately minimal so it parses the same way everywhere. If you need comments, use YAML, a format such as JSON5 where both sides support it, or a reserved "_comment" key.'),
+            ('How do I store a date in JSON?', 'As a string in ISO 8601 form, for example "2026-11-15T10:30:00Z", or as a Unix timestamp number. Pick one convention, document it and parse it explicitly after loading.'),
+            ('What is the difference between JSON and JSON Lines?', 'JSON Lines (NDJSON) stores one complete JSON object per line. It is easy to stream and append to, which makes it common for logs and large datasets, but a whole file is not a single valid JSON document.'),
+            ('Can I trust JSON written by an AI model?', 'Treat it like any untrusted input. Use a structured output feature if your provider offers one, then parse safely and validate the result against a schema before your code relies on it.'),
+        ],
+        'tools': ['json-formatter', 'json-repair', 'json-csv-converter', 'yaml-json-converter', 'unix-timestamp-converter'],
+    },
 ]

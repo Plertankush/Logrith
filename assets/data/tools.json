@@ -294,6 +294,12 @@
   "summary": "Paste invalid JSON to get it repaired automatically, with trailing commas and unquoted keys fixed and errors clearly explained."
  },
  {
+  "name": "JSON to CSV Converter",
+  "category": "Developer",
+  "url": "/tool/tools/json-csv-converter",
+  "summary": "Convert JSON to CSV or CSV to JSON online. Flattens nested objects, handles quoted fields and commas, supports comma, semicolon and tab delimiters. Free and private."
+ },
+ {
   "name": "JWT Decoder",
   "category": "Developer",
   "url": "/tool/tools/jwt-decoder",
@@ -586,6 +592,12 @@
   "category": "Utilities",
   "url": "/tool/tools/unit-price-comparator",
   "summary": "Enter price and quantity for two products to see the true cost per unit, so you know which one is actually cheaper."
+ },
+ {
+  "name": "Unix Timestamp Converter",
+  "category": "Developer",
+  "url": "/tool/tools/unix-timestamp-converter",
+  "summary": "Convert Unix timestamps to human-readable dates and dates back to epoch seconds or milliseconds. Live clock, automatic unit detection and time zone support. Free, runs in your browser."
  },
  {
   "name": "URL Deduplicator",
