@@ -1,6 +1,6 @@
-# Cache shared components and static assets so repeat page views are instant.
+# Shared components and static assets: cache briefly and always revalidate, so a new deploy shows up right away.
 /components/*
-  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+  Cache-Control: public, max-age=300, must-revalidate
 
 /assets/*
-  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+  Cache-Control: public, max-age=300, must-revalidate

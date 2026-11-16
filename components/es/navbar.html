@@ -1,0 +1,29 @@
+<!-- Shared site header. Injected into #navbar by /assets/js/main.js; styles live in style.css (section 12). -->
+<!-- The checkbox drives the mobile drawer with CSS only. It must stay a sibling of .site-header, .drawer-overlay and .drawer. -->
+<input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Alternar menú de navegación">
+<header class="site-header">
+<a href="/es/" class="site-logo" aria-label="Logrith inicio">
+<img alt="" height="28" src="/assets/img/logo.webp" width="28"><span>Logrith</span>
+</a>
+<nav class="site-nav" aria-label="Primario">
+<a href="/es/ai-technology/">Herramientas de IA y para desarrolladores</a> <a href="/es/tool/">Herramientas</a> <a href="/es/startups-business/">de compilación y distribución</a>
+</nav>
+<div class="site-header-actions">
+<a class="lang-switch" data-lang-switch="" hidden="">ES</a> <a aria-label="Search tools" class="site-header-search" href="/es/tool/"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#search"></use></svg></a> <label aria-label="Open menu" class="menu-btn" for="menu-toggle"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#menu"></use></svg></label>
+</div>
+</header>
+<label for="menu-toggle" class="drawer-overlay" aria-hidden="true"></label>
+<aside class="drawer" aria-label="Navegación móvil">
+<div class="drawer-top">
+<a class="drawer-title" href="/es/">Logrith</a> <label aria-label="Close menu" class="drawer-close" for="menu-toggle"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#close"></use></svg></label>
+</div>
+<a href="/es/">Hogar</a>
+<a href="/es/ai-technology/">Herramientas de IA y para desarrolladores</a>
+<a href="/es/startups-business/">Construir y enviar</a>
+<a href="/es/tool/">Herramientas</a>
+<hr>
+<a href="/es/pages/about">Acerca de</a>
+<a href="/es/pages/contact">Contacto</a>
+<a href="/es/pages/privacy">Privacidad</a>
+<a href="/es/pages/terms">Términos</a>
+</aside>

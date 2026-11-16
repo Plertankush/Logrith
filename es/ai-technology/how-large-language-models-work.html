@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cómo funcionan los modelos de lenguaje a gran escala: una guía en lenguaje sencillo | Logrith</title>
+<meta name="description" content="Una explicación clara de cómo se entrenan los modelos de lenguaje complejos, qué son los tokens y las ventanas de contexto, por qué cometen errores y cómo utilizarlos correctamente.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Plert Ankush">
+<link rel="canonical" href="https://logrith.in/es/ai-technology/how-large-language-models-work">
+  <link rel="alternate" hreflang="x-default" href="https://logrith.in/ai-technology/how-large-language-models-work">
+  <link rel="alternate" hreflang="es" href="https://logrith.in/es/ai-technology/how-large-language-models-work">
+  <link rel="alternate" hreflang="en" href="https://logrith.in/ai-technology/how-large-language-models-work">
+
+
+
+<meta property="og:title" content="Cómo funcionan los modelos de lenguaje a gran escala: una guía en lenguaje sencillo | Logrith">
+<meta property="og:description" content="Una explicación clara de cómo se entrenan los modelos de lenguaje complejos, qué son los tokens y las ventanas de contexto, por qué cometen errores y cómo utilizarlos correctamente.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://logrith.in/es/ai-technology/how-large-language-models-work">
+<meta property="og:site_name" content="Logrith">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cómo funcionan los modelos de lenguaje a gran escala: una guía en lenguaje sencillo | Logrith">
+<meta name="twitter:description" content="Una explicación clara de cómo se entrenan los modelos de lenguaje complejos, qué son los tokens y las ventanas de contexto, por qué cometen errores y cómo utilizarlos correctamente.">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
+<link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261115">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Cómo funcionan los modelos de lenguaje a gran escala: una guía en lenguaje sencillo.", "description": "Una explicación clara de cómo se entrenan los modelos de lenguaje complejos, qué son los tokens y las ventanas de contexto, por qué cometen errores y cómo utilizarlos correctamente.", "url": "https://logrith.in/es/ai-technology/how-large-language-models-work", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://logrith.in/ai-technology/how-large-language-models-work"}, "datePublished": "2026-11-12", "dateModified": "2026-11-12", "author": {"@type": "Person", "name": "Plert Ankush", "url": "https://logrith.in/es/pages/founder"}, "publisher": {"@id": "https://logrith.in/#organization"}, "isPartOf": {"@id": "https://logrith.in/#website"}, "inLanguage": "en"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Hogar", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas de IA y para desarrolladores", "item": "https://logrith.in/es/ai-technology/"}, {"@type": "ListItem", "position": 3, "name": "Inteligencia Artificial y Aprendizaje Automático", "item": "https://logrith.in/es/ai-technology/artificial-intelligence-ml"}, {"@type": "ListItem", "position": 4, "name": "Cómo funcionan los modelos de lenguaje a gran escala: una guía en lenguaje sencillo.", "item": "https://logrith.in/es/ai-technology/how-large-language-models-work"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Los grandes modelos de lenguaje entienden lo que dicen?", "acceptedAnswer": {"@type": "Answer", "text": "Modelan muy bien los patrones del lenguaje, lo que puede parecer comprensión. Si bien se debate si esto constituye comprensión en el sentido humano, en la práctica se debe tratar el resultado como un texto plausible que necesita verificación, no como conocimiento comprobado."}}, {"@type": "Question", "name": "¿Son los másteres jurídicos (LLM) lo mismo que los motores de búsqueda?", "acceptedAnswer": {"@type": "Answer", "text": "No. Un motor de búsqueda recupera páginas existentes. Un modelo de lenguaje natural (LLM) genera texto nuevo a partir de patrones aprendidos. Algunos productos combinan ambos, de modo que el modelo puede citar fuentes recuperadas, pero son mecanismos diferentes."}}, {"@type": "Question", "name": "¿Puede un estudiante de derecho aprender de mi conversación?", "acceptedAnswer": {"@type": "Answer", "text": "Dentro de una misma conversación, puede utilizar lo que hayas escrito, ya que se encuentra en la ventana de contexto. El uso de tus chats para entrenar modelos futuros depende del proveedor y de tu configuración, así que consulta su política."}}, {"@type": "Question", "name": "¿Qué tan grande es \"grande\"?", "acceptedAnswer": {"@type": "Answer", "text": "Los modelos de lenguaje complejos tienen miles de millones de parámetros y se entrenan con colecciones de texto muy extensas. El tamaño exacto varía según el modelo y no siempre se publica."}}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido</a>
+<div id="navbar"></div>
+<main id="main">
+<header class="page-hero page-hero-article">
+<div class="page-hero-inner">
+<nav class="breadcrumb" aria-label="Migaja de pan"><a href="/es/">Inicio</a> › <a href="/es/ai-technology/">IA y herramientas para desarrolladores</a> › <a href="/es/ai-technology/artificial-intelligence-ml">Inteligencia artificial y aprendizaje automático</a> › Cómo funcionan los modelos de lenguaje a gran escala: una guía sencilla</nav>
+<div class="badge"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#sparkles"></use></svg> Inteligencia Artificial y Aprendizaje Automático</div>
+<h1>Cómo funcionan los modelos de lenguaje a gran escala: una guía en lenguaje sencillo.</h1>
+<p class="byline">Por <a href="/es/pages/founder" rel="author">Plert Ankush</a> · Publicado<time datetime="2026-11-12"> 12 de noviembre de 2026</time> · Actualizado<time datetime="2026-11-12"> 12 de noviembre de 2026</time> · 5 minutos de lectura</p>
+</div>
+</header>
+<article class="page-section">
+<div class="prose hub-prose article-body">
+<p>Los modelos de lenguaje a gran escala (MLE) son la base de los chatbots, los asistentes de escritura y las herramientas de programación. Pueden redactar un correo electrónico, explicar un concepto o escribir una función, e incluso afirmar algo falso con total seguridad. Ambos comportamientos provienen del mismo mecanismo, y comprenderlo te convierte en un usuario mucho más competente.</p>
+<p>Esta guía explica cómo se construye un LLM y cómo genera una respuesta, sin necesidad de conocimientos matemáticos. Al finalizar, sabrá qué es un token, por qué son importantes los límites de contexto, por qué se producen las "alucinaciones" y cómo obtener resultados más fiables.</p>
+<aside class="takeaways" aria-label="Conclusiones clave">
+<h2>Conclusiones clave</h2>
+<ul class="check-list">
+<li>Un modelo LLM está entrenado para predecir el siguiente fragmento de texto. Todo lo demás que hace se basa en esa habilidad.</li>
+<li>Los modelos leen y escriben en tokens, y los límites y precios se cuentan en tokens en lugar de palabras.</li>
+<li>Un texto fluido no es lo mismo que un texto veraz. Verifica los datos, las cifras y las citas.</li>
+<li>Se obtienen mejores resultados con un contexto claro, ejemplos y limitaciones definidas, además de una etapa de revisión.</li>
+</ul>
+</aside>
+<nav class="article-toc" aria-label="En esta guía">
+<h2>En esta guía</h2>
+<ol>
+<li><a href="#what-it-is">Qué es realmente un modelo de lenguaje grande.</a></li>
+<li><a href="#tokens">Tokens: los modelos de unidad leen y escriben</a></li>
+<li><a href="#training">Cómo se entrena un modelo</a></li>
+<li><a href="#attention">Atención: cómo el modelo utiliza el contexto.</a></li>
+<li><a href="#context-window">La ventana de contexto</a></li>
+<li><a href="#hallucinations">Por qué las modelos inventan cosas</a></li>
+<li><a href="#randomness">Por qué obtienes respuestas diferentes cada vez</a></li>
+<li><a href="#using-well">Cómo obtener mejores resultados</a></li>
+<li><a href="#privacy">Privacidad y manejo de datos</a></li>
+</ol>
+</nav>
+<section id="what-it-is">
+<h2>Qué es realmente un modelo de lenguaje grande.</h2>
+<p>Un modelo de lenguaje a gran escala es un programa que ha aprendido patrones estadísticos en una enorme cantidad de texto. Dado un texto, estima qué fragmento es más probable que aparezca a continuación, lo añade y repite el proceso. Si se repite cientos de veces, se obtiene un párrafo.</p>
+<p>Esa descripción suena demasiado simple para explicar lo que estos sistemas pueden hacer, pero la escala cambia las cosas. Para predecir correctamente la siguiente palabra en millones de documentos, el modelo debe captar la gramática, los datos, los estilos de escritura, los patrones de razonamiento y la estructura del código. Estas capacidades no se programan una por una, sino que surgen de la propia tarea de predicción.</p>
+</section>
+<section id="tokens">
+<h2>Tokens: los modelos de unidad leen y escriben</h2>
+<p>Los modelos no leen letras ni palabras completas. Leen <strong>tokens</strong> , que son fragmentos de texto. Una palabra común puede ser un token, una palabra poco frecuente puede dividirse en varios, y la puntuación y los espacios también cuentan. Como regla general para el inglés, un token equivale a unos cuatro caracteres, o tres cuartos de palabra, aunque la división exacta depende del modelo.</p>
+<p>Los tokens son importantes porque prácticamente todo lo práctico se mide en tokens. Los proveedores suelen cobrar por el uso de un token, y cada modelo tiene un número máximo de tokens que puede gestionar simultáneamente. Si desea estimar cuánto texto cabe o cuánto podría costar un trabajo, la <a href="/tool/tools/ai-context-calculator">Calculadora de Contexto de IA</a> le ofrece una aproximación rápida en su navegador.</p>
+</section>
+<section id="training">
+<h2>Cómo se entrena un modelo</h2>
+<p>El entrenamiento se desarrolla por etapas.</p>
+<ol>
+<li><strong>Preentrenamiento.</strong> El modelo lee una enorme colección de texto e intenta repetidamente predecir el siguiente token. Cuando falla, sus valores internos (llamados parámetros) se ajustan ligeramente. Tras miles de millones de ajustes, se convierte en un potente predictor de texto.</li>
+<li><strong>Ajuste de instrucciones.</strong> Un modelo preentrenado completa el texto, pero no sigue las instrucciones de forma natural. Se entrena posteriormente con ejemplos de instrucciones acompañadas de buenas respuestas, de modo que se comporta como un asistente.</li>
+<li><strong>Ajuste de preferencias.</strong> Las personas o los sistemas automatizados comparan respuestas alternativas, y el modelo se orienta hacia las que se consideran mejores: más útiles, más cuidadosas o menos dañinas.</li>
+</ol>
+<p>Los detalles varían según el proveedor y cambian rápidamente, pero esta estructura de tres etapas es común. Lo importante es que el modelo aprende de patrones en el texto, no de una base de datos verificada de hechos.</p>
+</section>
+<section id="attention">
+<h2>Atención: cómo el modelo utiliza el contexto.</h2>
+<p>La mayoría de los modelos de lenguaje natural modernos utilizan una arquitectura llamada transformador. Su idea clave es <strong>la atención</strong> , un mecanismo que permite al modelo ponderar la relevancia de cada token anterior al predecir el siguiente. En la oración "El trofeo no cabía en la maleta porque era demasiado grande", la atención ayuda al modelo a relacionar "eso" con el trofeo en lugar de con la maleta.</p>
+<p>No necesitas conocimientos matemáticos para aprovechar la intuición: el modelo analiza toda la instrucción a la vez y decide en qué centrarse. Por eso, unas instrucciones claras y bien organizadas son útiles, y por eso ocultar el requisito clave en medio de una instrucción larga y confusa puede ser contraproducente.</p>
+</section>
+<section id="context-window">
+<h2>La ventana de contexto</h2>
+<p>La <strong>ventana de contexto</strong> es el número máximo de tokens que un modelo puede considerar a la vez. Incluye tus instrucciones, cualquier documento que pegues, la conversación hasta el momento y la respuesta que estás escribiendo. Cuando una conversación excede la ventana, el contenido anterior debe descartarse o resumirse, y el modelo ya no puede "verlo".</p>
+<p>Las ventanas de mayor tamaño permiten acceder a documentos más extensos, pero no garantizan una recuperación perfecta. Los modelos aún pueden pasar por alto detalles ocultos en entradas muy largas, y estas, además, son más costosas y lentas. Para trabajos importantes, consulte pasajes específicos y verifique las respuestas con la fuente original.</p>
+</section>
+<section id="hallucinations">
+<h2>Por qué las modelos inventan cosas</h2>
+<p>Una «alucinación» es una respuesta que suena plausible pero que no se basa en hechos. Se deriva directamente del funcionamiento del modelo. Se le recompensa por producir un texto plausible, no por verificar la veracidad, por lo que, aun cuando carece de información fiable, puede generar una suposición fluida.</p>
+<p>Es más probable que tengas alucinaciones cuando pidas:</p>
+<ul>
+<li>Números, fechas, citas o referencias exactas;</li>
+<li>hechos poco conocidos, acontecimientos recientes o temas especializados;</li>
+<li>Detalles sobre un documento que la modelo en realidad no ha recibido.</li>
+</ul>
+<p>Algunos productos reducen el problema permitiendo que el modelo busque en la web o extraiga texto de tus documentos antes de responder. Esto ayuda, pero no elimina la necesidad de verificar nada importante.</p>
+</section>
+<section id="randomness">
+<h2>Por qué obtienes respuestas diferentes cada vez</h2>
+<p>Al seleccionar el siguiente token, un modelo suele muestrear a partir de una lista clasificada de opciones probables, en lugar de elegir siempre la primera. Un parámetro, a menudo denominado <em>temperatura,</em> controla la audacia de este muestreo. Valores más bajos generan resultados más predecibles, mientras que valores más altos producen resultados más variados. Por eso, la misma pregunta puede generar textos diferentes en distintas ejecuciones.</p>
+</section>
+<section id="using-well">
+<h2>Cómo obtener mejores resultados</h2>
+<p>No puedes cambiar cómo funciona el modelo, pero puedes cambiar lo que le proporcionas.</p>
+<ul>
+<li><strong>Indica el objetivo y el público objetivo.</strong> "Explicar DNS a un gerente no técnico en 150 palabras" es mejor que "explicar DNS".</li>
+<li><strong>Proporcione el material.</strong> Pegue el texto que desea resumir o los datos que desea analizar, en lugar de depender de la memoria del modelo.</li>
+<li><strong>Muestre un ejemplo.</strong> Un solo ejemplo del formato que desea suele ser más efectivo que un párrafo descriptivo.</li>
+<li><strong>Establece restricciones.</strong> Duración, tono, qué incluir y qué evitar.</li>
+<li><strong>Pídele que muestre su trabajo</strong> en tareas de razonamiento y luego verifica los pasos.</li>
+<li><strong>Revisa antes de confiar.</strong> Considera el resultado como un primer borrador rápido de un asistente competente pero poco fiable.</li>
+</ul>
+</section>
+<section id="privacy">
+<h2>Privacidad y manejo de datos</h2>
+<p>Cuando escribes en un servicio de IA alojado, tu texto se envía al proveedor. Si se puede conservar o utilizar para mejorar los modelos depende del proveedor, el plan y tu configuración, así que lee la política de datos antes de pegar cualquier información confidencial. Como norma general, elimina los datos personales, las credenciales y los secretos de cliente de las solicitudes, a menos que estés seguro de cómo se gestionan.</p>
+</section>
+<section id="faq">
+<h2>Preguntas frecuentes</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary class="faq-q">¿Los grandes modelos de lenguaje entienden lo que dicen?</summary>
+<div class="faq-a"><p>Modelan muy bien los patrones del lenguaje, lo que puede parecer comprensión. Si bien se debate si esto constituye comprensión en el sentido humano, en la práctica se debe tratar el resultado como un texto plausible que necesita verificación, no como conocimiento comprobado.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Son los másteres jurídicos (LLM) lo mismo que los motores de búsqueda?</summary>
+<div class="faq-a"><p>No. Un motor de búsqueda recupera páginas existentes. Un modelo de lenguaje natural (LLM) genera texto nuevo a partir de patrones aprendidos. Algunos productos combinan ambos, de modo que el modelo puede citar fuentes recuperadas, pero son mecanismos diferentes.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Puede un estudiante de derecho aprender de mi conversación?</summary>
+<div class="faq-a"><p>Dentro de una misma conversación, puede utilizar lo que hayas escrito, ya que se encuentra en la ventana de contexto. El uso de tus chats para entrenar modelos futuros depende del proveedor y de tu configuración, así que consulta su política.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Qué tan grande es "grande"?</summary>
+<div class="faq-a"><p>Los modelos de lenguaje complejos tienen miles de millones de parámetros y se entrenan con colecciones de texto muy extensas. El tamaño exacto varía según el modelo y no siempre se publica.</p></div>
+</details>
+</div>
+</section>
+<aside class="author-box">
+<strong>Escrito por <a href="/es/pages/founder" rel="author">Plert Ankush</a></strong>
+<p>Fundador y editor independiente de Logrith. Los artículos se desarrollan con la ayuda de IA y luego son dirigidos y revisados ​​por el autor. ¿Has detectado algún error? <a href="/es/pages/contact">Avísanos</a> y lo corregiremos.</p>
+</aside>
+</div>
+</article>
+<section class="page-section">
+<div class="section-header"><h2>Herramientas gratuitas mencionadas en esta guía</h2></div>
+<div class="tool-list">
+<a href="/tool/tools/ai-context-calculator" class="tool-row">
+<span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+<div class="tool-row-body"><div class="tool-row-name">Calculadora de tokens y contexto de IA</div><div class="tool-row-desc">Pega una solicitud o un documento para estimar su número de tokens y qué parte de la ventana de contexto de un modelo utilizaría, directamente en tu navegador.</div></div>
+<span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+</a>
+<a href="/tool/tools/text-summarizer-basic" class="tool-row">
+<span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+<div class="tool-row-body"><div class="tool-row-name">Resumidor de texto</div><div class="tool-row-desc">Pega un artículo o documento extenso y obtén un resumen conciso, elaborado a partir de las frases más importantes, en cuestión de segundos.</div></div>
+<span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+</a>
+<a href="/tool/tools/word-counter" class="tool-row">
+<span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+<div class="tool-row-body"><div class="tool-row-name">Contador de palabras</div><div class="tool-row-desc">Pega cualquier texto para ver el recuento en tiempo real de palabras, caracteres, oraciones y párrafos, además de un tiempo estimado de lectura y habla.</div></div>
+<span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+</a>
+</div>
+</section>
+<section class="page-section">
+<div class="section-header"><h2>Más información en IA y herramientas para desarrolladores.</h2></div>
+<div class="article-list">
+<a href="/es/ai-technology/json-vs-yaml-vs-xml-vs-csv" class="article-card">
+<span class="article-card-topic">Herramientas de IA y para desarrolladores</span>
+<h3>JSON vs YAML vs XML vs CSV: ¿Qué formato de datos debería utilizar?</h3>
+<p>Comparación entre JSON, YAML, XML y CSV: ventajas, desventajas, errores comunes y una regla sencilla para elegir el formato de datos adecuado para tu proyecto.</p>
+<span class="article-card-meta">Lectura de 4 minutos</span>
+</a>
+<a href="/es/ai-technology/hashing-vs-encryption-vs-encoding" class="article-card">
+<span class="article-card-topic">Herramientas de IA y para desarrolladores</span>
+<h3>Hashing vs. Cifrado vs. Codificación: La diferencia explicada</h3>
+<p>El hashing, el cifrado y la codificación suelen confundirse. Aprenda qué hace cada uno, cuándo usarlo y qué errores pueden provocar graves problemas de seguridad.</p>
+<span class="article-card-meta">Lectura de 3 minutos</span>
+</a>
+<a href="/es/ai-technology/open-source-licenses-explained" class="article-card">
+<span class="article-card-topic">Herramientas de IA y para desarrolladores</span>
+<h3>Explicación de las licencias de código abierto: MIT, Apache, GPL y cómo elegir la más adecuada.</h3>
+<p>Una guía práctica sobre licencias de código abierto: permisivas frente a copyleft, en qué se diferencian MIT, Apache 2.0, GPL y AGPL, y cómo elegir una o cumplir con ella.</p>
+<span class="article-card-meta">Lectura de 3 minutos</span>
+</a>
+</div>
+</section>
+</main>
+<div id="footer"></div>
+<script src="/assets/js/main.js?v=20261115"></script>
+</body>
+</html>

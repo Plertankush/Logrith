@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JSON para desarrolladores: una guía paso a paso | Logrith</title>
+<meta name="description" content="Una guía en cinco partes sobre JSON: sintaxis, los errores que lo invalidan, su uso en código, su conversión a CSV y YAML, y cómo obtener JSON fiable a partir de modelos de IA.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Plert Ankush">
+<link rel="canonical" href="https://logrith.in/es/ai-technology/json-guide-for-developers">
+  <link rel="alternate" hreflang="x-default" href="https://logrith.in/ai-technology/json-guide-for-developers">
+  <link rel="alternate" hreflang="es" href="https://logrith.in/es/ai-technology/json-guide-for-developers">
+  <link rel="alternate" hreflang="en" href="https://logrith.in/ai-technology/json-guide-for-developers">
+
+
+
+<meta property="og:title" content="JSON para desarrolladores: una guía paso a paso | Logrith">
+<meta property="og:description" content="Una guía en cinco partes sobre JSON: sintaxis, los errores que lo invalidan, su uso en código, su conversión a CSV y YAML, y cómo obtener JSON fiable a partir de modelos de IA.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://logrith.in/es/ai-technology/json-guide-for-developers">
+<meta property="og:site_name" content="Logrith">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="JSON para desarrolladores: una guía paso a paso | Logrith">
+<meta name="twitter:description" content="Una guía en cinco partes sobre JSON: sintaxis, los errores que lo invalidan, su uso en código, su conversión a CSV y YAML, y cómo obtener JSON fiable a partir de modelos de IA.">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
+<link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261115">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "JSON para desarrolladores: una guía paso a paso", "description": "Una guía en cinco partes sobre JSON: sintaxis, los errores que lo invalidan, su uso en código, su conversión a CSV y YAML, y cómo obtener JSON fiable a partir de modelos de IA.", "url": "https://logrith.in/es/ai-technology/json-guide-for-developers", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://logrith.in/ai-technology/json-guide-for-developers"}, "datePublished": "2026-11-12", "dateModified": "2026-11-12", "author": {"@type": "Person", "name": "Plert Ankush", "url": "https://logrith.in/es/pages/founder"}, "publisher": {"@id": "https://logrith.in/#organization"}, "isPartOf": {"@id": "https://logrith.in/#website"}, "inLanguage": "en"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Hogar", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas de IA y para desarrolladores", "item": "https://logrith.in/es/ai-technology/"}, {"@type": "ListItem", "position": 3, "name": "Ecosistema de software y desarrolladores", "item": "https://logrith.in/es/ai-technology/software-developer-ecosystem"}, {"@type": "ListItem", "position": 4, "name": "JSON para desarrolladores: una guía paso a paso", "item": "https://logrith.in/es/ai-technology/json-guide-for-developers"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿JSON es lo mismo que un objeto JavaScript?", "acceptedAnswer": {"@type": "Answer", "text": "No. JSON es un formato de texto con reglas más estrictas: las claves y las cadenas deben usar comillas dobles, y no se permiten comentarios, funciones ni valores indefinidos. Un objeto JavaScript es un valor en memoria que se convierte a texto JSON y viceversa."}}, {"@type": "Question", "name": "¿Por qué JSON no permite comentarios?", "acceptedAnswer": {"@type": "Answer", "text": "El formato se mantuvo deliberadamente minimalista para que se analice de la misma manera en todas partes. Si necesita comentarios, utilice YAML, un formato como JSON5 (siempre que ambas partes lo admitan) o la clave reservada \"_comment\"."}}, {"@type": "Question", "name": "¿Cómo puedo almacenar una fecha en JSON?", "acceptedAnswer": {"@type": "Answer", "text": "Como una cadena en formato ISO 8601, por ejemplo \"2026-11-15T10:30:00Z\", o como un número de marca de tiempo Unix. Elija una convención, documéntela y analícela explícitamente después de la carga."}}, {"@type": "Question", "name": "¿Cuál es la diferencia entre JSON y JSON Lines?", "acceptedAnswer": {"@type": "Answer", "text": "JSON Lines (NDJSON) almacena un objeto JSON completo por línea. Es fácil de procesar y añadir datos, lo que lo hace común para registros y grandes conjuntos de datos, pero un archivo completo no constituye un único documento JSON válido."}}, {"@type": "Question", "name": "¿Puedo confiar en el JSON escrito por un modelo de IA?", "acceptedAnswer": {"@type": "Answer", "text": "Trátalo como cualquier dato de entrada no confiable. Si tu proveedor ofrece una función de salida estructurada, analízala de forma segura y valida el resultado con respecto a un esquema antes de que tu código dependa de él."}}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido</a>
+<div id="navbar"></div>
+<main id="main">
+<header class="page-hero page-hero-article">
+<div class="page-hero-inner">
+<nav class="breadcrumb" aria-label="Migaja de pan"><a href="/es/">Inicio</a> › <a href="/es/ai-technology/">Herramientas de IA y para desarrolladores</a> › <a href="/es/ai-technology/software-developer-ecosystem">Ecosistema de software y desarrollo</a> › JSON para desarrolladores: una guía paso a paso</nav>
+<div class="badge"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#code"></use></svg> Ecosistema de software y desarrolladores</div>
+<h1>JSON para desarrolladores: una guía paso a paso</h1>
+<p class="byline">Por <a href="/es/pages/founder" rel="author">Plert Ankush</a> · Publicado<time datetime="2026-11-12"> 12 de noviembre de 2026</time> · Actualizado<time datetime="2026-11-12"> 12 de noviembre de 2026</time> · 6 minutos de lectura</p>
+</div>
+</header>
+<article class="page-section">
+<div class="prose hub-prose article-body">
+<p>JSON es el formato que utilizan la mayoría de las API web, archivos de configuración y exportaciones de datos, y también es el formato que cada vez se les exige más a los modelos de IA. Puedes aprender lo básico en una tarde, pero los mismos pocos errores son la causa de la mayoría de los fallos.</p>
+<p>Esta guía se divide en cinco partes breves. Léalas en orden o vaya directamente a la que necesite. Cada parte incluye un enlace a una herramienta gratuita para navegadores, para que pueda probar la idea con sus propios datos mientras lee.</p>
+<aside class="takeaways" aria-label="Conclusiones clave">
+<h2>Conclusiones clave</h2>
+<ul class="check-list">
+<li>JSON solo tiene seis tipos de valores y una sintaxis estricta: comillas dobles, sin comentarios y sin comas al final.</li>
+<li>La mayoría de los errores de análisis sintáctico provienen de un pequeño grupo de errores, así que aprende a detectarlos.</li>
+<li>Siempre analice los datos dentro de un bloque try/catch (o equivalente) y nunca confíe en la estructura de los datos que usted no creó.</li>
+<li>Los registros planos se convierten correctamente a CSV; los datos anidados necesitan aplanarse o deben permanecer como JSON.</li>
+<li>Cuando un modelo de IA genera JSON, valídalo comparándolo con un esquema en lugar de asumir que es correcto.</li>
+</ul>
+</aside>
+<nav class="article-toc" aria-label="En esta guía">
+<h2>En esta guía</h2>
+<ol>
+<li><a href="#part-1">Parte 1: Qué es JSON y qué puede contener</a></li>
+<li><a href="#part-2">Parte 2: Reglas de sintaxis y errores que invalidan JSON</a></li>
+<li><a href="#part-3">Parte 3: Lectura y escritura de JSON en código</a></li>
+<li><a href="#part-4">Parte 4: Conversión de JSON a CSV, YAML y viceversa</a></li>
+<li><a href="#part-5">Parte 5: JSON y modelos de IA</a></li>
+<li><a href="#checklist">Lista de verificación rápida</a></li>
+</ol>
+</nav>
+<section id="part-1">
+<h2>Parte 1: Qué es JSON y qué puede contener</h2>
+<p>JSON significa Notación de Objetos JavaScript. Es un formato de texto plano para datos estructurados, creado a partir de la forma en que JavaScript escribe objetos, pero que ahora utilizan casi todos los lenguajes de programación. Un documento JSON se construye a partir de solo seis tipos de valores:</p>
+<ul>
+<li><strong>Objeto:</strong> pares clave-valor no ordenados entre llaves, como <code>{"name": "Asha"}</code>.</li>
+<li><strong>Matriz:</strong> una lista ordenada entre corchetes, como por ejemplo <code>[1, 2, 3]</code>.</li>
+<li><strong>Cadena:</strong> texto entre comillas dobles.</li>
+<li><strong>Número:</strong> entero o decimal, sin signo más inicial ni comillas.</li>
+<li><strong>Booleano:</strong> <code>true</code> o <code>false</code>, en minúsculas.</li>
+<li><strong>Nulo:</strong> <code>null</code>, lo que significa un valor vacío intencionalmente.</li>
+</ul>
+<p>Los objetos y las matrices pueden contener otros objetos y matrices a cualquier nivel de profundidad, lo que permite que JSON describa datos del mundo real, como un cliente con varios pedidos, cada uno con varios artículos.</p>
+<p>Lo que JSON no puede contener es igualmente importante. No existe un tipo de dato para fechas, por lo que estas se escriben como cadenas de texto, generalmente en formato ISO 8601, como <code>"2026-11-15T10:30:00Z"</code>. No hay sintaxis para comentarios, ni para valores indefinidos, ni para funciones, ni para valores especiales como infinito o que no sean números. Si necesita alguna de estas funcionalidades, deberá acordar una convención con quien lea sus datos.</p>
+</section>
+<section id="part-2">
+<h2>Parte 2: Reglas de sintaxis y errores que invalidan JSON</h2>
+<p>JSON es más estricto que JavaScript. Un archivo que parece correcto para un humano a menudo no pasa el filtro del analizador. Estos son los errores que causan la mayoría de los errores de "Token inesperado":</p>
+<table>
+<thead><tr><th>Error</th><th>Ejemplo</th><th>Arreglar</th></tr></thead>
+<tbody>
+<tr><td>coma final</td><td><code>{"a": 1,}</code></td><td>Eliminar la última coma</td></tr>
+<tr><td>Cotizaciones simples</td><td><code>{'a': 1}</code></td><td>Utilice comillas dobles para las claves y las cadenas de texto.</td></tr>
+<tr><td>clave sin comillas</td><td><code>{a: 1}</code></td><td>Escriba <code>"a"</code></td></tr>
+<tr><td>Comentario</td><td><code>// note</code></td><td>Elimínelo o guárdelo en un campo "_comentario".</td></tr>
+<tr><td>Falta una coma</td><td><code>{"a": 1 "b": 2}</code></td><td>Agregue una coma entre pares.</td></tr>
+<tr><td>Comilla o salto de línea sin escape en una cadena</td><td><code>"say "hi""</code></td><td>Escapar como <code>\"</code> y <code>\n</code></td></tr>
+<tr><td>Literal incorrecto</td><td><code>True</code>, <code>None</code>, <code>NaN</code></td><td>Utilice <code>true</code>, <code>null</code> y evite NaN.</td></tr>
+</tbody>
+</table>
+<p>Para encontrar la ubicación exacta, pega el texto en el <a href="/tool/tools/json-formatter">formateador JSON</a> , que lo valida y muestra la posición del primer error. Si los datos provienen de un registro, un mensaje de chat o un modelo de IA y presentan varios de estos problemas a la vez, la herramienta <a href="/tool/tools/json-repair">de reparación JSON</a> puede corregir automáticamente los más comunes.</p>
+<p>Hay dos detalles más que suelen causar confusión. Técnicamente, la sintaxis permite claves duplicadas, pero su comportamiento varía entre analizadores, así que evítalas. Además, el formato no tiene límite de tamaño para los números, pero la mayoría de los lenguajes los interpretan como números de coma flotante de 64 bits, por lo que los enteros mayores que 9.007.199.254.740.991 pueden perder precisión en JavaScript. Envía identificadores muy largos como cadenas de texto.</p>
+</section>
+<section id="part-3">
+<h2>Parte 3: Lectura y escritura de JSON en código</h2>
+<p>Todos los lenguajes de programación principales cuentan con una biblioteca JSON integrada o estándar. Las dos operaciones necesarias son el análisis sintáctico (de texto a datos) y la serialización (de datos a texto).</p>
+<p><strong>JavaScript</strong> utiliza <code>JSON.parse(text)</code> y <code>JSON.stringify(value, null, 2)</code>, donde los dos últimos argumentos producen una salida legible con sangría de dos espacios. <strong>Python</strong> utiliza <code>json.loads(text)</code> y <code>json.dumps(value, indent=2)</code>, además de <code>json.load</code> y <code>json.dump</code> para archivos.</p>
+<p>Buenos hábitos que previenen la mayoría de los errores de producción:</p>
+<ol>
+<li><strong>Envuelve el análisis sintáctico en un manejo de errores.</strong> Una entrada no válida genera una excepción, y una sola respuesta incorrecta no debería provocar que tu programa falle.</li>
+<li><strong>No des por sentado que la forma es correcta.</strong> Comprueba que las claves que necesitas existen y tienen el tipo esperado antes de usarlas. El encadenamiento opcional en JavaScript y <code>dict.get()</code> en Python son útiles.</li>
+<li><strong>Nunca uses <code>eval</code> para analizar JSON.</strong> Puede ejecutar código. Usa el analizador real.</li>
+<li><strong>Gestiona las fechas de forma específica.</strong> Tras la carga, convierte las cadenas ISO en objetos de fecha y vuelve a convertirlas al guardar. Un <a href="/tool/tools/unix-timestamp-converter">convertidor de marcas de tiempo Unix</a> resulta útil cuando la API proporciona números de época.</li>
+<li><strong>Formato legible para personas, tamaño reducido para máquinas.</strong> La sangría facilita la lectura; al eliminar los espacios en blanco, se reduce el tamaño del archivo.</li>
+</ol>
+<p>Al trabajar con API, compruebe también el encabezado <code>Content-Type: application/json</code> y el código de estado HTTP antes de analizarlos. De lo contrario, una página de error que se devuelva en HTML se mostrará como un error de análisis JSON confuso. La <a href="/tool/tools/http-status-code-lookup">tabla de códigos de estado HTTP</a> explica el significado de cada código.</p>
+</section>
+<section id="part-4">
+<h2>Parte 4: Conversión de JSON a CSV, YAML y viceversa</h2>
+<p>Con frecuencia, es necesario convertir JSON a otros formatos. El enfoque adecuado depende del formato de destino.</p>
+<p><strong>Conversión de JSON a CSV.</strong> CSV es una tabla plana, por lo que una matriz de objetos similares se mapea perfectamente: cada objeto se convierte en una fila y cada clave en una columna. Los objetos anidados se pueden aplanar en columnas con notación de puntos, como <code>address.city</code>, y las matrices se mantienen mejor como texto JSON dentro de una celda. El <a href="/tool/tools/json-csv-converter">convertidor de JSON a CSV</a> funciona en ambas direcciones y maneja las comillas de comas y saltos de línea. Verifique el resultado en una hoja de cálculo y recuerde que las hojas de cálculo pueden reformatear silenciosamente valores como números largos e identificadores con ceros iniciales.</p>
+<p><strong>Conversión de JSON a YAML.</strong> YAML expresa las mismas estructuras con sangría y permite comentarios, lo que lo hace popular para la configuración. Dado que la mayoría de los JSON son YAML válidos, la conversión suele ser sin pérdida de información, pero al convertir de nuevo, los tipos pueden cambiar si YAML interpreta erróneamente el valor; por ejemplo, si interpreta <code>no</code> como un valor booleano. Utilice el <a href="/tool/tools/yaml-json-converter">convertidor de YAML a JSON</a> para confirmar que la configuración sigue teniendo el significado previsto.</p>
+<p>¿No sabes qué formato se adapta mejor a tu proyecto? La comparación entre <a href="/es/ai-technology/json-vs-yaml-vs-xml-vs-csv">JSON, YAML, XML y CSV</a> te ofrece una regla sencilla para elegir.</p>
+</section>
+<section id="part-5">
+<h2>Parte 5: JSON y modelos de IA</h2>
+<p>Muchas aplicaciones ahora solicitan a un modelo de lenguaje que devuelva JSON para que otro código pueda utilizar la respuesta: una lista de campos extraídos, una clasificación o un conjunto de etiquetas. Esto funciona bien, pero solo si se trata la salida como una entrada no confiable.</p>
+<p>Los modelos pueden generar JSON casi correcto: envuelto en texto adicional o un delimitador de código Markdown, con una coma al final, un campo faltante o un valor del tipo incorrecto. Las API más recientes ofrecen un modo de salida estructurada que restringe el modelo a un esquema proporcionado, lo que reduce considerablemente estos fallos. Aun así, es recomendable crear una red de seguridad:</p>
+<ol>
+<li><strong>Solicita únicamente JSON.</strong> Indica las claves y los tipos exactos que esperas e incluye un breve ejemplo.</li>
+<li><strong>Elimine los contenedores.</strong> Elimine las vallas de código y cualquier texto que se encuentre antes de la primera llave y después de la última antes de analizar.</li>
+<li><strong>Analizar en un bloque try/catch y,</strong> en caso de fallo, volver a intentarlo una vez con el mensaje de error o recurrir a una solución segura.</li>
+<li><strong>Validar según un esquema.</strong> Comprobar las claves, los tipos y los valores permitidos mediante un validador como JSON Schema, en lugar de confiar en el modelo.</li>
+<li><strong>Ten en cuenta la longitud.</strong> Las salidas largas pueden cortarse a la mitad al alcanzar el límite de salida del modelo, lo que genera JSON no válido. Mantén las salidas cortas o solicítalas por partes. La <a href="/tool/tools/ai-context-calculator">calculadora de contexto de IA</a> te ayuda a estimar cuánto texto cabe.</li>
+</ol>
+<p>Si una respuesta presenta errores menores, la herramienta <a href="/tool/tools/json-repair">de reparación JSON</a> muestra cómo se vería la solución. Sin embargo, en producción, es preferible la prevención (esquemas y validación) a la reparación, ya que los datos reparados silenciosamente pueden ocultar problemas reales. Para comprender por qué los modelos cometen estos errores de formato, consulte <a href="/es/ai-technology/how-large-language-models-work">cómo funcionan los modelos de lenguaje a gran escala</a> .</p>
+</section>
+<section id="checklist">
+<h2>Lista de verificación rápida</h2>
+<ul>
+<li>Comillas dobles por todas partes, sin comas al final, sin comentarios.</li>
+<li>Los identificadores largos se envían como cadenas de texto.</li>
+<li>Fechas en formato ISO 8601 o como marcas de tiempo explícitas.</li>
+<li>Análisis sintáctico envuelto en manejo de errores, con comprobaciones de forma posteriores.</li>
+<li>Se revisaron las exportaciones CSV para detectar la pérdida de ceros iniciales y la presencia de delimitadores incorrectos.</li>
+<li>JSON generado por IA y validado según un esquema antes de su uso.</li>
+</ul>
+</section>
+<section id="faq">
+<h2>Preguntas frecuentes</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary class="faq-q">¿JSON es lo mismo que un objeto JavaScript?</summary>
+<div class="faq-a"><p>No. JSON es un formato de texto con reglas más estrictas: las claves y las cadenas deben usar comillas dobles, y no se permiten comentarios, funciones ni valores indefinidos. Un objeto JavaScript es un valor en memoria que se convierte a texto JSON y viceversa.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Por qué JSON no permite comentarios?</summary>
+<div class="faq-a"><p>El formato se mantuvo deliberadamente minimalista para que se analice de la misma manera en todas partes. Si necesita comentarios, utilice YAML, un formato como JSON5 (siempre que ambas partes lo admitan) o la clave reservada "_comment".</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Cómo puedo almacenar una fecha en JSON?</summary>
+<div class="faq-a"><p>Como una cadena en formato ISO 8601, por ejemplo "2026-11-15T10:30:00Z", o como un número de marca de tiempo Unix. Elija una convención, documéntela y analícela explícitamente después de la carga.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Cuál es la diferencia entre JSON y JSON Lines?</summary>
+<div class="faq-a"><p>JSON Lines (NDJSON) almacena un objeto JSON completo por línea. Es fácil de procesar y añadir datos, lo que lo hace común para registros y grandes conjuntos de datos, pero un archivo completo no constituye un único documento JSON válido.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Puedo confiar en el JSON escrito por un modelo de IA?</summary>
+<div class="faq-a"><p>Trátalo como cualquier dato de entrada no confiable. Si tu proveedor ofrece una función de salida estructurada, analízala de forma segura y valida el resultado con respecto a un esquema antes de que tu código dependa de él.</p></div>
+</details>
+</div>
+</section>
+<aside class="author-box">
+<strong>Escrito por <a href="/es/pages/founder" rel="author">Plert Ankush</a></strong>
+<p>Fundador y editor independiente de Logrith. Los artículos se desarrollan con la ayuda de IA y luego son dirigidos y revisados ​​por el autor. ¿Has detectado algún error? <a href="/es/pages/contact">Avísanos</a> y lo corregiremos.</p>
+</aside>
+</div>
+</article>
+<section class="page-section">
+<div class="section-header"><h2>Herramientas gratuitas mencionadas en esta guía</h2></div>
+<div class="tool-list">
+<a href="/tool/tools/json-formatter" class="tool-row">
+<span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+<div class="tool-row-body"><div class="tool-row-name">Formateador JSON</div><div class="tool-row-desc">Pegue el JSON para darle formato con la indentación adecuada, validar su sintaxis con la ubicación exacta de los errores o reducirlo a una sola línea.</div></div>
+<span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+</a>
+<a href="/tool/tools/json-repair" class="tool-row">
+<span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+<div class="tool-row-body"><div class="tool-row-name">Herramienta de reparación JSON</div><div class="tool-row-desc">Pegue el JSON no válido para que se repare automáticamente, corrigiendo las comas finales y las claves sin comillas, y explicando claramente los errores.</div></div>
+<span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+</a>
+<a href="/tool/tools/json-csv-converter" class="tool-row">
+<span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+<div class="tool-row-body"><div class="tool-row-name">Convertidor de JSON a CSV</div><div class="tool-row-desc">Convierte JSON a CSV o CSV a JSON en línea. Simplifica objetos anidados, maneja campos entre comillas y comas, y admite delimitadores como coma, punto y coma y tabulación. Gratuito y privado.</div></div>
+<span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+</a>
+<a href="/tool/tools/yaml-json-converter" class="tool-row">
+<span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+<div class="tool-row-body"><div class="tool-row-name">Convertidor de YAML a JSON</div><div class="tool-row-desc">Pega el código YAML o JSON y obtén una conversión precisa al otro formato al instante, conservando el formato original.</div></div>
+<span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+</a>
+<a href="/tool/tools/unix-timestamp-converter" class="tool-row">
+<span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+<div class="tool-row-body"><div class="tool-row-name">Convertidor de marcas de tiempo Unix</div><div class="tool-row-desc">Convierte marcas de tiempo Unix a fechas legibles y viceversa, a segundos o milisegundos de la época. Reloj en tiempo real, detección automática de unidades y compatibilidad con zonas horarias. Gratis, funciona en tu navegador.</div></div>
+<span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+</a>
+</div>
+</section>
+<section class="page-section">
+<div class="section-header"><h2>Más información en IA y herramientas para desarrolladores.</h2></div>
+<div class="article-list">
+<a href="/es/ai-technology/how-large-language-models-work" class="article-card">
+<span class="article-card-topic">Herramientas de IA y para desarrolladores</span>
+<h3>Cómo funcionan los modelos de lenguaje a gran escala: una guía en lenguaje sencillo.</h3>
+<p>Una explicación clara de cómo se entrenan los modelos de lenguaje complejos, qué son los tokens y las ventanas de contexto, por qué cometen errores y cómo utilizarlos correctamente.</p>
+<span class="article-card-meta">Lectura de 5 minutos</span>
+</a>
+<a href="/es/ai-technology/json-vs-yaml-vs-xml-vs-csv" class="article-card">
+<span class="article-card-topic">Herramientas de IA y para desarrolladores</span>
+<h3>JSON vs YAML vs XML vs CSV: ¿Qué formato de datos debería utilizar?</h3>
+<p>Comparación entre JSON, YAML, XML y CSV: ventajas, desventajas, errores comunes y una regla sencilla para elegir el formato de datos adecuado para tu proyecto.</p>
+<span class="article-card-meta">Lectura de 4 minutos</span>
+</a>
+<a href="/es/ai-technology/hashing-vs-encryption-vs-encoding" class="article-card">
+<span class="article-card-topic">Herramientas de IA y para desarrolladores</span>
+<h3>Hashing vs. Cifrado vs. Codificación: La diferencia explicada</h3>
+<p>El hashing, el cifrado y la codificación suelen confundirse. Aprenda qué hace cada uno, cuándo usarlo y qué errores pueden provocar graves problemas de seguridad.</p>
+<span class="article-card-meta">Lectura de 3 minutos</span>
+</a>
+</div>
+</section>
+</main>
+<div id="footer"></div>
+<script src="/assets/js/main.js?v=20261115"></script>
+</body>
+</html>

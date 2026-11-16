@@ -7,3 +7,4 @@ Sitemap: https://logrith.in/sitemap-topics.xml
 Sitemap: https://logrith.in/sitemap-blog.xml
 Sitemap: https://logrith.in/sitemap-global.xml
 Sitemap: https://logrith.in/sitemap-tools.xml
+Sitemap: https://logrith.in/sitemap-es.xml

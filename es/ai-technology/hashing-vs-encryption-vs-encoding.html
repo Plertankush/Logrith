@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hashing vs. Cifrado vs. Codificación: La diferencia explicada | Logrith</title>
+<meta name="description" content="El hashing, el cifrado y la codificación suelen confundirse. Aprenda qué hace cada uno, cuándo usarlo y qué errores pueden provocar graves problemas de seguridad.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Plert Ankush">
+<link rel="canonical" href="https://logrith.in/es/ai-technology/hashing-vs-encryption-vs-encoding">
+  <link rel="alternate" hreflang="x-default" href="https://logrith.in/ai-technology/hashing-vs-encryption-vs-encoding">
+  <link rel="alternate" hreflang="es" href="https://logrith.in/es/ai-technology/hashing-vs-encryption-vs-encoding">
+  <link rel="alternate" hreflang="en" href="https://logrith.in/ai-technology/hashing-vs-encryption-vs-encoding">
+
+
+
+<meta property="og:title" content="Hashing vs. Cifrado vs. Codificación: La diferencia explicada | Logrith">
+<meta property="og:description" content="El hashing, el cifrado y la codificación suelen confundirse. Aprenda qué hace cada uno, cuándo usarlo y qué errores pueden provocar graves problemas de seguridad.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://logrith.in/es/ai-technology/hashing-vs-encryption-vs-encoding">
+<meta property="og:site_name" content="Logrith">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hashing vs. Cifrado vs. Codificación: La diferencia explicada | Logrith">
+<meta name="twitter:description" content="El hashing, el cifrado y la codificación suelen confundirse. Aprenda qué hace cada uno, cuándo usarlo y qué errores pueden provocar graves problemas de seguridad.">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
+<link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261115">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Hashing vs. Cifrado vs. Codificación: La diferencia explicada", "description": "El hashing, el cifrado y la codificación suelen confundirse. Aprenda qué hace cada uno, cuándo usarlo y qué errores pueden provocar graves problemas de seguridad.", "url": "https://logrith.in/es/ai-technology/hashing-vs-encryption-vs-encoding", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://logrith.in/ai-technology/hashing-vs-encryption-vs-encoding"}, "datePublished": "2026-11-12", "dateModified": "2026-11-12", "author": {"@type": "Person", "name": "Plert Ankush", "url": "https://logrith.in/es/pages/founder"}, "publisher": {"@id": "https://logrith.in/#organization"}, "isPartOf": {"@id": "https://logrith.in/#website"}, "inLanguage": "en"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Hogar", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas de IA y para desarrolladores", "item": "https://logrith.in/es/ai-technology/"}, {"@type": "ListItem", "position": 3, "name": "Ecosistema de software y desarrolladores", "item": "https://logrith.in/es/ai-technology/software-developer-ecosystem"}, {"@type": "ListItem", "position": 4, "name": "Hashing vs. Cifrado vs. Codificación: La diferencia explicada", "item": "https://logrith.in/es/ai-technology/hashing-vs-encryption-vs-encoding"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Es Base64 cifrado?", "acceptedAnswer": {"@type": "Answer", "text": "No. Base64 es un sistema de codificación. Cualquiera puede decodificarlo sin una clave, por lo que no ofrece confidencialidad."}}, {"@type": "Question", "name": "¿Se puede invertir un hash?", "acceptedAnswer": {"@type": "Answer", "text": "Aunque no sea matemáticamente preciso, las contraseñas débiles o comunes pueden detectarse mediante el método de adivinación y comprobación, razón por la cual se necesitan funciones hash y sales lentas."}}, {"@type": "Question", "name": "¿Por qué se considera que MD5 está roto?", "acceptedAnswer": {"@type": "Answer", "text": "Los investigadores pueden generar dos entradas diferentes con el mismo hash MD5, lo que se denomina colisión, por lo que no se puede confiar en este método cuando existe preocupación por la manipulación."}}, {"@type": "Question", "name": "¿Cuál es la diferencia entre un hash y una suma de verificación?", "acceptedAnswer": {"@type": "Answer", "text": "Una suma de verificación detecta errores accidentales y suele ser sencilla. Un hash criptográfico también está diseñado para resistir manipulaciones deliberadas."}}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido</a>
+<div id="navbar"></div>
+<main id="main">
+<header class="page-hero page-hero-article">
+<div class="page-hero-inner">
+<nav class="breadcrumb" aria-label="Migaja de pan"><a href="/es/">Inicio</a> › <a href="/es/ai-technology/">Herramientas de IA y para desarrolladores</a> › <a href="/es/ai-technology/software-developer-ecosystem">Ecosistema de software y desarrollo</a> › Hashing vs. Cifrado vs. Codificación: La diferencia explicada</nav>
+<div class="badge"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#code"></use></svg> Ecosistema de software y desarrolladores</div>
+<h1>Hashing vs. Cifrado vs. Codificación: La diferencia explicada</h1>
+<p class="byline">Por <a href="/es/pages/founder" rel="author">Plert Ankush</a> · Publicado<time datetime="2026-11-12"> 12 de noviembre de 2026</time> · Actualizado<time datetime="2026-11-12"> 12 de noviembre de 2026</time> · 3 minutos de lectura</p>
+</div>
+</header>
+<article class="page-section">
+<div class="prose hub-prose article-body">
+<p>Tanto desarrolladores como usuarios comunes suelen confundir el hashing, el cifrado y la codificación. Si bien todos transforman los datos en algo de apariencia diferente, resuelven problemas distintos, y usar el método incorrecto es un error clásico de seguridad. Almacenar contraseñas con Base64, por ejemplo, no ofrece ninguna protección.</p>
+<p>Esta guía ofrece una definición clara de cada concepto, una tabla comparativa y reglas prácticas sobre cuándo utilizar cada uno.</p>
+<aside class="takeaways" aria-label="Conclusiones clave">
+<h2>Conclusiones clave</h2>
+<ul class="check-list">
+<li>La codificación cambia el formato de los datos para que los sistemas puedan procesarlos. Cualquiera puede revertirla y no proporciona ninguna confidencialidad.</li>
+<li>El hashing produce una huella digital de tamaño fijo que no se puede revertir. Se utiliza para comprobaciones de integridad y, con los algoritmos adecuados, para contraseñas.</li>
+<li>El cifrado oculta los datos y solo se puede revertir con la clave correcta.</li>
+<li>Nunca guardes contraseñas con codificación simple, cifrado que puedas descifrar o funciones hash rápidas de uso general.</li>
+</ul>
+</aside>
+<nav class="article-toc" aria-label="En esta guía">
+<h2>En esta guía</h2>
+<ol>
+<li><a href="#comparison">La diferencia en una tabla</a></li>
+<li><a href="#encoding">Codificación: cambio de formato</a></li>
+<li><a href="#hashing">Hashing: una huella digital unidireccional</a></li>
+<li><a href="#passwords">El hash de contraseñas es un caso especial.</a></li>
+<li><a href="#encryption">Cifrado: secreto con una clave</a></li>
+<li><a href="#hmac">Una herramienta relacionada: HMAC y tokens firmados</a></li>
+<li><a href="#rules">Reglas prácticas</a></li>
+</ol>
+</nav>
+<section id="comparison">
+<h2>La diferencia en una tabla</h2>
+<table>
+<thead><tr><th></th><th>Codificación</th><th>Hashing</th><th>Cifrado</th></tr></thead>
+<tbody>
+<tr><td>Objetivo</td><td>Hacer que los datos sean utilizables por otro sistema.</td><td>Crear una huella digital de los datos</td><td>Mantener los datos en secreto</td></tr>
+<tr><td>¿Reversible?</td><td>Sí, por cualquiera</td><td>No (de un solo sentido)</td><td>Sí, con la llave.</td></tr>
+<tr><td>¿Necesitas una llave?</td><td>No</td><td>No (HMAC utiliza uno)</td><td>Sí</td></tr>
+<tr><td>Tamaño de salida</td><td>Crece con la aportación</td><td>Fijado</td><td>Aproximadamente tamaño de entrada más sobrecarga</td></tr>
+<tr><td>Ejemplos</td><td>Base64, codificación URL</td><td>SHA-256, bcrypt, Argon2</td><td>AES, RSA</td></tr>
+</tbody>
+</table>
+</section>
+<section id="encoding">
+<h2>Codificación: cambio de formato</h2>
+<p>La codificación convierte los datos de una representación a otra para que puedan transmitirse de forma segura a través de un sistema que espera un formato determinado. <strong>Base64</strong> transforma los datos binarios en caracteres de texto plano para que puedan insertarse en JSON o en un correo electrónico. <strong>La codificación URL</strong> reemplaza los caracteres no seguros de una dirección web con códigos de porcentaje.</p>
+<p>No hay ningún secreto. Si puedes ver texto en Base64, puedes decodificarlo al instante. Pruébalo tú mismo con la <a href="/tool/tools/base64">herramienta Base64</a> o el <a href="/tool/tools/url-encoder">codificador de URL</a> . Considera la codificación como un empaquetado, nunca como una protección.</p>
+</section>
+<section id="hashing">
+<h2>Hashing: una huella digital unidireccional</h2>
+<p>Una función hash toma cualquier entrada y produce una salida de longitud fija, llamada hash o resumen. La misma entrada siempre produce la misma salida; un pequeño cambio en la entrada produce una salida completamente diferente, y no se puede reconstruir el hash para obtener los datos originales.</p>
+<p>Entre los usos comunes se incluyen:</p>
+<ul>
+<li><strong>Verificaciones de integridad.</strong> Publica el hash SHA-256 de una descarga para que los usuarios puedan verificar que el archivo no ha sido alterado.</li>
+<li><strong>Eliminación de duplicados.</strong> Los archivos idénticos producen hashes idénticos.</li>
+<li><strong>Firmas digitales y estructuras de datos.</strong> Los hashes se encuentran integrados en muchos sistemas de seguridad.</li>
+</ul>
+<p>No todas las funciones hash son igual de seguras. MD5 y SHA-1 presentan vulnerabilidades de colisión conocidas y no deberían utilizarse con fines de seguridad, mientras que la familia SHA-2, como SHA-256, sigue siendo ampliamente utilizada. Puede generar y comparar resúmenes con el <a href="/tool/tools/hash-generator">Generador de Hash</a> .</p>
+</section>
+<section id="passwords">
+<h2>El hash de contraseñas es un caso especial.</h2>
+<p>Los sitios web nunca deberían almacenar tu contraseña. Almacenan un hash y lo comparan con el hash de lo que escribas al iniciar sesión. Sin embargo, un hash simple y rápido como SHA-256 no es la herramienta adecuada, ya que los atacantes pueden probar miles de millones de intentos por segundo contra hashes robados.</p>
+<p>El almacenamiento de contraseñas debe utilizar un algoritmo deliberadamente lento diseñado para esta tarea, como <strong>Argon2</strong> , <strong>bcrypt</strong> o <strong>scrypt</strong> , con un <strong>valor</strong> aleatorio único para cada contraseña. Este valor garantiza que dos usuarios con la misma contraseña obtengan hashes diferentes y evita el uso de tablas de búsqueda precalculadas. En lugar de programarlo usted mismo, utilice una biblioteca con buenas reseñas.</p>
+</section>
+<section id="encryption">
+<h2>Cifrado: secreto con una clave</h2>
+<p>El cifrado codifica los datos de manera que solo alguien con la clave correcta pueda leerlos. Existen dos familias:</p>
+<ul>
+<li><strong>El cifrado simétrico</strong> (por ejemplo, AES) utiliza la misma clave para cifrar y descifrar. Es rápido y se utiliza para archivos, discos y la mayoría de los datos en tránsito una vez establecida la conexión.</li>
+<li><strong>El cifrado asimétrico</strong> (por ejemplo, RSA o sistemas de curva elíptica) utiliza una clave pública para cifrar y una clave privada para descifrar. Resuelve el problema de compartir claves y es la base de los certificados y firmas HTTPS.</li>
+</ul>
+<p>La seguridad del cifrado reside en mantener la clave en secreto y en utilizar un algoritmo moderno y probado. Inventar un sistema propio casi siempre es un error.</p>
+</section>
+<section id="hmac">
+<h2>Una herramienta relacionada: HMAC y tokens firmados</h2>
+<p>A veces es necesario demostrar que los datos provienen de alguien que conoce un secreto y que no han sido modificados. Un <strong>HMAC</strong> combina una función hash con una clave secreta para generar dicha prueba. Es el método que utilizan muchas API para firmar webhooks y para firmar tokens web JSON. Puedes inspeccionar las partes legibles de un token con el <a href="/tool/tools/jwt-decoder">decodificador JWT</a> , teniendo en cuenta que el contenido de un token está codificado, no cifrado, a menos que se trate específicamente de un token cifrado.</p>
+</section>
+<section id="rules">
+<h2>Reglas prácticas</h2>
+<ol>
+<li>¿Necesitas que los datos viajen en un formato diferente? <strong>Codifica</strong> .</li>
+<li>¿Necesitas verificar que los datos no hayan cambiado o almacenar contraseñas? Utiliza <strong>hash</strong> , usando SHA-256 para la integridad y un algoritmo de hash de contraseñas.</li>
+<li>¿Necesitas mantener tus datos en secreto pero legibles posteriormente? <strong>Encripta tus</strong> datos con un algoritmo moderno y claves cuidadosamente protegidas.</li>
+<li>No utilice la codificación como medida de seguridad, ni utilice funciones hash rápidas para las contraseñas.</li>
+</ol>
+</section>
+<section id="faq">
+<h2>Preguntas frecuentes</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary class="faq-q">¿Es Base64 cifrado?</summary>
+<div class="faq-a"><p>No. Base64 es un sistema de codificación. Cualquiera puede decodificarlo sin una clave, por lo que no ofrece confidencialidad.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Se puede invertir un hash?</summary>
+<div class="faq-a"><p>Aunque no sea matemáticamente preciso, las contraseñas débiles o comunes pueden detectarse mediante el método de adivinación y comprobación, razón por la cual se necesitan funciones hash y sales lentas.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Por qué se considera que MD5 está roto?</summary>
+<div class="faq-a"><p>Los investigadores pueden generar dos entradas diferentes con el mismo hash MD5, lo que se denomina colisión, por lo que no se puede confiar en este método cuando existe preocupación por la manipulación.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Cuál es la diferencia entre un hash y una suma de verificación?</summary>
+<div class="faq-a"><p>Una suma de verificación detecta errores accidentales y suele ser sencilla. Un hash criptográfico también está diseñado para resistir manipulaciones deliberadas.</p></div>
+</details>
+</div>
+</section>
+<aside class="author-box">
+<strong>Escrito por <a href="/es/pages/founder" rel="author">Plert Ankush</a></strong>
+<p>Fundador y editor independiente de Logrith. Los artículos se desarrollan con la ayuda de IA y luego son dirigidos y revisados ​​por el autor. ¿Has detectado algún error? <a href="/es/pages/contact">Avísanos</a> y lo corregiremos.</p>
+</aside>
+</div>
+</article>
+<section class="page-section">
+<div class="section-header"><h2>Herramientas gratuitas mencionadas en esta guía</h2></div>
+<div class="tool-list">
+<a href="/tool/tools/hash-generator" class="tool-row">
+<span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+<div class="tool-row-body"><div class="tool-row-name">Generador de hash</div><div class="tool-row-desc">Calcula el hash de cualquier texto o archivo para verificar su integridad o comparar sumas de comprobación, con SHA-1, SHA-256, SHA-384 y SHA-512, todos calculados instantáneamente.</div></div>
+<span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+</a>
+<a href="/tool/tools/base64" class="tool-row">
+<span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+<div class="tool-row-body"><div class="tool-row-name">Codificador Base64</div><div class="tool-row-desc">Convierte texto o un archivo subido a Base64, o decodifica una cadena Base64 para recuperar su formato original, al instante en tu navegador.</div></div>
+<span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+</a>
+<a href="/tool/tools/url-encoder" class="tool-row">
+<span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+<div class="tool-row-body"><div class="tool-row-name">Codificador y decodificador de URL</div><div class="tool-row-desc">Convierta instantáneamente los caracteres especiales de una URL a codificación porcentual, o decodifique una URL codificada para convertirla de nuevo en texto legible.</div></div>
+<span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+</a>
+<a href="/tool/tools/jwt-decoder" class="tool-row">
+<span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+<div class="tool-row-body"><div class="tool-row-name">Decodificador JWT</div><div class="tool-row-desc">Pega un JSON Web Token para ver su encabezado, carga útil y firma decodificados al instante, directamente en tu navegador.</div></div>
+<span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+</a>
+<a href="/tool/tools/password-generator" class="tool-row">
+<span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+<div class="tool-row-body"><div class="tool-row-name">Generador de contraseñas</div><div class="tool-row-desc">Establece la longitud y los tipos de caracteres que desees, y luego genera una contraseña criptográficamente aleatoria al instante; nada se almacena ni se envía a ningún lugar.</div></div>
+<span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+</a>
+</div>
+</section>
+<section class="page-section">
+<div class="section-header"><h2>Más información en IA y herramientas para desarrolladores.</h2></div>
+<div class="article-list">
+<a href="/es/ai-technology/how-large-language-models-work" class="article-card">
+<span class="article-card-topic">Herramientas de IA y para desarrolladores</span>
+<h3>Cómo funcionan los modelos de lenguaje a gran escala: una guía en lenguaje sencillo.</h3>
+<p>Una explicación clara de cómo se entrenan los modelos de lenguaje complejos, qué son los tokens y las ventanas de contexto, por qué cometen errores y cómo utilizarlos correctamente.</p>
+<span class="article-card-meta">Lectura de 5 minutos</span>
+</a>
+<a href="/es/ai-technology/json-vs-yaml-vs-xml-vs-csv" class="article-card">
+<span class="article-card-topic">Herramientas de IA y para desarrolladores</span>
+<h3>JSON vs YAML vs XML vs CSV: ¿Qué formato de datos debería utilizar?</h3>
+<p>Comparación entre JSON, YAML, XML y CSV: ventajas, desventajas, errores comunes y una regla sencilla para elegir el formato de datos adecuado para tu proyecto.</p>
+<span class="article-card-meta">Lectura de 4 minutos</span>
+</a>
+<a href="/es/ai-technology/open-source-licenses-explained" class="article-card">
+<span class="article-card-topic">Herramientas de IA y para desarrolladores</span>
+<h3>Explicación de las licencias de código abierto: MIT, Apache, GPL y cómo elegir la más adecuada.</h3>
+<p>Una guía práctica sobre licencias de código abierto: permisivas frente a copyleft, en qué se diferencian MIT, Apache 2.0, GPL y AGPL, y cómo elegir una o cumplir con ella.</p>
+<span class="article-card-meta">Lectura de 3 minutos</span>
+</a>
+</div>
+</section>
+</main>
+<div id="footer"></div>
+<script src="/assets/js/main.js?v=20261115"></script>
+</body>
+</html>

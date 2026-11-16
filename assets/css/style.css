@@ -1136,6 +1136,9 @@ textarea.mono { font-family: var(--font-mono); font-size: .86rem; }
 .site-nav a[aria-current="page"] { color: var(--gray-900); box-shadow: inset 0 -2px 0 var(--primary); border-radius: 0; }
 
 .site-header-actions { display: flex; align-items: center; gap: var(--space-3); flex-shrink: 0; }
+.lang-switch { padding: 4px 10px; font-size: .8rem; font-weight: 700; letter-spacing: .04em; color: var(--gray-700); border: 1px solid var(--gray-300); border-radius: var(--radius-sm); }
+.lang-switch:hover { color: var(--gray-900); border-color: var(--gray-900); text-decoration: none; }
+.lang-switch[hidden] { display: none; }
 
 .site-search { position: relative; }
 .site-search input {

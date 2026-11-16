@@ -46,11 +46,36 @@ def served_path(file: Path) -> str:
     return path.replace('/tool/tools/global/', '/tool/tools/')
 
 
+def build_spanish_sitemap(problems):
+    """sitemap-es.xml lists only translated /es/ pages (lang="es"), each with its hreflang cluster."""
+    entries = []
+    for file in sorted((ROOT / 'es').rglob('*.html')):
+        text = file.read_text(encoding='utf-8')
+        if not re.search(r'<html[^>]*\blang="es"', text):
+            continue   # still an untranslated English copy
+        canonical = re.search(r'<link rel="canonical" href="([^"]+)"', text)
+        english = re.search(r'<link rel="alternate" hreflang="en" href="([^"]+)"', text)
+        if not canonical or not english:
+            problems.append(f'es page without canonical/hreflang: {file.relative_to(ROOT)}')
+            continue
+        es_url = canonical.group(1)
+        entries.append(
+            f'<url>\n<loc>{es_url}</loc>\n<lastmod>{TODAY}</lastmod>\n'
+            f'<xhtml:link rel="alternate" hreflang="en" href="{english.group(1)}"/>\n'
+            f'<xhtml:link rel="alternate" hreflang="es" href="{es_url}"/>\n'
+            f'<xhtml:link rel="alternate" hreflang="x-default" href="{english.group(1)}"/>\n</url>\n')
+    if entries:
+        (ROOT / 'sitemap-es.xml').write_text(
+            '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+            'xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + ''.join(entries) + '</urlset>\n')
+    return len(entries)
+
+
 def main() -> int:
     pages, problems = {}, []
     for file in sorted(ROOT.rglob('*.html')):
         rel = file.relative_to(ROOT)
-        if rel.name in SKIP or rel.parts[0] in ('assets', 'components', 'node_modules', '.git') or rel.parts[0].startswith('_'):
+        if rel.name in SKIP or rel.parts[0] in ('assets', 'components', 'node_modules', '.git', 'es') or rel.parts[0].startswith('_'):
             continue
         match = re.search(r'<link rel="canonical" href="([^"]+)"', file.read_text(encoding='utf-8'))
         if not match:
@@ -77,6 +102,10 @@ def main() -> int:
     leftover = sorted(set(pages) - assigned)
     if leftover:
         problems.append(f'pages in no sitemap: {leftover}')
+
+    spanish = build_spanish_sitemap(problems)
+    if spanish:
+        written.append(('sitemap-es.xml', spanish))
 
     index = ''.join(f'<sitemap>\n<loc>{SITE}/{name}</loc>\n<lastmod>{TODAY}</lastmod>\n</sitemap>\n' for name, _ in written)
     (ROOT / 'sitemap.xml').write_text(

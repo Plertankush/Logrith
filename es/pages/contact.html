@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto Logrith — Ponte en contacto</title>
+<meta name="description" content="Contacta con Logrith para consultas generales, sugerencias de herramientas, informes de errores o colaboraciones comerciales. Respondemos en un plazo de 24 horas.">
+<meta name="keywords" content="contact logrith, logrith help, logrith inquiry, logrith support">
+<link rel="canonical" href="https://logrith.in/es/pages/contact">
+  <link rel="alternate" hreflang="x-default" href="https://logrith.in/pages/contact">
+  <link rel="alternate" hreflang="es" href="https://logrith.in/es/pages/contact">
+  <link rel="alternate" hreflang="en" href="https://logrith.in/pages/contact">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
+<link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261115">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-BPJ4332XJH');</script>
+</head>
+<body class="page-contact">
+<a class="skip-link" href="#main">Saltar al contenido</a>
+<div id="navbar"></div>
+<main id="main">
+<!-- HERO -->
+<header class="page-hero">
+<div class="page-hero-inner">
+<nav class="breadcrumb" aria-label="Migaja de pan"><a href="/es/">Inicio</a> › Contacto</nav>
+<h1>Ponte en <span>contacto</span></h1>
+<p>¿Tienes alguna pregunta, has encontrado un error o quieres sugerir una nueva herramienta? Leemos todos los mensajes y respondemos en un plazo de 24 horas.</p>
+</div>
+</header>
+<!-- PAGE TABS -->
+<div class="page-tabs">
+<a class="page-tab active" href="contact"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#mail"></use></svg> Contacto</a> <a class="page-tab" href="support"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#tool"></use></svg> Soporte</a> <a class="page-tab" href="business"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#users"></use></svg> Negocios</a>
+</div>
+<div class="contact-wrap container">
+<!-- LEFT -->
+<div class="contact-info">
+<h2>¿Cómo podemos ayudar?</h2>
+<div class="contact-card">
+<span class="cc-icon"><svg class="icon"><use href="/assets/svg/icons.svg#bug"></use></svg></span>
+<div>
+<h3>Informar de un error</h3>
+<p>¿La herramienta no funciona? Díganos cuál es, qué sucedió y qué esperaba. Lo solucionaremos en 48 horas.</p>
+</div>
+</div>
+<div class="contact-card">
+<span class="cc-icon"><svg class="icon"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+<div>
+<h3>Sugerir una herramienta</h3>
+<p>¿Tienes una idea? Desarrollamos primero las herramientas más solicitadas. Tu sugerencia es importante.</p>
+</div>
+</div>
+<div class="contact-card">
+<span class="cc-icon"><svg class="icon"><use href="/assets/svg/icons.svg#users"></use></svg></span>
+<div>
+<h3>Consultas comerciales</h3>
+<p>¿Publicidad, colaboraciones o integraciones? Contáctanos en <a href="mailto:contact@logrith.in">contact@logrith.in</a></p>
+</div>
+</div>
+<div class="contact-card">
+<span class="cc-icon"><svg class="icon"><use href="/assets/svg/icons.svg#clock"></use></svg></span>
+<div>
+<h3>Tiempo de respuesta</h3>
+<p>Normalmente respondemos en un plazo de <strong>24 horas</strong> en días laborables.</p>
+</div>
+</div>
+<div class="contact-card">
+<span class="cc-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#mail"></use></svg></span>
+<div>
+<h3>Correo electrónico directo</h3>
+<p>Envíanos un correo electrónico a <a class="u-dbe490" href="mailto:hello@logrith.in">hello@logrith.in</a></p>
+</div>
+</div>
+<div class="page-links">
+<p>¿Buscas algo en concreto?</p>
+<a href="support"><svg class="icon"><use href="/assets/svg/icons.svg#bug"></use></svg> Informar de un problema técnico →</a>
+<a href="business"><svg class="icon"><use href="/assets/svg/icons.svg#users"></use></svg> Negocios y sociedades →</a>
+</div>
+</div>
+<!-- RIGHT FORM -->
+<div class="form-card">
+<h2>Enviar mensaje</h2>
+<div class="msg-error" id="msg-error"></div>
+<div id="contact-form">
+<div class="cf-group">
+<label>Nombre <span class="req">*</span></label>
+<input type="text" id="cf-name" placeholder="Su nombre completo" autocomplete="name">
+<div class="field-error" id="err-name">Por favor, introduzca su nombre.</div>
+</div>
+<div class="cf-group">
+<label>Correo electrónico <span class="req">*</span></label>
+<input type="email" id="cf-email" placeholder="tú@ejemplo.com" autocomplete="email">
+<div class="field-error" id="err-email">Por favor, introduce una dirección de correo electrónico válida.</div>
+</div>
+<div class="cf-group">
+<label>Sujeto</label><select id="cf-subject"><option value="general"> Consulta general</option><option value="bug"> Informe de errores</option><option value="suggestion"> Sugerencia de herramienta</option><option value="business"> Empresa / Sociedad</option><option value="other"> Otro</option></select>
+</div>
+<div class="cf-group">
+<label>Mensaje <span class="req">*</span></label>
+<textarea id="cf-message" placeholder="Describe tu pregunta, sugerencia o problema en detalle..." oninput="updateCharCount(this, 'cc-msg', 20, 2000)"></textarea>
+<div class="char-count" id="cc-msg">0 / 2000</div>
+<div class="field-error" id="err-message">El mensaje debe tener al menos 20 caracteres.</div>
+</div>
+<button class="submit-btn" id="cf-submit" onclick="submitForm('contact')">
+<span id="btn-text">Enviar mensaje</span> <span id="btn-arrow">→</span>
+</button>
+<p class="form-footer">Nunca compartimos tu correo electrónico. Consulta nuestra <a href="privacy">Política de Privacidad</a> .</p>
+</div>
+<div class="form-success" id="form-success">
+<span class="fs-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg></span>
+<h3>¡Mensaje enviado!</h3>
+<p>Gracias por contactarnos. Le responderemos en un plazo de 24 horas a la dirección de correo electrónico que nos proporcionó.</p>
+<button class="reset-btn" onclick="resetForm()">Enviar otro mensaje</button>
+</div>
+</div>
+</div>
+<!-- CONTACT FAQ -->
+<section class="u-d33dc1">
+<h2 class="u-359580">Antes de escribir</h2>
+<div class="mb-16">
+<h3 class="u-e98619">¿Necesito crear una cuenta para ponerme en contacto con ustedes?</h3>
+<p class="u-37832d">No. El formulario de esta página no requiere iniciar sesión, y no solicitamos una cuenta cuando nos escribe directamente. Simplemente envíe su mensaje y le responderemos a la dirección de correo electrónico que nos proporcione.</p>
+</div>
+<div class="mb-16">
+<h3 class="u-e98619">¿Qué debo incluir en un informe de errores?</h3>
+<p class="u-37832d">El nombre de la herramienta, qué intentabas hacer, qué sucedió exactamente y tu navegador y dispositivo, si los conoces (por ejemplo, "Chrome en Android"). Una captura de pantalla es útil, pero no imprescindible; una descripción clara suele ser suficiente para que podamos reproducir el problema.</p>
+</div>
+<div class="mb-16">
+<h3 class="u-e98619">¿Cómo decides qué sugerencias de herramientas desarrollar?</h3>
+<p class="u-37832d">Hacemos un seguimiento de todas las sugerencias que recibimos a través de este formulario. Las herramientas que se solicitan más de una vez, o que cubren una necesidad evidente en una categoría existente, suelen tener prioridad. No hay plazos garantizados, pero ninguna sugerencia se ignora.</p>
+</div>
+<div class="mb-16">
+<h3 class="u-e98619">¿Es esta página el lugar adecuado para una pregunta sobre datos o privacidad?</h3>
+<p class="u-37832d">Sí, aquí se aceptan preguntas generales sobre privacidad. Para obtener información detallada sobre cómo Logrith gestiona los datos, consulte primero la <a class="u-035cc8" href="privacy">Política de Privacidad</a> ; la mayoría de las preguntas ya están respondidas allí.</p>
+</div>
+<div>
+<h3 class="u-e98619">Envié un mensaje pero no he recibido respuesta, ¿qué hago ahora?</h3>
+<p class="u-37832d">Nuestro objetivo es responder en un plazo de 24 horas en días laborables. Si ha transcurrido más tiempo, revise primero su carpeta de correo no deseado y, si el mensaje original no se envió correctamente, intente escribir directamente a <a class="u-035cc8" href="mailto:hello@logrith.in">hello@logrith.in</a> .</p>
+</div>
+</section>
+</main>
+<div id="footer"></div>
+<script src="/assets/js/main.js?v=20261115"></script>
+<script>
+/* ── SHARED FORM UTILITIES ── */
+function updateCharCount(el, countId, min, max) {
+  var len = el.value.length;
+  var el2 = document.getElementById(countId);
+  if (el2) el2.textContent = len + ' / ' + max;
+  if (len > max) el.value = el.value.slice(0, max);
+}
+
+function showFieldError(fieldId, errId, show) {
+  var f = document.getElementById(fieldId);
+  var e = document.getElementById(errId);
+  if (!f || !e) return;
+  if (show) { f.classList.add('error'); e.classList.add('show'); }
+  else { f.classList.remove('error'); e.classList.remove('show'); }
+}
+
+function validateEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function submitForm(page) {
+  var name    = (document.getElementById('cf-name')    || {}).value || '';
+  var email   = (document.getElementById('cf-email')   || {}).value || '';
+  var message = (document.getElementById('cf-message') || {}).value || '';
+  var subject = (document.getElementById('cf-subject') ||
+                 document.getElementById('cf-issue')   ||
+                 document.getElementById('cf-inquiry') || {}).value || '';
+
+  // Clear previous errors
+  showFieldError('cf-name',    'err-name',    false);
+  showFieldError('cf-email',   'err-email',   false);
+  showFieldError('cf-message', 'err-message', false);
+  var errBox = document.getElementById('msg-error');
+  if (errBox) { errBox.textContent = ''; errBox.classList.remove('show'); }
+
+  // Validate
+  var valid = true;
+  if (!name.trim())              { showFieldError('cf-name',    'err-name',    true); valid = false; }
+  if (!validateEmail(email))     { showFieldError('cf-email',   'err-email',   true); valid = false; }
+  if (message.trim().length < 20){ showFieldError('cf-message', 'err-message', true); valid = false; }
+  if (!valid) return;
+
+  // Spam check
+  if (name.trim().length < 2) {
+    showFieldError('cf-name', 'err-name', true);
+    document.getElementById('err-name').textContent = 'Name too short.';
+    return;
+  }
+
+  // Routing logic
+  var to = 'hello@logrith.in';
+  if (page === 'contact') {
+    if (subject === 'bug')      to = 'support@logrith.in';
+    if (subject === 'business') to = 'contact@logrith.in';
+  } else if (page === 'support') {
+    to = 'support@logrith.in';
+  } else if (page === 'business') {
+    to = 'contact@logrith.in';
+  }
+
+  // Loading state
+  var btn = document.getElementById('cf-submit');
+  var btnText = document.getElementById('btn-text');
+  var btnArrow = document.getElementById('btn-arrow');
+  if (btn) btn.disabled = true;
+  if (btnText) btnText.textContent = 'Sending...';
+  if (btnArrow) btnArrow.textContent = '⟳';
+
+  // Extra fields
+  var toolName    = (document.getElementById('cf-tool')    || {}).value || '';
+  var companyName = (document.getElementById('cf-company') || {}).value || '';
+
+  // POST to backend
+  fetch('https://about.ankushmaur4.workers.dev', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      name: name.trim(),
+      email: email.trim(),
+      subject: subject,
+      message: message.trim(),
+      page: page,
+      to: to,
+      toolName: toolName.trim(),
+      companyName: companyName.trim()
+    })
+  })
+  .then(function(res) {
+    if (!res.ok) throw new Error('Server error ' + res.status);
+    return res.json();
+  })
+  .then(function() {
+    // Success
+    var form = document.getElementById('contact-form');
+    var success = document.getElementById('form-success');
+    if (form) form.style.display = 'none';
+    if (success) success.style.display = 'block';
+  })
+  .catch(function(err) {
+    // Error
+    if (btn) btn.disabled = false;
+    if (btnText) btnText.textContent = 'Send Message';
+    if (btnArrow) btnArrow.textContent = '→';
+    if (errBox) {
+      errBox.textContent = 'Something went wrong. Please try again or email us directly at hello@logrith.in';
+      errBox.classList.add('show');
+    }
+  });
+}
+
+function resetForm() {
+  var form = document.getElementById('contact-form');
+  var success = document.getElementById('form-success');
+  if (form) { form.style.display = ''; form.reset ? form.reset() : null; }
+  if (success) success.style.display = 'none';
+  // Reset all inputs manually
+  ['cf-name','cf-email','cf-message','cf-subject','cf-tool','cf-company','cf-issue','cf-inquiry'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.value = el.tagName === 'SELECT' ? el.options[0].value : '';
+  });
+  var btn = document.getElementById('cf-submit');
+  var btnText = document.getElementById('btn-text');
+  var btnArrow = document.getElementById('btn-arrow');
+  if (btn) btn.disabled = false;
+  if (btnText) btnText.textContent = 'Send Message';
+  if (btnArrow) btnArrow.textContent = '→';
+}
+</script>
+</body>
+</html>

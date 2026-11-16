@@ -14,6 +14,12 @@
   const SEARCH_INDEX_URL = '/assets/data/tools.json';
   const MAX_RESULTS = 8;
 
+  /* The Spanish site lives under /es/ and has its own components. Ads stay off there until the English site is approved. */
+  const LANG = document.documentElement.lang === 'es' ? 'es' : 'en';
+  const URL_PREFIX = LANG === 'es' ? '/es' : '';
+  const COMPONENTS_DIR = LANG === 'es' ? '/components/es' : '/components';
+  const ADS_ENABLED = LANG === 'en';
+
 
   /* 1. Shared header & footer
      ====================================================================== */
@@ -39,13 +45,25 @@
     });
   }
 
+  /** Show the EN | ES link only when this page declares a translation in its <head>. */
+  function initLanguageSwitch(root) {
+    const link = root.querySelector('[data-lang-switch]');
+    const alternate = document.querySelector(`link[rel="alternate"][hreflang="${LANG === 'es' ? 'en' : 'es'}"]`);
+    if (!link || !alternate) return;
+    link.href = new URL(alternate.href).pathname;
+    link.textContent = LANG === 'es' ? 'EN' : 'ES';
+    link.lang = LANG === 'es' ? 'en' : 'es';
+    link.hidden = false;
+  }
+
   async function initChrome() {
     const [header] = await Promise.all([
-      loadPartial('navbar', '/components/navbar.html'),
-      loadPartial('footer', '/components/footer.html'),
+      loadPartial('navbar', `${COMPONENTS_DIR}/navbar.html`),
+      loadPartial('footer', `${COMPONENTS_DIR}/footer.html`),
     ]);
     if (!header) return;
     markCurrentLinks(header);
+    initLanguageSwitch(header);
     const input = header.querySelector('[data-tool-search]');
     if (input) initToolSearch(input);
   }
@@ -134,7 +152,7 @@
       const matches = searchTools(await loadSearchIndex(), query);
       results.innerHTML = matches.length
         ? matches.map((tool) => (
-            `<a role="option" href="${tool.url}">` +
+            `<a role="option" href="${URL_PREFIX}${tool.url}">` +
             `<span class="sr-name">${escapeHtml(tool.name)}</span>` +
             `<span class="sr-cat">${escapeHtml(tool.category)}</span></a>`
           )).join('')
@@ -241,7 +259,7 @@
 
   /* Boot
      ====================================================================== */
-  loadAds();
+  if (ADS_ENABLED) loadAds();
   initChrome();
   document.querySelectorAll('[data-tool-search]').forEach((input) => {
     if (!input.closest('#navbar')) initToolSearch(input);
