@@ -390,9 +390,8 @@ Logrith/
 │
 ├── robots.txt
 ├── sitemap.xml
-├── sitemap-blog.xml
-├── sitemap-pages.xml
-├── sitemap-tools.xml
+├── sitemap-en-*.xml   (pages, ai-technology, startups-business, blog, tools)
+├── sitemap-es-*.xml   (same sections for /es/)
 │
 └── site.webmanifest
 ```

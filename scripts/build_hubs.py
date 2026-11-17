@@ -59,8 +59,8 @@ def head(title, description, path, schema):
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
   <link rel="preload" href="/components/navbar.html" as="fetch" type="text/html" crossorigin>
   <link rel="preload" href="/components/footer.html" as="fetch" type="text/html" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=20261115">
-  <link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
+  <link rel="stylesheet" href="/assets/css/style.css?v=20261117">
+  <link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
@@ -106,7 +106,7 @@ def page(title, description, path, schemas, body):
 </main>
 
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261115"></script>
+<script src="/assets/js/main.js?v=20261117"></script>
 </body>
 </html>
 ''')

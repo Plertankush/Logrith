@@ -35,13 +35,13 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261115">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "datePublished": "2026-10-20", "dateModified": "2026-10-31", "headline": "Extraer texto de un PDF, gratis y privado", "description": "Cómo extraer texto legible y copiable de cualquier PDF, directamente en tu navegador.", "author": {"@type": "Person", "name": "Plert Ankush", "url": "https://logrith.in/es/pages/founder"}, "publisher": {"@id": "https://logrith.in/#organization"}, "mainEntityOfPage": "https://logrith.in/es/tool/blog/extract-text-from-pdf"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Extraer texto de un PDF", "url": "https://logrith.in/es/tool/blog/extract-text-from-pdf", "isPartOf": {"@type": "Blog", "name": "Logrith Blog", "url": "https://logrith.in/es/tool/blog/"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "PDF a texto", "url": "https://logrith.in/es/tool/tools/pdf-to-text", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Hogar", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Guías de herramientas", "item": "https://logrith.in/es/tool/blog/"}, {"@type": "ListItem", "position": 4, "name": "Herramientas de imagen y PDF", "item": "https://logrith.in/es/tool/blog/categories/image-pdf-tools"}, {"@type": "ListItem", "position": 5, "name": "PDF a texto", "item": "https://logrith.in/es/tool/blog/extract-text-from-pdf"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Guías de herramientas", "item": "https://logrith.in/es/tool/blog/"}, {"@type": "ListItem", "position": 4, "name": "Herramientas de imagen y PDF", "item": "https://logrith.in/es/tool/blog/categories/image-pdf-tools"}, {"@type": "ListItem", "position": 5, "name": "PDF a texto", "item": "https://logrith.in/es/tool/blog/extract-text-from-pdf"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Por qué esta herramienta no extrae el texto de un PDF escaneado?", "acceptedAnswer": {"@type": "Answer", "text": "Un PDF escaneado es en realidad una foto de una página, no datos de texto reales; las herramientas de extracción que leen la capa de texto de un PDF no encuentran nada porque no existe. Los documentos escaneados requieren OCR (reconocimiento óptico de caracteres), una tecnología diferente que lee el texto de una imagen."}}, {"@type": "Question", "name": "¿El texto extraído conserva el formato original?", "acceptedAnswer": {"@type": "Answer", "text": "En general, no exactamente. El texto extraído conserva las palabras y el orden de lectura general, pero los detalles de maquetación, como el formato de varias columnas, las tablas y el espaciado preciso, a menudo no se traducen correctamente al texto plano."}}, {"@type": "Question", "name": "¿Es seguro extraer texto de un PDF confidencial utilizando una herramienta en línea?", "acceptedAnswer": {"@type": "Answer", "text": "Solo si la herramienta procesa el archivo completamente en tu navegador. Muchas herramientas de conversión de PDF a texto suben el archivo a un servidor. La herramienta de PDF a texto de Logrith nunca lo hace: todo el proceso se ejecuta localmente usando PDF.js."}}, {"@type": "Question", "name": "¿Cómo puedo saber si un PDF contiene texto real o si es solo una imagen escaneada?", "acceptedAnswer": {"@type": "Answer", "text": "Prueba a seleccionar el texto directamente en el visor de PDF. Si puedes hacer clic y arrastrar para resaltar palabras individuales, el PDF tiene una capa de texto real. Si al hacer clic solo se selecciona la página completa como una imagen, se trata de un documento escaneado que requiere OCR."}}]}</script>
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
@@ -57,7 +57,7 @@
 <div id="navbar"></div>
 <main id="main">
 <header class="page-hero"><div class="page-hero-inner">
-<nav class="breadcrumb" aria-label="Migaja de pan"><a href="/es/">Inicio</a> › <a href="/es/tool/">Herramientas</a> › <a href="/es/tool/blog/">Guías de herramientas</a> › <a href="/es/tool/blog/categories/image-pdf-tools">Herramientas de imagen y PDF</a> › PDF a texto</nav>
+<nav class="breadcrumb" aria-label="Ruta de navegación"><a href="/es/">Inicio</a> › <a href="/es/tool/">Herramientas</a> › <a href="/es/tool/blog/">Guías de herramientas</a> › <a href="/es/tool/blog/categories/image-pdf-tools">Herramientas de imagen y PDF</a> › PDF a texto</nav>
 <h1>Cómo extraer texto legible y copiable de cualquier PDF</h1>
 <p>Copiar un párrafo de un PDF debería ser tan sencillo como seleccionar texto en cualquier documento, pero muchos PDF lo complican innecesariamente: diseños bloqueados, saltos de columna incómodos o contenido que se necesita en bloque en lugar de seleccionarlo cuidadosamente uno a uno. Extraer el texto completo de una sola vez soluciona este problema, siempre y cuando el PDF contenga texto real y no sea una imagen escaneada con extensión de archivo PDF.</p>
 <a href="/es/tool/tools/pdf-to-text" class="btn btn-primary btn-lg">
@@ -106,8 +106,8 @@
 <h2 id="comparison">Comparación con otras herramientas de conversión de PDF a texto.</h2>
 <div class="table-wrap">
 <table class="table">
-<tr><th>Característica</th><th>Logrith PDF a texto</th><th>iLovePDF</th><th>PDF pequeño</th></tr>
-<tr><td>Ubicación de procesamiento</td><td>Completamente en el navegador</td><td>Carga del servidor</td><td>Carga del servidor</td></tr>
+<tr><th>Característica</th><th>Logrith PDF a texto</th><th>iLovePDF</th><th>Smallpdf</th></tr>
+<tr><td>Ubicación de procesamiento</td><td>Completamente en el navegador</td><td>Subida a un servidor</td><td>Subida a un servidor</td></tr>
 <tr><td>Reconocimiento óptico de caracteres (OCR) para archivos PDF escaneados</td><td>No, solo extracción de la capa de texto.</td><td>Sí, el OCR está disponible como herramienta independiente.</td><td>Sí, el reconocimiento óptico de caracteres (OCR) está disponible en los planes de pago.</td></tr>
 <tr><td>Límite de uso gratuito</td><td>Ilimitado</td><td>Sin límite de tamaño de archivo.</td><td>2 tareas al día (plan gratuito)</td></tr>
 <tr><td>Se requiere cuenta</td><td>No</td><td>No</td><td>No</td></tr>
@@ -171,6 +171,6 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261115"></script>
+<script src="/assets/js/main.js?v=20261117"></script>
 </body>
 </html>

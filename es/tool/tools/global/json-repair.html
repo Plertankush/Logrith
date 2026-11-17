@@ -34,10 +34,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261115">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Logrith Herramienta de reparación JSON", "url": "https://logrith.in/es/tool/tools/json-repair", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web Browser", "description": "Herramienta basada en navegador que valida JSON, corrige automáticamente errores de sintaxis comunes como comas al final y claves sin comillas, formatea y minimiza JSON, y convierte JSON a interfaces TypeScript o CSV, sin necesidad de subir datos a un servidor.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": ["Validate JSON with line and column error location", "Automatically repair trailing commas, unquoted keys and single-quoted strings", "Format and beautify JSON with selectable indent", "Minify JSON", "Collapsible JSON tree viewer", "Convert JSON to a TypeScript interface", "Convert array-of-objects JSON to CSV", "100% local browser processing"]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Hogar", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas globales", "item": "https://logrith.in/es/tool/categories/global-tools"}, {"@type": "ListItem", "position": 4, "name": "Herramienta de reparación JSON", "item": "https://logrith.in/es/tool/tools/json-repair"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas globales", "item": "https://logrith.in/es/tool/categories/global-tools"}, {"@type": "ListItem", "position": 4, "name": "Herramienta de reparación JSON", "item": "https://logrith.in/es/tool/tools/json-repair"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Puede esta herramienta corregir cualquier JSON dañado?", "acceptedAnswer": {"@type": "Answer", "text": "No. El paso de reparación automática se centra en tres problemas comunes y bien definidos: comas al final de las líneas, claves de objeto sin comillas y valores de cadena entre comillas simples. No puede recuperar datos que realmente falten, corregir estructuras profundamente dañadas o truncadas, ni adivinar lo que usted quiso escribir. Para cualquier otro problema que no se pueda solucionar con estas tres correcciones, la herramienta le indicará la ubicación exacta del error para que pueda corregirlo manualmente."}}, {"@type": "Question", "name": "¿Mis datos JSON están subidos a algún sitio?", "acceptedAnswer": {"@type": "Answer", "text": "No. Todo el análisis, reparación, formateo y conversión se realizan localmente en su navegador mediante JavaScript. Sus datos nunca se envían a Logrith ni a ningún otro servidor."}}, {"@type": "Question", "name": "¿La herramienta me indica exactamente dónde está el error?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, cuando el analizador JSON del navegador informa la posición de un carácter, la herramienta convierte esa posición en un número de línea y columna para que puedas ir directamente al problema."}}, {"@type": "Question", "name": "¿Puedo convertir JSON a una interfaz TypeScript?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Una vez que el JSON se analiza correctamente, la herramienta genera una interfaz básica de TypeScript infiriendo el tipo de cada campo, incluidos los objetos anidados y las matrices."}}, {"@type": "Question", "name": "¿Puedo convertir JSON a CSV?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, si el JSON de nivel superior es una matriz de objetos planos. La herramienta crea un encabezado CSV a partir de la unión de todas las claves y escribe una fila por objeto. Si el JSON no tiene ese formato, la herramienta explica por qué no es posible exportar a CSV, en lugar de generar un resultado incompleto."}}, {"@type": "Question", "name": "¿Esta herramienta es de uso gratuito?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, esta herramienta es completamente gratuita, sin necesidad de cuenta, registro ni límite de uso más allá de lo que su navegador pueda soportar."}}]}</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
 <script>
@@ -52,7 +52,7 @@
 <main>
 <header class="page-hero">
 <div class="page-hero-inner">
-<nav class="breadcrumb" aria-label="Migaja de pan">
+<nav class="breadcrumb" aria-label="Ruta de navegación">
 <a href="/es/">Inicio</a> › <a href="/es/tool/categories/global-tools">Herramientas globales</a> › Herramienta de reparación JSON
       </nav>
 <h1>Herramienta de reparación de JSON: corrige <span>y valida JSON.</span></h1>
@@ -231,7 +231,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261115"></script>
+<script src="/assets/js/main.js?v=20261117"></script>
 <script>
 const inputEl = document.getElementById('json-input');
 const outputEl = document.getElementById('json-output');

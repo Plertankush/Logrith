@@ -86,4 +86,4 @@ Logrith publishes explainer blog posts for its highest-traffic tools at https://
 - Most tools process data entirely client-side (in-browser); server upload is used only where technically required (noted per tool).
 - No login or account system; no paywalled tools.
 - Monetization is via non-intrusive display ads (Google AdSense) only — no sponsored tool rankings, no affiliate manipulation of results.
-- Sitemaps: https://logrith.in/sitemap.xml (index), https://logrith.in/sitemap-tools.xml, https://logrith.in/sitemap-global.xml, https://logrith.in/sitemap-blog.xml, https://logrith.in/sitemap-pages.xml
+- Sitemaps: https://logrith.in/sitemap.xml (index of sitemap-en-*.xml and sitemap-es-*.xml: pages, ai-technology, startups-business, blog, tools)

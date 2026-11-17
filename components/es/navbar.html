@@ -1,31 +1,54 @@
-<!-- Shared site header. Injected into #navbar by /assets/js/main.js; styles live in style.css (section 12). -->
-<!-- The checkbox drives the mobile drawer with CSS only. It must stay a sibling of .site-header, .drawer-overlay and .drawer. -->
-<input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Alternar menú de navegación">
+<!-- Cabecera compartida en español. Se inyecta en #navbar desde /assets/js/main.js; los estilos están en style.css (sección 12). -->
+<!-- Escrita a mano: mantenla alineada con /components/navbar.html. -->
+
+<!-- La casilla controla el menú móvil solo con CSS. Debe seguir siendo hermana de .site-header, .drawer-overlay y .drawer. -->
+<input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Abrir o cerrar el menú de navegación">
+
 <header class="site-header">
-<a href="/es/" class="site-logo" aria-label="Logrith inicio">
-<img src="/assets/img/logo.webp" alt="" width="28" height="28">
-<span>Logrith</span>
-</a>
-<nav class="site-nav" aria-label="Primario">
-<a href="/es/ai-technology/">Herramientas de IA y para desarrolladores</a> <a href="/es/tool/">Herramientas</a> <a href="/es/startups-business/">de compilación y distribución</a>
-</nav>
-<div class="site-header-actions">
-<a class="lang-switch" data-lang-switch="" hidden="">ES</a> <a aria-label="Search tools" class="site-header-search" href="/es/tool/"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#search"></use></svg></a> <label aria-label="Open menu" class="menu-btn" for="menu-toggle"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#menu"></use></svg></label>
-</div>
+  <a href="/es/" class="site-logo" aria-label="Logrith, inicio">
+    <img src="/assets/img/logo.webp" alt="" width="28" height="28">
+    <span>Logrith</span>
+  </a>
+
+  <nav class="site-nav" aria-label="Principal">
+    <a href="/es/ai-technology/">IA y herramientas para desarrolladores</a>
+    <a href="/es/startups-business/">Construir y enviar</a>
+    <a href="/es/tool/">Herramientas</a>
+  </nav>
+
+  <div class="site-header-actions">
+    <a class="lang-switch" data-lang-switch hidden>EN</a>
+    <button type="button" class="site-header-search" data-search-toggle aria-label="Buscar herramientas" aria-expanded="false" aria-controls="header-search"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#search"></use></svg></button>
+    <label for="menu-toggle" class="menu-btn" aria-label="Abrir menú"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#menu"></use></svg></label>
+  </div>
+
+  <!-- Panel de búsqueda: lo abre el botón de búsqueda y lo rellena initToolSearch() en main.js. -->
+  <div class="header-search" id="header-search" hidden>
+    <div class="header-search-inner">
+      <input type="search" data-tool-search placeholder="Buscar herramientas, p. ej. formateador JSON" aria-label="Buscar herramientas" autocomplete="off" spellcheck="false" enterkeyhint="search">
+    </div>
+  </div>
 </header>
+
 <label for="menu-toggle" class="drawer-overlay" aria-hidden="true"></label>
+
 <aside class="drawer" aria-label="Navegación móvil">
-<div class="drawer-top">
-<a href="/es/" class="drawer-title">Logrith</a>
-<label for="menu-toggle" class="drawer-close" aria-label="Cerrar menú"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg></label>
-</div>
-<a href="/es/">Hogar</a>
-<a href="/es/ai-technology/">Herramientas de IA y para desarrolladores</a>
-<a href="/es/startups-business/">Construir y enviar</a>
-<a href="/es/tool/">Herramientas</a>
-<hr>
-<a href="/es/pages/about">Acerca de</a>
-<a href="/es/pages/contact">Contacto</a>
-<a href="/es/pages/privacy">Privacidad</a>
-<a href="/es/pages/terms">Términos</a>
+  <div class="drawer-top">
+    <a href="/es/" class="drawer-title">Logrith</a>
+    <label for="menu-toggle" class="drawer-close" aria-label="Cerrar menú"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg></label>
+  </div>
+
+  <a href="/es/">Inicio</a>
+  <a href="/es/ai-technology/">IA y herramientas para desarrolladores</a>
+  <a href="/es/startups-business/">Construir y enviar</a>
+  <a href="/es/tool/">Herramientas</a>
+
+  <hr>
+
+  <a href="/es/pages/about">Acerca de</a>
+  <a href="/es/pages/contact">Contacto</a>
+  <a href="/es/pages/privacy">Privacidad</a>
+  <a href="/es/pages/terms">Términos</a>
+
+  <a class="drawer-lang" data-lang-switch data-lang-full hidden>English</a>
 </aside>

@@ -22,7 +22,8 @@ For each translated page the script
   * sets lang="es", a self-referencing /es/ canonical and an hreflang cluster
     (the English page gets the same cluster),
   * points internal links at the /es/ page when that page is translated,
-  * translates the shared navbar and footer into components/es/.
+  * leaves components/es/ alone: the Spanish navbar and footer are written by hand so the menu
+    labels, search box and language links stay exact (keep them in step with components/).
 
 Translation engines (``--engine``):
   web         free Google Translate web endpoint through the ``deep-translator`` package.
@@ -93,6 +94,23 @@ def serialize(soup):
 # --------------------------------------------------------------------------
 # Translation back ends and cache
 # --------------------------------------------------------------------------
+
+# Exact source strings whose machine translation is known to be wrong or awkward. They always win over the
+# translator, and are written into the cache before every run. Add the "&amp;" spelling next to a "&" one.
+GLOSSARY = {
+    'Home': 'Inicio',
+    'Breadcrumb': 'Ruta de navegación',
+    'Utilities': 'Utilidades',
+    'Smallpdf': 'Smallpdf',
+    'EMI Calculator': 'Calculadora de cuotas EMI',
+    'Server upload': 'Subida a un servidor',
+    'Passphrase Generator': 'Generador de frases de contraseña',
+    'More in Build & Ship': 'Más en Construir y enviar',
+    'More in AI & Developer Tools': 'Más en Herramientas de IA y para desarrolladores',
+    **{f'{n} min read': f'{n} min de lectura' for n in range(1, 21)},
+}
+
+
 class Cache:
     """Translated strings keyed by a hash of the source. Saved atomically after every batch."""
 
@@ -580,13 +598,14 @@ def main():
 
     is_fake = args.engine.startswith('fake')
     cache = Cache(ROOT / 'scripts' / '.fake_cache.json' if is_fake else CACHE_FILE)
+    for source, spanish in GLOSSARY.items():
+        cache.put(source, spanish)
     files = source_pages(args.wave)
     translated_paths = {url_path(f) for f in files}
     translated_paths |= {p.rstrip('/') for p in translated_paths if p != '/'}   # /x/ and /x both count
     rewrite = make_link_rewriter(translated_paths)
 
-    # 1. Parse every page and component, then translate all new strings in one go.
-    components = [ROOT / 'components' / 'navbar.html', ROOT / 'components' / 'footer.html']
+    # 1. Parse every page, then translate all new strings in one go.
     jobs = []   # (source file, destination file, soup, units, is_fragment)
     for file in files:
         text = file.read_text(encoding='utf-8')
@@ -598,9 +617,6 @@ def main():
         to_es = lambda u: es_url_for(u) if urlparse(u).path in translated_paths else u
         soup, units = build_document(text, to_es)
         jobs.append((file, ROOT / 'es' / file.relative_to(ROOT), soup, units, False, en_canonical))
-    for file in components:
-        soup, units = build_document(file.read_text(encoding='utf-8'), fragment=True)
-        jobs.append((file, ROOT / 'components' / 'es' / file.name, soup, units, True, None))
 
     all_units = [u for *_, units, _f, _c in jobs for u in units if u.sent is not None]
     if args.retry_fallbacks:

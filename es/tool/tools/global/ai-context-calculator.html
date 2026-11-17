@@ -34,10 +34,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261115">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Logrith Calculadora de tokens y contexto de IA", "url": "https://logrith.in/es/tool/tools/ai-context-calculator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web Browser", "description": "Herramienta basada en navegador que estima el número de tokens, el uso de la ventana de contexto y el coste de la API para el texto pegado, utilizando heurísticas transparentes en lugar de un tokenizador exacto oculto o fabricado, sin subir datos a un servidor.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": ["Estimate approximate token count from pasted text", "Show character, word, sentence and paragraph counts", "Compare text size against common context window sizes", "Visual context window usage bar with percentage", "Optional cost estimate from a custom price per 1K or 1M tokens", "100% local browser processing"]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Hogar", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas globales", "item": "https://logrith.in/es/tool/categories/global-tools"}, {"@type": "ListItem", "position": 4, "name": "Calculadora de tokens y contexto de IA", "item": "https://logrith.in/es/tool/tools/ai-context-calculator"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas globales", "item": "https://logrith.in/es/tool/categories/global-tools"}, {"@type": "ListItem", "position": 4, "name": "Calculadora de tokens y contexto de IA", "item": "https://logrith.in/es/tool/tools/ai-context-calculator"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Se trata de un recuento exacto de tokens como en tiktoken?", "acceptedAnswer": {"@type": "Answer", "text": "No. La tokenización exacta depende del vocabulario específico de codificación de pares de bytes de un modelo dado, algo que no se puede reproducir fielmente en el lado del cliente sin enviar el archivo de vocabulario real de ese modelo. Esta herramienta utiliza dos heurísticas transparentes y bien conocidas, y está claramente etiquetada como una estimación, no como un recuento exacto."}}, {"@type": "Question", "name": "¿Por qué el recuento de tokens difiere del recuento de palabras?", "acceptedAnswer": {"@type": "Answer", "text": "Los analizadores léxicos dividen el texto en fragmentos de subpalabras, no en palabras completas. Las palabras cortas y comunes suelen ser un solo token, mientras que las palabras más largas o menos comunes, los números, la puntuación y el código pueden dividirse en varios tokens. Por lo tanto, el número de tokens suele ser mayor que el número de palabras en un texto en inglés normal."}}, {"@type": "Question", "name": "¿Qué es una ventana de contexto?", "acceptedAnswer": {"@type": "Answer", "text": "La ventana de contexto es el número máximo de tokens que un modelo puede procesar simultáneamente, considerando tanto la entrada como su propia salida. Si el texto excede la ventana de contexto, el modelo no podrá verlo completo o la solicitud podría ser rechazada directamente."}}, {"@type": "Question", "name": "¿Esta herramienta sube mi texto a algún sitio?", "acceptedAnswer": {"@type": "Answer", "text": "No. Todo el conteo y la estimación se realizan localmente en tu navegador mediante JavaScript. Tu texto nunca se envía a Logrith ni a ningún otro servidor."}}, {"@type": "Question", "name": "¿Puedo estimar el coste de la API con esta herramienta?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Introduce tu propio precio por cada 1.000 o por cada 1.000.000 de tokens, ya que los precios de los proveedores cambian con frecuencia y varían según el modelo, y la herramienta multiplica esa tarifa por la cantidad estimada de tokens para mostrar un coste aproximado para el texto que introduzcas."}}]}</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
 <script>
@@ -52,7 +52,7 @@
 <main>
 <header class="page-hero">
 <div class="page-hero-inner">
-<nav class="breadcrumb" aria-label="Migaja de pan">
+<nav class="breadcrumb" aria-label="Ruta de navegación">
 <a href="/es/">Inicio</a> › <a href="/es/tool/categories/global-tools">Herramientas globales</a> › Calculadora de tokens y contexto de IA
       </nav>
 <h1><span>Calculadora</span> de tokens y contexto de IA</h1>
@@ -197,7 +197,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261115"></script>
+<script src="/assets/js/main.js?v=20261117"></script>
 <script>
 const textInput = document.getElementById('text-input');
 const statusEl = document.getElementById('status-msg');

@@ -11,7 +11,6 @@
   'use strict';
 
   const ADSENSE_CLIENT = 'ca-pub-2892592901355098';
-  const SEARCH_INDEX_URL = '/assets/data/tools.json';
   const MAX_RESULTS = 8;
 
   /* The Spanish site lives under /es/ and has its own components. Ads stay off there until the English site is approved. */
@@ -19,6 +18,11 @@
   const URL_PREFIX = LANG === 'es' ? '/es' : '';
   const COMPONENTS_DIR = LANG === 'es' ? '/components/es' : '/components';
   const ADS_ENABLED = LANG === 'en';
+  const SEARCH_INDEX_URL = LANG === 'es' ? '/assets/data/tools.es.json' : '/assets/data/tools.json';
+  const TEXT = {
+    en: { noResults: 'No tools found', languageNames: { en: 'English', es: 'Español' } },
+    es: { noResults: 'No se encontraron herramientas', languageNames: { en: 'English', es: 'Español' } },
+  }[LANG];
 
 
   /* 1. Shared header & footer
@@ -45,15 +49,42 @@
     });
   }
 
-  /** Show the EN | ES link only when this page declares a translation in its <head>. */
-  function initLanguageSwitch(root) {
-    const link = root.querySelector('[data-lang-switch]');
-    const alternate = document.querySelector(`link[rel="alternate"][hreflang="${LANG === 'es' ? 'en' : 'es'}"]`);
-    if (!link || !alternate) return;
-    link.href = new URL(alternate.href).pathname;
-    link.textContent = LANG === 'es' ? 'EN' : 'ES';
-    link.lang = LANG === 'es' ? 'en' : 'es';
-    link.hidden = false;
+  /** Show every language link (header, menu, footer) only when this page declares a translation in its <head>. */
+  function initLanguageSwitch() {
+    const target = LANG === 'es' ? 'en' : 'es';
+    const alternate = document.querySelector(`link[rel="alternate"][hreflang="${target}"]`);
+    if (!alternate) return;
+    document.querySelectorAll('[data-lang-switch]').forEach((link) => {
+      link.href = new URL(alternate.href).pathname;
+      link.lang = target;
+      link.hreflang = target;
+      if (link.hasAttribute('data-lang-full')) link.textContent = TEXT.languageNames[target];
+      link.hidden = false;
+    });
+  }
+
+  /** The header search button opens a panel with the search box; Escape, a click outside or "/" work as expected. */
+  function initSearchPanel(header) {
+    const toggle = header.querySelector('[data-search-toggle]');
+    const panel = header.querySelector('.header-search');
+    const input = panel && panel.querySelector('[data-tool-search]');
+    if (!toggle || !input) return;
+
+    const setOpen = (open) => {
+      panel.hidden = !open;
+      toggle.setAttribute('aria-expanded', String(open));
+      if (open) input.focus();
+    };
+
+    toggle.addEventListener('click', () => setOpen(panel.hidden));
+    document.addEventListener('keydown', (event) => {
+      const typing = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName) || document.activeElement.isContentEditable;
+      if (event.key === '/' && !typing && !event.ctrlKey && !event.metaKey) { event.preventDefault(); setOpen(true); }
+      else if (event.key === 'Escape' && !panel.hidden) { setOpen(false); toggle.focus(); }
+    });
+    document.addEventListener('click', (event) => {
+      if (!panel.hidden && !panel.contains(event.target) && !toggle.contains(event.target)) setOpen(false);
+    });
   }
 
   async function initChrome() {
@@ -61,9 +92,10 @@
       loadPartial('navbar', `${COMPONENTS_DIR}/navbar.html`),
       loadPartial('footer', `${COMPONENTS_DIR}/footer.html`),
     ]);
+    initLanguageSwitch();
     if (!header) return;
     markCurrentLinks(header);
-    initLanguageSwitch(header);
+    initSearchPanel(header);
     const input = header.querySelector('[data-tool-search]');
     if (input) initToolSearch(input);
   }
@@ -156,7 +188,7 @@
             `<span class="sr-name">${escapeHtml(tool.name)}</span>` +
             `<span class="sr-cat">${escapeHtml(tool.category)}</span></a>`
           )).join('')
-        : '<div class="sr-empty">No tools found</div>';
+        : `<div class="sr-empty">${TEXT.noResults}</div>`;
       results.hidden = false;
       input.setAttribute('aria-expanded', 'true');
     }

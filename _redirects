@@ -1,3 +1,11 @@
+# Sitemap files renamed to sitemap-<lang>-<section>.xml (sitemap.xml is the only entry point now)
+/sitemap-pages.xml     /sitemap-en-pages.xml            301
+/sitemap-topics.xml    /sitemap-en-ai-technology.xml    301
+/sitemap-blog.xml      /sitemap-en-blog.xml             301
+/sitemap-tools.xml     /sitemap-en-tools.xml            301
+/sitemap-global.xml    /sitemap-en-tools.xml            301
+/sitemap-es.xml        /sitemap-es-pages.xml            301
+
 # Creator & Growth section retired (2026-11)
 /marketing-growth          /startups-business/   301
 /marketing-growth/         /startups-business/   301
@@ -26,3 +34,11 @@
 /tool/tools/ai-context-calculator    /tool/tools/global/ai-context-calculator.html    200
 /tool/tools/markdown-to-html         /tool/tools/global/markdown-to-html.html         200
 /tool/tools/url-deduplicator         /tool/tools/global/url-deduplicator.html         200
+# Spanish copies of the Global tools
+/es/tool/tools/pdf-inspector            /es/tool/tools/global/pdf-inspector.html200
+/es/tool/tools/image-privacy-cleaner    /es/tool/tools/global/image-privacy-cleaner.html200
+/es/tool/tools/json-repair              /es/tool/tools/global/json-repair.html  200
+/es/tool/tools/csv-cleaner              /es/tool/tools/global/csv-cleaner.html  200
+/es/tool/tools/ai-context-calculator    /es/tool/tools/global/ai-context-calculator.html200
+/es/tool/tools/markdown-to-html         /es/tool/tools/global/markdown-to-html.html200
+/es/tool/tools/url-deduplicator         /es/tool/tools/global/url-deduplicator.html200

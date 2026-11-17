@@ -2,9 +2,13 @@ User-agent: *
 Allow: /
 
 Sitemap: https://logrith.in/sitemap.xml
-Sitemap: https://logrith.in/sitemap-pages.xml
-Sitemap: https://logrith.in/sitemap-topics.xml
-Sitemap: https://logrith.in/sitemap-blog.xml
-Sitemap: https://logrith.in/sitemap-global.xml
-Sitemap: https://logrith.in/sitemap-tools.xml
-Sitemap: https://logrith.in/sitemap-es.xml
+Sitemap: https://logrith.in/sitemap-en-pages.xml
+Sitemap: https://logrith.in/sitemap-en-ai-technology.xml
+Sitemap: https://logrith.in/sitemap-en-startups-business.xml
+Sitemap: https://logrith.in/sitemap-en-blog.xml
+Sitemap: https://logrith.in/sitemap-en-tools.xml
+Sitemap: https://logrith.in/sitemap-es-pages.xml
+Sitemap: https://logrith.in/sitemap-es-ai-technology.xml
+Sitemap: https://logrith.in/sitemap-es-startups-business.xml
+Sitemap: https://logrith.in/sitemap-es-blog.xml
+Sitemap: https://logrith.in/sitemap-es-tools.xml

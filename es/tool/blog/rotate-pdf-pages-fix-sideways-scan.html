@@ -35,13 +35,13 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261115">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "datePublished": "2026-10-20", "dateModified": "2026-10-31", "headline": "Girar páginas PDF: corrige escaneos de lado sin perder calidad.", "description": "Cómo rotar páginas específicas o todas las páginas de un PDF sin pérdida de calidad.", "author": {"@type": "Person", "name": "Plert Ankush", "url": "https://logrith.in/es/pages/founder"}, "publisher": {"@id": "https://logrith.in/#organization"}, "mainEntityOfPage": "https://logrith.in/es/tool/blog/rotate-pdf-pages-fix-sideways-scan"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Rotar páginas PDF", "url": "https://logrith.in/es/tool/blog/rotate-pdf-pages-fix-sideways-scan", "isPartOf": {"@type": "Blog", "name": "Logrith Blog", "url": "https://logrith.in/es/tool/blog/"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Rotar PDF", "url": "https://logrith.in/es/tool/tools/pdf-rotate", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Hogar", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Guías de herramientas", "item": "https://logrith.in/es/tool/blog/"}, {"@type": "ListItem", "position": 4, "name": "Herramientas de imagen y PDF", "item": "https://logrith.in/es/tool/blog/categories/image-pdf-tools"}, {"@type": "ListItem", "position": 5, "name": "Rotar PDF", "item": "https://logrith.in/es/tool/blog/rotate-pdf-pages-fix-sideways-scan"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Guías de herramientas", "item": "https://logrith.in/es/tool/blog/"}, {"@type": "ListItem", "position": 4, "name": "Herramientas de imagen y PDF", "item": "https://logrith.in/es/tool/blog/categories/image-pdf-tools"}, {"@type": "ListItem", "position": 5, "name": "Rotar PDF", "item": "https://logrith.in/es/tool/blog/rotate-pdf-pages-fix-sideways-scan"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Al girar una página PDF se reduce su calidad?", "acceptedAnswer": {"@type": "Answer", "text": "No. La rotación de página en PDF se aplica como un indicador de metadatos en lugar de volver a renderizar el contenido de la página, lo que significa que el texto y las imágenes subyacentes nunca se modifican ni se vuelven a codificar; la calidad se conserva perfectamente."}}, {"@type": "Question", "name": "¿Puedo rotar solo algunas páginas de un PDF, y no todas?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, puede especificar un rango de páginas (como las páginas 1 a 3 o números de página específicos), o usar la selección de páginas pares/impares, lo cual es especialmente útil para escaneos a doble cara donde las páginas alternas aparecen giradas 180 grados entre sí."}}, {"@type": "Question", "name": "¿Por qué los documentos escaneados a doble cara suelen tener páginas alternadas y giradas?", "acceptedAnswer": {"@type": "Answer", "text": "Algunos escáneres y aplicaciones de escaneo capturan páginas a doble cara volteando el papel físico, lo que puede provocar que una página sí y otra no se escaneen al revés con respecto al resto, ya que la orientación del papel con respecto al escáner se invierte al voltearlo."}}, {"@type": "Question", "name": "¿Al girar una página PDF cambia su contenido visible o solo su forma de visualización?", "acceptedAnswer": {"@type": "Answer", "text": "Esto modifica la forma en que se muestra la página: el flujo de contenido subyacente no se altera, solo se agrega una instrucción de rotación que los visores de PDF utilizan para mostrar la página con la orientación correcta."}}]}</script>
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
@@ -57,7 +57,7 @@
 <div id="navbar"></div>
 <main id="main">
 <header class="page-hero"><div class="page-hero-inner">
-<nav class="breadcrumb" aria-label="Migaja de pan"><a href="/es/">Inicio</a> › <a href="/es/tool/">Herramientas</a> › <a href="/es/tool/blog/">Guías de herramientas</a> › <a href="/es/tool/blog/categories/image-pdf-tools">Herramientas de imagen y PDF</a> › Rotación de PDF</nav>
+<nav class="breadcrumb" aria-label="Ruta de navegación"><a href="/es/">Inicio</a> › <a href="/es/tool/">Herramientas</a> › <a href="/es/tool/blog/">Guías de herramientas</a> › <a href="/es/tool/blog/categories/image-pdf-tools">Herramientas de imagen y PDF</a> › Rotación de PDF</nav>
 <h1>Cómo girar las páginas que están de lado en un PDF escaneado, individualmente o todas a la vez.</h1>
 <p>Los documentos escaneados suelen aparecer de lado con más frecuencia que cualquier otro problema con los PDF: una página introducida en el escáner con la orientación incorrecta o un documento a doble cara donde las páginas alternas giran 180 grados entre sí. Corregir esto es una de las pocas operaciones con PDF que es realmente impecable y sin pérdida de calidad, y comprender el motivo hace que la solución parezca mucho menos arriesgada, especialmente para documentos que no se pueden volver a escanear o recrear fácilmente desde cero.</p>
 <a href="/es/tool/tools/pdf-rotate" class="btn btn-primary btn-lg">
@@ -107,8 +107,8 @@
 <h2 id="comparison">Comparación con otros rotadores de PDF</h2>
 <div class="table-wrap">
 <table class="table">
-<tr><th>Característica</th><th>Logrith PDF Rotar</th><th>iLovePDF</th><th>PDF pequeño</th></tr>
-<tr><td>Ubicación de procesamiento</td><td>Completamente en el navegador</td><td>Carga del servidor</td><td>Carga del servidor</td></tr>
+<tr><th>Característica</th><th>Logrith PDF Rotar</th><th>iLovePDF</th><th>Smallpdf</th></tr>
+<tr><td>Ubicación de procesamiento</td><td>Completamente en el navegador</td><td>Subida a un servidor</td><td>Subida a un servidor</td></tr>
 <tr><td>Rotar rango de páginas específico</td><td>Sí</td><td>Sí, control de rotación por página.</td><td>Sí</td></tr>
 <tr><td>Selección de páginas pares/impares</td><td>Sí</td><td>No hay opción específica para pares/impares; en su lugar, selección manual página por página.</td><td>No hay opción específica para números pares/impares.</td></tr>
 <tr><td>Límite de uso gratuito</td><td>Ilimitado</td><td>Ilimitado, con límites de tamaño de archivo.</td><td>2 tareas al día (plan gratuito)</td></tr>
@@ -189,6 +189,6 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261115"></script>
+<script src="/assets/js/main.js?v=20261117"></script>
 </body>
 </html>

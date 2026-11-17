@@ -1,0 +1,668 @@
+[
+ {
+  "name": "Analizador de currículums",
+  "category": "IA",
+  "url": "/tool/tools/resume-analyzer",
+  "summary": "Sube tu currículum para ver una puntuación de legibilidad y estructura con sugerencias específicas para mejorarlo, analizada en tu navegador."
+ },
+ {
+  "name": "Analizador de velocidad de sitios web",
+  "category": "IA",
+  "url": "/tool/tools/website-speed-analyzer",
+  "summary": "Introduce una URL para obtener un desglose del tiempo de carga, los cuellos de botella de rendimiento y sugerencias concretas para acelerar la página."
+ },
+ {
+  "name": "Búsqueda de código de estado HTTP",
+  "category": "Desarrollo",
+  "url": "/tool/tools/http-status-code-lookup",
+  "summary": "Busque o explore la lista completa de códigos de estado HTTP con una explicación sencilla del significado de cada uno."
+ },
+ {
+  "name": "Búsqueda de información del navegador",
+  "category": "Utilidades",
+  "url": "/tool/tools/browser-info-lookup",
+  "summary": "Comprueba el nombre de tu navegador, la versión, el sistema operativo, el tamaño de la pantalla y otros detalles que los sitios web pueden ver, con una sola consulta rápida."
+ },
+ {
+  "name": "Calculadora de abrazaderas CSS",
+  "category": "Desarrollo",
+  "url": "/tool/tools/css-clamp-calculator",
+  "summary": "Establece los tamaños mínimo y máximo de fuente y el rango de la ventana gráfica para obtener el CSS clamp() exacto para un escalado suave y adaptable."
+ },
+ {
+  "name": "Calculadora de acumulación de descuentos",
+  "category": "Calcular y convertir",
+  "url": "/tool/tools/discount-stacking-calculator",
+  "summary": "Aplica varios descuentos en secuencia y comprueba exactamente cuánto se descuenta con cada uno, además del precio final real; sin cálculos mentales ni conjeturas."
+ },
+ {
+  "name": "Calculadora de asequibilidad de préstamos",
+  "category": "Calcular y convertir",
+  "url": "/tool/tools/loan-affordability-calculator",
+  "summary": "Introduce tus ingresos y gastos para ver un importe de préstamo realista basado en tu relación entre la cuota mensual y tus ingresos, de modo que conozcas tu límite antes de solicitarlo."
+ },
+ {
+  "name": "Calculadora de cuotas de mercado",
+  "category": "Calcular y convertir",
+  "url": "/tool/tools/emi-calculator",
+  "summary": "Calcula tu cuota mensual para una hipoteca, un coche o un préstamo personal, además de los intereses totales y un desglose mensual de la amortización: preciso e instantáneo."
+ },
+ {
+  "name": "Calculadora de diferencia de fechas",
+  "category": "Calcular y convertir",
+  "url": "/tool/tools/date-difference-calculator",
+  "summary": "Introduce dos fechas y obtén la diferencia exacta en días, semanas, meses y años; útil para plazos de entrega, edades y cronogramas de proyectos."
+ },
+ {
+  "name": "Calculadora de edad",
+  "category": "Utilidades",
+  "url": "/tool/tools/age-calculator",
+  "summary": "Introduce tu fecha de nacimiento y descubre tu edad exacta (día, hora y minuto), además de una cuenta atrás en tiempo real para tu próximo cumpleaños. Instantáneo, preciso y sin necesidad de registrarte."
+ },
+ {
+  "name": "Calculadora de GST",
+  "category": "Calcular y convertir",
+  "url": "/tool/tools/gst-calculator",
+  "summary": "Calcula el GST al 5%, 12%, 18% o 28% en cualquier dirección, con el desglose de CGST, SGST e IGST mostrado automáticamente. Preciso, instantáneo y sin necesidad de registrarse."
+ },
+ {
+  "name": "Calculadora de IMC",
+  "category": "Calcular y convertir",
+  "url": "/tool/tools/bmi-calculator",
+  "summary": "Obtén tu Índice de Masa Corporal y descubre a cuál de las cuatro categorías estándar de la OMS perteneces, en unidades métricas o imperiales, con un resultado instantáneo y preciso."
+ },
+ {
+  "name": "Calculadora de interés compuesto",
+  "category": "Calcular y convertir",
+  "url": "/tool/tools/compound-interest-calculator",
+  "summary": "Vea con exactitud cómo se multiplica su inversión con el tiempo, incluyendo los depósitos mensuales regulares, con un desglose completo del crecimiento año tras año."
+ },
+ {
+  "name": "Calculadora de interés simple",
+  "category": "Calcular y convertir",
+  "url": "/tool/tools/simple-interest-calculator",
+  "summary": "Introduzca el capital, el tipo de interés y el plazo para obtener el importe de los intereses y el total a pagar, con cada paso del cálculo mostrado para que pueda verificarlo."
+ },
+ {
+  "name": "Calculadora de porcentaje de grasa corporal",
+  "category": "Calcular y convertir",
+  "url": "/tool/tools/body-fat-percentage-calculator",
+  "summary": "Introduce algunas medidas corporales para obtener un porcentaje estimado de grasa corporal, calculado según el método de la Marina de los EE. UU. tanto para hombres como para mujeres."
+ },
+ {
+  "name": "Calculadora de porcentajes",
+  "category": "Calcular y convertir",
+  "url": "/tool/tools/percentage-calculator",
+  "summary": "Calcula qué porcentaje representa un número, el cambio porcentual entre dos valores o un precio con descuento: cuatro cálculos comunes en una herramienta precisa."
+ },
+ {
+  "name": "Calculadora de reparto de propinas",
+  "category": "Calcular y convertir",
+  "url": "/tool/tools/tip-split-calculator",
+  "summary": "Calcula la propina y divide la cuenta a partes iguales o desiguales entre cualquier número de personas, indicando la cantidad exacta que debe pagar cada una."
+ },
+ {
+  "name": "Calculadora de tarifas de pago",
+  "category": "Utilidades",
+  "url": "/tool/tools/percentage-fee-splitter",
+  "summary": "Calcula la tarifa exacta de un procesador o plataforma de pagos que cobra un porcentaje más una tarifa fija, en un solo paso."
+ },
+ {
+  "name": "Calculadora de tokens y contexto de IA",
+  "category": "Global",
+  "url": "/tool/tools/ai-context-calculator",
+  "summary": "Pega una solicitud o un documento para estimar su número de tokens y qué parte de la ventana de contexto de un modelo utilizaría, directamente en tu navegador."
+ },
+ {
+  "name": "Calculadora de velocidad de escritura en palabras por minuto",
+  "category": "Calcular y convertir",
+  "url": "/tool/tools/wpm-typing-speed-calculator",
+  "summary": "Realice una prueba de mecanografía en vivo y obtenga su velocidad bruta (palabras por minuto), velocidad neta (palabras por minuto) y porcentaje de precisión, calculados de la misma manera que lo hacen las pruebas de mecanografía profesionales."
+ },
+ {
+  "name": "Codificador Base64",
+  "category": "Desarrollo",
+  "url": "/tool/tools/base64",
+  "summary": "Convierte texto o un archivo subido a Base64, o decodifica una cadena Base64 para recuperar su formato original, al instante en tu navegador."
+ },
+ {
+  "name": "Codificador y decodificador de URL",
+  "category": "Desarrollo",
+  "url": "/tool/tools/url-encoder",
+  "summary": "Convierta instantáneamente los caracteres especiales de una URL a codificación porcentual, o decodifique una URL codificada para convertirla de nuevo en texto legible."
+ },
+ {
+  "name": "Combinar PDF",
+  "category": "Imagen y PDF",
+  "url": "/tool/tools/pdf-merge",
+  "summary": "Combine tantos archivos PDF como necesite en un solo documento, con la función de arrastrar y soltar para reordenarlos, todo ello procesado íntegramente en su navegador."
+ },
+ {
+  "name": "Comparador de precios unitarios",
+  "category": "Utilidades",
+  "url": "/tool/tools/unit-price-comparator",
+  "summary": "Introduce el precio y la cantidad de dos productos para ver el coste real por unidad y así saber cuál es realmente más barato."
+ },
+ {
+  "name": "Compresor de imágenes",
+  "category": "Imagen y PDF",
+  "url": "/tool/tools/image-compressor",
+  "summary": "Reduce el tamaño o la calidad de tus fotos JPG, PNG y WEBP directamente en tu navegador. Comprime y convierte varias fotos a la vez en una sola pasada; no se sube ningún archivo."
+ },
+ {
+  "name": "Compresor de PDF",
+  "category": "Imagen y PDF",
+  "url": "/tool/tools/pdf-compressor",
+  "summary": "Reduce un PDF grande a una fracción de su tamaño para facilitar su envío por correo electrónico, comprimiéndolo completamente en tu navegador."
+ },
+ {
+  "name": "Comprobador de diferencias de texto",
+  "category": "Texto y generadores",
+  "url": "/tool/tools/text-diff",
+  "summary": "Pega dos versiones de un fragmento de texto o código y observa al instante cómo se resaltan, una al lado de la otra, todas las líneas añadidas, eliminadas y modificadas."
+ },
+ {
+  "name": "Comprobador de seguridad de contraseñas",
+  "category": "Utilidades",
+  "url": "/tool/tools/password-strength",
+  "summary": "Introduce una contraseña para ver su nivel de seguridad y una estimación del tiempo que tardaría en descifrarse, comprobado localmente en tu navegador."
+ },
+ {
+  "name": "Contador de caracteres",
+  "category": "Texto y generadores",
+  "url": "/tool/tools/character-counter",
+  "summary": "Consulta el recuento de caracteres con y sin espacios, el recuento de palabras y un desglose completo de la frecuencia de las letras que se actualiza a medida que escribes, sin límite de pegado."
+ },
+ {
+  "name": "Contador de palabras",
+  "category": "Texto y generadores",
+  "url": "/tool/tools/word-counter",
+  "summary": "Pega cualquier texto para ver el recuento en tiempo real de palabras, caracteres, oraciones y párrafos, además de un tiempo estimado de lectura y habla."
+ },
+ {
+  "name": "Conversión de texto a voz",
+  "category": "Texto y generadores",
+  "url": "/tool/tools/text-to-speech",
+  "summary": "Pega cualquier texto y haz que se lea en voz alta con la voz de tu navegador, con velocidad y tono ajustables, sin necesidad de descargar nada ni crear una cuenta."
+ },
+ {
+  "name": "Conversión de voz a texto",
+  "category": "Texto y generadores",
+  "url": "/tool/tools/speech-to-text",
+  "summary": "Habla por el micrófono y observa cómo tus palabras aparecen como texto en tiempo real, gracias al reconocimiento de voz integrado en tu navegador."
+ },
+ {
+  "name": "Convertidor de base numérica",
+  "category": "Calcular y convertir",
+  "url": "/tool/tools/number-base-converter",
+  "summary": "Introduce un número en cualquier base y obtén conversiones precisas a binario, octal, decimal y hexadecimal al instante; diseñado para programadores y estudiantes."
+ },
+ {
+  "name": "Convertidor de carcasa",
+  "category": "Texto y generadores",
+  "url": "/tool/tools/case-converter",
+  "summary": "Pega cualquier texto y conviértelo instantáneamente a mayúsculas, minúsculas, formato de título, formato de oración, camelCase o PascalCase con un solo clic."
+ },
+ {
+  "name": "Convertidor de color",
+  "category": "Calcular y convertir",
+  "url": "/tool/tools/color-converter",
+  "summary": "Pega cualquier valor de color y conviértelo a HEX, RGB, HSL, HSV y CMYK al instante, con un selector visual, un generador de tonos y un comprobador de contraste integrados."
+ },
+ {
+  "name": "Convertidor de divisas",
+  "category": "Calcular y convertir",
+  "url": "/tool/tools/currency-converter",
+  "summary": "Establece un tipo de cambio personalizado y convierte entre cualquier par de monedas al instante; no depende de ninguna API, funciona sin conexión y no es necesario registrarse."
+ },
+ {
+  "name": "Convertidor de entidades HTML",
+  "category": "Desarrollo",
+  "url": "/tool/tools/html-entity-converter",
+  "summary": "Codifique caracteres como < > y & en entidades HTML seguras, o decodifique las entidades HTML para convertirlas de nuevo en texto normal."
+ },
+ {
+  "name": "Convertidor de imágenes",
+  "category": "Imagen y PDF",
+  "url": "/tool/tools/image-converter",
+  "summary": "Convierte cualquier imagen entre JPG, PNG, WEBP, BMP y GIF al instante en tu navegador. Convierte varios archivos por lotes, sin necesidad de subirlos."
+ },
+ {
+  "name": "Convertidor de JPG a PDF",
+  "category": "Imagen y PDF",
+  "url": "/tool/tools/jpg-to-pdf",
+  "summary": "Combina varias imágenes JPG, PNG o WEBP en un único PDF, reordena las páginas arrastrándolas, todo ello procesado en tu navegador."
+ },
+ {
+  "name": "Convertidor de JSON a CSV",
+  "category": "Desarrollo",
+  "url": "/tool/tools/json-csv-converter",
+  "summary": "Convierte JSON a CSV o CSV a JSON en línea. Simplifica objetos anidados, maneja campos entre comillas y comas, y admite delimitadores como coma, punto y coma y tabulación. Gratuito y privado."
+ },
+ {
+  "name": "Convertidor de marcas de tiempo Unix",
+  "category": "Desarrollo",
+  "url": "/tool/tools/unix-timestamp-converter",
+  "summary": "Convierte marcas de tiempo Unix a fechas legibles y viceversa, a segundos o milisegundos de la época. Reloj en tiempo real, detección automática de unidades y compatibilidad con zonas horarias. Gratis, funciona en tu navegador."
+ },
+ {
+  "name": "Convertidor de Markdown a HTML",
+  "category": "Global",
+  "url": "/tool/tools/markdown-to-html",
+  "summary": "Pega el código Markdown y obtén al instante un HTML semántico y con la estructura adecuada, con una vista previa en tiempo real y la posibilidad de copiar con un solo clic."
+ },
+ {
+  "name": "Convertidor de números a palabras",
+  "category": "Texto y generadores",
+  "url": "/tool/tools/number-to-words-converter",
+  "summary": "Convierte un valor numérico en su forma escrita en palabras, útil para cheques, documentos legales y redacción formal, con precisión incluso para números grandes."
+ },
+ {
+  "name": "Convertidor de números romanos",
+  "category": "Calcular y convertir",
+  "url": "/tool/tools/roman-numeral-converter",
+  "summary": "Convierte cualquier número del 1 al 3999 en números romanos, o convierte números romanos de nuevo a números estándar, con resultados instantáneos y precisos."
+ },
+ {
+  "name": "Convertidor de palabras a páginas",
+  "category": "Texto y generadores",
+  "url": "/tool/tools/words-to-pages-converter",
+  "summary": "Introduce el número de palabras y la configuración de la fuente para ver aproximadamente cuántas páginas ocupa, lo cual resulta útil para planificar ensayos e informes antes de escribirlos."
+ },
+ {
+  "name": "Convertidor de PDF a JPG",
+  "category": "Imagen y PDF",
+  "url": "/tool/tools/pdf-to-jpg",
+  "summary": "Extrae cada página de un PDF como una imagen JPG independiente, lista para descargarla individualmente o en lote, en tu navegador."
+ },
+ {
+  "name": "Convertidor de salario a hora",
+  "category": "Calcular y convertir",
+  "url": "/tool/tools/salary-hourly-converter",
+  "summary": "Introduce un salario anual o una tarifa por hora y verás al instante el pago mensual, semanal, diario y por hora equivalente, calculado con precisión en ambos casos."
+ },
+ {
+  "name": "Convertidor de tamaño de archivo",
+  "category": "Utilidades",
+  "url": "/tool/tools/file-size-converter",
+  "summary": "Introduzca el tamaño de un archivo en cualquier unidad y vea al instante cómo se convierte a bytes, KB, MB, GB y TB, tanto en binario como en decimal."
+ },
+ {
+  "name": "Convertidor de unidades",
+  "category": "Calcular y convertir",
+  "url": "/tool/tools/unit-converter",
+  "summary": "Cambia entre unidades de longitud, peso, temperatura, área, volumen, tamaño de datos y velocidad, todo en un convertidor preciso con resultados instantáneos y exactos."
+ },
+ {
+  "name": "Convertidor de YAML a JSON",
+  "category": "Desarrollo",
+  "url": "/tool/tools/yaml-json-converter",
+  "summary": "Pega el código YAML o JSON y obtén una conversión precisa al otro formato al instante, conservando el formato original."
+ },
+ {
+  "name": "Convertidor de zonas horarias",
+  "category": "Calcular y convertir",
+  "url": "/tool/tools/time-zone-converter",
+  "summary": "Vea cómo se ve una hora determinada en las principales ciudades del mundo a la vez, con el horario de verano gestionado automáticamente para que el resultado sea siempre correcto."
+ },
+ {
+  "name": "Decodificador JWT",
+  "category": "Desarrollo",
+  "url": "/tool/tools/jwt-decoder",
+  "summary": "Pega un JSON Web Token para ver su encabezado, carga útil y firma decodificados al instante, directamente en tu navegador."
+ },
+ {
+  "name": "Deduplicador de URL",
+  "category": "Global",
+  "url": "/tool/tools/url-deduplicator",
+  "summary": "Pegue una lista de URL para eliminar duplicados exactos y casi duplicados causados ​​por parámetros de seguimiento, barras diagonales al final o diferencias de mayúsculas y minúsculas."
+ },
+ {
+  "name": "División de PDF",
+  "category": "Imagen y PDF",
+  "url": "/tool/tools/pdf-split",
+  "summary": "Extraiga las páginas exactas que necesita o divida un PDF en archivos individuales, que se procesarán localmente en su navegador."
+ },
+ {
+  "name": "Eliminador de líneas duplicadas",
+  "category": "Texto y generadores",
+  "url": "/tool/tools/duplicate-remover",
+  "summary": "Pega una lista y elimina las líneas repetidas con un solo clic, con la opción de ignorar las diferencias de mayúsculas/minúsculas o espacios en blanco entre elementos casi idénticos."
+ },
+ {
+  "name": "Eliminador de páginas PDF",
+  "category": "Imagen y PDF",
+  "url": "/tool/tools/pdf-page-remover",
+  "summary": "Seleccione exactamente qué páginas desea eliminar de un PDF y descargue el archivo corregido al instante, directamente en su navegador."
+ },
+ {
+  "name": "Esquinas de imagen redondeadas",
+  "category": "Imagen y PDF",
+  "url": "/tool/tools/round-image-corners",
+  "summary": "Redondea las esquinas de cualquier imagen en línea. Configura el radio en píxeles o porcentaje, enlaza o separa cada esquina, previsualiza en tiempo real y descarga un archivo PNG transparente. No se sube ningún archivo."
+ },
+ {
+  "name": "Formateador JSON",
+  "category": "Desarrollo",
+  "url": "/tool/tools/json-formatter",
+  "summary": "Pegue el JSON para darle formato con la indentación adecuada, validar su sintaxis con la ubicación exacta de los errores o reducirlo a una sola línea."
+ },
+ {
+  "name": "Formateador SQL",
+  "category": "Desarrollo",
+  "url": "/tool/tools/sql-formatter",
+  "summary": "Pega una consulta SQL apretada o generada automáticamente y obtén su formato con la indentación y los saltos de línea adecuados, al instante."
+ },
+ {
+  "name": "Formateador XML",
+  "category": "Desarrollo",
+  "url": "/tool/tools/xml-formatter",
+  "summary": "Pegue el código XML para mejorarlo con el anidamiento y la indentación correctos, o para validar su estructura y detectar errores de sintaxis."
+ },
+ {
+  "name": "Generador de acrónimos",
+  "category": "Texto y generadores",
+  "url": "/tool/tools/acronym-generator",
+  "summary": "Introduce una frase compuesta y obtén el acrónimo formado a partir de sus primeras letras, útil para nombrar proyectos, equipos o productos."
+ },
+ {
+  "name": "Generador de citas",
+  "category": "Texto y generadores",
+  "url": "/tool/tools/citation-generator",
+  "summary": "Introduce los datos de la fuente una sola vez y obtén una cita con el formato correcto en estilo APA, MLA o Chicago, lista para pegar en tu trabajo."
+ },
+ {
+  "name": "Generador de citas aleatorias",
+  "category": "Texto y generadores",
+  "url": "/tool/tools/random-quote-generator",
+  "summary": "Obtén una cita aleatoria sobre motivación, éxito, vida u otros temas, con el autor acreditado, y actualízala con un solo clic."
+ },
+ {
+  "name": "Generador de contraseñas",
+  "category": "Utilidades",
+  "url": "/tool/tools/passphrase-generator",
+  "summary": "Crea una frase de contraseña segura compuesta por palabras aleatorias en lugar de símbolos; será más fácil de recordar que una contraseña, pero aun así difícil de adivinar."
+ },
+ {
+  "name": "Generador de contraseñas",
+  "category": "Utilidades",
+  "url": "/tool/tools/password-generator",
+  "summary": "Establece la longitud y los tipos de caracteres que desees, y luego genera una contraseña criptográficamente aleatoria al instante; nada se almacena ni se envía a ningún lugar."
+ },
+ {
+  "name": "Generador de códigos de barras",
+  "category": "Utilidades",
+  "url": "/tool/tools/barcode-generator",
+  "summary": "Introduce un valor y genera un código de barras escaneable en formato CODE128, EAN o UPC, listo para descargar como imagen."
+ },
+ {
+  "name": "Generador de códigos QR",
+  "category": "Utilidades",
+  "url": "/tool/tools/qr-generator",
+  "summary": "Genera un código QR escaneable para siete tipos de datos diferentes, descárgalo como PNG y conéctate automáticamente donde sea compatible; todo gratis."
+ },
+ {
+  "name": "Generador de degradados CSS",
+  "category": "Desarrollo",
+  "url": "/tool/tools/css-gradient-generator",
+  "summary": "Selecciona los colores y los ángulos en una vista previa en directo y obtén el código CSS de degradado exacto generado para ti, listo para copiar."
+ },
+ {
+  "name": "Generador de equipos aleatorios",
+  "category": "Utilidades",
+  "url": "/tool/tools/random-team-generator",
+  "summary": "Introduce una lista de nombres y divídelos instantáneamente en el número de equipos que elijas, mezclándolos de forma justa y aleatoria."
+ },
+ {
+  "name": "Generador de expresiones Cron",
+  "category": "Desarrollo",
+  "url": "/tool/tools/cron-expression-builder",
+  "summary": "Crea una programación cron de forma visual y obtén una explicación sencilla de cuándo se ejecutará exactamente, sin tener que adivinar la sintaxis."
+ },
+ {
+  "name": "Generador de favicon",
+  "category": "Imagen y PDF",
+  "url": "/tool/tools/favicon-generator",
+  "summary": "Sube una imagen y obtén un conjunto completo de favicons (todos los tamaños, además de las etiquetas HTML que necesitas) procesados ​​en tu navegador."
+ },
+ {
+  "name": "Generador de hash",
+  "category": "Desarrollo",
+  "url": "/tool/tools/hash-generator",
+  "summary": "Calcula el hash de cualquier texto o archivo para verificar su integridad o comparar sumas de comprobación, con SHA-1, SHA-256, SHA-384 y SHA-512, todos calculados instantáneamente."
+ },
+ {
+  "name": "Generador de Lorem Ipsum",
+  "category": "Texto y generadores",
+  "url": "/tool/tools/lorem-ipsum",
+  "summary": "Crea textos de ejemplo para maquetas y diseños con la longitud que necesites, ya sea en palabras, frases o párrafos, listos para copiar al instante."
+ },
+ {
+  "name": "Generador de memes",
+  "category": "Imagen y PDF",
+  "url": "/tool/tools/meme-generator",
+  "summary": "Sube cualquier imagen, añade un texto descriptivo en la parte superior e inferior y descarga tu meme al instante; sin necesidad de iniciar sesión ni añadir marcas de agua."
+ },
+ {
+  "name": "Generador de nombres aleatorios",
+  "category": "Texto y generadores",
+  "url": "/tool/tools/random-name-generator",
+  "summary": "Obtén nombres aleatorios realistas por categoría (masculino, femenino, empresarial o personaje de ficción), generados al instante y tantos como necesites."
+ },
+ {
+  "name": "Generador de números aleatorios",
+  "category": "Texto y generadores",
+  "url": "/tool/tools/random-number-generator",
+  "summary": "Establece un valor mínimo y máximo y genera uno o varios números aleatorios al instante, con opciones para evitar duplicados."
+ },
+ {
+  "name": "Generador de paletas de colores",
+  "category": "Utilidades",
+  "url": "/tool/tools/random-color-palette-generator",
+  "summary": "Crea una paleta de colores que combinen bien utilizando reglas probadas de la teoría del color, con códigos HEX listos para copiar."
+ },
+ {
+  "name": "Generador de slugs de URL",
+  "category": "Texto y generadores",
+  "url": "/tool/tools/slug-generator",
+  "summary": "Convierte títulos o frases en slugs en minúsculas con guiones, listos para una URL, con los caracteres especiales eliminados automáticamente."
+ },
+ {
+  "name": "Generador de sombras de caja CSS",
+  "category": "Desarrollo",
+  "url": "/tool/tools/css-box-shadow-generator",
+  "summary": "Ajusta el desplazamiento, el desenfoque, la extensión y el color en una vista previa en vivo y obtén la sombra CSS correspondiente generada al instante."
+ },
+ {
+  "name": "Generador de texto elegante",
+  "category": "Texto y generadores",
+  "url": "/tool/tools/fancy-text-generator",
+  "summary": "Escribe texto normal y conviértelo en docenas de elegantes variaciones de fuentes Unicode, listas para pegar en biografías y pies de foto."
+ },
+ {
+  "name": "Generador de UUID",
+  "category": "Desarrollo",
+  "url": "/tool/tools/uuid-generator",
+  "summary": "Cree UUID v4 criptográficamente aleatorios bajo demanda, uno por uno o en lote, con la opción de copiar cada uno con un solo clic."
+ },
+ {
+  "name": "Herramienta de expansión y recorte de texto",
+  "category": "Utilidades",
+  "url": "/tool/tools/text-expander-snippet-tool",
+  "summary": "Guarda los bloques de texto que uses con frecuencia como fragmentos con nombre y accede a ellos al instante, en lugar de volver a escribir lo mismo."
+ },
+ {
+  "name": "Herramienta de reparación JSON",
+  "category": "Global",
+  "url": "/tool/tools/json-repair",
+  "summary": "Pegue el JSON no válido para que se repare automáticamente, corrigiendo las comas finales y las claves sin comillas, y explicando claramente los errores."
+ },
+ {
+  "name": "Imagen a Base64",
+  "category": "Imagen y PDF",
+  "url": "/tool/tools/image-to-base64",
+  "summary": "Convierte cualquier imagen en una URI de datos Base64 lista para pegar en HTML o CSS, con copia instantánea al portapapeles, directamente en tu navegador."
+ },
+ {
+  "name": "Inspector de PDF",
+  "category": "Global",
+  "url": "/tool/tools/pdf-inspector",
+  "summary": "Sube un PDF para ver sus metadatos, fuentes incrustadas, número de imágenes, indicadores de seguridad y estructura, analizados íntegramente en tu navegador."
+ },
+ {
+  "name": "Inversor de texto",
+  "category": "Texto y generadores",
+  "url": "/tool/tools/text-reverser",
+  "summary": "Invierte cualquier texto carácter por carácter, cambia el orden de las palabras o el orden de las líneas, y copia los resultados con un solo clic."
+ },
+ {
+  "name": "Lanzamiento de moneda y dados",
+  "category": "Utilidades",
+  "url": "/tool/tools/flip-coin-dice-roller",
+  "summary": "Obtén un lanzamiento de moneda o dados instantáneo e imparcial usando el generador de números aleatorios de tu navegador; no necesitas descargar ninguna aplicación."
+ },
+ {
+  "name": "Limpiador CSV",
+  "category": "Global",
+  "url": "/tool/tools/csv-cleaner",
+  "summary": "Elimine las filas duplicadas, las celdas vacías y el formato inconsistente de un archivo CSV con un analizador sintáctico real que maneje correctamente los campos entre comillas."
+ },
+ {
+  "name": "Limpiador de privacidad de imágenes",
+  "category": "Global",
+  "url": "/tool/tools/image-privacy-cleaner",
+  "summary": "Elimina con un solo clic los metadatos de ubicación, cámara y fecha y hora ocultos en una foto; el procesamiento se realiza localmente, por lo que la imagen nunca sale de tu dispositivo."
+ },
+ {
+  "name": "Marca de agua de imagen",
+  "category": "Imagen y PDF",
+  "url": "/tool/tools/image-watermark",
+  "summary": "Añade una marca de agua con texto personalizado a tus fotos, controlando su posición, tamaño, opacidad y color, con vista previa en tiempo real."
+ },
+ {
+  "name": "Marca de agua de PDF",
+  "category": "Imagen y PDF",
+  "url": "/tool/tools/pdf-watermark",
+  "summary": "Agregue una marca de agua de texto personalizada a todas las páginas de un PDF, con control sobre la posición, la rotación y la opacidad, procesada localmente."
+ },
+ {
+  "name": "Minificador CSS",
+  "category": "Desarrollo",
+  "url": "/tool/tools/css-minifier",
+  "summary": "Comprime el CSS hasta su tamaño mínimo para producción, o reformatea el CSS minimizado para convertirlo de nuevo en código legible y con sangría."
+ },
+ {
+  "name": "Minificador de HTML",
+  "category": "Desarrollo",
+  "url": "/tool/tools/html-minifier",
+  "summary": "Comprime el código HTML para producción o reformatea el HTML minimizado para convertirlo de nuevo en un código limpio, con sangría y legible."
+ },
+ {
+  "name": "Minificador de JS",
+  "category": "Desarrollo",
+  "url": "/tool/tools/js-minifier",
+  "summary": "Comprime JavaScript para producción eliminando espacios en blanco y comentarios, o reformatea el código JS minimizado para convertirlo en código legible."
+ },
+ {
+  "name": "PDF a texto",
+  "category": "Imagen y PDF",
+  "url": "/tool/tools/pdf-to-text",
+  "summary": "Extrae texto plano y copiable de un PDF en segundos, con todo el procesamiento realizado localmente en tu navegador."
+ },
+ {
+  "name": "PDF protegido con contraseña",
+  "category": "Imagen y PDF",
+  "url": "/tool/tools/pdf-password-protect",
+  "summary": "Encripta cualquier PDF con una contraseña para que solo las personas en las que confíes puedan abrirlo; el procesamiento se realiza localmente y nunca se sube a internet."
+ },
+ {
+  "name": "Probador de expresiones regulares",
+  "category": "Desarrollo",
+  "url": "/tool/tools/regex-tester",
+  "summary": "Escribe un patrón de expresiones regulares y observa cómo se resaltan en tiempo real todas las coincidencias con tu cadena de prueba, con explicaciones de los grupos de captura y las banderas."
+ },
+ {
+  "name": "Recortador de imágenes circulares",
+  "category": "Imagen y PDF",
+  "url": "/tool/tools/image-circle-crop",
+  "summary": "Recorta cualquier foto en un círculo perfecto en línea. Arrastra y haz zoom para posicionarla, ajusta el tamaño de salida exacto, añade un anillo opcional y descarga un archivo PNG transparente. No se sube ningún archivo."
+ },
+ {
+  "name": "Recorte de imagen",
+  "category": "Imagen y PDF",
+  "url": "/tool/tools/image-crop",
+  "summary": "Arrastra para recortar o introduce las dimensiones exactas en píxeles para fotos JPG, PNG y WEBP. Previsualiza el recorte en tiempo real y descárgalo al instante: tu imagen nunca saldrá de tu dispositivo."
+ },
+ {
+  "name": "Redimensionador de fotos a KB",
+  "category": "Imagen y PDF",
+  "url": "/tool/tools/photo-resizer-kb",
+  "summary": "Reduce automáticamente el tamaño de una imagen a un límite específico en kilobytes para formularios y cargas con límites de tamaño estrictos."
+ },
+ {
+  "name": "Redimensionar imagen",
+  "category": "Imagen y PDF",
+  "url": "/tool/tools/image-resize",
+  "summary": "Establezca un ancho y alto exactos o bloquee la relación de aspecto para imágenes JPG, PNG y WEBP, que se redimensionarán instantáneamente en su navegador."
+ },
+ {
+  "name": "Reloj mundial",
+  "category": "Utilidades",
+  "url": "/tool/tools/world-clock",
+  "summary": "Permite realizar un seguimiento simultáneo de la hora en tiempo real en varias ciudades y zonas horarias, con actualizaciones cada segundo, para la planificación en diferentes regiones."
+ },
+ {
+  "name": "Resumidor de texto",
+  "category": "Texto y generadores",
+  "url": "/tool/tools/text-summarizer-basic",
+  "summary": "Pega un artículo o documento extenso y obtén un resumen conciso, elaborado a partir de las frases más importantes, en cuestión de segundos."
+ },
+ {
+  "name": "Rotar imagen",
+  "category": "Imagen y PDF",
+  "url": "/tool/tools/image-rotate",
+  "summary": "Corrige una foto de lado o refleja una imagen con un solo clic. Gírala 90°, 180° o 270°, o voltéala horizontal y verticalmente; todo se procesa localmente en tu navegador."
+ },
+ {
+  "name": "Rotar PDF",
+  "category": "Imagen y PDF",
+  "url": "/tool/tools/pdf-rotate",
+  "summary": "Corrige páginas PDF que estén de lado o boca abajo. Gira todas las páginas a la vez o selecciona páginas individuales y descarga el archivo corregido al instante; no se sube nada."
+ },
+ {
+  "name": "Selector de color de imagen",
+  "category": "Imagen y PDF",
+  "url": "/tool/tools/image-color-picker",
+  "summary": "Haz clic en cualquier parte de una imagen subida para obtener el color exacto que hay debajo, con valores HEX, RGB y HSL instantáneos."
+ },
+ {
+  "name": "SVG a PNG",
+  "category": "Imagen y PDF",
+  "url": "/tool/tools/svg-to-png",
+  "summary": "Convierte un archivo vectorial SVG en un PNG nítido con el tamaño de píxel exacto que necesitas, convertido localmente en tu navegador."
+ },
+ {
+  "name": "Temporizador de cuenta regresiva",
+  "category": "Utilidades",
+  "url": "/tool/tools/countdown-timer-tool",
+  "summary": "Establece una fecha y hora objetivo y observa cómo se actualiza en tiempo real la cuenta atrás en días, horas, minutos y segundos."
+ },
+ {
+  "name": "Traductor de código Morse",
+  "category": "Texto y generadores",
+  "url": "/tool/tools/morse-code-translator",
+  "summary": "Escribe un mensaje para verlo convertido a puntos y rayas en código Morse, o pega el código Morse para decodificarlo y convertirlo de nuevo en texto legible."
+ },
+ {
+  "name": "Traductor del alfabeto fonético de la OTAN",
+  "category": "Texto y generadores",
+  "url": "/tool/tools/nato-phonetic-alphabet-translator",
+  "summary": "Escribe cualquier palabra o frase y obténla escrita utilizando Alpha, Bravo, Charlie y el resto del alfabeto fonético estándar de la OTAN."
+ },
+ {
+  "name": "Vista previa de Markdown",
+  "category": "Texto y generadores",
+  "url": "/tool/tools/markdown-previewer",
+  "summary": "Escribe o pega código Markdown en un lado y observa cómo la vista previa HTML formateada se actualiza instantáneamente en el otro, una al lado de la otra."
+ }
+]
