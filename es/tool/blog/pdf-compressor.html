@@ -1,66 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Compress a PDF for Email Without Uploading It | Logrith</title>
-  <meta name="description" content="How to compress a PDF for Gmail's 25MB limit or a strict upload portal, entirely in your browser. No signup, no server upload, unlike iLovePDF or SmallPDF.">
-  <meta name="keywords" content="compress pdf for email, reduce pdf size for gmail, pdf compressor no upload, compress pdf without server upload, shrink pdf browser only">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="author" content="Plert Ankush">
-  <link rel="canonical" href="https://logrith.in/tool/blog/pdf-compressor">
-  <meta property="og:title" content="Compress a PDF for Email Without Uploading It | Logrith">
-  <meta property="og:description" content="Reduce PDF file size for email or strict upload portals without uploading your file to anyone's server.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://logrith.in/tool/blog/pdf-compressor">
-  <meta property="og:site_name" content="Logrith">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Compress a PDF for Email Without Uploading It | Logrith">
-  <meta name="twitter:description" content="Reduce PDF file size entirely in your browser, no server upload required.">
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#0D0D0D">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comprimir un PDF para enviarlo por correo electrónico sin subirlo | Logrith</title>
+<meta name="description" content="Cómo comprimir un PDF para cumplir con el límite de 25 MB de Gmail o de un portal de carga con restricciones, todo desde tu navegador. Sin registro ni subida a un servidor, a diferencia de iLovePDF o SmallPDF.">
+<meta name="keywords" content="compress pdf for email, reduce pdf size for gmail, pdf compressor no upload, compress pdf without server upload, shrink pdf browser only">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Plert Ankush">
+<link rel="canonical" href="https://logrith.in/es/tool/blog/pdf-compressor">
+  <link rel="alternate" hreflang="x-default" href="https://logrith.in/tool/blog/pdf-compressor">
+  <link rel="alternate" hreflang="es" href="https://logrith.in/es/tool/blog/pdf-compressor">
+  <link rel="alternate" hreflang="en" href="https://logrith.in/tool/blog/pdf-compressor">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
-  <link rel="preload" href="/components/navbar.html" as="fetch" type="text/html" crossorigin>
-  <link rel="preload" href="/components/footer.html" as="fetch" type="text/html" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=20261115">
-  <link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
 
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
-  </script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Article","datePublished":"2026-10-20","dateModified":"2026-10-31","headline":"Compress PDF for Email or Upload Without Uploading to a Server","description":"How to compress a PDF entirely in your browser for Gmail's limit or a strict upload portal.","author":{"@type":"Person","name":"Plert Ankush","url":"https://logrith.in/pages/founder"},"publisher":{"@id":"https://logrith.in/#organization"},"mainEntityOfPage":"https://logrith.in/tool/blog/pdf-compressor"}
-  </script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebPage","name":"Compress PDF Without Server Upload","url":"https://logrith.in/tool/blog/pdf-compressor","isPartOf":{"@type":"Blog","name":"Logrith Blog","url":"https://logrith.in/tool/blog/"}}
-  </script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"PDF Compressor","url":"https://logrith.in/tool/tools/pdf-compressor","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
-  </script>
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Tool Guides", "item": "https://logrith.in/tool/blog/"}, {"@type": "ListItem", "position": 4, "name": "Image & PDF Tools", "item": "https://logrith.in/tool/blog/categories/image-pdf-tools"}, {"@type": "ListItem", "position": 5, "name": "PDF Compressor", "item": "https://logrith.in/tool/blog/pdf-compressor"}]}
-  </script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-    {"@type":"Question","name":"How do I compress a PDF to fit Gmail's attachment limit?","acceptedAnswer":{"@type":"Answer","text":"Gmail caps attachments at 25MB. Use Medium or Low compression quality on a PDF compressor, which re-renders each page at a lower image quality, typically shrinking scanned or image-heavy PDFs well below that limit."}},
-    {"@type":"Question","name":"Is it safe to compress a PDF containing personal or financial information online?","acceptedAnswer":{"@type":"Answer","text":"Only if the tool processes the file entirely in your browser. Many popular PDF compressors upload your file to a server first. Logrith's PDF Compressor never does — the entire process runs locally using PDF.js and pdf-lib."}},
-    {"@type":"Question","name":"Why did my compressed PDF get bigger instead of smaller?","acceptedAnswer":{"@type":"Answer","text":"This can happen if the original PDF was already highly optimized or mostly text-based, since re-rendering text as an image (which page-based compressors do) can sometimes produce a larger file than efficiently-encoded original text."}},
-    {"@type":"Question","name":"Does compressing a PDF reduce text sharpness?","acceptedAnswer":{"@type":"Answer","text":"With page-image-based compression, yes, to some degree, since each page becomes a rendered image rather than live text. Higher quality settings keep text edges sharper at a larger file size."}},
-    {"@type":"Question","name":"Can I compress a password-protected PDF?","acceptedAnswer":{"@type":"Answer","text":"You'll need to remove the password first, since the compression process needs to read and re-render each page, which isn't possible on an encrypted file without the password."}},
-    {"@type":"Question","name":"What's the difference between compressing a PDF and reducing its page count?","acceptedAnswer":{"@type":"Answer","text":"Compression reduces the file size of existing pages by lowering image quality. Reducing page count means removing pages entirely, which is a separate operation using a PDF page remover tool."}}
-  ]}
-  </script>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
-  <script>
+<meta property="og:title" content="Comprimir un PDF para enviarlo por correo electrónico sin subirlo | Logrith">
+<meta property="og:description" content="Reduce el tamaño de los archivos PDF para enviarlos por correo electrónico o para utilizar portales de carga con restricciones, sin necesidad de subir el archivo al servidor de nadie.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://logrith.in/es/tool/blog/pdf-compressor">
+<meta property="og:site_name" content="Logrith">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Comprimir un PDF para enviarlo por correo electrónico sin subirlo | Logrith">
+<meta name="twitter:description" content="Reduce el tamaño del archivo PDF completamente en tu navegador, sin necesidad de subirlo a un servidor.">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0D0D0D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
+<link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261115">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "datePublished": "2026-10-20", "dateModified": "2026-10-31", "headline": "Comprime archivos PDF para enviarlos por correo electrónico o subirlos sin necesidad de subirlos a un servidor.", "description": "Cómo comprimir un PDF completamente en tu navegador para cumplir con el límite de Gmail o un portal de carga estricto.", "author": {"@type": "Person", "name": "Plert Ankush", "url": "https://logrith.in/es/pages/founder"}, "publisher": {"@id": "https://logrith.in/#organization"}, "mainEntityOfPage": "https://logrith.in/es/tool/blog/pdf-compressor"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Comprime PDF sin subirlo al servidor.", "url": "https://logrith.in/es/tool/blog/pdf-compressor", "isPartOf": {"@type": "Blog", "name": "Logrith Blog", "url": "https://logrith.in/es/tool/blog/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Compresor de PDF", "url": "https://logrith.in/es/tool/tools/pdf-compressor", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Hogar", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Guías de herramientas", "item": "https://logrith.in/es/tool/blog/"}, {"@type": "ListItem", "position": 4, "name": "Herramientas de imagen y PDF", "item": "https://logrith.in/es/tool/blog/categories/image-pdf-tools"}, {"@type": "ListItem", "position": 5, "name": "Compresor de PDF", "item": "https://logrith.in/es/tool/blog/pdf-compressor"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cómo puedo comprimir un PDF para que se ajuste al límite de archivos adjuntos de Gmail?", "acceptedAnswer": {"@type": "Answer", "text": "Gmail limita el tamaño de los archivos adjuntos a 25 MB. Utilice una calidad de compresión media o baja en un compresor de PDF, que vuelve a renderizar cada página con una calidad de imagen inferior, reduciendo normalmente el tamaño de los PDF escaneados o con muchas imágenes muy por debajo de ese límite."}}, {"@type": "Question", "name": "¿Es seguro comprimir un PDF que contenga información personal o financiera en línea?", "acceptedAnswer": {"@type": "Answer", "text": "Solo si la herramienta procesa el archivo completamente en tu navegador. Muchos compresores de PDF populares suben primero el archivo a un servidor. El compresor de PDF de Logrith nunca lo hace: todo el proceso se ejecuta localmente usando PDF.js y pdf-lib."}}, {"@type": "Question", "name": "¿Por qué mi PDF comprimido se hizo más grande en lugar de más pequeño?", "acceptedAnswer": {"@type": "Answer", "text": "Esto puede ocurrir si el PDF original ya estaba altamente optimizado o se basaba principalmente en texto, ya que volver a renderizar el texto como una imagen (lo que hacen los compresores basados ​​en páginas) a veces puede producir un archivo más grande que el texto original codificado de manera eficiente."}}, {"@type": "Question", "name": "¿Comprimir un PDF reduce la nitidez del texto?", "acceptedAnswer": {"@type": "Answer", "text": "Con la compresión basada en imágenes de página, sí, hasta cierto punto, ya que cada página se convierte en una imagen renderizada en lugar de texto en vivo. Las configuraciones de mayor calidad mantienen los bordes del texto más nítidos con un tamaño de archivo mayor."}}, {"@type": "Question", "name": "¿Puedo comprimir un PDF protegido con contraseña?", "acceptedAnswer": {"@type": "Answer", "text": "Primero tendrás que eliminar la contraseña, ya que el proceso de compresión necesita leer y volver a renderizar cada página, lo cual no es posible en un archivo cifrado sin la contraseña."}}, {"@type": "Question", "name": "¿Cuál es la diferencia entre comprimir un PDF y reducir su número de páginas?", "acceptedAnswer": {"@type": "Answer", "text": "La compresión reduce el tamaño de los archivos de páginas existentes al disminuir la calidad de la imagen. Reducir el número de páginas implica eliminarlas por completo, lo cual es una operación aparte que se realiza con una herramienta para eliminar páginas de PDF."}}]}</script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+<script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -68,173 +53,146 @@
   </script>
 </head>
 <body class="page-blog-pdf-compressor">
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main">Saltar al contenido</a>
 <div id="navbar"></div>
-
 <main id="main">
-
 <header class="page-hero"><div class="page-hero-inner">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/tool/">Tools</a> &rsaquo; <a href="/tool/blog/">Tool Guides</a> &rsaquo; <a href="/tool/blog/categories/image-pdf-tools">Image & PDF Tools</a> &rsaquo; PDF Compressor</nav>
-  <h1>How to Compress a PDF for Email or Upload Without Sending It to a Server</h1>
-  <p>Gmail rejects attachments over 25MB. Outlook caps at 20MB. Countless job portals, government forms, and application systems enforce their own strict PDF size limits. Most people solve this by uploading their file to a compression website — but that means handing a resume, contract, or financial document to a third-party server before you've even confirmed the compression worked. Here's how to shrink a PDF entirely inside your own browser instead, and how that approach compares to iLovePDF, SmallPDF, and Adobe's online compressor.</p>
-  <a href="/tool/tools/pdf-compressor" class="btn btn-primary btn-lg">
-    <svg class="icon"><use href="/assets/svg/icons.svg#compress-img"></use></svg>
-    Compress My PDF
+<nav class="breadcrumb" aria-label="Migaja de pan"><a href="/es/">Inicio</a> › <a href="/es/tool/">Herramientas</a> › <a href="/es/tool/blog/">Guías de herramientas</a> › <a href="/es/tool/blog/categories/image-pdf-tools">Herramientas de imagen y PDF</a> › Compresor de PDF</nav>
+<h1>Cómo comprimir un PDF para enviarlo por correo electrónico o subirlo sin enviarlo a un servidor.</h1>
+<p>Gmail rechaza los archivos adjuntos de más de 25 MB. Outlook tiene un límite de 20 MB. Innumerables portales de empleo, formularios gubernamentales y sistemas de solicitud imponen sus propios límites estrictos de tamaño para PDF. La mayoría de las personas solucionan esto subiendo su archivo a un sitio web de compresión, pero eso significa entregar un currículum, contrato o documento financiero a un servidor de terceros antes incluso de haber confirmado que la compresión funcionó. Aquí te mostramos cómo reducir el tamaño de un PDF completamente en tu propio navegador y cómo se compara este método con iLovePDF, SmallPDF y el compresor en línea de Adobe.</p>
+<a href="/es/tool/tools/pdf-compressor" class="btn btn-primary btn-lg">
+<svg class="icon"><use href="/assets/svg/icons.svg#compress-img"></use></svg> Comprimir mi PDF
   </a>
-  <p class="byline">By <a href="/pages/founder" rel="author">Plert Ankush</a> &middot; Published <time datetime="2026-10-20">Oct 20, 2026</time> &middot; Updated <time datetime="2026-10-31">Oct 31, 2026</time></p>
+<p class="byline">Por <a href="/es/pages/founder" rel="author">Plert Ankush</a> · Publicado<time datetime="2026-10-20"> 20 de octubre de 2026</time> · Actualizado<time datetime="2026-10-31"> 31 de octubre de 2026</time></p>
 </div></header>
-
 <article class="page-section prose">
-
-  <nav class="toc" aria-label="On this page">
-    <h2>On This Page</h2>
-    <ol>
-      <li><a href="#why-server">Why Server-Based Compression Is a Real Privacy Tradeoff</a></li>
-      <li><a href="#how-to-use">How to Compress a PDF in Your Browser</a></li>
-      <li><a href="#how-it-works">How Browser-Based PDF Compression Actually Works</a></li>
-      <li><a href="#quality-levels">Choosing the Right Compression Level</a></li>
-      <li><a href="#comparison">Comparison vs. iLovePDF, SmallPDF, and Adobe</a></li>
-      <li><a href="#mistakes">Common Mistakes When Compressing PDFs</a></li>
-      <li><a href="#privacy">Privacy, Security, and Limits</a></li>
-      <li><a href="#faq">Frequently Asked Questions</a></li>
-    </ol>
-  </nav>
-
-  <h2 id="why-server">Why Server-Based Compression Is a Real Privacy Tradeoff</h2>
-  <p>The most widely used PDF compressors — iLovePDF, SmallPDF, Adobe's online tool, and dozens of similar sites — all work the same fundamental way: you upload your file to their servers, their infrastructure processes it, and you download the result. This is a completely reasonable approach for a birthday invitation or a public flyer. It's a materially different question when the file is a resume with your home address and phone number, a signed contract, a bank statement, or a medical record — documents where you'd reasonably prefer not to introduce a third party into the chain of custody at all, even one with a good privacy policy.</p>
-  <p>Most of these services are genuinely trustworthy and delete uploaded files after processing, as their privacy policies state. The distinction this guide is making isn't that they're untrustworthy — it's that browser-based processing removes the question entirely, rather than resolving it through a policy you have to trust. If your PDF is never transmitted anywhere, there's no server log, no temporary storage window, and no policy to rely on, because there was never a hand-off in the first place.</p>
-
-  <h2 id="how-to-use">How to Compress a PDF in Your Browser</h2>
-  <ol class="steps">
-    <li class="step">
-      <p>Open the <a href="/tool/tools/pdf-compressor">PDF Compressor tool</a> and upload your PDF by clicking the upload area or dragging the file in.</p>
-    </li>
-    <li class="step">
-      <p>Choose a compression level — Low, Medium, or High quality — based on how aggressively you need to shrink the file versus how much visual fidelity you want to preserve.</p>
-    </li>
-    <li class="step">
-      <p>Click Compress PDF. The tool renders each page and re-compresses it at your chosen quality, showing a progress bar as it works through multi-page documents.</p>
-    </li>
-    <li class="step">
-      <p>Review the before/after size comparison shown once processing completes.</p>
-    </li>
-    <li class="step">
-      <p>Download the compressed PDF directly — at no point was the file uploaded anywhere.</p>
-    </li>
-  </ol>
-
-  <h2 id="how-it-works">How Browser-Based PDF Compression Actually Works</h2>
-  <p>Unlike direct PDF-structure optimization (which requires deep, format-specific manipulation of the PDF's internal object streams — the kind of processing typically done server-side with specialized libraries), a practical way to compress a PDF entirely within a browser is to render each page as an image, compress that image, and reassemble the compressed images into a new PDF. This is exactly what Logrith's PDF Compressor does: PDF.js renders each page onto an in-memory canvas, that canvas is exported as a JPEG at your chosen quality level, and pdf-lib rebuilds a new PDF document from the compressed page images.</p>
-  <p>This approach is particularly effective for PDFs that are already mostly images to begin with — scanned documents, photo-heavy reports, or PDFs exported from a scanner app — since the bulk of their file size already comes from image data, which compresses well using this method. It's less dramatically effective on PDFs that are almost entirely native text (a plain text-based invoice, for example), since converting efficiently-encoded text into a rendered image can occasionally increase file size rather than reduce it, a genuine limitation worth understanding rather than glossing over.</p>
-
-  <h2 id="quality-levels">Choosing the Right Compression Level</h2>
-  <div class="table-wrap">
-    <table class="table">
-    <tr><th>Level</th><th>Best For</th><th>Tradeoff</th></tr>
-    <tr><td>Low (smallest file)</td><td>Quick sharing where maximum size reduction matters most — email attachments under a strict limit, casual document sharing</td><td>Noticeably softer image detail and less sharp text edges on image-heavy pages</td></tr>
-    <tr><td>Medium</td><td>General-purpose sharing and storage — the sensible default for most everyday compression needs</td><td>Balanced — moderate size reduction with generally acceptable visual quality</td></tr>
-    <tr><td>High</td><td>Documents where visual clarity matters, like reports with detailed charts or photos, where some compression is still needed but quality matters more than squeezing out the last few percent</td><td>Smaller size reduction than Low or Medium</td></tr>
-  </table>
-  </div>
-
-  <h2 id="comparison">Comparison vs. iLovePDF, SmallPDF, and Adobe</h2>
-  <div class="table-wrap">
-    <table class="table">
-    <tr><th>Feature</th><th>Logrith PDF Compressor</th><th>iLovePDF</th><th>SmallPDF</th><th>Adobe Acrobat Online</th></tr>
-    <tr><td>Processing location</td><td>Entirely in-browser</td><td>Server upload</td><td>Server upload</td><td>Server upload</td></tr>
-    <tr><td>Free usage limit</td><td>Unlimited</td><td>Unlimited compressions, 25MB file cap</td><td>2 tasks per day (free tier)</td><td>Requires Google/Adobe sign-in</td></tr>
-    <tr><td>Account required</td><td>No</td><td>No</td><td>No</td><td>Yes</td></tr>
-    <tr><td>Compression control</td><td>3 quality levels</td><td>Low/Recommended/Extreme presets</td><td>Basic/Strong presets</td><td>Automatic, high-quality engine</td></tr>
-    <tr><td>Exact size targeting (e.g. "under 200KB")</td><td>No — quality-level based</td><td>No</td><td>No</td><td>No</td></tr>
-    <tr><td>Watermark on output</td><td>None</td><td>None</td><td>None</td><td>None</td></tr>
-  </table>
-  </div>
-  <p>Adobe's compression engine — the same one behind Acrobat Pro — genuinely produces the best raw compression-to-quality ratio of the group, which makes sense given its decades of dedicated PDF engineering. Its cost is requiring a Google or Adobe sign-in, which introduces both friction and an account-level record of your usage. iLovePDF offers a reasonable middle ground with unlimited free compressions, at the cost of a 25MB file cap and an ad-supported interface. SmallPDF's free tier is the most restrictive of the three at just 2 tasks per day, positioning it more as a funnel toward its paid plans than a genuinely free everyday tool.</p>
-  <p>Logrith's PDF Compressor doesn't try to match Adobe's compression engine sophistication — a page-image-based approach is a reasonable, practical method, not a state-of-the-art PDF optimization engine. What it offers instead is the one thing none of the three major alternatives provide: your file never leaves your device, with no daily limit and no account required. For sensitive documents where that tradeoff matters more than squeezing out the absolute maximum compression ratio, that's a meaningfully different value proposition, not just a smaller version of the same tool.</p>
-
-  <h2>Real-World Scenarios: When Each Approach Makes Sense</h2>
-  <ul>
-    <li><strong>"I need to email a scanned contract that's 40MB."</strong> This is the strongest case for page-image compression — scanned documents are almost entirely image data, so even Medium quality typically shrinks a scan-heavy PDF dramatically, often by 70% or more.</li>
-    <li><strong>"My resume PDF is only 2MB but the portal wants under 500KB."</strong> A text-based resume PDF with a photo or logo may not shrink as dramatically through page-image compression, since the underlying text was already efficiently encoded. In this case, check whether the size is coming from an embedded high-resolution photo, and consider compressing that image separately before generating the PDF, in addition to running the PDF compressor.</li>
-    <li><strong>"I have a 200-page report full of charts and photos."</strong> Expect longer processing time given the page count, but also expect a meaningful size reduction, since chart and photo-heavy pages compress well with this method. Use High quality if chart legibility matters.</li>
-    <li><strong>"I just need this under Gmail's limit, nothing fancy."</strong> Medium quality is the sensible default — it balances noticeable size reduction against acceptable visual quality for the vast majority of everyday documents.</li>
-  </ul>
-
-  <h2>Single-File Processing vs. Batch Compression</h2>
-  <p>It's worth being upfront about a genuine limitation: Logrith's PDF Compressor currently handles one file at a time, while iLovePDF and SmallPDF both offer some form of batch processing on their free tiers (with iLovePDF's being more generous). If you routinely need to compress dozens of PDFs at once — processing a folder of scanned invoices, for example — a batch-capable tool will save meaningfully more time than compressing files one by one, even accounting for the privacy tradeoff of uploading them.</p>
-  <p>For the more common case of compressing a handful of documents as they come up — a single resume before applying to a job, one contract before emailing it, an occasional scanned form — the lack of batch processing is a minor inconvenience rather than a real obstacle, and the privacy benefit of never uploading the file remains fully intact regardless of how many files you process one at a time.</p>
-
-  <h2>Manual Alternatives to Online Compression</h2>
-  <p>If you have access to desktop software, Adobe Acrobat Pro, Preview (on macOS), or LibreOffice's PDF export can all reduce PDF size locally without any online tool at all — genuinely private since nothing touches a browser or server, but requiring installed software most casual users don't have on hand. For anyone without desktop PDF software, a browser-based compressor is the closest equivalent in terms of keeping the file local.</p>
-
-  <h2 id="mistakes">Common Mistakes When Compressing PDFs</h2>
-  <ul>
-    <li><strong>Compressing an already-compressed PDF repeatedly.</strong> Each re-compression pass can compound quality loss on image-heavy pages, similar to repeatedly re-saving a JPEG. Keep an original master file if you might need to re-compress at a different quality later.</li>
-    <li><strong>Using maximum compression on text-critical documents.</strong> Contracts, legal documents, and anything where fine text needs to remain perfectly legible should use High quality rather than Low, even though the file size reduction will be smaller.</li>
-    <li><strong>Not checking the result before sending.</strong> Especially at Low quality, always open the compressed file and check a few pages before relying on it for something important.</li>
-    <li><strong>Trying to compress a password-protected PDF.</strong> Remove any password protection first, since the compression process needs to read and re-render each page.</li>
-    <li><strong>Expecting text-based PDFs to shrink dramatically.</strong> If your PDF is mostly native text rather than scanned images, size reduction from this method will be modest — the bulk of the file size in a photo-heavy or scanned PDF comes from images, and that's where this compression method has the most impact.</li>
-  </ul>
-
-  <h2 id="privacy">Privacy, Security, and Limits</h2>
-  <p>The entire compression process — rendering pages, adjusting image quality, and reassembling the PDF — runs using PDF.js and pdf-lib, both JavaScript libraries executing directly in your browser. No file upload occurs at any point, no server log is created, and there's no account or session tied to your usage. Because there's no network round-trip involved, processing speed depends only on your device's own processing power and the document's page count, rather than upload bandwidth or a queue on someone else's servers.</p>
-  <p>The realistic limit worth knowing: very large or many-page PDFs will take correspondingly longer to process, since each page is individually rendered and re-compressed by your browser rather than a dedicated server. For typical documents under 50 pages, this remains fast; for very large scanned documents (hundreds of pages), expect noticeably more processing time than a server-based tool with dedicated compute resources.</p>
-
-  <h3>Why Choose Logrith</h3>
-  <p>This same privacy-first, no-account approach applies across all of Logrith's 100+ tools. If you're compressing a PDF for a job application, you might also need a resume analyzer, a file size converter to double-check the final result, or an image compressor for an accompanying photo — all built to the same standard, all in one place.</p>
-
-</article>
-
-<article class="page-section prose">
-  <h2 id="faq">Frequently Asked Questions</h2>
-  <div class="faq-list">
-    <details class="faq-item">
-      <summary class="faq-q">How do I compress a PDF to fit Gmail's attachment limit?</summary>
-      <div class="faq-a"><p>Gmail caps attachments at 25MB. Use Medium or Low compression quality, which re-renders each page at a lower image quality, typically shrinking scanned or image-heavy PDFs well below that limit.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Is it safe to compress a PDF with personal or financial information online?</summary>
-      <div class="faq-a"><p>Only if the tool processes the file entirely in your browser. Many popular compressors upload your file to a server first. Logrith's PDF Compressor never does — everything runs locally using PDF.js and pdf-lib.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Why did my compressed PDF get bigger instead of smaller?</summary>
-      <div class="faq-a"><p>This can happen if the original PDF was already highly optimized or mostly text-based, since re-rendering text as an image can sometimes produce a larger file than efficiently-encoded original text.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Does compressing a PDF reduce text sharpness?</summary>
-      <div class="faq-a"><p>With page-image-based compression, yes, to some degree, since each page becomes a rendered image rather than live text. Higher quality settings keep text edges sharper at a larger file size.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Can I compress a password-protected PDF?</summary>
-      <div class="faq-a"><p>You'll need to remove the password first, since compression requires reading and re-rendering each page, which isn't possible on an encrypted file without the password.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">What's the difference between compressing a PDF and reducing its page count?</summary>
-      <div class="faq-a"><p>Compression reduces file size of existing pages by lowering image quality. Reducing page count means removing pages entirely, a separate operation using a PDF page remover tool.</p></div>
-    </details>
-  </div>
-
-  <h2>Conclusion</h2>
-  <p>Compressing a PDF doesn't have to mean handing it to a server first. For casual documents, that tradeoff barely matters — but for resumes, contracts, financial records, and anything else genuinely sensitive, browser-based compression removes the question of trust entirely rather than asking you to rely on a privacy policy. Logrith's PDF Compressor won't out-compress Adobe's dedicated engine, but for documents where privacy and zero cost matter more than squeezing out the absolute maximum size reduction, it's a straightforward, honest tool for the job.</p>
-</article>
-
-<nav class="post-nav page-section" aria-label="More guides">
-  <a href="/tool/blog/photo-resizer-kb">&larr; Previous: <strong>Photo Resizer to KB Guide</strong></a>
-  <a href="/tool/blog/image-converter">Next: <strong>Image Converter Guide</strong> &rarr;</a>
+<nav class="toc" aria-label="En esta página">
+<h2>En esta página</h2>
+<ol>
+<li><a href="#why-server">Por qué la compresión basada en servidor supone una verdadera concesión a la privacidad.</a></li>
+<li><a href="#how-to-use">Cómo comprimir un PDF en tu navegador</a></li>
+<li><a href="#how-it-works">Cómo funciona realmente la compresión de PDF basada en el navegador</a></li>
+<li><a href="#quality-levels">Cómo elegir el nivel de compresión adecuado</a></li>
+<li><a href="#comparison">Comparación con iLovePDF, SmallPDF y Adobe</a></li>
+<li><a href="#mistakes">Errores comunes al comprimir archivos PDF</a></li>
+<li><a href="#privacy">Privacidad, seguridad y límites</a></li>
+<li><a href="#faq">Preguntas frecuentes</a></li>
+</ol>
 </nav>
-
+<h2 id="why-server">Por qué la compresión basada en servidor supone una verdadera concesión a la privacidad.</h2>
+<p>Los compresores de PDF más utilizados —iLovePDF, SmallPDF, la herramienta en línea de Adobe y docenas de sitios similares— funcionan básicamente de la misma manera: subes tu archivo a sus servidores, su infraestructura lo procesa y descargas el resultado. Este método es perfectamente válido para una invitación de cumpleaños o un folleto publicitario. Sin embargo, la situación cambia radicalmente cuando se trata de un currículum con tu dirección y número de teléfono, un contrato firmado, un extracto bancario o un historial médico; documentos en los que, lógicamente, preferirías no involucrar a terceros en la cadena de custodia, incluso si estos cuentan con una buena política de privacidad.</p>
+<p>La mayoría de estos servicios son realmente fiables y eliminan los archivos subidos tras su procesamiento, tal como indican sus políticas de privacidad. La diferencia que establece esta guía no radica en que no sean fiables, sino en que el procesamiento a través del navegador elimina por completo la cuestión, en lugar de resolverla mediante una política en la que debas confiar. Si tu PDF nunca se transmite a ningún sitio, no hay registro del servidor, ni almacenamiento temporal, ni política en la que basarse, porque, en primer lugar, nunca se produjo la transferencia del archivo.</p>
+<h2 id="how-to-use">Cómo comprimir un PDF en tu navegador</h2>
+<ol class="steps">
+<li class="step">
+<p>Abra la <a href="/es/tool/tools/pdf-compressor">herramienta PDF Compressor</a> y cargue su PDF haciendo clic en el área de carga o arrastrando el archivo.</p>
+</li>
+<li class="step">
+<p>Elige un nivel de compresión (bajo, medio o alto) en función de la rapidez con la que necesites reducir el tamaño del archivo y de la fidelidad visual que desees conservar.</p>
+</li>
+<li class="step">
+<p>Haz clic en Comprimir PDF. La herramienta procesa cada página y la vuelve a comprimir con la calidad que hayas elegido, mostrando una barra de progreso a medida que avanza con documentos de varias páginas.</p>
+</li>
+<li class="step">
+<p>Revise la comparación de tamaño antes y después que se muestra una vez que finaliza el procesamiento.</p>
+</li>
+<li class="step">
+<p>Descarga el PDF comprimido directamente; en ningún momento se subió el archivo a ningún sitio.</p>
+</li>
+</ol>
+<h2 id="how-it-works">Cómo funciona realmente la compresión de PDF basada en el navegador</h2>
+<p>A diferencia de la optimización directa de la estructura de un PDF (que requiere una manipulación profunda y específica del formato de los flujos de objetos internos del PDF, un tipo de procesamiento que normalmente se realiza en el servidor con bibliotecas especializadas), una forma práctica de comprimir un PDF completamente dentro de un navegador es renderizar cada página como una imagen, comprimir esa imagen y volver a ensamblar las imágenes comprimidas en un nuevo PDF. Esto es precisamente lo que hace el compresor de PDF de Logrith: PDF.js renderiza cada página en un lienzo en memoria, ese lienzo se exporta como un JPEG con el nivel de calidad elegido y pdf-lib reconstruye un nuevo documento PDF a partir de las imágenes de página comprimidas.</p>
+<p>Este método resulta especialmente eficaz para archivos PDF que ya contienen principalmente imágenes (documentos escaneados, informes con muchas fotos o archivos PDF exportados desde una aplicación de escáner), puesto que la mayor parte de su tamaño proviene de datos de imagen, que se comprimen eficazmente con este método. Su eficacia es menos significativa en archivos PDF que son casi exclusivamente texto (una factura en texto plano, por ejemplo), ya que la conversión de texto codificado de forma eficiente en una imagen renderizada puede, en ocasiones, aumentar el tamaño del archivo en lugar de reducirlo; una limitación importante que conviene comprender en lugar de ignorar.</p>
+<h2 id="quality-levels">Cómo elegir el nivel de compresión adecuado</h2>
+<div class="table-wrap">
+<table class="table">
+<tr><th>Nivel</th><th>Lo mejor para</th><th>Compensación</th></tr>
+<tr><td>Bajo (archivo más pequeño)</td><td>Compartir rápidamente donde la máxima reducción de tamaño es crucial: archivos adjuntos de correo electrónico con un límite estricto, compartir documentos de forma informal.</td><td>Se aprecia una menor nitidez en los detalles de las imágenes y bordes de texto menos definidos en las páginas con muchas imágenes.</td></tr>
+<tr><td>Medio</td><td>Compartir y almacenar de uso general: la opción predeterminada sensata para la mayoría de las necesidades de compresión cotidianas.</td><td>Equilibrado: reducción de tamaño moderada con una calidad visual generalmente aceptable.</td></tr>
+<tr><td>Alto</td><td>Documentos donde la claridad visual es importante, como informes con gráficos detallados o fotos, donde aún se necesita cierta compresión, pero la calidad importa más que exprimir hasta el último porcentaje.</td><td>Reducción de tamaño menor que en los niveles Bajo o Medio.</td></tr>
+</table>
+</div>
+<h2 id="comparison">Comparación con iLovePDF, SmallPDF y Adobe</h2>
+<div class="table-wrap">
+<table class="table">
+<tr><th>Característica</th><th>Logrith Compresor de PDF</th><th>iLovePDF</th><th>PDF pequeño</th><th>Adobe Acrobat Online</th></tr>
+<tr><td>Ubicación de procesamiento</td><td>Completamente en el navegador</td><td>Carga del servidor</td><td>Carga del servidor</td><td>Carga del servidor</td></tr>
+<tr><td>Límite de uso gratuito</td><td>Ilimitado</td><td>Compresión ilimitada, límite de archivos de 25 MB.</td><td>2 tareas al día (plan gratuito)</td><td>Requiere iniciar sesión con Google/Adobe.</td></tr>
+<tr><td>Se requiere cuenta</td><td>No</td><td>No</td><td>No</td><td>Sí</td></tr>
+<tr><td>Control de compresión</td><td>3 niveles de calidad</td><td>Preajustes bajos/recomendados/extremos</td><td>Preajustes básicos/avanzados</td><td>Motor automático de alta calidad</td></tr>
+<tr><td>Tamaño exacto (por ejemplo, "menos de 200 KB")</td><td>No — basado en el nivel de calidad</td><td>No</td><td>No</td><td>No</td></tr>
+<tr><td>Marca de agua en la salida</td><td>Ninguno</td><td>Ninguno</td><td>Ninguno</td><td>Ninguno</td></tr>
+</table>
+</div>
+<p>El motor de compresión de Adobe —el mismo que utiliza Acrobat Pro— ofrece la mejor relación compresión-calidad del grupo, lo cual es lógico dada su dilatada experiencia en ingeniería de PDF. Su precio es que requiere iniciar sesión con Google o Adobe, lo que genera cierta incomodidad y un registro de tu uso a nivel de cuenta. iLovePDF ofrece una solución intermedia razonable con compresiones gratuitas ilimitadas, a costa de un límite de 25 MB por archivo y una interfaz con publicidad. El plan gratuito de SmallPDF es el más restrictivo de los tres, con solo 2 tareas al día, lo que lo posiciona más como un embudo para sus planes de pago que como una herramienta verdaderamente gratuita para el uso diario.</p>
+<p>PDF Compressor de Logrith no pretende igualar la sofisticación del motor de compresión de Adobe: un enfoque basado en imágenes de página es un método razonable y práctico, no un motor de optimización de PDF de última generación. En cambio, ofrece algo que ninguna de las tres principales alternativas proporciona: tu archivo nunca sale de tu dispositivo, sin límite diario ni necesidad de cuenta. Para documentos confidenciales donde esta ventaja es más importante que lograr la máxima compresión posible, se trata de una propuesta de valor significativamente diferente, no solo una versión reducida de la misma herramienta.</p>
+<h2>Escenarios del mundo real: cuándo tiene sentido cada enfoque.</h2>
+<ul>
+<li><strong>"Necesito enviar por correo electrónico un contrato escaneado de 40 MB".</strong> Este es el argumento más sólido a favor de la compresión de imágenes de página: los documentos escaneados son casi en su totalidad datos de imagen, por lo que incluso la calidad media suele reducir drásticamente el tamaño de un PDF con mucho contenido escaneado, a menudo en un 70 % o más.</li>
+<li><strong>"Mi PDF de currículum solo pesa 2 MB, pero el portal exige que sea inferior a 500 KB."</strong> Un PDF de currículum basado en texto con una foto o logotipo puede que no se reduzca tanto mediante la compresión de imágenes, ya que el texto subyacente ya se codificó de forma eficiente. En este caso, compruebe si el tamaño se debe a una foto de alta resolución incrustada y considere comprimir esa imagen por separado antes de generar el PDF, además de usar el compresor de PDF.</li>
+<li><strong>Tengo un informe de 200 páginas con gráficos y fotos.</strong> Debido a la cantidad de páginas, el tiempo de procesamiento será mayor, pero también se espera una reducción de tamaño significativa, ya que las páginas con muchos gráficos y fotos se comprimen bien con este método. Utilice la opción de alta calidad si la legibilidad de los gráficos es importante.</li>
+<li><strong>"Solo necesito que esto no supere el límite de Gmail, nada del otro mundo."</strong> La calidad media es la opción predeterminada más sensata: equilibra una reducción de tamaño notable con una calidad visual aceptable para la gran mayoría de los documentos cotidianos.</li>
+</ul>
+<h2>Procesamiento de archivos individuales frente a compresión por lotes</h2>
+<p>Es importante ser claros sobre una limitación real: el compresor de PDF de Logrith actualmente procesa un archivo a la vez, mientras que iLovePDF y SmallPDF ofrecen procesamiento por lotes en sus planes gratuitos (siendo iLovePDF más generoso). Si necesita comprimir docenas de PDF a la vez con frecuencia —por ejemplo, una carpeta de facturas escaneadas— una herramienta con capacidad de procesamiento por lotes le ahorrará mucho más tiempo que comprimir los archivos uno por uno, incluso teniendo en cuenta la pérdida de privacidad que implica subirlos.</p>
+<p>En el caso más común de comprimir un puñado de documentos a medida que se van generando (un currículum antes de solicitar un trabajo, un contrato antes de enviarlo por correo electrónico, algún formulario escaneado ocasional), la falta de procesamiento por lotes es un inconveniente menor más que un obstáculo real, y la ventaja de privacidad de no subir nunca el archivo permanece totalmente intacta independientemente de cuántos archivos se procesen uno a la vez.</p>
+<h2>Alternativas manuales a la compresión en línea</h2>
+<p>Si tienes acceso a software de escritorio, Adobe Acrobat Pro, Vista Previa (en macOS) o la exportación a PDF de LibreOffice pueden reducir el tamaño de los PDF localmente sin necesidad de herramientas en línea. Esto garantiza la privacidad, ya que no se accede a ningún navegador ni servidor, pero requiere software instalado que la mayoría de los usuarios ocasionales no tienen a mano. Para quienes no disponen de software de escritorio para PDF, un compresor basado en navegador es la mejor alternativa para mantener el archivo localmente.</p>
+<h2 id="mistakes">Errores comunes al comprimir archivos PDF</h2>
+<ul>
+<li><strong>Comprimir repetidamente un PDF ya comprimido</strong> puede agravar la pérdida de calidad en páginas con muchas imágenes, de forma similar a guardar repetidamente un archivo JPEG. Conserve el archivo maestro original por si necesita recomprimirlo con una calidad diferente más adelante.</li>
+<li><strong>Utilice la máxima compresión en documentos con texto crítico.</strong> Los contratos, documentos legales y cualquier documento donde el texto pequeño deba permanecer perfectamente legible deben usar la calidad Alta en lugar de la Baja, aunque la reducción del tamaño del archivo sea menor.</li>
+<li><strong>No comprobar el resultado antes de enviarlo.</strong> Especialmente con baja calidad, siempre abra el archivo comprimido y revise algunas páginas antes de confiar en él para algo importante.</li>
+<li><strong>Intentando comprimir un PDF protegido con contraseña.</strong> Elimine primero cualquier protección con contraseña, ya que el proceso de compresión necesita leer y volver a renderizar cada página.</li>
+<li><strong>Se espera que los PDF basados ​​en texto se reduzcan drásticamente.</strong> Si su PDF contiene principalmente texto nativo en lugar de imágenes escaneadas, la reducción de tamaño con este método será modesta; la mayor parte del tamaño del archivo en un PDF con muchas fotos o escaneado proviene de las imágenes, y es ahí donde este método de compresión tiene mayor impacto.</li>
+</ul>
+<h2 id="privacy">Privacidad, seguridad y límites</h2>
+<p>Todo el proceso de compresión —renderizado de páginas, ajuste de la calidad de imagen y reconstrucción del PDF— se ejecuta mediante PDF.js y pdf-lib, dos bibliotecas JavaScript que se ejecutan directamente en tu navegador. No se realiza ninguna carga de archivos, no se crea ningún registro del servidor y no hay ninguna cuenta ni sesión vinculada a tu uso. Dado que no hay comunicación por red, la velocidad de procesamiento depende únicamente de la potencia de procesamiento de tu dispositivo y del número de páginas del documento, en lugar del ancho de banda de subida o de una cola en servidores externos.</p>
+<p>Un límite importante a tener en cuenta: los archivos PDF muy grandes o con muchas páginas tardarán más en procesarse, ya que cada página se renderiza y comprime individualmente en el navegador en lugar de en un servidor dedicado. Para documentos típicos de menos de 50 páginas, el procesamiento sigue siendo rápido; para documentos escaneados muy grandes (cientos de páginas), el tiempo de procesamiento será considerablemente mayor que con una herramienta basada en servidor con recursos informáticos dedicados.</p>
+<h3>¿Por qué elegir Logrith?</h3>
+<p>Este mismo enfoque que prioriza la privacidad y no requiere cuenta se aplica a las más de 100 herramientas de Logrith. Si estás comprimiendo un PDF para una solicitud de empleo, es posible que también necesites un analizador de currículum, un convertidor de tamaño de archivo para verificar el resultado final o un compresor de imágenes para una foto adjunta; todo ello con el mismo estándar y en un solo lugar.</p>
+</article>
+<article class="page-section prose">
+<h2 id="faq">Preguntas frecuentes</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary class="faq-q">¿Cómo puedo comprimir un PDF para que se ajuste al límite de archivos adjuntos de Gmail?</summary>
+<div class="faq-a"><p>Gmail limita el tamaño de los archivos adjuntos a 25 MB. Utilice una calidad de compresión media o baja, que vuelve a renderizar cada página con una calidad de imagen inferior, reduciendo normalmente el tamaño de los PDF escaneados o con muchas imágenes muy por debajo de ese límite.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Es seguro comprimir un PDF con información personal o financiera en línea?</summary>
+<div class="faq-a"><p>Solo si la herramienta procesa el archivo completamente en tu navegador. Muchos compresores populares suben primero el archivo a un servidor. El compresor de PDF de Logrith nunca lo hace: todo se ejecuta localmente usando PDF.js y pdf-lib.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Por qué mi PDF comprimido se hizo más grande en lugar de más pequeño?</summary>
+<div class="faq-a"><p>Esto puede ocurrir si el PDF original ya estaba altamente optimizado o se basaba principalmente en texto, ya que volver a renderizar el texto como una imagen a veces puede producir un archivo más grande que el texto original codificado de manera eficiente.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Comprimir un PDF reduce la nitidez del texto?</summary>
+<div class="faq-a"><p>Con la compresión basada en imágenes de página, sí, hasta cierto punto, ya que cada página se convierte en una imagen renderizada en lugar de texto en vivo. Las configuraciones de mayor calidad mantienen los bordes del texto más nítidos con un tamaño de archivo mayor.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Puedo comprimir un PDF protegido con contraseña?</summary>
+<div class="faq-a"><p>Primero tendrás que eliminar la contraseña, ya que la compresión requiere leer y volver a renderizar cada página, lo cual no es posible en un archivo cifrado sin la contraseña.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Cuál es la diferencia entre comprimir un PDF y reducir su número de páginas?</summary>
+<div class="faq-a"><p>La compresión reduce el tamaño de los archivos de las páginas existentes al disminuir la calidad de la imagen. Reducir el número de páginas implica eliminarlas por completo, una operación independiente que se realiza con una herramienta para eliminar páginas de PDF.</p></div>
+</details>
+</div>
+<h2>Conclusión</h2>
+<p>Comprimir un PDF no tiene por qué implicar enviarlo primero a un servidor. Para documentos informales, esta desventaja apenas importa; pero para currículos, contratos, registros financieros y cualquier otro documento realmente confidencial, la compresión basada en el navegador elimina por completo la cuestión de la confianza, en lugar de exigirle que confíe en una política de privacidad. El compresor de PDF de Logrith no comprime más rápido que el motor dedicado de Adobe, pero para documentos donde la privacidad y el coste cero son más importantes que lograr la máxima reducción de tamaño posible, es una herramienta sencilla y fiable.</p>
+</article>
+<nav class="post-nav page-section" aria-label="Más guías">
+<a href="/es/tool/blog/photo-resizer-kb">← Anterior: <strong>Guía para redimensionar fotos a KB</strong></a> <a href="/es/tool/blog/image-converter">Siguiente: <strong>Guía para convertir imágenes</strong> →</a>
+</nav>
 <section class="page-section">
-  <h2>Related Tools</h2>
-  <div class="related-grid">
-    <a class="related-card" href="/tool/blog/merge-multiple-pdf-files-into-one-free"><strong>PDF Merge</strong><span>Combine multiple PDF files into one document.</span></a>
-    <a class="related-card" href="/tool/blog/extract-pages-from-pdf-online-free"><strong>PDF Split</strong><span>Split a PDF into separate pages or page ranges.</span></a>
-    <a class="related-card" href="/tool/tools/pdf-page-remover"><strong>PDF Page Remover</strong><span>Remove specific pages to reduce page count directly.</span></a>
-    <a class="related-card" href="/tool/blog/image-compressor"><strong>Image Compressor</strong><span>Compress standalone images with six flexible modes.</span></a>
-  </div>
+<h2>Herramientas relacionadas</h2>
+<div class="related-grid">
+<a class="related-card" href="/es/tool/blog/merge-multiple-pdf-files-into-one-free"><strong>Combina</strong> <span>varios archivos PDF en un solo documento.</span></a> <a class="related-card" href="/es/tool/blog/extract-pages-from-pdf-online-free"><strong>Divide</strong> <span>un PDF en páginas o rangos de páginas.</span></a> <a class="related-card" href="/es/tool/tools/pdf-page-remover"><strong>Elimina</strong> <span>páginas específicas para reducir el número de páginas.</span></a> <a class="related-card" href="/es/tool/blog/image-compressor"><strong>Comprime</strong> <span>imágenes con seis modos flexibles.</span></a>
+</div>
 </section>
-
 </main>
-
 <div id="footer"></div>
 <script src="/assets/js/main.js?v=20261115"></script>
 </body>

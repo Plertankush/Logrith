@@ -1,290 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Get Instant Feedback and a Score on Your Resume | Logrith</title>
-  <meta name="description" content="Upload your resume to see a readability and structure score with specific suggestions to improve it, analyzed in your browser.">
-  <meta name="keywords" content="ai resume analyzer free, resume checker online, ats resume checker, resume score tool, resume feedback free, resume review online, resume analyzer no signup">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="author" content="Logrith">
-  <link rel="canonical" href="https://logrith.in/tool/tools/resume-analyzer">
-  <meta property="og:title" content="Get Instant Feedback and a Score on Your Resume | Logrith">
-  <meta property="og:description" content="Upload your resume to see a readability and structure score with specific suggestions to improve it, analyzed in your browser.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://logrith.in/tool/tools/resume-analyzer">
-  <meta property="og:site_name" content="Logrith">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Get Instant Feedback and a Score on Your Resume | Logrith">
-  <meta name="twitter:description" content="Upload your resume to see a readability and structure score with specific suggestions to improve it, analyzed in your browser.">
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#0D0D0D">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Obtén comentarios instantáneos y una puntuación para tu currículum | Logrith</title>
+<meta name="description" content="Sube tu currículum para ver una puntuación de legibilidad y estructura con sugerencias específicas para mejorarlo, analizada en tu navegador.">
+<meta name="keywords" content="ai resume analyzer free, resume checker online, ats resume checker, resume score tool, resume feedback free, resume review online, resume analyzer no signup">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Logrith">
+<link rel="canonical" href="https://logrith.in/es/tool/tools/resume-analyzer">
+  <link rel="alternate" hreflang="x-default" href="https://logrith.in/tool/tools/resume-analyzer">
+  <link rel="alternate" hreflang="es" href="https://logrith.in/es/tool/tools/resume-analyzer">
+  <link rel="alternate" hreflang="en" href="https://logrith.in/tool/tools/resume-analyzer">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
-  <link rel="preload" href="/components/navbar.html" as="fetch" type="text/html" crossorigin>
-  <link rel="preload" href="/components/footer.html" as="fetch" type="text/html" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=20261115">
-  <link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "AI Resume Analyzer",
-        "url": "https://logrith.in/tool/tools/resume-analyzer",
-        "description": "Free AI-powered resume analyzer that checks ATS compatibility, content quality, keyword usage, and provides actionable improvement suggestions.",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "provider": {
-          "@type": "Organization",
-          "name": "Logrith",
-          "url": "https://logrith.in"
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://logrith.in/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Tools",
-            "item": "https://logrith.in/tool/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "AI Tools",
-            "item": "https://logrith.in/tool/categories/ai-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "name": "AI Resume Analyzer"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What does the AI Resume Analyzer check?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "It analyzes ATS compatibility, contact information completeness, keyword density, quantified achievements, action verbs usage, section structure, resume length, and overall content quality."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is an ATS score?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "ATS (Applicant Tracking System) score measures how well your resume will perform when scanned by automated HR software. Over 90% of Fortune 500 companies use ATS to filter resumes before a human sees them."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is my resume data stored?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. Your resume text is analyzed entirely using the Anthropic Claude API, but nothing is stored permanently. Each analysis is independent and not retained."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What makes a good ATS-friendly resume?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "An ATS-friendly resume uses standard section headings (Experience, Education, Skills), avoids tables and graphics, includes relevant keywords from the job description, and uses simple formatting."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How should I paste my resume?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Copy all text from your resume (Ctrl+A, Ctrl+C in Word or PDF) and paste it into the text area. Include all sections: contact info, summary, experience, education, and skills."
-            }
-          }
-        ]
-      }
-    ]
-  }
-  </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-BPJ4332XJH');</script>
+
+<meta property="og:title" content="Obtén comentarios instantáneos y una puntuación para tu currículum | Logrith">
+<meta property="og:description" content="Sube tu currículum para ver una puntuación de legibilidad y estructura con sugerencias específicas para mejorarlo, analizada en tu navegador.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://logrith.in/es/tool/tools/resume-analyzer">
+<meta property="og:site_name" content="Logrith">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Obtén comentarios instantáneos y una puntuación para tu currículum | Logrith">
+<meta name="twitter:description" content="Sube tu currículum para ver una puntuación de legibilidad y estructura con sugerencias específicas para mejorarlo, analizada en tu navegador.">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0D0D0D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
+<link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261115">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Analizador de currículums con IA", "url": "https://logrith.in/es/tool/tools/resume-analyzer", "description": "Analizador de currículums gratuito con inteligencia artificial que comprueba la compatibilidad con sistemas ATS, la calidad del contenido, el uso de palabras clave y proporciona sugerencias prácticas para mejorar.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "provider": {"@type": "Organization", "name": "Logrith", "url": "https://logrith.in"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Hogar", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas de IA", "item": "https://logrith.in/es/tool/categories/ai-tools"}, {"@type": "ListItem", "position": 4, "name": "Analizador de currículums con IA"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Qué comprueba el analizador de currículums con IA?", "acceptedAnswer": {"@type": "Answer", "text": "Analiza la compatibilidad con los sistemas de seguimiento de candidatos (ATS), la exhaustividad de la información de contacto, la densidad de palabras clave, los logros cuantificados, el uso de verbos de acción, la estructura de las secciones, la longitud del currículum y la calidad general del contenido."}}, {"@type": "Question", "name": "¿Qué es una puntuación ATS?", "acceptedAnswer": {"@type": "Answer", "text": "La puntuación del ATS (Sistema de Seguimiento de Candidatos) mide el rendimiento de tu currículum al ser analizado por un software automatizado de recursos humanos. Más del 90 % de las empresas Fortune 500 utilizan ATS para filtrar los currículos antes de que los revise un humano."}}, {"@type": "Question", "name": "¿Se almacenan los datos de mi currículum?", "acceptedAnswer": {"@type": "Answer", "text": "No. El texto de tu currículum se analiza íntegramente mediante la API de Anthropic Claude, pero no se almacena nada de forma permanente. Cada análisis es independiente y no se guarda."}}, {"@type": "Question", "name": "¿Qué características debe tener un currículum compatible con los sistemas ATS?", "acceptedAnswer": {"@type": "Answer", "text": "Un currículum vitae compatible con los sistemas ATS utiliza encabezados de sección estándar (Experiencia, Educación, Habilidades), evita tablas y gráficos, incluye palabras clave relevantes de la descripción del puesto y utiliza un formato sencillo."}}, {"@type": "Question", "name": "¿Cómo debo pegar mi currículum?", "acceptedAnswer": {"@type": "Answer", "text": "Copia todo el texto de tu currículum (Ctrl+A, Ctrl+C en Word o PDF) y pégalo en el área de texto. Incluye todas las secciones: información de contacto, resumen, experiencia, formación académica y habilidades."}}]}]}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-BPJ4332XJH');</script>
 </head>
 <body class="page-resume-analyzer">
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main">Saltar al contenido</a>
 <div id="navbar"></div>
-
 <main id="main">
-
 <header class="page-hero">
-  <div class="page-hero-inner">
-    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/tool/">Tools</a> › <a href="/tool/categories/ai-tools">AI Tools</a> › AI Resume Analyzer</nav>
-    <h1>AI Resume Analyzer</h1><p>Get instant ATS score, keyword gaps & actionable feedback powered by Claude AI</p>
-    <div class="tag-list">
-      <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#cpu"></use></svg> Claude AI</span>
-      <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#chart-bar"></use></svg> ATS Score</span>
-      <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#key"></use></svg> Keyword Analysis</span>
-      <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
-      <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lock"></use></svg> Private</span>
-    </div>
-  </div>
-</header>
-
-<div class="tool-wrap">
-
-  <!-- INPUT CARD -->
-  <div class="input-card" id="input-card">
-    <div class="input-row">
-      <div class="field-group">
-        <label>Job Role You're Applying For</label>
-        <input type="text" id="job-role" placeholder="e.g. Software Engineer, Product Manager">
-      </div>
-      <div class="field-group">
-        <label>Experience Level</label>
-        <select id="exp-level">
-          <option value="fresher">Fresher / Entry Level (0-1 years)</option>
-          <option value="junior" selected>Junior (1-3 years)</option>
-          <option value="mid">Mid Level (3-6 years)</option>
-          <option value="senior">Senior (6-10 years)</option>
-          <option value="lead">Lead / Manager (10+ years)</option>
-        </select>
-      </div>
-    </div>
-    <div class="field-group">
-      <label>Paste Your Resume Text *</label>
-      <textarea class="resume-textarea" id="resume-text" placeholder="Paste your complete resume text here...
-
-Include:
-• Contact information
-• Professional summary / objective
-• Work experience with job titles, companies, dates
-• Education details
-• Skills section
-• Any certifications or projects" oninput="updateResumeStats()"></textarea>
-      <div class="char-row">
-        <span class="char-hint" id="resume-stats">0 words · 0 characters</span>
-        <span class="char-hint"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lightbulb"></use></svg> Include all sections for best results</span>
-      </div>
-    </div>
-    <button class="analyze-btn" id="analyze-btn" onclick="analyzeResume()">
-      <span><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#cpu"></use></svg> Analyze with AI</span>
-    </button>
-  </div>
-
-  <!-- LOADING -->
-  <div class="loading-card" id="loading-card">
-    <div class="ai-spinner"></div>
-    <p class="u-bffcff">AI is reviewing your resume...</p>
-    <p class="u-c78774">This takes about 10-15 seconds</p>
-    <div class="loading-steps">
-      <div class="ls-item done" id="ls1"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Parsing resume structure</div>
-      <div class="ls-item active" id="ls2">⟳ Analyzing content quality</div>
-      <div class="ls-item" id="ls3"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#circle"></use></svg> Checking ATS compatibility</div>
-      <div class="ls-item" id="ls4"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#circle"></use></svg> Identifying keyword gaps</div>
-      <div class="ls-item" id="ls5"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#circle"></use></svg> Generating recommendations</div>
-    </div>
-  </div>
-
-  <!-- RESULTS -->
-  <div class="results-card" id="results-card">
-    <div id="results-content"></div>
-    <div class="result-actions">
-      <button class="ra-btn primary" onclick="analyzeAgain()"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#refresh"></use></svg> Analyze Again</button>
-      <button class="ra-btn" onclick="copyReport()"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy Report</button>
-      <button class="ra-btn" onclick="downloadReport()"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#download"></use></svg> Download PDF</button>
-    </div>
-  </div>
-
-  <!-- SEO SECTION -->
-  <h2>How to Use AI Resume Analyzer</h2>
-  <div class="how-steps">
-    <div class="how-step"><div class="step-n">1</div><div class="step-body"><h4>Enter Job Details</h4><p>Type the job role you're applying for and select your experience level.</p></div></div>
-    <div class="how-step"><div class="step-n">2</div><div class="step-body"><h4>Paste Resume Text</h4><p>Copy all text from your Word or PDF resume and paste it in the text area.</p></div></div>
-    <div class="how-step"><div class="step-n">3</div><div class="step-body"><h4>Get AI Analysis</h4><p>Click Analyze to receive ATS score, keyword analysis, and improvement tips.</p></div></div>
-    <div class="how-step"><div class="step-n">4</div><div class="step-body"><h4>Apply Improvements</h4><p>Follow the recommendations to improve your resume and re-analyze.</p></div></div>
-  </div>
-
-  <h2 class="mt-32">What is ATS and Why Does It Matter?</h2>
-  <p>ATS (Applicant Tracking System) is software used by over 90% of Fortune 500 companies to automatically screen resumes before a human recruiter ever sees them. If your resume does not pass ATS filters, it gets rejected automatically — regardless of how qualified you are. Studies show that 75% of resumes are rejected by ATS before reaching a recruiter.</p>
-  <p>ATS systems scan resumes for specific keywords matching the job description, check for proper section headings (Experience, Education, Skills), and penalize complex formatting like tables, text boxes, headers/footers, and non-standard fonts. A resume that looks beautiful in PDF may completely fail in ATS if it uses graphics or multi-column layouts.</p>
-  <p>This AI-powered analyzer uses Claude by Anthropic to evaluate your resume across 8 critical dimensions: ATS compatibility, contact information, professional summary, work experience quality, education section, skills relevance, keyword density, and action verb usage. The result is a comprehensive score with specific, actionable improvements tailored to your target role.</p>
-
-  <h2 class="u-47c857">How the Analysis Actually Works</h2>
-  <p>When you click Analyze, the tool sends your resume text, target job role, and experience level to Claude (Anthropic's AI model) through a direct API call from your browser. Claude reads the full resume and returns a structured breakdown — scores for each section, strengths, gaps, missing keywords for your target role, and a prioritized list of next steps. If that API call fails for any reason (network issue, rate limit, or timeout), the tool automatically falls back to a built-in heuristic analyzer that runs entirely in your browser. This fallback checks for things like the presence of an email and phone number, common section headings (Experience, Education, Skills, Summary), a list of common action verbs, and whether the text contains quantified numbers or percentages — it is a rule-based approximation, not an AI judgment, but it still gives a usable score and basic feedback so the tool never leaves you with a blank result.</p>
-
-  <h3>Why Keyword Gaps Matter More Than You'd Think</h3>
-  <p>Most ATS platforms rank candidates by how closely resume text matches the job description, not by a human's subjective read. Two resumes with identical experience can score very differently if one uses the exact phrasing from the job posting ("cross-functional team leadership") and the other uses a synonym ("worked with different departments"). The keyword gap section exists specifically to catch this mismatch — it lists terms found in your resume versus terms commonly expected for your stated job role, so you can adjust wording before you apply rather than after a rejection.</p>
-
-  <h3>For Freshers and Career Switchers</h3>
-  <p>If you select "Fresher / Entry Level" or are switching fields, the analysis weighs things differently — it looks harder at projects, internships, certifications, and transferable skills instead of expecting a long work history. A common mistake at this stage is leaving the professional summary generic ("hardworking fresher seeking opportunities") instead of naming the specific role and skills being targeted, which both humans and ATS keyword matching tend to penalize.</p>
-
-  <h3>For Experienced and Senior Candidates</h3>
-  <p>At the senior and lead level, the scoring leans more heavily on quantified achievements — revenue impact, team size managed, percentage improvements — rather than just listing responsibilities. A resume that says "responsible for backend systems" scores lower on the experience metric than one that says "led a team of 6 engineers to rebuild backend systems, cutting latency by 40%." The improvements list will usually flag unquantified bullet points first, since this is the single most common weakness in experienced resumes.</p>
-
-  <h3>Common Resume Mistakes This Tool Catches</h3>
-  <ul>
-    <li>Missing or incomplete contact information (no email, no working phone format)</li>
-    <li>No professional summary or an objective that doesn't mention the target role</li>
-    <li>Work experience bullets that describe duties instead of measurable outcomes</li>
-    <li>Resume length that is too short (under ~200 words, looks incomplete) or too long for one role</li>
-    <li>Missing role-specific keywords that an ATS would be scanning for</li>
-    <li>Weak or repeated action verbs at the start of bullet points</li>
-  </ul>
-
-  <h3>Frequently Searched Terms</h3>
-  <p>People land on this tool searching for phrases like "free resume checker online," "ATS score checker," "resume keyword scanner," "will my resume pass ATS," and "AI resume feedback free." If that's what brought you here — paste your resume text above, add the job title you're targeting, and run the analysis to see where it stands before you submit an application.</p>
-
-  <h3>Doing This Manually vs. Using the Analyzer</h3>
-  <p>Manually reviewing a resume against a job description means reading both side by side, highlighting matching and missing terms, and guessing at how an ATS might parse your formatting — a process that easily takes 20-30 minutes per application if done carefully, and most people skip it entirely after the first couple of applications. This tool compresses that same comparison into a single pass: it reads your resume text and your stated job role together and returns the keyword gaps, section-by-section scores, and formatting flags in one report, so you can re-run it after every edit instead of only checking once before the first submission.</p>
-
-  <h3>A Note on What Gets Sent and Why</h3>
-  <p>Your resume text is sent to Claude's API only for the duration of that single analysis request — it is not saved to a database or reused for any other purpose by this tool. Still, it's good practice to avoid pasting sensitive identifiers like Aadhaar, PAN, or bank account numbers into any online text box, including this one, since none of that information is needed for a resume review.</p>
-
-  <h2 class="u-47c857">Related Tools</h2>
-  <div class="related-grid">
-    <a href="fake-data-generator" class="related-card"><span class="ri"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#random"></use></svg></span><span>Fake Data Generator</span></a>
-    <a href="word-counter" class="related-card"><span class="ri"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#edit"></use></svg></span><span>Word Counter</span></a>
-    <a href="seo-title-generator" class="related-card"><span class="ri"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#edit"></use></svg></span><span>Title Generator</span></a>
-    <a href="blog-outline-generator" class="related-card"><span class="ri"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg></span><span>Blog Outline</span></a>
-    <a href="case-converter" class="related-card"><span class="ri">Aa</span><span>Case Converter</span></a>
-    <a href="pdf-to-text" class="related-card"><span class="ri"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#file-text"></use></svg></span><span>PDF to Text</span></a>
-  </div>
-
-  <div class="u-d3a180">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item"><div class="faq-q">What does the AI analyze in my resume?</div><div class="faq-a">8 dimensions: ATS compatibility, contact information completeness, professional summary quality, work experience (quantified achievements, action verbs), education section, skills relevance, keyword density for your target role, and overall formatting.</div></div>
-    <div class="faq-item"><div class="faq-q">What is a good ATS score?</div><div class="faq-a">70+ is considered good. 85+ is excellent. Below 60 means your resume is likely getting filtered out by ATS systems. The most important fixes are adding relevant keywords, using standard section headings, and removing complex formatting.</div></div>
-    <div class="faq-item"><div class="faq-q">Is my resume data stored?</div><div class="faq-a">No. Your resume is analyzed by the Claude AI API in real time and not stored permanently. Each analysis is independent. Do not include sensitive info like Aadhaar/PAN numbers in the text you paste.</div></div>
-    <div class="faq-item"><div class="faq-q">How do I paste my PDF resume?</div><div class="faq-a">Open your PDF resume, press Ctrl+A to select all, then Ctrl+C to copy. Paste into the text area. Alternatively use our PDF to Text tool to extract clean text from your PDF first.</div></div>
-    <div class="faq-item"><div class="faq-q">How often should I analyze my resume?</div><div class="faq-a">Analyze every time you update your resume, and customize it for each job application by adding role-specific keywords. ATS filtering is job-specific — a resume optimized for one role may miss keywords for another.</div></div>
-  </div>
+<div class="page-hero-inner">
+<nav class="breadcrumb" aria-label="Migaja de pan"><a href="/es/">Inicio</a> › <a href="/es/tool/">Herramientas</a> › <a href="/es/tool/categories/ai-tools">Herramientas de IA</a> › Analizador de currículums con IA</nav>
+<h1>Analizador de currículums con IA</h1><p>Obtén al instante la puntuación ATS, las brechas de palabras clave y comentarios prácticos gracias a Claude AI.</p>
+<div class="tag-list">
+<span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#cpu"></use></svg> Claude AI</span> <span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#chart-bar"></use></svg> Puntuación ATS</span> <span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#key"></use></svg> Análisis de palabras clave</span> <span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Gratis</span> <span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#lock"></use></svg> Privado</span>
 </div>
-
+</div>
+</header>
+<div class="tool-wrap">
+<!-- INPUT CARD -->
+<div class="input-card" id="input-card">
+<div class="input-row">
+<div class="field-group">
+<label>Puesto de trabajo al que te postulas</label><input id="job-role" placeholder="e.g. Software Engineer, Product Manager" type="text">
+</div>
+<div class="field-group">
+<label>Nivel de experiencia</label><select id="exp-level"><option value="fresher"> Recién egresado/a / Nivel de entrada (0-1 año de experiencia)</option><option selected="" value="junior"> Junior (1-3 años)</option><option value="mid"> Nivel intermedio (3-6 años)</option><option value="senior"> Adulto mayor (6-10 años)</option><option value="lead"> Líder/Gerente (más de 10 años de experiencia)</option></select>
+</div>
+</div>
+<div class="field-group">
+<label>Pegue el texto de su currículum *</label>
+<textarea class="resume-textarea" id="resume-text" placeholder="Pegue aquí el texto completo de su currículum... Incluya: • Información de contacto • Resumen/objetivo profesional • Experiencia laboral con puestos, empresas y fechas • Detalles de la formación académica • Sección de habilidades • Cualquier certificación o proyecto" oninput="updateResumeStats()"></textarea>
+<div class="char-row">
+<span class="char-hint" id="resume-stats">0 palabras · 0 caracteres</span> <span class="char-hint"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#lightbulb"></use></svg> Incluya todas las secciones para obtener mejores resultados</span>
+</div>
+</div>
+<button class="analyze-btn" id="analyze-btn" onclick="analyzeResume()">
+<span><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#cpu"></use></svg> Analizar con IA</span>
+</button>
+</div>
+<!-- LOADING -->
+<div class="loading-card" id="loading-card">
+<div class="ai-spinner"></div>
+<p class="u-bffcff">La IA está revisando tu currículum...</p>
+<p class="u-c78774">Esto tarda entre 10 y 15 segundos.</p>
+<div class="loading-steps">
+<div class="ls-item done" id="ls1"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Análisis de la estructura del currículum</div>
+<div class="ls-item active" id="ls2">⟳ Análisis de la calidad del contenido</div>
+<div class="ls-item" id="ls3"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#circle"></use></svg> Comprobación de la compatibilidad con ATS</div>
+<div class="ls-item" id="ls4"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#circle"></use></svg> Identificación de lagunas en palabras clave</div>
+<div class="ls-item" id="ls5"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#circle"></use></svg> Generación de recomendaciones</div>
+</div>
+</div>
+<!-- RESULTS -->
+<div class="results-card" id="results-card">
+<div id="results-content"></div>
+<div class="result-actions">
+<button class="ra-btn primary" onclick="analyzeAgain()"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#refresh"></use></svg> Analizar de nuevo</button> <button class="ra-btn" onclick="copyReport()"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#copy"></use></svg> Copiar informe</button> <button class="ra-btn" onclick="downloadReport()"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#download"></use></svg> Descargar PDF</button>
+</div>
+</div>
+<!-- SEO SECTION -->
+<h2>Cómo usar el analizador de currículums con IA</h2>
+<div class="how-steps">
+<div class="how-step"><div class="step-n">1</div><div class="step-body"><h4>Ingrese los detalles del trabajo</h4><p>Escribe el puesto de trabajo al que te postulas y selecciona tu nivel de experiencia.</p></div></div>
+<div class="how-step"><div class="step-n">2</div><div class="step-body"><h4>Pegar texto del currículum</h4><p>Copia todo el texto de tu currículum en formato Word o PDF y pégalo en el área de texto.</p></div></div>
+<div class="how-step"><div class="step-n">3</div><div class="step-body"><h4>Obtenga análisis de IA</h4><p>Haz clic en Analizar para recibir la puntuación ATS, el análisis de palabras clave y consejos para mejorar.</p></div></div>
+<div class="how-step"><div class="step-n">4</div><div class="step-body"><h4>Aplicar mejoras</h4><p>Sigue las recomendaciones para mejorar tu currículum y vuelve a analizarlo.</p></div></div>
+</div>
+<h2 class="mt-32">¿Qué es ATS y por qué es importante?</h2>
+<p>El ATS (Sistema de Seguimiento de Candidatos) es un software utilizado por más del 90 % de las empresas Fortune 500 para filtrar automáticamente los currículums antes de que un reclutador humano los vea. Si tu currículum no supera los filtros del ATS, se rechaza automáticamente, independientemente de tus cualificaciones. Los estudios demuestran que el 75 % de los currículums son rechazados por el ATS antes de llegar a un reclutador.</p>
+<p>Los sistemas ATS analizan los currículos en busca de palabras clave específicas que coincidan con la descripción del puesto, verifican que los encabezados de sección (Experiencia, Educación, Habilidades) sean correctos y penalizan el formato complejo, como tablas, cuadros de texto, encabezados/pies de página y fuentes no estándar. Un currículo que se ve bien en PDF puede fallar por completo en un ATS si utiliza gráficos o diseños de varias columnas.</p>
+<p>Este analizador con inteligencia artificial utiliza Claude de Anthropic para evaluar tu currículum en ocho dimensiones clave: compatibilidad con sistemas ATS, información de contacto, resumen profesional, calidad de la experiencia laboral, sección de educación, relevancia de las habilidades, densidad de palabras clave y uso de verbos de acción. El resultado es una puntuación completa con sugerencias de mejora específicas y prácticas, adaptadas al puesto al que aspiras.</p>
+<h2 class="u-47c857">Cómo funciona realmente el análisis</h2>
+<p>Cuando haces clic en Analizar, la herramienta envía el texto de tu currículum, el puesto de trabajo al que aspiras y tu nivel de experiencia a Claude (el modelo de IA de Anthropic) mediante una llamada directa a la API desde tu navegador. Claude lee el currículum completo y devuelve un análisis estructurado: puntuaciones para cada sección, fortalezas, deficiencias, palabras clave faltantes para el puesto al que aspiras y una lista priorizada de los próximos pasos. Si la llamada a la API falla por algún motivo (problema de red, límite de solicitudes o tiempo de espera agotado), la herramienta recurre automáticamente a un analizador heurístico integrado que se ejecuta completamente en tu navegador. Este analizador heurístico comprueba aspectos como la presencia de un correo electrónico y un número de teléfono, los encabezados de sección comunes (Experiencia, Educación, Habilidades, Resumen), una lista de verbos de acción comunes y si el texto contiene números o porcentajes cuantificados. Se trata de una aproximación basada en reglas, no de un juicio de IA, pero aun así proporciona una puntuación útil y comentarios básicos para que la herramienta nunca te deje con un resultado en blanco.</p>
+<h3>Por qué las brechas de palabras clave importan más de lo que crees</h3>
+<p>La mayoría de las plataformas ATS clasifican a los candidatos según la coincidencia entre el texto del currículum y la descripción del puesto, no según la interpretación subjetiva de un evaluador. Dos currículos con experiencia idéntica pueden obtener puntuaciones muy diferentes si uno utiliza la redacción exacta de la oferta de empleo ("liderazgo de equipos multifuncionales") y el otro un sinónimo ("trabajé con diferentes departamentos"). La sección de brecha de palabras clave existe precisamente para detectar esta discrepancia: enumera los términos que aparecen en tu currículum frente a los términos que se suelen esperar para el puesto, de modo que puedas ajustar la redacción antes de presentar tu solicitud, en lugar de después de un rechazo.</p>
+<h3>Para recién graduados y personas que cambian de carrera</h3>
+<p>Si seleccionas "Recién egresado/a / Nivel de entrada" o cambias de campo, el análisis pondera los aspectos de manera diferente: se centra más en proyectos, pasantías, certificaciones y habilidades transferibles, en lugar de esperar una larga trayectoria laboral. Un error común en esta etapa es dejar el resumen profesional genérico ("recién egresado/a trabajador/a en busca de oportunidades") en lugar de especificar el puesto y las habilidades que se buscan, lo cual suele penalizarse tanto para los analistas como para los sistemas de seguimiento de candidatos (ATS).</p>
+<h3>Para candidatos con experiencia y de alto nivel.</h3>
+<p>En los niveles sénior y de liderazgo, la puntuación se basa más en logros cuantificables (impacto en los ingresos, tamaño del equipo gestionado, porcentaje de mejoras) que en la simple enumeración de responsabilidades. Un currículum que diga "responsable de sistemas backend" obtiene una puntuación más baja en la métrica de experiencia que uno que diga "lideré un equipo de 6 ingenieros para reconstruir sistemas backend, reduciendo la latencia en un 40 %". La lista de mejoras suele destacar primero los puntos no cuantificados, ya que esta es la debilidad más común en los currículos de profesionales con experiencia.</p>
+<h3>Errores comunes en los currículums que esta herramienta detecta</h3>
+<ul>
+<li>Información de contacto faltante o incompleta (sin correo electrónico, sin formato de teléfono que funcione).</li>
+<li>No se requiere un resumen profesional ni un objetivo que no mencione el puesto al que se aspira.</li>
+<li>Puntos de experiencia laboral que describen las tareas en lugar de los resultados medibles.</li>
+<li>Currículum vitae demasiado corto (menos de ~200 palabras, parece incompleto) o demasiado largo para un puesto.</li>
+<li>Faltan palabras clave específicas del rol que un ATS estaría escaneando.</li>
+<li>Verbos de acción débiles o repetidos al comienzo de los puntos de viñeta</li>
+</ul>
+<h3>Términos buscados con frecuencia</h3>
+<p>Los usuarios acceden a esta herramienta buscando frases como "verificador de currículum gratuito en línea", "verificador de puntuación ATS", "escáner de palabras clave para currículum", "¿mi currículum pasará el filtro ATS?" y "análisis de currículum con IA gratuito". Si este es el motivo de tu búsqueda, pega el texto de tu currículum arriba, añade el puesto al que aspiras y ejecuta el análisis para ver su rendimiento antes de enviar tu solicitud.</p>
+<h3>Hacer esto manualmente frente a usar el analizador</h3>
+<p>Revisar manualmente un currículum comparándolo con la descripción del puesto implica leer ambos documentos a la vez, resaltar las coincidencias y las faltantes, e intentar adivinar cómo un sistema de seguimiento de candidatos (ATS) interpretará el formato. Este proceso puede llevar fácilmente entre 20 y 30 minutos por solicitud si se realiza con cuidado, y la mayoría de las personas lo omiten por completo después de las primeras solicitudes. Esta herramienta comprime esa misma comparación en una sola pasada: lee el texto del currículum y el puesto de trabajo indicado conjuntamente, y devuelve las carencias de palabras clave, las puntuaciones por sección y los indicadores de formato en un solo informe, para que puedas volver a ejecutarlo después de cada edición en lugar de revisarlo solo una vez antes del primer envío.</p>
+<h3>Una nota sobre qué se envía y por qué.</h3>
+<p>El texto de tu currículum se envía a la API de Claude únicamente durante la duración de esa solicitud de análisis; no se guarda en ninguna base de datos ni se reutiliza para ningún otro fin. Aun así, es recomendable evitar pegar datos confidenciales como el número de Aadhaar, el número de identificación fiscal (PAN) o números de cuenta bancaria en cualquier cuadro de texto en línea, incluido este, ya que esa información no es necesaria para la revisión del currículum.</p>
+<h2 class="u-47c857">Herramientas relacionadas</h2>
+<div class="related-grid">
+<a class="related-card" href="fake-data-generator"><span class="ri"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#random"></use></svg></span> <span>Generador de datos falsos</span></a> <a class="related-card" href="word-counter"><span class="ri"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#edit"></use></svg></span> <span>Contador de palabras</span></a> <a class="related-card" href="seo-title-generator"><span class="ri"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#edit"></use></svg></span> <span>Generador de títulos</span></a> <a class="related-card" href="blog-outline-generator"><span class="ri"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#copy"></use></svg></span> <span>Convertidor</span></a> <a class="related-card" href="case-converter"><span>de mayúsculas y minúsculas</span> <span class="ri">para</span></a> esquemas de blogs <a class="related-card" href="pdf-to-text"><span class="ri"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#file-text"></use></svg></span> <span>PDF a texto</span></a>
+</div>
+<div class="u-d3a180">
+<h2>Preguntas frecuentes</h2>
+<div class="faq-item"><div class="faq-q">¿Qué analiza la IA en mi currículum?</div><div class="faq-a">8 dimensiones: compatibilidad con ATS, exhaustividad de la información de contacto, calidad del resumen profesional, experiencia laboral (logros cuantificados, verbos de acción), sección de educación, relevancia de las habilidades, densidad de palabras clave para el puesto objetivo y formato general.</div></div>
+<div class="faq-item"><div class="faq-q">¿Qué se considera una buena puntuación ATS?</div><div class="faq-a">Una puntuación de 70 o más se considera buena. Una puntuación de 85 o más es excelente. Si la puntuación es inferior a 60, es probable que tu currículum sea descartado por los sistemas ATS. Las correcciones más importantes consisten en añadir palabras clave relevantes, usar encabezados de sección estándar y eliminar el formato complejo.</div></div>
+<div class="faq-item"><div class="faq-q">¿Se almacenan los datos de mi currículum?</div><div class="faq-a">No. Tu currículum es analizado por la API de Claude AI en tiempo real y no se almacena permanentemente. Cada análisis es independiente. No incluyas información confidencial como números de Aadhaar/PAN en el texto que pegues.</div></div>
+<div class="faq-item"><div class="faq-q">¿Cómo pego mi currículum en formato PDF?</div><div class="faq-a">Abre tu currículum en formato PDF, pulsa Ctrl+A para seleccionarlo todo y luego Ctrl+C para copiarlo. Pégalo en el área de texto. Si lo prefieres, puedes usar nuestra herramienta de PDF a texto para extraer primero el texto limpio de tu PDF.</div></div>
+<div class="faq-item"><div class="faq-q">¿Con qué frecuencia debo analizar mi currículum?</div><div class="faq-a">Analiza tu currículum cada vez que lo actualices y personalízalo para cada solicitud de empleo añadiendo palabras clave específicas para cada puesto. El filtrado de los sistemas ATS es específico para cada puesto: un currículum optimizado para un puesto puede no incluir palabras clave para otro.</div></div>
+</div>
+</div>
 </main>
-
 <div id="footer"></div>
 <script src="/assets/js/main.js?v=20261115"></script>
 <script>

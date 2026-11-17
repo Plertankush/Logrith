@@ -1,63 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Percentage Fee Splitter: Who Pays What | Logrith</title>
-  <meta name="description" content="How percentage-plus-fixed payment fees actually get split between parties, and how to calculate the exact amount each owes.">
-  <meta name="keywords" content="percentage fee splitter online free, payment processing fee calculator, gross up fee calculator, who pays the fee split">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="author" content="Plert Ankush">
-  <link rel="canonical" href="https://logrith.in/tool/blog/percentage-fee-splitter-guide">
-  <meta property="og:title" content="Percentage Fee Splitter: Who Pays What | Logrith">
-  <meta property="og:description" content="How percentage-plus-fixed payment fees actually get split between parties, and how to calculate the exact amount each owes.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://logrith.in/tool/blog/percentage-fee-splitter-guide">
-  <meta property="og:site_name" content="Logrith">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Percentage Fee Splitter: Who Pays What | Logrith">
-  <meta name="twitter:description" content="How percentage-plus-fixed payment fees actually get split between parties, and how to calculate the exact amount each owes.">
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#0D0D0D">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Repartidor de comisiones por porcentaje: ¿Quién paga qué? | Logrith</title>
+<meta name="description" content="Cómo se reparten realmente entre las partes las comisiones de pago que combinan un porcentaje y una cantidad fija, y cómo calcular la cantidad exacta que debe cada una.">
+<meta name="keywords" content="percentage fee splitter online free, payment processing fee calculator, gross up fee calculator, who pays the fee split">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Plert Ankush">
+<link rel="canonical" href="https://logrith.in/es/tool/blog/percentage-fee-splitter-guide">
+  <link rel="alternate" hreflang="x-default" href="https://logrith.in/tool/blog/percentage-fee-splitter-guide">
+  <link rel="alternate" hreflang="es" href="https://logrith.in/es/tool/blog/percentage-fee-splitter-guide">
+  <link rel="alternate" hreflang="en" href="https://logrith.in/tool/blog/percentage-fee-splitter-guide">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
-  <link rel="preload" href="/components/navbar.html" as="fetch" type="text/html" crossorigin>
-  <link rel="preload" href="/components/footer.html" as="fetch" type="text/html" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=20261115">
-  <link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
 
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
-  </script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Article","datePublished":"2026-10-20","dateModified":"2026-10-31","headline":"Percentage Fee Splitter: Who Pays What When Fees Are Involved","description":"How to correctly split a percentage-based fee between two parties, and why the math is trickier than it looks.","author":{"@type":"Person","name":"Plert Ankush","url":"https://logrith.in/pages/founder"},"publisher":{"@id":"https://logrith.in/#organization"},"mainEntityOfPage":"https://logrith.in/tool/blog/percentage-fee-splitter-guide"}
-  </script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebPage","name":"Percentage Fee Splitter Guide","url":"https://logrith.in/tool/blog/percentage-fee-splitter-guide","isPartOf":{"@type":"Blog","name":"Logrith Blog","url":"https://logrith.in/tool/blog/"}}
-  </script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Percentage Fee Splitter","url":"https://logrith.in/tool/tools/percentage-fee-splitter","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
-  </script>
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Tool Guides", "item": "https://logrith.in/tool/blog/"}, {"@type": "ListItem", "position": 4, "name": "Utilities", "item": "https://logrith.in/tool/blog/categories/utilities"}, {"@type": "ListItem", "position": 5, "name": "Percentage Fee Splitter", "item": "https://logrith.in/tool/blog/percentage-fee-splitter-guide"}]}
-  </script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-    {"@type":"Question","name":"What's the difference between adding a fee on top and taking a fee off the top?","acceptedAnswer":{"@type":"Answer","text":"Adding a fee on top means the fee is calculated on the base amount and added to it, increasing the total. Taking a fee off the top means the fee is subtracted from a fixed total, meaning the base amount must be 'grossed up' to a higher figure so that after the fee is deducted, the intended net amount remains."}},
-    {"@type":"Question","name":"Why does 'covering the processing fee' require more than just adding the fee percentage?","acceptedAnswer":{"@type":"Answer","text":"If you want to receive exactly $100 after a 3% fee is deducted, simply adding 3% to $100 (getting $103) is insufficient, since 3% of $103 is more than 3% of $100. The correct calculation requires dividing by (1 minus the fee rate) rather than multiplying by (1 plus the fee rate)."}},
-    {"@type":"Question","name":"Who typically pays payment processing fees, the buyer or the seller?","acceptedAnswer":{"@type":"Answer","text":"This varies by platform, agreement, and jurisdiction. Some marketplaces deduct fees from the seller's proceeds; others allow or require passing the fee to the buyer. Payment processor and platform terms of service specify which arrangement applies for any given transaction."}},
-    {"@type":"Question","name":"How do you split a fee evenly between two parties?</Question>","acceptedAnswer":{"@type":"Answer","text":"An even split typically means each party absorbs half the fee amount, calculated on the transaction total, though the specific method (splitting the fee itself vs. adjusting each party's price to share the burden) depends on the agreement between the parties."}}
-  ]}
-  </script>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
-  <script>
+<meta property="og:title" content="Repartidor de comisiones por porcentaje: ¿Quién paga qué? | Logrith">
+<meta property="og:description" content="Cómo se reparten realmente entre las partes las comisiones de pago que combinan un porcentaje y una cantidad fija, y cómo calcular la cantidad exacta que debe cada una.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://logrith.in/es/tool/blog/percentage-fee-splitter-guide">
+<meta property="og:site_name" content="Logrith">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Repartidor de comisiones por porcentaje: ¿Quién paga qué? | Logrith">
+<meta name="twitter:description" content="Cómo se reparten realmente entre las partes las comisiones de pago que combinan un porcentaje y una cantidad fija, y cómo calcular la cantidad exacta que debe cada una.">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0D0D0D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
+<link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261115">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "datePublished": "2026-10-20", "dateModified": "2026-10-31", "headline": "Reparto de comisiones por porcentaje: ¿Quién paga qué cuando hay comisiones de por medio?", "description": "Cómo dividir correctamente una comisión basada en un porcentaje entre dos partes y por qué los cálculos son más complicados de lo que parecen.", "author": {"@type": "Person", "name": "Plert Ankush", "url": "https://logrith.in/es/pages/founder"}, "publisher": {"@id": "https://logrith.in/#organization"}, "mainEntityOfPage": "https://logrith.in/es/tool/blog/percentage-fee-splitter-guide"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Guía para la división de comisiones porcentuales", "url": "https://logrith.in/es/tool/blog/percentage-fee-splitter-guide", "isPartOf": {"@type": "Blog", "name": "Logrith Blog", "url": "https://logrith.in/es/tool/blog/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Divisor de comisiones por porcentaje", "url": "https://logrith.in/es/tool/tools/percentage-fee-splitter", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Hogar", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Guías de herramientas", "item": "https://logrith.in/es/tool/blog/"}, {"@type": "ListItem", "position": 4, "name": "Servicios públicos", "item": "https://logrith.in/es/tool/blog/categories/utilities"}, {"@type": "ListItem", "position": 5, "name": "Divisor de comisiones por porcentaje", "item": "https://logrith.in/es/tool/blog/percentage-fee-splitter-guide"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cuál es la diferencia entre añadir una comisión y descontar una comisión?", "acceptedAnswer": {"@type": "Answer", "text": "Agregar una comisión significa que esta se calcula sobre el monto base y se suma a él, aumentando el total. Restar una comisión significa que esta se resta de un total fijo, lo que implica que el monto base debe incrementarse para obtener una cifra mayor, de modo que, después de deducir la comisión, se mantenga el monto neto previsto."}}, {"@type": "Question", "name": "¿Por qué \"cubrir la tarifa de procesamiento\" requiere algo más que simplemente sumar el porcentaje de la tarifa?", "acceptedAnswer": {"@type": "Answer", "text": "Si desea recibir exactamente $100 después de deducir una comisión del 3%, simplemente sumar el 3% a $100 (obteniendo $103) no es suficiente, ya que el 3% de $103 es mayor que el 3% de $100. El cálculo correcto requiere dividir entre (1 menos la tasa de comisión) en lugar de multiplicar por (1 más la tasa de comisión)."}}, {"@type": "Question", "name": "¿Quién suele pagar las comisiones por procesamiento de pagos, el comprador o el vendedor?", "acceptedAnswer": {"@type": "Answer", "text": "Esto varía según la plataforma, el acuerdo y la jurisdicción. Algunos mercados deducen las comisiones de las ganancias del vendedor; otros permiten o exigen que se transfieran al comprador. Los términos de servicio del procesador de pagos y de la plataforma especifican qué modalidad se aplica a cada transacción."}}, {"@type": "Question", "name": "¿Cómo se divide una tarifa a partes iguales entre dos partes?", "acceptedAnswer": {"@type": "Answer", "text": "Un reparto equitativo suele significar que cada parte absorbe la mitad del importe de la comisión, calculado sobre el total de la transacción, aunque el método específico (dividir la comisión en sí misma o ajustar el precio de cada parte para compartir la carga) depende del acuerdo entre las partes."}}]}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+<script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -65,151 +52,124 @@
   </script>
 </head>
 <body class="page-percentage-fee-splitter-guide">
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main">Saltar al contenido</a>
 <div id="navbar"></div>
-
 <main id="main">
-
 <header class="page-hero"><div class="page-hero-inner">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/tool/">Tools</a> &rsaquo; <a href="/tool/blog/">Tool Guides</a> &rsaquo; <a href="/tool/blog/categories/utilities">Utilities</a> &rsaquo; Percentage Fee Splitter</nav>
-  <h1>Splitting a Percentage Fee Correctly: Why "Add It On" Isn't Always Right</h1>
-  <p>Payment processing fees, marketplace commissions, and service charges all take a percentage cut somewhere in a transaction, and figuring out exactly who ends up paying how much depends entirely on whether the fee comes off the top or gets added on top — two calculations that sound similar but produce genuinely different numbers, and getting this wrong is one of the most common quiet pricing mistakes among freelancers and small sellers.</p>
-  <a href="/tool/tools/percentage-fee-splitter" class="btn btn-primary btn-lg">
-    <svg class="icon"><use href="/assets/svg/icons.svg#percent"></use></svg>
-    Split a Fee
+<nav class="breadcrumb" aria-label="Migaja de pan"><a href="/es/">Inicio</a> › <a href="/es/tool/">Herramientas</a> › <a href="/es/tool/blog/">Guías de herramientas</a> › <a href="/es/tool/blog/categories/utilities">Utilidades</a> › Divisor de tarifas porcentuales</nav>
+<h1>Cómo dividir correctamente una comisión porcentual: por qué "añadirla" no siempre es lo correcto.</h1>
+<p>Las comisiones por procesamiento de pagos, las comisiones de las plataformas de venta y los cargos por servicio suponen un porcentaje de la transacción, y calcular quién acaba pagando cuánto depende totalmente de si la comisión se deduce del total o se añade al mismo. Son dos cálculos que suenan similares, pero que producen cifras realmente diferentes, y equivocarse en esto es uno de los errores de precios más comunes entre los autónomos y los pequeños vendedores.</p>
+<a href="/es/tool/tools/percentage-fee-splitter" class="btn btn-primary btn-lg">
+<svg class="icon"><use href="/assets/svg/icons.svg#percent"></use></svg> Dividir una tarifa
   </a>
-  <p class="byline">By <a href="/pages/founder" rel="author">Plert Ankush</a> &middot; Published <time datetime="2026-10-20">Oct 20, 2026</time> &middot; Updated <time datetime="2026-10-31">Oct 31, 2026</time></p>
+<p class="byline">Por <a href="/es/pages/founder" rel="author">Plert Ankush</a> · Publicado<time datetime="2026-10-20"> 20 de octubre de 2026</time> · Actualizado<time datetime="2026-10-31"> 31 de octubre de 2026</time></p>
 </div></header>
-
 <article class="page-section prose">
-
-  <nav class="toc" aria-label="On this page">
-    <h2>On This Page</h2>
-    <ol>
-      <li><a href="#how-to-use">How to Split a Percentage Fee</a></li>
-      <li><a href="#two-directions">Fee Added On vs. Fee Taken Off</a></li>
-      <li><a href="#gross-up">Why "Covering the Fee" Requires Grossing Up, Not Just Adding</a></li>
-      <li><a href="#how-it-works">The Gross-Up Formula Explained</a></li>
-      <li><a href="#who-pays">Who Actually Pays Payment Processing Fees</a></li>
-      <li><a href="#uses">Common Reasons People Split Fees</a></li>
-      <li><a href="#mistakes">Common Mistakes</a></li>
-      <li><a href="#faq">Frequently Asked Questions</a></li>
-    </ol>
-  </nav>
-
-  <h2 id="how-to-use">How to Split a Percentage Fee</h2>
-  <ol class="steps">
-    <li class="step">
-      <p>Open the <a href="/tool/tools/percentage-fee-splitter">Percentage Fee Splitter</a> to begin the calculation.</p>
-    </li>
-    <li class="step">
-      <p>Enter the transaction amount and the fee percentage involved.</p>
-    </li>
-    <li class="step">
-      <p>Choose whether the fee is deducted from the total or needs to be added so a specific net amount remains after the fee.</p>
-    </li>
-    <li class="step">
-      <p>Get the instant breakdown of gross amount, fee amount, and net amount, calculated correctly either way.</p>
-    </li>
-  </ol>
-
-  <h2 id="two-directions">Fee Added On vs. Fee Taken Off</h2>
-  <div class="table-wrap">
-    <table class="table">
-    <tr><th>Scenario</th><th>What Happens</th><th>Example</th></tr>
-    <tr><td>Fee added on top</td><td>Fee is calculated on the base amount and added to it</td><td>$100 + 3% fee = $103 total charged</td></tr>
-    <tr><td>Fee taken off the top</td><td>Fee is deducted from a fixed total, reducing what's received</td><td>$100 transaction − 3% fee = $97 received</td></tr>
-  </table>
-  </div>
-  <p>Both of these are straightforward, and most fee situations are one or the other. The genuinely tricky case, covered in detail below, is a third scenario: wanting to receive a specific exact net amount after a percentage fee is deducted, which requires a different calculation entirely from either of the two simple cases above, and it's exactly the scenario most likely to catch someone off guard the first time they need to solve it without realizing a third distinct formula is required.</p>
-
-  <h2 id="gross-up">Why "Covering the Fee" Requires Grossing Up, Not Just Adding</h2>
-  <p>This is the scenario that trips up nearly everyone the first time they encounter it, and it's worth working through carefully. Imagine you want to receive exactly $100 after a payment processor takes a 3% fee. The intuitive but incorrect approach is to simply add 3% of $100 ($3) to get $103, then charge $103. The problem: 3% of $103 is $3.09, not $3, meaning after the processor takes their 3% cut of the actual $103 charged, you're left with $99.91, not the $100 you wanted. The fee percentage is calculated on whatever the final charged amount actually is, not on the amount you started with, which means simply adding the fee percentage to your target amount always slightly undershoots the correct charge — a small gap on a single transaction, but one that compounds meaningfully across many transactions if the pricing mistake goes uncorrected.</p>
-
-  <h2 id="how-it-works">The Gross-Up Formula Explained</h2>
-  <p>The correct calculation, called "grossing up," is: <code>gross amount = net amount ÷ (1 − fee rate)</code>. For the $100-net, 3%-fee example above, this gives $100 ÷ 0.97 = $103.09 (rounded). Charging exactly $103.09 means the processor's 3% cut is $3.09, leaving exactly $100.00 net — the number actually works out correctly this time. The key insight is that dividing by (1 minus the fee rate) rather than multiplying by (1 plus the fee rate) correctly accounts for the fee being calculated on the larger, grossed-up total rather than on the original smaller target amount, closing the small gap that the naive addition approach leaves behind. This same formula structure — dividing by one minus a rate rather than multiplying by one plus that rate — shows up in several other financial contexts where a fee, tax, or deduction is calculated on a final amount rather than a starting amount, making it a genuinely reusable piece of financial reasoning well beyond just payment processing specifically.</p>
-
-  <h2>Real-World Scenarios</h2>
-  <ul>
-    <li><strong>"I'm selling on a marketplace that takes a 10% commission and want to net $50 per item."</strong> Use the gross-up formula: $50 ÷ 0.90 = $55.56, list the item at that price, and after the marketplace's 10% commission is deducted, you'll receive your intended $50, exactly matching your target rather than falling slightly short.</li>
-    <li><strong>"My payment processor charges 2.9% plus a flat fee — how do I account for both?"</strong> Handle the percentage portion with the gross-up formula first, then add the flat fee separately on top, since a flat fee doesn't scale with the transaction amount the way a percentage does and needs to be treated as a distinct, separate addition to the calculation.</li>
-    <li><strong>"I'm splitting a restaurant bill with a service charge among friends."</strong> Calculate each person's share of the pre-fee total, then determine each person's proportional share of the service charge itself, adding both together for each individual's final amount owed.</li>
-    <li><strong>"I need to invoice a client an amount that nets me exactly a round number after wire transfer fees."</strong> Apply the gross-up formula using the wire transfer's percentage fee (and any flat fee, added separately) to determine the exact invoice amount that leaves you with your intended round net figure.</li>
-  </ul>
-
-  <h2>Why This Confusion Is So Persistent Across Industries</h2>
-  <p>The gross-up miscalculation isn't a niche mistake — it shows up repeatedly across freelancing, e-commerce, payment processing, and financial planning precisely because the intuitive mental shortcut (just add the percentage) is genuinely close enough to correct that it often goes unnoticed for small fee percentages or small transaction amounts, where the gap between the naive addition and the correct gross-up figure is small enough in absolute dollar terms to not draw attention. The discrepancy becomes far more noticeable and financially consequential at higher fee percentages or larger transaction amounts, where even a small percentage-point miscalculation compounds into a meaningful dollar shortfall across many transactions over time — which is exactly the situation many freelancers, small business owners, and marketplace sellers find themselves in without realizing their pricing has been quietly under-covering the fees they're actually paying, transaction after transaction, until the cumulative shortfall becomes noticeable in their overall revenue.</p>
-
-  <h2 id="who-pays">Who Actually Pays Payment Processing Fees</h2>
-  <p>This varies considerably by platform, agreement, and business model, and there's no single universal answer. Some marketplaces and payment processors deduct their fee directly from the seller's proceeds, meaning the seller receives less than the buyer paid, with the difference going to the platform. Other arrangements pass the fee explicitly to the buyer, adding it as a visible surcharge on top of the listed price — sometimes required, sometimes prohibited depending on the specific payment network's rules and local regulations, since some card networks have historically restricted merchants from passing card processing fees directly onto customers in certain contexts. Freelancers and small business owners setting their own prices often need to decide deliberately whether to absorb a platform's fee into their stated price or gross up their price so that after the fee, they receive their intended target amount — exactly the gross-up calculation covered above, and a decision that meaningfully affects both how competitive a stated price looks to a buyer and how much a seller actually walks away with once every deduction has been applied.</p>
-
-  <h2 id="uses">Common Reasons People Split Fees</h2>
-  <ul>
-    <li><strong>Setting freelance or service rates that account for platform fees.</strong> Grossing up a target take-home rate ensures a freelancer actually receives their intended amount after a marketplace's percentage cut, rather than quietly underpricing every invoice by a small but accumulating margin.</li>
-    <li><strong>Splitting a shared cost or bill including a service charge.</strong> Determining each person's fair share when a percentage-based fee or gratuity is added to a group total.</li>
-    <li><strong>Pricing products sold through a marketplace with seller fees.</strong> Setting a listing price that yields a specific desired net proceeds after the marketplace's cut.</li>
-    <li><strong>Understanding exactly how much a payment processor is taking.</strong> Verifying that a deducted fee matches the stated percentage, useful for confirming invoices or statements are accurate.</li>
-  </ul>
-
-  <h2>Why This Confusion Is So Persistent Across Industries</h2>
-  <p>The gross-up miscalculation isn't a niche mistake — it shows up repeatedly across freelancing, e-commerce, payment processing, and financial planning precisely because the intuitive mental shortcut of simply adding the percentage is genuinely close enough to correct that it often goes unnoticed for small fee percentages or small transaction amounts, where the gap between the naive addition and the correct gross-up figure is small enough in absolute dollar terms to not draw attention. The discrepancy becomes far more noticeable and financially consequential at higher fee percentages or larger transaction amounts, where even a small percentage-point miscalculation compounds into a meaningful dollar shortfall across many transactions over time.</p>
-
-  <h2 id="mistakes">Common Mistakes</h2>
-  <ul>
-    <li><strong>Simply adding the fee percentage when trying to hit a specific net target.</strong> As covered above, this consistently undershoots the correct amount — use the gross-up division formula instead, dividing by one minus the fee rate rather than multiplying by one plus it.</li>
-    <li><strong>Confusing "fee added on" with "fee taken off" scenarios.</strong> These require genuinely different calculations — be clear about which situation actually applies before calculating, since applying the wrong formula produces a plausible-looking but incorrect result either way.</li>
-    <li><strong>Assuming all platforms handle fees the same way.</strong> Fee structures and who bears them vary significantly across payment processors and marketplaces — check the specific terms for any platform involved rather than assuming a familiar arrangement applies universally.</li>
-    <li><strong>Not accounting for compounding when multiple fees apply.</strong> If several percentage-based fees or taxes stack on the same transaction, each needs to be calculated in the correct order and against the correct base, similar to the sequential percentage calculations covered in general percentage guides.</li>
-    <li><strong>Forgetting to separately handle a flat fee component alongside a percentage fee.</strong> Many real-world processors charge both a percentage and a fixed flat amount — the gross-up formula handles the percentage portion, but a flat fee needs to be added separately as its own distinct step.</li>
-  </ul>
-
-  <h3>Why Choose Logrith</h3>
-  <p>Calculation happens entirely in your browser using standard JavaScript arithmetic, with no data ever transmitted anywhere — instant, accurate fee splitting whether you're adding a fee on top, taking one off, or grossing up to hit a specific net target, without the risk of quietly under-pricing your own transactions over time.</p>
-
-</article>
-
-<article class="page-section prose">
-  <h2 id="faq">Frequently Asked Questions</h2>
-  <div class="faq-list">
-    <details class="faq-item">
-      <summary class="faq-q">What's the difference between adding a fee on top and taking it off?</summary>
-      <div class="faq-a"><p>Adding on top means the fee is calculated on the base and added, increasing the total. Taking it off the top means the fee is subtracted from a fixed total, requiring the base to be "grossed up" so the intended net amount remains after deduction.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Why does covering a fee require more than just adding the percentage?</summary>
-      <div class="faq-a"><p>Adding 3% to $100 gives $103, but 3% of $103 is more than 3% of $100, so simply adding the percentage undershoots the target. The correct approach divides by (1 minus the fee rate) instead, correctly accounting for the fee being calculated on the larger final amount.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Who pays payment processing fees, the buyer or seller?</summary>
-      <div class="faq-a"><p>This varies by platform and agreement. Some marketplaces deduct fees from seller proceeds; others allow passing fees to buyers. Platform terms specify which arrangement applies.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">How do you split a fee evenly between two parties?</summary>
-      <div class="faq-a"><p>An even split typically means each party absorbs half the fee amount, though the specific method depends on the agreement between the parties involved.</p></div>
-    </details>
-  </div>
-
-  <h2>Conclusion</h2>
-  <p>Splitting or covering a percentage-based fee is straightforward once you identify which of the three scenarios actually applies — fee added on, fee taken off, or grossing up to hit a specific net target — since each requires a genuinely different calculation. The gross-up case specifically trips up nearly everyone on first encounter, since the intuitive approach of simply adding the fee percentage always falls slightly short of the correct answer, a small gap that quietly compounds into a meaningful shortfall across many transactions if left uncorrected, making the correct formula worth remembering for anyone who regularly prices services, sells through a marketplace, or invoices clients with fees involved.</p>
-</article>
-
-<nav class="post-nav page-section" aria-label="More guides">
-  <a href="/tool/blog/">&larr; Back to Blog</a>
-  <a href="/tool/blog/barcode-generator-guide">Next: <strong>Barcode Generator Guide</strong> &rarr;</a>
+<nav class="toc" aria-label="En esta página">
+<h2>En esta página</h2>
+<ol>
+<li><a href="#how-to-use">Cómo dividir una comisión porcentual</a></li>
+<li><a href="#two-directions">Tarifa añadida vs. Tarifa deducida</a></li>
+<li><a href="#gross-up">Por qué "Cubrir la tarifa" requiere un cálculo bruto, no solo una suma</a></li>
+<li><a href="#how-it-works">Explicación de la fórmula de ajuste bruto</a></li>
+<li><a href="#who-pays">¿Quién paga realmente las comisiones por procesamiento de pagos?</a></li>
+<li><a href="#uses">Razones comunes por las que las personas dividen los gastos</a></li>
+<li><a href="#mistakes">Errores comunes</a></li>
+<li><a href="#faq">Preguntas frecuentes</a></li>
+</ol>
 </nav>
-
+<h2 id="how-to-use">Cómo dividir una comisión porcentual</h2>
+<ol class="steps">
+<li class="step">
+<p>Abra la <a href="/es/tool/tools/percentage-fee-splitter">herramienta de división de comisiones porcentuales</a> para comenzar el cálculo.</p>
+</li>
+<li class="step">
+<p>Introduzca el importe de la transacción y el porcentaje de comisión correspondiente.</p>
+</li>
+<li class="step">
+<p>Elija si la tarifa se deduce del total o si debe sumarse para que quede un importe neto específico después de deducir la tarifa.</p>
+</li>
+<li class="step">
+<p>Obtenga el desglose instantáneo del importe bruto, el importe de la comisión y el importe neto, calculados correctamente en ambos casos.</p>
+</li>
+</ol>
+<h2 id="two-directions">Tarifa añadida vs. Tarifa deducida</h2>
+<div class="table-wrap">
+<table class="table">
+<tr><th>Guión</th><th>Lo que sucede</th><th>Ejemplo</th></tr>
+<tr><td>Tarifa añadida adicional</td><td>La tarifa se calcula sobre el monto base y se le agrega.</td><td>$100 + 3% de comisión = $103 en total</td></tr>
+<tr><td>Tarifa descontada de la parte superior</td><td>La tarifa se deduce de un total fijo, reduciendo lo que se recibe.</td><td>Transacción de $100 − comisión del 3% = $97 recibidos</td></tr>
+</table>
+</div>
+<p>Ambos casos son sencillos, y la mayoría de las situaciones de comisiones se reducen a uno u otro. El caso realmente complejo, que se detalla más adelante, es un tercer escenario: querer recibir una cantidad neta exacta después de deducir un porcentaje de comisión. Esto requiere un cálculo completamente diferente al de los dos casos sencillos anteriores, y es precisamente el escenario que más probabilidades tiene de sorprender a alguien la primera vez que necesita resolverlo sin darse cuenta de que se requiere una tercera fórmula distinta.</p>
+<h2 id="gross-up">Por qué "Cubrir la tarifa" requiere un cálculo bruto, no solo una suma</h2>
+<p>Este es el escenario que suele confundir a casi todos la primera vez que se encuentran con él, y vale la pena analizarlo con detenimiento. Imagina que quieres recibir exactamente $100 después de que el procesador de pagos cobre una comisión del 3%. El enfoque intuitivo, pero incorrecto, es simplemente sumar el 3% de $100 ($3) para obtener $103, y luego cobrar $103. El problema: el 3% de $103 es $3.09, no $3, lo que significa que después de que el procesador se quede con su 3% de los $103 cobrados, te quedan $99.91, no los $100 que querías. El porcentaje de la comisión se calcula sobre el monto final cobrado, no sobre el monto inicial, lo que significa que simplemente sumar el porcentaje de la comisión al monto objetivo siempre resulta en un cargo ligeramente inferior al correcto; una pequeña diferencia en una sola transacción, pero que se acumula significativamente en muchas transacciones si el error de precios no se corrige.</p>
+<h2 id="how-it-works">Explicación de la fórmula de ajuste bruto</h2>
+<p>El cálculo correcto, denominado "ajuste bruto", es: <code>gross amount = net amount ÷ (1 − fee rate)</code>. Para el ejemplo anterior de $100 netos con una comisión del 3%, esto da $100 ÷ 0.97 = $103.09 (redondeado). Cobrar exactamente $103.09 significa que la comisión del procesador del 3% es de $3.09, dejando exactamente $100.00 netos; el número funciona correctamente esta vez. La clave está en que dividir por (1 menos la tasa de comisión) en lugar de multiplicar por (1 más la tasa de comisión) tiene en cuenta correctamente que la comisión se calcula sobre el total bruto mayor en lugar de sobre el monto objetivo original menor, cerrando la pequeña brecha que deja el enfoque de suma simple. Esta misma estructura de fórmula (dividir por uno menos una tasa en lugar de multiplicar por uno más esa tasa) aparece en varios otros contextos financieros donde una comisión, impuesto o deducción se calcula sobre un monto final en lugar de un monto inicial, lo que la convierte en una pieza de razonamiento financiero realmente reutilizable mucho más allá del procesamiento de pagos específico.</p>
+<h2>Escenarios del mundo real</h2>
+<ul>
+<li><strong>"Vendo en una plataforma que cobra una comisión del 10% y quiero obtener una ganancia neta de $50 por artículo".</strong> Usa la fórmula de cálculo de ganancia bruta: $50 ÷ 0.90 = $55.56. Publica el artículo a ese precio y, después de deducir la comisión del 10% de la plataforma, recibirás los $50 previstos, alcanzando exactamente tu objetivo en lugar de quedarte ligeramente por debajo.</li>
+<li><strong>"Mi procesador de pagos cobra un 2,9 % más una tarifa fija. ¿Cómo contabilizo ambos?"</strong> Primero, calcula la parte porcentual con la fórmula de ajuste bruto y luego añade la tarifa fija por separado, ya que esta no se ajusta al importe de la transacción como lo hace un porcentaje y debe tratarse como un importe distinto e independiente en el cálculo.</li>
+<li><strong>"Voy a dividir la cuenta de un restaurante con cargo por servicio entre amigos."</strong> Calcula la parte que le corresponde a cada persona del total antes del cargo por servicio, luego determina la parte proporcional que le corresponde a cada persona del cargo por servicio, sumando ambas para obtener el monto final a pagar por cada individuo.</li>
+<li><strong>"Necesito facturar a un cliente un importe que me reporte una cifra redonda exacta después de deducir las comisiones por transferencia bancaria."</strong> Aplique la fórmula de ajuste utilizando el porcentaje de comisión por transferencia bancaria (y cualquier comisión fija, añadida por separado) para determinar el importe exacto de la factura que le permita obtener la cifra redonda deseada.</li>
+</ul>
+<h2>¿Por qué persiste esta confusión en todos los sectores?</h2>
+<p>El error de cálculo del margen bruto no es un error aislado: se repite constantemente en el trabajo independiente, el comercio electrónico, el procesamiento de pagos y la planificación financiera, precisamente porque el atajo mental intuitivo (simplemente sumar el porcentaje) es lo suficientemente preciso como para corregirlo, y a menudo pasa desapercibido para porcentajes de comisión pequeños o importes de transacción pequeños, donde la diferencia entre la suma ingenua y la cifra correcta del margen bruto es lo suficientemente pequeña en términos absolutos como para no llamar la atención. La discrepancia se vuelve mucho más notoria y tiene consecuencias financieras mayores con porcentajes de comisión más altos o importes de transacción mayores, donde incluso un pequeño error de cálculo porcentual se acumula hasta convertirse en un déficit significativo en dólares a lo largo de muchas transacciones con el tiempo; que es exactamente la situación en la que se encuentran muchos trabajadores independientes, propietarios de pequeñas empresas y vendedores de marketplaces sin darse cuenta de que sus precios han estado cubriendo silenciosamente menos de lo que realmente pagan, transacción tras transacción, hasta que el déficit acumulado se hace evidente en sus ingresos totales.</p>
+<h2 id="who-pays">¿Quién paga realmente las comisiones por procesamiento de pagos?</h2>
+<p>Esto varía considerablemente según la plataforma, el acuerdo y el modelo de negocio, y no existe una respuesta única y universal. Algunos mercados y procesadores de pago deducen su comisión directamente de las ganancias del vendedor, lo que significa que el vendedor recibe menos de lo que pagó el comprador, y la diferencia va a la plataforma. Otros acuerdos transfieren la comisión explícitamente al comprador, añadiéndola como un recargo visible sobre el precio publicado; a veces es obligatorio, a veces está prohibido dependiendo de las normas de la red de pago específica y las regulaciones locales, ya que algunas redes de tarjetas históricamente han restringido a los comerciantes la transferencia de las comisiones de procesamiento de tarjetas directamente a los clientes en ciertos contextos. Los autónomos y los propietarios de pequeñas empresas que fijan sus propios precios a menudo deben decidir detenidamente si absorber la comisión de la plataforma en su precio declarado o aumentarlo para que, después de la comisión, reciban el importe objetivo previsto; exactamente el cálculo de aumento que se explicó anteriormente, y una decisión que afecta significativamente tanto a la competitividad del precio declarado para un comprador como a la cantidad que realmente recibe el vendedor una vez aplicadas todas las deducciones.</p>
+<h2 id="uses">Razones comunes por las que las personas dividen los gastos</h2>
+<ul>
+<li><strong>Establecer tarifas para trabajos freelance o servicios que tengan en cuenta las comisiones de la plataforma.</strong> Calcular un margen bruto para obtener un ingreso neto garantiza que el freelancer reciba realmente la cantidad prevista después de la comisión de la plataforma, en lugar de cobrar menos de lo debido en cada factura, aunque sea un margen pequeño pero acumulativo.</li>
+<li><strong>Dividir un costo o factura compartida que incluya un cargo por servicio.</strong> Determinar la parte justa de cada persona cuando se agrega una propina o cargo basado en un porcentaje al total del grupo.</li>
+<li><strong>Fijar el precio de los productos vendidos a través de una plataforma de comercio electrónico con comisiones para el vendedor.</strong> Establecer un precio de venta que genere un beneficio neto específico después de la comisión de la plataforma.</li>
+<li><strong>Comprender con exactitud cuánto cobra el procesador de pagos.</strong> Verificar que la comisión deducida coincida con el porcentaje indicado, lo cual resulta útil para confirmar la exactitud de las facturas o los extractos.</li>
+</ul>
+<h2>¿Por qué persiste esta confusión en todos los sectores?</h2>
+<p>El error de cálculo en el cálculo del margen bruto no es un error aislado: se repite constantemente en el trabajo independiente, el comercio electrónico, el procesamiento de pagos y la planificación financiera, precisamente porque el atajo mental intuitivo de simplemente sumar el porcentaje es lo suficientemente preciso como para corregirlo, y a menudo pasa desapercibido para porcentajes de comisión bajos o importes de transacción pequeños, donde la diferencia entre la suma ingenua y la cifra correcta del margen bruto es lo suficientemente pequeña en términos absolutos como para no llamar la atención. La discrepancia se vuelve mucho más notoria y tiene consecuencias financieras mayores con porcentajes de comisión más altos o importes de transacción mayores, donde incluso un pequeño error de cálculo porcentual se acumula y genera un déficit significativo en dólares a lo largo de muchas transacciones.</p>
+<h2 id="mistakes">Errores comunes</h2>
+<ul>
+<li><strong>Simplemente hay que añadir el porcentaje de comisión al intentar alcanzar un objetivo neto específico.</strong> Como se explicó anteriormente, esto suele resultar en una cantidad inferior a la correcta; en su lugar, utilice la fórmula de división bruta, dividiendo entre uno menos la tasa de comisión en lugar de multiplicar por uno más ella.</li>
+<li><strong>Es común confundir los casos de "tarifa añadida" con los de "tarifa deducida".</strong> Estos requieren cálculos distintos; asegúrese de comprender qué situación se aplica antes de calcular, ya que usar la fórmula incorrecta produce un resultado que, aunque parezca plausible, es erróneo.</li>
+<li><strong>Suponiendo que todas las plataformas gestionan las comisiones de la misma manera,</strong> las estructuras de comisiones y quién las asume varían significativamente entre los procesadores de pago y los mercados. Consulta los términos específicos de cada plataforma en lugar de asumir que un sistema similar se aplica universalmente.</li>
+<li><strong>No se tiene en cuenta la capitalización cuando se aplican múltiples comisiones.</strong> Si varias comisiones o impuestos basados ​​en porcentajes se acumulan en la misma transacción, cada uno debe calcularse en el orden correcto y sobre la base correcta, de forma similar a los cálculos porcentuales secuenciales que se explican en las guías generales sobre porcentajes.</li>
+<li><strong>Olvidar gestionar por separado un componente de tarifa fija junto con una tarifa porcentual.</strong> Muchos procesadores de pagos reales cobran tanto un porcentaje como una cantidad fija; la fórmula de ajuste bruto gestiona la parte porcentual, pero la tarifa fija debe añadirse por separado como un paso distinto.</li>
+</ul>
+<h3>¿Por qué elegir Logrith?</h3>
+<p>El cálculo se realiza íntegramente en tu navegador mediante aritmética JavaScript estándar, sin que se transmita ningún dato a ningún sitio: una división de comisiones instantánea y precisa, tanto si añades una comisión, como si la restas o si ajustas el importe bruto para alcanzar un objetivo neto específico, sin el riesgo de infravalorar tus propias transacciones con el tiempo.</p>
+</article>
+<article class="page-section prose">
+<h2 id="faq">Preguntas frecuentes</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary class="faq-q">¿Cuál es la diferencia entre añadir una tarifa y eliminarla?</summary>
+<div class="faq-a"><p>Agregarlo significa que la comisión se calcula sobre la base y se suma, aumentando el total. Restarlo significa que la comisión se resta de un total fijo, lo que requiere que la base se ajuste al alza para que el importe neto previsto permanezca después de la deducción.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Por qué cubrir una tarifa requiere algo más que simplemente sumar el porcentaje?</summary>
+<div class="faq-a"><p>Si se le suma un 3 % a 100 dólares, el resultado es 103 dólares. Sin embargo, el 3 % de 103 dólares es mayor que el 3 % de 100 dólares, por lo que simplemente sumar el porcentaje no alcanza el resultado deseado. El método correcto consiste en dividir entre (1 menos la tasa de comisión), lo que permite calcular correctamente la comisión sobre el importe final mayor.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Quién paga las comisiones por procesamiento de pagos, el comprador o el vendedor?</summary>
+<div class="faq-a"><p>Esto varía según la plataforma y el acuerdo. Algunos mercados deducen las comisiones de las ganancias del vendedor; otros permiten que las comisiones se transfieran a los compradores. Los términos de la plataforma especifican qué modalidad se aplica.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Cómo se divide una tarifa a partes iguales entre dos partes?</summary>
+<div class="faq-a"><p>Un reparto equitativo suele significar que cada parte asume la mitad del importe de los honorarios, aunque el método específico depende del acuerdo entre las partes implicadas.</p></div>
+</details>
+</div>
+<h2>Conclusión</h2>
+<p>Dividir o cubrir una comisión porcentual es sencillo una vez que se identifica cuál de los tres escenarios se aplica: comisión añadida, comisión deducida o ajuste al alza para alcanzar un objetivo neto específico, ya que cada uno requiere un cálculo distinto. El caso del ajuste al alza suele confundir a casi todos la primera vez, puesto que el enfoque intuitivo de simplemente sumar el porcentaje de la comisión siempre resulta ligeramente inferior al resultado correcto, una pequeña diferencia que, si no se corrige, se convierte en un déficit significativo en muchas transacciones. Por ello, es importante recordar la fórmula correcta para cualquiera que fije precios de servicios, venda a través de un mercado o facture a clientes con comisiones.</p>
+</article>
+<nav class="post-nav page-section" aria-label="Más guías">
+<a href="/es/tool/blog/">← Volver al blog</a> <a href="/es/tool/blog/barcode-generator-guide">Siguiente: <strong>Guía para generar códigos de barras</strong> →</a>
+</nav>
 <section class="page-section">
-  <h2>Related Tools</h2>
-  <div class="related-grid">
-    <a class="related-card" href="/tool/tools/percentage-calculator"><strong>Percentage Calculator</strong><span>Calculate percentages, increases, and decreases.</span></a>
-    <a class="related-card" href="/tool/tools/tip-split-calculator"><strong>Tip Split Calculator</strong><span>Split a bill and tip between multiple people.</span></a>
-    <a class="related-card" href="/tool/tools/compound-interest-calculator"><strong>Compound Interest Calculator</strong><span>Calculate investment growth over time.</span></a>
-    <a class="related-card" href="/tool/tools/currency-converter"><strong>Currency Converter</strong><span>Convert transaction amounts between currencies.</span></a>
-  </div>
+<h2>Herramientas relacionadas</h2>
+<div class="related-grid">
+<a class="related-card" href="/es/tool/tools/percentage-calculator"><strong>Calculadora de porcentajes:</strong> <span>Calcula porcentajes, aumentos y disminuciones.</span></a> <a class="related-card" href="/es/tool/tools/tip-split-calculator"><strong>Calculadora de reparto de propinas:</strong> <span>Divide una cuenta y una propina entre varias personas.</span></a> <a class="related-card" href="/es/tool/tools/compound-interest-calculator"><strong>Calculadora de interés compuesto:</strong> <span>Calcula el crecimiento de la inversión a lo largo del tiempo.</span></a> <a class="related-card" href="/es/tool/tools/currency-converter"><strong>Convertidor de divisas:</strong> <span>Convierte importes de transacciones entre diferentes monedas.</span></a>
+</div>
 </section>
-
 </main>
-
 <div id="footer"></div>
 <script src="/assets/js/main.js?v=20261115"></script>
 </body>

@@ -1,50 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Format Messy SQL Queries Into Readable Code | Logrith</title>
-  <meta name="description" content="Paste a cramped or auto-generated SQL query and get it reformatted with proper indentation and line breaks, instantly.">
-  <meta name="keywords" content="sql formatter, sql formatter online, beautify sql free, sql query formatter, sql beautifier online">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="author" content="Logrith">
-  <link rel="canonical" href="https://logrith.in/tool/tools/sql-formatter">
-  <meta property="og:title" content="Format Messy SQL Queries Into Readable Code | Logrith">
-  <meta property="og:description" content="Paste a cramped or auto-generated SQL query and get it reformatted with proper indentation and line breaks, instantly.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://logrith.in/tool/tools/sql-formatter">
-  <meta property="og:site_name" content="Logrith">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Format Messy SQL Queries Into Readable Code | Logrith">
-  <meta name="twitter:description" content="Paste a cramped or auto-generated SQL query and get it reformatted with proper indentation and line breaks, instantly.">
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#0D0D0D">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cómo convertir consultas SQL desordenadas en código legible | Logrith</title>
+<meta name="description" content="Pega una consulta SQL apretada o generada automáticamente y obtén su formato con la indentación y los saltos de línea adecuados, al instante.">
+<meta name="keywords" content="sql formatter, sql formatter online, beautify sql free, sql query formatter, sql beautifier online">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Logrith">
+<link rel="canonical" href="https://logrith.in/es/tool/tools/sql-formatter">
+  <link rel="alternate" hreflang="x-default" href="https://logrith.in/tool/tools/sql-formatter">
+  <link rel="alternate" hreflang="es" href="https://logrith.in/es/tool/tools/sql-formatter">
+  <link rel="alternate" hreflang="en" href="https://logrith.in/tool/tools/sql-formatter">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
-  <link rel="preload" href="/components/navbar.html" as="fetch" type="text/html" crossorigin>
-  <link rel="preload" href="/components/footer.html" as="fetch" type="text/html" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=20261115">
-  <link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
 
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
-  </script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebApplication","name":"SQL Formatter","url":"https://logrith.in/tool/tools/sql-formatter","applicationCategory":"DeveloperApplication","operatingSystem":"Any","description":"Free online SQL formatter and beautifier.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://logrith.in/#organization"}}
-  </script>
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Developer Tools", "item": "https://logrith.in/tool/categories/developer-tools"}, {"@type": "ListItem", "position": 4, "name": "SQL Formatter", "item": "https://logrith.in/tool/tools/sql-formatter"}]}
-  </script>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
-  <script>
+<meta property="og:title" content="Cómo convertir consultas SQL desordenadas en código legible | Logrith">
+<meta property="og:description" content="Pega una consulta SQL apretada o generada automáticamente y obtén su formato con la indentación y los saltos de línea adecuados, al instante.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://logrith.in/es/tool/tools/sql-formatter">
+<meta property="og:site_name" content="Logrith">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cómo convertir consultas SQL desordenadas en código legible | Logrith">
+<meta name="twitter:description" content="Pega una consulta SQL apretada o generada automáticamente y obtén su formato con la indentación y los saltos de línea adecuados, al instante.">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0D0D0D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
+<link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261115">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Formateador SQL", "url": "https://logrith.in/es/tool/tools/sql-formatter", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Formateador y embellecedor de SQL en línea gratuito.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Hogar", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas para desarrolladores", "item": "https://logrith.in/es/tool/categories/developer-tools"}, {"@type": "ListItem", "position": 4, "name": "Formateador SQL", "item": "https://logrith.in/es/tool/tools/sql-formatter"}]}</script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+<script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -52,146 +50,113 @@
   </script>
 </head>
 <body class="page-sql-formatter">
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main">Saltar al contenido</a>
 <div id="navbar"></div>
-
 <main id="main">
-
 <header class="page-hero"><div class="page-hero-inner">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/tool/">Tools</a> › <a href="/tool/categories/developer-tools">Developer Tools</a> › SQL Formatter</nav>
-  <h1>Free SQL Formatter</h1>
-  <p>Turn messy, single-line SQL queries into clean, properly indented, readable code instantly.</p>
-  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#ruler"></use></svg> Auto-Indent</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span></div>
+<nav class="breadcrumb" aria-label="Migaja de pan"><a href="/es/">Inicio</a> › <a href="/es/tool/">Herramientas</a> › <a href="/es/tool/categories/developer-tools">Herramientas para desarrolladores</a> › Formateador SQL</nav>
+<h1>Formateador SQL gratuito</h1>
+<p>Convierte al instante consultas SQL desordenadas de una sola línea en código limpio, con la indentación correcta y legible.</p>
+<div class="tag-list"><span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Gratis</span> <span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#ruler"></use></svg> Sangría automática</span> <span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#zap"></use></svg> Instantáneo</span></div>
 </div></header>
-
 <div class="tool-workspace">
-  <div class="tool-card">
-    <h2>SQL Query</h2>
-    <textarea class="tool-textarea mono" id="input-sql" rows="6" placeholder="Paste your SQL query here...">select id, name, email from users where status = 'active' and age > 18 order by name limit 50</textarea>
-    <div class="btn-group mt-12">
-      <button class="btn btn-primary btn-lg" id="format-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#ruler"></use></svg> Format SQL</button>
-      <button class="btn btn-secondary" id="clear-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Clear</button>
-    </div>
-    <div class="control-group mt-16 relative">
-      <label>Formatted Output</label>
-      <textarea class="tool-textarea mono" id="output-sql" rows="10" readonly></textarea>
-      <button class="copy-btn" id="copy-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
-    </div>
-  </div>
+<div class="tool-card">
+<h2>Consulta SQL</h2>
+<textarea class="tool-textarea mono" id="input-sql" rows="6" placeholder="Pega aquí tu consulta SQL...">select id, name, email from users where status = 'active' and age > 18 order by name limit 50</textarea>
+<div class="btn-group mt-12">
+<button class="btn btn-primary btn-lg" id="format-btn"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#ruler"></use></svg> Formato SQL</button> <button class="btn btn-secondary" id="clear-btn"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#close"></use></svg> Borrar</button>
 </div>
-
+<div class="control-group mt-16 relative">
+<label>Salida formateada</label><textarea class="tool-textarea mono" id="output-sql" readonly="" rows="10"></textarea> <button class="copy-btn" id="copy-btn"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#copy"></use></svg> Copia</button>
+</div>
+</div>
+</div>
 <section class="page-section">
-  <h2>Frequently Asked Questions</h2>
-  <div class="faq-list">
-    <details class="faq-item">
-      <summary class="faq-q">Which SQL keywords does this recognize?</summary>
-      <div class="faq-a"><p>Common keywords like SELECT, FROM, WHERE, JOIN, GROUP BY, ORDER BY, HAVING, INSERT INTO, UPDATE, and DELETE FROM are recognized and placed on new lines with uppercase formatting.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Does this work for all SQL dialects?</summary>
-      <div class="faq-a"><p>This formatter handles standard SQL syntax common across MySQL, PostgreSQL, SQLite, and SQL Server. Highly dialect-specific syntax may not format perfectly.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Will formatting change my query's behavior?</summary>
-      <div class="faq-a"><p>No, formatting only adds whitespace and line breaks for readability — it doesn't change the query logic or behavior.</p></div>
-    </details>
-  </div>
+<h2>Preguntas frecuentes</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary class="faq-q">¿Qué palabras clave SQL reconoce?</summary>
+<div class="faq-a"><p>Las palabras clave comunes como SELECT, FROM, WHERE, JOIN, GROUP BY, ORDER BY, HAVING, INSERT INTO, UPDATE y DELETE FROM se reconocen y se colocan en líneas nuevas con formato en mayúsculas.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Esto funciona para todos los dialectos SQL?</summary>
+<div class="faq-a"><p>Este formateador maneja la sintaxis SQL estándar común a MySQL, PostgreSQL, SQLite y SQL Server. Es posible que la sintaxis muy específica de un dialecto no se formatee a la perfección.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿El formato modificará el comportamiento de mi consulta?</summary>
+<div class="faq-a"><p>No, el formato solo agrega espacios en blanco y saltos de línea para facilitar la lectura; no cambia la lógica ni el comportamiento de la consulta.</p></div>
+</details>
+</div>
 </section>
-
 <section class="page-section">
-  <h2>How to Use the SQL Formatter</h2>
-  <ol class="steps">
-    <li class="step">
-      <strong>Paste your SQL</strong>
-      <p>Replace the sample query in the input box with your own SQL statement, however messy or unindented.</p>
-    </li>
-    <li class="step">
-      <strong>Click Format SQL</strong>
-      <p>The tool scans your query for recognized keywords and rebuilds it with each clause on its own line.</p>
-    </li>
-    <li class="step">
-      <strong>Review the formatted output</strong>
-      <p>Check the read-only output box — keywords are uppercased and placed on new lines, while your identifiers and values stay untouched.</p>
-    </li>
-    <li class="step">
-      <strong>Copy the result</strong>
-      <p>Click the Copy button to grab the formatted SQL for pasting into your editor, documentation, or pull request.</p>
-    </li>
-  </ol>
+<h2>Cómo usar el formateador SQL</h2>
+<ol class="steps">
+<li class="step">
+<strong>Pega tu SQL</strong>
+<p>Sustituya la consulta de ejemplo en el cuadro de entrada por su propia instrucción SQL, por muy desordenada o sin sangría que esté.</p>
+</li>
+<li class="step">
+<strong>Haga clic en Formato SQL</strong>
+<p>La herramienta analiza tu consulta en busca de palabras clave reconocidas y la reconstruye colocando cada cláusula en una línea independiente.</p>
+</li>
+<li class="step">
+<strong>Revise la salida formateada.</strong>
+<p>Marque la casilla de salida de solo lectura: las palabras clave se convierten a mayúsculas y se colocan en líneas nuevas, mientras que los identificadores y los valores permanecen intactos.</p>
+</li>
+<li class="step">
+<strong>Copia el resultado</strong>
+<p>Haz clic en el botón Copiar para obtener el código SQL formateado y pegarlo en tu editor, documentación o solicitud de extracción.</p>
+</li>
+</ol>
 </section>
-
 <section class="page-section prose">
-  <h2>SQL Formatter and Beautifier</h2>
-  <p>This tool reformats SQL queries — turning a dense, single-line query into a clean, readable structure with each major clause on its own line and consistent capitalization for keywords.</p>
-
-  <h3>Why Format SQL Queries?</h3>
-  <p>SQL queries copied from logs, generated by ORMs, or written quickly during debugging are often compressed onto a single line, making them hard to read at a glance. Proper formatting — placing each major clause (SELECT, FROM, WHERE, JOIN, GROUP BY, ORDER BY) on its own line with consistent indentation — makes the query's structure and logic immediately clear, which speeds up debugging, code review, and understanding queries written by others.</p>
-
-  <h3>What This Tool Does</h3>
-  <p>The formatter identifies common SQL keywords within your query and places each one at the start of a new line, capitalizing it for consistency, while leaving the rest of your query (table names, column names, values, conditions) untouched. This produces a query that's dramatically easier to scan and understand without altering its actual logic or behavior in any way.</p>
-
-  <h3>Common Uses</h3>
-  <ul>
-    <li><strong>Debugging</strong> — quickly understanding a complex query pulled from application logs.</li>
-    <li><strong>Code review</strong> — making SQL in pull requests easier for reviewers to read.</li>
-    <li><strong>Documentation</strong> — presenting queries clearly in technical documentation or tutorials.</li>
-    <li><strong>Learning SQL</strong> — seeing query structure broken down clause by clause.</li>
-  </ul>
-
-  <h3>Privacy and Local Processing</h3>
-  <p>All formatting happens directly in your browser — your SQL queries are never sent to a server.</p>
-
-  <h3>How the Keyword Detection Works</h3>
-  <p>The formatter first collapses your query down to a single line by stripping extra whitespace, then walks through a list of recognized clause keywords — starting with multi-word phrases like SELECT DISTINCT, LEFT OUTER JOIN, and INSERT INTO before shorter ones like SELECT, FROM, and SET. Checking longer phrases first prevents a keyword like "JOIN" from being matched and broken apart in the middle of "LEFT JOIN" or "INNER JOIN". Each match is placed at the start of a new line and rewritten in uppercase, so a query written entirely in lowercase comes out with standard, conventional capitalization.</p>
-
-  <h3>Handling WHERE Clauses with AND / OR</h3>
-  <p>Beyond the main clause keywords, the formatter also looks for AND and OR inside your conditions and indents them two spaces under the WHERE (or HAVING) clause they belong to. This keeps a multi-condition filter — for example <code>status = 'active' AND age &gt; 18 AND country = 'US'</code> — readable as a stacked list of conditions rather than a long unbroken line, which makes it much faster to spot a missing or misplaced condition.</p>
-
-  <h3>For Developers Working with ORM-Generated Queries</h3>
-  <p>Queries generated by ORMs (Django, SQLAlchemy, Sequelize, Hibernate, Eloquent, and similar) are typically logged as a single compressed line with no formatting at all, since the ORM has no reason to pretty-print its output. Pasting that raw logged query into this tool is often the fastest way to actually read what the ORM sent to the database — especially useful when you're trying to confirm whether a generated query includes the JOINs, WHERE conditions, or LIMIT clause you expected.</p>
-
-  <h3>For Students Learning SQL</h3>
-  <p>Seeing a query broken into its component clauses — SELECT, FROM, WHERE, GROUP BY, ORDER BY — each on its own line makes the overall structure of a SELECT statement much easier to internalize than reading it as one continuous sentence. Students can paste example queries from textbooks or online tutorials into the tool to see how each clause relates to the others before writing their own queries from scratch.</p>
-
-  <h3>Manual Formatting vs. Using This Tool</h3>
-  <p>Formatting a short query by hand — adding line breaks and capitalizing keywords — takes only a minute, but queries with several JOINs, nested conditions, or subqueries get tedious and error-prone to reformat manually, especially under time pressure while debugging a production issue. Running the query through this tool takes the same amount of effort regardless of query length and never introduces a typo into a keyword or accidentally changes a value while reformatting.</p>
-
-  <h3>Limitations to Keep in Mind</h3>
-  <p>The formatter works on recognized keywords and doesn't parse your SQL into a full syntax tree, so it won't reformat the contents of subqueries with extra indentation relative to their parent query, and it doesn't validate that your SQL is syntactically correct — it simply looks for the keywords regardless of whether the surrounding query would actually run. Highly vendor-specific syntax (such as T-SQL's TOP, or PostgreSQL's DISTINCT ON) outside the recognized keyword list is left exactly as typed.</p>
-
-  <h3>Frequently Searched Terms</h3>
-  <p>People land on this page searching for phrases like "format sql online free," "sql pretty print," "make sql query readable," "sql indent tool," "uppercase sql keywords online," and "sql query beautifier no download." This tool covers all of these — it's a browser-based formatter with no installation, account, or file upload required.</p>
-
-  <h3>Using It Alongside Code Review</h3>
-  <p>When you're reviewing a pull request that touches raw SQL — a migration script, a reporting query, or a hand-written statement inside application code — pasting it through the formatter before reading it closely can surface issues that are easy to miss in a cramped one-liner, such as a WHERE clause that's missing a condition on one branch of an OR, or a JOIN that's silently a CROSS JOIN because the ON condition was dropped. Reformatting first and then reading top to bottom, clause by clause, is a quick habit that catches more than skimming the original compressed query.</p>
-
-  <h3>Working with Multiple Statements</h3>
-  <p>If your input contains more than one SQL statement separated by semicolons, the formatter processes the whole pasted block as one piece of text, splitting on whitespace and keywords rather than on statement boundaries. For the clearest output, it generally works best to format one statement at a time, especially when the statements use very different clause structures (for example, one SELECT and one UPDATE in the same paste).</p>
+<h2>Formateador y embellecedor de SQL</h2>
+<p>Esta herramienta reformatea las consultas SQL, transformando una consulta densa de una sola línea en una estructura limpia y legible, con cada cláusula principal en su propia línea y un uso coherente de mayúsculas para las palabras clave.</p>
+<h3>¿Por qué formatear las consultas SQL?</h3>
+<p>Las consultas SQL copiadas de los registros, generadas por ORM o escritas rápidamente durante la depuración suelen comprimirse en una sola línea, lo que dificulta su lectura a simple vista. Un formato adecuado —colocar cada cláusula principal (SELECT, FROM, WHERE, JOIN, GROUP BY, ORDER BY) en una línea independiente con una indentación uniforme— deja clara la estructura y la lógica de la consulta de inmediato, lo que agiliza la depuración, la revisión del código y la comprensión de las consultas escritas por otros.</p>
+<h3>Qué hace esta herramienta</h3>
+<p>El formateador identifica las palabras clave SQL más comunes en tu consulta y las coloca al inicio de una nueva línea, poniéndolas en mayúscula para mayor coherencia, sin modificar el resto de la consulta (nombres de tablas, columnas, valores y condiciones). Esto genera una consulta mucho más fácil de leer y comprender, sin alterar su lógica ni su comportamiento.</p>
+<h3>Usos comunes</h3>
+<ul>
+<li><strong>Depuración</strong> : comprender rápidamente una consulta compleja extraída de los registros de la aplicación.</li>
+<li><strong>Revisión de código</strong> : hacer que el código SQL en las solicitudes de extracción sea más fácil de leer para los revisores.</li>
+<li><strong>Documentación</strong> : presentar las consultas de forma clara en la documentación técnica o en los tutoriales.</li>
+<li><strong>Aprender SQL</strong> : ver la estructura de la consulta desglosada cláusula por cláusula.</li>
+</ul>
+<h3>Privacidad y procesamiento local</h3>
+<p>Todo el formato se aplica directamente en tu navegador; tus consultas SQL nunca se envían a un servidor.</p>
+<h3>Cómo funciona la detección de palabras clave</h3>
+<p>El formateador primero reduce la consulta a una sola línea eliminando los espacios en blanco adicionales y luego recorre una lista de palabras clave de cláusulas reconocidas, comenzando con frases de varias palabras como SELECT DISTINCT, LEFT OUTER JOIN e INSERT INTO, antes que las más cortas como SELECT, FROM y SET. La comprobación de las frases más largas evita que una palabra clave como "JOIN" se encuentre y se divida en medio de "LEFT JOIN" o "INNER JOIN". Cada coincidencia se coloca al inicio de una nueva línea y se reescribe en mayúsculas, de modo que una consulta escrita completamente en minúsculas se muestra con la capitalización estándar y convencional.</p>
+<h3>Manejo de cláusulas WHERE con AND / OR</h3>
+<p>Además de las palabras clave de la cláusula principal, el formateador también busca AND y OR dentro de las condiciones y les aplica una sangría de dos espacios debajo de la cláusula WHERE (o HAVING) a la que pertenecen. Esto permite que un filtro con múltiples condiciones —por ejemplo, <code>status = 'active' AND age > 18 AND country = 'US'</code>— se lea como una lista apilada de condiciones en lugar de una línea larga sin saltos, lo que facilita la detección de una condición faltante o mal ubicada.</p>
+<h3>Para desarrolladores que trabajan con consultas generadas por ORM</h3>
+<p>Las consultas generadas por ORM (Django, SQLAlchemy, Sequelize, Hibernate, Eloquent y similares) suelen registrarse como una única línea comprimida sin formato alguno, ya que el ORM no tiene motivo para formatear su salida. Copiar y pegar esa consulta registrada en bruto en esta herramienta suele ser la forma más rápida de leer lo que el ORM envió a la base de datos, lo cual resulta especialmente útil cuando se intenta confirmar si una consulta generada incluye las cláusulas JOIN, WHERE o LIMIT esperadas.</p>
+<h3>Para estudiantes que aprenden SQL</h3>
+<p>Ver una consulta dividida en sus cláusulas componentes —SELECT, FROM, WHERE, GROUP BY, ORDER BY—, cada una en una línea independiente, facilita enormemente la comprensión de la estructura general de una sentencia SELECT en comparación con leerla como una sola oración continua. Los estudiantes pueden pegar ejemplos de consultas de libros de texto o tutoriales en línea en la herramienta para ver cómo se relaciona cada cláusula con las demás antes de escribir sus propias consultas desde cero.</p>
+<h3>Formato manual frente a uso de esta herramienta</h3>
+<p>Formatear manualmente una consulta corta (añadiendo saltos de línea y capitalizando palabras clave) solo lleva un minuto, pero las consultas con varias cláusulas JOIN, condiciones anidadas o subconsultas resultan tediosas y propensas a errores al reformatearlas manualmente, especialmente bajo presión de tiempo al depurar un problema en producción. Ejecutar la consulta con esta herramienta requiere el mismo esfuerzo independientemente de su longitud y nunca introduce errores tipográficos en las palabras clave ni modifica accidentalmente ningún valor durante el reformateo.</p>
+<h3>Limitaciones a tener en cuenta</h3>
+<p>El formateador funciona con palabras clave reconocidas y no analiza el código SQL para generar un árbol de sintaxis completo. Por lo tanto, no reformatea el contenido de las subconsultas con sangría adicional con respecto a la consulta principal, ni valida la sintaxis del código SQL. Simplemente busca las palabras clave, independientemente de si la consulta circundante se ejecutaría o no. La sintaxis específica del proveedor (como TOP de T-SQL o DISTINCT ON de PostgreSQL) que no se encuentra en la lista de palabras clave reconocidas se mantiene tal como se escribió.</p>
+<h3>Términos buscados con frecuencia</h3>
+<p>Los usuarios llegan a esta página buscando frases como "formatear SQL en línea gratis", "formatear SQL", "hacer que las consultas SQL sean legibles", "herramienta de sangría SQL", "palabras clave SQL en mayúsculas en línea" y "embellecedor de consultas SQL sin descarga". Esta herramienta cubre todas estas necesidades: es un formateador basado en el navegador que no requiere instalación, cuenta ni carga de archivos.</p>
+<h3>Utilizarlo junto con la revisión de código</h3>
+<p>Cuando revisas una solicitud de extracción que involucra SQL puro (un script de migración, una consulta de informes o una instrucción escrita a mano dentro del código de la aplicación), copiarla y pegarla en el formateador antes de leerla detenidamente puede revelar problemas que son fáciles de pasar por alto en una línea de código concisa, como una cláusula WHERE a la que le falta una condición en una rama de un OR, o un JOIN que en realidad es un CROSS JOIN porque se eliminó la condición ON. Reformatear primero y luego leer de arriba abajo, cláusula por cláusula, es un hábito rápido que detecta más problemas que simplemente leer por encima la consulta comprimida original.</p>
+<h3>Trabajar con múltiples declaraciones</h3>
+<p>Si el texto introducido contiene más de una instrucción SQL separada por punto y coma, el formateador procesa todo el bloque pegado como un único texto, dividiéndolo por espacios en blanco y palabras clave en lugar de por los límites de las instrucciones. Para obtener un resultado más claro, generalmente es mejor formatear una instrucción a la vez, especialmente cuando las instrucciones utilizan estructuras de cláusulas muy diferentes (por ejemplo, una instrucción SELECT y una UPDATE en el mismo texto).</p>
 </section>
-
 <section class="page-section">
-  <h2>Related Tools</h2>
-  <div class="related-grid">
-    <a class="related-card" href="/tool/tools/json-formatter"><strong>JSON Formatter</strong><span>Format and validate JSON data.</span></a>
-    <a class="related-card" href="/tool/tools/css-minifier"><strong>CSS Minifier</strong><span>Minify or beautify CSS code.</span></a>
-    <a class="related-card" href="/tool/tools/html-minifier"><strong>HTML Minifier</strong><span>Minify or beautify HTML code.</span></a>
-    <a class="related-card" href="/tool/tools/regex-tester"><strong>Regex Tester</strong><span>Test and debug regular expressions.</span></a>
-  </div>
+<h2>Herramientas relacionadas</h2>
+<div class="related-grid">
+<a class="related-card" href="/es/tool/tools/json-formatter"><strong>Formateador JSON:</strong> <span>formatea y valida datos JSON.</span></a> <a class="related-card" href="/es/tool/tools/css-minifier"><strong>Minificador CSS:</strong> <span>minimiza o embellece el código CSS.</span></a> <a class="related-card" href="/es/tool/tools/html-minifier"><strong>Minificador HTML:</strong> <span>minimiza o embellece el código HTML.</span></a> <a class="related-card" href="/es/tool/tools/regex-tester"><strong>Probador de expresiones regulares:</strong> <span>prueba y depura expresiones regulares.</span></a>
+</div>
 </section>
-
 <section class="page-section">
-  <h2>Popular Searches</h2>
-  <div class="keyword-box">
-    <span class="keyword-tag">sql formatter</span>
-    <span class="keyword-tag">sql formatter online</span>
-    <span class="keyword-tag">beautify sql</span>
-    <span class="keyword-tag">sql query formatter</span>
-    <span class="keyword-tag">sql beautifier</span>
-  </div>
+<h2>Búsquedas populares</h2>
+<div class="keyword-box">
+<span class="keyword-tag">formateador SQL</span> <span class="keyword-tag">formateador SQL en línea</span> <span class="keyword-tag">embellecer SQL</span> <span class="keyword-tag">formateador de consultas SQL</span> <span class="keyword-tag">embellecedor SQL</span>
+</div>
 </section>
-
 </main>
-
 <div id="footer"></div>
 <script src="/assets/js/main.js?v=20261115"></script>
 <script>

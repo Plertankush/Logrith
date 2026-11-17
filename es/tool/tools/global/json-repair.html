@@ -1,85 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Repara el JSON dañado y descubre exactamente cuál era el problema | Logrith</title>
+<meta name="description" content="Pegue el JSON no válido para que se repare automáticamente, corrigiendo las comas finales y las claves sin comillas, y explicando claramente los errores.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Logrith">
+<link rel="canonical" href="https://logrith.in/es/tool/tools/json-repair">
+  <link rel="alternate" hreflang="x-default" href="https://logrith.in/tool/tools/json-repair">
+  <link rel="alternate" hreflang="es" href="https://logrith.in/es/tool/tools/json-repair">
+  <link rel="alternate" hreflang="en" href="https://logrith.in/tool/tools/json-repair">
 
-  <title>Fix Broken JSON and See Exactly What Was Wrong | Logrith</title>
-  <meta name="description" content="Paste invalid JSON to get it repaired automatically, with trailing commas and unquoted keys fixed and errors clearly explained.">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="author" content="Logrith">
-  <link rel="canonical" href="https://logrith.in/tool/tools/json-repair">
 
-  <meta property="og:title" content="Fix Broken JSON and See Exactly What Was Wrong | Logrith">
-  <meta property="og:description" content="Paste invalid JSON to get it repaired automatically, with trailing commas and unquoted keys fixed and errors clearly explained.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://logrith.in/tool/tools/json-repair">
-  <meta property="og:site_name" content="Logrith">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Fix Broken JSON and See Exactly What Was Wrong | Logrith">
-  <meta name="twitter:description" content="Paste invalid JSON to get it repaired automatically, with trailing commas and unquoted keys fixed and errors clearly explained.">
-
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#0D0D0D">
-
-  <meta name="keywords" content="json repair tool, fix json online, json validator, json formatter, json beautifier, json to typescript, json to csv">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
-  <link rel="preload" href="/components/navbar.html" as="fetch" type="text/html" crossorigin>
-  <link rel="preload" href="/components/footer.html" as="fetch" type="text/html" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=20261115">
-  <link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"SoftwareApplication",
-    "name":"Logrith JSON Repair Tool",
-    "url":"https://logrith.in/tool/tools/json-repair",
-    "applicationCategory":"UtilitiesApplication",
-    "operatingSystem":"Web Browser",
-    "description":"Browser-based tool that validates JSON, automatically fixes common syntax errors such as trailing commas and unquoted keys, formats and minifies JSON, and converts JSON to TypeScript interfaces or CSV, without uploading data to a server.",
-    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
-    "featureList":[
-      "Validate JSON with line and column error location",
-      "Automatically repair trailing commas, unquoted keys and single-quoted strings",
-      "Format and beautify JSON with selectable indent",
-      "Minify JSON",
-      "Collapsible JSON tree viewer",
-      "Convert JSON to a TypeScript interface",
-      "Convert array-of-objects JSON to CSV",
-      "100% local browser processing"
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Global Tools", "item": "https://logrith.in/tool/categories/global-tools"}, {"@type": "ListItem", "position": 4, "name": "JSON Repair Tool", "item": "https://logrith.in/tool/tools/json-repair"}]}
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"Can this tool fix any broken JSON?","acceptedAnswer":{"@type":"Answer","text":"No. The automatic repair step targets three common, well-defined problems: trailing commas, unquoted object keys, and single-quoted string values. It cannot recover data that is genuinely missing, fix deeply malformed or truncated structures, or guess what you meant to write. For anything outside those three fixes, the tool reports the exact error location so you can correct it manually."}},
-      {"@type":"Question","name":"Is my JSON data uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. All parsing, repair, formatting and conversion happens locally in your browser using JavaScript. Your data is never sent to Logrith or any other server."}},
-      {"@type":"Question","name":"Does the tool tell me exactly where the error is?","acceptedAnswer":{"@type":"Answer","text":"Yes, when the browser's JSON parser reports a character position, the tool converts that position into a line and column number so you can jump straight to the problem."}},
-      {"@type":"Question","name":"Can I convert JSON to a TypeScript interface?","acceptedAnswer":{"@type":"Answer","text":"Yes. Once your JSON parses successfully, the tool generates a basic TypeScript interface by inferring the type of each field, including nested objects and arrays."}},
-      {"@type":"Question","name":"Can I convert JSON to CSV?","acceptedAnswer":{"@type":"Answer","text":"Yes, if the top-level JSON is an array of flat objects. The tool builds a CSV header from the union of all keys and writes one row per object. If the JSON isn't shaped that way, the tool explains why CSV export isn't possible rather than producing broken output."}},
-      {"@type":"Question","name":"Is this tool free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes, this tool is completely free with no account, signup, or usage limit beyond what your browser can handle."}}
-    ]
-  }
-  </script>
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
-  <script>
+<meta property="og:title" content="Repara el JSON dañado y descubre exactamente cuál era el problema | Logrith">
+<meta property="og:description" content="Pegue el JSON no válido para que se repare automáticamente, corrigiendo las comas finales y las claves sin comillas, y explicando claramente los errores.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://logrith.in/es/tool/tools/json-repair">
+<meta property="og:site_name" content="Logrith">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Repara el JSON dañado y descubre exactamente cuál era el problema | Logrith">
+<meta name="twitter:description" content="Pegue el JSON no válido para que se repare automáticamente, corrigiendo las comas finales y las claves sin comillas, y explicando claramente los errores.">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0D0D0D">
+<meta name="keywords" content="json repair tool, fix json online, json validator, json formatter, json beautifier, json to typescript, json to csv">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
+<link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261115">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Logrith Herramienta de reparación JSON", "url": "https://logrith.in/es/tool/tools/json-repair", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web Browser", "description": "Herramienta basada en navegador que valida JSON, corrige automáticamente errores de sintaxis comunes como comas al final y claves sin comillas, formatea y minimiza JSON, y convierte JSON a interfaces TypeScript o CSV, sin necesidad de subir datos a un servidor.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": ["Validate JSON with line and column error location", "Automatically repair trailing commas, unquoted keys and single-quoted strings", "Format and beautify JSON with selectable indent", "Minify JSON", "Collapsible JSON tree viewer", "Convert JSON to a TypeScript interface", "Convert array-of-objects JSON to CSV", "100% local browser processing"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Hogar", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas globales", "item": "https://logrith.in/es/tool/categories/global-tools"}, {"@type": "ListItem", "position": 4, "name": "Herramienta de reparación JSON", "item": "https://logrith.in/es/tool/tools/json-repair"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Puede esta herramienta corregir cualquier JSON dañado?", "acceptedAnswer": {"@type": "Answer", "text": "No. El paso de reparación automática se centra en tres problemas comunes y bien definidos: comas al final de las líneas, claves de objeto sin comillas y valores de cadena entre comillas simples. No puede recuperar datos que realmente falten, corregir estructuras profundamente dañadas o truncadas, ni adivinar lo que usted quiso escribir. Para cualquier otro problema que no se pueda solucionar con estas tres correcciones, la herramienta le indicará la ubicación exacta del error para que pueda corregirlo manualmente."}}, {"@type": "Question", "name": "¿Mis datos JSON están subidos a algún sitio?", "acceptedAnswer": {"@type": "Answer", "text": "No. Todo el análisis, reparación, formateo y conversión se realizan localmente en su navegador mediante JavaScript. Sus datos nunca se envían a Logrith ni a ningún otro servidor."}}, {"@type": "Question", "name": "¿La herramienta me indica exactamente dónde está el error?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, cuando el analizador JSON del navegador informa la posición de un carácter, la herramienta convierte esa posición en un número de línea y columna para que puedas ir directamente al problema."}}, {"@type": "Question", "name": "¿Puedo convertir JSON a una interfaz TypeScript?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Una vez que el JSON se analiza correctamente, la herramienta genera una interfaz básica de TypeScript infiriendo el tipo de cada campo, incluidos los objetos anidados y las matrices."}}, {"@type": "Question", "name": "¿Puedo convertir JSON a CSV?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, si el JSON de nivel superior es una matriz de objetos planos. La herramienta crea un encabezado CSV a partir de la unión de todas las claves y escribe una fila por objeto. Si el JSON no tiene ese formato, la herramienta explica por qué no es posible exportar a CSV, en lugar de generar un resultado incompleto."}}, {"@type": "Question", "name": "¿Esta herramienta es de uso gratuito?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, esta herramienta es completamente gratuita, sin necesidad de cuenta, registro ni límite de uso más allá de lo que su navegador pueda soportar."}}]}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+<script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -88,250 +49,189 @@
 </head>
 <body class="page-json-repair">
 <div id="navbar"></div>
-
 <main>
-  <header class="page-hero">
-    <div class="page-hero-inner">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="/">Home</a> › <a href="/tool/categories/global-tools">Global Tools</a> › JSON Repair Tool
+<header class="page-hero">
+<div class="page-hero-inner">
+<nav class="breadcrumb" aria-label="Migaja de pan">
+<a href="/es/">Inicio</a> › <a href="/es/tool/categories/global-tools">Herramientas globales</a> › Herramienta de reparación JSON
       </nav>
-      <h1>JSON Repair Tool – Fix<span> and Validate JSON</span></h1>
-      <p>Paste broken JSON, validate it, auto-fix common syntax mistakes, and format, minify or convert the result, entirely in your browser.</p>
-      <div class="tag-list">
-        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
-        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#lock"></use></svg> Local Processing</span>
-        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#json"></use></svg> Auto Repair</span>
-        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#speed"></use></svg> Instant</span>
-      </div>
-    </div>
-  </header>
-
-  <div class="tool-workspace">
-    <div class="tool-card">
-      <h2>Paste Your JSON</h2>
-      <textarea class="tool-textarea mono" id="json-input" rows="14" spellcheck="false" placeholder='{"name": "Example", "tags": ["a", "b",], noQuotes: &apos;value&apos;}'></textarea>
-
-      <div class="json-toolbar">
-        <select class="indent-select" id="indent-select">
-          <option value="2">2 spaces</option>
-          <option value="4">4 spaces</option>
-          <option value="tab">Tab</option>
-        </select>
-        <button class="btn btn-secondary" id="validate-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#check"></use></svg> Validate</button>
-        <button class="btn btn-secondary" id="format-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#code"></use></svg> Format</button>
-        <button class="btn btn-secondary" id="minify-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#compress-img"></use></svg> Minify</button>
-        <div class="spacer"></div>
-        <button class="btn btn-primary" id="repair-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#tool"></use></svg> Auto-Repair</button>
-      </div>
-
-      <div class="status-msg" id="status-msg" aria-live="polite"></div>
-      <div id="repair-note-wrap"></div>
-    </div>
-
-    <div class="tool-card is-hidden" id="results-card">
-      <div class="json-tabs">
-        <button class="json-tab active" data-panel="panel-output" type="button">Output</button>
-        <button class="json-tab" data-panel="panel-tree" type="button">Tree View</button>
-        <button class="json-tab" data-panel="panel-ts" type="button">TypeScript</button>
-        <button class="json-tab" data-panel="panel-csv" type="button">CSV</button>
-      </div>
-
-      <div class="json-panel active" id="panel-output">
-        <div class="btn-group mb-12">
-          <button class="btn btn-secondary btn-sm" id="copy-output-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
-          <button class="btn btn-secondary btn-sm" id="download-output-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#download"></use></svg> Download .json</button>
-        </div>
-        <textarea class="tool-textarea mono" id="json-output" rows="14" spellcheck="false" readonly></textarea>
-      </div>
-
-      <div class="json-panel" id="panel-tree">
-        <div class="json-tree" id="tree-view"></div>
-      </div>
-
-      <div class="json-panel" id="panel-ts">
-        <div class="btn-group mb-12">
-          <button class="btn btn-secondary btn-sm" id="copy-ts-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
-        </div>
-        <textarea class="tool-textarea mono" id="ts-output" rows="14" spellcheck="false" readonly></textarea>
-      </div>
-
-      <div class="json-panel" id="panel-csv">
-        <div class="btn-group mb-12">
-          <button class="btn btn-secondary btn-sm" id="copy-csv-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
-          <button class="btn btn-secondary btn-sm" id="download-csv-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#download"></use></svg> Download .csv</button>
-        </div>
-        <div id="csv-message" class="status-msg"></div>
-        <textarea class="tool-textarea mono" id="csv-output" rows="14" spellcheck="false" readonly></textarea>
-      </div>
-    </div>
-
-    <p class="privacy-note">Your JSON is processed in your browser. Data is not uploaded to Logrith.</p>
-  </div>
-
-  <section class="page-section">
-    <h2>How to Fix JSON</h2>
-    <ol class="steps">
-      <li class="step">
-        <p>Paste or type your JSON into the input box above.</p>
-      </li>
-      <li class="step">
-        <p>Click "Validate" to check it, or click "Auto-Repair" directly if you know it has common mistakes.</p>
-      </li>
-      <li class="step">
-        <p>If repair succeeds, review which fixes were applied, then click "Accept repaired JSON" to replace the editor content.</p>
-      </li>
-      <li class="step">
-        <p>Use "Format" to beautify the result, "Minify" to compress it, or switch tabs to view it as a tree, TypeScript interface, or CSV.</p>
-      </li>
-    </ol>
-  </section>
-
-  <section class="page-section prose">
-    <h2>What This JSON Repair Tool Does</h2>
-    <ul>
-      <li><strong>Validation:</strong> parses your JSON and reports the exact line and column of the first syntax error.</li>
-      <li><strong>Automatic repair:</strong> fixes trailing commas, unquoted object keys, and single-quoted string values when it safely can.</li>
-      <li><strong>Formatting:</strong> beautifies JSON with a selectable indent of 2 spaces, 4 spaces, or a tab.</li>
-      <li><strong>Minification:</strong> strips all unnecessary whitespace for compact output.</li>
-      <li><strong>Tree view:</strong> renders parsed JSON as a collapsible nested structure you can explore.</li>
-      <li><strong>Conversions:</strong> generates a TypeScript interface or, for array-of-objects data, a CSV file.</li>
-    </ul>
-  </section>
-
-  <section class="page-section prose">
-    <h2>What Is JSON?</h2>
-    <p>JSON (JavaScript Object Notation) is a lightweight, text-based data format used almost everywhere in modern software: API responses, configuration files, application settings, data exports, and the output of countless tools and scripts. It represents data as nested objects (key-value pairs in curly braces) and arrays (ordered lists in square brackets), with values that are strings, numbers, booleans, null, or further nested objects and arrays. Its simplicity is exactly why it's so widely used — and also why a single missing comma or stray quote can make an entire file unreadable to a parser.</p>
-
-    <h2>Why JSON Becomes Invalid</h2>
-    <p>JSON has strict, unforgiving syntax rules. Unlike some configuration formats that tolerate minor inconsistencies, a JSON parser will reject the entire document over a single misplaced character. The most common causes of invalid JSON are:</p>
-    <ul>
-      <li><strong>Missing commas</strong> between properties or array items.</li>
-      <li><strong>Missing quotes</strong> around string values or object keys.</li>
-      <li><strong>Extra trailing commas</strong> left after the last item in an object or array — valid in JavaScript object literals, but not in strict JSON.</li>
-      <li><strong>Unmatched brackets or braces</strong> from a copy-paste that cut off part of the structure.</li>
-      <li><strong>Incorrect values</strong>, such as using single quotes instead of double quotes, or writing <code>undefined</code> instead of <code>null</code>.</li>
-    </ul>
-
-    <div class="example-grid">
-      <div class="example-box"><span class="lbl">Before (trailing comma)</span>{
-  "tags": ["a", "b",]
-}</div>
-      <div class="example-box"><span class="lbl">After</span>{
-  "tags": ["a", "b"]
-}</div>
-      <div class="example-box"><span class="lbl">Before (unquoted key)</span>{
-  name: "Example"
-}</div>
-      <div class="example-box"><span class="lbl">After</span>{
-  "name": "Example"
-}</div>
-    </div>
-
-    <h2>How to Fix JSON</h2>
-    <p>The most reliable way to fix JSON is to let a parser point you to the exact location of the problem rather than scanning the whole document by eye. This tool does that two ways: the Validate button reports a precise line and column for the first error the browser's own JSON parser encounters, and the Auto-Repair button attempts to fix the specific categories of mistakes that are common enough to handle safely and predictably.</p>
-
-    <h2>JSON Validator</h2>
-    <p>Click "Validate" to run your input through <code>JSON.parse()</code>. If it succeeds, you'll see a confirmation that the JSON is valid. If it fails, the browser's error message is parsed for a character position — when present, that position is converted into a line and column number by counting the newline characters in your input up to that point, so you can go straight to the offending character instead of re-reading the entire document.</p>
-
-    <h2>JSON Formatter and Beautifier</h2>
-    <p>Click "Format" to pretty-print valid JSON with consistent indentation. Choose 2 spaces, 4 spaces, or a tab from the indent selector before formatting. This is useful for making minified API responses or single-line config values readable, or for standardizing the style of a file before committing it to a repository.</p>
-
-    <h2>JSON Minifier</h2>
-    <p>Click "Minify" to strip all non-essential whitespace from valid JSON, producing the smallest possible representation. This is useful when you need to paste JSON into a size-constrained field, embed it in a URL parameter, or shrink a configuration payload before sending it over a network.</p>
-
-    <h2>JSON Repair</h2>
-    <p>The Auto-Repair button applies three specific, well-scoped fixes, in order, and re-validates after each pass:</p>
-    <ul>
-      <li><strong>Trailing comma removal:</strong> a comma directly before a closing <code>}</code> or <code>]</code> is removed.</li>
-      <li><strong>Unquoted key quoting:</strong> an object key written without quotes (a valid JavaScript identifier followed by a colon) is wrapped in double quotes. Keys that are already quoted are left untouched.</li>
-      <li><strong>Single-quote conversion:</strong> string values wrapped in single quotes are converted to double-quoted strings.</li>
-    </ul>
-    <p>After these fixes are applied, the tool re-parses the result. If it now succeeds, you'll see a list of exactly which of the three fixes changed something, and a button to accept the repaired JSON into the editor. If the JSON still doesn't parse, the tool tells you plainly that automatic repair could not fix it and shows the latest parse error so you can correct it by hand.</p>
-    <p><strong>Honest limitations:</strong> this repair step cannot recover data that is genuinely missing (such as a value that was never written), cannot fix deeply malformed or truncated structures with multiple overlapping problems, cannot guess your intent when a key or value is ambiguous, and the single-quote conversion uses a scoped pattern that won't perfectly handle every case of escaped quotes inside a string. It is designed to reliably fix the handful of mistakes that account for most "nearly-valid" JSON, not to repair arbitrary broken text.</p>
-
-    <h2>Developer Use Cases</h2>
-    <p>This tool is built for the everyday moments developers run into broken JSON:</p>
-    <ul>
-      <li><strong>Debugging API responses</strong> that fail to parse because of a server-side formatting bug.</li>
-      <li><strong>Cleaning up configuration files</strong> hand-edited by someone who used JavaScript object syntax instead of strict JSON.</li>
-      <li><strong>Working with AI-generated JSON output</strong>, which frequently includes trailing commas, unquoted keys, or single quotes when a model approximates JSON from training patterns rather than strict syntax.</li>
-      <li><strong>Quick data exchange</strong> between tools that expect slightly different JSON conventions.</li>
-      <li><strong>Web development</strong>, where a malformed JSON fixture or mock-data file can block local testing until it's fixed.</li>
-      <li><strong>Generating types and tabular exports</strong> directly from a JSON payload without writing a one-off script.</li>
-    </ul>
-
-    <h3>JSON to TypeScript</h3>
-    <p>Once your JSON parses successfully, switch to the TypeScript tab to generate a basic interface. The tool infers each field's type — string, number, boolean, or <code>null</code> — and recurses into nested objects to generate additional named interfaces, and into arrays to infer an element type from the first item. An empty array is annotated as <code>any[]</code> with a comment noting that its type couldn't be inferred, since there's no element to examine.</p>
-
-    <h3>JSON to CSV</h3>
-    <p>The CSV tab works specifically for JSON shaped as an array of flat objects — the common shape for exported records or API list responses. The tool builds a header row from the union of every key that appears across all objects, in the order each key first appears, then writes one row per object with proper CSV escaping (quoting any value containing a comma, quote, or newline, and doubling internal quotes). If your JSON isn't in that shape, the tool explains clearly why CSV export isn't available instead of producing a broken file.</p>
-
-    <h3>Frequently Searched Terms</h3>
-    <p>People use this tool when searching for phrases like "fix json online," "json validator," "json syntax error checker," "json repair tool," "json to typescript converter," and "json to csv converter" — this page is built to answer exactly those needs in one browser-based tool.</p>
-  </section>
-
-  <section class="page-section">
-    <h2>JSON Repair Tool FAQ</h2>
-    <div class="faq-list">
-      <details class="faq-item">
-        <summary class="faq-q">Can this tool fix any broken JSON?</summary>
-        <div class="faq-a"><p>No. The automatic repair step targets three common, well-defined problems: trailing commas, unquoted object keys, and single-quoted string values. It cannot recover genuinely missing data, fix deeply malformed or truncated structures, or guess what you meant to write. For anything beyond those three fixes, the tool shows the exact parse error so you can correct it manually.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">Is my JSON data uploaded anywhere?</summary>
-        <div class="faq-a"><p>No. Parsing, repair, formatting and conversion all happen locally in your browser using JavaScript. Nothing is sent to Logrith or any other server.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">Does the tool tell me exactly where the error is?</summary>
-        <div class="faq-a"><p>Yes, when the browser's parser reports a character position, the tool converts it into a line and column number so you can locate the problem quickly.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">Can I convert JSON to a TypeScript interface?</summary>
-        <div class="faq-a"><p>Yes. Once your JSON parses successfully, the tool generates a basic TypeScript interface, inferring types including nested objects and arrays.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">Can I convert JSON to CSV?</summary>
-        <div class="faq-a"><p>Yes, if the top-level JSON is an array of flat objects. The tool builds a header from the union of all keys and writes one row per object. If the shape doesn't fit, it explains why rather than producing broken output.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">Is this tool free to use?</summary>
-        <div class="faq-a"><p>Yes, this tool is free to use with no account, signup, or usage limit beyond what your browser can handle.</p></div>
-      </details>
-    </div>
-  </section>
-
-  <section class="page-section">
-    <h2>Related Tools</h2>
-    <div class="related-grid">
-    <a class="related-card" href="/tool/tools/json-csv-converter"><strong>JSON ⇄ CSV Converter</strong><span>Flatten nested JSON, both ways.</span></a>
-      <a class="related-card" href="/tool/tools/json-formatter"><strong>JSON Formatter</strong><span>the classic formatter; use this repair tool first when your JSON won't parse at all.</span></a>
-      <a class="related-card" href="/tool/tools/yaml-json-converter"><strong>YAML to JSON Converter</strong></a>
-      <a class="related-card" href="/tool/tools/xml-formatter"><strong>XML Formatter</strong></a>
-      <a class="related-card" href="/tool/tools/ai-context-calculator"><strong>AI Context Calculator</strong></a>
-      <a class="related-card" href="/tool/tools/markdown-to-html"><strong>Markdown to HTML</strong></a>
-      <a class="related-card" href="/tool/tools/csv-cleaner"><strong>CSV Cleaner</strong></a>
-    </div>
-  </section>
-
-  <section class="page-section">
-    <h2>Top JSON Repair Tool Search Queries</h2>
-    <div class="keyword-box">
-      <span class="keyword-tag">json repair tool online</span>
-      <span class="keyword-tag">fix json syntax error</span>
-      <span class="keyword-tag">json validator free</span>
-      <span class="keyword-tag">json formatter and beautifier</span>
-      <span class="keyword-tag">json to typescript converter</span>
-      <span class="keyword-tag">json to csv converter online</span>
-      <span class="keyword-tag">fix trailing comma json</span>
-      <span class="keyword-tag">json minifier online</span>
-    </div>
-  </section>
+<h1>Herramienta de reparación de JSON: corrige <span>y valida JSON.</span></h1>
+<p>Pega el JSON dañado, valídalo, corrige automáticamente los errores de sintaxis comunes y formatea, minimiza o convierte el resultado, todo ello directamente en tu navegador.</p>
+<div class="tag-list">
+<span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Gratis</span> <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#lock"></use></svg> Procesamiento local</span> <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#json"></use></svg> Reparación de automóviles</span> <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#speed"></use></svg> Instantáneo</span>
+</div>
+</div>
+</header>
+<div class="tool-workspace">
+<div class="tool-card">
+<h2>Pega tu JSON</h2>
+<textarea class="tool-textarea mono" id="json-input" rows="14" spellcheck="false" placeholder="{&quot;name&quot;: &quot;Ejemplo&quot;, &quot;tags&quot;: [&quot;a&quot;, &quot;b&quot;,], noQuotes: 'value'}"></textarea>
+<div class="json-toolbar">
+<select class="indent-select" id="indent-select">
+<option value="2">2 espacios</option><option value="4"> 4 espacios</option><option value="tab"> Pestaña</option>
+</select>
+<button class="btn btn-secondary" id="validate-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#check"></use></svg> Validar</button>
+<button class="btn btn-secondary" id="format-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#code"></use></svg> Formato</button>
+<button class="btn btn-secondary" id="minify-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#compress-img"></use></svg> Minimizar</button>
+<div class="spacer"></div>
+<button class="btn btn-primary" id="repair-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#tool"></use></svg> Reparación de automóviles</button>
+</div>
+<div class="status-msg" id="status-msg" aria-live="polite"></div>
+<div id="repair-note-wrap"></div>
+</div>
+<div class="tool-card is-hidden" id="results-card">
+<div class="json-tabs">
+<button class="json-tab" data-panel="panel-tree" type="button">Vista de árbol</button> <button class="json-tab active" data-panel="panel-output" type="button">de salida</button> <button class="json-tab" data-panel="panel-ts" type="button">TypeScript</button> <button class="json-tab" data-panel="panel-csv" type="button">CSV</button>
+</div>
+<div class="json-panel active" id="panel-output">
+<div class="btn-group mb-12">
+<button class="btn btn-secondary btn-sm" id="copy-output-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#copy"></use></svg> Copiar</button> <button class="btn btn-secondary btn-sm" id="download-output-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#download"></use></svg> Descargar .json</button>
+</div>
+<textarea class="tool-textarea mono" id="json-output" rows="14" spellcheck="false" readonly=""></textarea>
+</div>
+<div class="json-panel" id="panel-tree">
+<div class="json-tree" id="tree-view"></div>
+</div>
+<div class="json-panel" id="panel-ts">
+<div class="btn-group mb-12">
+<button class="btn btn-secondary btn-sm" id="copy-ts-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#copy"></use></svg> Copia</button>
+</div>
+<textarea class="tool-textarea mono" id="ts-output" rows="14" spellcheck="false" readonly=""></textarea>
+</div>
+<div class="json-panel" id="panel-csv">
+<div class="btn-group mb-12">
+<button class="btn btn-secondary btn-sm" id="copy-csv-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#copy"></use></svg> Copiar</button> <button class="btn btn-secondary btn-sm" id="download-csv-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#download"></use></svg> Descargar .csv</button>
+</div>
+<div id="csv-message" class="status-msg"></div>
+<textarea class="tool-textarea mono" id="csv-output" rows="14" spellcheck="false" readonly=""></textarea>
+</div>
+</div>
+<p class="privacy-note">Tu JSON se procesa en tu navegador. Los datos no se suben a Logrith.</p>
+</div>
+<section class="page-section">
+<h2>Cómo corregir JSON</h2>
+<ol class="steps">
+<li class="step">
+<p>Pegue o escriba su JSON en el cuadro de entrada de arriba.</p>
+</li>
+<li class="step">
+<p>Haz clic en "Validar" para comprobarlo, o haz clic directamente en "Reparación automática" si sabes que tiene errores comunes.</p>
+</li>
+<li class="step">
+<p>Si la reparación se realiza correctamente, revise las correcciones aplicadas y, a continuación, haga clic en "Aceptar JSON reparado" para reemplazar el contenido del editor.</p>
+</li>
+<li class="step">
+<p>Utilice "Formato" para embellecer el resultado, "Minimizar" para comprimirlo o cambie de pestaña para verlo como un árbol, una interfaz TypeScript o un archivo CSV.</p>
+</li>
+</ol>
+</section>
+<section class="page-section prose">
+<h2>¿Qué hace esta herramienta de reparación de JSON?</h2>
+<ul>
+<li><strong>Validación:</strong> analiza su JSON e informa la línea y columna exactas del primer error de sintaxis.</li>
+<li><strong>Reparación automática:</strong> corrige las comas finales, las claves de objetos sin comillas y los valores de cadena entre comillas simples cuando puede hacerlo de forma segura.</li>
+<li><strong>Formato:</strong> embellece el JSON con una sangría seleccionable de 2 espacios, 4 espacios o una tabulación.</li>
+<li><strong>Minificación:</strong> elimina todos los espacios en blanco innecesarios para obtener una salida compacta.</li>
+<li><strong>Vista de árbol:</strong> muestra el JSON analizado como una estructura anidada desplegable que puedes explorar.</li>
+<li><strong>Conversiones:</strong> genera una interfaz TypeScript o, para datos de tipo array de objetos, un archivo CSV.</li>
+</ul>
+</section>
+<section class="page-section prose">
+<h2>¿Qué es JSON?</h2>
+<p>JSON (JavaScript Object Notation) es un formato de datos ligero, basado en texto, que se utiliza prácticamente en todas partes en el software moderno: respuestas de API, archivos de configuración, ajustes de aplicaciones, exportaciones de datos y la salida de innumerables herramientas y scripts. Representa los datos como objetos anidados (pares clave-valor entre llaves) y matrices (listas ordenadas entre corchetes), con valores que pueden ser cadenas de texto, números, booleanos, nulos o incluso objetos y matrices anidados. Su simplicidad es precisamente la razón de su amplio uso, y también la razón por la que una sola coma faltante o una comilla suelta pueden hacer que un analizador sintáctico lea un archivo completo.</p>
+<h2>¿Por qué JSON se vuelve inválido?</h2>
+<p>JSON tiene reglas de sintaxis estrictas e implacables. A diferencia de algunos formatos de configuración que toleran pequeñas inconsistencias, un analizador JSON rechazará todo el documento por un solo carácter mal colocado. Las causas más comunes de JSON no válido son:</p>
+<ul>
+<li><strong>Faltan comas</strong> entre las propiedades o los elementos de la matriz.</li>
+<li><strong>Faltan comillas</strong> alrededor de los valores de cadena o las claves de objeto.</li>
+<li><strong>Comas adicionales</strong> al final del último elemento de un objeto o matriz: válidas en literales de objetos de JavaScript, pero no en JSON estricto.</li>
+<li><strong>Corchetes o soportes que no coinciden</strong> debido a un copiar y pegar que recortó parte de la estructura.</li>
+<li><strong>Valores incorrectos</strong> , como usar comillas simples en lugar de comillas dobles, o escribir <code>undefined</code> en lugar de <code>null</code>.</li>
+</ul>
+<div class="example-grid">
+<div class="example-box"><span class="lbl">Antes (coma final)</span> { "etiquetas": ["a", "b",] }</div>
+<div class="example-box"><span class="lbl">Después de</span> { "etiquetas": ["a", "b"] }</div>
+<div class="example-box"><span class="lbl">Antes (clave sin comillas)</span> { nombre: "Ejemplo" }</div>
+<div class="example-box"><span class="lbl">Después de</span> { "nombre": "Ejemplo" }</div>
+</div>
+<h2>Cómo corregir JSON</h2>
+<p>La forma más fiable de corregir JSON es dejar que un analizador te indique la ubicación exacta del problema, en lugar de revisar todo el documento manualmente. Esta herramienta lo hace de dos maneras: el botón Validar informa la línea y columna precisas del primer error que encuentra el analizador JSON del navegador, y el botón Autorreparar intenta corregir las categorías específicas de errores que son lo suficientemente comunes como para manejarlas de forma segura y predecible.</p>
+<h2>Validador JSON</h2>
+<p>Haz clic en "Validar" para procesar tu entrada con <code>JSON.parse()</code>. Si la validación es exitosa, verás una confirmación de que el JSON es válido. Si falla, el mensaje de error del navegador se analiza para obtener la posición del carácter. Si está presente, esa posición se convierte en un número de línea y columna contando los caracteres de salto de línea en tu entrada hasta ese punto, para que puedas ir directamente al carácter problemático en lugar de releer todo el documento.</p>
+<h2>Formateador y embellecedor de JSON</h2>
+<p>Haz clic en "Formato" para formatear JSON válido con una sangría uniforme. Antes de formatear, elige 2 espacios, 4 espacios o una tabulación en el selector de sangría. Esto resulta útil para que las respuestas de API minimizadas o los valores de configuración de una sola línea sean legibles, o para estandarizar el estilo de un archivo antes de subirlo a un repositorio.</p>
+<h2>Minificador JSON</h2>
+<p>Haz clic en "Minimizar" para eliminar los espacios en blanco no esenciales de un JSON válido, obteniendo así la representación más pequeña posible. Esto resulta útil cuando necesitas pegar JSON en un campo con límite de tamaño, insertarlo en un parámetro de URL o reducir el tamaño de una carga útil de configuración antes de enviarla por la red.</p>
+<h2>Reparación de JSON</h2>
+<p>El botón de Autorreparación aplica tres correcciones específicas y bien definidas, en orden, y vuelve a validar después de cada pasada:</p>
+<ul>
+<li><strong>Eliminación de la coma final:</strong> se elimina la coma que precede directamente a la sección de cierre <code>}</code> o <code>]</code>.</li>
+<li><strong>Citas de claves sin comillas:</strong> una clave de objeto escrita sin comillas (un identificador JavaScript válido seguido de dos puntos) se encierra entre comillas dobles. Las claves que ya están entre comillas permanecen sin cambios.</li>
+<li><strong>Conversión de comillas simples:</strong> los valores de cadena encerrados entre comillas simples se convierten en cadenas entre comillas dobles.</li>
+</ul>
+<p>Tras aplicar estas correcciones, la herramienta vuelve a analizar el resultado. Si lo hace correctamente, verá una lista que indica exactamente cuáles de las tres correcciones modificaron el código y un botón para aceptar el JSON corregido en el editor. Si el JSON sigue sin analizarse correctamente, la herramienta le indicará claramente que la reparación automática no pudo solucionarlo y le mostrará el último error de análisis para que pueda corregirlo manualmente.</p>
+<p><strong>Limitaciones honestas:</strong> este paso de reparación no puede recuperar datos que realmente faltan (como un valor que nunca se escribió), no puede corregir estructuras profundamente mal formadas o truncadas con múltiples problemas superpuestos, no puede adivinar su intención cuando una clave o un valor son ambiguos, y la conversión de comillas simples utiliza un patrón con ámbito que no manejará perfectamente todos los casos de comillas escapadas dentro de una cadena. Está diseñado para corregir de manera confiable los pocos errores que representan la mayoría de los JSON "casi válidos", no para reparar texto roto arbitrariamente.</p>
+<h2>Casos de uso para desarrolladores</h2>
+<p>Esta herramienta está diseñada para los momentos cotidianos en que los desarrolladores se topan con JSON defectuoso:</p>
+<ul>
+<li><strong>Depuración de respuestas de API</strong> que no se pueden analizar debido a un error de formato del servidor.</li>
+<li><strong>Limpiar archivos de configuración</strong> editados manualmente por alguien que utilizó la sintaxis de objetos JavaScript en lugar de JSON estricto.</li>
+<li><strong>Trabajar con la salida JSON generada por IA</strong> , que con frecuencia incluye comas al final, claves sin comillas o comillas simples cuando un modelo aproxima JSON a partir de patrones de entrenamiento en lugar de una sintaxis estricta.</li>
+<li><strong>Intercambio rápido de datos</strong> entre herramientas que esperan convenciones JSON ligeramente diferentes.</li>
+<li>En <strong>el desarrollo web</strong> , un archivo JSON de datos simulados o un archivo de datos de prueba con formato incorrecto puede bloquear las pruebas locales hasta que se solucione.</li>
+<li><strong>Generación de tipos y exportaciones tabulares</strong> directamente a partir de una carga útil JSON sin necesidad de escribir un script específico.</li>
+</ul>
+<h3>JSON a TypeScript</h3>
+<p>Una vez que el JSON se haya analizado correctamente, cambie a la pestaña TypeScript para generar una interfaz básica. La herramienta infiere el tipo de cada campo (cadena, número, booleano o <code>null</code>) y realiza un recorrido recursivo en objetos anidados para generar interfaces con nombre adicionales, y en matrices para inferir el tipo de un elemento a partir del primer elemento. Una matriz vacía se anota como <code>any[]</code> con un comentario que indica que no se pudo inferir su tipo, ya que no hay ningún elemento que examinar.</p>
+<h3>JSON a CSV</h3>
+<p>La pestaña CSV funciona específicamente con JSON con formato de matriz de objetos planos, el formato común para registros exportados o respuestas de listas de API. La herramienta crea una fila de encabezado a partir de la unión de todas las claves presentes en todos los objetos, en el orden en que aparecen por primera vez. A continuación, escribe una fila por objeto con el formato CSV adecuado (entrecomillando cualquier valor que contenga una coma, una comilla simple o un salto de línea, y duplicando las comillas internas). Si su JSON no tiene este formato, la herramienta explica claramente por qué no está disponible la exportación a CSV, en lugar de generar un archivo incompleto.</p>
+<h3>Términos buscados con frecuencia</h3>
+<p>La gente usa esta herramienta cuando busca frases como "corregir json en línea", "validador de json", "comprobador de errores de sintaxis json", "herramienta de reparación de json", "convertidor de json a typescript" y "convertidor de json a csv". Esta página está diseñada para satisfacer precisamente esas necesidades en una herramienta basada en el navegador.</p>
+</section>
+<section class="page-section">
+<h2>Preguntas frecuentes sobre la herramienta de reparación JSON</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary class="faq-q">¿Puede esta herramienta corregir cualquier JSON dañado?</summary>
+<div class="faq-a"><p>No. El paso de reparación automática se centra en tres problemas comunes y bien definidos: comas al final de las líneas, claves de objeto sin comillas y valores de cadena entre comillas simples. No puede recuperar datos que realmente falten, corregir estructuras profundamente mal formadas o truncadas, ni adivinar lo que usted quiso escribir. Para cualquier otro problema que vaya más allá de estas tres correcciones, la herramienta muestra el error de análisis exacto para que pueda corregirlo manualmente.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Mis datos JSON están subidos a algún sitio?</summary>
+<div class="faq-a"><p>No. El análisis, la reparación, el formateo y la conversión se realizan localmente en tu navegador mediante JavaScript. No se envía nada a Logrith ni a ningún otro servidor.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿La herramienta me indica exactamente dónde está el error?</summary>
+<div class="faq-a"><p>Sí, cuando el analizador del navegador informa la posición de un carácter, la herramienta la convierte en un número de línea y columna para que puedas localizar el problema rápidamente.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Puedo convertir JSON a una interfaz TypeScript?</summary>
+<div class="faq-a"><p>Sí. Una vez que el JSON se analiza correctamente, la herramienta genera una interfaz básica de TypeScript, infiriendo tipos que incluyen objetos anidados y matrices.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Puedo convertir JSON a CSV?</summary>
+<div class="faq-a"><p>Sí, si el JSON de nivel superior es una matriz de objetos planos. La herramienta crea un encabezado a partir de la unión de todas las claves y escribe una fila por objeto. Si la estructura no se ajusta, explica el motivo en lugar de generar una salida incorrecta.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Esta herramienta es de uso gratuito?</summary>
+<div class="faq-a"><p>Sí, esta herramienta es de uso gratuito, sin necesidad de cuenta, registro ni límite de uso más allá de lo que su navegador pueda soportar.</p></div>
+</details>
+</div>
+</section>
+<section class="page-section">
+<h2>Herramientas relacionadas</h2>
+<div class="related-grid">
+<a class="related-card" href="/es/tool/tools/json-csv-converter"><strong>Convertidor JSON ⇄ CSV</strong> <span>Aplana JSON anidado, en ambos sentidos.</span></a> <a class="related-card" href="/es/tool/tools/json-formatter"><strong>Formateador JSON</strong> <span>el formateador clásico; usa esta herramienta de reparación primero cuando tu JSON no se analice en absoluto.</span></a> <a class="related-card" href="/es/tool/tools/yaml-json-converter"><strong>Convertidor YAML a JSON</strong></a> <a class="related-card" href="/es/tool/tools/xml-formatter"><strong>Formateador XML</strong></a> <a class="related-card" href="/es/tool/tools/ai-context-calculator"><strong>Calculadora de contexto con IA</strong></a> <a class="related-card" href="/es/tool/tools/markdown-to-html"><strong>Convertidor de Markdown a HTML</strong></a> <a class="related-card" href="/es/tool/tools/csv-cleaner"><strong>Limpiador CSV</strong></a>
+</div>
+</section>
+<section class="page-section">
+<h2>Consultas de búsqueda más frecuentes sobre herramientas de reparación de JSON</h2>
+<div class="keyword-box">
+<span class="keyword-tag">Herramienta de reparación de JSON en línea</span> <span class="keyword-tag">para corregir errores de sintaxis JSON,</span> <span class="keyword-tag">validador de JSON gratuito</span> <span class="keyword-tag">, formateador y embellecedor de JSON</span> <span class="keyword-tag">, convertidor de JSON a TypeScript,</span> <span class="keyword-tag">convertidor de JSON a CSV en línea,</span> <span class="keyword-tag">corregir comas finales en JSON,</span> <span class="keyword-tag">minificador de JSON en línea</span>
+</div>
+</section>
 </main>
-
 <div id="footer"></div>
 <script src="/assets/js/main.js?v=20261115"></script>
-
-
 <script>
 const inputEl = document.getElementById('json-input');
 const outputEl = document.getElementById('json-output');

@@ -1,82 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estimación del número de tokens y el uso del contexto para IA | Logrith</title>
+<meta name="description" content="Pega una solicitud o un documento para estimar su número de tokens y qué parte de la ventana de contexto de un modelo utilizaría, directamente en tu navegador.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Logrith">
+<link rel="canonical" href="https://logrith.in/es/tool/tools/ai-context-calculator">
+  <link rel="alternate" hreflang="x-default" href="https://logrith.in/tool/tools/ai-context-calculator">
+  <link rel="alternate" hreflang="es" href="https://logrith.in/es/tool/tools/ai-context-calculator">
+  <link rel="alternate" hreflang="en" href="https://logrith.in/tool/tools/ai-context-calculator">
 
-  <title>Estimate Token Count and Context Usage for AI | Logrith</title>
-  <meta name="description" content="Paste a prompt or document to estimate its token count and how much of a model's context window it would use, right in your browser.">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="author" content="Logrith">
-  <link rel="canonical" href="https://logrith.in/tool/tools/ai-context-calculator">
 
-  <meta property="og:title" content="Estimate Token Count and Context Usage for AI | Logrith">
-  <meta property="og:description" content="Paste a prompt or document to estimate its token count and how much of a model's context window it would use, right in your browser.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://logrith.in/tool/tools/ai-context-calculator">
-  <meta property="og:site_name" content="Logrith">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Estimate Token Count and Context Usage for AI | Logrith">
-  <meta name="twitter:description" content="Paste a prompt or document to estimate its token count and how much of a model's context window it would use, right in your browser.">
-
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#0D0D0D">
-
-  <meta name="keywords" content="ai token calculator, token counter, context window calculator, estimate ai tokens, llm cost calculator, prompt token estimator">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
-  <link rel="preload" href="/components/navbar.html" as="fetch" type="text/html" crossorigin>
-  <link rel="preload" href="/components/footer.html" as="fetch" type="text/html" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=20261115">
-  <link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"SoftwareApplication",
-    "name":"Logrith AI Token & Context Calculator",
-    "url":"https://logrith.in/tool/tools/ai-context-calculator",
-    "applicationCategory":"UtilitiesApplication",
-    "operatingSystem":"Web Browser",
-    "description":"Browser-based tool that estimates token count, context window usage, and API cost for pasted text, using transparent heuristics instead of a hidden or fabricated exact tokenizer, without uploading data to a server.",
-    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
-    "featureList":[
-      "Estimate approximate token count from pasted text",
-      "Show character, word, sentence and paragraph counts",
-      "Compare text size against common context window sizes",
-      "Visual context window usage bar with percentage",
-      "Optional cost estimate from a custom price per 1K or 1M tokens",
-      "100% local browser processing"
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Global Tools", "item": "https://logrith.in/tool/categories/global-tools"}, {"@type": "ListItem", "position": 4, "name": "AI Token & Context Calculator", "item": "https://logrith.in/tool/tools/ai-context-calculator"}]}
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"Is this an exact token count like tiktoken?","acceptedAnswer":{"@type":"Answer","text":"No. Exact tokenization depends on the specific byte-pair-encoding vocabulary of a given model, which isn't something that can be faithfully reproduced client-side without shipping that model's real vocabulary file. This tool uses two well-known, transparent heuristics instead and is clearly labeled as an estimate, not an exact count."}},
-      {"@type":"Question","name":"Why does token count differ from word count?","acceptedAnswer":{"@type":"Answer","text":"Tokenizers split text into sub-word pieces, not whole words. Common short words are often a single token, while longer or less common words, numbers, punctuation and code can split into multiple tokens. As a result, token count is usually higher than word count for normal English text."}},
-      {"@type":"Question","name":"What is a context window?","acceptedAnswer":{"@type":"Answer","text":"A context window is the maximum number of tokens a model can process at once across your input and its own output combined. If your text exceeds the context window, the model cannot see all of it, or the request may be rejected outright."}},
-      {"@type":"Question","name":"Does this tool upload my text anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. All counting and estimation happens locally in your browser using JavaScript. Your text is never sent to Logrith or any other server."}},
-      {"@type":"Question","name":"Can I estimate API cost with this tool?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter your own price per 1,000 or per 1,000,000 tokens, since provider pricing changes frequently and varies by model, and the tool multiplies that rate by the estimated token count to show an approximate cost for your input text."}}
-    ]
-  }
-  </script>
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
-  <script>
+<meta property="og:title" content="Estimación del número de tokens y el uso del contexto para IA | Logrith">
+<meta property="og:description" content="Pega una solicitud o un documento para estimar su número de tokens y qué parte de la ventana de contexto de un modelo utilizaría, directamente en tu navegador.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://logrith.in/es/tool/tools/ai-context-calculator">
+<meta property="og:site_name" content="Logrith">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Estimación del número de tokens y el uso del contexto para IA | Logrith">
+<meta name="twitter:description" content="Pega una solicitud o un documento para estimar su número de tokens y qué parte de la ventana de contexto de un modelo utilizaría, directamente en tu navegador.">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0D0D0D">
+<meta name="keywords" content="ai token calculator, token counter, context window calculator, estimate ai tokens, llm cost calculator, prompt token estimator">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
+<link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261115">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Logrith Calculadora de tokens y contexto de IA", "url": "https://logrith.in/es/tool/tools/ai-context-calculator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web Browser", "description": "Herramienta basada en navegador que estima el número de tokens, el uso de la ventana de contexto y el coste de la API para el texto pegado, utilizando heurísticas transparentes en lugar de un tokenizador exacto oculto o fabricado, sin subir datos a un servidor.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": ["Estimate approximate token count from pasted text", "Show character, word, sentence and paragraph counts", "Compare text size against common context window sizes", "Visual context window usage bar with percentage", "Optional cost estimate from a custom price per 1K or 1M tokens", "100% local browser processing"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Hogar", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas globales", "item": "https://logrith.in/es/tool/categories/global-tools"}, {"@type": "ListItem", "position": 4, "name": "Calculadora de tokens y contexto de IA", "item": "https://logrith.in/es/tool/tools/ai-context-calculator"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Se trata de un recuento exacto de tokens como en tiktoken?", "acceptedAnswer": {"@type": "Answer", "text": "No. La tokenización exacta depende del vocabulario específico de codificación de pares de bytes de un modelo dado, algo que no se puede reproducir fielmente en el lado del cliente sin enviar el archivo de vocabulario real de ese modelo. Esta herramienta utiliza dos heurísticas transparentes y bien conocidas, y está claramente etiquetada como una estimación, no como un recuento exacto."}}, {"@type": "Question", "name": "¿Por qué el recuento de tokens difiere del recuento de palabras?", "acceptedAnswer": {"@type": "Answer", "text": "Los analizadores léxicos dividen el texto en fragmentos de subpalabras, no en palabras completas. Las palabras cortas y comunes suelen ser un solo token, mientras que las palabras más largas o menos comunes, los números, la puntuación y el código pueden dividirse en varios tokens. Por lo tanto, el número de tokens suele ser mayor que el número de palabras en un texto en inglés normal."}}, {"@type": "Question", "name": "¿Qué es una ventana de contexto?", "acceptedAnswer": {"@type": "Answer", "text": "La ventana de contexto es el número máximo de tokens que un modelo puede procesar simultáneamente, considerando tanto la entrada como su propia salida. Si el texto excede la ventana de contexto, el modelo no podrá verlo completo o la solicitud podría ser rechazada directamente."}}, {"@type": "Question", "name": "¿Esta herramienta sube mi texto a algún sitio?", "acceptedAnswer": {"@type": "Answer", "text": "No. Todo el conteo y la estimación se realizan localmente en tu navegador mediante JavaScript. Tu texto nunca se envía a Logrith ni a ningún otro servidor."}}, {"@type": "Question", "name": "¿Puedo estimar el coste de la API con esta herramienta?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Introduce tu propio precio por cada 1.000 o por cada 1.000.000 de tokens, ya que los precios de los proveedores cambian con frecuencia y varían según el modelo, y la herramienta multiplica esa tarifa por la cantidad estimada de tokens para mostrar un coste aproximado para el texto que introduzcas."}}]}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+<script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -85,203 +49,155 @@
 </head>
 <body class="page-ai-context-calculator">
 <div id="navbar"></div>
-
 <main>
-  <header class="page-hero">
-    <div class="page-hero-inner">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="/">Home</a> › <a href="/tool/categories/global-tools">Global Tools</a> › AI Token & Context Calculator
+<header class="page-hero">
+<div class="page-hero-inner">
+<nav class="breadcrumb" aria-label="Migaja de pan">
+<a href="/es/">Inicio</a> › <a href="/es/tool/categories/global-tools">Herramientas globales</a> › Calculadora de tokens y contexto de IA
       </nav>
-      <h1>AI Token & Context<span> Calculator</span></h1>
-      <p>Paste a prompt, document, or conversation to estimate its token count, context window usage, and API cost — all in your browser.</p>
-      <div class="tag-list">
-        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
-        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#lock"></use></svg> Local Processing</span>
-        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#cpu"></use></svg> Honest Estimate</span>
-        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#speed"></use></svg> Instant</span>
-      </div>
-    </div>
-  </header>
-
-  <div class="tool-workspace">
-    <div class="tool-card">
-      <h2>Paste Your Text</h2>
-      <div class="control-group">
-        <label for="text-input">Prompt, document, or conversation text</label>
-        <textarea class="tool-textarea" id="text-input" rows="12" placeholder="Paste a prompt, article, chat history, or any text you want to estimate..."></textarea>
-      </div>
-      <div class="btn-group mt-12">
-        <button class="btn btn-primary" id="calc-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#calculator"></use></svg> Calculate</button>
-      </div>
-      <div class="status-msg mt-12" id="status-msg" aria-live="polite"></div>
-    </div>
-
-    <p class="privacy-note">Your text is processed in your browser. Nothing is uploaded to Logrith.</p>
-
-    <div class="tool-card is-hidden" id="breakdown-card">
-      <h2>Text Breakdown</h2>
-      <div class="insp-grid" id="breakdown-grid"></div>
-    </div>
-
-    <div class="tool-card is-hidden" id="context-card">
-      <h2>Context Window Usage</h2>
-      <div class="ctx-controls">
-        <div class="ctx-field">
-          <label for="context-size">Context window size</label>
-          <select id="context-size">
-            <option value="8192">Small (8K tokens)</option>
-            <option value="32768" selected>Medium (32K tokens)</option>
-            <option value="128000">Large (128K tokens)</option>
-            <option value="200000">Extra Large (200K tokens)</option>
-            <option value="1000000">Very Large (1M tokens)</option>
-          </select>
-        </div>
-      </div>
-      <div class="ctx-bar-wrap">
-        <div class="ctx-bar-label"><span id="ctx-bar-text">0 of 32,768 tokens</span><span id="ctx-bar-pct">0%</span></div>
-        <div class="ctx-bar-track"><div class="ctx-bar-fill" id="ctx-bar-fill"></div></div>
-        <div class="ctx-bar-note" id="ctx-bar-note"></div>
-      </div>
-    </div>
-
-    <div class="tool-card is-hidden" id="cost-card">
-      <h2>Optional Cost Estimate</h2>
-      <p class="u-5cfdda">Enter a price you know for a given model or provider. Prices change often and vary widely, so no rate is pre-filled.</p>
-      <div class="cost-row">
-        <div class="ctx-field">
-          <label for="price-amount">Price</label>
-          <input type="number" id="price-amount" min="0" step="0.0001" placeholder="e.g. 3.00">
-        </div>
-        <div class="ctx-field">
-          <label for="price-unit">Per</label>
-          <select id="price-unit">
-            <option value="1000">1,000 tokens</option>
-            <option value="1000000" selected>1,000,000 tokens</option>
-          </select>
-        </div>
-      </div>
-      <div class="insp-grid" id="cost-grid"></div>
-    </div>
-  </div>
-
-  <section class="page-section">
-    <h2>How to Use the AI Token &amp; Context Calculator</h2>
-    <ol class="steps">
-      <li class="step">
-        <p>Paste your prompt, document, or chat history into the text box.</p>
-      </li>
-      <li class="step">
-        <p>Click "Calculate" to see character count, word count, sentence and paragraph count, and an estimated token count.</p>
-      </li>
-      <li class="step">
-        <p>Pick a context window size to see what percentage of that window your text would use, shown as a progress bar.</p>
-      </li>
-      <li class="step">
-        <p>Optionally enter a price per 1,000 or 1,000,000 tokens to see an estimated cost for processing this text as input.</p>
-      </li>
-    </ol>
-  </section>
-
-  <section class="page-section prose">
-    <h2>What This Tool Calculates</h2>
-    <ul>
-      <li><strong>Character and word counts:</strong> exact counts of your pasted text, for reference against the token estimate.</li>
-      <li><strong>Sentence and paragraph counts:</strong> a rough structural breakdown of document length.</li>
-      <li><strong>Estimated token count:</strong> computed with two transparent heuristics, shown side by side.</li>
-      <li><strong>Context window usage:</strong> a percentage and visual bar for a chosen context size.</li>
-      <li><strong>Optional cost estimate:</strong> your own price per 1,000 or 1,000,000 tokens, multiplied by the estimated token count.</li>
-    </ul>
-  </section>
-
-  <section class="page-section prose">
-    <h2>What Is a Token in AI Language Models?</h2>
-    <p>A token is the basic unit of text that a language model actually reads and generates. Models don't process raw characters or whole words one at a time — they work with tokens produced by a tokenizer, which breaks text into a sequence of sub-word pieces drawn from a fixed vocabulary learned during training. A common English word like "the" or "is" is often a single token, while a longer or less frequent word, a made-up word, a number, or a piece of code might be split into two, three, or more tokens. Every request you send to an AI model and every response it generates is measured and billed in tokens, not in words or characters, which is why understanding roughly how many tokens your text contains matters before you send it anywhere.</p>
-
-    <h2>Why Token Count Differs From Word Count</h2>
-    <p>Because tokenizers split on sub-word units rather than whitespace, token count and word count are related but never identical. For typical English prose, a widely cited rule of thumb is that one token corresponds to roughly four characters, or equivalently about three-quarters of a word — so 100 words of English text usually lands somewhere around 130 to 140 tokens. Text that's dense with rare words, technical jargon, non-English characters, code syntax, or unusual punctuation tends to use more tokens per word, because the tokenizer has to fall back to smaller pieces for anything outside its most common vocabulary entries.</p>
-
-    <h2>Why This Tool Doesn't Pretend to Be an Exact Tokenizer</h2>
-    <p>Precise, model-accurate tokenization requires the real byte-pair-encoding vocabulary file that a specific model was trained with, and different model families use different vocabularies that can change over time. Shipping a fake approximation that silently pretends to be exact would give you a number that looks precise but is actually meaningless. Instead, this tool is upfront about what it does: it applies two well-known, published estimation heuristics — a character-based estimate (roughly 1 token per 4 characters) and a word-based estimate (roughly 1 token per 0.75 words) — and shows both, clearly labeled as approximations. For everyday planning, such as checking whether a prompt is roughly within budget, this level of accuracy is sufficient, and it's honest about its own limits rather than quietly guessing.</p>
-
-    <h2>What Is a Context Window?</h2>
-    <p>A context window is the maximum number of tokens a model can hold in memory for a single request, counting your input (the prompt, any attached documents, and prior conversation turns) together with the model's own generated output. If the combined token count exceeds the context window, the model either truncates older content, rejects the request, or simply cannot "see" everything you've provided. Context windows vary enormously by model and provider, from a few thousand tokens on smaller or older models up to a million tokens or more on newer, large-context models. Because exact window sizes change frequently as providers release new models, this tool uses generic size tiers — Small, Medium, Large, Extra Large, and Very Large — so the comparison stays useful without going stale.</p>
-
-    <h2>Why Context Window Usage Matters</h2>
-    <p>If you're building a long conversation, feeding in a large document, or pasting an entire codebase, you need to know whether it will even fit before the model truncates or refuses part of it. Many providers also charge by the token, so a request using a large fraction of the context window is typically more expensive. Some models also perform less reliably when a context window is nearly full, so keeping headroom rather than running right up against the limit is often good practice.</p>
-
-    <h2>Estimating API Cost</h2>
-    <p>Token-based pricing means the cost of a request scales directly with how many tokens it contains. Rather than hardcoding specific vendor prices into this tool — which would quickly become outdated as providers adjust their pricing — the cost estimator lets you type in whatever rate you currently know, per 1,000 or per 1,000,000 tokens, and instantly multiplies it by the estimated token count of your pasted text. This keeps the calculator useful regardless of which provider or model you're planning to use.</p>
-
-    <h2>Common Use Cases</h2>
-    <ul>
-      <li><strong>Estimating cost before an API call:</strong> check roughly how many tokens a prompt or document will use, and what that might cost at a known rate, before sending a request.</li>
-      <li><strong>Checking whether a document fits a model's context window:</strong> paste a long document or transcript and see what percentage of a given context size it would consume.</li>
-      <li><strong>Estimating chat history size:</strong> paste an exported conversation to gauge how close it is to running into context limits during a long back-and-forth session.</li>
-      <li><strong>Trimming content to a budget:</strong> paste draft text, see the token estimate, and edit down until it comfortably fits a target size.</li>
-      <li><strong>Comparing word count versus token count:</strong> get a feel for how much more "expensive" certain kinds of text (code, technical writing, non-English text) are in tokens compared to plain prose.</li>
-    </ul>
-
-    <h3>How the Estimate Is Calculated</h3>
-    <p>This tool computes character, word, sentence, and paragraph counts directly from your pasted text, then derives two token estimates — character count divided by four, and word count divided by 0.75 — averaging them into one working estimate used for the context bar and cost calculation. Both heuristic values are shown separately so you can see the spread. Everything runs synchronously in plain JavaScript, with no network request involved.</p>
-
-    <h3>Frequently Searched Terms</h3>
-    <p>People use this tool when searching for phrases like "ai token calculator," "how many tokens is this text," "context window calculator," "estimate prompt tokens," and "llm api cost estimator."</p>
-  </section>
-
-  <section class="page-section">
-    <h2>AI Token &amp; Context Calculator FAQ</h2>
-    <div class="faq-list">
-      <details class="faq-item">
-        <summary class="faq-q">Is this an exact token count like tiktoken?</summary>
-        <div class="faq-a"><p>No. Exact tokenization depends on the specific byte-pair-encoding vocabulary of a given model, which isn't something that can be faithfully reproduced client-side without shipping that model's real vocabulary file. This tool uses two well-known, transparent heuristics instead and is clearly labeled as an estimate, not an exact count.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">Why does token count differ from word count?</summary>
-        <div class="faq-a"><p>Tokenizers split text into sub-word pieces, not whole words. Common short words are often a single token, while longer or less common words, numbers, punctuation and code can split into multiple tokens. As a result, token count is usually higher than word count for normal English text.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">What is a context window?</summary>
-        <div class="faq-a"><p>A context window is the maximum number of tokens a model can process at once across your input and its own output combined. If your text exceeds the context window, the model cannot see all of it, or the request may be rejected outright.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">Does this tool upload my text anywhere?</summary>
-        <div class="faq-a"><p>No. All counting and estimation happens locally in your browser using JavaScript. Your text is never sent to Logrith or any other server.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">Can I estimate API cost with this tool?</summary>
-        <div class="faq-a"><p>Yes. Enter your own price per 1,000 or per 1,000,000 tokens, since provider pricing changes frequently and varies by model, and the tool multiplies that rate by the estimated token count to show an approximate cost for your input text.</p></div>
-      </details>
-    </div>
-  </section>
-
-  <section class="page-section">
-    <h2>Related Tools</h2>
-    <div class="related-grid">
-      <a class="related-card" href="/tool/tools/csv-cleaner"><strong>CSV Cleaner</strong></a>
-      <a class="related-card" href="/tool/tools/json-repair"><strong>JSON Repair Tool</strong></a>
-      <a class="related-card" href="/tool/tools/markdown-to-html"><strong>Markdown to HTML Converter</strong></a>
-      <a class="related-card" href="/tool/tools/url-deduplicator"><strong>URL Deduplicator</strong></a>
-    </div>
-  </section>
-
-  <section class="page-section">
-    <h2>Top AI Token Calculator Search Queries</h2>
-    <div class="keyword-box">
-      <span class="keyword-tag">ai token calculator</span>
-      <span class="keyword-tag">how many tokens is this text</span>
-      <span class="keyword-tag">context window calculator</span>
-      <span class="keyword-tag">estimate prompt tokens</span>
-      <span class="keyword-tag">llm api cost estimator</span>
-      <span class="keyword-tag">token counter online free</span>
-      <span class="keyword-tag">gpt token estimator</span>
-    </div>
-  </section>
+<h1><span>Calculadora</span> de tokens y contexto de IA</h1>
+<p>Pega una solicitud, un documento o una conversación para estimar su número de tokens, el uso de la ventana de contexto y el coste de la API, todo ello en tu navegador.</p>
+<div class="tag-list">
+<span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Gratis</span> <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#lock"></use></svg> Procesamiento local</span> <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#cpu"></use></svg> Presupuesto honesto</span> <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#speed"></use></svg> Instantáneo</span>
+</div>
+</div>
+</header>
+<div class="tool-workspace">
+<div class="tool-card">
+<h2>Pega tu texto</h2>
+<div class="control-group">
+<label for="text-input">Texto de la solicitud, documento o conversación</label> <textarea class="tool-textarea" id="text-input" placeholder="Paste a prompt, article, chat history, or any text you want to estimate..." rows="12"></textarea>
+</div>
+<div class="btn-group mt-12">
+<button class="btn btn-primary" id="calc-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#calculator"></use></svg> Calcular</button>
+</div>
+<div class="status-msg mt-12" id="status-msg" aria-live="polite"></div>
+</div>
+<p class="privacy-note">Tu texto se procesa en tu navegador. No se sube nada a Logrith.</p>
+<div class="tool-card is-hidden" id="breakdown-card">
+<h2>Desglose del texto</h2>
+<div class="insp-grid" id="breakdown-grid"></div>
+</div>
+<div class="tool-card is-hidden" id="context-card">
+<h2>Uso de la ventana de contexto</h2>
+<div class="ctx-controls">
+<div class="ctx-field">
+<label for="context-size">Tamaño de la ventana de contexto</label><select id="context-size"><option value="8192"> Pequeño (8K tokens)</option><option selected="" value="32768"> Medio (32.000 tokens)</option><option value="128000"> Grande (128.000 tokens)</option><option value="200000"> Extra grande (200.000 tokens)</option><option value="1000000"> Muy grande (1 millón de tokens)</option></select>
+</div>
+</div>
+<div class="ctx-bar-wrap">
+<div class="ctx-bar-label"><span id="ctx-bar-text">0 de 32.768 tokens</span> <span id="ctx-bar-pct">0%</span></div>
+<div class="ctx-bar-track"><div class="ctx-bar-fill" id="ctx-bar-fill"></div></div>
+<div class="ctx-bar-note" id="ctx-bar-note"></div>
+</div>
+</div>
+<div class="tool-card is-hidden" id="cost-card">
+<h2>Estimación de costos opcional</h2>
+<p class="u-5cfdda">Introduzca el precio que conoce para un modelo o proveedor determinado. Los precios cambian con frecuencia y varían mucho, por lo que no hay ninguna tarifa predefinida.</p>
+<div class="cost-row">
+<div class="ctx-field">
+<label for="price-amount">Precio</label><input id="price-amount" min="0" placeholder="e.g. 3.00" step="0.0001" type="number">
+</div>
+<div class="ctx-field">
+<label for="price-unit">Por</label><select id="price-unit"><option value="1000"> 1.000 tokens</option><option selected="" value="1000000"> 1.000.000 de tokens</option></select>
+</div>
+</div>
+<div class="insp-grid" id="cost-grid"></div>
+</div>
+</div>
+<section class="page-section">
+<h2>Cómo usar la calculadora de tokens y contexto de IA</h2>
+<ol class="steps">
+<li class="step">
+<p>Pega tu mensaje, documento o historial de chat en el cuadro de texto.</p>
+</li>
+<li class="step">
+<p>Haz clic en "Calcular" para ver el recuento de caracteres, el recuento de palabras, el recuento de oraciones y párrafos, y un recuento estimado de tokens.</p>
+</li>
+<li class="step">
+<p>Seleccione un tamaño de ventana de contexto para ver qué porcentaje de esa ventana ocupará su texto, lo cual se mostrará como una barra de progreso.</p>
+</li>
+<li class="step">
+<p>Opcionalmente, introduzca un precio por cada 1.000 o 1.000.000 de tokens para ver un coste estimado de procesamiento de este texto como entrada.</p>
+</li>
+</ol>
+</section>
+<section class="page-section prose">
+<h2>Qué calcula esta herramienta</h2>
+<ul>
+<li><strong>Recuento de caracteres y palabras:</strong> recuento exacto del texto pegado, para compararlo con la estimación de tokens.</li>
+<li><strong>Recuento de oraciones y párrafos:</strong> un desglose estructural aproximado de la longitud del documento.</li>
+<li><strong>Recuento estimado de tokens:</strong> calculado con dos heurísticas transparentes, mostradas una al lado de la otra.</li>
+<li><strong>Uso de la ventana de contexto:</strong> un porcentaje y una barra visual para el tamaño de contexto seleccionado.</li>
+<li><strong>Estimación de costos opcional:</strong> su propio precio por cada 1.000 o 1.000.000 de tokens, multiplicado por la cantidad estimada de tokens.</li>
+</ul>
+</section>
+<section class="page-section prose">
+<h2>¿Qué es un token en los modelos de lenguaje de IA?</h2>
+<p>Un token es la unidad básica de texto que un modelo de lenguaje lee y genera. Los modelos no procesan caracteres ni palabras completas individualmente, sino que trabajan con tokens generados por un tokenizador, que divide el texto en una secuencia de fragmentos de subpalabras extraídos de un vocabulario fijo aprendido durante el entrenamiento. Una palabra común en inglés, como "the" o "is", suele ser un solo token, mientras que una palabra más larga o menos frecuente, una palabra inventada, un número o un fragmento de código pueden dividirse en dos, tres o más tokens. Cada solicitud que se envía a un modelo de IA y cada respuesta que genera se mide y factura en tokens, no en palabras ni caracteres, por lo que es importante saber aproximadamente cuántos tokens contiene el texto antes de enviarlo.</p>
+<h2>Por qué el recuento de tokens difiere del recuento de palabras.</h2>
+<p>Dado que los analizadores léxicos dividen el texto en unidades subléxicas en lugar de espacios en blanco, el recuento de tokens y el recuento de palabras están relacionados, pero nunca son idénticos. Para la prosa inglesa típica, una regla general ampliamente citada es que un token corresponde aproximadamente a cuatro caracteres, o lo que es lo mismo, a tres cuartos de palabra; por lo tanto, 100 palabras de texto en inglés suelen generar entre 130 y 140 tokens. El texto denso con palabras poco comunes, jerga técnica, caracteres no ingleses, sintaxis de código o puntuación inusual tiende a usar más tokens por palabra, porque el analizador léxico tiene que recurrir a fragmentos más pequeños para todo aquello que no se encuentre dentro de su vocabulario más común.</p>
+<h2>Por qué esta herramienta no pretende ser un tokenizador exacto.</h2>
+<p>La tokenización precisa y fiel al modelo requiere el archivo de vocabulario de codificación de pares de bytes real con el que se entrenó un modelo específico, y las diferentes familias de modelos utilizan vocabularios distintos que pueden cambiar con el tiempo. Enviar una aproximación falsa que pretenda ser exacta daría como resultado un número que parece preciso pero que en realidad carece de sentido. En cambio, esta herramienta es transparente sobre su funcionamiento: aplica dos heurísticas de estimación bien conocidas y publicadas —una estimación basada en caracteres (aproximadamente 1 token por cada 4 caracteres) y una estimación basada en palabras (aproximadamente 1 token por cada 0,75 palabras)— y muestra ambas, claramente etiquetadas como aproximaciones. Para la planificación cotidiana, como comprobar si una solicitud se ajusta aproximadamente al presupuesto, este nivel de precisión es suficiente, y es honesta sobre sus propias limitaciones en lugar de adivinar en secreto.</p>
+<h2>¿Qué es una ventana de contexto?</h2>
+<p>Una ventana de contexto es el número máximo de tokens que un modelo puede almacenar en memoria para una sola solicitud, incluyendo la entrada (el mensaje, los documentos adjuntos y los turnos de conversación anteriores) junto con la salida generada por el propio modelo. Si el número total de tokens supera la ventana de contexto, el modelo trunca el contenido antiguo, rechaza la solicitud o simplemente no puede "ver" todo lo que se ha proporcionado. Las ventanas de contexto varían enormemente según el modelo y el proveedor, desde unos pocos miles de tokens en modelos más pequeños o antiguos hasta un millón o más en modelos más recientes y con mayor capacidad de contexto. Dado que el tamaño exacto de las ventanas cambia con frecuencia a medida que los proveedores lanzan nuevos modelos, esta herramienta utiliza niveles de tamaño genéricos (Pequeño, Mediano, Grande, Extra Grande y Muy Grande) para que la comparación siga siendo útil y no quede obsoleta.</p>
+<h2>Por qué es importante el uso de la ventana de contexto</h2>
+<p>Si estás creando una conversación larga, introduciendo un documento extenso o pegando un código fuente completo, necesitas saber si cabe antes de que el modelo lo trunque o rechace parte del mismo. Muchos proveedores también cobran por token, por lo que una solicitud que utilice una gran parte de la ventana de contexto suele ser más cara. Algunos modelos también funcionan de forma menos fiable cuando la ventana de contexto está casi llena, por lo que mantener un margen de seguridad en lugar de llegar al límite suele ser una buena práctica.</p>
+<h2>Estimación del costo de la API</h2>
+<p>El modelo de precios basado en tokens implica que el costo de una solicitud se ajusta directamente a la cantidad de tokens que contiene. En lugar de codificar precios específicos de proveedores en esta herramienta —lo que rápidamente quedaría obsoleto a medida que los proveedores ajusten sus precios—, el estimador de costos le permite ingresar la tarifa que conozca, ya sea por cada 1000 o por cada 1 000 000 de tokens, y la multiplica instantáneamente por la cantidad estimada de tokens del texto que pegue. Esto hace que la calculadora sea útil independientemente del proveedor o modelo que planee usar.</p>
+<h2>Casos de uso comunes</h2>
+<ul>
+<li><strong>Estimación de costes antes de realizar una llamada a la API:</strong> compruebe aproximadamente cuántos tokens utilizará una solicitud o un documento, y cuál podría ser el coste a una tasa conocida, antes de enviar una solicitud.</li>
+<li><strong>Comprobación de si un documento se ajusta a la ventana de contexto de un modelo:</strong> pegue un documento o transcripción extenso y vea qué porcentaje del tamaño de contexto determinado consumiría.</li>
+<li><strong>Estimación del tamaño del historial de chat:</strong> pegue una conversación exportada para evaluar qué tan cerca está de alcanzar los límites de contexto durante una sesión larga de intercambio de mensajes.</li>
+<li><strong>Recortar el contenido para ajustarlo a un presupuesto:</strong> pegue el texto borrador, vea la estimación de tokens y edítelo hasta que se ajuste cómodamente al tamaño deseado.</li>
+<li><strong>Comparación entre el número de palabras y el número de tokens:</strong> para hacerse una idea de cuánto más "costosos" son ciertos tipos de texto (código, redacción técnica, texto en otros idiomas) en términos de tokens en comparación con la prosa simple.</li>
+</ul>
+<h3>Cómo se calcula la estimación</h3>
+<p>Esta herramienta calcula el número de caracteres, palabras, oraciones y párrafos directamente a partir del texto que pegues. Luego, obtiene dos estimaciones de tokens (el número de caracteres dividido por cuatro y el número de palabras dividido por 0,75), promediándolas para obtener una estimación final que se utiliza en la barra de contexto y el cálculo del costo. Ambos valores heurísticos se muestran por separado para que puedas ver la diferencia. Todo se ejecuta de forma síncrona en JavaScript puro, sin necesidad de realizar ninguna solicitud de red.</p>
+<h3>Términos buscados con frecuencia</h3>
+<p>La gente usa esta herramienta cuando busca frases como "calculadora de tokens de IA", "¿cuántos tokens tiene este texto?", "calculadora de ventana de contexto", "estimar tokens de solicitud" y "estimador de costos de la API de LLM".</p>
+</section>
+<section class="page-section">
+<h2>Preguntas frecuentes sobre la calculadora de tokens y contexto de IA</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary class="faq-q">¿Se trata de un recuento exacto de tokens como en tiktoken?</summary>
+<div class="faq-a"><p>No. La tokenización exacta depende del vocabulario específico de codificación de pares de bytes de un modelo dado, algo que no se puede reproducir fielmente en el lado del cliente sin enviar el archivo de vocabulario real de ese modelo. Esta herramienta utiliza dos heurísticas transparentes y bien conocidas, y está claramente etiquetada como una estimación, no como un recuento exacto.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Por qué el recuento de tokens difiere del recuento de palabras?</summary>
+<div class="faq-a"><p>Los analizadores léxicos dividen el texto en fragmentos de subpalabras, no en palabras completas. Las palabras cortas y comunes suelen ser un solo token, mientras que las palabras más largas o menos comunes, los números, la puntuación y el código pueden dividirse en varios tokens. Por lo tanto, el número de tokens suele ser mayor que el número de palabras en un texto en inglés normal.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Qué es una ventana de contexto?</summary>
+<div class="faq-a"><p>La ventana de contexto es el número máximo de tokens que un modelo puede procesar simultáneamente, considerando tanto la entrada como su propia salida. Si el texto excede la ventana de contexto, el modelo no podrá verlo completo o la solicitud podría ser rechazada directamente.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Esta herramienta sube mi texto a algún sitio?</summary>
+<div class="faq-a"><p>No. Todo el conteo y la estimación se realizan localmente en tu navegador mediante JavaScript. Tu texto nunca se envía a Logrith ni a ningún otro servidor.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Puedo estimar el coste de la API con esta herramienta?</summary>
+<div class="faq-a"><p>Sí. Introduce tu propio precio por cada 1.000 o por cada 1.000.000 de tokens, ya que los precios de los proveedores cambian con frecuencia y varían según el modelo, y la herramienta multiplica esa tarifa por la cantidad estimada de tokens para mostrar un coste aproximado para el texto que introduzcas.</p></div>
+</details>
+</div>
+</section>
+<section class="page-section">
+<h2>Herramientas relacionadas</h2>
+<div class="related-grid">
+<a class="related-card" href="/es/tool/tools/csv-cleaner"><strong>Limpiador de CSV,</strong></a> <a class="related-card" href="/es/tool/tools/json-repair"><strong>herramienta de reparación de JSON,</strong></a> <a class="related-card" href="/es/tool/tools/markdown-to-html"><strong>convertidor de Markdown a HTML,</strong></a> <a class="related-card" href="/es/tool/tools/url-deduplicator"><strong>deduplicador de URL</strong></a>
+</div>
+</section>
+<section class="page-section">
+<h2>Consultas de búsqueda más frecuentes sobre la calculadora de tokens de IA</h2>
+<div class="keyword-box">
+<span class="keyword-tag">Calculadora de tokens de IA</span> <span class="keyword-tag">¿Cuántos tokens tiene este texto?</span> <span class="keyword-tag">Calculadora de ventana de contexto</span> <span class="keyword-tag">Estimación de tokens de solicitud</span> <span class="keyword-tag">API LLM Estimador de costos</span> <span class="keyword-tag">Contador de tokens en línea gratuito</span> <span class="keyword-tag">Estimador de tokens GPT</span>
+</div>
+</section>
 </main>
-
 <div id="footer"></div>
 <script src="/assets/js/main.js?v=20261115"></script>
-
-
 <script>
 const textInput = document.getElementById('text-input');
 const statusEl = document.getElementById('status-msg');

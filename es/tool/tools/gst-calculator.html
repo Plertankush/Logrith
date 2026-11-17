@@ -1,340 +1,188 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="es">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de GST — División instantánea inclusiva/exclusiva | Logrith</title>
+<meta name="description" content="Calcula el GST al 5%, 12%, 18% o 28% en cualquier dirección, con el desglose de CGST, SGST e IGST mostrado automáticamente. Preciso, instantáneo y sin necesidad de registrarse.">
+<meta name="keywords" content="gst calculator, gst calculator online, india gst calculator, gst inclusive calculator, gst exclusive calculator, cgst sgst igst calculator, gst slab calculator, 5 12 18 28 gst calculator, free gst calculator india">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Logrith">
+<meta name="theme-color" content="#0D0D0D">
+<link rel="canonical" href="https://logrith.in/es/tool/tools/gst-calculator">
+  <link rel="alternate" hreflang="x-default" href="https://logrith.in/tool/tools/gst-calculator">
+  <link rel="alternate" hreflang="es" href="https://logrith.in/es/tool/tools/gst-calculator">
+  <link rel="alternate" hreflang="en" href="https://logrith.in/tool/tools/gst-calculator">
 
-  <title>GST Calculator — Instant Inclusive/Exclusive Split | Logrith</title>
-  <meta name="description" content="Calculate GST at 5%, 12%, 18% or 28% in either direction, with the CGST, SGST and IGST split shown automatically. Accurate, instant, no signup.">
-  <meta name="keywords" content="gst calculator, gst calculator online, india gst calculator, gst inclusive calculator, gst exclusive calculator, cgst sgst igst calculator, gst slab calculator, 5 12 18 28 gst calculator, free gst calculator india">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="author" content="Logrith">
-  <meta name="theme-color" content="#0D0D0D">
-  <link rel="canonical" href="https://logrith.in/tool/tools/gst-calculator">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
-  <link rel="preload" href="/components/navbar.html" as="fetch" type="text/html" crossorigin>
-  <link rel="preload" href="/components/footer.html" as="fetch" type="text/html" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=20261115">
-  <link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="GST Calculator — Instant Inclusive/Exclusive Split | Logrith">
-  <meta property="og:description" content="Calculate GST at 5%, 12%, 18% or 28% in either direction, with the CGST, SGST and IGST split shown automatically. Accurate, instant, no signup.">
-  <meta property="og:url" content="https://logrith.in/tool/tools/gst-calculator">
-  <meta property="og:site_name" content="Logrith">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="GST Calculator — Instant Inclusive/Exclusive Split | Logrith">
-  <meta name="twitter:description" content="Calculate GST at 5%, 12%, 18% or 28% in either direction, with the CGST, SGST and IGST split shown automatically. Accurate, instant, no signup.">
-
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- Schema: WebPage -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "GST Calculator Online India",
-    "url": "https://logrith.in/tool/tools/gst-calculator",
-    "description": "Free GST Calculator Online India to calculate GST inclusive and exclusive prices for 5%, 12%, 18%, and 28% slabs.",
-    "inLanguage": "en",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "Logrith",
-      "url": "https://logrith.in/"
-    },
-    "breadcrumb": {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://logrith.in/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Tools",
-          "item": "https://logrith.in/tool/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Utility Tools",
-          "item": "https://logrith.in/tool/categories/utilities"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "GST Calculator",
-          "item": "https://logrith.in/tool/tools/gst-calculator"
-        }
-      ]
-    }
-  }
-  </script>
-
-  <!-- Schema: FAQ -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is GST Exclusive vs GST Inclusive?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "GST Exclusive means GST is added on top of the base price. For example, if a product costs ₹1000 and GST is 18%, the total becomes ₹1180. GST Inclusive means the shown price already includes GST. If the total price is ₹1180 inclusive at 18% GST, then the base price is ₹1000 and GST amount is ₹180."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is CGST, SGST and IGST?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "For intra-state transactions in India, GST is split equally into CGST and SGST. For inter-state transactions, IGST is charged as the full GST rate. For example, 18% GST within a state becomes 9% CGST and 9% SGST."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Which GST slab applies to which goods?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "0% GST applies to some essential items. 5% applies to selected daily-use goods and services. 12% applies to certain processed and standard items. 18% applies to most goods and services. 28% applies to luxury and sin goods such as premium items and certain automobiles."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How to calculate GST amount from total price?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "If the total price is inclusive of GST, the GST amount can be calculated using the formula: GST Amount = Total Price × GST Rate ÷ (100 + GST Rate). For example, if the total is ₹1180 and GST is 18%, then GST amount is ₹180 and the base price is ₹1000."
-        }
-      }
-    ]
-  }
-  </script>
-
-  <!-- Schema: Article -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "About GST in India",
-    "description": "Understand how GST works in India, including GST slabs, inclusive and exclusive pricing, and CGST, SGST, and IGST.",
-    "author": {
-      "@type": "Organization",
-      "name": "Logrith"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Logrith"
-    },
-    "mainEntityOfPage": "https://logrith.in/tool/tools/gst-calculator"
-  }
-  </script>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
-  <script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
+<link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261115">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calculadora de GST — División instantánea inclusiva/exclusiva | Logrith">
+<meta property="og:description" content="Calcula el GST al 5%, 12%, 18% o 28% en cualquier dirección, con el desglose de CGST, SGST e IGST mostrado automáticamente. Preciso, instantáneo y sin necesidad de registrarse.">
+<meta property="og:url" content="https://logrith.in/es/tool/tools/gst-calculator">
+<meta property="og:site_name" content="Logrith">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Calculadora de GST — División instantánea inclusiva/exclusiva | Logrith">
+<meta name="twitter:description" content="Calcula el GST al 5%, 12%, 18% o 28% en cualquier dirección, con el desglose de CGST, SGST e IGST mostrado automáticamente. Preciso, instantáneo y sin necesidad de registrarse.">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<!-- Schema: WebPage -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Calculadora de GST en línea en India", "url": "https://logrith.in/es/tool/tools/gst-calculator", "description": "Calculadora de GST gratuita en línea para India para calcular precios con y sin GST para tramos del 5%, 12%, 18% y 28%.", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "Logrith", "url": "https://logrith.in/es/"}, "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Hogar", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas de utilidad", "item": "https://logrith.in/es/tool/categories/utilities"}, {"@type": "ListItem", "position": 4, "name": "Calculadora de GST", "item": "https://logrith.in/es/tool/tools/gst-calculator"}]}}</script>
+<!-- Schema: FAQ -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Qué significa GST Exclusivo frente a GST Inclusivo?", "acceptedAnswer": {"@type": "Answer", "text": "GST Exclusivo significa que el impuesto sobre bienes y servicios (GST) se añade al precio base. Por ejemplo, si un producto cuesta 1000 rupias y el GST es del 18 %, el total asciende a 1180 rupias. GST Incluido significa que el precio mostrado ya incluye el GST. Si el precio total es de 1180 rupias con un GST del 18 %, el precio base es de 1000 rupias y el importe del GST es de 180 rupias."}}, {"@type": "Question", "name": "¿Qué son CGST, SGST e IGST?", "acceptedAnswer": {"@type": "Answer", "text": "En India, para las transacciones dentro de un mismo estado, el GST se divide a partes iguales entre CGST y SGST. Para las transacciones interestatales, se aplica el IGST como la tasa completa del GST. Por ejemplo, un 18 % de GST dentro de un estado se convierte en un 9 % de CGST y un 9 % de SGST."}}, {"@type": "Question", "name": "¿Qué tramo del GST se aplica a qué productos?", "acceptedAnswer": {"@type": "Answer", "text": "Se aplica un 0% de GST a algunos artículos esenciales. Se aplica un 5% a determinados bienes y servicios de uso diario. Se aplica un 12% a ciertos artículos procesados ​​y estándar. Se aplica un 18% a la mayoría de los bienes y servicios. Se aplica un 28% a artículos de lujo y productos considerados perjudiciales para la salud, como artículos de alta gama y ciertos automóviles."}}, {"@type": "Question", "name": "¿Cómo se calcula el importe del GST a partir del precio total?", "acceptedAnswer": {"@type": "Answer", "text": "Si el precio total incluye el IVA, el importe del IVA se puede calcular mediante la fórmula: Importe del IVA = Precio total × Tasa de IVA ÷ (100 + Tasa de IVA). Por ejemplo, si el total es de 1180 rupias y el IVA es del 18 %, el importe del IVA es de 180 rupias y el precio base es de 1000 rupias."}}]}</script>
+<!-- Schema: Article -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Acerca del GST en India", "description": "Comprenda cómo funciona el GST en la India, incluyendo los tramos del GST, los precios inclusivos y exclusivos, y el CGST, el SGST y el IGST.", "author": {"@type": "Organization", "name": "Logrith"}, "publisher": {"@type": "Organization", "name": "Logrith"}, "mainEntityOfPage": "https://logrith.in/es/tool/tools/gst-calculator"}</script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+<script>
    window.dataLayer = window.dataLayer || [];
    function gtag(){dataLayer.push(arguments);}
    gtag('js', new Date());
    gtag('config', 'G-BPJ4332XJH');
   </script>
- 
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "WebApplication", "name": "GST Calculator", "url": "https://logrith.in/tool/tools/gst-calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript and a modern web browser", "description": "Free GST calculator to add or remove GST from any amount. Calculates GST-inclusive and GST-exclusive prices instantly.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "publisher": {"@id": "https://logrith.in/#organization"}}
-  </script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de GST", "url": "https://logrith.in/es/tool/tools/gst-calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript and a modern web browser", "description": "Calculadora gratuita de IVA para añadir o restar IVA a cualquier importe. Calcula al instante precios con y sin IVA.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
 </head>
 <body class="page-gst-calculator">
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main">Saltar al contenido</a>
 <div id="navbar"></div>
-
 <main id="main">
-
 <header class="page-hero"><div class="page-hero-inner">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/tool/">Tools</a> › <a href="/tool/categories/calculate-convert">Calculate &amp; Convert</a> › GST Calculator</nav>
-  <h1>Free GST Calculator Online</h1>
-  <p>Calculate GST inclusive and exclusive prices instantly. Supports all Indian GST slabs — 5%, 12%, 18%, 28%. Find CGST, SGST and IGST breakdowns.</p>
-  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#flag"></use></svg> India GST Slabs</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#chart-bar"></use></svg> CGST + SGST</span></div>
+<nav class="breadcrumb" aria-label="Migaja de pan"><a href="/es/">Inicio</a> › <a href="/es/tool/">Herramientas</a> › <a href="/es/tool/categories/calculate-convert">Calcular y convertir</a> › Calculadora de GST</nav>
+<h1>Calculadora de GST gratuita en línea</h1>
+<p>Calcula al instante los precios con y sin IVA. Compatible con todos los tramos del IVA indio: 5%, 12%, 18% y 28%. Consulta el desglose del CGST, SGST e IGST.</p>
+<div class="tag-list"><span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Gratuito</span> <span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#flag"></use></svg> Tramos del GST de la India</span> <span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#zap"></use></svg> Instantáneo</span> <span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#chart-bar"></use></svg> CGST + SGST</span></div>
 </div></header>
-
 <div class="tool-workspace">
-  <div class="tool-card">
-    <h2>GST Calculator</h2>
-    
-    <!-- GST Slabs -->
-    <label class="u-20094a">Quick GST Slabs</label>
-    <div class="slab-grid">
-      <button class="slab-btn" data-gst="0">0% (Exempt)</button>
-      <button class="slab-btn" data-gst="5">5% Slab</button>
-      <button class="slab-btn" data-gst="12">12% Slab</button>
-      <button class="slab-btn active" data-gst="18">18% Slab</button>
-      <button class="slab-btn" data-gst="28">28% Slab</button>
-    </div>
-
-    <div class="controls-grid">
-      <div class="control-group">
-        <label>Amount (₹)</label>
-        <input type="number" id="amount" value="1000" min="0" step="0.01" placeholder="Enter amount">
-      </div>
-      <div class="control-group">
-        <label>GST Rate (%)</label>
-        <input type="number" id="gst-rate" value="18" min="0" max="100" step="0.01" placeholder="e.g. 18">
-      </div>
-      <div class="control-group">
-        <label>Amount Type</label>
-        <select id="amount-type">
-          <option value="exclusive">Exclusive (Add GST to amount)</option>
-          <option value="inclusive">Inclusive (Amount includes GST)</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="btn-group mt-16">
-      <button class="btn btn-primary btn-lg" id="calc-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#trending-up"></use></svg> Calculate GST</button>
-      <button class="btn btn-secondary" id="reset-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Reset</button>
-    </div>
-  </div>
-
-  <div class="tool-card is-hidden" id="result-card">
-    <h2>GST Breakdown</h2>
-    <div class="gst-result-grid" id="gst-grid"></div>
-
-    <div class="u-e1389a">
-      <table class="u-dc2b4d">
-        <thead><tr><th class="u-7b02bc">Component</th><th class="u-9fae84">Rate</th><th class="u-9fae84">Amount (₹)</th></tr></thead>
-        <tbody id="gst-table-body"></tbody>
-      </table>
-    </div>
-  </div>
+<div class="tool-card">
+<h2>Calculadora de GST</h2>
+<!-- GST Slabs -->
+<label class="u-20094a">Tramos de GST rápidos</label>
+<div class="slab-grid">
+<button class="slab-btn" data-gst="0">0% (Exento)</button> <button class="slab-btn" data-gst="5">5% Losa</button> <button class="slab-btn" data-gst="12">12% Losa</button> <button class="slab-btn active" data-gst="18">18% Losa</button> <button class="slab-btn" data-gst="28">28% Losa</button>
 </div>
-
-
+<div class="controls-grid">
+<div class="control-group">
+<label>Importe (₹)</label><input id="amount" min="0" placeholder="Enter amount" step="0.01" type="number" value="1000">
+</div>
+<div class="control-group">
+<label>Tasa de GST (%)</label><input id="gst-rate" max="100" min="0" placeholder="e.g. 18" step="0.01" type="number" value="18">
+</div>
+<div class="control-group">
+<label>Tipo de importe</label><select id="amount-type"><option value="exclusive"> Exclusivo (Añadir IVA al importe)</option><option value="inclusive"> Todo incluido (El importe incluye el IVA)</option></select>
+</div>
+</div>
+<div class="btn-group mt-16">
+<button class="btn btn-primary btn-lg" id="calc-btn"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#trending-up"></use></svg> Calcular el GST</button> <button class="btn btn-secondary" id="reset-btn"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#close"></use></svg> Reiniciar</button>
+</div>
+</div>
+<div class="tool-card is-hidden" id="result-card">
+<h2>Desglose del GST</h2>
+<div class="gst-result-grid" id="gst-grid"></div>
+<div class="u-e1389a">
+<table class="u-dc2b4d">
+<thead><tr><th class="u-7b02bc">Componente</th><th class="u-9fae84">Tasa</th><th class="u-9fae84">Importe (₹)</th></tr></thead>
+<tbody id="gst-table-body"></tbody>
+</table>
+</div>
+</div>
+</div>
 <section class="page-section">
-  <h2>How to Use Hash Generator</h2>
-  <ol class="steps">
-    <li class="step">
-      <p>Enter your text, upload a file, or open the compare tab to paste two hashes for verification.</p>
-    </li>
-    <li class="step">
-      <p>Click the generate or compare button, or keep real-time mode enabled for instant output while typing.</p>
-    </li>
-    <li class="step">
-      <p>Copy the required SHA hash and use it for checksum verification, file integrity checks, development tasks, or secure comparison.</p>
-    </li>
-  </ol>
+<h2>Cómo usar el generador de hash</h2>
+<ol class="steps">
+<li class="step">
+<p>Introduzca su texto, suba un archivo o abra la pestaña de comparación para pegar dos hashes para su verificación.</p>
+</li>
+<li class="step">
+<p>Haz clic en el botón "Generar" o "Comparar", o mantén activado el modo en tiempo real para obtener resultados instantáneos mientras escribes.</p>
+</li>
+<li class="step">
+<p>Copie el hash SHA necesario y utilícelo para la verificación de la suma de comprobación, las comprobaciones de integridad de los archivos, las tareas de desarrollo o la comparación segura.</p>
+</li>
+</ol>
 </section>
-
 <section class="page-section prose">
-  <h2>Why Our Hash Generator is Best</h2>
-  <ul>
-    <li><strong>Fast:</strong> Generates SHA-1, SHA-256, SHA-384, and SHA-512 hashes instantly in the browser.</li>
-    <li><strong>Private:</strong> Local browser-based processing means your text and files stay on your device.</li>
-    <li><strong>Free:</strong> Use the tool unlimited times without signup or installation.</li>
-    <li><strong>Practical:</strong> Supports text hashing, file hashing, one-click copy, and instant hash comparison.</li>
-    <li><strong>Useful for developers:</strong> Great for checksums, debugging, file verification, and integrity checks.</li>
- </ul>
+<h2>Por qué nuestro generador de hash es el mejor</h2>
+<ul>
+<li><strong>Rápido:</strong> Genera hashes SHA-1, SHA-256, SHA-384 y SHA-512 al instante en el navegador.</li>
+<li><strong>Privado:</strong> El procesamiento local a través del navegador significa que tu texto y tus archivos permanecen en tu dispositivo.</li>
+<li><strong>Gratis:</strong> Utilice la herramienta un número ilimitado de veces sin necesidad de registrarse ni instalar nada.</li>
+<li><strong>Práctico:</strong> Admite el hash de texto, el hash de archivos, la copia con un solo clic y la comparación instantánea de hashes.</li>
+<li><strong>Útil para desarrolladores:</strong> Ideal para sumas de comprobación, depuración, verificación de archivos y comprobaciones de integridad.</li>
+</ul>
 </section>
-
 <section class="page-section prose">
-  <h2>About GST in India And Why Use Our Tool</h2>
-  <p>Goods and Services Tax (GST) is an indirect tax system levied on the supply of goods and services in India. It was implemented on July 1, 2017, to replace multiple central and state taxes with a more unified taxation structure.</p>
-  <p>GST in India generally follows four major slabs: 5%, 12%, 18%, and 28%. Essential goods may fall under lower or zero tax slabs, while common goods and services usually come under 12% or 18%, and luxury or sin goods may attract 28% GST.</p>
-  <p>A GST calculator helps businesses, freelancers, shop owners, students, and consumers quickly calculate tax-inclusive and tax-exclusive prices without manual errors. It is also useful for understanding how much tax is charged as CGST, SGST, or IGST depending on the type of transaction.</p>
-
-  <h3>How This Calculator Works</h3>
-  <p>Enter an amount, pick a GST rate (or use one of the quick slab buttons for 0%, 5%, 12%, 18%, or 28%), and choose whether that amount is exclusive of GST (tax needs to be added) or inclusive of GST (tax is already baked into the figure). For exclusive amounts, the tool multiplies the base price by the rate to get the GST amount, then adds it to get the total. For inclusive amounts, it works backward using the formula Total × Rate ÷ (100 + Rate) to extract the exact GST component from a final price. The breakdown table then splits that GST amount into CGST and SGST (each exactly half the rate, for transactions within the same state) and shows the equivalent IGST figure (the full rate, for transactions across state lines) side by side, so you don't have to calculate both scenarios separately.</p>
-
-  <h3>Exclusive vs Inclusive — Which One Should You Use</h3>
-  <p>Use "Exclusive" when you have a base price (what you'd quote before tax, common when pricing a product or service you're selling) and need to know what the customer pays after GST is added. Use "Inclusive" when you already have a final price — for example, an MRP printed on packaging, or an amount on an invoice — and need to work out how much of that figure is actually tax versus base value. Mixing these up is one of the most common GST calculation errors: applying the exclusive formula to an inclusive amount overstates the GST amount, since it taxes a number that already contains tax.</p>
-
-  <h3>CGST, SGST and IGST in Practice</h3>
-  <p>Under India's GST structure, a sale within the same state splits the tax equally between the central government (CGST) and the state government (SGST) — so an 18% rate becomes 9% + 9%. A sale across state lines instead charges IGST at the full rate, collected by the central government and apportioned to the destination state. This calculator shows both splits at once in the breakdown table so you can read off whichever applies to your transaction without re-running the calculation.</p>
-
-  <h3>Who Uses a GST Calculator</h3>
-  <ul>
-    <li><strong>Small business owners and shopkeepers</strong> who need to quote GST-inclusive retail prices or verify supplier invoices.</li>
-    <li><strong>Freelancers and consultants</strong> invoicing clients who need to add 18% GST on professional services.</li>
-    <li><strong>Accountants and bookkeepers</strong> cross-checking CGST/SGST/IGST splits on a large batch of invoices.</li>
-    <li><strong>Students and exam candidates</strong> learning how Indian indirect taxation is structured and calculated.</li>
-    <li><strong>Online shoppers</strong> trying to verify whether a displayed price already includes GST.</li>
-  </ul>
-
-  <h3>Common Mistakes When Calculating GST Manually</h3>
-  <p>The most frequent manual error is treating an inclusive price as if it were exclusive — for instance, taking a ₹1,180 MRP and simply multiplying by 18% to get ₹212.40 as the "GST amount," when the correct GST component of that inclusive price is actually ₹180. Another common mistake is forgetting that CGST and SGST are each half the stated rate, not the full rate applied twice — doubling the tax by mistake when manually splitting an intra-state invoice.</p>
-
-  <h3>Why Use a Dedicated GST Calculator Instead of a Generic One</h3>
-  <p>A generic percentage calculator can add or subtract a percentage, but it won't automatically split that percentage into CGST and SGST, won't handle the reverse inclusive-price formula correctly without you remembering it, and won't map to India's actual GST slab structure (0%, 5%, 12%, 18%, 28%). This tool is built specifically around those Indian GST mechanics, so the slab buttons, the inclusive/exclusive toggle, and the CGST/SGST/IGST table are all pre-wired to match how GST actually works on an Indian invoice, cutting out the risk of applying the wrong formula by hand.</p>
-
-  <h3>Runs Entirely in Your Browser</h3>
-  <p>All calculations happen client-side using JavaScript the moment you click Calculate — no amount, rate, or result is sent to any server. This makes it safe to use for quick checks on real invoice figures, client billing amounts, or business pricing without that data leaving your device.</p></section>
-
+<h2>Acerca del GST en India y por qué usar nuestra herramienta</h2>
+<p>El Impuesto sobre Bienes y Servicios (GST, por sus siglas en inglés) es un sistema de impuestos indirectos que grava el suministro de bienes y servicios en la India. Se implementó el 1 de julio de 2017 para reemplazar los múltiples impuestos centrales y estatales existentes con una estructura tributaria más unificada.</p>
+<p>En la India, el GST (Impuesto sobre Bienes y Servicios) generalmente se rige por cuatro tramos principales: 5%, 12%, 18% y 28%. Los bienes esenciales pueden estar sujetos a tramos impositivos más bajos o nulos, mientras que los bienes y servicios comunes suelen estar sujetos al 12% o al 18%, y los bienes de lujo o considerados perjudiciales para la salud pueden estar sujetos al 28% de GST.</p>
+<p>Una calculadora de GST ayuda a empresas, autónomos, comerciantes, estudiantes y consumidores a calcular rápidamente los precios con y sin impuestos, evitando errores manuales. También es útil para comprender cuánto impuesto se cobra como CGST, SGST o IGST, según el tipo de transacción.</p>
+<h3>Cómo funciona esta calculadora</h3>
+<p>Ingrese un monto, seleccione una tasa de GST (o use uno de los botones de tramos rápidos para 0%, 5%, 12%, 18% o 28%), y elija si ese monto no incluye el GST (impuesto que debe agregarse) o lo incluye (impuesto que ya está incluido en la cifra). Para montos sin GST, la herramienta multiplica el precio base por la tasa para obtener el monto del GST, y luego lo suma para obtener el total. Para montos con GST, trabaja a la inversa usando la fórmula Total × Tasa ÷ (100 + Tasa) para extraer el componente exacto del GST de un precio final. La tabla de desglose luego divide ese monto de GST en CGST y SGST (cada uno exactamente la mitad de la tasa, para transacciones dentro del mismo estado) y muestra la cifra equivalente de IGST (la tasa completa, para transacciones entre estados) una al lado de la otra, para que no tenga que calcular ambos escenarios por separado.</p>
+<h3>Exclusivo vs. Inclusivo: ¿Cuál debería usar?</h3>
+<p>Utilice la fórmula "Exclusivo" cuando tenga un precio base (el precio que cotizaría antes de impuestos, común al fijar el precio de un producto o servicio) y necesite saber cuánto paga el cliente después de agregar el IVA. Utilice la fórmula "Inclusivo" cuando ya tenga un precio final (por ejemplo, un precio de venta al público impreso en el empaque o un monto en una factura) y necesite calcular qué parte de esa cifra corresponde a impuestos y qué parte al precio base. Confundir estas fórmulas es uno de los errores más comunes en el cálculo del IVA: aplicar la fórmula exclusiva a un monto inclusivo sobreestima el monto del IVA, ya que grava una cifra que ya incluye impuestos.</p>
+<h3>CGST, SGST e IGST en la práctica</h3>
+<p>Según la estructura del GST de la India, una venta dentro del mismo estado divide el impuesto a partes iguales entre el gobierno central (CGST) y el gobierno estatal (SGST); así, una tasa del 18 % se convierte en 9 % + 9 %. En cambio, una venta entre estados aplica el IGST a la tasa completa, recaudado por el gobierno central y prorrateado al estado de destino. Esta calculadora muestra ambas divisiones simultáneamente en la tabla de desglose para que pueda consultar la que corresponda a su transacción sin necesidad de volver a realizar el cálculo.</p>
+<h3>¿Quién utiliza una calculadora de GST?</h3>
+<ul>
+<li><strong>Propietarios de pequeñas empresas y comerciantes</strong> que necesiten cotizar precios minoristas con IVA incluido o verificar facturas de proveedores.</li>
+<li><strong>Profesionales autónomos y consultores</strong> que facturan a clientes que deben añadir el 18% de GST (impuesto sobre bienes y servicios) a los servicios profesionales.</li>
+<li><strong>Contadores y tenedores de libros</strong> cotejando los desgloses de CGST/SGST/IGST en un gran lote de facturas.</li>
+<li><strong>Estudiantes y candidatos a exámenes</strong> aprenden cómo se estructura y calcula la tributación indirecta en la India.</li>
+<li><strong>Compradores en línea</strong> que intentan verificar si un precio mostrado ya incluye el IVA.</li>
+</ul>
+<h3>Errores comunes al calcular el GST manualmente</h3>
+<p>El error manual más frecuente consiste en tratar un precio con todo incluido como si fuera con todo incluido; por ejemplo, tomar un precio de venta al público de 1180 rupias y simplemente multiplicarlo por el 18 % para obtener 212,40 rupias como "importe del IVA", cuando el componente correcto del IVA de ese precio con todo incluido es en realidad de 180 rupias. Otro error común es olvidar que el CGST y el SGST son cada uno la mitad de la tasa indicada, no la tasa completa aplicada dos veces, lo que duplica el impuesto por error al dividir manualmente una factura intraestatal.</p>
+<h3>¿Por qué usar una calculadora de GST específica en lugar de una genérica?</h3>
+<p>Una calculadora de porcentajes genérica puede sumar o restar un porcentaje, pero no lo dividirá automáticamente entre CGST y SGST, no manejará correctamente la fórmula inversa del precio inclusivo sin que usted la recuerde, y no se ajustará a la estructura de tramos del GST real de la India (0%, 5%, 12%, 18%, 28%). Esta herramienta está diseñada específicamente en torno a la mecánica del GST indio, por lo que los botones de tramos, el interruptor de inclusivo/exclusivo y la tabla de CGST/SGST/IGST están preconfigurados para coincidir con el funcionamiento real del GST en una factura india, eliminando el riesgo de aplicar la fórmula incorrecta manualmente.</p>
+<h3>Se ejecuta completamente en tu navegador.</h3>
+<p>Todos los cálculos se realizan en el lado del cliente mediante JavaScript en el momento en que haces clic en Calcular; no se envía ningún importe, tasa ni resultado a ningún servidor. Esto permite utilizarlo de forma segura para comprobar rápidamente cifras reales de facturas, importes de facturación de clientes o precios comerciales sin que esos datos salgan de tu dispositivo.</p></section>
 <section class="page-section">
-  <h2>Frequently Asked Questions</h2>
-  <div class="faq-list">
-    <details class="faq-item">
-      <summary class="faq-q">What is GST Exclusive vs GST Inclusive?</summary>
-      <div class="faq-a"><p>GST Exclusive means GST is added on top of the base price. If a product costs ₹1000 with 18% GST exclusive, total = ₹1180. GST Inclusive means the price already includes GST. If price is ₹1180 inclusive at 18%, the base = ₹1000 and GST = ₹180.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">What is CGST, SGST and IGST?</summary>
-      <div class="faq-a"><p>For intra-state (within same state) transactions: GST is split equally into CGST (Central GST) and SGST (State GST). For inter-state transactions: IGST (Integrated GST) applies, which equals the full GST rate. E.g., 18% GST intra-state = 9% CGST + 9% SGST.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Which GST slab applies to which goods?</summary>
-      <div class="faq-a"><p>0%: Essential items such as selected fresh food products. 5%: Some packaged food items and budget services. 12%: Certain processed goods and standard products. 18%: Most services, electronics, and restaurants. 28%: Luxury goods, selected automobiles, and tobacco-related items.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">How to calculate GST amount from total price?</summary>
-      <div class="faq-a"><p>If the total price is inclusive of GST: GST Amount = Total Price × GST Rate / (100 + GST Rate). E.g., Total = ₹1180, GST 18%: GST = 1180 × 18/118 = ₹180. Base price = ₹1000.</p></div>
-    </details>
-  </div>
+<h2>Preguntas frecuentes</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary class="faq-q">¿Qué significa GST Exclusivo frente a GST Inclusivo?</summary>
+<div class="faq-a"><p>GST Exclusivo significa que el impuesto sobre bienes y servicios (GST) se añade al precio base. Si un producto cuesta 1000 rupias con un 18 % de GST sin incluir, el total es de 1180 rupias. GST Inclusivo significa que el precio ya incluye el GST. Si el precio es de 1180 rupias con un 18 % de GST incluido, el precio base es de 1000 rupias y el GST es de 180 rupias.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Qué son CGST, SGST e IGST?</summary>
+<div class="faq-a"><p>Para transacciones intraestatales (dentro del mismo estado): el GST se divide equitativamente entre CGST (Impuesto Central sobre Bienes y Servicios) y SGST (Impuesto Estatal sobre Bienes y Servicios). Para transacciones interestatales: se aplica el IGST (Impuesto Integrado sobre Bienes y Servicios), que equivale a la tasa total del GST. Por ejemplo, un 18 % de GST intraestatal equivale a un 9 % de CGST + un 9 % de SGST.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Qué tramo del GST se aplica a qué productos?</summary>
+<div class="faq-a"><p>0%: Artículos esenciales como ciertos productos frescos. 5%: Algunos alimentos envasados ​​y servicios económicos. 12%: Ciertos productos procesados ​​y productos estándar. 18%: La mayoría de los servicios, productos electrónicos y restaurantes. 28%: Artículos de lujo, ciertos automóviles y productos relacionados con el tabaco.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Cómo se calcula el importe del GST a partir del precio total?</summary>
+<div class="faq-a"><p>Si el precio total incluye el IVA: Importe del IVA = Precio total × Tasa de IVA / (100 + Tasa de IVA). Por ejemplo, Total = 1180 rupias, IVA del 18%: IVA = 1180 × 18/118 = 180 rupias. Precio base = 1000 rupias.</p></div>
+</details>
+</div>
 </section>
-
 <!-- Related internal links -->
 <section class="page-section">
-  <h2>Related Tools</h2>
-  <div class="related-grid">
-    <a class="related-card" href="/tool/tools/emi-calculator"><strong>EMI Calculator</strong></a>
-    <a class="related-card" href="/tool/tools/qr-generator"><strong>QR Code Generator</strong></a>
-    <a class="related-card" href="/tool/tools/age-calculator"><strong>Age Calculator</strong></a>
-    <a class="related-card" href="/tool/tools/color-converter"><strong>Color Converter</strong></a>
-  </div>
+<h2>Herramientas relacionadas</h2>
+<div class="related-grid">
+<a class="related-card" href="/es/tool/tools/emi-calculator"><strong>Calculadora de EMI</strong></a> <a class="related-card" href="/es/tool/tools/qr-generator"><strong>Generador de código QR</strong></a> <a class="related-card" href="/es/tool/tools/age-calculator"><strong>Calculadora de edad</strong></a> <a class="related-card" href="/es/tool/tools/color-converter"><strong>Convertidor de color</strong></a>
+</div>
 </section>
-
 <section class="page-section">
-  <h2>Top 10 Hash Generator Search Queries/Keywords</h2>
-  <div class="keyword-box">
-    <span class="keyword-tag">hash generator online</span>
-    <span class="keyword-tag">free hash generator</span>
-    <span class="keyword-tag">sha 256 hash generator</span>
-    <span class="keyword-tag">sha 512 hash generator online</span>
-    <span class="keyword-tag">sha 1 generator</span>
-    <span class="keyword-tag">file hash generator</span>
-    <span class="keyword-tag">hash checker online</span>
-    <span class="keyword-tag">compare hashes online</span>
-    <span class="keyword-tag">checksum generator tool</span>
-    <span class="keyword-tag">browser hash generator</span>
-  </div>
+<h2>Las 10 consultas/palabras clave más frecuentes en la búsqueda de generadores de hash</h2>
+<div class="keyword-box">
+<span class="keyword-tag">Generador de hash en línea</span> <span class="keyword-tag">gratuito, generador de hash</span> <span class="keyword-tag">SHA-256, generador de hash</span> <span class="keyword-tag">SHA-512, generador de hash en línea</span> <span class="keyword-tag">SHA-1, generador</span> <span class="keyword-tag">de hash de archivos,</span> <span class="keyword-tag">verificador de hash en línea,</span> <span class="keyword-tag">comparar hashes en línea,</span> <span class="keyword-tag">herramienta generadora de suma de verificación,</span> <span class="keyword-tag">generador de hash del navegador</span>
+</div>
 </section>
-
-
 </main>
-
 <div id="footer"></div>
 <script src="/assets/js/main.js?v=20261115"></script>
-
 <script>
 document.querySelectorAll('.slab-btn').forEach(btn => {
   btn.addEventListener('click', () => {

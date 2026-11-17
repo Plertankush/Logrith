@@ -1,254 +1,202 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="es">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Format, Validate and Minify JSON Instantly | Logrith</title>
-  <meta name="description" content="Paste JSON to beautify it with proper indentation, validate its syntax with exact error locations, or minify it to one line.">
-  <link rel="canonical" href="https://logrith.in/tool/tools/json-formatter">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="author" content="Logrith">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://logrith.in/tool/tools/json-formatter">
-  <meta property="og:site_name" content="Logrith">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Format, Validate and Minify JSON Instantly | Logrith">
-  <meta name="twitter:description" content="Paste JSON to beautify it with proper indentation, validate its syntax with exact error locations, or minify it to one line.">
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#0D0D0D">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formatee, valide y minimice JSON al instante | Logrith</title>
+<meta name="description" content="Pegue el JSON para darle formato con la indentación adecuada, validar su sintaxis con la ubicación exacta de los errores o reducirlo a una sola línea.">
+<link rel="canonical" href="https://logrith.in/es/tool/tools/json-formatter">
+  <link rel="alternate" hreflang="x-default" href="https://logrith.in/tool/tools/json-formatter">
+  <link rel="alternate" hreflang="es" href="https://logrith.in/es/tool/tools/json-formatter">
+  <link rel="alternate" hreflang="en" href="https://logrith.in/tool/tools/json-formatter">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
-  <link rel="preload" href="/components/navbar.html" as="fetch" type="text/html" crossorigin>
-  <link rel="preload" href="/components/footer.html" as="fetch" type="text/html" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=20261115">
-  <link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
 
-  <!-- Google tag (gtag.js) -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
- <script>
+
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Logrith">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://logrith.in/es/tool/tools/json-formatter">
+<meta property="og:site_name" content="Logrith">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Formatee, valide y minimice JSON al instante | Logrith">
+<meta name="twitter:description" content="Pegue el JSON para darle formato con la indentación adecuada, validar su sintaxis con la ubicación exacta de los errores o reducirlo a una sola línea.">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0D0D0D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
+<link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261115">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+<script>
    window.dataLayer = window.dataLayer || [];
    function gtag(){dataLayer.push(arguments);}
    gtag('js', new Date());
 
    gtag('config', 'G-BPJ4332XJH');
  </script>
- 
-  <meta name="keywords" content="json formatter, json validator, json beautifier, format json online, json pretty print, json minify">
-  <meta property="og:title" content="Format, Validate and Minify JSON Instantly | Logrith">
-  <meta property="og:description" content="Paste JSON to beautify it with proper indentation, validate its syntax with exact error locations, or minify it to one line.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://logrith.in/tool/tools/json-formatter">
-  <meta property="og:site_name" content="Logrith">
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}
-  </script>
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "WebApplication", "name": "JSON Formatter", "url": "https://logrith.in/tool/tools/json-formatter", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript and a modern web browser", "description": "Format, validate, beautify and minify JSON online for free. Instant JSON syntax checker with error highlighting. No install required.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}
-  </script>
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Developer Tools", "item": "https://logrith.in/tool/categories/developer-tools"}, {"@type": "ListItem", "position": 4, "name": "JSON Formatter", "item": "https://logrith.in/tool/tools/json-formatter"}]}
-  </script>
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I format JSON online?", "acceptedAnswer": {"@type": "Answer", "text": "Paste your JSON into the input box and the tool will validate it and display a cleanly indented, readable version."}}, {"@type": "Question", "name": "Does it validate JSON syntax?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, it detects syntax errors such as missing commas or unclosed brackets and reports them."}}, {"@type": "Question", "name": "Can I minify JSON as well?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, you can compress JSON by removing whitespace, which reduces file size."}}, {"@type": "Question", "name": "Is my JSON data sent to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No, formatting runs entirely in your browser."}}]}
-  </script>
+<meta name="keywords" content="json formatter, json validator, json beautifier, format json online, json pretty print, json minify">
+<meta property="og:title" content="Formatee, valide y minimice JSON al instante | Logrith">
+<meta property="og:description" content="Pegue el JSON para darle formato con la indentación adecuada, validar su sintaxis con la ubicación exacta de los errores o reducirlo a una sola línea.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://logrith.in/es/tool/tools/json-formatter">
+<meta property="og:site_name" content="Logrith">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Formateador JSON", "url": "https://logrith.in/es/tool/tools/json-formatter", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript and a modern web browser", "description": "Formatea, valida, embellece y minimiza JSON en línea gratis. Verificador de sintaxis JSON instantáneo con resaltado de errores. No requiere instalación.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Hogar", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas para desarrolladores", "item": "https://logrith.in/es/tool/categories/developer-tools"}, {"@type": "ListItem", "position": 4, "name": "Formateador JSON", "item": "https://logrith.in/es/tool/tools/json-formatter"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cómo formateo JSON en línea?", "acceptedAnswer": {"@type": "Answer", "text": "Pega tu JSON en el cuadro de entrada y la herramienta lo validará y mostrará una versión legible y con sangría limpia."}}, {"@type": "Question", "name": "¿Valida la sintaxis JSON?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, detecta errores de sintaxis, como comas faltantes o paréntesis sin cerrar, y los reporta."}}, {"@type": "Question", "name": "¿También puedo minificar JSON?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, puedes comprimir JSON eliminando los espacios en blanco, lo que reduce el tamaño del archivo."}}, {"@type": "Question", "name": "¿Mis datos JSON se envían a un servidor?", "acceptedAnswer": {"@type": "Answer", "text": "No, el formato se ejecuta completamente en tu navegador."}}]}</script>
 </head>
 <body class="page-json-formatter">
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main">Saltar al contenido</a>
 <div id="navbar"></div>
-
 <main id="main">
-
 <header class="page-hero"><div class="page-hero-inner">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/tool/">Tools</a> › <a href="/tool/categories/developer-tools">Developer Tools</a> › JSON Formatter</nav>
-  <h1>Free JSON Formatter &amp; Validator</h1>
-  <p>Instantly format, beautify, validate, and minify JSON. Detects errors with line numbers. Works completely offline in your browser.</p>
-  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Real-time</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#search"></use></svg> Validates JSON</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy Output</span></div>
+<nav class="breadcrumb" aria-label="Migaja de pan"><a href="/es/">Inicio</a> › <a href="/es/tool/">Herramientas</a> › <a href="/es/tool/categories/developer-tools">Herramientas para desarrolladores</a> › Formateador JSON</nav>
+<h1>Formateador y validador JSON gratuito</h1>
+<p>Formatea, embellece, valida y minimiza JSON al instante. Detecta errores con números de línea. Funciona completamente sin conexión en tu navegador.</p>
+<div class="tag-list"><span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Gratis</span> <span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#zap"></use></svg> En tiempo real</span> <span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#search"></use></svg> Valida JSON</span> <span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#copy"></use></svg> Copiar salida</span></div>
 </div></header>
-
 <div class="tool-workspace">
-  <div class="tool-card">
-    <h2>JSON Input &amp; Output</h2>
-    <div class="btn-group u-617963">
-      <button class="btn btn-primary" id="format-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#sparkles"></use></svg> Format / Beautify</button>
-      <button class="btn btn-secondary" id="minify-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Minify</button>
-      <button class="btn btn-secondary" id="validate-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Validate Only</button>
-      <button class="btn btn-secondary" id="clear-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Clear</button>
-      <button class="btn btn-secondary" id="sample-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Load Sample</button>
-    </div>
-
-    <div class="two-col">
-      <div>
-        <label class="u-8eb637">Input JSON</label>
-        <div class="editor-wrap">
-          <textarea id="json-input" spellcheck="false" placeholder='Paste your JSON here...&#10;&#10;{"name":"Logrith","tools":160,"free":true}'></textarea>
-        </div>
-      </div>
-      <div>
-        <label class="u-8eb637">Output</label>
-        <div class="editor-wrap relative">
-          <textarea id="json-output" spellcheck="false" readonly placeholder="Formatted JSON will appear here..."></textarea>
-          <button class="copy-btn" id="copy-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="status-msg mt-12" id="status-msg"></div>
-    <div class="json-stats mt-12" id="json-stats"></div>
-  </div>
-
-  <div class="tool-card">
-    <h2>Indentation &amp; Options</h2>
-    <div class="controls-grid">
-      <div class="control-group">
-        <label>Indent Style</label>
-        <select id="indent-style">
-          <option value="2">2 Spaces</option>
-          <option value="4">4 Spaces</option>
-          <option value="tab">Tab</option>
-        </select>
-      </div>
-      <div class="control-group">
-        <label>Sort Keys</label>
-        <select id="sort-keys">
-          <option value="no">No</option>
-          <option value="asc">A → Z</option>
-          <option value="desc">Z → A</option>
-        </select>
-      </div>
-    </div>
-  </div>
+<div class="tool-card">
+<h2>Entrada y salida JSON</h2>
+<div class="btn-group u-617963">
+<button class="btn btn-primary" id="format-btn"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#sparkles"></use></svg> Formatear / Embellecer</button> <button class="btn btn-secondary" id="minify-btn"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#zap"></use></svg> Minimizar</button> <button class="btn btn-secondary" id="validate-btn"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Validar solamente</button> <button class="btn btn-secondary" id="clear-btn"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#close"></use></svg> Borrar</button> <button class="btn btn-secondary" id="sample-btn"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#copy"></use></svg> Cargar muestra</button>
 </div>
-
+<div class="two-col">
+<div>
+<label class="u-8eb637">Entrada JSON</label>
+<div class="editor-wrap">
+<textarea id="json-input" spellcheck="false" placeholder='Pega tu JSON aquí... {"name":"Logrith","tools":160,"free":true}'></textarea>
+</div>
+</div>
+<div>
+<label class="u-8eb637">Producción</label>
+<div class="editor-wrap relative">
+<textarea id="json-output" placeholder="Formatted JSON will appear here..." readonly="" spellcheck="false"></textarea> <button class="copy-btn" id="copy-btn"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#copy"></use></svg> Copia</button>
+</div>
+</div>
+</div>
+<div class="status-msg mt-12" id="status-msg"></div>
+<div class="json-stats mt-12" id="json-stats"></div>
+</div>
+<div class="tool-card">
+<h2>Sangría y opciones</h2>
+<div class="controls-grid">
+<div class="control-group">
+<label>Estilo de sangría</label><select id="indent-style"><option value="2"> 2 espacios</option><option value="4"> 4 espacios</option><option value="tab"> Pestaña</option></select>
+</div>
+<div class="control-group">
+<label>Claves de ordenación</label><select id="sort-keys"><option value="no"> No</option><option value="asc"> A → Z</option><option value="desc"> Z → A</option></select>
+</div>
+</div>
+</div>
+</div>
 <section class="page-section">
-  <h2>Related Dev Tools</h2>
-  <div class="related-grid">
-    <a class="related-card" href="/tool/tools/unix-timestamp-converter"><strong>Unix Timestamp Converter</strong><span>Epoch to date, seconds and ms.</span></a>
-    <a class="related-card" href="/tool/tools/json-csv-converter"><strong>JSON ⇄ CSV Converter</strong><span>Flatten nested JSON, both ways.</span></a>
-    <a class="related-card" href="base64"><i class="related-icon" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lock"></use></svg></i><div><strong>Base64 Encode/Decode</strong><span>Encode text or files to Base64</span></div></a>
-    <a class="related-card" href="url-encoder"><i class="related-icon" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#link"></use></svg></i><div><strong>URL Encoder</strong><span>Encode/decode URLs</span></div></a>
-    <a class="related-card" href="hash-generator"><i class="related-icon" aria-hidden="true">#</i><div><strong>Hash Generator</strong><span>MD5, SHA1, SHA256</span></div></a>
-    <a class="related-card" href="password-generator"><i class="related-icon" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#key"></use></svg></i><div><strong>Password Generator</strong><span>Strong random passwords</span></div></a>
-  </div>
+<h2>Herramientas de desarrollo relacionadas</h2>
+<div class="related-grid">
+<a class="related-card" href="/es/tool/tools/unix-timestamp-converter"><strong>Convertidor de marcas de tiempo Unix:</strong> <span>de época a fecha, segundos y milisegundos.</span></a>
+<a class="related-card" href="/es/tool/tools/json-csv-converter"><strong>Convertidor JSON ⇄ CSV</strong> <span>Aplana JSON anidado, en ambos sentidos.</span></a>
+<a class="related-card" href="base64"><i class="related-icon" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lock"></use></svg></i><div><strong>Codificación/decodificación Base64</strong> <span>Codifica texto o archivos a Base64.</span></div></a>
+<a class="related-card" href="url-encoder"><i class="related-icon" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#link"></use></svg></i><div><strong>Codificador de URL:</strong> <span>codifica/descodifica URL</span></div></a>
+<a class="related-card" href="hash-generator"><i class="related-icon" aria-hidden="true">#</i><div><strong>Generador de hashes</strong> <span>MD5, SHA1, SHA256</span></div></a>
+<a class="related-card" href="password-generator"><i class="related-icon" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#key"></use></svg></i><div><strong>Generador de contraseñas</strong> <span>Contraseñas aleatorias seguras</span></div></a>
+</div>
 </section>
-
 <section class="page-section">
-  <h2>Frequently Asked Questions</h2>
-  <div class="faq-list">
-    <details class="faq-item">
-      <summary class="faq-q">What is JSON formatting?</summary>
-      <div class="faq-a"><p>JSON formatting (beautifying) adds proper indentation and line breaks to make compact JSON human-readable. Minifying does the reverse — removes all whitespace to reduce file size.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">How does the JSON validator work?</summary>
-      <div class="faq-a"><p>The tool uses JavaScript's built-in JSON.parse() to validate your JSON. If there's a syntax error, it shows the exact error message including the character position where parsing failed.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Is my JSON data safe?</summary>
-      <div class="faq-a"><p>Completely safe. All processing is done in your browser using JavaScript. No data is sent to any server.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Can I sort JSON keys alphabetically?</summary>
-      <div class="faq-a"><p>Yes! Use the "Sort Keys" option to sort all keys in the JSON object alphabetically in ascending (A→Z) or descending (Z→A) order.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">What causes most JSON syntax errors?</summary>
-      <div class="faq-a"><p>The most common issues are trailing commas after the last item in an object or array, missing quotes around keys, using single quotes instead of double quotes, and unescaped special characters inside strings.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Can I minify JSON as well as format it?</summary>
-      <div class="faq-a"><p>Yes, the tool works in both directions — beautify compact JSON into readable, indented form, or minify readable JSON down to a single compact line with no extra whitespace.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Does this tool support nested JSON structures?</summary>
-      <div class="faq-a"><p>Yes, it handles deeply nested objects and arrays of any depth, correctly indenting each level so the structure stays readable no matter how complex the JSON is.</p></div>
-    </details>
-  </div>
+<h2>Preguntas frecuentes</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary class="faq-q">¿Qué es el formato JSON?</summary>
+<div class="faq-a"><p>El formato JSON (embellecimiento) añade la sangría y los saltos de línea adecuados para que el JSON compacto sea legible para los humanos. La minimización hace lo contrario: elimina todos los espacios en blanco para reducir el tamaño del archivo.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Cómo funciona el validador JSON?</summary>
+<div class="faq-a"><p>Esta herramienta utiliza la función JSON.parse() integrada de JavaScript para validar el JSON. Si hay un error de sintaxis, muestra el mensaje de error exacto, incluyendo la posición del carácter donde falló el análisis.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Mis datos JSON son seguros?</summary>
+<div class="faq-a"><p>Totalmente seguro. Todo el procesamiento se realiza en tu navegador mediante JavaScript. No se envía ningún dato a ningún servidor.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Puedo ordenar las claves JSON alfabéticamente?</summary>
+<div class="faq-a"><p>¡Sí! Utilice la opción "Ordenar claves" para ordenar todas las claves del objeto JSON alfabéticamente en orden ascendente (A→Z) o descendente (Z→A).</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Qué causa la mayoría de los errores de sintaxis JSON?</summary>
+<div class="faq-a"><p>Los problemas más comunes son las comas al final del último elemento de un objeto o matriz, la falta de comillas alrededor de las claves, el uso de comillas simples en lugar de comillas dobles y los caracteres especiales sin escape dentro de las cadenas.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Puedo minimizar JSON además de formatearlo?</summary>
+<div class="faq-a"><p>Sí, la herramienta funciona en ambas direcciones: embellece el JSON compacto para convertirlo en un formato legible y con sangría, o minimiza el JSON legible hasta convertirlo en una sola línea compacta sin espacios en blanco adicionales.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Esta herramienta admite estructuras JSON anidadas?</summary>
+<div class="faq-a"><p>Sí, maneja objetos y matrices anidados en profundidad de cualquier nivel, aplicando la sangría correcta a cada nivel para que la estructura siga siendo legible, independientemente de la complejidad del JSON.</p></div>
+</details>
+</div>
 </section>
-
 <section class="page-section prose">
-  <h2>About the JSON Formatter Tool</h2>
-  <p>The Logrith JSON Formatter beautifies, validates, minifies, and sorts JSON data instantly in your browser. Paste in compact or malformed JSON and get back properly indented, readable output — or catch a syntax error with the exact character position where parsing failed. This is one of the most frequently needed tools for anyone working with APIs, configuration files, or structured data.</p>
-
-  <p>JSON (JavaScript Object Notation) is the most widely used format for exchanging structured data between systems, especially in web APIs. In its raw form, especially when returned by an API without formatting, JSON often arrives as one long unbroken line of text — technically valid but nearly impossible to read or debug by eye. This tool adds proper indentation and line breaks, turning that dense block into a clearly structured, nested view that's easy to scan and understand.</p>
-
-  <h3>Core Functions This Tool Provides</h3>
-  <ul>
-    <li><strong>Beautify (format).</strong> Adds indentation and line breaks to compact JSON, making nested objects and arrays easy to read and navigate visually.</li>
-    <li><strong>Minify.</strong> Removes all unnecessary whitespace, producing the smallest possible valid JSON string — useful for reducing payload size before sending data over a network.</li>
-    <li><strong>Validate.</strong> Checks whether the JSON is syntactically correct, and if not, reports exactly where and why parsing failed.</li>
-    <li><strong>Sort keys.</strong> Reorders object keys alphabetically, which can make it easier to compare two JSON objects or find a specific field in a large structure.</li>
-  </ul>
-
-  <h3>Common JSON Syntax Errors and How to Spot Them</h3>
-  <p>JSON has a stricter syntax than JavaScript object literals, and the differences trip people up constantly. A trailing comma after the last item in an object or array — valid in some JavaScript contexts — is invalid in strict JSON and will cause a parse error. Keys must always be wrapped in double quotes, never single quotes or left unquoted, even though unquoted keys are valid in plain JavaScript objects. String values must also use double quotes, not single quotes. Special characters inside strings, like a literal quote mark or newline, need to be escaped properly or they'll break the surrounding string. This tool's validator catches all of these issues and reports the exact position where the problem occurs, saving you from manually scanning through a long JSON blob looking for a single misplaced comma.</p>
-
-  <h3>Why Readable Formatting Matters</h3>
-  <p>Beyond simply looking nicer, properly formatted JSON is significantly easier to debug. When an API response or configuration file is returned as one dense line, finding a specific field, understanding the nesting structure, or spotting a missing value means scrolling through a wall of text character by character. Formatted JSON, with each key-value pair on its own indented line, lets you visually trace the structure — which object a field belongs to, how deeply nested an array is, where one object ends and another begins — at a glance.</p>
-
-  <h3>When to Minify Instead of Format</h3>
-  <p>While formatted JSON is better for human reading, minified JSON has its own purpose: reducing file size. When JSON is being sent over a network — as an API request or response, or embedded in a web page — every unnecessary whitespace character adds to the payload size and, at scale, to bandwidth and loading time. Minifying strips all of that extra whitespace while keeping the data itself completely unchanged, producing a smaller file that parses identically to the formatted version. Development and debugging typically call for formatted JSON; production and network transfer typically call for minified JSON.</p>
-
-  <h3>Step-by-Step: How to Format JSON</h3>
-  <ol class="steps">
-    <li class="step">
-      <strong>Paste your JSON</strong>
-      <p>Enter or paste your raw JSON data into the input field.</p>
-    </li>
-    <li class="step">
-      <strong>Choose an action</strong>
-      <p>Select Beautify, Minify, or Sort Keys depending on what you need.</p>
-    </li>
-    <li class="step">
-      <strong>Review the output</strong>
-      <p>Check the formatted result, or read the error message if validation failed.</p>
-    </li>
-    <li class="step">
-      <strong>Copy the result</strong>
-      <p>Copy the processed JSON to use in your project, API testing tool, or documentation.</p>
-    </li>
-  </ol>
-
-  <h3>Privacy</h3>
-  <p>All JSON processing happens locally in your browser using JavaScript's built-in JSON.parse() and JSON.stringify() functions — your data is never uploaded to a server or stored anywhere. This makes the tool safe to use with JSON containing API keys, internal configuration, or other sensitive structured data.</p>
-
-  <h3>Why Key Sorting Can Help With Comparisons</h3>
-  <p>When two JSON objects contain the same data but their keys are in a different order, a plain text comparison will flag them as different even though they're functionally identical. Sorting keys alphabetically before comparing removes this ordering noise, making it much easier to spot genuine differences between two JSON payloads — for example, when debugging why an API response doesn't match an expected test fixture, or when comparing two versions of a configuration file that were edited independently.</p>
+<h2>Acerca de la herramienta de formateo JSON</h2>
+<p>El formateador JSON Logrith embellece, valida, minimiza y ordena datos JSON al instante en tu navegador. Pega JSON compacto o con formato incorrecto y obtén una salida legible y con la indentación correcta, o detecta un error de sintaxis con la posición exacta del carácter donde falló el análisis. Esta es una de las herramientas más necesarias para quienes trabajan con API, archivos de configuración o datos estructurados.</p>
+<p>JSON (JavaScript Object Notation) es el formato más utilizado para el intercambio de datos estructurados entre sistemas, especialmente en las API web. En su forma original, sobre todo cuando una API lo devuelve sin formato, JSON suele aparecer como una larga línea de texto continua, técnicamente válida pero prácticamente imposible de leer o depurar a simple vista. Esta herramienta añade la indentación y los saltos de línea adecuados, transformando ese bloque denso en una vista anidada y claramente estructurada, fácil de escanear y comprender.</p>
+<h3>Funciones principales que ofrece esta herramienta</h3>
+<ul>
+<li><strong>Embellecer (formato).</strong> Agrega sangría y saltos de línea a JSON compacto, lo que facilita la lectura y la navegación visual de objetos y matrices anidados.</li>
+<li><strong>Minimizar.</strong> Elimina todos los espacios en blanco innecesarios, produciendo la cadena JSON válida más pequeña posible; útil para reducir el tamaño de la carga útil antes de enviar datos a través de una red.</li>
+<li><strong>Validar.</strong> Comprueba si el JSON es sintácticamente correcto y, si no lo es, informa exactamente dónde y por qué falló el análisis.</li>
+<li><strong>Ordenar claves.</strong> Reordena alfabéticamente las claves de los objetos, lo que puede facilitar la comparación de dos objetos JSON o la búsqueda de un campo específico en una estructura grande.</li>
+</ul>
+<h3>Errores comunes de sintaxis JSON y cómo detectarlos</h3>
+<p>JSON tiene una sintaxis más estricta que los literales de objetos de JavaScript, y estas diferencias suelen causar confusión. Una coma al final de un objeto o array —válida en algunos contextos de JavaScript— no es válida en JSON estricto y provocará un error de análisis. Las claves siempre deben ir entre comillas dobles, nunca entre comillas simples ni sin comillas, aunque las claves sin comillas sean válidas en objetos JavaScript simples. Los valores de cadena también deben usar comillas dobles, no simples. Los caracteres especiales dentro de las cadenas, como las comillas literales o los saltos de línea, deben escaparse correctamente o romperán la cadena circundante. El validador de esta herramienta detecta todos estos problemas e informa la posición exacta donde se produce el error, evitando que tengas que revisar manualmente un extenso JSON en busca de una sola coma mal colocada.</p>
+<h3>Por qué es importante un formato legible</h3>
+<p>Además de tener una apariencia más agradable, el formato JSON correcto facilita considerablemente la depuración. Cuando una respuesta de API o un archivo de configuración se devuelve como una sola línea densa, encontrar un campo específico, comprender la estructura de anidamiento o detectar un valor faltante implica desplazarse por un texto interminable carácter por carácter. El formato JSON, con cada par clave-valor en su propia línea con sangría, permite visualizar la estructura —a qué objeto pertenece un campo, cuán anidado está un array, dónde termina un objeto y comienza otro— de un vistazo.</p>
+<h3>Cuándo minimizar en lugar de formatear.</h3>
+<p>Si bien el JSON formateado facilita la lectura humana, el JSON minificado tiene su propia finalidad: reducir el tamaño del archivo. Al enviar JSON a través de una red —ya sea como solicitud o respuesta de una API, o integrado en una página web—, cada espacio en blanco innecesario aumenta el tamaño de la carga útil y, a gran escala, el ancho de banda y el tiempo de carga. La minificación elimina todos esos espacios en blanco adicionales sin alterar los datos, lo que produce un archivo más pequeño que se analiza de forma idéntica a la versión formateada. El desarrollo y la depuración suelen requerir JSON formateado; la producción y la transferencia de red suelen requerir JSON minificado.</p>
+<h3>Paso a paso: Cómo formatear JSON</h3>
+<ol class="steps">
+<li class="step">
+<strong>Pega tu JSON</strong>
+<p>Introduzca o pegue sus datos JSON sin procesar en el campo de entrada.</p>
+</li>
+<li class="step">
+<strong>Elige una acción</strong>
+<p>Seleccione Embellecer, Minimizar u Ordenar Claves según lo que necesite.</p>
+</li>
+<li class="step">
+<strong>Revisar el resultado</strong>
+<p>Compruebe el resultado formateado o lea el mensaje de error si la validación ha fallado.</p>
+</li>
+<li class="step">
+<strong>Copia el resultado</strong>
+<p>Copia el JSON procesado para usarlo en tu proyecto, herramienta de prueba de API o documentación.</p>
+</li>
+</ol>
+<h3>Privacidad</h3>
+<p>Todo el procesamiento de JSON se realiza localmente en tu navegador mediante las funciones integradas de JavaScript JSON.parse() y JSON.stringify(). Tus datos nunca se suben a un servidor ni se almacenan en ningún lugar. Esto hace que la herramienta sea segura para usar con JSON que contenga claves de API, configuración interna u otros datos estructurados confidenciales.</p>
+<h3>Por qué la clasificación por claves puede ayudar con las comparaciones</h3>
+<p>Cuando dos objetos JSON contienen los mismos datos, pero sus claves están en un orden diferente, una comparación de texto plano los marcará como distintos, aunque sean funcionalmente idénticos. Ordenar las claves alfabéticamente antes de compararlas elimina este problema de ordenación, lo que facilita la detección de diferencias reales entre dos cargas útiles JSON; por ejemplo, al depurar por qué una respuesta de API no coincide con un conjunto de datos de prueba esperado, o al comparar dos versiones de un archivo de configuración que se editaron de forma independiente.</p>
 </section>
-
 <section class="page-section">
-  <h2>Related Tools</h2>
-  <div class="related-grid">
-    <a class="related-card" href="/tool/tools/yaml-json-converter"><strong>YAML to JSON Converter</strong><span>Convert between YAML and JSON formats instantly.</span></a>
-    <a class="related-card" href="/tool/tools/xml-formatter"><strong>XML Formatter</strong><span>Format and validate XML documents.</span></a>
-    <a class="related-card" href="/tool/tools/js-minifier"><strong>JS Minifier</strong><span>Minify JavaScript code to reduce file size.</span></a>
-    <a class="related-card" href="/tool/tools/jwt-decoder"><strong>JWT Decoder</strong><span>Decode and inspect JSON Web Tokens instantly.</span></a>
-  </div>
+<h2>Herramientas relacionadas</h2>
+<div class="related-grid">
+<a class="related-card" href="/es/tool/tools/yaml-json-converter"><strong>Convertidor de YAML a JSON:</strong> <span>Convierte instantáneamente entre formatos YAML y JSON.</span></a> <a class="related-card" href="/es/tool/tools/xml-formatter"><strong>Formateador XML:</strong> <span>Formatea y valida documentos XML.</span></a> <a class="related-card" href="/es/tool/tools/js-minifier"><strong>Minificador de JS:</strong> <span>Minimiza el código JavaScript para reducir el tamaño del archivo.</span></a> <a class="related-card" href="/es/tool/tools/jwt-decoder"><strong>Decodificador JWT:</strong> <span>Decodifica e inspecciona los tokens web JSON al instante.</span></a>
+</div>
 </section>
-
 <section class="page-section">
-  <h2>Popular Searches</h2>
-  <div class="keyword-box">
-    <span class="keyword-tag">json formatter online</span>
-    <span class="keyword-tag">json validator free</span>
-    <span class="keyword-tag">json beautifier</span>
-    <span class="keyword-tag">minify json online</span>
-    <span class="keyword-tag">json pretty print</span>
-    <span class="keyword-tag">json syntax checker</span>
-    <span class="keyword-tag">format json online free</span>
-    <span class="keyword-tag">json viewer online</span>
-  </div>
+<h2>Búsquedas populares</h2>
+<div class="keyword-box">
+<span class="keyword-tag">formateador de JSON en línea</span> <span class="keyword-tag">validador de JSON gratuito</span> <span class="keyword-tag">embellecedor de JSON</span> <span class="keyword-tag">minificar JSON en línea</span> <span class="keyword-tag">impresión bonita de JSON</span> <span class="keyword-tag">verificador de sintaxis de JSON</span> <span class="keyword-tag">formatear JSON en línea gratuito</span> <span class="keyword-tag">visor de JSON en línea</span>
+</div>
 </section>
-
 </main>
-
 <div id="footer"></div>
 <script src="/assets/js/main.js?v=20261115"></script>
-
-
 <script>
 const jsonInput = document.getElementById('json-input');
 const jsonOutput = document.getElementById('json-output');

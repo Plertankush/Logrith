@@ -1,87 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eliminar URL duplicadas de una lista al instante | Logrith</title>
+<meta name="description" content="Pegue una lista de URL para eliminar duplicados exactos y casi duplicados causados ​​por parámetros de seguimiento, barras diagonales al final o diferencias de mayúsculas y minúsculas.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Logrith">
+<link rel="canonical" href="https://logrith.in/es/tool/tools/url-deduplicator">
+  <link rel="alternate" hreflang="x-default" href="https://logrith.in/tool/tools/url-deduplicator">
+  <link rel="alternate" hreflang="es" href="https://logrith.in/es/tool/tools/url-deduplicator">
+  <link rel="alternate" hreflang="en" href="https://logrith.in/tool/tools/url-deduplicator">
 
-  <title>Remove Duplicate URLs From a List Instantly | Logrith</title>
-  <meta name="description" content="Paste a list of URLs to strip exact duplicates and near-duplicates caused by tracking parameters, trailing slashes or case differences.">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="author" content="Logrith">
-  <link rel="canonical" href="https://logrith.in/tool/tools/url-deduplicator">
 
-  <meta property="og:title" content="Remove Duplicate URLs From a List Instantly | Logrith">
-  <meta property="og:description" content="Paste a list of URLs to strip exact duplicates and near-duplicates caused by tracking parameters, trailing slashes or case differences.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://logrith.in/tool/tools/url-deduplicator">
-  <meta property="og:site_name" content="Logrith">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Remove Duplicate URLs From a List Instantly | Logrith">
-  <meta name="twitter:description" content="Paste a list of URLs to strip exact duplicates and near-duplicates caused by tracking parameters, trailing slashes or case differences.">
-
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#0D0D0D">
-
-  <meta name="keywords" content="url deduplicator, remove duplicate urls, normalize urls online, dedupe links, remove utm parameters, clean url list, url list cleaner">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
-  <link rel="preload" href="/components/navbar.html" as="fetch" type="text/html" crossorigin>
-  <link rel="preload" href="/components/footer.html" as="fetch" type="text/html" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=20261115">
-  <link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"SoftwareApplication",
-    "name":"Logrith URL Deduplicator",
-    "url":"https://logrith.in/tool/tools/url-deduplicator",
-    "applicationCategory":"UtilitiesApplication",
-    "operatingSystem":"Web Browser",
-    "description":"Browser-based tool that extracts URLs from pasted text, removes exact and near-duplicate URLs using the native URL parser, and outputs a clean, sorted list, without uploading data to a server.",
-    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
-    "featureList":[
-      "Extract URLs from pasted text",
-      "Remove exact duplicate URLs",
-      "Ignore trailing slash differences",
-      "Ignore hostname case differences",
-      "Ignore www prefix differences",
-      "Strip common tracking parameters",
-      "Ignore URL fragments",
-      "Treat http and https as equivalent (optional)",
-      "Sort alphabetically or keep original order",
-      "Copy or download the cleaned list",
-      "100% local browser processing"
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Global Tools", "item": "https://logrith.in/tool/categories/global-tools"}, {"@type": "ListItem", "position": 4, "name": "URL Deduplicator", "item": "https://logrith.in/tool/tools/url-deduplicator"}]}
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"What counts as a duplicate URL?","acceptedAnswer":{"@type":"Answer","text":"An exact duplicate is a byte-for-byte identical URL string. A near-duplicate is a URL that points to the same resource but differs in formatting — a trailing slash, hostname case, a www prefix, a tracking parameter, or a fragment. You choose which of these differences to treat as duplicates using the normalization options."}},
-      {"@type":"Question","name":"Does this tool remove tracking parameters from every URL?","acceptedAnswer":{"@type":"Answer","text":"Only when you enable that option, and only for a fixed list of known tracking parameters such as utm_source, utm_medium, utm_campaign, fbclid, and gclid. Unrecognized query parameters are left untouched because they may affect which page or content is actually returned."}},
-      {"@type":"Question","name":"Will this tool treat http and https versions of the same URL as duplicates?","acceptedAnswer":{"@type":"Answer","text":"Only if you turn on the 'Treat http and https as equivalent' option, which is off by default. Many sites serve different content or redirect behavior on http versus https, so this tool does not assume they are the same unless you say so."}},
-      {"@type":"Question","name":"Does this tool upload my URL list anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Extraction, parsing, normalization, and deduplication all run locally in your browser using JavaScript and the browser's built-in URL parser. Nothing is sent to a server."}},
-      {"@type":"Question","name":"What happens to text that isn't a valid URL?","acceptedAnswer":{"@type":"Answer","text":"The tool extracts URL-shaped substrings from your pasted text using a pattern match, then attempts to parse each one with the browser's URL API. Anything that fails to parse as a URL is excluded from the cleaned list and counted separately so you can see how many entries were skipped."}}
-    ]
-  }
-  </script>
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
-  <script>
+<meta property="og:title" content="Eliminar URL duplicadas de una lista al instante | Logrith">
+<meta property="og:description" content="Pegue una lista de URL para eliminar duplicados exactos y casi duplicados causados ​​por parámetros de seguimiento, barras diagonales al final o diferencias de mayúsculas y minúsculas.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://logrith.in/es/tool/tools/url-deduplicator">
+<meta property="og:site_name" content="Logrith">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Eliminar URL duplicadas de una lista al instante | Logrith">
+<meta name="twitter:description" content="Pegue una lista de URL para eliminar duplicados exactos y casi duplicados causados ​​por parámetros de seguimiento, barras diagonales al final o diferencias de mayúsculas y minúsculas.">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0D0D0D">
+<meta name="keywords" content="url deduplicator, remove duplicate urls, normalize urls online, dedupe links, remove utm parameters, clean url list, url list cleaner">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
+<link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261115">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Logrith Deduplicador de URL", "url": "https://logrith.in/es/tool/tools/url-deduplicator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web Browser", "description": "Herramienta basada en navegador que extrae las URL del texto pegado, elimina las URL exactas y casi duplicadas mediante el analizador de URL nativo y genera una lista limpia y ordenada, sin necesidad de subir datos a un servidor.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": ["Extract URLs from pasted text", "Remove exact duplicate URLs", "Ignore trailing slash differences", "Ignore hostname case differences", "Ignore www prefix differences", "Strip common tracking parameters", "Ignore URL fragments", "Treat http and https as equivalent (optional)", "Sort alphabetically or keep original order", "Copy or download the cleaned list", "100% local browser processing"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Hogar", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas globales", "item": "https://logrith.in/es/tool/categories/global-tools"}, {"@type": "ListItem", "position": 4, "name": "Deduplicador de URL", "item": "https://logrith.in/es/tool/tools/url-deduplicator"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Qué se considera una URL duplicada?", "acceptedAnswer": {"@type": "Answer", "text": "Una URL idéntica, byte a byte, es una copia exacta. Una URL casi idéntica es aquella que apunta al mismo recurso, pero difiere en el formato: una barra diagonal al final, mayúsculas y minúsculas en el nombre de host, el prefijo www, un parámetro de seguimiento o un fragmento. Puedes elegir cuáles de estas diferencias tratar como duplicados mediante las opciones de normalización."}}, {"@type": "Question", "name": "¿Esta herramienta elimina los parámetros de seguimiento de todas las URL?", "acceptedAnswer": {"@type": "Answer", "text": "Solo cuando actives esa opción, y únicamente para una lista fija de parámetros de seguimiento conocidos, como utm_source, utm_medium, utm_campaign, fbclid y gclid. Los parámetros de consulta no reconocidos no se modifican, ya que podrían afectar a la página o el contenido que se devuelve."}}, {"@type": "Question", "name": "¿Esta herramienta tratará como duplicados las versiones http y https de la misma URL?", "acceptedAnswer": {"@type": "Answer", "text": "Solo si activas la opción \"Tratar http y https como equivalentes\", que está desactivada por defecto. Muchos sitios web ofrecen contenido o redireccionamientos diferentes en http y https, por lo que esta herramienta no los considera iguales a menos que tú lo indiques."}}, {"@type": "Question", "name": "¿Esta herramienta sube mi lista de URL a algún sitio?", "acceptedAnswer": {"@type": "Answer", "text": "No. La extracción, el análisis, la normalización y la eliminación de duplicados se ejecutan localmente en su navegador mediante JavaScript y el analizador de URL integrado del navegador. No se envía nada a un servidor."}}, {"@type": "Question", "name": "¿Qué ocurre con un texto que no es una URL válida?", "acceptedAnswer": {"@type": "Answer", "text": "La herramienta extrae subcadenas con formato de URL del texto que has pegado mediante una coincidencia de patrones, y luego intenta analizar cada una con la API de URL del navegador. Cualquier elemento que no se pueda analizar como una URL se excluye de la lista depurada y se cuenta por separado para que puedas ver cuántas entradas se omitieron."}}]}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+<script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -90,202 +49,169 @@
 </head>
 <body class="page-url-deduplicator">
 <div id="navbar"></div>
-
 <main>
-  <header class="page-hero">
-    <div class="page-hero-inner">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="/">Home</a> › <a href="/tool/categories/global-tools">Global Tools</a> › URL Deduplicator
+<header class="page-hero">
+<div class="page-hero-inner">
+<nav class="breadcrumb" aria-label="Migaja de pan">
+<a href="/es/">Inicio</a> › <a href="/es/tool/categories/global-tools">Herramientas globales</a> › Deduplicador de URL
       </nav>
-      <h1>URL Deduplicator – Remove<span> Duplicate &amp; Near-Duplicate</span> Links</h1>
-      <p>Paste a list of URLs and remove exact duplicates plus near-duplicates caused by trailing slashes, case, www, tracking parameters, and fragments — all in your browser.</p>
-      <div class="tag-list">
-        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
-        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#lock"></use></svg> Local Processing</span>
-        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#dedupe"></use></svg> Real URL Parser</span>
-        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#speed"></use></svg> Instant</span>
-      </div>
-    </div>
-  </header>
-
-  <div class="tool-workspace">
-    <div class="tool-card">
-      <h2>Paste Your URL List</h2>
-      <div class="control-group">
-        <label for="url-input">URLs (one per line, or mixed with other text)</label>
-        <textarea class="tool-textarea mono" id="url-input" rows="10" placeholder="https://example.com/blog/post-1&#10;https://example.com/blog/post-1/&#10;https://Example.com/blog/post-1?utm_source=newsletter&#10;http://www.example.com/blog/post-1&#10;not a url&#10;https://example.com/blog/post-2#section"></textarea>
-      </div>
-
-      <h2 class="u-4a909e">Normalization Options</h2>
-      <div class="clean-opts">
-        <div class="clean-opt">
-          <input type="checkbox" id="opt-slash" checked>
-          <div><label for="opt-slash">Ignore trailing slash</label><p>Treats https://example.com/ and https://example.com as the same URL.</p></div>
-        </div>
-        <div class="clean-opt">
-          <input type="checkbox" id="opt-case" checked>
-          <div><label for="opt-case">Ignore hostname case</label><p>Treats HTTPS://Example.com and https://example.com as the same host. Only the scheme and host are case-normalized; the path and query stay exactly as written, since they can be case-sensitive.</p></div>
-        </div>
-        <div class="clean-opt">
-          <input type="checkbox" id="opt-www" checked>
-          <div><label for="opt-www">Ignore "www." prefix</label><p>Treats www.example.com and example.com as the same host.</p></div>
-        </div>
-        <div class="clean-opt">
-          <input type="checkbox" id="opt-tracking" checked>
-          <div><label for="opt-tracking">Strip common tracking parameters</label><p>Removes known tracking parameters only: utm_source, utm_medium, utm_campaign, utm_term, utm_content, fbclid, gclid, ref, mc_cid, mc_eid. Other query parameters are left untouched.</p></div>
-        </div>
-        <div class="clean-opt">
-          <input type="checkbox" id="opt-fragment" checked>
-          <div><label for="opt-fragment">Ignore fragment (#hash)</label><p>Treats https://example.com/page#section and https://example.com/page as the same URL.</p></div>
-        </div>
-        <div class="clean-opt">
-          <input type="checkbox" id="opt-protocol">
-          <div><label for="opt-protocol">Treat http and https as equivalent</label><p>Off by default. Turn this on only if you're confident http and https versions of your URLs serve the same content, since some sites genuinely differ between the two.</p></div>
-        </div>
-      </div>
-
-      <div class="sort-row">
-        <span class="u-6665f4">Output order:</span>
-        <label><input type="radio" name="sort-mode" value="original" checked> Keep original order</label>
-        <label><input type="radio" name="sort-mode" value="alpha"> Sort alphabetically</label>
-      </div>
-
-      <div class="btn-group mt-16">
-        <button class="btn btn-primary" id="dedupe-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#dedupe"></use></svg> Deduplicate URLs</button>
-      </div>
-      <div class="status-msg mt-12" id="status-msg" aria-live="polite"></div>
-    </div>
-
-    <p class="privacy-note">Your URL list is parsed and deduplicated in your browser using the native URL API. Nothing is uploaded to Logrith.</p>
-
-    <div class="tool-card is-hidden" id="summary-card">
-      <h2>Deduplication Summary</h2>
-      <div class="insp-grid" id="summary-grid"></div>
-    </div>
-
-    <div class="tool-card is-hidden" id="result-card">
-      <h2>Cleaned URL List</h2>
-      <div class="url-list-box">
-        <ol id="result-list"></ol>
-      </div>
-      <div class="btn-group mt-16">
-        <button class="btn btn-primary" id="copy-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy List</button>
-        <button class="btn btn-secondary" id="download-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#download"></use></svg> Download .txt</button>
-      </div>
-    </div>
-  </div>
-
-  <section class="page-section">
-    <h2>How to Deduplicate a URL List</h2>
-    <ol class="steps">
-      <li class="step">
-        <p>Paste your list of URLs into the box — one per line, or mixed in with other text; the tool extracts the URLs automatically.</p>
-      </li>
-      <li class="step">
-        <p>Choose which normalization options to apply, based on which formatting differences you want treated as duplicates.</p>
-      </li>
-      <li class="step">
-        <p>Click "Deduplicate URLs" to see the summary: how many URLs were found, how many were exact duplicates, how many were near-duplicates, and how many were unparseable.</p>
-      </li>
-      <li class="step">
-        <p>Review the cleaned list, then copy it or download it as a .txt file.</p>
-      </li>
-    </ol>
-  </section>
-
-  <section class="page-section prose">
-    <h2>What This Tool Detects</h2>
-    <ul>
-      <li><strong>Exact duplicates:</strong> the identical URL string appearing more than once.</li>
-      <li><strong>Trailing slash differences:</strong> a URL with and without a trailing slash after the path.</li>
-      <li><strong>Hostname case differences:</strong> uppercase or mixed-case letters in the scheme or host.</li>
-      <li><strong>www vs non-www:</strong> the same host with and without a leading "www." label.</li>
-      <li><strong>Tracking parameters:</strong> known marketing and analytics parameters appended to an otherwise identical URL.</li>
-      <li><strong>Fragments:</strong> an in-page anchor or router hash appended after a "#".</li>
-      <li><strong>Unparseable entries:</strong> text that looks like it might be a URL but doesn't parse as one, flagged and excluded rather than silently guessed at.</li>
-    </ul>
-  </section>
-
-  <section class="page-section prose">
-    <h2>What Is URL Deduplication?</h2>
-    <p>URL deduplication is the process of taking a list of links and reducing it down to one entry per unique destination. It sounds simple, but "unique" is doing a lot of work in that sentence. A straightforward approach — comparing URL strings character by character — only catches exact duplicates: the same string appearing twice. In practice, most duplicate URLs in a real-world list aren't exact string matches at all. They're near-duplicates: the same underlying page, written slightly differently. <code>https://example.com/pricing</code> and <code>https://example.com/pricing/</code> almost always point to the same page, but as plain text strings they're different. A naive deduplication pass misses that, and a list that should have 500 unique URLs ends up reported as 650.</p>
-
-    <h2>Why Near-Duplicate URLs Happen</h2>
-    <p>Near-duplicates aren't random noise — they come from a handful of predictable sources, and understanding them is what makes a deduplication tool actually useful instead of just a find-and-replace script.</p>
-    <p><strong>Tracking parameters.</strong> Marketing platforms append query parameters to track where a click came from — <code>utm_source</code>, <code>utm_medium</code>, and <code>utm_campaign</code> from Google Analytics campaigns, <code>fbclid</code> from Facebook, <code>gclid</code> from Google Ads, and similar vendor-specific parameters from email platforms and affiliate programs. The same article shared through a newsletter, a tweet, and a paid ad can generate three completely different URL strings that all load the exact same page.</p>
-    <p><strong>Trailing slash inconsistency.</strong> Most web servers treat <code>/about</code> and <code>/about/</code> as the same resource, but whether a given link includes the trailing slash often comes down to which tool generated it — a CMS, a sitemap export, or a hand-typed link — rather than anything meaningful about the destination.</p>
-    <p><strong>www vs non-www.</strong> Many sites serve identical content whether or not a request includes the "www." subdomain, usually because one redirects to the other. A crawler or export tool that doesn't follow redirects before recording a URL will capture both forms as if they were separate pages.</p>
-    <p><strong>http vs https.</strong> Nearly every modern site redirects http requests to https, so the two commonly resolve to the same page — but not always, which is why this tool keeps that normalization optional rather than automatic.</p>
-    <p><strong>Case sensitivity rules.</strong> Per RFC 3986, the scheme and host portions of a URL are case-insensitive — <code>HTTPS://Example.COM</code> and <code>https://example.com</code> are the same authority — but the path, query string, and fragment are generally case-sensitive, since many servers treat <code>/Page</code> and <code>/page</code> as genuinely different resources. This tool respects that distinction: hostname case normalization only touches the scheme and host, never the path or query.</p>
-    <p><strong>URL fragments.</strong> The portion after a "#" was originally meant for in-page anchors, but is now also used heavily by JavaScript-driven single-page applications for client-side routing. In both cases, two URLs that differ only by fragment frequently point to the same server resource, even if the fragment changes what's visible on screen after the page loads.</p>
-
-    <h2>How the Normalization Options Work</h2>
-    <p>Each option targets one specific difference, and they combine: a URL is only treated as a near-duplicate of another if, after applying every option you've enabled, the two normalized forms match exactly. This tool uses the browser's built-in <code>URL</code> API to parse each entry rather than manipulating strings with regular expressions, which avoids subtle bugs around query parameter ordering, encoded characters, default ports, and other edge cases that a hand-rolled string parser tends to get wrong. Tracking-parameter stripping removes only a fixed, known list of parameters — it does not strip every query parameter, because an unrecognized parameter might select a different product variant, language, or page section, and blindly removing it could make two genuinely different pages look identical.</p>
-
-    <h2>Why This Matters</h2>
-    <p>Clean, deduplicated URL lists matter in several recurring situations. <strong>SEO backlink audits</strong> often start with an export from a backlink tool that lists every referring link, including many that are the same page reached through different tracking parameters or trailing-slash variants — deduplicating first gives an accurate count of how many distinct pages actually link to you. <strong>Deduplicating scraped link lists</strong> is routine when building a crawler or collecting links from multiple pages, where the same destination is frequently discovered more than once in slightly different forms. <strong>Cleaning a bookmark export</strong> removes the duplicate entries that accumulate over years of saving the same page from different browsers or sync conflicts. <strong>Preparing a URL list for a sitemap or crawler</strong> benefits from deduplication because submitting near-duplicate URLs to a sitemap can create the appearance of duplicate content, which search engines may interpret as a signal to investigate rather than reward.</p>
-
-    <h2>How to Use This Tool</h2>
-    <p>Paste your list of URLs into the input box — the tool extracts anything URL-shaped from the pasted text, so you can paste a raw list, a block of scraped HTML, or notes with links mixed in among other text. Choose which normalization options match your situation: if you're cleaning backlinks for an SEO audit, keep tracking-parameter stripping and trailing-slash normalization on; if you're auditing redirect behavior and need to know exactly which protocol or case variant was recorded, turn the relevant options off instead. Click "Deduplicate URLs" to see a full breakdown of how many URLs were found, how many were removed as exact duplicates, how many were removed as near-duplicates under your chosen options, and how many entries couldn't be parsed as valid URLs at all. The cleaned list can then be copied directly or downloaded as a plain text file, ready to paste into a spreadsheet, a sitemap generator, or another tool in your workflow.</p>
-
-    <h3>Frequently Searched Terms</h3>
-    <p>People use this tool when searching for phrases like "remove duplicate urls online," "url list deduplicator," "strip utm parameters from urls," "normalize url list," and "clean backlink list free" — this page is built to answer those tasks directly with a working, browser-based tool powered by the real URL parsing API rather than a naive string comparison.</p>
-  </section>
-
-  <section class="page-section">
-    <h2>URL Deduplicator FAQ</h2>
-    <div class="faq-list">
-      <details class="faq-item">
-        <summary class="faq-q">What counts as a duplicate URL?</summary>
-        <div class="faq-a"><p>An exact duplicate is a byte-for-byte identical URL string. A near-duplicate is a URL that points to the same resource but differs in formatting — a trailing slash, hostname case, a www prefix, a tracking parameter, or a fragment. You choose which of these differences to treat as duplicates using the normalization options.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">Does this tool remove tracking parameters from every URL?</summary>
-        <div class="faq-a"><p>Only when you enable that option, and only for a fixed list of known tracking parameters such as utm_source, utm_medium, utm_campaign, fbclid, and gclid. Unrecognized query parameters are left untouched because they may affect which page or content is actually returned.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">Will this tool treat http and https versions of the same URL as duplicates?</summary>
-        <div class="faq-a"><p>Only if you turn on the "Treat http and https as equivalent" option, which is off by default. Many sites serve different content or redirect behavior on http versus https, so this tool does not assume they are the same unless you say so.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">Does this tool upload my URL list anywhere?</summary>
-        <div class="faq-a"><p>No. Extraction, parsing, normalization, and deduplication all run locally in your browser using JavaScript and the browser's built-in URL parser. Nothing is sent to a server.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">What happens to text that isn't a valid URL?</summary>
-        <div class="faq-a"><p>The tool extracts URL-shaped substrings from your pasted text using a pattern match, then attempts to parse each one with the browser's URL API. Anything that fails to parse as a URL is excluded from the cleaned list and counted separately so you can see how many entries were skipped.</p></div>
-      </details>
-    </div>
-  </section>
-
-  <section class="page-section">
-    <h2>Related Tools</h2>
-    <div class="related-grid">
-      <a class="related-card" href="/tool/tools/csv-cleaner"><strong>CSV Cleaner</strong></a>
-      <a class="related-card" href="/tool/tools/json-repair"><strong>JSON Repair Tool</strong></a>
-      <a class="related-card" href="/tool/tools/ai-context-calculator"><strong>AI Token &amp; Context Calculator</strong></a>
-      <a class="related-card" href="/tool/tools/markdown-to-html"><strong>Markdown to HTML Converter</strong></a>
-    </div>
-  </section>
-
-  <section class="page-section">
-    <h2>Top URL Deduplicator Search Queries</h2>
-    <div class="keyword-box">
-      <span class="keyword-tag">url deduplicator online</span>
-      <span class="keyword-tag">remove duplicate urls</span>
-      <span class="keyword-tag">strip utm parameters from url</span>
-      <span class="keyword-tag">normalize url list free</span>
-      <span class="keyword-tag">clean backlink list</span>
-      <span class="keyword-tag">dedupe links tool</span>
-      <span class="keyword-tag">remove tracking parameters url</span>
-    </div>
-  </section>
+<h1>Eliminador de URL: elimina enlaces <span>duplicados y casi duplicados.</span></h1>
+<p>Pega una lista de URL y elimina las duplicadas exactas, así como las casi duplicadas causadas por barras diagonales finales, mayúsculas y minúsculas, www, parámetros de seguimiento y fragmentos, todo ello en tu navegador.</p>
+<div class="tag-list">
+<span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Gratis</span> <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#lock"></use></svg> Procesamiento local</span> <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#dedupe"></use></svg> Analizador de URL real</span> <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#speed"></use></svg> Instantáneo</span>
+</div>
+</div>
+</header>
+<div class="tool-workspace">
+<div class="tool-card">
+<h2>Pegue su lista de URL</h2>
+<div class="control-group">
+<label for="url-input">URL (una por línea o mezclada con otro texto)</label> <textarea class="tool-textarea mono" id="url-input" placeholder="https://example.com/blog/post-1
+https://example.com/blog/post-1/
+https://Example.com/blog/post-1?utm_source=newsletter
+http://www.example.com/blog/post-1
+not a url
+https://example.com/blog/post-2#section" rows="10"></textarea>
+</div>
+<h2 class="u-4a909e">Opciones de normalización</h2>
+<div class="clean-opts">
+<div class="clean-opt">
+<input type="checkbox" id="opt-slash" checked="">
+<div><label for="opt-slash">Ignorar la barra diagonal final</label><p>Trata https://example.com/ y https://example.com como la misma URL.</p></div>
+</div>
+<div class="clean-opt">
+<input type="checkbox" id="opt-case" checked="">
+<div><label for="opt-case">Ignorar mayúsculas y minúsculas en el nombre de host</label><p>Trata HTTPS://Example.com y https://example.com como el mismo host. Solo el esquema y el host se normalizan en cuanto a mayúsculas y minúsculas; la ruta y la consulta permanecen exactamente como están escritas, ya que pueden distinguir entre mayúsculas y minúsculas.</p></div>
+</div>
+<div class="clean-opt">
+<input type="checkbox" id="opt-www" checked="">
+<div><label for="opt-www">Ignorar el prefijo "www."</label><p>Trata www.example.com y example.com como si fueran el mismo host.</p></div>
+</div>
+<div class="clean-opt">
+<input type="checkbox" id="opt-tracking" checked="">
+<div><label for="opt-tracking">Parámetros de seguimiento comunes de la tira</label><p>Elimina únicamente los parámetros de seguimiento conocidos: utm_source, utm_medium, utm_campaign, utm_term, utm_content, fbclid, gclid, ref, mc_cid, mc_eid. Los demás parámetros de consulta permanecen intactos.</p></div>
+</div>
+<div class="clean-opt">
+<input type="checkbox" id="opt-fragment" checked="">
+<div><label for="opt-fragment">Ignorar fragmento (#hash)</label><p>Trata https://example.com/page#section y https://example.com/page como la misma URL.</p></div>
+</div>
+<div class="clean-opt">
+<input type="checkbox" id="opt-protocol">
+<div><label for="opt-protocol">Tratar http y https como equivalentes</label><p>Desactivado por defecto. Actívalo solo si estás seguro de que las versiones http y https de tus URL ofrecen el mismo contenido, ya que algunos sitios web presentan diferencias reales entre ambas.</p></div>
+</div>
+</div>
+<div class="sort-row">
+<span class="u-6665f4">Orden de salida:</span> <label><input checked="" name="sort-mode" type="radio" value="original">Mantén el pedido original.</label> <label><input name="sort-mode" type="radio" value="alpha">Ordenar alfabéticamente</label>
+</div>
+<div class="btn-group mt-16">
+<button class="btn btn-primary" id="dedupe-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#dedupe"></use></svg> Eliminar URL duplicadas</button>
+</div>
+<div class="status-msg mt-12" id="status-msg" aria-live="polite"></div>
+</div>
+<p class="privacy-note">Tu lista de URL se analiza y se eliminan los duplicados en tu navegador mediante la API de URL nativa. No se sube nada a Logrith.</p>
+<div class="tool-card is-hidden" id="summary-card">
+<h2>Resumen de deduplicación</h2>
+<div class="insp-grid" id="summary-grid"></div>
+</div>
+<div class="tool-card is-hidden" id="result-card">
+<h2>Lista de URL depurada</h2>
+<div class="url-list-box">
+<ol id="result-list"></ol>
+</div>
+<div class="btn-group mt-16">
+<button class="btn btn-primary" id="copy-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#copy"></use></svg> Copiar lista</button> <button class="btn btn-secondary" id="download-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#download"></use></svg> Descargar .txt</button>
+</div>
+</div>
+</div>
+<section class="page-section">
+<h2>Cómo eliminar duplicados de una lista de URL</h2>
+<ol class="steps">
+<li class="step">
+<p>Pegue su lista de URL en el cuadro, una por línea o mezclada con otro texto; la herramienta extrae las URL automáticamente.</p>
+</li>
+<li class="step">
+<p>Elige las opciones de normalización que deseas aplicar, en función de las diferencias de formato que quieras que se traten como duplicados.</p>
+</li>
+<li class="step">
+<p>Haz clic en "Eliminar URL duplicadas" para ver el resumen: cuántas URL se encontraron, cuántas eran duplicadas exactas, cuántas eran casi duplicadas y cuántas no se pudieron analizar.</p>
+</li>
+<li class="step">
+<p>Revise la lista depurada y luego cópiela o descárguela como un archivo .txt.</p>
+</li>
+</ol>
+</section>
+<section class="page-section prose">
+<h2>Qué detecta esta herramienta</h2>
+<ul>
+<li><strong>Duplicados exactos:</strong> la misma cadena de URL aparece más de una vez.</li>
+<li><strong>Diferencias en la barra diagonal final:</strong> una URL con y sin barra diagonal final después de la ruta.</li>
+<li><strong>Diferencias en el uso de mayúsculas y minúsculas en los nombres de host:</strong> letras mayúsculas o mayúsculas y minúsculas en el esquema o el host.</li>
+<li><strong>www vs sin www:</strong> el mismo servidor con y sin la etiqueta "www." al principio.</li>
+<li><strong>Parámetros de seguimiento:</strong> parámetros de marketing y análisis conocidos que se añaden a una URL idéntica.</li>
+<li><strong>Fragmentos:</strong> un ancla dentro de la página o un hash de enrutador agregado después de un "#".</li>
+<li><strong>Entradas no analizables:</strong> texto que parece ser una URL pero que no se analiza como tal, se marca y se excluye en lugar de intentar adivinarlas automáticamente.</li>
+</ul>
+</section>
+<section class="page-section prose">
+<h2>¿Qué es la deduplicación de URL?</h2>
+<p>La deduplicación de URL consiste en tomar una lista de enlaces y reducirla a una sola entrada por destino único. Suena sencillo, pero la palabra "único" tiene un gran peso en esa frase. Un enfoque directo —comparar las cadenas de URL carácter por carácter— solo detecta duplicados exactos: la misma cadena que aparece dos veces. En la práctica, la mayoría de las URL duplicadas en una lista real no son coincidencias exactas de cadenas. Son casi duplicados: la misma página subyacente, escrita de forma ligeramente diferente. <code>https://example.com/pricing</code> y <code>https://example.com/pricing/</code> casi siempre apuntan a la misma página, pero como cadenas de texto plano son diferentes. Un proceso de deduplicación ingenuo no detecta esto, y una lista que debería tener 500 URL únicas termina reportándose como 650.</p>
+<h2>¿Por qué se producen las URL casi duplicadas?</h2>
+<p>Los elementos casi duplicados no son ruido aleatorio; provienen de un conjunto de fuentes predecibles, y comprenderlas es lo que hace que una herramienta de deduplicación sea realmente útil en lugar de un simple script de búsqueda y reemplazo.</p>
+<p><strong>Parámetros de seguimiento.</strong> Las plataformas de marketing añaden parámetros de consulta para rastrear el origen de un clic: <code>utm_source</code>, <code>utm_medium</code> y <code>utm_campaign</code> de las campañas de Google Analytics, <code>fbclid</code> de Facebook, <code>gclid</code> de Google Ads y parámetros similares específicos de cada proveedor en plataformas de correo electrónico y programas de afiliados. El mismo artículo compartido a través de un boletín informativo, un tuit y un anuncio pagado puede generar tres cadenas de URL completamente diferentes que cargan la misma página.</p>
+<p><strong>Inconsistencia en la barra diagonal final.</strong> La mayoría de los servidores web tratan <code>/about</code> y <code>/about/</code> como el mismo recurso, pero el hecho de que un enlace determinado incluya o no la barra diagonal final a menudo depende de la herramienta que lo generó (un CMS, una exportación de mapa del sitio o un enlace escrito manualmente) en lugar de algo significativo sobre el destino.</p>
+<p><strong>Con www frente a sin www.</strong> Muchos sitios web ofrecen contenido idéntico independientemente de si la solicitud incluye o no el subdominio "www.", generalmente porque uno redirige al otro. Un rastreador o una herramienta de exportación que no siga las redirecciones antes de registrar una URL capturará ambas formas como si fueran páginas separadas.</p>
+<p><strong>http frente a https.</strong> Casi todos los sitios web modernos redirigen las solicitudes http a https, por lo que ambas suelen conducir a la misma página, pero no siempre. Por eso, esta herramienta mantiene esa normalización como opcional en lugar de automática.</p>
+<p><strong>Reglas de distinción entre mayúsculas y minúsculas.</strong> Según la RFC 3986, el esquema y el host de una URL no distinguen entre mayúsculas y minúsculas (<code>HTTPS://Example.COM</code> y <code>https://example.com</code> corresponden a la misma autoridad), pero la ruta, la cadena de consulta y el fragmento sí suelen distinguir entre mayúsculas y minúsculas, ya que muchos servidores tratan <code>/Page</code> y <code>/page</code> como recursos distintos. Esta herramienta respeta esta distinción: la normalización de mayúsculas y minúsculas del nombre de host solo afecta al esquema y al host, nunca a la ruta ni a la consulta.</p>
+<p><strong>Fragmentos de URL.</strong> La parte que aparece después de un "#" se utilizaba originalmente para enlaces internos de la página, pero ahora también la emplean con frecuencia las aplicaciones de una sola página basadas en JavaScript para el enrutamiento del lado del cliente. En ambos casos, dos URL que solo se diferencian por el fragmento suelen apuntar al mismo recurso del servidor, incluso si el fragmento modifica lo que se ve en pantalla después de que la página se carga.</p>
+<h2>Cómo funcionan las opciones de normalización</h2>
+<p>Cada opción apunta a una diferencia específica y se combinan: una URL solo se trata como una copia casi idéntica de otra si, después de aplicar todas las opciones habilitadas, las dos formas normalizadas coinciden exactamente. Esta herramienta utiliza la API <code>URL</code> integrada del navegador para analizar cada entrada en lugar de manipular cadenas con expresiones regulares, lo que evita errores sutiles relacionados con el orden de los parámetros de consulta, los caracteres codificados, los puertos predeterminados y otros casos límite que un analizador de cadenas manual suele pasar por alto. La eliminación de parámetros de seguimiento solo elimina una lista fija y conocida de parámetros; no elimina todos los parámetros de consulta, ya que un parámetro no reconocido podría seleccionar una variante de producto, idioma o sección de página diferente, y eliminarlo indiscriminadamente podría hacer que dos páginas realmente diferentes parezcan idénticas.</p>
+<h2>Por qué esto importa</h2>
+<p>Las listas de URL limpias y sin duplicados son importantes en varias situaciones recurrentes. <strong>Las auditorías de backlinks SEO</strong> suelen comenzar con una exportación desde una herramienta de backlinks que lista todos los enlaces de referencia, incluyendo muchos que corresponden a la misma página a la que se accede mediante diferentes parámetros de seguimiento o variantes de barra diagonal final. La eliminación de duplicados previa proporciona un recuento preciso de cuántas páginas distintas enlazan realmente a la tuya. <strong>La eliminación de duplicados en las listas de enlaces extraídas</strong> es rutinaria al crear un rastreador o recopilar enlaces de varias páginas, donde el mismo destino se encuentra con frecuencia más de una vez en formas ligeramente diferentes. <strong>La limpieza de una exportación de marcadores</strong> elimina las entradas duplicadas que se acumulan a lo largo de los años al guardar la misma página desde diferentes navegadores o debido a conflictos de sincronización. <strong>La preparación de una lista de URL para un mapa del sitio o un rastreador</strong> se beneficia de la eliminación de duplicados, ya que enviar URL casi duplicadas a un mapa del sitio puede crear la apariencia de contenido duplicado, lo que los motores de búsqueda pueden interpretar como una señal para investigar en lugar de recompensar.</p>
+<h2>Cómo utilizar esta herramienta</h2>
+<p>Pegue su lista de URL en el cuadro de entrada: la herramienta extrae cualquier elemento con forma de URL del texto pegado, por lo que puede pegar una lista sin formato, un bloque de HTML extraído o notas con enlaces mezclados con otro texto. Elija las opciones de normalización que mejor se adapten a su situación: si está limpiando backlinks para una auditoría SEO, mantenga activadas la eliminación de parámetros de seguimiento y la normalización de barras diagonales finales; si está auditando el comportamiento de redireccionamiento y necesita saber exactamente qué protocolo o variante de mayúsculas y minúsculas se registró, desactive las opciones correspondientes. Haga clic en "Eliminar URL duplicadas" para ver un desglose completo de cuántas URL se encontraron, cuántas se eliminaron como duplicados exactos, cuántas se eliminaron como casi duplicados según las opciones elegidas y cuántas entradas no se pudieron analizar como URL válidas. La lista limpia se puede copiar directamente o descargar como un archivo de texto plano, listo para pegar en una hoja de cálculo, un generador de mapas del sitio u otra herramienta de su flujo de trabajo.</p>
+<h3>Términos buscados con frecuencia</h3>
+<p>La gente usa esta herramienta cuando busca frases como "eliminar URL duplicadas en línea", "eliminador de duplicados de listas de URL", "eliminar parámetros UTM de las URL", "normalizar lista de URL" y "limpiar lista de backlinks gratis". Esta página está diseñada para responder directamente a esas tareas con una herramienta funcional basada en el navegador, impulsada por la API real de análisis de URL en lugar de una simple comparación de cadenas.</p>
+</section>
+<section class="page-section">
+<h2>Preguntas frecuentes sobre el deduplicador de URL</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary class="faq-q">¿Qué se considera una URL duplicada?</summary>
+<div class="faq-a"><p>Una URL idéntica, byte a byte, es una copia exacta. Una URL casi idéntica es aquella que apunta al mismo recurso, pero difiere en el formato: una barra diagonal al final, mayúsculas y minúsculas en el nombre de host, el prefijo www, un parámetro de seguimiento o un fragmento. Puedes elegir cuáles de estas diferencias tratar como duplicados mediante las opciones de normalización.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Esta herramienta elimina los parámetros de seguimiento de todas las URL?</summary>
+<div class="faq-a"><p>Solo cuando actives esa opción, y únicamente para una lista fija de parámetros de seguimiento conocidos, como utm_source, utm_medium, utm_campaign, fbclid y gclid. Los parámetros de consulta no reconocidos no se modifican, ya que podrían afectar a la página o el contenido que se devuelve.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Esta herramienta tratará como duplicados las versiones http y https de la misma URL?</summary>
+<div class="faq-a"><p>Solo si activas la opción "Tratar http y https como equivalentes", que está desactivada por defecto. Muchos sitios web ofrecen contenido o redirecciones diferentes según se utilicen http o https, por lo que esta herramienta no asume que sean iguales a menos que tú lo indiques.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Esta herramienta sube mi lista de URL a algún sitio?</summary>
+<div class="faq-a"><p>No. La extracción, el análisis, la normalización y la eliminación de duplicados se ejecutan localmente en su navegador mediante JavaScript y el analizador de URL integrado del navegador. No se envía nada a un servidor.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Qué ocurre con un texto que no es una URL válida?</summary>
+<div class="faq-a"><p>La herramienta extrae subcadenas con formato de URL del texto que has pegado mediante una coincidencia de patrones, y luego intenta analizar cada una con la API de URL del navegador. Cualquier elemento que no se pueda analizar como una URL se excluye de la lista depurada y se cuenta por separado para que puedas ver cuántas entradas se omitieron.</p></div>
+</details>
+</div>
+</section>
+<section class="page-section">
+<h2>Herramientas relacionadas</h2>
+<div class="related-grid">
+<a class="related-card" href="/es/tool/tools/csv-cleaner"><strong>Limpiador de CSV,</strong></a> <a class="related-card" href="/es/tool/tools/json-repair"><strong>herramienta de reparación de JSON,</strong></a> <a class="related-card" href="/es/tool/tools/ai-context-calculator"><strong>calculadora de tokens y contexto con IA,</strong></a> <a class="related-card" href="/es/tool/tools/markdown-to-html"><strong>convertidor de Markdown a HTML</strong></a>
+</div>
+</section>
+<section class="page-section">
+<h2>Consultas de búsqueda del deduplicador de URL principales</h2>
+<div class="keyword-box">
+<span class="keyword-tag">Eliminador de URL en línea,</span> <span class="keyword-tag">elimina URL duplicadas,</span> <span class="keyword-tag">elimina parámetros UTM de URL,</span> <span class="keyword-tag">normaliza la lista de URL</span> <span class="keyword-tag">, limpia la lista de backlinks</span> gratis, <span class="keyword-tag">herramienta para eliminar enlaces duplicados,</span> <span class="keyword-tag">elimina parámetros de seguimiento de URL.</span>
+</div>
+</section>
 </main>
-
 <div id="footer"></div>
 <script src="/assets/js/main.js?v=20261115"></script>
-
-
 <script>
 /* ==========================================================================
    URL Deduplicator

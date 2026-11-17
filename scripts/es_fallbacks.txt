@@ -1,0 +1,42 @@
+pages/founder.html	markup changed by translator	I'm not a traditional software engineer with a formal coding background. I'm a founder who learned to build by doing, an
+pages/license.html	markup changed by translator	Yes. Anything you create using a Logrith tool — a compressed image, a merged PDF, a generated QR code — is yours to use 
+pages/privacy.html	markup changed by translator	We do not use advertising cookies or third-party tracking cookies. You can disable cookies in your browser settings with
+pages/privacy.html	markup changed by translator	You can opt out of personalized advertising by visiting <a href="https://adssettings.google.com" rel="noopener" target="
+pages/support.html	markup changed by translator	Most Logrith tools process files entirely in your browser, so a failed upload is usually a browser permission issue (che
+pages/terms.html	markup changed by translator	Logrith tools are provided <strong>"as is"</strong> without warranty of any kind, express or implied. We do not guarante
+tool/blog/combine-jpg-images-into-one-pdf-free.html	markup changed by translator	<a class="related-card" href="/tool/blog/merge-multiple-pdf-files-into-one-free"><strong>PDF Merge</strong><span>Combine
+tool/blog/percentage-calculator-guide.html	markup changed by translator	This is the classic "what percent" question: what percent is 45 of 60? The formula is <code>(part ÷ whole) × 100</code>.
+tool/blog/percentage-calculator-guide.html	markup changed by translator	Sometimes the question runs in reverse: a price after a 20% discount is $80 — what was the original price? Since $80 rep
+tool/categories/ai-tools.html	markup changed by translator	About Logrith AI Tools
+tool/categories/all-tools.html	markup changed by translator	Many Logrith tools process files directly inside the browser for faster performance and improved privacy. Some tools may
+tool/categories/calculate-convert.html	markup changed by translator	Logrith Calculate & Convert Tools are designed to make everyday calculations, conversions, and quick utility tasks simpl
+tool/categories/categories.html	markup changed by translator	Browse all Logrith tool categories including Image & PDF Tools, Calculate & Convert, Text & Generators, Developer Tools,
+tool/categories/developer-tools.html	markup changed by translator	About Logrith Developer Tools
+tool/categories/image-pdf-tools.html	markup changed by translator	Logrith Image & PDF Tools are built to simplify everyday file tasks with fast, practical, browser-based tools that work 
+tool/categories/image-pdf-tools.html	markup changed by translator	Most Logrith image and PDF tools are designed to process files directly in your browser whenever possible. This helps im
+tool/categories/image-pdf-tools.html	markup changed by translator	Image compression slightly reduces file size by optimizing image data, but Logrith is designed to maintain visual qualit
+tool/categories/text-generators.html	markup changed by translator	Logrith Text & Generator Tools are built for writers, developers, creators, students, marketers, and anyone who works wi
+tool/categories/utilities.html	markup changed by translator	Logrith Utility Tools are built to simplify everyday digital tasks with fast, practical, browser-based tools that work i
+tool/index.html	markup changed by translator	<svg class="icon icon-sm"><use href="/assets/svg/icons.svg#percent"></use></svg> Percentage Calculator
+tool/index.html	markup changed by translator	<svg class="icon icon-sm"><use href="/assets/svg/icons.svg#percent"></use></svg> BMI Calculator
+tool/index.html	markup changed by translator	<svg class="icon icon-sm"><use href="/assets/svg/icons.svg#percent"></use></svg> Compound Interest Calculator
+tool/index.html	markup changed by translator	<svg class="icon icon-sm"><use href="/assets/svg/icons.svg#speed"></use></svg> WPM Typing Speed Calculator
+tool/index.html	markup changed by translator	<svg class="icon icon-sm"><use href="/assets/svg/icons.svg#ruler"></use></svg> Body Fat Percentage Calculator
+tool/index.html	markup changed by translator	Logrith is a fast, free, and privacy-first platform designed to help you solve everyday tasks instantly — all in one pla
+tool/tools/case-converter.html	markup changed by translator	The Logrith Text Case Converter transforms text between more than a dozen popular formats instantly: UPPERCASE, lowercas
+tool/tools/global/image-privacy-cleaner.html	markup changed by translator	Everything in this tool runs locally in your browser using JavaScript. When you select a photo, its bytes are read direc
+tool/tools/global/pdf-inspector.html	markup changed by translator	This inspector runs entirely client-side using a JavaScript PDF parsing library loaded in your browser. When you select 
+tool/tools/image-circle-crop.html	markup changed by translator	The Logrith Circle Image Cropper turns any photo into a clean, perfectly round image directly in your browser. You choos
+tool/tools/image-compressor.html	markup changed by translator	Logrith Image Compressor is designed as a practical multi-mode image compression tool. It helps users compress images on
+tool/tools/image-compressor.html	markup changed by translator	If you need a browser-based image compressor that gives control over quality, dimensions, output format, target file siz
+tool/tools/image-crop.html	markup changed by translator	The Logrith Image Crop tool lets you trim an image down to exactly the area you need, directly in your browser, with no 
+tool/tools/image-resize.html	markup changed by translator	The Logrith Image Resize tool changes an image's pixel dimensions — making it smaller or larger — directly in your brows
+tool/tools/jpg-to-pdf.html	markup changed by translator	The Logrith JPG to PDF tool converts one or more images into a single PDF document, free and entirely in your browser. U
+tool/tools/json-csv-converter.html	markup changed by translator	The Logrith JSON ⇄ CSV Converter changes data between the two formats people use most often to move records around. Past
+tool/tools/lorem-ipsum.html	markup changed by translator	The Logrith Lorem Ipsum Generator produces placeholder text for use in design mockups, website layouts, print templates,
+tool/tools/password-strength.html	markup changed by translator	The Logrith Password Strength Checker analyzes a password's length, character variety, and common patterns to estimate h
+tool/tools/pdf-rotate.html	markup changed by translator	The Logrith PDF Rotate tool fixes sideways or upside-down pages in a PDF document without needing to reprint, rescan, or
+tool/tools/pdf-split.html	markup changed by translator	The Logrith PDF Split tool lets you extract specific pages or split an entire PDF into individual page files, free and d
+tool/tools/round-image-corners.html	markup changed by translator	The Logrith Round Image Corners tool softens the corners of any picture with a radius you control. Set one value for eve
+tool/tools/slug-generator.html	markup changed by translator	The Logrith Slug Generator converts any title, heading, or phrase into a clean, URL-safe slug — lowercase, hyphen-separa
+tool/tools/uuid-generator.html	markup changed by translator	The Logrith UUID Generator creates random, version 4 UUIDs (Universally Unique Identifiers) instantly in your browser — 

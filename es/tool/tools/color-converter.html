@@ -1,88 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Convierte códigos de color HEX, RGB, HSL y CMYK al instante | Logrith</title>
+<meta name="description" content="Pega cualquier valor de color y conviértelo a HEX, RGB, HSL, HSV y CMYK al instante, con un selector visual, un generador de tonos y un comprobador de contraste integrados.">
+<meta name="keywords" content="color converter online, hex to rgb, rgb to hex, hsl converter, hsv converter, cmyk converter, online color picker, contrast checker, color palette generator, css color converter">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Logrith">
+<link rel="canonical" href="https://logrith.in/es/tool/tools/color-converter">
+  <link rel="alternate" hreflang="x-default" href="https://logrith.in/tool/tools/color-converter">
+  <link rel="alternate" hreflang="es" href="https://logrith.in/es/tool/tools/color-converter">
+  <link rel="alternate" hreflang="en" href="https://logrith.in/tool/tools/color-converter">
 
-  <title>Convert HEX, RGB, HSL & CMYK Color Codes Instantly | Logrith</title>
-  <meta name="description" content="Paste any color value and get it converted to HEX, RGB, HSL, HSV and CMYK at once, with a visual picker, shade generator and contrast checker built in.">
-  <meta name="keywords" content="color converter online, hex to rgb, rgb to hex, hsl converter, hsv converter, cmyk converter, online color picker, contrast checker, color palette generator, css color converter">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="author" content="Logrith">
-  <link rel="canonical" href="https://logrith.in/tool/tools/color-converter">
 
-  <meta property="og:title" content="Convert HEX, RGB, HSL & CMYK Color Codes Instantly | Logrith">
-  <meta property="og:description" content="Paste any color value and get it converted to HEX, RGB, HSL, HSV and CMYK at once, with a visual picker, shade generator and contrast checker built in.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://logrith.in/tool/tools/color-converter">
-  <meta property="og:site_name" content="Logrith">
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Convert HEX, RGB, HSL & CMYK Color Codes Instantly | Logrith">
-  <meta name="twitter:description" content="Paste any color value and get it converted to HEX, RGB, HSL, HSV and CMYK at once, with a visual picker, shade generator and contrast checker built in.">
-
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#0D0D0D">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
-  <link rel="preload" href="/components/navbar.html" as="fetch" type="text/html" crossorigin>
-  <link rel="preload" href="/components/footer.html" as="fetch" type="text/html" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=20261115">
-  <link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://logrith.in/#organization",
-    "name": "Logrith",
-    "url": "https://logrith.in"
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Color Converter",
-    "url": "https://logrith.in/tool/tools/color-converter",
-    "applicationCategory": "DesignApplication",
-    "operatingSystem": "Any",
-    "browserRequirements": "Requires a modern web browser",
-    "isAccessibleForFree": true,
-    "description": "Free online color converter for HEX, RGB, HSL, HSV, and CMYK with color picker, contrast checker, tints and shades, and CSS copy tools.",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "publisher": { "@id": "https://logrith.in/#organization" }
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Calculate & Convert", "item": "https://logrith.in/tool/categories/calculate-convert"}, {"@type": "ListItem", "position": 4, "name": "Color Converter", "item": "https://logrith.in/tool/tools/color-converter"}]}
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      { "@type": "Question", "name": "What is the difference between HEX and RGB colors?", "acceptedAnswer": { "@type": "Answer", "text": "HEX and RGB represent the same digital color in different formats. RGB uses decimal values for red, green, and blue, while HEX writes those same values in hexadecimal form such as #FF0000." } },
-      { "@type": "Question", "name": "What is HSL color format?", "acceptedAnswer": { "@type": "Answer", "text": "HSL stands for Hue, Saturation, and Lightness. It is often easier for designers to adjust visually because it separates the color family from intensity and brightness." } },
-      { "@type": "Question", "name": "What is HSV color format?", "acceptedAnswer": { "@type": "Answer", "text": "HSV stands for Hue, Saturation, and Value. It is similar to HSL but uses value or brightness instead of lightness, which can be useful in graphics and picker-based workflows." } },
-      { "@type": "Question", "name": "What is CMYK and when is it used?", "acceptedAnswer": { "@type": "Answer", "text": "CMYK stands for Cyan, Magenta, Yellow, and Key or Black. It is commonly used in print design because it reflects how inks combine on paper." } },
-      { "@type": "Question", "name": "Can I convert HEX to RGB online for free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can enter a HEX color code and instantly get RGB, HSL, HSV, and CMYK output values using this free online color converter." } }
-    ]
-  }
-  </script>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
-  <script>
+<meta property="og:title" content="Convierte códigos de color HEX, RGB, HSL y CMYK al instante | Logrith">
+<meta property="og:description" content="Pega cualquier valor de color y conviértelo a HEX, RGB, HSL, HSV y CMYK al instante, con un selector visual, un generador de tonos y un comprobador de contraste integrados.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://logrith.in/es/tool/tools/color-converter">
+<meta property="og:site_name" content="Logrith">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Convierte códigos de color HEX, RGB, HSL y CMYK al instante | Logrith">
+<meta name="twitter:description" content="Pega cualquier valor de color y conviértelo a HEX, RGB, HSL, HSV y CMYK al instante, con un selector visual, un generador de tonos y un comprobador de contraste integrados.">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0D0D0D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
+<link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261115">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Convertidor de color", "url": "https://logrith.in/es/tool/tools/color-converter", "applicationCategory": "DesignApplication", "operatingSystem": "Any", "browserRequirements": "Requires a modern web browser", "isAccessibleForFree": true, "description": "Convertidor de color online gratuito para HEX, RGB, HSL, HSV y CMYK con selector de color, comprobador de contraste, tintes y sombras, y herramientas para copiar CSS.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Hogar", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Calcular y convertir", "item": "https://logrith.in/es/tool/categories/calculate-convert"}, {"@type": "ListItem", "position": 4, "name": "Convertidor de color", "item": "https://logrith.in/es/tool/tools/color-converter"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cuál es la diferencia entre los colores HEX y RGB?", "acceptedAnswer": {"@type": "Answer", "text": "HEX y RGB representan el mismo color digital en formatos diferentes. RGB utiliza valores decimales para el rojo, el verde y el azul, mientras que HEX escribe esos mismos valores en formato hexadecimal, como #FF0000."}}, {"@type": "Question", "name": "¿Qué es el formato de color HSL?", "acceptedAnswer": {"@type": "Answer", "text": "HSL significa Tono, Saturación y Luminosidad. A los diseñadores les suele resultar más fácil ajustarlo visualmente porque separa la familia de colores de la intensidad y el brillo."}}, {"@type": "Question", "name": "¿Qué es el formato de color HSV?", "acceptedAnswer": {"@type": "Answer", "text": "HSV significa Tono, Saturación y Valor. Es similar a HSL, pero utiliza el valor o brillo en lugar de la luminosidad, lo que puede ser útil en gráficos y flujos de trabajo basados ​​en selectores."}}, {"@type": "Question", "name": "¿Qué es CMYK y cuándo se utiliza?", "acceptedAnswer": {"@type": "Answer", "text": "CMYK significa cian, magenta, amarillo y negro. Se usa comúnmente en el diseño gráfico porque refleja cómo se combinan las tintas en el papel."}}, {"@type": "Question", "name": "¿Puedo convertir HEX a RGB en línea de forma gratuita?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Puedes introducir un código de color HEX y obtener al instante valores de salida RGB, HSL, HSV y CMYK con este convertidor de color online gratuito."}}]}</script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+<script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -90,213 +51,160 @@
   </script>
 </head>
 <body class="page-color-converter">
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main">Saltar al contenido</a>
 <div id="navbar"></div>
-
 <main id="main">
-
 <header class="page-hero"><div class="page-hero-inner">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/tool/">Tools</a> › <a href="/tool/categories/calculate-convert">Calculate &amp; Convert</a> › Color Converter</nav>
-  <h1>Free Color Converter Online</h1>
-  <p>Convert HEX, RGB, HSL, HSV, and CMYK color values instantly. Pick a color, generate tints and shades, check contrast, and copy values for CSS, UI design, or print workflows.</p>
-  <div class="tag-list">
-    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
-    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#palette"></use></svg> HEX / RGB / HSL / HSV / CMYK</span>
-    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#palette"></use></svg> Palette Generator</span>
-    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span>
-  </div>
-</div></header>
-
-<div class="tool-workspace">
-  <div class="tool-card">
-    <h2>Color Picker &amp; Converter</h2>
-
-    <div class="u-3594f4">
-      <label for="color-picker" class="sr-only">Choose a color</label>
-      <input type="color" id="color-picker" value="#0057FF">
-      <div class="u-39cc94">
-        <div class="color-swatch" id="color-swatch">
-          <span class="color-info-badge" id="swatch-label">#0057FF</span>
-          <span class="color-info-badge" id="contrast-badge">Contrast: White text</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="color-field mb-16">
-      <label for="hex-input">HEX</label>
-      <input type="text" id="hex-input" value="#0057FF" placeholder="#RRGGBB" maxlength="7">
-    </div>
-
-    <div class="mb-16">
-      <label class="u-b82231">RGB</label>
-      <div class="color-input-row">
-        <div class="color-field"><label for="r-input">R (0–255)</label><input type="number" id="r-input" min="0" max="255" value="0"></div>
-        <div class="color-field"><label for="g-input">G (0–255)</label><input type="number" id="g-input" min="0" max="255" value="87"></div>
-        <div class="color-field"><label for="b-input">B (0–255)</label><input type="number" id="b-input" min="0" max="255" value="255"></div>
-      </div>
-    </div>
-
-    <div class="mb-16">
-      <label class="u-b82231">HSL</label>
-      <div class="color-input-row">
-        <div class="color-field"><label for="h-input">H (0–360)</label><input type="number" id="h-input" min="0" max="360" value="220"></div>
-        <div class="color-field"><label for="s-input">S (0–100%)</label><input type="number" id="s-input" min="0" max="100" value="100"></div>
-        <div class="color-field"><label for="l-input">L (0–100%)</label><input type="number" id="l-input" min="0" max="100" value="50"></div>
-      </div>
-    </div>
-
-    <div class="mb-16">
-      <label class="u-b82231">HSV</label>
-      <div class="color-input-row">
-        <div class="color-field"><label for="hh-input">H (0–360)</label><input type="number" id="hh-input" min="0" max="360" value="220"></div>
-        <div class="color-field"><label for="sv-input">S (0–100%)</label><input type="number" id="sv-input" min="0" max="100" value="100"></div>
-        <div class="color-field"><label for="vv-input">V (0–100%)</label><input type="number" id="vv-input" min="0" max="100" value="100"></div>
-      </div>
-    </div>
-
-    <div>
-      <label class="u-b82231">CMYK (Read Only)</label>
-      <div class="color-output-grid">
-        <div class="color-field"><label for="c-out">C %</label><input type="number" id="c-out" readonly></div>
-        <div class="color-field"><label for="m-out">M %</label><input type="number" id="m-out" readonly></div>
-        <div class="color-field"><label for="y-out">Y %</label><input type="number" id="y-out" readonly></div>
-        <div class="color-field"><label for="k-out">K %</label><input type="number" id="k-out" readonly></div>
-      </div>
-    </div>
-
-    <div class="tool-copy-grid mt-16">
-      <button class="btn btn-secondary" id="copy-hex"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy HEX</button>
-      <button class="btn btn-secondary" id="copy-rgb"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy RGB</button>
-      <button class="btn btn-secondary" id="copy-hsl"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy HSL</button>
-      <button class="btn btn-secondary" id="copy-hsv"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy HSV</button>
-      <button class="btn btn-secondary" id="copy-css"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy CSS Vars</button>
-      <button class="btn btn-secondary" id="copy-all"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy All</button>
-    </div>
-
-    <div class="mini-stat-grid">
-      <div class="mini-stat"><div class="ms-label">Recommended Text</div><div class="ms-value" id="text-recommend">White</div></div>
-      <div class="mini-stat"><div class="ms-label">Nearest Named</div><div class="ms-value" id="nearest-name">Blue</div></div>
-      <div class="mini-stat"><div class="ms-label">Active Color</div><div class="ms-value" id="active-color-code">#0057FF</div></div>
-    </div>
-  </div>
-
-  <div class="tool-card">
-    <h2>Tints &amp; Shades Palette</h2>
-    <div class="palette-grid" id="tints-grid"></div>
-    <p class="text-sm text-muted mt-8">Click any swatch to use it as the active color.</p>
-  </div>
-
-  <div class="tool-card">
-    <h2>Common Named Colors</h2>
-    <div class="named-colors-grid" id="named-grid"></div>
-  </div>
+<nav class="breadcrumb" aria-label="Migaja de pan"><a href="/es/">Inicio</a> › <a href="/es/tool/">Herramientas</a> › <a href="/es/tool/categories/calculate-convert">Calcular y convertir</a> › Convertidor de color</nav>
+<h1>Convertidor de color gratuito en línea</h1>
+<p>Convierte instantáneamente valores de color HEX, RGB, HSL, HSV y CMYK. Selecciona un color, genera tonalidades y matices, comprueba el contraste y copia los valores para flujos de trabajo de CSS, diseño de interfaz de usuario o impresión.</p>
+<div class="tag-list">
+<span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Gratis</span> <span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#palette"></use></svg> HEX / RGB / HSL / HSV / CMYK</span> <span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#palette"></use></svg> Generador de paletas</span> <span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#zap"></use></svg> Instantáneo</span>
 </div>
-
+</div></header>
+<div class="tool-workspace">
+<div class="tool-card">
+<h2>Selector y convertidor de color</h2>
+<div class="u-3594f4">
+<label for="color-picker" class="sr-only">Elige un color</label>
+<input type="color" id="color-picker" value="#0057FF">
+<div class="u-39cc94">
+<div class="color-swatch" id="color-swatch">
+<span class="color-info-badge" id="swatch-label">#0057FF</span> <span class="color-info-badge" id="contrast-badge">Contraste: Texto blanco</span>
+</div>
+</div>
+</div>
+<div class="color-field mb-16">
+<label for="hex-input">MALEFICIO</label><input id="hex-input" maxlength="7" placeholder="#RRGGBB" type="text" value="#0057FF">
+</div>
+<div class="mb-16">
+<label class="u-b82231">RGB</label>
+<div class="color-input-row">
+<div class="color-field"><label for="r-input">R (0–255)</label><input type="number" id="r-input" min="0" max="255" value="0"></div>
+<div class="color-field"><label for="g-input">G (0–255)</label><input type="number" id="g-input" min="0" max="255" value="87"></div>
+<div class="color-field"><label for="b-input">B (0–255)</label><input type="number" id="b-input" min="0" max="255" value="255"></div>
+</div>
+</div>
+<div class="mb-16">
+<label class="u-b82231">HSL</label>
+<div class="color-input-row">
+<div class="color-field"><label for="h-input">H (0–360)</label><input type="number" id="h-input" min="0" max="360" value="220"></div>
+<div class="color-field"><label for="s-input">S (0–100%)</label><input type="number" id="s-input" min="0" max="100" value="100"></div>
+<div class="color-field"><label for="l-input">L (0–100%)</label><input type="number" id="l-input" min="0" max="100" value="50"></div>
+</div>
+</div>
+<div class="mb-16">
+<label class="u-b82231">HSV</label>
+<div class="color-input-row">
+<div class="color-field"><label for="hh-input">H (0–360)</label><input type="number" id="hh-input" min="0" max="360" value="220"></div>
+<div class="color-field"><label for="sv-input">S (0–100%)</label><input type="number" id="sv-input" min="0" max="100" value="100"></div>
+<div class="color-field"><label for="vv-input">V (0–100%)</label><input type="number" id="vv-input" min="0" max="100" value="100"></div>
+</div>
+</div>
+<div>
+<label class="u-b82231">CMYK (Solo lectura)</label>
+<div class="color-output-grid">
+<div class="color-field"><label for="c-out">C %</label><input type="number" id="c-out" readonly=""></div>
+<div class="color-field"><label for="m-out">M %</label><input type="number" id="m-out" readonly=""></div>
+<div class="color-field"><label for="y-out">Y %</label><input type="number" id="y-out" readonly=""></div>
+<div class="color-field"><label for="k-out">K %</label><input type="number" id="k-out" readonly=""></div>
+</div>
+</div>
+<div class="tool-copy-grid mt-16">
+<button class="btn btn-secondary" id="copy-hex"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#copy"></use></svg> Copiar HEX</button> <button class="btn btn-secondary" id="copy-rgb"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#copy"></use></svg> Copiar RGB</button> <button class="btn btn-secondary" id="copy-hsl"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#copy"></use></svg> Copiar HSL</button> <button class="btn btn-secondary" id="copy-hsv"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#copy"></use></svg> Copiar HSV</button> <button class="btn btn-secondary" id="copy-css"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#copy"></use></svg> Copiar variables CSS</button> <button class="btn btn-secondary" id="copy-all"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#copy"></use></svg> Copiar todo</button>
+</div>
+<div class="mini-stat-grid">
+<div class="mini-stat"><div class="ms-label">Texto recomendado</div><div class="ms-value" id="text-recommend">Blanco</div></div>
+<div class="mini-stat"><div class="ms-label">Nombre más cercano</div><div class="ms-value" id="nearest-name">Azul</div></div>
+<div class="mini-stat"><div class="ms-label">Color activo</div><div class="ms-value" id="active-color-code">#0057FF</div></div>
+</div>
+</div>
+<div class="tool-card">
+<h2>Paleta de tonos y matices</h2>
+<div class="palette-grid" id="tints-grid"></div>
+<p class="text-sm text-muted mt-8">Haz clic en cualquier muestra para usarla como color activo.</p>
+</div>
+<div class="tool-card">
+<h2>Colores comunes con nombre</h2>
+<div class="named-colors-grid" id="named-grid"></div>
+</div>
+</div>
 <section class="page-section">
-  <h2>Frequently Asked Questions</h2>
-  <div class="faq-list">
-    <details class="faq-item">
-      <summary class="faq-q">What is the difference between HEX and RGB colors?</summary>
-      <div class="faq-a"><p>HEX and RGB represent the same digital color in different notations. RGB uses decimal red, green, and blue values, while HEX stores those values in hexadecimal form such as #FF0000.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">What is HSL color format?</summary>
-      <div class="faq-a"><p>HSL stands for Hue, Saturation, and Lightness. It is useful for design work because it makes it easier to adjust color tone and brightness visually.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">What is HSV color format?</summary>
-      <div class="faq-a"><p>HSV stands for Hue, Saturation, and Value. It is similar to HSL and is often used in design tools and color pickers where brightness-based control is preferred.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">What is CMYK and when is it used?</summary>
-      <div class="faq-a"><p>CMYK stands for Cyan, Magenta, Yellow, and Key or Black. It is mainly used for print design because printing relies on ink mixing rather than light-based RGB color.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Can I convert HEX to RGB online for free?</summary>
-      <div class="faq-a"><p>Yes. Enter any valid HEX code and this tool instantly converts it into RGB, HSL, HSV, and CMYK values for free.</p></div>
-    </details>
-  </div>
+<h2>Preguntas frecuentes</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary class="faq-q">¿Cuál es la diferencia entre los colores HEX y RGB?</summary>
+<div class="faq-a"><p>HEX y RGB representan el mismo color digital con notaciones diferentes. RGB utiliza valores decimales para rojo, verde y azul, mientras que HEX almacena esos valores en formato hexadecimal, como #FF0000.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Qué es el formato de color HSL?</summary>
+<div class="faq-a"><p>HSL significa Tono, Saturación y Luminosidad. Es útil para el diseño porque facilita el ajuste visual del tono y el brillo del color.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Qué es el formato de color HSV?</summary>
+<div class="faq-a"><p>HSV significa Tono, Saturación y Valor. Es similar a HSL y se usa frecuentemente en herramientas de diseño y selectores de color donde se prefiere el control basado en el brillo.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Qué es CMYK y cuándo se utiliza?</summary>
+<div class="faq-a"><p>CMYK significa cian, magenta, amarillo y negro. Se utiliza principalmente en el diseño gráfico para impresión, ya que esta se basa en la mezcla de tintas en lugar del color RGB (basado en la luz).</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Puedo convertir HEX a RGB en línea de forma gratuita?</summary>
+<div class="faq-a"><p>Sí. Introduce cualquier código HEX válido y esta herramienta lo convertirá instantáneamente a valores RGB, HSL, HSV y CMYK de forma gratuita.</p></div>
+</details>
+</div>
 </section>
-
 <section class="page-section prose">
-  <h2>Online HEX to RGB, HSL, HSV and CMYK Converter</h2>
-  <p>This free online color converter is designed for web designers, frontend developers, graphic designers, students, and creators who need quick color format conversion without opening heavy design software. It lets you convert between HEX, RGB, HSL, HSV, and CMYK in one place, with a live picker, generated tints and shades, a contrast checker, and one-click copy for CSS values.</p>
-
-  <p>You can use this tool to prepare CSS color values, generate shade palettes for user interfaces, estimate print-friendly CMYK values, and quickly test contrast for readable text on colored backgrounds. The built-in picker and palette chips make the workflow considerably faster than manually calculating each format by hand for real design and development projects.</p>
-
-  <h3>Understanding Each Color Format</h3>
-  <p>Modern design and development work touches several different color formats, each suited to a different context:</p>
-  <ul>
-    <li><strong>HEX</strong> — a six-digit hexadecimal code like #0057FF, the most common format in web development, used directly in CSS, HTML, and most design tools.</li>
-    <li><strong>RGB</strong> — three decimal values (0–255) for red, green, and blue, representing the same color as HEX but in a form that's easier to reason about numerically, and the format used by rgb() in CSS.</li>
-    <li><strong>HSL</strong> — Hue (0–360°), Saturation (0–100%), and Lightness (0–100%), a format that separates "which color" from "how vivid" and "how light or dark," making it much easier to create consistent color variations by adjusting just one value.</li>
-    <li><strong>HSV</strong> — Hue, Saturation, and Value (or Brightness), closely related to HSL but using a slightly different lightness model that maps more directly to how many color pickers and graphics tools present color selection.</li>
-    <li><strong>CMYK</strong> — Cyan, Magenta, Yellow, and Key (Black), the format used in print design, since printers mix physical inks rather than combining light like a screen does.</li>
-  </ul>
-
-  <h3>Why Convert Between Color Formats?</h3>
-  <p>Different tools and contexts expect different formats, and needing to convert between them is a routine part of design and development work. A brand guideline document might specify a color only in CMYK because it was written for print, but a web developer implementing that brand on a website needs the equivalent HEX or RGB value. A designer working in HSL to create a consistent set of five shades of a brand color might need to hand off the final HEX codes to a developer who will paste them directly into a CSS file. This tool keeps all five formats in sync at once — changing any one of them instantly recalculates the rest, so you're never stuck manually computing a conversion or guessing at an approximate match.</p>
-
-  <h3>Tints, Shades, and Building a Color Palette</h3>
-  <p>The Tints & Shades palette on this page automatically generates a spectrum of lighter and darker variations of your active color — tints move toward white, shades move toward black — giving you an instant starting point for building a cohesive color system around a single base color. This is a common design task: most UI design systems need not just a primary brand color, but a range of lighter and darker variants for hover states, disabled states, backgrounds, borders, and text, all derived consistently from the same base hue. Clicking any generated swatch instantly loads it as the new active color across every format field, letting you explore a palette interactively rather than recalculating each variant by hand.</p>
-
-  <h3>Contrast Checking for Readable Text</h3>
-  <p>The tool automatically calculates a relative luminance value for your active color and recommends whether black or white text would be more readable on top of it, displayed both in the swatch itself and in the "Recommended Text" stat. This is a quick, practical check for anything from button design to banner text — placing dark text on a dark background (or light text on a light background) is one of the most common and easily avoided accessibility and readability mistakes in interface design, and this feature flags the safer choice instantly as you adjust the color.</p>
-
-  <h3>Nearest Named Color Matching</h3>
-  <p>Alongside the numeric conversions, the tool also identifies the closest common named color to whatever custom shade you've selected — useful for quickly communicating a color verbally ("it's basically a deep navy blue") even when the exact HEX value is something more precise and less memorable like #0B1D42. This uses a straightforward color-distance calculation across a curated list of common named colors to find the closest visual match.</p>
-
-  <h3>Copying Values for CSS and Design Handoff</h3>
-  <p>Beyond individual format copy buttons, the tool includes a "Copy CSS Vars" option that outputs a ready-to-paste block of CSS custom properties (HEX, RGB, and HSL variants of the active color), and a "Copy All" option that outputs every format at once in a clean, labeled block — handy for design handoff documents, style guides, or quickly dropping a full color specification into a ticket or chat message without retyping each value by hand.</p>
-
-  <h3>Privacy and Local Processing</h3>
-  <p>Every conversion, palette generation, and contrast calculation in this tool runs entirely in your browser using JavaScript math — no color values are ever sent to a server. This makes the tool equally suitable for public brand colors and for unreleased or confidential design work you'd rather not upload anywhere.</p>
-
-  <h3>Common Use Cases in Real Projects</h3>
-  <ul>
-    <li><strong>Building a design system</strong> — converting a single brand HEX color into a full set of HSL-based tints and shades for buttons, hover states, and backgrounds.</li>
-    <li><strong>Debugging CSS</strong> — quickly checking what a given rgb() or hsl() value in a stylesheet actually looks like, or converting it to HEX to match a design spec.</li>
-    <li><strong>Print design handoff</strong> — converting a screen-based RGB or HEX brand color to CMYK before sending artwork to a print vendor, since printers expect ink-based CMYK values rather than screen-based RGB.</li>
-    <li><strong>Accessibility review</strong> — using the contrast recommendation to catch potential text-on-background readability issues before they ship.</li>
-    <li><strong>Quick color identification</strong> — using the nearest named color feature to describe a custom shade in plain language during a design discussion or code review.</li>
-  </ul>
-
-  <h3>Why HSL Is Popular Among Designers</h3>
-  <p>Of the formats supported here, HSL tends to be the most intuitive for making deliberate color adjustments by hand, because its three components map closely to how people naturally describe color changes. Wanting a color "a bit lighter" means increasing Lightness; wanting it "more vivid" or "more muted" means increasing or decreasing Saturation; and changing the color family entirely (blue to purple to red) means adjusting Hue. This is why many CSS-based theming systems and design tools expose HSL sliders even when the underlying stored value is HEX — it's simply easier to reason about a controlled adjustment in HSL terms than to guess at the equivalent HEX or RGB shift directly.</p>
+<h2>Convertidor en línea de HEX a RGB, HSL, HSV y CMYK</h2>
+<p>Este conversor de color online gratuito está diseñado para diseñadores web, desarrolladores frontend, diseñadores gráficos, estudiantes y creadores que necesitan una conversión rápida de formatos de color sin tener que abrir programas de diseño complejos. Permite convertir entre HEX, RGB, HSL, HSV y CMYK en un solo lugar, con un selector en tiempo real, generación de tonos y matices, un comprobador de contraste y la opción de copiar valores CSS con un solo clic.</p>
+<p>Puedes usar esta herramienta para preparar valores de color CSS, generar paletas de tonos para interfaces de usuario, estimar valores CMYK aptos para impresión y probar rápidamente el contraste para texto legible sobre fondos de color. El selector y las paletas de colores integrados agilizan considerablemente el flujo de trabajo en comparación con el cálculo manual de cada formato en proyectos reales de diseño y desarrollo.</p>
+<h3>Comprender cada formato de color</h3>
+<p>El trabajo de diseño y desarrollo moderno abarca varios formatos de color diferentes, cada uno adecuado a un contexto distinto:</p>
+<ul>
+<li><strong>HEX</strong> : un código hexadecimal de seis dígitos como #0057FF, el formato más común en el desarrollo web, utilizado directamente en CSS, HTML y la mayoría de las herramientas de diseño.</li>
+<li><strong>RGB</strong> : tres valores decimales (0–255) para rojo, verde y azul, que representan el mismo color que HEX pero en un formato más fácil de interpretar numéricamente, y el formato utilizado por rgb() en CSS.</li>
+<li><strong>HSL</strong> — Tono (0–360°), Saturación (0–100%) y Luminosidad (0–100%), un formato que separa "qué color" de "cuán vívido" y "cuán claro u oscuro", lo que facilita mucho la creación de variaciones de color consistentes ajustando un solo valor.</li>
+<li><strong>HSV</strong> (Tono, Saturación y Valor o Brillo), estrechamente relacionado con HSL pero que utiliza un modelo de luminosidad ligeramente diferente que se corresponde más directamente con la forma en que muchos selectores de color y herramientas gráficas presentan la selección de color.</li>
+<li><strong>CMYK</strong> (cian, magenta, amarillo y negro) es el formato utilizado en el diseño gráfico para impresión, ya que las impresoras mezclan tintas físicas en lugar de combinar luz como lo hace una pantalla.</li>
+</ul>
+<h3>¿Por qué convertir entre formatos de color?</h3>
+<p>Las distintas herramientas y contextos requieren formatos diferentes, y la conversión entre ellos es una parte habitual del trabajo de diseño y desarrollo. Un documento de directrices de marca podría especificar un color solo en CMYK porque fue escrito para impresión, pero un desarrollador web que implemente esa marca en un sitio web necesita el valor HEX o RGB equivalente. Un diseñador que trabaje con HSL para crear un conjunto coherente de cinco tonalidades de un color de marca podría necesitar entregar los códigos HEX finales a un desarrollador que los pegará directamente en un archivo CSS. Esta herramienta mantiene los cinco formatos sincronizados a la vez: al cambiar cualquiera de ellos, se recalculan instantáneamente los demás, por lo que nunca tendrá que calcular manualmente una conversión ni adivinar una coincidencia aproximada.</p>
+<h3>Tonos, matices y cómo crear una paleta de colores</h3>
+<p>La paleta de Tonos y Sombras de esta página genera automáticamente un espectro de variaciones más claras y más oscuras del color activo (los tonos tienden al blanco y las sombras al negro), lo que proporciona un punto de partida instantáneo para crear un sistema de color coherente a partir de un único color base. Esta es una tarea de diseño común: la mayoría de los sistemas de diseño de interfaz de usuario no solo necesitan un color de marca principal, sino también una gama de variantes más claras y más oscuras para los estados de desplazamiento, los estados deshabilitados, los fondos, los bordes y el texto, todos derivados de forma consistente del mismo tono base. Al hacer clic en cualquier muestra generada, esta se carga instantáneamente como el nuevo color activo en todos los campos de formato, lo que permite explorar una paleta de forma interactiva en lugar de recalcular cada variante manualmente.</p>
+<h3>Comprobación de contraste para texto legible</h3>
+<p>La herramienta calcula automáticamente un valor de luminancia relativa para el color activo y recomienda si el texto en blanco o negro sería más legible sobre él, mostrándolo tanto en la muestra de color como en la estadística "Texto recomendado". Esta es una comprobación rápida y práctica para cualquier elemento, desde el diseño de botones hasta el texto de banners: colocar texto oscuro sobre un fondo oscuro (o texto claro sobre un fondo claro) es uno de los errores de accesibilidad y legibilidad más comunes y fáciles de evitar en el diseño de interfaces, y esta función señala la opción más segura al instante mientras ajustas el color.</p>
+<h3>Coincidencia de color con nombre más cercana</h3>
+<p>Además de las conversiones numéricas, la herramienta también identifica el color común más parecido al tono personalizado que hayas seleccionado, lo cual resulta útil para describir rápidamente un color verbalmente ("es básicamente un azul marino oscuro"), incluso cuando el valor hexadecimal exacto es más preciso y menos fácil de recordar, como #0B1D42. Para ello, utiliza un cálculo sencillo de distancia cromática sobre una lista seleccionada de colores comunes para encontrar la coincidencia visual más cercana.</p>
+<h3>Copia de valores para CSS y transferencia de diseño</h3>
+<p>Además de los botones para copiar formatos individuales, la herramienta incluye una opción "Copiar variables CSS" que genera un bloque listo para pegar de propiedades personalizadas CSS (variantes HEX, RGB y HSL del color activo), y una opción "Copiar todo" que genera todos los formatos a la vez en un bloque limpio y etiquetado, muy útil para documentos de traspaso de diseño, guías de estilo o para insertar rápidamente una especificación de color completa en un ticket o mensaje de chat sin tener que volver a escribir cada valor manualmente.</p>
+<h3>Privacidad y procesamiento local</h3>
+<p>Cada conversión, generación de paleta y cálculo de contraste en esta herramienta se ejecuta completamente en tu navegador mediante JavaScript; ningún valor de color se envía a un servidor. Esto hace que la herramienta sea igualmente adecuada para colores de marca públicos y para trabajos de diseño confidenciales o inéditos que prefieras no publicar en ningún sitio.</p>
+<h3>Casos de uso comunes en proyectos reales</h3>
+<ul>
+<li><strong>Creación de un sistema de diseño</strong> : convertir un único color HEX de marca en un conjunto completo de tonalidades y matices basados ​​en HSL para botones, estados de desplazamiento del cursor y fondos.</li>
+<li><strong>Depuración de CSS</strong> : comprobar rápidamente cómo se ve realmente un valor rgb() o hsl() determinado en una hoja de estilos, o convertirlo a HEX para que coincida con una especificación de diseño.</li>
+<li><strong>Entrega del diseño para impresión</strong> : conversión de un color de marca RGB o HEX basado en pantalla a CMYK antes de enviar el diseño a un proveedor de impresión, ya que las imprentas esperan valores CMYK basados ​​en tinta en lugar de RGB basado en pantalla.</li>
+<li><strong>Revisión de accesibilidad</strong> : utilizar la recomendación de contraste para detectar posibles problemas de legibilidad del texto sobre fondo antes de su lanzamiento.</li>
+<li><strong>Identificación rápida del color</strong> : utilizar la característica de color con nombre más cercana para describir un tono personalizado en lenguaje sencillo durante una discusión de diseño o una revisión de código.</li>
+</ul>
+<h3>¿Por qué HSL es popular entre los diseñadores?</h3>
+<p>De los formatos compatibles, HSL suele ser el más intuitivo para realizar ajustes de color manuales y precisos, ya que sus tres componentes se corresponden estrechamente con la forma en que las personas describen naturalmente los cambios de color. Si se desea un color "un poco más claro", se aumenta la luminosidad; si se desea "más vívido" o "más apagado", se aumenta o disminuye la saturación; y si se cambia la gama de colores por completo (de azul a morado o a rojo), se ajusta el tono. Por eso, muchos sistemas de temas y herramientas de diseño basados ​​en CSS muestran controles deslizantes HSL incluso cuando el valor almacenado subyacente es hexadecimal: es mucho más sencillo razonar sobre un ajuste controlado en términos HSL que adivinar directamente el cambio equivalente en hexadecimal o RGB.</p>
 </section>
-
 <section class="page-section">
-  <h2>Related Tools</h2>
-  <div class="related-grid">
-    <a class="related-card" href="/tool/tools/unit-converter"><strong>Unit Converter</strong><span>Convert between length, weight, temperature, and more.</span></a>
-    <a class="related-card" href="/tool/tools/percentage-calculator"><strong>Percentage Calculator</strong><span>Calculate percentages, increases, decreases, and ratios.</span></a>
-    <a class="related-card" href="/tool/tools/qr-generator"><strong>QR Code Generator</strong><span>Generate custom QR codes for links, text, and contact info.</span></a>
-    <a class="related-card" href="/tool/tools/image-compressor"><strong>Image Compressor</strong><span>Reduce image file size for websites and faster uploads.</span></a>
-  </div>
+<h2>Herramientas relacionadas</h2>
+<div class="related-grid">
+<a class="related-card" href="/es/tool/tools/unit-converter"><strong>Convertidor de unidades:</strong> <span>convierte entre longitud, peso, temperatura y más.</span></a> <a class="related-card" href="/es/tool/tools/percentage-calculator"><strong>Calculadora de porcentajes:</strong> <span>calcula porcentajes, aumentos, disminuciones y proporciones.</span></a> <a class="related-card" href="/es/tool/tools/qr-generator"><strong>Generador de códigos QR:</strong> <span>crea códigos QR personalizados para enlaces, texto e información de contacto.</span></a> <a class="related-card" href="/es/tool/tools/image-compressor"><strong>Compresor de imágenes:</strong> <span>reduce el tamaño de los archivos de imagen para sitios web y cargas más rápidas.</span></a>
+</div>
 </section>
-
 <section class="page-section">
-  <h2>Popular Searches</h2>
-  <div class="keyword-box">
-    <span class="keyword-tag">color converter online</span>
-    <span class="keyword-tag">hex to rgb converter</span>
-    <span class="keyword-tag">rgb to hex converter</span>
-    <span class="keyword-tag">hsl color converter</span>
-    <span class="keyword-tag">hsv color picker</span>
-    <span class="keyword-tag">cmyk converter online</span>
-    <span class="keyword-tag">color contrast checker</span>
-    <span class="keyword-tag">color palette generator</span>
-    <span class="keyword-tag">css color converter</span>
-    <span class="keyword-tag">free online color picker</span>
-  </div>
+<h2>Búsquedas populares</h2>
+<div class="keyword-box">
+<span class="keyword-tag">convertidor de color en línea convertidor</span> <span class="keyword-tag">hex a rgb convertidor</span> <span class="keyword-tag">rgb a hex convertidor</span> <span class="keyword-tag">de color hsl</span> <span class="keyword-tag">selector de color hsv</span> <span class="keyword-tag">convertidor cmyk en línea</span> <span class="keyword-tag">comprobador de contraste de color</span> <span class="keyword-tag">generador de paleta de colores</span> <span class="keyword-tag">convertidor de color css</span> <span class="keyword-tag">selector de color en línea gratuito</span>
+</div>
 </section>
-
 </main>
-
 <div id="footer"></div>
 <script src="/assets/js/main.js?v=20261115"></script>
-
-
 <script>
 let r = 0, g = 87, b = 255;
 

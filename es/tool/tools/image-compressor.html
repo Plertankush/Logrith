@@ -1,409 +1,246 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comprimir imágenes a un tamaño exacto en KB | Logrith</title>
+<meta name="description" content="Reduce el tamaño o la calidad de tus fotos JPG, PNG y WEBP directamente en tu navegador. Comprime y convierte varias fotos a la vez en una sola pasada; no se sube ningún archivo.">
+<meta name="keywords" content="image compressor online, compress image online, compress JPG online, compress PNG online, reduce image size, resize image online, image optimizer online, target file size image compressor, bulk image compressor, photo compressor online, convert PNG to JPG, WEBP converter, image size reducer, free image compressor, Logrith image compressor">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Logrith">
+<link rel="canonical" href="https://logrith.in/es/tool/tools/image-compressor">
+  <link rel="alternate" hreflang="x-default" href="https://logrith.in/tool/tools/image-compressor">
+  <link rel="alternate" hreflang="es" href="https://logrith.in/es/tool/tools/image-compressor">
+  <link rel="alternate" hreflang="en" href="https://logrith.in/tool/tools/image-compressor">
 
-  <title>Compress Images to an Exact KB Size | Logrith</title>
-  <meta name="description" content="Shrink JPG, PNG and WEBP photos to a target file size or quality in your browser. Batch compress and convert in one pass — nothing is uploaded.">
-  <meta name="keywords" content="image compressor online, compress image online, compress JPG online, compress PNG online, reduce image size, resize image online, image optimizer online, target file size image compressor, bulk image compressor, photo compressor online, convert PNG to JPG, WEBP converter, image size reducer, free image compressor, Logrith image compressor">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="author" content="Logrith">
-  <link rel="canonical" href="https://logrith.in/tool/tools/image-compressor">
 
-  <meta property="og:title" content="Compress Images to an Exact KB Size | Logrith">
-  <meta property="og:description" content="Shrink JPG, PNG and WEBP photos to a target file size or quality level right in your browser, with batch processing and format conversion built in.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://logrith.in/tool/tools/image-compressor">
-  <meta property="og:site_name" content="Logrith">
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Compress Images to an Exact KB Size | Logrith">
-  <meta name="twitter:description" content="Shrink JPG, PNG and WEBP photos to a target size in your browser — batch compress, resize and convert in one pass.">
-
-  <link rel="icon" href="/favicon.ico">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
-  <link rel="preload" href="/components/navbar.html" as="fetch" type="text/html" crossorigin>
-  <link rel="preload" href="/components/footer.html" as="fetch" type="text/html" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=20261115">
-  <link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebApplication",
-    "name":"Logrith Image Compressor",
-    "url":"https://logrith.in/tool/tools/image-compressor",
-    "applicationCategory":"MultimediaApplication",
-    "operatingSystem":"Web Browser",
-    "description":"Compress images online using quality, resize, target file size, format conversion, preset modes, and batch processing.",
-    "offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Image Tools", "item": "https://logrith.in/#image-tools"}, {"@type": "ListItem", "position": 4, "name": "Image Compressor", "item": "https://logrith.in/tool/tools/image-compressor"}]}
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {
-        "@type":"Question",
-        "name":"How do I compress an image online for free?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Upload your image, choose a compression mode, adjust the settings, and download the smaller file instantly."
-        }
-      },
-      {
-        "@type":"Question",
-        "name":"Can I resize my image before compressing it?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Yes. You can resize by percentage or enter exact width and height before saving the final image."
-        }
-      },
-      {
-        "@type":"Question",
-        "name":"Which format is best for smaller file size?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"WEBP is often the smallest for photos, while JPG is widely supported and PNG is better when transparency matters."
-        }
-      },
-      {
-        "@type":"Question",
-        "name":"Can I compress multiple images at once?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Yes. The tool can support batch compression so you can handle multiple files in one workflow."
-        }
-      },
-      {
-        "@type":"Question",
-        "name":"Does target file size mode help for forms and uploads?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Yes. Target size mode is useful when you need an image under a specific file-size limit such as 100 KB, 200 KB, or another custom upload restriction."
-        }
-      },
-      {
-        "@type":"Question",
-        "name":"Does converting PNG to JPG or WEBP reduce file size?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Yes. Converting large PNG files to JPG or WEBP can reduce file size significantly when transparency is not required."
-        }
-      }
-    ]
-  }
-  </script>
- 
+<meta property="og:title" content="Comprimir imágenes a un tamaño exacto en KB | Logrith">
+<meta property="og:description" content="Reduce el tamaño de tus fotos JPG, PNG y WEBP al tamaño o nivel de calidad deseado directamente en tu navegador, con procesamiento por lotes y conversión de formato integrados.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://logrith.in/es/tool/tools/image-compressor">
+<meta property="og:site_name" content="Logrith">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Comprimir imágenes a un tamaño exacto en KB | Logrith">
+<meta name="twitter:description" content="Comprime fotos JPG, PNG y WEBP al tamaño deseado directamente en tu navegador: comprime, redimensiona y convierte por lotes en una sola operación.">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
+<link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261115">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Logrith Compresor de imágenes", "url": "https://logrith.in/es/tool/tools/image-compressor", "applicationCategory": "MultimediaApplication", "operatingSystem": "Web Browser", "description": "Comprime imágenes en línea utilizando la calidad, el redimensionamiento, el tamaño de archivo objetivo, la conversión de formato, los modos preestablecidos y el procesamiento por lotes.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Hogar", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas de imagen", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 4, "name": "Compresor de imágenes", "item": "https://logrith.in/es/tool/tools/image-compressor"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cómo puedo comprimir una imagen en línea de forma gratuita?", "acceptedAnswer": {"@type": "Answer", "text": "Sube tu imagen, elige un modo de compresión, ajusta la configuración y descarga el archivo más pequeño al instante."}}, {"@type": "Question", "name": "¿Puedo cambiar el tamaño de mi imagen antes de comprimirla?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Puedes cambiar el tamaño por porcentaje o introducir el ancho y la altura exactos antes de guardar la imagen final."}}, {"@type": "Question", "name": "¿Qué formato es mejor para archivos de menor tamaño?", "acceptedAnswer": {"@type": "Answer", "text": "WEBP suele ser el formato más pequeño para fotos, mientras que JPG es ampliamente compatible y PNG es mejor cuando la transparencia es importante."}}, {"@type": "Question", "name": "¿Puedo comprimir varias imágenes a la vez?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. La herramienta admite la compresión por lotes, lo que permite gestionar varios archivos en un mismo flujo de trabajo."}}, {"@type": "Question", "name": "¿El modo de tamaño de archivo objetivo resulta útil para formularios y cargas de archivos?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. El modo de tamaño objetivo es útil cuando necesitas una imagen con un tamaño de archivo inferior a un límite específico, como 100 KB, 200 KB u otra restricción de carga personalizada."}}, {"@type": "Question", "name": "¿Convertir un archivo PNG a JPG o WEBP reduce su tamaño?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Convertir archivos PNG grandes a JPG o WEBP puede reducir significativamente el tamaño del archivo cuando no se requiere transparencia."}}]}</script>
 </head>
 <body class="page-tools-image-compressor">
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main">Saltar al contenido</a>
 <div id="navbar"></div>
-
 <main id="main">
-
 <header class="page-hero"><div class="page-hero-inner">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/tool/">Tools</a> › <a href="/tool/categories/image-pdf-tools">Image &amp; PDF Tools</a> › Image Compressor</nav>
-  <h1>Free Image Compressor Online</h1>
-  <p>Compress images your way — reduce quality, resize dimensions, convert format, target a file size, or use ready-made presets for web, email, WhatsApp, and more.</p>
-  <div class="tag-list">
-    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
-    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Multi-Mode</span>
-    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lock"></use></svg> Browser-Based</span>
-    <span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#image"></use></svg> JPG, PNG, WEBP</span>
-  </div>
-</div></header>
-
-<div class="tool-workspace">
-  <div class="tool-card">
-    <h2>Upload Image(s)</h2>
-    <div class="upload-zone" id="upload-zone">
-      <input type="file" id="file-input" accept="image/jpeg,image/png,image/webp" multiple>
-      <div class="upload-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#package"></use></svg></div>
-      <h3>Drop images here or click to browse</h3>
-      <p>Supports JPG, PNG, WEBP — up to 10 images</p>
-      <span class="upload-limit">Max 20MB per file</span>
-    </div>
-    <div id="file-list" class="mt-12"></div>
-  </div>
-
-  <div class="tool-card is-hidden" id="settings-card">
-    <h2>Choose Compression Method</h2>
-
-    <div class="mode-grid" id="mode-grid">
-      <div class="mode-card active" data-mode="quality"><h3>Quality Mode</h3><p>Reduce file size by lowering image quality.</p></div>
-      <div class="mode-card" data-mode="percent"><h3>Resize %</h3><p>Resize image by percentage like 75%, 50%, 25%.</p></div>
-      <div class="mode-card" data-mode="exact"><h3>Exact Size</h3><p>Set exact width and height in pixels.</p></div>
-      <div class="mode-card" data-mode="target"><h3>Target KB</h3><p>Try to compress close to a chosen file size.</p></div>
-      <div class="mode-card" data-mode="preset"><h3>Smart Presets</h3><p>One-click modes for web, email, WhatsApp, HD.</p></div>
-      <div class="mode-card" data-mode="convert"><h3>Format Convert</h3><p>Convert to JPG, PNG, or WEBP for better savings.</p></div>
-    </div>
-
-    <div class="sub-panel active" id="panel-quality">
-      <div class="control-group">
-        <label>Quality: <span class="range-value" id="quality-val">75%</span></label>
-        <input type="range" id="quality-slider" min="5" max="95" value="75">
-        <div class="mini-note">Best for photos. 70–80% usually gives balanced results.</div>
-      </div>
-    </div>
-
-    <div class="sub-panel" id="panel-percent">
-      <div class="control-group">
-        <label>Resize Percentage</label>
-        <select id="resize-percent">
-          <option value="100">100% (original)</option>
-          <option value="75">75%</option>
-          <option value="50">50%</option>
-          <option value="25">25%</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="sub-panel" id="panel-exact">
-      <div class="controls-grid">
-        <div class="control-group">
-          <label>Width (px)</label>
-          <input type="number" id="exact-width" placeholder="e.g. 1280">
-        </div>
-        <div class="control-group">
-          <label>Height (px)</label>
-          <input type="number" id="exact-height" placeholder="e.g. 720">
-        </div>
-      </div>
-      <div class="control-group mt-12">
-        <label class="u-2a9780">
-          <input type="checkbox" id="keep-ratio" checked>
-          Keep aspect ratio
-        </label>
-      </div>
-    </div>
-
-    <div class="sub-panel" id="panel-target">
-      <div class="control-group">
-        <label>Target File Size (KB)</label>
-        <input type="number" id="target-kb" placeholder="e.g. 150">
-        <div class="mini-note">Tool will try multiple quality levels to get close to this size.</div>
-      </div>
-    </div>
-
-    <div class="sub-panel" id="panel-preset">
-      <div class="control-group">
-        <label>Preset</label>
-        <select id="preset-mode">
-          <option value="web">Web Optimized</option>
-          <option value="email">Email Attachment</option>
-          <option value="whatsapp">WhatsApp Share</option>
-          <option value="document">Document Upload</option>
-          <option value="hd">HD Balanced</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="sub-panel" id="panel-convert">
-      <div class="control-group">
-        <label>Convert To</label>
-        <select id="convert-format">
-          <option value="image/jpeg">JPG</option>
-          <option value="image/webp">WEBP</option>
-          <option value="image/png">PNG</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="controls-grid mt-16">
-      <div class="control-group">
-        <label>Fallback Output Format</label>
-        <select id="output-format">
-          <option value="auto">Smart Auto</option>
-          <option value="same">Same as original</option>
-          <option value="image/jpeg">JPG</option>
-          <option value="image/webp">WEBP</option>
-          <option value="image/png">PNG</option>
-        </select>
-      </div>
-      <div class="control-group">
-        <label>Image Smoothing</label>
-        <select id="smooth-mode">
-          <option value="high">High Quality</option>
-          <option value="medium">Medium</option>
-          <option value="low">Low</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="insight-box" id="compression-insight">
-      Pick the method based on your goal: quality mode for photos, resize for large images, target KB for upload forms, presets for quick use, and format convert for aggressive size reduction.
-    </div>
-
-    <div class="mt-16 btn-group">
-      <button class="btn btn-primary btn-lg" id="compress-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#package"></use></svg> Compress Images</button>
-      <button class="btn btn-secondary" id="reset-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Reset</button>
-    </div>
-
-    <div class="progress-bar mt-12" id="progress"><div class="progress-fill" id="progress-fill"></div></div>
-    <div class="status-msg" id="status-msg"></div>
-  </div>
-
-  <div class="tool-card is-hidden" id="preview-card">
-    <h2>Preview</h2>
-    <div class="preview-grid" id="preview-grid"></div>
-  </div>
-
-  <div class="tool-card is-hidden" id="output-card">
-    <h2>Compressed Results</h2>
-    <div class="result-list" id="results-list"></div>
-    <div class="summary-strip" id="summary-strip"></div>
-    <div class="btn-group mt-16">
-      <button class="btn btn-success" id="download-all-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#download"></use></svg> Download All</button>
-      <button class="btn btn-secondary" id="compress-more-btn">+ Compress More</button>
-    </div>
-  </div>
+<nav class="breadcrumb" aria-label="Migaja de pan"><a href="/es/">Inicio</a> › <a href="/es/tool/">Herramientas</a> › <a href="/es/tool/categories/image-pdf-tools">Herramientas de imagen y PDF</a> › Compresor de imágenes</nav>
+<h1>Compresor de imágenes gratuito en línea</h1>
+<p>Comprime las imágenes a tu manera: reduce la calidad, cambia el tamaño, convierte el formato, establece un tamaño de archivo específico o utiliza ajustes predefinidos para web, correo electrónico, WhatsApp y mucho más.</p>
+<div class="tag-list">
+<span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Gratis</span> <span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#zap"></use></svg> Multimodo</span> <span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#lock"></use></svg> Basado en navegador</span> <span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#image"></use></svg> JPG, PNG, WEBP</span>
 </div>
-  <section class="page-section">
-    <h2>How to Use This Image Compressor</h2>
-    <ol class="steps">
-      <li class="step">
-        <strong>Upload image</strong>
-        <p>Add one or multiple JPG, PNG, or WEBP images.</p>
-      </li>
-      <li class="step">
-        <strong>Choose mode</strong>
-        <p>Select quality, resize, target KB, preset, or format conversion.</p>
-      </li>
-      <li class="step">
-        <strong>Adjust settings</strong>
-        <p>Set the quality, exact dimensions, or output type as needed.</p>
-      </li>
-      <li class="step">
-        <strong>Download result</strong>
-        <p>Get optimized images with lower file size and better usability.</p>
-      </li>
-    </ol>
-  </section>
-
-<section class="page-section prose">
-  <h2>Why Our Image Compressor Is Best</h2>
-  <ul>
-    <li><strong>Fast:</strong> Compresses images instantly in the browser using Canvas — no upload wait time.</li>
-    <li><strong>Private:</strong> Local browser-based processing means your images never leave your device.</li>
-    <li><strong>Free:</strong> Use the tool unlimited times without signup or installation.</li>
-    <li><strong>Flexible:</strong> Six compression modes covering quality, resize, exact dimensions, target size, presets, and format conversion.</li>
-    <li><strong>Practical for real workflows:</strong> Batch processing lets you compress multiple images in one pass.</li>
-  </ul>
-</section>
-
-<section class="page-section prose">
- <h2>Free Image Compressor Online for JPG, PNG, and WEBP</h2>
-          <p>Image compression is one of the most useful tasks for modern websites, online forms, social media uploads, document portals, portfolios, e-commerce listings, and email attachments. Large image files slow down websites, increase upload time, waste storage, and can even fail when a platform sets a strict size limit. That is why an image compressor should be flexible enough to support different types of optimization instead of relying on only a single compression slider.</p>
-
-          <p>Logrith Image Compressor is designed as a practical multi-mode image compression tool. It helps users compress images online using quality control, exact resize, percentage resize, target file size mode, smart presets, and format conversion. This makes the tool useful for students uploading documents, job seekers submitting forms, bloggers improving website speed, developers testing assets, designers sharing previews, and everyday users reducing photo size before sending files.</p>
-
-          <h3>Why one compression method is not enough</h3>
-          <p>Not every image behaves the same way. A camera photo often compresses well when quality is reduced slightly. A huge screenshot may benefit more from resizing than quality changes. A PNG file might stay large unless it is converted to JPG or WEBP. A scanned document may need a target size mode to meet a fixed file limit for government, exam, or office portals. Because of this, a useful image compressor must give users several ways to reduce image size based on the real job they need to do.</p>
-
-          <h3>Quality mode for balanced compression</h3>
-          <p>Quality mode is usually the easiest option for photos. If the original image is very large, lowering quality moderately can create a noticeable file size reduction while still keeping the image clear enough for websites, profile uploads, social posts, and email. This mode is especially useful when the original dimensions are already correct and the main goal is simply to reduce file weight.</p>
-
-          <h3>Resize image online by percentage or exact dimensions</h3>
-          <p>Sometimes the biggest reason an image is large is not just quality but resolution. A 4000-pixel image used in a small web box is unnecessarily heavy. In that case, resizing by 75%, 50%, or a custom width and height can reduce the image size far more effectively. Exact resize is also useful when an upload form asks for specific dimensions like 1200 × 628, 1080 × 1080, or passport-photo style constraints.</p>
-
-          <h3>Target file size mode for strict uploads</h3>
-          <p>Many users search for tools like compress image to 100KB, compress image to 200KB, or reduce photo size for form upload. Target file size mode helps solve that exact use case. Instead of guessing a quality setting manually, users can aim for a size limit and let the tool optimize the image more practically. This is especially helpful for government forms, college portals, exam sites, application systems, and ID uploads.</p>
-
-          <h3>Format conversion can reduce size further</h3>
-          <p>Changing the format can make a major difference. Converting large photos from PNG to JPG or WEBP often creates much smaller files when transparency is not needed. JPG remains widely compatible and useful for general sharing, while WEBP is often a strong option for modern websites and smaller file output. PNG is still valuable when you need transparent backgrounds or certain design assets, but it may not always be the smallest choice.</p>
-
-          <h3>Smart presets for fast results</h3>
-          <p>Not everyone wants to manually test settings. Smart presets make the tool simpler by giving users a starting point based on their goal. A web preset can focus on smaller website-ready files. An email preset can keep attachments manageable. A WhatsApp preset can prepare images for fast messaging. A document preset can help with portal uploads. An HD balanced preset can try to keep quality and size more evenly matched.</p>
-
-          <h3>Bulk image compression for real workflows</h3>
-          <p>Single-image tools are useful, but batch support makes the experience much more practical. Students, content teams, product sellers, and bloggers often work with multiple files at once. Bulk image compression saves time and creates a smoother workflow when many images need similar treatment. It also helps keep a consistent output style across several files.</p>
-
-          <h3>Best use cases for this tool</h3>
-          <p>This free image compressor online can be used to reduce image size for websites, improve page speed, optimize media before blog publishing, compress photos for WhatsApp or email, create smaller e-commerce product images, prepare school and office documents, and handle image uploads that have strict size requirements. It is also useful as a quick image optimizer online when you need fast results without installing software.</p>
-
-          <h3>Why this page is useful for search intent</h3>
-          <p>Users search with many related phrases such as image compressor online, reduce image size, compress JPG online, compress PNG online, resize image online, image optimizer online, WEBP converter, and target file size image compressor. A page that explains these use cases clearly while also offering the actual working tool is more useful than a thin page with only a button and no guidance. The goal is to help the user finish the task, not just land on the page.</p>
-
-          <p>If you need a browser-based image compressor that gives control over quality, dimensions, output format, target file size, and preset-based optimization, this Logrith tool is built to cover those use cases in a single workflow. It is free, practical, and designed for everyday image compression needs.</p>
-</section>
-
-  <section class="page-section">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-list">
-      <details class="faq-item">
-        <summary class="faq-q">How do I compress an image online for free?</summary>
-        <div class="faq-a"><p>Upload your image, choose a compression mode, adjust the settings, and download the smaller file instantly.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">Can I resize my image before compressing it?</summary>
-        <div class="faq-a"><p>Yes. You can resize by percentage or enter exact width and height before saving the final image.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">Which format is best for smaller file size?</summary>
-        <div class="faq-a"><p>WEBP is often the smallest for photos, while JPG is widely supported and PNG is better when transparency matters.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">Can I compress multiple images at once?</summary>
-        <div class="faq-a"><p>Yes. The tool can support batch compression so you can handle multiple files in one workflow.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">Does target file size mode help for forms and uploads?</summary>
-        <div class="faq-a"><p>Yes. Target size mode is useful when you need an image under a specific file-size limit such as 100 KB, 200 KB, or another custom upload restriction.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">Does converting PNG to JPG or WEBP reduce file size?</summary>
-        <div class="faq-a"><p>Yes. Converting large PNG files to JPG or WEBP can reduce file size significantly when transparency is not required.</p></div>
-      </details>
+</div></header>
+<div class="tool-workspace">
+<div class="tool-card">
+<h2>Subir imagen(es)</h2>
+<div class="upload-zone" id="upload-zone">
+<input type="file" id="file-input" accept="image/jpeg,image/png,image/webp" multiple="">
+<div class="upload-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#package"></use></svg></div>
+<h3>Arrastra las imágenes aquí o haz clic para explorar.</h3>
+<p>Admite JPG, PNG, WEBP — hasta 10 imágenes</p>
+<span class="upload-limit">Máximo 20 MB por archivo</span>
+</div>
+<div id="file-list" class="mt-12"></div>
+</div>
+<div class="tool-card is-hidden" id="settings-card">
+<h2>Seleccione el método de compresión</h2>
+<div class="mode-grid" id="mode-grid">
+<div class="mode-card active" data-mode="quality"><h3>Modo de calidad</h3><p>Reduce el tamaño del archivo disminuyendo la calidad de la imagen.</p></div>
+<div class="mode-card" data-mode="percent"><h3>Redimensionar %</h3><p>Redimensiona la imagen por porcentaje, como 75%, 50%, 25%.</p></div>
+<div class="mode-card" data-mode="exact"><h3>Tamaño exacto</h3><p>Establezca el ancho y la altura exactos en píxeles.</p></div>
+<div class="mode-card" data-mode="target"><h3>Base de conocimientos objetivo</h3><p>Intenta comprimir el archivo hasta un tamaño lo más cercano posible al tamaño deseado.</p></div>
+<div class="mode-card" data-mode="preset"><h3>Ajustes predefinidos inteligentes</h3><p>Modos de un solo clic para web, correo electrónico, WhatsApp y HD.</p></div>
+<div class="mode-card" data-mode="convert"><h3>Convertir formato</h3><p>Conviértelo a JPG, PNG o WEBP para ahorrar más.</p></div>
+</div>
+<div class="sub-panel active" id="panel-quality">
+<div class="control-group">
+<label>Calidad: <span class="range-value" id="quality-val">75%</span></label>
+<input type="range" id="quality-slider" min="5" max="95" value="75">
+<div class="mini-note">Ideal para fotos. Entre el 70 y el 80% suele dar resultados equilibrados.</div>
+</div>
+</div>
+<div class="sub-panel" id="panel-percent">
+<div class="control-group">
+<label>Porcentaje de redimensionamiento</label><select id="resize-percent"><option value="100"> 100% (original)</option><option value="75"> 75%</option><option value="50"> 50%</option><option value="25"> 25%</option></select>
+</div>
+</div>
+<div class="sub-panel" id="panel-exact">
+<div class="controls-grid">
+<div class="control-group">
+<label>Ancho (px)</label><input id="exact-width" placeholder="e.g. 1280" type="number">
+</div>
+<div class="control-group">
+<label>Altura (px)</label><input id="exact-height" placeholder="e.g. 720" type="number">
+</div>
+</div>
+<div class="control-group mt-12">
+<label class="u-2a9780"><input checked="" id="keep-ratio" type="checkbox">Mantener la relación de aspecto</label>
+</div>
+</div>
+<div class="sub-panel" id="panel-target">
+<div class="control-group">
+<label>Tamaño de archivo objetivo (KB)</label>
+<input type="number" id="target-kb" placeholder="e.g. 150">
+<div class="mini-note">La herramienta intentará alcanzar varios niveles de calidad para aproximarse a este tamaño.</div>
+</div>
+</div>
+<div class="sub-panel" id="panel-preset">
+<div class="control-group">
+<label>Programar</label><select id="preset-mode"><option value="web"> Optimizado para web</option><option value="email"> Archivo adjunto de correo electrónico</option><option value="whatsapp"> Compartir en WhatsApp</option><option value="document"> Carga de documentos</option><option value="hd"> HD equilibrado</option></select>
+</div>
+</div>
+<div class="sub-panel" id="panel-convert">
+<div class="control-group">
+<label>Convertir a</label><select id="convert-format"><option value="image/jpeg"> JPG</option><option value="image/webp"> WEBP</option><option value="image/png"> PNG</option></select>
+</div>
+</div>
+<div class="controls-grid mt-16">
+<div class="control-group">
+<label>Formato de salida alternativo</label><select id="output-format"><option value="auto"> Auto inteligente</option><option value="same"> Igual que el original</option><option value="image/jpeg"> JPG</option><option value="image/webp"> WEBP</option><option value="image/png"> PNG</option></select>
+</div>
+<div class="control-group">
+<label>Suavizado de imágenes</label><select id="smooth-mode"><option value="high"> Alta calidad</option><option value="medium"> Medio</option><option value="low"> Bajo</option></select>
+</div>
+</div>
+<div class="insight-box" id="compression-insight">
+      Elige el método que mejor se adapte a tu objetivo: modo de calidad para fotos, redimensionamiento para imágenes grandes, tamaño objetivo en KB para formularios de carga, ajustes preestablecidos para un uso rápido y conversión de formato para una reducción de tamaño drástica.
     </div>
-  </section>
-
-
+<div class="mt-16 btn-group">
+<button class="btn btn-primary btn-lg" id="compress-btn"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#package"></use></svg> Comprimir imágenes</button> <button class="btn btn-secondary" id="reset-btn"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#close"></use></svg> Reiniciar</button>
+</div>
+<div class="progress-bar mt-12" id="progress"><div class="progress-fill" id="progress-fill"></div></div>
+<div class="status-msg" id="status-msg"></div>
+</div>
+<div class="tool-card is-hidden" id="preview-card">
+<h2>Avance</h2>
+<div class="preview-grid" id="preview-grid"></div>
+</div>
+<div class="tool-card is-hidden" id="output-card">
+<h2>Resultados comprimidos</h2>
+<div class="result-list" id="results-list"></div>
+<div class="summary-strip" id="summary-strip"></div>
+<div class="btn-group mt-16">
+<button class="btn btn-success" id="download-all-btn"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#download"></use></svg> Descargar todo</button> <button class="btn btn-secondary" id="compress-more-btn">+ Comprimir más</button>
+</div>
+</div>
+</div>
 <section class="page-section">
-  <h2>Related Tools</h2>
-  <div class="related-grid">
-    <a class="related-card" href="/tool/tools/image-converter"><strong>Image Converter</strong><span>Convert JPG, PNG, and WEBP images into other formats online.</span></a>
-    <a class="related-card" href="/tool/tools/image-resize"><strong>Image Resize</strong><span>Resize image dimensions for web, social media, and forms.</span></a>
-    <a class="related-card" href="/tool/tools/image-crop"><strong>Image Crop</strong><span>Crop photos and screenshots before export or upload.</span></a>
-    <a class="related-card" href="/tool/tools/jpg-to-pdf"><strong>JPG to PDF</strong><span>Turn images into PDF documents quickly.</span></a>
-    <a class="related-card" href="/tool/tools/pdf-to-jpg"><strong>PDF to JPG</strong><span>Extract PDF pages as image files online.</span></a>
-  </div>
+<h2>Cómo usar este compresor de imágenes</h2>
+<ol class="steps">
+<li class="step">
+<strong>Subir imagen</strong>
+<p>Agregue una o varias imágenes JPG, PNG o WEBP.</p>
+</li>
+<li class="step">
+<strong>Elegir modo</strong>
+<p>Seleccione calidad, redimensionar, tamaño objetivo en KB, preajuste o conversión de formato.</p>
+</li>
+<li class="step">
+<strong>Ajustar la configuración</strong>
+<p>Configure la calidad, las dimensiones exactas o el tipo de salida según sea necesario.</p>
+</li>
+<li class="step">
+<strong>Descargar resultado</strong>
+<p>Obtén imágenes optimizadas con un tamaño de archivo menor y una mejor usabilidad.</p>
+</li>
+</ol>
 </section>
-
+<section class="page-section prose">
+<h2>Por qué nuestro compresor de imágenes es el mejor</h2>
+<ul>
+<li><strong>Rápido:</strong> Comprime las imágenes al instante en el navegador usando Canvas, sin tiempos de espera para la carga.</li>
+<li><strong>Privado:</strong> El procesamiento local a través del navegador significa que tus imágenes nunca salen de tu dispositivo.</li>
+<li><strong>Gratis:</strong> Utilice la herramienta un número ilimitado de veces sin necesidad de registrarse ni instalar nada.</li>
+<li><strong>Flexible:</strong> Seis modos de compresión que abarcan calidad, redimensionamiento, dimensiones exactas, tamaño objetivo, preajustes y conversión de formato.</li>
+<li><strong>Práctico para flujos de trabajo reales:</strong> el procesamiento por lotes permite comprimir varias imágenes en una sola pasada.</li>
+</ul>
+</section>
+<section class="page-section prose">
+<h2>Compresor de imágenes online gratuito para JPG, PNG y WEBP</h2>
+<p>La compresión de imágenes es una de las tareas más útiles para sitios web modernos, formularios en línea, cargas a redes sociales, portales de documentos, portafolios, listados de comercio electrónico y archivos adjuntos de correo electrónico. Los archivos de imagen grandes ralentizan los sitios web, aumentan el tiempo de carga, desperdician espacio de almacenamiento e incluso pueden fallar cuando una plataforma establece un límite de tamaño estricto. Por eso, un compresor de imágenes debe ser lo suficientemente flexible como para admitir diferentes tipos de optimización en lugar de depender únicamente de un solo control deslizante de compresión.</p>
+<p>Logrith Image Compressor is designed as a practical multi-mode image compression tool. It helps users compress images online using quality control, exact resize, percentage resize, target file size mode, smart presets, and format conversion. This makes the tool useful for students uploading documents, job seekers submitting forms, bloggers improving website speed, developers testing assets, designers sharing previews, and everyday users reducing photo size before sending files.</p>
+<h3>Por qué un solo método de compresión no es suficiente</h3>
+<p>No todas las imágenes se comportan igual. Una foto tomada con cámara suele comprimirse bien con una ligera reducción de calidad. Una captura de pantalla grande puede beneficiarse más de un redimensionamiento que de cambios en la calidad. Un archivo PNG puede permanecer grande a menos que se convierta a JPG o WEBP. Un documento escaneado puede requerir un modo de tamaño objetivo para cumplir con un límite de archivo fijo para portales gubernamentales, de exámenes o de oficinas. Por ello, un compresor de imágenes útil debe ofrecer a los usuarios varias formas de reducir el tamaño de la imagen según la tarea que necesiten realizar.</p>
+<h3>Modo de calidad para una compresión equilibrada</h3>
+<p>El modo de calidad suele ser la opción más sencilla para las fotos. Si la imagen original es muy grande, reducir la calidad moderadamente puede generar una disminución notable del tamaño del archivo, manteniendo la nitidez suficiente para sitios web, perfiles, publicaciones en redes sociales y correo electrónico. Este modo es especialmente útil cuando las dimensiones originales son correctas y el objetivo principal es simplemente reducir el tamaño del archivo.</p>
+<h3>Cambia el tamaño de la imagen en línea por porcentaje o dimensiones exactas.</h3>
+<p>A veces, el principal motivo del gran tamaño de una imagen no es solo su calidad, sino también su resolución. Una imagen de 4000 píxeles en un recuadro web pequeño resulta innecesariamente pesada. En ese caso, reducir su tamaño en un 75 %, un 50 % o con un ancho y alto personalizados puede ser mucho más efectivo. El redimensionamiento exacto también es útil cuando un formulario de carga solicita dimensiones específicas, como 1200 × 628, 1080 × 1080 o formatos similares a los de una foto de pasaporte.</p>
+<h3>Modo de tamaño de archivo objetivo para cargas estrictas</h3>
+<p>Muchos usuarios buscan herramientas para comprimir imágenes a 100 KB, 200 KB o reducir el tamaño de las fotos para subirlas a formularios. El modo de tamaño de archivo objetivo resuelve precisamente este problema. En lugar de ajustar manualmente la calidad, los usuarios pueden establecer un límite de tamaño y dejar que la herramienta optimice la imagen de forma más práctica. Esto resulta especialmente útil para formularios gubernamentales, portales universitarios, sitios de exámenes, sistemas de solicitud y para subir documentos de identidad.</p>
+<h3>La conversión de formato puede reducir aún más el tamaño.</h3>
+<p>Cambiar el formato puede marcar una gran diferencia. Convertir fotos grandes de PNG a JPG o WEBP suele generar archivos mucho más pequeños cuando no se necesita transparencia. JPG sigue siendo ampliamente compatible y útil para compartir en general, mientras que WEBP suele ser una buena opción para sitios web modernos y para generar archivos más pequeños. PNG sigue siendo valioso cuando se necesitan fondos transparentes o ciertos elementos de diseño, pero no siempre es la opción más compacta.</p>
+<h3>Preajustes inteligentes para obtener resultados rápidos.</h3>
+<p>No todos quieren probar la configuración manualmente. Los preajustes inteligentes simplifican la herramienta al proporcionar a los usuarios un punto de partida según sus objetivos. Un preajuste web puede centrarse en archivos pequeños listos para sitios web. Un preajuste de correo electrónico puede mantener los archivos adjuntos organizados. Un preajuste de WhatsApp puede preparar imágenes para enviar mensajes rápidamente. Un preajuste de documentos puede ayudar con las cargas a portales. Un preajuste HD equilibrado puede intentar mantener una calidad y un tamaño más uniformes.</p>
+<h3>Compresión masiva de imágenes para flujos de trabajo reales</h3>
+<p>Las herramientas para imágenes individuales son útiles, pero la compatibilidad con procesamiento por lotes hace que la experiencia sea mucho más práctica. Estudiantes, equipos de contenido, vendedores y blogueros suelen trabajar con varios archivos a la vez. La compresión masiva de imágenes ahorra tiempo y agiliza el flujo de trabajo cuando muchas imágenes requieren un tratamiento similar. Además, ayuda a mantener un estilo de salida uniforme en varios archivos.</p>
+<h3>Mejores casos de uso para esta herramienta</h3>
+<p>Este compresor de imágenes online gratuito permite reducir el tamaño de las imágenes en sitios web, mejorar la velocidad de carga, optimizar contenido multimedia antes de publicar en blogs, comprimir fotos para WhatsApp o correo electrónico, crear imágenes de productos para comercio electrónico más pequeñas, preparar documentos escolares y de oficina, y gestionar la carga de imágenes con requisitos de tamaño estrictos. También resulta útil como optimizador de imágenes online rápido cuando se necesitan resultados inmediatos sin necesidad de instalar ningún software.</p>
+<h3>Por qué esta página es útil para la intención de búsqueda</h3>
+<p>Los usuarios realizan búsquedas con frases relacionadas como compresor de imágenes en línea, reducir el tamaño de la imagen, comprimir JPG en línea, comprimir PNG en línea, redimensionar imagen en línea, optimizador de imágenes en línea, convertidor WEBP y compresor de imágenes con tamaño de archivo objetivo. Una página que explique claramente estos casos de uso y que además ofrezca la herramienta en funcionamiento es más útil que una página simple con solo un botón y sin ninguna guía. El objetivo es ayudar al usuario a completar la tarea, no solo a acceder a la página.</p>
+<p>If you need a browser-based image compressor that gives control over quality, dimensions, output format, target file size, and preset-based optimization, this Logrith tool is built to cover those use cases in a single workflow. It is free, practical, and designed for everyday image compression needs.</p>
+</section>
 <section class="page-section">
-  <h2>Popular Searches</h2>
-  <div class="keyword-box">
-    <span class="keyword-tag">image compressor online</span>
-    <span class="keyword-tag">compress JPG online</span>
-    <span class="keyword-tag">compress PNG online</span>
-    <span class="keyword-tag">reduce image size</span>
-    <span class="keyword-tag">resize image online</span>
-    <span class="keyword-tag">target file size compressor</span>
-    <span class="keyword-tag">bulk image compressor</span>
-    <span class="keyword-tag">photo compressor online</span>
-    <span class="keyword-tag">image optimizer online</span>
-    <span class="keyword-tag">WEBP converter</span>
-    <span class="keyword-tag">convert PNG to JPG</span>
-    <span class="keyword-tag">image size reducer</span>
-  </div>
+<h2>Preguntas frecuentes</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary class="faq-q">¿Cómo puedo comprimir una imagen en línea de forma gratuita?</summary>
+<div class="faq-a"><p>Sube tu imagen, elige un modo de compresión, ajusta la configuración y descarga el archivo más pequeño al instante.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Puedo cambiar el tamaño de mi imagen antes de comprimirla?</summary>
+<div class="faq-a"><p>Sí. Puedes cambiar el tamaño por porcentaje o introducir el ancho y la altura exactos antes de guardar la imagen final.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Qué formato es mejor para archivos de menor tamaño?</summary>
+<div class="faq-a"><p>WEBP suele ser el formato más pequeño para fotos, mientras que JPG es ampliamente compatible y PNG es mejor cuando la transparencia es importante.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Puedo comprimir varias imágenes a la vez?</summary>
+<div class="faq-a"><p>Sí. La herramienta admite la compresión por lotes, lo que permite gestionar varios archivos en un mismo flujo de trabajo.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿El modo de tamaño de archivo objetivo resulta útil para formularios y cargas de archivos?</summary>
+<div class="faq-a"><p>Sí. El modo de tamaño objetivo es útil cuando necesitas una imagen con un tamaño de archivo inferior a un límite específico, como 100 KB, 200 KB u otra restricción de carga personalizada.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Convertir un archivo PNG a JPG o WEBP reduce su tamaño?</summary>
+<div class="faq-a"><p>Sí. Convertir archivos PNG grandes a JPG o WEBP puede reducir significativamente el tamaño del archivo cuando no se requiere transparencia.</p></div>
+</details>
+</div>
 </section>
-
+<section class="page-section">
+<h2>Herramientas relacionadas</h2>
+<div class="related-grid">
+<a class="related-card" href="/es/tool/tools/image-converter"><strong>Convertidor de imágenes:</strong> <span>Convierte imágenes JPG, PNG y WEBP a otros formatos en línea.</span></a> <a class="related-card" href="/es/tool/tools/image-resize"><strong>Redimensionar imágenes</strong> <span>: Cambia el tamaño de las imágenes para web, redes sociales y formularios.</span></a> <a class="related-card" href="/es/tool/tools/image-crop"><strong>Recortar imágenes:</strong> <span>Recorta fotos y capturas de pantalla antes de exportarlas o subirlas.</span></a> <a class="related-card" href="/es/tool/tools/jpg-to-pdf"><strong>JPG a PDF:</strong> <span>Convierte imágenes en documentos PDF rápidamente.</span></a> <a class="related-card" href="/es/tool/tools/pdf-to-jpg"><strong>PDF a JPG:</strong> <span>Extrae páginas PDF como archivos de imagen en línea.</span></a>
+</div>
+</section>
+<section class="page-section">
+<h2>Búsquedas populares</h2>
+<div class="keyword-box">
+<span class="keyword-tag">compresor de imágenes en línea</span> <span class="keyword-tag">comprimir JPG en línea</span> <span class="keyword-tag">comprimir PNG en línea</span> <span class="keyword-tag">reducir tamaño de imagen</span> <span class="keyword-tag">redimensionar imagen en línea</span> <span class="keyword-tag">tamaño de archivo objetivo compresor</span> <span class="keyword-tag">de imágenes masivo</span> <span class="keyword-tag">compresor de fotos en línea</span> <span class="keyword-tag">optimizador de imágenes en línea</span> <span class="keyword-tag">convertidor WEBP</span> <span class="keyword-tag">convertir PNG a JPG</span> <span class="keyword-tag">reductor de tamaño de imagen</span>
+</div>
+</section>
 </main>
-
 <div id="footer"></div>
 <script src="/assets/js/main.js?v=20261115"></script>
-
-
 <script>
 (function () {
   'use strict';

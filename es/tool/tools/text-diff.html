@@ -1,241 +1,190 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="es">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Compare Two Texts and Highlight Every Change | Logrith</title>
-  <meta name="description" content="Paste two versions of a text or code snippet and see every added, removed and changed line highlighted side by side, instantly.">
-  <link rel="canonical" href="https://logrith.in/tool/tools/text-diff">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="author" content="Logrith">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://logrith.in/tool/tools/text-diff">
-  <meta property="og:site_name" content="Logrith">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Compare Two Texts and Highlight Every Change | Logrith">
-  <meta name="twitter:description" content="Paste two versions of a text or code snippet and see every added, removed and changed line highlighted side by side, instantly.">
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#0D0D0D">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compara dos textos y resalta todos los cambios | Logrith</title>
+<meta name="description" content="Pega dos versiones de un fragmento de texto o código y observa al instante cómo se resaltan, una al lado de la otra, todas las líneas añadidas, eliminadas y modificadas.">
+<link rel="canonical" href="https://logrith.in/es/tool/tools/text-diff">
+  <link rel="alternate" hreflang="x-default" href="https://logrith.in/tool/tools/text-diff">
+  <link rel="alternate" hreflang="es" href="https://logrith.in/es/tool/tools/text-diff">
+  <link rel="alternate" hreflang="en" href="https://logrith.in/tool/tools/text-diff">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
-  <link rel="preload" href="/components/navbar.html" as="fetch" type="text/html" crossorigin>
-  <link rel="preload" href="/components/footer.html" as="fetch" type="text/html" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=20261115">
-  <link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
 
-  <!-- Google tag (gtag.js) -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
- <script>
+
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Logrith">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://logrith.in/es/tool/tools/text-diff">
+<meta property="og:site_name" content="Logrith">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Compara dos textos y resalta todos los cambios | Logrith">
+<meta name="twitter:description" content="Pega dos versiones de un fragmento de texto o código y observa al instante cómo se resaltan, una al lado de la otra, todas las líneas añadidas, eliminadas y modificadas.">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0D0D0D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
+<link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261115">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+<script>
    window.dataLayer = window.dataLayer || [];
    function gtag(){dataLayer.push(arguments);}
    gtag('js', new Date());
 
    gtag('config', 'G-BPJ4332XJH');
  </script>
- 
-  <meta name="keywords" content="text diff, diff checker, compare two texts, text compare online, find differences between text, text comparison tool">
-  <meta property="og:title" content="Compare Two Texts and Highlight Every Change | Logrith">
-  <meta property="og:description" content="Paste two versions of a text or code snippet and see every added, removed and changed line highlighted side by side, instantly.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://logrith.in/tool/tools/text-diff">
-  <meta property="og:site_name" content="Logrith">
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}
-  </script>
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "WebApplication", "name": "Text Diff Checker", "url": "https://logrith.in/tool/tools/text-diff", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript and a modern web browser", "description": "Compare two texts and highlight differences online free. Word-level and character-level diff. Instant, no login required.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}
-  </script>
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Text & Generators", "item": "https://logrith.in/tool/categories/text-generators"}, {"@type": "ListItem", "position": 4, "name": "Text Diff Checker", "item": "https://logrith.in/tool/tools/text-diff"}]}
-  </script>
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I compare two texts online?", "acceptedAnswer": {"@type": "Answer", "text": "Paste the original text in the first box and the revised text in the second. The tool highlights additions and deletions instantly."}}, {"@type": "Question", "name": "What is the difference between word-level and character-level diff?", "acceptedAnswer": {"@type": "Answer", "text": "Word-level diff highlights which whole words changed, while character-level diff pinpoints exact character changes within words."}}, {"@type": "Question", "name": "Can I compare code with this tool?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, it works on any plain text, including code, configuration files, and documents."}}, {"@type": "Question", "name": "Is my text uploaded anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No, the comparison runs entirely in your browser."}}]}
-  </script>
+<meta name="keywords" content="text diff, diff checker, compare two texts, text compare online, find differences between text, text comparison tool">
+<meta property="og:title" content="Compara dos textos y resalta todos los cambios | Logrith">
+<meta property="og:description" content="Pega dos versiones de un fragmento de texto o código y observa al instante cómo se resaltan, una al lado de la otra, todas las líneas añadidas, eliminadas y modificadas.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://logrith.in/es/tool/tools/text-diff">
+<meta property="og:site_name" content="Logrith">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Comprobador de diferencias de texto", "url": "https://logrith.in/es/tool/tools/text-diff", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript and a modern web browser", "description": "Compara dos textos y resalta las diferencias en línea gratis. Comparación a nivel de palabra y de carácter. Instantáneo, sin necesidad de registrarse.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Hogar", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Texto y generadores", "item": "https://logrith.in/es/tool/categories/text-generators"}, {"@type": "ListItem", "position": 4, "name": "Comprobador de diferencias de texto", "item": "https://logrith.in/es/tool/tools/text-diff"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cómo puedo comparar dos textos en línea?", "acceptedAnswer": {"@type": "Answer", "text": "Pega el texto original en el primer cuadro y el texto revisado en el segundo. La herramienta resalta al instante las adiciones y eliminaciones."}}, {"@type": "Question", "name": "¿Cuál es la diferencia entre la diferencia a nivel de palabra y a nivel de carácter?", "acceptedAnswer": {"@type": "Answer", "text": "La comparación a nivel de palabra resalta qué palabras completas cambiaron, mientras que la comparación a nivel de carácter identifica los cambios exactos de caracteres dentro de las palabras."}}, {"@type": "Question", "name": "¿Puedo comparar el código con esta herramienta?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, funciona con cualquier texto plano, incluyendo código, archivos de configuración y documentos."}}, {"@type": "Question", "name": "¿Mi texto está subido a algún sitio?", "acceptedAnswer": {"@type": "Answer", "text": "No, la comparación se realiza completamente en su navegador."}}]}</script>
 </head>
 <body class="page-text-diff">
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main">Saltar al contenido</a>
 <div id="navbar"></div>
-
 <main id="main">
-
 <header class="page-hero"><div class="page-hero-inner">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/tool/">Tools</a> › <a href="/tool/categories/text-generators">Text &amp; Generators</a> › Text Diff</nav>
-  <h1>Free Text Diff Checker</h1>
-  <p>Compare two blocks of text and highlight exactly what's different. Line-by-line and word-level diff modes. Fast, free, no login.</p>
-  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Instant</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#case"></use></svg> Word-level</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#file-text"></use></svg> Line-level</span></div>
+<nav class="breadcrumb" aria-label="Migaja de pan"><a href="/es/">Inicio</a> › <a href="/es/tool/">Herramientas</a> › <a href="/es/tool/categories/text-generators">Texto y generadores</a> › Comparación de texto</nav>
+<h1>Comprobador de diferencias de texto libre</h1>
+<p>Compara dos bloques de texto y resalta con precisión las diferencias. Modos de comparación línea por línea y palabra por palabra. Rápido, gratuito y sin necesidad de registrarse.</p>
+<div class="tag-list"><span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Gratis</span> <span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#zap"></use></svg> Instantáneo</span> <span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#case"></use></svg> A nivel de palabra</span> <span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#file-text"></use></svg> A nivel de línea</span></div>
 </div></header>
-
 <div class="tool-workspace">
-  <div class="tool-card">
-    <h2>Enter Texts to Compare</h2>
-    <div class="u-990b13">
-      <div>
-        <label class="u-8eb637">Original Text (A)</label>
-        <textarea class="tool-textarea" id="text-a" rows="10" placeholder="Paste original text here..."></textarea>
-      </div>
-      <div>
-        <label class="u-8eb637">Modified Text (B)</label>
-        <textarea class="tool-textarea" id="text-b" rows="10" placeholder="Paste modified text here..."></textarea>
-      </div>
-    </div>
-    <div class="controls-grid mt-12">
-      <div class="control-group">
-        <label>Diff Mode</label>
-        <select id="diff-mode">
-          <option value="line">Line by Line</option>
-          <option value="word">Word by Word</option>
-          <option value="char">Character by Character</option>
-        </select>
-      </div>
-      <div class="control-group">
-        <label>Case Sensitive</label>
-        <select id="case-sensitive">
-          <option value="yes">Yes</option>
-          <option value="no">No (ignore case)</option>
-        </select>
-      </div>
-      <div class="control-group">
-        <label>Ignore Whitespace</label>
-        <select id="ignore-ws">
-          <option value="no">No</option>
-          <option value="yes">Yes</option>
-        </select>
-      </div>
-    </div>
-    <div class="btn-group mt-16">
-      <button class="btn btn-primary btn-lg" id="compare-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#search"></use></svg> Compare Texts</button>
-      <button class="btn btn-secondary" id="swap-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#swap"></use></svg> Swap A/B</button>
-      <button class="btn btn-secondary" id="clear-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Clear</button>
-      <button class="btn btn-secondary" id="sample-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Load Sample</button>
-    </div>
-  </div>
-
-  <div class="tool-card is-hidden" id="result-card">
-    <h2>Diff Result</h2>
-    <div class="diff-stats mb-12" id="diff-stats"></div>
-    <div class="diff-container" id="diff-output"></div>
-    <div class="btn-group mt-12">
-      <button class="btn btn-secondary" id="copy-diff-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy Diff</button>
-    </div>
-  </div>
+<div class="tool-card">
+<h2>Introduzca los textos que desea comparar.</h2>
+<div class="u-990b13">
+<div>
+<label class="u-8eb637">Texto original (A)</label> <textarea class="tool-textarea" id="text-a" placeholder="Paste original text here..." rows="10"></textarea>
 </div>
-
+<div>
+<label class="u-8eb637">Texto modificado (B)</label> <textarea class="tool-textarea" id="text-b" placeholder="Paste modified text here..." rows="10"></textarea>
+</div>
+</div>
+<div class="controls-grid mt-12">
+<div class="control-group">
+<label>Modo diferencial</label><select id="diff-mode"><option value="line"> Línea por línea</option><option value="word"> Palabra por palabra</option><option value="char"> Personaje por personaje</option></select>
+</div>
+<div class="control-group">
+<label>Distingue mayúsculas y minúsculas</label><select id="case-sensitive"><option value="yes"> Sí</option><option value="no"> No (ignorar mayúsculas y minúsculas)</option></select>
+</div>
+<div class="control-group">
+<label>Ignorar espacios en blanco</label><select id="ignore-ws"><option value="no"> No</option><option value="yes"> Sí</option></select>
+</div>
+</div>
+<div class="btn-group mt-16">
+<button class="btn btn-primary btn-lg" id="compare-btn"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#search"></use></svg> Comparar textos</button> <button class="btn btn-secondary" id="swap-btn"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#swap"></use></svg> Intercambiar A/B</button> <button class="btn btn-secondary" id="clear-btn"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#close"></use></svg> Borrar</button> <button class="btn btn-secondary" id="sample-btn"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#copy"></use></svg> Cargar muestra</button>
+</div>
+</div>
+<div class="tool-card is-hidden" id="result-card">
+<h2>Resultado de la diferencia</h2>
+<div class="diff-stats mb-12" id="diff-stats"></div>
+<div class="diff-container" id="diff-output"></div>
+<div class="btn-group mt-12">
+<button class="btn btn-secondary" id="copy-diff-btn"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#copy"></use></svg> Copiar Diff</button>
+</div>
+</div>
+</div>
 <section class="page-section">
-  <h2>Frequently Asked Questions</h2>
-  <div class="faq-list">
-    <details class="faq-item">
-      <summary class="faq-q">How does the text diff tool work?</summary>
-      <div class="faq-a"><p>The tool uses a longest common subsequence (LCS) algorithm to find what is common between the two texts. Lines/words unique to text A are highlighted in red (removed), lines/words unique to text B are in green (added).</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">What's the difference between line diff and word diff?</summary>
-      <div class="faq-a"><p>Line diff shows which entire lines were added, removed, or changed. Word diff breaks each line into words and shows which specific words changed. Character diff is the most granular — it shows individual characters that changed.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Can I compare code with this tool?</summary>
-      <div class="faq-a"><p>Yes! The diff tool works well for comparing code. Use "Line by Line" mode for code comparisons. For code, you may want to keep "Case Sensitive" set to Yes.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Is my text uploaded to a server?</summary>
-      <div class="faq-a"><p>No, the comparison runs entirely in your browser using JavaScript. Neither text you paste in is sent anywhere, which makes it safe to compare confidential drafts or private content.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">What does the color coding mean?</summary>
-      <div class="faq-a"><p>Content shown in red represents text that exists in the first (original) input but not the second, meaning it was removed. Content shown in green represents text in the second input that wasn't in the first, meaning it was added.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">How large a text can I compare?</summary>
-      <div class="faq-a"><p>The tool handles typical documents, articles, and code files well. Very large files (tens of thousands of lines) may take a moment longer to process since comparison runs in your browser rather than on a server.</p></div>
-    </details>
-  </div>
+<h2>Preguntas frecuentes</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary class="faq-q">¿Cómo funciona la herramienta de comparación de texto?</summary>
+<div class="faq-a"><p>La herramienta utiliza un algoritmo de subsecuencia común más larga (LCS, por sus siglas en inglés) para encontrar elementos comunes entre los dos textos. Las líneas o palabras exclusivas del texto A se resaltan en rojo (eliminadas), mientras que las exclusivas del texto B se resaltan en verde (añadidas).</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Cuál es la diferencia entre la comparación de líneas y la comparación de palabras?</summary>
+<div class="faq-a"><p>La comparación de líneas muestra qué líneas completas se agregaron, eliminaron o modificaron. La comparación de palabras divide cada línea en palabras y muestra qué palabras específicas cambiaron. La comparación de caracteres es la más detallada: muestra los caracteres individuales que cambiaron.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Puedo comparar el código con esta herramienta?</summary>
+<div class="faq-a"><p>¡Sí! La herramienta diff funciona bien para comparar código. Usa el modo "Línea por línea" para comparar el código. Para el código, es recomendable mantener la opción "Distingue mayúsculas y minúsculas" activada.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Mi texto se ha subido a un servidor?</summary>
+<div class="faq-a"><p>No, la comparación se realiza completamente en tu navegador mediante JavaScript. Ninguno de los textos que pegues se envía a ningún sitio, lo que garantiza la seguridad al comparar borradores confidenciales o contenido privado.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Qué significa el código de colores?</summary>
+<div class="faq-a"><p>El contenido mostrado en rojo representa texto que existe en el primer campo (original) pero no en el segundo, lo que significa que fue eliminado. El contenido mostrado en verde representa texto en el segundo campo que no estaba en el primero, lo que significa que fue añadido.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Qué tamaño de texto puedo comparar?</summary>
+<div class="faq-a"><p>La herramienta maneja bien documentos, artículos y archivos de código comunes. Los archivos muy grandes (decenas de miles de líneas) pueden tardar un poco más en procesarse, ya que la comparación se realiza en el navegador en lugar de en un servidor.</p></div>
+</details>
+</div>
 </section>
-
 <section class="page-section prose">
-  <h2>About the Text Diff Tool</h2>
-  <p>The Logrith Text Diff tool compares two blocks of text and highlights exactly what changed between them — additions in green, removals in red — so you can spot differences instantly instead of reading through both versions line by line looking for discrepancies. It supports comparison at the line, word, or character level, and works entirely in your browser.</p>
-
-  <p>Comparing two versions of text comes up constantly: checking what changed between two drafts of a document, reviewing edits a collaborator made, comparing two versions of code before merging, or verifying that a copied block of text matches the original exactly. Doing this manually by reading both versions side by side is slow and error-prone, especially with longer text, which is exactly the problem this tool solves.</p>
-
-  <h3>Three Levels of Comparison</h3>
-  <ul>
-    <li><strong>Line by Line.</strong> Compares entire lines at once, showing which lines were added, removed, or changed. This is the most useful mode for comparing code, configuration files, or any text organized into discrete lines.</li>
-    <li><strong>Word by Word.</strong> Breaks each line down into individual words and highlights exactly which words changed within a line, useful for catching small edits in prose that a line-level diff would mark as an entire line changing.</li>
-    <li><strong>Character by Character.</strong> The most granular mode, highlighting individual characters that differ — useful for catching typos, punctuation changes, or very small edits that word-level comparison might group together.</li>
-  </ul>
-
-  <h3>How the Comparison Algorithm Works</h3>
-  <p>This tool uses a longest common subsequence (LCS) algorithm, a well-established approach to text comparison that also powers version control tools like Git's diff feature. Rather than naively comparing text position by position — which breaks down the moment anything is inserted or deleted partway through, shifting everything after it out of alignment — LCS finds the longest sequence of matching content shared between the two texts, then treats everything outside that shared sequence as either an addition or a removal. This is why inserting a single new line in the middle of a document doesn't cause the diff tool to mark every subsequent line as changed; it correctly identifies that only the new line is different and everything else still matches.</p>
-
-  <h3>Common Use Cases for Text Diffing</h3>
-  <ul>
-    <li><strong>Reviewing document edits.</strong> Quickly see what a collaborator or editor changed in a shared document without manually comparing two long files.</li>
-    <li><strong>Comparing code snippets.</strong> Check differences between two versions of a function or configuration file, especially useful when working outside a version control system.</li>
-    <li><strong>Verifying copied text.</strong> Confirm that a block of text was copied exactly, with no accidental changes, truncation, or formatting differences introduced.</li>
-    <li><strong>Tracking content changes over time.</strong> Compare an older saved version of an article or policy document against the current version to see exactly what's been updated.</li>
-    <li><strong>Catching subtle errors.</strong> Spot small but important differences, like a changed number or date, that are easy to miss when scanning text by eye.</li>
-  </ul>
-
-  <h3>Case Sensitivity and Why It Matters</h3>
-  <p>The case-sensitive toggle controls whether "Hello" and "hello" are treated as identical or different during comparison. For most natural-language prose comparison, keeping case sensitivity off can reduce noise from inconsequential capitalization differences. For code comparison, however, case sensitivity usually should stay on, since many programming languages treat identifiers, variable names, and keywords as case-sensitive — a difference between myVariable and myvariable could represent an actual bug, not just a stylistic variation.</p>
-
-  <h3>Step-by-Step: How to Compare Two Texts</h3>
-  <ol class="steps">
-    <li class="step">
-      <strong>Paste your first text</strong>
-      <p>Enter or paste the original version into the first text box.</p>
-    </li>
-    <li class="step">
-      <strong>Paste your second text</strong>
-      <p>Enter or paste the updated or comparison version into the second text box.</p>
-    </li>
-    <li class="step">
-      <strong>Choose a comparison mode</strong>
-      <p>Select line, word, or character-level comparison depending on how granular you need the result.</p>
-    </li>
-    <li class="step">
-      <strong>Review the highlighted differences</strong>
-      <p>Scan the color-coded output to see exactly what was added or removed between the two versions.</p>
-    </li>
-  </ol>
-
-  <h3>Privacy</h3>
-  <p>Both text inputs are processed entirely within your browser using JavaScript — nothing is uploaded to a server, logged, or stored anywhere. This makes the tool a safe choice for comparing confidential documents, private drafts, or proprietary code without that content ever leaving your device.</p>
+<h2>Acerca de la herramienta de comparación de texto</h2>
+<p>La herramienta de comparación de texto Logrith compara dos bloques de texto y resalta con precisión los cambios (adiciones en verde, eliminaciones en rojo), para que puedas detectar las diferencias al instante en lugar de leer ambas versiones línea por línea buscando discrepancias. Permite comparar a nivel de línea, palabra o carácter, y funciona completamente en tu navegador.</p>
+<p>Comparar dos versiones de un texto es una tarea constante: comprobar los cambios entre dos borradores de un documento, revisar las ediciones de un colaborador, comparar dos versiones de código antes de fusionarlas o verificar que un bloque de texto copiado coincida exactamente con el original. Realizar esta tarea manualmente, leyendo ambas versiones una al lado de la otra, es lento y propenso a errores, sobre todo con textos largos, problema que esta herramienta resuelve.</p>
+<h3>Tres niveles de comparación</h3>
+<ul>
+<li><strong>Línea por línea.</strong> Compara líneas completas a la vez, mostrando qué líneas se agregaron, eliminaron o modificaron. Este es el modo más útil para comparar código, archivos de configuración o cualquier texto organizado en líneas independientes.</li>
+<li><strong>Palabra por palabra.</strong> Analiza cada línea en palabras individuales y resalta exactamente qué palabras cambiaron dentro de una línea, lo que resulta útil para detectar pequeñas ediciones en la prosa que una comparación a nivel de línea marcaría como un cambio de línea completa.</li>
+<li><strong>Carácter por carácter.</strong> El modo más detallado, que resalta los caracteres individuales que difieren, resulta útil para detectar errores tipográficos, cambios de puntuación o pequeñas correcciones que la comparación a nivel de palabra podría agrupar.</li>
+</ul>
+<h3>Cómo funciona el algoritmo de comparación</h3>
+<p>Esta herramienta utiliza el algoritmo de subsecuencia común más larga (LCS), un método consolidado para la comparación de texto que también se emplea en herramientas de control de versiones como la función diff de Git. En lugar de comparar ingenuamente el texto posición por posición —lo cual falla en cuanto se inserta o elimina algo a mitad del documento, desalineando todo lo que sigue—, LCS encuentra la secuencia más larga de contenido coincidente que comparten ambos textos y trata todo lo que queda fuera de esa secuencia compartida como una adición o una eliminación. Por eso, insertar una sola línea nueva en medio de un documento no hace que la herramienta diff marque todas las líneas siguientes como modificadas; identifica correctamente que solo la nueva línea es diferente y que todo lo demás sigue siendo igual.</p>
+<h3>Casos de uso comunes para la comparación de texto</h3>
+<ul>
+<li><strong>Revisión de las ediciones de documentos.</strong> Vea rápidamente qué cambios realizó un colaborador o editor en un documento compartido sin tener que comparar manualmente dos archivos extensos.</li>
+<li><strong>Comparación de fragmentos de código.</strong> Permite comprobar las diferencias entre dos versiones de una función o archivo de configuración, lo cual resulta especialmente útil al trabajar fuera de un sistema de control de versiones.</li>
+<li><strong>Verificación del texto copiado.</strong> Confirme que el bloque de texto se copió exactamente, sin cambios accidentales, truncamientos ni diferencias de formato.</li>
+<li><strong>Seguimiento de los cambios de contenido a lo largo del tiempo.</strong> Compare una versión anterior guardada de un artículo o documento de política con la versión actual para ver exactamente qué se ha actualizado.</li>
+<li><strong>Detectar errores sutiles.</strong> Identificar pequeñas pero importantes diferencias, como un número o una fecha modificados, que son fáciles de pasar por alto al leer un texto a simple vista.</li>
+</ul>
+<h3>La importancia de las mayúsculas y minúsculas</h3>
+<p>La opción de distinción entre mayúsculas y minúsculas controla si "Hello" y "hello" se tratan como idénticas o diferentes durante la comparación. Para la mayoría de las comparaciones de texto en lenguaje natural, desactivar la distinción entre mayúsculas y minúsculas puede reducir el ruido causado por diferencias de mayúsculas insignificantes. Sin embargo, para la comparación de código, generalmente se debe mantener activada la distinción entre mayúsculas y minúsculas, ya que muchos lenguajes de programación tratan los identificadores, los nombres de variables y las palabras clave como sensibles a mayúsculas y minúsculas; una diferencia entre myVariable y myvariable podría representar un error real, no solo una variación estilística.</p>
+<h3>Paso a paso: Cómo comparar dos textos</h3>
+<ol class="steps">
+<li class="step">
+<strong>Pega tu primer texto</strong>
+<p>Introduzca o pegue la versión original en el primer cuadro de texto.</p>
+</li>
+<li class="step">
+<strong>Pega tu segundo texto</strong>
+<p>Introduzca o pegue la versión actualizada o comparativa en el segundo cuadro de texto.</p>
+</li>
+<li class="step">
+<strong>Elige un modo de comparación</strong>
+<p>Seleccione la comparación a nivel de línea, palabra o carácter, según el nivel de detalle que necesite en el resultado.</p>
+</li>
+<li class="step">
+<strong>Revise las diferencias resaltadas</strong>
+<p>Examine la salida codificada por colores para ver exactamente qué se agregó o eliminó entre las dos versiones.</p>
+</li>
+</ol>
+<h3>Privacidad</h3>
+<p>Ambos textos se procesan completamente en tu navegador mediante JavaScript; no se sube nada a un servidor, ni se registra ni se almacena en ningún lugar. Esto convierte a la herramienta en una opción segura para comparar documentos confidenciales, borradores privados o código propietario sin que dicho contenido salga de tu dispositivo.</p>
 </section>
-
 <section class="page-section">
-  <h2>Related Tools</h2>
-  <div class="related-grid">
-    <a class="related-card" href="/tool/tools/word-counter"><strong>Word Counter</strong><span>Count words, characters, and paragraphs in your text.</span></a>
-    <a class="related-card" href="/tool/tools/case-converter"><strong>Case Converter</strong><span>Convert text between uppercase, lowercase, and title case.</span></a>
-    <a class="related-card" href="/tool/tools/json-formatter"><strong>JSON Formatter</strong><span>Format, validate, and beautify JSON data.</span></a>
-    <a class="related-card" href="/tool/tools/duplicate-remover"><strong>Duplicate Remover</strong><span>Remove duplicate lines or entries from a list of text.</span></a>
-  </div>
+<h2>Herramientas relacionadas</h2>
+<div class="related-grid">
+<a class="related-card" href="/es/tool/tools/word-counter"><strong>Contador de palabras:</strong> <span>Cuenta palabras, caracteres y párrafos en tu texto.</span></a> <a class="related-card" href="/es/tool/tools/case-converter"><strong>Convertidor de mayúsculas y minúsculas:</strong> <span>Convierte texto entre mayúsculas, minúsculas y formato de título.</span></a> <a class="related-card" href="/es/tool/tools/json-formatter"><strong>Formateador JSON</strong> <span>: Formatea, valida y embellece datos JSON.</span></a> <a class="related-card" href="/es/tool/tools/duplicate-remover"><strong>Eliminador de duplicados:</strong> <span>Elimina líneas o entradas duplicadas de una lista de texto.</span></a>
+</div>
 </section>
-
 <section class="page-section">
-  <h2>Popular Searches</h2>
-  <div class="keyword-box">
-    <span class="keyword-tag">text diff online free</span>
-    <span class="keyword-tag">compare two texts online</span>
-    <span class="keyword-tag">text comparison tool</span>
-    <span class="keyword-tag">diff checker online</span>
-    <span class="keyword-tag">compare code online</span>
-    <span class="keyword-tag">find text differences</span>
-    <span class="keyword-tag">word diff tool</span>
-    <span class="keyword-tag">line by line text compare</span>
-  </div>
+<h2>Búsquedas populares</h2>
+<div class="keyword-box">
+<span class="keyword-tag">Comparación de textos en línea gratuita,</span> <span class="keyword-tag">compara dos textos en línea,</span> <span class="keyword-tag">herramienta de comparación de textos</span> <span class="keyword-tag">, verificador de diferencias en línea,</span> <span class="keyword-tag">compara códigos en línea,</span> <span class="keyword-tag">encuentra diferencias de texto,</span> <span class="keyword-tag">herramienta de comparación de palabras</span> <span class="keyword-tag">línea por línea</span>
+</div>
 </section>
-
 </main>
-
 <div id="footer"></div>
 <script src="/assets/js/main.js?v=20261115"></script>
-
-
 <script>
 // LCS-based diff algorithm
 function lcsMatrix(a, b) {

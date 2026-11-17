@@ -113,7 +113,7 @@
 <tr><td>Literal incorrecto</td><td><code>True</code>, <code>None</code>, <code>NaN</code></td><td>Utilice <code>true</code>, <code>null</code> y evite NaN.</td></tr>
 </tbody>
 </table>
-<p>Para encontrar la ubicación exacta, pega el texto en el <a href="/tool/tools/json-formatter">formateador JSON</a> , que lo valida y muestra la posición del primer error. Si los datos provienen de un registro, un mensaje de chat o un modelo de IA y presentan varios de estos problemas a la vez, la herramienta <a href="/tool/tools/json-repair">de reparación JSON</a> puede corregir automáticamente los más comunes.</p>
+<p>Para encontrar la ubicación exacta, pega el texto en el <a href="/es/tool/tools/json-formatter">formateador JSON</a> , que lo valida y muestra la posición del primer error. Si los datos provienen de un registro, un mensaje de chat o un modelo de IA y presentan varios de estos problemas a la vez, la herramienta <a href="/es/tool/tools/json-repair">de reparación JSON</a> puede corregir automáticamente los más comunes.</p>
 <p>Hay dos detalles más que suelen causar confusión. Técnicamente, la sintaxis permite claves duplicadas, pero su comportamiento varía entre analizadores, así que evítalas. Además, el formato no tiene límite de tamaño para los números, pero la mayoría de los lenguajes los interpretan como números de coma flotante de 64 bits, por lo que los enteros mayores que 9.007.199.254.740.991 pueden perder precisión en JavaScript. Envía identificadores muy largos como cadenas de texto.</p>
 </section>
 <section id="part-3">
@@ -125,16 +125,16 @@
 <li><strong>Envuelve el análisis sintáctico en un manejo de errores.</strong> Una entrada no válida genera una excepción, y una sola respuesta incorrecta no debería provocar que tu programa falle.</li>
 <li><strong>No des por sentado que la forma es correcta.</strong> Comprueba que las claves que necesitas existen y tienen el tipo esperado antes de usarlas. El encadenamiento opcional en JavaScript y <code>dict.get()</code> en Python son útiles.</li>
 <li><strong>Nunca uses <code>eval</code> para analizar JSON.</strong> Puede ejecutar código. Usa el analizador real.</li>
-<li><strong>Gestiona las fechas de forma específica.</strong> Tras la carga, convierte las cadenas ISO en objetos de fecha y vuelve a convertirlas al guardar. Un <a href="/tool/tools/unix-timestamp-converter">convertidor de marcas de tiempo Unix</a> resulta útil cuando la API proporciona números de época.</li>
+<li><strong>Gestiona las fechas de forma específica.</strong> Tras la carga, convierte las cadenas ISO en objetos de fecha y vuelve a convertirlas al guardar. Un <a href="/es/tool/tools/unix-timestamp-converter">convertidor de marcas de tiempo Unix</a> resulta útil cuando la API proporciona números de época.</li>
 <li><strong>Formato legible para personas, tamaño reducido para máquinas.</strong> La sangría facilita la lectura; al eliminar los espacios en blanco, se reduce el tamaño del archivo.</li>
 </ol>
-<p>Al trabajar con API, compruebe también el encabezado <code>Content-Type: application/json</code> y el código de estado HTTP antes de analizarlos. De lo contrario, una página de error que se devuelva en HTML se mostrará como un error de análisis JSON confuso. La <a href="/tool/tools/http-status-code-lookup">tabla de códigos de estado HTTP</a> explica el significado de cada código.</p>
+<p>Al trabajar con API, compruebe también el encabezado <code>Content-Type: application/json</code> y el código de estado HTTP antes de analizarlos. De lo contrario, una página de error que se devuelva en HTML se mostrará como un error de análisis JSON confuso. La <a href="/es/tool/tools/http-status-code-lookup">tabla de códigos de estado HTTP</a> explica el significado de cada código.</p>
 </section>
 <section id="part-4">
 <h2>Parte 4: Conversión de JSON a CSV, YAML y viceversa</h2>
 <p>Con frecuencia, es necesario convertir JSON a otros formatos. El enfoque adecuado depende del formato de destino.</p>
-<p><strong>Conversión de JSON a CSV.</strong> CSV es una tabla plana, por lo que una matriz de objetos similares se mapea perfectamente: cada objeto se convierte en una fila y cada clave en una columna. Los objetos anidados se pueden aplanar en columnas con notación de puntos, como <code>address.city</code>, y las matrices se mantienen mejor como texto JSON dentro de una celda. El <a href="/tool/tools/json-csv-converter">convertidor de JSON a CSV</a> funciona en ambas direcciones y maneja las comillas de comas y saltos de línea. Verifique el resultado en una hoja de cálculo y recuerde que las hojas de cálculo pueden reformatear silenciosamente valores como números largos e identificadores con ceros iniciales.</p>
-<p><strong>Conversión de JSON a YAML.</strong> YAML expresa las mismas estructuras con sangría y permite comentarios, lo que lo hace popular para la configuración. Dado que la mayoría de los JSON son YAML válidos, la conversión suele ser sin pérdida de información, pero al convertir de nuevo, los tipos pueden cambiar si YAML interpreta erróneamente el valor; por ejemplo, si interpreta <code>no</code> como un valor booleano. Utilice el <a href="/tool/tools/yaml-json-converter">convertidor de YAML a JSON</a> para confirmar que la configuración sigue teniendo el significado previsto.</p>
+<p><strong>Conversión de JSON a CSV.</strong> CSV es una tabla plana, por lo que una matriz de objetos similares se mapea perfectamente: cada objeto se convierte en una fila y cada clave en una columna. Los objetos anidados se pueden aplanar en columnas con notación de puntos, como <code>address.city</code>, y las matrices se mantienen mejor como texto JSON dentro de una celda. El <a href="/es/tool/tools/json-csv-converter">convertidor de JSON a CSV</a> funciona en ambas direcciones y maneja las comillas de comas y saltos de línea. Verifique el resultado en una hoja de cálculo y recuerde que las hojas de cálculo pueden reformatear silenciosamente valores como números largos e identificadores con ceros iniciales.</p>
+<p><strong>Conversión de JSON a YAML.</strong> YAML expresa las mismas estructuras con sangría y permite comentarios, lo que lo hace popular para la configuración. Dado que la mayoría de los JSON son YAML válidos, la conversión suele ser sin pérdida de información, pero al convertir de nuevo, los tipos pueden cambiar si YAML interpreta erróneamente el valor; por ejemplo, si interpreta <code>no</code> como un valor booleano. Utilice el <a href="/es/tool/tools/yaml-json-converter">convertidor de YAML a JSON</a> para confirmar que la configuración sigue teniendo el significado previsto.</p>
 <p>¿No sabes qué formato se adapta mejor a tu proyecto? La comparación entre <a href="/es/ai-technology/json-vs-yaml-vs-xml-vs-csv">JSON, YAML, XML y CSV</a> te ofrece una regla sencilla para elegir.</p>
 </section>
 <section id="part-5">
@@ -146,9 +146,9 @@
 <li><strong>Elimine los contenedores.</strong> Elimine las vallas de código y cualquier texto que se encuentre antes de la primera llave y después de la última antes de analizar.</li>
 <li><strong>Analizar en un bloque try/catch y,</strong> en caso de fallo, volver a intentarlo una vez con el mensaje de error o recurrir a una solución segura.</li>
 <li><strong>Validar según un esquema.</strong> Comprobar las claves, los tipos y los valores permitidos mediante un validador como JSON Schema, en lugar de confiar en el modelo.</li>
-<li><strong>Ten en cuenta la longitud.</strong> Las salidas largas pueden cortarse a la mitad al alcanzar el límite de salida del modelo, lo que genera JSON no válido. Mantén las salidas cortas o solicítalas por partes. La <a href="/tool/tools/ai-context-calculator">calculadora de contexto de IA</a> te ayuda a estimar cuánto texto cabe.</li>
+<li><strong>Ten en cuenta la longitud.</strong> Las salidas largas pueden cortarse a la mitad al alcanzar el límite de salida del modelo, lo que genera JSON no válido. Mantén las salidas cortas o solicítalas por partes. La <a href="/es/tool/tools/ai-context-calculator">calculadora de contexto de IA</a> te ayuda a estimar cuánto texto cabe.</li>
 </ol>
-<p>Si una respuesta presenta errores menores, la herramienta <a href="/tool/tools/json-repair">de reparación JSON</a> muestra cómo se vería la solución. Sin embargo, en producción, es preferible la prevención (esquemas y validación) a la reparación, ya que los datos reparados silenciosamente pueden ocultar problemas reales. Para comprender por qué los modelos cometen estos errores de formato, consulte <a href="/es/ai-technology/how-large-language-models-work">cómo funcionan los modelos de lenguaje a gran escala</a> .</p>
+<p>Si una respuesta presenta errores menores, la herramienta <a href="/es/tool/tools/json-repair">de reparación JSON</a> muestra cómo se vería la solución. Sin embargo, en producción, es preferible la prevención (esquemas y validación) a la reparación, ya que los datos reparados silenciosamente pueden ocultar problemas reales. Para comprender por qué los modelos cometen estos errores de formato, consulte <a href="/es/ai-technology/how-large-language-models-work">cómo funcionan los modelos de lenguaje a gran escala</a> .</p>
 </section>
 <section id="checklist">
 <h2>Lista de verificación rápida</h2>
@@ -195,27 +195,27 @@
 <section class="page-section">
 <div class="section-header"><h2>Herramientas gratuitas mencionadas en esta guía</h2></div>
 <div class="tool-list">
-<a href="/tool/tools/json-formatter" class="tool-row">
+<a href="/es/tool/tools/json-formatter" class="tool-row">
 <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
 <div class="tool-row-body"><div class="tool-row-name">Formateador JSON</div><div class="tool-row-desc">Pegue el JSON para darle formato con la indentación adecuada, validar su sintaxis con la ubicación exacta de los errores o reducirlo a una sola línea.</div></div>
 <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
 </a>
-<a href="/tool/tools/json-repair" class="tool-row">
+<a href="/es/tool/tools/json-repair" class="tool-row">
 <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
 <div class="tool-row-body"><div class="tool-row-name">Herramienta de reparación JSON</div><div class="tool-row-desc">Pegue el JSON no válido para que se repare automáticamente, corrigiendo las comas finales y las claves sin comillas, y explicando claramente los errores.</div></div>
 <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
 </a>
-<a href="/tool/tools/json-csv-converter" class="tool-row">
+<a href="/es/tool/tools/json-csv-converter" class="tool-row">
 <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
 <div class="tool-row-body"><div class="tool-row-name">Convertidor de JSON a CSV</div><div class="tool-row-desc">Convierte JSON a CSV o CSV a JSON en línea. Simplifica objetos anidados, maneja campos entre comillas y comas, y admite delimitadores como coma, punto y coma y tabulación. Gratuito y privado.</div></div>
 <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
 </a>
-<a href="/tool/tools/yaml-json-converter" class="tool-row">
+<a href="/es/tool/tools/yaml-json-converter" class="tool-row">
 <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
 <div class="tool-row-body"><div class="tool-row-name">Convertidor de YAML a JSON</div><div class="tool-row-desc">Pega el código YAML o JSON y obtén una conversión precisa al otro formato al instante, conservando el formato original.</div></div>
 <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
 </a>
-<a href="/tool/tools/unix-timestamp-converter" class="tool-row">
+<a href="/es/tool/tools/unix-timestamp-converter" class="tool-row">
 <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
 <div class="tool-row-body"><div class="tool-row-name">Convertidor de marcas de tiempo Unix</div><div class="tool-row-desc">Convierte marcas de tiempo Unix a fechas legibles y viceversa, a segundos o milisegundos de la época. Reloj en tiempo real, detección automática de unidades y compatibilidad con zonas horarias. Gratis, funciona en tu navegador.</div></div>
 <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>

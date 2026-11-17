@@ -1,63 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSS Box Shadow: What Each Value Actually Does | Logrith</title>
-  <meta name="description" content="A plain-English breakdown of every value in the CSS box-shadow property, with examples of how offset, blur and spread each work.">
-  <meta name="keywords" content="css box shadow generator free, box shadow syntax explained, css shadow blur spread offset, inset box shadow">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="author" content="Plert Ankush">
-  <link rel="canonical" href="https://logrith.in/tool/blog/css-box-shadow-generator-guide">
-  <meta property="og:title" content="CSS Box Shadow: What Each Value Actually Does | Logrith">
-  <meta property="og:description" content="A plain-English breakdown of every value in the CSS box-shadow property, with examples of how offset, blur and spread each work.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://logrith.in/tool/blog/css-box-shadow-generator-guide">
-  <meta property="og:site_name" content="Logrith">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="CSS Box Shadow: What Each Value Actually Does | Logrith">
-  <meta name="twitter:description" content="A plain-English breakdown of every value in the CSS box-shadow property, with examples of how offset, blur and spread each work.">
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#0D0D0D">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sombra de caja CSS: ¿Qué hace realmente cada valor? | Logrith</title>
+<meta name="description" content="Una explicación sencilla de cada valor de la propiedad CSS box-shadow, con ejemplos de cómo funcionan offset, blur y spread.">
+<meta name="keywords" content="css box shadow generator free, box shadow syntax explained, css shadow blur spread offset, inset box shadow">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Plert Ankush">
+<link rel="canonical" href="https://logrith.in/es/tool/blog/css-box-shadow-generator-guide">
+  <link rel="alternate" hreflang="x-default" href="https://logrith.in/tool/blog/css-box-shadow-generator-guide">
+  <link rel="alternate" hreflang="es" href="https://logrith.in/es/tool/blog/css-box-shadow-generator-guide">
+  <link rel="alternate" hreflang="en" href="https://logrith.in/tool/blog/css-box-shadow-generator-guide">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
-  <link rel="preload" href="/components/navbar.html" as="fetch" type="text/html" crossorigin>
-  <link rel="preload" href="/components/footer.html" as="fetch" type="text/html" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=20261115">
-  <link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
 
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","@id":"https://logrith.in/#organization","name":"Logrith","url":"https://logrith.in"}
-  </script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Article","datePublished":"2026-10-20","dateModified":"2026-10-31","headline":"CSS Box Shadow: What Each Value in the Syntax Actually Does","description":"How the CSS box-shadow property's offset, blur, spread, color, and inset values work together.","author":{"@type":"Person","name":"Plert Ankush","url":"https://logrith.in/pages/founder"},"publisher":{"@id":"https://logrith.in/#organization"},"mainEntityOfPage":"https://logrith.in/tool/blog/css-box-shadow-generator-guide"}
-  </script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebPage","name":"CSS Box Shadow Generator Guide","url":"https://logrith.in/tool/blog/css-box-shadow-generator-guide","isPartOf":{"@type":"Blog","name":"Logrith Blog","url":"https://logrith.in/tool/blog/"}}
-  </script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"CSS Box Shadow Generator","url":"https://logrith.in/tool/tools/css-box-shadow-generator","applicationCategory":"DeveloperApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
-  </script>
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Tool Guides", "item": "https://logrith.in/tool/blog/"}, {"@type": "ListItem", "position": 4, "name": "Developer Tools", "item": "https://logrith.in/tool/blog/categories/developer-tools"}, {"@type": "ListItem", "position": 5, "name": "CSS Box Shadow Generator", "item": "https://logrith.in/tool/blog/css-box-shadow-generator-guide"}]}
-  </script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-    {"@type":"Question","name":"What do the numbers in a CSS box-shadow value mean?","acceptedAnswer":{"@type":"Answer","text":"In order, they typically represent horizontal offset, vertical offset, blur radius, and spread radius, followed by a color value. Horizontal and vertical offset position the shadow, blur radius softens its edges, and spread radius expands or contracts the shadow's size before blurring is applied."}},
-    {"@type":"Question","name":"What's the difference between blur radius and spread radius?","acceptedAnswer":{"@type":"Answer","text":"Blur radius softens and fades the shadow's edges outward, like increasing the softness of a light source. Spread radius expands or shrinks the shadow's base size uniformly in all directions before any blurring is applied, changing how large the shadow shape is to begin with."}},
-    {"@type":"Question","name":"What does the inset keyword do in a box-shadow value?","acceptedAnswer":{"@type":"Answer","text":"Adding 'inset' changes the shadow from an outer shadow (appearing to cast outward from the element, suggesting elevation) to an inner shadow (appearing to recede into the element, suggesting a pressed or carved-in appearance)."}},
-    {"@type":"Question","name":"Can an element have more than one box-shadow applied at once?","acceptedAnswer":{"@type":"Answer","text":"Yes, multiple shadow values can be applied to a single element by separating them with commas, layering several shadows together to create more complex, realistic depth effects than a single shadow alone can achieve."}}
-  ]}
-  </script>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
-  <script>
+<meta property="og:title" content="Sombra de caja CSS: ¿Qué hace realmente cada valor? | Logrith">
+<meta property="og:description" content="Una explicación sencilla de cada valor de la propiedad CSS box-shadow, con ejemplos de cómo funcionan offset, blur y spread.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://logrith.in/es/tool/blog/css-box-shadow-generator-guide">
+<meta property="og:site_name" content="Logrith">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sombra de caja CSS: ¿Qué hace realmente cada valor? | Logrith">
+<meta name="twitter:description" content="Una explicación sencilla de cada valor de la propiedad CSS box-shadow, con ejemplos de cómo funcionan offset, blur y spread.">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0D0D0D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
+<link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261115">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "datePublished": "2026-10-20", "dateModified": "2026-10-31", "headline": "Sombra de caja CSS: ¿Qué hace realmente cada valor en la sintaxis?", "description": "Cómo funcionan conjuntamente los valores offset, blur, spread, color e inset de la propiedad box-shadow de CSS.", "author": {"@type": "Person", "name": "Plert Ankush", "url": "https://logrith.in/es/pages/founder"}, "publisher": {"@id": "https://logrith.in/#organization"}, "mainEntityOfPage": "https://logrith.in/es/tool/blog/css-box-shadow-generator-guide"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Guía del generador de sombras de caja CSS", "url": "https://logrith.in/es/tool/blog/css-box-shadow-generator-guide", "isPartOf": {"@type": "Blog", "name": "Logrith Blog", "url": "https://logrith.in/es/tool/blog/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Generador de sombras de caja CSS", "url": "https://logrith.in/es/tool/tools/css-box-shadow-generator", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Hogar", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Guías de herramientas", "item": "https://logrith.in/es/tool/blog/"}, {"@type": "ListItem", "position": 4, "name": "Herramientas para desarrolladores", "item": "https://logrith.in/es/tool/blog/categories/developer-tools"}, {"@type": "ListItem", "position": 5, "name": "Generador de sombras de caja CSS", "item": "https://logrith.in/es/tool/blog/css-box-shadow-generator-guide"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Qué significan los números en el valor de una sombra de caja CSS?", "acceptedAnswer": {"@type": "Answer", "text": "En orden, suelen representar el desplazamiento horizontal, el desplazamiento vertical, el radio de desenfoque y el radio de expansión, seguidos de un valor de color. El desplazamiento horizontal y vertical posicionan la sombra, el radio de desenfoque suaviza sus bordes y el radio de expansión aumenta o disminuye el tamaño de la sombra antes de aplicar el desenfoque."}}, {"@type": "Question", "name": "¿Cuál es la diferencia entre radio de desenfoque y radio de dispersión?", "acceptedAnswer": {"@type": "Answer", "text": "El radio de desenfoque suaviza y difumina los bordes de la sombra hacia afuera, como si aumentara la suavidad de una fuente de luz. El radio de dispersión expande o encoge el tamaño base de la sombra de forma uniforme en todas las direcciones antes de aplicar cualquier desenfoque, modificando así el tamaño inicial de la forma de la sombra."}}, {"@type": "Question", "name": "¿Qué función cumple la palabra clave `insert` en un valor de `box-shadow`?", "acceptedAnswer": {"@type": "Answer", "text": "Al añadir la opción \"insertar\", la sombra cambia de una sombra exterior (que parece proyectarse hacia afuera desde el elemento, sugiriendo elevación) a una sombra interior (que parece retroceder hacia el elemento, sugiriendo una apariencia de presión o tallado)."}}, {"@type": "Question", "name": "¿Puede un elemento tener más de una sombra aplicada a la vez?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, se pueden aplicar varios valores de sombra a un solo elemento separándolos con comas, superponiendo varias sombras para crear efectos de profundidad más complejos y realistas que los que puede lograr una sola sombra."}}]}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+<script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -65,141 +52,115 @@
   </script>
 </head>
 <body class="page-css-box-shadow-generator-guide">
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main">Saltar al contenido</a>
 <div id="navbar"></div>
-
 <main id="main">
-
 <header class="page-hero"><div class="page-hero-inner">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/tool/">Tools</a> &rsaquo; <a href="/tool/blog/">Tool Guides</a> &rsaquo; <a href="/tool/blog/categories/developer-tools">Developer Tools</a> &rsaquo; CSS Box Shadow Generator</nav>
-  <h1>Decoding CSS box-shadow: Offset, Blur, Spread, and Inset Fully Explained</h1>
-  <p>The box-shadow property packs four numeric values plus a color and an optional keyword into one declaration, and while copying a value from a generator works fine, actually understanding what each piece controls is what lets you adjust a shadow confidently rather than randomly tweaking numbers until something looks right, and it opens the door to genuinely custom effects a generator's default presets alone would never produce.</p>
-  <a href="/tool/tools/css-box-shadow-generator" class="btn btn-primary btn-lg">
-    <svg class="icon"><use href="/assets/svg/icons.svg#square"></use></svg>
-    Generate a Box Shadow
+<nav class="breadcrumb" aria-label="Migaja de pan"><a href="/es/">Inicio</a> › <a href="/es/tool/">Herramientas</a> › <a href="/es/tool/blog/">Guías de herramientas</a> › <a href="/es/tool/blog/categories/developer-tools">Herramientas para desarrolladores</a> › Generador de sombras de caja CSS</nav>
+<h1>Descifrando la función box-shadow de CSS: Offset, Blur, Spread e Inset explicados en detalle.</h1>
+<p>La propiedad box-shadow incluye cuatro valores numéricos, un color y una palabra clave opcional en una sola declaración. Si bien copiar un valor de un generador funciona bien, comprender realmente qué controla cada elemento es lo que permite ajustar una sombra con seguridad, en lugar de modificar números al azar hasta que algo se vea bien. Además, abre la puerta a efectos verdaderamente personalizados que los ajustes preestablecidos predeterminados de un generador por sí solos nunca producirían.</p>
+<a href="/es/tool/tools/css-box-shadow-generator" class="btn btn-primary btn-lg">
+<svg class="icon"><use href="/assets/svg/icons.svg#square"></use></svg> Generar una sombra de caja
   </a>
-  <p class="byline">By <a href="/pages/founder" rel="author">Plert Ankush</a> &middot; Published <time datetime="2026-10-20">Oct 20, 2026</time> &middot; Updated <time datetime="2026-10-31">Oct 31, 2026</time></p>
+<p class="byline">Por <a href="/es/pages/founder" rel="author">Plert Ankush</a> · Publicado<time datetime="2026-10-20"> 20 de octubre de 2026</time> · Actualizado<time datetime="2026-10-31"> 31 de octubre de 2026</time></p>
 </div></header>
-
 <article class="page-section prose">
-
-  <nav class="toc" aria-label="On this page">
-    <h2>On This Page</h2>
-    <ol>
-      <li><a href="#how-to-use">How to Generate a Box Shadow</a></li>
-      <li><a href="#syntax">The box-shadow Syntax Broken Down</a></li>
-      <li><a href="#offset">Horizontal and Vertical Offset</a></li>
-      <li><a href="#blur-spread">Blur Radius vs. Spread Radius</a></li>
-      <li><a href="#inset">The Inset Keyword: Outer vs. Inner Shadows</a></li>
-      <li><a href="#layering">Layering Multiple Shadows for Realistic Depth</a></li>
-      <li><a href="#mistakes">Common Mistakes</a></li>
-      <li><a href="#faq">Frequently Asked Questions</a></li>
-    </ol>
-  </nav>
-
-  <h2 id="how-to-use">How to Generate a Box Shadow</h2>
-  <ol class="steps">
-    <li class="step">
-      <p>Open the <a href="/tool/tools/css-box-shadow-generator">CSS Box Shadow Generator</a> to get started right away.</p>
-    </li>
-    <li class="step">
-      <p>Adjust the offset, blur, spread, color, and opacity sliders while previewing the result live.</p>
-    </li>
-    <li class="step">
-      <p>Toggle inset if you want an inner shadow instead of an outer one.</p>
-    </li>
-    <li class="step">
-      <p>Copy the generated CSS code directly into your stylesheet for immediate use.</p>
-    </li>
-  </ol>
-
-  <h2 id="syntax">The box-shadow Syntax Broken Down</h2>
-  <p>A full box-shadow declaration looks like: <code>box-shadow: 2px 4px 8px 0px rgba(0,0,0,0.25);</code>. Reading left to right, the four numeric values are horizontal offset, vertical offset, blur radius, and spread radius, followed by the shadow's color (here using rgba to include transparency). An optional <code>inset</code> keyword can appear at the start or end of the value to flip the shadow from outer to inner. Multiple shadows can be layered by separating complete shadow declarations with commas, a technique covered in more detail further down. The order of the four numeric values is fixed and cannot be rearranged — browsers parse box-shadow strictly according to this positional convention, meaning even a syntactically valid-looking value with values in the wrong order will produce an unexpected visual result rather than an error, since the browser has no way to know your intended meaning differs from the standard positional interpretation.</p>
-
-  <h2 id="offset">Horizontal and Vertical Offset</h2>
-  <div class="table-wrap">
-    <table class="table">    <tr><th>Value</th><th>What It Controls</th><th>Effect</th></tr>
-    <tr><td>Horizontal offset</td><td>Left/right shadow position</td><td>Positive moves shadow right, negative moves it left</td></tr>
-    <tr><td>Vertical offset</td><td>Up/down shadow position</td><td>Positive moves shadow down, negative moves it up</td></tr>
-  </table>
-  </div>
-  <p>These first two values position the shadow relative to the element casting it, functioning conceptually like a light source's direction — a shadow offset down and to the right suggests a light source coming from the upper left, which is the most common, natural-feeling convention used in most UI design, mimicking how light typically falls in real-world environments. Setting both offsets to zero produces a shadow that surrounds the element evenly on all sides rather than appearing to fall in any particular direction, useful for a subtle, ambient glow effect rather than a directional shadow suggesting elevation. Larger offset values combined with proportionally larger blur generally suggest a more dramatically elevated element, since real-world shadows genuinely do grow larger and more diffuse the further their source is lifted above the surface behind it, making offset magnitude a useful, intuitive dial for communicating relative elevation across different interface elements.</p>
-
-  <h2 id="blur-spread">Blur Radius vs. Spread Radius</h2>
-  <p>These two values are the ones most often confused, since both affect the shadow's apparent size, but through genuinely different mechanisms. Blur radius softens and fades the shadow's edges outward, similar to how increasing a light source's softness produces a more gradual, feathered shadow edge rather than a sharp one — a higher blur value makes the shadow's boundary fade out over a longer distance. Spread radius, by contrast, expands or shrinks the shadow's base shape uniformly in every direction before any blurring is applied, functioning more like scaling the shadow's underlying size up or down. A shadow with high spread and low blur looks like a solid-edged, enlarged silhouette; a shadow with low spread and high blur looks like a soft, diffused glow closer to the element's original size. Combining both values thoughtfully — typically a moderate blur with a small or even negative spread — produces the soft, realistic elevation effect commonly seen in modern card-based and material-design-influenced interfaces. Negative spread values are particularly useful and underused: shrinking the shadow's base slightly while applying generous blur produces a softer, more contained glow than positive spread would, which is exactly the technique behind many of the subtle, refined card shadows seen across contemporary web and app design.</p>
-
-  <h2>Real-World Scenarios</h2>
-  <ul>
-    <li><strong>"I want a subtle card elevation effect like modern web apps use."</strong> Use a moderate blur (8-16px), small or zero spread, low opacity (10-25%), and a modest vertical offset (2-4px) for a clean, contemporary card shadow that reads as polished without looking heavy-handed.</li>
-    <li><strong>"I need a pressed button state for when a user clicks."</strong> Apply <code>inset</code> with a small offset and blur to create the visual impression of the button being pushed inward.</li>
-    <li><strong>"My shadow looks harsh and unnatural."</strong> Try reducing opacity, increasing blur radius slightly, and switching from pure black to a dark, slightly desaturated color for a softer, more realistic appearance.</li>
-    <li><strong>"I want a glowing effect rather than a directional shadow."</strong> Set horizontal and vertical offset to zero, increase blur significantly, and use a bright or saturated color to create a glow rather than a traditional cast shadow.</li>
-  </ul>
-
-  <h2>Why box-shadow Became So Central to Modern Web Design</h2>
-  <p>The widespread adoption of subtle shadow-based depth cues in web interfaces traces largely to design systems and visual languages that emphasized layering and elevation as a way to communicate interface hierarchy — which elements sit "above" others, which are interactive, which represent distinct groupings of content. Before browsers reliably supported flexible shadow rendering, achieving similar depth effects required image-based tricks (background images simulating shadows, or multiple nested elements with border tricks), all considerably more cumbersome and less flexible than a single CSS property that could be adjusted with live, immediate visual feedback. As box-shadow support became universal across browsers and design conventions matured around using elevation and shadow as a genuine information hierarchy signal (not just decoration), it became one of the most frequently used properties in modern CSS, appearing on cards, modals, dropdowns, buttons, and countless other interface elements where conveying a sense of depth or layering meaningfully improves the interface's visual clarity and usability, turning what began as a purely decorative CSS feature into a genuinely functional piece of interface communication.</p>
-
-  <h2 id="inset">The Inset Keyword: Outer vs. Inner Shadows</h2>
-  <p>By default, box-shadow produces an outer shadow, appearing to cast outward from behind the element, which visually suggests the element is raised or elevated above the surface behind it. Adding the <code>inset</code> keyword flips this entirely, producing a shadow that appears inside the element's boundary instead, receding inward rather than casting outward — this creates the visual impression of the element being pressed into or carved out of the surface, commonly used for input fields, pressed button states, or any UI element intended to convey a recessed rather than elevated appearance. The same offset, blur, spread, and color values apply identically in both cases; only the direction the shadow appears to fall (outward or inward) changes based on whether inset is present.</p>
-
-  <h2 id="layering">Layering Multiple Shadows for Realistic Depth</h2>
-  <p>A single box-shadow value can look convincingly three-dimensional for simple, everyday cases, but genuinely realistic elevation effects — the kind seen in polished modern interfaces — typically layer two or more shadow values together, separated by commas. A common pattern combines a tight, low-opacity shadow close to the element (simulating ambient occlusion, the subtle darkening where two surfaces nearly touch) with a larger, softer, more diffused shadow further out (simulating the broader cast shadow from a directional light source). This layered approach mimics how shadows actually behave in real physical environments, where multiple light sources and surface interactions combine to produce a shadow that's rarely a single uniform blur, and it's exactly the technique behind the elevation systems used in many popular design frameworks that assign different named "elevation levels" to different combinations of layered shadow values. Higher elevation levels in these systems typically use larger offsets, larger blur radii, and sometimes an additional third layered shadow, producing a progressively more pronounced sense of depth that visually communicates an element floating further above the surface behind it — a genuinely useful, systematic way to build a consistent visual hierarchy across an entire interface rather than guessing at shadow values independently for each component.</p>
-
-  <h2 id="mistakes">Common Mistakes</h2>
-  <ul>    <li><strong>Confusing blur radius with spread radius.</strong> As covered above, these control genuinely different aspects of the shadow's appearance — adjust each independently and observe the distinct effects to build real intuition rather than treating them as interchangeable.</li>
-    <li><strong>Using pure black at high opacity for every shadow.</strong> Real shadows are rarely pure black — using a dark, desaturated version of the background color (or a low-opacity black) typically produces a more natural, less harsh result that reads as genuinely realistic rather than artificial and heavy-handed.</li>
-    <li><strong>Forgetting that inset shadows use the same offset direction logic.</strong> The offset values still control shadow direction with inset applied, just now appearing to recede inward into the element rather than project outward away from it.</li>
-    <li><strong>Overusing heavy shadows across an entire interface.</strong> Excessive, heavy shadows on too many elements simultaneously often reads as visually cluttered rather than convincingly elevated — restraint and consistency usually produce a far more polished, professional-looking result than maximalist shadow use applied everywhere indiscriminately.</li>
-    <li><strong>Ignoring negative spread as a useful technique.</strong> Slightly negative spread combined with generous blur produces a softer, more contained glow effect that's frequently more refined-looking and subtle than the default combination of zero or positive spread most people reach for by default without experimenting further.</li>
-  </ul>
-
-  <h3>Why Choose Logrith</h3>
-  <p>Generation happens entirely in your browser with a live visual preview, no signup required — adjust every value and see the effect immediately, then copy the exact CSS you need directly into your project, without needing to guess at values or iterate through a code editor's slow refresh cycle just to see a small adjustment's effect, saving genuine time whether you're tweaking a single component or exploring several design options quickly.</p>
-
-</article>
-
-<article class="page-section prose">
-  <h2 id="faq">Frequently Asked Questions</h2>
-  <div class="faq-list">
-    <details class="faq-item">
-      <summary class="faq-q">What do the numbers in a box-shadow value mean?</summary>
-      <div class="faq-a"><p>In order: horizontal offset, vertical offset, blur radius, and spread radius, followed by color. Offsets position the shadow, blur softens edges, and spread expands or contracts the shadow's size before blurring is applied.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">What's the difference between blur and spread?</summary>
-      <div class="faq-a"><p>Blur radius softens and fades the shadow's edges outward. Spread radius expands or shrinks the shadow's base size uniformly before any blurring is applied, changing its underlying shape.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">What does the inset keyword do?</summary>
-      <div class="faq-a"><p>It changes the shadow from an outer shadow (suggesting elevation) to an inner shadow (suggesting a pressed or recessed appearance), using the same offset, blur, and spread logic in the opposite direction.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Can an element have multiple box-shadows?</summary>
-      <div class="faq-a"><p>Yes, multiple shadow values can be applied by separating them with commas, layering several shadows to create more complex, realistic depth effects than any single shadow alone could achieve.</p></div>
-    </details>
-  </div>
-
-  <h2>Conclusion</h2>
-  <p>The box-shadow property's syntax packs a lot into one line, but each value controls something distinct and learnable: offsets for position, blur for edge softness, spread for size, and an optional inset flag for direction. Understanding these individually, rather than treating shadow values as a black box to copy and paste, makes it far easier to adjust a shadow confidently for a specific design need rather than blindly tweaking numbers until something looks acceptable, and it opens the door to layering multiple shadows together for the kind of realistic, polished depth effects that a single flat shadow value alone can never quite achieve on its own, no matter how carefully its individual values are tuned.</p>
-</article>
-
-<nav class="post-nav page-section" aria-label="More guides">
-  <a href="/tool/blog/">&larr; Back to Blog</a>
-  <a href="/tool/blog/categories/developer-tools">More Developer Tools Guides &rarr;</a>
+<nav class="toc" aria-label="En esta página">
+<h2>En esta página</h2>
+<ol>
+<li><a href="#how-to-use">Cómo generar una sombra de caja</a></li>
+<li><a href="#syntax">Explicación detallada de la sintaxis de la sombra de caja</a></li>
+<li><a href="#offset">Desplazamiento horizontal y vertical</a></li>
+<li><a href="#blur-spread">Radio de desenfoque vs. radio de dispersión</a></li>
+<li><a href="#inset">La palabra clave insertada: Sombras exteriores vs. sombras interiores</a></li>
+<li><a href="#layering">Superposición de múltiples sombras para lograr una profundidad realista.</a></li>
+<li><a href="#mistakes">Errores comunes</a></li>
+<li><a href="#faq">Preguntas frecuentes</a></li>
+</ol>
 </nav>
-
+<h2 id="how-to-use">Cómo generar una sombra de caja</h2>
+<ol class="steps">
+<li class="step">
+<p>Abre el <a href="/es/tool/tools/css-box-shadow-generator">Generador de Sombras de Caja CSS</a> para empezar de inmediato.</p>
+</li>
+<li class="step">
+<p>Ajusta los controles deslizantes de desplazamiento, desenfoque, dispersión, color y opacidad mientras previsualizas el resultado en tiempo real.</p>
+</li>
+<li class="step">
+<p>Activa la opción "insertar" si deseas una sombra interior en lugar de una exterior.</p>
+</li>
+<li class="step">
+<p>Copia el código CSS generado directamente en tu hoja de estilos para usarlo de inmediato.</p>
+</li>
+</ol>
+<h2 id="syntax">Explicación detallada de la sintaxis de la sombra de caja</h2>
+<p>Una declaración completa de box-shadow se ve así: <code>box-shadow: 2px 4px 8px 0px rgba(0,0,0,0.25);</code>. De izquierda a derecha, los cuatro valores numéricos son desplazamiento horizontal, desplazamiento vertical, radio de desenfoque y radio de dispersión, seguidos del color de la sombra (aquí se usa rgba para incluir transparencia). Se puede agregar una palabra clave opcional <code>inset</code> al principio o al final del valor para invertir la sombra de exterior a interior. Se pueden superponer varias sombras separando las declaraciones completas de sombra con comas, una técnica que se explica con más detalle más adelante. El orden de los cuatro valores numéricos es fijo y no se puede reorganizar: los navegadores interpretan box-shadow estrictamente según esta convención posicional, lo que significa que incluso un valor que parezca sintácticamente válido con valores en el orden incorrecto producirá un resultado visual inesperado en lugar de un error, ya que el navegador no tiene forma de saber que el significado que se pretende tiene difiere de la interpretación posicional estándar.</p>
+<h2 id="offset">Desplazamiento horizontal y vertical</h2>
+<div class="table-wrap">
+<table class="table"> <tr><th>Valor</th><th>Qué controla</th><th>Efecto</th></tr>
+<tr><td>Desplazamiento horizontal</td><td>Posición de la sombra izquierda/derecha</td><td>Los movimientos positivos proyectan la sombra a la derecha, los movimientos negativos la proyectan a la izquierda.</td></tr>
+<tr><td>Desplazamiento vertical</td><td>Posición de la sombra hacia arriba/abajo</td><td>Los movimientos positivos desplazan la sombra hacia abajo, los negativos la desplazan hacia arriba.</td></tr>
+</table>
+</div>
+<p>Estos dos primeros valores posicionan la sombra en relación con el elemento que la proyecta, funcionando conceptualmente como la dirección de una fuente de luz: una sombra desplazada hacia abajo y a la derecha sugiere una fuente de luz proveniente de la parte superior izquierda, que es la convención más común y natural utilizada en la mayoría de los diseños de interfaz de usuario, imitando cómo suele caer la luz en entornos del mundo real. Establecer ambos desplazamientos en cero produce una sombra que rodea el elemento uniformemente por todos lados en lugar de parecer que cae en una dirección particular, útil para un efecto de brillo ambiental sutil en lugar de una sombra direccional que sugiera elevación. Valores de desplazamiento mayores combinados con un desenfoque proporcionalmente mayor generalmente sugieren un elemento más elevado de forma más dramática, ya que las sombras del mundo real realmente se hacen más grandes y difusas a medida que su fuente se eleva por encima de la superficie que tiene detrás, lo que hace que la magnitud del desplazamiento sea un control útil e intuitivo para comunicar la elevación relativa entre diferentes elementos de la interfaz.</p>
+<h2 id="blur-spread">Radio de desenfoque vs. radio de dispersión</h2>
+<p>Estos dos valores son los que más se confunden, ya que ambos afectan el tamaño aparente de la sombra, pero mediante mecanismos realmente diferentes. El radio de desenfoque suaviza y difumina los bordes de la sombra hacia afuera, de forma similar a como aumentar la suavidad de una fuente de luz produce un borde de sombra más gradual y difuminado en lugar de uno nítido; un valor de desenfoque más alto hace que el límite de la sombra se desvanezca a lo largo de una mayor distancia. El radio de dispersión, por el contrario, expande o encoge la forma base de la sombra de forma uniforme en todas las direcciones antes de aplicar cualquier desenfoque, funcionando más como escalar el tamaño subyacente de la sombra hacia arriba o hacia abajo. Una sombra con alta dispersión y bajo desenfoque se ve como una silueta ampliada de bordes sólidos; una sombra con baja dispersión y alto desenfoque se ve como un brillo suave y difuso más cercano al tamaño original del elemento. Combinar ambos valores de forma inteligente —normalmente un desenfoque moderado con una dispersión pequeña o incluso negativa— produce el efecto de elevación suave y realista que se ve comúnmente en las interfaces modernas basadas en tarjetas y con influencia del diseño Material Design. Los valores de dispersión negativos son particularmente útiles y poco utilizados: al reducir ligeramente la base de la sombra mientras se aplica un desenfoque generoso, se obtiene un brillo más suave y contenido que con una dispersión positiva, que es precisamente la técnica que se emplea en muchas de las sutiles y refinadas sombras de cartas que se ven en el diseño web y de aplicaciones contemporáneo.</p>
+<h2>Escenarios del mundo real</h2>
+<ul>
+<li><strong>"Quiero un efecto de elevación de tarjeta sutil, como el que usan las aplicaciones web modernas."</strong> Usa un desenfoque moderado (8-16 px), una dispersión pequeña o nula, una opacidad baja (10-25 %) y un desplazamiento vertical moderado (2-4 px) para lograr una sombra de tarjeta limpia y contemporánea que se vea pulida sin resultar recargada.</li>
+<li><strong>"Necesito un estado de botón presionado para cuando el usuario haga clic."</strong> Aplica <code>inset</code> con un pequeño desplazamiento y desenfoque para crear la impresión visual de que el botón se presiona hacia adentro.</li>
+<li><strong>"Mi sombra se ve dura y poco natural."</strong> Prueba a reducir la opacidad, aumentar ligeramente el radio de desenfoque y cambiar de negro puro a un color oscuro y ligeramente desaturado para lograr una apariencia más suave y realista.</li>
+<li><strong>"Quiero un efecto de brillo en lugar de una sombra direccional."</strong> Ajusta el desplazamiento horizontal y vertical a cero, aumenta significativamente el desenfoque y usa un color brillante o saturado para crear un brillo en lugar de una sombra proyectada tradicional.</li>
+</ul>
+<h2>Por qué la sombra de caja se volvió tan fundamental para el diseño web moderno.</h2>
+<p>La adopción generalizada de sutiles señales de profundidad basadas en sombras en las interfaces web se remonta en gran medida a sistemas de diseño y lenguajes visuales que enfatizaban la superposición y la elevación como una forma de comunicar la jerarquía de la interfaz: qué elementos se sitúan "por encima" de otros, cuáles son interactivos, cuáles representan grupos de contenido distintos. Antes de que los navegadores admitieran de forma fiable la representación flexible de sombras, lograr efectos de profundidad similares requería trucos basados ​​en imágenes (imágenes de fondo que simulaban sombras o múltiples elementos anidados con trucos de borde), todo ello considerablemente más engorroso y menos flexible que una sola propiedad CSS que pudiera ajustarse con retroalimentación visual inmediata y en tiempo real. A medida que la compatibilidad con box-shadow se generalizó en todos los navegadores y las convenciones de diseño maduraron en torno al uso de la elevación y la sombra como una señal genuina de jerarquía de información (no solo decoración), se convirtió en una de las propiedades más utilizadas en el CSS moderno, apareciendo en tarjetas, modales, menús desplegables, botones e innumerables otros elementos de interfaz donde transmitir una sensación de profundidad o superposición mejora significativamente la claridad visual y la usabilidad de la interfaz, convirtiendo lo que comenzó como una característica CSS puramente decorativa en una pieza de comunicación de interfaz genuinamente funcional.</p>
+<h2 id="inset">La palabra clave insertada: Sombras exteriores vs. sombras interiores</h2>
+<p>Por defecto, box-shadow produce una sombra exterior que parece proyectarse hacia afuera desde detrás del elemento, lo que sugiere visualmente que el elemento está elevado sobre la superficie que tiene detrás. Al añadir la palabra clave <code>inset</code>, esto cambia por completo, produciendo una sombra que aparece dentro del límite del elemento, retrocediendo hacia adentro en lugar de proyectarse hacia afuera. Esto crea la impresión visual de que el elemento está presionado o tallado en la superficie, algo común en campos de entrada, estados de botones presionados o cualquier elemento de la interfaz de usuario que pretenda transmitir una apariencia de estar hundido en lugar de elevado. Los mismos valores de desplazamiento, desenfoque, extensión y color se aplican de forma idéntica en ambos casos; solo cambia la dirección en la que parece caer la sombra (hacia afuera o hacia adentro) según si está presente inset.</p>
+<h2 id="layering">Superposición de múltiples sombras para lograr una profundidad realista.</h2>
+<p>Un único valor de sombra rectangular puede parecer convincentemente tridimensional para casos sencillos y cotidianos, pero los efectos de elevación verdaderamente realistas —como los que se ven en las interfaces modernas y pulidas— suelen superponer dos o más valores de sombra, separados por comas. Un patrón común combina una sombra estrecha y de baja opacidad cerca del elemento (simulando la oclusión ambiental, el sutil oscurecimiento donde dos superficies casi se tocan) con una sombra más grande, suave y difusa más alejada (simulando la sombra proyectada más amplia de una fuente de luz direccional). Este enfoque por capas imita cómo se comportan las sombras en entornos físicos reales, donde múltiples fuentes de luz e interacciones de superficies se combinan para producir una sombra que rara vez es un desenfoque uniforme, y es precisamente la técnica detrás de los sistemas de elevación utilizados en muchos marcos de diseño populares que asignan diferentes "niveles de elevación" a diferentes combinaciones de valores de sombra superpuestos. En estos sistemas, los niveles de elevación más altos suelen utilizar mayores desplazamientos, radios de desenfoque más grandes y, a veces, una tercera sombra superpuesta, lo que produce una sensación de profundidad progresivamente más pronunciada que comunica visualmente un elemento que flota más por encima de la superficie que hay detrás; una forma realmente útil y sistemática de construir una jerarquía visual coherente en toda la interfaz, en lugar de adivinar los valores de sombra de forma independiente para cada componente.</p>
+<h2 id="mistakes">Errores comunes</h2>
+<ul> <li><strong>Confundir el radio de desenfoque con el radio de dispersión.</strong> Como se explicó anteriormente, estos controlan aspectos realmente diferentes de la apariencia de la sombra; ajústalos de forma independiente y observa los efectos distintos para desarrollar una intuición real en lugar de tratarlos como intercambiables.</li>
+<li><strong>Utilizar negro puro con alta opacidad para cada sombra.</strong> Las sombras reales rara vez son de color negro puro; usar una versión oscura y desaturada del color de fondo (o un negro de baja opacidad) suele producir un resultado más natural y menos duro, que se percibe como genuinamente realista en lugar de artificial y exagerado.</li>
+<li><strong>Olvidando que las sombras insertadas usan la misma lógica de dirección de desplazamiento.</strong> Los valores de desplazamiento siguen controlando la dirección de la sombra con la inserción aplicada, solo que ahora parece retroceder hacia el elemento en lugar de proyectarse hacia afuera.</li>
+<li><strong>El uso excesivo de sombras intensas en toda una interfaz. El</strong> uso excesivo de sombras intensas en demasiados elementos simultáneamente suele dar una impresión visual recargada en lugar de una mejora convincente. La moderación y la coherencia suelen producir un resultado mucho más pulido y profesional que el uso maximalista de sombras aplicado indiscriminadamente en todas partes.</li>
+<li><strong>Ignorar la dispersión negativa como técnica útil.</strong> Una dispersión ligeramente negativa combinada con un desenfoque generoso produce un efecto de brillo más suave y contenido, que suele ser más refinado y sutil que la combinación predeterminada de dispersión cero o positiva que la mayoría de la gente utiliza sin experimentar más.</li>
+</ul>
+<h3>¿Por qué elegir Logrith?</h3>
+<p>La generación se realiza completamente en tu navegador con una vista previa visual en tiempo real, sin necesidad de registrarte: ajusta cada valor y observa el efecto de inmediato, luego copia el CSS exacto que necesitas directamente en tu proyecto, sin tener que adivinar valores ni iterar a través del lento ciclo de actualización de un editor de código solo para ver el efecto de un pequeño ajuste, ahorrando tiempo real tanto si estás modificando un solo componente como si estás explorando rápidamente varias opciones de diseño.</p>
+</article>
+<article class="page-section prose">
+<h2 id="faq">Preguntas frecuentes</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary class="faq-q">¿Qué significan los números en el valor de la sombra de un cuadro?</summary>
+<div class="faq-a"><p>En orden: desplazamiento horizontal, desplazamiento vertical, radio de desenfoque y radio de expansión, seguido del color. El desplazamiento posiciona la sombra, el desenfoque suaviza los bordes y la expansión aumenta o disminuye el tamaño de la sombra antes de aplicar el desenfoque.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Cuál es la diferencia entre desenfoque y dispersión?</summary>
+<div class="faq-a"><p>El radio de desenfoque suaviza y difumina los bordes de la sombra hacia afuera. El radio de expansión reduce o expande el tamaño base de la sombra de manera uniforme antes de aplicar cualquier desenfoque, modificando su forma subyacente.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Qué función tiene la palabra clave "insertar"?</summary>
+<div class="faq-a"><p>Cambia la sombra de una sombra exterior (que sugiere elevación) a una sombra interior (que sugiere una apariencia hundida o empotrada), utilizando la misma lógica de desplazamiento, desenfoque y dispersión en la dirección opuesta.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Puede un elemento tener varias sombras de caja?</summary>
+<div class="faq-a"><p>Sí, se pueden aplicar varios valores de sombra separándolos con comas, superponiendo varias sombras para crear efectos de profundidad más complejos y realistas que los que podría lograr una sola sombra.</p></div>
+</details>
+</div>
+<h2>Conclusión</h2>
+<p>La sintaxis de la propiedad box-shadow concentra mucha información en una sola línea, pero cada valor controla algo distinto y fácil de aprender: offsets para la posición, blur para la suavidad de los bordes, spread para el tamaño y un indicador inset opcional para la dirección. Comprender estos valores individualmente, en lugar de tratarlos como una caja negra para copiar y pegar, facilita enormemente el ajuste preciso de una sombra para una necesidad de diseño específica, en lugar de modificar números a ciegas hasta obtener un resultado aceptable. Además, permite superponer varias sombras para lograr efectos de profundidad realistas y pulidos que un solo valor de sombra plano nunca podrá conseguir por sí solo, por muy cuidadosamente que se ajusten sus valores individuales.</p>
+</article>
+<nav class="post-nav page-section" aria-label="Más guías">
+<a href="/es/tool/blog/">← Volver al blog</a> <a href="/es/tool/blog/categories/developer-tools">Más guías de herramientas para desarrolladores →</a>
+</nav>
 <section class="page-section">
-  <h2>Related Tools</h2>
-  <div class="related-grid">
-    <a class="related-card" href="/tool/tools/color-converter"><strong>Color Converter</strong><span>Convert colors between HEX, RGB, and HSL.</span></a>
-    <a class="related-card" href="/tool/tools/css-gradient-generator"><strong>CSS Gradient Generator</strong><span>Generate CSS gradient code visually.</span></a>
-    <a class="related-card" href="/tool/tools/json-formatter"><strong>JSON Formatter</strong><span>Format and validate JSON data.</span></a>
-    <a class="related-card" href="/tool/tools/html-minifier"><strong>HTML Minifier</strong><span>Minify HTML for production use.</span></a>
-  </div>
+<h2>Herramientas relacionadas</h2>
+<div class="related-grid">
+<a class="related-card" href="/es/tool/tools/color-converter"><strong>Convertidor de color:</strong> <span>Convierte colores entre HEX, RGB y HSL.</span></a> <a class="related-card" href="/es/tool/tools/css-gradient-generator"><strong>Generador de degradados CSS:</strong> <span>Genera código de degradado CSS visualmente.</span></a> <a class="related-card" href="/es/tool/tools/json-formatter"><strong>Formateador JSON</strong> <span>: Formatea y valida datos JSON.</span></a> <a class="related-card" href="/es/tool/tools/html-minifier"><strong>Minificador HTML:</strong> <span>Minimiza HTML para su uso en producción.</span></a>
+</div>
 </section>
-
 </main>
-
 <div id="footer"></div>
 <script src="/assets/js/main.js?v=20261115"></script>
 </body>

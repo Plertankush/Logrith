@@ -1,252 +1,197 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="es">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Turn JPG & PNG Images Into One PDF File | Logrith</title>
-  <meta name="description" content="Combine multiple JPG, PNG or WEBP images into a single PDF, reorder pages by dragging, all processed in your browser.">
-  <link rel="canonical" href="https://logrith.in/tool/tools/jpg-to-pdf">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="author" content="Logrith">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://logrith.in/tool/tools/jpg-to-pdf">
-  <meta property="og:site_name" content="Logrith">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Turn JPG & PNG Images Into One PDF File | Logrith">
-  <meta name="twitter:description" content="Combine multiple images into a single PDF, reorder by dragging — processed entirely in your browser.">
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#0D0D0D">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Convierte imágenes JPG y PNG en un solo archivo PDF | Logrith</title>
+<meta name="description" content="Combina varias imágenes JPG, PNG o WEBP en un único PDF, reordena las páginas arrastrándolas, todo ello procesado en tu navegador.">
+<link rel="canonical" href="https://logrith.in/es/tool/tools/jpg-to-pdf">
+  <link rel="alternate" hreflang="x-default" href="https://logrith.in/tool/tools/jpg-to-pdf">
+  <link rel="alternate" hreflang="es" href="https://logrith.in/es/tool/tools/jpg-to-pdf">
+  <link rel="alternate" hreflang="en" href="https://logrith.in/tool/tools/jpg-to-pdf">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
-  <link rel="preload" href="/components/navbar.html" as="fetch" type="text/html" crossorigin>
-  <link rel="preload" href="/components/footer.html" as="fetch" type="text/html" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=20261115">
-  <link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js" defer></script>
 
-  <!-- Google tag (gtag.js) -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
- <script>
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Logrith">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://logrith.in/es/tool/tools/jpg-to-pdf">
+<meta property="og:site_name" content="Logrith">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Convierte imágenes JPG y PNG en un solo archivo PDF | Logrith">
+<meta name="twitter:description" content="Combina varias imágenes en un único PDF, reordénalas arrastrándolas; todo el proceso se realiza íntegramente en tu navegador.">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0D0D0D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
+<link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261115">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js" defer=""></script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+<script>
    window.dataLayer = window.dataLayer || [];
    function gtag(){dataLayer.push(arguments);}
    gtag('js', new Date());
 
    gtag('config', 'G-BPJ4332XJH');
  </script>
- 
-  <meta name="keywords" content="jpg to pdf, convert jpg to pdf, image to pdf, jpg to pdf converter free, combine images into pdf">
-  <meta property="og:title" content="Turn JPG & PNG Images Into One PDF File | Logrith">
-  <meta property="og:description" content="Combine multiple JPG, PNG or WEBP images into a single PDF, reorder pages by dragging, all processed in your browser.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://logrith.in/tool/tools/jpg-to-pdf">
-  <meta property="og:site_name" content="Logrith">
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}
-  </script>
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "WebApplication", "name": "JPG to PDF Converter", "url": "https://logrith.in/tool/tools/jpg-to-pdf", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript and a modern web browser", "description": "Convert JPG, PNG, WEBP images to PDF online for free. Combine multiple images into one PDF. No server upload required.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}
-  </script>
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Image & PDF Tools", "item": "https://logrith.in/tool/categories/image-pdf-tools"}, {"@type": "ListItem", "position": 4, "name": "JPG to PDF Converter", "item": "https://logrith.in/tool/tools/jpg-to-pdf"}]}
-  </script>
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I convert JPG to PDF?", "acceptedAnswer": {"@type": "Answer", "text": "Upload one or more JPG images, arrange them in the order you want, and download the combined PDF."}}, {"@type": "Question", "name": "Can I combine multiple images into one PDF?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, you can add several images and they will be merged into a single multi-page PDF."}}, {"@type": "Question", "name": "Does the tool reduce image quality?", "acceptedAnswer": {"@type": "Answer", "text": "Images are embedded into the PDF at their original resolution."}}, {"@type": "Question", "name": "Are my files uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No, conversion happens in your browser."}}]}
-  </script>
+<meta name="keywords" content="jpg to pdf, convert jpg to pdf, image to pdf, jpg to pdf converter free, combine images into pdf">
+<meta property="og:title" content="Convierte imágenes JPG y PNG en un solo archivo PDF | Logrith">
+<meta property="og:description" content="Combina varias imágenes JPG, PNG o WEBP en un único PDF, reordena las páginas arrastrándolas, todo ello procesado en tu navegador.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://logrith.in/es/tool/tools/jpg-to-pdf">
+<meta property="og:site_name" content="Logrith">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Convertidor de JPG a PDF", "url": "https://logrith.in/es/tool/tools/jpg-to-pdf", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript and a modern web browser", "description": "Convierte imágenes JPG, PNG y WEBP a PDF en línea gratis. Combina varias imágenes en un solo PDF. No se requiere subir imágenes a un servidor.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Hogar", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas de imagen y PDF", "item": "https://logrith.in/es/tool/categories/image-pdf-tools"}, {"@type": "ListItem", "position": 4, "name": "Convertidor de JPG a PDF", "item": "https://logrith.in/es/tool/tools/jpg-to-pdf"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cómo convierto un archivo JPG a PDF?", "acceptedAnswer": {"@type": "Answer", "text": "Sube una o más imágenes JPG, ordénalas como quieras y descarga el PDF resultante."}}, {"@type": "Question", "name": "¿Puedo combinar varias imágenes en un solo PDF?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, puedes añadir varias imágenes y se fusionarán en un único PDF de varias páginas."}}, {"@type": "Question", "name": "¿La herramienta reduce la calidad de la imagen?", "acceptedAnswer": {"@type": "Answer", "text": "Las imágenes están incrustadas en el PDF con su resolución original."}}, {"@type": "Question", "name": "¿Mis archivos se suben a un servidor?", "acceptedAnswer": {"@type": "Answer", "text": "No, la conversión se realiza en tu navegador."}}]}</script>
 </head>
 <body class="page-jpg-to-pdf">
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main">Saltar al contenido</a>
 <div id="navbar"></div>
-
 <main id="main">
-
 <header class="page-hero"><div class="page-hero-inner">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/tool/">Tools</a> › <a href="/tool/categories/image-pdf-tools">Image &amp; PDF Tools</a> › JPG to PDF</nav>
-  <h1>Free JPG to PDF Converter</h1>
-  <p>Convert one or multiple images (JPG, PNG, WEBP) into a single PDF document. Each image becomes a page. 100% free, no server upload.</p>
-  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lock"></use></svg> Private</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#file-text"></use></svg> Multi-image PDF</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#swap"></use></svg> Drag to Reorder</span></div>
+<nav class="breadcrumb" aria-label="Migaja de pan"><a href="/es/">Inicio</a> › <a href="/es/tool/">Herramientas</a> › <a href="/es/tool/categories/image-pdf-tools">Herramientas de imagen y PDF</a> › JPG a PDF</nav>
+<h1>Convertidor gratuito de JPG a PDF</h1>
+<p>Convierte una o varias imágenes (JPG, PNG, WEBP) en un único documento PDF. Cada imagen se convierte en una página. 100% gratis, sin necesidad de subir archivos a un servidor.</p>
+<div class="tag-list"><span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Gratis</span> <span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#lock"></use></svg> Privado</span> <span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#file-text"></use></svg> PDF con varias imágenes</span> <span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#swap"></use></svg> Arrastrar para reordenar</span></div>
 </div></header>
-
 <div class="tool-workspace">
-  <div class="tool-card">
-    <h2>Upload Images</h2>
-    <div class="upload-zone" id="upload-zone">
-      <input type="file" id="file-input" accept="image/jpeg,image/png,image/webp" multiple>
-      <div class="upload-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#image"></use></svg></div>
-      <h3>Drop images here or click to browse</h3>
-      <p>JPG, PNG, WEBP — multiple files supported</p>
-      <span class="upload-limit">Max 20MB each</span>
-    </div>
-  </div>
-
-  <div class="tool-card is-hidden" id="settings-card">
-    <h2>PDF Settings</h2>
-    <div class="controls-grid">
-      <div class="control-group">
-        <label>Page Size</label>
-        <select id="page-size">
-          <option value="a4">A4 (210×297mm)</option>
-          <option value="letter">US Letter (216×279mm)</option>
-          <option value="fit">Fit to Image</option>
-        </select>
-      </div>
-      <div class="control-group">
-        <label>Orientation</label>
-        <select id="orientation">
-          <option value="portrait">Portrait</option>
-          <option value="landscape">Landscape</option>
-          <option value="auto">Auto (per image)</option>
-        </select>
-      </div>
-      <div class="control-group">
-        <label>Image Fit</label>
-        <select id="img-fit">
-          <option value="contain">Contain (with margins)</option>
-          <option value="fill">Fill page</option>
-        </select>
-      </div>
-    </div>
-
-    <div id="image-preview-list"></div>
-
-    <div class="btn-group mt-16">
-      <button class="btn btn-primary btn-lg" id="convert-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#file-text"></use></svg> Create PDF</button>
-      <button class="btn btn-secondary" id="add-more-btn">+ Add More Images</button>
-      <button class="btn btn-secondary" id="reset-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Reset</button>
-    </div>
-    <div class="progress-bar mt-12" id="progress"><div class="progress-fill" id="progress-fill"></div></div>
-    <div class="status-msg" id="status-msg"></div>
-  </div>
-
-  <div class="tool-card is-hidden" id="output-card">
-    <h2><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> PDF Created</h2>
-    <div id="output-stats" class="stats-row mt-4"></div>
-    <div class="btn-group mt-16">
-      <button class="btn btn-success btn-lg" id="download-btn"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#download"></use></svg> Download PDF</button>
-      <button class="btn btn-secondary" id="convert-more">+ Convert More</button>
-    </div>
-  </div>
+<div class="tool-card">
+<h2>Subir imágenes</h2>
+<div class="upload-zone" id="upload-zone">
+<input type="file" id="file-input" accept="image/jpeg,image/png,image/webp" multiple="">
+<div class="upload-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#image"></use></svg></div>
+<h3>Arrastra las imágenes aquí o haz clic para explorar.</h3>
+<p>JPG, PNG, WEBP: admite varios formatos de archivo.</p>
+<span class="upload-limit">Máximo 20 MB cada uno</span>
 </div>
-
+</div>
+<div class="tool-card is-hidden" id="settings-card">
+<h2>Configuración de PDF</h2>
+<div class="controls-grid">
+<div class="control-group">
+<label>Tamaño de página</label><select id="page-size"><option value="a4"> A4 (210×297 mm)</option><option value="letter"> Carta estadounidense (216×279 mm)</option><option value="fit"> Ajustar a la imagen</option></select>
+</div>
+<div class="control-group">
+<label>Orientación</label><select id="orientation"><option value="portrait"> Retrato</option><option value="landscape"> Paisaje</option><option value="auto"> Automático (por imagen)</option></select>
+</div>
+<div class="control-group">
+<label>Ajuste de imagen</label><select id="img-fit"><option value="contain"> Contener (con márgenes)</option><option value="fill"> Rellenar página</option></select>
+</div>
+</div>
+<div id="image-preview-list"></div>
+<div class="btn-group mt-16">
+<button class="btn btn-primary btn-lg" id="convert-btn"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#file-text"></use></svg> Crear PDF</button> <button class="btn btn-secondary" id="add-more-btn">+ Agregar más imágenes</button> <button class="btn btn-secondary" id="reset-btn"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#close"></use></svg> Restablecer</button>
+</div>
+<div class="progress-bar mt-12" id="progress"><div class="progress-fill" id="progress-fill"></div></div>
+<div class="status-msg" id="status-msg"></div>
+</div>
+<div class="tool-card is-hidden" id="output-card">
+<h2><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#check-circle"></use></svg> PDF creado</h2>
+<div id="output-stats" class="stats-row mt-4"></div>
+<div class="btn-group mt-16">
+<button class="btn btn-success btn-lg" id="download-btn"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#download"></use></svg> Descargar PDF</button> <button class="btn btn-secondary" id="convert-more">+ Convertir más</button>
+</div>
+</div>
+</div>
 <section class="page-section">
-  <h2>Frequently Asked Questions</h2>
-  <div class="faq-list">
-    <details class="faq-item">
-      <summary class="faq-q">How do I convert JPG images to PDF?</summary>
-      <div class="faq-a"><p>Upload your JPG or PNG images, choose the page size and orientation, then click Create PDF. Each image becomes one page. Download the result instantly.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Can I add multiple images to one PDF?</summary>
-      <div class="faq-a"><p>Yes! Upload as many images as you want. Each image will be placed on its own page in the order you uploaded them.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">What page sizes are supported?</summary>
-      <div class="faq-a"><p>A4 (standard international), US Letter (common in North America), or Fit to Image which creates a PDF with pages exactly sized to each image.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Can I reorder images before converting?</summary>
-      <div class="faq-a"><p>Yes, images are placed into the PDF in the order they appear in the upload list, and you can remove or re-add images before generating the final PDF.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Is my image data uploaded to a server?</summary>
-      <div class="faq-a"><p>No, the entire conversion process runs in your browser using JavaScript. Your images never leave your device during conversion.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">What image formats can I convert to PDF?</summary>
-      <div class="faq-a"><p>JPG, JPEG, PNG, and WEBP images are all supported and can be mixed together in a single PDF if needed.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Will the images lose quality during conversion?</summary>
-      <div class="faq-a"><p>No, images are embedded into the PDF at their original resolution. The "Fit to Image" page size option avoids any scaling, while A4/Letter options scale proportionally to fit the page without distortion.</p></div>
-    </details>
-  </div>
+<h2>Preguntas frecuentes</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary class="faq-q">¿Cómo convierto imágenes JPG a PDF?</summary>
+<div class="faq-a"><p>Sube tus imágenes JPG o PNG, elige el tamaño y la orientación de la página y haz clic en Crear PDF. Cada imagen se convertirá en una página. Descarga el resultado al instante.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Puedo añadir varias imágenes a un mismo PDF?</summary>
+<div class="faq-a"><p>¡Sí! Sube todas las imágenes que quieras. Cada imagen se colocará en su propia página, en el orden en que las subiste.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Qué tamaños de página son compatibles?</summary>
+<div class="faq-a"><p>A4 (estándar internacional), Carta estadounidense (común en Norteamérica) o Ajustar a la imagen, que crea un PDF con páginas del tamaño exacto de cada imagen.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Puedo reordenar las imágenes antes de convertirlas?</summary>
+<div class="faq-a"><p>Sí, las imágenes se insertan en el PDF en el orden en que aparecen en la lista de archivos cargados, y puede eliminar o volver a agregar imágenes antes de generar el PDF final.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Se suben mis datos de imagen a un servidor?</summary>
+<div class="faq-a"><p>No, todo el proceso de conversión se ejecuta en tu navegador mediante JavaScript. Tus imágenes nunca salen de tu dispositivo durante la conversión.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Qué formatos de imagen puedo convertir a PDF?</summary>
+<div class="faq-a"><p>Se admiten imágenes JPG, JPEG, PNG y WEBP, y se pueden combinar en un único PDF si es necesario.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Las imágenes perderán calidad durante la conversión?</summary>
+<div class="faq-a"><p>No, las imágenes se insertan en el PDF con su resolución original. La opción de tamaño de página "Ajustar a la imagen" evita cualquier escalado, mientras que las opciones A4/Carta se escalan proporcionalmente para ajustarse a la página sin distorsión.</p></div>
+</details>
+</div>
 </section>
-
 <section class="page-section prose">
-  <h2>About the JPG to PDF Tool</h2>
-  <p>The Logrith JPG to PDF tool converts one or more images into a single PDF document, free and entirely in your browser. Upload JPG, PNG, or WEBP files, choose a page size, and each image becomes its own page in the finished PDF — in the order you added them. This is a frequently needed conversion for turning scanned documents, receipts, or photo collections into a single shareable file.</p>
-
-  <p>Images and PDFs serve different purposes, and converting between them comes up constantly. A PDF keeps multiple pages together as one file that prints consistently and opens the same way on any device, while individual image files are easier to capture but awkward to send or print as a set. This tool bridges that gap by combining any number of separate image files into one properly formatted PDF document.</p>
-
-  <h3>Common Reasons to Convert Images to PDF</h3>
-  <ul>
-    <li><strong>Combining scanned pages.</strong> Phone camera scans of a multi-page document, taken as separate photos, can be combined into a single PDF for easy sharing or printing.</li>
-    <li><strong>Submitting documents online.</strong> Many application forms and portals require a single PDF upload rather than multiple separate image files.</li>
-    <li><strong>Archiving receipts or records.</strong> Converting a batch of photographed receipts into one PDF makes them easier to store, search, and reference later.</li>
-    <li><strong>Creating a simple photo booklet.</strong> Combining a sequence of images into a PDF provides a basic, printable booklet format without needing design software.</li>
-    <li><strong>Printing consistency.</strong> PDFs print more predictably across different printers and software than a loose folder of image files.</li>
-  </ul>
-
-  <h3>Choosing the Right Page Size</h3>
-  <p>The page size setting determines how each image is placed onto its PDF page. A4 is the standard paper size used across most of the world outside North America, while US Letter is standard in the United States and Canada — pick whichever matches your printer or regional convention if you plan to print the result. The "Fit to Image" option skips standard paper dimensions entirely and instead creates a page sized exactly to match each image's own dimensions, which avoids any white space or scaling and is the best choice when the PDF is only going to be viewed digitally rather than printed on standard paper.</p>
-
-  <h3>How the Conversion Works</h3>
-  <p>When you convert your images, the tool reads each image file, creates a new page in a PDF document for it using a PDF generation library, and embeds the image data onto that page at either its original size or scaled to fit the chosen page dimensions. Because this all happens through code running in your browser rather than a server, there's no waiting for an upload and download round-trip — the finished PDF is ready to download as soon as processing completes.</p>
-
-  <h3>Step-by-Step: How to Convert JPG to PDF</h3>
-  <ol class="steps">
-    <li class="step">
-      <strong>Upload your images</strong>
-      <p>Drag and drop one or more JPG, PNG, or WEBP files, or click to browse and select them.</p>
-    </li>
-    <li class="step">
-      <strong>Choose a page size</strong>
-      <p>Pick A4, US Letter, or Fit to Image depending on how the PDF will be used.</p>
-    </li>
-    <li class="step">
-      <strong>Review the order</strong>
-      <p>Confirm the images are arranged in the order you want them to appear as pages.</p>
-    </li>
-    <li class="step">
-      <strong>Create and download</strong>
-      <p>Click Create PDF and download the finished multi-page document.</p>
-    </li>
-  </ol>
-
-  <h3>JPG to PDF vs. PDF to JPG</h3>
-  <p>It's worth knowing the difference between this tool and its counterpart. JPG to PDF, covered here, takes one or more standalone images and bundles them into a single PDF document — useful when you have loose images that need to become one shareable file. PDF to JPG does the reverse, extracting each page of an existing PDF as a separate image file — useful when you need to use a specific page as a standalone image, for example in a presentation or on a website. Logrith's PDF to JPG tool handles that opposite direction.</p>
-
-  <h3>Privacy and Browser-Based Processing</h3>
-  <p>All conversion happens locally in your browser — images are never uploaded to a remote server, and no copy of your files or the resulting PDF is stored or logged anywhere. This makes the tool a safe option for converting personal documents, IDs, or receipts into PDF form without that data passing through a third party.</p>
-
-  <h3>Tips for Best Results When Scanning with a Phone</h3>
-  <p>If you're photographing physical pages to convert into a PDF, a few small habits make a noticeable difference in the final result. Shoot in good, even lighting to avoid shadows falling across the text, and keep the phone as parallel to the page as possible to avoid a skewed or trapezoid-shaped capture. Try to keep a consistent distance and angle across all pages so that when they're combined into one PDF, the pages look reasonably uniform rather than wildly different sizes. If a page comes out tilted, consider cropping or rotating it with Logrith's other image tools before converting, since this tool places each image as-is onto its PDF page without any automatic straightening.</p>
+<h2>Acerca de la herramienta JPG a PDF</h2>
+<p>The Logrith JPG to PDF tool converts one or more images into a single PDF document, free and entirely in your browser. Upload JPG, PNG, or WEBP files, choose a page size, and each image becomes its own page in the finished PDF — in the order you added them. This is a frequently needed conversion for turning scanned documents, receipts, or photo collections into a single shareable file.</p>
+<p>Las imágenes y los PDF tienen propósitos diferentes, y la conversión entre ellos es una tarea frecuente. Un PDF mantiene varias páginas juntas en un solo archivo que se imprime de forma consistente y se abre igual en cualquier dispositivo, mientras que los archivos de imagen individuales son más fáciles de capturar, pero resultan engorrosos para enviar o imprimir en conjunto. Esta herramienta soluciona este problema combinando cualquier número de archivos de imagen independientes en un único documento PDF con el formato adecuado.</p>
+<h3>Razones comunes para convertir imágenes a PDF</h3>
+<ul>
+<li><strong>Combinación de páginas escaneadas.</strong> Las imágenes escaneadas con la cámara del teléfono de un documento de varias páginas, tomadas como fotos individuales, se pueden combinar en un único PDF para compartirlo o imprimirlo fácilmente.</li>
+<li><strong>Envío de documentos en línea.</strong> Muchos formularios y portales de solicitud requieren la carga de un único archivo PDF en lugar de varios archivos de imagen separados.</li>
+<li><strong>Archivar recibos o registros.</strong> Convertir un lote de recibos fotografiados en un solo PDF facilita su almacenamiento, búsqueda y consulta posterior.</li>
+<li><strong>Creación de un sencillo folleto fotográfico.</strong> Al combinar una secuencia de imágenes en un PDF, se obtiene un formato de folleto básico e imprimible sin necesidad de software de diseño.</li>
+<li><strong>Impresión uniforme.</strong> Los archivos PDF se imprimen de forma más predecible en diferentes impresoras y programas que una carpeta con archivos de imagen sueltos.</li>
+</ul>
+<h3>Cómo elegir el tamaño de página adecuado</h3>
+<p>La configuración del tamaño de página determina cómo se coloca cada imagen en su página PDF. El tamaño A4 es el estándar en la mayor parte del mundo fuera de Norteamérica, mientras que el tamaño Carta estadounidense es el estándar en Estados Unidos y Canadá. Elija el que coincida con su impresora o convención regional si planea imprimir el resultado. La opción "Ajustar a la imagen" omite por completo las dimensiones estándar del papel y, en su lugar, crea una página con el tamaño exacto de cada imagen, lo que evita espacios en blanco o escalado y es la mejor opción cuando el PDF solo se va a visualizar digitalmente y no se va a imprimir en papel estándar.</p>
+<h3>Cómo funciona la conversión</h3>
+<p>Al convertir las imágenes, la herramienta lee cada archivo de imagen, crea una nueva página en un documento PDF mediante una biblioteca de generación de PDF e inserta los datos de la imagen en esa página, ya sea en su tamaño original o escalada para ajustarse a las dimensiones de página seleccionadas. Dado que todo esto se realiza mediante código que se ejecuta en el navegador en lugar de en un servidor, no hay que esperar a que se complete la carga y descarga: el PDF final está listo para descargar en cuanto finaliza el procesamiento.</p>
+<h3>Paso a paso: Cómo convertir JPG a PDF</h3>
+<ol class="steps">
+<li class="step">
+<strong>Sube tus imágenes</strong>
+<p>Arrastra y suelta uno o más archivos JPG, PNG o WEBP, o haz clic para buscarlos y seleccionarlos.</p>
+</li>
+<li class="step">
+<strong>Elige un tamaño de página</strong>
+<p>Seleccione el tamaño A4, Carta estadounidense o Ajustar a la imagen, según cómo se vaya a utilizar el PDF.</p>
+</li>
+<li class="step">
+<strong>Revisar el pedido</strong>
+<p>Confirma que las imágenes estén ordenadas según el patrón en el que deseas que aparezcan en las páginas.</p>
+</li>
+<li class="step">
+<strong>Crear y descargar</strong>
+<p>Haz clic en Crear PDF y descarga el documento multipágina finalizado.</p>
+</li>
+</ol>
+<h3>JPG a PDF vs. PDF a JPG</h3>
+<p>Vale la pena conocer la diferencia entre esta herramienta y su contraparte. JPG a PDF, que se explica aquí, toma una o más imágenes independientes y las agrupa en un solo documento PDF, lo cual es útil cuando se tienen imágenes sueltas que se necesitan convertir en un archivo compartible. PDF a JPG hace lo contrario, extrayendo cada página de un PDF existente como un archivo de imagen independiente, lo cual es útil cuando se necesita usar una página específica como imagen independiente, por ejemplo, en una presentación o en un sitio web. La herramienta PDF a JPG de Logrith maneja la dirección opuesta.</p>
+<h3>Privacidad y procesamiento basado en el navegador</h3>
+<p>Toda la conversión se realiza localmente en tu navegador: las imágenes nunca se suben a un servidor remoto y no se almacena ni registra ninguna copia de tus archivos ni del PDF resultante. Esto convierte a la herramienta en una opción segura para convertir documentos personales, identificaciones o recibos a formato PDF sin que esos datos pasen por un tercero.</p>
+<h3>Consejos para obtener los mejores resultados al escanear con el teléfono</h3>
+<p>Si vas a fotografiar páginas físicas para convertirlas a PDF, algunos pequeños hábitos marcan una gran diferencia en el resultado final. Toma las fotos con buena iluminación y uniforme para evitar sombras sobre el texto, y mantén el teléfono lo más paralelo posible a la página para evitar una captura torcida o con forma de trapecio. Intenta mantener una distancia y un ángulo consistentes en todas las páginas para que, al combinarlas en un solo PDF, se vean bastante uniformes en lugar de con tamaños muy diferentes. Si una página aparece inclinada, considera recortarla o rotarla con las demás herramientas de imagen de Logrith antes de convertirla, ya que esta herramienta coloca cada imagen tal cual en su página PDF sin enderezarla automáticamente.</p>
 </section>
-
 <section class="page-section">
-  <h2>Related Tools</h2>
-  <div class="related-grid">
-    <a class="related-card" href="/tool/tools/pdf-to-jpg"><strong>PDF to JPG</strong><span>Extract pages from a PDF as individual image files.</span></a>
-    <a class="related-card" href="/tool/tools/pdf-merge"><strong>PDF Merge</strong><span>Combine multiple PDF files into a single document.</span></a>
-    <a class="related-card" href="/tool/tools/image-compressor"><strong>Image Compressor</strong><span>Reduce image file size while keeping visual quality intact.</span></a>
-    <a class="related-card" href="/tool/tools/pdf-compressor"><strong>PDF Compressor</strong><span>Reduce PDF file size while keeping content readable.</span></a>
-  </div>
+<h2>Herramientas relacionadas</h2>
+<div class="related-grid">
+<a class="related-card" href="/es/tool/tools/pdf-to-jpg"><strong>PDF a JPG</strong> <span>Extrae páginas de un PDF como archivos de imagen individuales.</span></a> <a class="related-card" href="/es/tool/tools/pdf-merge"><strong>Combinar PDF</strong> <span>Combina varios archivos PDF en un solo documento.</span></a> <a class="related-card" href="/es/tool/tools/image-compressor"><strong>Compresor de imágenes</strong> <span>Reduce el tamaño de los archivos de imagen manteniendo la calidad visual intacta.</span></a> <a class="related-card" href="/es/tool/tools/pdf-compressor"><strong>Compresor de PDF</strong> <span>Reduce el tamaño de los archivos PDF manteniendo el contenido legible.</span></a>
+</div>
 </section>
-
 <section class="page-section">
-  <h2>Popular Searches</h2>
-  <div class="keyword-box">
-    <span class="keyword-tag">jpg to pdf converter online</span>
-    <span class="keyword-tag">convert image to pdf free</span>
-    <span class="keyword-tag">combine images into pdf</span>
-    <span class="keyword-tag">png to pdf online</span>
-    <span class="keyword-tag">multiple images to pdf</span>
-    <span class="keyword-tag">photo to pdf converter</span>
-    <span class="keyword-tag">jpg to pdf no watermark</span>
-    <span class="keyword-tag">scan to pdf online</span>
-  </div>
+<h2>Búsquedas populares</h2>
+<div class="keyword-box">
+<span class="keyword-tag">Convertidor de JPG a PDF en línea</span> <span class="keyword-tag">, convertir imagen a PDF gratis,</span> <span class="keyword-tag">combinar imágenes en PDF,</span> <span class="keyword-tag">PNG a PDF en línea,</span> <span class="keyword-tag">múltiples imágenes a PDF,</span> <span class="keyword-tag">convertidor de fotos a PDF,</span> <span class="keyword-tag">JPG a PDF sin marca de agua,</span> <span class="keyword-tag">escanear a PDF en línea</span>
+</div>
 </section>
-
 </main>
-
 <div id="footer"></div>
 <script src="/assets/js/main.js?v=20261115"></script>
-
-
 <script>
 let imgFiles = [];
 

@@ -1,216 +1,183 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="es">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Unix Timestamp Converter: Epoch to Date and Date to Epoch | Logrith</title>
-  <meta name="description" content="Convert Unix timestamps to human-readable dates and dates back to epoch seconds or milliseconds. Live clock, automatic unit detection and time zone support. Free, runs in your browser.">
-  <link rel="canonical" href="https://logrith.in/tool/tools/unix-timestamp-converter">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="author" content="Logrith">
-  <meta name="keywords" content="unix timestamp converter, epoch converter, timestamp to date, date to unix timestamp, epoch time to human readable, unix time milliseconds, current unix timestamp, convert epoch to utc">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://logrith.in/tool/tools/unix-timestamp-converter">
-  <meta property="og:site_name" content="Logrith">
-  <meta property="og:title" content="Unix Timestamp Converter: Epoch to Date and Date to Epoch | Logrith">
-  <meta property="og:description" content="Convert Unix timestamps to human-readable dates and dates back to epoch seconds or milliseconds. Live clock, automatic unit detection and time zone support. Free, runs in your browser.">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Unix Timestamp Converter: Epoch to Date and Date to Epoch | Logrith">
-  <meta name="twitter:description" content="Convert Unix timestamps to human-readable dates and dates back to epoch seconds or milliseconds. Live clock, automatic unit detection and time zone support. Free, runs in your browser.">
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#0D0D0D">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Convertidor de marcas de tiempo Unix: de época a fecha y de fecha a época | Logrith</title>
+<meta name="description" content="Convierte marcas de tiempo Unix a fechas legibles y viceversa, a segundos o milisegundos de la época. Reloj en tiempo real, detección automática de unidades y compatibilidad con zonas horarias. Gratis, funciona en tu navegador.">
+<link rel="canonical" href="https://logrith.in/es/tool/tools/unix-timestamp-converter">
+  <link rel="alternate" hreflang="x-default" href="https://logrith.in/tool/tools/unix-timestamp-converter">
+  <link rel="alternate" hreflang="es" href="https://logrith.in/es/tool/tools/unix-timestamp-converter">
+  <link rel="alternate" hreflang="en" href="https://logrith.in/tool/tools/unix-timestamp-converter">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
-  <link rel="preload" href="/components/navbar.html" as="fetch" type="text/html" crossorigin>
-  <link rel="preload" href="/components/footer.html" as="fetch" type="text/html" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=20261115">
-  <link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
-  <script>
+
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Logrith">
+<meta name="keywords" content="unix timestamp converter, epoch converter, timestamp to date, date to unix timestamp, epoch time to human readable, unix time milliseconds, current unix timestamp, convert epoch to utc">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://logrith.in/es/tool/tools/unix-timestamp-converter">
+<meta property="og:site_name" content="Logrith">
+<meta property="og:title" content="Convertidor de marcas de tiempo Unix: de época a fecha y de fecha a época | Logrith">
+<meta property="og:description" content="Convierte marcas de tiempo Unix a fechas legibles y viceversa, a segundos o milisegundos de la época. Reloj en tiempo real, detección automática de unidades y compatibilidad con zonas horarias. Gratis, funciona en tu navegador.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Convertidor de marcas de tiempo Unix: de época a fecha y de fecha a época | Logrith">
+<meta name="twitter:description" content="Convierte marcas de tiempo Unix a fechas legibles y viceversa, a segundos o milisegundos de la época. Reloj en tiempo real, detección automática de unidades y compatibilidad con zonas horarias. Gratis, funciona en tu navegador.">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0D0D0D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
+<link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261115">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+<script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-BPJ4332XJH');
   </script>
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}
-  </script>
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "WebApplication", "name": "Unix Timestamp Converter", "url": "https://logrith.in/tool/tools/unix-timestamp-converter", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript and a modern web browser", "description": "Convert Unix timestamps to human-readable dates and dates back to epoch seconds or milliseconds. Live clock, automatic unit detection and time zone support. Free, runs in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}
-  </script>
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Developer Tools", "item": "https://logrith.in/tool/categories/developer-tools"}, {"@type": "ListItem", "position": 4, "name": "Unix Timestamp Converter", "item": "https://logrith.in/tool/tools/unix-timestamp-converter"}]}
-  </script>
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a Unix timestamp?", "acceptedAnswer": {"@type": "Answer", "text": "A Unix timestamp, also called epoch time, is the number of seconds that have passed since 00:00:00 UTC on 1 January 1970, not counting leap seconds. It is a single number that identifies one moment in time, regardless of time zone."}}, {"@type": "Question", "name": "How do I tell whether a timestamp is in seconds or milliseconds?", "acceptedAnswer": {"@type": "Answer", "text": "Count the digits. A current timestamp in seconds has 10 digits, in milliseconds 13, in microseconds 16 and in nanoseconds 19. The converter uses this rule to detect the unit automatically and shows what it chose."}}, {"@type": "Question", "name": "Why does JavaScript give me a 13-digit number?", "acceptedAnswer": {"@type": "Answer", "text": "Date.now() and new Date().getTime() return milliseconds, while many languages and databases use seconds. Divide by 1000 to get seconds, or multiply seconds by 1000 before passing them to new Date()."}}, {"@type": "Question", "name": "Does a Unix timestamp depend on time zone?", "acceptedAnswer": {"@type": "Answer", "text": "No. The number is always counted from the UTC epoch. Time zones only matter when you display the moment as a calendar date and clock time, which is why this tool shows UTC and the zone you choose."}}, {"@type": "Question", "name": "What is the Year 2038 problem?", "acceptedAnswer": {"@type": "Answer", "text": "Systems that store the timestamp as a signed 32-bit integer overflow on 19 January 2038 at 03:14:07 UTC. Modern systems use 64-bit values, which last for billions of years, but old embedded devices and file formats may still be affected."}}, {"@type": "Question", "name": "Can a Unix timestamp be negative?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Negative values are moments before 1 January 1970. For example, -86400 is 31 December 1969 at 00:00:00 UTC."}}, {"@type": "Question", "name": "Is my data sent anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No. The conversion runs entirely in your browser with built-in date functions, and nothing you type is uploaded."}}]}
-  </script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Convertidor de marcas de tiempo Unix", "url": "https://logrith.in/es/tool/tools/unix-timestamp-converter", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript and a modern web browser", "description": "Convierte marcas de tiempo Unix a fechas legibles y viceversa, a segundos o milisegundos de la época. Reloj en tiempo real, detección automática de unidades y compatibilidad con zonas horarias. Gratis, funciona en tu navegador.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Hogar", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas para desarrolladores", "item": "https://logrith.in/es/tool/categories/developer-tools"}, {"@type": "ListItem", "position": 4, "name": "Convertidor de marcas de tiempo Unix", "item": "https://logrith.in/es/tool/tools/unix-timestamp-converter"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Qué es una marca de tiempo Unix?", "acceptedAnswer": {"@type": "Answer", "text": "Una marca de tiempo Unix, también llamada tiempo epoch, es el número de segundos transcurridos desde las 00:00:00 UTC del 1 de enero de 1970, sin contar los segundos intercalares. Es un único número que identifica un momento específico en el tiempo, independientemente de la zona horaria."}}, {"@type": "Question", "name": "¿Cómo puedo saber si una marca de tiempo está en segundos o milisegundos?", "acceptedAnswer": {"@type": "Answer", "text": "Cuenta los dígitos. Una marca de tiempo actual tiene 10 dígitos en segundos, 13 en milisegundos, 16 en microsegundos y 19 en nanosegundos. El convertidor utiliza esta regla para detectar la unidad automáticamente y muestra la que seleccionó."}}, {"@type": "Question", "name": "¿Por qué JavaScript me da un número de 13 dígitos?", "acceptedAnswer": {"@type": "Answer", "text": "Date.now() y new Date().getTime() devuelven milisegundos, mientras que muchos lenguajes y bases de datos utilizan segundos. Para obtener los segundos, divide entre 1000 o multiplícalos por 1000 antes de pasarlos a new Date()."}}, {"@type": "Question", "name": "¿Depende una marca de tiempo Unix de la zona horaria?", "acceptedAnswer": {"@type": "Answer", "text": "No. El número siempre se cuenta a partir de la época UTC. Las zonas horarias solo importan cuando se muestra el momento como fecha y hora del calendario, por eso esta herramienta muestra UTC y la zona horaria que elijas."}}, {"@type": "Question", "name": "¿Cuál es el problema del año 2038?", "acceptedAnswer": {"@type": "Answer", "text": "Los sistemas que almacenan la marca de tiempo como un entero con signo de 32 bits fallarán el 19 de enero de 2038 a las 03:14:07 UTC. Los sistemas modernos utilizan valores de 64 bits, que duran miles de millones de años, pero los dispositivos integrados y los formatos de archivo antiguos aún podrían verse afectados."}}, {"@type": "Question", "name": "¿Puede una marca de tiempo Unix ser negativa?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Los valores negativos corresponden a momentos anteriores al 1 de enero de 1970. Por ejemplo, -86400 es el 31 de diciembre de 1969 a las 00:00:00 UTC."}}, {"@type": "Question", "name": "¿Se envían mis datos a algún sitio?", "acceptedAnswer": {"@type": "Answer", "text": "No. La conversión se realiza completamente en tu navegador con funciones de fecha integradas, y nada de lo que escribas se carga en la nube."}}]}</script>
 </head>
 <body class="page-tools-unix-timestamp-converter">
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main">Saltar al contenido</a>
 <div id="navbar"></div>
-
 <main id="main">
-
 <header class="page-hero"><div class="page-hero-inner">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/tool/">Tools</a> › <a href="/tool/categories/developer-tools">Developer Tools</a> › Unix Timestamp Converter</nav>
-  <h1>Unix Timestamp Converter</h1>
-  <p>Convert epoch time to a readable date, or a date to a Unix timestamp, in seconds or milliseconds. It detects the unit for you and handles time zones.</p>
-  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#clock"></use></svg> Live Epoch Clock</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#globe"></use></svg> Time Zones</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lock"></use></svg> Private</span></div>
+<nav class="breadcrumb" aria-label="Migaja de pan"><a href="/es/">Inicio</a> › <a href="/es/tool/">Herramientas</a> › <a href="/es/tool/categories/developer-tools">Herramientas para desarrolladores</a> › Convertidor de marcas de tiempo Unix</nav>
+<h1>Convertidor de marcas de tiempo Unix</h1>
+<p>Convierte la hora epoch a una fecha legible, o una fecha a una marca de tiempo Unix, en segundos o milisegundos. Detecta automáticamente la unidad y admite zonas horarias.</p>
+<div class="tag-list"><span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Gratis</span> <span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#clock"></use></svg> Reloj de época en vivo</span> <span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#globe"></use></svg> Zonas horarias</span> <span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#lock"></use></svg> Privado</span></div>
 </div></header>
-
 <div class="tool-workspace">
-
-  <div class="tool-card">
-    <h2>Current Unix Time</h2>
-    <div class="now-box">
-      <div><strong id="now-sec">0</strong><span>seconds</span></div>
-      <div><strong id="now-ms">0</strong><span>milliseconds</span></div>
-      <button class="btn btn-secondary btn-sm" id="copy-now" type="button"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy seconds</button>
-    </div>
-  </div>
-
-  <div class="tool-card">
-    <h2>Timestamp to Date</h2>
-    <div class="controls-grid">
-      <div class="control-group"><label for="ts-input">Unix timestamp</label><input type="text" id="ts-input" inputmode="numeric" placeholder="1735689600" autocomplete="off"></div>
-      <div class="control-group"><label for="ts-zone">Show time in</label><select id="ts-zone"></select></div>
-    </div>
-    <div class="btn-group mt-12"><button class="btn btn-secondary btn-sm" id="use-now" type="button">Use current time</button></div>
-    <div class="result-list" id="ts-output" aria-live="polite"></div>
-  </div>
-
-  <div class="tool-card">
-    <h2>Date to Timestamp</h2>
-    <div class="controls-grid">
-      <div class="control-group"><label for="date-input">Date and time</label><input type="datetime-local" id="date-input" step="1"></div>
-      <div class="control-group"><label for="date-zone">Entered in</label><select id="date-zone"></select></div>
-    </div>
-    <div class="result-list" id="date-output" aria-live="polite"></div>
-  </div>
+<div class="tool-card">
+<h2>Hora actual de Unix</h2>
+<div class="now-box">
+<div><strong id="now-sec">0</strong> <span>segundos</span></div>
+<div><strong id="now-ms">0</strong> <span>milisegundos</span></div>
+<button class="btn btn-secondary btn-sm" id="copy-now" type="button"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#copy"></use></svg> Copiar segundos</button>
 </div>
-
+</div>
+<div class="tool-card">
+<h2>Marca de tiempo hasta la fecha</h2>
+<div class="controls-grid">
+<div class="control-group"><label for="ts-input">marca de tiempo Unix</label><input autocomplete="off" id="ts-input" inputmode="numeric" placeholder="1735689600" type="text"></div>
+<div class="control-group"><label for="ts-zone">Hora del espectáculo en</label><select id="ts-zone"></select></div>
+</div>
+<div class="btn-group mt-12"><button class="btn btn-secondary btn-sm" id="use-now" type="button">Utilice la hora actual</button></div>
+<div class="result-list" id="ts-output" aria-live="polite"></div>
+</div>
+<div class="tool-card">
+<h2>Fecha a marca de tiempo</h2>
+<div class="controls-grid">
+<div class="control-group"><label for="date-input">Fecha y hora</label><input id="date-input" step="1" type="datetime-local"></div>
+<div class="control-group"><label for="date-zone">Ingresado en</label><select id="date-zone"></select></div>
+</div>
+<div class="result-list" id="date-output" aria-live="polite"></div>
+</div>
+</div>
 <section class="page-section">
-  <h2>Frequently Asked Questions</h2>
-  <div class="faq-list">
-    <details class="faq-item">
-      <summary class="faq-q">What is a Unix timestamp?</summary>
-      <div class="faq-a"><p>A Unix timestamp, also called epoch time, is the number of seconds that have passed since 00:00:00 UTC on 1 January 1970, not counting leap seconds. It is a single number that identifies one moment in time, regardless of time zone.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">How do I tell whether a timestamp is in seconds or milliseconds?</summary>
-      <div class="faq-a"><p>Count the digits. A current timestamp in seconds has 10 digits, in milliseconds 13, in microseconds 16 and in nanoseconds 19. The converter uses this rule to detect the unit automatically and shows what it chose.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Why does JavaScript give me a 13-digit number?</summary>
-      <div class="faq-a"><p>Date.now() and new Date().getTime() return milliseconds, while many languages and databases use seconds. Divide by 1000 to get seconds, or multiply seconds by 1000 before passing them to new Date().</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Does a Unix timestamp depend on time zone?</summary>
-      <div class="faq-a"><p>No. The number is always counted from the UTC epoch. Time zones only matter when you display the moment as a calendar date and clock time, which is why this tool shows UTC and the zone you choose.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">What is the Year 2038 problem?</summary>
-      <div class="faq-a"><p>Systems that store the timestamp as a signed 32-bit integer overflow on 19 January 2038 at 03:14:07 UTC. Modern systems use 64-bit values, which last for billions of years, but old embedded devices and file formats may still be affected.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Can a Unix timestamp be negative?</summary>
-      <div class="faq-a"><p>Yes. Negative values are moments before 1 January 1970. For example, -86400 is 31 December 1969 at 00:00:00 UTC.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Is my data sent anywhere?</summary>
-      <div class="faq-a"><p>No. The conversion runs entirely in your browser with built-in date functions, and nothing you type is uploaded.</p></div>
-    </details>
-  </div>
+<h2>Preguntas frecuentes</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary class="faq-q">¿Qué es una marca de tiempo Unix?</summary>
+<div class="faq-a"><p>Una marca de tiempo Unix, también llamada tiempo epoch, es el número de segundos transcurridos desde las 00:00:00 UTC del 1 de enero de 1970, sin contar los segundos intercalares. Es un único número que identifica un momento específico en el tiempo, independientemente de la zona horaria.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Cómo puedo saber si una marca de tiempo está en segundos o milisegundos?</summary>
+<div class="faq-a"><p>Cuenta los dígitos. Una marca de tiempo actual tiene 10 dígitos en segundos, 13 en milisegundos, 16 en microsegundos y 19 en nanosegundos. El convertidor utiliza esta regla para detectar la unidad automáticamente y muestra la que seleccionó.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Por qué JavaScript me da un número de 13 dígitos?</summary>
+<div class="faq-a"><p>Date.now() y new Date().getTime() devuelven milisegundos, mientras que muchos lenguajes y bases de datos utilizan segundos. Para obtener los segundos, divide entre 1000 o multiplícalos por 1000 antes de pasarlos a new Date().</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Depende una marca de tiempo Unix de la zona horaria?</summary>
+<div class="faq-a"><p>No. El número siempre se cuenta a partir de la época UTC. Las zonas horarias solo importan cuando se muestra el momento como fecha y hora del calendario, por eso esta herramienta muestra UTC y la zona horaria que elijas.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Cuál es el problema del año 2038?</summary>
+<div class="faq-a"><p>Los sistemas que almacenan la marca de tiempo como un entero con signo de 32 bits fallarán el 19 de enero de 2038 a las 03:14:07 UTC. Los sistemas modernos utilizan valores de 64 bits, que duran miles de millones de años, pero los dispositivos integrados y los formatos de archivo antiguos aún podrían verse afectados.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Puede una marca de tiempo Unix ser negativa?</summary>
+<div class="faq-a"><p>Sí. Los valores negativos corresponden a momentos anteriores al 1 de enero de 1970. Por ejemplo, -86400 es el 31 de diciembre de 1969 a las 00:00:00 UTC.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Se envían mis datos a algún sitio?</summary>
+<div class="faq-a"><p>No. La conversión se realiza completamente en tu navegador con funciones de fecha integradas, y nada de lo que escribas se carga en la nube.</p></div>
+</details>
+</div>
 </section>
-
 <section class="page-section prose">
-  <h2>About the Unix Timestamp Converter</h2>
-  <p>The Logrith Unix Timestamp Converter translates between epoch time and ordinary dates in both directions. Paste a number such as 1735689600 and see the exact moment it represents in UTC and in the time zone you pick; or choose a date and time and get the matching timestamp in seconds and milliseconds. A live clock at the top shows the current Unix time, which is handy when you need a value for a log, a test or an API call.</p>
-  <p>Unix time is the standard way computers record a moment. Databases, log files, authentication tokens, APIs, file systems and programming languages all use it because a single integer is easy to store, sort and compare, and it does not change with daylight saving or time zones. The difficulty is that people cannot read it. This tool closes that gap without needing a command line or a code snippet.</p>
-
-  <h3>What the number means</h3>
-  <p>A Unix timestamp counts the seconds that have elapsed since the Unix epoch, 00:00:00 Coordinated Universal Time (UTC) on 1 January 1970. Leap seconds are not counted, so every day is treated as exactly 86,400 seconds. A timestamp of 0 is the epoch itself, 86400 is one day later, and negative numbers refer to moments before 1970.</p>
-
-  <h3>Seconds, milliseconds, microseconds and nanoseconds</h3>
-  <p>Different systems use different precision. The classic Unix timestamp is in seconds and currently has 10 digits. JavaScript, Java and many web APIs use milliseconds, giving 13 digits. Some databases and tracing tools use microseconds (16 digits), and Go and some logging systems use nanoseconds (19 digits). When you paste a number, the converter counts the digits and picks the matching unit, then tells you which one it chose. If your value is from an unusual source, check that detected unit before trusting the date.</p>
-
-  <h3>Time zones and daylight saving</h3>
-  <p>The timestamp itself never changes with the time zone. Only the calendar date and clock time shown to a human do. The converter shows the UTC time in ISO 8601 form, which is what most APIs expect, plus the same moment in your local zone or another zone from the list, including New York, London, Berlin, Kolkata, Singapore, Tokyo and Sydney. When you convert a date to a timestamp, you tell the tool which zone you typed it in, and it applies that zone&rsquo;s offset on that specific date, including daylight saving changes, before producing the number.</p>
-
-  <h3>Where developers use epoch time</h3>
-  <ul>
-    <li><strong>Debugging logs</strong>, where events are stamped with a number and you need to know when they happened.</li>
-    <li><strong>JWT and session tokens</strong>, which carry <code>iat</code> and <code>exp</code> claims as Unix seconds.</li>
-    <li><strong>Databases</strong> that store created and updated times as integers.</li>
-    <li><strong>API requests</strong> that take a start and end time as timestamps.</li>
-    <li><strong>Cron jobs and scheduled tasks</strong>, where you want to check the exact run time.</li>
-    <li><strong>Cache and expiry values</strong>, such as <code>Expires</code> or TTL fields.</li>
-  </ul>
-
-  <h3>Common mistakes</h3>
-  <ul>
-    <li><strong>Mixing seconds and milliseconds.</strong> Passing a seconds value to a function that expects milliseconds gives a date in January 1970. Passing milliseconds where seconds are expected gives a date tens of thousands of years away.</li>
-    <li><strong>Reading a UTC time as local time.</strong> A timestamp converted to a date is correct only in the zone you state. Always label the zone when sharing a time.</li>
-    <li><strong>Forgetting that months are zero-based in some languages.</strong> In JavaScript, <code>new Date(2026, 0, 1)</code> is January, not February.</li>
-    <li><strong>Using 32-bit storage.</strong> A signed 32-bit integer can only hold dates up to 19 January 2038, so use a 64-bit type for new systems.</li>
-  </ul>
-
-  <h3>Quick reference in code</h3>
-  <p>In JavaScript, <code>Math.floor(Date.now() / 1000)</code> gives the current timestamp in seconds, and <code>new Date(seconds * 1000).toISOString()</code> turns one back into a date. In Python, <code>int(time.time())</code> returns the current time in seconds and <code>datetime.fromtimestamp(ts, tz=timezone.utc)</code> converts it. In a Unix shell, <code>date +%s</code> prints the current timestamp and <code>date -d @1735689600</code> converts one on Linux.</p>
-
-  <h3>Privacy</h3>
-  <p>All conversions use your browser&rsquo;s built-in date and internationalization functions. Nothing you type is sent to Logrith or any other server, so it is safe to use with timestamps from private logs.</p>
-  <h3>Step-by-Step: How to Use the Unix Timestamp Converter</h3>
-  <ol class="steps">
-    <li class="step">
-      <strong>Read the current time</strong>
-      <p>The box at the top shows the live Unix time in seconds and milliseconds. Copy it with one click.</p>
-    </li>
-    <li class="step">
-      <strong>Convert a timestamp</strong>
-      <p>Paste a timestamp into the first field. The detected unit, the UTC date, your chosen time zone, the relative time and both numeric forms appear below.</p>
-    </li>
-    <li class="step">
-      <strong>Convert a date</strong>
-      <p>Pick a date and time in the third box and choose the time zone it was entered in. The matching seconds and milliseconds value is shown, ready to copy.</p>
-    </li>
-  </ol>
+<h2>Acerca del convertidor de marcas de tiempo de Unix</h2>
+<p>El convertidor de marcas de tiempo Unix Logrith traduce entre tiempo epoch y fechas ordinarias en ambas direcciones. Pegue un número como 1735689600 y vea el momento exacto que representa en UTC y en la zona horaria que seleccione; o elija una fecha y hora y obtenga la marca de tiempo correspondiente en segundos y milisegundos. Un reloj en tiempo real en la parte superior muestra la hora Unix actual, lo cual resulta útil cuando necesita un valor para un registro, una prueba o una llamada a la API.</p>
+<p>El tiempo Unix es el formato estándar que utilizan las computadoras para registrar un momento. Bases de datos, archivos de registro, tokens de autenticación, API, sistemas de archivos y lenguajes de programación lo emplean porque un solo número entero es fácil de almacenar, ordenar y comparar, y no se ve afectado por el horario de verano ni las zonas horarias. La dificultad radica en que las personas no pueden leerlo. Esta herramienta resuelve ese problema sin necesidad de usar la línea de comandos ni fragmentos de código.</p>
+<h3>Qué significa el número</h3>
+<p>Una marca de tiempo Unix cuenta los segundos transcurridos desde la época Unix, las 00:00:00 hora universal coordinada (UTC) del 1 de enero de 1970. Los segundos intercalares no se contabilizan, por lo que cada día se considera de exactamente 86 400 segundos. Una marca de tiempo de 0 corresponde a la época misma, 86 400 a un día después, y los números negativos se refieren a momentos anteriores a 1970.</p>
+<h3>Segundos, milisegundos, microsegundos y nanosegundos</h3>
+<p>Los distintos sistemas utilizan diferentes niveles de precisión. La marca de tiempo clásica de Unix se expresa en segundos y actualmente consta de 10 dígitos. JavaScript, Java y muchas API web utilizan milisegundos, lo que resulta en 13 dígitos. Algunas bases de datos y herramientas de rastreo utilizan microsegundos (16 dígitos), y Go y algunos sistemas de registro utilizan nanosegundos (19 dígitos). Al pegar un número, el conversor cuenta los dígitos y selecciona la unidad correspondiente, indicándole cuál ha elegido. Si el valor proviene de una fuente inusual, verifique la unidad detectada antes de confiar en la fecha.</p>
+<h3>Zonas horarias y horario de verano</h3>
+<p>La marca de tiempo en sí no cambia con la zona horaria. Solo la fecha del calendario y la hora que se muestran al usuario sí lo hacen. El conversor muestra la hora UTC en formato ISO 8601, que es lo que esperan la mayoría de las API, además de la misma hora en su zona horaria local o en otra zona de la lista, incluyendo Nueva York, Londres, Berlín, Calcuta, Singapur, Tokio y Sídney. Al convertir una fecha a una marca de tiempo, le indica a la herramienta en qué zona horaria la introdujo, y esta aplica el desfase horario correspondiente a esa fecha específica, incluyendo los cambios del horario de verano, antes de generar el número.</p>
+<h3>Donde los desarrolladores usan la hora epoch</h3>
+<ul>
+<li><strong>Registros de depuración</strong> , donde los eventos están marcados con un número y necesitas saber cuándo ocurrieron.</li>
+<li><strong>JWT y tokens de sesión</strong> , que llevan declaraciones <code>iat</code> y <code>exp</code> como segundos Unix.</li>
+<li><strong>Bases de datos</strong> que almacenan las fechas de creación y actualización como números enteros.</li>
+<li><strong>Solicitudes a la API</strong> que toman como marcas de tiempo una hora de inicio y una hora de finalización.</li>
+<li><strong>Tareas programadas (Cron jobs</strong> ) donde se desea comprobar el tiempo exacto de ejecución.</li>
+<li><strong>Valores de caché y caducidad</strong> , como los campos <code>Expires</code> o TTL.</li>
+</ul>
+<h3>Errores comunes</h3>
+<ul>
+<li><strong>Mezclando segundos y milisegundos.</strong> Si se pasa un valor en segundos a una función que espera milisegundos, se obtiene una fecha de enero de 1970. Si se pasan milisegundos donde se esperan segundos, se obtiene una fecha de decenas de miles de años de antigüedad.</li>
+<li><strong>Interpretación de una hora UTC como hora local.</strong> Una marca de tiempo convertida a fecha solo es correcta en la zona horaria que indique. Siempre indique la zona horaria al compartir una hora.</li>
+<li><strong>Olvidar que en algunos lenguajes los meses comienzan en cero.</strong> En JavaScript, <code>new Date(2026, 0, 1)</code> es enero, no febrero.</li>
+<li><strong>Utilizando almacenamiento de 32 bits.</strong> Un entero con signo de 32 bits solo puede almacenar fechas hasta el 19 de enero de 2038, por lo que se recomienda usar un tipo de 64 bits para sistemas nuevos.</li>
+</ul>
+<h3>Referencia rápida en código</h3>
+<p>En JavaScript, <code>Math.floor(Date.now() / 1000)</code> devuelve la marca de tiempo actual en segundos, y <code>new Date(seconds * 1000).toISOString()</code> la convierte de nuevo a fecha. En Python, <code>int(time.time())</code> devuelve la hora actual en segundos y <code>datetime.fromtimestamp(ts, tz=timezone.utc)</code> la convierte. En un intérprete de comandos de Unix, <code>date +%s</code> imprime la marca de tiempo actual y <code>date -d @1735689600</code> la convierte en Linux.</p>
+<h3>Privacidad</h3>
+<p>Todas las conversiones utilizan las funciones integradas de fecha e internacionalización de su navegador. Nada de lo que escriba se envía a Logrith ni a ningún otro servidor, por lo que es seguro usarlo con marcas de tiempo de registros privados.</p>
+<h3>Paso a paso: Cómo usar el convertidor de marcas de tiempo de Unix</h3>
+<ol class="steps">
+<li class="step">
+<strong>Lea la hora actual</strong>
+<p>El recuadro superior muestra la hora Unix en tiempo real, en segundos y milisegundos. Cópiela con un solo clic.</p>
+</li>
+<li class="step">
+<strong>Convertir una marca de tiempo</strong>
+<p>Pegue una marca de tiempo en el primer campo. A continuación, aparecerán la unidad detectada, la fecha UTC, la zona horaria seleccionada, la hora relativa y ambos formatos numéricos.</p>
+</li>
+<li class="step">
+<strong>Convertir una fecha</strong>
+<p>Seleccione una fecha y hora en la tercera casilla y elija la zona horaria en la que se ingresó. Se mostrarán los valores correspondientes en segundos y milisegundos, listos para copiar.</p>
+</li>
+</ol>
 </section>
-
 <section class="page-section">
-  <h2>Related Tools</h2>
-  <div class="related-grid">
-    <a class="related-card" href="/tool/tools/time-zone-converter"><strong>Time Zone Converter</strong><span>Compare the same time across cities.</span></a>
-    <a class="related-card" href="/tool/tools/date-difference-calculator"><strong>Date Difference Calculator</strong><span>Find the days between two dates.</span></a>
-    <a class="related-card" href="/tool/tools/cron-expression-builder"><strong>Cron Expression Builder</strong><span>Build and read cron schedules.</span></a>
-    <a class="related-card" href="/tool/tools/jwt-decoder"><strong>JWT Decoder</strong><span>Read the exp and iat timestamps inside a token.</span></a>
-  </div>
+<h2>Herramientas relacionadas</h2>
+<div class="related-grid">
+<a class="related-card" href="/es/tool/tools/time-zone-converter"><strong>Convertidor de zona horaria:</strong> <span>compara la misma hora entre ciudades.</span></a> <a class="related-card" href="/es/tool/tools/date-difference-calculator"><strong>Calculadora de diferencia de fechas:</strong> <span>encuentra los días entre dos fechas.</span></a> <a class="related-card" href="/es/tool/tools/cron-expression-builder"><strong>Creador de expresiones Cron:</strong> <span>crea y lee programaciones Cron.</span></a> <a class="related-card" href="/es/tool/tools/jwt-decoder"><strong>Decodificador JWT:</strong> <span>lee las marcas de tiempo exp e iat dentro de un token.</span></a>
+</div>
 </section>
-
 <section class="page-section">
-  <h2>Popular Searches</h2>
-  <div class="keyword-box">
-    <span class="keyword-tag">unix timestamp converter</span>
-    <span class="keyword-tag">epoch converter</span>
-    <span class="keyword-tag">timestamp to date</span>
-    <span class="keyword-tag">date to unix timestamp</span>
-    <span class="keyword-tag">epoch time to human readable</span>
-    <span class="keyword-tag">unix time milliseconds</span>
-    <span class="keyword-tag">current unix timestamp</span>
-    <span class="keyword-tag">convert epoch to utc</span>
-  </div>
+<h2>Búsquedas populares</h2>
+<div class="keyword-box">
+<span class="keyword-tag">convertidor de marca de tiempo Unix</span> <span class="keyword-tag">convertidor de época</span> <span class="keyword-tag">marca de tiempo a fecha</span> <span class="keyword-tag">fecha a marca de tiempo Unix</span> <span class="keyword-tag">época tiempo a tiempo Unix legible para humanos</span> <span class="keyword-tag">milisegundos</span> <span class="keyword-tag">marca de tiempo Unix actual</span> <span class="keyword-tag">convertir época a UTC</span>
+</div>
 </section>
-
 </main>
-
 <div id="footer"></div>
 <script src="/assets/js/main.js?v=20261115"></script>
-
 <script src="/assets/js/tools/unix-timestamp-converter.js"></script>
 </body></html>

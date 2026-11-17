@@ -1,83 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eliminar filas duplicadas y limpiar un archivo CSV desordenado | Logrith</title>
+<meta name="description" content="Elimine las filas duplicadas, las celdas vacías y el formato inconsistente de un archivo CSV con un analizador sintáctico real que maneje correctamente los campos entre comillas.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Logrith">
+<link rel="canonical" href="https://logrith.in/es/tool/tools/csv-cleaner">
+  <link rel="alternate" hreflang="x-default" href="https://logrith.in/tool/tools/csv-cleaner">
+  <link rel="alternate" hreflang="es" href="https://logrith.in/es/tool/tools/csv-cleaner">
+  <link rel="alternate" hreflang="en" href="https://logrith.in/tool/tools/csv-cleaner">
 
-  <title>Remove Duplicate Rows and Clean a Messy CSV File | Logrith</title>
-  <meta name="description" content="Strip duplicate rows, empty cells and inconsistent formatting from a CSV file, with a real parser that handles quoted fields correctly.">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="author" content="Logrith">
-  <link rel="canonical" href="https://logrith.in/tool/tools/csv-cleaner">
 
-  <meta property="og:title" content="Remove Duplicate Rows and Clean a Messy CSV File | Logrith">
-  <meta property="og:description" content="Strip duplicate rows, empty cells and inconsistent formatting from a CSV file, with a real parser that handles quoted fields correctly.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://logrith.in/tool/tools/csv-cleaner">
-  <meta property="og:site_name" content="Logrith">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Remove Duplicate Rows and Clean a Messy CSV File | Logrith">
-  <meta name="twitter:description" content="Strip duplicate rows, empty cells and inconsistent formatting from a CSV file, with a real parser that handles quoted fields correctly.">
-
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#0D0D0D">
-
-  <meta name="keywords" content="csv cleaner, csv deduplicator, clean csv file, remove duplicate csv rows, csv validator, csv formatter online">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
-  <link rel="preload" href="/components/navbar.html" as="fetch" type="text/html" crossorigin>
-  <link rel="preload" href="/components/footer.html" as="fetch" type="text/html" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=20261115">
-  <link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"SoftwareApplication",
-    "name":"Logrith CSV Cleaner",
-    "url":"https://logrith.in/tool/tools/csv-cleaner",
-    "applicationCategory":"UtilitiesApplication",
-    "operatingSystem":"Web Browser",
-    "description":"Browser-based CSV cleaning tool that removes duplicate rows, trims whitespace, removes empty rows and columns, normalizes casing and flags invalid emails, without uploading data to a server.",
-    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
-    "featureList":[
-      "Remove duplicate CSV rows",
-      "Remove empty rows and columns",
-      "Trim whitespace from every cell",
-      "Normalize text casing on a selected column",
-      "Flag invalid-looking email addresses",
-      "Export cleaned CSV",
-      "100% local browser processing"
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Global Tools", "item": "https://logrith.in/tool/categories/global-tools"}, {"@type": "ListItem", "position": 4, "name": "CSV Cleaner", "item": "https://logrith.in/tool/tools/csv-cleaner"}]}
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"Does this tool detect duplicate rows?","acceptedAnswer":{"@type":"Answer","text":"Yes. It compares every cell in a row, after trimming whitespace, against every other row and flags exact matches as duplicates."}},
-      {"@type":"Question","name":"Can it handle fields that contain commas?","acceptedAnswer":{"@type":"Answer","text":"Yes. The parser correctly handles quoted fields that contain commas, quotes, or line breaks, following standard CSV quoting rules."}},
-      {"@type":"Question","name":"Will it upload my CSV file anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. The file is parsed and cleaned entirely in your browser using JavaScript. Nothing is sent to a server."}},
-      {"@type":"Question","name":"Can I undo a cleaning operation?","acceptedAnswer":{"@type":"Answer","text":"The cleaning options are previewed before you download, and your original uploaded file is never modified, so you can re-upload it and try different options at any time."}},
-      {"@type":"Question","name":"Is this tool free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes, this tool is completely free with no account, signup, or row limit beyond what your browser can handle."}}
-    ]
-  }
-  </script>
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
-  <script>
+<meta property="og:title" content="Eliminar filas duplicadas y limpiar un archivo CSV desordenado | Logrith">
+<meta property="og:description" content="Elimine las filas duplicadas, las celdas vacías y el formato inconsistente de un archivo CSV con un analizador sintáctico real que maneje correctamente los campos entre comillas.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://logrith.in/es/tool/tools/csv-cleaner">
+<meta property="og:site_name" content="Logrith">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Eliminar filas duplicadas y limpiar un archivo CSV desordenado | Logrith">
+<meta name="twitter:description" content="Elimine las filas duplicadas, las celdas vacías y el formato inconsistente de un archivo CSV con un analizador sintáctico real que maneje correctamente los campos entre comillas.">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0D0D0D">
+<meta name="keywords" content="csv cleaner, csv deduplicator, clean csv file, remove duplicate csv rows, csv validator, csv formatter online">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
+<link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261115">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Logrith Limpiador CSV", "url": "https://logrith.in/es/tool/tools/csv-cleaner", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web Browser", "description": "Herramienta de limpieza de archivos CSV basada en el navegador que elimina filas duplicadas, recorta espacios en blanco, elimina filas y columnas vacías, normaliza el uso de mayúsculas y minúsculas e identifica correos electrónicos no válidos, sin necesidad de subir datos a un servidor.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": ["Remove duplicate CSV rows", "Remove empty rows and columns", "Trim whitespace from every cell", "Normalize text casing on a selected column", "Flag invalid-looking email addresses", "Export cleaned CSV", "100% local browser processing"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Hogar", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas globales", "item": "https://logrith.in/es/tool/categories/global-tools"}, {"@type": "ListItem", "position": 4, "name": "Limpiador CSV", "item": "https://logrith.in/es/tool/tools/csv-cleaner"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Esta herramienta detecta filas duplicadas?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Compara cada celda de una fila, después de eliminar los espacios en blanco, con todas las demás filas y marca las coincidencias exactas como duplicados."}}, {"@type": "Question", "name": "¿Puede procesar campos que contienen comas?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. El analizador maneja correctamente los campos entre comillas que contienen comas, comillas simples o saltos de línea, siguiendo las reglas estándar de comillas de CSV."}}, {"@type": "Question", "name": "¿Subirá mi archivo CSV a algún sitio?", "acceptedAnswer": {"@type": "Answer", "text": "No. El archivo se analiza y se limpia completamente en tu navegador mediante JavaScript. No se envía nada a un servidor."}}, {"@type": "Question", "name": "¿Puedo deshacer una operación de limpieza?", "acceptedAnswer": {"@type": "Answer", "text": "Las opciones de limpieza se muestran antes de la descarga, y el archivo original que subiste nunca se modifica, por lo que puedes volver a subirlo y probar diferentes opciones en cualquier momento."}}, {"@type": "Question", "name": "¿Esta herramienta es de uso gratuito?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, esta herramienta es completamente gratuita, sin necesidad de cuenta, registro ni límite de filas más allá de lo que su navegador pueda soportar."}}]}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+<script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -86,235 +49,193 @@
 </head>
 <body class="page-csv-cleaner">
 <div id="navbar"></div>
-
 <main>
-  <header class="page-hero">
-    <div class="page-hero-inner">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="/">Home</a> › <a href="/tool/categories/global-tools">Global Tools</a> › CSV Cleaner
+<header class="page-hero">
+<div class="page-hero-inner">
+<nav class="breadcrumb" aria-label="Migaja de pan">
+<a href="/es/">Inicio</a> › <a href="/es/tool/categories/global-tools">Herramientas globales</a> › Limpiador de archivos CSV
       </nav>
-      <h1>CSV Cleaner – Clean<span> and Organize</span> CSV Files</h1>
-      <p>Remove duplicate rows, trim whitespace, drop empty rows and columns, and flag invalid emails — all in your browser.</p>
-      <div class="tag-list">
-        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span>
-        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#lock"></use></svg> Local Processing</span>
-        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#csv"></use></svg> Real CSV Parser</span>
-        <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#speed"></use></svg> Instant</span>
-      </div>
-    </div>
-  </header>
-
-  <div class="tool-workspace">
-    <div class="tool-card">
-      <h2>Upload or Paste a CSV</h2>
-      <div class="upload-zone" id="upload-zone">
-        <input type="file" id="file-input" accept=".csv,text/csv">
-        <svg class="icon u-bbd9fb"><use href="/assets/svg/icons.svg#csv"></use></svg>
-        <h3>Drop a CSV file here or click to browse</h3>
-        <p>Or paste raw CSV text in the box below.</p>
-        <span class="upload-limit">Works with CSVs of any size your browser can handle</span>
-      </div>
-      <div class="control-group mt-12">
-        <label for="csv-input">Or paste CSV text</label>
-        <textarea class="tool-textarea mono" id="csv-input" rows="6" placeholder="name,email,city&#10;Jane Doe, jane@example.com ,Boston&#10;Jane Doe,jane@example.com,Boston"></textarea>
-      </div>
-      <div class="btn-group mt-12">
-        <button class="btn btn-primary" id="parse-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#search"></use></svg> Analyze CSV</button>
-      </div>
-      <div class="status-msg mt-12" id="status-msg" aria-live="polite"></div>
-    </div>
-
-    <p class="privacy-note">Your CSV is processed in your browser. Files are not uploaded to Logrith.</p>
-
-    <div class="tool-card is-hidden" id="summary-card">
-      <h2>CSV Summary</h2>
-      <div class="insp-grid" id="summary-grid"></div>
-    </div>
-
-    <div class="tool-card is-hidden" id="options-card">
-      <h2>Cleaning Options</h2>
-      <div class="clean-opts">
-        <div class="clean-opt">
-          <input type="checkbox" id="opt-dedupe" checked>
-          <div><label for="opt-dedupe">Remove duplicate rows</label><p>Keeps the first occurrence of each exact row, compared after trimming whitespace.</p></div>
-        </div>
-        <div class="clean-opt">
-          <input type="checkbox" id="opt-empty-rows" checked>
-          <div><label for="opt-empty-rows">Remove fully empty rows</label><p>Drops rows where every cell is blank.</p></div>
-        </div>
-        <div class="clean-opt">
-          <input type="checkbox" id="opt-empty-cols">
-          <div><label for="opt-empty-cols">Remove fully empty columns</label><p>Drops columns where every data row is blank.</p></div>
-        </div>
-        <div class="clean-opt">
-          <input type="checkbox" id="opt-trim" checked>
-          <div><label for="opt-trim">Trim whitespace from every cell</label><p>Removes leading and trailing spaces from all values.</p></div>
-        </div>
-        <div class="clean-opt">
-          <input type="checkbox" id="opt-case">
-          <div>
-            <label for="opt-case">Normalize casing on a column</label>
-            <p>Apply consistent casing to one column.</p>
-            <div class="inline-select">
-              <select id="case-column"></select>
-              <select id="case-mode">
-                <option value="lower">lowercase</option>
-                <option value="upper">UPPERCASE</option>
-                <option value="title">Title Case</option>
-              </select>
-            </div>
-          </div>
-        </div>
-        <div class="clean-opt">
-          <input type="checkbox" id="opt-email">
-          <div>
-            <label for="opt-email">Flag invalid email addresses</label>
-            <p>Check one column for values that don't look like a valid email. Flagged rows are reported, not removed.</p>
-            <div class="inline-select">
-              <select id="email-column"></select>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="btn-group mt-16">
-        <button class="btn btn-primary" id="clean-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Clean CSV</button>
-      </div>
-    </div>
-
-    <div class="tool-card is-hidden" id="result-card">
-      <h2>Cleaning Result</h2>
-      <div class="insp-grid" id="result-grid"></div>
-      <div class="csv-preview-wrap is-hidden" id="preview-wrap">
-        <table class="csv-preview" id="preview-table"></table>
-      </div>
-      <div class="btn-group mt-16">
-        <button class="btn btn-primary" id="download-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#cloud-down"></use></svg> Download Cleaned CSV</button>
-        <button class="btn btn-secondary" id="copy-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy as Text</button>
-      </div>
-    </div>
-  </div>
-
-  <section class="page-section">
-    <h2>How to Clean a CSV</h2>
-    <ol class="steps">
-      <li class="step">
-        <p>Upload a .csv file or paste raw CSV text directly into the box.</p>
-      </li>
-      <li class="step">
-        <p>Click "Analyze CSV" to see row/column counts, duplicate count, and empty row/column counts.</p>
-      </li>
-      <li class="step">
-        <p>Choose which cleaning operations to apply, then click "Clean CSV".</p>
-      </li>
-      <li class="step">
-        <p>Review the before/after summary and preview table, then download or copy the cleaned result.</p>
-      </li>
-    </ol>
-  </section>
-
-  <section class="page-section prose">
-    <h2>What Problems Can It Detect?</h2>
-    <ul>
-      <li><strong>Duplicate rows:</strong> exact row matches, compared after trimming whitespace from each cell.</li>
-      <li><strong>Empty rows and columns:</strong> rows where every cell is blank, and columns where every data row is blank.</li>
-      <li><strong>Inconsistent whitespace:</strong> leading or trailing spaces that make otherwise-identical values look different.</li>
-      <li><strong>Inconsistent casing:</strong> a selected column can be normalized to lowercase, uppercase, or Title Case in one pass.</li>
-      <li><strong>Invalid-looking emails:</strong> a selected email column is checked against a standard email pattern and mismatches are reported.</li>
-    </ul>
-  </section>
-
-  <section class="page-section prose">
-    <h2>What Is a CSV Cleaner?</h2>
-    <p>A CSV cleaner is a utility that reads a comma-separated-values file, finds common data problems, and fixes them in a repeatable way. CSV is a simple, text-based format, but that simplicity is also why CSV files exported from different systems — spreadsheets, databases, contact forms, e-commerce platforms — often arrive with duplicate rows, empty rows or columns, inconsistent spacing, and mismatched casing. A CSV cleaner automates the tedious part of fixing those problems by hand in a spreadsheet application.</p>
-
-    <h2>Remove Duplicate CSV Rows</h2>
-    <p>Duplicate rows commonly appear when a contact list is exported more than once and merged, when a form is submitted twice, or when data is combined from multiple sources without deduplication. This tool compares every cell in a row — after trimming whitespace — against every other row in the file, and removes exact repeats while keeping the first occurrence. Because the comparison happens after trimming, rows that differ only by a stray trailing space are still correctly recognized as duplicates.</p>
-
-    <h2>Clean CSV Columns</h2>
-    <p>Beyond duplicate rows, a CSV file can carry columns that are entirely empty — sometimes left over from a template or an export that included unused fields. Removing fully empty columns reduces clutter and keeps the file focused on columns that actually carry data. This tool checks every column across all data rows and removes any column where no row has a value.</p>
-
-    <h2>Validate CSV Data</h2>
-    <p>Beyond structural cleanup, this tool includes a lightweight validation pass for one of the most common data-quality checks: email addresses. Select the column that holds email values, and the tool checks each entry against a standard email pattern, reporting how many values don't look like valid emails. Flagged rows are not removed automatically — the pattern check is a heuristic, not a guarantee of deliverability, so the decision to fix or remove flagged entries is left to you.</p>
-
-    <h3>How the CSV Parser Actually Works</h3>
-    <p>Many simple tools split CSV text on commas, which breaks immediately on any field that itself contains a comma — a common case with addresses, descriptions, or names written as "Last, First". This tool instead uses a proper character-by-character CSV parser that tracks whether it is currently inside a quoted field. Inside quotes, commas and line breaks are treated as literal characters rather than delimiters, and a doubled quote (<code>""</code>) inside a quoted field is correctly read as a single literal quote character. Rows are split on unquoted line breaks, handling both Unix (<code>\n</code>) and Windows (<code>\r\n</code>) line endings.</p>
-
-    <h3>Normalizing Casing on a Column</h3>
-    <p>Data entered by hand or merged from multiple sources frequently has inconsistent capitalization — "new york", "New York", and "NEW YORK" might all represent the same value. Selecting a column and choosing lowercase, UPPERCASE, or Title Case applies that casing consistently to every value in that column, which is especially useful before deduplicating on a column where case differences would otherwise cause near-identical values to be treated as distinct.</p>
-
-    <h2>Clean CSV Files in Your Browser</h2>
-    <p>Every step — parsing, analysis, cleaning, and CSV re-serialization — runs locally in your browser using JavaScript. Your file is never uploaded to any server, which makes this tool suitable for cleaning files that contain personal information, customer data, or other sensitive content before you process it further elsewhere.</p>
-
-    <h2>Common CSV Cleaning Tasks</h2>
-    <ul>
-      <li><strong>Cleaning an exported contact list:</strong> removing duplicate entries and empty rows left over from an export, before importing into another system.</li>
-      <li><strong>Preparing data for a spreadsheet import:</strong> trimming stray whitespace and normalizing casing so lookups and filters behave consistently.</li>
-      <li><strong>Deduplicating a mailing list:</strong> catching repeated email addresses or names that would otherwise result in duplicate sends.</li>
-      <li><strong>Auditing a data export:</strong> quickly seeing row/column counts and empty-field counts before deciding how to process a file further.</li>
-    </ul>
-
-    <h3>Re-serializing CSV Correctly</h3>
-    <p>When the cleaned data is exported back to CSV, any value that contains a comma, a double quote, or a line break is automatically wrapped in double quotes, with internal quotes doubled, following the same quoting convention most spreadsheet applications expect. This means the downloaded file opens correctly in Excel, Google Sheets, or any standard CSV reader without manual fixing.</p>
-
-    <h3>Frequently Searched Terms</h3>
-    <p>People use this tool when searching for phrases like "remove duplicate rows csv online," "clean csv file free," "csv whitespace trimmer," and "validate csv data online" — this page is built to answer those tasks directly with a working, browser-based tool rather than a manual spreadsheet workaround.</p>
-  </section>
-
-  <section class="page-section">
-    <h2>CSV Cleaner FAQ</h2>
-    <div class="faq-list">
-      <details class="faq-item">
-        <summary class="faq-q">Does this tool detect duplicate rows?</summary>
-        <div class="faq-a"><p>Yes. It compares every cell in a row, after trimming whitespace, against every other row and flags exact matches as duplicates.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">Can it handle fields that contain commas?</summary>
-        <div class="faq-a"><p>Yes. The parser correctly handles quoted fields that contain commas, quotes, or line breaks, following standard CSV quoting rules.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">Will it upload my CSV file anywhere?</summary>
-        <div class="faq-a"><p>No. The file is parsed and cleaned entirely in your browser using JavaScript. Nothing is sent to a server.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">Can I undo a cleaning operation?</summary>
-        <div class="faq-a"><p>The cleaning options are previewed before you download, and your original uploaded file is never modified, so you can re-upload it and try different options at any time.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">Is this tool free to use?</summary>
-        <div class="faq-a"><p>Yes, this tool is completely free with no account, signup, or row limit beyond what your browser can handle.</p></div>
-      </details>
-    </div>
-  </section>
-
-  <section class="page-section">
-    <h2>Related Tools</h2>
-    <div class="related-grid">
-    <a class="related-card" href="/tool/tools/json-csv-converter"><strong>JSON ⇄ CSV Converter</strong><span>Flatten nested JSON, both ways.</span></a>
-      <a class="related-card" href="/tool/tools/json-repair"><strong>JSON Repair Tool</strong></a>
-      <a class="related-card" href="/tool/tools/url-deduplicator"><strong>URL Deduplicator</strong></a>
-      <a class="related-card" href="/tool/tools/ai-context-calculator"><strong>AI Token &amp; Context Calculator</strong></a>
-      <a class="related-card" href="/tool/tools/markdown-to-html"><strong>Markdown to HTML Converter</strong></a>
-    </div>
-  </section>
-
-  <section class="page-section">
-    <h2>Top CSV Cleaner Search Queries</h2>
-    <div class="keyword-box">
-      <span class="keyword-tag">csv cleaner online</span>
-      <span class="keyword-tag">remove duplicate csv rows</span>
-      <span class="keyword-tag">clean csv file free</span>
-      <span class="keyword-tag">csv validator online</span>
-      <span class="keyword-tag">trim csv whitespace</span>
-      <span class="keyword-tag">csv deduplicator tool</span>
-      <span class="keyword-tag">fix messy csv online</span>
-    </div>
-  </section>
+<h1>Limpiador de CSV: limpia <span>y organiza</span> archivos CSV.</h1>
+<p>Elimina filas duplicadas, recorta espacios en blanco, borra filas y columnas vacías y marca correos electrónicos no válidos, todo desde tu navegador.</p>
+<div class="tag-list">
+<span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Gratis</span> <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#lock"></use></svg> Procesamiento local</span> <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#csv"></use></svg> Analizador CSV real</span> <span class="tag"><svg class="icon"><use href="/assets/svg/icons.svg#speed"></use></svg> Instantáneo</span>
+</div>
+</div>
+</header>
+<div class="tool-workspace">
+<div class="tool-card">
+<h2>Sube o pega un archivo CSV.</h2>
+<div class="upload-zone" id="upload-zone">
+<input type="file" id="file-input" accept=".csv,text/csv">
+<svg class="icon u-bbd9fb"><use href="/assets/svg/icons.svg#csv"></use></svg>
+<h3>Arrastre aquí un archivo CSV o haga clic para explorar.</h3>
+<p>O bien, pegue el texto CSV sin formato en el cuadro de abajo.</p>
+<span class="upload-limit">Funciona con archivos CSV de cualquier tamaño que admita tu navegador.</span>
+</div>
+<div class="control-group mt-12">
+<label for="csv-input">O pegue el texto CSV</label> <textarea class="tool-textarea mono" id="csv-input" placeholder="name,email,city
+Jane Doe, jane@example.com ,Boston
+Jane Doe,jane@example.com,Boston" rows="6"></textarea>
+</div>
+<div class="btn-group mt-12">
+<button class="btn btn-primary" id="parse-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#search"></use></svg> Analizar CSV</button>
+</div>
+<div class="status-msg mt-12" id="status-msg" aria-live="polite"></div>
+</div>
+<p class="privacy-note">Tu archivo CSV se procesa en tu navegador. Los archivos no se suben a Logrith.</p>
+<div class="tool-card is-hidden" id="summary-card">
+<h2>Resumen CSV</h2>
+<div class="insp-grid" id="summary-grid"></div>
+</div>
+<div class="tool-card is-hidden" id="options-card">
+<h2>Opciones de limpieza</h2>
+<div class="clean-opts">
+<div class="clean-opt">
+<input type="checkbox" id="opt-dedupe" checked="">
+<div><label for="opt-dedupe">Eliminar filas duplicadas</label><p>Conserva la primera aparición de cada fila exacta, comparada después de eliminar los espacios en blanco.</p></div>
+</div>
+<div class="clean-opt">
+<input type="checkbox" id="opt-empty-rows" checked="">
+<div><label for="opt-empty-rows">Eliminar filas completamente vacías</label><p>Elimina las filas donde todas las celdas están en blanco.</p></div>
+</div>
+<div class="clean-opt">
+<input type="checkbox" id="opt-empty-cols">
+<div><label for="opt-empty-cols">Eliminar columnas completamente vacías</label><p>Elimina las columnas donde todas las filas de datos están en blanco.</p></div>
+</div>
+<div class="clean-opt">
+<input type="checkbox" id="opt-trim" checked="">
+<div><label for="opt-trim">Recorta los espacios en blanco de cada celda.</label><p>Elimina los espacios iniciales y finales de todos los valores.</p></div>
+</div>
+<div class="clean-opt">
+<input type="checkbox" id="opt-case">
+<div>
+<label for="opt-case">Normalizar el encapsulado en una columna</label>
+<p>Aplique un revestimiento uniforme a una columna.</p>
+<div class="inline-select">
+<select id="case-column"></select><select id="case-mode"><option value="lower">minúsculas</option><option value="upper"> MAYÚSCULAS</option><option value="title"> Caso de título</option></select>
+</div>
+</div>
+</div>
+<div class="clean-opt">
+<input type="checkbox" id="opt-email">
+<div>
+<label for="opt-email">Marcar direcciones de correo electrónico no válidas</label>
+<p>Verifique una columna para detectar valores que no parezcan una dirección de correo electrónico válida. Las filas marcadas se reportan, no se eliminan.</p>
+<div class="inline-select">
+<select id="email-column"></select>
+</div>
+</div>
+</div>
+</div>
+<div class="btn-group mt-16">
+<button class="btn btn-primary" id="clean-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> CSV limpio</button>
+</div>
+</div>
+<div class="tool-card is-hidden" id="result-card">
+<h2>Resultado de la limpieza</h2>
+<div class="insp-grid" id="result-grid"></div>
+<div class="csv-preview-wrap is-hidden" id="preview-wrap">
+<table class="csv-preview" id="preview-table"></table>
+</div>
+<div class="btn-group mt-16">
+<button class="btn btn-primary" id="download-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#cloud-down"></use></svg> Descargar CSV limpio</button> <button class="btn btn-secondary" id="copy-btn" type="button"><svg class="icon"><use href="/assets/svg/icons.svg#copy"></use></svg> Copiar como texto</button>
+</div>
+</div>
+</div>
+<section class="page-section">
+<h2>Cómo limpiar un archivo CSV</h2>
+<ol class="steps">
+<li class="step">
+<p>Cargue un archivo .csv o pegue el texto CSV sin formato directamente en el cuadro.</p>
+</li>
+<li class="step">
+<p>Haz clic en "Analizar CSV" para ver el número de filas y columnas, el número de duplicados y el número de filas y columnas vacías.</p>
+</li>
+<li class="step">
+<p>Seleccione las operaciones de limpieza que desea aplicar y, a continuación, haga clic en "Limpiar CSV".</p>
+</li>
+<li class="step">
+<p>Revise el resumen y la tabla de vista previa de antes y después, y luego descargue o copie el resultado depurado.</p>
+</li>
+</ol>
+</section>
+<section class="page-section prose">
+<h2>¿Qué problemas puede detectar?</h2>
+<ul>
+<li><strong>Filas duplicadas:</strong> coincidencias exactas de filas, comparadas después de eliminar los espacios en blanco de cada celda.</li>
+<li><strong>Filas y columnas vacías:</strong> filas donde todas las celdas están en blanco y columnas donde todas las filas de datos están en blanco.</li>
+<li><strong>Espacios en blanco inconsistentes:</strong> espacios iniciales o finales que hacen que valores que de otro modo serían idénticos parezcan diferentes.</li>
+<li><strong>Mayúsculas y minúsculas inconsistentes:</strong> una columna seleccionada puede normalizarse a minúsculas, mayúsculas o formato de título en una sola pasada.</li>
+<li><strong>Correos electrónicos con apariencia no válida:</strong> se comprueba una columna de correo electrónico seleccionada comparándola con un patrón de correo electrónico estándar y se informan las discrepancias.</li>
+</ul>
+</section>
+<section class="page-section prose">
+<h2>¿Qué es un limpiador de archivos CSV?</h2>
+<p>Un limpiador de CSV es una utilidad que lee un archivo de valores separados por comas, detecta problemas comunes de datos y los corrige de forma repetible. CSV es un formato de texto sencillo, pero precisamente por eso, los archivos CSV exportados desde distintos sistemas (hojas de cálculo, bases de datos, formularios de contacto, plataformas de comercio electrónico) suelen presentar filas duplicadas, filas o columnas vacías, espaciado inconsistente y errores de mayúsculas y minúsculas. Un limpiador de CSV automatiza la tediosa tarea de corregir manualmente estos problemas en una hoja de cálculo.</p>
+<h2>Eliminar filas duplicadas del archivo CSV</h2>
+<p>Es común que aparezcan filas duplicadas al exportar y combinar una lista de contactos varias veces, al enviar un formulario dos veces o al combinar datos de múltiples fuentes sin eliminar duplicados. Esta herramienta compara cada celda de una fila —tras eliminar los espacios en blanco— con todas las demás filas del archivo y elimina las repeticiones exactas, conservando la primera. Dado que la comparación se realiza después de eliminar los espacios en blanco, las filas que solo difieren por un espacio al final se siguen reconociendo correctamente como duplicadas.</p>
+<h2>Limpiar columnas CSV</h2>
+<p>Además de filas duplicadas, un archivo CSV puede contener columnas completamente vacías, a veces como resultado de una plantilla o una exportación con campos no utilizados. Eliminar las columnas totalmente vacías reduce el desorden y mantiene el archivo centrado en las columnas que realmente contienen datos. Esta herramienta revisa todas las columnas de todas las filas de datos y elimina cualquier columna cuya fila no tenga ningún valor.</p>
+<h2>Validar datos CSV</h2>
+<p>Además de la limpieza estructural, esta herramienta incluye una validación sencilla para una de las comprobaciones de calidad de datos más comunes: las direcciones de correo electrónico. Seleccione la columna que contiene los correos electrónicos y la herramienta comparará cada entrada con un patrón estándar, indicando cuántos valores no parecen correos electrónicos válidos. Las filas marcadas no se eliminan automáticamente; la comprobación del patrón es una heurística, no una garantía de entrega, por lo que la decisión de corregir o eliminar las entradas marcadas queda a su criterio.</p>
+<h3>Cómo funciona realmente el analizador CSV</h3>
+<p>Muchas herramientas sencillas dividen el texto CSV por comas, lo que provoca un salto de línea inmediato en cualquier campo que contenga una coma, algo común en direcciones, descripciones o nombres escritos como "Apellido, Nombre". Esta herramienta, en cambio, utiliza un analizador CSV correcto, carácter por carácter, que detecta si el texto se encuentra dentro de un campo entre comillas. Dentro de las comillas, las comas y los saltos de línea se tratan como caracteres literales en lugar de delimitadores, y las comillas dobles (<code>""</code>) dentro de un campo entre comillas se leen correctamente como una sola comilla literal. Las filas se dividen por saltos de línea sin comillas, manejando tanto los finales de línea de Unix (<code>\n</code>) como los de Windows (<code>\r\n</code>).</p>
+<h3>Normalización de la carcasa en una columna</h3>
+<p>Los datos introducidos manualmente o combinados de múltiples fuentes suelen presentar inconsistencias en el uso de mayúsculas y minúsculas: "new york", "New York" y "NEW YORK" podrían representar el mismo valor. Seleccionar una columna y elegir minúsculas, MAYÚSCULAS o mayúsculas iniciales aplica ese formato de forma consistente a todos los valores de esa columna, lo cual resulta especialmente útil antes de eliminar duplicados en una columna donde las diferencias de mayúsculas y minúsculas podrían provocar que valores casi idénticos se traten como distintos.</p>
+<h2>Limpiar archivos CSV en tu navegador</h2>
+<p>Cada paso —análisis, limpieza y reserialización de CSV— se ejecuta localmente en tu navegador mediante JavaScript. Tu archivo nunca se sube a ningún servidor, lo que hace que esta herramienta sea ideal para limpiar archivos que contienen información personal, datos de clientes u otro contenido sensible antes de procesarlos posteriormente en otro lugar.</p>
+<h2>Tareas comunes de limpieza de archivos CSV</h2>
+<ul>
+<li><strong>Limpieza de una lista de contactos exportada:</strong> eliminación de entradas duplicadas y filas vacías que quedan tras la exportación, antes de importarla a otro sistema.</li>
+<li><strong>Preparación de datos para la importación a una hoja de cálculo:</strong> eliminación de espacios en blanco innecesarios y normalización de mayúsculas y minúsculas para que las búsquedas y los filtros se comporten de forma coherente.</li>
+<li><strong>Eliminar duplicados de una lista de correo:</strong> detectar direcciones de correo electrónico o nombres repetidos que, de otro modo, darían lugar a envíos duplicados.</li>
+<li><strong>Auditoría de una exportación de datos:</strong> permite ver rápidamente el número de filas/columnas y el número de campos vacíos antes de decidir cómo procesar el archivo posteriormente.</li>
+</ul>
+<h3>Re-serialización correcta de CSV</h3>
+<p>Al exportar los datos limpios a formato CSV, cualquier valor que contenga una coma, una comilla doble o un salto de línea se encierra automáticamente entre comillas dobles, duplicando las comillas internas, siguiendo la convención de comillas que utilizan la mayoría de las hojas de cálculo. Esto significa que el archivo descargado se abre correctamente en Excel, Google Sheets o cualquier lector de CSV estándar sin necesidad de correcciones manuales.</p>
+<h3>Términos buscados con frecuencia</h3>
+<p>La gente usa esta herramienta cuando busca frases como "eliminar filas duplicadas en archivos CSV en línea", "limpiar archivos CSV gratis", "recortador de espacios en blanco en archivos CSV" y "validar datos CSV en línea". Esta página está diseñada para responder a esas tareas directamente con una herramienta funcional basada en el navegador, en lugar de una solución alternativa manual mediante una hoja de cálculo.</p>
+</section>
+<section class="page-section">
+<h2>Preguntas frecuentes sobre CSV Cleaner</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary class="faq-q">¿Esta herramienta detecta filas duplicadas?</summary>
+<div class="faq-a"><p>Sí. Compara cada celda de una fila, después de eliminar los espacios en blanco, con todas las demás filas y marca las coincidencias exactas como duplicados.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Puede procesar campos que contienen comas?</summary>
+<div class="faq-a"><p>Sí. El analizador maneja correctamente los campos entre comillas que contienen comas, comillas simples o saltos de línea, siguiendo las reglas estándar de comillas de CSV.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Subirá mi archivo CSV a algún sitio?</summary>
+<div class="faq-a"><p>No. El archivo se analiza y se limpia completamente en tu navegador mediante JavaScript. No se envía nada a un servidor.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Puedo deshacer una operación de limpieza?</summary>
+<div class="faq-a"><p>Las opciones de limpieza se muestran antes de la descarga, y el archivo original que subiste nunca se modifica, por lo que puedes volver a subirlo y probar diferentes opciones en cualquier momento.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Esta herramienta es de uso gratuito?</summary>
+<div class="faq-a"><p>Sí, esta herramienta es completamente gratuita, sin necesidad de cuenta, registro ni límite de filas más allá de lo que su navegador pueda soportar.</p></div>
+</details>
+</div>
+</section>
+<section class="page-section">
+<h2>Herramientas relacionadas</h2>
+<div class="related-grid">
+<a class="related-card" href="/es/tool/tools/json-csv-converter"><strong>Convertidor JSON ⇄ CSV</strong> <span>Aplanar JSON anidado, en ambos sentidos.</span></a> <a class="related-card" href="/es/tool/tools/json-repair"><strong>Herramienta de reparación de JSON</strong></a> <a class="related-card" href="/es/tool/tools/url-deduplicator"><strong>Deduplicador de URL</strong></a> <a class="related-card" href="/es/tool/tools/ai-context-calculator"><strong>Calculadora de tokens y contexto con IA</strong></a> <a class="related-card" href="/es/tool/tools/markdown-to-html"><strong>Convertidor de Markdown a HTML</strong></a>
+</div>
+</section>
+<section class="page-section">
+<h2>Consultas de búsqueda más frecuentes sobre limpieza de archivos CSV</h2>
+<div class="keyword-box">
+<span class="keyword-tag">Limpiador de CSV en línea,</span> <span class="keyword-tag">elimina filas duplicadas de CSV,</span> limpia archivos CSV <span class="keyword-tag">, validador de CSV</span> <span class="keyword-tag">gratuito</span> en línea, <span class="keyword-tag">recorta espacios en blanco de CSV</span> <span class="keyword-tag">, herramienta de deduplicación de CSV,</span> <span class="keyword-tag">corrige CSV desordenados en línea.</span>
+</div>
+</section>
 </main>
-
 <div id="footer"></div>
 <script src="/assets/js/main.js?v=20261115"></script>
-
-
 <script>
 /* ---------- CSV parser: character-by-character state machine ---------- */
 function parseCsv(text) {

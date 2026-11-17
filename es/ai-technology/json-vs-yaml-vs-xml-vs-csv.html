@@ -101,7 +101,7 @@
 <p>JSON (JavaScript Object Notation) representa los datos como objetos (pares clave-valor), matrices, cadenas de texto, números, valores booleanos y valores nulos. Es compacto, fácil de analizar para programas en prácticamente cualquier lenguaje y lo suficientemente estricto como para que los errores de análisis sean fáciles de detectar.</p>
 <p><strong>Puntos fuertes:</strong> compatibilidad universal, sintaxis breve y predecible, tipos de datos claros.</p>
 <p><strong>Desventajas:</strong> no admite comentarios ni comas al final del texto, requiere comillas dobles para cada clave y cadena, y los números grandes pueden perder precisión en algunos lenguajes. La edición manual resulta tediosa para archivos grandes.</p>
-<p>Cuando un archivo JSON no se analiza correctamente, la causa suele ser una coma faltante, una coma al final del archivo o comillas simples. Péguelo en un <a href="/tool/tools/json-formatter">formateador de JSON</a> para ver exactamente dónde falla, o pruebe <a href="/tool/tools/json-repair">JSON Repair</a> para errores comunes.</p>
+<p>Cuando un archivo JSON no se analiza correctamente, la causa suele ser una coma faltante, una coma al final del archivo o comillas simples. Péguelo en un <a href="/es/tool/tools/json-formatter">formateador de JSON</a> para ver exactamente dónde falla, o pruebe <a href="/es/tool/tools/json-repair">JSON Repair</a> para errores comunes.</p>
 </section>
 <section id="yaml">
 <h2>YAML: configuración legible</h2>
@@ -113,13 +113,13 @@
 <li><strong>Adivinación de tipos.</strong> Los valores sin comillas pueden interpretarse como otros tipos. En YAML 1.1, palabras como <code>no</code> o <code>off</code> pueden leerse como booleanos, lo que ha provocado el conocido "problema de Noruega", donde el código de país NO se convierte en falso. Codifique las cadenas ambiguas.</li>
 <li><strong>Complejidad.</strong> Funcionalidades como los anclajes y los archivos multidocumento son potentes, pero fáciles de usar incorrectamente.</li>
 </ul>
-<p>¿Necesitas convertir entre ambos formatos? Un <a href="/tool/tools/yaml-json-converter">convertidor de YAML a JSON</a> te ayuda a comprobar que una configuración significa lo que crees que significa.</p>
+<p>¿Necesitas convertir entre ambos formatos? Un <a href="/es/tool/tools/yaml-json-converter">convertidor de YAML a JSON</a> te ayuda a comprobar que una configuración significa lo que crees que significa.</p>
 </section>
 <section id="xml">
 <h2>XML: estructura para documentos</h2>
 <p>XML encapsula los datos en etiquetas y atributos con nombre. Es un lenguaje extenso, pero esa extensión permite funcionalidades de las que carecen otros lenguajes: espacios de nombres para evitar conflictos, esquemas que validan la estructura rigurosamente y contenido mixto donde se intercalan texto y marcado, como en los documentos.</p>
 <p><strong>Puntos fuertes:</strong> validación sólida, herramientas maduras, ideal para datos en formato de documento y todavía común en fuentes de datos, formatos de archivos de oficina e integraciones empresariales o gubernamentales.</p>
-<p><strong>Desventajas:</strong> es demasiado extenso, más complejo de analizar y más difícil de leer que JSON para datos simples. Un <a href="/tool/tools/xml-formatter">formateador XML</a> facilita la inspección de archivos grandes.</p>
+<p><strong>Desventajas:</strong> es demasiado extenso, más complejo de analizar y más difícil de leer que JSON para datos simples. Un <a href="/es/tool/tools/xml-formatter">formateador XML</a> facilita la inspección de archivos grandes.</p>
 </section>
 <section id="csv">
 <h2>CSV: tablas simples</h2>
@@ -131,7 +131,7 @@
 <li>Las distintas herramientas utilizan diferentes delimitadores (coma, punto y coma, tabulación) y codificaciones.</li>
 <li>Las hojas de cálculo pueden reformatear valores silenciosamente, como eliminar los ceros iniciales de los identificadores o convertir los nombres de los genes en fechas.</li>
 </ul>
-<p>Si un archivo está desordenado, <a href="/tool/tools/csv-cleaner">CSV Cleaner</a> puede solucionar los problemas comunes antes de importarlo.</p>
+<p>Si un archivo está desordenado, <a href="/es/tool/tools/csv-cleaner">CSV Cleaner</a> puede solucionar los problemas comunes antes de importarlo.</p>
 </section>
 <section id="choose">
 <h2>Una forma sencilla de elegir</h2>
@@ -183,27 +183,27 @@
 <section class="page-section">
 <div class="section-header"><h2>Herramientas gratuitas mencionadas en esta guía</h2></div>
 <div class="tool-list">
-<a href="/tool/tools/json-formatter" class="tool-row">
+<a href="/es/tool/tools/json-formatter" class="tool-row">
 <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
 <div class="tool-row-body"><div class="tool-row-name">Formateador JSON</div><div class="tool-row-desc">Pegue el JSON para darle formato con la indentación adecuada, validar su sintaxis con la ubicación exacta de los errores o reducirlo a una sola línea.</div></div>
 <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
 </a>
-<a href="/tool/tools/yaml-json-converter" class="tool-row">
+<a href="/es/tool/tools/yaml-json-converter" class="tool-row">
 <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
 <div class="tool-row-body"><div class="tool-row-name">Convertidor de YAML a JSON</div><div class="tool-row-desc">Pega el código YAML o JSON y obtén una conversión precisa al otro formato al instante, conservando el formato original.</div></div>
 <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
 </a>
-<a href="/tool/tools/xml-formatter" class="tool-row">
+<a href="/es/tool/tools/xml-formatter" class="tool-row">
 <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
 <div class="tool-row-body"><div class="tool-row-name">Formateador XML</div><div class="tool-row-desc">Pegue el código XML para mejorarlo con el anidamiento y la indentación correctos, o para validar su estructura y detectar errores de sintaxis.</div></div>
 <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
 </a>
-<a href="/tool/tools/csv-cleaner" class="tool-row">
+<a href="/es/tool/tools/csv-cleaner" class="tool-row">
 <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
 <div class="tool-row-body"><div class="tool-row-name">Limpiador CSV</div><div class="tool-row-desc">Elimine las filas duplicadas, las celdas vacías y el formato inconsistente de un archivo CSV con un analizador sintáctico real que maneje correctamente los campos entre comillas.</div></div>
 <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
 </a>
-<a href="/tool/tools/json-repair" class="tool-row">
+<a href="/es/tool/tools/json-repair" class="tool-row">
 <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
 <div class="tool-row-body"><div class="tool-row-name">Herramienta de reparación JSON</div><div class="tool-row-desc">Pegue el JSON no válido para que se repare automáticamente, corrigiendo las comas finales y las claves sin comillas, y explicando claramente los errores.</div></div>
 <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>

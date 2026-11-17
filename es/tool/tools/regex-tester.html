@@ -1,246 +1,199 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="es">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Test and Debug Regular Expressions in Real Time | Logrith</title>
-  <meta name="description" content="Write a regex pattern and see every match highlighted live against your test string, with capture groups and flags explained.">
-  <link rel="canonical" href="https://logrith.in/tool/tools/regex-tester">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="author" content="Logrith">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://logrith.in/tool/tools/regex-tester">
-  <meta property="og:site_name" content="Logrith">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Test and Debug Regular Expressions in Real Time | Logrith">
-  <meta name="twitter:description" content="Write a regex pattern and see every match highlighted live against your test string, with capture groups and flags explained.">
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#0D0D0D">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prueba y depuración de expresiones regulares en tiempo real | Logrith</title>
+<meta name="description" content="Escribe un patrón de expresiones regulares y observa cómo se resaltan en tiempo real todas las coincidencias con tu cadena de prueba, con explicaciones de los grupos de captura y las banderas.">
+<link rel="canonical" href="https://logrith.in/es/tool/tools/regex-tester">
+  <link rel="alternate" hreflang="x-default" href="https://logrith.in/tool/tools/regex-tester">
+  <link rel="alternate" hreflang="es" href="https://logrith.in/es/tool/tools/regex-tester">
+  <link rel="alternate" hreflang="en" href="https://logrith.in/tool/tools/regex-tester">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
-  <link rel="preload" href="/components/navbar.html" as="fetch" type="text/html" crossorigin>
-  <link rel="preload" href="/components/footer.html" as="fetch" type="text/html" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=20261115">
-  <link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
 
-  <!-- Google tag (gtag.js) -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
- <script>
+
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Logrith">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://logrith.in/es/tool/tools/regex-tester">
+<meta property="og:site_name" content="Logrith">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Prueba y depuración de expresiones regulares en tiempo real | Logrith">
+<meta name="twitter:description" content="Escribe un patrón de expresiones regulares y observa cómo se resaltan en tiempo real todas las coincidencias con tu cadena de prueba, con explicaciones de los grupos de captura y las banderas.">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0D0D0D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
+<link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261115">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261115">
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+<script>
    window.dataLayer = window.dataLayer || [];
    function gtag(){dataLayer.push(arguments);}
    gtag('js', new Date());
 
    gtag('config', 'G-BPJ4332XJH');
  </script>
- 
-  <meta name="keywords" content="regex tester, regex tester online, regular expression tester, test regex, regex checker">
-  <meta property="og:title" content="Test and Debug Regular Expressions in Real Time | Logrith">
-  <meta property="og:description" content="Write a regex pattern and see every match highlighted live against your test string, with capture groups and flags explained.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://logrith.in/tool/tools/regex-tester">
-  <meta property="og:site_name" content="Logrith">
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}
-  </script>
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "WebApplication", "name": "Regex Tester", "url": "https://logrith.in/tool/tools/regex-tester", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript and a modern web browser", "description": "Test and debug regular expressions online free. Real-time match highlighting, capture groups, flags support. No login required.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}
-  </script>
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Developer Tools", "item": "https://logrith.in/tool/categories/developer-tools"}, {"@type": "ListItem", "position": 4, "name": "Regex Tester", "item": "https://logrith.in/tool/tools/regex-tester"}]}
-  </script>
-  <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I test a regular expression?", "acceptedAnswer": {"@type": "Answer", "text": "Enter your pattern and sample text, and the tool highlights every match in real time."}}, {"@type": "Question", "name": "Which regex flavor does the tester use?", "acceptedAnswer": {"@type": "Answer", "text": "It uses the JavaScript regular expression engine built into your browser."}}, {"@type": "Question", "name": "Can I use flags like global or case-insensitive?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, common flags can be toggled to change how matching behaves."}}, {"@type": "Question", "name": "Is my text sent to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No, testing runs entirely in your browser."}}]}
-  </script>
+<meta name="keywords" content="regex tester, regex tester online, regular expression tester, test regex, regex checker">
+<meta property="og:title" content="Prueba y depuración de expresiones regulares en tiempo real | Logrith">
+<meta property="og:description" content="Escribe un patrón de expresiones regulares y observa cómo se resaltan en tiempo real todas las coincidencias con tu cadena de prueba, con explicaciones de los grupos de captura y las banderas.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://logrith.in/es/tool/tools/regex-tester">
+<meta property="og:site_name" content="Logrith">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Probador de expresiones regulares", "url": "https://logrith.in/es/tool/tools/regex-tester", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript and a modern web browser", "description": "Prueba y depura expresiones regulares en línea gratis. Resaltado de coincidencias en tiempo real, grupos de captura, compatibilidad con indicadores. No se requiere iniciar sesión.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Hogar", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas para desarrolladores", "item": "https://logrith.in/es/tool/categories/developer-tools"}, {"@type": "ListItem", "position": 4, "name": "Probador de expresiones regulares", "item": "https://logrith.in/es/tool/tools/regex-tester"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cómo puedo probar una expresión regular?", "acceptedAnswer": {"@type": "Answer", "text": "Introduce tu patrón y un texto de muestra, y la herramienta resaltará todas las coincidencias en tiempo real."}}, {"@type": "Question", "name": "¿Qué variante de expresiones regulares utiliza el evaluador?", "acceptedAnswer": {"@type": "Answer", "text": "Utiliza el motor de expresiones regulares de JavaScript integrado en su navegador."}}, {"@type": "Question", "name": "¿Puedo usar indicadores como global o que no distinga entre mayúsculas y minúsculas?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, se pueden activar o desactivar indicadores comunes para cambiar el comportamiento del sistema de coincidencia."}}, {"@type": "Question", "name": "¿Mi texto se envía a un servidor?", "acceptedAnswer": {"@type": "Answer", "text": "No, las pruebas se realizan completamente en su navegador."}}]}</script>
 </head>
 <body class="page-regex-tester">
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main">Saltar al contenido</a>
 <div id="navbar"></div>
-
 <main id="main">
-
 <header class="page-hero"><div class="page-hero-inner">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/tool/">Tools</a> › <a href="/tool/categories/developer-tools">Developer Tools</a> › Regex Tester</nav>
-  <h1>Free Regex Tester Online</h1>
-  <p>Test and debug regular expressions in real-time. See all matches highlighted, capture groups listed, and match count shown instantly.</p>
-  <div class="tag-list"><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Free</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg> Real-time</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Capture Groups</span><span class="tag"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#search"></use></svg> Highlight Matches</span></div>
+<nav class="breadcrumb" aria-label="Migaja de pan"><a href="/es/">Inicio</a> › <a href="/es/tool/">Herramientas</a> › <a href="/es/tool/categories/developer-tools">Herramientas para desarrolladores</a> › Probador de expresiones regulares</nav>
+<h1>Probador de expresiones regulares gratuito en línea</h1>
+<p>Pruebe y depure expresiones regulares en tiempo real. Vea todas las coincidencias resaltadas, los grupos de captura listados y el recuento de coincidencias mostrado al instante.</p>
+<div class="tag-list"><span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Gratis</span> <span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#zap"></use></svg> Tiempo real</span> <span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#copy"></use></svg> Capturar grupos</span> <span class="tag"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#search"></use></svg> Resaltar partidos</span></div>
 </div></header>
-
 <div class="tool-workspace">
-  <div class="tool-card">
-    <h2>Regex Tester</h2>
-    <!-- Regex input -->
-    <div class="u-f768bb">
-      <span class="u-9acc71">/</span>
-      <input type="text" class="regex-input" id="regex-input" placeholder="Enter your regex pattern..." value="\b\w{5,}\b">
-      <span class="u-5e4aa8">/</span>
-    </div>
-    <!-- Flags -->
-    <div class="u-70b2d5">
-      <label class="u-287448"><input type="checkbox" id="flag-g" checked> g (global)</label>
-      <label class="u-287448"><input type="checkbox" id="flag-i"> i (case insensitive)</label>
-      <label class="u-287448"><input type="checkbox" id="flag-m"> m (multiline)</label>
-      <label class="u-287448"><input type="checkbox" id="flag-s"> s (dotAll)</label>
-    </div>
-    <div class="status-msg mb-12" id="regex-error"></div>
-
-    <!-- Test string -->
-    <label class="u-8eb637">Test String</label>
-    <textarea class="test-area" id="test-str" placeholder="Enter test string here...">The quick brown fox jumps over the lazy dog. Hello World! Testing regex patterns.</textarea>
-
-    <!-- Highlighted result -->
-    <label class="u-59832b">Matches Highlighted</label>
-    <div class="highlighted-text" id="highlight-out"></div>
-    <div class="stats-row mt-8" id="match-stats"></div>
-  </div>
-
-  <div class="tool-card" id="matches-card">
-    <h2>Match Details</h2>
-    <div id="matches-list"></div>
-  </div>
-
-  <div class="tool-card">
-    <h2>Common Regex Patterns</h2>
-    <div class="u-180d23">
-      <button class="btn btn-sm btn-secondary" onclick="loadPattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$')"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#mail"></use></svg> Email</button>
-      <button class="btn btn-sm btn-secondary" onclick="loadPattern('https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%_\\+.~#?&//=]*)')"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#link"></use></svg> URL</button>
-      <button class="btn btn-sm btn-secondary" onclick="loadPattern('^[6-9]\\d{9}$')"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#phone"></use></svg> India Phone</button>
-      <button class="btn btn-sm btn-secondary" onclick="loadPattern('\\d{4}-\\d{2}-\\d{2}')"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#calendar"></use></svg> Date YYYY-MM-DD</button>
-      <button class="btn btn-sm btn-secondary" onclick="loadPattern('#[0-9A-Fa-f]{6}|#[0-9A-Fa-f]{3}')"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#palette"></use></svg> HEX Color</button>
-      <button class="btn btn-sm btn-secondary" onclick="loadPattern('^[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{4}$')"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#navigation"></use></svg> India Number Plate</button>
-      <button class="btn btn-sm btn-secondary" onclick="loadPattern('[A-Z][a-z]+ [A-Z][a-z]+')"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#user"></use></svg> Name (First Last)</button>
-      <button class="btn btn-sm btn-secondary" onclick="loadPattern('\\b(\\d{1,3}\\.){3}\\d{1,3}\\b')"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#globe"></use></svg> IP Address</button>
-    </div>
-  </div>
+<div class="tool-card">
+<h2>Probador de expresiones regulares</h2>
+<!-- Regex input -->
+<div class="u-f768bb">
+<span class="u-9acc71">/</span>
+<input type="text" class="regex-input" id="regex-input" placeholder="Introduce tu patrón de expresión regular..." value="\b\w{5,}\b">
+<span class="u-5e4aa8">/</span>
 </div>
-
+<!-- Flags -->
+<div class="u-70b2d5">
+<label class="u-287448"><input checked="" id="flag-g" type="checkbox">g (global)</label> <label class="u-287448"><input id="flag-i" type="checkbox">i (sin distinción de mayúsculas y minúsculas)</label> <label class="u-287448"><input id="flag-m" type="checkbox">m (multilínea)</label> <label class="u-287448"><input id="flag-s" type="checkbox">s (puntoTodo)</label>
+</div>
+<div class="status-msg mb-12" id="regex-error"></div>
+<!-- Test string -->
+<label class="u-8eb637">Cadena de prueba</label>
+<textarea class="test-area" id="test-str" placeholder="Introduzca aquí la cadena de prueba...">The quick brown fox jumps over the lazy dog. Hello World! Testing regex patterns.</textarea>
+<!-- Highlighted result -->
+<label class="u-59832b">Partidos destacados</label>
+<div class="highlighted-text" id="highlight-out"></div>
+<div class="stats-row mt-8" id="match-stats"></div>
+</div>
+<div class="tool-card" id="matches-card">
+<h2>Detalles del partido</h2>
+<div id="matches-list"></div>
+</div>
+<div class="tool-card">
+<h2>Patrones comunes de expresiones regulares</h2>
+<div class="u-180d23">
+<button class="btn btn-sm btn-secondary" onclick="loadPattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$')"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#mail"></use></svg> Correo electrónico</button> <button class="btn btn-sm btn-secondary" onclick="loadPattern('https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%_\\+.~#?&//=]*)')"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#link"></use></svg> URL</button> <button class="btn btn-sm btn-secondary" onclick="loadPattern('^[6-9]\\d{9}$')"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#phone"></use></svg> Teléfono de la India</button> <button class="btn btn-sm btn-secondary" onclick="loadPattern('\\d{4}-\\d{2}-\\d{2}')"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#calendar"></use></svg> Fecha AAAA-MM-DD</button> <button class="btn btn-sm btn-secondary" onclick="loadPattern('#[0-9A-Fa-f]{6}|#[0-9A-Fa-f]{3}')"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#palette"></use></svg> Color HEX</button> <button class="btn btn-sm btn-secondary" onclick="loadPattern('^[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{4}$')"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#navigation"></use></svg> Matrícula de la India</button> <button class="btn btn-sm btn-secondary" onclick="loadPattern('[A-Z][a-z]+ [A-Z][a-z]+')"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#user"></use></svg> Nombre (Nombre Apellido)</button> <button class="btn btn-sm btn-secondary" onclick="loadPattern('\\b(\\d{1,3}\\.){3}\\d{1,3}\\b')"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#globe"></use></svg> Dirección IP</button>
+</div>
+</div>
+</div>
 <section class="page-section">
-  <h2>Frequently Asked Questions</h2>
-  <div class="faq-list">
-    <details class="faq-item">
-      <summary class="faq-q">What are regex flags?</summary>
-      <div class="faq-a"><p>Flags modify how the regex engine searches: g (global) finds all matches instead of stopping at first; i (case insensitive) matches regardless of letter case; m (multiline) makes ^ and $ match line start/end instead of string start/end; s (dotAll) makes . match newlines too.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">How do I capture groups in regex?</summary>
-      <div class="faq-a"><p>Use parentheses to create capture groups: (\d{4}) captures a 4-digit sequence. In the match details below, you'll see Group 1, Group 2, etc. for each captured group in each match.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">What does \b mean in regex?</summary>
-      <div class="faq-a"><p>\b is a word boundary anchor. It matches the position between a word character (\w) and a non-word character. \b\w+\b matches complete words. Without \b, patterns can match partial words.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Is my test data sent to a server?</summary>
-      <div class="faq-a"><p>No, pattern matching runs entirely in your browser using JavaScript's built-in regex engine. Your test string and pattern never leave your device.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Does this tool use the same regex engine as JavaScript?</summary>
-      <div class="faq-a"><p>Yes, matches are tested using the browser's native JavaScript RegExp engine, so results will match exactly what you'd get running the same pattern in JavaScript code.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-q">Why isn't my pattern matching anything?</summary>
-      <div class="faq-a"><p>Common causes include a missing global flag (g) when expecting multiple matches, special characters that need escaping (like . or *), or case sensitivity — try adding the "i" flag if case shouldn't matter.</p></div>
-    </details>
-  </div>
+<h2>Preguntas frecuentes</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary class="faq-q">¿Qué son las banderas de expresiones regulares?</summary>
+<div class="faq-a"><p>Las banderas modifican la forma en que el motor de expresiones regulares busca: g (global) encuentra todas las coincidencias en lugar de detenerse en la primera; i (sin distinción de mayúsculas y minúsculas) coincide independientemente de las mayúsculas o minúsculas; m (multilínea) hace que ^ y $ coincidan con el inicio/fin de la línea en lugar del inicio/fin de la cadena; s (dotAll) hace que . coincida también con los saltos de línea.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Cómo puedo capturar grupos en expresiones regulares?</summary>
+<div class="faq-a"><p>Utilice paréntesis para crear grupos de captura: (\d{4}) captura una secuencia de 4 dígitos. En los detalles de la coincidencia que aparecen a continuación, verá Grupo 1, Grupo 2, etc., para cada grupo capturado en cada coincidencia.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Qué significa \b en expresiones regulares?</summary>
+<div class="faq-a"><p>\b es un ancla de límite de palabra. Coincide con la posición entre un carácter de palabra (\w) y un carácter que no es de palabra. \b\w+\b coincide con palabras completas. Sin \b, los patrones pueden coincidir con palabras parciales.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Se envían mis datos de prueba a un servidor?</summary>
+<div class="faq-a"><p>No, la coincidencia de patrones se ejecuta completamente en tu navegador utilizando el motor de expresiones regulares integrado de JavaScript. Tu cadena de prueba y el patrón nunca salen de tu dispositivo.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Esta herramienta utiliza el mismo motor de expresiones regulares que JavaScript?</summary>
+<div class="faq-a"><p>Sí, las coincidencias se comprueban utilizando el motor de expresiones regulares de JavaScript nativo del navegador, por lo que los resultados coincidirán exactamente con los que obtendrías al ejecutar el mismo patrón en código JavaScript.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Por qué mi patrón no coincide con nada?</summary>
+<div class="faq-a"><p>Las causas comunes incluyen la falta de una bandera global (g) cuando se esperan múltiples coincidencias, caracteres especiales que necesitan ser escapados (como . o *), o la distinción entre mayúsculas y minúsculas; intente agregar la bandera "i" si no debería importar la distinción entre mayúsculas y minúsculas.</p></div>
+</details>
+</div>
 </section>
-
 <section class="page-section prose">
-  <h2>About the Regex Tester Tool</h2>
-  <p>The Logrith Regex Tester lets you build, test, and debug regular expressions against sample text in real time, showing every match, capture group, and flag effect instantly as you type. Regular expressions are a powerful but notoriously tricky syntax to get right on the first try, and this tool removes the guesswork by showing exactly what a pattern matches before you use it in actual code.</p>
-
-  <p>A regular expression (regex) is a sequence of characters that defines a search pattern, used for finding, validating, or extracting text that matches specific rules — email addresses, phone numbers, dates, or any custom text format. Writing regex correctly on the first attempt is difficult even for experienced developers, since small syntax differences can completely change what a pattern matches. Testing interactively, rather than running code repeatedly, is by far the fastest way to get a pattern right.</p>
-
-  <h3>Understanding Regex Flags</h3>
-  <ul>
-    <li><strong>g (global)</strong> — finds every match in the text instead of stopping after the first one found.</li>
-    <li><strong>i (case insensitive)</strong> — matches letters regardless of uppercase or lowercase, so "Hello" and "hello" are treated the same.</li>
-    <li><strong>m (multiline)</strong> — changes how ^ and $ behave, making them match the start and end of each line rather than only the start and end of the entire string.</li>
-    <li><strong>s (dotAll)</strong> — makes the . (dot) wildcard also match newline characters, which it doesn't by default.</li>
-  </ul>
-
-  <h3>Common Regex Patterns and What They Do</h3>
-  <ul>
-    <li><strong>\d</strong> matches any digit (0-9), while <strong>\D</strong> matches any non-digit character.</li>
-    <li><strong>\w</strong> matches any word character (letters, digits, underscore), while <strong>\W</strong> matches anything that isn't.</li>
-    <li><strong>\s</strong> matches whitespace (spaces, tabs, newlines), while <strong>\S</strong> matches non-whitespace.</li>
-    <li><strong>+</strong> means "one or more" of the preceding element, while <strong>*</strong> means "zero or more".</li>
-    <li><strong>?</strong> makes the preceding element optional (zero or one occurrence).</li>
-    <li><strong>{n}</strong> requires exactly n repetitions, while <strong>{n,m}</strong> requires between n and m repetitions.</li>
-    <li><strong>^</strong> and <strong>$</strong> anchor a match to the start and end of the string (or line, with the m flag).</li>
-  </ul>
-
-  <h3>Understanding Capture Groups</h3>
-  <p>Parentheses in a regex pattern create a capture group, which extracts a specific portion of each match rather than just confirming that a match occurred. For example, the pattern (\d{4})-(\d{2})-(\d{2}) matching a date like "2024-03-15" would capture "2024" as Group 1, "03" as Group 2, and "15" as Group 3 — letting you pull out the year, month, and day separately rather than just the full matched string. This tool displays every capture group for every match, making it easy to confirm your groups are extracting exactly the parts of the text you intend to use.</p>
-
-  <h3>Common Use Cases for Regex</h3>
-  <ul>
-    <li><strong>Form validation</strong> — checking that an email address, phone number, or postal code matches an expected format before accepting it.</li>
-    <li><strong>Data extraction</strong> — pulling specific pieces of information, like dates or prices, out of larger blocks of unstructured text.</li>
-    <li><strong>Find and replace</strong> — searching for a pattern across a codebase or document and replacing every occurrence with a different format.</li>
-    <li><strong>Log file analysis</strong> — filtering server or application logs for lines matching a specific error pattern or timestamp format.</li>
-    <li><strong>Input sanitization</strong> — identifying and stripping unwanted characters from user-submitted text before processing it further.</li>
-  </ul>
-
-  <h3>Step-by-Step: How to Test a Regex Pattern</h3>
-  <ol class="steps">
-    <li class="step">
-      <strong>Enter your pattern</strong>
-      <p>Type your regular expression into the pattern field, without the surrounding slashes.</p>
-    </li>
-    <li class="step">
-      <strong>Select flags</strong>
-      <p>Toggle global, case-insensitive, multiline, or dotAll flags depending on your needs.</p>
-    </li>
-    <li class="step">
-      <strong>Paste test text</strong>
-      <p>Enter or paste the sample text you want to test the pattern against.</p>
-    </li>
-    <li class="step">
-      <strong>Review matches</strong>
-      <p>See every match highlighted in the text, along with any capture groups extracted.</p>
-    </li>
-  </ol>
-
-  <h3>Privacy</h3>
-  <p>All pattern testing happens locally in your browser using JavaScript's built-in regular expression engine — your test text and pattern are never sent to a server or logged anywhere. This makes the tool safe to use even when testing patterns against sensitive sample data like real user information or internal log excerpts.</p>
-
-  <h3>Tips for Debugging a Pattern That Isn't Working</h3>
-  <p>When a regex doesn't match what you expect, work through it step by step rather than guessing at the whole pattern at once. Start by simplifying the pattern down to its smallest matching piece and confirm that works, then add complexity back one piece at a time, checking after each addition. Pay close attention to characters that have special meaning in regex — a period (.) matches any character unless escaped as \., and parentheses, brackets, and braces all carry structural meaning rather than being literal characters. Forgetting the global flag is one of the most common reasons a pattern only seems to match once when multiple matches were expected, so if you're only seeing one result where you expected several, that's usually the first thing to check.</p>
+<h2>Acerca de la herramienta de prueba de expresiones regulares</h2>
+<p>El probador de expresiones regulares Logrith te permite crear, probar y depurar expresiones regulares con texto de ejemplo en tiempo real, mostrando cada coincidencia, grupo de captura y efecto de bandera al instante mientras escribes. Las expresiones regulares son una sintaxis potente pero notoriamente difícil de dominar a la primera, y esta herramienta elimina las conjeturas al mostrar exactamente con qué coincide un patrón antes de usarlo en el código.</p>
+<p>Una expresión regular (regex) es una secuencia de caracteres que define un patrón de búsqueda, utilizado para encontrar, validar o extraer texto que coincida con reglas específicas: direcciones de correo electrónico, números de teléfono, fechas o cualquier formato de texto personalizado. Escribir una expresión regular correctamente al primer intento es difícil incluso para desarrolladores experimentados, ya que pequeñas diferencias de sintaxis pueden cambiar por completo las coincidencias del patrón. Probar de forma interactiva, en lugar de ejecutar el código repetidamente, es, con diferencia, la manera más rápida de obtener un patrón correcto.</p>
+<h3>Comprender las banderas de expresiones regulares</h3>
+<ul>
+<li><strong>g (global)</strong> — encuentra todas las coincidencias en el texto en lugar de detenerse después de la primera encontrada.</li>
+<li><strong>i (sin distinción de mayúsculas y minúsculas)</strong> : coincide con las letras independientemente de si son mayúsculas o minúsculas, por lo que "Hello" y "hello" se tratan igual.</li>
+<li><strong>m (multilínea)</strong> : cambia el comportamiento de ^ y $, haciendo que coincidan con el inicio y el final de cada línea en lugar de solo con el inicio y el final de toda la cadena.</li>
+<li><strong>s (dotAll)</strong> — hace que el comodín . (punto) también coincida con los caracteres de nueva línea, lo cual no hace por defecto.</li>
+</ul>
+<h3>Patrones comunes de expresiones regulares y su función</h3>
+<ul>
+<li><strong>\d</strong> coincide con cualquier dígito (0-9), mientras que <strong>\D</strong> coincide con cualquier carácter que no sea un dígito.</li>
+<li><strong>\w</strong> coincide con cualquier carácter de palabra (letras, dígitos, guion bajo), mientras que <strong>\W</strong> coincide con cualquier cosa que no lo sea.</li>
+<li><strong>\s</strong> coincide con espacios en blanco (espacios, tabulaciones, saltos de línea), mientras que <strong>\S</strong> coincide con caracteres que no son espacios en blanco.</li>
+<li><strong>+</strong> significa "uno o más" del elemento precedente, mientras que <strong>*</strong> significa "cero o más".</li>
+<li><strong>El</strong> signo de interrogación hace que el elemento precedente sea opcional (cero o una aparición).</li>
+<li><strong>{n}</strong> requiere exactamente n repeticiones, mientras que <strong>{n,m}</strong> requiere entre n y m repeticiones.</li>
+<li><strong>^</strong> y <strong>$</strong> anclan una coincidencia al principio y al final de la cadena (o línea, con la bandera m).</li>
+</ul>
+<h3>Comprender los grupos de captura</h3>
+<p>Los paréntesis en un patrón de expresiones regulares crean un grupo de captura, que extrae una parte específica de cada coincidencia en lugar de simplemente confirmar que se ha producido una coincidencia. Por ejemplo, el patrón (\d{4})-(\d{2})-(\d{2}) que coincide con una fecha como "2024-03-15" capturaría "2024" como Grupo 1, "03" como Grupo 2 y "15" como Grupo 3, lo que permite extraer el año, el mes y el día por separado en lugar de solo la cadena completa coincidente. Esta herramienta muestra cada grupo de captura para cada coincidencia, lo que facilita confirmar que los grupos extraen exactamente las partes del texto que se pretenden utilizar.</p>
+<h3>Casos de uso comunes para expresiones regulares</h3>
+<ul>
+<li><strong>Validación de formularios</strong> : comprobar que una dirección de correo electrónico, un número de teléfono o un código postal coincidan con el formato esperado antes de aceptarlos.</li>
+<li><strong>Extracción de datos</strong> : extraer información específica, como fechas o precios, de bloques más grandes de texto no estructurado.</li>
+<li><strong>Buscar y reemplazar</strong> : buscar un patrón en un código fuente o documento y reemplazar cada aparición con un formato diferente.</li>
+<li><strong>Análisis de archivos de registro</strong> : filtrado de los registros del servidor o de la aplicación para encontrar líneas que coincidan con un patrón de error o un formato de marca de tiempo específico.</li>
+<li><strong>Saneamiento de entrada</strong> : identificación y eliminación de caracteres no deseados del texto enviado por el usuario antes de su posterior procesamiento.</li>
+</ul>
+<h3>Paso a paso: Cómo probar un patrón de expresiones regulares</h3>
+<ol class="steps">
+<li class="step">
+<strong>Introduce tu patrón</strong>
+<p>Escriba su expresión regular en el campo de patrón, sin las barras diagonales que la rodean.</p>
+</li>
+<li class="step">
+<strong>Seleccionar banderas</strong>
+<p>Active o desactive las opciones globales, sin distinción entre mayúsculas y minúsculas, multilínea o dotAll según sus necesidades.</p>
+</li>
+<li class="step">
+<strong>Pegar texto de prueba</strong>
+<p>Introduzca o pegue el texto de ejemplo con el que desea probar el patrón.</p>
+</li>
+<li class="step">
+<strong>Revisar partidos</strong>
+<p>Vea todas las coincidencias resaltadas en el texto, junto con los grupos de captura extraídos.</p>
+</li>
+</ol>
+<h3>Privacidad</h3>
+<p>Todas las pruebas de patrones se realizan localmente en tu navegador mediante el motor de expresiones regulares integrado de JavaScript; el texto y el patrón de prueba nunca se envían a un servidor ni se registran en ningún lugar. Esto hace que la herramienta sea segura incluso al probar patrones con datos de muestra confidenciales, como información real de usuarios o extractos de registros internos.</p>
+<h3>Consejos para depurar un patrón que no funciona</h3>
+<p>Cuando una expresión regular no coincide con lo que esperas, revísala paso a paso en lugar de intentar adivinar el patrón completo de una vez. Comienza simplificando el patrón a su parte coincidente más pequeña y confirma que funciona, luego agrega complejidad de nuevo una parte a la vez, verificando después de cada adición. Presta mucha atención a los caracteres que tienen un significado especial en las expresiones regulares: un punto (.) coincide con cualquier carácter a menos que se escape como \., y los paréntesis, corchetes y llaves tienen un significado estructural en lugar de ser caracteres literales. Olvidar la bandera global es una de las razones más comunes por las que un patrón parece coincidir solo una vez cuando se esperaban múltiples coincidencias, así que si solo ves un resultado donde esperabas varios, eso suele ser lo primero que debes verificar.</p>
 </section>
-
 <section class="page-section">
-  <h2>Related Tools</h2>
-  <div class="related-grid">
-    <a class="related-card" href="/tool/tools/text-diff"><strong>Text Diff</strong><span>Compare two blocks of text and highlight differences.</span></a>
-    <a class="related-card" href="/tool/tools/json-formatter"><strong>JSON Formatter</strong><span>Format, validate, and beautify JSON data.</span></a>
-    <a class="related-card" href="/tool/tools/url-encoder"><strong>URL Encoder</strong><span>Encode and decode URLs and query strings.</span></a>
-    <a class="related-card" href="/tool/tools/sql-formatter"><strong>SQL Formatter</strong><span>Format and beautify SQL queries instantly.</span></a>
-  </div>
+<h2>Herramientas relacionadas</h2>
+<div class="related-grid">
+<a class="related-card" href="/es/tool/tools/text-diff"><strong>Comparador de texto:</strong> <span>compara dos bloques de texto y resalta las diferencias.</span></a> <a class="related-card" href="/es/tool/tools/json-formatter"><strong>Formateador JSON</strong> <span>: formatea, valida y embellece datos JSON.</span></a> <a class="related-card" href="/es/tool/tools/url-encoder"><strong>Codificador de URL</strong> <span>: codifica y decodifica URL y cadenas de consulta.</span></a> <a class="related-card" href="/es/tool/tools/sql-formatter"><strong>Formateador SQL</strong> <span>: formatea y embellece consultas SQL al instante.</span></a>
+</div>
 </section>
-
 <section class="page-section">
-  <h2>Popular Searches</h2>
-  <div class="keyword-box">
-    <span class="keyword-tag">regex tester online</span>
-    <span class="keyword-tag">regular expression tester</span>
-    <span class="keyword-tag">test regex pattern free</span>
-    <span class="keyword-tag">javascript regex tester</span>
-    <span class="keyword-tag">regex match checker</span>
-    <span class="keyword-tag">regex capture groups tool</span>
-    <span class="keyword-tag">online regex debugger</span>
-    <span class="keyword-tag">regex validator free</span>
-  </div>
+<h2>Búsquedas populares</h2>
+<div class="keyword-box">
+<span class="keyword-tag">probador</span> <span class="keyword-tag">de expresiones regulares en línea probador de expresiones regulares</span> <span class="keyword-tag">prueba de patrones regex probador de regex gratuito</span> <span class="keyword-tag">para javascript</span> <span class="keyword-tag">verificador de coincidencias de regex</span> <span class="keyword-tag">herramienta de grupos de captura de regex</span> <span class="keyword-tag">en línea depurador de regex</span> <span class="keyword-tag">validador de regex gratuito</span>
+</div>
 </section>
-
 </main>
-
 <div id="footer"></div>
 <script src="/assets/js/main.js?v=20261115"></script>
-
-
 <script>
 function escH(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 

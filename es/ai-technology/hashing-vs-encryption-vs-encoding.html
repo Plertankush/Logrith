@@ -100,7 +100,7 @@
 <section id="encoding">
 <h2>Codificación: cambio de formato</h2>
 <p>La codificación convierte los datos de una representación a otra para que puedan transmitirse de forma segura a través de un sistema que espera un formato determinado. <strong>Base64</strong> transforma los datos binarios en caracteres de texto plano para que puedan insertarse en JSON o en un correo electrónico. <strong>La codificación URL</strong> reemplaza los caracteres no seguros de una dirección web con códigos de porcentaje.</p>
-<p>No hay ningún secreto. Si puedes ver texto en Base64, puedes decodificarlo al instante. Pruébalo tú mismo con la <a href="/tool/tools/base64">herramienta Base64</a> o el <a href="/tool/tools/url-encoder">codificador de URL</a> . Considera la codificación como un empaquetado, nunca como una protección.</p>
+<p>No hay ningún secreto. Si puedes ver texto en Base64, puedes decodificarlo al instante. Pruébalo tú mismo con la <a href="/es/tool/tools/base64">herramienta Base64</a> o el <a href="/es/tool/tools/url-encoder">codificador de URL</a> . Considera la codificación como un empaquetado, nunca como una protección.</p>
 </section>
 <section id="hashing">
 <h2>Hashing: una huella digital unidireccional</h2>
@@ -111,7 +111,7 @@
 <li><strong>Eliminación de duplicados.</strong> Los archivos idénticos producen hashes idénticos.</li>
 <li><strong>Firmas digitales y estructuras de datos.</strong> Los hashes se encuentran integrados en muchos sistemas de seguridad.</li>
 </ul>
-<p>No todas las funciones hash son igual de seguras. MD5 y SHA-1 presentan vulnerabilidades de colisión conocidas y no deberían utilizarse con fines de seguridad, mientras que la familia SHA-2, como SHA-256, sigue siendo ampliamente utilizada. Puede generar y comparar resúmenes con el <a href="/tool/tools/hash-generator">Generador de Hash</a> .</p>
+<p>No todas las funciones hash son igual de seguras. MD5 y SHA-1 presentan vulnerabilidades de colisión conocidas y no deberían utilizarse con fines de seguridad, mientras que la familia SHA-2, como SHA-256, sigue siendo ampliamente utilizada. Puede generar y comparar resúmenes con el <a href="/es/tool/tools/hash-generator">Generador de Hash</a> .</p>
 </section>
 <section id="passwords">
 <h2>El hash de contraseñas es un caso especial.</h2>
@@ -129,7 +129,7 @@
 </section>
 <section id="hmac">
 <h2>Una herramienta relacionada: HMAC y tokens firmados</h2>
-<p>A veces es necesario demostrar que los datos provienen de alguien que conoce un secreto y que no han sido modificados. Un <strong>HMAC</strong> combina una función hash con una clave secreta para generar dicha prueba. Es el método que utilizan muchas API para firmar webhooks y para firmar tokens web JSON. Puedes inspeccionar las partes legibles de un token con el <a href="/tool/tools/jwt-decoder">decodificador JWT</a> , teniendo en cuenta que el contenido de un token está codificado, no cifrado, a menos que se trate específicamente de un token cifrado.</p>
+<p>A veces es necesario demostrar que los datos provienen de alguien que conoce un secreto y que no han sido modificados. Un <strong>HMAC</strong> combina una función hash con una clave secreta para generar dicha prueba. Es el método que utilizan muchas API para firmar webhooks y para firmar tokens web JSON. Puedes inspeccionar las partes legibles de un token con el <a href="/es/tool/tools/jwt-decoder">decodificador JWT</a> , teniendo en cuenta que el contenido de un token está codificado, no cifrado, a menos que se trate específicamente de un token cifrado.</p>
 </section>
 <section id="rules">
 <h2>Reglas prácticas</h2>
@@ -170,27 +170,27 @@
 <section class="page-section">
 <div class="section-header"><h2>Herramientas gratuitas mencionadas en esta guía</h2></div>
 <div class="tool-list">
-<a href="/tool/tools/hash-generator" class="tool-row">
+<a href="/es/tool/tools/hash-generator" class="tool-row">
 <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
 <div class="tool-row-body"><div class="tool-row-name">Generador de hash</div><div class="tool-row-desc">Calcula el hash de cualquier texto o archivo para verificar su integridad o comparar sumas de comprobación, con SHA-1, SHA-256, SHA-384 y SHA-512, todos calculados instantáneamente.</div></div>
 <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
 </a>
-<a href="/tool/tools/base64" class="tool-row">
+<a href="/es/tool/tools/base64" class="tool-row">
 <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
 <div class="tool-row-body"><div class="tool-row-name">Codificador Base64</div><div class="tool-row-desc">Convierte texto o un archivo subido a Base64, o decodifica una cadena Base64 para recuperar su formato original, al instante en tu navegador.</div></div>
 <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
 </a>
-<a href="/tool/tools/url-encoder" class="tool-row">
+<a href="/es/tool/tools/url-encoder" class="tool-row">
 <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
 <div class="tool-row-body"><div class="tool-row-name">Codificador y decodificador de URL</div><div class="tool-row-desc">Convierta instantáneamente los caracteres especiales de una URL a codificación porcentual, o decodifique una URL codificada para convertirla de nuevo en texto legible.</div></div>
 <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
 </a>
-<a href="/tool/tools/jwt-decoder" class="tool-row">
+<a href="/es/tool/tools/jwt-decoder" class="tool-row">
 <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
 <div class="tool-row-body"><div class="tool-row-name">Decodificador JWT</div><div class="tool-row-desc">Pega un JSON Web Token para ver su encabezado, carga útil y firma decodificados al instante, directamente en tu navegador.</div></div>
 <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
 </a>
-<a href="/tool/tools/password-generator" class="tool-row">
+<a href="/es/tool/tools/password-generator" class="tool-row">
 <span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
 <div class="tool-row-body"><div class="tool-row-name">Generador de contraseñas</div><div class="tool-row-desc">Establece la longitud y los tipos de caracteres que desees, y luego genera una contraseña criptográficamente aleatoria al instante; nada se almacena ni se envía a ningún lugar.</div></div>
 <span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
