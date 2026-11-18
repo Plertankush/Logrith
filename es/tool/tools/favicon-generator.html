@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Generador de favicon", "url": "https://logrith.in/es/tool/tools/favicon-generator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "description": "Herramienta online gratuita para generar iconos de favoritos de todos los tamaños a partir de una única imagen subida.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas de imagen y PDF", "item": "https://logrith.in/es/tool/categories/image-pdf-tools"}, {"@type": "ListItem", "position": 4, "name": "Generador de favicon", "item": "https://logrith.in/es/tool/tools/favicon-generator"}]}</script>
@@ -80,7 +80,7 @@
 <button class="btn btn-primary" id="download-all-btn"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#download"></use></svg> Descargar todos los tamaños</button>
 </div>
 <div class="insight-box mt-16">
-<strong>HTML para agregar en su<head> :</head></strong>
+<strong>Código HTML para agregar en tu &lt;head&gt;:</strong>
 <div class="u-8484c7">
 <textarea class="tool-textarea mono" id="html-snippet" readonly="" rows="6"></textarea><button class="copy-btn" id="copy-html"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#copy"></use></svg> Copia</button>
 </div>
@@ -125,13 +125,13 @@
 </li>
 <li class="step">
 <strong>Copia el fragmento HTML en tu sitio web.</strong>
-<p>Pegue las etiquetas de enlace generadas en su página.<head> De esta forma, los navegadores y dispositivos seleccionan automáticamente el icono correcto.</head></p>
+<p>Pega las etiquetas de enlace generadas en la sección &lt;head&gt; de tu página para que los navegadores y dispositivos detecten automáticamente el icono correcto.</p>
 </li>
 </ol>
 </section>
 <section class="page-section prose">
 <h2>Generador de favicons gratuito: todos los tamaños a partir de una sola imagen.</h2>
-<p>Esta herramienta toma una sola imagen de origen y genera todos los tamaños de favicon que un sitio web moderno suele necesitar: 16×16, 32×32, 48×48, 180×180 (icono táctil de Apple), 192×192 y 512×512, utilizando la API Canvas del navegador para redimensionar con suavizado de alta calidad. Cada tamaño está disponible como descarga individual en formato PNG, junto con un fragmento HTML listo para pegar en la sección <code><head></code> de su sitio.</p>
+<p>Esta herramienta toma una sola imagen de origen y genera todos los tamaños de favicon que un sitio web moderno suele necesitar: 16×16, 32×32, 48×48, 180×180 (icono táctil de Apple), 192×192 y 512×512, utilizando la API Canvas del navegador para redimensionar con suavizado de alta calidad. Cada tamaño está disponible como descarga individual en formato PNG, junto con un fragmento HTML listo para pegar en la sección <code>&lt;head&gt;</code> de su sitio.</p>
 <h3>¿Por qué hay tantos tamaños de favicon?</h3>
 <p>Los favicons ya no se limitan a las pestañas del navegador. Las distintas plataformas y contextos requieren tamaños diferentes: las pestañas del navegador suelen usar 16×16 o 32×32, los marcadores de la pantalla de inicio de iOS usan un icono táctil de 180×180, y los manifiestos de Android y las aplicaciones web progresivas suelen solicitar versiones de 192×192 y 512×512 para los iconos de la pantalla de inicio y las instalaciones tipo aplicación. Ofrecer todos estos tamaños garantiza que el icono de tu sitio se vea nítido en cualquier lugar donde aparezca, en lugar de verse distorsionado o borroso a partir de una sola imagen pequeña.</p>
 <h3>Consejos para una buena imagen de origen del favicon</h3>
@@ -144,7 +144,7 @@
 <h3>Cómo funciona esta herramienta</h3>
 <p>Tras subir una imagen, la herramienta la carga en un lienzo HTML y la redibuja en cada tamaño deseado utilizando el suavizado de imagen integrado del lienzo, generando una imagen PNG nítida y reducida para cada dimensión. Dado que todo esto se realiza a través de la API de Canvas directamente en tu navegador, no hay subida de archivos, ni retrasos en el procesamiento del servidor, ni problemas de privacidad: la imagen original nunca sale de tu dispositivo.</p>
 <h3>Agregar los favicons generados a su sitio web.</h3>
-<p>Una vez generados, descarga cada tamaño y coloca los archivos en la carpeta raíz o de recursos de tu sitio web. Luego, pega el fragmento HTML proporcionado en la sección <code><head></code> de tu página. Esto incluye etiquetas <code><link rel="icon"></code> estándar para los tamaños de pestañas del navegador, un enlace <code>apple-touch-icon</code> para iOS y referencias adecuadas para un archivo <code>site.webmanifest</code> si estás creando una aplicación web instalable.</p>
+<p>Una vez generados, descarga cada tamaño y coloca los archivos en la carpeta raíz o de recursos de tu sitio web. Luego, pega el fragmento HTML proporcionado en la sección <code>&lt;head&gt;</code> de tu página. Esto incluye etiquetas <code>&lt;link rel="icon"&gt;</code> estándar para los tamaños de pestañas del navegador, un enlace <code>apple-touch-icon</code> para iOS y referencias adecuadas para un archivo <code>site.webmanifest</code> si estás creando una aplicación web instalable.</p>
 <h3>Privacidad y procesamiento local</h3>
 <p>Todos los cambios de tamaño se realizan localmente mediante la API de Canvas; la imagen nunca se sube a ningún servidor, lo que mantiene los logotipos o la marca no publicados completamente privados hasta que estés listo para publicarlos.</p>
 <h3>Cómo se gestionan las imágenes no cuadradas</h3>
@@ -165,7 +165,7 @@
 <ul>
 <li><strong>Subir una fuente de baja resolución:</strong> empezar con una resolución inferior a 512×512 significa que los tamaños generados más grandes se verán borrosos, ya que el escalado ascendente introduce un desenfoque que el escalado descendente evita.</li>
 <li><strong>Al usar un logotipo recargado o detallado,</strong> los detalles finos, las líneas delgadas o el texto pequeño desaparecen en 16×16; los favicons funcionan mejor como formas simples y llamativas o una sola letra/marca.</li>
-<li><strong>Olvidar la referencia del manifiesto:</strong> si estás creando una PWA instalable, asegúrate de que tu archivo <code>site.webmanifest</code> también haga referencia a los iconos de 192×192 y 512×512, no solo a las etiquetas HTML <code><link></code>.</li>
+<li><strong>Olvidar la referencia del manifiesto:</strong> si estás creando una PWA instalable, asegúrate de que tu archivo <code>site.webmanifest</code> también haga referencia a los iconos de 192×192 y 512×512, no solo a las etiquetas HTML <code>&lt;link&gt;</code>.</li>
 </ul>
 <h3>Términos buscados con frecuencia</h3>
 <p>Quienes buscan esta función suelen usar términos como "generador de favicon a partir de un logotipo", "tamaño del icono táctil de Apple", "cómo añadir un favicon a un sitio web", "generar un archivo .ico en línea" y "generador de tamaños de iconos para PWA". Esta herramienta genera todos los tamaños comunes necesarios para responder a cada una de estas búsquedas en un solo paso.</p>
@@ -184,7 +184,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 const SIZES = [16, 32, 48, 180, 192, 512];
 const uploadZone = document.getElementById('upload-zone');
@@ -193,20 +193,20 @@ let generatedImages = {};
 
 function handleFile(file) {
   const statusEl = document.getElementById('status-msg');
-  if (!file || !file.type.startsWith('image/')) { showStatus(statusEl,'error','Please select a valid image file.'); return; }
-  if (file.size > 8*1024*1024) { showStatus(statusEl,'error','File too large. Max 8MB.'); return; }
+  if (!file || !file.type.startsWith('image/')) { showStatus(statusEl,'error','Seleccione un archivo de imagen válido.'); return; }
+  if (file.size > 8*1024*1024) { showStatus(statusEl,'error','El archivo es demasiado grande. Máximo 8 MB.'); return; }
 
   const img = new Image();
   const reader = new FileReader();
   reader.onload = e => {
     img.onload = () => {
       generateFavicons(img);
-      showStatus(statusEl, 'success', 'Favicons generated!');
+      showStatus(statusEl, 'success', '¡Favicons generados!');
     };
-    img.onerror = () => showStatus(statusEl, 'error', 'Could not load this image.');
+    img.onerror = () => showStatus(statusEl, 'error', 'No se pudo cargar esta imagen.');
     img.src = e.target.result;
   };
-  reader.onerror = () => showStatus(statusEl, 'error', 'Could not read this file.');
+  reader.onerror = () => showStatus(statusEl, 'error', 'No se pudo leer este archivo.');
   reader.readAsDataURL(file);
 }
 
@@ -237,7 +237,7 @@ function generateFavicons(img) {
       <img src="${dataUrl}" style="width:${Math.min(size,64)}px;height:${Math.min(size,64)}px;image-rendering:pixelated;display:block;margin:0 auto;background:var(--white);border:1px solid var(--gray-200);border-radius:6px;">
       <div class="result-title" style="text-align:center;margin-top:8px;">${size}×${size}</div>
       <div class="btn-group" style="justify-content:center;margin-top:8px;">
-        <a href="${dataUrl}" download="favicon-${size}x${size}.png" class="btn btn-secondary btn-sm"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#download"></use></svg> Download</a>
+        <a href="${dataUrl}" download="favicon-${size}x${size}.png" class="btn btn-secondary btn-sm"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#download"></use></svg> Descargar</a>
       </div>`;
     grid.appendChild(card);
   });

@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "datePublished": "2026-10-20", "dateModified": "2026-10-31", "headline": "Genera favicons de todos los tamaños a partir de una sola imagen, gratis.", "description": "Cómo generar todos los tamaños de favicon que necesita un sitio web a partir de una única imagen de origen.", "author": {"@type": "Person", "name": "Plert Ankush", "url": "https://logrith.in/es/pages/founder"}, "publisher": {"@id": "https://logrith.in/#organization"}, "mainEntityOfPage": "https://logrith.in/es/tool/blog/generate-favicon-all-sizes-online-free"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Generar todos los tamaños de favicon", "url": "https://logrith.in/es/tool/blog/generate-favicon-all-sizes-online-free", "isPartOf": {"@type": "Blog", "name": "Logrith Blog", "url": "https://logrith.in/es/tool/blog/"}}</script>
@@ -93,7 +93,7 @@
 <p>Descarga cada tamaño generado individualmente o descarga el conjunto completo.</p>
 </li>
 <li class="step">
-<p>Agregue las etiquetas de enlace HTML correspondientes a la sección <head> de su sitio, haciendo referencia a cada archivo.</p>
+<p>Agregue las etiquetas de enlace HTML correspondientes a la sección &lt;head&gt; de su sitio, haciendo referencia a cada archivo.</p>
 </li>
 </ol>
 <h2 id="sizes">Qué tallas necesitas realmente y por qué.</h2>
@@ -112,12 +112,12 @@
 <h2 id="history">Por qué los favicons pasaron de un solo tamaño a seis o más</h2>
 <p>El formato original favicon.ico data de mediados de la década de 1990, cuando su única función era la de mostrar un pequeño icono junto a un marcador del navegador o en la barra de direcciones. Con la evolución de la web, que incluyó la navegación móvil, experiencias similares a las de las aplicaciones en la pantalla de inicio y, finalmente, aplicaciones web progresivas completas que se comportan como aplicaciones nativas instaladas, cada nuevo contexto trajo consigo sus propios requisitos de iconos, que se superponían al original en lugar de reemplazarlo. iOS introdujo su propia convención de iconos táctiles cuando Safari añadió la posibilidad de guardar una página web en la pantalla de inicio con el aspecto de un icono de aplicación nativa. Posteriormente, Android y la plataforma web en general introdujeron el manifiesto de la aplicación web, que requería tamaños de iconos específicos para la pantalla de inicio y la pantalla de bienvenida. El resultado es que una configuración de favicon moderna y verdaderamente completa acumuló requisitos a lo largo de aproximadamente tres décadas de evolución de la plataforma web, en lugar de haber sido diseñada como un sistema coherente desde el principio.</p>
 <h2 id="html">Agregar las etiquetas HTML correctas</h2>
-<p>Generar los archivos de imagen es solo la mitad del trabajo; los navegadores y dispositivos deben saber dónde encontrar cada tamaño mediante etiquetas de enlace en la sección <head> de su HTML. Un conjunto completo típico se ve así:</p>
-<p><code><link rel="icon" href="/favicon.ico"></code><br>
-<code><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"></code><br>
-<code><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"></code><br>
-<code><link rel="apple-touch-icon" href="/apple-touch-icon.png"></code><br>
-<code><link rel="manifest" href="/site.webmanifest"></code></p>
+<p>Generar los archivos de imagen es solo la mitad del trabajo; los navegadores y dispositivos deben saber dónde encontrar cada tamaño mediante etiquetas de enlace en la sección &lt;head&gt; de su HTML. Un conjunto completo típico se ve así:</p>
+<p><code>&lt;link rel="icon" href="/favicon.ico"&gt;</code><br>
+<code>&lt;link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"&gt;</code><br>
+<code>&lt;link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"&gt;</code><br>
+<code>&lt;link rel="apple-touch-icon" href="/apple-touch-icon.png"&gt;</code><br>
+<code>&lt;link rel="manifest" href="/site.webmanifest"&gt;</code></p>
 <p>Los tamaños de 192x192 y 512x512 normalmente no se referencian directamente en la cabecera HTML, sino dentro de un archivo JSON <code>site.webmanifest</code>, al que apunta la etiqueta de enlace del manifiesto anterior; este archivo también define otros metadatos relacionados con PWA, como el nombre del sitio y el color del tema, con los tamaños de los iconos listados como parte de esa estructura.</p>
 <h2 id="manifest">Comprender site.webmanifest</h2>
 <p>El archivo de manifiesto de la aplicación web —normalmente llamado <code>site.webmanifest</code>— es un archivo JSON que describe cómo debe comportarse tu sitio cuando se guarda en la pantalla de inicio o se instala como una aplicación web progresiva (PWA). Además de enumerar los tamaños de los iconos, suele definir el nombre para mostrar del sitio, el color de fondo, el color del tema y el modo de visualización (si se abre en una ventana completa del navegador o en una ventana independiente similar a la de una aplicación). Un manifiesto mínimo que haga referencia a los iconos generados se parece aproximadamente a un objeto JSON con un campo "name", un campo "short_name" para la visualización con limitaciones de espacio y una matriz "icons" que enumera la ruta de origen, el tamaño y el tipo MIME de cada icono. Es importante que este archivo esté bien configurado, especialmente para los tamaños de iconos relacionados con Android y las PWA: sin un manifiesto correctamente estructurado que haga referencia a ellos, esos tamaños de iconos más grandes no se detectarán, incluso si los archivos de imagen existen y se generan correctamente.</p>
@@ -147,7 +147,7 @@
 <h2 id="mistakes">Errores comunes</h2>
 <ul>
 <li><strong>Partiendo de una imagen de origen de baja resolución,</strong> ampliar una imagen pequeña para que ocupe un tamaño de 512x512 píxeles produce un resultado poco natural. Para obtener los mejores resultados en todos los tamaños, se recomienda empezar con una resolución mínima de 512x512 píxeles.</li>
-<li><strong>Olvidar agregar las etiquetas de enlace HTML.</strong> Los archivos de imagen generados por sí solos no sirven de nada sin las etiquetas de enlace correspondientes que los referencian en la sección <head> de tu sitio web.</li>
+<li><strong>Olvidar agregar las etiquetas de enlace HTML.</strong> Los archivos de imagen generados por sí solos no sirven de nada sin las etiquetas de enlace correspondientes que los referencian en la sección &lt;head&gt; de tu sitio web.</li>
 <li><strong>Utilizar un diseño excesivamente detallado.</strong> Los detalles finos desaparecen a 16x16 píxeles; es preferible usar formas simples y llamativas que sigan siendo reconocibles incluso en tamaños realmente pequeños.</li>
 <li><strong>No se han realizado pruebas en dispositivos reales.</strong> Los iconos de las pestañas del navegador, los iconos de la pantalla de inicio de iOS y los iconos de Android se muestran de forma ligeramente diferente; comprobar el favicon en una pestaña real del navegador y en la pantalla de inicio de un dispositivo móvil confirma que todo se muestra correctamente.</li>
 </ul>
@@ -175,7 +175,7 @@
 </details>
 <details class="faq-item">
 <summary class="faq-q">¿Necesito agregar etiquetas HTML manualmente?</summary>
-<div class="faq-a"><p>Sí, generar los archivos es solo la mitad de la configuración; también necesitas las etiquetas de enlace HTML correctas en la sección <head> de tu sitio para que los navegadores y dispositivos puedan encontrarlas.</p></div>
+<div class="faq-a"><p>Sí, generar los archivos es solo la mitad de la configuración; también necesitas las etiquetas de enlace HTML correctas en la sección &lt;head&gt; de tu sitio para que los navegadores y dispositivos puedan encontrarlas.</p></div>
 </details>
 <details class="faq-item">
 <summary class="faq-q">¿Por qué no aparece inmediatamente mi favicon actualizado?</summary>
@@ -200,6 +200,6 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 </body>
 </html>

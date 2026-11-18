@@ -27,11 +27,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js" defer=""></script>
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
@@ -185,7 +185,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 let pdfFile = null, rotatedBlob = null;
 document.getElementById('apply-to').addEventListener('change', e => {
@@ -197,9 +197,9 @@ function parseRange(str, max) {
   return Array.from(s);
 }
 function handleFile(file) {
-  if (file.size > 20*1024*1024) { alert('Max 20MB'); return; }
+  if (file.size > 20*1024*1024) { alert('Máximo 20 MB'); return; }
   pdfFile = file;
-  document.getElementById('pdf-info').innerHTML = `<span class="stat-chip">File: <strong>${file.name}</strong></span><span class="stat-chip">Size: <strong>${formatSize(file.size)}</strong></span>`;
+  document.getElementById('pdf-info').innerHTML = `<span class="stat-chip">Archivo: <strong>${file.name}</strong></span><span class="stat-chip">Tamaño: <strong>${formatSize(file.size)}</strong></span>`;
   document.getElementById('settings-card').style.display = 'block';
   document.getElementById('output-card').style.display = 'none';
 }
@@ -236,7 +236,7 @@ document.getElementById('rotate-btn').addEventListener('click', async () => {
     const bytes = await pdf.save();
     document.getElementById('pfill').style.width = '100%';
     rotatedBlob = new Blob([bytes], { type: 'application/pdf' });
-    document.getElementById('out-stats').innerHTML = `<span class="stat-chip">Pages rotated: <strong>${indices.length}</strong></span><span class="stat-chip">Angle: <strong>${angle}°</strong></span><span class="stat-chip">Size: <strong>${formatSize(rotatedBlob.size)}</strong></span>`;
+    document.getElementById('out-stats').innerHTML = `<span class="stat-chip">Páginas rotadas: <strong>${indices.length}</strong></span><span class="stat-chip">Ángulo: <strong>${angle}°</strong></span><span class="stat-chip">Tamaño: <strong>${formatSize(rotatedBlob.size)}</strong></span>`;
     document.getElementById('output-card').style.display = 'block';
     showStatus(document.getElementById('status-msg'), 'success', 'PDF rotated successfully!');
     document.getElementById('download-btn').onclick = () => downloadBlob(rotatedBlob, pdfFile.name.replace('.pdf','') + '_rotated.pdf');

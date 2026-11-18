@@ -31,11 +31,11 @@
 <meta name="keywords" content="image privacy cleaner, remove exif data, strip photo metadata, remove gps from photo, exif remover online">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Logrith Limpiador de privacidad de imágenes", "url": "https://logrith.in/es/tool/tools/image-privacy-cleaner", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web Browser", "description": "Herramienta basada en navegador que lee los metadatos EXIF ​​de una foto y elimina los datos de la cámara, la marca de tiempo y la ubicación GPS antes de la descarga, sin necesidad de subir el archivo a un servidor.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": ["Read EXIF metadata from JPEG photos", "Detect camera make and model", "Detect date and time metadata", "Detect GPS location coordinates in photos", "Remove all metadata from an image", "Download a clean image with pixels unchanged", "100% local browser processing"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas globales", "item": "https://logrith.in/es/tool/categories/global-tools"}, {"@type": "ListItem", "position": 4, "name": "Limpiador de privacidad de imágenes", "item": "https://logrith.in/es/tool/tools/image-privacy-cleaner"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Esta herramienta elimina los datos de ubicación GPS de las fotos?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Si la foto contiene coordenadas GPS en sus datos EXIF, la herramienta las detecta y las muestra, y el proceso de limpieza las elimina junto con todos los demás metadatos."}}, {"@type": "Question", "name": "¿Eliminar los metadatos cambiará el aspecto de mi foto?", "acceptedAnswer": {"@type": "Answer", "text": "No. Los píxeles visibles de la imagen no se alteran. Solo se eliminan los metadatos ocultos asociados al archivo, como los detalles de la cámara, las marcas de tiempo y las coordenadas GPS."}}, {"@type": "Question", "name": "¿Mi foto está subida a un servidor?", "acceptedAnswer": {"@type": "Answer", "text": "No. La imagen se lee y procesa completamente en su navegador mediante JavaScript. Nunca se sube a Logrith ni a ningún otro servidor."}}, {"@type": "Question", "name": "¿Qué formatos de imagen son compatibles?", "acceptedAnswer": {"@type": "Answer", "text": "La lectura de metadatos EXIF ​​funciona con fotos JPEG, que es el formato que normalmente contiene metadatos de la cámara y del GPS. Los formatos PNG y otros también se pueden limpiar mediante el paso de reexportación del lienzo, aunque PNG rara vez contiene datos EXIF."}}, {"@type": "Question", "name": "¿Esta herramienta es de uso gratuito?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, esta herramienta es completamente gratuita, sin necesidad de cuenta, registro ni límite de archivos más allá de lo que su navegador pueda manejar."}}]}</script>
@@ -195,7 +195,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 const uploadZone = document.getElementById('upload-zone');
 const fileInput = document.getElementById('file-input');
@@ -293,7 +293,7 @@ function parseExif(arrayBuffer) {
 
   const TAGS = {
     0x010F: 'Make',
-    0x0110: 'Model',
+    0x0110: 'Modelo',
     0x0112: 'Orientation',
     0x0131: 'Software',
     0x0132: 'DateTime',
@@ -384,9 +384,9 @@ function parseExif(arrayBuffer) {
   }
 
   const ORIENTATIONS = {
-    1: 'Normal', 2: 'Flipped horizontally', 3: 'Rotated 180°',
-    4: 'Flipped vertically', 5: 'Rotated 90° CW + flipped', 6: 'Rotated 90° CW',
-    7: 'Rotated 90° CCW + flipped', 8: 'Rotated 90° CCW'
+    1: 'Normal', 2: 'Volteado horizontalmente', 3: 'Girado 180°',
+    4: 'Volteado verticalmente', 5: 'Girado 90° en sentido horario + volteado', 6: 'Girado 90° en sentido horario.',
+    7: 'Girado 90° en sentido antihorario + volteado', 8: 'Girado 90° en sentido antihorario.'
   };
 
   return {
@@ -404,11 +404,11 @@ function parseExif(arrayBuffer) {
 
 function handleFile(file) {
   if (!file || !/^image\/(jpeg|jpg|png)$/.test(file.type)) {
-    setStatus('error', 'Please select a JPG or PNG image file.');
+    setStatus('error', 'Seleccione un archivo de imagen JPG o PNG.');
     return;
   }
   currentFile = file;
-  setStatus('info', 'Reading image locally...');
+  setStatus('info', 'Leyendo la imagen localmente...');
 
   const reader = new FileReader();
   reader.onload = (e) => {
@@ -420,15 +420,15 @@ function handleFile(file) {
     }
     showReport(file, exif);
   };
-  reader.onerror = () => setStatus('error', 'Could not read this file.');
+  reader.onerror = () => setStatus('error', 'No se pudo leer este archivo.');
   reader.readAsArrayBuffer(file);
 }
 
 function showReport(file, exif) {
   let basicsHtml = '';
-  basicsHtml += row('File Name', file.name);
-  basicsHtml += row('File Size', formatSize(file.size));
-  basicsHtml += row('File Type', file.type || 'Unknown');
+  basicsHtml += row('Nombre del archivo', file.name);
+  basicsHtml += row('Tamaño del archivo', formatSize(file.size));
+  basicsHtml += row('Tipo de archivo', file.type || 'Desconocido');
 
   let cameraHtml = '';
   let gpsHtml = '';
@@ -438,7 +438,7 @@ function showReport(file, exif) {
     if (exif.make || exif.model || exif.software || exif.dateTime || exif.orientation) {
       hasAnyMetadata = true;
       cameraHtml += row('Make', exif.make || '—');
-      cameraHtml += row('Model', exif.model || '—');
+      cameraHtml += row('Modelo', exif.model || '—');
       cameraHtml += row('Date/Time', exif.dateTime || '—');
       cameraHtml += row('Software', exif.software || '—');
       cameraHtml += row('Orientation', exif.orientation || '—');
@@ -446,21 +446,21 @@ function showReport(file, exif) {
 
     if (exif.hasGPS) {
       hasAnyMetadata = true;
-      gpsHtml += row('GPS Data', flag(true, 'Location Found', 'None Detected'));
-      gpsHtml += row('Latitude', exif.latitude.toFixed(6));
-      gpsHtml += row('Longitude', exif.longitude.toFixed(6));
-      gpsHtml += row('Map Link', `<a href="https://www.openstreetmap.org/?mlat=${exif.latitude}&mlon=${exif.longitude}#map=15/${exif.latitude}/${exif.longitude}" target="_blank" rel="noopener">View location</a>`);
+      gpsHtml += row('GPS Data', flag(true, 'Location Found', 'No se detectó ninguno'));
+      gpsHtml += row('Latitud', exif.latitude.toFixed(6));
+      gpsHtml += row('Longitud', exif.longitude.toFixed(6));
+      gpsHtml += row('Enlace al mapa', `<a href="https://www.openstreetmap.org/?mlat=${exif.latitude}&mlon=${exif.longitude}#map=15/${exif.latitude}/${exif.longitude}" target="_blank" rel="noopener">Ver ubicación</a>`);
     } else {
-      gpsHtml += row('GPS Data', flag(false, 'Location Found', 'None Detected'));
+      gpsHtml += row('GPS Data', flag(false, 'Location Found', 'No se detectó ninguno'));
     }
   } else {
-    gpsHtml += row('GPS Data', flag(false, 'Location Found', 'None Detected'));
+    gpsHtml += row('GPS Data', flag(false, 'Location Found', 'No se detectó ninguno'));
   }
 
   inspGrid.innerHTML = `
-    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#file"></use></svg> File Info</h3>${basicsHtml}</div>
-    ${cameraHtml ? `<div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#camera"></use></svg> Camera Metadata</h3>${cameraHtml}</div>` : `<div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#camera"></use></svg> Camera Metadata</h3>${row('Status', 'No EXIF camera data found')}</div>`}
-    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#map-pin"></use></svg> Location Metadata</h3>${gpsHtml}</div>
+    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#file"></use></svg> Información del archivo</h3>${basicsHtml}</div>
+    ${cameraHtml ? `<div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#camera"></use></svg> Metadatos de la cámara</h3>${cameraHtml}</div>` : `<div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#camera"></use></svg> Metadatos de la cámara</h3>${row('Estado', 'No se encontraron datos EXIF ​​de la cámara.')}</div>`}
+    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#map-pin"></use></svg> Metadatos de ubicación</h3>${gpsHtml}</div>
   `;
 
   resultsCard.style.display = 'block';
@@ -468,15 +468,15 @@ function showReport(file, exif) {
   previewCleaned.src = '';
 
   if (hasAnyMetadata) {
-    setStatus('info', 'Metadata found in this image. Review it below, then clean the file if you want a copy without it.');
+    setStatus('info', 'Se han encontrado metadatos en esta imagen. Revíselos a continuación y, si desea una copia sin ellos, borre el archivo.');
   } else {
-    setStatus('info', 'No readable EXIF metadata was found in this file. You can still run the clean step to be certain.');
+    setStatus('info', 'No se encontraron metadatos EXIF ​​legibles en este archivo. Aun así, puede ejecutar el paso de limpieza para asegurarse.');
   }
 }
 
 cleanBtn.addEventListener('click', () => {
   if (!currentFile) {
-    setStatus('error', 'Upload an image first.');
+    setStatus('error', 'Primero sube una imagen.');
     return;
   }
 
@@ -495,7 +495,7 @@ cleanBtn.addEventListener('click', () => {
 
     canvas.toBlob((blob) => {
       if (!blob) {
-        setStatus('error', 'Could not generate the cleaned image.');
+        setStatus('error', 'No se pudo generar la imagen limpia.');
         return;
       }
 
@@ -513,12 +513,12 @@ cleanBtn.addEventListener('click', () => {
       a.download = downloadName;
       a.click();
 
-      setStatus('success', 'Metadata removed. A clean copy of your image has been downloaded.');
+      setStatus('success', 'Metadatos eliminados. Se ha descargado una copia limpia de su imagen.');
     }, mime, quality);
   };
 
   img.onerror = () => {
-    setStatus('error', 'Could not load this image for cleaning.');
+    setStatus('error', 'No se pudo cargar esta imagen para su limpieza.');
     URL.revokeObjectURL(url);
   };
 

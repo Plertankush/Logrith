@@ -31,11 +31,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Logrith Generador de hash", "url": "https://logrith.in/es/tool/tools/hash-generator", "applicationCategory": "DeveloperApplication", "operatingSystem": "Web Browser", "description": "Generador de hashes online gratuito para SHA-1, SHA-256, SHA-384 y SHA-512. Calcula el hash de texto y archivos localmente en tu navegador y compara los hashes al instante.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": ["Generate SHA-1 hash online", "Generate SHA-256 hash online", "Generate SHA-384 hash online", "Generate SHA-512 hash online", "Hash files locally in browser", "Compare two hashes instantly", "Copy hash output in one click"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Qué es una función hash criptográfica?", "acceptedAnswer": {"@type": "Answer", "text": "Un hash criptográfico es una salida de longitud fija generada a partir de datos de entrada. Los mismos datos de entrada producen el mismo resultado, pero incluso un pequeño cambio en la entrada genera un hash diferente."}}, {"@type": "Question", "name": "¿Qué función hash debo usar para la integridad del archivo?", "acceptedAnswer": {"@type": "Answer", "text": "SHA-256 es la opción más práctica y ampliamente recomendada para la verificación general de la integridad de los archivos y las comprobaciones relacionadas con la seguridad."}}, {"@type": "Question", "name": "¿Es seguro SHA-1?", "acceptedAnswer": {"@type": "Answer", "text": "SHA-1 se considera débil para su uso en seguridad moderna debido a vulnerabilidades conocidas. En su lugar, se recomienda utilizar SHA-256 o algoritmos más robustos."}}, {"@type": "Question", "name": "¿Esta herramienta sube mi archivo?", "acceptedAnswer": {"@type": "Answer", "text": "No. Los hashes se generan localmente en tu navegador, por lo que tu archivo permanece en tu dispositivo durante el procesamiento."}}]}</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
@@ -210,7 +210,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 const tabs = document.querySelectorAll('.tab-btn');
 const panels = document.querySelectorAll('.tab-panel');
@@ -331,7 +331,7 @@ function setStatus(el, type, message) {
 
 function formatBytes(bytes) {
   if (typeof formatSize === 'function') return formatSize(bytes);
-  if (bytes === 0) return '0 Bytes';
+  if (bytes === 0) return '0 bytes';
   const k = 1024;
   const sizes = ['Bytes', 'KB', 'MB', 'GB'];
   const i = Math.floor(Math.log(bytes) / Math.log(k));
@@ -355,7 +355,7 @@ hashInput.addEventListener('input', () => {
       const bytes = new TextEncoder().encode(text).length;
       showHashes(
         hashes,
-        `<span class="stat-chip">Input: <strong>${bytes} bytes</strong></span><span class="stat-chip">Characters: <strong>${text.length}</strong></span>`
+        `<span class="stat-chip">Aporte: <strong>${bytes} bytes</strong></span><span class="stat-chip">Personajes: <strong>${text.length}</strong></span>`
       );
     } catch (err) {
       console.error(err);
@@ -372,7 +372,7 @@ document.getElementById('hash-text-btn').addEventListener('click', async () => {
     const bytes = new TextEncoder().encode(text).length;
     showHashes(
       hashes,
-      `<span class="stat-chip">Input: <strong>${bytes} bytes</strong></span><span class="stat-chip">Characters: <strong>${text.length}</strong></span>`
+      `<span class="stat-chip">Aporte: <strong>${bytes} bytes</strong></span><span class="stat-chip">Personajes: <strong>${text.length}</strong></span>`
     );
   } catch (err) {
     console.error(err);
@@ -391,19 +391,19 @@ fileInput.addEventListener('change', async e => {
   if (!file) return;
 
   if (file.size > 100 * 1024 * 1024) {
-    setStatus(fileStatus, 'error', 'Recommended maximum is 100MB per file.');
+    setStatus(fileStatus, 'error', 'El tamaño máximo recomendado es de 100 MB por archivo.');
     return;
   }
 
-  setStatus(fileStatus, 'info', 'Generating file hashes...');
+  setStatus(fileStatus, 'info', 'Generando hashes de archivos...');
 
   try {
     const hashes = await hashFile(file);
     showHashes(
       hashes,
-      `<span class="stat-chip">File: <strong>${file.name}</strong></span><span class="stat-chip">Size: <strong>${formatBytes(file.size)}</strong></span>`
+      `<span class="stat-chip">Archivo: <strong>${file.name}</strong></span><span class="stat-chip">Tamaño: <strong>${formatBytes(file.size)}</strong></span>`
     );
-    setStatus(fileStatus, 'success', 'Hash generated successfully.');
+    setStatus(fileStatus, 'success', 'Hash generado correctamente.');
     fileInfo.innerHTML = `<span class="stat-chip"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> <strong>${file.name}</strong></span>`;
   } catch (err) {
     setStatus(fileStatus, 'error', 'Error: ' + err.message);
@@ -422,14 +422,14 @@ document.getElementById('compare-btn').addEventListener('click', () => {
   const b = document.getElementById('hash-b').value.trim().toLowerCase();
 
   if (!a || !b) {
-    compareResult.innerHTML = `<div class="compare-box error">Please enter both hashes before comparing.</div>`;
+    compareResult.innerHTML = `<div class="compare-box error">Introduzca ambos hashes antes de compararlos.</div>`;
     return;
   }
 
   if (a === b) {
-    compareResult.innerHTML = `<div class="compare-box success"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Hashes match exactly. The compared values are identical.</div>`;
+    compareResult.innerHTML = `<div class="compare-box success"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Los hashes coinciden exactamente. Los valores comparados son idénticos.</div>`;
   } else {
-    compareResult.innerHTML = `<div class="compare-box error"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#x-circle"></use></svg> Hashes do not match. The input data or files are different.</div>`;
+    compareResult.innerHTML = `<div class="compare-box error"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#x-circle"></use></svg> Los hashes no coinciden. Los datos o archivos de entrada son diferentes.</div>`;
   }
 });
 </script>

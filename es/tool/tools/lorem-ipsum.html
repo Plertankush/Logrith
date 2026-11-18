@@ -27,11 +27,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
 <script>
@@ -104,7 +104,7 @@
 </details>
 <details class="faq-item">
 <summary class="faq-q">¿Puedo obtener Lorem Ipsum en formato HTML?</summary>
-<div class="faq-a"><p>¡Sí! Seleccione "HTML (etiquetas p)" en el menú desplegable Formato para que el texto se ajuste a<p> etiquetas, listas para pegar directamente en su archivo HTML o CMS.</p></p></div>
+<div class="faq-a"><p>¡Sí! Seleccione "HTML (etiquetas p)" en el menú desplegable Formato para obtener el texto envuelto en etiquetas &lt;p&gt;, listo para pegar directamente en su archivo HTML o CMS.</p></div>
 </details>
 <details class="faq-item">
 <summary class="faq-q">¿Cuánto texto de Lorem Ipsum puedo generar?</summary>
@@ -134,7 +134,7 @@
 <li><strong>Disponible antes de que el texto final esté listo.</strong> El trabajo de diseño y desarrollo suele comenzar antes de que se termine el contenido escrito definitivo; el texto de marcador de posición permite que el trabajo de maquetación avance en paralelo en lugar de tener que esperar.</li>
 </ul>
 <h3>Elegir el formato de salida adecuado</h3>
-<p>Este generador ofrece tres formas de contar su resultado. Los párrafos generan bloques completos de texto, cada uno un párrafo independiente de longitud variable; la opción más común para crear maquetas de artículos, entradas de blog o texto principal. Las oraciones generan un número específico de oraciones individuales sin saltos de párrafo, útil para espacios más cortos como subtítulos o descripciones de tarjetas. Las palabras generan un recuento exacto de palabras, útil cuando necesita texto de relleno para probar un límite específico de caracteres o palabras. La opción de formato HTML envuelve la salida de párrafo en `<p> ` etiquetas automáticamente, por lo que se puede pegar directamente en un archivo HTML o sistema de gestión de contenido sin formateo manual.</p></p>
+<p>Este generador ofrece tres formas de contar el resultado. Los párrafos generan bloques de texto completos, cada uno un párrafo independiente de longitud variable; la opción más común para crear prototipos de artículos, entradas de blog o texto principal. Las oraciones generan un número específico de oraciones individuales sin saltos de párrafo, útil para espacios más cortos como subtítulos o descripciones de tarjetas. Las palabras generan un recuento exacto de palabras, útil cuando se necesita texto de relleno para probar un límite específico de caracteres o palabras. La opción de formato HTML envuelve automáticamente el resultado del párrafo en etiquetas `&lt;p&gt;`, de modo que se puede pegar directamente en un archivo HTML o sistema de gestión de contenido sin formateo manual.</p>
 <h3>Casos de uso comunes</h3>
 <ul>
 <li><strong>Maquetas de sitios web y aplicaciones</strong> : completar el texto principal, los titulares y las descripciones mientras se revisa el diseño.</li>
@@ -181,7 +181,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 const LOREM_WORDS = "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt neque porro quisquam est qui dolorem ipsum quia dolor sit amet consectetur adipisci velit".split(' ');
 
@@ -257,7 +257,7 @@ function generate() {
   document.getElementById('lorem-output').value = output;
   const wc = output.split(/\s+/).filter(Boolean).length;
   const bytes = new TextEncoder().encode(output).length;
-  document.getElementById('lorem-stats').innerHTML = `<span class="stat-chip">Words: <strong>${wc}</strong></span><span class="stat-chip">Chars: <strong>${output.length}</strong></span><span class="stat-chip">Bytes: <strong>${bytes}</strong></span><span class="stat-chip">Paragraphs: <strong>${paragraphs.length}</strong></span>`;
+  document.getElementById('lorem-stats').innerHTML = `<span class="stat-chip">Palabras: <strong>${wc}</strong></span><span class="stat-chip">Personajes: <strong>${output.length}</strong></span><span class="stat-chip">Bytes: <strong>${bytes}</strong></span><span class="stat-chip">Párrafos: <strong>${paragraphs.length}</strong></span>`;
   document.getElementById('output-card').style.display = 'block';
 }
 

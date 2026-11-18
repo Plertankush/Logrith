@@ -26,7 +26,7 @@
   function relative(ms) {
     const diff = ms - Date.now();
     const units = [['year', 31557600000], ['month', 2629800000], ['day', 86400000], ['hour', 3600000], ['minute', 60000], ['second', 1000]];
-    const formatter = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
+    const formatter = new Intl.RelativeTimeFormat(document.documentElement.lang || 'en', { numeric: 'auto' });
     for (const [unit, size] of units) {
       if (Math.abs(diff) >= size || unit === 'second') return formatter.format(Math.round(diff / size), unit);
     }
@@ -41,19 +41,19 @@
     const raw = $('ts-input').value.trim();
     const out = $('ts-output');
     if (!/^-?\d+(\.\d+)?$/.test(raw)) {
-      out.innerHTML = raw ? '<p class="mini-note">Enter digits only, for example 1735689600.</p>' : '';
+      out.innerHTML = raw ? `<p class="mini-note">${uiText('Enter digits only, for example 1735689600.')}</p>` : '';
       return;
     }
     const { ms, unit } = toMilliseconds(raw);
     const date = new Date(ms);
-    if (Number.isNaN(date.getTime())) { out.innerHTML = '<p class="mini-note">That number is out of range.</p>'; return; }
+    if (Number.isNaN(date.getTime())) { out.innerHTML = `<p class="mini-note">${uiText('That number is out of range.')}</p>`; return; }
     const zone = $('ts-zone').value;
-    out.innerHTML = row('Detected unit', unit) +
+    out.innerHTML = row(uiText('Detected unit'), unit) +
       row('UTC (ISO 8601)', date.toISOString()) +
-      row(zone === 'local' ? `Local (${LOCAL})` : zone, format(date, zone === 'local' ? LOCAL : zone)) +
-      row('Relative', relative(ms)) +
-      row('Seconds', Math.floor(ms / 1000)) +
-      row('Milliseconds', Math.floor(ms));
+      row(zone === 'local' ? uiText('Local ({0})', LOCAL) : zone, format(date, zone === 'local' ? LOCAL : zone)) +
+      row(uiText('Relative'), relative(ms)) +
+      row(uiText('Seconds'), Math.floor(ms / 1000)) +
+      row(uiText('Milliseconds'), Math.floor(ms));
   }
 
   /** Convert a date-time typed as wall-clock time in `zone` into epoch milliseconds. */
@@ -81,7 +81,7 @@
     if (!value) { out.innerHTML = ''; return; }
     const ms = zonedToEpoch(value, $('date-zone').value);
     if (Number.isNaN(ms)) { out.innerHTML = ''; return; }
-    out.innerHTML = row('Seconds', Math.floor(ms / 1000)) + row('Milliseconds', ms) + row('UTC (ISO 8601)', new Date(ms).toISOString());
+    out.innerHTML = row(uiText('Seconds'), Math.floor(ms / 1000)) + row(uiText('Milliseconds'), ms) + row('UTC (ISO 8601)', new Date(ms).toISOString());
   }
 
   function tick() {
@@ -91,7 +91,7 @@
   }
 
   function fillZones() {
-    const options = [`<option value="local">Local (${LOCAL})</option>`, ...ZONES.map((z) => `<option value="${z}">${z}</option>`)].join('');
+    const options = [`<option value="local">${uiText('Local ({0})', LOCAL)}</option>`, ...ZONES.map((z) => `<option value="${z}">${z}</option>`)].join('');
     $('ts-zone').innerHTML = options;
     $('date-zone').innerHTML = options;
     $('ts-zone').value = 'local';

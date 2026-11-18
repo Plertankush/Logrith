@@ -64,8 +64,8 @@
     clampOffsets();
     draw(canvas, state.size, backgroundFor($('circle-format').value));
     $('zoom-val').textContent = `${Math.round(state.zoom * 100)}%`;
-    $('circle-info').innerHTML = `<span class="stat-chip">Output: <strong>${state.size} × ${state.size}px</strong></span>` +
-      `<span class="stat-chip">Source: <strong>${state.image.width} × ${state.image.height}px</strong></span>`;
+    $('circle-info').innerHTML = `<span class="stat-chip">${uiText('Output:')} <strong>${state.size} × ${state.size}px</strong></span>` +
+      `<span class="stat-chip">${uiText('Source:')} <strong>${state.image.width} × ${state.image.height}px</strong></span>`;
   }
 
   function setSize(value) {
@@ -102,7 +102,7 @@
       $('zoom').value = 1;
       setSize(Math.min(1024, Math.min(img.naturalWidth, img.naturalHeight)));
     };
-    img.onerror = () => showStatus($('status-msg'), 'error', 'This file could not be read as an image.');
+    img.onerror = () => showStatus($('status-msg'), 'error', uiText('This file could not be read as an image.'));
     img.src = url;
   }
 
@@ -153,7 +153,7 @@
     const ext = { 'image/png': 'png', 'image/jpeg': 'jpg', 'image/webp': 'webp' }[type];
     out.toBlob((blob) => {
       downloadBlob(blob, `${state.file.name.replace(/\.[^.]+$/, '')}_circle.${ext}`);
-      showStatus($('status-msg'), 'success', `Saved ${formatSize(blob.size)} ${ext.toUpperCase()}.`);
+      showStatus($('status-msg'), 'success', uiText('Saved {0} {1}.', formatSize(blob.size), ext.toUpperCase()));
     }, type, 0.92);
   });
 

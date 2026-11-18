@@ -21,11 +21,11 @@
 <meta name="theme-color" content="#000000">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-BPJ4332XJH');</script>
 </head>
@@ -157,7 +157,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 function updateCharCount(el, countId, min, max) {
   var len = el.value.length;
@@ -197,7 +197,7 @@ function submitForm(page) {
   var btnText = document.getElementById('btn-text');
   var btnArrow = document.getElementById('btn-arrow');
   if (btn) btn.disabled = true;
-  if (btnText) btnText.textContent = 'Sending...';
+  if (btnText) btnText.textContent = 'Envío...';
   if (btnArrow) btnArrow.textContent = '⟳';
 
   fetch('https://about.ankushmaur4.workers.dev', {
@@ -205,7 +205,7 @@ function submitForm(page) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ name:name.trim(), email:email.trim(), subject:issue, message:message.trim(), page:page, to:'support@logrith.in', toolName:tool.trim() })
   })
-  .then(function(res) { if (!res.ok) throw new Error('Server error'); return res.json(); })
+  .then(function(res) { if (!res.ok) throw new Error('Error del servidor'); return res.json(); })
   .then(function() {
     var form = document.getElementById('contact-form');
     var success = document.getElementById('form-success');
@@ -214,9 +214,9 @@ function submitForm(page) {
   })
   .catch(function() {
     if (btn) btn.disabled = false;
-    if (btnText) btnText.textContent = 'Submit Report';
+    if (btnText) btnText.textContent = 'Enviar informe';
     if (btnArrow) btnArrow.textContent = '→';
-    if (errBox) { errBox.textContent = 'Something went wrong. Email us directly at support@logrith.in'; errBox.classList.add('show'); }
+    if (errBox) { errBox.textContent = 'Algo salió mal. Envíanos un correo electrónico directamente a support@logrith.in'; errBox.classList.add('show'); }
   });
 }
 
@@ -228,7 +228,7 @@ function resetForm() {
   ['cf-name','cf-email','cf-message','cf-tool'].forEach(function(id){ var el=document.getElementById(id); if(el) el.value=''; });
   var issue = document.getElementById('cf-issue'); if(issue) issue.selectedIndex=0;
   var btn=document.getElementById('cf-submit'); if(btn) btn.disabled=false;
-  var btnText=document.getElementById('btn-text'); if(btnText) btnText.textContent='Submit Report';
+  var btnText=document.getElementById('btn-text'); if(btnText) btnText.textContent='Enviar informe';
   var btnArrow=document.getElementById('btn-arrow'); if(btnArrow) btnArrow.textContent='→';
 }
 </script>

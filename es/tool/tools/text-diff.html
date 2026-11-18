@@ -27,11 +27,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
 <script>
@@ -184,7 +184,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 // LCS-based diff algorithm
 function lcsMatrix(a, b) {
@@ -249,19 +249,19 @@ document.getElementById('compare-btn').addEventListener('click', () => {
     });
   }
 
-  document.getElementById('diff-output').innerHTML = html || '<span style="color:var(--gray-500);">No differences found — texts are identical.</span>';
+  document.getElementById('diff-output').innerHTML = html || '<span style="color:var(--gray-500);">No se encontraron diferencias; los textos son idénticos.</span>';
   document.getElementById('diff-stats').innerHTML = `
-    <span class="diff-stat equal">= ${equal} equal ${mode==='line'?'lines':'tokens'}</span>
-    <span class="diff-stat added">+ ${added} added</span>
-    <span class="diff-stat removed">− ${removed} removed</span>`;
+    <span class="diff-stat equal">= ${equal} igual a ${mode==='line'?'lines':'tokens'}</span>
+    <span class="diff-stat added">+ ${added} añadido</span>
+    <span class="diff-stat removed">− ${removed} eliminado</span>`;
   document.getElementById('result-card').style.display='block';
 });
 
 document.getElementById('swap-btn').addEventListener('click', () => { const t=document.getElementById('text-a').value; document.getElementById('text-a').value=document.getElementById('text-b').value; document.getElementById('text-b').value=t; });
 document.getElementById('clear-btn').addEventListener('click', () => { document.getElementById('text-a').value=''; document.getElementById('text-b').value=''; document.getElementById('result-card').style.display='none'; });
 document.getElementById('sample-btn').addEventListener('click', () => {
-  document.getElementById('text-a').value='The quick brown fox jumps over the lazy dog.\nThis is the original text.\nSome lines are the same.';
-  document.getElementById('text-b').value='The quick brown fox leaps over the lazy cat.\nThis is the modified text.\nSome lines are the same.';
+  document.getElementById('text-a').value='El rápido zorro marrón salta sobre el perro perezoso. Este es el texto original. Algunas líneas son iguales.';
+  document.getElementById('text-b').value='El veloz zorro marrón salta sobre el gato perezoso. Este es el texto modificado. Algunas líneas son iguales.';
 });
 document.getElementById('copy-diff-btn').addEventListener('click', function() {
   const text = document.getElementById('diff-output').textContent;

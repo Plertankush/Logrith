@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de propinas y divisor de cuentas", "url": "https://logrith.in/es/tool/tools/tip-split-calculator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "description": "Calculadora de propinas y divisor de cuentas online gratuitos que permiten dividir la cuenta tanto a partes iguales como desiguales entre un grupo.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Calcular y convertir", "item": "https://logrith.in/es/tool/categories/calculate-convert"}, {"@type": "ListItem", "position": 4, "name": "Calculadora de reparto de propinas", "item": "https://logrith.in/es/tool/tools/tip-split-calculator"}]}</script>
@@ -180,7 +180,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 let currentMode = 'equal';
 
@@ -202,7 +202,7 @@ function addPersonInput() {
   const count = container.children.length + 1;
   const div = document.createElement('div');
   div.className = 'control-group';
-  div.innerHTML = `<label>Person ${count} Share (₹)</label><input type="number" class="field-input person-share" value="250" min="0">`;
+  div.innerHTML = `<label>Persona ${count} Participación (₹)</label><input type="number" class="field-input person-share" value="250" min="0">`;
   container.appendChild(div);
 }
 document.getElementById('add-person-btn').addEventListener('click', addPersonInput);
@@ -213,48 +213,48 @@ document.getElementById('calc-btn').addEventListener('click', () => {
   const tipPct = parseFloat(document.getElementById('tip-pct').value);
   const fmt = v => '₹' + v.toLocaleString('en-IN', {maximumFractionDigits: 2});
 
-  if (isNaN(tipPct) || tipPct < 0) { showStatus(statusEl, 'error', 'Please enter a valid tip percentage.'); return; }
+  if (isNaN(tipPct) || tipPct < 0) { showStatus(statusEl, 'error', 'Por favor, introduzca un porcentaje de propina válido.'); return; }
 
   if (currentMode === 'equal') {
-    if (!bill || bill <= 0) { showStatus(statusEl, 'error', 'Please enter a valid bill amount.'); return; }
+    if (!bill || bill <= 0) { showStatus(statusEl, 'error', 'Por favor, introduzca un importe válido para la factura.'); return; }
     const numPeople = parseInt(document.getElementById('num-people').value) || 1;
     const tipAmount = bill * (tipPct / 100);
     const total = bill + tipAmount;
     const perPerson = total / numPeople;
 
     document.getElementById('result-grid').innerHTML = `
-      <div class="stat-box"><span class="stat-num">${fmt(bill)}</span><span class="stat-label">Bill Amount</span></div>
-      <div class="stat-box"><span class="stat-num" style="color:var(--success);">${fmt(tipAmount)}</span><span class="stat-label">Tip (${tipPct}%)</span></div>
-      <div class="stat-box"><span class="stat-num">${fmt(total)}</span><span class="stat-label">Total with Tip</span></div>
+      <div class="stat-box"><span class="stat-num">${fmt(bill)}</span><span class="stat-label">Importe de la factura</span></div>
+      <div class="stat-box"><span class="stat-num" style="color:var(--success);">${fmt(tipAmount)}</span><span class="stat-label">Propina (${tipPct}%)</span></div>
+      <div class="stat-box"><span class="stat-num">${fmt(total)}</span><span class="stat-label">Total con propina</span></div>
       <div class="stat-box" style="background:linear-gradient(135deg,var(--primary),var(--primary-light));border:none;">
-        <span class="stat-num" style="color:white;">${fmt(perPerson)}</span><span class="stat-label" style="color:rgba(255,255,255,0.85);">Per Person (${numPeople})</span>
+        <span class="stat-num" style="color:white;">${fmt(perPerson)}</span><span class="stat-label" style="color:rgba(255,255,255,0.85);">Por persona (${numPeople})</span>
       </div>`;
     document.getElementById('per-person-breakdown').innerHTML = '';
   } else {
     const shareInputs = document.querySelectorAll('.person-share');
     const shares = Array.from(shareInputs).map(el => parseFloat(el.value) || 0);
     const totalBill = shares.reduce((a,b) => a+b, 0);
-    if (totalBill <= 0) { showStatus(statusEl, 'error', 'Please enter valid shares for each person.'); return; }
+    if (totalBill <= 0) { showStatus(statusEl, 'error', 'Por favor, introduzca las acciones válidas para cada persona.'); return; }
 
     const totalTip = totalBill * (tipPct / 100);
     const grandTotal = totalBill + totalTip;
 
     document.getElementById('result-grid').innerHTML = `
-      <div class="stat-box"><span class="stat-num">${fmt(totalBill)}</span><span class="stat-label">Total Bill</span></div>
-      <div class="stat-box"><span class="stat-num" style="color:var(--success);">${fmt(totalTip)}</span><span class="stat-label">Total Tip (${tipPct}%)</span></div>
+      <div class="stat-box"><span class="stat-num">${fmt(totalBill)}</span><span class="stat-label">Factura total</span></div>
+      <div class="stat-box"><span class="stat-num" style="color:var(--success);">${fmt(totalTip)}</span><span class="stat-label">Propina total (${tipPct}%)</span></div>
       <div class="stat-box" style="background:linear-gradient(135deg,var(--primary),var(--primary-light));border:none;">
-        <span class="stat-num" style="color:white;">${fmt(grandTotal)}</span><span class="stat-label" style="color:rgba(255,255,255,0.85);">Grand Total</span>
+        <span class="stat-num" style="color:white;">${fmt(grandTotal)}</span><span class="stat-label" style="color:rgba(255,255,255,0.85);">Gran total</span>
       </div>`;
 
     document.getElementById('per-person-breakdown').innerHTML = shares.map((share, i) => {
       const personTip = share * (tipPct / 100);
       const personTotal = share + personTip;
-      return `<div class="tool-step"><strong>Person ${i+1}:</strong> ${fmt(share)} + ${fmt(personTip)} tip = <strong>${fmt(personTotal)}</strong></div>`;
+      return `<div class="tool-step"><strong>Persona ${i+1}:</strong> ${fmt(share)} + ${fmt(personTip)} propina = <strong>${fmt(personTotal)}</strong></div>`;
     }).join('');
   }
 
   document.getElementById('result-card').style.display = 'block';
-  showStatus(statusEl, 'success', 'Calculated!');
+  showStatus(statusEl, 'success', '¡Calculado!');
 });
 
 document.getElementById('reset-btn').addEventListener('click', () => {

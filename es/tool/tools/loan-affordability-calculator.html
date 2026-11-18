@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de asequibilidad de préstamos", "url": "https://logrith.in/es/tool/tools/loan-affordability-calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "description": "Calculadora online gratuita para estimar el importe máximo del préstamo que puedes permitirte en función de tus ingresos y la relación entre la cuota mensual y la mensualidad.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Calcular y convertir", "item": "https://logrith.in/es/tool/categories/calculate-convert"}, {"@type": "ListItem", "position": 4, "name": "Calculadora de asequibilidad de préstamos", "item": "https://logrith.in/es/tool/tools/loan-affordability-calculator"}]}</script>
@@ -172,7 +172,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 document.getElementById('calc-btn').addEventListener('click', () => {
   const statusEl = document.getElementById('status-msg');
@@ -183,7 +183,7 @@ document.getElementById('calc-btn').addEventListener('click', () => {
   const years = parseFloat(document.getElementById('tenure').value);
 
   if (!income || income <= 0 || !ratio || !annualRate || !years) {
-    showStatus(statusEl, 'error', 'Please fill in all fields with valid values.');
+    showStatus(statusEl, 'error', 'Por favor, rellene todos los campos con valores válidos.');
     return;
   }
 
@@ -191,7 +191,7 @@ document.getElementById('calc-btn').addEventListener('click', () => {
   const availableEmi = maxTotalEmi - existingEmi;
 
   if (availableEmi <= 0) {
-    showStatus(statusEl, 'error', 'Your existing EMIs already exceed the affordable limit. No additional loan is affordable.');
+    showStatus(statusEl, 'error', 'Sus cuotas mensuales actuales ya superan el límite que puede asumir. No puede permitirse ningún préstamo adicional.');
     return;
   }
 
@@ -206,17 +206,17 @@ document.getElementById('calc-btn').addEventListener('click', () => {
   document.getElementById('result-grid').innerHTML = `
     <div class="stat-box" style="background:linear-gradient(135deg,var(--primary),var(--primary-light));border:none;">
       <span class="stat-num" style="color:white;">${fmt(maxLoan)}</span>
-      <span class="stat-label" style="color:rgba(255,255,255,0.85);">Max Loan Amount</span>
+      <span class="stat-label" style="color:rgba(255,255,255,0.85);">Monto máximo del préstamo</span>
     </div>
-    <div class="stat-box"><span class="stat-num">${fmt(availableEmi)}</span><span class="stat-label">Available EMI</span></div>
-    <div class="stat-box"><span class="stat-num">${fmt(maxTotalEmi)}</span><span class="stat-label">Max Total EMI (${ratio}%)</span></div>
-    <div class="stat-box"><span class="stat-num" style="color:var(--accent);">${fmt(totalInterest)}</span><span class="stat-label">Total Interest</span></div>`;
+    <div class="stat-box"><span class="stat-num">${fmt(availableEmi)}</span><span class="stat-label">Disponible en EMI</span></div>
+    <div class="stat-box"><span class="stat-num">${fmt(maxTotalEmi)}</span><span class="stat-label">Cuota mensual total máxima (${ratio}%)</span></div>
+    <div class="stat-box"><span class="stat-num" style="color:var(--accent);">${fmt(totalInterest)}</span><span class="stat-label">Interés total</span></div>`;
 
   document.getElementById('result-summary').innerHTML =
-    `Based on a monthly income of ${fmt(income)}, existing EMIs of ${fmt(existingEmi)}, and a target EMI-to-income ratio of ${ratio}%, you could afford a loan of approximately <strong>${fmt(maxLoan)}</strong> over ${years} years at ${annualRate}% interest, with a monthly EMI of ${fmt(availableEmi)}.`;
+    `Based on a monthly income of ${fmt(income)}, existing EMIs of ${fmt(existingEmi)}, and a target EMI-to-income ratio of ${ratio}%, you could afford a loan of approximately <strong>${fmt(maxLoan)}</strong> durante ${years} años al ${annualRate}% de interés, con una EMI mensual de ${fmt(availableEmi)}.`;
 
   document.getElementById('result-card').style.display = 'block';
-  showStatus(statusEl, 'success', 'Affordability calculated!');
+  showStatus(statusEl, 'success', '¡Precio asequible calculado!');
 });
 
 document.getElementById('reset-btn').addEventListener('click', () => {

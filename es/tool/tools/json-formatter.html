@@ -27,11 +27,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
 <script>
@@ -196,7 +196,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 const jsonInput = document.getElementById('json-input');
 const jsonOutput = document.getElementById('json-output');
@@ -237,9 +237,9 @@ function updateStats(parsed, raw) {
   const keys = JSON.stringify(parsed).match(/"[^"]+"\s*:/g);
   const size = new TextEncoder().encode(raw).length;
   statsEl.innerHTML = `
-    <span class="json-stat">Size: <strong>${formatSize ? formatSize(size) : size + ' B'}</strong></span>
-    <span class="json-stat">Keys: <strong>${keys ? keys.length : 0}</strong></span>
-    <span class="json-stat">Type: <strong>${Array.isArray(parsed) ? 'Array' : typeof parsed}</strong></span>`;
+    <span class="json-stat">Tamaño: <strong>${formatSize ? formatSize(size) : size + ' B'}</strong></span>
+    <span class="json-stat">Llaves: <strong>${keys ? keys.length : 0}</strong></span>
+    <span class="json-stat">Tipo: <strong>${Array.isArray(parsed) ? 'Array' : typeof parsed}</strong></span>`;
 }
 
 document.getElementById('format-btn').addEventListener('click', () => {
@@ -252,7 +252,7 @@ document.getElementById('format-btn').addEventListener('click', () => {
     const formatted = JSON.stringify(parsed, null, getIndent());
     jsonOutput.value = formatted;
     jsonOutput.className = '';
-    showStatus(statusMsg, 'success', 'Valid JSON — formatted successfully!');
+    showStatus(statusMsg, 'success', 'JSON válido: ¡formateado correctamente!');
     updateStats(parsed, formatted);
   } catch(e) {
     jsonOutput.value = 'Error: ' + e.message;
@@ -270,7 +270,7 @@ document.getElementById('minify-btn').addEventListener('click', () => {
     const minified = JSON.stringify(parsed);
     jsonOutput.value = minified;
     jsonOutput.className = '';
-    showStatus(statusMsg, 'success', `Minified! ${raw.length} → ${minified.length} chars`);
+    showStatus(statusMsg, 'success', `¡Minimizado! ${raw.length} → ${minified.length} caracteres`);
     updateStats(parsed, minified);
   } catch(e) {
     jsonOutput.value = 'Error: ' + e.message;
@@ -284,12 +284,12 @@ document.getElementById('validate-btn').addEventListener('click', () => {
   if (!raw) return;
   try {
     const parsed = JSON.parse(raw);
-    jsonOutput.value = 'Valid JSON!';
+    jsonOutput.value = '¡JSON válido!';
     jsonOutput.className = '';
     showStatus(statusMsg, 'success', 'JSON is valid!');
     updateStats(parsed, raw);
   } catch(e) {
-    jsonOutput.value = 'Invalid JSON\n\n' + e.message;
+    jsonOutput.value = 'JSON no válido\n\n' + e.message;
     jsonOutput.className = 'error';
     showStatus(statusMsg, 'error', e.message);
   }

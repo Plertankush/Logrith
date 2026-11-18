@@ -27,11 +27,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
 <script>
@@ -141,7 +141,7 @@ Free Online Tools for Developers" rows="6"></textarea>
 <ul>
 <li><strong>Solo minúsculas.</strong> Las URL distinguen entre mayúsculas y minúsculas, y mezclarlas genera inconsistencias y posibles problemas de contenido duplicado si la misma página se enlaza con diferentes capitalizaciones.</li>
 <li><strong>Se utilizan guiones entre las palabras, no guiones bajos.</strong> Los motores de búsqueda, incluido Google, tratan los guiones como separadores de palabras, pero los guiones bajos como conectores, lo que puede afectar la interpretación de las palabras clave individuales en la URL.</li>
-<li><strong>No se permiten caracteres especiales.</strong> Los espacios, la puntuación y los símbolos como &, %, o # rompen las URL directamente o se codifican en secuencias de caracteres ilegibles, por lo que deben eliminarse o reemplazarse.</li>
+<li><strong>No se permiten caracteres especiales.</strong> Los espacios, la puntuación y los símbolos como &amp;, %, o # rompen las URL directamente o se codifican en secuencias de caracteres ilegibles, por lo que deben eliminarse o reemplazarse.</li>
 <li><strong>Breve y descriptivo.</strong> Un título breve que refleje claramente el tema de la página en pocas palabras es más útil tanto para los usuarios como para los motores de búsqueda que una copia literal y excesivamente larga del título completo.</li>
 </ul>
 <h3>¿Por qué guiones en lugar de guiones bajos?</h3>
@@ -195,7 +195,7 @@ Free Online Tools for Developers" rows="6"></textarea>
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 const STOP_WORDS = new Set(['a','an','the','and','or','but','in','on','at','to','for','of','with','by','from','is','are','was','were','be','been','being','have','has','had','do','does','did','will','would','could','should','may','might','shall','can','this','that','these','those','it','its']);
 
@@ -238,7 +238,7 @@ function update() {
   if (!input.trim()) { document.getElementById('slug-output').value=''; document.getElementById('slug-stats').innerHTML=''; return; }
   const slug = slugify(input);
   document.getElementById('slug-output').value = slug;
-  document.getElementById('slug-stats').innerHTML = `<span class="stat-chip">Length: <strong>${slug.length} chars</strong></span><span class="stat-chip">Words: <strong>${slug.split(/[-_.]/).filter(Boolean).length}</strong></span>`;
+  document.getElementById('slug-stats').innerHTML = `<span class="stat-chip">Longitud: <strong>${slug.length} chars</strong></span><span class="stat-chip">Palabras: <strong>${slug.split(/[-_.]/).filter(Boolean).length}</strong></span>`;
 }
 
 document.getElementById('slug-input').addEventListener('input', update);
@@ -257,7 +257,7 @@ document.getElementById('bulk-btn').addEventListener('click', () => {
 document.getElementById('copy-bulk').addEventListener('click', function() { const v=document.getElementById('bulk-output').value; if(v) copyText(v,this); });
 
 // Auto-fill sample
-document.getElementById('slug-input').value = 'How to Build a Modern Website in 2026!';
+document.getElementById('slug-input').value = '¡Cómo crear un sitio web moderno en 2026!';
 update();
 </script>
 </body></html>

@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de cuotas EMI", "url": "https://logrith.in/es/tool/tools/emi-calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript and a modern web browser", "description": "Calculadora de cuotas mensuales gratuita en línea para calcular la cuota mensual del préstamo, el interés total, el pago total y el plan de amortización para préstamos hipotecarios, préstamos para automóviles y préstamos personales.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Qué es EMI?", "acceptedAnswer": {"@type": "Answer", "text": "EMI significa Cuota Mensual Equivalente. Es la cantidad fija que un prestatario paga mensualmente para amortizar un préstamo, incluyendo tanto el capital como los intereses."}}, {"@type": "Question", "name": "¿Cómo se calcula la cuota mensual?", "acceptedAnswer": {"@type": "Answer", "text": "La cuota mensual se calcula utilizando el monto del préstamo, la tasa de interés mensual y el plazo total. La fórmula estándar es EMI = P × r × (1+r)^n / ((1+r)^n - 1)."}}, {"@type": "Question", "name": "¿Puedo usar esta calculadora de cuotas mensuales para préstamos hipotecarios, préstamos para automóviles y préstamos personales?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Esta calculadora de cuotas mensuales gratuita funciona para préstamos hipotecarios, préstamos para automóviles, préstamos personales, préstamos para estudios y otros cálculos de préstamos a tasa fija."}}, {"@type": "Question", "name": "¿Qué es un cuadro de amortización?", "acceptedAnswer": {"@type": "Answer", "text": "Un cuadro de amortización muestra el desglose de cada cuota mensual en capital e intereses, junto con el saldo restante del préstamo a lo largo del tiempo."}}, {"@type": "Question", "name": "¿Cómo puedo reducir mi cuota mensual?", "acceptedAnswer": {"@type": "Answer", "text": "Puedes reducir la cuota mensual aumentando el plazo del préstamo, haciendo un pago inicial mayor, consiguiendo un tipo de interés más bajo o realizando pagos anticipados parciales."}}, {"@type": "Question", "name": "¿Esta calculadora de cuotas mensuales es gratuita?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Esta calculadora de cuotas mensuales es completamente gratuita y se puede usar en línea sin necesidad de iniciar sesión ni registrarse."}}]}</script>
@@ -205,7 +205,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 let currentView = 'yearly';
 let schedule = [];
@@ -249,7 +249,7 @@ document.getElementById('calc-btn').addEventListener('click', () => {
   if (tenureType === 'years') n *= 12;
 
   if (isNaN(P) || isNaN(annualRate) || isNaN(n) || P <= 0 || annualRate <= 0 || n <= 0) {
-    showStatus(document.getElementById('status-msg'), 'error', 'Please enter valid loan details.');
+    showStatus(document.getElementById('status-msg'), 'error', 'Por favor, introduzca datos válidos para su préstamo.');
     return;
   }
 
@@ -264,19 +264,19 @@ document.getElementById('calc-btn').addEventListener('click', () => {
   document.getElementById('emi-grid').innerHTML = `
     <div class="stat-box" style="background:linear-gradient(135deg,var(--primary),var(--primary-light));border:none;">
       <span class="stat-num" style="color:white;">${fmt(monthlyEMI)}</span>
-      <span class="stat-label" style="color:rgba(255,255,255,0.85);">Monthly EMI</span>
+      <span class="stat-label" style="color:rgba(255,255,255,0.85);">Cuota mensual</span>
     </div>
     <div class="stat-box">
       <span class="stat-num">${fmt(P)}</span>
-      <span class="stat-label">Principal Amount</span>
+      <span class="stat-label">Monto principal</span>
     </div>
     <div class="stat-box">
       <span class="stat-num" style="color:var(--accent);">${fmt(totalInterest)}</span>
-      <span class="stat-label">Total Interest</span>
+      <span class="stat-label">Interés total</span>
     </div>
     <div class="stat-box">
       <span class="stat-num" style="color:var(--success);">${fmt(totalPayment)}</span>
-      <span class="stat-label">Total Payment</span>
+      <span class="stat-label">Pago total</span>
     </div>`;
 
   const principalPct = (P / totalPayment * 100).toFixed(1);
@@ -317,7 +317,7 @@ function renderTable() {
   const fmt = v => '₹' + Math.round(v).toLocaleString('en-IN');
 
   if (currentView === 'monthly') {
-    head.innerHTML = '<tr><th>Month</th><th>EMI</th><th>Principal</th><th>Interest</th><th>Balance</th></tr>';
+    head.innerHTML = '<tr><th>Mes</th><th>EMI</th><th>Principal</th><th>Interés</th><th>Balance</th></tr>';
     body.innerHTML = schedule.map(row =>
       `<tr>
         <td>${row.month}</td>
@@ -328,7 +328,7 @@ function renderTable() {
       </tr>`
     ).join('');
   } else {
-    head.innerHTML = '<tr><th>Year</th><th>Total EMI</th><th>Principal Paid</th><th>Interest Paid</th><th>Balance</th></tr>';
+    head.innerHTML = '<tr><th>Año</th><th>Cuota mensual total</th><th>Capital pagado</th><th>Intereses pagados</th><th>Balance</th></tr>';
     const years = {};
 
     schedule.forEach(row => {
@@ -342,7 +342,7 @@ function renderTable() {
 
     body.innerHTML = Object.entries(years).map(([yr, d]) =>
       `<tr>
-        <td>Year ${yr}</td>
+        <td>Año ${yr}</td>
         <td>${fmt(d.emi)}</td>
         <td>${fmt(d.principal)}</td>
         <td>${fmt(d.interest)}</td>

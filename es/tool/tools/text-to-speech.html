@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Conversión de texto a voz", "url": "https://logrith.in/es/tool/tools/text-to-speech", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "description": "Herramienta gratuita en línea para convertir texto a voz, que utiliza las voces de síntesis de voz integradas del navegador.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Texto y generadores", "item": "https://logrith.in/es/tool/categories/text-generators"}, {"@type": "ListItem", "position": 4, "name": "Conversión de texto a voz", "item": "https://logrith.in/es/tool/tools/text-to-speech"}]}</script>
@@ -150,7 +150,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 const synth = window.speechSynthesis;
 let voices = [];
@@ -172,11 +172,11 @@ document.getElementById('pitch-slider').addEventListener('input', e => document.
 
 document.getElementById('speak-btn').addEventListener('click', () => {
   if (typeof speechSynthesis === 'undefined') {
-    showStatus(statusEl, 'error', 'Text to speech is not supported in this browser.');
+    showStatus(statusEl, 'error', 'Este navegador no admite la conversión de texto a voz.');
     return;
   }
   const text = document.getElementById('tts-text').value.trim();
-  if (!text) { showStatus(statusEl, 'error', 'Please enter some text.'); return; }
+  if (!text) { showStatus(statusEl, 'error', 'Por favor, introduzca algún texto.'); return; }
 
   synth.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
@@ -185,11 +185,11 @@ document.getElementById('speak-btn').addEventListener('click', () => {
   utterance.rate = parseFloat(document.getElementById('rate-slider').value);
   utterance.pitch = parseFloat(document.getElementById('pitch-slider').value);
 
-  utterance.onend = () => showStatus(statusEl, 'success', 'Finished speaking.');
-  utterance.onerror = () => showStatus(statusEl, 'error', 'Speech playback error.');
+  utterance.onend = () => showStatus(statusEl, 'success', 'Terminé de hablar.');
+  utterance.onerror = () => showStatus(statusEl, 'error', 'Error en la reproducción del audio.');
 
   synth.speak(utterance);
-  showStatus(statusEl, 'success', 'Speaking...');
+  showStatus(statusEl, 'success', 'Discurso...');
 });
 
 document.getElementById('pause-btn').addEventListener('click', () => {
@@ -199,7 +199,7 @@ document.getElementById('pause-btn').addEventListener('click', () => {
 
 document.getElementById('stop-btn').addEventListener('click', () => {
   synth.cancel();
-  showStatus(statusEl, 'success', 'Stopped.');
+  showStatus(statusEl, 'success', 'Interrumpido.');
 });
 </script>
 </body>

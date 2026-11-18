@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de velocidad de escritura en palabras por minuto", "url": "https://logrith.in/es/tool/tools/wpm-typing-speed-calculator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "description": "Calculadora de velocidad de escritura en palabras por minuto (PPM) y prueba de mecanografía en vivo gratuitas en línea.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Calcular y convertir", "item": "https://logrith.in/es/tool/categories/calculate-convert"}, {"@type": "ListItem", "position": 4, "name": "Calculadora de velocidad de escritura en palabras por minuto", "item": "https://logrith.in/es/tool/tools/wpm-typing-speed-calculator"}]}</script>
@@ -181,12 +181,12 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 const SAMPLE_TEXTS = [
-  "The quick brown fox jumps over the lazy dog while the sun sets behind the distant mountains.",
-  "Technology continues to reshape how we communicate, work, and learn in ways nobody predicted a decade ago.",
-  "Practice makes perfect, especially when it comes to building consistent and accurate typing habits.",
+  "El veloz zorro marrón salta sobre el perro perezoso mientras el sol se pone tras las montañas lejanas.",
+  "La tecnología sigue transformando nuestra forma de comunicarnos, trabajar y aprender de maneras que nadie predijo hace una década.",
+  "La práctica hace al maestro, especialmente cuando se trata de desarrollar hábitos de mecanografía consistentes y precisos.",
   "A journey of a thousand miles begins with a single step, and every skill starts with basic practice."
 ];
 
@@ -240,10 +240,10 @@ document.getElementById('typing-input').addEventListener('input', e => {
     const accuracy = typed.length > 0 ? Math.round(((typed.length - errors) / typed.length) * 100) : 100;
 
     document.getElementById('live-stats').innerHTML = `
-      <span class="stat-chip">Gross WPM: <strong>${grossWPM}</strong></span>
-      <span class="stat-chip">Net WPM: <strong>${netWPM}</strong></span>
-      <span class="stat-chip">Accuracy: <strong>${accuracy}%</strong></span>
-      <span class="stat-chip">Time: <strong>${elapsedSec.toFixed(1)}s</strong></span>`;
+      <span class="stat-chip">Palabras por minuto brutas: <strong>${grossWPM}</strong></span>
+      <span class="stat-chip">Palabras netas por minuto: <strong>${netWPM}</strong></span>
+      <span class="stat-chip">Exactitud: <strong>${accuracy}%</strong></span>
+      <span class="stat-chip">Tiempo: <strong>${elapsedSec.toFixed(1)}s</strong></span>`;
   }
 
   if (typed.length >= currentText.length) {
@@ -267,9 +267,9 @@ document.getElementById('manual-calc-btn').addEventListener('click', () => {
   const accuracy = words > 0 ? ((words - errors) / words) * 100 : 100;
 
   document.getElementById('manual-result').innerHTML = `
-    <div class="stat-box"><span class="stat-num">${grossWPM.toFixed(0)}</span><span class="stat-label">Gross WPM</span></div>
-    <div class="stat-box" style="background:linear-gradient(135deg,var(--primary),var(--primary-light));border:none;"><span class="stat-num" style="color:white;">${netWPM.toFixed(0)}</span><span class="stat-label" style="color:rgba(255,255,255,0.85);">Net WPM</span></div>
-    <div class="stat-box"><span class="stat-num">${accuracy.toFixed(1)}%</span><span class="stat-label">Accuracy</span></div>`;
+    <div class="stat-box"><span class="stat-num">${grossWPM.toFixed(0)}</span><span class="stat-label">PPM brutos</span></div>
+    <div class="stat-box" style="background:linear-gradient(135deg,var(--primary),var(--primary-light));border:none;"><span class="stat-num" style="color:white;">${netWPM.toFixed(0)}</span><span class="stat-label" style="color:rgba(255,255,255,0.85);">Palabras netas por minuto</span></div>
+    <div class="stat-box"><span class="stat-num">${accuracy.toFixed(1)}%</span><span class="stat-label">Exactitud</span></div>`;
 });
 
 loadNewText();

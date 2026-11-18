@@ -31,11 +31,11 @@
 <meta name="keywords" content="url deduplicator, remove duplicate urls, normalize urls online, dedupe links, remove utm parameters, clean url list, url list cleaner">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Logrith Deduplicador de URL", "url": "https://logrith.in/es/tool/tools/url-deduplicator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web Browser", "description": "Herramienta basada en navegador que extrae las URL del texto pegado, elimina las URL exactas y casi duplicadas mediante el analizador de URL nativo y genera una lista limpia y ordenada, sin necesidad de subir datos a un servidor.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": ["Extract URLs from pasted text", "Remove exact duplicate URLs", "Ignore trailing slash differences", "Ignore hostname case differences", "Ignore www prefix differences", "Strip common tracking parameters", "Ignore URL fragments", "Treat http and https as equivalent (optional)", "Sort alphabetically or keep original order", "Copy or download the cleaned list", "100% local browser processing"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas globales", "item": "https://logrith.in/es/tool/categories/global-tools"}, {"@type": "ListItem", "position": 4, "name": "Deduplicador de URL", "item": "https://logrith.in/es/tool/tools/url-deduplicator"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Qué se considera una URL duplicada?", "acceptedAnswer": {"@type": "Answer", "text": "Una URL idéntica, byte a byte, es una copia exacta. Una URL casi idéntica es aquella que apunta al mismo recurso, pero difiere en el formato: una barra diagonal al final, mayúsculas y minúsculas en el nombre de host, el prefijo www, un parámetro de seguimiento o un fragmento. Puedes elegir cuáles de estas diferencias tratar como duplicados mediante las opciones de normalización."}}, {"@type": "Question", "name": "¿Esta herramienta elimina los parámetros de seguimiento de todas las URL?", "acceptedAnswer": {"@type": "Answer", "text": "Solo cuando actives esa opción, y únicamente para una lista fija de parámetros de seguimiento conocidos, como utm_source, utm_medium, utm_campaign, fbclid y gclid. Los parámetros de consulta no reconocidos no se modifican, ya que podrían afectar a la página o el contenido que se devuelve."}}, {"@type": "Question", "name": "¿Esta herramienta tratará como duplicados las versiones http y https de la misma URL?", "acceptedAnswer": {"@type": "Answer", "text": "Solo si activas la opción \"Tratar http y https como equivalentes\", que está desactivada por defecto. Muchos sitios web ofrecen contenido o redireccionamientos diferentes en http y https, por lo que esta herramienta no los considera iguales a menos que tú lo indiques."}}, {"@type": "Question", "name": "¿Esta herramienta sube mi lista de URL a algún sitio?", "acceptedAnswer": {"@type": "Answer", "text": "No. La extracción, el análisis, la normalización y la eliminación de duplicados se ejecutan localmente en su navegador mediante JavaScript y el analizador de URL integrado del navegador. No se envía nada a un servidor."}}, {"@type": "Question", "name": "¿Qué ocurre con un texto que no es una URL válida?", "acceptedAnswer": {"@type": "Answer", "text": "La herramienta extrae subcadenas con formato de URL del texto que has pegado mediante una coincidencia de patrones, y luego intenta analizar cada una con la API de URL del navegador. Cualquier elemento que no se pueda analizar como una URL se excluye de la lista depurada y se cuenta por separado para que puedas ver cuántas entradas se omitieron."}}]}</script>
@@ -211,7 +211,7 @@ https://example.com/blog/post-2#section" rows="10"></textarea>
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 /* ==========================================================================
    URL Deduplicator
@@ -294,7 +294,7 @@ let cleanedUrls = [];
 document.getElementById('dedupe-btn').addEventListener('click', () => {
   const text = urlInput.value;
   if (!text.trim()) {
-    showStatus(statusEl, 'error', 'Paste a list of URLs first.');
+    showStatus(statusEl, 'error', 'Primero, pegue una lista de URL.');
     return;
   }
 
@@ -310,7 +310,7 @@ document.getElementById('dedupe-btn').addEventListener('click', () => {
 
   const rawCandidates = extractUrls(text);
   if (!rawCandidates.length) {
-    showStatus(statusEl, 'error', 'No URLs found in the pasted text. Make sure links start with http:// or https://.');
+    showStatus(statusEl, 'error', 'No se encontraron URL en el texto pegado. Asegúrese de que los enlaces comiencen con http:// o https://.');
     summaryCard.style.display = 'none';
     resultCard.style.display = 'none';
     return;
@@ -354,21 +354,21 @@ document.getElementById('dedupe-btn').addEventListener('click', () => {
   }
 
   summaryGrid.innerHTML = `
-    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#search"></use></svg> Found</h3>${row('URLs Found', totalFound)}${row('Unparseable', unparseableCount)}</div>
-    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#dedupe"></use></svg> Removed</h3>${row('Exact Duplicates', exactDupeCount)}${row('Near-Duplicates', nearDupeCount)}</div>
-    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Result</h3>${row('Unique URLs', cleanedUrls.length)}</div>
+    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#search"></use></svg> Encontró</h3>${row('URLs Found', totalFound)}${row('Inanalizable', unparseableCount)}</div>
+    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#dedupe"></use></svg> Remoto</h3>${row('Duplicados exactos', exactDupeCount)}${row('Casi duplicados', nearDupeCount)}</div>
+    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Resultado</h3>${row('URLs únicas', cleanedUrls.length)}</div>
   `;
   summaryCard.style.display = 'block';
 
   resultList.innerHTML = cleanedUrls.map(u => `<li>${u.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</li>`).join('');
   resultCard.style.display = 'block';
 
-  showStatus(statusEl, 'success', `Found ${totalFound} URLs, removed ${exactDupeCount + nearDupeCount} duplicates, kept ${cleanedUrls.length} unique URLs.`);
+  showStatus(statusEl, 'success', `Se encontraron ${totalFound} URL, se eliminaron ${exactDupeCount + nearDupeCount} duplicados, se conservaron ${cleanedUrls.length} URL únicas.`);
 });
 
 document.getElementById('copy-btn').addEventListener('click', function() {
   if (!cleanedUrls.length) {
-    showStatus(statusEl, 'error', 'Deduplicate a URL list first.');
+    showStatus(statusEl, 'error', 'Primero, elimina los duplicados de la lista de URL.');
     return;
   }
   const text = cleanedUrls.join('\n');
@@ -381,7 +381,7 @@ document.getElementById('copy-btn').addEventListener('click', function() {
 
 document.getElementById('download-btn').addEventListener('click', () => {
   if (!cleanedUrls.length) {
-    showStatus(statusEl, 'error', 'Deduplicate a URL list first.');
+    showStatus(statusEl, 'error', 'Primero, elimina los duplicados de la lista de URL.');
     return;
   }
   const text = cleanedUrls.join('\n');

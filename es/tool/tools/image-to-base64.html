@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Convertidor de imagen a Base64", "url": "https://logrith.in/es/tool/tools/image-to-base64", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "description": "Herramienta online gratuita para convertir imágenes a URI de datos Base64 con vista previa en tiempo real y estadísticas de tamaño.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas de imagen y PDF", "item": "https://logrith.in/es/tool/categories/image-pdf-tools"}, {"@type": "ListItem", "position": 4, "name": "Imagen a Base64", "item": "https://logrith.in/es/tool/tools/image-to-base64"}]}</script>
@@ -145,13 +145,13 @@
 <h3>Cuando las imágenes Base64 son una mala idea</h3>
 <p>La codificación Base64 no siempre es la mejor opción. Dado que aumenta el tamaño del archivo aproximadamente en un tercio, y que el navegador no puede almacenar en caché las URI de datos de forma independiente como lo hace un archivo de imagen normal, incrustar imágenes grandes o de uso frecuente en Base64 suele perjudicar el rendimiento en lugar de mejorarlo. Funciona mejor para gráficos pequeños y puntuales (iconos, logotipos pequeños, decoraciones de interfaz de usuario diminutas) que para fotos, imágenes principales o cualquier imagen que se reutilice en varias páginas.</p>
 <h3>Cómo funciona esta herramienta</h3>
-<p>Al subir una imagen, la API FileReader integrada del navegador lee el archivo y lo convierte a una URI de datos codificada en Base64 directamente en tu dispositivo; no se realiza ninguna subida a ningún servidor. La herramienta muestra una vista previa en tiempo real de la imagen para que puedas confirmar visualmente que has seleccionado el archivo correcto, junto con el tamaño original del archivo, el tamaño codificado y el porcentaje de sobrecarga de la codificación. Puedes copiar la URI de datos completa (lista para pegar directamente en un atributo <code><img src=""></code>), la cadena Base64 sin el prefijo de la URI de datos, una declaración CSS <code>background-image</code> ya hecha o una etiqueta HTML <code><img></code> completa.</p>
+<p>Al subir una imagen, la API FileReader integrada del navegador lee el archivo y lo convierte a una URI de datos codificada en Base64 directamente en tu dispositivo; no se realiza ninguna subida a ningún servidor. La herramienta muestra una vista previa en tiempo real de la imagen para que puedas confirmar visualmente que has seleccionado el archivo correcto, junto con el tamaño original del archivo, el tamaño codificado y el porcentaje de sobrecarga de la codificación. Puedes copiar la URI de datos completa (lista para pegar directamente en un atributo <code>&lt;img src=""&gt;</code>), la cadena Base64 sin el prefijo de la URI de datos, una declaración CSS <code>background-image</code> ya hecha o una etiqueta HTML <code>&lt;img&gt;</code> completa.</p>
 <h3>Formatos de imagen compatibles</h3>
 <p>Esta herramienta funciona con cualquier formato de imagen que tu navegador pueda leer, incluyendo PNG, JPG/JPEG, GIF, WEBP, BMP y SVG. El tipo MIME de salida se detecta automáticamente a partir del archivo subido, por lo que el prefijo URI de los datos siempre coincide con el formato de imagen real: un PNG produce <code>data:image/png;base64,</code>, un JPG produce <code>data:image/jpeg;base64,</code>, y así sucesivamente.</p>
 <h3>Privacidad y procesamiento local</h3>
 <p>Tu imagen se procesa completamente en tu navegador mediante la API FileReader; nunca se sube, transmite ni almacena en ningún servidor. Esto hace que la herramienta sea segura incluso para imágenes privadas, inéditas o confidenciales.</p>
 <h3>Explicación de los formatos de copia</h3>
-<p>Esta herramienta te ofrece cuatro formatos de salida listos para usar, para que no tengas que ensamblar manualmente el código final. El URI de datos completo es la cadena completa, lista para usarse directamente donde se espere una URL. La opción Base64 sin prefijo elimina el encabezado <code>data:image/...;base64,</code>, útil cuando un sistema espera solo los bytes codificados, por ejemplo, algunos campos de API JSON o columnas de bases de datos. La opción de fondo CSS envuelve el URI de datos en una declaración <code>background-image</code> lista para pegar. La opción de etiqueta HTML img produce un elemento <code><img></code> completo y válido con el URI de datos como origen y el nombre de archivo original como texto alternativo, listo para insertarse directamente en una página.</p>
+<p>Esta herramienta te ofrece cuatro formatos de salida listos para usar, para que no tengas que ensamblar manualmente el código final. El URI de datos completo es la cadena completa, lista para usarse directamente donde se espere una URL. La opción Base64 sin prefijo elimina el encabezado <code>data:image/...;base64,</code>, útil cuando un sistema espera solo los bytes codificados, por ejemplo, algunos campos de API JSON o columnas de bases de datos. La opción de fondo CSS envuelve el URI de datos en una declaración <code>background-image</code> lista para pegar. La opción de etiqueta HTML img produce un elemento <code>&lt;img&gt;</code> completo y válido con el URI de datos como origen y el nombre de archivo original como texto alternativo, listo para insertarse directamente en una página.</p>
 <h3>Para desarrolladores: Incrustar iconos y logotipos</h3>
 <p>Los desarrolladores front-end suelen insertar iconos SVG o PNG pequeños directamente en los archivos de componentes para evitar un paso de compilación adicional o la importación de recursos. Al pegar la salida Base64 directamente en una cadena de React, Vue o JavaScript simple, o en un objeto CSS-in-JS, se evita la necesidad de gestionar un archivo de icono independiente para gráficos puntuales, como un único favicon alternativo o un pequeño logotipo insertado.</p>
 <h3>Para creadores de plantillas de correo electrónico</h3>
@@ -175,7 +175,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 const MAX_SIZE = 8 * 1024 * 1024;
 const uploadZone = document.getElementById('upload-zone');
@@ -186,8 +186,8 @@ function formatSize(b){ if(b<1024) return b+' B'; if(b<1048576) return (b/1024).
 
 function handleFile(file) {
   const statusEl = document.getElementById('status-msg');
-  if (!file || !file.type.startsWith('image/')) { showStatus(statusEl,'error','Please select a valid image file.'); return; }
-  if (file.size > MAX_SIZE) { showStatus(statusEl,'error',`File too large (${formatSize(file.size)}). Max 8MB.`); return; }
+  if (!file || !file.type.startsWith('image/')) { showStatus(statusEl,'error','Seleccione un archivo de imagen válido.'); return; }
+  if (file.size > MAX_SIZE) { showStatus(statusEl,'error',`Archivo demasiado grande (${formatSize(file.size)}). Máximo 8 MB.`); return; }
 
   const reader = new FileReader();
   reader.onload = e => {
@@ -198,14 +198,14 @@ function handleFile(file) {
     document.getElementById('output-b64').value = currentDataUri;
     const base64Len = currentDataUri.split(',')[1]?.length || 0;
     document.getElementById('stats-row').innerHTML = `
-      <span class="stat-chip">File: <strong>${file.name}</strong></span>
-      <span class="stat-chip">Type: <strong>${file.type}</strong></span>
+      <span class="stat-chip">Archivo: <strong>${file.name}</strong></span>
+      <span class="stat-chip">Tipo: <strong>${file.type}</strong></span>
       <span class="stat-chip">Original: <strong>${formatSize(file.size)}</strong></span>
       <span class="stat-chip">Base64: <strong>${formatSize(base64Len)}</strong></span>`;
     document.getElementById('result-card').style.display = 'block';
-    showStatus(statusEl, 'success', 'Image converted to Base64!');
+    showStatus(statusEl, 'success', '¡Imagen convertida a Base64!');
   };
-  reader.onerror = () => showStatus(statusEl, 'error', 'Could not read this file.');
+  reader.onerror = () => showStatus(statusEl, 'error', 'No se pudo leer este archivo.');
   reader.readAsDataURL(file);
 }
 

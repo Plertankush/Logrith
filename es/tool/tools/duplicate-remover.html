@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Eliminador de líneas duplicadas", "url": "https://logrith.in/es/tool/tools/duplicate-remover", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "browserRequirements": "Requires a modern web browser", "isAccessibleForFree": true, "description": "Eliminador de líneas duplicadas gratuito en línea para limpiar líneas de texto repetidas, eliminar líneas vacías, recortar espacios, ignorar mayúsculas y minúsculas, y ordenar líneas únicas al instante.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Texto y generadores", "item": "https://logrith.in/es/tool/categories/text-generators"}, {"@type": "ListItem", "position": 4, "name": "Eliminador de líneas duplicadas", "item": "https://logrith.in/es/tool/tools/duplicate-remover"}]}</script>
@@ -171,7 +171,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 const inputText = document.getElementById('input-text');
 const outputText = document.getElementById('output-text');
@@ -212,8 +212,8 @@ function processLines() {
   const removedCount = originalCount - deduped.length;
   statsRow.innerHTML = `
     <span class="stat-chip">Original: <strong>${originalCount}</strong> lines</span>
-    <span class="stat-chip">Output: <strong>${deduped.length}</strong> lines</span>
-    <span class="stat-chip">Removed: <strong>${removedCount}</strong> duplicate line(s)</span>
+    <span class="stat-chip">Producción: <strong>${deduped.length}</strong> lines</span>
+    <span class="stat-chip">Remoto: <strong>${removedCount}</strong> líneas duplicadas</span>
   `;
 
   if (text.trim().length === 0) {
@@ -223,7 +223,7 @@ function processLines() {
     return;
   }
 
-  showStatus(statusMsg, 'success', `Processed ${originalCount} lines and removed ${removedCount} duplicate line(s).`);
+  showStatus(statusMsg, 'success', `Se procesaron ${originalCount} líneas y se eliminaron ${removedCount} líneas duplicadas.`);
 }
 
 processBtn.addEventListener('click', processLines);

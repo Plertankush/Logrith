@@ -27,11 +27,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
 <script>
@@ -168,7 +168,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 function genUUID() {
   return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c => (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16));
@@ -205,10 +205,10 @@ document.getElementById('validate-btn').addEventListener('click', () => {
   const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
   const genericUUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
   const res = document.getElementById('validate-result');
-  if (!v) { showStatus(res,'error','Please enter a UUID.'); return; }
-  if (uuidRegex.test(v)) showStatus(res,'success','Valid UUID v4!');
-  else if (genericUUID.test(v)) showStatus(res,'info','Valid UUID format but not version 4 (the 13th char should be "4").');
-  else showStatus(res,'error','Invalid UUID format.');
+  if (!v) { showStatus(res,'error','Por favor, introduzca un UUID.'); return; }
+  if (uuidRegex.test(v)) showStatus(res,'success','¡UUID v4 válido!');
+  else if (genericUUID.test(v)) showStatus(res,'info','Formato UUID válido, pero no es la versión 4 (el decimotercer carácter debería ser "4").');
+  else showStatus(res,'error','Formato UUID no válido.');
 });
 
 // Generate one on load

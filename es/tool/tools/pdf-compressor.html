@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" defer=""></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js" defer=""></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
@@ -190,7 +190,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 let uploadedFile = null;
 let originalSize = 0;
@@ -205,7 +205,7 @@ fileInput.addEventListener('change', e => { if (e.target.files[0]) handleFile(e.
 
 function handleFile(file) {
   if (file.type !== 'application/pdf') {
-    showStatus(statusEl, 'error', 'Please upload a PDF file.');
+    showStatus(statusEl, 'error', 'Por favor, suba un archivo PDF.');
     return;
   }
   uploadedFile = file;
@@ -214,7 +214,7 @@ function handleFile(file) {
   document.getElementById('compress-btn').disabled = false;
 }
 
-const QUALITY_MAP = { 1: { label: 'Low (smallest file)', jpeg: 0.35, scale: 1.0 }, 2: { label: 'Medium', jpeg: 0.6, scale: 1.3 }, 3: { label: 'High', jpeg: 0.85, scale: 1.6 } };
+const QUALITY_MAP = { 1: { label: 'Bajo (archivo más pequeño)', jpeg: 0.35, scale: 1.0 }, 2: { label: 'Medio', jpeg: 0.6, scale: 1.3 }, 3: { label: 'Alto', jpeg: 0.85, scale: 1.6 } };
 
 document.getElementById('quality-slider').addEventListener('input', e => {
   document.getElementById('quality-label').textContent = QUALITY_MAP[e.target.value].label;
@@ -229,7 +229,7 @@ document.getElementById('compress-btn').addEventListener('click', async () => {
 
   document.getElementById('compress-btn').disabled = true;
   document.getElementById('progress-row').style.display = 'flex';
-  showStatus(statusEl, 'info', 'Compressing... this may take a moment for larger PDFs.');
+  showStatus(statusEl, 'info', 'Comprimiendo... esto puede tardar un momento en el caso de archivos PDF grandes.');
 
   try {
     pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
@@ -275,14 +275,14 @@ document.getElementById('compress-btn').addEventListener('click', async () => {
 
     document.getElementById('result-stats').innerHTML = `
       <span class="stat-chip">Original: <strong>${formatSize(originalSize)}</strong></span>
-      <span class="stat-chip">Compressed: <strong>${formatSize(newSize)}</strong></span>
-      <span class="stat-chip">Reduction: <strong>${reduction > 0 ? reduction : 0}%</strong></span>`;
+      <span class="stat-chip">Comprimido: <strong>${formatSize(newSize)}</strong></span>
+      <span class="stat-chip">Reducción: <strong>${reduction > 0 ? reduction : 0}%</strong></span>`;
 
     document.getElementById('download-btn').href = url;
     document.getElementById('result-card').style.display = 'block';
     showStatus(statusEl, 'success', 'PDF compressed successfully!');
   } catch (err) {
-    showStatus(statusEl, 'error', 'Something went wrong compressing this PDF. Please try a different file.');
+    showStatus(statusEl, 'error', 'Se produjo un error al comprimir este PDF. Por favor, intente con otro archivo.');
   }
 
   document.getElementById('compress-btn').disabled = false;

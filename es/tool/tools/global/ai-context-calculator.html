@@ -31,11 +31,11 @@
 <meta name="keywords" content="ai token calculator, token counter, context window calculator, estimate ai tokens, llm cost calculator, prompt token estimator">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Logrith Calculadora de tokens y contexto de IA", "url": "https://logrith.in/es/tool/tools/ai-context-calculator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web Browser", "description": "Herramienta basada en navegador que estima el número de tokens, el uso de la ventana de contexto y el coste de la API para el texto pegado, utilizando heurísticas transparentes en lugar de un tokenizador exacto oculto o fabricado, sin subir datos a un servidor.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": ["Estimate approximate token count from pasted text", "Show character, word, sentence and paragraph counts", "Compare text size against common context window sizes", "Visual context window usage bar with percentage", "Optional cost estimate from a custom price per 1K or 1M tokens", "100% local browser processing"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas globales", "item": "https://logrith.in/es/tool/categories/global-tools"}, {"@type": "ListItem", "position": 4, "name": "Calculadora de tokens y contexto de IA", "item": "https://logrith.in/es/tool/tools/ai-context-calculator"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Se trata de un recuento exacto de tokens como en tiktoken?", "acceptedAnswer": {"@type": "Answer", "text": "No. La tokenización exacta depende del vocabulario específico de codificación de pares de bytes de un modelo dado, algo que no se puede reproducir fielmente en el lado del cliente sin enviar el archivo de vocabulario real de ese modelo. Esta herramienta utiliza dos heurísticas transparentes y bien conocidas, y está claramente etiquetada como una estimación, no como un recuento exacto."}}, {"@type": "Question", "name": "¿Por qué el recuento de tokens difiere del recuento de palabras?", "acceptedAnswer": {"@type": "Answer", "text": "Los analizadores léxicos dividen el texto en fragmentos de subpalabras, no en palabras completas. Las palabras cortas y comunes suelen ser un solo token, mientras que las palabras más largas o menos comunes, los números, la puntuación y el código pueden dividirse en varios tokens. Por lo tanto, el número de tokens suele ser mayor que el número de palabras en un texto en inglés normal."}}, {"@type": "Question", "name": "¿Qué es una ventana de contexto?", "acceptedAnswer": {"@type": "Answer", "text": "La ventana de contexto es el número máximo de tokens que un modelo puede procesar simultáneamente, considerando tanto la entrada como su propia salida. Si el texto excede la ventana de contexto, el modelo no podrá verlo completo o la solicitud podría ser rechazada directamente."}}, {"@type": "Question", "name": "¿Esta herramienta sube mi texto a algún sitio?", "acceptedAnswer": {"@type": "Answer", "text": "No. Todo el conteo y la estimación se realizan localmente en tu navegador mediante JavaScript. Tu texto nunca se envía a Logrith ni a ningún otro servidor."}}, {"@type": "Question", "name": "¿Puedo estimar el coste de la API con esta herramienta?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Introduce tu propio precio por cada 1.000 o por cada 1.000.000 de tokens, ya que los precios de los proveedores cambian con frecuencia y varían según el modelo, y la herramienta multiplica esa tarifa por la cantidad estimada de tokens para mostrar un coste aproximado para el texto que introduzcas."}}]}</script>
@@ -197,7 +197,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 const textInput = document.getElementById('text-input');
 const statusEl = document.getElementById('status-msg');
@@ -261,12 +261,12 @@ function updateContextBar() {
   ctxBarFill.classList.remove('warn', 'over');
   if (pct > 100) {
     ctxBarFill.classList.add('over');
-    ctxBarNote.textContent = `This text exceeds the selected context window by about ${fmt(used - size)} tokens.`;
+    ctxBarNote.textContent = `Este texto excede la ventana de contexto seleccionada en aproximadamente ${fmt(used - size)} tokens.`;
   } else if (pct > 80) {
     ctxBarFill.classList.add('warn');
-    ctxBarNote.textContent = 'This text is using most of the selected context window, leaving little room for a response.';
+    ctxBarNote.textContent = 'Este texto ocupa casi toda la ventana de contexto seleccionada, dejando poco espacio para una respuesta.';
   } else {
-    ctxBarNote.textContent = 'This text comfortably fits within the selected context window.';
+    ctxBarNote.textContent = 'Este texto se ajusta perfectamente a la ventana de contexto seleccionada.';
   }
 
   ctxBarText.textContent = `${fmt(used)} of ${fmt(size)} tokens`;
@@ -279,7 +279,7 @@ function updateCost() {
   const unit = parseInt(priceUnit.value, 10);
 
   if (isNaN(price) || price <= 0) {
-    costGrid.innerHTML = `<div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#info"></use></svg> Cost Estimate</h3>${row('Status', 'Enter a price to see an estimate')}</div>`;
+    costGrid.innerHTML = `<div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#info"></use></svg> Estimación de costos</h3>${row('Estado', 'Introduce un precio para ver una estimación.')}</div>`;
     return;
   }
 
@@ -287,10 +287,10 @@ function updateCost() {
 
   costGrid.innerHTML = `
     <div class="insp-card">
-      <h3><svg class="icon"><use href="/assets/svg/icons.svg#calculator"></use></svg> Cost Estimate</h3>
-      ${row('Estimated Tokens', fmt(lastTokenEstimate))}
-      ${row('Rate', '$' + price + ' / ' + fmt(unit) + ' tokens')}
-      ${row('Estimated Cost', '$' + estimatedCost.toFixed(6))}
+      <h3><svg class="icon"><use href="/assets/svg/icons.svg#calculator"></use></svg> Estimación de costos</h3>
+      ${row('Tokens estimados', fmt(lastTokenEstimate))}
+      ${row('Tasa', '$' + price + ' / ' + fmt(unit) + ' tokens')}
+      ${row('Costo estimado', '$' + estimatedCost.toFixed(6))}
     </div>
   `;
 }
@@ -299,7 +299,7 @@ function updateCost() {
 document.getElementById('calc-btn').addEventListener('click', () => {
   const text = textInput.value;
   if (!text.trim()) {
-    showStatus(statusEl, 'error', 'Paste some text first.');
+    showStatus(statusEl, 'error', 'Primero, pega algún texto.');
     return;
   }
 
@@ -307,9 +307,9 @@ document.getElementById('calc-btn').addEventListener('click', () => {
   lastTokenEstimate = a.tokenEstimate;
 
   breakdownGrid.innerHTML = `
-    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#char-count"></use></svg> Characters</h3>${row('Total', fmt(a.charCount))}${row('Without Spaces', fmt(a.charCountNoSpace))}</div>
-    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#word-count"></use></svg> Structure</h3>${row('Words', fmt(a.wordCount))}${row('Sentences', fmt(a.sentenceCount))}${row('Paragraphs', fmt(a.paragraphCount))}</div>
-    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#hash"></use></svg> Token Estimate</h3>${row('Character-based', fmt(a.charBasedEstimate))}${row('Word-based', fmt(a.wordBasedEstimate))}${row('Average (used below)', fmt(a.tokenEstimate))}</div>
+    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#char-count"></use></svg> Personajes</h3>${row('Total', fmt(a.charCount))}${row('Sin espacios', fmt(a.charCountNoSpace))}</div>
+    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#word-count"></use></svg> Estructura</h3>${row('Palabras', fmt(a.wordCount))}${row('Oraciones', fmt(a.sentenceCount))}${row('Párrafos', fmt(a.paragraphCount))}</div>
+    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#hash"></use></svg> Estimación de tokens</h3>${row('Basado en personajes', fmt(a.charBasedEstimate))}${row('Basado en palabras', fmt(a.wordBasedEstimate))}${row('Promedio (utilizado a continuación)', fmt(a.tokenEstimate))}</div>
   `;
 
   breakdownCard.style.display = 'block';
@@ -319,7 +319,7 @@ document.getElementById('calc-btn').addEventListener('click', () => {
   updateContextBar();
   updateCost();
 
-  showStatus(statusEl, 'success', `Estimated about ${fmt(a.tokenEstimate)} tokens. This is an approximation, not an exact model tokenizer count.`);
+  showStatus(statusEl, 'success', `Se estima que hay alrededor de ${fmt(a.tokenEstimate)} tokens. Esto es una aproximación, no un recuento exacto del tokenizador del modelo.`);
 });
 
 contextSizeSel.addEventListener('change', () => {

@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de interés compuesto", "url": "https://logrith.in/es/tool/tools/compound-interest-calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "description": "Calculadora de interés compuesto online gratuita con soporte para aportaciones mensuales regulares.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Calcular y convertir", "item": "https://logrith.in/es/tool/categories/calculate-convert"}, {"@type": "ListItem", "position": 4, "name": "Calculadora de interés compuesto", "item": "https://logrith.in/es/tool/tools/compound-interest-calculator"}]}</script>
@@ -186,7 +186,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 document.getElementById('calc-btn').addEventListener('click', () => {
   const statusEl = document.getElementById('status-msg');
@@ -197,7 +197,7 @@ document.getElementById('calc-btn').addEventListener('click', () => {
   const n = parseFloat(document.getElementById('compound-freq').value);
 
   if (!annualRate || !years || (principal <= 0 && monthlyContribution <= 0)) {
-    showStatus(statusEl, 'error', 'Please enter valid investment details.');
+    showStatus(statusEl, 'error', 'Por favor, introduzca datos de inversión válidos.');
     return;
   }
 
@@ -224,20 +224,20 @@ document.getElementById('calc-btn').addEventListener('click', () => {
   document.getElementById('result-grid').innerHTML = `
     <div class="stat-box" style="background:linear-gradient(135deg,var(--primary),var(--primary-light));border:none;">
       <span class="stat-num" style="color:white;">${fmt(totalFV)}</span>
-      <span class="stat-label" style="color:rgba(255,255,255,0.85);">Future Value</span>
+      <span class="stat-label" style="color:rgba(255,255,255,0.85);">Valor futuro</span>
     </div>
-    <div class="stat-box"><span class="stat-num">${fmt(totalContributed)}</span><span class="stat-label">Total Contributed</span></div>
-    <div class="stat-box"><span class="stat-num" style="color:var(--success);">${fmt(totalInterest)}</span><span class="stat-label">Interest Earned</span></div>`;
+    <div class="stat-box"><span class="stat-num">${fmt(totalContributed)}</span><span class="stat-label">Total aportado</span></div>
+    <div class="stat-box"><span class="stat-num" style="color:var(--success);">${fmt(totalInterest)}</span><span class="stat-label">Intereses ganados</span></div>`;
 
   const contribPct = (totalContributed / totalFV * 100).toFixed(1);
   document.getElementById('principal-pct').textContent = contribPct + '%';
   document.getElementById('growth-bar').style.width = contribPct + '%';
 
   document.getElementById('result-summary').innerHTML =
-    `Starting with ${fmt(principal)} and contributing ${fmt(monthlyContribution)} per month at ${annualRate}% annual interest (compounded ${document.getElementById('compound-freq').selectedOptions[0].text.toLowerCase()}) over ${years} years, your investment grows to <strong>${fmt(totalFV)}</strong>, with <strong>${fmt(totalInterest)}</strong> coming purely from compound interest.`;
+    `Starting with ${fmt(principal)} and contributing ${fmt(monthlyContribution)} per month at ${annualRate}% annual interest (compounded ${document.getElementById('compound-freq').selectedOptions[0].text.toLowerCase()}) over ${years} years, your investment grows to <strong>${fmt(totalFV)}</strong>, with <strong>${fmt(totalInterest)}</strong> proveniente únicamente del interés compuesto.`;
 
   document.getElementById('result-card').style.display = 'block';
-  showStatus(statusEl, 'success', 'Growth calculated!');
+  showStatus(statusEl, 'success', '¡Crecimiento calculado!');
 });
 
 document.getElementById('reset-btn').addEventListener('click', () => {

@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Traductor de código Morse", "url": "https://logrith.in/es/tool/tools/morse-code-translator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "description": "Traductor de código Morse online gratuito con reproducción de audio, que convierte texto a código Morse y viceversa.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Texto y generadores", "item": "https://logrith.in/es/tool/categories/text-generators"}, {"@type": "ListItem", "position": 4, "name": "Traductor de código Morse", "item": "https://logrith.in/es/tool/tools/morse-code-translator"}]}</script>
@@ -146,7 +146,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 const MORSE_MAP = {
   A:'.-',B:'-...',C:'-.-.',D:'-..',E:'.',F:'..-.',G:'--.',H:'....',I:'..',J:'.---',
@@ -192,8 +192,8 @@ document.querySelectorAll('.mode-card').forEach(card => {
     card.classList.add('active');
     currentMode = card.dataset.mode;
     const isToMorse = currentMode === 'to-morse';
-    document.getElementById('input-label').textContent = isToMorse ? 'Text to Convert' : 'Morse Code to Convert';
-    document.getElementById('output-label').textContent = isToMorse ? 'Morse Code' : 'Decoded Text';
+    document.getElementById('input-label').textContent = isToMorse ? 'Texto para convertir' : 'Código Morse para convertir';
+    document.getElementById('output-label').textContent = isToMorse ? 'Código Morse' : 'Texto decodificado';
     document.getElementById('input-text').value = isToMorse ? 'SOS HELLO WORLD' : '... --- ... / .... . .-.. .-.. --- / .-- --- .-. .-.. -..';
     convert();
   });

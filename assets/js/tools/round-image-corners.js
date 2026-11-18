@@ -70,8 +70,8 @@
     $('radius-range').max = max;
     ['radius', ...CORNERS.map((c) => `r-${c}`)].forEach((id) => { $(id).max = max; });
     draw(canvas, backgroundFor($('corner-format').value));
-    $('corner-info').innerHTML = `<span class="stat-chip">Size: <strong>${state.image.width} × ${state.image.height}px</strong></span>` +
-      `<span class="stat-chip">Radius: <strong>${$('radius').value}${state.unit}</strong></span>`;
+    $('corner-info').innerHTML = `<span class="stat-chip">${uiText('Size:')} <strong>${state.image.width} × ${state.image.height}px</strong></span>` +
+      `<span class="stat-chip">${uiText('Radius:')} <strong>${$('radius').value}${state.unit}</strong></span>`;
   }
 
   function setUnit(unit) {
@@ -107,7 +107,7 @@
       syncFields();
       render();
     };
-    img.onerror = () => showStatus($('status-msg'), 'error', 'This file could not be read as an image.');
+    img.onerror = () => showStatus($('status-msg'), 'error', uiText('This file could not be read as an image.'));
     img.src = url;
   }
 
@@ -147,7 +147,7 @@
     const ext = { 'image/png': 'png', 'image/jpeg': 'jpg', 'image/webp': 'webp' }[type];
     out.toBlob((blob) => {
       downloadBlob(blob, `${state.file.name.replace(/\.[^.]+$/, '')}_rounded.${ext}`);
-      showStatus($('status-msg'), 'success', `Saved ${formatSize(blob.size)} ${ext.toUpperCase()}.`);
+      showStatus($('status-msg'), 'success', uiText('Saved {0} {1}.', formatSize(blob.size), ext.toUpperCase()));
     }, type, 0.92);
   });
 

@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Lanzamiento de moneda y dados", "url": "https://logrith.in/es/tool/tools/flip-coin-dice-roller", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "description": "Juego gratuito de lanzamiento de moneda y dados en línea con registro de historial.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Utilidades", "item": "https://logrith.in/es/tool/categories/utilities"}, {"@type": "ListItem", "position": 4, "name": "Lanzamiento de moneda y dados", "item": "https://logrith.in/es/tool/tools/flip-coin-dice-roller"}]}</script>
@@ -179,7 +179,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 let history = [];
 
@@ -195,7 +195,7 @@ function addHistory(entry) {
 document.getElementById('flip-btn').addEventListener('click', () => {
   const result = Math.random() < 0.5 ? 'HEADS' : 'TAILS';
   document.getElementById('coin-display').textContent = result;
-  addHistory(`<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#currency"></use></svg> Coin Flip: <strong>${result}</strong>`);
+  addHistory(`<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#currency"></use></svg> Lanzamiento de moneda: <strong>${result}</strong>`);
 });
 
 document.getElementById('dice-count').addEventListener('input', e => {
@@ -214,7 +214,7 @@ document.getElementById('roll-btn').addEventListener('click', () => {
 
   const total = rolls.reduce((a,b) => a+b, 0);
   document.getElementById('dice-total').textContent = `Total: ${total} (${rolls.join(' + ')})`;
-  addHistory(`<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#random"></use></svg> Dice Roll (${count}): <strong>${rolls.join(', ')}</strong> = ${total}`);
+  addHistory(`<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#random"></use></svg> Tirada de dados (${count}): <strong>${rolls.join(', ')}</strong> = ${total}`);
 });
 
 document.getElementById('clear-history-btn').addEventListener('click', () => {

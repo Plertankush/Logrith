@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Minificador de HTML", "url": "https://logrith.in/es/tool/tools/html-minifier", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Minimizador y formateador de HTML gratuito en línea.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas para desarrolladores", "item": "https://logrith.in/es/tool/categories/developer-tools"}, {"@type": "ListItem", "position": 4, "name": "Minificador de HTML", "item": "https://logrith.in/es/tool/tools/html-minifier"}]}</script>
@@ -62,10 +62,10 @@
 <div class="tool-workspace">
 <div class="tool-card">
 <h2>Código HTML</h2>
-<textarea class="tool-textarea mono" id="input-html" rows="12" placeholder="Pega tu código HTML aquí..."><!-- comment -->
-<div class="box">
-  <p>Hello World</p>
-</div></textarea>
+<textarea class="tool-textarea mono" id="input-html" rows="12" placeholder="Pega tu código HTML aquí...">&lt;!-- comment --&gt;
+&lt;div class="box"&gt;
+  &lt;p&gt;Hello World&lt;/p&gt;
+&lt;/div&gt;</textarea>
 <div class="btn-group mt-12">
 <button class="btn btn-primary" id="minify-btn"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#zip"></use></svg> Minimizar</button> <button class="btn btn-primary" id="beautify-btn"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#sparkles"></use></svg> Embellecer</button> <button class="btn btn-secondary" id="clear-btn"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#close"></use></svg> Borrar</button>
 </div>
@@ -87,7 +87,7 @@
 <div class="faq-a"><p>No, la minificación estándar de HTML solo elimina los espacios en blanco y los comentarios; no altera las etiquetas, los atributos ni el contenido de forma que cambie la representación.</p></div>
 </details>
 <details class="faq-item">
-<summary class="faq-q">¿Qué hay del contenido interior?<pre> o<textarea> ¿Etiquetas?</textarea></pre></summary>
+<summary class="faq-q">¿Qué ocurre con el contenido dentro de las etiquetas &lt;pre&gt; o &lt;textarea&gt;?</summary>
 <div class="faq-a"><p>Los espacios en blanco dentro de estas etiquetas son significativos y los navegadores los conservan, así que tenga cuidado al minimizar el HTML que contiene dichos elementos.</p></div>
 </details>
 <details class="faq-item">
@@ -96,7 +96,7 @@
 </details>
 <details class="faq-item">
 <summary class="faq-q">¿Afecta la minificación al CSS o JavaScript en línea dentro del HTML?</summary>
-<div class="faq-a"><p>Esta herramienta se centra en la estructura HTML: etiquetas, atributos y espacios en blanco entre ellos. Contenido dentro<style> and <script> blocks is preserved as-is; use the dedicated CSS Minifier or JS Minifier separately for that embedded code.</style></p></div>
+<div class="faq-a"><p>Esta herramienta se centra en la estructura HTML: etiquetas, atributos y espacios en blanco entre ellos. El contenido dentro de los bloques &lt;style&gt; y &lt;script&gt; se conserva tal cual; para ese código incrustado, utilice el minificador de CSS o el minificador de JS por separado.</p></div>
 </details>
 <details class="faq-item">
 <summary class="faq-q">¿Puedo formatear el código HTML copiado desde la opción "Ver código fuente" de un navegador?</summary>
@@ -115,12 +115,12 @@
 <p>La minimización de HTML elimina comentarios, espacios en blanco adicionales y saltos de línea entre etiquetas que existen únicamente para facilitar la lectura del código fuente, pero que no influyen en la visualización de la página. Los archivos HTML más pequeños se transfieren más rápido por la red, lo que contribuye a una carga inicial más rápida de la página, algo especialmente notable en páginas grandes o para usuarios con conexiones lentas. La mayoría de los procesos de implementación web en entornos de producción minimizan HTML junto con CSS y JavaScript como paso de optimización estándar.</p>
 <h3>¿Qué se elimina?</h3>
 <ul>
-<li><strong>Comentarios HTML</strong> : todo lo que se encuentra entre <code><!--</code> y <code>--></code>.</li>
+<li><strong>Comentarios HTML</strong> : todo lo que se encuentra entre <code>&lt;!--</code> y <code>--&gt;</code>.</li>
 <li><strong>Espacio en blanco entre etiquetas</strong> : se ha ocultado ya que los navegadores generalmente ignoran este espacio en blanco al renderizar elementos de nivel de bloque.</li>
 <li><strong>Líneas en blanco y sangría adicionales</strong> : condensadas para reducir el tamaño del archivo.</li>
 </ul>
 <h3>Nota sobre el contenido sensible a los espacios en blanco</h3>
-<p>Un pequeño número de elementos HTML —principalmente <code><pre></code> y <code><textarea></code>— conservan los espacios en blanco tal como están escritos, ya que son relevantes para su contenido (como el formato del código o el texto predeterminado). Esta herramienta realiza una minificación general orientada al marcado típico; si su HTML contiene estos elementos sensibles a los espacios en blanco con formato interno significativo, revise cuidadosamente el resultado minificado antes de usarlo.</p>
+<p>Un pequeño número de elementos HTML —principalmente <code>&lt;pre&gt;</code> y <code>&lt;textarea&gt;</code>— conservan los espacios en blanco tal como están escritos, ya que son relevantes para su contenido (como el formato del código o el texto predeterminado). Esta herramienta realiza una minificación general orientada al marcado típico; si su HTML contiene estos elementos sensibles a los espacios en blanco con formato interno significativo, revise cuidadosamente el resultado minificado antes de usarlo.</p>
 <h3>Por qué generalmente es seguro eliminar los espacios en blanco entre las etiquetas HTML</h3>
 <p>Los navegadores suprimen la mayoría de los espacios en blanco entre los elementos HTML de nivel de bloque al renderizar una página, lo que significa que un salto de línea o varios espacios de sangría entre dos etiquetas generalmente no tienen ningún efecto visual en el resultado final. Esto es precisamente lo que hace que la minificación de HTML sea segura en la gran mayoría de los casos: los espacios en blanco que se eliminan nunca contribuyeron a la apariencia de la página en primer lugar, existían simplemente para facilitar la lectura del código fuente al desarrollador. Las excepciones son los elementos en línea y las etiquetas sensibles a los espacios en blanco, donde un espacio suelto a veces puede afectar el espaciado entre el texto en línea; por eso, vale la pena revisar visualmente el resultado minificado de las páginas con mucho formato en línea.</p>
 <h3>Minificación de HTML como parte de una estrategia de optimización más amplia.</h3>
@@ -157,7 +157,7 @@
 <h3>Cómo embellecer el HTML para facilitar la depuración</h3>
 <p>Al inspeccionar el código fuente de una página, ya sea propia o de terceros, el HTML denso y sin sangría dificulta distinguir dónde termina un elemento y comienza otro anidado. Al procesarlo con Beautify, se restaura una estructura de árbol clara y con la sangría correcta, lo que facilita enormemente rastrear con precisión cómo se anidan los elementos, detectar una etiqueta de cierre faltante o comprender la estructura del diseño antes de modificarlo.</p>
 <h3>Elementos vacíos y por qué se tratan de forma diferente</h3>
-<p>HTML tiene una categoría específica de elementos —llamados elementos vacíos— que nunca tienen una etiqueta de cierre y nunca contienen contenido secundario: etiquetas como<br> ,<img> ,<input> ,<hr> , y<meta> Al formatear HTML, estos elementos deben reconocerse y tratarse de forma diferente a los elementos contenedores habituales, ya que una etiqueta normal aumenta el nivel de sangría de todo lo que contiene, mientras que un elemento vacío nunca debería hacerlo, puesto que no hay nada dentro que sangrar. El formateador de esta herramienta mantiene una lista de elementos vacíos estándar y los gestiona correctamente, de modo que la sangría se mantiene precisa incluso en el marcado que mezcla elementos vacíos y contenedores, evitando la sangría desequilibrada que produciría un formateador básico.</p>
+<p>HTML tiene una categoría específica de elementos —llamados elementos vacíos— que nunca tienen una etiqueta de cierre ni contienen contenido secundario: etiquetas como &lt;br&gt;, &lt;img&gt;, &lt;input&gt;, &lt;hr&gt; y &lt;meta&gt;. Al formatear HTML, estos elementos deben reconocerse y tratarse de forma diferente a los elementos contenedores normales, ya que una etiqueta normal aumenta el nivel de sangría de todo lo que contiene, mientras que un elemento vacío nunca debería hacerlo, puesto que no hay nada dentro que sangrar. El formateador de esta herramienta mantiene una lista de elementos vacíos estándar y los gestiona correctamente, de modo que la sangría se mantiene precisa incluso en el marcado que mezcla elementos vacíos y contenedores, evitando la sangría desequilibrada que produciría un formateador básico.</p>
 <h3>Paso a paso: Minimizar o embellecer HTML</h3>
 <ol class="steps">
 <li class="step">
@@ -186,7 +186,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 function minifyHTML(html) {
   return html
@@ -235,8 +235,8 @@ document.getElementById('minify-btn').addEventListener('click', () => {
   const reduction = origSize > 0 ? Math.round((1 - newSize/origSize) * 100) : 0;
   document.getElementById('stats-row').innerHTML = `
     <span class="stat-chip">Original: <strong>${origSize} bytes</strong></span>
-    <span class="stat-chip">Minified: <strong>${newSize} bytes</strong></span>
-    <span class="stat-chip">Saved: <strong>${reduction}%</strong></span>`;
+    <span class="stat-chip">Minimizado: <strong>${newSize} bytes</strong></span>
+    <span class="stat-chip">Guardado: <strong>${reduction}%</strong></span>`;
 });
 
 document.getElementById('beautify-btn').addEventListener('click', () => {

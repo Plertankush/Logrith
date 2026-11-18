@@ -29,11 +29,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Logrith Convertidor de imágenes", "url": "https://logrith.in/es/tool/tools/image-converter", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web Browser", "description": "Convertidor de imágenes online gratuito para JPG, PNG, WEBP, BMP y GIF. Convierte imágenes directamente en tu navegador sin necesidad de subirlas, iniciar sesión y con descarga instantánea.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": ["Convert JPG to PNG", "Convert PNG to JPG", "Convert PNG to WEBP", "Convert WEBP to JPG", "Convert BMP images online", "Convert GIF images online", "Batch image conversion", "Local browser-based processing"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cómo puedo convertir JPG a PNG en línea de forma gratuita?", "acceptedAnswer": {"@type": "Answer", "text": "Sube tu imagen JPG, selecciona PNG como formato de salida y haz clic en Convertir imagen. La herramienta procesará el archivo en tu navegador y te permitirá descargarlo al instante."}}, {"@type": "Question", "name": "¿Mi imagen está a salvo al usar este convertidor de imágenes?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. La conversión se realiza localmente en tu navegador, por lo que la imagen no se sube a un servidor remoto."}}, {"@type": "Question", "name": "¿Qué formato de imagen debo elegir?", "acceptedAnswer": {"@type": "Answer", "text": "JPG es ideal para fotos, PNG es útil para transparencias y gráficos nítidos, y WEBP es un formato web moderno que suele ofrecer archivos de menor tamaño."}}, {"@type": "Question", "name": "¿Puedo convertir varias imágenes a la vez?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Puedes subir varios archivos de imagen juntos y convertirlos de una sola vez, para luego descargar cada imagen convertida."}}]}</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
@@ -196,7 +196,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" defer=""></script>
 <script>
 (function () {
@@ -247,7 +247,7 @@
 
   function formatBytes(bytes) {
     if (typeof formatSize === 'function') return formatSize(bytes);
-    if (bytes === 0) return '0 Bytes';
+    if (bytes === 0) return '0 bytes';
     const k = 1024;
     const sizes = ['Bytes', 'KB', 'MB', 'GB'];
     const i = Math.floor(Math.log(bytes) / Math.log(k));
@@ -272,7 +272,7 @@
   function handleFiles(fileList) {
     files = Array.from(fileList).filter(file => {
       if (!file.type.startsWith('image/')) {
-        setStatus('error', 'Please upload image files only.');
+        setStatus('error', 'Por favor, suba únicamente archivos de imagen.');
         return false;
       }
       if (file.size > 20 * 1024 * 1024) {
@@ -331,7 +331,7 @@
   function canvasToBlob(canvas, type, quality) {
     return new Promise((resolve, reject) => {
       canvas.toBlob(blob => {
-        if (!blob) reject(new Error('Conversion failed.'));
+        if (!blob) reject(new Error('La conversión falló.'));
         else resolve(blob);
       }, type, quality);
     });
@@ -342,7 +342,7 @@
       const img = new Image();
       const objectUrl = URL.createObjectURL(file);
       img.onload = () => { resolve({ img, objectUrl }); };
-      img.onerror = () => { URL.revokeObjectURL(objectUrl); reject(new Error('Could not load image.')); };
+      img.onerror = () => { URL.revokeObjectURL(objectUrl); reject(new Error('No se pudo cargar la imagen.')); };
       img.src = objectUrl;
     });
   }
@@ -497,7 +497,7 @@
   if (convertBtn) {
     convertBtn.addEventListener('click', async () => {
       if (!files.length) {
-        setStatus('error', 'Please upload at least one image.');
+        setStatus('error', 'Por favor, suba al menos una imagen.');
         return;
       }
 
@@ -536,14 +536,14 @@
 
         outputStats.innerHTML =
           '<span class="stat-chip">Original: <strong>' + formatBytes(files[0].size) + '</strong></span>' +
-          '<span class="stat-chip">Converted: <strong>' + formatBytes(first.blob.size) + '</strong></span>' +
-          '<span class="stat-chip">Format: <strong>' + ext.toUpperCase() + '</strong></span>' +
-          '<span class="stat-chip">Files: <strong>' + currentBlobs.length + '</strong></span>';
+          '<span class="stat-chip">Convertido: <strong>' + formatBytes(first.blob.size) + '</strong></span>' +
+          '<span class="stat-chip">Formato: <strong>' + ext.toUpperCase() + '</strong></span>' +
+          '<span class="stat-chip">Archivos: <strong>' + currentBlobs.length + '</strong></span>';
 
         outputCard.style.display = 'block';
         setStatus('success', currentBlobs.length + ' image(s) converted successfully.');
       } catch (error) {
-        setStatus('error', 'Conversion failed: ' + error.message);
+        setStatus('error', 'Error de conversión: ' + error.message);
       }
 
       progress.classList.remove('active');

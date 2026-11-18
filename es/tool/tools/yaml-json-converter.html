@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Convertidor de YAML a JSON", "url": "https://logrith.in/es/tool/tools/yaml-json-converter", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Convertidor online gratuito entre formatos YAML y JSON.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas para desarrolladores", "item": "https://logrith.in/es/tool/categories/developer-tools"}, {"@type": "ListItem", "position": 4, "name": "Convertidor de YAML a JSON", "item": "https://logrith.in/es/tool/tools/yaml-json-converter"}]}</script>
@@ -147,7 +147,7 @@
 <h3>Para desarrolladores que trabajan con Kubernetes y CI/CD</h3>
 <p>Los manifiestos de Kubernetes, los flujos de trabajo de GitHub Actions y los archivos Docker Compose están escritos en YAML, pero las herramientas de depuración, las API y muchas bibliotecas estándar de lenguajes de programación funcionan de forma más natural con JSON. Convertir temporalmente un manifiesto a JSON facilita la validación de la estructura, la comparación con la respuesta de una API o la introducción en un validador de esquemas JSON, para luego volver a convertirlo a YAML una vez finalizado el proceso.</p>
 <h3>Limitaciones a tener en cuenta</h3>
-<p>Este convertidor admite las características YAML más comunes en los archivos de configuración: asignaciones anidadas, listas y tipos escalares estándar. No admite anclas ni alias YAML (referencias <code>&</code>/<code>*</code> para reutilizar bloques), archivos multidocumento separados por <code>---</code> ni colecciones en línea de estilo flow, como <code>{key: value}</code> escritas en una sola línea. Si su archivo YAML requiere estas características avanzadas, una biblioteca YAML específica las gestionará de forma más fiable.</p>
+<p>Este convertidor admite las características YAML más comunes en los archivos de configuración: asignaciones anidadas, listas y tipos escalares estándar. No admite anclas ni alias YAML (referencias <code>&amp;</code>/<code>*</code> para reutilizar bloques), archivos multidocumento separados por <code>---</code> ni colecciones en línea de estilo flow, como <code>{key: value}</code> escritas en una sola línea. Si su archivo YAML requiere estas características avanzadas, una biblioteca YAML específica las gestionará de forma más fiable.</p>
 <h3>Errores comunes</h3>
 <ul>
 <li>Mezclar tabulaciones y espacios para la indentación: YAML (y este analizador) se basa en un espaciado consistente, y una tabulación mal colocada puede desplazar un bloque completo al nivel de anidamiento incorrecto.</li>
@@ -181,7 +181,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 let currentMode = 'yaml-to-json';
 
@@ -308,9 +308,9 @@ document.getElementById('convert-btn').addEventListener('click', () => {
       const parsed = JSON.parse(input);
       document.getElementById('output-text').value = jsonToYAML(parsed).trim();
     }
-    showStatus(statusEl, 'success', 'Converted successfully!');
+    showStatus(statusEl, 'success', '¡Conversión exitosa!');
   } catch (e) {
-    showStatus(statusEl, 'error', 'Could not parse input. Please check the syntax.');
+    showStatus(statusEl, 'error', 'No se pudo analizar la entrada. Por favor, compruebe la sintaxis.');
     document.getElementById('output-text').value = '';
   }
 });

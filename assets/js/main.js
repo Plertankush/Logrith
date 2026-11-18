@@ -261,7 +261,7 @@
     });
     const hint = document.createElement('p');
     hint.className = 'upload-replace';
-    hint.textContent = 'Click or drop to replace';
+    hint.textContent = uiText('Click or drop to replace');
     wrap.appendChild(hint);
     previewUrls.set(zone, urls);
     zone.appendChild(wrap);
@@ -304,6 +304,44 @@
    These stay global on purpose: tool pages call them from inline handlers.
    ========================================================================== */
 
+/* Interface text. The English wording is the key, so a message that is missing here simply stays English.
+   Messages that insert values use {0}, {1}, ... and are filled in by uiText(). Page-specific messages inside
+   a tool page's own <script> are translated when /es/ is built (scripts/translate_es.py), not here. */
+const UI_TEXT_ES = {
+  'Click or drop to replace': 'Haz clic o suelta para reemplazar',
+  'Copied': 'Copiado',
+  'File too large. Max {0}MB allowed.': 'El archivo es demasiado grande. El máximo es {0} MB.',
+  'This file could not be read as an image.': 'No se pudo leer este archivo como imagen.',
+  'Saved {0} {1}.': 'Guardado: {0} {1}.',
+  'Upload an image first.': 'Primero sube una imagen.',
+  'Image cropped!': '¡Imagen recortada!',
+  'Output:': 'Salida:',
+  'Source:': 'Origen:',
+  'Image:': 'Imagen:',
+  'Selection:': 'Selección:',
+  'Cropped:': 'Recortada:',
+  'Size:': 'Tamaño:',
+  'Extra rotation:': 'Rotación adicional:',
+  'Radius:': 'Radio:',
+  'No CSV rows found.': 'No se encontraron filas CSV.',
+  'Converted {0} record.': 'Se convirtió {0} registro.',
+  'Converted {0} records.': 'Se convirtieron {0} registros.',
+  'Invalid JSON: {0}': 'JSON no válido: {0}',
+  'Enter digits only, for example 1735689600.': 'Introduce solo dígitos, por ejemplo 1735689600.',
+  'That number is out of range.': 'Ese número está fuera de rango.',
+  'Detected unit': 'Unidad detectada',
+  'Local ({0})': 'Local ({0})',
+  'Relative': 'Relativo',
+  'Seconds': 'Segundos',
+  'Milliseconds': 'Milisegundos',
+};
+
+/** The message in the page's language, with {0}, {1}, ... replaced by the given values. */
+function uiText(message, ...values) {
+  const text = (document.documentElement.lang === 'es' && UI_TEXT_ES[message]) || message;
+  return text.replace(/\{(\d+)\}/g, (_, index) => values[index]);
+}
+
 function icon(name) {
   return `<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#${name}"></use></svg>`;
 }
@@ -311,7 +349,7 @@ function icon(name) {
 function copyText(text, button) {
   navigator.clipboard.writeText(text).then(() => {
     const original = button.innerHTML;
-    button.innerHTML = `${icon('check')} Copied`;
+    button.innerHTML = `${icon('check')} ${uiText('Copied')}`;
     button.classList.add('is-copied');
     setTimeout(() => {
       button.innerHTML = original;
@@ -336,7 +374,7 @@ function formatSize(bytes) {
 
 function checkFileSize(file, maxMB = 20) {
   if (file.size > maxMB * 1048576) {
-    alert(`File too large. Max ${maxMB}MB allowed.`);
+    alert(uiText('File too large. Max {0}MB allowed.', maxMB));
     return false;
   }
   return true;

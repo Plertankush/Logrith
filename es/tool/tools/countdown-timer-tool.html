@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Temporizador de cuenta regresiva", "url": "https://logrith.in/es/tool/tools/countdown-timer-tool", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "description": "Temporizador de cuenta regresiva en línea gratuito para cualquier fecha o evento.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Utilidades", "item": "https://logrith.in/es/tool/categories/utilities"}, {"@type": "ListItem", "position": 4, "name": "Temporizador de cuenta regresiva", "item": "https://logrith.in/es/tool/tools/countdown-timer-tool"}]}</script>
@@ -172,7 +172,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 let countdownInterval = null;
 
@@ -182,14 +182,14 @@ const nextYear = new Date(today.getFullYear() + 1, 0, 1);
 document.getElementById('target-date').value = `${nextYear.getFullYear()}-01-01`;
 
 document.getElementById('start-btn').addEventListener('click', () => {
-  const eventName = document.getElementById('event-name').value.trim() || 'Countdown';
+  const eventName = document.getElementById('event-name').value.trim() || 'Cuenta atrás';
   const dateVal = document.getElementById('target-date').value;
   const timeVal = document.getElementById('target-time').value || '00:00';
 
   if (!dateVal) { return; }
 
   const targetDate = new Date(`${dateVal}T${timeVal}:00`);
-  document.getElementById('event-title-display').textContent = `Countdown to ${eventName}`;
+  document.getElementById('event-title-display').textContent = `Cuenta regresiva para ${eventName}`;
   document.getElementById('result-card').style.display = 'block';
 
   if (countdownInterval) clearInterval(countdownInterval);
@@ -217,7 +217,7 @@ document.getElementById('start-btn').addEventListener('click', () => {
     document.getElementById('cd-hours').textContent = hours;
     document.getElementById('cd-minutes').textContent = minutes;
     document.getElementById('cd-seconds').textContent = seconds;
-    document.getElementById('cd-status').textContent = `Counting down to ${targetDate.toDateString()}, ${targetDate.toLocaleTimeString()}`;
+    document.getElementById('cd-status').textContent = `Cuenta regresiva hasta ${targetDate.toDateString()}, ${targetDate.toLocaleTimeString()}`;
   }
 
   updateCountdown();

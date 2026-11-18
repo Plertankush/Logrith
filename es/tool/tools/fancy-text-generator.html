@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Generador de texto elegante", "url": "https://logrith.in/es/tool/tools/fancy-text-generator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "description": "Generador online gratuito de fuentes de texto Unicode con estilo, utilizable en cualquier lugar donde se acepte texto plano.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Texto y generadores", "item": "https://logrith.in/es/tool/categories/text-generators"}, {"@type": "ListItem", "position": 4, "name": "Generador de texto elegante", "item": "https://logrith.in/es/tool/tools/fancy-text-generator"}]}</script>
@@ -165,7 +165,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 const NORMAL_UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const NORMAL_LOWER = 'abcdefghijklmnopqrstuvwxyz';
@@ -182,16 +182,16 @@ function buildMap(upperStart, lowerStart, digitStart) {
 }
 
 const STYLES = [
-  { name: 'Bold', map: buildMap(0x1D400, 0x1D41A, 0x1D7CE) },
-  { name: 'Italic', map: buildMap(0x1D434, 0x1D44E, null) },
-  { name: 'Bold Italic', map: buildMap(0x1D468, 0x1D482, null) },
-  { name: 'Script', map: buildMap(0x1D49C, 0x1D4B6, null) },
-  { name: 'Double-Struck', map: buildMap(0x1D538, 0x1D552, 0x1D7D8) },
+  { name: 'Atrevido', map: buildMap(0x1D400, 0x1D41A, 0x1D7CE) },
+  { name: 'Itálico', map: buildMap(0x1D434, 0x1D44E, null) },
+  { name: 'Negrita cursiva', map: buildMap(0x1D468, 0x1D482, null) },
+  { name: 'Guion', map: buildMap(0x1D49C, 0x1D4B6, null) },
+  { name: 'Doble golpe', map: buildMap(0x1D538, 0x1D552, 0x1D7D8) },
   { name: 'Fraktur', map: buildMap(0x1D504, 0x1D51E, null) },
-  { name: 'Monospace', map: buildMap(0x1D670, 0x1D68A, 0x1D7F6) },
-  { name: 'Sans-Serif Bold', map: buildMap(0x1D5D4, 0x1D5EE, 0x1D7EC) },
-  { name: 'Circled', map: buildMap(0x24B6, 0x24D0, null) },
-  { name: 'Fullwidth', map: buildMap(0xFF21, 0xFF41, 0xFF10) },
+  { name: 'Monoespacio', map: buildMap(0x1D670, 0x1D68A, 0x1D7F6) },
+  { name: 'Negrita sans-serif', map: buildMap(0x1D5D4, 0x1D5EE, 0x1D7EC) },
+  { name: 'Rodeado con un círculo', map: buildMap(0x24B6, 0x24D0, null) },
+  { name: 'Ancho completo', map: buildMap(0xFF21, 0xFF41, 0xFF10) },
 ];
 
 function applyStyle(text, map) {
@@ -207,12 +207,12 @@ function applyUnderline(text) {
 }
 
 function render() {
-  const input = document.getElementById('input-text').value || 'Hello World';
+  const input = document.getElementById('input-text').value || 'Hola Mundo';
   const container = document.getElementById('styles-list');
 
   let items = STYLES.map(s => ({ name: s.name, text: applyStyle(input, s.map) }));
-  items.push({ name: 'Strikethrough', text: applyStrikethrough(input) });
-  items.push({ name: 'Underline', text: applyUnderline(input) });
+  items.push({ name: 'Tachado', text: applyStrikethrough(input) });
+  items.push({ name: 'Subrayar', text: applyUnderline(input) });
 
   container.innerHTML = items.map((item, i) => `
     <div class="tl-item" style="cursor:pointer;" data-idx="${i}">

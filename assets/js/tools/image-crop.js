@@ -32,8 +32,8 @@
     inputs.w.value = Math.round(sel.w);
     inputs.h.value = Math.round(sel.h);
     info.innerHTML =
-      `<span class="stat-chip">Image: <strong>${natural.w} × ${natural.h}px</strong></span>` +
-      `<span class="stat-chip">Selection: <strong>${Math.round(sel.w)} × ${Math.round(sel.h)}px</strong></span>`;
+      `<span class="stat-chip">${uiText('Image:')} <strong>${natural.w} × ${natural.h}px</strong></span>` +
+      `<span class="stat-chip">${uiText('Selection:')} <strong>${Math.round(sel.w)} × ${Math.round(sel.h)}px</strong></span>`;
   }
 
   /** Keep the selection inside the image and honour the ratio lock. */
@@ -176,7 +176,7 @@
 
   /* ---- output -------------------------------------------------------- */
   $('crop-btn').addEventListener('click', () => {
-    if (!natural.w) { showStatus(status, 'error', 'Upload an image first.'); return; }
+    if (!natural.w) { showStatus(status, 'error', uiText('Upload an image first.')); return; }
     const x = Math.round(sel.x), y = Math.round(sel.y), w = Math.round(sel.w), h = Math.round(sel.h);
     const type = $('crop-format').value;
     const canvas = document.createElement('canvas');
@@ -189,10 +189,10 @@
       const ext = { 'image/png': 'png', 'image/jpeg': 'jpg', 'image/webp': 'webp' }[type];
       $('output-img').src = URL.createObjectURL(blob);
       $('output-stats').innerHTML =
-        `<span class="stat-chip">Cropped: <strong>${w} × ${h}px</strong></span>` +
-        `<span class="stat-chip">Size: <strong>${formatSize(blob.size)}</strong></span>`;
+        `<span class="stat-chip">${uiText('Cropped:')} <strong>${w} × ${h}px</strong></span>` +
+        `<span class="stat-chip">${uiText('Size:')} <strong>${formatSize(blob.size)}</strong></span>`;
       $('output-card').classList.remove('is-hidden');
-      showStatus(status, 'success', 'Image cropped!');
+      showStatus(status, 'success', uiText('Image cropped!'));
       $('download-btn').onclick = () => downloadBlob(blob, `${file.name.replace(/\.[^.]+$/, '')}_cropped.${ext}`);
       $('output-card').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }, type, 0.92);

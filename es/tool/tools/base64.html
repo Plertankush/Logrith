@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Codificador y decodificador Base64", "url": "https://logrith.in/es/tool/tools/base64", "description": "Herramienta gratuita en línea para codificar/decodificar Base64 para texto, archivos e imágenes, con vista previa en tiempo real.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas para desarrolladores", "item": "https://logrith.in/es/tool/categories/developer-tools"}, {"@type": "ListItem", "position": 4, "name": "Codificador Base64", "item": "https://logrith.in/es/tool/tools/base64"}]}</script>
@@ -175,7 +175,7 @@
 <p>Los tokens web JSON (JWT) son uno de los lugares más comunes donde los desarrolladores se encuentran directamente con Base64. Un JWT se compone de tres partes separadas por puntos: un encabezado, una carga útil y una firma. Tanto el encabezado como la carga útil son objetos JSON simples que se codifican en Base64-URL antes de unirse. Esto significa que puedes tomar los dos primeros segmentos de cualquier JWT, pegarlos en la pestaña Decodificar de esta herramienta y ver las declaraciones JSON exactas que contienen, lo cual es útil para depurar problemas de autenticación, inspeccionar la caducidad del token o verificar qué declaraciones está enviando realmente una API, sin necesidad de confiar tu token a un sitio web de depuración de JWT de terceros.</p>
 <p>Es importante recordar que la codificación Base64 no es cifrado. Cualquiera que pueda ver un JWT puede decodificar su encabezado y su contenido al instante, que es precisamente lo que demuestra esta herramienta. La seguridad de un JWT reside exclusivamente en su firma, no en el hecho de que el contenido esté codificado en Base64 en lugar de en JSON simple.</p>
 <h3>Trabajar con imágenes: Explicación de las URI de datos</h3>
-<p>Al convertir una imagen a Base64 mediante la pestaña Archivo, la herramienta genera una "URI de datos": una cadena completa que comienza con algo como <code>data:image/png;base64,</code> seguida de los bytes de la imagen codificados. Esta única cadena es una representación totalmente autónoma de la imagen que se puede insertar directamente en un atributo HTML <code><img src="..."></code> o en una declaración CSS <code>background-image: url(...)</code>, sin necesidad de un archivo de imagen aparte ni de una solicitud HTTP adicional.</p>
+<p>Al convertir una imagen a Base64 mediante la pestaña Archivo, la herramienta genera una "URI de datos": una cadena completa que comienza con algo como <code>data:image/png;base64,</code> seguida de los bytes de la imagen codificados. Esta única cadena es una representación totalmente autónoma de la imagen que se puede insertar directamente en un atributo HTML <code>&lt;img src="..."&gt;</code> o en una declaración CSS <code>background-image: url(...)</code>, sin necesidad de un archivo de imagen aparte ni de una solicitud HTTP adicional.</p>
 <p>Esta técnica es especialmente útil para iconos, logotipos o gráficos de interfaz de usuario pequeños y de uso frecuente, donde evitar una transferencia de datos adicional puede mejorar notablemente el rendimiento de carga de la página. Generalmente no se recomienda para fotos grandes o imágenes de alta resolución, ya que el aumento de tamaño de aproximadamente un 33 % derivado de la codificación Base64, sumado al hecho de que el navegador no puede almacenar en caché las URI de datos por separado como lo hace un archivo de imagen normal, tiende a contrarrestar el beneficio una vez que la imagen supera unos pocos kilobytes.</p>
 <h3>Solución de problemas comunes de errores de Base64</h3>
 <p>Si la pestaña Decodificar informa una cadena Base64 no válida, generalmente se debe a algunas causas comunes. Primero, verifique si la cadena incluye caracteres seguros para URL ('-' y '_'): esta herramienta los detecta y normaliza automáticamente, pero otros decodificadores no lo hacen, por lo que una cadena que se decodifica correctamente aquí podría fallar en otro lugar si el sistema de destino espera Base64 estrictamente estándar. Segundo, verifique si hay espacios en blanco, saltos de línea o truncamientos accidentales: las cadenas Base64 copiadas de algunas fuentes (como ciertos clientes de correo electrónico o salidas de terminal) pueden incluir saltos de línea adicionales que deben eliminarse antes de la decodificación. Tercero, confirme que la longitud de la cadena sea la esperada; una cadena Base64 que se cortó a mitad de la copia generalmente no se decodificará porque su longitud no se dividirá de manera uniforme según las reglas de relleno del formato.</p>
@@ -205,7 +205,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 // Tab switching
 document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -227,7 +227,7 @@ function showStatus(el, type, msg) {
 function copyText(text, btn) {
   navigator.clipboard.writeText(text).then(()=>{
     const orig = btn.innerHTML;
-    btn.innerHTML = '<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Copied!';
+    btn.innerHTML = '<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> ¡Copiado!';
     setTimeout(()=>btn.innerHTML=orig, 1500);
   });
 }
@@ -242,7 +242,7 @@ document.getElementById('encode-btn').addEventListener('click', () => {
   const text = document.getElementById('enc-input').value;
   const variant = document.getElementById('enc-variant').value;
   const statusEl = document.getElementById('enc-status');
-  if (!text) { showStatus(statusEl, 'error', 'Please enter some text to encode.'); return; }
+  if (!text) { showStatus(statusEl, 'error', 'Por favor, introduzca algún texto para codificar.'); return; }
   try {
     let encoded = btoa(unescape(encodeURIComponent(text)));
     if (variant === 'urlsafe') encoded = encoded.replace(/\+/g,'-').replace(/\//g,'_').replace(/=/g,'');
@@ -251,11 +251,11 @@ document.getElementById('encode-btn').addEventListener('click', () => {
     const encSize = encoded.length;
     document.getElementById('enc-stats').innerHTML =
       `<span class="stat-chip">Original: <strong>${formatSize(origSize)}</strong></span>
-       <span class="stat-chip">Encoded: <strong>${encSize} chars</strong></span>
-       <span class="stat-chip">+${Math.round((encSize/origSize-1)*100)}% size</span>`;
-    showStatus(statusEl, 'success', 'Text encoded to Base64!');
+       <span class="stat-chip">Codificado: <strong>${encSize} chars</strong></span>
+       <span class="stat-chip">+${Math.round((encSize/origSize-1)*100)}% tamaño</span>`;
+    showStatus(statusEl, 'success', '¡Texto codificado en Base64!');
   } catch(e) {
-    showStatus(statusEl, 'error', 'Encoding error: ' + e.message);
+    showStatus(statusEl, 'error', 'Error de codificación: ' + e.message);
   }
 });
 
@@ -283,7 +283,7 @@ document.getElementById('decode-btn').addEventListener('click', () => {
   const imgEl = document.getElementById('dec-img');
   imgPreview.style.display = 'none';
 
-  if (!raw) { showStatus(statusEl, 'error', 'Please paste a Base64 string to decode.'); return; }
+  if (!raw) { showStatus(statusEl, 'error', 'Por favor, pegue una cadena Base64 para decodificar.'); return; }
 
   try {
     // If it's already a full data URI, just show the image directly
@@ -292,13 +292,13 @@ document.getElementById('decode-btn').addEventListener('click', () => {
         imgEl.src = raw;
         imgPreview.style.display = 'block';
         document.getElementById('dec-output').value = '[Image data URI — see preview above]';
-        showStatus(statusEl, 'success', 'Base64 image decoded!');
+        showStatus(statusEl, 'success', '¡Imagen Base64 decodificada!');
         return;
       }
       const base64Part = raw.split(',')[1] || '';
       const decoded = decodeURIComponent(escape(atob(normalizeBase64(base64Part))));
       document.getElementById('dec-output').value = decoded;
-      showStatus(statusEl, 'success', 'Base64 decoded!');
+      showStatus(statusEl, 'success', '¡Base64 decodificado!');
       return;
     }
 
@@ -316,16 +316,16 @@ document.getElementById('decode-btn').addEventListener('click', () => {
       imgEl.src = `data:${mime};base64,${normalized}`;
       imgPreview.style.display = 'block';
       document.getElementById('dec-output').value = `[Detected ${mime} image — see preview above. Base64 length: ${normalized.length} chars]`;
-      showStatus(statusEl, 'success', 'Base64 image detected and decoded!');
+      showStatus(statusEl, 'success', '¡Imagen Base64 detectada y decodificada!');
       return;
     }
 
     // Otherwise treat as UTF-8 text
     const decoded = decodeURIComponent(escape(binaryStr));
     document.getElementById('dec-output').value = decoded;
-    showStatus(statusEl, 'success', 'Base64 decoded!');
+    showStatus(statusEl, 'success', '¡Base64 decodificado!');
   } catch (e) {
-    showStatus(statusEl, 'error', 'Invalid Base64 string. Please check your input and try again.');
+    showStatus(statusEl, 'error', 'Cadena Base64 no válida. Por favor, revise su entrada e inténtelo de nuevo.');
   }
 });
 
@@ -359,7 +359,7 @@ function handleFile(file) {
 
   if (!file) return;
   if (file.size > MAX_FILE_SIZE) {
-    showStatus(statusEl, 'error', `File too large (${formatSize(file.size)}). Maximum allowed size is 5MB.`);
+    showStatus(statusEl, 'error', `El archivo es demasiado grande (${formatSize(file.size)}). El tamaño máximo permitido es de 5 MB.`);
     return;
   }
 
@@ -371,7 +371,7 @@ function handleFile(file) {
 
     const base64Length = dataUri.split(',')[1]?.length || 0;
     document.getElementById('file-stats').innerHTML =
-      `<span class="stat-chip">File: <strong>${file.name}</strong></span>
+      `<span class="stat-chip">Archivo: <strong>${file.name}</strong></span>
        <span class="stat-chip">Original: <strong>${formatSize(file.size)}</strong></span>
        <span class="stat-chip">Base64: <strong>${formatSize(base64Length)}</strong></span>`;
 
@@ -379,10 +379,10 @@ function handleFile(file) {
       document.getElementById('file-preview-img').src = dataUri;
       filePreviewWrap.style.display = 'block';
     }
-    showStatus(statusEl, 'success', 'File converted to Base64!');
+    showStatus(statusEl, 'success', '¡Archivo convertido a Base64!');
   };
   reader.onerror = () => {
-    showStatus(statusEl, 'error', 'Could not read this file. Please try a different file.');
+    showStatus(statusEl, 'error', 'No se pudo leer este archivo. Intente con otro archivo.');
   };
   reader.readAsDataURL(file);
 }

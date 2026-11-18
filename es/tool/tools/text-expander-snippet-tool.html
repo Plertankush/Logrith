@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Herramienta de expansión y recorte de texto", "url": "https://logrith.in/es/tool/tools/text-expander-snippet-tool", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "description": "Herramienta online gratuita para guardar y reutilizar fragmentos de texto y plantillas, almacenados localmente en el navegador.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Utilidades", "item": "https://logrith.in/es/tool/categories/utilities"}, {"@type": "ListItem", "position": 4, "name": "Herramienta de expansión y recorte de texto", "item": "https://logrith.in/es/tool/tools/text-expander-snippet-tool"}]}</script>
@@ -154,7 +154,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 const STORAGE_KEY = 'logrith_text_snippets';
 
@@ -181,13 +181,13 @@ function renderSnippets(filter = '') {
 
   if (snippets.length === 0) {
     emptyNote.style.display = 'block';
-    emptyNote.textContent = 'No snippets saved yet. Add one above to get started.';
+    emptyNote.textContent = 'Aún no se han guardado fragmentos. Añade uno arriba para empezar.';
     list.innerHTML = '';
     return;
   }
   if (filtered.length === 0) {
     emptyNote.style.display = 'block';
-    emptyNote.textContent = 'No snippets match your search.';
+    emptyNote.textContent = 'No se encontraron fragmentos que coincidan con su búsqueda.';
     list.innerHTML = '';
     return;
   }
@@ -200,7 +200,7 @@ function renderSnippets(filter = '') {
         <div class="tl-desc" style="white-space:pre-wrap;">${escapeHtml(s.text)}</div>
       </div>
       <div style="display:flex;gap:6px;">
-        <button class="btn btn-secondary btn-sm copy-snippet-btn" data-text="${escapeHtml(s.text)}"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy</button>
+        <button class="btn btn-secondary btn-sm copy-snippet-btn" data-text="${escapeHtml(s.text)}"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copiar</button>
         <button class="btn btn-secondary btn-sm delete-snippet-btn" data-idx="${snippets.indexOf(s)}"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg></button>
       </div>
     </div>
@@ -234,7 +234,7 @@ document.getElementById('save-btn').addEventListener('click', () => {
   const text = document.getElementById('snippet-text').value.trim();
 
   if (!name || !text) {
-    showStatus(statusEl, 'error', 'Please enter both a name and the snippet text.');
+    showStatus(statusEl, 'error', 'Por favor, introduzca tanto un nombre como el texto del fragmento.');
     return;
   }
 
@@ -244,7 +244,7 @@ document.getElementById('save-btn').addEventListener('click', () => {
 
   document.getElementById('snippet-name').value = '';
   document.getElementById('snippet-text').value = '';
-  showStatus(statusEl, 'success', 'Snippet saved!');
+  showStatus(statusEl, 'success', '¡Fragmento guardado!');
   renderSnippets(document.getElementById('search-input').value);
 });
 

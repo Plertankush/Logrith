@@ -18,11 +18,11 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Calculadora de GST — División instantánea inclusiva/exclusiva | Logrith">
@@ -182,7 +182,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 document.querySelectorAll('.slab-btn').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -205,7 +205,7 @@ document.getElementById('calc-btn').addEventListener('click', () => {
   const type = document.getElementById('amount-type').value;
   
   if (isNaN(amount) || isNaN(rate)) {
-    alert('Please enter valid amount and GST rate.');
+    alert('Por favor, introduzca un importe válido y el tipo impositivo del GST.');
     return;
   }
 
@@ -227,17 +227,17 @@ document.getElementById('calc-btn').addEventListener('click', () => {
   const fmt = n => '₹' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
   document.getElementById('gst-grid').innerHTML = `
-    <div class="gst-box"><span class="gb-label">Base Price (Ex-GST)</span><span class="gb-value">${fmt(base)}</span></div>
-    <div class="gst-box"><span class="gb-label">GST Amount (${rate}%)</span><span class="gb-value" style="color:var(--accent);">${fmt(gstAmount)}</span></div>
-    <div class="gst-box highlight"><span class="gb-label">Total Price (Inc-GST)</span><span class="gb-value">${fmt(total)}</span></div>
-    <div class="gst-box"><span class="gb-label">You Save / Pay Extra</span><span class="gb-value" style="color:var(--success);">${fmt(gstAmount)}</span></div>`;
+    <div class="gst-box"><span class="gb-label">Precio base (sin IVA)</span><span class="gb-value">${fmt(base)}</span></div>
+    <div class="gst-box"><span class="gb-label">Importe del GST (${rate}%)</span><span class="gb-value" style="color:var(--accent);">${fmt(gstAmount)}</span></div>
+    <div class="gst-box highlight"><span class="gb-label">Precio total (IVA incluido)</span><span class="gb-value">${fmt(total)}</span></div>
+    <div class="gst-box"><span class="gb-label">Ahorras / Pagas extra</span><span class="gb-value" style="color:var(--success);">${fmt(gstAmount)}</span></div>`;
 
   document.getElementById('gst-table-body').innerHTML = `
-    <tr><td style="padding:10px 14px;border-bottom:1px solid var(--gray-100);">Base Price</td><td style="text-align:right;padding:10px 14px;border-bottom:1px solid var(--gray-100);">—</td><td style="text-align:right;padding:10px 14px;border-bottom:1px solid var(--gray-100);font-weight:600;">${fmt(base)}</td></tr>
-    <tr><td style="padding:10px 14px;border-bottom:1px solid var(--gray-100);">CGST (Intra-state)</td><td style="text-align:right;padding:10px 14px;border-bottom:1px solid var(--gray-100);">${rate/2}%</td><td style="text-align:right;padding:10px 14px;border-bottom:1px solid var(--gray-100);font-weight:600;">${fmt(cgst)}</td></tr>
-    <tr><td style="padding:10px 14px;border-bottom:1px solid var(--gray-100);">SGST (Intra-state)</td><td style="text-align:right;padding:10px 14px;border-bottom:1px solid var(--gray-100);">${rate/2}%</td><td style="text-align:right;padding:10px 14px;border-bottom:1px solid var(--gray-100);font-weight:600;">${fmt(sgst)}</td></tr>
-    <tr><td style="padding:10px 14px;border-bottom:1px solid var(--gray-100);">IGST (Inter-state)</td><td style="text-align:right;padding:10px 14px;border-bottom:1px solid var(--gray-100);">${rate}%</td><td style="text-align:right;padding:10px 14px;border-bottom:1px solid var(--gray-100);font-weight:600;">${fmt(igst)}</td></tr>
-    <tr style="background:var(--gray-50);"><td style="padding:10px 14px;font-weight:700;">Total Amount</td><td style="text-align:right;padding:10px 14px;font-weight:700;">${rate}%</td><td style="text-align:right;padding:10px 14px;font-weight:700;color:var(--primary);">${fmt(total)}</td></tr>`;
+    <tr><td style="padding:10px 14px;border-bottom:1px solid var(--gray-100);">Precio base</td><td style="text-align:right;padding:10px 14px;border-bottom:1px solid var(--gray-100);">—</td><td style="text-align:right;padding:10px 14px;border-bottom:1px solid var(--gray-100);font-weight:600;">${fmt(base)}</td></tr>
+    <tr><td style="padding:10px 14px;border-bottom:1px solid var(--gray-100);">CGST (Intraestatal)</td><td style="text-align:right;padding:10px 14px;border-bottom:1px solid var(--gray-100);">${rate/2}%</td><td style="text-align:right;padding:10px 14px;border-bottom:1px solid var(--gray-100);font-weight:600;">${fmt(cgst)}</td></tr>
+    <tr><td style="padding:10px 14px;border-bottom:1px solid var(--gray-100);">SGST (Intraestatal)</td><td style="text-align:right;padding:10px 14px;border-bottom:1px solid var(--gray-100);">${rate/2}%</td><td style="text-align:right;padding:10px 14px;border-bottom:1px solid var(--gray-100);font-weight:600;">${fmt(sgst)}</td></tr>
+    <tr><td style="padding:10px 14px;border-bottom:1px solid var(--gray-100);">IGST (Interestatal)</td><td style="text-align:right;padding:10px 14px;border-bottom:1px solid var(--gray-100);">${rate}%</td><td style="text-align:right;padding:10px 14px;border-bottom:1px solid var(--gray-100);font-weight:600;">${fmt(igst)}</td></tr>
+    <tr style="background:var(--gray-50);"><td style="padding:10px 14px;font-weight:700;">Cantidad total</td><td style="text-align:right;padding:10px 14px;font-weight:700;">${rate}%</td><td style="text-align:right;padding:10px 14px;font-weight:700;color:var(--primary);">${fmt(total)}</td></tr>`;
 
   document.getElementById('result-card').style.display = 'block';
 });

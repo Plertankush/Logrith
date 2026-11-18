@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" defer=""></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Convertidor de PDF a texto", "url": "https://logrith.in/es/tool/tools/pdf-to-text", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "description": "Herramienta online gratuita para extraer texto plano de un archivo PDF.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
@@ -171,7 +171,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 const uploadZone = document.getElementById('upload-zone');
 const fileInput = document.getElementById('file-input');
@@ -181,8 +181,8 @@ async function handleFile(file) {
   const progressBar = document.getElementById('progress-bar');
   const progressFill = document.getElementById('progress-fill');
 
-  if (!file || file.type !== 'application/pdf') { showStatus(statusEl,'error','Please select a valid PDF file.'); return; }
-  if (file.size > 20*1024*1024) { showStatus(statusEl,'error','File too large. Max 20MB.'); return; }
+  if (!file || file.type !== 'application/pdf') { showStatus(statusEl,'error','Seleccione un archivo PDF válido.'); return; }
+  if (file.size > 20*1024*1024) { showStatus(statusEl,'error','El archivo es demasiado grande. Máximo 20 MB.'); return; }
   if (typeof pdfjsLib === 'undefined') { showStatus(statusEl,'error','PDF library loading... please wait a moment and try again.'); return; }
 
   pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
@@ -205,17 +205,17 @@ async function handleFile(file) {
     document.getElementById('output-text').value = fullText.trim();
     const words = fullText.trim() ? fullText.trim().split(/\s+/).length : 0;
     document.getElementById('stats-row').innerHTML = `
-      <span class="stat-chip">Pages: <strong>${pdf.numPages}</strong></span>
-      <span class="stat-chip">Words: <strong>${words.toLocaleString()}</strong></span>
-      <span class="stat-chip">Characters: <strong>${fullText.length.toLocaleString()}</strong></span>`;
+      <span class="stat-chip">Páginas: <strong>${pdf.numPages}</strong></span>
+      <span class="stat-chip">Palabras: <strong>${words.toLocaleString()}</strong></span>
+      <span class="stat-chip">Personajes: <strong>${fullText.length.toLocaleString()}</strong></span>`;
 
     progressFill.style.width = '100%';
     setTimeout(() => progressBar.classList.remove('active'), 500);
     document.getElementById('result-card').style.display = 'block';
-    showStatus(statusEl, 'success', `Extracted text from ${pdf.numPages} page(s)!`);
+    showStatus(statusEl, 'success', `Texto extraído de la(s) página(s) ${pdf.numPages}.`);
   } catch (err) {
     progressBar.classList.remove('active');
-    showStatus(statusEl, 'error', 'Could not extract text. The PDF may be encrypted, corrupted, or image-only (scanned).');
+    showStatus(statusEl, 'error', 'No se pudo extraer el texto. El PDF puede estar cifrado, dañado o ser solo una imagen (escaneada).');
   }
 }
 

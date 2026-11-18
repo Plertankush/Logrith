@@ -77,7 +77,7 @@
 
   function csvToJson(text) {
     const rows = parseCsv(text, delimiter());
-    if (!rows.length) throw new Error('No CSV rows found.');
+    if (!rows.length) throw new Error(uiText('No CSV rows found.'));
     const header = $('header').checked ? rows.shift() : rows[0].map((_, i) => `column${i + 1}`);
     const objects = rows.map((row) => Object.fromEntries(header.map((key, i) => [key, typed(row[i] ?? '')])));
     return { text: JSON.stringify(objects, null, 2), count: objects.length };
@@ -88,10 +88,10 @@
     try {
       const result = mode === 'json-to-csv' ? jsonToCsv($('input-text').value) : csvToJson($('input-text').value);
       $('output-text').value = result.text;
-      showStatus(status, 'success', `Converted ${result.count} record${result.count === 1 ? '' : 's'}.`);
+      showStatus(status, 'success', uiText(result.count === 1 ? 'Converted {0} record.' : 'Converted {0} records.', result.count));
     } catch (error) {
       $('output-text').value = '';
-      showStatus(status, 'error', mode === 'json-to-csv' ? `Invalid JSON: ${error.message}` : error.message);
+      showStatus(status, 'error', mode === 'json-to-csv' ? uiText('Invalid JSON: {0}', error.message) : error.message);
     }
   }
 

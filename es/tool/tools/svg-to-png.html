@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Convertidor de SVG a PNG", "url": "https://logrith.in/es/tool/tools/svg-to-png", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "description": "Herramienta online gratuita para convertir archivos SVG o código en imágenes PNG rasterizadas con resolución personalizada.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas de imagen y PDF", "item": "https://logrith.in/es/tool/categories/image-pdf-tools"}, {"@type": "ListItem", "position": 4, "name": "SVG a PNG", "item": "https://logrith.in/es/tool/tools/svg-to-png"}]}</script>
@@ -75,7 +75,7 @@
 </div>
 </div>
 <div class="tab-panel" id="tab-paste">
-<textarea class="tool-textarea mono" id="svg-code-input" rows="8" placeholder="Pegue aquí el código SVG, por ejemplo: <svg>...</svg>"></textarea>
+<textarea class="tool-textarea mono" id="svg-code-input" rows="8" placeholder="Pegue aquí el código SVG, por ejemplo: &lt;svg&gt;...&lt;/svg&gt;"></textarea>
 <div class="btn-group mt-12">
 <button class="btn btn-primary" id="load-code-btn">Cargar código SVG</button>
 </div>
@@ -171,7 +171,7 @@
 <h3>Privacidad y procesamiento local</h3>
 <p>Toda la conversión se realiza localmente en tu navegador mediante la API de Canvas; tu archivo SVG o código nunca se sube a ningún servidor.</p>
 <h3>Para desarrolladores: Pegar código SVG directamente</h3>
-<p>Si trabajas con marcado SVG en línea desde un código fuente, una exportación de diseño o una biblioteca de iconos, la pestaña Pegar código SVG omite por completo el paso del archivo: pega el marcado <code><svg>...</svg></code> sin procesar y la herramienta lo analiza con <code>DOMParser</code> para leer su ancho y alto nativos antes de renderizarlo en el lienzo. Esto es más rápido que guardar un archivo .svg temporal solo para convertirlo, y funciona con fragmentos SVG copiados directamente de un componente de React, un icono CSS-in-JS o un panel de exportación de Figma.</p>
+<p>Si trabajas con marcado SVG en línea desde un código fuente, una exportación de diseño o una biblioteca de iconos, la pestaña Pegar código SVG omite por completo el paso del archivo: pega el marcado <code>&lt;svg&gt;...&lt;/svg&gt;</code> sin procesar y la herramienta lo analiza con <code>DOMParser</code> para leer su ancho y alto nativos antes de renderizarlo en el lienzo. Esto es más rápido que guardar un archivo .svg temporal solo para convertirlo, y funciona con fragmentos SVG copiados directamente de un componente de React, un icono CSS-in-JS o un panel de exportación de Figma.</p>
 <h3>Casos de uso comunes</h3>
 <ul>
 <li><strong>Preparación del icono de la aplicación y del favicon:</strong> convierta un logotipo vectorial a PNG antes de introducirlo en un generador de favicons o iconos de aplicaciones que requiera una entrada rasterizada.</li>
@@ -188,7 +188,7 @@
 <ul>
 <li><strong>Exportar con una resolución demasiado baja:</strong> dado que el formato PNG no se puede ampliar sin que se produzca desenfoque posteriormente, exporte siempre con una resolución mayor de la que cree necesaria; la reducción de escala posterior no produce pérdidas, mientras que la ampliación no.</li>
 <li><strong>Olvidar la relación de aspecto:</strong> cambiar el ancho y la altura de forma independiente sin que coincidan con las proporciones originales del SVG estirará o comprimirá la imagen.</li>
-<li><strong>Pegar código SVG incompleto:</strong> el código debe incluir las etiquetas de apertura y cierre <code><svg></code> completas con XML válido; un fragmento parcial copiado desde dentro de un SVG no se renderizará.</li>
+<li><strong>Pegar código SVG incompleto:</strong> el código debe incluir las etiquetas de apertura y cierre <code>&lt;svg&gt;</code> completas con XML válido; un fragmento parcial copiado desde dentro de un SVG no se renderizará.</li>
 </ul>
 <h3>Términos buscados con frecuencia</h3>
 <p>Las búsquedas más comunes que llevan a los usuarios a esta herramienta incluyen "convertir svg a png gratis", "svg a png con fondo transparente", "código svg a imagen en línea", "exportar svg como png de alta resolución" y "convertidor de vector a ráster en línea". Esta herramienta gestiona cada uno de estos casos directamente en el navegador, sin necesidad de instalación.</p>
@@ -207,7 +207,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 const uploadZone = document.getElementById('upload-zone');
 const fileInput = document.getElementById('file-input');
@@ -228,8 +228,8 @@ document.getElementById('bg-mode').addEventListener('change', e => {
 
 function handleFile(file) {
   const statusEl = document.getElementById('status-msg');
-  if (!file || (!file.name.endsWith('.svg') && file.type !== 'image/svg+xml')) { showStatus(statusEl,'error','Please select a valid SVG file.'); return; }
-  if (file.size > 5*1024*1024) { showStatus(statusEl,'error','File too large. Max 5MB.'); return; }
+  if (!file || (!file.name.endsWith('.svg') && file.type !== 'image/svg+xml')) { showStatus(statusEl,'error','Seleccione un archivo SVG válido.'); return; }
+  if (file.size > 5*1024*1024) { showStatus(statusEl,'error','El archivo es demasiado grande. Máximo 5 MB.'); return; }
 
   const reader = new FileReader();
   reader.onload = e => {
@@ -244,7 +244,7 @@ function handleFile(file) {
 document.getElementById('load-code-btn').addEventListener('click', () => {
   const statusEl = document.getElementById('status-msg');
   const code = document.getElementById('svg-code-input').value.trim();
-  if (!code || !code.includes('<svg')) { showStatus(statusEl,'error','Please paste valid SVG code.'); return; }
+  if (!code || !code.includes('<svg')) { showStatus(statusEl,'error','Por favor, pegue un código SVG válido.'); return; }
   currentSvgText = code;
   loadSvgDimensions();
   document.getElementById('controls-card').style.display = 'block';
@@ -265,7 +265,7 @@ function loadSvgDimensions() {
 
 document.getElementById('convert-btn').addEventListener('click', () => {
   const statusEl = document.getElementById('status-msg');
-  if (!currentSvgText) { showStatus(statusEl, 'error', 'Please provide an SVG first.'); return; }
+  if (!currentSvgText) { showStatus(statusEl, 'error', 'Por favor, proporcione primero un archivo SVG.'); return; }
 
   const width = parseInt(document.getElementById('out-width').value) || 512;
   const height = parseInt(document.getElementById('out-height').value) || 512;
@@ -289,10 +289,10 @@ document.getElementById('convert-btn').addEventListener('click', () => {
 
     document.getElementById('download-btn').href = canvas.toDataURL('image/png');
     document.getElementById('result-card').style.display = 'block';
-    showStatus(statusEl, 'success', 'Converted to PNG!');
+    showStatus(statusEl, 'success', '¡Convertido a PNG!');
   };
   img.onerror = () => {
-    showStatus(statusEl, 'error', 'Could not render this SVG. Please check the SVG code is valid.');
+    showStatus(statusEl, 'error', 'No se pudo renderizar este SVG. Por favor, compruebe que el código SVG sea válido.');
   };
   img.src = url;
 });

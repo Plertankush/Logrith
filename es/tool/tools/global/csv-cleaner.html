@@ -31,11 +31,11 @@
 <meta name="keywords" content="csv cleaner, csv deduplicator, clean csv file, remove duplicate csv rows, csv validator, csv formatter online">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Logrith Limpiador CSV", "url": "https://logrith.in/es/tool/tools/csv-cleaner", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web Browser", "description": "Herramienta de limpieza de archivos CSV basada en el navegador que elimina filas duplicadas, recorta espacios en blanco, elimina filas y columnas vacías, normaliza el uso de mayúsculas y minúsculas e identifica correos electrónicos no válidos, sin necesidad de subir datos a un servidor.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": ["Remove duplicate CSV rows", "Remove empty rows and columns", "Trim whitespace from every cell", "Normalize text casing on a selected column", "Flag invalid-looking email addresses", "Export cleaned CSV", "100% local browser processing"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas globales", "item": "https://logrith.in/es/tool/categories/global-tools"}, {"@type": "ListItem", "position": 4, "name": "Limpiador CSV", "item": "https://logrith.in/es/tool/tools/csv-cleaner"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Esta herramienta detecta filas duplicadas?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Compara cada celda de una fila, después de eliminar los espacios en blanco, con todas las demás filas y marca las coincidencias exactas como duplicados."}}, {"@type": "Question", "name": "¿Puede procesar campos que contienen comas?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. El analizador maneja correctamente los campos entre comillas que contienen comas, comillas simples o saltos de línea, siguiendo las reglas estándar de comillas de CSV."}}, {"@type": "Question", "name": "¿Subirá mi archivo CSV a algún sitio?", "acceptedAnswer": {"@type": "Answer", "text": "No. El archivo se analiza y se limpia completamente en tu navegador mediante JavaScript. No se envía nada a un servidor."}}, {"@type": "Question", "name": "¿Puedo deshacer una operación de limpieza?", "acceptedAnswer": {"@type": "Answer", "text": "Las opciones de limpieza se muestran antes de la descarga, y el archivo original que subiste nunca se modifica, por lo que puedes volver a subirlo y probar diferentes opciones en cualquier momento."}}, {"@type": "Question", "name": "¿Esta herramienta es de uso gratuito?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, esta herramienta es completamente gratuita, sin necesidad de cuenta, registro ni límite de filas más allá de lo que su navegador pueda soportar."}}]}</script>
@@ -235,7 +235,7 @@ Jane Doe,jane@example.com,Boston" rows="6"></textarea>
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 /* ---------- CSV parser: character-by-character state machine ---------- */
 function parseCsv(text) {
@@ -332,7 +332,7 @@ function rowsEqualTrimmed(a, b) {
 function analyze(text) {
   const parsed = parseCsv(text);
   if (!parsed.length) {
-    showStatus(statusEl, 'error', 'No CSV data found. Paste or upload a CSV first.');
+    showStatus(statusEl, 'error', 'No se encontraron datos CSV. Primero, pegue o cargue un archivo CSV.');
     return;
   }
 
@@ -359,23 +359,23 @@ function analyze(text) {
   }
 
   summaryGrid.innerHTML = `
-    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#csv"></use></svg> Structure</h3>${row('Data Rows', totalRows)}${row('Columns', totalCols)}</div>
-    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#warning"></use></svg> Issues Found</h3>${row('Duplicate Rows', dupeCount)}${row('Empty Rows', emptyRowCount)}${row('Empty Columns', emptyColCount)}</div>
-    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#tag"></use></svg> Column Headers</h3>${headers.map((h, idx) => row('Col ' + (idx + 1), h || '(blank)')).join('')}</div>
+    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#csv"></use></svg> Estructura</h3>${row('Filas de datos', totalRows)}${row('Columnas', totalCols)}</div>
+    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#warning"></use></svg> Problemas encontrados</h3>${row('Filas duplicadas', dupeCount)}${row('Filas vacías', emptyRowCount)}${row('Columnas vacías', emptyColCount)}</div>
+    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#tag"></use></svg> Encabezados de columna</h3>${headers.map((h, idx) => row('Columna ' + (idx + 1), h || '(blank)')).join('')}</div>
   `;
   summaryCard.style.display = 'block';
   optionsCard.style.display = 'block';
 
-  caseColumnSel.innerHTML = headers.map((h, idx) => `<option value="${idx}">${h || 'Column ' + (idx + 1)}</option>`).join('');
-  emailColumnSel.innerHTML = headers.map((h, idx) => `<option value="${idx}">${h || 'Column ' + (idx + 1)}</option>`).join('');
+  caseColumnSel.innerHTML = headers.map((h, idx) => `<option value="${idx}">${h || 'Columna ' + (idx + 1)}</option>`).join('');
+  emailColumnSel.innerHTML = headers.map((h, idx) => `<option value="${idx}">${h || 'Columna ' + (idx + 1)}</option>`).join('');
 
-  showStatus(statusEl, 'success', `Parsed ${totalRows} rows and ${totalCols} columns.`);
+  showStatus(statusEl, 'success', `Se analizaron ${totalRows} filas y ${totalCols} columnas.`);
 }
 
 document.getElementById('parse-btn').addEventListener('click', () => {
   const text = csvInput.value;
   if (!text.trim()) {
-    showStatus(statusEl, 'error', 'Paste CSV text or upload a file first.');
+    showStatus(statusEl, 'error', 'Pegue primero el texto CSV o cargue un archivo.');
     return;
   }
   analyze(text);
@@ -387,7 +387,7 @@ function handleFile(file) {
     csvInput.value = e.target.result;
     analyze(e.target.result);
   };
-  reader.onerror = () => showStatus(statusEl, 'error', 'Could not read this file.');
+  reader.onerror = () => showStatus(statusEl, 'error', 'No se pudo leer este archivo.');
   reader.readAsText(file);
 }
 
@@ -402,7 +402,7 @@ function toTitleCase(s) {
 
 document.getElementById('clean-btn').addEventListener('click', () => {
   if (!headers.length) {
-    showStatus(statusEl, 'error', 'Analyze a CSV first.');
+    showStatus(statusEl, 'error', 'Analice primero un archivo CSV.');
     return;
   }
 
@@ -474,9 +474,9 @@ document.getElementById('clean-btn').addEventListener('click', () => {
   cleanedRows = rows;
 
   resultGrid.innerHTML = `
-    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Before</h3>${row('Rows', beforeCount)}${row('Columns', headers.length)}</div>
-    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> After</h3>${row('Rows', rows.length)}${row('Columns', outHeaders.length)}</div>
-    ${doEmail ? `<div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#warning"></use></svg> Email Check</h3>${row('Flagged Rows', invalidEmailCount)}</div>` : ''}
+    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Antes</h3>${row('Filas', beforeCount)}${row('Columnas', headers.length)}</div>
+    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Después</h3>${row('Filas', rows.length)}${row('Columnas', outHeaders.length)}</div>
+    ${doEmail ? `<div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#warning"></use></svg> Comprobación de correo electrónico</h3>${row('Filas marcadas', invalidEmailCount)}</div>` : ''}
   `;
 
   const previewRows = rows.slice(0, 15);
@@ -486,7 +486,7 @@ document.getElementById('clean-btn').addEventListener('click', () => {
   `;
   previewWrap.style.display = 'block';
   resultCard.style.display = 'block';
-  showStatus(statusEl, 'success', `Cleaned: ${beforeCount} rows -> ${rows.length} rows.`);
+  showStatus(statusEl, 'success', `Limpiado: filas ${beforeCount} -> filas ${rows.length}.`);
 });
 
 function getCleanedCsvText() {
@@ -495,7 +495,7 @@ function getCleanedCsvText() {
 
 document.getElementById('download-btn').addEventListener('click', function() {
   if (!cleanedRows.length && !cleanedHeaders.length) {
-    showStatus(statusEl, 'error', 'Clean the CSV first.');
+    showStatus(statusEl, 'error', 'Primero, limpia el archivo CSV.');
     return;
   }
   const csvText = getCleanedCsvText();
@@ -512,7 +512,7 @@ document.getElementById('download-btn').addEventListener('click', function() {
 
 document.getElementById('copy-btn').addEventListener('click', function() {
   if (!cleanedRows.length && !cleanedHeaders.length) {
-    showStatus(statusEl, 'error', 'Clean the CSV first.');
+    showStatus(statusEl, 'error', 'Primero, limpia el archivo CSV.');
     return;
   }
   copyText(getCleanedCsvText(), this);

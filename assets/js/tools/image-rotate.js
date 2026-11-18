@@ -40,8 +40,8 @@
     preview.height = out.height;
     preview.getContext('2d').drawImage(out, 0, 0);
     $('angle-val').textContent = `${angle}°`;
-    $('transform-info').innerHTML = `<span class="stat-chip">Size: <strong>${out.width} × ${out.height}px</strong></span>` +
-      `<span class="stat-chip">Extra rotation: <strong>${angle}°</strong></span>`;
+    $('transform-info').innerHTML = `<span class="stat-chip">${uiText('Size:')} <strong>${out.width} × ${out.height}px</strong></span>` +
+      `<span class="stat-chip">${uiText('Extra rotation:')} <strong>${angle}°</strong></span>`;
   }
 
   function setAngle(value) {

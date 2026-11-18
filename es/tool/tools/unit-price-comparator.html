@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Comparador de precios unitarios", "url": "https://logrith.in/es/tool/tools/unit-price-comparator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "description": "Herramienta online gratuita para comparar el precio por unidad entre productos y encontrar la mejor oferta.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Utilidades", "item": "https://logrith.in/es/tool/categories/utilities"}, {"@type": "ListItem", "position": 4, "name": "Comparador de precios unitarios", "item": "https://logrith.in/es/tool/tools/unit-price-comparator"}]}</script>
@@ -176,7 +176,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 let productCount = 0;
 
@@ -190,19 +190,19 @@ function addProductRow(name = '', price = '', qty = '') {
   div.innerHTML = `
     <div class="controls-grid">
       <div class="control-group">
-        <label>Product Name</label>
+        <label>Nombre del producto</label>
         <input type="text" class="field-input product-name" placeholder="e.g. Brand A" value="${name}">
       </div>
       <div class="control-group">
-        <label>Price ($)</label>
+        <label>Precio ($)</label>
         <input type="number" class="field-input product-price" placeholder="e.g. 250" value="${price}">
       </div>
       <div class="control-group">
-        <label>Quantity (g, ml, pcs...)</label>
+        <label>Cantidad (g, ml, unidades...)</label>
         <input type="number" class="field-input product-qty" placeholder="e.g. 1000" value="${qty}">
       </div>
     </div>
-    ${productCount > 2 ? '<button class="btn btn-secondary btn-sm mt-8 remove-product"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Remove</button>' : ''}
+    ${productCount > 2 ? '<button class="btn btn-secondary btn-sm mt-8 remove-product"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#close"></use></svg> Eliminar</button>' : ''}
   `;
   container.appendChild(div);
 
@@ -218,14 +218,14 @@ document.getElementById('compare-btn').addEventListener('click', () => {
   const products = [];
 
   rows.forEach((row, i) => {
-    const name = row.querySelector('.product-name').value.trim() || `Product ${i + 1}`;
+    const name = row.querySelector('.product-name').value.trim() || `Producto ${i + 1}`;
     const price = parseFloat(row.querySelector('.product-price').value);
     const qty = parseFloat(row.querySelector('.product-qty').value);
     if (price > 0 && qty > 0) products.push({ name, price, qty, unitPrice: price / qty });
   });
 
   if (products.length < 2) {
-    showStatus(statusEl, 'error', 'Please enter valid price and quantity for at least 2 products.');
+    showStatus(statusEl, 'error', 'Por favor, introduzca un precio y una cantidad válidos para al menos 2 productos.');
     return;
   }
 
@@ -234,21 +234,21 @@ document.getElementById('compare-btn').addEventListener('click', () => {
 
   document.getElementById('comparison-results').innerHTML = products.map((p, i) => `
     <div class="preview-card" style="${i === 0 ? 'border-color:var(--success);background:#f0fdf4;' : ''}">
-      <div class="result-title">${p.name} ${i === 0 ? '<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#award"></use></svg> Best Value' : ''}</div>
+      <div class="result-title">${p.name} ${i === 0 ? '<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#award"></use></svg> Mejor relación calidad-precio' : ''}</div>
       <div class="result-meta">
         $${p.price} for ${p.qty} units<br>
         <strong style="color:${i===0?'var(--success)':'var(--gray-700)'};">$${p.unitPrice.toFixed(4)} per unit</strong>
-        ${i > 0 ? `<br><span style="color:var(--error);">+${(((p.unitPrice/cheapest.unitPrice)-1)*100).toFixed(1)}% more expensive per unit</span>` : ''}
+        ${i > 0 ? `<br><span style="color:var(--error);">+${(((p.unitPrice/cheapest.unitPrice)-1)*100).toFixed(1)}% más caro por unidad</span>` : ''}
       </div>
     </div>
   `).join('');
 
   document.getElementById('result-card').style.display = 'block';
-  showStatus(statusEl, 'success', `Compared ${products.length} products!`);
+  showStatus(statusEl, 'success', `¡Comparación de productos ${products.length}!`);
 });
 
-addProductRow('Product A', '250', '1000');
-addProductRow('Product B', '150', '500');
+addProductRow('Producto A', '250', '1000');
+addProductRow('Producto B', '150', '500');
 </script>
 </body>
 </html>

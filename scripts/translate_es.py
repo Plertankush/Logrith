@@ -49,7 +49,10 @@ from urllib.parse import urlparse
 
 from bs4 import BeautifulSoup, Comment, Doctype, NavigableString
 from bs4.element import Script
+from bs4.dammit import EntitySubstitution
 from bs4.formatter import HTMLFormatter
+
+import js_strings
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = 'https://logrith.in'
@@ -73,6 +76,7 @@ JSONLD_TEXT_KEYS = {'name', 'description', 'text', 'headline', 'alternateName'}
 PROTECTED = re.compile(r'<(code|kbd|svg|samp)\b.*?</\1>|\b(?:Logrith|Plert Ankush|AdSense)\b', re.S)
 TAG = re.compile(r'<[^>]+>')
 
+SCRIPT_PROTECTED = re.compile(PROTECTED.pattern + r'|\$\{\d+\}', re.S)   # inside scripts, ${n} marks inserted code
 TOKEN = re.compile(r'§\s*(\d+)\s*§')
 LETTERS = re.compile(r'[A-Za-z]{2,}')
 
@@ -82,6 +86,10 @@ MAX_BATCH_CHARS = 20000
 
 class SourceOrderFormatter(HTMLFormatter):
     """Write attributes in their original order and void tags without a trailing slash, like the English pages."""
+
+    def __init__(self, **options):
+        # Escape & < > in text. Without this the formatter writes a sentence about "<script>" as a real tag.
+        super().__init__(entity_substitution=EntitySubstitution.substitute_xml, **options)
 
     def attributes(self, tag):
         return tag.attrs.items()
@@ -318,14 +326,14 @@ def translate_missing(texts, cache, translator, batch_items=MAX_BATCH_ITEMS):
 class Unit:
     """One translatable string and how to write its translation back."""
 
-    def __init__(self, source, apply, html=True):
+    def __init__(self, source, apply, html=True, pattern=PROTECTED):
         self.html = html                      # True for inner HTML, False for plain text
         self.apply = apply                    # callback receiving the translated text
-        self.sent, self.slots = protect(source if html else escape(source, quote=False))
+        self.sent, self.slots = protect(source if html else escape(source, quote=False), pattern)
         self.source = source
 
 
-def protect(markup):
+def protect(markup, pattern=PROTECTED):
     """Swap code, svg and brand names for numbered tokens so the translator cannot touch them."""
     slots = []
 
@@ -333,7 +341,7 @@ def protect(markup):
         slots.append(match.group(0))
         return f'§{len(slots) - 1}§'
 
-    return PROTECTED.sub(keep, markup), slots
+    return pattern.sub(keep, markup), slots
 
 
 def restore(unit, translated):
@@ -368,11 +376,14 @@ def tags_nest_properly(markup):
 
 
 def has_text(markup):
-    return bool(LETTERS.search(TAG.sub('', PROTECTED.sub('', markup))))
+    return bool(LETTERS.search(re.sub(r'&#?\w+;', '', TAG.sub('', PROTECTED.sub('', markup)))))
 
 
 def inner_html(element):
-    return ''.join(str(child) for child in element.children)
+    """The element's contents as HTML. Text must be escaped: str() on a text node returns "<" and "&" raw,
+    which let "&lt;script&gt;" in a sentence turn into a real <script> tag in the translated page."""
+    return ''.join(escape(str(child), quote=False) if isinstance(child, NavigableString) and not isinstance(child, Comment)
+                   else str(child) for child in element.children)
 
 
 def collect_units(soup, scope):
@@ -424,6 +435,39 @@ def collect_units(soup, scope):
             value = element.get(attr)
             if isinstance(value, str) and has_text(value):
                 units.append(Unit(value, lambda text, el=element, a=attr: el.__setitem__(a, text), html=False))
+    return units
+
+
+# Tools whose script output is data that must stay as it is (the NATO alphabet and its digit names are international).
+NO_SCRIPT_TRANSLATION = {'nato-phonetic-alphabet-translator'}
+
+
+def script_units(soup):
+    """Translate the messages and labels inside inline <script>s, so tools answer in Spanish too.
+
+    Each script is rewritten once all its strings are applied (a finisher unit, like the JSON-LD one).
+    """
+    units = []
+    canonical = soup.find('link', rel='canonical')
+    if canonical and urlparse(canonical['href']).path.rstrip('/').rsplit('/', 1)[-1] in NO_SCRIPT_TRANSLATION:
+        return units
+    for script in soup.find_all('script'):
+        if script.get('src') or script.get('type') in ('application/ld+json', 'importmap') or not script.string:
+            continue
+        code = script.string
+        strings = js_strings.visible_strings(code)
+        if not strings:
+            continue
+        translations = {}
+        for piece in strings:
+            units.append(Unit(piece, lambda text, k=piece, t=translations: t.__setitem__(k, text), html=False, pattern=SCRIPT_PROTECTED))
+
+        def finish(_text, el=script, source=code, t=translations):
+            el.clear()
+            el.append(Script(js_strings.rewrite(source, t)))
+        finisher = Unit('', finish, html=False)
+        finisher.sent = None
+        units.append(finisher)
     return units
 
 
@@ -552,7 +596,7 @@ def build_document(source_text, to_es_url=None, fragment=False):
     scope = soup if fragment else soup.body
     units = collect_units(soup, scope)
     if not fragment:
-        units += head_units(soup) + jsonld_units(soup, to_es_url)
+        units += head_units(soup) + jsonld_units(soup, to_es_url) + script_units(soup)
     return soup, units
 
 

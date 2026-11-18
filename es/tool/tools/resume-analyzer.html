@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Analizador de currículums con IA", "url": "https://logrith.in/es/tool/tools/resume-analyzer", "description": "Analizador de currículums gratuito con inteligencia artificial que comprueba la compatibilidad con sistemas ATS, la calidad del contenido, el uso de palabras clave y proporciona sugerencias prácticas para mejorar.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "provider": {"@type": "Organization", "name": "Logrith", "url": "https://logrith.in"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas de IA", "item": "https://logrith.in/es/tool/categories/ai-tools"}, {"@type": "ListItem", "position": 4, "name": "Analizador de currículums con IA"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Qué comprueba el analizador de currículums con IA?", "acceptedAnswer": {"@type": "Answer", "text": "Analiza la compatibilidad con los sistemas de seguimiento de candidatos (ATS), la exhaustividad de la información de contacto, la densidad de palabras clave, los logros cuantificados, el uso de verbos de acción, la estructura de las secciones, la longitud del currículum y la calidad general del contenido."}}, {"@type": "Question", "name": "¿Qué es una puntuación ATS?", "acceptedAnswer": {"@type": "Answer", "text": "La puntuación del ATS (Sistema de Seguimiento de Candidatos) mide el rendimiento de tu currículum al ser analizado por un software automatizado de recursos humanos. Más del 90 % de las empresas Fortune 500 utilizan ATS para filtrar los currículos antes de que los revise un humano."}}, {"@type": "Question", "name": "¿Se almacenan los datos de mi currículum?", "acceptedAnswer": {"@type": "Answer", "text": "No. El texto de tu currículum se analiza íntegramente mediante la API de Anthropic Claude, pero no se almacena nada de forma permanente. Cada análisis es independiente y no se guarda."}}, {"@type": "Question", "name": "¿Qué características debe tener un currículum compatible con los sistemas ATS?", "acceptedAnswer": {"@type": "Answer", "text": "Un currículum vitae compatible con los sistemas ATS utiliza encabezados de sección estándar (Experiencia, Educación, Habilidades), evita tablas y gráficos, incluye palabras clave relevantes de la descripción del puesto y utiliza un formato sencillo."}}, {"@type": "Question", "name": "¿Cómo debo pegar mi currículum?", "acceptedAnswer": {"@type": "Answer", "text": "Copia todo el texto de tu currículum (Ctrl+A, Ctrl+C en Word o PDF) y pégalo en el área de texto. Incluye todas las secciones: información de contacto, resumen, experiencia, formación académica y habilidades."}}]}]}</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-BPJ4332XJH');</script>
@@ -146,7 +146,7 @@
 </div>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 let lastReport = '';
 
@@ -158,11 +158,11 @@ function updateResumeStats() {
 
 async function analyzeResume() {
   const resumeText = document.getElementById('resume-text').value.trim();
-  const jobRole = document.getElementById('job-role').value.trim() || 'General Position';
+  const jobRole = document.getElementById('job-role').value.trim() || 'Posición general';
   const expLevel = document.getElementById('exp-level').value;
 
-  if (!resumeText) { alert('Please paste your resume text first.'); return; }
-  if (resumeText.split(/\s+/).length < 50) { alert('Resume seems too short. Please paste the complete resume text for accurate analysis.'); return; }
+  if (!resumeText) { alert('Por favor, pegue primero el texto de su currículum.'); return; }
+  if (resumeText.split(/\s+/).length < 50) { alert('El currículum parece demasiado corto. Por favor, copie y pegue el texto completo para un análisis preciso.'); return; }
 
   // Show loading
   document.getElementById('input-card').style.display = 'none';
@@ -183,11 +183,11 @@ async function analyzeResume() {
   }, 2500);
 
   const expLabels = {
-    fresher: 'Fresher / Entry Level (0-1 years)',
-    junior: 'Junior (1-3 years)',
-    mid: 'Mid Level (3-6 years)',
-    senior: 'Senior (6-10 years)',
-    lead: 'Lead / Manager (10+ years)'
+    fresher: 'Recién egresado/a / Nivel de entrada (0-1 año de experiencia)',
+    junior: 'Junior (1-3 años)',
+    mid: 'Nivel intermedio (3-6 años)',
+    senior: 'Adulto mayor (6-10 años)',
+    lead: 'Líder/Gerente (más de 10 años de experiencia)'
   };
 
   const prompt = `You are an expert resume reviewer and ATS optimization specialist. Analyze the following resume and provide a comprehensive, structured review.
@@ -290,21 +290,21 @@ function staticAnalyze(text, role) {
   return {
     overall_score: overall, ats_score: Math.min(95, ats),
     grade: overall >= 85?'A':overall >= 75?'B+':overall >= 65?'B':overall >= 55?'C+':'C',
-    headline: `Resume scored ${overall}/100 — ${overall >= 75 ? 'Good foundation with room for improvement' : 'Needs significant improvements for competitive roles'}`,
+    headline: `Currículum puntuado ${overall}/100 — ${overall >= 75 ? 'Buena base con margen de mejora.' : 'Necesita mejoras significativas para desempeñar funciones competitivas.'}`,
     scores: { contact_info: contactScore, summary: summaryScore, experience: expScore, education: eduScore, skills: skillsScore, keywords: kwScore, formatting: fmtScore, action_verbs: actionScore },
-    strengths: [hasEmail && hasPhone ? 'Contact information is present' : 'Basic contact info included', hasExperience ? 'Work experience section found' : 'Has some content structure', hasSkills ? 'Skills section present' : 'Resume has key sections'],
-    improvements: ['Add quantified achievements (e.g., "Increased sales by 35%")', 'Use more action verbs at the start of bullet points', !hasSummary ? 'Add a professional summary section' : 'Strengthen your professional summary', 'Tailor keywords to match the job description'],
-    critical_issues: [!hasEmail ? 'Email address not found — add contact information' : '', !hasExperience ? 'No experience section detected' : ''].filter(Boolean),
+    strengths: [hasEmail && hasPhone ? 'La información de contacto está presente.' : 'Información de contacto básica incluida', hasExperience ? 'Se encontró la sección de experiencia laboral.' : 'Tiene cierta estructura de contenido', hasSkills ? 'Sección de habilidades presente' : 'El currículum tiene secciones clave'],
+    improvements: ['Agregue logros cuantificables (por ejemplo, "Aumento de las ventas en un 35%").', 'Utilice más verbos de acción al comienzo de las viñetas.', !hasSummary ? 'Agregue una sección de resumen profesional.' : 'Refuerza tu resumen profesional', 'Adapta las palabras clave para que coincidan con la descripción del puesto.'],
+    critical_issues: [!hasEmail ? 'Dirección de correo electrónico no encontrada; agregue información de contacto.' : '', !hasExperience ? 'No se detectó ninguna sección de experiencia.' : ''].filter(Boolean),
     keywords_found: actionVerbs.slice(0,5),
     keywords_missing: [`${role} specific skills`, 'Industry keywords', 'Technical tools', 'Certifications'],
-    ats_tips: ['Use standard section headings (Experience, Education, Skills)', 'Avoid tables, columns, and text boxes', 'Save as clean .docx or ATS-friendly PDF'],
-    word_count_assessment: wordCount < 200 ? 'Resume is too short — expand work experience and skills' : wordCount > 800 ? 'Resume may be too long for ATS — aim for 1-2 pages' : 'Good length for ATS scanning',
-    next_steps: ['Add specific metrics and numbers to work experience', `Research ${role} job descriptions and add matching keywords`, 'Have someone proofread for typos and formatting']
+    ats_tips: ['Utilice encabezados de sección estándar (Experiencia, Educación, Habilidades).', 'Evite tablas, columnas y cuadros de texto.', 'Guárdalo como archivo .docx limpio o PDF compatible con ATS.'],
+    word_count_assessment: wordCount < 200 ? 'El currículum es demasiado corto; amplíe su experiencia laboral y sus habilidades.' : wordCount > 800 ? 'El currículum puede ser demasiado largo para el ATS; intenta que ocupe entre 1 y 2 páginas.' : 'Longitud adecuada para el escaneo ATS',
+    next_steps: ['Agregue métricas y cifras específicas a la experiencia laboral.', `Research ${role} job descriptions and add matching keywords`, 'Pídele a alguien que revise el texto para corregir errores tipográficos y de formato.']
   };
 }
 
 function scoreColor(s) { return s >= 75 ? '#16a34a' : s >= 55 ? '#d97706' : '#ef4444'; }
-function scoreLabel(s) { return s >= 75 ? '<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Good' : s >= 55 ? '<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#warning"></use></svg> Improve' : '<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#x-circle"></use></svg> Weak'; }
+function scoreLabel(s) { return s >= 75 ? '<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Bien' : s >= 55 ? '<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#warning"></use></svg> Mejorar' : '<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#x-circle"></use></svg> Débil'; }
 
 function renderResults(r, role) {
   const gradeColors = {'A+':'#10b981','A':'#16a34a','B+':'#3b82f6','B':'#60a5fa','C+':'#f59e0b','C':'#f97316','D':'#ef4444'};
@@ -312,7 +312,7 @@ function renderResults(r, role) {
   const circumference = 2 * Math.PI * 40;
   const dashOffset = circumference - (r.overall_score / 100) * circumference;
 
-  const scoreNames = { contact_info:'Contact Info', summary:'Summary', experience:'Experience', education:'Education', skills:'Skills', keywords:'Keywords', formatting:'Format & Length', action_verbs:'Action Verbs' };
+  const scoreNames = { contact_info:'Información de contacto', summary:'Resumen', experience:'Experiencia', education:'Educación', skills:'Habilidades', keywords:'Palabras clave', formatting:'Formato y duración', action_verbs:'verbos de acción' };
 
   let html = `
   <div class="score-header">
@@ -325,12 +325,12 @@ function renderResults(r, role) {
       <span class="sc-label">/ 100</span>
     </div>
     <div class="score-info">
-      <div class="score-title">Resume Score: ${r.grade} — ${r.overall_score >= 85 ? 'Excellent' : r.overall_score >= 70 ? 'Good' : r.overall_score >= 55 ? 'Needs Work' : 'Major Improvements Needed'}</div>
+      <div class="score-title">Puntuación del currículum: ${r.grade} — ${r.overall_score >= 85 ? 'Excelente' : r.overall_score >= 70 ? 'Bien' : r.overall_score >= 55 ? 'Necesita trabajo' : 'Se necesitan mejoras importantes'}</div>
       <div class="score-subtitle">${r.headline}</div>
       <div class="score-pills">
-        <span class="score-pill pill-${r.ats_score >= 75 ? 'green' : r.ats_score >= 55 ? 'yellow' : 'red'}">ATS Score: ${r.ats_score}/100</span>
-        <span class="score-pill pill-${r.overall_score >= 75 ? 'green' : 'yellow'}">Overall: ${r.grade}</span>
-        <span class="score-pill" style="background:rgba(255,255,255,.08);color:#94a3b8;">Target: ${role}</span>
+        <span class="score-pill pill-${r.ats_score >= 75 ? 'green' : r.ats_score >= 55 ? 'yellow' : 'red'}">Puntuación ATS: ${r.ats_score}/100</span>
+        <span class="score-pill pill-${r.overall_score >= 75 ? 'green' : 'yellow'}">Total: ${r.grade}</span>
+        <span class="score-pill" style="background:rgba(255,255,255,.08);color:#94a3b8;">Objetivo: ${role}</span>
       </div>
     </div>
   </div>
@@ -351,7 +351,7 @@ function renderResults(r, role) {
   // Strengths
   if(r.strengths?.length) {
     html += `<div class="feedback-section">
-      <div class="fs-header"><span class="fs-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg></span><span class="fs-title">Strengths</span><span class="fs-badge badge-good">Good</span></div>
+      <div class="fs-header"><span class="fs-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg></span><span class="fs-title">Fortalezas</span><span class="fs-badge badge-good">Bien</span></div>
       <ul class="feedback-list">${r.strengths.map(s=>`<li><span class="fi"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg></span><span>${s}</span></li>`).join('')}</ul>
     </div>`;
   }
@@ -359,7 +359,7 @@ function renderResults(r, role) {
   // Improvements
   if(r.improvements?.length) {
     html += `<div class="feedback-section">
-      <div class="fs-header"><span class="fs-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lightbulb"></use></svg></span><span class="fs-title">Recommended Improvements</span><span class="fs-badge badge-improve">Action Needed</span></div>
+      <div class="fs-header"><span class="fs-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lightbulb"></use></svg></span><span class="fs-title">Mejoras recomendadas</span><span class="fs-badge badge-improve">Se requiere acción</span></div>
       <ul class="feedback-list">${r.improvements.map(s=>`<li><span class="fi"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#lightbulb"></use></svg></span><span>${s}</span></li>`).join('')}</ul>
     </div>`;
   }
@@ -367,29 +367,29 @@ function renderResults(r, role) {
   // Critical
   if(r.critical_issues?.length) {
     html += `<div class="feedback-section">
-      <div class="fs-header"><span class="fs-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#warning"></use></svg></span><span class="fs-title">Critical Issues</span><span class="fs-badge badge-critical">Fix First</span></div>
+      <div class="fs-header"><span class="fs-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#warning"></use></svg></span><span class="fs-title">Cuestiones críticas</span><span class="fs-badge badge-critical">Primero, soluciona el problema</span></div>
       <ul class="feedback-list">${r.critical_issues.map(s=>`<li><span class="fi"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#warning"></use></svg></span><span>${s}</span></li>`).join('')}</ul>
     </div>`;
   }
 
   // Keywords
   html += `<div class="feedback-section">
-    <div class="fs-header"><span class="fs-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#key"></use></svg></span><span class="fs-title">Keyword Analysis</span></div>
-    <p style="font-size:.84rem;color:var(--gray-600);margin-bottom:8px;">Found in your resume:</p>
+    <div class="fs-header"><span class="fs-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#key"></use></svg></span><span class="fs-title">Análisis de palabras clave</span></div>
+    <p style="font-size:.84rem;color:var(--gray-600);margin-bottom:8px;">Encontrado en tu currículum:</p>
     <div class="keywords-found">${(r.keywords_found||[]).map(k=>`<span class="kw-chip kw-found"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check"></use></svg> ${k}</span>`).join('')}</div>
-    <p style="font-size:.84rem;color:var(--gray-600);margin:12px 0 8px;">Consider adding for <strong>${role}</strong>:</p>
+    <p style="font-size:.84rem;color:var(--gray-600);margin:12px 0 8px;">Considere agregar para <strong>${role}</strong>:</p>
     <div class="keywords-found">${(r.keywords_missing||[]).map(k=>`<span class="kw-chip kw-missing"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#x-circle"></use></svg> ${k}</span>`).join('')}</div>
   </div>`;
 
   // ATS Tips
   html += `<div class="feedback-section">
-    <div class="fs-header"><span class="fs-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#cpu"></use></svg></span><span class="fs-title">ATS Optimization Tips</span><span class="fs-badge badge-${r.ats_score>=75?'good':'improve'}">ATS: ${r.ats_score}/100</span></div>
+    <div class="fs-header"><span class="fs-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#cpu"></use></svg></span><span class="fs-title">Consejos para optimizar el ATS</span><span class="fs-badge badge-${r.ats_score>=75?'good':'improve'}">ATS: ${r.ats_score}/100</span></div>
     <ul class="feedback-list">${(r.ats_tips||[]).map(s=>`<li><span class="fi"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#cpu"></use></svg></span><span>${s}</span></li>`).join('')}</ul>
   </div>`;
 
   // Next steps
   html += `<div class="feedback-section">
-    <div class="fs-header"><span class="fs-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#send"></use></svg></span><span class="fs-title">Your Next Steps</span></div>
+    <div class="fs-header"><span class="fs-icon"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#send"></use></svg></span><span class="fs-title">Tus próximos pasos</span></div>
     <ul class="feedback-list">${(r.next_steps||[]).map((s,i)=>`<li><span class="fi" style="background:#eff6ff;padding:1px 6px;border-radius:4px;font-size:.7rem;font-weight:700;color:var(--primary);">${i+1}</span><span>${s}</span></li>`).join('')}</ul>
   </div>`;
 
@@ -398,7 +398,9 @@ function renderResults(r, role) {
 
 function buildReportText(r, role, exp) {
   let t = `RESUME ANALYSIS REPORT — Logrith.in\n${'='.repeat(50)}\n`;
-  t += `Target Role: ${role}\nExperience Level: ${exp}\n\n`;
+  t += `Puesto objetivo: ${role} Nivel de experiencia: ${exp}
+
+`;
   t += `OVERALL SCORE: ${r.overall_score}/100 (Grade: ${r.grade})\n`;
   t += `ATS SCORE: ${r.ats_score}/100\n\n`;
   t += `STRENGTHS:\n${(r.strengths||[]).map(s=>`• ${s}`).join('\n')}\n\n`;
@@ -417,7 +419,7 @@ function copyReport() {
   if(!lastReport) return;
   navigator.clipboard.writeText(lastReport).then(() => {
     const btn = document.querySelectorAll('.ra-btn')[1];
-    btn.innerHTML = '<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> Copied!'; setTimeout(() => btn.innerHTML = '<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copy Report', 2000);
+    btn.innerHTML = '<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg> ¡Copiado!'; setTimeout(() => btn.innerHTML = '<svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#copy"></use></svg> Copiar informe', 2000);
   });
 }
 

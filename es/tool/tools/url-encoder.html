@@ -27,11 +27,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
 <script>
@@ -94,7 +94,7 @@ e.g. Hello%20World%21 → Hello World!" rows="5"></textarea></div>
 <tr><td class="u-487786">Espacio</td><td class="u-53a01e">%20</td><td class="u-d322df">Espacio en blanco</td></tr>
 <tr><td class="u-487786">!</td><td class="u-53a01e">%21</td><td class="u-d322df">Signo de admiración</td></tr>
 <tr><td class="u-487786">#</td><td class="u-53a01e">%23</td><td class="u-d322df">Hash / Fragmento</td></tr>
-<tr><td class="u-487786">&</td><td class="u-53a01e">%26</td><td class="u-d322df">Ampersand (separador de parámetros)</td></tr>
+<tr><td class="u-487786">&amp;</td><td class="u-53a01e">%26</td><td class="u-d322df">Ampersand (separador de parámetros)</td></tr>
 <tr><td class="u-487786">=</td><td class="u-53a01e">%3D</td><td class="u-d322df">Igual a (clave=valor)</td></tr>
 <tr><td class="u-487786">?</td><td class="u-53a01e">%3F</td><td class="u-d322df">Inicio de la cadena de consulta</td></tr>
 <tr><td class="u-c7afe5">@</td><td class="u-b9f127">%40</td><td class="u-68e138">En la señal</td></tr>
@@ -112,7 +112,7 @@ e.g. Hello%20World%21 → Hello World!" rows="5"></textarea></div>
 </details>
 <details class="faq-item">
 <summary class="faq-q">¿Cuál es la diferencia entre encodeURI y encodeURIComponent?</summary>
-<div class="faq-a"><p>`encodeURI` codifica una URL completa y conserva los caracteres estructurales como /, ?, &, #. `encodeURIComponent` codifica un componente de URL (como el valor de un parámetro de consulta) y también codifica estos caracteres estructurales. Utilice `encodeURIComponent` para valores en cadenas de consulta.</p></div>
+<div class="faq-a"><p>`encodeURI` codifica una URL completa y conserva los caracteres estructurales como /, ?, &amp;, #. `encodeURIComponent` codifica un componente de URL (como el valor de un parámetro de consulta) y también codifica estos caracteres estructurales. Utilice `encodeURIComponent` para valores en cadenas de consulta.</p></div>
 </details>
 <details class="faq-item">
 <summary class="faq-q">¿Cuándo necesito la codificación de URL?</summary>
@@ -137,9 +137,9 @@ e.g. Hello%20World%21 → Hello World!" rows="5"></textarea></div>
 <p>El codificador de URL Logrith convierte el texto a un formato seguro para URL mediante codificación porcentual y lo decodifica de nuevo a texto legible. Esto es fundamental cuando se necesita incluir de forma segura caracteres especiales, espacios o texto no ASCII en una URL, cadena de consulta o solicitud de API sin alterar la estructura de la propia URL.</p>
 <p>Las URL solo pueden contener de forma segura un conjunto limitado de caracteres: letras, dígitos y algunos símbolos. Todo lo demás, incluidos los espacios, las ampersands, los signos de interrogación y los caracteres acentuados o no latinos, debe convertirse a una representación codificada en porcentaje antes de poder incluirse en una URL sin causar errores o comportamientos inesperados. Este proceso de conversión se denomina codificación URL o codificación en porcentaje, y esta herramienta lo gestiona instantáneamente en ambas direcciones.</p>
 <h3>Cómo funciona la codificación porcentual</h3>
-<p>La codificación porcentual reemplaza un carácter no seguro con un signo de porcentaje seguido del valor hexadecimal del carácter. Por ejemplo, un espacio se convierte en %20. Un signo de ampersand (&) se convierte en %26. Una barra inclinada se convierte en %2F. Este esquema de codificación permite representar cualquier carácter, incluso aquellos que no pertenecen al conjunto básico ASCII, utilizando únicamente el conjunto limitado de caracteres cuya seguridad está garantizada dentro de una URL. Cuando un navegador o servidor recibe una URL codificada con porcentaje, decodifica estas secuencias para obtener sus caracteres originales antes de procesar la solicitud.</p>
+<p>La codificación porcentual reemplaza un carácter no seguro con un signo de porcentaje seguido del valor hexadecimal del carácter. Por ejemplo, un espacio se convierte en %20. Un signo de ampersand (&amp;) se convierte en %26. Una barra inclinada se convierte en %2F. Este esquema de codificación permite representar cualquier carácter, incluso aquellos que no pertenecen al conjunto básico ASCII, utilizando únicamente el conjunto limitado de caracteres cuya seguridad está garantizada dentro de una URL. Cuando un navegador o servidor recibe una URL codificada con porcentaje, decodifica estas secuencias para obtener sus caracteres originales antes de procesar la solicitud.</p>
 <h3>encodeURI vs. encodeURIComponent: ¿Cuál usar?</h3>
-<p>JavaScript proporciona dos funciones de codificación relacionadas pero diferentes, y elegir la correcta es importante. `encodeURI` está diseñada para codificar una URL completa; deja intactos caracteres estructurales como `/`, `?`, `&` y `#`, ya que estos caracteres tienen un significado especial en la estructura general de la URL y no deben codificarse si se está codificando una dirección completa. `encodeURIComponent`, por el contrario, está diseñada para codificar un solo componente o valor, como el valor de un parámetro de consulta, y sí codifica esos caracteres estructurales, ya que dentro de un solo valor, un `&` o un `?` literales deben tratarse como datos en lugar de como parte de la estructura de la URL. Como regla general, utilice `encodeURIComponent` cuando codifique un valor que se colocará dentro de una cadena de consulta, y reserve `encodeURI` para codificar una URL completa que ya tenga su estructura definida.</p>
+<p>JavaScript proporciona dos funciones de codificación relacionadas pero diferentes, y elegir la correcta es importante. `encodeURI` está diseñada para codificar una URL completa; deja intactos caracteres estructurales como `/`, `?`, `&amp;` y `#`, ya que estos caracteres tienen un significado especial en la estructura general de la URL y no deben codificarse si se está codificando una dirección completa. `encodeURIComponent`, por el contrario, está diseñada para codificar un solo componente o valor, como el valor de un parámetro de consulta, y sí codifica esos caracteres estructurales, ya que dentro de un solo valor, un `&amp;` o un `?` literales deben tratarse como datos en lugar de como parte de la estructura de la URL. Como regla general, utilice `encodeURIComponent` cuando codifique un valor que se colocará dentro de una cadena de consulta, y reserve `encodeURI` para codificar una URL completa que ya tenga su estructura definida.</p>
 <h3>Situaciones comunes que requieren codificación URL</h3>
 <ul>
 <li><strong>Se pasa la entrada del usuario como parámetro de consulta.</strong> Si un término de búsqueda contiene espacios o caracteres especiales, debe codificarse antes de agregarlo a una URL como valor de parámetro.</li>
@@ -187,7 +187,7 @@ e.g. Hello%20World%21 → Hello World!" rows="5"></textarea></div>
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -215,8 +215,8 @@ document.getElementById('do-decode').addEventListener('click', () => {
   try {
     const decoded = decodeURIComponent(text);
     document.getElementById('dec-out').value = decoded;
-    showStatus(document.getElementById('dec-status'), 'success', 'Decoded successfully!');
-  } catch(e) { showStatus(document.getElementById('dec-status'), 'error', 'Invalid percent-encoding: ' + e.message); }
+    showStatus(document.getElementById('dec-status'), 'success', '¡Descifrado con éxito!');
+  } catch(e) { showStatus(document.getElementById('dec-status'), 'error', 'Codificación de porcentaje no válida: ' + e.message); }
 });
 document.getElementById('dec-clear').addEventListener('click', () => { document.getElementById('dec-in').value=''; document.getElementById('dec-out').value=''; document.getElementById('dec-status').style.display='none'; });
 document.getElementById('copy-dec').addEventListener('click', function() { const v=document.getElementById('dec-out').value; if(v) copyText(v,this); });

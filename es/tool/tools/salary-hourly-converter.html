@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Convertidor de salario a hora", "url": "https://logrith.in/es/tool/tools/salary-hourly-converter", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "description": "Convertidor online gratuito entre salarios anuales, mensuales, semanales, diarios y por hora.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Calcular y convertir", "item": "https://logrith.in/es/tool/categories/calculate-convert"}, {"@type": "ListItem", "position": 4, "name": "Convertidor de salario a hora", "item": "https://logrith.in/es/tool/tools/salary-hourly-converter"}]}</script>
@@ -152,7 +152,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 function calculate() {
   const period = document.getElementById('pay-period').value;
@@ -179,12 +179,12 @@ function calculate() {
   const fmt = v => v.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
 
   document.getElementById('result-grid').innerHTML = `
-    <div class="stat-box"><span class="stat-num" style="font-size:1.2rem;">${fmt(annual)}</span><span class="stat-label">Annual</span></div>
-    <div class="stat-box"><span class="stat-num" style="font-size:1.2rem;">${fmt(monthly)}</span><span class="stat-label">Monthly</span></div>
-    <div class="stat-box"><span class="stat-num" style="font-size:1.2rem;">${fmt(weekly)}</span><span class="stat-label">Weekly</span></div>
-    <div class="stat-box"><span class="stat-num" style="font-size:1.2rem;">${fmt(daily)}</span><span class="stat-label">Daily</span></div>
+    <div class="stat-box"><span class="stat-num" style="font-size:1.2rem;">${fmt(annual)}</span><span class="stat-label">Anual</span></div>
+    <div class="stat-box"><span class="stat-num" style="font-size:1.2rem;">${fmt(monthly)}</span><span class="stat-label">Mensual</span></div>
+    <div class="stat-box"><span class="stat-num" style="font-size:1.2rem;">${fmt(weekly)}</span><span class="stat-label">Semanalmente</span></div>
+    <div class="stat-box"><span class="stat-num" style="font-size:1.2rem;">${fmt(daily)}</span><span class="stat-label">A diario</span></div>
     <div class="stat-box" style="background:linear-gradient(135deg,var(--primary),var(--primary-light));border:none;grid-column:span 2;">
-      <span class="stat-num" style="color:white;font-size:1.4rem;">${fmt(hourly)}</span><span class="stat-label" style="color:rgba(255,255,255,0.85);">Hourly Rate</span>
+      <span class="stat-num" style="color:white;font-size:1.4rem;">${fmt(hourly)}</span><span class="stat-label" style="color:rgba(255,255,255,0.85);">Tarifa por hora</span>
     </div>`;
 }
 

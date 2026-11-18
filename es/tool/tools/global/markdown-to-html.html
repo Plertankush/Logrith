@@ -31,11 +31,11 @@
 <meta name="keywords" content="markdown to html converter, convert markdown to html, markdown html online, markdown parser online, md to html, markdown renderer free">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Logrith Convertidor de Markdown a HTML", "url": "https://logrith.in/es/tool/tools/markdown-to-html", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web Browser", "description": "Herramienta basada en navegador que convierte texto Markdown en HTML limpio y semántico mediante un analizador sintáctico escrito manualmente, con vista previa en tiempo real y código fuente HTML descargable, sin necesidad de subir datos a un servidor.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": ["Convert headings, bold, italic, and inline code", "Convert ordered and unordered lists", "Convert links and images", "Convert fenced code blocks and blockquotes", "Convert tables with column alignment", "Live HTML preview", "Copy or download the generated HTML", "100% local browser processing"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas globales", "item": "https://logrith.in/es/tool/categories/global-tools"}, {"@type": "ListItem", "position": 4, "name": "Convertidor de Markdown a HTML", "item": "https://logrith.in/es/tool/tools/markdown-to-html"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Qué sintaxis de Markdown admite este convertidor?", "acceptedAnswer": {"@type": "Answer", "text": "Admite encabezados, texto en negrita y cursiva, listas ordenadas y desordenadas, enlaces, imágenes, código en línea, bloques de código delimitados, citas en bloque, líneas horizontales, tablas y párrafos con saltos de línea."}}, {"@type": "Question", "name": "¿Esta herramienta sube mi archivo Markdown a algún sitio?", "acceptedAnswer": {"@type": "Answer", "text": "No. La conversión completa se realiza localmente en tu navegador mediante un analizador JavaScript escrito manualmente. Tu texto nunca se envía a Logrith ni a ningún otro servidor."}}, {"@type": "Question", "name": "¿Utiliza alguna biblioteca Markdown externa?", "acceptedAnswer": {"@type": "Answer", "text": "No. El analizador sintáctico está escrito desde cero en JavaScript puro, sin dependencias externas, por lo que la herramienta se carga rápidamente y funciona completamente sin conexión una vez que se abre la página."}}, {"@type": "Question", "name": "¿Es seguro reutilizar el código HTML generado?", "acceptedAnswer": {"@type": "Answer", "text": "El texto dentro de los bloques de código y el código en línea se codifica para que los corchetes angulares y las ampersands se muestren literalmente en lugar de interpretarse como marcado. El HTML generado refleja las convenciones estándar de Markdown a HTML y es adecuado para pegarlo en un blog, un sitio estático o una página de documentación."}}, {"@type": "Question", "name": "¿Puedo descargar el HTML como un archivo completo?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. El botón de descarga envuelve el HTML convertido en un documento HTML5 mínimo y válido con un doctype, charset y título, listo para guardar como un archivo .html independiente."}}]}</script>
@@ -125,7 +125,7 @@ This is **bold** and this is *italic*.
 <li><strong>Listas:</strong> listas no ordenadas con <code>-</code>, <code>*</code> o <code>+</code>, y listas ordenadas con <code>1.</code>, <code>2.</code>, y así sucesivamente.</li>
 <li><strong>Enlaces e imágenes:</strong> <code>[text](url)</code> y <code>![alt](url)</code>.</li>
 <li><strong>Código:</strong> bloques de código en línea <code>`code`</code> y delimitados mediante tres comillas invertidas, con caracteres especiales escapados por seguridad.</li>
-<li><strong>Citas en bloque, líneas horizontales y tablas:</strong> citas <code>></code>, reglas <code>---</code> y tablas delimitadas por barras verticales con una fila de alineación.</li>
+<li><strong>Citas en bloque, líneas horizontales y tablas:</strong> citas <code>&gt;</code>, reglas <code>---</code> y tablas delimitadas por barras verticales con una fila de alineación.</li>
 </ul>
 </section>
 <section class="page-section prose">
@@ -146,13 +146,13 @@ This is **bold** and this is *italic*.
 <tr><td><code>![alt](url)</code></td><td>Imagen</td></tr>
 <tr><td><code>`code`</code></td><td>Código en línea</td></tr>
 <tr><td>Triple acento grave en sus propias líneas</td><td>Bloque de código vallado</td></tr>
-<tr><td><code>> quote</code></td><td>cita en bloque</td></tr>
+<tr><td><code>&gt; quote</code></td><td>cita en bloque</td></tr>
 <tr><td><code>---</code>, <code>***</code> o <code>___</code> en su propia línea</td><td>Regla horizontal</td></tr>
 <tr><td>Filas de tuberías con separador <code>---|---</code></td><td>Mesa</td></tr>
 </tbody>
 </table>
 <h2>Qué significa "HTML limpio y semántico"</h2>
-<p>El HTML semántico implica usar el elemento HTML que realmente coincide con el significado del contenido, en lugar de etiquetas de estilo genéricas. Un encabezado se convierte en un <code><h1></code> a <code><h6></code>, no en un párrafo en negrita; una lista se convierte en un <code><ul></code> o <code><ol></code> real con elementos <code><li></code>, no en una serie de saltos de línea; una cita se convierte en un <code><blockquote></code>, no en texto con sangría. Esto es importante por dos razones prácticas. Primero, la accesibilidad: los lectores de pantalla y otras tecnologías de asistencia dependen de las etiquetas semánticas para anunciar la estructura; un lector de pantalla le dice a un usuario "encabezado nivel 2" o "lista, 4 elementos" solo cuando el marcado subyacente es realmente un encabezado o un elemento de lista. Segundo, los motores de búsqueda usan la jerarquía de encabezados y el marcado estructural como señales al indexar y resumir una página, por lo que la salida semántica tiende a ser más accesible y más amigable para la búsqueda que el marcado visualmente similar pero estructuralmente plano.</p>
+<p>El HTML semántico implica usar el elemento HTML que realmente coincide con el significado del contenido, en lugar de etiquetas de estilo genéricas. Un encabezado se convierte en un <code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code>, no en un párrafo en negrita; una lista se convierte en un <code>&lt;ul&gt;</code> o <code>&lt;ol&gt;</code> real con elementos <code>&lt;li&gt;</code>, no en una serie de saltos de línea; una cita se convierte en un <code>&lt;blockquote&gt;</code>, no en texto con sangría. Esto es importante por dos razones prácticas. Primero, la accesibilidad: los lectores de pantalla y otras tecnologías de asistencia dependen de las etiquetas semánticas para anunciar la estructura; un lector de pantalla le dice a un usuario "encabezado nivel 2" o "lista, 4 elementos" solo cuando el marcado subyacente es realmente un encabezado o un elemento de lista. Segundo, los motores de búsqueda usan la jerarquía de encabezados y el marcado estructural como señales al indexar y resumir una página, por lo que la salida semántica tiende a ser más accesible y más amigable para la búsqueda que el marcado visualmente similar pero estructuralmente plano.</p>
 <h2>Cómo funciona esta herramienta</h2>
 <p>El convertidor ejecuta un analizador sintáctico manual directamente en tu navegador, en dos etapas. La primera etapa analiza el Markdown línea por línea para identificar estructuras de nivel de bloque: encabezados, bloques de código delimitados, citas, líneas horizontales, bloques de lista, bloques de tabla y párrafos normales. La segunda etapa procesa el texto en línea dentro de cada bloque que no sea de código, aplicando formato de negrita, cursiva, código en línea y enlaces o imágenes. Además, los caracteres especiales dentro de los bloques de código y los fragmentos de código en línea se escapan para que los corchetes angulares y las ampersands en tu código de ejemplo se muestren como texto visible en lugar de interpretarse como etiquetas HTML. Todo sucede de forma síncrona, sin necesidad de conexión a la red, por lo que la vista previa en tiempo real se actualiza en cuanto haces clic en convertir, y tu contenido nunca abandona la página.</p>
 <h2>Casos de uso comunes</h2>
@@ -207,7 +207,7 @@ Herramienta <a class="related-card" href="/es/tool/tools/csv-cleaner"><strong>de
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 /* ==========================================================================
    Markdown to HTML Converter
@@ -469,7 +469,7 @@ let lastHtml = '';
 document.getElementById('convert-btn').addEventListener('click', () => {
   const src = mdInput.value;
   if (!src.trim()) {
-    showStatus(statusEl, 'error', 'Paste some Markdown text first.');
+    showStatus(statusEl, 'error', 'Primero, pega un texto en formato Markdown.');
     return;
   }
 
@@ -482,12 +482,12 @@ document.getElementById('convert-btn').addEventListener('click', () => {
   const lineCount = src.split('\n').length;
   const blockCount = splitIntoBlocks(src).length;
   resultGrid.innerHTML = `
-    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#file-text"></use></svg> Input</h3>${row('Lines', lineCount)}${row('Characters', src.length)}</div>
-    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#markdown-html"></use></svg> Output</h3>${row('Blocks Parsed', blockCount)}${row('HTML Characters', html.length)}</div>
+    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#file-text"></use></svg> Aporte</h3>${row('Pauta', lineCount)}${row('Personajes', src.length)}</div>
+    <div class="insp-card"><h3><svg class="icon"><use href="/assets/svg/icons.svg#markdown-html"></use></svg> Producción</h3>${row('Bloques analizados', blockCount)}${row('HTML Characters', html.length)}</div>
   `;
 
   resultCard.style.display = 'block';
-  showStatus(statusEl, 'success', 'Converted to HTML. Switch tabs to view the preview or the HTML source.');
+  showStatus(statusEl, 'success', 'Convertido a HTML. Cambia de pestaña para ver la vista previa o el código fuente HTML.');
 });
 
 tabPreviewBtn.addEventListener('click', () => {
@@ -506,7 +506,7 @@ tabSourceBtn.addEventListener('click', () => {
 
 document.getElementById('copy-btn').addEventListener('click', function() {
   if (!lastHtml) {
-    showStatus(statusEl, 'error', 'Convert some Markdown first.');
+    showStatus(statusEl, 'error', 'Primero, convierte algunos archivos Markdown.');
     return;
   }
   if (typeof copyText === 'function') {
@@ -518,7 +518,7 @@ document.getElementById('copy-btn').addEventListener('click', function() {
 
 document.getElementById('download-btn').addEventListener('click', () => {
   if (!lastHtml) {
-    showStatus(statusEl, 'error', 'Convert some Markdown first.');
+    showStatus(statusEl, 'error', 'Primero, convierte algunos archivos Markdown.');
     return;
   }
   const fullDoc = `<!DOCTYPE html>
@@ -526,7 +526,7 @@ document.getElementById('download-btn').addEventListener('click', () => {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Converted Document</title>
+<title>Documento convertido</title>
 </head>
 <body>
 ${lastHtml}

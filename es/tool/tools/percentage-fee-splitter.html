@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de tarifas de pago", "url": "https://logrith.in/es/tool/tools/percentage-fee-splitter", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "description": "Calculadora online gratuita para porcentajes más comisiones fijas por transacción, que muestra el pago neto exacto.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Utilidades", "item": "https://logrith.in/es/tool/categories/utilities"}, {"@type": "ListItem", "position": 4, "name": "Calculadora de tarifas de pago", "item": "https://logrith.in/es/tool/tools/percentage-fee-splitter"}]}</script>
@@ -167,7 +167,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 document.getElementById('calc-btn').addEventListener('click', () => {
   const statusEl = document.getElementById('status-msg');
@@ -176,7 +176,7 @@ document.getElementById('calc-btn').addEventListener('click', () => {
   const fixedFee = parseFloat(document.getElementById('fixed-fee').value) || 0;
 
   if (!amount || amount <= 0 || isNaN(percentFee) || percentFee < 0) {
-    showStatus(statusEl, 'error', 'Please enter a valid amount and fee percentage.');
+    showStatus(statusEl, 'error', 'Por favor, introduzca un importe válido y un porcentaje de comisión.');
     return;
   }
 
@@ -188,18 +188,18 @@ document.getElementById('calc-btn').addEventListener('click', () => {
   const fmt = v => v.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
 
   document.getElementById('result-grid').innerHTML = `
-    <div class="stat-box"><span class="stat-num">${fmt(amount)}</span><span class="stat-label">Transaction Amount</span></div>
-    <div class="stat-box"><span class="stat-num" style="color:var(--error);">${fmt(totalFee)}</span><span class="stat-label">Total Fee Deducted</span></div>
+    <div class="stat-box"><span class="stat-num">${fmt(amount)}</span><span class="stat-label">Importe de la transacción</span></div>
+    <div class="stat-box"><span class="stat-num" style="color:var(--error);">${fmt(totalFee)}</span><span class="stat-label">Tarifa total deducida</span></div>
     <div class="stat-box" style="background:linear-gradient(135deg,var(--primary),var(--primary-light));border:none;">
-      <span class="stat-num" style="color:white;">${fmt(netAmount)}</span><span class="stat-label" style="color:rgba(255,255,255,0.85);">Net Payout</span>
+      <span class="stat-num" style="color:white;">${fmt(netAmount)}</span><span class="stat-label" style="color:rgba(255,255,255,0.85);">Pago neto</span>
     </div>
-    <div class="stat-box"><span class="stat-num">${effectiveRate.toFixed(2)}%</span><span class="stat-label">Effective Fee Rate</span></div>`;
+    <div class="stat-box"><span class="stat-num">${effectiveRate.toFixed(2)}%</span><span class="stat-label">Tarifa efectiva</span></div>`;
 
   document.getElementById('result-summary').innerHTML =
-    `On a transaction of <strong>${fmt(amount)}</strong> with a fee of <strong>${percentFee}% + ${fmt(fixedFee)}</strong> fixed, the total fee deducted is <strong>${fmt(totalFee)}</strong> (${effectiveRate.toFixed(2)}% effective rate), leaving a net payout of <strong>${fmt(netAmount)}</strong>.`;
+    `En una transacción de <strong>${fmt(amount)}</strong> con una tarifa de <strong>${percentFee}% + ${fmt(fixedFee)}</strong> fijo, la tarifa total deducida es <strong>${fmt(totalFee)}</strong> (${effectiveRate.toFixed(2)}% effective rate), leaving a net payout of <strong>${fmt(netAmount)}</strong>.`;
 
   document.getElementById('result-card').style.display = 'block';
-  showStatus(statusEl, 'success', 'Calculated!');
+  showStatus(statusEl, 'success', '¡Calculado!');
 });
 
 document.getElementById('reset-btn').addEventListener('click', () => {

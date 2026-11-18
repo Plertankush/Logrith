@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js" defer=""></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Eliminador de páginas PDF", "url": "https://logrith.in/es/tool/tools/pdf-page-remover", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "description": "Herramienta online gratuita para eliminar páginas específicas de un archivo PDF.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
@@ -178,7 +178,7 @@ herramienta para <span class="keyword-tag">eliminar páginas de</span> <span cla
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 const uploadZone = document.getElementById('upload-zone');
 const fileInput = document.getElementById('file-input');
@@ -187,8 +187,8 @@ let toRemove = new Set();
 
 async function handleFile(file) {
   const statusEl = document.getElementById('status-msg');
-  if (!file || file.type !== 'application/pdf') { showStatus(statusEl,'error','Please select a valid PDF file.'); return; }
-  if (file.size > 20*1024*1024) { showStatus(statusEl,'error','File too large. Max 20MB.'); return; }
+  if (!file || file.type !== 'application/pdf') { showStatus(statusEl,'error','Seleccione un archivo PDF válido.'); return; }
+  if (file.size > 20*1024*1024) { showStatus(statusEl,'error','El archivo es demasiado grande. Máximo 20 MB.'); return; }
   if (typeof PDFLib === 'undefined') { showStatus(statusEl,'error','PDF library loading... please wait and try again.'); return; }
 
   try {
@@ -199,9 +199,9 @@ async function handleFile(file) {
     renderPages();
     document.getElementById('pages-card').style.display = 'block';
     document.getElementById('result-card').style.display = 'none';
-    showStatus(statusEl, 'success', `Loaded PDF with ${totalPages} page(s).`);
+    showStatus(statusEl, 'success', `PDF cargado con ${totalPages} página(s).`);
   } catch (err) {
-    showStatus(statusEl, 'error', 'Could not read this PDF. It may be corrupted or password-protected.');
+    showStatus(statusEl, 'error', 'No se pudo leer este PDF. Puede estar dañado o protegido con contraseña.');
   }
 }
 
@@ -214,7 +214,7 @@ function renderPages() {
     card.style.cursor = 'pointer';
     card.style.textAlign = 'center';
     card.dataset.page = i;
-    card.innerHTML = `<div style="font-size:2rem;"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#file-text"></use></svg></div><div class="result-title">Page ${i + 1}</div>`;
+    card.innerHTML = `<div style="font-size:2rem;"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#file-text"></use></svg></div><div class="result-title">Página ${i + 1}</div>`;
     card.addEventListener('click', () => {
       if (toRemove.has(i)) { toRemove.delete(i); card.style.borderColor = 'var(--gray-200)'; card.style.background = 'var(--gray-50)'; }
       else { toRemove.add(i); card.style.borderColor = 'var(--error)'; card.style.background = '#fef2f2'; }
@@ -230,8 +230,8 @@ document.getElementById('clear-selection-btn').addEventListener('click', () => {
 
 document.getElementById('remove-btn').addEventListener('click', async () => {
   const statusEl = document.getElementById('status-msg');
-  if (toRemove.size === 0) { showStatus(statusEl, 'error', 'Select at least one page to remove.'); return; }
-  if (toRemove.size === totalPages) { showStatus(statusEl, 'error', 'Cannot remove all pages — at least one must remain.'); return; }
+  if (toRemove.size === 0) { showStatus(statusEl, 'error', 'Seleccione al menos una página para eliminar.'); return; }
+  if (toRemove.size === totalPages) { showStatus(statusEl, 'error', 'No se pueden eliminar todas las páginas; al menos una debe permanecer.'); return; }
 
   try {
     const srcPdf = await PDFLib.PDFDocument.load(pdfBytes);
@@ -248,11 +248,11 @@ document.getElementById('remove-btn').addEventListener('click', async () => {
 
     document.getElementById('download-btn').href = url;
     document.getElementById('result-summary').innerHTML =
-      `<strong>Removed ${toRemove.size} page(s).</strong><br>Original: ${totalPages} pages → New: ${keepIndexes.length} pages`;
+      `<strong>Se eliminaron ${toRemove.size} página(s).</strong><br>Original: ${totalPages} páginas → Nuevo: ${keepIndexes.length} páginas`;
     document.getElementById('result-card').style.display = 'block';
-    showStatus(statusEl, 'success', 'Pages removed successfully!');
+    showStatus(statusEl, 'success', '¡Páginas eliminadas correctamente!');
   } catch (err) {
-    showStatus(statusEl, 'error', 'Something went wrong while processing the PDF.');
+    showStatus(statusEl, 'error', 'Se produjo un error al procesar el PDF.');
   }
 });
 

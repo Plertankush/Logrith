@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Búsqueda de código de estado HTTP", "url": "https://logrith.in/es/tool/tools/http-status-code-lookup", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Referencia gratuita y con función de búsqueda de códigos de estado HTTP con explicaciones.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas para desarrolladores", "item": "https://logrith.in/es/tool/categories/developer-tools"}, {"@type": "ListItem", "position": 4, "name": "Búsqueda de código de estado HTTP", "item": "https://logrith.in/es/tool/tools/http-status-code-lookup"}]}</script>
@@ -159,36 +159,36 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 const STATUS_CODES = [
-  { code: 100, name: 'Continue', desc: 'The server has received the request headers and the client should proceed to send the request body.' },
-  { code: 101, name: 'Switching Protocols', desc: 'The requester has asked the server to switch protocols and the server has agreed.' },
-  { code: 200, name: 'OK', desc: 'The request has succeeded. The most common success status code.' },
-  { code: 201, name: 'Created', desc: 'The request has succeeded and a new resource has been created as a result.' },
-  { code: 202, name: 'Accepted', desc: 'The request has been received but not yet acted upon.' },
-  { code: 204, name: 'No Content', desc: 'The server successfully processed the request but is not returning any content.' },
-  { code: 301, name: 'Moved Permanently', desc: 'The requested resource has been permanently moved to a new URL.' },
-  { code: 302, name: 'Found', desc: 'The requested resource temporarily resides at a different URL.' },
-  { code: 304, name: 'Not Modified', desc: 'Indicates the resource has not been modified since the version specified by request headers, allowing cached versions to be used.' },
-  { code: 307, name: 'Temporary Redirect', desc: 'The request should be repeated with another URL, but future requests should still use the original URL.' },
-  { code: 308, name: 'Permanent Redirect', desc: 'The resource has permanently moved, and future requests should use the new URL, preserving the original request method.' },
-  { code: 400, name: 'Bad Request', desc: 'The server cannot process the request due to a client error, such as malformed syntax.' },
-  { code: 401, name: 'Unauthorized', desc: 'Authentication is required and has failed or has not been provided.' },
-  { code: 403, name: 'Forbidden', desc: 'The server understood the request but refuses to authorize it, regardless of authentication.' },
-  { code: 404, name: 'Not Found', desc: 'The requested resource could not be found on the server. One of the most common status codes.' },
-  { code: 405, name: 'Method Not Allowed', desc: 'The request method is not supported for the requested resource.' },
-  { code: 408, name: 'Request Timeout', desc: 'The server timed out waiting for the request from the client.' },
-  { code: 409, name: 'Conflict', desc: 'The request conflicts with the current state of the target resource.' },
-  { code: 410, name: 'Gone', desc: 'The requested resource is no longer available and has been permanently removed.' },
-  { code: 418, name: "I'm a Teapot", desc: 'An April Fools joke status code from RFC 2324, indicating the server refuses to brew coffee because it is a teapot.' },
-  { code: 422, name: 'Unprocessable Entity', desc: 'The request was well-formed but contains semantic errors preventing processing.' },
-  { code: 429, name: 'Too Many Requests', desc: 'The client has sent too many requests in a given time period (rate limiting).' },
-  { code: 500, name: 'Internal Server Error', desc: 'A generic error indicating the server encountered an unexpected condition.' },
-  { code: 501, name: 'Not Implemented', desc: 'The server does not support the functionality required to fulfill the request.' },
-  { code: 502, name: 'Bad Gateway', desc: 'The server, acting as a gateway, received an invalid response from an upstream server.' },
-  { code: 503, name: 'Service Unavailable', desc: 'The server is currently unable to handle the request, often due to maintenance or overload.' },
-  { code: 504, name: 'Gateway Timeout', desc: 'The server, acting as a gateway, did not receive a timely response from an upstream server.' },
+  { code: 100, name: 'Continuar', desc: 'El servidor ha recibido los encabezados de la solicitud y el cliente debe proceder a enviar el cuerpo de la solicitud.' },
+  { code: 101, name: 'Protocolos de conmutación', desc: 'El solicitante ha pedido al servidor que cambie de protocolo y el servidor ha accedido.' },
+  { code: 200, name: 'OK', desc: 'La solicitud se ha realizado correctamente. Este es el código de estado de éxito más común.' },
+  { code: 201, name: 'Creado', desc: 'La solicitud se ha realizado correctamente y, como resultado, se ha creado un nuevo recurso.' },
+  { code: 202, name: 'Aceptado', desc: 'La solicitud ha sido recibida, pero aún no se ha tomado ninguna medida al respecto.' },
+  { code: 204, name: 'Sin contenido', desc: 'El servidor procesó correctamente la solicitud, pero no devuelve ningún contenido.' },
+  { code: 301, name: 'Trasladado permanentemente', desc: 'El recurso solicitado se ha movido permanentemente a una nueva URL.' },
+  { code: 302, name: 'Encontró', desc: 'El recurso solicitado reside temporalmente en una URL diferente.' },
+  { code: 304, name: 'No modificado', desc: 'Indica que el recurso no ha sido modificado desde la versión especificada en los encabezados de la solicitud, lo que permite utilizar versiones almacenadas en caché.' },
+  { code: 307, name: 'Redireccionamiento temporal', desc: 'La solicitud debe repetirse con otra URL, pero las solicitudes futuras deben seguir utilizando la URL original.' },
+  { code: 308, name: 'Redireccionamiento permanente', desc: 'El recurso se ha movido de forma permanente, y las futuras solicitudes deberán utilizar la nueva URL, conservando el método de solicitud original.' },
+  { code: 400, name: 'Solicitud incorrecta', desc: 'El servidor no puede procesar la solicitud debido a un error del cliente, como por ejemplo una sintaxis incorrecta.' },
+  { code: 401, name: 'No autorizado', desc: 'Se requiere autenticación y esta ha fallado o no se ha proporcionado.' },
+  { code: 403, name: 'Prohibido', desc: 'El servidor entendió la solicitud, pero se negó a autorizarla, independientemente de la autenticación.' },
+  { code: 404, name: 'Extraviado', desc: 'El recurso solicitado no se pudo encontrar en el servidor. Uno de los códigos de estado más comunes.' },
+  { code: 405, name: 'Método no permitido', desc: 'El método de solicitud no es compatible con el recurso solicitado.' },
+  { code: 408, name: 'Tiempo de espera de la solicitud', desc: 'El servidor agotó el tiempo de espera mientras esperaba la solicitud del cliente.' },
+  { code: 409, name: 'Conflicto', desc: 'La solicitud entra en conflicto con el estado actual del recurso de destino.' },
+  { code: 410, name: 'Desaparecido', desc: 'El recurso solicitado ya no está disponible y ha sido eliminado permanentemente.' },
+  { code: 418, name: "I'm a Teapot", desc: 'Un código de estado de broma del Día de los Inocentes del RFC 2324, que indica que el servidor se niega a preparar café porque es una tetera.' },
+  { code: 422, name: 'Entidad no procesable', desc: 'La solicitud estaba bien formulada, pero contiene errores semánticos que impiden su procesamiento.' },
+  { code: 429, name: 'Demasiadas peticiones', desc: 'El cliente ha enviado demasiadas solicitudes en un período de tiempo determinado (limitación de velocidad).' },
+  { code: 500, name: 'Error Interno del Servidor', desc: 'A generic error indicating the server encountered an unexpected condition.' },
+  { code: 501, name: 'No implementado', desc: 'El servidor no admite la funcionalidad necesaria para atender la solicitud.' },
+  { code: 502, name: 'Puerta de enlace defectuosa', desc: 'El servidor, que actúa como puerta de enlace, recibió una respuesta no válida de un servidor ascendente.' },
+  { code: 503, name: 'Servicio No Disponible', desc: 'El servidor no puede procesar la solicitud en este momento, a menudo debido a tareas de mantenimiento o sobrecarga.' },
+  { code: 504, name: 'Tiempo de espera de la puerta de enlace', desc: 'El servidor, que actuaba como puerta de enlace, no recibió una respuesta oportuna de un servidor ascendente.' },
 ];
 
 function getCategoryClass(code) {
@@ -201,7 +201,7 @@ function getCategoryClass(code) {
 
 function renderList(list) {
   const container = document.getElementById('status-list');
-  document.getElementById('results-count').innerHTML = `<span class="stat-chip">${list.length} of ${STATUS_CODES.length} status codes</span>`;
+  document.getElementById('results-count').innerHTML = `<span class="stat-chip">${list.length} de ${STATUS_CODES.length} códigos de estado</span>`;
   container.innerHTML = list.map(s => `
     <div class="status-item">
       <div class="status-code ${getCategoryClass(s.code)}">${s.code}</div>

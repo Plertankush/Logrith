@@ -31,11 +31,11 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
 <script>
@@ -173,7 +173,7 @@ const ico = (name) => `<svg class="icon icon-em" aria-hidden="true"><use href="/
 <div class="article-card">
 <div class="art-cat"><i><svg aria-hidden="true" class="icon icon-em"><use href="/assets/svg/icons.svg#clock"></use></svg></i> Vitalidades web básicas</div>
 <div class="art-title">¿Qué es Largest Contentful Paint (LCP) y cómo solucionarlo?</div>
-<div class="art-desc">LCP mide cuánto tiempo tarda el elemento visible más grande en renderizarse en la pantalla. Una puntuación superior a 2,5 segundos significa que los usuarios ven una pantalla en blanco y pueden abandonarla. La solución más común es precargar la imagen principal usando<link rel="preload"> , sirviéndolo en formato WebP y alojándolo en una CDN más cercana a tus usuarios. Eliminar los scripts que bloquean la renderización antes de que se cargue el elemento LCP también genera mejoras significativas.</div>
+<div class="art-desc">LCP mide el tiempo que tarda en cargarse el elemento visible más grande en pantalla. Un resultado superior a 2,5 segundos significa que los usuarios ven una pantalla en blanco y podrían abandonar la página. La solución más común consiste en precargar la imagen principal mediante &lt;link rel="preload"&gt;, servirla en formato WebP y alojarla en una CDN más cercana a los usuarios. Eliminar los scripts que bloquean la renderización antes de que se cargue el elemento LCP también produce mejoras significativas.</div>
 </div>
 <div class="article-card">
 <div class="art-cat"><i><svg aria-hidden="true" class="icon icon-em"><use href="/assets/svg/icons.svg#expand"></use></svg></i> Estabilidad del diseño</div>
@@ -198,7 +198,7 @@ const ico = (name) => `<svg class="icon icon-em" aria-hidden="true"><use href="/
 <div class="article-card">
 <div class="art-cat"><i><svg aria-hidden="true" class="icon icon-em"><use href="/assets/svg/icons.svg#image"></use></svg></i> Imágenes</div>
 <div class="art-title">WebP vs AVIF: ¿Qué formato de imagen debería usar en 2025?</div>
-<div class="art-desc">Los formatos de imagen modernos pueden reducir el tamaño del archivo entre un 30 y un 70 % en comparación con JPEG/PNG con una calidad equivalente. WebP tiene una compatibilidad con navegadores de más del 97 % y es la opción más segura en la actualidad. AVIF ofrece una compresión entre un 20 y un 30 % mejor que WebP, pero tiene una compatibilidad con navegadores ligeramente menor. Utilice el<picture> Elemento para servir AVIF a los navegadores compatibles y WebP como alternativa, con JPEG como último recurso para una máxima compatibilidad.</picture></div>
+<div class="art-desc">Los formatos de imagen modernos pueden reducir el tamaño de los archivos entre un 30 % y un 70 % en comparación con JPEG/PNG, manteniendo una calidad equivalente. WebP cuenta con una compatibilidad con más del 97 % de los navegadores y es la opción más segura actualmente. AVIF ofrece una compresión entre un 20 % y un 30 % superior a la de WebP, pero tiene una compatibilidad ligeramente menor con los navegadores. Utilice el elemento &lt;picture&gt; para servir AVIF a los navegadores compatibles y WebP como alternativa, con JPEG como último recurso para una máxima compatibilidad.</div>
 </div>
 </div>
 </div>
@@ -246,7 +246,7 @@ const ico = (name) => `<svg class="icon icon-em" aria-hidden="true"><use href="/
 <span class="q-text">¿Qué debo corregir primero para mejorar mi puntuación de rendimiento?</span>
 <i class="q-arrow"><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#chevron-down"></use></svg></i>
 </div>
-<div class="qna-a"><p>Comience con la pestaña Oportunidades: los elementos están ordenados por ahorro de tiempo estimado. En la mayoría de los casos, las correcciones de mayor impacto son: (1) comprimir y convertir imágenes a WebP/AVIF, (2) eliminar JavaScript y CSS que bloquean la renderización, (3) precargar la imagen LCP con<link rel="preload"> (4) habilitar la compresión de texto (Brotli/Gzip) y (5) usar una CDN para reducir el tiempo de respuesta del servidor. Estas cinco soluciones por sí solas suelen representar entre el 60 % y el 80 % de la mejora potencial total.</p></div>
+<div class="qna-a"><p>Comience con la pestaña Oportunidades: los elementos están ordenados según el tiempo estimado de ahorro. En la mayoría de los casos, las soluciones de mayor impacto son: (1) comprimir y convertir imágenes a WebP/AVIF, (2) eliminar JavaScript y CSS que bloquean la renderización, (3) precargar la imagen LCP con &lt;link rel="preload"&gt;, (4) habilitar la compresión de texto (Brotli/Gzip) y (5) usar una CDN para reducir el tiempo de respuesta del servidor. Estas cinco soluciones por sí solas suelen representar entre el 60 % y el 80 % de la mejora potencial total.</p></div>
 </div>
 <div class="qna-item">
 <div class="qna-q">
@@ -288,7 +288,7 @@ const ico = (name) => `<svg class="icon icon-em" aria-hidden="true"><use href="/
 <div class="tip-card">
 <div class="tip-ico"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-up"></use></svg></i></div>
 <div class="tip-title">Precargar imagen LCP</div>
-<div class="tip-text">Agregar<link rel="preload" as="image"> para tu imagen principal. Uno de los cambios con mayor retorno de inversión para la puntuación LCP.</div>
+<div class="tip-text">Agrega &lt;link rel="preload" as="image"&gt; a tu imagen principal. Uno de los cambios con mayor retorno de inversión para la puntuación LCP.</div>
 </div>
 <div class="tip-card">
 <div class="tip-ico"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#ban"></use></svg></i></div>
@@ -316,7 +316,7 @@ const ico = (name) => `<svg class="icon icon-em" aria-hidden="true"><use href="/
 </div>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 // ═══════════════════════════════════════════
 // CONFIG
@@ -359,13 +359,13 @@ document.querySelectorAll('.qna-q').forEach(q => {
 // ═══════════════════════════════════════════
 async function analyze() {
   let url = document.getElementById('urlInput').value.trim();
-  if (!url) { setStatus('Please enter a URL.', 'bad'); return; }
+  if (!url) { setStatus('Por favor, introduzca una URL.', 'bad'); return; }
   if (!url.startsWith('http')) url = 'https://' + url;
-  try { new URL(url); } catch(e) { setStatus('Invalid URL format.', 'bad'); return; }
+  try { new URL(url); } catch(e) { setStatus('Formato de URL no válido.', 'bad'); return; }
 
   const btn = document.getElementById('analyzeBtn');
   btn.classList.add('loading');
-  btn.innerHTML = '<i><svg class="icon icon-em icon-spin" aria-hidden="true"><use href="/assets/svg/icons.svg#loader"></use></svg></i> Analyzing...';
+  btn.innerHTML = '<i><svg class="icon icon-em icon-spin" aria-hidden="true"><use href="/assets/svg/icons.svg#loader"></use></svg></i> Analizando...';
   document.getElementById('loadingOverlay').classList.add('show');
   document.getElementById('resultsArea').style.display = 'none';
   setStatus('', '');
@@ -381,13 +381,13 @@ async function analyze() {
     renderAll(data);
     document.getElementById('resultsArea').style.display = 'block';
     document.getElementById('resultsArea').scrollIntoView({ behavior:'smooth', block:'start' });
-    setStatus('Analysis complete — ' + new Date().toLocaleTimeString(), 'good');
+    setStatus('Análisis completado — ' + new Date().toLocaleTimeString(), 'good');
   } catch(err) {
     setStatus('Error: ' + err.message, 'bad');
   } finally {
     document.getElementById('loadingOverlay').classList.remove('show');
     btn.classList.remove('loading');
-    btn.innerHTML = '<i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg></i> Analyze';
+    btn.innerHTML = '<i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#zap"></use></svg></i> Analizar';
   }
 }
 
@@ -420,14 +420,14 @@ function renderAll(data) {
 
   // Header
   document.getElementById('resultUrl').textContent = url.length > 55 ? url.substring(0,55)+'…' : url;
-  document.getElementById('resultTime').textContent = 'Tested ' + new Date(data.timestamp || Date.now()).toLocaleString();
+  document.getElementById('resultTime').textContent = 'Probado ' + new Date(data.timestamp || Date.now()).toLocaleString();
   try {
     const domain = new URL(url).hostname;
     document.getElementById('faviconBox').innerHTML = `<img src="https://www.google.com/s2/favicons?domain=${domain}&sz=32" width="22" style="border-radius:4px" onerror="this.style.display='none'">`;
   } catch(e){}
   document.getElementById('modeChip').innerHTML = isApi
-    ? `<span class="mode-chip api"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg></i> Lighthouse API + CrUX</span>`
-    : `<span class="mode-chip fallback"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#warning"></use></svg></i> Fallback Mode</span>`;
+    ? `<span class="mode-chip api"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#check-circle"></use></svg></i> API Lighthouse + CrUX</span>`
+    : `<span class="mode-chip fallback"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#warning"></use></svg></i> Modo de reserva</span>`;
 
   // Scores
   buildScores(mob, dsk);
@@ -435,8 +435,8 @@ function renderAll(data) {
   // Opp badge
   const oppCount = (mob.opportunities||[]).length;
   document.getElementById('oppsTab').innerHTML = oppCount
-    ? `<i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#lightbulb"></use></svg></i> Opportunities <span class="tbadge">${oppCount}</span>`
-    : `<i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#lightbulb"></use></svg></i> Opportunities`;
+    ? `<i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#lightbulb"></use></svg></i> Oportunidades <span class="tbadge">${oppCount}</span>`
+    : `<i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#lightbulb"></use></svg></i> Oportunidades`;
 
   // Panes
   document.getElementById('metricsPane').innerHTML = buildMetrics(mob, dsk);
@@ -453,10 +453,10 @@ function renderAll(data) {
 function buildScores(mob, dsk) {
   const circ = 2 * Math.PI * 30;
   const cards = [
-    { label:'Mobile', sub:'Performance', val: mob.performance, icon:'phone' },
-    { label:'Desktop', sub:'Performance', val: dsk.performance, icon:'layout' },
-    { label:'Accessibility', sub:'', val: mob.accessibility, icon:'user' },
-    { label:'Best Practices', sub:'', val: mob.bestPractices, icon:'shield' },
+    { label:'Móvil', sub:'Actuación', val: mob.performance, icon:'phone' },
+    { label:'De oficina', sub:'Actuación', val: dsk.performance, icon:'layout' },
+    { label:'Accesibilidad', sub:'', val: mob.accessibility, icon:'user' },
+    { label:'Mejores prácticas', sub:'', val: mob.bestPractices, icon:'shield' },
     { label:'SEO', sub:'', val: mob.seo, icon:'search' },
   ];
   const color = v => v >= 90 ? '#22c55e' : v >= 50 ? '#f59e0b' : '#ef4444';
@@ -494,13 +494,13 @@ function animateRings() {
 function buildMetrics(mob, dsk) {
   const m = mob.metrics||{}, d = dsk.metrics||{};
   const rows = [
-    {name:'Largest Contentful Paint', key:'lcp', tip:'Good ≤2.5s'},
-    {name:'Cumulative Layout Shift', key:'cls', tip:'Good ≤0.1'},
-    {name:'Total Blocking Time', key:'tbt', tip:'Good ≤200ms'},
-    {name:'First Contentful Paint', key:'fcp', tip:'Good ≤1.8s'},
-    {name:'Time to First Byte', key:'ttfb', tip:'Good ≤800ms'},
-    {name:'Speed Index', key:'speedIndex', tip:'Good ≤3.4s'},
-    {name:'Time to Interactive', key:'tti', tip:'Good ≤3.8s'},
+    {name:'La mayor pintura con contenido', key:'lcp', tip:'Bueno ≤2,5 s'},
+    {name:'Cambio de diseño acumulativo', key:'cls', tip:'Bueno ≤0,1'},
+    {name:'Tiempo total de bloqueo', key:'tbt', tip:'Bueno ≤200 ms'},
+    {name:'Primera pintura de contenido', key:'fcp', tip:'Bueno ≤1,8 s'},
+    {name:'Tiempo hasta el primer byte', key:'ttfb', tip:'Bueno ≤800 ms'},
+    {name:'Índice de velocidad', key:'speedIndex', tip:'Bueno ≤3,4 s'},
+    {name:'Es hora de interactuar.', key:'tti', tip:'Bueno ≤3,8 s'},
   ];
   const cls = (k,v) => {
     if(!v||v==='N/A') return 'na';
@@ -517,23 +517,21 @@ function buildMetrics(mob, dsk) {
   return `
     <div class="two-col">
       <div class="panel">
-        <div class="panel-ttl"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#phone"></use></svg></i> Mobile — Slow 4G Simulated</div>
+        <div class="panel-ttl"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#phone"></use></svg></i> Móvil: simulación 4G lenta</div>
         ${makeRows(m)}
         <div class="cwv-badge ${mob.coreWebVitalsPass?'pass':'fail'}">
-          ${ico(mob.coreWebVitalsPass?'check-circle':'x-circle')}
-          Core Web Vitals: ${mob.coreWebVitalsPass?'PASS':'FAIL'}
+          ${ico(mob.coreWebVitalsPass?'check-circle':'x-circle')} Indicadores básicos de rendimiento web: ${mob.coreWebVitalsPass?'PASS':'FAIL'}
         </div>
       </div>
       <div class="panel">
-        <div class="panel-ttl"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#layout"></use></svg></i> Desktop — Fast Wired</div>
+        <div class="panel-ttl"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#layout"></use></svg></i> Escritorio — Conexión por cable rápida</div>
         ${makeRows(d)}
         <div class="cwv-badge ${dsk.coreWebVitalsPass?'pass':'fail'}">
-          ${ico(dsk.coreWebVitalsPass?'check-circle':'x-circle')}
-          Core Web Vitals: ${dsk.coreWebVitalsPass?'PASS':'FAIL'}
+          ${ico(dsk.coreWebVitalsPass?'check-circle':'x-circle')} Indicadores básicos de rendimiento web: ${dsk.coreWebVitalsPass?'PASS':'FAIL'}
         </div>
       </div>
     </div>
-    <p style="font-size:0.73rem;color:var(--gray-500);margin-top:0.6rem"><i style="color:var(--primary)"><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></i> Lab data — simulated environment. See "Real Users" tab for field data Google uses for ranking.</p>`;
+    <p style="font-size:0.73rem;color:var(--gray-500);margin-top:0.6rem"><i style="color:var(--primary)"><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></i> Datos de laboratorio: entorno simulado. Consulta la pestaña "Usuarios reales" para ver los datos de campo que Google utiliza para el posicionamiento.</p>`;
 }
 
 // ── CRUX ──
@@ -541,22 +539,22 @@ function buildCrux(crux) {
   if (!crux.available) return `
     <div class="panel"><div class="empty">
       <i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#users"></use></svg></i>
-      <p><strong>No CrUX data available</strong></p>
-      <p style="margin-top:0.4rem">This origin has insufficient Chrome user traffic in the last 28 days.<br>Try a high-traffic site like google.com.</p>
+      <p><strong>No hay datos de CruX disponibles</strong></p>
+      <p style="margin-top:0.4rem">Este origen ha registrado un tráfico insuficiente de usuarios de Chrome en los últimos 28 días.<br>Prueba con un sitio web con mucho tráfico como google.com.</p>
       ${crux.error?`<p style="color:var(--error);font-size:0.73rem;margin-top:0.4rem">${crux.error}</p>`:''}
     </div></div>`;
 
   const defs = [
-    {key:'lcp',name:'Largest Contentful Paint',unit:'ms',dec:0},
-    {key:'cls',name:'Cumulative Layout Shift',unit:'',dec:3},
-    {key:'inp',name:'Interaction to Next Paint',unit:'ms',dec:0},
+    {key:'lcp',name:'La mayor pintura con contenido',unit:'ms',dec:0},
+    {key:'cls',name:'Cambio de diseño acumulativo',unit:'',dec:3},
+    {key:'inp',name:'Interacción con la siguiente pintura',unit:'ms',dec:0},
   ];
   const ratingCls = r => r==='good'?'good':r==='needs-improvement'?'ni':'poor';
-  const ratingLabel = r => r==='good'?'Good':r==='needs-improvement'?'Needs Work':'Poor';
+  const ratingLabel = r => r==='good'?'Bien':r==='needs-improvement'?'Necesita trabajo':'Pobre';
 
   return `
     <div class="panel">
-      <div class="panel-ttl"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#users"></use></svg></i> Chrome UX Report — Last 28 Days (Real Chrome Users)</div>
+      <div class="panel-ttl"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#users"></use></svg></i> Informe de experiencia de usuario de Chrome: últimos 28 días (usuarios reales de Chrome)</div>
       <div class="crux-grid">
         ${defs.map(def => {
           const d = crux[def.key]; if(!d) return '';
@@ -573,7 +571,7 @@ function buildCrux(crux) {
               <div class="crux-val" style="color:${col}">${displayVal}${def.unit?' '+def.unit:''}</div>
               <div class="crux-chip ${rc}">${ico(rc==='good'?'check-circle':rc==='ni'?'minus':'x-circle')} ${ratingLabel(d.rating||'')}</div>
               <div class="crux-bar-wrap">
-                <div class="crux-bar-lbl"><span>Good ${g}%</span><span>NI ${n}%</span><span>Poor ${p}%</span></div>
+                <div class="crux-bar-lbl"><span>Bueno ${g}%</span><span>NI ${n}%</span><span>Malo ${p}%</span></div>
                 <div class="crux-bar-track">
                   <div class="crux-seg g" style="width:${g}%"></div>
                   <div class="crux-seg n" style="width:${n}%"></div>
@@ -592,13 +590,13 @@ function buildOpps(opps) {
   if(!opps.length) return `
     <div class="panel"><div class="empty">
       <i style="color:var(--success);opacity:1"><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#award"></use></svg></i>
-      <p style="color:var(--success);font-weight:600">No major opportunities found</p>
-      <p>Your site is well-optimized. Check diagnostics for fine-tuning.</p>
+      <p style="color:var(--success);font-weight:600">No se encontraron oportunidades importantes</p>
+      <p>Tu sitio web está bien optimizado. Revisa los diagnósticos para realizar ajustes adicionales.</p>
     </div></div>`;
   const icoMap = {high:{i:'fire',c:'high'},medium:{i:'warning',c:'medium'},low:{i:'info',c:'low'}};
   return `
     <div class="panel">
-      <div class="panel-ttl"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#lightbulb"></use></svg></i> ${opps.length} Opportunities — Sorted by Impact</div>
+      <div class="panel-ttl"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#lightbulb"></use></svg></i> ${opps.length} Oportunidades — Ordenadas por impacto</div>
       ${opps.map(o=>{
         const imp=(o.impact||'medium').toLowerCase();
         const ic=icoMap[imp]||icoMap.medium;
@@ -623,18 +621,18 @@ function buildDiag(diag, env) {
   const items = [
     {icon:'grid',    name:'DOM Size',            val:diag.domSize},
     {icon:'code',       name:'JS Execution Time',   val:diag.jsExecution},
-    {icon:'cpu',  name:'Main Thread Work',    val:diag.mainThreadWork},
-    {icon:'package',        name:'Total Page Weight',   val:diag.totalByteWeight||diag.networkPayload},
-    {icon:'api',       name:'Third-Party Impact',  val:diag.thirdParty},
-    {icon:'file-text',  name:'First-Party Summary', val:diag.firstParty},
+    {icon:'cpu',  name:'Trabajo del hilo principal',    val:diag.mainThreadWork},
+    {icon:'package',        name:'Peso total de la página',   val:diag.totalByteWeight||diag.networkPayload},
+    {icon:'api',       name:'Impacto de terceros',  val:diag.thirdParty},
+    {icon:'file-text',  name:'Resumen de primera parte', val:diag.firstParty},
     {icon:'zap',       name:'JS Parse + Compile',  val:diag.jsParseCompile},
-    {icon:'expand', name:'Layout Shift Elements',val:diag.layoutShift},
-    {icon:'timer',  name:'Long Tasks',          val:diag.longTasks},
-    {icon:'font-size',       name:'Font Display',        val:diag.fontDisplay},
+    {icon:'expand', name:'Elementos de cambio de diseño',val:diag.layoutShift},
+    {icon:'timer',  name:'Tareas largas',          val:diag.longTasks},
+    {icon:'font-size',       name:'Visualización de fuentes',        val:diag.fontDisplay},
   ];
   return `
     <div class="panel">
-      <div class="panel-ttl"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></i> Technical Diagnostics</div>
+      <div class="panel-ttl"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></i> Diagnóstico técnico</div>
       <div class="diag-grid">
         ${items.map(i=>`
           <div class="diag-row">
@@ -643,21 +641,21 @@ function buildDiag(diag, env) {
           </div>`).join('')}
       </div>
       ${env.device?`<div style="margin-top:1rem;padding:0.75rem;background:var(--gray-300);border-radius:6px;font-size:0.76rem;color:var(--gray-500)">
-        <i style="color:var(--primary)"><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#server"></use></svg></i> ${env.device} &middot; ${env.network||'—'} &middot; Lighthouse ${env.lighthouseVersion||'11.x'}
+        <i style="color:var(--primary)"><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#server"></use></svg></i> ${env.device} &middot; ${env.network||'—'} &middot; Faro ${env.lighthouseVersion||'11.x'}
       </div>`:''}
     </div>`;
 }
 
 // ── NETWORK ──
 function buildNetwork(reqs) {
-  if(!reqs||!reqs.length) return `<div class="panel"><div class="empty"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#server"></use></svg></i><p>Network waterfall not available in fallback mode.</p></div></div>`;
+  if(!reqs||!reqs.length) return `<div class="panel"><div class="empty"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#server"></use></svg></i><p>La cascada de red no está disponible en modo de reserva.</p></div></div>`;
   const maxSz = Math.max(...reqs.map(r=>r.transferSize||0));
   return `
     <div class="panel">
       <div class="panel-ttl"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#server"></use></svg></i> Network Waterfall — Top ${reqs.length} Requests by Size</div>
       <div style="overflow-x:auto">
         <table class="net-table">
-          <thead><tr><th>#</th><th>URL</th><th>Type</th><th>Size</th><th>Bar</th></tr></thead>
+          <thead><tr><th>#</th><th>URL</th><th>Tipo</th><th>Tamaño</th><th>Bar</th></tr></thead>
           <tbody>
             ${reqs.map((r,i)=>{
               const kb=Math.round((r.transferSize||0)/1024);
@@ -680,17 +678,17 @@ function buildNetwork(reqs) {
 
 // ── THIRD PARTY ──
 function buildTP(summary) {
-  if(!summary||!summary.length) return `<div class="panel"><div class="empty"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#api"></use></svg></i><p>No third-party data. Requires full Lighthouse API mode.</p></div></div>`;
+  if(!summary||!summary.length) return `<div class="panel"><div class="empty"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#api"></use></svg></i><p>No admite datos de terceros. Requiere el modo API completo de Lighthouse.</p></div></div>`;
   return `
     <div class="panel">
-      <div class="panel-ttl"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#api"></use></svg></i> Third-Party Scripts — Main Thread Impact</div>
+      <div class="panel-ttl"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#api"></use></svg></i> Scripts de terceros: impacto en el hilo principal</div>
       <div class="tp-grid">
         ${summary.map(tp=>`
           <div class="tp-card">
             <div class="tp-name"><i><svg class="icon icon-em" aria-hidden="true"><use href="/assets/svg/icons.svg#external-link"></use></svg></i> ${tp.entity}</div>
-            <div class="tp-row"><span class="tp-key">Main Thread</span><span class="tp-v">${tp.mainThreadTime?Math.round(tp.mainThreadTime)+' ms':'N/A'}</span></div>
-            <div class="tp-row"><span class="tp-key">Transfer Size</span><span class="tp-v" style="color:var(--warning)">${tp.transferSize?(tp.transferSize/1024).toFixed(1)+' KB':'N/A'}</span></div>
-            <div class="tp-row"><span class="tp-key">Blocking Time</span><span class="tp-v">${tp.blockTime?Math.round(tp.blockTime)+' ms':'N/A'}</span></div>
+            <div class="tp-row"><span class="tp-key">Hilo principal</span><span class="tp-v">${tp.mainThreadTime?Math.round(tp.mainThreadTime)+' ms':'N/A'}</span></div>
+            <div class="tp-row"><span class="tp-key">Tamaño de transferencia</span><span class="tp-v" style="color:var(--warning)">${tp.transferSize?(tp.transferSize/1024).toFixed(1)+' KB':'N/A'}</span></div>
+            <div class="tp-row"><span class="tp-key">Bloquear el tiempo</span><span class="tp-v">${tp.blockTime?Math.round(tp.blockTime)+' ms':'N/A'}</span></div>
           </div>`).join('')}
       </div>
     </div>`;
@@ -706,14 +704,14 @@ function saveHistory(url, data) {
 }
 
 function doCompare() {
-  if(runHistory.length<2){ setStatus('Run at least 2 audits to compare.','avg'); return; }
+  if(runHistory.length<2){ setStatus('Realice al menos 2 auditorías para comparar.','avg'); return; }
   const a=runHistory[0], b=runHistory[1];
   const diff=(a.mob??0)-(b.mob??0);
   setStatus(`vs last run: Mobile ${diff>0?'+':''}${diff} (${new Date(b.ts).toLocaleTimeString()})`, diff>=0?'good':'bad');
 }
 
 function copyReport() {
-  if(!lastData){ setStatus('No report to copy yet.','avg'); return; }
+  if(!lastData){ setStatus('Aún no hay ningún informe para copiar.','avg'); return; }
   const m=lastData.mobile||{}, d=lastData.desktop||{};
   const txt=`LOGRITH SPEED ANALYZER REPORT
 URL: ${lastData.url}
@@ -737,7 +735,7 @@ Core Web Vitals: ${m.coreWebVitalsPass?'PASS':'FAIL'}
 
 OPPORTUNITIES (${(m.opportunities||[]).length})
 ${(m.opportunities||[]).map(o=>`  • ${o.title}: ${o.savings}`).join('\n')}`.trim();
-  navigator.clipboard.writeText(txt).then(()=>setStatus('Report copied to clipboard.','good')).catch(()=>setStatus('Copy failed — please use Ctrl+A on the page.','bad'));
+  navigator.clipboard.writeText(txt).then(()=>setStatus('Informe copiado al portapapeles.','good')).catch(()=>setStatus('Error al copiar: utilice Ctrl+A en la página.','bad'));
 }
 </script>
 </body>

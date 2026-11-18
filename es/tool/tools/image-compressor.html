@@ -27,11 +27,11 @@
 <link rel="icon" href="/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Logrith Compresor de imágenes", "url": "https://logrith.in/es/tool/tools/image-compressor", "applicationCategory": "MultimediaApplication", "operatingSystem": "Web Browser", "description": "Comprime imágenes en línea utilizando la calidad, el redimensionamiento, el tamaño de archivo objetivo, la conversión de formato, los modos preestablecidos y el procesamiento por lotes.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas de imagen", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 4, "name": "Compresor de imágenes", "item": "https://logrith.in/es/tool/tools/image-compressor"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cómo puedo comprimir una imagen en línea de forma gratuita?", "acceptedAnswer": {"@type": "Answer", "text": "Sube tu imagen, elige un modo de compresión, ajusta la configuración y descarga el archivo más pequeño al instante."}}, {"@type": "Question", "name": "¿Puedo cambiar el tamaño de mi imagen antes de comprimirla?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Puedes cambiar el tamaño por porcentaje o introducir el ancho y la altura exactos antes de guardar la imagen final."}}, {"@type": "Question", "name": "¿Qué formato es mejor para archivos de menor tamaño?", "acceptedAnswer": {"@type": "Answer", "text": "WEBP suele ser el formato más pequeño para fotos, mientras que JPG es ampliamente compatible y PNG es mejor cuando la transparencia es importante."}}, {"@type": "Question", "name": "¿Puedo comprimir varias imágenes a la vez?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. La herramienta admite la compresión por lotes, lo que permite gestionar varios archivos en un mismo flujo de trabajo."}}, {"@type": "Question", "name": "¿El modo de tamaño de archivo objetivo resulta útil para formularios y cargas de archivos?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. El modo de tamaño objetivo es útil cuando necesitas una imagen con un tamaño de archivo inferior a un límite específico, como 100 KB, 200 KB u otra restricción de carga personalizada."}}, {"@type": "Question", "name": "¿Convertir un archivo PNG a JPG o WEBP reduce su tamaño?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Convertir archivos PNG grandes a JPG o WEBP puede reducir significativamente el tamaño del archivo cuando no se requiere transparencia."}}]}</script>
@@ -240,7 +240,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 (function () {
   'use strict';
@@ -254,7 +254,7 @@
   }
 
   function formatSize(bytes) {
-    if (bytes === 0) return '0 Bytes';
+    if (bytes === 0) return '0 bytes';
     const k = 1024;
     const sizes = ['Bytes', 'KB', 'MB', 'GB'];
     const i = Math.floor(Math.log(bytes) / Math.log(k));
@@ -362,7 +362,7 @@
     const arr = Array.from(fList).slice(0, 10);
     const accepted = arr.filter(file => {
       if (!['image/jpeg', 'image/png', 'image/webp'].includes(file.type)) {
-        showStatus(statusMsg, 'error', 'Only JPG, PNG, WEBP supported.');
+        showStatus(statusMsg, 'error', 'Solo se admiten JPG, PNG y WEBP.');
         return false;
       }
       if (file.size > 20 * 1024 * 1024) {
@@ -408,7 +408,7 @@
   function exportBlob(canvas, mime, quality) {
     return new Promise((resolve, reject) => {
       canvas.toBlob(blob => {
-        if (blob) resolve(blob); else reject(new Error('Compression failed'));
+        if (blob) resolve(blob); else reject(new Error('Falló la compresión'));
       }, mime, quality);
     });
   }
@@ -509,7 +509,7 @@
 
       img.onerror = () => {
         URL.revokeObjectURL(url);
-        reject(new Error('Image load failed'));
+        reject(new Error('Error al cargar la imagen'));
       };
 
       img.src = url;
@@ -518,7 +518,7 @@
 
   async function runCompression() {
     if (!files.length) {
-      showStatus(statusMsg, 'error', 'Please upload at least one image first.');
+      showStatus(statusMsg, 'error', 'Por favor, suba al menos una imagen primero.');
       return;
     }
 
@@ -560,13 +560,13 @@
             '<div class="result-title">' + files[i].name + '</div>' +
             '<div class="result-meta">' +
               formatSize(files[i].size) + ' → ' + formatSize(result.blob.size) + '<br>' +
-              'Output: ' + ext.toUpperCase() + ' • ' + result.width + ' × ' + result.height +
+              'Producción: ' + ext.toUpperCase() + ' • ' + result.width + ' × ' + result.height +
             '</div>' +
             '<div class="badge-row">' +
-              '<span class="' + badgeClass + '">' + (savePct > 0 ? ('↓ ' + savePct + '% saved') : 'Low savings') + '</span>' +
+              '<span class="' + badgeClass + '">' + (savePct > 0 ? ('↓ ' + savePct + '% saved') : 'Ahorros bajos') + '</span>' +
             '</div>' +
             '<div class="btn-group mt-12">' +
-              '<button class="btn btn-success btn-sm" data-idx="' + i + '"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#download"></use></svg> Download</button>' +
+              '<button class="btn btn-success btn-sm" data-idx="' + i + '"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#download"></use></svg> Descargar</button>' +
             '</div>' +
           '</div>';
       } catch (e) {
@@ -594,11 +594,11 @@
     const totalSaved = Math.max(0, totalOriginal - totalCompressed);
     const totalPct = totalOriginal ? Math.round((totalSaved / totalOriginal) * 100) : 0;
     summaryStrip.innerHTML =
-      '<span class="stat-chip">Images: <strong>' + files.length + '</strong></span>' +
+      '<span class="stat-chip">Imágenes: <strong>' + files.length + '</strong></span>' +
       '<span class="stat-chip">Original: <strong>' + formatSize(totalOriginal) + '</strong></span>' +
-      '<span class="stat-chip">Compressed: <strong>' + formatSize(totalCompressed) + '</strong></span>' +
-      '<span class="stat-chip">Saved: <strong>' + formatSize(totalSaved) + ' (' + totalPct + '%)</strong></span>' +
-      '<span class="stat-chip">Mode: <strong>' + activeMode + '</strong></span>';
+      '<span class="stat-chip">Comprimido: <strong>' + formatSize(totalCompressed) + '</strong></span>' +
+      '<span class="stat-chip">Guardado: <strong>' + formatSize(totalSaved) + ' (' + totalPct + '%)</strong></span>' +
+      '<span class="stat-chip">Modo: <strong>' + activeMode + '</strong></span>';
   }
 
   if (compressBtn) {
@@ -606,7 +606,7 @@
       runCompression().catch(function (err) {
         compressBtn.disabled = false;
         progress.classList.remove('active');
-        showStatus(statusMsg, 'error', 'Something went wrong: ' + err.message);
+        showStatus(statusMsg, 'error', 'Algo salió mal: ' + err.message);
       });
     });
   }

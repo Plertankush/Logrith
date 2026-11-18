@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Convertir caracteres especiales en entidades HTML | Logrith</title>
-<meta name="description" content="Codifique caracteres como < > y & en entidades HTML seguras, o decodifique las entidades HTML para convertirlas de nuevo en texto normal.">
+<meta name="description" content="Codifique caracteres como &lt; &gt; y &amp; en entidades HTML seguras, o decodifique las entidades HTML para convertirlas de nuevo en texto normal.">
 <meta name="keywords" content="html entity converter, html entity encoder, html entity decoder, encode html entities online, decode html entities free">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Logrith">
@@ -17,13 +17,13 @@
 
 
 <meta property="og:title" content="Convertir caracteres especiales en entidades HTML | Logrith">
-<meta property="og:description" content="Codifique caracteres como < > y & en entidades HTML seguras, o decodifique las entidades HTML para convertirlas de nuevo en texto normal.">
+<meta property="og:description" content="Codifique caracteres como &lt; &gt; y &amp; en entidades HTML seguras, o decodifique las entidades HTML para convertirlas de nuevo en texto normal.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://logrith.in/es/tool/tools/html-entity-converter">
 <meta property="og:site_name" content="Logrith">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Convertir caracteres especiales en entidades HTML | Logrith">
-<meta name="twitter:description" content="Codifique caracteres como < > y & en entidades HTML seguras, o decodifique las entidades HTML para convertirlas de nuevo en texto normal.">
+<meta name="twitter:description" content="Codifique caracteres como &lt; &gt; y &amp; en entidades HTML seguras, o decodifique las entidades HTML para convertirlas de nuevo en texto normal.">
 <link rel="icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Convertidor de entidades HTML", "url": "https://logrith.in/es/tool/tools/html-entity-converter", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Codificador y decodificador de entidades HTML en línea gratuito.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas para desarrolladores", "item": "https://logrith.in/es/tool/categories/developer-tools"}, {"@type": "ListItem", "position": 4, "name": "Convertidor de entidades HTML", "item": "https://logrith.in/es/tool/tools/html-entity-converter"}]}</script>
@@ -63,7 +63,7 @@
 <div class="tool-workspace">
 <div class="tool-card">
 <h2>Texto de entrada</h2>
-<textarea class="tool-textarea" id="input-text" rows="8" placeholder="Introduzca texto o HTML con caracteres especiales..."><div class="box">Tom & Jerry's "Adventure"</div></textarea>
+<textarea class="tool-textarea" id="input-text" rows="8" placeholder="Introduzca texto o HTML con caracteres especiales...">&lt;div class="box"&gt;Tom &amp; Jerry's "Adventure"&lt;/div&gt;</textarea>
 <div class="btn-group mt-12">
 <button class="btn btn-primary" id="encode-btn"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#lock"></use></svg> Codificar entidades</button> <button class="btn btn-primary" id="decode-btn"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#unlock"></use></svg> Decodificar entidades</button> <button class="btn btn-secondary" id="clear-btn"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#close"></use></svg> Borrar</button>
 </div>
@@ -81,7 +81,7 @@
 <div class="faq-list">
 <details class="faq-item">
 <summary class="faq-q">¿Por qué codificar caracteres especiales como entidades HTML?</summary>
-<div class="faq-a"><p>Caracteres como <, > y & tienen un significado especial en el marcado HTML. Al codificarlos como entidades, se muestran como texto literal en lugar de interpretarse como sintaxis HTML.</p></div>
+<div class="faq-a"><p>Caracteres como &lt;, &gt; y &amp; tienen un significado especial en el marcado HTML. Al codificarlos como entidades, se muestran como texto literal en lugar de interpretarse como sintaxis HTML.</p></div>
 </details>
 <details class="faq-item">
 <summary class="faq-q">¿Qué es XSS y cómo se relaciona esto?</summary>
@@ -89,7 +89,7 @@
 </details>
 <details class="faq-item">
 <summary class="faq-q">¿Puede esto decodificar entidades con nombre como ©?</summary>
-<div class="faq-a"><p>Sí, el decodificador maneja tanto entidades numéricas (') como entidades con nombre común (&, ©, ™ y más).</p></div>
+<div class="faq-a"><p>Sí, el decodificador maneja tanto entidades numéricas (') como entidades con nombre común (&amp;, ©, ™ y más).</p></div>
 </details>
 </div>
 </section>
@@ -102,7 +102,7 @@
 </li>
 <li class="step">
 <strong>Seleccione Codificar o Decodificar</strong>
-<p>Haz clic en "Codificar entidades" para convertir caracteres reservados como <code>&</code>, <code><</code> y <code>></code> en su forma de entidad segura, o en "Decodificar entidades" para convertir entidades como <code>&amp;</code> de nuevo en caracteres legibles.</p>
+<p>Haz clic en "Codificar entidades" para convertir caracteres reservados como <code>&amp;</code>, <code>&lt;</code> y <code>&gt;</code> en su forma de entidad segura, o en "Decodificar entidades" para convertir entidades como <code>&amp;amp;</code> de nuevo en caracteres legibles.</p>
 </li>
 <li class="step">
 <strong>Revisar el resultado</strong>
@@ -118,38 +118,38 @@
 <h2>Codificador y decodificador de entidades HTML</h2>
 <p>Esta herramienta convierte caracteres especiales en sus equivalentes de entidades HTML (codificación) o decodifica las entidades HTML. Es fundamental para mostrar de forma segura texto que contiene caracteres con significado especial en el marcado HTML.</p>
 <h3>¿Por qué existen las entidades HTML?</h3>
-<p>Ciertos caracteres —en particular <code><</code>, <code>></code> y <code>&</code>— están reservados en HTML porque se utilizan para definir etiquetas y entidades. Si desea mostrar el carácter literal "<" en el texto de una página web en lugar de que se interprete como el inicio de una etiqueta, debe codificarlo como <code>&lt;</code>. Las entidades HTML proporcionan este mecanismo de escape para los caracteres reservados, así como una forma de representar caracteres que podrían no ser fáciles de escribir (como las comillas curvas, las rayas largas o los símbolos de marca registrada).</p>
+<p>Ciertos caracteres —en particular <code>&lt;</code>, <code>&gt;</code> y <code>&amp;</code>— están reservados en HTML porque se utilizan para definir etiquetas y entidades. Si desea mostrar el carácter literal "&lt;" en el texto de una página web en lugar de que se interprete como el inicio de una etiqueta, debe codificarlo como <code>&amp;lt;</code>. Las entidades HTML proporcionan este mecanismo de escape para los caracteres reservados, así como una forma de representar caracteres que podrían no ser fáciles de escribir (como las comillas curvas, las rayas largas o los símbolos de marca registrada).</p>
 <h3>La codificación como defensa contra XSS</h3>
 <p>Más allá de una correcta visualización, la codificación es una práctica de seguridad fundamental. Si un sitio web muestra texto enviado por el usuario sin codificarlo previamente, y dicho texto contiene HTML o JavaScript, el navegador lo interpretará y podría ejecutarlo; esta es la base de los ataques de secuencias de comandos entre sitios (XSS). Codificar los caracteres especiales antes de insertar el contenido del usuario en una página es una de las defensas más importantes contra esta vulnerabilidad, ya que garantiza que la entrada del usuario siempre se trate como texto plano, nunca como código ejecutable.</p>
 <h3>Entidades HTML comunes</h3>
 <ul>
-<li><strong>&amp;</strong> se representa como & (ampersand)</li>
-<li><strong>&lt;</strong> se muestra como < (menor que)</li>
-<li><strong>&gt;</strong> se muestra como > (mayor que)</li>
-<li><strong>&quot;</strong> se muestra como " (comillas dobles)</li>
-<li><strong>&#39;</strong> se representa como ' (comilla simple/apóstrofe)</li>
-<li><strong>&nbsp;</strong> se muestra como un espacio sin separación</li>
-<li><strong>&copy;</strong> se muestra como © (símbolo de copyright)</li>
+<li><strong>&amp;amp;</strong> se representa como &amp; (ampersand)</li>
+<li><strong>&amp;lt;</strong> se muestra como &lt; (menor que)</li>
+<li><strong>&amp;gt;</strong> se muestra como &gt; (mayor que)</li>
+<li><strong>&amp;quot;</strong> se muestra como " (comillas dobles)</li>
+<li><strong>&amp;#39;</strong> se representa como ' (comilla simple/apóstrofe)</li>
+<li><strong>&amp;nbsp;</strong> se muestra como un espacio sin separación</li>
+<li><strong>&amp;copy;</strong> se muestra como © (símbolo de copyright)</li>
 </ul>
 <h3>Privacidad y procesamiento local</h3>
 <p>Todo el proceso de codificación y decodificación se realiza directamente en tu navegador; tu texto nunca se envía a un servidor.</p>
 <h3>Cómo funciona la codificación en esta herramienta</h3>
-<p>El codificador se centra en los cinco caracteres que realmente importan para una salida HTML segura: <code>&</code>, <code><</code>, <code>></code>, <code>"</code> y <code>'</code>. Cada aparición se reemplaza con su entidad numérica o con nombre correspondiente; primero se codifica el símbolo &, de modo que al codificar un carácter como <code><</code> no se codifique accidentalmente el símbolo & dentro de su propia entidad. Estos cinco caracteres cubren todos los casos en los que el marcado HTML podría malinterpretarse o romperse con texto literal, razón por la cual la mayoría de las bibliotecas de codificación, incluida esta, se centran específicamente en ellos en lugar de convertir todos los caracteres que no son ASCII.</p>
+<p>El codificador se centra en los cinco caracteres que realmente importan para una salida HTML segura: <code>&amp;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>"</code> y <code>'</code>. Cada aparición se reemplaza con su entidad numérica o con nombre correspondiente; primero se codifica el símbolo &amp;, de modo que al codificar un carácter como <code>&lt;</code> no se codifique accidentalmente el símbolo &amp; dentro de su propia entidad. Estos cinco caracteres cubren todos los casos en los que el marcado HTML podría malinterpretarse o romperse con texto literal, razón por la cual la mayoría de las bibliotecas de codificación, incluida esta, se centran específicamente en ellos en lugar de convertir todos los caracteres que no son ASCII.</p>
 <h3>Cómo funciona la decodificación en esta herramienta</h3>
-<p>La decodificación utiliza el analizador HTML del propio navegador: el texto de la entidad se asigna al elemento <code>innerHTML</code> de un área de texto oculta, y el navegador decodifica cualquier entidad válida —numérica (<code>&#39;</code>), hexadecimal (<code>&#x27;</code>) o con nombre (<code>&copy;</code>, <code>&trade;</code>, <code>&mdash;</code>)— exactamente como lo haría al renderizar una página web real. Al leer el <code>value</code> resultante del área de texto, se obtiene el texto sin formato. Este enfoque permite que el decodificador admita toda la gama de entidades que reconoce un navegador, no solo una lista corta predefinida.</p>
+<p>La decodificación utiliza el analizador HTML del propio navegador: el texto de la entidad se asigna al elemento <code>innerHTML</code> de un área de texto oculta, y el navegador decodifica cualquier entidad válida —numérica (<code>&amp;#39;</code>), hexadecimal (<code>&amp;#x27;</code>) o con nombre (<code>&amp;copy;</code>, <code>&amp;trade;</code>, <code>&amp;mdash;</code>)— exactamente como lo haría al renderizar una página web real. Al leer el <code>value</code> resultante del área de texto, se obtiene el texto sin formato. Este enfoque permite que el decodificador admita toda la gama de entidades que reconoce un navegador, no solo una lista corta predefinida.</p>
 <h3>Entidades numéricas frente a entidades con nombre</h3>
-<p>Una entidad con nombre como <code>&amp;</code> es más fácil de leer para un humano en el código fuente, mientras que una entidad numérica como <code>&#38;</code> hace referencia a un carácter directamente mediante su código Unicode y funciona incluso en contextos que no reconocen el conjunto completo de entidades con nombre. Ambas formas se decodifican al mismo carácter, y el decodificador de esta herramienta maneja cualquiera de las dos sin necesidad de saber de antemano cuál se utilizó.</p>
+<p>Una entidad con nombre como <code>&amp;amp;</code> es más fácil de leer para un humano en el código fuente, mientras que una entidad numérica como <code>&amp;#38;</code> hace referencia a un carácter directamente mediante su código Unicode y funciona incluso en contextos que no reconocen el conjunto completo de entidades con nombre. Ambas formas se decodifican al mismo carácter, y el decodificador de esta herramienta maneja cualquiera de las dos sin necesidad de saber de antemano cuál se utilizó.</p>
 <h3>Cuando necesite codificar entidades</h3>
 <ul>
 <li><strong>Mostrar fragmentos de código en una página web:</strong> mostrar código HTML o JavaScript literal como texto, en lugar de que el navegador intente renderizarlo.</li>
 <li><strong>Insertar contenido enviado por el usuario en HTML:</strong> codificar comentarios, datos de formularios o cualquier texto procedente de una fuente no fiable antes de insertarlo en el código HTML de una página.</li>
 <li><strong>Escribir valores de atributos entre comillas:</strong> escapar un carácter de comilla dentro de un atributo HTML para que no cierre prematuramente la cadena del atributo.</li>
-<li><strong>Incrustar texto con un signo de ampersand:</strong> nombres de empresas, URL con parámetros de consulta o frases como "Tom & Jerry" que de otro modo se interpretarían erróneamente como el inicio de una entidad.</li>
+<li><strong>Incrustar texto con un signo de ampersand:</strong> nombres de empresas, URL con parámetros de consulta o frases como "Tom &amp; Jerry" que de otro modo se interpretarían erróneamente como el inicio de una entidad.</li>
 </ul>
 <h3>Cuando necesitas decodificar entidades</h3>
 <p>La decodificación resulta útil cuando se dispone de código HTML sin procesar —copiado del código fuente de una página, exportado desde un CMS o extraído de la respuesta de una API— y se necesita leer o procesar el contenido textual sin que el escape de entidades interfiera. También es habitual al trabajar con fuentes RSS o datos extraídos mediante web scraping, donde el texto suele entregarse ya codificado en entidades.</p>
 <h3>Un caso de uso cotidiano para desarrolladores</h3>
-<p>Al crear un formulario web o un sistema de comentarios, cualquier texto que escriba el usuario debe codificarse antes de insertarse en el HTML de la página. De lo contrario, si el usuario escribe algo como <code><script></code>, podría dañar el diseño de la página o, en una aplicación real sin las medidas de seguridad adecuadas, permitir un ataque de secuencias de comandos entre sitios (XSS). Es fácil probar cómo se comporta la lógica de codificación con entradas complejas (cadenas con comillas, signos de ampersand y corchetes angulares) antes de integrarla en el código de la aplicación.</p>
+<p>Al crear un formulario web o un sistema de comentarios, cualquier texto que escriba el usuario debe codificarse antes de insertarse en el HTML de la página. De lo contrario, si el usuario escribe algo como <code>&lt;script&gt;</code>, podría dañar el diseño de la página o, en una aplicación real sin las medidas de seguridad adecuadas, permitir un ataque de secuencias de comandos entre sitios (XSS). Es fácil probar cómo se comporta la lógica de codificación con entradas complejas (cadenas con comillas, signos de ampersand y corchetes angulares) antes de integrarla en el código de la aplicación.</p>
 <h3>Entidades HTML frente a codificación URL</h3>
 <p>La codificación de entidades HTML y la codificación URL (codificación porcentual) resuelven problemas diferentes y no son intercambiables: las entidades HTML permiten insertar texto de forma segura dentro del marcado HTML, mientras que la codificación URL permite insertar texto de forma segura dentro de una URL. Una cadena destinada a un parámetro de consulta requiere codificación URL; la misma cadena destinada al texto visible de una página web requiere codificación de entidades HTML. Mezclar ambas es una causa común de errores al gestionar la entrada del usuario en diferentes partes de una aplicación.</p>
 </section>
@@ -167,7 +167,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 const ENTITY_MAP = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
 

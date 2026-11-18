@@ -27,11 +27,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js" defer=""></script>
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
@@ -159,7 +159,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 let pdfFiles = [], mergedBlob = null;
 let dragSrc = null;
@@ -197,7 +197,7 @@ function renderFileList() {
 
 function updateStats() {
   const total = pdfFiles.reduce((a, f) => a + f.size, 0);
-  document.getElementById('files-stats').innerHTML = `<span class="stat-chip">Files: <strong>${pdfFiles.length}</strong></span><span class="stat-chip">Total: <strong>${formatSize(total)}</strong></span>`;
+  document.getElementById('files-stats').innerHTML = `<span class="stat-chip">Archivos: <strong>${pdfFiles.length}</strong></span><span class="stat-chip">Total: <strong>${formatSize(total)}</strong></span>`;
 }
 
 function handleFiles(f) {
@@ -219,7 +219,7 @@ document.getElementById('add-more-btn').addEventListener('click', () => document
 document.getElementById('clear-btn').addEventListener('click', () => { pdfFiles=[]; renderFileList(); document.getElementById('files-card').style.display='none'; document.getElementById('output-card').style.display='none'; });
 
 document.getElementById('merge-btn').addEventListener('click', async () => {
-  if (pdfFiles.length < 2) { showStatus(document.getElementById('status-msg'), 'error', 'Please add at least 2 PDF files.'); return; }
+  if (pdfFiles.length < 2) { showStatus(document.getElementById('status-msg'), 'error', 'Por favor, adjunte al menos 2 archivos PDF.'); return; }
   if (typeof PDFLib === 'undefined') { showStatus(document.getElementById('status-msg'), 'error', 'PDF library not loaded. Check internet connection.'); return; }
 
   document.getElementById('merge-btn').disabled = true;
@@ -239,12 +239,12 @@ document.getElementById('merge-btn').addEventListener('click', async () => {
     const pdfBytes = await mergedPdf.save();
     progressFill.style.width = '100%';
     mergedBlob = new Blob([pdfBytes], { type: 'application/pdf' });
-    document.getElementById('output-info').innerHTML = `<span class="stat-chip">Files merged: <strong>${pdfFiles.length}</strong></span><span class="stat-chip">Final size: <strong>${formatSize(mergedBlob.size)}</strong></span>`;
+    document.getElementById('output-info').innerHTML = `<span class="stat-chip">Archivos fusionados: <strong>${pdfFiles.length}</strong></span><span class="stat-chip">Tamaño final: <strong>${formatSize(mergedBlob.size)}</strong></span>`;
     document.getElementById('output-card').style.display = 'block';
     showStatus(document.getElementById('status-msg'), 'success', 'PDFs merged successfully!');
     document.getElementById('download-btn').onclick = () => downloadBlob(mergedBlob, 'merged.pdf');
   } catch(e) {
-    showStatus(document.getElementById('status-msg'), 'error', 'Merge failed: ' + e.message);
+    showStatus(document.getElementById('status-msg'), 'error', 'La fusión falló: ' + e.message);
   }
   progress.classList.remove('active');
   document.getElementById('merge-btn').disabled = false;

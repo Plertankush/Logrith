@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de diferencia de fechas", "url": "https://logrith.in/es/tool/tools/date-difference-calculator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "description": "Calculadora online gratuita para calcular la diferencia exacta entre dos fechas cualesquiera en años, meses, días y semanas.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Calcular y convertir", "item": "https://logrith.in/es/tool/categories/calculate-convert"}, {"@type": "ListItem", "position": 4, "name": "Calculadora de diferencia de fechas", "item": "https://logrith.in/es/tool/tools/date-difference-calculator"}]}</script>
@@ -170,7 +170,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 const today = new Date();
 const pad = n => String(n).padStart(2,'0');
@@ -182,7 +182,7 @@ document.getElementById('calc-btn').addEventListener('click', () => {
   const startVal = document.getElementById('start-date').value;
   const endVal = document.getElementById('end-date').value;
 
-  if (!startVal || !endVal) { showStatus(statusEl, 'error', 'Please select both dates.'); return; }
+  if (!startVal || !endVal) { showStatus(statusEl, 'error', 'Por favor, seleccione ambas fechas.'); return; }
 
   let d1 = new Date(startVal);
   let d2 = new Date(endVal);
@@ -208,20 +208,20 @@ document.getElementById('calc-btn').addEventListener('click', () => {
   }
 
   document.getElementById('result-grid').innerHTML = `
-    <div class="stat-box"><span class="stat-num">${years}</span><span class="stat-label">Years</span></div>
-    <div class="stat-box"><span class="stat-num">${months}</span><span class="stat-label">Months</span></div>
-    <div class="stat-box"><span class="stat-num">${days}</span><span class="stat-label">Days</span></div>
-    <div class="stat-box"><span class="stat-num">${totalDays.toLocaleString()}</span><span class="stat-label">Total Days</span></div>
-    <div class="stat-box"><span class="stat-num">${totalWeeks.toLocaleString()}</span><span class="stat-label">Total Weeks</span></div>
-    <div class="stat-box"><span class="stat-num">${totalMonths.toLocaleString()}</span><span class="stat-label">Total Months</span></div>
-    <div class="stat-box"><span class="stat-num">${weekdays.toLocaleString()}</span><span class="stat-label">Weekdays</span></div>
-    <div class="stat-box"><span class="stat-num">${weekends.toLocaleString()}</span><span class="stat-label">Weekend Days</span></div>`;
+    <div class="stat-box"><span class="stat-num">${years}</span><span class="stat-label">Años</span></div>
+    <div class="stat-box"><span class="stat-num">${months}</span><span class="stat-label">Meses</span></div>
+    <div class="stat-box"><span class="stat-num">${days}</span><span class="stat-label">Días</span></div>
+    <div class="stat-box"><span class="stat-num">${totalDays.toLocaleString()}</span><span class="stat-label">Días totales</span></div>
+    <div class="stat-box"><span class="stat-num">${totalWeeks.toLocaleString()}</span><span class="stat-label">Semanas totales</span></div>
+    <div class="stat-box"><span class="stat-num">${totalMonths.toLocaleString()}</span><span class="stat-label">Meses totales</span></div>
+    <div class="stat-box"><span class="stat-num">${weekdays.toLocaleString()}</span><span class="stat-label">días laborables</span></div>
+    <div class="stat-box"><span class="stat-num">${weekends.toLocaleString()}</span><span class="stat-label">Días de fin de semana</span></div>`;
 
   document.getElementById('result-summary').innerHTML =
-    `From <strong>${start.toDateString()}</strong> to <strong>${end.toDateString()}</strong> is <strong>${years} years, ${months} months, ${days} days</strong> (${totalDays.toLocaleString()} total days).`;
+    `De <strong>${start.toDateString()}</strong> to <strong>${end.toDateString()}</strong> is <strong>${years} años, ${months} meses, ${days} días</strong> (${totalDays.toLocaleString()} días en total).`;
 
   document.getElementById('result-card').style.display = 'block';
-  showStatus(statusEl, 'success', 'Calculated!');
+  showStatus(statusEl, 'success', '¡Calculado!');
 });
 
 document.getElementById('reset-btn').addEventListener('click', () => {

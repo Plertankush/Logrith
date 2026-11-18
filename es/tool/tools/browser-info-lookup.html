@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Búsqueda de información del navegador", "url": "https://logrith.in/es/tool/tools/browser-info-lookup", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "description": "Herramienta online gratuita que muestra información del cliente detectada por el navegador, como el navegador, el sistema operativo, la pantalla y la zona horaria.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Utilidades", "item": "https://logrith.in/es/tool/categories/utilities"}, {"@type": "ListItem", "position": 4, "name": "Búsqueda de información del navegador", "item": "https://logrith.in/es/tool/tools/browser-info-lookup"}]}</script>
@@ -142,11 +142,11 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 function detectBrowser() {
   const ua = navigator.userAgent;
-  let name = 'Unknown', version = '';
+  let name = 'Desconocido', version = '';
 
   if (ua.includes('Edg/')) { name = 'Microsoft Edge'; version = ua.match(/Edg\/([\d.]+)/)?.[1] || ''; }
   else if (ua.includes('Chrome/') && !ua.includes('Edg')) { name = 'Google Chrome'; version = ua.match(/Chrome\/([\d.]+)/)?.[1] || ''; }
@@ -161,27 +161,27 @@ function detectOS() {
   if (ua.includes('Windows NT 10.0')) return 'Windows 10/11';
   if (ua.includes('Windows')) return 'Windows';
   if (ua.includes('Mac OS X')) return 'macOS';
-  if (ua.includes('Android')) return 'Android';
+  if (ua.includes('Android')) return 'Androide';
   if (ua.includes('iPhone') || ua.includes('iPad')) return 'iOS';
   if (ua.includes('Linux')) return 'Linux';
-  return 'Unknown';
+  return 'Desconocido';
 }
 
 function loadInfo() {
   const grid = document.getElementById('info-grid');
   const items = [
-    { label: 'Browser', value: detectBrowser() },
-    { label: 'Operating System', value: detectOS() },
-    { label: 'Screen Resolution', value: `${screen.width} × ${screen.height}` },
-    { label: 'Viewport Size', value: `${window.innerWidth} × ${window.innerHeight}` },
-    { label: 'Timezone', value: Intl.DateTimeFormat().resolvedOptions().timeZone || 'Unknown' },
-    { label: 'Language', value: navigator.language || 'Unknown' },
-    { label: 'Cookies Enabled', value: navigator.cookieEnabled ? 'Yes' : 'No' },
-    { label: 'Online Status', value: navigator.onLine ? 'Online' : 'Offline' },
-    { label: 'Color Depth', value: `${screen.colorDepth}-bit` },
-    { label: 'Device Pixel Ratio', value: window.devicePixelRatio || 1 },
-    { label: 'Platform', value: navigator.platform || 'Unknown' },
-    { label: 'Touch Support', value: ('ontouchstart' in window) ? 'Yes' : 'No' },
+    { label: 'Navegador', value: detectBrowser() },
+    { label: 'Sistema operativo', value: detectOS() },
+    { label: 'Resolución de pantalla', value: `${screen.width} × ${screen.height}` },
+    { label: 'Tamaño de la ventana gráfica', value: `${window.innerWidth} × ${window.innerHeight}` },
+    { label: 'Zona horaria', value: Intl.DateTimeFormat().resolvedOptions().timeZone || 'Desconocido' },
+    { label: 'Idioma', value: navigator.language || 'Desconocido' },
+    { label: 'Cookies habilitadas', value: navigator.cookieEnabled ? 'Sí' : 'No' },
+    { label: 'Estado en línea', value: navigator.onLine ? 'En línea' : 'Desconectado' },
+    { label: 'Profundidad de color', value: `${screen.colorDepth}-bit` },
+    { label: 'Relación de píxeles del dispositivo', value: window.devicePixelRatio || 1 },
+    { label: 'Plataforma', value: navigator.platform || 'Desconocido' },
+    { label: 'Soporte táctil', value: ('ontouchstart' in window) ? 'Sí' : 'No' },
   ];
 
   grid.innerHTML = items.map(item => `

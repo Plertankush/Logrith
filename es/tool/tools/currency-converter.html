@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Convertidor de divisas", "url": "https://logrith.in/es/tool/tools/currency-converter", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "description": "Convertidor de divisas online gratuito que utiliza un tipo de cambio introducido manualmente o preestablecido.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Calcular y convertir", "item": "https://logrith.in/es/tool/categories/calculate-convert"}, {"@type": "ListItem", "position": 4, "name": "Convertidor de divisas", "item": "https://logrith.in/es/tool/tools/currency-converter"}]}</script>
@@ -185,7 +185,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 let history = [];
 
@@ -197,7 +197,7 @@ document.getElementById('convert-btn').addEventListener('click', () => {
   const amount = parseFloat(document.getElementById('amount').value);
 
   if (!rate || rate <= 0 || isNaN(amount) || amount < 0) {
-    showStatus(statusEl, 'error', 'Please enter a valid rate and amount.');
+    showStatus(statusEl, 'error', 'Por favor, introduzca una tarifa y un importe válidos.');
     return;
   }
 
@@ -210,7 +210,7 @@ document.getElementById('convert-btn').addEventListener('click', () => {
   history = history.slice(0, 5);
   renderHistory();
 
-  showStatus(statusEl, 'success', 'Converted!');
+  showStatus(statusEl, 'success', '¡Convertido!');
 });
 
 function renderHistory() {

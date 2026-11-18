@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Vista previa de Markdown", "url": "https://logrith.in/es/tool/tools/markdown-previewer", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "description": "Editor de Markdown online gratuito con vista previa HTML en tiempo real.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Texto y generadores", "item": "https://logrith.in/es/tool/categories/text-generators"}, {"@type": "ListItem", "position": 4, "name": "Vista previa de Markdown", "item": "https://logrith.in/es/tool/tools/markdown-previewer"}]}</script>
@@ -64,7 +64,7 @@
 <h2>Editor de Markdown</h2>
 <div class="editor-split">
 <div>
-<label class="mini-note mb-8 u-fa9aec">Entrada Markdown</label><textarea class="tool-textarea mono" id="md-input" rows="16"> # Bienvenido Este es un **previsualizador de Markdown en vivo**. ¡Intenta editar este texto! ## Características - Encabezados - Texto en **negrita** y *cursiva* - `código en línea` - [Enlaces](https://logrith.in) > Esta es una cita en bloque. --- ¡Feliz escritura!</textarea>
+<label class="mini-note mb-8 u-fa9aec">Entrada Markdown</label><textarea class="tool-textarea mono" id="md-input" rows="16"> # Bienvenido Este es un **previsualizador de Markdown en vivo**. ¡Intenta editar este texto! ## Características - Encabezados - Texto en **negrita** y *cursiva* - `código en línea` - [Enlaces](https://logrith.in) &gt; Esta es una cita en bloque. --- ¡Feliz escritura!</textarea>
 </div>
 <div>
 <label class="mini-note mb-8 u-fa9aec">Vista previa en vivo</label>
@@ -81,7 +81,7 @@
 <div class="faq-list">
 <details class="faq-item">
 <summary class="faq-q">¿Qué sintaxis de Markdown es compatible?</summary>
-<div class="faq-a"><p>Encabezados (#, ##, ###), negrita (**texto**), cursiva (*texto*), código en línea (`código`), enlaces ([texto](url)), citas en bloque (> texto), líneas horizontales (---) y listas básicas (* elemento).</p></div>
+<div class="faq-a"><p>Encabezados (#, ##, ###), negrita (**texto**), cursiva (*texto*), código en línea (`código`), enlaces ([texto](url)), citas en bloque (&gt; texto), líneas horizontales (---) y listas básicas (* elemento).</p></div>
 </details>
 <details class="faq-item">
 <summary class="faq-q">¿Puedo copiar el HTML generado?</summary>
@@ -126,7 +126,7 @@
 <li><strong>Cursiva:</strong> <code>*italic text*</code></li>
 <li><strong>Código en línea:</strong> <code>`code`</code></li>
 <li><strong>Enlaces:</strong> <code>[link text](https://example.com)</code></li>
-<li><strong>Citas en bloque:</strong> <code>> quoted text</code></li>
+<li><strong>Citas en bloque:</strong> <code>&gt; quoted text</code></li>
 <li><strong>Regla horizontal:</strong> <code>---</code></li>
 <li><strong>Listas simples:</strong> líneas que comienzan con <code>* </code></li>
 </ul>
@@ -172,7 +172,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 function markdownToHtml(md) {
   let html = md

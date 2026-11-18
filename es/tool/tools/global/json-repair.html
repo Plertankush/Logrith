@@ -31,11 +31,11 @@
 <meta name="keywords" content="json repair tool, fix json online, json validator, json formatter, json beautifier, json to typescript, json to csv">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Logrith Herramienta de reparación JSON", "url": "https://logrith.in/es/tool/tools/json-repair", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web Browser", "description": "Herramienta basada en navegador que valida JSON, corrige automáticamente errores de sintaxis comunes como comas al final y claves sin comillas, formatea y minimiza JSON, y convierte JSON a interfaces TypeScript o CSV, sin necesidad de subir datos a un servidor.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": ["Validate JSON with line and column error location", "Automatically repair trailing commas, unquoted keys and single-quoted strings", "Format and beautify JSON with selectable indent", "Minify JSON", "Collapsible JSON tree viewer", "Convert JSON to a TypeScript interface", "Convert array-of-objects JSON to CSV", "100% local browser processing"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas globales", "item": "https://logrith.in/es/tool/categories/global-tools"}, {"@type": "ListItem", "position": 4, "name": "Herramienta de reparación JSON", "item": "https://logrith.in/es/tool/tools/json-repair"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Puede esta herramienta corregir cualquier JSON dañado?", "acceptedAnswer": {"@type": "Answer", "text": "No. El paso de reparación automática se centra en tres problemas comunes y bien definidos: comas al final de las líneas, claves de objeto sin comillas y valores de cadena entre comillas simples. No puede recuperar datos que realmente falten, corregir estructuras profundamente dañadas o truncadas, ni adivinar lo que usted quiso escribir. Para cualquier otro problema que no se pueda solucionar con estas tres correcciones, la herramienta le indicará la ubicación exacta del error para que pueda corregirlo manualmente."}}, {"@type": "Question", "name": "¿Mis datos JSON están subidos a algún sitio?", "acceptedAnswer": {"@type": "Answer", "text": "No. Todo el análisis, reparación, formateo y conversión se realizan localmente en su navegador mediante JavaScript. Sus datos nunca se envían a Logrith ni a ningún otro servidor."}}, {"@type": "Question", "name": "¿La herramienta me indica exactamente dónde está el error?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, cuando el analizador JSON del navegador informa la posición de un carácter, la herramienta convierte esa posición en un número de línea y columna para que puedas ir directamente al problema."}}, {"@type": "Question", "name": "¿Puedo convertir JSON a una interfaz TypeScript?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Una vez que el JSON se analiza correctamente, la herramienta genera una interfaz básica de TypeScript infiriendo el tipo de cada campo, incluidos los objetos anidados y las matrices."}}, {"@type": "Question", "name": "¿Puedo convertir JSON a CSV?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, si el JSON de nivel superior es una matriz de objetos planos. La herramienta crea un encabezado CSV a partir de la unión de todas las claves y escribe una fila por objeto. Si el JSON no tiene ese formato, la herramienta explica por qué no es posible exportar a CSV, en lugar de generar un resultado incompleto."}}, {"@type": "Question", "name": "¿Esta herramienta es de uso gratuito?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, esta herramienta es completamente gratuita, sin necesidad de cuenta, registro ni límite de uso más allá de lo que su navegador pueda soportar."}}]}</script>
@@ -231,7 +231,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 const inputEl = document.getElementById('json-input');
 const outputEl = document.getElementById('json-output');
@@ -268,12 +268,12 @@ function positionToLineCol(text, pos) {
 }
 
 function describeError(text, err) {
-  const msg = err && err.message ? err.message : 'Invalid JSON';
+  const msg = err && err.message ? err.message : 'JSON no válido';
   const m = msg.match(/position (\d+)/i);
   if (m) {
     const pos = parseInt(m[1], 10);
     const { line, col } = positionToLineCol(text, pos);
-    return `Error near line ${line}, column ${col}: ${msg}`;
+    return `Error cerca de la línea ${line}, columna ${col}: ${msg}`;
   }
   return msg;
 }
@@ -283,7 +283,7 @@ document.getElementById('validate-btn').addEventListener('click', () => {
   const text = inputEl.value;
   try {
     JSON.parse(text);
-    showStatus(statusEl, 'success', 'Valid JSON.');
+    showStatus(statusEl, 'success', 'JSON válido.');
   } catch (err) {
     showStatus(statusEl, 'error', describeError(text, err));
   }
@@ -326,13 +326,13 @@ function repairJson(text) {
 
   // 1. Strip trailing commas before } or ]
   const noTrailing = working.replace(/,(\s*[}\]])/g, '$1');
-  if (noTrailing !== working) applied.push('Removed trailing commas');
+  if (noTrailing !== working) applied.push('Se eliminaron las comas finales.');
   working = noTrailing;
 
   // 2. Quote unquoted object keys: ({ or ,) whitespace identifier whitespace :
   //    Only match keys NOT already inside quotes (identifier-start char after { or ,)
   const quotedKeys = working.replace(/([{,])(\s*)([A-Za-z_$][A-Za-z0-9_$]*)(\s*):/g, '$1$2"$3"$4:');
-  if (quotedKeys !== working) applied.push('Quoted unquoted object keys');
+  if (quotedKeys !== working) applied.push('Claves de objetos entre comillas y sin comillas');
   working = quotedKeys;
 
   // 3. Convert single-quoted string values to double-quoted.
@@ -343,7 +343,7 @@ function repairJson(text) {
     const escaped = inner.replace(/\\'/g, "'").replace(/"/g, '\\"');
     return '"' + escaped + '"';
   });
-  if (singleToDouble !== working) applied.push('Converted single-quoted strings to double-quoted');
+  if (singleToDouble !== working) applied.push('Se convirtieron las cadenas entre comillas simples a comillas dobles.');
   working = singleToDouble;
 
   return { text: working, applied };
@@ -352,14 +352,14 @@ function repairJson(text) {
 document.getElementById('repair-btn').addEventListener('click', () => {
   const text = inputEl.value;
   if (!text.trim()) {
-    showStatus(statusEl, 'error', 'Paste some JSON first.');
+    showStatus(statusEl, 'error', 'Primero, pega algo de JSON.');
     return;
   }
 
   // If already valid, nothing to repair.
   try {
     JSON.parse(text);
-    showStatus(statusEl, 'success', 'This JSON is already valid — nothing to repair.');
+    showStatus(statusEl, 'success', 'Este JSON ya es válido; no hay nada que reparar.');
     repairNoteWrap.innerHTML = '';
     return;
   } catch (e) { /* continue to repair */ }
@@ -379,27 +379,26 @@ document.getElementById('repair-btn').addEventListener('click', () => {
     lastRepairedText = repaired;
     const list = applied.length
       ? `<ul>${applied.map(a => `<li>${a}</li>`).join('')}</ul>`
-      : '<p>No changes were needed beyond re-parsing.</p>';
+      : '<p>No fue necesario realizar ningún cambio más allá del análisis sintáctico.</p>';
     repairNoteWrap.innerHTML = `
       <div class="repair-note ok">
-        <strong>Repaired successfully.</strong> The following fixes were applied:
-        ${list}
-        <button class="btn btn-primary btn-sm mt-12" id="accept-repair-btn" type="button">Accept repaired JSON</button>
+        <strong>Reparado con éxito.</strong> Se aplicaron las siguientes correcciones: ${list}
+        <button class="btn btn-primary btn-sm mt-12" id="accept-repair-btn" type="button">Aceptar JSON reparado</button>
       </div>`;
     document.getElementById('accept-repair-btn').addEventListener('click', () => {
       inputEl.value = JSON.stringify(finalParsed, null, getIndent());
       showOutput(inputEl.value, finalParsed);
-      showStatus(statusEl, 'success', 'Repaired JSON accepted into the editor.');
+      showStatus(statusEl, 'success', 'El JSON reparado ha sido aceptado en el editor.');
       repairNoteWrap.innerHTML = '';
     });
     showStatus(statusEl, 'success', 'JSON repaired. Review the changes below.');
   } else {
     repairNoteWrap.innerHTML = `
       <div class="repair-note fail">
-        <strong>Automatic repair could not fix this JSON automatically — manual correction is needed.</strong>
+        <strong>La reparación automática no pudo corregir este JSON automáticamente; se necesita una corrección manual.</strong>
         <p style="margin-top:8px;">${describeError(repaired, finalErr)}</p>
       </div>`;
-    showStatus(statusEl, 'error', 'Repair attempted, but the JSON still has errors.');
+    showStatus(statusEl, 'error', 'Se intentó reparar el archivo, pero el JSON aún contiene errores.');
   }
 });
 
@@ -447,7 +446,7 @@ function renderValue(key, value, isRoot) {
 }
 
 function renderTree(parsed) {
-  if (parsed === undefined) { treeView.innerHTML = '<p>No valid JSON to display.</p>'; return; }
+  if (parsed === undefined) { treeView.innerHTML = '<p>No hay ningún JSON válido para mostrar.</p>'; return; }
   treeView.innerHTML = `<div class="jt-root">${renderValue(null, parsed, true)}</div>`;
   treeView.querySelectorAll('.jt-toggle').forEach(t => {
     t.addEventListener('click', () => {
@@ -577,15 +576,15 @@ function renderCsv(parsed) {
 
 /* ---------- copy / download ---------- */
 document.getElementById('copy-output-btn').addEventListener('click', (e) => {
-  if (!outputEl.value) { showStatus(statusEl, 'error', 'Nothing to copy yet — format or minify first.'); return; }
+  if (!outputEl.value) { showStatus(statusEl, 'error', 'Todavía no hay nada que copiar; primero formatea o minimiza.'); return; }
   copyText(outputEl.value, e.currentTarget);
 });
 document.getElementById('copy-ts-btn').addEventListener('click', (e) => {
-  if (!tsOutput.value) { showStatus(statusEl, 'error', 'No TypeScript output available yet.'); return; }
+  if (!tsOutput.value) { showStatus(statusEl, 'error', 'Aún no hay salida de TypeScript disponible.'); return; }
   copyText(tsOutput.value, e.currentTarget);
 });
 document.getElementById('copy-csv-btn').addEventListener('click', (e) => {
-  if (!csvOutput.value) { showStatus(statusEl, 'error', 'No CSV output available for this JSON.'); return; }
+  if (!csvOutput.value) { showStatus(statusEl, 'error', 'No hay salida CSV disponible para este JSON.'); return; }
   copyText(csvOutput.value, e.currentTarget);
 });
 
@@ -600,12 +599,12 @@ function downloadBlob(content, filename, mime) {
 }
 
 document.getElementById('download-output-btn').addEventListener('click', () => {
-  if (!outputEl.value) { showStatus(statusEl, 'error', 'Nothing to download yet — format or minify first.'); return; }
+  if (!outputEl.value) { showStatus(statusEl, 'error', 'Todavía no hay nada que descargar; primero formatea o minimiza el archivo.'); return; }
   downloadBlob(outputEl.value, 'data.json', 'application/json');
 });
 
 document.getElementById('download-csv-btn').addEventListener('click', () => {
-  if (!csvOutput.value) { showStatus(statusEl, 'error', 'No CSV output available for this JSON.'); return; }
+  if (!csvOutput.value) { showStatus(statusEl, 'error', 'No hay salida CSV disponible para este JSON.'); return; }
   downloadBlob(csvOutput.value, 'data.csv', 'text/csv');
 });
 </script>

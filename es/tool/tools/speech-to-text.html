@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Conversión de voz a texto", "url": "https://logrith.in/es/tool/tools/speech-to-text", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "description": "Herramienta gratuita de dictado de voz a texto en línea que utiliza el reconocimiento de voz integrado del navegador.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Texto y generadores", "item": "https://logrith.in/es/tool/categories/text-generators"}, {"@type": "ListItem", "position": 4, "name": "Conversión de voz a texto", "item": "https://logrith.in/es/tool/tools/speech-to-text"}]}</script>
@@ -160,7 +160,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 const statusEl = document.getElementById('status-msg');
 const outputText = document.getElementById('output-text');
@@ -191,7 +191,7 @@ if (SpeechRecognitionAPI) {
   };
 
   recognition.onerror = (event) => {
-    showStatus(statusEl, 'error', `Recognition error: ${event.error}`);
+    showStatus(statusEl, 'error', `Error de reconocimiento: ${event.error}`);
     isListening = false;
   };
 
@@ -204,20 +204,20 @@ if (SpeechRecognitionAPI) {
     isListening = true;
     try {
       recognition.start();
-      showStatus(statusEl, 'success', 'Listening... speak now.');
+      showStatus(statusEl, 'success', 'Escuchando... habla ahora.');
     } catch (e) {
-      showStatus(statusEl, 'error', 'Could not start listening. Try clicking Stop first.');
+      showStatus(statusEl, 'error', 'No se pudo iniciar la escucha. Intente hacer clic en Detener primero.');
     }
   });
 
   document.getElementById('stop-btn').addEventListener('click', () => {
     isListening = false;
     recognition.stop();
-    showStatus(statusEl, 'success', 'Stopped listening.');
+    showStatus(statusEl, 'success', 'Dejé de escuchar.');
   });
 } else {
   document.getElementById('start-btn').addEventListener('click', () => {
-    showStatus(statusEl, 'error', 'Speech recognition is not supported in this browser. Please try Google Chrome or Microsoft Edge.');
+    showStatus(statusEl, 'error', 'Este navegador no admite el reconocimiento de voz. Pruebe con Google Chrome o Microsoft Edge.');
   });
   document.getElementById('stop-btn').addEventListener('click', () => {});
 }

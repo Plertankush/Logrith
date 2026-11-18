@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de IMC", "url": "https://logrith.in/es/tool/tools/bmi-calculator", "applicationCategory": "HealthApplication", "operatingSystem": "Any", "description": "Calculadora de IMC online gratuita con clasificación por categorías y rango de peso saludable.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Calcular y convertir", "item": "https://logrith.in/es/tool/categories/calculate-convert"}, {"@type": "ListItem", "position": 4, "name": "Calculadora de IMC", "item": "https://logrith.in/es/tool/tools/bmi-calculator"}]}</script>
@@ -198,7 +198,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 document.getElementById('unit-system').addEventListener('change', e => {
   const isMetric = e.target.value === 'metric';
@@ -214,22 +214,22 @@ document.getElementById('calc-btn').addEventListener('click', () => {
   if (isMetric) {
     const weight = parseFloat(document.getElementById('weight-kg').value);
     const height = parseFloat(document.getElementById('height-cm').value) / 100;
-    if (!weight || !height || weight <= 0 || height <= 0) { showStatus(statusEl,'error','Please enter valid weight and height.'); return; }
+    if (!weight || !height || weight <= 0 || height <= 0) { showStatus(statusEl,'error','Por favor, introduzca un peso y una altura válidos.'); return; }
     bmi = weight / (height * height);
   } else {
     const weight = parseFloat(document.getElementById('weight-lb').value);
     const ft = parseFloat(document.getElementById('height-ft').value) || 0;
     const inch = parseFloat(document.getElementById('height-in').value) || 0;
     const totalInches = ft * 12 + inch;
-    if (!weight || !totalInches || weight <= 0 || totalInches <= 0) { showStatus(statusEl,'error','Please enter valid weight and height.'); return; }
+    if (!weight || !totalInches || weight <= 0 || totalInches <= 0) { showStatus(statusEl,'error','Por favor, introduzca un peso y una altura válidos.'); return; }
     bmi = (703 * weight) / (totalInches * totalInches);
   }
 
   let category, color, barPct;
-  if (bmi < 18.5) { category = 'Underweight'; color = 'var(--accent)'; barPct = (bmi / 18.5) * 25; }
-  else if (bmi < 25) { category = 'Normal Weight'; color = 'var(--success)'; barPct = 25 + ((bmi - 18.5) / 6.5) * 25; }
-  else if (bmi < 30) { category = 'Overweight'; color = '#f59e0b'; barPct = 50 + ((bmi - 25) / 5) * 25; }
-  else { category = 'Obese'; color = 'var(--error)'; barPct = Math.min(100, 75 + ((bmi - 30) / 10) * 25); }
+  if (bmi < 18.5) { category = 'Bajo peso'; color = 'var(--accent)'; barPct = (bmi / 18.5) * 25; }
+  else if (bmi < 25) { category = 'Peso normal'; color = 'var(--success)'; barPct = 25 + ((bmi - 18.5) / 6.5) * 25; }
+  else if (bmi < 30) { category = 'Sobrepeso'; color = '#f59e0b'; barPct = 50 + ((bmi - 25) / 5) * 25; }
+  else { category = 'Obeso'; color = 'var(--error)'; barPct = Math.min(100, 75 + ((bmi - 30) / 10) * 25); }
 
   document.getElementById('bmi-value').textContent = bmi.toFixed(1);
   document.getElementById('bmi-category').textContent = category;
@@ -247,9 +247,9 @@ document.getElementById('calc-btn').addEventListener('click', () => {
   const maxWeightKg = 24.9 * heightM * heightM;
 
   if (isMetric) {
-    document.getElementById('bmi-summary').innerHTML = `<strong>Healthy weight range:</strong> ${minWeightKg.toFixed(1)} kg – ${maxWeightKg.toFixed(1)} kg`;
+    document.getElementById('bmi-summary').innerHTML = `<strong>Rango de peso saludable:</strong> ${minWeightKg.toFixed(1)} kg – ${maxWeightKg.toFixed(1)} kg`;
   } else {
-    document.getElementById('bmi-summary').innerHTML = `<strong>Healthy weight range:</strong> ${(minWeightKg*2.20462).toFixed(1)} lb – ${(maxWeightKg*2.20462).toFixed(1)} lb`;
+    document.getElementById('bmi-summary').innerHTML = `<strong>Rango de peso saludable:</strong> ${(minWeightKg*2.20462).toFixed(1)} lb – ${(maxWeightKg*2.20462).toFixed(1)} lb`;
   }
 
   document.getElementById('result-card').style.display = 'block';

@@ -32,11 +32,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Formateador SQL", "url": "https://logrith.in/es/tool/tools/sql-formatter", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Formateador y embellecedor de SQL en línea gratuito.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@id": "https://logrith.in/#organization"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Herramientas para desarrolladores", "item": "https://logrith.in/es/tool/categories/developer-tools"}, {"@type": "ListItem", "position": 4, "name": "Formateador SQL", "item": "https://logrith.in/es/tool/tools/sql-formatter"}]}</script>
@@ -62,7 +62,7 @@
 <div class="tool-workspace">
 <div class="tool-card">
 <h2>Consulta SQL</h2>
-<textarea class="tool-textarea mono" id="input-sql" rows="6" placeholder="Pega aquí tu consulta SQL...">select id, name, email from users where status = 'active' and age > 18 order by name limit 50</textarea>
+<textarea class="tool-textarea mono" id="input-sql" rows="6" placeholder="Pega aquí tu consulta SQL...">select id, name, email from users where status = 'active' and age &gt; 18 order by name limit 50</textarea>
 <div class="btn-group mt-12">
 <button class="btn btn-primary btn-lg" id="format-btn"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#ruler"></use></svg> Formato SQL</button> <button class="btn btn-secondary" id="clear-btn"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#close"></use></svg> Borrar</button>
 </div>
@@ -128,7 +128,7 @@
 <h3>Cómo funciona la detección de palabras clave</h3>
 <p>El formateador primero reduce la consulta a una sola línea eliminando los espacios en blanco adicionales y luego recorre una lista de palabras clave de cláusulas reconocidas, comenzando con frases de varias palabras como SELECT DISTINCT, LEFT OUTER JOIN e INSERT INTO, antes que las más cortas como SELECT, FROM y SET. La comprobación de las frases más largas evita que una palabra clave como "JOIN" se encuentre y se divida en medio de "LEFT JOIN" o "INNER JOIN". Cada coincidencia se coloca al inicio de una nueva línea y se reescribe en mayúsculas, de modo que una consulta escrita completamente en minúsculas se muestra con la capitalización estándar y convencional.</p>
 <h3>Manejo de cláusulas WHERE con AND / OR</h3>
-<p>Además de las palabras clave de la cláusula principal, el formateador también busca AND y OR dentro de las condiciones y les aplica una sangría de dos espacios debajo de la cláusula WHERE (o HAVING) a la que pertenecen. Esto permite que un filtro con múltiples condiciones —por ejemplo, <code>status = 'active' AND age > 18 AND country = 'US'</code>— se lea como una lista apilada de condiciones en lugar de una línea larga sin saltos, lo que facilita la detección de una condición faltante o mal ubicada.</p>
+<p>Además de las palabras clave de la cláusula principal, el formateador también busca AND y OR dentro de las condiciones y les aplica una sangría de dos espacios debajo de la cláusula WHERE (o HAVING) a la que pertenecen. Esto permite que un filtro con múltiples condiciones —por ejemplo, <code>status = 'active' AND age &gt; 18 AND country = 'US'</code>— se lea como una lista apilada de condiciones en lugar de una línea larga sin saltos, lo que facilita la detección de una condición faltante o mal ubicada.</p>
 <h3>Para desarrolladores que trabajan con consultas generadas por ORM</h3>
 <p>Las consultas generadas por ORM (Django, SQLAlchemy, Sequelize, Hibernate, Eloquent y similares) suelen registrarse como una única línea comprimida sin formato alguno, ya que el ORM no tiene motivo para formatear su salida. Copiar y pegar esa consulta registrada en bruto en esta herramienta suele ser la forma más rápida de leer lo que el ORM envió a la base de datos, lo cual resulta especialmente útil cuando se intenta confirmar si una consulta generada incluye las cláusulas JOIN, WHERE o LIMIT esperadas.</p>
 <h3>Para estudiantes que aprenden SQL</h3>
@@ -158,7 +158,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 function formatSQL(sql) {
   const keywords = [

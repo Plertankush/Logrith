@@ -27,11 +27,11 @@
 <meta name="theme-color" content="#0D0D0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
 <link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
 <link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261117">
-<link rel="stylesheet" href="/assets/css/pages.css?v=20261117">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer=""></script>
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
@@ -227,7 +227,7 @@
 </section>
 </main>
 <div id="footer"></div>
-<script src="/assets/js/main.js?v=20261117"></script>
+<script src="/assets/js/main.js?v=20261118"></script>
 <script>
 let currentType = 'url';
 document.querySelectorAll('.qr-type-btn').forEach(btn => {
@@ -266,7 +266,7 @@ function getQRData() {
 
 document.getElementById('generate-btn').addEventListener('click', () => {
   const data = getQRData();
-  if (!data) { showStatus(document.getElementById('status-msg'), 'error', 'Please enter some content first.'); return; }
+  if (!data) { showStatus(document.getElementById('status-msg'), 'error', 'Por favor, introduzca primero algún contenido.'); return; }
   if (typeof QRCode === 'undefined') { showStatus(document.getElementById('status-msg'), 'error', 'QR library not loaded. Check internet connection.'); return; }
 
   const size = parseInt(document.getElementById('qr-size').value);
@@ -279,7 +279,7 @@ document.getElementById('generate-btn').addEventListener('click', () => {
   try {
     new QRCode(wrap, { text: data, width: size, height: size, colorDark: dark, colorLight: light, correctLevel: QRCode.CorrectLevel[document.getElementById('qr-ecl').value] || QRCode.CorrectLevel.M });
     document.getElementById('output-card').style.display = 'block';
-    document.getElementById('qr-stats').innerHTML = `<span class="stat-chip">Size: <strong>${size}×${size}px</strong></span><span class="stat-chip">Type: <strong>${currentType.toUpperCase()}</strong></span><span class="stat-chip">Data: <strong>${data.length} chars</strong></span>`;
+    document.getElementById('qr-stats').innerHTML = `<span class="stat-chip">Tamaño: <strong>${size}×${size}px</strong></span><span class="stat-chip">Tipo: <strong>${currentType.toUpperCase()}</strong></span><span class="stat-chip">Datos: <strong>${data.length} chars</strong></span>`;
     showStatus(document.getElementById('status-msg'), 'success', 'QR Code generated!');
   } catch(e) { showStatus(document.getElementById('status-msg'), 'error', 'Error: ' + e.message); }
 });
