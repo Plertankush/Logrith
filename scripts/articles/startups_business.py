@@ -251,4 +251,86 @@ ARTICLES = [
         ],
         'tools': ['percentage-calculator', 'emi-calculator', 'compound-interest-calculator', 'discount-stacking-calculator', 'salary-hourly-converter'],
     },
+    {
+        'slug': 'static-website-launch-checklist',
+        'topic': 'startups-business',
+        'subtopic': 'saas-product-building',
+        'published': '2026-11-20',
+        'title': 'Static Website Launch Checklist: What to Check Before You Ship',
+        'description': 'A practical pre-launch checklist for a static website: URLs, meta tags and social previews, crawling, speed, mobile, trust pages and the first two weeks after launch.',
+        'intro': '''<p>A static website is easy to publish, which is exactly why launches go wrong. Nothing stops you from pushing a page with a missing title, a broken image path or a search tag that tells Google to ignore the whole site. These mistakes are cheap to prevent before launch and slow to recover from afterwards, because search engines take days or weeks to notice fixes.</p>
+<p>This checklist walks through what to verify in the order it matters: the pages themselves, how they look in search and when shared, whether search engines can find them, how fast they load, and what to watch in the first two weeks. Each section ends with the check you can run, and several link to free tools that do the work in your browser.</p>''',
+        'takeaways': [
+            'Fix URLs and page titles first. They are hard to change later without losing search visibility.',
+            'Give every page a unique title, a description, a canonical link and a share image.',
+            'Check robots tags and your sitemap before launch, because one stray noindex hides a page completely.',
+            'Compress images and minify code, then measure speed on a mobile connection, not just on your own computer.',
+            'After launch, watch indexing in Search Console and fix errors in the first two weeks.',
+        ],
+        'sections': [
+            ('urls', '1. Settle your URLs and structure', '''<p>The address of a page is the one thing you want to get right the first time, because changing it later means redirects and a temporary drop in traffic. Before launch, decide on a pattern and stick to it.</p>
+<ul>
+<li><strong>Use short, readable slugs</strong> in lower case with hyphens, such as /guides/meta-tags rather than /Page_2?id=7. A <a href="/tool/tools/slug-generator">slug generator</a> turns a title into a clean slug in one step.</li>
+<li><strong>Choose one version of the site.</strong> Decide between www and non-www and between trailing slash and none, then redirect the others to your choice.</li>
+<li><strong>Create a 404 page</strong> that links back to the home page and your main sections, and confirm your host serves it for unknown addresses.</li>
+<li><strong>Check every internal link.</strong> Click through the navigation, the footer and a sample of in-text links, and look for pages that return an error.</li>
+</ul>'''),
+            ('meta', '2. Write the tags that describe each page', '''<p>The head of each page is where search engines and social networks learn what it is about. Every page needs its own title and description, a canonical link and, if you want links to look good when shared, Open Graph and Twitter Card tags.</p>
+<ul>
+<li><strong>Title:</strong> about 60 characters, main phrase first, different on every page.</li>
+<li><strong>Description:</strong> one or two sentences, up to about 160 characters, written for a person deciding whether to click.</li>
+<li><strong>Canonical:</strong> the full https address of the version you want indexed.</li>
+<li><strong>Share image:</strong> 1200 x 630 pixels, hosted on your own domain with a full address.</li>
+</ul>
+<p>The <a href="/tool/tools/meta-tag-generator">Meta Tag Generator</a> writes all of these from a single form and shows how the page will look in Google and in a shared link. Our <a href="/tool/blog/meta-tags-and-open-graph-guide">guide to meta tags and Open Graph</a> explains each tag and the mistakes to avoid.</p>'''),
+            ('icons', '3. Add icons and a web manifest', '''<p>A missing favicon makes a site look unfinished, and browsers request it repeatedly, which fills your logs with 404 errors. Provide a favicon, a 32 and 16 pixel PNG, an Apple touch icon of 180 pixels and, if you want the site to be installable, a web manifest. The <a href="/tool/tools/favicon-generator">Favicon Generator</a> creates the standard sizes from one image.</p>'''),
+            ('crawl', '4. Make sure search engines can find and read the site', '''<p>Search engines discover pages by following links and by reading your sitemap. Before launch, confirm that nothing blocks them and that you are helping them along.</p>
+<ul>
+<li><strong>Remove noindex.</strong> Staging sites often carry a robots meta tag or a header that blocks indexing. Search the final build for &ldquo;noindex&rdquo; and make sure it is gone from pages you want found.</li>
+<li><strong>Check robots.txt.</strong> A line such as Disallow: / blocks the entire site. Open /robots.txt on the live domain and read it.</li>
+<li><strong>Publish a sitemap.</strong> List every page you want indexed in sitemap.xml and reference it from robots.txt.</li>
+<li><strong>Link every page</strong> from somewhere else on the site. A page with no links pointing to it is hard for crawlers to discover.</li>
+<li><strong>Verify the domain</strong> in Google Search Console and submit the sitemap there.</li>
+</ul>'''),
+            ('speed', '5. Make it fast', '''<p>Speed affects both visitors and search. On a static site the biggest wins are usually the simplest: smaller images and less code.</p>
+<ul>
+<li><strong>Compress images</strong> and serve them at the size they are displayed. A photo that is 4000 pixels wide in a 600 pixel slot wastes bandwidth. The <a href="/tool/tools/image-compressor">Image Compressor</a> shrinks files in your browser.</li>
+<li><strong>Minify HTML, CSS and JavaScript</strong> for production with the <a href="/tool/tools/html-minifier">HTML Minifier</a> or the matching CSS and JS tools.</li>
+<li><strong>Set caching headers</strong> so returning visitors do not re-download unchanged files, and use short cache times for files you update often.</li>
+<li><strong>Load fonts and scripts sparingly.</strong> Every extra font file and third-party script adds delay.</li>
+<li><strong>Measure it.</strong> Run the <a href="/tool/tools/website-speed-analyzer">Website Speed Analyzer</a> and test on a throttled mobile connection, which is closer to what many visitors have.</li>
+</ul>'''),
+            ('mobile', '6. Test on phones and for accessibility', '''<p>Most visits come from phones, so test there first. Open the site on a real device and check that text is readable without zooming, that buttons are large enough to tap, and that nothing scrolls sideways. Then cover the basics of accessibility: every image has a useful alt attribute, headings follow a logical order, links describe where they go, and text has enough contrast against its background. Try tabbing through the page with a keyboard to confirm that every control can be reached.</p>'''),
+            ('trust', '7. Add the trust pages', '''<p>Visitors, search engines and advertising programs all look for signs that a real person or business stands behind a site. At minimum, publish an About page that says who runs the site and why it exists, a Contact page with a working way to reach you, a Privacy Policy that describes what data is collected, and Terms of Use. If the site uses analytics, advertising or cookies, say so in the privacy policy. These pages cost an afternoon and remove a common reason for review problems later.</p>'''),
+            ('analytics', '8. Decide how you will measure results', '''<p>Set up measurement before launch so you can see the first visits. Search Console shows how Google sees the site: which pages are indexed, which queries bring impressions and which errors it found. A privacy-friendly analytics tool shows how visitors behave once they arrive. Pick one you can explain in your privacy policy, and test that it records a visit to a page before you announce the site.</p>'''),
+            ('security', '9. Check the security basics', '''<ul>
+<li>Serve the whole site over HTTPS and redirect http addresses to https.</li>
+<li>Confirm that no page loads images or scripts over plain http, which triggers mixed-content warnings.</li>
+<li>Do not publish secrets, API keys or private files in the repository or the build output.</li>
+<li>Add basic security headers if your host lets you, such as a content security policy and a referrer policy.</li>
+</ul>'''),
+            ('after', '10. The first two weeks after launch', '''<p>Launch is the start of the checking, not the end. In the first two weeks, look at Search Console every few days. Confirm that the sitemap was read, that pages are moving from discovered to indexed, and that no errors are piling up. Search for your own site name to see how the result looks. Share a few pages in a chat or social post to confirm the preview card is correct, and refresh the cached preview with the network&rsquo;s debugger tool if you changed anything. Write down what you fixed, because the same list will help on the next project.</p>'''),
+            ('checklist', 'Quick pre-launch checklist', '''<table>
+<thead><tr><th>Area</th><th>Check</th></tr></thead>
+<tbody>
+<tr><td>URLs</td><td>Readable slugs, one canonical version, a working 404 page</td></tr>
+<tr><td>Meta tags</td><td>Unique title and description, canonical, Open Graph image on every page</td></tr>
+<tr><td>Crawling</td><td>No stray noindex, sensible robots.txt, sitemap submitted</td></tr>
+<tr><td>Speed</td><td>Compressed images, minified code, caching headers set</td></tr>
+<tr><td>Mobile</td><td>Readable text, tappable buttons, no sideways scroll</td></tr>
+<tr><td>Trust</td><td>About, Contact, Privacy and Terms pages live</td></tr>
+<tr><td>Security</td><td>HTTPS everywhere, no mixed content, no exposed secrets</td></tr>
+<tr><td>After launch</td><td>Search Console checked every few days for two weeks</td></tr>
+</tbody>
+</table>'''),
+        ],
+        'faq': [
+            ('How long does it take for a new static site to appear in Google?', 'It varies. A well-linked site with a submitted sitemap can see its first pages indexed within days, but ranking for competitive searches takes much longer. Verify the site in Search Console and request indexing for your most important pages to speed up discovery.'),
+            ('Do I need a sitemap for a small static site?', 'It is not strictly required for a very small, well-linked site, but it is quick to create and helps search engines find every page and see when it changed. Submitting one in Search Console also gives you indexing reports for those URLs.'),
+            ('What is the most common launch mistake?', 'Leaving a noindex tag or a blocking robots.txt rule from the staging site in place after launch. The site looks fine to visitors but search engines are told to ignore it, so always check the live site for both.'),
+            ('Should every page have its own meta description?', 'Ideally yes. A unique description written for each page gives search engines a better snippet to show. If you cannot write all of them at once, start with your most important pages and let search engines generate text for the rest.'),
+            ('Do static sites need analytics?', 'You need some way to know whether anyone visits and what they do. Search Console covers search performance for free, and a lightweight analytics tool covers on-site behaviour. Mention whichever you use in your privacy policy.'),
+        ],
+        'tools': ['meta-tag-generator', 'favicon-generator', 'slug-generator', 'image-compressor', 'html-minifier', 'website-speed-analyzer'],
+    },
 ]

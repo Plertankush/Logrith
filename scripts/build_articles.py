@@ -1,3 +1,4 @@
+import datetime
 #!/usr/bin/env python3
 """Build the in-depth article pages from scripts/articles/*.py.
 
@@ -16,7 +17,7 @@ from hub_content import TOPICS
 
 TOPIC_BY_SLUG = {t['slug']: t for t in TOPICS}
 SUBTOPIC_BY_SLUG = {s['slug']: s for t in TOPICS for s in t['subtopics']}
-AUTHOR = {'@type': 'Person', 'name': 'Plert Ankush', 'url': f'{SITE}/pages/founder'}
+AUTHOR = {'@type': 'Organization', 'name': "Logrith Team", 'url': f'{SITE}/pages/founder'}
 
 
 def article_card(article):
@@ -50,7 +51,7 @@ def build_article(article, all_articles):
     {breadcrumb_html(trail)}
     <div class="badge">{icon(sub['icon'])} {escape(sub['title'])}</div>
     <h1>{escape(article['title'])}</h1>
-    <p class="byline">By <a href="/pages/founder" rel="author">Plert Ankush</a> &middot; Published <time datetime="{article['published']}">Nov 12, 2026</time> &middot; Updated <time datetime="{article['modified']}">Nov 12, 2026</time> &middot; {article['minutes']} min read</p>
+    <p class="byline">By <a href="/pages/founder" rel="author">Logrith Team</a> &middot; Published <time datetime="{article['published']}">{display_date(article['published'])}</time> &middot; Updated <time datetime="{article['modified']}">{display_date(article['modified'])}</time> &middot; {article['minutes']} min read</p>
   </div>
 </header>
 
@@ -82,7 +83,7 @@ def build_article(article, all_articles):
     </section>
 
     <aside class="author-box">
-      <strong>Written by <a href="/pages/founder" rel="author">Plert Ankush</a></strong>
+      <strong>Written by <a href="/pages/founder" rel="author">Logrith Team</a></strong>
       <p>Independent founder and publisher of Logrith. Articles are developed with AI assistance, then directed and reviewed by the author. Spotted a mistake? <a href="/pages/contact">Tell us</a> and we will correct it.</p>
     </aside>
   </div>
@@ -113,6 +114,12 @@ def build_article(article, all_articles):
     ]
     html = page(f'{article["title"]} | Logrith', article['description'], path, schemas, body)
     return html.replace('<meta property="og:type" content="website">', '<meta property="og:type" content="article">', 1)
+
+
+def display_date(iso):
+    """2026-11-20 -> Nov 20, 2026"""
+    day = datetime.date.fromisoformat(iso)
+    return f'{day:%b} {day.day}, {day.year}'
 
 
 def main():

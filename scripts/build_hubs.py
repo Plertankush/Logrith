@@ -38,7 +38,7 @@ def head(title, description, path, schema):
   <title>{escape(title)}</title>
   <meta name="description" content="{escape(description, quote=True)}">
   <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="author" content="Plert Ankush">
+  <meta name="author" content="Logrith Team">
   <link rel="canonical" href="{url}">
   <meta property="og:title" content="{escape(title, quote=True)}">
   <meta property="og:description" content="{escape(description, quote=True)}">
@@ -169,7 +169,7 @@ def build_subtopic(topic, sub):
     <div class="badge">{icon(sub['icon'])} {escape(topic['title'])}</div>
     <h1>{escape(sub['title'])}</h1>
     <p>{escape(sub['summary'])}</p>
-    <p class="byline">By <a href="/pages/founder" rel="author">Plert Ankush</a></p>
+    <p class="byline">By <a href="/pages/founder" rel="author">Logrith Team</a></p>
   </div>
 </header>
 
@@ -209,7 +209,7 @@ def build_subtopic(topic, sub):
 </section>'''
     schemas = [
         {'@context': 'https://schema.org', '@type': 'CollectionPage', 'name': sub['title'], 'url': f'{SITE}{path}',
-         'description': sub['summary'], 'author': {'@type': 'Person', 'name': 'Plert Ankush', 'url': f'{SITE}/pages/founder'},
+         'description': sub['summary'], 'author': {'@type': 'Organization', 'name': "Logrith Team", 'url': f'{SITE}/pages/founder'},
          'isPartOf': {'@id': f'{SITE}/#website'}},
         breadcrumb_schema(trail),
     ]

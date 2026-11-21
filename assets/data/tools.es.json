@@ -42,7 +42,7 @@
   "summary": "Introduce tus ingresos y gastos para ver un importe de préstamo realista basado en tu relación entre la cuota mensual y tus ingresos, de modo que conozcas tu límite antes de solicitarlo."
  },
  {
-  "name": "Calculadora de cuotas de mercado",
+  "name": "Calculadora de cuotas EMI",
   "category": "Calcular y convertir",
   "url": "/tool/tools/emi-calculator",
   "summary": "Calcula tu cuota mensual para una hipoteca, un coche o un préstamo personal, además de los intereses totales y un desglose mensual de la amortización: preciso e instantáneo."
@@ -380,12 +380,6 @@
  {
   "name": "Generador de contraseñas",
   "category": "Utilidades",
-  "url": "/tool/tools/passphrase-generator",
-  "summary": "Crea una frase de contraseña segura compuesta por palabras aleatorias en lugar de símbolos; será más fácil de recordar que una contraseña, pero aun así difícil de adivinar."
- },
- {
-  "name": "Generador de contraseñas",
-  "category": "Utilidades",
   "url": "/tool/tools/password-generator",
   "summary": "Establece la longitud y los tipos de caracteres que desees, y luego genera una contraseña criptográficamente aleatoria al instante; nada se almacena ni se envía a ningún lugar."
  },
@@ -424,6 +418,12 @@
   "category": "Imagen y PDF",
   "url": "/tool/tools/favicon-generator",
   "summary": "Sube una imagen y obtén un conjunto completo de favicons (todos los tamaños, además de las etiquetas HTML que necesitas) procesados ​​en tu navegador."
+ },
+ {
+  "name": "Generador de frases de contraseña",
+  "category": "Utilidades",
+  "url": "/tool/tools/passphrase-generator",
+  "summary": "Crea una frase de contraseña segura compuesta por palabras aleatorias en lugar de símbolos; será más fácil de recordar que una contraseña, pero aun así difícil de adivinar."
  },
  {
   "name": "Generador de hash",

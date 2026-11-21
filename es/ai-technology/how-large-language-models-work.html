@@ -7,7 +7,7 @@
 <title>Cómo funcionan los modelos de lenguaje a gran escala: una guía en lenguaje sencillo | Logrith</title>
 <meta name="description" content="Una explicación clara de cómo se entrenan los modelos de lenguaje complejos, qué son los tokens y las ventanas de contexto, por qué cometen errores y cómo utilizarlos correctamente.">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<meta name="author" content="Plert Ankush">
+<meta name="author" content="Logrith Team">
 <link rel="canonical" href="https://logrith.in/es/ai-technology/how-large-language-models-work">
   <link rel="alternate" hreflang="x-default" href="https://logrith.in/ai-technology/how-large-language-models-work">
   <link rel="alternate" hreflang="es" href="https://logrith.in/es/ai-technology/how-large-language-models-work">
@@ -43,7 +43,7 @@
     gtag('js', new Date());
     gtag('config', 'G-BPJ4332XJH');
   </script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Cómo funcionan los modelos de lenguaje a gran escala: una guía en lenguaje sencillo.", "description": "Una explicación clara de cómo se entrenan los modelos de lenguaje complejos, qué son los tokens y las ventanas de contexto, por qué cometen errores y cómo utilizarlos correctamente.", "url": "https://logrith.in/es/ai-technology/how-large-language-models-work", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://logrith.in/ai-technology/how-large-language-models-work"}, "datePublished": "2026-11-12", "dateModified": "2026-11-12", "author": {"@type": "Person", "name": "Plert Ankush", "url": "https://logrith.in/es/pages/founder"}, "publisher": {"@id": "https://logrith.in/#organization"}, "isPartOf": {"@id": "https://logrith.in/#website"}, "inLanguage": "en"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Cómo funcionan los modelos de lenguaje a gran escala: una guía en lenguaje sencillo.", "description": "Una explicación clara de cómo se entrenan los modelos de lenguaje complejos, qué son los tokens y las ventanas de contexto, por qué cometen errores y cómo utilizarlos correctamente.", "url": "https://logrith.in/es/ai-technology/how-large-language-models-work", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://logrith.in/ai-technology/how-large-language-models-work"}, "datePublished": "2026-11-12", "dateModified": "2026-11-12", "author": {"@type": "Organization", "name": "Logrith Team", "url": "https://logrith.in/es/pages/founder"}, "publisher": {"@id": "https://logrith.in/#organization"}, "isPartOf": {"@id": "https://logrith.in/#website"}, "inLanguage": "en"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas de IA y para desarrolladores", "item": "https://logrith.in/es/ai-technology/"}, {"@type": "ListItem", "position": 3, "name": "Inteligencia Artificial y Aprendizaje Automático", "item": "https://logrith.in/es/ai-technology/artificial-intelligence-ml"}, {"@type": "ListItem", "position": 4, "name": "Cómo funcionan los modelos de lenguaje a gran escala: una guía en lenguaje sencillo.", "item": "https://logrith.in/es/ai-technology/how-large-language-models-work"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Los grandes modelos de lenguaje entienden lo que dicen?", "acceptedAnswer": {"@type": "Answer", "text": "Modelan muy bien los patrones del lenguaje, lo que puede parecer comprensión. Si bien se debate si esto constituye comprensión en el sentido humano, en la práctica se debe tratar el resultado como un texto plausible que necesita verificación, no como conocimiento comprobado."}}, {"@type": "Question", "name": "¿Son los másteres jurídicos (LLM) lo mismo que los motores de búsqueda?", "acceptedAnswer": {"@type": "Answer", "text": "No. Un motor de búsqueda recupera páginas existentes. Un modelo de lenguaje natural (LLM) genera texto nuevo a partir de patrones aprendidos. Algunos productos combinan ambos, de modo que el modelo puede citar fuentes recuperadas, pero son mecanismos diferentes."}}, {"@type": "Question", "name": "¿Puede un estudiante de derecho aprender de mi conversación?", "acceptedAnswer": {"@type": "Answer", "text": "Dentro de una misma conversación, puede utilizar lo que hayas escrito, ya que se encuentra en la ventana de contexto. El uso de tus chats para entrenar modelos futuros depende del proveedor y de tu configuración, así que consulta su política."}}, {"@type": "Question", "name": "¿Qué tan grande es \"grande\"?", "acceptedAnswer": {"@type": "Answer", "text": "Los modelos de lenguaje complejos tienen miles de millones de parámetros y se entrenan con colecciones de texto muy extensas. El tamaño exacto varía según el modelo y no siempre se publica."}}]}</script>
 </head>
@@ -56,7 +56,7 @@
 <nav class="breadcrumb" aria-label="Ruta de navegación"><a href="/es/">Inicio</a> › <a href="/es/ai-technology/">IA y herramientas para desarrolladores</a> › <a href="/es/ai-technology/artificial-intelligence-ml">Inteligencia artificial y aprendizaje automático</a> › Cómo funcionan los modelos de lenguaje a gran escala: una guía sencilla</nav>
 <div class="badge"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#sparkles"></use></svg> Inteligencia Artificial y Aprendizaje Automático</div>
 <h1>Cómo funcionan los modelos de lenguaje a gran escala: una guía en lenguaje sencillo.</h1>
-<p class="byline">Por <a href="/es/pages/founder" rel="author">Plert Ankush</a> · Publicado<time datetime="2026-11-12"> 12 de noviembre de 2026</time> · Actualizado<time datetime="2026-11-12"> 12 de noviembre de 2026</time> · 5 minutos de lectura</p>
+<p class="byline">Por <a href="/es/pages/founder" rel="author">Logrith Team</a> · Publicado<time datetime="2026-11-12"> 12 de noviembre de 2026</time> · Actualizado<time datetime="2026-11-12"> 12 de noviembre de 2026</time> · 5 minutos de lectura</p>
 </div>
 </header>
 <article class="page-section">
@@ -169,7 +169,7 @@
 </div>
 </section>
 <aside class="author-box">
-<strong>Escrito por <a href="/es/pages/founder" rel="author">Plert Ankush</a></strong>
+<strong>Escrito por <a href="/es/pages/founder" rel="author">Logrith Team</a></strong>
 <p>Fundador y editor independiente de Logrith. Los artículos se desarrollan con la ayuda de IA y luego son dirigidos y revisados ​​por el autor. ¿Has detectado algún error? <a href="/es/pages/contact">Avísanos</a> y lo corregiremos.</p>
 </aside>
 </div>

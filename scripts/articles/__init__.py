@@ -17,6 +17,6 @@ def load_articles():
     articles = ai_technology.ARTICLES + startups_business.ARTICLES
     for article in articles:
         article['minutes'] = reading_minutes(article)
-        article['published'] = PUBLISHED
-        article['modified'] = MODIFIED
+        article.setdefault('published', PUBLISHED)
+        article.setdefault('modified', article['published'])
     return articles

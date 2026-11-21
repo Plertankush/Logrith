@@ -398,4 +398,95 @@ ARTICLES = [
         ],
         'tools': ['json-formatter', 'json-repair', 'json-csv-converter', 'yaml-json-converter', 'unix-timestamp-converter'],
     },
+    {
+        'slug': 'prompt-engineering-for-developers',
+        'topic': 'ai-technology',
+        'subtopic': 'artificial-intelligence-ml',
+        'published': '2026-11-20',
+        'title': 'Prompt Engineering for Developers: Getting Reliable Output from AI Models',
+        'description': 'A practical guide to writing prompts for software: structure, examples, JSON output, token cost and how to test prompts like code before they reach users.',
+        'intro': '''<p>When you type a question into a chat window, a slightly vague prompt costs you a minute. When a prompt sits inside an application and runs thousands of times a day, a slightly vague prompt becomes a bug that ships to every user. Prompt engineering for developers is the habit of treating a prompt as part of your code: written deliberately, tested, versioned and measured.</p>
+<p>This guide covers the techniques that matter most in practice: how to structure a prompt, how to ask for output your code can parse, how to keep cost under control, and how to test changes so a rewording does not quietly break something. It is written for people who build with AI models through an API or a tool, not for researchers.</p>''',
+        'takeaways': [
+            'A reliable prompt states the task, the context, the constraints and the exact output format, in that order.',
+            'Show one or two examples of the output you want. Examples steer a model more strongly than adjectives do.',
+            'If code reads the answer, request JSON, validate it against a schema and plan for the times it is wrong.',
+            'Prompts cost tokens on every call, so measure length and trim what the model does not need.',
+            'Keep a small test set and re-run it whenever the prompt or the model changes.',
+        ],
+        'sections': [
+            ('mindset', 'Treat a prompt as an interface', '''<p>A language model is a function with an unusual signature: you pass in text, and you get back text that is likely, not guaranteed, to be what you wanted. Two consequences follow. First, the model only knows what is in the prompt, so anything it needs to behave correctly has to be written there. Second, the output varies, so your application must cope with answers that are slightly different from the last run.</p>
+<p>Developers who get good results tend to think of the prompt as a contract between the application and the model. The prompt describes what the model receives, what it must produce and what it must never do. When something goes wrong, they look for the gap in that contract before they blame the model.</p>'''),
+            ('structure', 'The structure of a reliable prompt', '''<p>Most dependable prompts contain the same five parts. You do not need a special template, only a habit of checking that each one is present.</p>
+<ol>
+<li><strong>Role or situation.</strong> One sentence that sets the frame, such as &ldquo;You are a support assistant for a project-management app.&rdquo; This narrows the tone and vocabulary.</li>
+<li><strong>Task.</strong> The single thing you want done, stated as an instruction: &ldquo;Classify the message below into exactly one category.&rdquo;</li>
+<li><strong>Context.</strong> The facts the model cannot guess: product rules, definitions of the categories, the user&rsquo;s plan, the date.</li>
+<li><strong>Constraints.</strong> The limits: maximum length, language, things to avoid, what to do when the answer is not known.</li>
+<li><strong>Output format.</strong> Exactly what the reply should look like, including field names if it is structured.</li>
+</ol>
+<p>Put the instructions first and the data the model should work on last, clearly separated, for example between lines of three dashes or inside tags. This makes it much harder for text inside the data to be mistaken for an instruction.</p>'''),
+            ('specific', 'Be specific about what good looks like', '''<p>Vague prompts produce vague output because the model has to guess your standard. Replacing a general wish with a measurable requirement is the cheapest improvement you can make.</p>
+<table>
+<thead><tr><th>Vague</th><th>Specific</th></tr></thead>
+<tbody>
+<tr><td>Summarise this article.</td><td>Summarise this article in three bullet points of at most 20 words each, for a busy engineer.</td></tr>
+<tr><td>Write a good product description.</td><td>Write a 40 to 60 word product description in plain language. Mention the material and one use case. No superlatives.</td></tr>
+<tr><td>Extract the important details.</td><td>Extract the invoice number, the total amount and the due date. If a field is missing, return null for it.</td></tr>
+<tr><td>Make it shorter.</td><td>Reduce this text to under 120 words and keep every number and name.</td></tr>
+</tbody>
+</table>
+<p>Notice that the specific versions also say what to do when information is absent. Telling the model it may answer &ldquo;unknown&rdquo; or return null removes much of the pressure to invent something.</p>'''),
+            ('examples', 'Show examples, not just rules', '''<p>One or two worked examples often teach the model more than a paragraph of description. Each example is an input paired with the output you would accept. This technique is usually called few-shot prompting.</p>
+<p>Pick examples that cover the edges as well as the typical case. If you are classifying messages, include one that is ambiguous and show how you want it handled. Keep the examples consistent: if one answer is lower case and another is title case, the model will copy the inconsistency. Be careful not to use only one kind of example, because the model tends to over-weight whatever it sees most.</p>'''),
+            ('structured', 'Ask for output your code can read', '''<p>If a person reads the answer, free text is fine. If your code reads it, ask for structure. JSON is the usual choice because every language can parse it. State the field names, the type of each field and the allowed values, and say that the reply must contain nothing except the JSON.</p>
+<p>Even then, plan for failure. Models sometimes wrap the JSON in a code fence, add a sentence before it, leave a trailing comma or stop in the middle when they reach the output limit. A robust pipeline does four things: it strips any wrapper, parses inside a try/catch, validates the result against the shape it expects, and on failure retries once with the error message or falls back to a safe default.</p>
+<p>When you are debugging, paste the raw reply into a <a href="/tool/tools/json-formatter">JSON formatter</a> to see exactly where the structure breaks. If a response is only slightly malformed, <a href="/tool/tools/json-repair">JSON Repair</a> shows what the fix would be, which helps you decide whether the cause is the prompt or the parsing. Our <a href="/ai-technology/json-guide-for-developers">JSON guide for developers</a> covers the format in more depth.</p>'''),
+            ('tokens', 'Watch the token cost', '''<p>Models read and write tokens, small chunks of text that are often shorter than a word. Pricing, speed and the size of the context window are all counted in tokens. A prompt that carries a long block of instructions, several examples and a pasted document is paid for on every single call.</p>
+<ul>
+<li><strong>Measure first.</strong> Paste the whole prompt into the <a href="/tool/tools/ai-context-calculator">AI Context Calculator</a> to see its approximate size and how much room is left for the reply.</li>
+<li><strong>Trim repetition.</strong> Remove instructions that restate each other and examples that teach the same lesson.</li>
+<li><strong>Send only what is needed.</strong> Pass the relevant section of a document rather than the whole file when you can.</li>
+<li><strong>Cap the output.</strong> Ask for short answers and set a maximum length so a runaway reply does not cost you more than expected.</li>
+</ul>'''),
+            ('testing', 'Test prompts like code', '''<p>The most common reason prompts get worse over time is that nobody notices a change. Someone adds a sentence to fix one case and quietly breaks three others. A small test set prevents this.</p>
+<ol>
+<li><strong>Collect real cases.</strong> Save 20 to 50 inputs from real use, including the awkward ones, with the output you consider correct.</li>
+<li><strong>Run the set after every change</strong> to the prompt, the model or the settings, and compare against the expected output.</li>
+<li><strong>Look at the differences.</strong> A <a href="/tool/tools/text-diff">text diff</a> between the previous and the new outputs shows what actually moved, which is faster than rereading everything.</li>
+<li><strong>Version the prompt</strong> in your repository next to the code, so you can see who changed it, when and why.</li>
+<li><strong>Lower the randomness</strong> for tasks that need consistency. Most providers let you reduce the temperature setting, which makes output more repeatable, though never perfectly identical.</li>
+</ol>'''),
+            ('failures', 'Common failures and how to fix them', '''<table>
+<thead><tr><th>Symptom</th><th>Likely cause</th><th>Fix</th></tr></thead>
+<tbody>
+<tr><td>Invented facts or numbers</td><td>The model was asked for information it was not given</td><td>Supply the facts in the prompt and allow &ldquo;unknown&rdquo; as an answer</td></tr>
+<tr><td>Extra text around the JSON</td><td>Format instruction is too loose</td><td>Say &ldquo;reply with JSON only&rdquo; and strip wrappers in code</td></tr>
+<tr><td>Ignores a constraint</td><td>The rule is buried in a long prompt</td><td>Move it near the end, repeat it once, or split the task into two calls</td></tr>
+<tr><td>Different format each run</td><td>No example and a high temperature</td><td>Add an example and lower the temperature</td></tr>
+<tr><td>Cut off mid-sentence</td><td>Output limit reached</td><td>Ask for shorter output or request it in pieces</td></tr>
+<tr><td>Follows instructions found in the data</td><td>Untrusted text mixed with instructions</td><td>Separate data from instructions and treat the reply as untrusted</td></tr>
+</tbody>
+</table>'''),
+            ('security', 'A note on untrusted input', '''<p>If your prompt includes text written by someone else, such as an email, a web page or a support ticket, that text can contain instructions aimed at the model. This is usually called prompt injection. No wording makes a prompt immune, so design as though it will sometimes work. Give the model the least access it needs, never let its output run as code or trigger irreversible actions without a check, and validate anything it returns before your application acts on it.</p>
+<p>Privacy matters too. Anything you send to a hosted model leaves your control, so remove personal data and secrets from prompts unless you have checked the provider&rsquo;s data-handling terms.</p>'''),
+            ('checklist', 'Prompt checklist', '''<ul>
+<li>Is the task a single, clearly stated instruction?</li>
+<li>Does the prompt contain every fact the model needs and nothing it does not?</li>
+<li>Is the output format exact, with an example?</li>
+<li>Does it say what to do when the answer is unknown?</li>
+<li>Is the reply validated before your code uses it?</li>
+<li>Have you measured the token size and set an output limit?</li>
+<li>Is there a test set that runs after every change?</li>
+</ul>'''),
+        ],
+        'faq': [
+            ('Is prompt engineering still worth learning as models improve?', 'Yes, though the emphasis shifts. Newer models tolerate vague wording better, but production use still depends on clear requirements, exact output formats, examples and tests. Those habits are really about specifying software behaviour, which does not go out of date.'),
+            ('How long should a prompt be?', 'As long as it needs to be and no longer. Include every fact the model cannot guess and the exact format you want, then cut repetition. Longer prompts cost more on every call and can bury important rules, so measure the token count rather than guessing.'),
+            ('What is few-shot prompting?', 'It means including a small number of example inputs and the outputs you want inside the prompt. The model picks up the pattern, the tone and the format from them. One to three well-chosen examples are usually enough.'),
+            ('How do I stop a model from making things up?', 'You cannot remove the behaviour entirely, but you can reduce it. Provide the facts in the prompt, tell the model it may answer that it does not know, ask it to quote its source from the supplied text, and check important claims in code or by a person.'),
+            ('Why does the same prompt give different answers each time?', 'Models choose the next token with some randomness. Lowering the temperature setting makes answers more consistent, and a clear example reduces variation in format, but exact repetition is not guaranteed, so write your code to tolerate small differences.'),
+        ],
+        'tools': ['ai-context-calculator', 'json-formatter', 'json-repair', 'text-diff', 'regex-tester'],
+    },
 ]

@@ -336,6 +336,12 @@
   "summary": "Upload any image, add top and bottom caption text, and download your meme instantly — no login, no added watermark."
  },
  {
+  "name": "Meta Tag Generator",
+  "category": "Developer",
+  "url": "/tool/tools/meta-tag-generator",
+  "summary": "Generate meta tags for any page: title, description, canonical, robots, Open Graph and Twitter Card. See live Google and social previews, check lengths, and copy the HTML. Free and private."
+ },
+ {
   "name": "Morse Code Translator",
   "category": "Text & Generators",
   "url": "/tool/tools/morse-code-translator",

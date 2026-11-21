@@ -334,6 +334,18 @@ const UI_TEXT_ES = {
   'Relative': 'Relativo',
   'Seconds': 'Segundos',
   'Milliseconds': 'Milisegundos',
+  'Add a page title.': 'Añade un título a la página.',
+  'The title has {0} characters. Search results usually cut it off after about {1}.': 'El título tiene {0} caracteres. Los resultados de búsqueda suelen cortarlo después de unos {1}.',
+  'The title length is good ({0} characters).': 'La longitud del título es buena ({0} caracteres).',
+  'Add a meta description.': 'Añade una meta descripción.',
+  'The description has {0} characters. Search results usually cut it off after about {1}.': 'La descripción tiene {0} caracteres. Los resultados de búsqueda suelen cortarla después de unos {1}.',
+  'The description is short ({0} characters). Aim for {1} to {2}.': 'La descripción es corta ({0} caracteres). Apunta a entre {1} y {2}.',
+  'The description length is good ({0} characters).': 'La longitud de la descripción es buena ({0} caracteres).',
+  'The page URL should be a full address starting with https://.': 'La URL de la página debe ser una dirección completa que empiece por https://.',
+  'The page URL uses http. Use https if your site supports it.': 'La URL de la página usa http. Usa https si tu sitio lo admite.',
+  'The image URL must be a full address. Social networks ignore relative paths.': 'La URL de la imagen debe ser una dirección completa. Las redes sociales ignoran las rutas relativas.',
+  'Add an image URL (1200 x 630 pixels works well) so shared links show a picture.': 'Añade la URL de una imagen (1200 x 630 píxeles funciona bien) para que los enlaces compartidos muestren una imagen.',
+  'This page tells search engines not to index it.': 'Esta página indica a los buscadores que no la indexen.',
 };
 
 /** The message in the page's language, with {0}, {1}, ... replaced by the given values. */
