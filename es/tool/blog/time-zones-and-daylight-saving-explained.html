@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explicación de las zonas horarias y el horario de verano | Logrith</title>
+<meta name="description" content="Cómo funcionan las diferencias horarias UTC y el horario de verano, por qué India tiene la zona horaria UTC+5:30 y un método sencillo para convertir la hora de una reunión entre diferentes zonas horarias sin cometer errores.">
+<meta name="keywords" content="time zone converter, how time zones work, daylight saving time explained, convert IST to EST, utc offset, schedule meeting across time zones">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Logrith Team">
+<link rel="canonical" href="https://logrith.in/es/tool/blog/time-zones-and-daylight-saving-explained">
+  <link rel="alternate" hreflang="x-default" href="https://logrith.in/tool/blog/time-zones-and-daylight-saving-explained">
+  <link rel="alternate" hreflang="es" href="https://logrith.in/es/tool/blog/time-zones-and-daylight-saving-explained">
+  <link rel="alternate" hreflang="en" href="https://logrith.in/tool/blog/time-zones-and-daylight-saving-explained">
+
+
+<meta property="og:title" content="Explicación de las zonas horarias y el horario de verano | Logrith">
+<meta property="og:description" content="Cómo funcionan las diferencias horarias UTC y el horario de verano, por qué India tiene la zona horaria UTC+5:30 y un método sencillo para convertir la hora de una reunión entre diferentes zonas horarias sin cometer errores.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://logrith.in/es/tool/blog/time-zones-and-daylight-saving-explained">
+<meta property="og:site_name" content="Logrith">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Explicación de las zonas horarias y el horario de verano | Logrith">
+<meta name="twitter:description" content="Cómo funcionan las diferencias horarias UTC y el horario de verano, por qué India tiene la zona horaria UTC+5:30 y un método sencillo para convertir la hora de una reunión entre diferentes zonas horarias sin cometer errores.">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0D0D0D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
+<link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
+<link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "datePublished": "2026-11-25", "dateModified": "2026-11-25", "headline": "Explicación de las zonas horarias y el horario de verano", "description": "Cómo funcionan las diferencias horarias UTC y el horario de verano, por qué India tiene la zona horaria UTC+5:30 y un método sencillo para convertir la hora de una reunión entre diferentes zonas horarias sin cometer errores.", "author": {"@type": "Organization", "name": "Logrith Team", "url": "https://logrith.in/pages/founder"}, "publisher": {"@id": "https://logrith.in/#organization"}, "mainEntityOfPage": "https://logrith.in/es/tool/blog/time-zones-and-daylight-saving-explained"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Zonas horarias y horario de verano", "url": "https://logrith.in/es/tool/blog/time-zones-and-daylight-saving-explained", "isPartOf": {"@type": "Blog", "name": "Logrith Blog", "url": "https://logrith.in/es/tool/blog/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Convertidor de zonas horarias", "url": "https://logrith.in/es/tool/tools/time-zone-converter", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://logrith.in/es/tool/"}, {"@type": "ListItem", "position": 3, "name": "Guías de herramientas", "item": "https://logrith.in/es/tool/blog/"}, {"@type": "ListItem", "position": 4, "name": "Calcular y convertir", "item": "https://logrith.in/es/tool/blog/categories/calculate-convert"}, {"@type": "ListItem", "position": 5, "name": "Zonas horarias y horario de verano", "item": "https://logrith.in/es/tool/blog/time-zones-and-daylight-saving-explained"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cómo convierto IST a EST?", "acceptedAnswer": {"@type": "Answer", "text": "En invierno, la hora de la India (IST) es UTC+5:30 y la del este de EE. UU. es UTC-5, por lo que la hora de la India está 10 horas y 30 minutos adelantada. En verano, cuando la hora del este es UTC-4, la diferencia es de 9 horas y 30 minutos."}}, {"@type": "Question", "name": "¿Por qué India tiene la zona horaria UTC+5:30?", "acceptedAnswer": {"@type": "Answer", "text": "India utiliza una única zona horaria basada en el meridiano de 82,5 grados este, que está cinco horas y media por delante de UTC. India no utiliza el horario de verano."}}, {"@type": "Question", "name": "¿Qué países no utilizan el horario de verano?", "acceptedAnswer": {"@type": "Answer", "text": "Muchos países no lo hacen, incluidos India, Japón y China. La mayor parte del mundo cercano al ecuador también mantiene el mismo horario durante todo el año."}}, {"@type": "Question", "name": "¿Cuándo empieza el horario de verano?", "acceptedAnswer": {"@type": "Answer", "text": "En Estados Unidos y Canadá comienza el segundo domingo de marzo y termina el primer domingo de noviembre. En la Unión Europea y el Reino Unido comienza el último domingo de marzo y termina el último domingo de octubre."}}, {"@type": "Question", "name": "¿Cuál es la mejor manera de programar una reunión entre personas que se encuentran en diferentes zonas horarias?", "acceptedAnswer": {"@type": "Answer", "text": "Elija una hora que se ajuste al horario laboral de todos, indíquela con la fecha y la zona horaria de cada persona o en UTC, y compruebe las fechas en las que cambia el horario de verano."}}]}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+</head>
+<body class="page-time-zones-and-daylight-saving-explained">
+<a class="skip-link" href="#main">Saltar al contenido</a>
+<div id="navbar"></div>
+<main id="main">
+<header class="page-hero"><div class="page-hero-inner">
+<nav class="breadcrumb" aria-label="Ruta de navegación"><a href="/es/">Inicio</a> › <a href="/es/tool/">Herramientas</a> › <a href="/es/tool/blog/">Guías de herramientas</a> › <a href="/es/tool/blog/categories/calculate-convert">Calcular y convertir</a> › Zonas horarias y horario de verano</nav>
+<h1>Zonas horarias y horario de verano: Cómo convertir la hora correctamente</h1>
+<p>Convertir la hora parece sencillo hasta que entran en juego las diferencias horarias de media hora y el horario de verano. Esta guía explica las reglas en un lenguaje claro y ofrece un método para evitar los errores más comunes.</p>
+<a href="/es/tool/tools/time-zone-converter" class="btn btn-primary btn-lg">
+<svg class="icon"><use href="/assets/svg/icons.svg#globe"></use></svg> Convertir zonas horarias
+  </a>
+<p class="byline">Por el <a href="/es/pages/founder" rel="author">equipo Logrith</a> · Publicado<time datetime="2026-11-25"> 25 de noviembre de 2026</time> · Actualizado<time datetime="2026-11-25"> 25 de noviembre de 2026</time></p>
+</div></header>
+<article class="page-section prose">
+<nav class="toc" aria-label="En esta página">
+<h2>En esta página</h2>
+<ol>
+<li><a href="#utc">UTC y desplazamientos</a></li>
+<li><a href="#names">Nombres de zonas frente a abreviaturas</a></li>
+<li><a href="#dst">Cómo funciona el horario de verano</a></li>
+<li><a href="#method">Un método sencillo para convertir una hora</a></li>
+<li><a href="#meetings">Programación en diferentes zonas horarias</a></li>
+<li><a href="#mistakes">Errores comunes</a></li>
+<li><a href="#faq">Preguntas frecuentes</a></li>
+</ol>
+</nav>
+<h2 id="utc">UTC y desplazamientos</h2>
+<p>Cada zona horaria se define por su diferencia con respecto al UTC (Tiempo Universal Coordinado). La hora estándar de la India es UTC+5:30, lo que significa que sus relojes están cinco horas y media adelantados con respecto al UTC. Nueva York tiene una diferencia horaria de UTC−5 en invierno y UTC−4 en verano. El UTC no varía con las estaciones, lo que lo convierte en un punto de referencia fiable.</p>
+<p>No todas las diferencias horarias son de horas completas. India usa UTC+5:30, Nepal UTC+5:45 y algunas zonas de Australia UTC+9:30. Un conversor que solo sume horas completas no funcionará correctamente en estos lugares.</p>
+<h2 id="names">Nombres de zonas frente a abreviaturas</h2>
+<p>Las abreviaturas como IST o CST son ambiguas. IST puede referirse a India, Irlanda o Israel, y CST a la hora central de Norteamérica o a la hora de China. El software utiliza nombres como Asia/Kolkata o America/New_York de la base de datos de zonas horarias de la IANA, que son inequívocos e incluyen las reglas del horario de verano para cada lugar.</p>
+<h2 id="dst">Cómo funciona el horario de verano</h2>
+<p>Algunos países adelantan sus relojes en primavera y los atrasan en otoño para que las horas de luz se extiendan hasta la tarde. Las fechas varían según la región.</p>
+<div class="table-wrap">
+<table class="table">
+<tr><th>Región</th><th>Los relojes avanzan.</th><th>Los relojes retroceden</th></tr>
+<tr><td>Estados Unidos y Canadá (la mayoría de las zonas)</td><td>Segundo domingo de marzo</td><td>Primer domingo de noviembre</td></tr>
+<tr><td>Unión Europea y Reino Unido</td><td>El último domingo de marzo</td><td>El último domingo de octubre</td></tr>
+<tr><td>India, Japón y China</td><td>Sin horario de verano</td><td>Sin horario de verano</td></tr>
+</table>
+</div>
+<p>Debido a que Estados Unidos y Europa cambian de hora en fechas diferentes, la diferencia horaria entre ambos países varía durante algunas semanas cada año. Una reunión que tiene lugar a la misma hora local en ambos lugares puede, de repente, tener una diferencia de una hora.</p>
+<h2 id="method">Un método sencillo para convertir una hora</h2>
+<ol class="steps">
+<li class="step"><p>Escriba la hora y la fecha en la zona de origen, no solo la hora.</p></li>
+<li class="step"><p>Conviértalo a UTC restando el desplazamiento de origen en esa fecha.</p></li>
+<li class="step"><p>Sume el desfase horario de destino en esa misma fecha para obtener la hora local.</p></li>
+<li class="step"><p>Comprueba si el resultado se ha trasladado al día anterior o al siguiente.</p></li>
+</ol>
+<p><strong>Ejemplo:</strong> Las 9:00 a. m. en India (UTC+5:30) son las 3:30 UTC. En Nueva York, esto equivale a las 10:30 p. m. del día anterior en invierno (UTC−5) y a las 11:30 p. m. del día anterior en verano (UTC−4). El <a href="/es/tool/tools/time-zone-converter">convertidor de zonas horarias</a> realiza estos pasos automáticamente y gestiona el horario de verano.</p>
+<h2 id="meetings">Programación en diferentes zonas horarias</h2>
+<ul>
+<li>Compartan la hora en UTC o en la zona horaria de cada persona, junto con la fecha, para que nadie tenga que hacer cálculos.</li>
+<li>Busque coincidencias en los horarios laborales habituales. India y el Reino Unido comparten una breve coincidencia matutina, mientras que India y la costa oeste de Estados Unidos tienen muy poca.</li>
+<li>Consulta las fechas cercanas a marzo y desde finales de octubre hasta noviembre, cuando cambia el horario de verano.</li>
+<li>Mantén abierto un <a href="/es/tool/tools/world-clock">reloj mundial</a> para las ciudades con las que trabajas con mayor frecuencia.</li>
+</ul>
+<h2 id="mistakes">Errores comunes</h2>
+<ul>
+<li><strong>Olvidar la fecha.</strong> Una hora puede caer en el día anterior o siguiente en otra zona horaria.</li>
+<li><strong>Suponiendo una diferencia horaria fija,</strong> la diferencia entre dos lugares puede variar con el horario de verano.</li>
+<li><strong>Utilizar abreviaturas ambiguas</strong> como IST o CST sin especificar el nombre del lugar.</li>
+<li><strong>Suponiendo desfases de una hora completa.</strong> Varias regiones extensas utilizan desfases de 30 o 45 minutos.</li>
+</ul>
+</article>
+<article class="page-section prose">
+<h2 id="faq">Preguntas frecuentes</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary class="faq-q">¿Cómo convierto IST a EST?</summary>
+<div class="faq-a"><p>En invierno, la hora de la India (IST) es UTC+5:30 y la del este de EE. UU. es UTC-5, por lo que la hora de la India está 10 horas y 30 minutos adelantada. En verano, cuando la hora del este es UTC-4, la diferencia es de 9 horas y 30 minutos.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Por qué India tiene la zona horaria UTC+5:30?</summary>
+<div class="faq-a"><p>India utiliza una única zona horaria basada en el meridiano de 82,5 grados este, que está cinco horas y media por delante de UTC. India no utiliza el horario de verano.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Qué países no utilizan el horario de verano?</summary>
+<div class="faq-a"><p>Muchos países no lo hacen, incluidos India, Japón y China. La mayor parte del mundo cercano al ecuador también mantiene el mismo horario durante todo el año.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Cuándo empieza el horario de verano?</summary>
+<div class="faq-a"><p>En Estados Unidos y Canadá comienza el segundo domingo de marzo y termina el primer domingo de noviembre. En la Unión Europea y el Reino Unido comienza el último domingo de marzo y termina el último domingo de octubre.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Cuál es la mejor manera de programar una reunión entre personas que se encuentran en diferentes zonas horarias?</summary>
+<div class="faq-a"><p>Elija una hora que se ajuste al horario laboral de todos, indíquela con la fecha y la zona horaria de cada persona o en UTC, y compruebe las fechas en las que cambia el horario de verano.</p></div>
+</details>
+</div>
+<h2>Conclusión</h2>
+<p>Las zonas horarias son sencillas si se trabaja con UTC y se incluye siempre la fecha. Utilice el método anterior para comprender el proceso y un conversor para mayor rapidez.</p>
+</article>
+<nav class="post-nav page-section" aria-label="Más guías">
+<a href="/es/tool/blog/categories/calculate-convert">← Más guías de cálculo y conversión</a> <a href="/es/tool/blog/best-time-to-schedule-meeting">Relacionado: <strong>Mejor momento para programar una reunión</strong> →</a>
+</nav>
+<section class="page-section">
+<h2>Herramientas relacionadas</h2>
+<div class="related-grid">
+<a class="related-card" href="/es/tool/tools/world-clock"><strong>Reloj mundial:</strong> <span>Consulta la hora en varias ciudades a la vez.</span></a> <a class="related-card" href="/es/tool/tools/date-difference-calculator"><strong>Calculadora de diferencia de fechas:</strong> <span>Cuenta los días entre dos fechas.</span></a> <a class="related-card" href="/es/tool/tools/age-calculator"><strong>Calculadora de edad:</strong> <span>Averigua la edad exacta a partir de una fecha de nacimiento.</span></a> <a class="related-card" href="/es/tool/tools/countdown-timer-tool"><strong>Temporizador de cuenta regresiva:</strong> <span>Cuenta los días que faltan para un evento.</span></a>
+</div>
+</section>
+</main>
+<div id="footer"></div>
+<script src="/assets/js/main.js?v=20261118"></script>
+</body>
+</html>
