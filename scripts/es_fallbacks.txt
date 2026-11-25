@@ -10,7 +10,6 @@ tool/blog/percentage-calculator-guide.html	markup changed by translator	Sometime
 tool/categories/ai-tools.html	markup changed by translator	About Logrith AI Tools
 tool/categories/all-tools.html	markup changed by translator	Many Logrith tools process files directly inside the browser for faster performance and improved privacy. Some tools may
 tool/categories/calculate-convert.html	markup changed by translator	Logrith Calculate &amp; Convert Tools are designed to make everyday calculations, conversions, and quick utility tasks s
-tool/categories.html	markup changed by translator	Browse all Logrith tool categories including Image & PDF Tools, Calculate & Convert, Text & Generators, Developer Tools,
 tool/categories/developer-tools.html	markup changed by translator	About Logrith Developer Tools
 tool/categories/image-pdf-tools.html	markup changed by translator	Logrith Image &amp; PDF Tools are built to simplify everyday file tasks with fast, practical, browser-based tools that w
 tool/categories/image-pdf-tools.html	markup changed by translator	Most Logrith image and PDF tools are designed to process files directly in your browser whenever possible. This helps im
@@ -28,9 +27,12 @@ tool/tools/character-counter.html	markup changed by translator	Logrith Character
 tool/tools/compound-interest-calculator.html	markup changed by translator	Starting with ${0} and contributing ${1} per month at ${2}% annual interest (compounded ${3}) over ${4} years, your inve
 tool/tools/emi-calculator.html	markup changed by translator	Total Interest: ${0} (${1}%)
 tool/tools/global/image-privacy-cleaner.html	markup changed by translator	Everything in this tool runs locally in your browser using JavaScript. When you select a photo, its bytes are read direc
+tool/tools/global/markdown-to-html.html	markup changed by translator	<a class="related-card" href="/tool/blog/"><strong>All Tool Guides</strong><span>Plain-English guides for every Logrith 
 tool/tools/global/pdf-inspector.html	markup changed by translator	This inspector runs entirely client-side using a JavaScript PDF parsing library loaded in your browser. When you select 
+tool/tools/global/pdf-inspector.html	markup changed by translator	<a class="related-card" href="/tool/blog/"><strong>All Tool Guides</strong><span>Plain-English guides for every Logrith 
 tool/tools/global/pdf-inspector.html	markup changed by translator	Font scan limited to the first ${0} pages for performance.
 tool/tools/global/pdf-inspector.html	markup changed by translator	Image count limited to the first ${0} pages for performance.
+tool/tools/global/url-deduplicator.html	markup changed by translator	<a class="related-card" href="/tool/blog/"><strong>All Tool Guides</strong><span>Plain-English guides for every Logrith 
 tool/tools/image-circle-crop.html	markup changed by translator	The Logrith Circle Image Cropper turns any photo into a clean, perfectly round image directly in your browser. You choos
 tool/tools/image-compressor.html	markup changed by translator	Logrith Image Compressor is designed as a practical multi-mode image compression tool. It helps users compress images on
 tool/tools/image-compressor.html	markup changed by translator	If you need a browser-based image compressor that gives control over quality, dimensions, output format, target file siz
@@ -40,6 +42,7 @@ tool/tools/jpg-to-pdf.html	markup changed by translator	The Logrith JPG to PDF t
 tool/tools/json-csv-converter.html	markup changed by translator	The Logrith JSON ⇄ CSV Converter changes data between the two formats people use most often to move records around. Past
 tool/tools/loan-affordability-calculator.html	markup changed by translator	Based on a monthly income of ${0}, existing EMIs of ${1}, and a target EMI-to-income ratio of ${2}%, you could afford a 
 tool/tools/lorem-ipsum.html	markup changed by translator	The Logrith Lorem Ipsum Generator produces placeholder text for use in design mockups, website layouts, print templates,
+tool/tools/meta-tag-generator.html	markup changed by translator	The Logrith Meta Tag Generator writes the HTML that describes your page to search engines and social networks. You enter
 tool/tools/password-strength.html	markup changed by translator	The Logrith Password Strength Checker analyzes a password's length, character variety, and common patterns to estimate h
 tool/tools/pdf-rotate.html	markup changed by translator	The Logrith PDF Rotate tool fixes sideways or upside-down pages in a PDF document without needing to reprint, rescan, or
 tool/tools/pdf-split.html	markup changed by translator	The Logrith PDF Split tool lets you extract specific pages or split an entire PDF into individual page files, free and d

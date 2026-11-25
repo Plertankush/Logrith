@@ -12,9 +12,6 @@
   <link rel="alternate" hreflang="x-default" href="https://logrith.in/ai-technology/json-guide-for-developers">
   <link rel="alternate" hreflang="es" href="https://logrith.in/es/ai-technology/json-guide-for-developers">
   <link rel="alternate" hreflang="en" href="https://logrith.in/ai-technology/json-guide-for-developers">
-
-
-
 <meta property="og:title" content="JSON para desarrolladores: una guía paso a paso | Logrith">
 <meta property="og:description" content="Una guía en cinco partes sobre JSON: sintaxis, los errores que lo invalidan, su uso en código, su conversión a CSV y YAML, y cómo obtener JSON fiable a partir de modelos de IA.">
 <meta property="og:type" content="article">
@@ -43,7 +40,7 @@
     gtag('js', new Date());
     gtag('config', 'G-BPJ4332XJH');
   </script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "JSON para desarrolladores: una guía paso a paso", "description": "Una guía en cinco partes sobre JSON: sintaxis, los errores que lo invalidan, su uso en código, su conversión a CSV y YAML, y cómo obtener JSON fiable a partir de modelos de IA.", "url": "https://logrith.in/es/ai-technology/json-guide-for-developers", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://logrith.in/ai-technology/json-guide-for-developers"}, "datePublished": "2026-11-12", "dateModified": "2026-11-12", "author": {"@type": "Organization", "name": "Logrith Team", "url": "https://logrith.in/es/pages/founder"}, "publisher": {"@id": "https://logrith.in/#organization"}, "isPartOf": {"@id": "https://logrith.in/#website"}, "inLanguage": "en"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "JSON para desarrolladores: una guía paso a paso", "description": "Una guía en cinco partes sobre JSON: sintaxis, los errores que lo invalidan, su uso en código, su conversión a CSV y YAML, y cómo obtener JSON fiable a partir de modelos de IA.", "url": "https://logrith.in/es/ai-technology/json-guide-for-developers", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://logrith.in/ai-technology/json-guide-for-developers"}, "datePublished": "2026-11-12", "dateModified": "2026-11-12", "author": {"@type": "Organization", "name": "Logrith Team", "url": "https://logrith.in/pages/founder"}, "publisher": {"@id": "https://logrith.in/#organization"}, "isPartOf": {"@id": "https://logrith.in/#website"}, "inLanguage": "en"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas de IA y para desarrolladores", "item": "https://logrith.in/es/ai-technology/"}, {"@type": "ListItem", "position": 3, "name": "Ecosistema de software y desarrolladores", "item": "https://logrith.in/es/ai-technology/software-developer-ecosystem"}, {"@type": "ListItem", "position": 4, "name": "JSON para desarrolladores: una guía paso a paso", "item": "https://logrith.in/es/ai-technology/json-guide-for-developers"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿JSON es lo mismo que un objeto JavaScript?", "acceptedAnswer": {"@type": "Answer", "text": "No. JSON es un formato de texto con reglas más estrictas: las claves y las cadenas deben usar comillas dobles, y no se permiten comentarios, funciones ni valores indefinidos. Un objeto JavaScript es un valor en memoria que se convierte a texto JSON y viceversa."}}, {"@type": "Question", "name": "¿Por qué JSON no permite comentarios?", "acceptedAnswer": {"@type": "Answer", "text": "El formato se mantuvo deliberadamente minimalista para que se analice de la misma manera en todas partes. Si necesita comentarios, utilice YAML, un formato como JSON5 (siempre que ambas partes lo admitan) o la clave reservada \"_comment\"."}}, {"@type": "Question", "name": "¿Cómo puedo almacenar una fecha en JSON?", "acceptedAnswer": {"@type": "Answer", "text": "Como una cadena en formato ISO 8601, por ejemplo \"2026-11-15T10:30:00Z\", o como un número de marca de tiempo Unix. Elija una convención, documéntela y analícela explícitamente después de la carga."}}, {"@type": "Question", "name": "¿Cuál es la diferencia entre JSON y JSON Lines?", "acceptedAnswer": {"@type": "Answer", "text": "JSON Lines (NDJSON) almacena un objeto JSON completo por línea. Es fácil de procesar y añadir datos, lo que lo hace común para registros y grandes conjuntos de datos, pero un archivo completo no constituye un único documento JSON válido."}}, {"@type": "Question", "name": "¿Puedo confiar en el JSON escrito por un modelo de IA?", "acceptedAnswer": {"@type": "Answer", "text": "Trátalo como cualquier dato de entrada no confiable. Si tu proveedor ofrece una función de salida estructurada, analízala de forma segura y valida el resultado con respecto a un esquema antes de que tu código dependa de él."}}]}</script>
 </head>
@@ -56,7 +53,7 @@
 <nav class="breadcrumb" aria-label="Ruta de navegación"><a href="/es/">Inicio</a> › <a href="/es/ai-technology/">Herramientas de IA y para desarrolladores</a> › <a href="/es/ai-technology/software-developer-ecosystem">Ecosistema de software y desarrollo</a> › JSON para desarrolladores: una guía paso a paso</nav>
 <div class="badge"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#code"></use></svg> Ecosistema de software y desarrolladores</div>
 <h1>JSON para desarrolladores: una guía paso a paso</h1>
-<p class="byline">Por <a href="/es/pages/founder" rel="author">Logrith Team</a> · Publicado<time datetime="2026-11-12"> 12 de noviembre de 2026</time> · Actualizado<time datetime="2026-11-12"> 12 de noviembre de 2026</time> · 6 minutos de lectura</p>
+<p class="byline">Por el <a href="/es/pages/founder" rel="author">equipo Logrith</a> · Publicado<time datetime="2026-11-12"> 12 de noviembre de 2026</time> · Actualizado<time datetime="2026-11-12"> 12 de noviembre de 2026</time> · 6 minutos de lectura</p>
 </div>
 </header>
 <article class="page-section">
@@ -187,7 +184,7 @@
 </div>
 </section>
 <aside class="author-box">
-<strong>Escrito por <a href="/es/pages/founder" rel="author">Logrith Team</a></strong>
+<strong>Escrito por <a href="/es/pages/founder" rel="author">el equipo Logrith</a></strong>
 <p>Fundador y editor independiente de Logrith. Los artículos se desarrollan con la ayuda de IA y luego son dirigidos y revisados ​​por el autor. ¿Has detectado algún error? <a href="/es/pages/contact">Avísanos</a> y lo corregiremos.</p>
 </aside>
 </div>

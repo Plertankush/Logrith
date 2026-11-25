@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ingeniería rápida para desarrolladores: Cómo obtener resultados fiables de los modelos de IA | Logrith</title>
+<meta name="description" content="Una guía práctica para escribir indicaciones para software: estructura, ejemplos, salida JSON, coste del token y cómo probar las indicaciones como si fueran código antes de que lleguen a los usuarios.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Logrith Team">
+<link rel="canonical" href="https://logrith.in/es/ai-technology/prompt-engineering-for-developers">
+  <link rel="alternate" hreflang="x-default" href="https://logrith.in/ai-technology/prompt-engineering-for-developers">
+  <link rel="alternate" hreflang="es" href="https://logrith.in/es/ai-technology/prompt-engineering-for-developers">
+  <link rel="alternate" hreflang="en" href="https://logrith.in/ai-technology/prompt-engineering-for-developers">
+<meta property="og:title" content="Ingeniería rápida para desarrolladores: Cómo obtener resultados fiables de los modelos de IA | Logrith">
+<meta property="og:description" content="Una guía práctica para escribir indicaciones para software: estructura, ejemplos, salida JSON, coste del token y cómo probar las indicaciones como si fueran código antes de que lleguen a los usuarios.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://logrith.in/es/ai-technology/prompt-engineering-for-developers">
+<meta property="og:site_name" content="Logrith">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ingeniería rápida para desarrolladores: Cómo obtener resultados fiables de los modelos de IA | Logrith">
+<meta name="twitter:description" content="Una guía práctica para escribir indicaciones para software: estructura, ejemplos, salida JSON, coste del token y cómo probar las indicaciones como si fueran código antes de que lleguen a los usuarios.">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700;800&amp;display=swap">
+<link rel="preload" href="/components/es/navbar.html" as="fetch" type="text/html" crossorigin="">
+<link rel="preload" href="/components/es/footer.html" as="fetch" type="text/html" crossorigin="">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+<link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Ingeniería rápida para desarrolladores: Cómo obtener resultados fiables de los modelos de IA", "description": "Una guía práctica para escribir indicaciones para software: estructura, ejemplos, salida JSON, coste del token y cómo probar las indicaciones como si fueran código antes de que lleguen a los usuarios.", "url": "https://logrith.in/es/ai-technology/prompt-engineering-for-developers", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://logrith.in/ai-technology/prompt-engineering-for-developers"}, "datePublished": "2026-11-20", "dateModified": "2026-11-20", "author": {"@type": "Organization", "name": "Logrith Team", "url": "https://logrith.in/pages/founder"}, "publisher": {"@id": "https://logrith.in/#organization"}, "isPartOf": {"@id": "https://logrith.in/#website"}, "inLanguage": "en"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://logrith.in/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas de IA y para desarrolladores", "item": "https://logrith.in/es/ai-technology/"}, {"@type": "ListItem", "position": 3, "name": "Inteligencia Artificial y Aprendizaje Automático", "item": "https://logrith.in/es/ai-technology/artificial-intelligence-ml"}, {"@type": "ListItem", "position": 4, "name": "Ingeniería rápida para desarrolladores: Cómo obtener resultados fiables de los modelos de IA", "item": "https://logrith.in/es/ai-technology/prompt-engineering-for-developers"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Sigue mereciendo la pena aprender ingeniería rápida a medida que mejoran los modelos?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, aunque el énfasis cambia. Los modelos más recientes toleran mejor la redacción ambigua, pero su uso en producción sigue dependiendo de requisitos claros, formatos de salida exactos, ejemplos y pruebas. En realidad, estas prácticas se centran en especificar el comportamiento del software, algo que no pasa de moda."}}, {"@type": "Question", "name": "¿Qué longitud debe tener una consigna?", "acceptedAnswer": {"@type": "Answer", "text": "Con la duración necesaria, ni más ni menos. Incluye todos los datos que el modelo no pueda adivinar y el formato exacto que desees; luego, elimina las repeticiones. Las indicaciones más largas cuestan más en cada llamada y pueden ocultar reglas importantes, así que mide la cantidad de tokens en lugar de adivinar."}}, {"@type": "Question", "name": "¿Qué es la inducción con pocos disparos?", "acceptedAnswer": {"@type": "Answer", "text": "Consiste en incluir una pequeña cantidad de ejemplos de entrada y las salidas que se desean obtener dentro del mensaje. El modelo capta el patrón, el tono y el formato a partir de ellos. Generalmente, basta con uno a tres ejemplos bien elegidos."}}, {"@type": "Question", "name": "¿Cómo puedo evitar que una modelo se invente cosas?", "acceptedAnswer": {"@type": "Answer", "text": "No se puede eliminar el comportamiento por completo, pero sí se puede reducir. Proporcione los datos en la solicitud, indíquele al modelo que puede responder que no lo sabe, pídale que cite su fuente del texto proporcionado y verifique las afirmaciones importantes en el código o las realizadas por una persona."}}, {"@type": "Question", "name": "¿Por qué la misma pregunta da respuestas diferentes cada vez?", "acceptedAnswer": {"@type": "Answer", "text": "Los modelos eligen el siguiente token con cierto grado de aleatoriedad. Reducir la configuración de temperatura hace que las respuestas sean más consistentes, y un ejemplo claro reduce la variación en el formato, pero no se garantiza la repetición exacta, así que escriba su código para que tolere pequeñas diferencias."}}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido</a>
+<div id="navbar"></div>
+<main id="main">
+<header class="page-hero page-hero-article">
+<div class="page-hero-inner">
+<nav class="breadcrumb" aria-label="Ruta de navegación"><a href="/es/">Inicio</a> › <a href="/es/ai-technology/">Herramientas de IA y para desarrolladores</a> › <a href="/es/ai-technology/artificial-intelligence-ml">Inteligencia artificial y aprendizaje automático</a> › Ingeniería de mensajes para desarrolladores: cómo obtener resultados fiables de los modelos de IA</nav>
+<div class="badge"><svg aria-hidden="true" class="icon icon-inline"><use href="/assets/svg/icons.svg#sparkles"></use></svg> Inteligencia Artificial y Aprendizaje Automático</div>
+<h1>Ingeniería rápida para desarrolladores: Cómo obtener resultados fiables de los modelos de IA</h1>
+<p class="byline">Por el <a href="/es/pages/founder" rel="author">equipo Logrith</a> · Publicado<time datetime="2026-11-20"> 20 de noviembre de 2026</time> · Actualizado<time datetime="2026-11-20"> 20 de noviembre de 2026</time> • 7 minutos de lectura</p>
+</div>
+</header>
+<article class="page-section">
+<div class="prose hub-prose article-body">
+<p>Cuando escribes una pregunta en una ventana de chat, una indicación ligeramente vaga te hace perder un minuto. Cuando una indicación se encuentra dentro de una aplicación y se ejecuta miles de veces al día, se convierte en un error que afecta a todos los usuarios. Para los desarrolladores, la ingeniería de indicaciones consiste en tratarlas como parte del código: escritas con precisión, probadas, versionadas y medidas.</p>
+<p>Esta guía abarca las técnicas más importantes en la práctica: cómo estructurar una solicitud, cómo pedir una salida que el código pueda analizar, cómo controlar los costos y cómo probar los cambios para que una simple reformulación no provoque fallos inesperados. Está dirigida a quienes desarrollan con modelos de IA mediante una API o una herramienta, no a investigadores.</p>
+<aside class="takeaways" aria-label="Conclusiones clave">
+<h2>Conclusiones clave</h2>
+<ul class="check-list">
+<li>Una indicación fiable especifica la tarea, el contexto, las restricciones y el formato de salida exacto, en ese orden.</li>
+<li>Muestre uno o dos ejemplos del resultado que desea. Los ejemplos influyen más en un modelo que los adjetivos.</li>
+<li>Si el código lee la respuesta, solicita JSON, valida la respuesta con respecto a un esquema y planifica las situaciones en las que la respuesta sea incorrecta.</li>
+<li>Cada llamada a las indicaciones cuesta tokens, así que mide su longitud y recorta lo que el modelo no necesite.</li>
+<li>Mantén un pequeño conjunto de pruebas y vuelve a ejecutarlo cada vez que cambie la solicitud o el modelo.</li>
+</ul>
+</aside>
+<nav class="article-toc" aria-label="En esta guía">
+<h2>En esta guía</h2>
+<ol>
+<li><a href="#mindset">Trate una solicitud como una interfaz</a></li>
+<li><a href="#structure">La estructura de una indicación confiable</a></li>
+<li><a href="#specific">Sé específico sobre cómo se ve bien.</a></li>
+<li><a href="#examples">Muestra ejemplos, no solo reglas.</a></li>
+<li><a href="#structured">Solicita la salida que tu código pueda leer.</a></li>
+<li><a href="#tokens">Observa el costo del token</a></li>
+<li><a href="#testing">Indicaciones de prueba como código</a></li>
+<li><a href="#failures">Fallos comunes y cómo solucionarlos</a></li>
+<li><a href="#security">Una nota sobre la información no confiable</a></li>
+<li><a href="#checklist">Lista de verificación de indicaciones</a></li>
+</ol>
+</nav>
+<section id="mindset">
+<h2>Trate una solicitud como una interfaz</h2>
+<p>Un modelo de lenguaje es una función con una firma inusual: se le pasa un texto y se obtiene un texto que probablemente, aunque no con garantía, sea el que se esperaba. Esto tiene dos consecuencias. Primero, el modelo solo conoce el texto de la solicitud, por lo que todo lo necesario para su correcto funcionamiento debe estar escrito allí. Segundo, la salida varía, por lo que la aplicación debe gestionar respuestas ligeramente diferentes a las de la ejecución anterior.</p>
+<p>Los desarrolladores que obtienen buenos resultados suelen considerar la solicitud como un contrato entre la aplicación y el modelo. La solicitud describe lo que el modelo recibe, lo que debe producir y lo que nunca debe hacer. Cuando algo falla, buscan la falla en ese contrato antes de culpar al modelo.</p>
+</section>
+<section id="structure">
+<h2>La estructura de una indicación confiable</h2>
+<p>La mayoría de las indicaciones fiables contienen las mismas cinco partes. No necesitas una plantilla especial, solo el hábito de comprobar que todas estén presentes.</p>
+<ol>
+<li><strong>Rol o situación.</strong> Una frase que defina el contexto, como por ejemplo: «Eres asistente de soporte para una aplicación de gestión de proyectos». Esto limita el tono y el vocabulario.</li>
+<li><strong>Tarea.</strong> La única cosa que se debe hacer, expresada como una instrucción: “Clasifique el siguiente mensaje en exactamente una categoría”.</li>
+<li><strong>Contexto.</strong> Los datos que el modelo no puede adivinar: reglas del producto, definiciones de las categorías, el plan del usuario, la fecha.</li>
+<li><strong>Restricciones.</strong> Los límites: longitud máxima, idioma, cosas que se deben evitar, qué hacer cuando se desconoce la respuesta.</li>
+<li><strong>Formato de salida.</strong> Cómo debe verse exactamente la respuesta, incluyendo los nombres de los campos si está estructurada.</li>
+</ol>
+<p>Coloca las instrucciones primero y los datos con los que debe trabajar el modelo al final, claramente separados, por ejemplo, entre líneas de tres guiones o dentro de etiquetas. Esto dificulta que el texto dentro de los datos se confunda con una instrucción.</p>
+</section>
+<section id="specific">
+<h2>Sé específico sobre cómo se ve bien.</h2>
+<p>Las indicaciones vagas producen resultados vagos porque el modelo tiene que adivinar tu estándar. Reemplazar un deseo general por un requisito medible es la mejora más económica que puedes implementar.</p>
+<table>
+<thead><tr><th>Impreciso</th><th>Específico</th></tr></thead>
+<tbody>
+<tr><td>Resume este artículo.</td><td>Resuma este artículo en tres puntos clave de no más de 20 palabras cada uno, para un ingeniero con poco tiempo.</td></tr>
+<tr><td>Escribe una buena descripción del producto.</td><td>Redacte una descripción del producto de entre 40 y 60 palabras en lenguaje sencillo. Mencione el material y un caso de uso. Evite los superlativos.</td></tr>
+<tr><td>Extrae los detalles importantes.</td><td>Extrae el número de factura, el importe total y la fecha de vencimiento. Si falta algún campo, devuelve null.</td></tr>
+<tr><td>Hazlo más corto.</td><td>Reduce este texto a menos de 120 palabras y conserva todos los números y nombres.</td></tr>
+</tbody>
+</table>
+<p>Nótese que las versiones específicas también indican qué hacer cuando falta información. Al indicarle al modelo que puede responder "desconocido" o devolver nulo, se reduce considerablemente la necesidad de inventar una solución.</p>
+</section>
+<section id="examples">
+<h2>Muestra ejemplos, no solo reglas.</h2>
+<p>Uno o dos ejemplos resueltos suelen enseñar al modelo más que un párrafo descriptivo. Cada ejemplo consiste en una entrada emparejada con la salida que se aceptaría. Esta técnica se conoce generalmente como "indicación con pocos ejemplos".</p>
+<p>Seleccione ejemplos que abarquen tanto los casos extremos como los típicos. Si está clasificando mensajes, incluya uno ambiguo y muestre cómo desea que se procese. Mantenga la coherencia en los ejemplos: si una respuesta está en minúsculas y otra en mayúsculas iniciales, el modelo copiará la inconsistencia. Tenga cuidado de no usar un solo tipo de ejemplo, ya que el modelo tiende a dar mayor importancia a lo que ve con más frecuencia.</p>
+</section>
+<section id="structured">
+<h2>Solicita la salida que tu código pueda leer.</h2>
+<p>Si la respuesta la lee una persona, el texto libre es suficiente. Si la lee tu código, solicita una estructura. JSON es la opción habitual porque cualquier lenguaje puede analizarlo. Indica los nombres de los campos, el tipo de cada campo y los valores permitidos, y especifica que la respuesta no debe contener nada más que el JSON.</p>
+<p>Incluso en ese caso, conviene prepararse para posibles fallos. Algunos modelos envuelven el JSON en un bloque de código, añaden una frase antes, dejan una coma al final o se detienen a mitad de camino al alcanzar el límite de salida. Un pipeline robusto realiza cuatro acciones: elimina cualquier envoltorio, analiza el código dentro de un bloque try/catch, valida el resultado con respecto al formato esperado y, en caso de fallo, reintenta la operación una vez con el mensaje de error o recurre a una opción predeterminada segura.</p>
+<p>Al depurar, pega la respuesta sin procesar en un <a href="/es/tool/tools/json-formatter">formateador JSON</a> para ver exactamente dónde falla la estructura. Si la respuesta está ligeramente mal formada, <a href="/es/tool/tools/json-repair">JSON Repair</a> muestra la solución, lo que te ayuda a decidir si la causa es la solicitud o el análisis. Nuestra <a href="/es/ai-technology/json-guide-for-developers">guía JSON para desarrolladores</a> explica el formato con mayor detalle.</p>
+</section>
+<section id="tokens">
+<h2>Observa el costo del token</h2>
+<p>Los modelos leen y escriben tokens, pequeños fragmentos de texto que suelen ser más cortos que una palabra. El precio, la velocidad y el tamaño de la ventana de contexto se miden en tokens. Cada llamada implica el pago de un mensaje que contiene un bloque extenso de instrucciones, varios ejemplos y un documento pegado.</p>
+<ul>
+<li><strong>Primero, mide.</strong> Pega el texto completo en la <a href="/es/tool/tools/ai-context-calculator">Calculadora de Contexto de IA</a> para ver su tamaño aproximado y cuánto espacio queda para la respuesta.</li>
+<li><strong>Elimine las repeticiones.</strong> Quite las instrucciones que se repiten y los ejemplos que enseñan la misma lección.</li>
+<li><strong>Envía solo lo necesario.</strong> Siempre que sea posible, envía la sección relevante del documento en lugar del archivo completo.</li>
+<li><strong>Limita la cantidad de respuestas.</strong> Solicita respuestas breves y establece una longitud máxima para que una respuesta demasiado larga no te cueste más de lo previsto.</li>
+</ul>
+</section>
+<section id="testing">
+<h2>Indicaciones de prueba como código</h2>
+<p>La razón más común por la que las indicaciones empeoran con el tiempo es que nadie se da cuenta del cambio. Alguien añade una frase para corregir un caso y, sin que nadie lo note, modifica otros tres. Un pequeño conjunto de pruebas evita esto.</p>
+<ol>
+<li><strong>Recopila casos reales.</strong> Guarda entre 20 y 50 entradas de uso real, incluidas las más extrañas, con la salida que consideres correcta.</li>
+<li><strong>Ejecute el conjunto después de cada cambio</strong> en el mensaje, el modelo o la configuración, y compare el resultado con el esperado.</li>
+<li><strong>Observa las diferencias.</strong> Una <a href="/es/tool/tools/text-diff">comparación de texto</a> entre la versión anterior y la nueva muestra qué fue lo que realmente se modificó, lo cual es más rápido que releer todo.</li>
+<li><strong>Añade la versión al mensaje</strong> en tu repositorio, junto al código, para que puedas ver quién lo modificó, cuándo y por qué.</li>
+<li><strong>Reduce la aleatoriedad</strong> en las tareas que requieren consistencia. La mayoría de los proveedores permiten reducir la configuración de temperatura, lo que hace que la salida sea más repetible, aunque nunca perfectamente idéntica.</li>
+</ol>
+</section>
+<section id="failures">
+<h2>Fallos comunes y cómo solucionarlos</h2>
+<table>
+<thead><tr><th>Síntoma</th><th>Causa probable</th><th>Arreglar</th></tr></thead>
+<tbody>
+<tr><td>Hechos o cifras inventados</td><td>Se le pidió a la modelo información que no se le proporcionó.</td><td>Proporcione los datos indicados en la pregunta y permita "desconocido" como respuesta.</td></tr>
+<tr><td>Texto adicional alrededor del JSON</td><td>Las instrucciones de formato son demasiado laxas.</td><td>Di "responde solo con JSON" y elimina los contenedores en el código.</td></tr>
+<tr><td>Ignora una restricción</td><td>La regla está oculta en una larga instrucción.</td><td>Muévelo cerca del final, repítelo una vez o divide la tarea en dos llamadas.</td></tr>
+<tr><td>Formato diferente en cada ejecución</td><td>Ningún ejemplo y una temperatura alta</td><td>Añade un ejemplo y baja la temperatura.</td></tr>
+<tr><td>Interrumpido a mitad de frase</td><td>Se ha alcanzado el límite de salida.</td><td>Solicite una entrega más breve o pídala por partes.</td></tr>
+<tr><td>Sigue las instrucciones que se encuentran en los datos.</td><td>Texto no fiable mezclado con instrucciones</td><td>Separe los datos de las instrucciones y trate la respuesta como no confiable.</td></tr>
+</tbody>
+</table>
+</section>
+<section id="security">
+<h2>Una nota sobre la información no confiable</h2>
+<p>Si tu mensaje incluye texto escrito por otra persona, como un correo electrónico, una página web o un ticket de soporte, dicho texto puede contener instrucciones dirigidas al modelo. Esto se conoce como inyección de mensajes. Ningún texto garantiza la inmunidad de un mensaje, así que diséñalo como si en ocasiones pudiera funcionar. Otorga al modelo el mínimo acceso necesario, nunca permitas que su salida se ejecute como código ni que active acciones irreversibles sin una verificación, y valida todo lo que devuelva antes de que tu aplicación actúe sobre ello.</p>
+<p>La privacidad también es importante. Todo lo que envíes a una modelo alojada escapa a tu control, así que elimina los datos personales y la información confidencial de las solicitudes, a menos que hayas consultado los términos de manejo de datos del proveedor.</p>
+</section>
+<section id="checklist">
+<h2>Lista de verificación de indicaciones</h2>
+<ul>
+<li>¿La tarea consiste en una única instrucción claramente definida?</li>
+<li>¿La consigna contiene todos los datos que el modelo necesita y ninguno que no necesite?</li>
+<li>¿El formato de salida es exacto? ¿Podría proporcionarse un ejemplo?</li>
+<li>¿Dice qué hacer cuando se desconoce la respuesta?</li>
+<li>¿Se valida la respuesta antes de que la utilice tu código?</li>
+<li>¿Has medido el tamaño del token y establecido un límite de salida?</li>
+<li>¿Existe un conjunto de pruebas que se ejecute después de cada cambio?</li>
+</ul>
+</section>
+<section id="faq">
+<h2>Preguntas frecuentes</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary class="faq-q">¿Sigue mereciendo la pena aprender ingeniería rápida a medida que mejoran los modelos?</summary>
+<div class="faq-a"><p>Sí, aunque el énfasis cambia. Los modelos más recientes toleran mejor la redacción ambigua, pero su uso en producción sigue dependiendo de requisitos claros, formatos de salida exactos, ejemplos y pruebas. En realidad, estas prácticas se centran en especificar el comportamiento del software, algo que no pasa de moda.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Qué longitud debe tener una consigna?</summary>
+<div class="faq-a"><p>Con la duración necesaria, ni más ni menos. Incluye todos los datos que el modelo no pueda adivinar y el formato exacto que desees; luego, elimina las repeticiones. Las indicaciones más largas cuestan más en cada llamada y pueden ocultar reglas importantes, así que mide la cantidad de tokens en lugar de adivinar.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Qué es la inducción con pocos disparos?</summary>
+<div class="faq-a"><p>Consiste en incluir una pequeña cantidad de ejemplos de entrada y las salidas que se desean obtener dentro del mensaje. El modelo capta el patrón, el tono y el formato a partir de ellos. Generalmente, basta con uno a tres ejemplos bien elegidos.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Cómo puedo evitar que una modelo se invente cosas?</summary>
+<div class="faq-a"><p>No se puede eliminar el comportamiento por completo, pero sí se puede reducir. Proporcione los datos en la solicitud, indíquele al modelo que puede responder que no lo sabe, pídale que cite su fuente del texto proporcionado y verifique las afirmaciones importantes en el código o las realizadas por una persona.</p></div>
+</details>
+<details class="faq-item">
+<summary class="faq-q">¿Por qué la misma pregunta da respuestas diferentes cada vez?</summary>
+<div class="faq-a"><p>Los modelos eligen el siguiente token con cierto grado de aleatoriedad. Reducir la configuración de temperatura hace que las respuestas sean más consistentes, y un ejemplo claro reduce la variación en el formato, pero no se garantiza la repetición exacta, así que escriba su código para que tolere pequeñas diferencias.</p></div>
+</details>
+</div>
+</section>
+<aside class="author-box">
+<strong>Escrito por <a href="/es/pages/founder" rel="author">el equipo Logrith</a></strong>
+<p>Fundador y editor independiente de Logrith. Los artículos se desarrollan con la ayuda de IA y luego son dirigidos y revisados ​​por el autor. ¿Has detectado algún error? <a href="/es/pages/contact">Avísanos</a> y lo corregiremos.</p>
+</aside>
+</div>
+</article>
+<section class="page-section">
+<div class="section-header"><h2>Herramientas gratuitas mencionadas en esta guía</h2></div>
+<div class="tool-list">
+<a href="/es/tool/tools/ai-context-calculator" class="tool-row">
+<span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+<div class="tool-row-body"><div class="tool-row-name">Calculadora de tokens y contexto de IA</div><div class="tool-row-desc">Pega una solicitud o un documento para estimar su número de tokens y qué parte de la ventana de contexto de un modelo utilizaría, directamente en tu navegador.</div></div>
+<span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+</a>
+<a href="/es/tool/tools/json-formatter" class="tool-row">
+<span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+<div class="tool-row-body"><div class="tool-row-name">Formateador JSON</div><div class="tool-row-desc">Pegue el JSON para darle formato con la indentación adecuada, validar su sintaxis con la ubicación exacta de los errores o reducirlo a una sola línea.</div></div>
+<span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+</a>
+<a href="/es/tool/tools/json-repair" class="tool-row">
+<span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+<div class="tool-row-body"><div class="tool-row-name">Herramienta de reparación JSON</div><div class="tool-row-desc">Pegue el JSON no válido para que se repare automáticamente, corrigiendo las comas finales y las claves sin comillas, y explicando claramente los errores.</div></div>
+<span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+</a>
+<a href="/es/tool/tools/text-diff" class="tool-row">
+<span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+<div class="tool-row-body"><div class="tool-row-name">Comprobador de diferencias de texto</div><div class="tool-row-desc">Pega dos versiones de un fragmento de texto o código y observa al instante cómo se resaltan, una al lado de la otra, todas las líneas añadidas, eliminadas y modificadas.</div></div>
+<span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+</a>
+<a href="/es/tool/tools/regex-tester" class="tool-row">
+<span class="tool-row-icon"><svg class="icon" aria-hidden="true"><use href="/assets/svg/icons.svg#tool"></use></svg></span>
+<div class="tool-row-body"><div class="tool-row-name">Probador de expresiones regulares</div><div class="tool-row-desc">Escribe un patrón de expresiones regulares y observa cómo se resaltan en tiempo real todas las coincidencias con tu cadena de prueba, con explicaciones de los grupos de captura y las banderas.</div></div>
+<span class="tool-row-arrow" aria-hidden="true"><svg class="icon icon-inline" aria-hidden="true"><use href="/assets/svg/icons.svg#arrow-right"></use></svg></span>
+</a>
+</div>
+</section>
+<section class="page-section">
+<div class="section-header"><h2>Más información en IA y herramientas para desarrolladores.</h2></div>
+<div class="article-list">
+<a href="/es/ai-technology/how-large-language-models-work" class="article-card">
+<span class="article-card-topic">Herramientas de IA y para desarrolladores</span>
+<h3>Cómo funcionan los modelos de lenguaje a gran escala: una guía en lenguaje sencillo.</h3>
+<p>Una explicación clara de cómo se entrenan los modelos de lenguaje complejos, qué son los tokens y las ventanas de contexto, por qué cometen errores y cómo utilizarlos correctamente.</p>
+<span class="article-card-meta">5 min de lectura</span>
+</a>
+<a href="/es/ai-technology/json-vs-yaml-vs-xml-vs-csv" class="article-card">
+<span class="article-card-topic">Herramientas de IA y para desarrolladores</span>
+<h3>JSON vs YAML vs XML vs CSV: ¿Qué formato de datos debería utilizar?</h3>
+<p>Comparación entre JSON, YAML, XML y CSV: ventajas, desventajas, errores comunes y una regla sencilla para elegir el formato de datos adecuado para tu proyecto.</p>
+<span class="article-card-meta">4 min de lectura</span>
+</a>
+<a href="/es/ai-technology/hashing-vs-encryption-vs-encoding" class="article-card">
+<span class="article-card-topic">Herramientas de IA y para desarrolladores</span>
+<h3>Hashing vs. Cifrado vs. Codificación: La diferencia explicada</h3>
+<p>El hashing, el cifrado y la codificación suelen confundirse. Aprenda qué hace cada uno, cuándo usarlo y qué errores pueden provocar graves problemas de seguridad.</p>
+<span class="article-card-meta">3 min de lectura</span>
+</a>
+</div>
+</section>
+</main>
+<div id="footer"></div>
+<script src="/assets/js/main.js?v=20261118"></script>
+</body>
+</html>
