@@ -11,6 +11,20 @@
 /marketing-growth/         /startups-business/   301
 /marketing-growth/*        /startups-business/   301
 
+# Old URLs still crawled by Google (Search Console 404 / redirect-error lists)
+/blog/index                         /tool/blog                              301
+/legacy                             /tool/                                  301
+/legacy/tools/base64-encoder-decoder /tool/tools/base64                     301
+/legacy/tools/url-encoder-decoder   /tool/tools/url-encoder                 301
+/blog/http-status-code-lookup       /tool/tools/http-status-code-lookup     301
+/blog/salary-hourly-converter       /tool/tools/salary-hourly-converter     301
+/blog/unit-converter                /tool/blog/unit-converter-guide         301
+/blog/json-formatter                /tool/tools/json-formatter              301
+/blog/bmi-calculator                /tool/blog/calculate-bmi-online-free    301
+/en/categories/*                    /tool/categories                        301
+/en/tools/word-counter.html         /tool/tools/word-counter                301
+/en/tools/website-speed-analyzer.html /tool/tools/website-speed-analyzer    301
+
 # Categories hub lives at /tool/categories (was /tool/categories/categories)
 /tool/categories/categories      /tool/categories      301
 /es/tool/categories/categories   /es/tool/categories   301

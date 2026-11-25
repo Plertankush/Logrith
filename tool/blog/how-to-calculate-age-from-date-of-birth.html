@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Calculate Age from Date of Birth | Logrith</title>
+  <meta name="description" content="Learn how to work out exact age in years, months and days from a date of birth, with a worked example, leap-year rules and spreadsheet formulas.">
+  <meta name="keywords" content="how to calculate age, age from date of birth, calculate age in years months days, age formula, leap year birthday, datedif age">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Logrith Team">
+  <link rel="canonical" href="https://logrith.in/tool/blog/how-to-calculate-age-from-date-of-birth">
+  <link rel="alternate" hreflang="en" href="https://logrith.in/tool/blog/how-to-calculate-age-from-date-of-birth">
+  <link rel="alternate" hreflang="x-default" href="https://logrith.in/tool/blog/how-to-calculate-age-from-date-of-birth">
+  <meta property="og:title" content="How to Calculate Age from Date of Birth | Logrith">
+  <meta property="og:description" content="Learn how to work out exact age in years, months and days from a date of birth, with a worked example, leap-year rules and spreadsheet formulas.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://logrith.in/tool/blog/how-to-calculate-age-from-date-of-birth">
+  <meta property="og:site_name" content="Logrith">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Calculate Age from Date of Birth | Logrith">
+  <meta name="twitter:description" content="Learn how to work out exact age in years, months and days from a date of birth, with a worked example, leap-year rules and spreadsheet formulas.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0D0D0D">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700;800&display=swap">
+  <link rel="preload" href="/components/navbar.html" as="fetch" type="text/html" crossorigin>
+  <link rel="preload" href="/components/footer.html" as="fetch" type="text/html" crossorigin>
+  <link rel="stylesheet" href="/assets/css/style.css?v=20261118">
+  <link rel="stylesheet" href="/assets/css/pages.css?v=20261118">
+
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "Organization", "@id": "https://logrith.in/#organization", "name": "Logrith", "url": "https://logrith.in"}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "Article", "datePublished": "2026-11-25", "dateModified": "2026-11-25", "headline": "How to Calculate Age from Date of Birth", "description": "Learn how to work out exact age in years, months and days from a date of birth, with a worked example, leap-year rules and spreadsheet formulas.", "author": {"@type": "Organization", "name": "Logrith Team", "url": "https://logrith.in/pages/founder"}, "publisher": {"@id": "https://logrith.in/#organization"}, "mainEntityOfPage": "https://logrith.in/tool/blog/how-to-calculate-age-from-date-of-birth"}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "WebPage", "name": "Calculate Age from Date of Birth", "url": "https://logrith.in/tool/blog/how-to-calculate-age-from-date-of-birth", "isPartOf": {"@type": "Blog", "name": "Logrith Blog", "url": "https://logrith.in/tool/blog/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Age Calculator", "url": "https://logrith.in/tool/tools/age-calculator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://logrith.in/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://logrith.in/tool/"}, {"@type": "ListItem", "position": 3, "name": "Tool Guides", "item": "https://logrith.in/tool/blog/"}, {"@type": "ListItem", "position": 4, "name": "Calculate & Convert", "item": "https://logrith.in/tool/blog/categories/calculate-convert"}, {"@type": "ListItem", "position": 5, "name": "Calculate Age from Date of Birth", "item": "https://logrith.in/tool/blog/how-to-calculate-age-from-date-of-birth"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I calculate my age from my date of birth?", "acceptedAnswer": {"@type": "Answer", "text": "Subtract the birth year from the current year, then subtract one more year if your birthday has not happened yet this year. For years, months and days, count whole years first, then whole months, then the remaining days."}}, {"@type": "Question", "name": "How old am I if I was born in 2000?", "acceptedAnswer": {"@type": "Answer", "text": "In 2026 you are 26 once your birthday has passed this year, and 25 before it. The same rule works for any birth year: subtract it from the current year, then adjust for the birthday."}}, {"@type": "Question", "name": "How do I calculate age in Excel or Google Sheets?", "acceptedAnswer": {"@type": "Answer", "text": "Use DATEDIF with the date of birth and TODAY(). The \"Y\" option returns whole years and \"YM\" returns the months after the last birthday."}}, {"@type": "Question", "name": "When is the birthday of someone born on 29 February?", "acceptedAnswer": {"@type": "Answer", "text": "In non-leap years it depends on local rules and the organisation, with 28 February and 1 March both being used. Check the rule that applies to the form or law involved."}}, {"@type": "Question", "name": "Is the result of an age calculator exact?", "acceptedAnswer": {"@type": "Answer", "text": "It is exact to the day when it uses the same date rules as you, including leap years and month lengths. Small differences appear only when the end of a month is involved."}}]}
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPJ4332XJH');
+  </script>
+</head>
+<body class="page-how-to-calculate-age-from-date-of-birth">
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="navbar"></div>
+
+<main id="main">
+
+<header class="page-hero"><div class="page-hero-inner">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/tool/">Tools</a> &rsaquo; <a href="/tool/blog/">Tool Guides</a> &rsaquo; <a href="/tool/blog/categories/calculate-convert">Calculate & Convert</a> &rsaquo; Calculate Age from Date of Birth</nav>
+  <h1>How to Calculate Your Age from a Date of Birth, Step by Step</h1>
+  <p>Subtracting one year from another gets you close, but not exact. This guide shows the method that always works, how leap days and month lengths change the answer, and the formulas to use in a spreadsheet.</p>
+  <a href="/tool/tools/age-calculator" class="btn btn-primary btn-lg">
+    <svg class="icon"><use href="/assets/svg/icons.svg#age"></use></svg>
+    Calculate My Age
+  </a>
+  <p class="byline">By <a href="/pages/founder" rel="author">Logrith Team</a> &middot; Published <time datetime="2026-11-25">Nov 25, 2026</time> &middot; Updated <time datetime="2026-11-25">Nov 25, 2026</time></p>
+</div></header>
+
+<article class="page-section prose">
+
+  <nav class="toc" aria-label="On this page">
+    <h2>On This Page</h2>
+    <ol>
+      <li><a href="#quick">The Quick Method</a></li>
+      <li><a href="#exact">Working Out Years, Months and Days</a></li>
+      <li><a href="#months">Why Month Lengths Matter</a></li>
+      <li><a href="#leap">Leap Years and 29 February Birthdays</a></li>
+      <li><a href="#sheets">Calculating Age in a Spreadsheet</a></li>
+      <li><a href="#systems">Other Ways of Counting Age</a></li>
+      <li><a href="#mistakes">Common Mistakes</a></li>
+      <li><a href="#faq">Frequently Asked Questions</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="quick">The Quick Method</h2>
+  <p>Take the current year and subtract the birth year. Then check whether this year&rsquo;s birthday has happened yet. If it has not, subtract one more year. That is your age in whole years.</p>
+  <p>For example, someone born on 15 August 1995 is 2026 &minus; 1995 = 31 on 15 August 2026, but only 30 on 1 March 2026, because the birthday has not yet come round.</p>
+
+  <h2 id="exact">Working Out Years, Months and Days</h2>
+  <p>For an exact age, count whole years first, then whole months, then the remaining days. Use this order of steps:</p>
+  <ol class="steps">
+    <li class="step"><p>Subtract the birth year from the current year, then subtract one if the birthday has not happened yet. This gives the years.</p></li>
+    <li class="step"><p>Move the birth date forward by those years. Count the whole months from that date to today. This gives the months.</p></li>
+    <li class="step"><p>Move the date forward by those months. Count the days left until today. This gives the days.</p></li>
+  </ol>
+  <p><strong>Worked example.</strong> Date of birth: 15 August 1995. Today: 25 November 2026.</p>
+  <ul>
+    <li>15 August 1995 + 31 years = 15 August 2026, so the years are 31.</li>
+    <li>15 August 2026 + 3 months = 15 November 2026, so the months are 3.</li>
+    <li>15 November to 25 November is 10 days.</li>
+  </ul>
+  <p>The age is 31 years, 3 months and 10 days. The <a href="/tool/tools/age-calculator">Age Calculator</a> does the same steps instantly and also shows hours and minutes.</p>
+
+  <h2 id="months">Why Month Lengths Matter</h2>
+  <p>Months have 28 to 31 days, so counting days is where hand calculations go wrong. If you were born on the 31st and the current month has only 30 days, there is no matching day to count from. Calculators handle this by borrowing days from the previous month, which is why two methods can differ by a day or two at the end of a month.</p>
+  <p>When the exact number of days matters, for example for a legal or school deadline, count from a clearly stated rule rather than a rounded estimate.</p>
+
+  <h2 id="leap">Leap Years and 29 February Birthdays</h2>
+  <p>A leap year adds 29 February roughly every four years. Years divisible by 100 are not leap years unless they are also divisible by 400, so 2000 was a leap year and 1900 was not.</p>
+  <p>People born on 29 February have a real birthday only in leap years. In other years, which day counts as their birthday depends on the local rules or the organisation involved, with 28 February and 1 March both being used. If it matters for a form or a legal age, check the rule that applies to you.</p>
+
+  <h2 id="sheets">Calculating Age in a Spreadsheet</h2>
+  <p>Excel and Google Sheets both support the DATEDIF function. Put the date of birth in cell A2 and use:</p>
+  <div class="table-wrap">
+    <table class="table">
+    <tr><th>What you want</th><th>Formula</th></tr>
+    <tr><td>Whole years</td><td><code>=DATEDIF(A2, TODAY(), "Y")</code></td></tr>
+    <tr><td>Months after the last birthday</td><td><code>=DATEDIF(A2, TODAY(), "YM")</code></td></tr>
+    <tr><td>Total days lived</td><td><code>=TODAY() - A2</code></td></tr>
+    </table>
+  </div>
+  <p>Excel does not list DATEDIF in its function help, but it works. The "MD" option, which returns the leftover days, is known to give wrong answers in some Excel cases, so check it against a calculator if you rely on it.</p>
+
+  <h2 id="systems">Other Ways of Counting Age</h2>
+  <p>Not every culture counts age the same way. Traditional East Asian age reckoning counts a person as one year old at birth and adds a year at each new year. South Korea moved to the international system for most legal and administrative purposes in June 2023. If you fill in a form from another country, check which system it expects.</p>
+
+  <h2 id="mistakes">Common Mistakes</h2>
+  <ul>
+    <li><strong>Subtracting years only.</strong> This is wrong for anyone whose birthday has not yet happened this year.</li>
+    <li><strong>Assuming every month has 30 days.</strong> This shifts the day count by up to three days.</li>
+    <li><strong>Ignoring the time zone.</strong> Near midnight, the date can differ between where you are and where you were born.</li>
+    <li><strong>Forgetting leap days</strong> when counting total days between two dates.</li>
+  </ul>
+
+</article>
+
+<article class="page-section prose">
+  <h2 id="faq">Frequently Asked Questions</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">How do I calculate my age from my date of birth?</summary>
+      <div class="faq-a"><p>Subtract the birth year from the current year, then subtract one more year if your birthday has not happened yet this year. For years, months and days, count whole years first, then whole months, then the remaining days.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How old am I if I was born in 2000?</summary>
+      <div class="faq-a"><p>In 2026 you are 26 once your birthday has passed this year, and 25 before it. The same rule works for any birth year: subtract it from the current year, then adjust for the birthday.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">How do I calculate age in Excel or Google Sheets?</summary>
+      <div class="faq-a"><p>Use DATEDIF with the date of birth and TODAY(). The &quot;Y&quot; option returns whole years and &quot;YM&quot; returns the months after the last birthday.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">When is the birthday of someone born on 29 February?</summary>
+      <div class="faq-a"><p>In non-leap years it depends on local rules and the organisation, with 28 February and 1 March both being used. Check the rule that applies to the form or law involved.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Is the result of an age calculator exact?</summary>
+      <div class="faq-a"><p>It is exact to the day when it uses the same date rules as you, including leap years and month lengths. Small differences appear only when the end of a month is involved.</p></div>
+    </details>
+  </div>
+
+  <h2>Conclusion</h2>
+  <p>Age is a simple idea with a few edge cases: the birthday check, uneven months and leap days. Use the manual steps when you want to understand the number, and a calculator when you need it fast and exact.</p>
+</article>
+
+<nav class="post-nav page-section" aria-label="More guides">
+  <a href="/tool/blog/categories/calculate-convert">&larr; More Calculate & Convert Guides</a>
+  <a href="/tool/blog/calculate-exact-age-online">Related: <strong>Age Calculator Guide</strong> &rarr;</a>
+</nav>
+
+<section class="page-section">
+  <h2>Related Tools</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/tool/tools/date-difference-calculator"><strong>Date Difference Calculator</strong><span>Find the exact gap between two dates.</span></a>
+    <a class="related-card" href="/tool/tools/world-clock"><strong>World Clock</strong><span>Check the current time in other cities.</span></a>
+    <a class="related-card" href="/tool/tools/percentage-calculator"><strong>Percentage Calculator</strong><span>Work out percentages quickly.</span></a>
+    <a class="related-card" href="/tool/tools/unit-converter"><strong>Unit Converter</strong><span>Convert between common units.</span></a>
+  </div>
+</section>
+
+</main>
+
+<div id="footer"></div>
+<script src="/assets/js/main.js?v=20261118"></script>
+</body>
+</html>
