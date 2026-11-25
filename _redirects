@@ -11,6 +11,10 @@
 /marketing-growth/         /startups-business/   301
 /marketing-growth/*        /startups-business/   301
 
+# Categories hub lives at /tool/categories (was /tool/categories/categories)
+/tool/categories/categories      /tool/categories      301
+/es/tool/categories/categories   /es/tool/categories   301
+
 # Logrith 2.0: old home, categories and guides moved under /tool/
 /blog                     /tool/blog                301
 /blog/*                   /tool/blog/:splat         301

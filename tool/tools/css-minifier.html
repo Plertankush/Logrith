@@ -46,6 +46,9 @@
   </script>
 
   <!-- Google tag (gtag.js) -->
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much smaller does minified CSS get?", "acceptedAnswer": {"@type": "Answer", "text": "Typically 20-40% smaller depending on how much whitespace, comments, and formatting the original CSS had."}}, {"@type": "Question", "name": "Does minifying break my CSS?", "acceptedAnswer": {"@type": "Answer", "text": "No, minification only removes whitespace, comments, and unnecessary characters — it doesn't change how the CSS functions."}}, {"@type": "Question", "name": "Can I beautify already-minified CSS?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, use the Beautify button to reformat minified CSS with proper indentation and line breaks for readability."}}, {"@type": "Question", "name": "Is my CSS code uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No, both minifying and beautifying run entirely in your browser using JavaScript. Your code never leaves your device."}}, {"@type": "Question", "name": "Will minifying affect how my CSS renders?", "acceptedAnswer": {"@type": "Answer", "text": "No, minification only removes characters that have no effect on rendering — whitespace, comments, and optional syntax. Every selector, property, and value remains functionally identical."}}, {"@type": "Question", "name": "Should I minify CSS during development too?", "acceptedAnswer": {"@type": "Answer", "text": "No, keep readable, well-formatted CSS during development and only minify as a build step before deploying to production, since minified code is much harder to debug while actively working on it."}}, {"@type": "Question", "name": "Does this tool handle CSS with custom properties (variables)?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, CSS custom properties like --main-color are treated the same as any other value during minification and beautification, since they follow standard CSS syntax rules."}}, {"@type": "Question", "name": "Can I minify CSS with media queries and nested rules?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, media queries, pseudo-classes, and standard nested selector blocks are all handled correctly during both minification and beautification."}}]}
+  </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -196,6 +199,13 @@
     <a class="related-card" href="/tool/tools/html-minifier"><strong>HTML Minifier</strong><span>Minify or beautify HTML code.</span></a>
     <a class="related-card" href="/tool/tools/css-gradient-generator"><strong>CSS Gradient Generator</strong><span>Build gradients visually with CSS output.</span></a>
     <a class="related-card" href="/tool/tools/css-box-shadow-generator"><strong>CSS Box Shadow Generator</strong><span>Build box shadows visually with CSS output.</span></a>
+  </div>
+</section>
+
+<section class="page-section" data-linked="guides">
+  <h2>Guides for This Tool</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/tool/blog/categories/developer-tools"><strong>Developer Tool Guides</strong><span>Practical guides to formatters, encoders and developer utilities.</span></a>
   </div>
 </section>
 

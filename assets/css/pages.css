@@ -585,7 +585,7 @@
   font-size: .96rem;
 }
 
-/* categories/categories.html */
+/* categories.html */
 .page-categories .categories-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));

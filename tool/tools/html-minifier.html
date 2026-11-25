@@ -46,6 +46,9 @@
   </script>
 
   <!-- Google tag (gtag.js) -->
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does minifying HTML remove comments?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, HTML comments (<!-- like this -->) are removed during minification, along with unnecessary whitespace between tags."}}, {"@type": "Question", "name": "Will minification break my HTML?", "acceptedAnswer": {"@type": "Answer", "text": "No, standard HTML minification only removes whitespace and comments — it doesn't alter tags, attributes, or content in ways that change rendering."}}, {"@type": "Question", "name": "What about content inside <pre> or <textarea> tags?", "acceptedAnswer": {"@type": "Answer", "text": "Whitespace inside these tags is meaningful and preserved by browsers, so exercise care when minifying HTML containing such elements."}}, {"@type": "Question", "name": "Is my HTML code sent to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No, both minification and beautification run entirely in your browser using JavaScript. Your markup never leaves your device."}}, {"@type": "Question", "name": "Does minifying affect inline CSS or JavaScript inside the HTML?", "acceptedAnswer": {"@type": "Answer", "text": "This tool focuses on HTML structure — tags, attributes, and whitespace between them. Content inside <style> and <script> blocks is preserved as-is; use the dedicated CSS Minifier or JS Minifier separately for that embedded code."}}, {"@type": "Question", "name": "Can I beautify HTML copied from a browser's \"View Source\"?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, pasting compact or server-rendered HTML into Beautify reformats it with proper indentation, making nested structure much easier to read and follow."}}, {"@type": "Question", "name": "Does this tool validate my HTML for errors?", "acceptedAnswer": {"@type": "Answer", "text": "No, it only reformats or compresses the markup as given — it doesn't check for unclosed tags, invalid nesting, or other HTML validity issues."}}]}
+  </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -213,6 +216,13 @@
     <a class="related-card" href="/tool/tools/js-minifier"><strong>JS Minifier</strong><span>Minify or beautify JavaScript code.</span></a>
     <a class="related-card" href="/tool/tools/html-entity-converter"><strong>HTML Entity Converter</strong><span>Encode and decode HTML entities.</span></a>
     <a class="related-card" href="/tool/tools/markdown-previewer"><strong>Markdown Previewer</strong><span>Convert Markdown to HTML with live preview.</span></a>
+  </div>
+</section>
+
+<section class="page-section" data-linked="guides">
+  <h2>Guides for This Tool</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/startups-business/static-website-launch-checklist"><strong>Static Website Launch Checklist: What to Check Before You Ship</strong><span>A practical pre-launch checklist for a static website: URLs, meta tags and social previews, crawling, speed, mobile, trust…</span></a>
   </div>
 </section>
 

@@ -46,6 +46,9 @@
   </script>
 
   <!-- Google tag (gtag.js) -->
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I generate multiple unique numbers?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, enable \"Unique values only\" to generate a set of numbers with no repeats, useful for lottery-style draws or sampling."}}, {"@type": "Question", "name": "What's the maximum range?", "acceptedAnswer": {"@type": "Answer", "text": "You can use any minimum and maximum values, as long as the range is large enough to generate your requested quantity if uniqueness is enabled."}}, {"@type": "Question", "name": "Is this truly random?", "acceptedAnswer": {"@type": "Answer", "text": "It uses JavaScript's built-in pseudorandom number generator, suitable for games, sampling, and general randomization needs, though not cryptographically secure."}}, {"@type": "Question", "name": "Can I generate negative numbers?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, enter a negative value in the Minimum field — for example, a range of -50 to 50 generates numbers across both negative and positive values."}}, {"@type": "Question", "name": "Is my data or usage tracked?", "acceptedAnswer": {"@type": "Answer", "text": "No, every number is generated locally in your browser. Nothing about the ranges or quantities you request is logged or stored anywhere."}}, {"@type": "Question", "name": "Can I generate more than 1000 numbers at once?", "acceptedAnswer": {"@type": "Answer", "text": "The tool caps quantity at 1000 per generation to keep the results readable and the page responsive. For larger batches, run the generator multiple times and combine the results."}}]}
+  </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPJ4332XJH"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -200,6 +203,13 @@
     <a class="related-card" href="/tool/tools/uuid-generator"><strong>UUID Generator</strong><span>Generate unique IDs for development use.</span></a>
     <a class="related-card" href="/tool/tools/flip-coin-dice-roller"><strong>Coin Flip &amp; Dice Roller</strong><span>Flip a coin or roll dice with history log.</span></a>
     <a class="related-card" href="/tool/tools/random-team-generator"><strong>Random Team Generator</strong><span>Split a list of names into random teams.</span></a>
+  </div>
+</section>
+
+<section class="page-section" data-linked="guides">
+  <h2>Guides for This Tool</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/tool/blog/random-number-generator-guide"><strong>Random Number Generator: Is It Actually Random?</strong><span>How browser-based random number generation actually works, and whether it's random enough to trust for your use case.</span></a>
   </div>
 </section>
 

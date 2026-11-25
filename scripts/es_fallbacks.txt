@@ -10,7 +10,7 @@ tool/blog/percentage-calculator-guide.html	markup changed by translator	Sometime
 tool/categories/ai-tools.html	markup changed by translator	About Logrith AI Tools
 tool/categories/all-tools.html	markup changed by translator	Many Logrith tools process files directly inside the browser for faster performance and improved privacy. Some tools may
 tool/categories/calculate-convert.html	markup changed by translator	Logrith Calculate &amp; Convert Tools are designed to make everyday calculations, conversions, and quick utility tasks s
-tool/categories/categories.html	markup changed by translator	Browse all Logrith tool categories including Image & PDF Tools, Calculate & Convert, Text & Generators, Developer Tools,
+tool/categories.html	markup changed by translator	Browse all Logrith tool categories including Image & PDF Tools, Calculate & Convert, Text & Generators, Developer Tools,
 tool/categories/developer-tools.html	markup changed by translator	About Logrith Developer Tools
 tool/categories/image-pdf-tools.html	markup changed by translator	Logrith Image &amp; PDF Tools are built to simplify everyday file tasks with fast, practical, browser-based tools that w
 tool/categories/image-pdf-tools.html	markup changed by translator	Most Logrith image and PDF tools are designed to process files directly in your browser whenever possible. This helps im

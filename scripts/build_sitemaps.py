@@ -32,7 +32,7 @@ LANGUAGES = ('en', 'es')
 
 # section -> (predicate on the URL path without its language prefix, changefreq, priority)
 SECTIONS = {
-    'pages':            (lambda p: p == '/' or p.startswith('/pages/') or p == '/tool/' or p.startswith('/tool/categories/'), 'weekly', '0.8'),
+    'pages':            (lambda p: p == '/' or p.startswith('/pages/') or p == '/tool/' or p == '/tool/categories' or p.startswith('/tool/categories/'), 'weekly', '0.8'),
     'ai-technology':    (lambda p: p.startswith('/ai-technology/'), 'weekly', '0.9'),
     'startups-business': (lambda p: p.startswith('/startups-business/'), 'weekly', '0.9'),
     'blog':             (lambda p: p.startswith('/tool/blog/'), 'monthly', '0.6'),
